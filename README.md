@@ -4,7 +4,7 @@
 
 > [`Flurl.Http`](https://flurl.dev/) 是一个轻量级 HTTP 库，是 .NET 中最受欢迎扩展库之一，在 NuGet 上的累计下载量超过 1200 万、日均下载量超过 5 千、GitHub 2.6k Stars（数据统计截至 2021-05-01）。
 > 
-> 与另一个目前更加流行的 HTTP 库 [`RestSharp`](https://restsharp.dev/) 相比，`Flurl.Http` 底层基于 `System.Net.Http.HttpClient`，而 `RestSharp` 底层则基于 `System.Net.HttpWebRequest`，前者在多核多线程环境下的性能基准测试中表现要远由优于后者，同时也是微软官方目前推荐的 HTTP 客户端方案。
+> 与另一个流行的 HTTP 库 [`RestSharp`](https://restsharp.dev/) 相比，`Flurl.Http` 底层基于 `System.Net.Http.HttpClient`，而 `RestSharp` 底层则基于 `System.Net.HttpWebRequest`，前者在多核多线程环境下的性能基准测试中表现要远优于后者，同时也是微软官方目前推荐的 HTTP 客户端方案。
 > 
 > 
 > 【附】微软官方关于 `System.Net.HttpWebRequest` 与 `System.Net.Http.HttpClient` 的说明：
