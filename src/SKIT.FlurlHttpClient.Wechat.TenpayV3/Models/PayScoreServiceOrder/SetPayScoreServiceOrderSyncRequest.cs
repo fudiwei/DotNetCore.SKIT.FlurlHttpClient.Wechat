@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+{
+    /// <summary>
+    /// <para>表示 [POST] /payscore/serviceorder/{out_order_no}/sync 接口的请求。</para>
+    /// </summary>
+    public class SetPayScoreServiceOrderSyncRequest : WechatTenpayRequest
+    {
+        public static class Types
+        {
+            public class Detail
+            {
+                /// <summary>
+                /// 获取或设置收款成功时间字符串（格式：yyyyMMddHHmmss 或 yyyyMMdd）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("paid_time")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.CommonWithoutSeparatorsNullableDateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("paid_time")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.CommonWithoutSeparatorsNullableDateTimeOffsetConverter))]
+                public DateTimeOffset? PaidTime { get; set; }
+            }
+        }
+
+        /// <summary>
+        /// 获取或设置商户服务订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string OutOrderNumber { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string AppId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置服务 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("service_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("service_id")]
+        public string ServiceId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置场景类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("type")]
+        [System.Text.Json.Serialization.JsonPropertyName("type")]
+        public string Type { get; set; } = "Order_Paid";
+
+        /// <summary>
+        /// 获取或设置内容详情信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("detail")]
+        [System.Text.Json.Serialization.JsonPropertyName("detail")]
+        public Types.Detail? Detail { get; set; }
+    }
+}

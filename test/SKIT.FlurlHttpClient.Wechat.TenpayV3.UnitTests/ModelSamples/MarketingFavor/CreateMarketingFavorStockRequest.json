@@ -1,0 +1,45 @@
+﻿{
+    "stock_name": "微信支付代金券批次",
+    "comment": "零售批次",
+    "belong_merchant": "98568865",
+    "available_begin_time": "2015-05-20T13:29:35.120+08:00",
+    "available_end_time": "2015-05-20T13:29:35.120+08:00",
+    "stock_use_rule": {
+        "max_coupons": 100,
+        "max_amount": 5000,
+        "max_amount_by_day": 400,
+        "max_coupons_per_user": 3,
+        "natural_person_limit": false,
+        "prevent_api_abuse": false
+    },
+    "pattern_info": {
+        "description": "微信支付营销代金券",
+        "merchant_logo": "https://qpic.cn/xxx",
+        "merchant_name": "微信支付",
+        "background_color": "COLOR020",
+        "coupon_image": "https://qpic.cn/xxx"
+    },
+    "coupon_use_rule": {
+        "fixed_normal_coupon": {
+            "coupon_amount": 50,
+            "transaction_minimum": 100
+        },
+        "goods_tag": [
+            "123321",
+            "123322"
+        ],
+        "trade_type": [ "OTHER", "APPPAY" ],
+        "combine_use": false,
+        "available_items": [
+            "123321",
+            "123322"
+        ],
+        "available_merchants": [
+            "9856000",
+            "9856001"
+        ]
+    },
+    "no_cash": false,
+    "stock_type": "NORMAL",
+    "out_request_no": "89560002019101000121"
+}

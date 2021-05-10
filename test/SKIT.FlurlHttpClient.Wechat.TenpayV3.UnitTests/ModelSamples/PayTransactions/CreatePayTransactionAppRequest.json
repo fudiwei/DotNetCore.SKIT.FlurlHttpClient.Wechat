@@ -1,0 +1,11 @@
+﻿{
+    "mchid": "1900006XXX",
+    "out_trade_no": "APP1217752501201407033233368018",
+    "appid": "wxb4ba3c02aa476XXX",
+    "description": "Image形象店-深圳腾大-QQ公仔",
+    "notify_url": "https://weixin.qq.com/",
+    "amount": {
+        "total": 1,
+        "currency": "CNY"
+    }
+}

@@ -1,0 +1,14 @@
+﻿{
+    "event_type": "EVENT_TYPE_BUSICOUPON_SEND",
+    "coupon_code": "1227944959000000911017",
+    "stock_id": "1286950000000039",
+    "send_time": "2019-12-17T10:35:53+08:00",
+    "openid": "odXnH1CJjeQoWTld48db-pnxs-Wg",
+    "unionid": "oOuyajgxj0oVwjocSoQm6mp7PGKw",
+    "send_channel": "BUSICOUPON_SEND_CHANNEL_PAYGIFT",
+    "send_merchant": "98568888",
+    "attach_info": {
+        "transaction_id": "4200000462220200226114599",
+        "act_code": "540358695"
+    }
+}

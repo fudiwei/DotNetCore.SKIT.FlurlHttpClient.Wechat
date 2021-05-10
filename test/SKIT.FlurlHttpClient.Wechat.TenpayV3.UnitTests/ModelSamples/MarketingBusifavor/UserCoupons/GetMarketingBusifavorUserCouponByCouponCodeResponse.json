@@ -1,0 +1,68 @@
+﻿{
+    "belong_merchant": "100000222",
+    "stock_name": "商家券",
+    "comment": "xxx可用",
+    "goods_name": "xxx商品可用",
+    "stock_type": "NORMAL",
+    "transferable": false,
+    "shareable": false,
+    "coupon_state": "SENDED",
+    "display_pattern_info": {
+        "description": "xxx门店可用",
+        "merchant_logo_url": "https://xxx",
+        "merchant_name": "微信支付",
+        "background_color": "Color020",
+        "coupon_image_url": "https://qpic.cn/xxx"
+    },
+    "coupon_use_rule": {
+        "coupon_available_time": {
+            "available_begin_time": "2015-05-20T13:29:35+08:00",
+            "available_end_time": "2015-05-20T13:29:35+08:00",
+            "available_day_after_receive": 3,
+            "available_week": {
+                "week_day": [
+                    "1",
+                    "2"
+                ],
+                "available_day_time": [
+                    {
+                        "begin_time": 3600,
+                        "end_time": 86399
+                    }
+                ]
+            },
+            "irregulary_avaliable_time": [
+                {
+                    "begin_time": "2015-05-20T13:29:35+08:00",
+                    "end_time": "2015-05-20T13:29:35+08:00"
+                }
+            ]
+        },
+        "fixed_normal_coupon": {
+            "discount_amount": 5,
+            "transaction_minimum": 100
+        },
+        "use_method": "OFF_LINE",
+        "mini_programs_appid": "wx23232232323",
+        "mini_programs_path": "/path/index/index"
+    },
+    "custom_entrance": {
+        "mini_programs_info": {
+            "mini_programs_appid": "wx234545656765876",
+            "mini_programs_path": "/path/index/index",
+            "entrance_words": "欢迎选购",
+            "guiding_words": "获取更多优惠"
+        },
+        "appid": "wx324345hgfhfghfg",
+        "hall_id": "233455656",
+        "store_id": "233554655"
+    },
+    "coupon_code": "123446565767",
+    "stock_id": "1002323",
+    "available_start_time": "2019-12-30T13:29:35+08:00",
+    "expire_time": "2019-12-31T13:29:35+08:00",
+    "receive_time": "2019-12-30T13:29:35+08:00",
+    "send_request_no": "MCHSEND202003101234",
+    "use_request_no": "MCHSEND202003101234",
+    "use_time": "2019-12-30T13:29:35+08:00"
+}

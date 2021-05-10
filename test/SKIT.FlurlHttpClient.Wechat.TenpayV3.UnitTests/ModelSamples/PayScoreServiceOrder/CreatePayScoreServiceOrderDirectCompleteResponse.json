@@ -1,0 +1,51 @@
+﻿{
+    "post_payments": [
+        {
+            "amount": 40000,
+            "name": "就餐费用服务费",
+            "count": 4,
+            "description": "就餐人均100元服务费：100/小时"
+        },
+        {
+            "amount": 2000,
+            "name": "就餐费用服务费",
+            "count": 1,
+            "description": "就餐人均100元服务费：100/小时"
+        }
+    ],
+    "mchid": "1230000109",
+    "service_introduction": "某某酒店",
+    "notify_url": "https://api.test.com",
+    "state_description": "MCH_COMPLETE",
+    "out_order_no": "1234323JKHDFE1243252",
+    "time_range": {
+        "start_time": "20091225091010",
+        "end_time_remark": "备注2",
+        "end_time": "20091225121010",
+        "start_time_remark": "备注1"
+    },
+    "total_amount": 50000,
+    "service_id": "500001",
+    "appid": "wxd678efh567hg6787",
+    "location": {
+        "start_location": "嗨客时尚主题展餐厅",
+        "end_location": "嗨客时尚主题展餐厅"
+    },
+    "state": "FINISHED",
+    "attach": "Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald",
+    "order_id": "15646546545165651651",
+    "post_discounts": [
+        {
+            "amount": 100,
+            "name": "满20减1元",
+            "count": 2,
+            "description": "不与其他优惠叠加"
+        },
+        {
+            "amount": 100,
+            "name": "满20减1元",
+            "count": 2,
+            "description": "不与其他优惠叠加"
+        }
+    ]
+}

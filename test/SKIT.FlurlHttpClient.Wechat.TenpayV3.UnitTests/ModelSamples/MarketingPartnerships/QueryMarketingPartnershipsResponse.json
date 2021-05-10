@@ -1,0 +1,35 @@
+﻿{
+    "data": [
+        {
+            "authorized_data": {
+                "business_type": "FAVOR_STOCK",
+                "stock_id": "2433405"
+            },
+            "partner": {
+                "appid": "wx4e1916a585d1f4e9",
+                "type": "APPID"
+            },
+            "update_time": "2015-05-20T13:29:35.120+08:00",
+            "create_time": "2015-05-20T13:29:35.120+08:00",
+            "build_time": "2015-05-20T13:29:35.120+08:00",
+            "terminate_time": "2015-05-20T13:29:35.120+08:00"
+        },
+        {
+            "authorized_data": {
+                "business_type": "FAVOR_STOCK",
+                "stock_id": "2433405"
+            },
+            "partner": {
+                "appid": "wx4e1916a585d1f4e9",
+                "type": "APPID"
+            },
+            "update_time": "2015-05-20T13:29:35.120+08:00",
+            "create_time": "2015-05-20T13:29:35.120+08:00",
+            "build_time": "2015-05-20T13:29:35.120+08:00",
+            "terminate_time": "2015-05-20T13:29:35.120+08:00"
+        }
+    ],
+    "offset": 0,
+    "total_count": 2,
+    "limit": 5
+}

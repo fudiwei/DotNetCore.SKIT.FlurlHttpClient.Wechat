@@ -1,0 +1,40 @@
+﻿{
+    "appid": "wxd678efh567hg6787",
+    "mchid": "1230000109",
+    "out_order_no": "1234323JKHDFE1243252",
+    "service_id": "500001",
+    "service_introduction": "某某酒店",
+    "state": "DOING",
+    "state_description": "",
+    "total_amount": 3900,
+    "post_payments": [
+        {
+            "name": "就餐费用服务费",
+            "amount": 1,
+            "description": "就餐人均100元服务费：100/小时",
+            "count": 1
+        }
+    ],
+    "post_discounts": [
+        {
+            "name": "满20减1元",
+            "description": "不与其他优惠叠加",
+            "amount": 1
+        }
+    ],
+    "risk_fund": {
+        "name": "ESTIMATE_ORDER_COST",
+        "amount": 4000,
+        "description": "就餐的预估费用"
+    },
+    "time_range": {
+        "start_time": "20091225091010",
+        "end_time": "20091225121010"
+    },
+    "location": {
+        "start_location": "嗨客时尚主题展餐厅",
+        "end_location": "嗨客时尚主题展餐厅"
+    },
+    "order_id": "15646546545165651651",
+    "need_collection": true
+}

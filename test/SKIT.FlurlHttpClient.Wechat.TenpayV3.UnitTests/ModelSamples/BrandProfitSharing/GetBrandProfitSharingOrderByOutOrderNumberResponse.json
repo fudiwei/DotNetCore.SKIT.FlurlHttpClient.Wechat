@@ -1,0 +1,29 @@
+﻿{
+    "transaction_id": "4208450740201411110007820472",
+    "receivers": [
+        {
+            "result": "SUCCESS",
+            "amount": 10,
+            "description": "分帐1900000110",
+            "type": "MERCHANT_ID",
+            "fail_reason": "NO_RELATION",
+            "account": "1900000109",
+            "finish_time": "2015-05-20T13:29:35.120+08:00"
+        },
+        {
+            "result": "SUCCESS",
+            "amount": 10,
+            "description": "分帐1900000110",
+            "type": "MERCHANT_ID",
+            "fail_reason": "NO_RELATION",
+            "account": "1900000109",
+            "finish_time": "2015-05-20T13:29:35.120+08:00"
+        }
+    ],
+    "finish_description": "分账完结",
+    "out_order_no": "P20150806125346",
+    "sub_mchid": "1900000109",
+    "finish_amount": 100,
+    "order_id": "3008450740201411110007820472",
+    "status": "FINISHED"
+}

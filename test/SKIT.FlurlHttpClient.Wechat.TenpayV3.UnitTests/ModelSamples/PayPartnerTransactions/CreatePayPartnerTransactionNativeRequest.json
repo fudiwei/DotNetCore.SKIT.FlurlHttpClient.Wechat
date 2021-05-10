@@ -1,0 +1,13 @@
+﻿{
+    "sp_mchid": "1900007XXX",
+    "sub_mchid": "1900008XXX",
+    "out_trade_no": "native12177525012014070332333",
+    "sp_appid": "wxdace645e0bc2cXXX",
+    "sub_appid": "wxdace645e0bc2cXXX",
+    "description": "Image形象店-深圳腾大-QQ公仔",
+    "notify_url": "https://weixin.qq.com/",
+    "amount": {
+        "total": 1,
+        "currency": "CNY"
+    }
+}

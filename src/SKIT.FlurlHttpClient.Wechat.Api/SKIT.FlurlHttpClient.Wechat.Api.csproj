@@ -1,0 +1,26 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net461; netstandard2.0</TargetFrameworks>
+        <LangVersion>8.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <NullableReferenceTypes>true</NullableReferenceTypes>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>SKIT.FlurlHttpClient.Wechat.Api</PackageId>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
+        <PackageTags>Flurl.Http Wechat Weixin MicroMessage 微信 公众号 服务号 小程序 公众平台 开放平台 微信公众号 微信服务号 微信小程序 微信公众平台 微信开放平台</PackageTags>
+        <Version>0.0.1-alpha.1</Version>
+        <Description>Flurl.Http client for Wechat API. 基于 Flurl.Http 的微信 API 客户端，支持公众平台（公众号、小程序）、开放平台等功能。</Description>
+        <Authors>Fu Diwei</Authors>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git</RepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\SKIT.FlurlHttpClient.Wechat\SKIT.FlurlHttpClient.Wechat.csproj" />
+    </ItemGroup>
+
+</Project>

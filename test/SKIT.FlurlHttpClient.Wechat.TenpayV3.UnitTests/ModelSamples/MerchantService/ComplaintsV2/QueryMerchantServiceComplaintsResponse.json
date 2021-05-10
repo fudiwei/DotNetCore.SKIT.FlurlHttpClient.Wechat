@@ -1,0 +1,30 @@
+﻿{
+    "data": [
+        {
+            "complaint_id": "200201820200101080076610000",
+            "complaint_time": "2015-05-20T13:29:35.120+08:00",
+            "complaint_detail": "反馈一个重复扣费的问题",
+            "complaint_state": "PENDING",
+            "payer_phone": "Qe41VhP/sGdNeTHMQGlxCWiUyHu6XNO9GCYln2Luv4HhwJzZBfcL12sB+PgZcS5NhePBog30NgJ1xRaK+gbGDKwpg==",
+            "payer_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
+            "complaint_order_info": [
+                {
+                    "transaction_id": "4200000404201909069117582536",
+                    "out_trade_no": "20190906154617947762231",
+                    "amount": 3
+                },
+                {
+                    "transaction_id": "4200000404201909069117982536",
+                    "out_trade_no": "20190906154617947772231",
+                    "amount": 9
+                }
+            ],
+            "complaint_full_refunded": true,
+            "incoming_user_response": true,
+            "user_complaint_times": 1
+        }
+    ],
+    "limit": 5,
+    "offset": 10,
+    "total_count": 1000
+}

@@ -1,0 +1,25 @@
+﻿{
+    "stock_id": "9836588",
+    "stock_creator_mchid": "123456",
+    "stock_name": "微信支付批次",
+    "status": "paused",
+    "create_time": "2015-05-20T13:29:35.120+08:00",
+    "description": "微信支付营销",
+    "stock_use_rule": {
+        "max_coupons": 100,
+        "max_amount": 5000,
+        "max_amount_by_day": 400,
+        "max_coupons_per_user": 3,
+        "trade_type": "MICROAPP"
+    },
+    "available_begin_time": "2015-05-20T13:29:35.120+08:00",
+    "available_end_time": "2015-05-20T13:29:35.120+08:00",
+    "distributed_coupons": 100,
+    "no_cash": true,
+    "cut_to_message": {
+        "single_price_max": 100,
+        "cut_to_price": 5000
+    },
+    "singleitem": true,
+    "stock_type": "NORMAL"
+}

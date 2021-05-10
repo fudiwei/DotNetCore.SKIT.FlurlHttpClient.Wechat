@@ -1,0 +1,12 @@
+﻿{
+    "total": 23000,
+    "count": 10000,
+    "data": {
+        "openid": [
+            "OPENID1",
+            "OPENID2",
+            "OPENID10000"
+        ]
+    },
+    "next_openid": "OPENID10000"
+}

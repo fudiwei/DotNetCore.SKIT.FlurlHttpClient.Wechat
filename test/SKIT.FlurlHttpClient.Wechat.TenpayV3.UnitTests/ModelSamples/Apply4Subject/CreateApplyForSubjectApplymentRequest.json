@@ -1,0 +1,51 @@
+﻿{
+    "business_code": "1111111111",
+    "contact_info": {
+        "name": "wRNIsXOvVuTYIhVxZJCD8uJIGmNPGozCe44Ph8rD+QAJEPxw==",
+        "mobile": "w+zPKEVNm7IDxPvK55P0OfNd5E5VXoWbRwyyGk37HiB6C/F2lUog==",
+        "id_card_number": "rjbq82xBwMixDGA5A4x6/hqZRAYmaeM+yyjn9BU8qUBZga+mKqQ=="
+    },
+    "subject_info": {
+        "subject_type": "SUBJECT_TYPE_ENTERPRISE",
+        "business_licence_info": {
+            "licence_number": "914201123033363296",
+            "licence_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+            "merchant_name": "李四网络有限公司",
+            "legal_person": "李四",
+            "company_address": "广东省深圳市南山区xx路xx号",
+            "licence_valid_date": "[\"1970-01-01\",\"forever\"]"
+        },
+        "certificate_info": {
+            "cert_type": "CERTIFICATE_TYPE_2388",
+            "cert_number": "111111111111",
+            "cert_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+            "merchant_name": "xx公益团体",
+            "legal_person": "李四",
+            "company_address": "广东省深圳市南山区xx路xx号",
+            "cert_valid_date": "[\"1970-01-01\",\"forever\"]"
+        },
+        "company_prove_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+        "assist_prove_info": {
+            "micro_biz_type": "MICRO_TYPE_STORE",
+            "store_name": "大郎烧饼",
+            "store_address_code": "440305",
+            "store_address": "广东省深圳市南山区xx大厦x层xxxx室",
+            "store_header_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+            "store_indoor_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo"
+        }
+    },
+    "identification_info": {
+        "identification_type": "IDENTIFICATION_TYPE_IDCARD",
+        "identification_name": "MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiFRL8Aii3L4U74RPCPztcJOScaXsaGs82HJNU3K+46ndk7prENiPDw==",
+        "identification_number": "ZTnn5dKGCvP4csw4XTLug/+VLB+4R6nxSPQwqSpmPVZtXmye+/3s9O+y32w==",
+        "identification_valid_date": "[\"1970-01-01\",\"forever\"]",
+        "identification_front_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+        "identification_back_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo"
+    },
+    "addition_info": {
+        "confirm_mchid_list": [
+            "20001113",
+            "20001112"
+        ]
+    }
+}

@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net461; netstandard2.0</TargetFrameworks>
+        <LangVersion>8.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <NullableReferenceTypes>true</NullableReferenceTypes>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>SKIT.FlurlHttpClient.Wechat.TenpayV3</PackageId>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
+        <PackageTags>Flurl.Http Wechat Weixin MicroMessage Tenpay Wxpay 微信 微信支付 微信商户</PackageTags>
+        <Version>1.0.0-rc</Version>
+        <Description>Flurl.Http client for Wechat Tenpay API. 基于 Flurl.Http 的微信支付 API v3 版客户端，支持直连商户、服务商模式，支持基础支付、代金券、商家券、委托营销、消费卡、支付有礼、微信支付分、微信先享卡、支付即服务、点金计划、智慧商圈、电商收付通、消费者投诉等功能。</Description>
+        <Authors>Fu Diwei</Authors>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git</RepositoryUrl>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461'" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Portable.BouncyCastle" Version="1.8.10" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\SKIT.FlurlHttpClient.Wechat\SKIT.FlurlHttpClient.Wechat.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,16 @@
+﻿{
+    "subsidy_return_receipt_id": "2120200119165100000000000001",
+    "stock_id": "128888000000001",
+    "coupon_code": "ABCD12345678",
+    "transaction_id": "4200000913202101152566792388",
+    "refund_id": "50100506732021010105138718375",
+    "payer_merchant": "1900000001",
+    "payee_merchant": "1900000002",
+    "amount": 100,
+    "description": "20210115DESCRIPTION",
+    "status": "SUCCESS",
+    "return_done_time": "2021-01-20T10:29:35.120+08:00",
+    "subsidy_receipt_id": "1120200119165100000000000001",
+    "out_subsidy_return_no": "subsidy-abcd-12345678",
+    "return_create_time": "2021-01-20T10:29:35.120+08:00"
+}

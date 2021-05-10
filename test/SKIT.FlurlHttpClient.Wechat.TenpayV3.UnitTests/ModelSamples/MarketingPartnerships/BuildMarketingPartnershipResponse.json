@@ -1,0 +1,15 @@
+﻿{
+    "authorized_data": {
+        "business_type": "FAVOR_STOCK",
+        "scenarios": [ "" ],
+        "stock_id": "2433405"
+    },
+    "update_time": "2015-05-20T13:29:35.120+08:00",
+    "partner": {
+        "appid": "wx4e1916a585d1f4e9",
+        "type": "APPID"
+    },
+    "create_time": "2015-05-20T13:29:35.120+08:00",
+    "build_time": "2015-05-20T13:29:35.120+08:00",
+    "state": "ESTABLISHED"
+}

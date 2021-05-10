@@ -1,0 +1,36 @@
+﻿{
+    "custom_entrance": {
+        "mini_programs_info": {
+            "mini_programs_appid": "wx234545656765876",
+            "mini_programs_path": "/path/index/index",
+            "entrance_words": "欢迎选购",
+            "guiding_words": "获取更多优惠"
+        },
+        "appid": "wx324345hgfhfghfg",
+        "hall_id": "233455656",
+        "code_display_mode": "BARCODE"
+    },
+    "stock_name": "8月1日活动券",
+    "comment": "活动使用",
+    "goods_name": "xxx商品使用",
+    "out_request_no": "6122352020010133287985742",
+    "display_pattern_info": {
+        "description": "xxx门店可用",
+        "merchant_logo_url": "https://xxx",
+        "merchant_name": "微信支付",
+        "background_color": "xxxxx",
+        "coupon_image_url": "图片cdn地址"
+    },
+    "coupon_use_rule": {
+        "use_method": "OFF_LINE",
+        "mini_programs_appid": "wx23232232323",
+        "mini_programs_path": "/path/index/index"
+    },
+    "stock_send_rule": {
+        "natural_person_limit": false,
+        "prevent_api_abuse": false
+    },
+    "notify_config": {
+        "notify_appid": "wx23232232323"
+    }
+}
