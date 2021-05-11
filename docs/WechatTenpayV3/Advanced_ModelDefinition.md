@@ -486,6 +486,34 @@
 
 -   经营能力
 
+    -   微信支付分（公共 API）
+
+        -   创建支付分订单：`CreatePayScorePartnerServiceOrder`
+
+        -   查询支付分订单：`GetPayScorePartnerServiceOrderByQueryId` / `GetPayScoreServiceOrderByOutOrderNumber`
+
+        -   取消支付分订单：`CancelPayScorePartnerServiceOrder`
+
+        -   修改订单金额：`ModifyPayPartnerScoreServiceOrder`
+
+        -   完结支付分订单：`SetPayScorePartnerServiceOrderComplete`
+
+        -   商户发起催收扣款：`SetPayScorePartnerServiceOrderPay`
+
+        -   同步服务订单信息：`SetPayScorePartnerServiceOrderSync`
+
+    -   微信支付分（免确认模式特有 API）
+
+        -   商户预授权：`ApplyPayScorePartnerPermissions`
+
+        -   查询用户授权记录（授权协议号）：`GetPayScorePartnerPermissionsByAuthorizationCode`
+
+        -   解除用户授权关系（授权协议号）：`TerminatePayScorePartnerPermissionsByAuthorizationCode`
+
+        -   查询用户授权记录（OpenId）：`GetPayScorePartnerPermissionsByOpenId`
+
+        -   解除用户授权关系（OpenId）：`TerminatePayScorePartnerPermissionsByOpenId`
+
     -   支付即服务
 
         -   服务人员注册：`CreateSmartGuide`
