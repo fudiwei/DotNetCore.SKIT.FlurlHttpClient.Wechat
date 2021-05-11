@@ -1,0 +1,10 @@
+﻿{
+    "service_id": "2002000000000558128851361561536",
+    "sub_mchid": "1900000109",
+    "type": "Order_Paid",
+    "detail": {
+        "seq": 1,
+        "paid_time": "20091225091210",
+        "paid_amount": 1
+    }
+}

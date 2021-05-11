@@ -1,0 +1,59 @@
+﻿{
+    "service_id": "500001",
+    "appid": "wxd678efh567hg6787",
+    "mchid": "1230000109",
+    "sub_appid": "wxd678efh567hg6999",
+    "sub_mchid": "1900000109",
+    "out_order_no": "1234323JKHDFE1243252",
+    "sub_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
+    "state": "DONE",
+    "service_introduction": "嗨客餐厅用餐",
+    "total_amount": "40000",
+    "post_payments": [
+        {
+            "name": "服务费",
+            "amount": 40000,
+            "description": "每分钟1元"
+        }
+    ],
+    "post_discounts": [
+        {
+            "name": "满20减1元",
+            "amount": 1,
+            "description": "不与其他优惠叠加"
+        }
+    ],
+    "risk_fund": {
+        "name": "预估订单费用",
+        "amount": 10000,
+        "description": "就餐的预估费用"
+    },
+    "time_range": {
+        "start_time": "20091225091010",
+        "start_time_remark": "xxx",
+        "end_time": "20091225091210",
+        "end_time_remark": "xxx"
+    },
+    "location": {
+        "start_location": "嗨客时尚主题展餐厅",
+        "end_location": "嗨客时尚主题展餐厅"
+    },
+    "attach": "attach",
+    "order_id": "165461131",
+    "need_collection": true,
+    "collection": {
+        "state": "",
+        "total_amount": 40000,
+        "paying_amount": 40000,
+        "paid_amount": 0,
+        "details": [
+            {
+                "seq": 1,
+                "amount": 10000,
+                "paid_type": "MCH",
+                "paid_time": "20091225091210",
+                "transaction_id": "15646546545165651651"
+            }
+        ]
+    }
+}
