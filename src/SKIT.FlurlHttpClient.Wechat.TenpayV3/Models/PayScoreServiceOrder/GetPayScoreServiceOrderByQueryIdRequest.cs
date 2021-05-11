@@ -18,15 +18,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置服务 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("service_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("service_id")]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         public string ServiceId { get; set; } = string.Empty;
     }
 }

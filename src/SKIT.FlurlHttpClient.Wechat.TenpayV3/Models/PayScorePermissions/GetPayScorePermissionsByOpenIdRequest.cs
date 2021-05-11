@@ -9,24 +9,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetPayScorePermissionsByOpenIdRequest : WechatTenpayRequest
     {
         /// <summary>
+        /// 获取或设置服务 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string ServiceId { get; set; } = string.Empty;
+
+        /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string AppId { get; set; } = string.Empty;
+        public virtual string AppId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置用户唯一标识。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string OpenId { get; set; } = string.Empty;
-
-        /// <summary>
-        /// 获取或设置服务 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string ServiceId { get; set; } = string.Empty;
+        public virtual string? OpenId { get; set; }
     }
 }

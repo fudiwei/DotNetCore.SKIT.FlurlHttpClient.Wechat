@@ -150,7 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public virtual string AppId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置商户服务订单号。
@@ -192,7 +192,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string? OpenId { get; set; }
+        public virtual string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置是否需要用户确认。

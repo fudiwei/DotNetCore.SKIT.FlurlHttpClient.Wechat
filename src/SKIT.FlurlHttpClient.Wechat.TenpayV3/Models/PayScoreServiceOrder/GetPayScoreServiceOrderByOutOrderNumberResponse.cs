@@ -155,7 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("seq")]
                         [System.Text.Json.Serialization.JsonPropertyName("seq")]
-                        public int SequenceNumber { get; set; }
+                        public int Sequence { get; set; }
 
                         /// <summary>
                         /// 获取或设置单笔收款金额（单位：分）。
@@ -227,18 +227,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置微信 AppId。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
-
-        /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public virtual string MerchantId { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public virtual string AppId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置商户服务订单号。
@@ -301,7 +301,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string? OpenId { get; set; }
+        public virtual string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置付费项目列表。
@@ -350,6 +350,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("need_collection")]
         [System.Text.Json.Serialization.JsonPropertyName("need_collection")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.StringTypedNullableBooleanConverter))]
         public bool? RequireCollection { get; set; }
 
         /// <summary>

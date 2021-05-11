@@ -13,13 +13,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Detail
             {
                 /// <summary>
-                /// 获取或设置收款成功时间字符串（格式：yyyyMMddHHmmss 或 yyyyMMdd）。
+                /// 获取或设置收款序号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("seq")]
+                [System.Text.Json.Serialization.JsonPropertyName("seq")]
+                public int? Sequence { get; set; }
+
+                /// <summary>
+                /// 获取或设置收款成功时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("paid_time")]
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.CommonWithoutSeparatorsNullableDateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("paid_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.CommonWithoutSeparatorsNullableDateTimeOffsetConverter))]
                 public DateTimeOffset? PaidTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置收款金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("paid_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("paid_amount")]
+                public int? PaidAmount { get; set; }
             }
         }
 
@@ -35,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置服务 ID。

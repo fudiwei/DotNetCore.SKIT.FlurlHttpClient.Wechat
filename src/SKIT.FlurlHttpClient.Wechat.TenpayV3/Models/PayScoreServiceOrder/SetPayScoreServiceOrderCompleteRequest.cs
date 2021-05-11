@@ -22,14 +22,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
             }
 
-            public class Location
+            public class Location : CreatePayScoreServiceOrderRequest.Types.Location
             {
-                /// <summary>
-                /// 获取或设置服务结束地点。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("end_location")]
-                [System.Text.Json.Serialization.JsonPropertyName("end_location")]
-                public string EndLocation { get; set; } = string.Empty;
             }
         }
 
@@ -45,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置服务 ID。

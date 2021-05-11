@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /payscore/serviceorder 接口的响应。</para>
+    /// <para>表示 [POST] /payscore/partner/serviceorder 接口的响应。</para>
     /// </summary>
-    public class CreatePayScoreServiceOrderResponse : GetPayScoreServiceOrderByOutOrderNumberResponse
+    public class CreatePayScorePartnerServiceOrderResponse : GetPayScorePartnerServiceOrderByOutOrderNumberResponse
     {
         /// <summary>
         /// 获取或设置跳转微信侧小程序订单数据。
