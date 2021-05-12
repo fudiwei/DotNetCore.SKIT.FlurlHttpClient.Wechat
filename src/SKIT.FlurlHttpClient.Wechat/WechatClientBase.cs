@@ -36,14 +36,14 @@ namespace SKIT.FlurlHttpClient.Wechat
         public void Configure(Action<WechatClientSettings> configure)
         {
             if (configure == null) throw new ArgumentNullException(nameof(configure));
-
+            
             ProxyFlurlClient.Configure(flurlSettings =>
             {
                 var settings = new WechatClientSettings();
-                settings.Timeout = flurlSettings.Defaults.Timeout;
+                settings.Timeout = flurlSettings.Timeout;
                 settings.ConnectionLeaseTimeout = flurlSettings.ConnectionLeaseTimeout;
-                settings.JsonSerializer = flurlSettings.Defaults.JsonSerializer;
-                settings.UrlEncodedSerializer = flurlSettings.Defaults.UrlEncodedSerializer;
+                settings.JsonSerializer = flurlSettings.JsonSerializer;
+                settings.UrlEncodedSerializer = flurlSettings.UrlEncodedSerializer;
                 settings.HttpClientFactory = flurlSettings.HttpClientFactory;
                 configure.Invoke(settings);
 

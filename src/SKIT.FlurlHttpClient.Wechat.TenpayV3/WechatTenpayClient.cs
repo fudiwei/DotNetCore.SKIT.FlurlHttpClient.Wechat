@@ -61,16 +61,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             MerchantV3Secret = options.MerchantV3Secret;
 
             ProxyFlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
-            ProxyFlurlClient.Configure(settings =>
-            {
-                settings.Timeout = TimeSpan.FromMilliseconds(options.Timeout);
-            });
             ProxyFlurlClient.Headers.Remove("Accept");
             ProxyFlurlClient.Headers.Remove("Accept-Language");
             ProxyFlurlClient.Headers.Remove("User-Agent");
             ProxyFlurlClient.WithHeader("Accept", "application/json");
             ProxyFlurlClient.WithHeader("Accept-Language", options.AcceptLanguage);
             ProxyFlurlClient.WithHeader("User-Agent", options.UserAgent);
+            ProxyFlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
 
             var interceptorAuthenticator = new Interceptors.WechatTenpayAuthenticator(
                 scheme: options.AuthScheme,
