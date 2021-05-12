@@ -61,6 +61,8 @@
 
 ### 安装：
 
+提示：如果你使用 Visual Studio NuGet 管理器图形化界面，请在搜索结果中勾选“**包括预发行版**”。
+
 ```shell
 # 通过 NuGet 安装
 > Install-Package SKIT.FlurlHttpClient.Wechat.TenpayV3
