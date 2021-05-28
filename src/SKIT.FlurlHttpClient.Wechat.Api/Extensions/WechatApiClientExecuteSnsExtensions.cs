@@ -14,6 +14,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [GET] /sns/oauth2/access_token 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html#1 </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -38,6 +40,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [GET] /sns/oauth2/refresh_token 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html#1 </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -61,6 +65,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [GET] /sns/userinfo 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html#3 </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Authorized_API_call_UnionID.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Authorized_Interface_Calling_UnionID.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -84,6 +90,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [GET] /sns/auth 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html#4 </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/Development_Guide.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/Wechat_Login.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -127,5 +135,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestAsync<Models.SnsJsCode2SessionResponse>(flurlReq, cancellationToken: cancellationToken);
         }
+
+        #region Component
+        /// <summary>
+        /// <para>异步调用 [GET] /sns/component/jscode2session 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/others/WeChat_login.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.SnsComponentJsCode2SessionResponse> ExecuteSnsComponentJsCode2SessionAsync(this WechatApiClient client, Models.SnsComponentJsCode2SessionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (string.IsNullOrEmpty(request.ComponentAppId))
+                request.ComponentAppId = client.AppId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Get, "sns", "component", "jscode2session")
+                .SetOptions(request)
+                .SetQueryParam("grant_type", request.GrantType)
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("component_appid", request.ComponentAppId)
+                .SetQueryParam("component_access_token", request.ComponentAccessToken)
+                .SetQueryParam("js_code", request.JsCode);
+
+            return await client.SendRequestAsync<Models.SnsComponentJsCode2SessionResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

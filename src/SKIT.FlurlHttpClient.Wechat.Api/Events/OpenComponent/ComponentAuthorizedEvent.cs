@@ -1,0 +1,48 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+{
+    /// <summary>
+    /// <para>表示 INFO.authorized 事件的数据。</para>
+    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/token/authorize_event.html </para>
+    /// </summary>
+    public class ComponentAuthorizedEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
+    {
+        /// <summary>
+        /// 获取或设置第三方平台 AppId。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("AppId")]
+        public string AppId { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置信息类型。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("InfoType")]
+        public string InfoType { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置授权方 AppId。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("AuthorizerAppid")]
+        public string AuthorizerAppid { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置预授权码。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("PreAuthCode")]
+        public string PreAuthCode { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置授权码。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("AuthorizationCode")]
+        public string AuthCode { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置授权码过期时间戳。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("AuthorizationCodeExpiredTime")]
+        public long AuthCodeExpireTimestamp { get; set; }
+    }
+}

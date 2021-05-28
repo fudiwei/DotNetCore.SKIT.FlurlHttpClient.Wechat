@@ -72,11 +72,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string HeadImageUrl { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置用户是否订阅该公众号标识（值为 0 时，代表此用户没有关注该公众号，拉取不到其余信息）。
+        /// 获取或设置用户是否订阅该公众号标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("subscribe")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("subscribe")]
-        public int Subscribe { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        public bool IsSubscribed { get; set; }
 
         /// <summary>
         /// 获取或设置用户关注的时间戳。如果用户曾多次关注，则取最后关注时间。
@@ -114,11 +116,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public int[]? TagIdList { get; set; }
 
         /// <summary>
-        /// 获取或设置二维码扫码场景。
+        /// 获取或设置二维码扫码场景值 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qr_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("qr_scene")]
-        public int? QrcodeScene { get; set; }
+        public long? QrcodeSceneId { get; set; }
 
         /// <summary>
         /// 获取或设置二维码扫码场景描述。

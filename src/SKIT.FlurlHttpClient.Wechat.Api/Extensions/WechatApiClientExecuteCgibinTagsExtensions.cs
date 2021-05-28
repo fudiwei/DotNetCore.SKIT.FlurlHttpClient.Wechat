@@ -116,6 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.CgibinUserTagGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
+        #region Members
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/members/batchtagging 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html </para>
@@ -178,7 +179,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.CgibinTagsGetIdListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+        #endregion
 
+        #region MembersBlackList
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/members/getblacklist 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/Manage_blacklist.html </para>
@@ -241,5 +244,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.CgibinTagsMembersBatchUnblackListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+        #endregion
     }
 }

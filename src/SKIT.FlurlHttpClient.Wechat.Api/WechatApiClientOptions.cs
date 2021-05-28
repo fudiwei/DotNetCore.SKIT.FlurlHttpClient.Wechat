@@ -28,5 +28,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// 获取或设置微信 AppSecret。
         /// </summary>
         public string AppSecret { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置即时配送公司帐号 AppKey。
+        /// </summary>
+        public string? ImmeDeliveryAppKey { get; set; }
+
+        /// <summary>
+        /// 获取或设置即时配送公司帐号 AppSecret。
+        /// </summary>
+        public string? ImmeDeliveryAppSecret { get; set; }
+
+        /// <summary>
+        /// 获取或设置米大师平台 AppKey。
+        /// </summary>
+        public string? MidasAppKey { get; set; }
     }
 }

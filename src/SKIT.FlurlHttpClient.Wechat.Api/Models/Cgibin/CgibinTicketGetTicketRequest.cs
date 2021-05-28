@@ -9,8 +9,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CgibinTicketGetTicketRequest : WechatApiRequest
     {
         /// <summary>
-        /// <i>（使用默认值即可，无需修改）</i>
+        /// <para>获取或设置票据类型。</para>
+        /// <para>默认值：jsapi</para>
         /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         public string Type { get; set; } = "jsapi";
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
+using Flurl.Http.Configuration;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
@@ -22,9 +23,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public string AppId { get; }
 
         /// <summary>
-        /// 获取或设置当前客户端使用的微信 AppSecret。
+        /// 获取当前客户端使用的微信 AppSecret。
         /// </summary>
-        public string AppSecret { get; set; }
+        internal string AppSecret { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的即时配送公司帐号 AppKey（用于即使配送相关接口的请求签名）。
+        /// </summary>
+        internal string? ImmeDeliveryAppKey { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的即时配送公司帐号 AppSecret（用于即使配送相关接口的请求签名）。
+        /// </summary>
+        internal string? ImmeDeliveryAppSecret { get; }
+
+        /// <summary>
+        /// 获取或设置米大师平台 AppKey（用于虚拟支付相关接口的请求签名）。
+        /// </summary>
+        internal string? MidasAppKey { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的 JSON 序列化器。
+        /// </summary>
+        internal ISerializer JsonSerializer
+        {
+            get { return ProxyFlurlClient.Settings?.JsonSerializer ?? new FlurlNewtonsoftJsonSerializer(); }
+        }
 
         /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatApiClient"/> 类的新实例。
@@ -37,12 +61,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             AppId = options.AppId;
             AppSecret = options.AppSecret;
+            ImmeDeliveryAppKey = options.ImmeDeliveryAppKey;
+            ImmeDeliveryAppSecret = options.ImmeDeliveryAppSecret;
+            MidasAppKey = options.MidasAppKey;
 
             ProxyFlurlClient.BaseUrl = options.Endpoints ?? WechatApiEndpoints.DEFAULT;
-            ProxyFlurlClient.Configure(settings =>
-            {
-                settings.Timeout = TimeSpan.FromMilliseconds(options.Timeout);
-            });
+            ProxyFlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
         }
 
         /// <summary>
@@ -103,8 +127,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             where T : WechatApiResponse, new()
         {
             string contentType = response.Headers.GetAll("Content-Type").FirstOrDefault() ?? string.Empty;
-            bool contentTypeIsNotJson = 
-                response.StatusCode == (int)HttpStatusCode.OK && !contentType.StartsWith("application/json") && !contentType.StartsWith("text/json");
+            bool contentTypeIsNotJson =
+                (response.StatusCode != (int)HttpStatusCode.OK) ||
+                (!contentType.StartsWith("application/json") && !contentType.StartsWith("text/json") && !contentType.StartsWith("text/plain"));
 
             T result = contentTypeIsNotJson ? new T() : await response.GetJsonAsync<T>().ConfigureAwait(false);
             result.RawStatus = response.StatusCode;
