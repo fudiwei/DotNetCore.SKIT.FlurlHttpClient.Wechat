@@ -200,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// 获取或设置总收款金额（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("total_amount")]
-                [System.Text.Json.Serialization.JsonPropertyName("description")]
+                [System.Text.Json.Serialization.JsonPropertyName("total_amount")]
                 public int TotalAmount { get; set; }
 
                 /// <summary>
