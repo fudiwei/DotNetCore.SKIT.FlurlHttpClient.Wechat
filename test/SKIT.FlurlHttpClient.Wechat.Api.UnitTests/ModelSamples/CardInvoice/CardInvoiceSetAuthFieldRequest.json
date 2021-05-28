@@ -1,0 +1,27 @@
+﻿{
+    "auth_field": {
+        "user_field": {
+            "show_title": 1,
+            "show_phone": 1,
+            "show_email": 1,
+            "custom_field": [
+                {
+                    "key": "field1"
+                }
+            ]
+        },
+        "biz_field": {
+            "show_title": 1,
+            "show_tax_no": 1,
+            "show_addr": 1,
+            "show_phone": 1,
+            "show_bank_type": 1,
+            "show_bank_no": 1,
+            "custom_field": [
+                {
+                    "key": "field2"
+                }
+            ]
+        }
+    }
+}

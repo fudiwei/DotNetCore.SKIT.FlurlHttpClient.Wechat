@@ -1,0 +1,28 @@
+﻿{
+    "base_resp": {
+        "err_msg": "ok",
+        "ret": 0
+    },
+    "list": [
+        {
+            "date": "20XX-XX-XX",
+            "exposure_count": 15153,
+            "click_count": 396,
+            "click_rate": 38.265151515,
+            "order_count": 3,
+            "order_rate": 0.007575758,
+            "total_fee": 162900,
+            "total_commission": 25021
+        }
+    ],
+    "summary": {
+        "exposure_count": 117143,
+        "click_count": 3442,
+        "click_rate": 34.033410808,
+        "order_count": 18,
+        "order_rate": 0.005229518,
+        "total_fee": 924082,
+        "total_commission": 133030
+    },
+    "total_num": 7
+}

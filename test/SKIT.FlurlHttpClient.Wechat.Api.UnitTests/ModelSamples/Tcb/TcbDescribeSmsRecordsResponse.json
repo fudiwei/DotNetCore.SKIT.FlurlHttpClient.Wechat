@@ -1,0 +1,18 @@
+﻿{
+    "Response": {
+        "SmsRecords": [
+            {
+                "Content": "【XXX】XXX，跳转小程序 https://xxx/xxx 回T退订",
+                "ContentSize": 51,
+                "CreateTime": "2021-03-22 17:18:37",
+                "Fee": 1,
+                "Mobile": "+86xxxxxxxxxxx",
+                "ReceivedTime": "2021-03-22 17:18:43",
+                "Remarks": "用户短信接收成功",
+                "Status": "sent"
+            }
+        ],
+        "TotalCount": 1,
+        "RequestId": "bf34127a-35bd-48a2-86bb-ae583d2ff9ff"
+    }
+}

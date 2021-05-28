@@ -1,0 +1,13 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": [
+        {
+            "priTmplId": "9Aw5ZV1j9xdWTFEkqCpZ7mIBbSC34khK55OtzUPl0rU",
+            "title": "报名结果通知",
+            "content": "会议时间:{{date2.DATA}}\n会议地点:{{thing1.DATA}}\n",
+            "example": "会议时间:2016年8月8日\n会议地点:TIT会议室\n",
+            "type": 2
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "appid": "wx5f6e43071809a9dd",
+    "openid": "ont-9vjAcIdSU-LgB7ubALAVJO9U",
+    "order_id": "AQCAGxwqp6-aBeIKDJ7fvb6x3dZt",
+    "create_time": 1508847678,
+    "pay_finish_time": 0,
+    "desc": "测试办证缴费",
+    "fee": 1,
+    "fee_type": 1,
+    "trans_id": "",
+    "status": 12,
+    "bank_id": "test_bank_id",
+    "bank_name": "测试_银行",
+    "bank_account": "6215385809487657",
+    "refund_finish_time": 0,
+    "items": [
+        {
+            "no": 1,
+            "item_id": "000001",
+            "item_name": "测试办证缴费1",
+            "overdue": 0,
+            "fee": 1
+        },
+        {
+            "no": 2,
+            "item_id": "000002",
+            "item_name": "测试办证缴费2",
+            "overdue": 0,
+            "fee": 0
+        }
+    ],
+    "bill_type_code": "",
+    "bill_no": "",
+    "payment_info_source": 2,
+    "payment_notice_no": "08111639088",
+    "department_code": "118610002",
+    "department_name": "测试执收单位",
+    "payment_notice_type": 1,
+    "region_code": "440000",
+    "notify_history": [
+        {
+            "appid": "wx5f6e43071809a9dd",
+            "name": "测试财政",
+            "notify_detail": [
+                {
+                    "notify_time": 1524023367,
+                    "ret": 0,
+                    "cost_time": 39,
+                    "wxnontaxstr": "2ba37f90d155d390",
+                    "status": 3,
+                    "errcode": 0,
+                    "errmsg": ""
+                }
+            ],
+            "notify_cnt": 1
+        },
+        {
+            "appid": "wxefd0818f53b9b82f",
+            "name": "测试委办局",
+            "notify_detail": [
+                {
+                    "notify_time": 1524023367,
+                    "ret": 0,
+                    "cost_time": 20,
+                    "wxnontaxstr": "f7ad824e08ac4bc5",
+                    "status": 3,
+                    "errcode": 0,
+                    "errmsg": ""
+                }
+            ],
+            "notify_cnt": 1
+        },
+        {
+            "appid": "wxf1bfa94c33668abf",
+            "name": "测试银行",
+            "notify_detail": [
+                {
+                    "notify_time": 1524023367,
+                    "ret": 0,
+                    "cost_time": 18,
+                    "wxnontaxstr": "2e628b6f1e3e9bf3",
+                    "status": 3,
+                    "errcode": 0,
+                    "errmsg": ""
+                }
+            ],
+            "notify_cnt": 1
+        }
+    ]
+}

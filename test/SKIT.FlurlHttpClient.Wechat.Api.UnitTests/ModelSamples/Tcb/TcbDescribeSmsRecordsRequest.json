@@ -1,0 +1,10 @@
+﻿{
+    "PostData": {
+        "StartDate": "2021-03-01",
+        "EndDate": "2021-03-23",
+        "EnvId": "xxx",
+        "QueryId": "xxx",
+        "PageNumber": 1,
+        "PageSize": 20
+    }
+}

@@ -1,0 +1,28 @@
+﻿{
+    "list": [
+        {
+            "ref_date": "2020-02-18",
+            "user_source": 99999999,
+            "int_page_read_user": 545497,
+            "int_page_read_count": 856093,
+            "ori_page_read_user": 191,
+            "ori_page_read_count": 240,
+            "share_user": 22603,
+            "share_count": 28487,
+            "add_to_fav_user": 3163,
+            "add_to_fav_count": 3841
+        },
+        {
+            "ref_date": "2020-02-18",
+            "user_source": 0,
+            "int_page_read_user": 381272,
+            "int_page_read_count": 646629,
+            "ori_page_read_user": 0,
+            "ori_page_read_count": 0,
+            "share_user": 13110,
+            "share_count": 16469,
+            "add_to_fav_user": 0,
+            "add_to_fav_count": 0
+        }
+    ]
+}

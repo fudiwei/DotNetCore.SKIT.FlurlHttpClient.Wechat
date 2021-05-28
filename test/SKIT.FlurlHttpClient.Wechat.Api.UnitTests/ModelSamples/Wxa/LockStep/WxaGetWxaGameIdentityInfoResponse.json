@@ -1,0 +1,12 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "info_list": [
+            {
+                "client_id": 1,
+                "open_id": "OPENID"
+            }
+        ]
+    }
+}

@@ -1,0 +1,33 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "success",
+    "properties": [
+        {
+            "id": "1075741879",
+            "name": "品牌",
+            "property_value": [
+                {
+                    "id": "200050867",
+                    "name": "VIC&#38"
+                },
+                {
+                    "id": "200050868",
+                    "name": "Kate&#38"
+                },
+                {
+                    "id": "200050971",
+                    "name": "M&#38"
+                },
+                {
+                    "id": "200050972",
+                    "name": "Black&#38"
+                }
+            ]
+        },
+        {
+            "id": "123456789",
+            "name": "颜色",
+            "property_value": []
+        }
+    ]
+}

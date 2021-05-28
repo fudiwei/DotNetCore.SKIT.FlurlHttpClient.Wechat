@@ -1,0 +1,11 @@
+﻿<xml>
+    <ToUserName><![CDATA[weixin_media1]]></ToUserName>
+    <FromUserName><![CDATA[oDF3iYyVlek46AyTBbMRVV8VZVlI]]></FromUserName>
+    <CreateTime>1398144192</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[merchant_order]]></Event>
+    <OrderId><![CDATA[test_order_id]]></OrderId>
+    <OrderStatus>2</OrderStatus>
+    <ProductId><![CDATA[test_product_id]]></ProductId>
+    <SkuInfo><![CDATA[10001:1000012;10002:100021]]></SkuInfo>
+</xml>

@@ -1,0 +1,52 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "items": [
+        {
+            "text": "腾讯",
+            "pos": {
+                "left_top": {
+                    "x": 575,
+                    "y": 519
+                },
+                "right_top": {
+                    "x": 744,
+                    "y": 519
+                },
+                "right_bottom": {
+                    "x": 744,
+                    "y": 532
+                },
+                "left_bottom": {
+                    "x": 573,
+                    "y": 532
+                }
+            }
+        },
+        {
+            "text": "微信团队",
+            "pos": {
+                "left_top": {
+                    "x": 670,
+                    "y": 516
+                },
+                "right_top": {
+                    "x": 762,
+                    "y": 517
+                },
+                "right_bottom": {
+                    "x": 762,
+                    "y": 532
+                },
+                "left_bottom": {
+                    "x": 670,
+                    "y": 531
+                }
+            }
+        }
+    ],
+    "img_size": {
+        "w": 1280,
+        "h": 720
+    }
+}

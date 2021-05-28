@@ -1,0 +1,10 @@
+﻿{
+    "PostData": {
+        "ExtensionFiles": [
+            {
+                "FileType": "SMS",
+                "FileName": "gongzi.csv"
+            }
+        ]
+    }
+}

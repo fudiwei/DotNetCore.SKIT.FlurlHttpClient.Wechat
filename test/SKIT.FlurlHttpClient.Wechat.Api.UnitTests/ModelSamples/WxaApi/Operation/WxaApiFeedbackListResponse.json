@@ -1,0 +1,18 @@
+﻿{
+    "list": [
+        {
+            "record_id": 1,
+            "create_time": 1587571200,
+            "content": "白屏了",
+            "phone": 18800000000,
+            "openid": "openidxxxxxx",
+            "nickname": "反馈用户昵称",
+            "head_url": "反馈用户头像",
+            "type": 1,
+            "mediaIds": [],
+            "systemInfo": "{}"
+        }
+    ],
+    "total_num": 100,
+    "errcode": 0
+}

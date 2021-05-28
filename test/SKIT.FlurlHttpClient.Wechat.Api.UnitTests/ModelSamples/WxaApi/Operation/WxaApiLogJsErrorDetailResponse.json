@@ -1,0 +1,27 @@
+﻿{
+    "data": [
+        {
+            "Count": "1",
+            "sdkVersion": "2.14.1",
+            "ClientVersion": "7.0.21",
+            "errorStackMd5": "e371cd9cae821969c855f9f461327dac",
+            "TimeStamp": "2021-01-25 16:36:39",
+            "appVersion": "2.6.16",
+            "errorMsgMd5": "53b4825ec4a41d966f88c298c718de80",
+            "errorMsg": "errCode: -404012 polling exceed max timeout retry | errMsg: cloud.callFunction:fail polling exceed max timeout retry (callId: 1611553677669-0.2531087324274228) (trace: 13:47:57 start->13:48:12 timeout, retry->13:48:18 app hide->13:48:27 timeout, retry->13:48:42 timeout, abort); at cloud.callFunction api; ",
+            "errorStack": "Error: errCode: -404012 polling exceed max timeout retry | errMsg: cloud.callFunction:fail polling exceed max timeout retry (callId: 1611553677669-0.2531087324274228) (trace: 13:47:57 start->13:48:12 timeout, retry->13:48:18 app hide->13:48:27 timeout, retry->13:48:42 timeout, abort); at cloud.callFunction api; \n    at new t (https://usr/app-service.js:2:320930)\n    at c (https://usr/app-service.js:2:321660)\n    at l (https://usr/app-service.js:2:321755)\n    at https://usr/app-service.js:2:297192\n    at https://usr/app-service.js:2:76398\n    at Object.next (https://usr/app-service.js:2:76503)\n    at s (https://usr/app-service.js:2:75234)",
+            "Ds": "2021-01-25",
+            "OsName": "1",
+            "openId": "o-0YS0ZNM_bzkm13NKNUSwbrEkYU",
+            "pluginversion": "0",
+            "appId": "wxcff7381e631cf54e",
+            "DeviceModel": "Redmi Note 5Aarm64-v8a",
+            "source": "",
+            "route": "",
+            "Uin": "",
+            "nickname": ""
+        }
+    ],
+    "totalCount": 1,
+    "errcode": 0
+}

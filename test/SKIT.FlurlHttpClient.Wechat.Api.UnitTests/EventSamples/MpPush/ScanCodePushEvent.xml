@@ -1,0 +1,12 @@
+﻿<xml>
+    <ToUserName><![CDATA[gh_e136c6e50636]]></ToUserName>
+    <FromUserName><![CDATA[oMgHVjngRipVsoxg6TuX3vz6glDg]]></FromUserName>
+    <CreateTime>1408090502</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[scancode_push]]></Event>
+    <EventKey><![CDATA[6]]></EventKey>
+    <ScanCodeInfo>
+        <ScanType><![CDATA[qrcode]]></ScanType>
+        <ScanResult><![CDATA[1]]></ScanResult>
+    </ScanCodeInfo>
+</xml>

@@ -1,0 +1,15 @@
+﻿<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[FromUser]]></FromUserName>
+    <CreateTime>123456789</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[cloud_invoice_invoiceresult_event]]></Event>
+    <title><![CDATA[用户选择抬头]]></title>
+    <tax_no><![CDATA[1486715661]]></tax_no>
+    <addr><![CDATA[abc]]></addr>
+    <phone><![CDATA[12345]]></phone>
+    <bank_type><![CDATA[bank_type]]></bank_type>
+    <bank_no><![CDATA[bank_type]]></bank_no>
+    <attach><![CDATA[attach]]></attach>
+    <title_type><![CDATA[InvoiceUserTitleBusinessType]]></title_type>
+</xml>

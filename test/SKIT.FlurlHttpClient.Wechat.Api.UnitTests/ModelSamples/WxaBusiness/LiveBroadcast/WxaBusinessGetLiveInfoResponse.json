@@ -1,0 +1,38 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total": 1,
+    "room_info": [
+        {
+            "name": "直播房间名",
+            "roomid": 1,
+            "cover_img": "http://http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/Rl1RuuhdstSfZa8EEljedAYcbtX3Ejpdl2et1tPAQ37bdicnxoVialDLCKKDcPBy8Iic0kCiaiaalXg3EbpNKoicrweQ\/0?wx_fmt=jpeg",
+            "share_img": "http://http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/Rl1RuuhdstSfZa8EEljedAYcbtX3Ejpdl2et1tPAQ37bdicnxoVialDLCKKDcPBy8Iic0kCiaiaalXg3EbpNKoicrweQ\/0?wx_fmt=jpeg",
+            "live_status": 101,
+            "start_time": 1568128900,
+            "end_time": 1568131200,
+            "anchor_name": "里斯",
+            "goods": [
+                {
+                    "cover_img": "http://http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/Rl1RuuhdstSfZa8EEljedAYcbtX3Ejpdl2et1tPAQ37bdicnxoVialDLCKKDcPBy8Iic0kCiaiaalXg3EbpNKoicrweQ\/0?wx_fmt=jpeg",
+                    "url": "pages/index/index.html",
+                    "name": "茶杯",
+                    "price": 1889,
+                    "price2": 0,
+                    "price_type": 1,
+                    "goods_id": 256,
+                    "third_party_appid": "wx3d0fae56402d8a81"
+                }
+            ],
+            "live_type": 0,
+            "close_like": 0,
+            "close_goods": 0,
+            "close_comment": 0,
+            "close_kf": 1,
+            "close_replay": 1,
+            "is_feeds_public": 0,
+            "creater_openid": "oawjt4t9NWZV2BYaEPA89sh1XblE",
+            "feeds_img": "XXX"
+        }
+    ]
+}

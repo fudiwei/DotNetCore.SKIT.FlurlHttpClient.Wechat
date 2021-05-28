@@ -1,0 +1,42 @@
+﻿{
+    "order_list": [
+        {
+            "errcode": 0,
+            "errmsg": "ok",
+            "order_id": "01234567890123456789",
+            "delivery_id": "SF",
+            "waybill_id": "123456789",
+            "print_html": "jh7DjipP4ul4CQYUh69cniskrQZuOPwa1inAbXIqKbU0t71c0s65Au54cdWBZW0QJY4LYeofdM",
+            "waybill_data": [
+                {
+                    "key": "SF_bagAddr",
+                    "value": "广州"
+                },
+                {
+                    "key": "SF_mark",
+                    "value": "101- 07-03 509"
+                }
+            ],
+            "order_status": 0
+        },
+        {
+            "errcode": 0,
+            "errmsg": "ok",
+            "order_id": "01234567890123456789_2",
+            "delivery_id": "SF",
+            "waybill_id": "123456789_2",
+            "print_html": "jh7DjipP4ul4CQYUh69cniskrQZuOPwa1inAbXIqKbU0t71c0s65Au54cdWBZW0QJY4LYeofdM",
+            "waybill_data": [
+                {
+                    "key": "SF_bagAddr",
+                    "value": "广州"
+                },
+                {
+                    "key": "SF_mark",
+                    "value": "101- 07-03 509"
+                }
+            ],
+            "order_status": 0
+        }
+    ]
+}

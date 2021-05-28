@@ -1,0 +1,15 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "card_list": [
+        {
+            "code": "xxx1434079154",
+            "card_id": "xxxxxxxxxx"
+        },
+        {
+            "code": "xxx1434079155",
+            "card_id": "xxxxxxxxxx"
+        }
+    ],
+    "has_share_card": true
+}

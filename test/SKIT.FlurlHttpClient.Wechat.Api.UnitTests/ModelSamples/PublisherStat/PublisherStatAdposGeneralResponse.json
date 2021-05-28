@@ -1,0 +1,30 @@
+﻿{
+    "base_resp": {
+        "err_msg": "ok",
+        "ret": 0
+    },
+    "list": [
+        {
+            "slot_id": 3030046789020061,
+            "ad_slot": "SLOT_ID_WEAPP_INTERSTITIAL",
+            "date": "2020-04-13",
+            "req_succ_count": 443610,
+            "exposure_count": 181814,
+            "exposure_rate": 0.409850995,
+            "click_count": 10095,
+            "click_rate": 0.055523777,
+            "income": 52175,
+            "ecpm": 286.969100289
+        }
+    ],
+    "summary": {
+        "req_succ_count": 4406394,
+        "exposure_count": 1797225,
+        "exposure_rate": 0.407867522,
+        "click_count": 100167,
+        "click_rate": 0.055734257,
+        "income": 578003,
+        "ecpm": 321.608591022
+    },
+    "total_num": 1
+}

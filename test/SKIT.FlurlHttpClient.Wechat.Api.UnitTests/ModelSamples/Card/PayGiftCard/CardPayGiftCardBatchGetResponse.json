@@ -1,0 +1,27 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_count": 4,
+    "rule_list": [
+        {
+            "type": "RULE_TYPE_PAY_MEMBER_CARD",
+            "base_info": {
+                "mchid_list": [
+                    "123",
+                    "456"
+                ],
+                "begin_time": 1480317217,
+                "end_time": 1580317217,
+                "status": "RULE_STATUS_OK",
+                "create_time": 1480317217,
+                "update_time": 1480317217
+            },
+            "member_rule": {
+                "card_id": "abcdefg",
+                "least_cost": 2,
+                "max_cost": 20000,
+                "jump_url": "www.qq.com"
+            }
+        }
+    ]
+}

@@ -16,13 +16,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         [Fact(DisplayName = "验证模型定义")]
         public void ModelDefinitionsTest()
         {
-            static void SetPropertiesValueRecursively(object obj)
+            static void TrySetPropertiesValueRecursively(object obj)
             {
                 var lstProperty = obj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
                 foreach (var tProperty in lstProperty)
                 {
                     if (tProperty.SetMethod == null || !tProperty.SetMethod.IsPublic)
                         continue;
+
+                    var newtonsoftJsonAttribute = tProperty.GetCustomAttribute<Newtonsoft.Json.JsonPropertyAttribute>();
+                    var systemTextJsonAttribute = tProperty.GetCustomAttribute<System.Text.Json.Serialization.JsonPropertyNameAttribute>();
+                    if (newtonsoftJsonAttribute?.PropertyName != systemTextJsonAttribute?.Name)
+                        throw new Exception($"`{obj.GetType().Name}` fields mismatching: `{newtonsoftJsonAttribute.PropertyName}` & `{systemTextJsonAttribute.Name}`");
 
                     if (tProperty.PropertyType.IsPrimitive)
                     {
@@ -33,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                         Type tEl = tProperty.PropertyType.Assembly.GetType(tProperty.PropertyType.FullName.Replace("[]", string.Empty));
                         object propEl = (tEl == typeof(string)) ? string.Empty : Activator.CreateInstance(tEl);
                         propEl = Convert.ChangeType(propEl, tEl);
-                        SetPropertiesValueRecursively(propEl);
+                        TrySetPropertiesValueRecursively(propEl);
 
                         Array prop = Array.CreateInstance(tEl, 1);
                         prop.SetValue(propEl, 0);
@@ -60,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                         Type tGeneric = tProperty.PropertyType.GetGenericArguments().Single();
                         object propEl = (tGeneric == typeof(string)) ? string.Empty : Activator.CreateInstance(tGeneric);
                         propEl = Convert.ChangeType(propEl, tGeneric);
-                        SetPropertiesValueRecursively(propEl);
+                        TrySetPropertiesValueRecursively(propEl);
 
                         Type tList = typeof(List<>).MakeGenericType(new Type[] { tGeneric });
                         object prop = Activator.CreateInstance(tList);
@@ -72,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                     else
                     {
                         object prop = Activator.CreateInstance(tProperty.PropertyType);
-                        SetPropertiesValueRecursively(prop);
+                        TrySetPropertiesValueRecursively(prop);
 
                         tProperty.SetValue(obj, prop);
                     }
@@ -82,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             var lstModel = _assembly.GetTypes()
                 .Where(e =>
                     e.Namespace != null &&
-                    e.Namespace.Equals(_assembly.GetName().Name + "Models") &&
+                    e.Namespace.Equals(_assembly.GetName().Name + ".Models") &&
                     e.IsClass &&
                     !e.IsAbstract &&
                     !e.IsInterface &&
@@ -137,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                 try
                 {
                     object instance = _assembly.CreateInstance(tModel.Namespace + "." + tModel.Name);
-                    SetPropertiesValueRecursively(instance);
+                    TrySetPropertiesValueRecursively(instance);
 
                     new FlurlNewtonsoftJsonSerializer().Serialize(instance);
                     new FlurlSystemTextJsonSerializer().Serialize(instance);
@@ -203,7 +208,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                     }
                     else if (retv == null || !retv.EndsWith("Response"))
                     {
-                        exceptions.Add(tMethod);
+                        if (!tMethod.ReturnType.GenericTypeArguments.First().IsGenericType)
+                        {
+                            exceptions.Add(tMethod);
+                        }
                         continue;
                     }
                     else if (!string.Equals(func, $"Execute{para.Substring(0, para.Length - "Request".Length)}Async"))
@@ -225,7 +233,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         [Fact(DisplayName = "验证字段定义")]
         public void FieldDefinitionsTest()
         {
-            static string[] GetFiles(string path)
+            var exceptions = new List<string>();
+
+            string[] GetAllFiles(string path)
             {
                 var results = new List<string>();
 
@@ -236,56 +246,101 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 
                 foreach (string dir in dirs)
                 {
-                    results.AddRange(GetFiles(dir));
+                    results.AddRange(GetAllFiles(dir));
                 }
 
                 return results.ToArray();
             }
 
-            string workdir = Path.Combine(Environment.CurrentDirectory, "ModelSamples");
-            Assert.True(Directory.Exists(workdir));
-
-            var lstFile = GetFiles(workdir)
-                .Where(e => string.Equals(Path.GetExtension(e), ".json", StringComparison.InvariantCultureIgnoreCase))
-                .ToList();
-            Assert.NotEmpty(lstFile);
-
-            var exceptions = new List<string>();
-
-            foreach (string file in lstFile)
+            void VerifyJsonSamples(string subdir, string subns)
             {
-                string json = File.ReadAllText(file);
-                string name = Path.GetFileNameWithoutExtension(file);
+                string workdir = Path.Combine(Environment.CurrentDirectory, subdir);
+                Assert.True(Directory.Exists(workdir));
 
-                Type type = _assembly.GetType($"{_assembly.GetName().Name}.Models.{name}");
-                if (type == null)
+                var lstFile = GetAllFiles(workdir)
+                    .Where(e => string.Equals(Path.GetExtension(e), ".json", StringComparison.InvariantCultureIgnoreCase))
+                    .ToList();
+                Assert.NotEmpty(lstFile);
+
+                foreach (string file in lstFile)
                 {
-                    exceptions.Add(name);
-                    continue;
-                }
+                    string json = File.ReadAllText(file);
+                    string name = Path.GetFileNameWithoutExtension(file);
 
-                try
-                {
-                    var settings = FlurlNewtonsoftJsonSerializer.GetDefaultSerializerSettings();
-                    settings.CheckAdditionalContent = true;
-                    settings.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Error;
-                    new FlurlNewtonsoftJsonSerializer(settings).Deserialize(json, type);
+                    Type type = _assembly.GetType($"{_assembly.GetName().Name}.{subns}.{name}");
+                    if (type == null)
+                    {
+                        exceptions.Add(name);
+                        continue;
+                    }
 
-                    new FlurlSystemTextJsonSerializer().Deserialize(json, type);
-                }
-                catch (Exception ex)
-                {
-                    exceptions.Add(name);
+                    try
+                    {
+                        var settings = FlurlNewtonsoftJsonSerializer.GetDefaultSerializerSettings();
+                        settings.CheckAdditionalContent = true;
+                        settings.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Error;
+                        new FlurlNewtonsoftJsonSerializer(settings).Deserialize(json, type);
 
-                    if (ex is Newtonsoft.Json.JsonException)
-                        throw new Exception($"Deserialize `{name}` by Newtonsoft.Json failed.", ex);
-                    else if (ex is System.Text.Json.JsonException)
-                        throw new Exception($"Deserialize `{name}` by System.Text.Json failed.", ex);
-                    else
-                        throw new Exception($"Deserialize `{name}` failed.", ex);
+                        new FlurlSystemTextJsonSerializer().Deserialize(json, type);
+                    }
+                    catch (Exception ex)
+                    {
+                        exceptions.Add(name);
+
+                        if (ex is Newtonsoft.Json.JsonException)
+                            throw new Exception($"Deserialize `{name}` by Newtonsoft.Json failed.", ex);
+                        else if (ex is System.Text.Json.JsonException)
+                            throw new Exception($"Deserialize `{name}` by System.Text.Json failed.", ex);
+                        else
+                            throw new Exception($"Deserialize `{name}` failed.", ex);
+                    }
                 }
             }
-            
+
+            void VerifyXmlSamples(string subdir, string subns)
+            {
+                string workdir = Path.Combine(Environment.CurrentDirectory, subdir);
+                Assert.True(Directory.Exists(workdir));
+
+                var lstFile = GetAllFiles(workdir)
+                    .Where(e => string.Equals(Path.GetExtension(e), ".xml", StringComparison.InvariantCultureIgnoreCase))
+                    .ToList();
+                Assert.NotEmpty(lstFile);
+
+                foreach (string file in lstFile)
+                {
+                    string xml = File.ReadAllText(file);
+                    string name = Path.GetFileNameWithoutExtension(file);
+
+                    Type type = _assembly.GetType($"{_assembly.GetName().Name}.{subns}.{name}");
+                    if (type == null)
+                    {
+                        exceptions.Add(name);
+                        continue;
+                    }
+
+                    try
+                    {
+                        using StringReader reader = new StringReader(xml);
+                        System.Xml.Serialization.XmlSerializer xmlSerializer = new System.Xml.Serialization.XmlSerializer(type, new System.Xml.Serialization.XmlRootAttribute("xml"));
+                        xmlSerializer.Deserialize(reader);
+                    }
+                    catch (Exception ex)
+                    {
+                        exceptions.Add(name);
+
+                        if (ex is System.Xml.XmlException)
+                            throw new Exception($"Deserialize `{name}` by System.Xml failed.", ex);
+                        else
+                            throw new Exception($"Deserialize `{name}` failed.", ex);
+                    }
+                }
+            }
+
+            VerifyJsonSamples("ModelSamples", "Models");
+            VerifyJsonSamples("EventSamples", "Events");
+            VerifyXmlSamples("EventSamples", "Events");
+
             Assert.Empty(exceptions);
         }
     }

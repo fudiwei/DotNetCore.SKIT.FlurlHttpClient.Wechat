@@ -1,0 +1,16 @@
+﻿{
+    "appid": "wx5f6e43071809a9dd",
+    "bank_id": "test_bank_id",
+    "mch_id": "1900016021",
+    "region_code": "440000",
+    "trade_scene": "PARKING",
+    "scene_info": {
+        "start_time": 1542351485,
+        "notify_url": "https://weixin.qq.com",
+        "car_type": "小型车",
+        "parking_name": "test_parking_name",
+        "free_time": 1200,
+        "plate_number": "粤B888888",
+        "openid": "ont-9vjAcIdSU-LgB7ubALAVJO9U"
+    }
+}

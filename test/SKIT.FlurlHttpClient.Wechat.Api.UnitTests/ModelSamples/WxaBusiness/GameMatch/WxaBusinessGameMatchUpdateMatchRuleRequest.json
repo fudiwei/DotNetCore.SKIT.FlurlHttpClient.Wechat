@@ -1,0 +1,14 @@
+﻿{
+    "team_count": 3,
+    "team_member_count": 3,
+    "need_room_service_info": 1,
+    "match_id": "FD0PT4rKguEdK-L83RaJgdbchUCW8wjhSwgCku4CLQk",
+    "game_room_info": {
+        "game_tick": 30,
+        "udp_reliability_strategy": 3,
+        "start_percent": 100,
+        "need_user_info": true,
+        "game_last_time": 3600,
+        "need_game_seed": true
+    }
+}

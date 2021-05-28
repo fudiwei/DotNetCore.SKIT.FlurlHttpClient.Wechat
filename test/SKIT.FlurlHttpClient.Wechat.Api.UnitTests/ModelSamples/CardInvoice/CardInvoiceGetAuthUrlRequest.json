@@ -1,0 +1,10 @@
+﻿{
+    "s_pappid": "wxabcd",
+    "order_id": "1234",
+    "money": 11,
+    "timestamp": 1474875876,
+    "source": "web",
+    "redirect_url": "https://mp.weixin.qq.com",
+    "ticket": "tttt",
+    "type": 1
+} 

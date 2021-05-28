@@ -1,0 +1,14 @@
+﻿{
+    "info": {
+        "merchant_id": "12",
+        "app_id": "xxxxxxxxxxxxx",
+        "brand_name": "aaaaaa",
+        "logo_url": "http://mmbiz.xxxx",
+        "protocol": "media_id",
+        "agreement_media_id": "xxxxxxxxxx",
+        "operator_media_id": "xxxxxxxx",
+        "end_time": 1438990559,
+        "primary_category_id": 1,
+        "secondary_category_id": 101
+    }
+}

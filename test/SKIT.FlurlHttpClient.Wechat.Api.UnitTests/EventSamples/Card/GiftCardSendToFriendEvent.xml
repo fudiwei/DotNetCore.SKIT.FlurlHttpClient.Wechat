@@ -1,0 +1,11 @@
+﻿<xml>
+    <ToUserName><![CDATA[gh_3fcea188bf78]]></ToUserName>
+    <FromUserName><![CDATA[obLatjgoYejavUtHsWwrX-2GtFJE]]></FromUserName>
+    <CreateTime>1472631550</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[giftcard_send_to_friend]]></Event>
+    <PageId><![CDATA[OQK0R3MaFnCm74Phw5hwFJlz5sn+jy1zzM2amDidDbU=]]></PageId>
+    <OrderId><![CDATA[Z2y2rY74ksZX1ceuGA]]></OrderId>
+    <IsChatRoom>true</IsChatRoom>
+    <IsReturnBack><![CDATA[true]]></IsReturnBack>
+</xml>

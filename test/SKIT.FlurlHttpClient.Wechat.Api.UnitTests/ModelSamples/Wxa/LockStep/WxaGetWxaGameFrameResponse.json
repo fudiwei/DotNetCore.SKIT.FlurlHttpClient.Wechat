@@ -1,0 +1,19 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "has_more": false,
+        "frame_list": [
+            {
+                "frame_id": 1,
+                "pkg_list": [
+                    {
+                        "open_id": "OPENID",
+                        "action_list": [ "xxx", "xxx" ],
+                        "b": false
+                    }
+                ]
+            }
+        ]
+    }
+}

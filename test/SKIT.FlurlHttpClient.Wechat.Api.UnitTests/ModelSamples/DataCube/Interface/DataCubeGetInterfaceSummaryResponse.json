@@ -1,0 +1,11 @@
+﻿{
+    "list": [
+        {
+            "ref_date": "2014-12-01",
+            "callback_count": 36974,
+            "fail_count": 67,
+            "total_time_cost": 14994291,
+            "max_time_cost": 5044
+        }
+    ]
+}

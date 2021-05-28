@@ -1,0 +1,22 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "results": [
+        {
+            "crop_left": 112,
+            "crop_top": 0,
+            "crop_right": 839,
+            "crop_bottom": 727
+        },
+        {
+            "crop_left": 0,
+            "crop_top": 205,
+            "crop_right": 965,
+            "crop_bottom": 615
+        }
+    ],
+    "img_size": {
+        "w": 966,
+        "h": 728
+    }
+}

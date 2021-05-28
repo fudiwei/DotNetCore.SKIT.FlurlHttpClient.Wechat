@@ -1,0 +1,10 @@
+﻿{
+    "init_bonus": 100,
+    "init_bonus_record": "旧积分同步",
+    "init_balance": 200,
+    "membership_number": "AAA00000001",
+    "code": "12312313",
+    "card_id": "xxxx_card_id",
+    "background_pic_url": "https://mmbiz.qlogo.cn/mmbiz/0?wx_fmt=jpeg",
+    "init_custom_field_value1": "xxxxx"
+}

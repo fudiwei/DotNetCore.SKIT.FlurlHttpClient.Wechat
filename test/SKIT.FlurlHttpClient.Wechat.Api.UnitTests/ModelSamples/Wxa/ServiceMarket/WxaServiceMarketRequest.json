@@ -1,0 +1,10 @@
+﻿{
+    "service": "wx79ac3de8be320b71",
+    "api": "OcrAllInOne",
+    "data": {
+        "img_url": "http://mmbiz.qpic.cn/mmbiz_jpg/7UFjuNbYxibu66xSqsQqKcuoGBZM77HIyibdiczeWibdMeA2XMt5oibWVQMgDibriazJSOibLqZxcO6DVVcZMxDKgeAtbQ/0",
+        "data_type": 3,
+        "ocr_type": 1
+    },
+    "client_msg_id": "id123"
+}

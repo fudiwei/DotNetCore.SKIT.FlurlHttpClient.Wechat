@@ -1,0 +1,6 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "expires_in": 7200,
+    "auth_url": "https://mp.weixin.qq.com/insurance/card/getpwdconfig?auth_param=5c9f05#wechat_redirect"
+}

@@ -1,0 +1,83 @@
+﻿{
+    "data_column": [
+        {
+            "col_id": "appid",
+            "col_name": "小程序id",
+            "col_data_type": "0"
+        },
+        {
+            "col_id": "env_id",
+            "col_name": "环境id",
+            "col_data_type": "0"
+        },
+        {
+            "col_id": "activity_id",
+            "col_name": "活动id",
+            "col_data_type": "0"
+        },
+        {
+            "col_id": "channel_id",
+            "col_name": "渠道",
+            "col_data_type": "0"
+        },
+        {
+            "col_id": "h5_open_uercnt",
+            "col_name": "h5打开人数",
+            "col_data_type": "1"
+        },
+        {
+            "col_id": "jump_wxapp_uercnt",
+            "col_name": "小程序跳转人数",
+            "col_data_type": "1"
+        },
+        {
+            "col_id": "sms_send_uercnt",
+            "col_name": "短信下发人数",
+            "col_data_type": "1"
+        },
+        {
+            "col_id": "sms_send_list",
+            "col_name": "下发记录数组",
+            "col_data_type": "0"
+        },
+        {
+            "col_id": "jump_wxapp_uercnt_percent",
+            "col_name": "跳转人数渠道占比",
+            "col_data_type": "2"
+        },
+        {
+            "col_id": "h5_open_uercnt_percent",
+            "col_name": "h5打开人数渠道占比",
+            "col_data_type": "2"
+        },
+        {
+            "col_id": "h5_sms_rate",
+            "col_name": "短信到h5转化率",
+            "col_data_type": "2"
+        },
+        {
+            "col_id": "jump_h5_rate",
+            "col_name": "h5到跳转转化率",
+            "col_data_type": "2"
+        }
+    ],
+    "data_value": [
+        {
+            "data_value": [
+                "xxxxxxxxxxxxxxxxxx",
+                "wedcvfr",
+                "21ded5cb6001691405171ba161c603d1",
+                "_cms_sms_",
+                "5000",
+                "3000",
+                "10000",
+                "[task1:5000,task2:5000]",
+                "0.535714",
+                "0.625",
+                "0.5",
+                "0.6"
+            ]
+        }
+    ],
+    "total_num": 1
+}

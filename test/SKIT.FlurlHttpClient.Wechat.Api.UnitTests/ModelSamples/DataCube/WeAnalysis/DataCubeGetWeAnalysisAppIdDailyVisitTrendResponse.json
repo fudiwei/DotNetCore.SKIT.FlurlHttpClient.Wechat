@@ -1,0 +1,13 @@
+﻿{
+    "list": [
+        {
+            "ref_date": "20170313",
+            "session_cnt": 142549,
+            "visit_pv": 472351,
+            "visit_uv": 55500,
+            "visit_uv_new": 5464,
+            "stay_time_session": 0,
+            "visit_depth": 1.9838
+        }
+    ]
+}

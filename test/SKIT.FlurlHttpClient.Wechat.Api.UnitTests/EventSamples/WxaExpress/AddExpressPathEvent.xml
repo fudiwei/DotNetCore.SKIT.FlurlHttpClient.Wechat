@@ -1,0 +1,27 @@
+﻿<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[fromUser]]></FromUserName>
+    <CreateTime>1546924844</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[add_express_path]]></Event>
+    <DeliveryID><![CDATA[SF]]></DeliveryID>
+    <WayBillId><![CDATA[123456789]]></WayBillId>
+    <OrderId><![CDATA[123456]]></OrderId>
+    <Version>3</Version>
+    <Count>3</Count>
+    <Actions>
+        <ActionTime>1546924840</ActionTime>
+        <ActionType>100001</ActionType>
+        <ActionMsg><![CDATA[小哥A揽件成功]]></ActionMsg>
+    </Actions>
+    <Actions>
+        <ActionTime>1546924841</ActionTime>
+        <ActionType>200001</ActionType>
+        <ActionMsg><![CDATA[到达广州集包地]]></ActionMsg>
+    </Actions>
+    <Actions>
+        <ActionTime>1546924842</ActionTime>
+        <ActionType>200001</ActionType>
+        <ActionMsg><![CDATA[运往目的地]]></ActionMsg>
+    </Actions>
+</xml>

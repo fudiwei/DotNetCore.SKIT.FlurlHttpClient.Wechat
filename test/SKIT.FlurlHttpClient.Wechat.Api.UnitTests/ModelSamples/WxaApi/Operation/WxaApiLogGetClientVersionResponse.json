@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "cvlist": [
+        {
+            "type": 1,
+            "client_version_list": []
+        },
+        {
+            "type": 2,
+            "client_version_list": []
+        }
+    ]
+}

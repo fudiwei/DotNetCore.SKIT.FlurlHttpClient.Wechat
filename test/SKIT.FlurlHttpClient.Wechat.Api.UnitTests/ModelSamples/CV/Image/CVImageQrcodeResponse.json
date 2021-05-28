@@ -1,0 +1,62 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "code_results": [
+        {
+            "type_name": "QR_CODE",
+            "data": "http://www.qq.com",
+            "pos": {
+                "left_top": {
+                    "x": 585,
+                    "y": 378
+                },
+                "right_top": {
+                    "x": 828,
+                    "y": 378
+                },
+                "right_bottom": {
+                    "x": 828,
+                    "y": 618
+                },
+                "left_bottom": {
+                    "x": 585,
+                    "y": 618
+                }
+            }
+        },
+        {
+            "type_name": "QR_CODE",
+            "data": "https://mp.weixin.qq.com",
+            "pos": {
+                "left_top": {
+                    "x": 185,
+                    "y": 142
+                },
+                "right_top": {
+                    "x": 396,
+                    "y": 142
+                },
+                "right_bottom": {
+                    "x": 396,
+                    "y": 353
+                },
+                "left_bottom": {
+                    "x": 185,
+                    "y": 353
+                }
+            }
+        },
+        {
+            "type_name": "EAN_13",
+            "data": "5906789678957"
+        },
+        {
+            "type_name": "CODE_128",
+            "data": "50090500019191"
+        }
+    ],
+    "img_size": {
+        "w": 1000,
+        "h": 900
+    }
+}

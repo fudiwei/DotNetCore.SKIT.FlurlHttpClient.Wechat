@@ -1,0 +1,15 @@
+﻿{
+    "total_num": 1,
+    "msg_list": [
+        {
+            "guide_account": "张三",
+            "openid": "xxx",
+            "create_time": 121212,
+            "content": "test",
+            "content_type": 1,
+            "direction": 1
+        }
+    ],
+    "errcode": 0,
+    "errmsg": "ok"
+}

@@ -1,0 +1,18 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "rule_id": 1231243,
+    "fail_mchid_list": [
+        {
+            "mchid": "111",
+            "errcode": 23112,
+            "errmsg": "err",
+            "occupy_rule_id": 12332123,
+            "occupy_appid": "appid"
+        }
+    ],
+    "succ_mchid_list": [
+        "123",
+        "456"
+    ]
+}
