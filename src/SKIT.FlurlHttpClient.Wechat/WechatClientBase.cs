@@ -44,14 +44,14 @@ namespace SKIT.FlurlHttpClient.Wechat
                 settings.ConnectionLeaseTimeout = flurlSettings.ConnectionLeaseTimeout;
                 settings.JsonSerializer = flurlSettings.JsonSerializer;
                 settings.UrlEncodedSerializer = flurlSettings.UrlEncodedSerializer;
-                settings.HttpClientFactory = flurlSettings.HttpClientFactory;
+                settings.FlurlHttpClientFactory = flurlSettings.HttpClientFactory;
                 configure.Invoke(settings);
 
                 flurlSettings.Timeout = settings.Timeout;
                 flurlSettings.ConnectionLeaseTimeout = settings.ConnectionLeaseTimeout;
                 flurlSettings.JsonSerializer = settings.JsonSerializer;
                 flurlSettings.UrlEncodedSerializer = settings.UrlEncodedSerializer;
-                flurlSettings.HttpClientFactory = settings.HttpClientFactory;
+                flurlSettings.HttpClientFactory = settings.FlurlHttpClientFactory;
             });
         }
 

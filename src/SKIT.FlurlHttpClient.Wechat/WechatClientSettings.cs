@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat
         /// <summary>
         /// 
         /// </summary>
-        public IHttpClientFactory HttpClientFactory { get; set; } = default!;
+        public IHttpClientFactory FlurlHttpClientFactory { get; set; } = default!;
 
         /// <summary>
         /// 
