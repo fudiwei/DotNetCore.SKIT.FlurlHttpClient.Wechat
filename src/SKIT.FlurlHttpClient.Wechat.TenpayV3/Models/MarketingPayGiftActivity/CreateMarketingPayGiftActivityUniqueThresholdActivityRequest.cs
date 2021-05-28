@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class ActivityBaseInformation
+            public class ActivityBase
             {
                 public static class Types
                 {
@@ -257,7 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_base_info")]
         [System.Text.Json.Serialization.JsonPropertyName("activity_base_info")]
-        public Types.ActivityBaseInformation ActivityBaseInformation { get; set; } = new Types.ActivityBaseInformation();
+        public Types.ActivityBase ActivityBase { get; set; } = new Types.ActivityBase();
 
         /// <summary>
         /// 获取或设置活动奖品发放规则信息。
