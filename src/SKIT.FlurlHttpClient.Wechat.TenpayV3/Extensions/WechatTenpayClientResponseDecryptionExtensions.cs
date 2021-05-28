@@ -14,12 +14,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_3.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml </para>
         /// </summary>
-        /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="response"></param>
         /// <returns></returns>
-        public static TResponse DecryptResponseEncryptedData<TResponse>(this WechatTenpayClient client, TResponse response)
-            where TResponse : WechatTenpayResponse
+        public static Models.GetEcommerceApplymentByOutRequestNumberResponse DecryptResponseEncryptedData(this WechatTenpayClient client, Models.GetEcommerceApplymentByOutRequestNumberResponse response)
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (response == null) throw new ArgumentNullException(nameof(response));
@@ -30,42 +28,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (!response.IsSuccessful())
                 throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
 
-            if (response is Models.GetEcommerceApplymentByOutRequestNumberResponse resGetEcommerceApplymentByOutRequestNumber)
-            {
-                DecryptResponse(resGetEcommerceApplymentByOutRequestNumber, client.MerchantCertPrivateKey);
-                return (resGetEcommerceApplymentByOutRequestNumber as TResponse)!;
-            }
-            else if (response is Models.GetEcommerceBillFundflowBillResponse resGetEcommerceBillFundflowBill)
-            {
-                DecryptResponse(resGetEcommerceBillFundflowBill, client.MerchantCertPrivateKey);
-                return (resGetEcommerceBillFundflowBill as TResponse)!;
-            }
-            else if (response is Models.GetMerchantServiceComplaintByComplaintIdResponse resGetMerchantServiceComplaintByComplaintId)
-            {
-                DecryptResponse(resGetMerchantServiceComplaintByComplaintId, client.MerchantCertPrivateKey);
-                return (resGetMerchantServiceComplaintByComplaintId as TResponse)!;
-            }
-            else if (response is Models.QueryCertificatesResponse resQueryCertificates)
-            {
-                DecryptResponse(resQueryCertificates, client.MerchantV3Secret);
-                return (resQueryCertificates as TResponse)!;
-            }
-            else if (response is Models.QueryMerchantServiceComplaintsResponse resQueryMerchantServiceComplaints)
-            {
-                DecryptResponse(resQueryMerchantServiceComplaints, client.MerchantCertPrivateKey);
-                return (resQueryMerchantServiceComplaints as TResponse)!;
-            }
-            else if (response is Models.QuerySmartGuidesResponse resQuerySmartGuides)
-            {
-                DecryptResponse(resQuerySmartGuides, client.MerchantCertPrivateKey);
-                return (resQuerySmartGuides as TResponse)!;
-            }
-
-            return response;
-        }
-
-        private static void DecryptResponse(Models.GetEcommerceApplymentByOutRequestNumberResponse response, string privateKey)
-        {
             if (response.AccountValidation != null)
             {
                 IList<Exception> exceptions = new List<Exception>();
@@ -77,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     try
                     {
                         accountValidationModel.AccountNameEncryptedData = Utilities.RsaUtil.DecryptWithECB(
-                            privateKey, 
+                            client.MerchantCertPrivateKey, 
                             accountValidationModel.AccountNameEncryptedData
                         );
                     }
@@ -92,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     try
                     {
                         accountValidationModel.AccountNumberEncryptedData = Utilities.RsaUtil.DecryptWithECB(
-                            privateKey,
+                            client.MerchantCertPrivateKey,
                             accountValidationModel.AccountNumberEncryptedData!
                         );
                     }
@@ -105,10 +67,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 if (exceptions.Any())
                     throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed.", new AggregateException(exceptions));
             }
+
+            return response;
         }
 
-        private static void DecryptResponse(Models.GetEcommerceBillFundflowBillResponse response, string privateKey)
+        /// <summary>
+        /// <para>解密响应中返回的敏感数据。该方法会改变传入的响应信息。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static Models.GetEcommerceBillFundflowBillResponse DecryptResponseEncryptedData(this WechatTenpayClient client, Models.GetEcommerceBillFundflowBillResponse response)
         {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (response == null) throw new ArgumentNullException(nameof(response));
+
+            if (string.IsNullOrEmpty(client.MerchantCertPrivateKey))
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+
+            if (!response.IsSuccessful())
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+
             if (response.DownloadBillList != null)
             {
                 IList<Exception> exceptions = new List<Exception>();
@@ -120,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         try
                         {
                             downloadBillModel.EncryptKeyEncryptedData = Utilities.RsaUtil.DecryptWithECB(
-                                privateKey,
+                                client.MerchantCertPrivateKey,
                                 downloadBillModel.EncryptKeyEncryptedData
                             );
                         }
@@ -134,10 +115,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 if (exceptions.Any())
                     throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed.", new AggregateException(exceptions));
             }
+
+            return response;
         }
 
-        private static void DecryptResponse(Models.GetMerchantServiceComplaintByComplaintIdResponse response, string privateKey)
+        /// <summary>
+        /// <para>解密响应中返回的敏感数据。该方法会改变传入的响应信息。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static Models.GetMerchantServiceComplaintByComplaintIdResponse DecryptResponseEncryptedData(this WechatTenpayClient client, Models.GetMerchantServiceComplaintByComplaintIdResponse response)
         {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (response == null) throw new ArgumentNullException(nameof(response));
+
+            if (string.IsNullOrEmpty(client.MerchantCertPrivateKey))
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+
+            if (!response.IsSuccessful())
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+
             if (response.ComplaintDetail != null)
             {
                 if (!string.IsNullOrEmpty(response.PayerPhoneEncryptedData))
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     try
                     {
                         response.PayerPhoneEncryptedData = Utilities.RsaUtil.DecryptWithECB(
-                            privateKey,
+                            client.MerchantCertPrivateKey,
                             response.PayerPhoneEncryptedData!
                         );
                     }
@@ -155,10 +155,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     }
                 }
             }
+
+            return response;
         }
 
-        private static void DecryptResponse(Models.QueryCertificatesResponse response, string aesKey)
+        /// <summary>
+        /// <para>解密响应中返回的敏感数据。该方法会改变传入的响应信息。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static Models.QueryCertificatesResponse DecryptResponseEncryptedData(this WechatTenpayClient client, Models.QueryCertificatesResponse response)
         {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (response == null) throw new ArgumentNullException(nameof(response));
+
+            if (string.IsNullOrEmpty(client.MerchantV3Secret))
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant secret.");
+
+            if (!response.IsSuccessful())
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+
             if (response.CertificateList != null)
             {
                 IList<Exception> exceptions = new List<Exception>();
@@ -170,7 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         try
                         {
                             certificateModel.EncryptCertificate.CipherText = Utilities.AesUtil.DecryptWithGCM(
-                                aesKey: aesKey,
+                                aesKey: client.MerchantV3Secret,
                                 nonce: certificateModel.EncryptCertificate.Nonce,
                                 associatedData: certificateModel.EncryptCertificate.AssociatedData,
                                 cipherText: certificateModel.EncryptCertificate.CipherText
@@ -190,10 +209,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 if (exceptions.Any())
                     throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed.", new AggregateException(exceptions));
             }
+
+            return response;
         }
 
-        private static void DecryptResponse(Models.QueryMerchantServiceComplaintsResponse response, string privateKey)
+        /// <summary>
+        /// <para>解密响应中返回的敏感数据。该方法会改变传入的响应信息。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static Models.QueryMerchantServiceComplaintsResponse DecryptResponseEncryptedData(this WechatTenpayClient client, Models.QueryMerchantServiceComplaintsResponse response)
         {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (response == null) throw new ArgumentNullException(nameof(response));
+
+            if (string.IsNullOrEmpty(client.MerchantCertPrivateKey))
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+
+            if (!response.IsSuccessful())
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+
             if (response.ComplaintList != null)
             {
                 IList<Exception> exceptions = new List<Exception>();
@@ -205,7 +243,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         try
                         {
                             complaintModel.PayerPhoneEncryptedData = Utilities.RsaUtil.DecryptWithECB(
-                                privateKey,
+                                client.MerchantCertPrivateKey,
                                 complaintModel.PayerPhoneEncryptedData!
                             );
                         }
@@ -219,10 +257,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 if (exceptions.Any())
                     throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed.", new AggregateException(exceptions));
             }
+
+            return response;
         }
 
-        private static void DecryptResponse(Models.QuerySmartGuidesResponse response, string privateKey)
+        /// <summary>
+        /// <para>解密响应中返回的敏感数据。该方法会改变传入的响应信息。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static Models.QuerySmartGuidesResponse DecryptResponseEncryptedData(this WechatTenpayClient client, Models.QuerySmartGuidesResponse response)
         {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (response == null) throw new ArgumentNullException(nameof(response));
+
+            if (string.IsNullOrEmpty(client.MerchantCertPrivateKey))
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+
+            if (!response.IsSuccessful())
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+
             if (response.GuideList != null)
             {
                 IList<Exception> exceptions = new List<Exception>();
@@ -234,7 +291,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         try
                         {
                             guideModel.UserNameEncryptedData = Utilities.RsaUtil.DecryptWithECB(
-                                privateKey,
+                                client.MerchantCertPrivateKey,
                                 guideModel.UserNameEncryptedData
                             );
                         }
@@ -249,7 +306,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         try
                         {
                             guideModel.UserMobileEncryptedData = Utilities.RsaUtil.DecryptWithECB(
-                                privateKey,
+                                client.MerchantCertPrivateKey,
                                 guideModel.UserMobileEncryptedData
                             );
                         }
@@ -263,6 +320,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 if (exceptions.Any())
                     throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed.", new AggregateException(exceptions));
             }
+
+            return response;
         }
     }
 }
