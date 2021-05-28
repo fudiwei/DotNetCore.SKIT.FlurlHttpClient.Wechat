@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    public class StringTypedStringArrayConverter : JsonConverter<string[]?>
+    public class JsonTypedStringArrayConverter : JsonConverter<string[]?>
     {
         public override string[]? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
