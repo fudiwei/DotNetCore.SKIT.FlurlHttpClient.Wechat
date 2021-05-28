@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotNull(response.ActivityList.First().ActivityId);
                 Assert.NotNull(response.ActivityList.First().ActivityStatus);
-                Assert.NotNull(response.ActivityList.First().ActivityBaseInformation);
+                Assert.NotNull(response.ActivityList.First().ActivityBase);
                 Assert.NotNull(response.ActivityList.First().AwardSendRule);
             }
         }

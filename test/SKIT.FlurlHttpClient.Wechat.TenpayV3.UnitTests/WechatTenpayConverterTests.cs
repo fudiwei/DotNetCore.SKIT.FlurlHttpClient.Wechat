@@ -39,21 +39,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         class JsonStringTypedStringListOrArrayTestEntity
         {
             [Newtonsoft.Json.JsonProperty("string_ilist")]
-            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringTypedStringIListConverter))]
+            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.JsonTypedStringIListConverter))]
             [System.Text.Json.Serialization.JsonPropertyName("string_ilist")]
-            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.StringTypedStringIListConverter))]
+            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.JsonTypedStringIListConverter))]
             public IList<string> StringTypedIList { get; set; }
 
             [Newtonsoft.Json.JsonProperty("string_list")]
-            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringTypedStringListConverter))]
+            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.JsonTypedStringListConverter))]
             [System.Text.Json.Serialization.JsonPropertyName("string_list")]
-            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.StringTypedStringListConverter))]
+            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.JsonTypedStringListConverter))]
             public List<string> StringTypedList { get; set; }
 
             [Newtonsoft.Json.JsonProperty("string_array")]
-            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.StringTypedStringArrayConverter))]
+            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.JsonTypedStringArrayConverter))]
             [System.Text.Json.Serialization.JsonPropertyName("string_array")]
-            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.StringTypedStringArrayConverter))]
+            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.JsonTypedStringArrayConverter))]
             public string[] StringTypedArray { get; set; }
         }
 

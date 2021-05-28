@@ -16,13 +16,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         [Fact(DisplayName = "验证模型定义")]
         public void ModelDefinitionsTest()
         {
-            static void SetPropertiesValueRecursively(object obj)
+            static void TrySetPropertiesValueRecursively(object obj)
             {
                 var lstProperty = obj.GetType().GetProperties(BindingFlags.Public | BindingFlags.Instance);
                 foreach (var tProperty in lstProperty)
                 {
                     if (tProperty.SetMethod == null || !tProperty.SetMethod.IsPublic)
                         continue;
+
+                    var newtonsoftJsonAttribute = tProperty.GetCustomAttribute<Newtonsoft.Json.JsonPropertyAttribute>();
+                    var systemTextJsonAttribute = tProperty.GetCustomAttribute<System.Text.Json.Serialization.JsonPropertyNameAttribute>();
+                    if (newtonsoftJsonAttribute?.PropertyName != systemTextJsonAttribute?.Name)
+                        throw new Exception($"`{obj.GetType().Name}` fields mismatching: `{newtonsoftJsonAttribute.PropertyName}` & `{systemTextJsonAttribute.Name}`");
 
                     if (tProperty.PropertyType.IsPrimitive)
                     {
@@ -33,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                         Type tEl = tProperty.PropertyType.Assembly.GetType(tProperty.PropertyType.FullName.Replace("[]", string.Empty));
                         object propEl = (tEl == typeof(string)) ? string.Empty : Activator.CreateInstance(tEl);
                         propEl = Convert.ChangeType(propEl, tEl);
-                        SetPropertiesValueRecursively(propEl);
+                        TrySetPropertiesValueRecursively(propEl);
 
                         Array prop = Array.CreateInstance(tEl, 1);
                         prop.SetValue(propEl, 0);
@@ -60,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                         Type tGeneric = tProperty.PropertyType.GetGenericArguments().Single();
                         object propEl = (tGeneric == typeof(string)) ? string.Empty : Activator.CreateInstance(tGeneric);
                         propEl = Convert.ChangeType(propEl, tGeneric);
-                        SetPropertiesValueRecursively(propEl);
+                        TrySetPropertiesValueRecursively(propEl);
 
                         Type tList = typeof(List<>).MakeGenericType(new Type[] { tGeneric });
                         object prop = Activator.CreateInstance(tList);
@@ -72,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     else
                     {
                         object prop = Activator.CreateInstance(tProperty.PropertyType);
-                        SetPropertiesValueRecursively(prop);
+                        TrySetPropertiesValueRecursively(prop);
 
                         tProperty.SetValue(obj, prop);
                     }
@@ -82,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             var lstModel = _assembly.GetTypes()
                 .Where(e =>
                     e.Namespace != null &&
-                    e.Namespace.Equals(_assembly.GetName().Name + "Models") &&
+                    e.Namespace.Equals(_assembly.GetName().Name + ".Models") &&
                     e.IsClass &&
                     !e.IsAbstract &&
                     !e.IsInterface &&
@@ -137,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 try
                 {
                     object instance = _assembly.CreateInstance(tModel.Namespace + "." + tModel.Name);
-                    SetPropertiesValueRecursively(instance);
+                    TrySetPropertiesValueRecursively(instance);
 
                     new FlurlNewtonsoftJsonSerializer().Serialize(instance);
                     new FlurlSystemTextJsonSerializer().Serialize(instance);
@@ -290,7 +295,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
 
             VerifyJsonSamples("ModelSamples", "Models");
-            VerifyJsonSamples("ResourceSamples", "Resources");
+            VerifyJsonSamples("EventSamples", "Events");
             
             Assert.Empty(exceptions);
         }
