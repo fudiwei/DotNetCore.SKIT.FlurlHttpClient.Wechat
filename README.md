@@ -3,12 +3,11 @@
 基于 `Flurl.Http` 的微信 API HTTP 客户端，支持公众平台、开放平台、商户平台等模块。
 
 > [`Flurl.Http`](https://flurl.dev/) 是一个轻量级 HTTP 库，是 .NET 中最受欢迎扩展库之一，在 NuGet 上的累计下载量超过 1200 万、日均下载量超过 5 千、GitHub 2.6k Stars（数据统计截至 2021-05-01）。
-> 
+>
 > 与另一个流行的 HTTP 库 [`RestSharp`](https://restsharp.dev/) 相比，`Flurl.Http` 底层基于 `System.Net.Http.HttpClient`，而 `RestSharp` 底层则基于 `System.Net.HttpWebRequest`，前者在多核多线程环境下的性能基准测试中表现要远优于后者，同时也是微软官方目前推荐的 HTTP 客户端方案。
-> 
-> 
+>
 > 【附】微软官方关于 `System.Net.HttpWebRequest` 与 `System.Net.Http.HttpClient` 的说明：
-> 
+>
 > -   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.httpwebrequest#remarks
 > -   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient#httpclient-and-net-core）。
 
@@ -34,6 +33,8 @@
 
 ## 模块
 
--   [《微信公众平台（公众号、小程序） & 开放平台 API 模块》文档](./docs/WechatApi/README.md)
-
--   [《微信商户平台（微信支付） API 模块》文档](./docs/WechatTenpayV3/README.md)
+|                   名称                    |                                                                                     NuGet                                                                                      |                  其他                   |
+| :---------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------: |
+| 公众平台（公众号、小程序） & 开放平台模块 |      [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Api.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Api)      |   [文档](./docs/WechatApi/README.md)    |
+|         商户平台（微信支付）模块          | [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3) | [文档](./docs/WechatTenpayV3/README.md) |
+|               企业微信模块                |                                                                                    _开发中_                                                                                    |                                         |

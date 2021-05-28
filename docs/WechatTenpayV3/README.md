@@ -107,7 +107,7 @@ var request = new CreatePayTransactionJsapiRequest()
     },
     Payer = new Models.CreatePayTransactionJsapiRequest.Types.Payer()
     {
-        OpenId = TestConfigs.WechatOpenId
+        OpenId = "微信 OpenId"
     }
 };
 var response = await TestClients.Instance.ExecuteCreatePayTransactionJsapiAsync(request);
@@ -121,7 +121,7 @@ var response = await TestClients.Instance.ExecuteCreatePayTransactionJsapiAsync(
 
 -   [如何验证微信响应签名？](./Advanced_ResponseSignatureVerification.md)
 
--   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Advanced_ModelDefinition.md)
+-   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Advanced_ModelDefinition.md)
 
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 
@@ -129,7 +129,7 @@ var response = await TestClients.Instance.ExecuteCreatePayTransactionJsapiAsync(
 
 -   [如何解密响应中的敏感数据？](./Advanced_ResponseDataDecryption.md)
 
--   [如何解密回调通知事件中的敏感数据？](./Advanced_CallbackDataDecryption.md)
+-   [如何解密回调通知事件中的敏感数据？](./Advanced_EventDataDecryption.md)
 
 -   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Payment.md)
 

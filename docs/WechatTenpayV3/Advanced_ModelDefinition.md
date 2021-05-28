@@ -4,7 +4,7 @@
 
 本库提供的请求模型、响应模型和接口方法，三者均保持同名。
 
-例如，发起退款的请求是 `CreateRefundDomesticRefundRequest`，响应是 `CreateRefundDomesticRefundResponse`，接口是 `CreateRefundDomesticRefundAsync()`。知道其中一个，其余两个就可以快速地推断出了。
+例如，发起退款的请求是 `CreateRefundDomesticRefundRequest`，响应是 `CreateRefundDomesticRefundResponse`，接口是 `ExecuteCreateRefundDomesticRefundAsync()`。知道其中一个，其余两个就可以快速地推断出了。
 
 再有，每个对象的命名与官方文档的接口地址大体保持一致。例如刚刚提到的发起退款，它的接口地址是 `[POST] /refund/domestic/refunds`，将其中的反斜杠去掉、并以大驼峰命名法的方式调整它，就可以得到前文提到的几个对象了。
 

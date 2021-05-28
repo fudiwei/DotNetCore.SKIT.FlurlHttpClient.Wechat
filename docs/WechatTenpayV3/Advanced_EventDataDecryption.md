@@ -15,13 +15,13 @@
 ```csharp
 string callbackJson = "..."; // 微信支付平台发来的通知内容
 
-var callbackModel = client.DeserializeCallback(callbackJson); // 得到通知对象
+var callbackModel = client.DeserializeEvent(callbackJson); // 得到通知对象
 if ("TRANSACTION.SUCCESS".Equals(callbackModel.EventType))
 {
-    var callbackResource = client.DecryptCallbackResource<Resources.TransactionResource>(callbackModel); // 得到支付通知敏感数据
+    var callbackResource = client.DecryptEventResource<Events.TransactionResource>(callbackModel); // 得到支付通知敏感数据
     string outTradeNumber = callbackResource.OutTradeNumber;
     string transactionId = callbackResource.TransactionId;
 }
 ```
 
-完整的回调通知模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.TenpayV3/Resources_ 目录。
+完整的回调通知模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.TenpayV3/Events_ 目录。

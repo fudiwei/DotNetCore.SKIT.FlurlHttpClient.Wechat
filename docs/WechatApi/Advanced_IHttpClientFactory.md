@@ -2,7 +2,7 @@
 
 ---
 
-> 请先自行阅读：
+> 请参阅：
 >
 > [《Microsoft Docs - 使用 IHttpClientFactory 实现复原 HTTP 请求》](https://docs.microsoft.com/zh-cn/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests)
 >
@@ -18,10 +18,10 @@
 using Flurl.Http;
 using Flurl.Http.Configuration;
 using Microsoft.Extensions.Options;
-using SKIT.FlurlHttpClient.Wechat.TenpayV3;
-using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
+using SKIT.FlurlHttpClient.Wechat.Api;
+using SKIT.FlurlHttpClient.Wechat.Api.Models;
 
-public class WechatTenpayClientFactory
+public class WechatApiClientFactory
 {
     internal class DelegatingFlurlClientFactory : IFlurlClientFactory
     {
@@ -44,25 +44,25 @@ public class WechatTenpayClientFactory
     }
 
     private readonly System.Net.Http.IHttpClientFactory _httpClientFactory;
-    private readonly IOptions<WechatTenpayClientOptions> _wechatTenpayClientOptions;
+    private readonly IOptions<WechatApiClientOptions> _wechatApiClientOptions;
 
-    public WechatTenpayClientFactory(
+    public WechatApiClientFactory(
         System.Net.Http.IHttpClientFactory httpClientFactory,
-        IOptions<WechatTenpayClientOptions> wechatTenpayClientOptions)
+        IOptions<WechatApiClientOptions> wechatApiClientOptions)
     {
         _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
-        _wechatTenpayClientOptions = wechatTenpayClientOptions ?? throw new ArgumentNullException(nameof(wechatTenpayClientOptions));
+        _wechatApiClientOptions = wechatApiClientOptions ?? throw new ArgumentNullException(nameof(wechatApiClientOptions));
 
         Flurl.Http.FlurlHttp.GlobalSettings.FlurlClientFactory = new DelegatingFlurlClientFactory(_httpClientFactory);
     }
 
-    public WechatTenpayClient CreateClient()
+    public WechatApiClient CreateClient()
     {
-        return new WechatTenpayClient(_wechatTenpayClientOptions.Value);
+        return new WechatApiClient(_wechatApiClientOptions.Value);
     }
 }
 ```
 
-需要强调的是，虽然 `WechatTenpayClient` 实现了 `System.IDisposable` 接口，但你不应该在 DI/IoC 中手动释放它，而是应该交给 IoC 容器自动管理它。
+需要强调的是，虽然 `WechatApiClient` 实现了 `System.IDisposable` 接口，但你不应该在 DI/IoC 中手动释放它，而是应该交给 IoC 容器自动管理它。
 
 此外你应注意，`System.Net.Http.IHttpClientFactory` 与 `Flurl.Http.Configuration.IHttpClientFactory` 是两个不同的类型，[使用时请加以区分](https://flurl.dev/docs/configuration/#httpclientfactory)。
