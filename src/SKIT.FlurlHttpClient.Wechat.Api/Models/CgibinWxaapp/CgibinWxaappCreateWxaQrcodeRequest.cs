@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("path")]
         [System.Text.Json.Serialization.JsonPropertyName("path")]
-        public string Path { get; set; } = default!;
+        public string Path { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置二维码的宽度（单位：像素）。

@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("dimension")]
                 [System.Text.Json.Serialization.JsonPropertyName("dimension")]
-                public string Dimension { get; set; } = default!;
+                public string Dimension { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置维度的取值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = default!;
+                public string Value { get; set; } = string.Empty;
             }
         }
 
@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("metric")]
         [System.Text.Json.Serialization.JsonPropertyName("metric")]
-        public string Metric { get; set; } = default!;
+        public string Metric { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置时间粒度。

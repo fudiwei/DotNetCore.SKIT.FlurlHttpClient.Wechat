@@ -41,6 +41,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action_msg")]
         [System.Text.Json.Serialization.JsonPropertyName("action_msg")]
-        public string ActionMessage { get; set; } = default!;
+        public string ActionMessage { get; set; } = string.Empty;
     }
 }

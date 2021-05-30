@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sub_button")]
                         [System.Text.Json.Serialization.JsonPropertyName("sub_button")]
-                        public IList<Button>? SubButtonList { get; set; }
+                        public Button[]? SubButtonList { get; set; }
                     }
                 }
 

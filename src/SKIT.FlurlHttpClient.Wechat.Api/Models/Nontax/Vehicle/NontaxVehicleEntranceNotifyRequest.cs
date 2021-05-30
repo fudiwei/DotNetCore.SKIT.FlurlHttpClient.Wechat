@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? CarType { get; set; }
 
                 /// <summary>
-                /// 获取或设置回调通知 URL。
+                /// 获取或设置回调通知地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("notify_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("notify_url")]

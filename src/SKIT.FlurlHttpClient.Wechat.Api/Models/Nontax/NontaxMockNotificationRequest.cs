@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置回调通知 URL。
+        /// 获取或设置回调通知地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]

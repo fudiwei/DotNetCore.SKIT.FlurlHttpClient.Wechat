@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("feeds_img")]
                 [System.Text.Json.Serialization.JsonPropertyName("feeds_img")]
-                public string FeedsImageUrl { get; set; } = string.Empty;
+                public string FeedsImageUrl { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置是否开启官方收录。

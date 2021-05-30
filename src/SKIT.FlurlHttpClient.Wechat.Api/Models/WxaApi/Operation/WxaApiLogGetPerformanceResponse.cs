@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             }
         }
 
-        public static class Converters
+        internal static class Converters
         {
             internal class NewtonsoftJsonDefaultTimeDataConverter : Newtonsoft.Json.JsonConverter<Types.DefaultTimeData?>
             {

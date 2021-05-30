@@ -18,14 +18,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("key")]
                 [System.Text.Json.Serialization.JsonPropertyName("key")]
-                public string Key { get; set; } = default!;
+                public string Key { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置运单信息 Value。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
-                public string Value { get; set; } = default!;
+                public string Value { get; set; } = string.Empty;
             }
 
             public class CustomData
@@ -143,7 +143,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             }
         }
 
-        public static class Converters
+        internal static class Converters
         {
             internal class NewtonsoftJsonWaybillDataListConverter : Newtonsoft.Json.JsonConverter<IList<Types.WaybillData>?>
             {
