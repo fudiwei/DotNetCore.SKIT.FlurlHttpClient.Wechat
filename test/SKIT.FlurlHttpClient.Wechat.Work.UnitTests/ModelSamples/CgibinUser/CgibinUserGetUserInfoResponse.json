@@ -1,0 +1,8 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "UserId": "USERID",
+    "DeviceId": "DEVICEID",
+    "OpenId": "OPENID",
+    "external_userid": "EXTERNAL_USERID"
+}

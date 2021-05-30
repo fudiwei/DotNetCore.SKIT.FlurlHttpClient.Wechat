@@ -1,0 +1,18 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "department_list": [
+        {
+            "department_id": "1",
+            "department_name": "测试部门1",
+            "parentid": "0",
+            "order": 100000000
+        },
+        {
+            "department_id": "2",
+            "department_name": "测试部门2",
+            "parentid": "1",
+            "order": 99999999
+        }
+    ]
+}

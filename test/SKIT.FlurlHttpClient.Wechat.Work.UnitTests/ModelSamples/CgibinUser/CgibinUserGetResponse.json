@@ -1,0 +1,71 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "userid": "zhangsan",
+    "name": "张三",
+    "department": [ 1, 2 ],
+    "order": [ 1, 2 ],
+    "position": "后台工程师",
+    "mobile": "13800000000",
+    "gender": "1",
+    "email": "zhangsan@gzdev.com",
+    "is_leader_in_dept": [ 1, 0 ],
+    "avatar": "http://wx.qlogo.cn/mmopen/ajNVdqHZLLA3WJ6DSZUfiakYe37PKnQhBIeOQBO4czqrnZDS79FH5Wm5m4X69TBicnHFlhiafvDwklOpZeXYQQ2icg/0",
+    "thumb_avatar": "http://wx.qlogo.cn/mmopen/ajNVdqHZLLA3WJ6DSZUfiakYe37PKnQhBIeOQBO4czqrnZDS79FH5Wm5m4X69TBicnHFlhiafvDwklOpZeXYQQ2icg/100",
+    "telephone": "020-123456",
+    "alias": "jackzhang",
+    "address": "广州市海珠区新港中路",
+    "open_userid": "xxxxxx",
+    "main_department": 1,
+    "extattr": {
+        "attrs": [
+            {
+                "type": 0,
+                "name": "文本名称",
+                "text": {
+                    "value": "文本"
+                }
+            },
+            {
+                "type": 1,
+                "name": "网页名称",
+                "web": {
+                    "url": "http://www.test.com",
+                    "title": "标题"
+                }
+            }
+        ]
+    },
+    "status": 1,
+    "qr_code": "https://open.work.weixin.qq.com/wwopen/userQRCode?vcode=xxx",
+    "external_position": "产品经理",
+    "external_profile": {
+        "external_corp_name": "企业简称",
+        "external_attr": [
+            {
+                "type": 0,
+                "name": "文本名称",
+                "text": {
+                    "value": "文本"
+                }
+            },
+            {
+                "type": 1,
+                "name": "网页名称",
+                "web": {
+                    "url": "http://www.test.com",
+                    "title": "标题"
+                }
+            },
+            {
+                "type": 2,
+                "name": "测试app",
+                "miniprogram": {
+                    "appid": "wx8bd80126147dFAKE",
+                    "pagepath": "/index",
+                    "title": "my miniprogram"
+                }
+            }
+        ]
+    }
+}

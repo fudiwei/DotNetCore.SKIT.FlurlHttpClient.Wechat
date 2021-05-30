@@ -16,11 +16,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.TenpayV3", "src\SKIT.FlurlHttpClient.Wechat.TenpayV3\SKIT.FlurlHttpClient.Wechat.TenpayV3.csproj", "{6FE502D4-C43D-49C9-9E57-D1EE566FD1C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SKIT.FlurlHttpClient.Wechat.Work", "src\SKIT.FlurlHttpClient.Wechat.Work\SKIT.FlurlHttpClient.Wechat.Work.csproj", "{CDD123E6-2622-4368-BAEE-8B95F05F1AB2}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C95AF531-CF44-44AA-AC90-F4DF9F941674}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.Api.UnitTests", "test\SKIT.FlurlHttpClient.Wechat.Api.UnitTests\SKIT.FlurlHttpClient.Wechat.Api.UnitTests.csproj", "{0C87A7D9-26EA-4821-AF3F-6D28B3006B24}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests", "test\SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests\SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests.csproj", "{5ECE2E7A-9AE8-49BF-902D-41A7756C3E78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SKIT.FlurlHttpClient.Wechat.Work.UnitTests", "test\SKIT.FlurlHttpClient.Wechat.Work.UnitTests\SKIT.FlurlHttpClient.Wechat.Work.UnitTests.csproj", "{DBF84F66-1436-4599-93AB-7C16A3A2C3A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +52,14 @@ Global
 		{5ECE2E7A-9AE8-49BF-902D-41A7756C3E78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5ECE2E7A-9AE8-49BF-902D-41A7756C3E78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5ECE2E7A-9AE8-49BF-902D-41A7756C3E78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD123E6-2622-4368-BAEE-8B95F05F1AB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD123E6-2622-4368-BAEE-8B95F05F1AB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD123E6-2622-4368-BAEE-8B95F05F1AB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD123E6-2622-4368-BAEE-8B95F05F1AB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DBF84F66-1436-4599-93AB-7C16A3A2C3A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DBF84F66-1436-4599-93AB-7C16A3A2C3A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DBF84F66-1436-4599-93AB-7C16A3A2C3A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DBF84F66-1436-4599-93AB-7C16A3A2C3A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,6 +70,8 @@ Global
 		{6FE502D4-C43D-49C9-9E57-D1EE566FD1C3} = {3E34ADB9-1F52-4C96-9A42-DE782DE1AAA3}
 		{0C87A7D9-26EA-4821-AF3F-6D28B3006B24} = {C95AF531-CF44-44AA-AC90-F4DF9F941674}
 		{5ECE2E7A-9AE8-49BF-902D-41A7756C3E78} = {C95AF531-CF44-44AA-AC90-F4DF9F941674}
+		{CDD123E6-2622-4368-BAEE-8B95F05F1AB2} = {3E34ADB9-1F52-4C96-9A42-DE782DE1AAA3}
+		{DBF84F66-1436-4599-93AB-7C16A3A2C3A4} = {C95AF531-CF44-44AA-AC90-F4DF9F941674}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F08ED64E-2517-4B51-A4BE-D33D56CC7B39}

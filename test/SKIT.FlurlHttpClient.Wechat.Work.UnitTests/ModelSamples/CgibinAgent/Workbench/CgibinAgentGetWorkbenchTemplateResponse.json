@@ -1,0 +1,61 @@
+﻿{
+    "type": "image",
+    "keydata": {
+        "items": [
+            {
+                "key": "待审批",
+                "data": "2",
+                "jump_url": "http://www.qq.com",
+                "pagepath": "pages/index"
+            },
+            {
+                "key": "带批阅作业",
+                "data": "4",
+                "jump_url": "http://www.qq.com",
+                "pagepath": "pages/index"
+            },
+            {
+                "key": "成绩录入",
+                "data": "45",
+                "jump_url": "http://www.qq.com",
+                "pagepath": "pages/index"
+            },
+            {
+                "key": "综合评价",
+                "data": "98",
+                "jump_url": "http://www.qq.com",
+                "pagepath": "pages/index"
+            }
+        ]
+    },
+    "list": {
+        "items": [
+            {
+                "title": "智慧校园新版设计的小程序要来啦",
+                "jump_url": "http://www.qq.com",
+                "pagepath": "pages/index"
+            },
+            {
+                "title": "植物百科，这是什么花",
+                "jump_url": "http://www.qq.com",
+                "pagepath": "pages/index"
+            },
+            {
+                "title": "周一升旗通知，全体学生必须穿校服",
+                "jump_url": "http://www.qq.com",
+                "pagepath": "pages/index"
+            }
+        ]
+    },
+    "image": {
+        "url": "xxxx",
+        "jump_url": "http://www.qq.com",
+        "pagepath": "pages/index"
+    },
+    "webview": {
+        "url": "http://www.qq.com",
+        "jump_url": "http://www.qq.com",
+        "pagepath": "pages/index"
+    },
+    "replace_user_data": true
+}

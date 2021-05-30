@@ -1,0 +1,16 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "corp_list": [
+        {
+            "corpid": "wwcorpid1",
+            "corp_name": "测试企业1",
+            "agentid": 1111
+        },
+        {
+            "corpid": "wwcorpid2",
+            "corp_name": "测试企业2",
+            "agentid": 1112
+        }
+    ]
+}
