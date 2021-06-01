@@ -1,0 +1,29 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "tag_group": [
+        {
+            "group_id": "TAG_GROUPID1",
+            "group_name": "GOURP_NAME",
+            "create_time": 1557838797,
+            "order": 1,
+            "deleted": false,
+            "tag": [
+                {
+                    "id": "TAG_ID1",
+                    "name": "NAME1",
+                    "create_time": 1557838797,
+                    "order": 1,
+                    "deleted": false
+                },
+                {
+                    "id": "TAG_ID2",
+                    "name": "NAME2",
+                    "create_time": 1557838797,
+                    "order": 2,
+                    "deleted": true
+                }
+            ]
+        }
+    ]
+}

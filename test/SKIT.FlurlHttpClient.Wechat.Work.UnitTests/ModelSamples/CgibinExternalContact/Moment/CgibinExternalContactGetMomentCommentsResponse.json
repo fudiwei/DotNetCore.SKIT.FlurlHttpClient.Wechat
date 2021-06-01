@@ -1,0 +1,24 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "comment_list": [
+        {
+            "external_userid": "woAJ2GCAAAXtWyujaWJHDDGi0mACAAAA ",
+            "create_time": 1605172726
+        },
+        {
+            "userid": "zhangshan ",
+            "create_time": 1605172729
+        }
+    ],
+    "like_list": [
+        {
+            "external_userid": "woAJ2GCAAAXtWyujaWJHDDGi0mACBBBB ",
+            "create_time": 1605172726
+        },
+        {
+            "userid": "zhangshan ",
+            "create_time": 1605172720
+        }
+    ]
+}
