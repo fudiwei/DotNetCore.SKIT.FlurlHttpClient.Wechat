@@ -12,6 +12,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         {
             public class Amount
             {
+                public static class Types
+                {
+                    public class From
+                    {
+                        /// <summary>
+                        /// 获取或设置出资金额	（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                        public int Amount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置出资账户。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("account")]
+                        [System.Text.Json.Serialization.JsonPropertyName("account")]
+                        public string Account { get; set; } = string.Empty;
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置原订单金额（单位：分）。
                 /// </summary>
@@ -32,6 +52,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]
                 public string Currency { get; set; } = "CNY";
+
+                /// <summary>
+                /// 获取或设置退款出资账户及金额列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("from")]
+                [System.Text.Json.Serialization.JsonPropertyName("from")]
+                public IList<Types.From>? FromList { get; set; }
             }
 
             public class GoodsDetail
