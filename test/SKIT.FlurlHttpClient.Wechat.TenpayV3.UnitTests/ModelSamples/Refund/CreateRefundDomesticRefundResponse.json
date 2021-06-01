@@ -7,7 +7,13 @@
         "refund": 1,
         "settlement_refund": 1,
         "settlement_total": 1,
-        "total": 1
+        "total": 1,
+        "from": [
+            {
+                "account": "AVAILABLE",
+                "amount": 444
+            }
+        ]
     },
     "channel": "ORIGINAL",
     "create_time": "2021-03-26T14:52:08+08:00",
