@@ -72,14 +72,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public bool? IsTemp { get; set; }
 
         /// <summary>
-        /// 获取或设置临时会话二维码有效期（单位：秒）。
+        /// 获取或设置临时会话二维码有效时间（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("expires_in")]
         [System.Text.Json.Serialization.JsonPropertyName("expires_in")]
         public int? TempQrcodeExpiresIn { get; set; }
 
         /// <summary>
-        /// 获取或设置临时会话有效期有效期（单位：秒）。
+        /// 获取或设置临时会话有效时间有效时间（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chat_expires_in")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_expires_in")]

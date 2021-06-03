@@ -9,21 +9,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     public class CgibinBatchInviteResponse : WechatWorkResponse
     {
         /// <summary>
-        /// 获取或设置非法成员账号列表。
+        /// 获取或设置无效的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invaliduser")]
         [System.Text.Json.Serialization.JsonPropertyName("invaliduser")]
         public string[]? InvalidUserIdList { get; set; }
 
         /// <summary>
-        /// 获取或设置非法部门 ID 列表。
+        /// 获取或设置无效的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidparty")]
         [System.Text.Json.Serialization.JsonPropertyName("invalidparty")]
         public int[]? InvalidDepartmentIdList { get; set; }
 
         /// <summary>
-        /// 获取或设置非法标签 ID 列表。
+        /// 获取或设置无效的标签 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidtag")]
         [System.Text.Json.Serialization.JsonPropertyName("invalidtag")]

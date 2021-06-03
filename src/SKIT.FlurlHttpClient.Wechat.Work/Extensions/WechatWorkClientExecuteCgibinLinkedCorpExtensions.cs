@@ -115,5 +115,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinLinkedCorpDepartmentListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region Message
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/linkedcorp/message/send 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90250 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLinkedCorpMessageSendResponse> ExecuteCgibinLinkedCorpMessageSendAsync(this WechatWorkClient client, Models.CgibinLinkedCorpMessageSendRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (!request.AgentId.HasValue)
+                request.AgentId = client.AgentId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "linkedcorp", "message", "send")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLinkedCorpMessageSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

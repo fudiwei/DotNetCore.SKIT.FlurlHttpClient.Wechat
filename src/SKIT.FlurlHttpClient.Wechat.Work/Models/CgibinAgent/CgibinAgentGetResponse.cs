@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string Description { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置可见人员范围信息。
+        /// 获取或设置可见成员范围信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_userinfos")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_userinfos")]

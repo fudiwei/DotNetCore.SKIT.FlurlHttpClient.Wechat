@@ -11,21 +11,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     public class WechatWorkEvent
     {
         /// <summary>
-        /// 获取或设置接收的企业 ID。
+        /// 获取或设置企业 CorpId。
         /// </summary>
-        [XmlElement("ToUserName")]
-        public string ToUserName { get; set; } = default!;
+        [XmlElement("ToUserName", IsNullable = true)]
+        public string? ToUserName { get; set; }
 
         /// <summary>
-        /// 获取或设置接收的应用 ID。
+        /// 获取或设置发送方账号。
         /// </summary>
-        [XmlElement("AgentID")]
-        public string AgentId { get; set; } = default!;
+        [XmlElement("FromUserName", IsNullable = true)]
+        public string? FromUserName { get; set; }
 
         /// <summary>
-        /// 获取或设置经过加密的消息数据。
+        /// 获取或设置消息类型。
         /// </summary>
-        [XmlElement("Encrypt")]
-        public string EncryptedData { get; set; } = default!;
+        [XmlElement("MsgType", IsNullable = true)]
+        public string? MessageType { get; set; }
+
+        /// <summary>
+        /// 获取或设置事件类型。
+        /// </summary>
+        [XmlElement("Event", IsNullable = true)]
+        public string? Event { get; set; }
+
+        /// <summary>
+        /// 获取或设置消息创建时间。
+        /// </summary>
+        [XmlElement("CreateTime")]
+        public long CreateTimestamp { get; set; }
     }
 }

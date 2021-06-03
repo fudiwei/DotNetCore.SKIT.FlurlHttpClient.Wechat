@@ -16,7 +16,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         public virtual int? Timeout { get; set; }
 
         /// <summary>
-        /// 获取或设置企业微信应用的 AccessToken。
+        /// <para>获取或设置企业微信的 AccessToken。</para>
+        /// <para>注意：部分第三方应用开发的接口中该字段表示第三方应用的 SuiteAccessToken。</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

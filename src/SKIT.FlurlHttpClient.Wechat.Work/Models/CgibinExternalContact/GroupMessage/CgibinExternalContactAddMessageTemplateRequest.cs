@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Text
+            public class TextMessage
             {
                 /// <summary>
                 /// 获取或设置文本消息内容。
@@ -177,7 +177,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("text")]
         [System.Text.Json.Serialization.JsonPropertyName("text")]
-        public Types.Text? Text { get; set; }
+        public Types.TextMessage? Text { get; set; }
 
         /// <summary>
         /// 获取或设置附件列表。

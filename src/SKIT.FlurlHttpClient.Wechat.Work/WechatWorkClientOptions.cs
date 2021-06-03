@@ -25,13 +25,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         public string CorpId { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置企业微信应用的 AgentId。
+        /// 获取或设置企业微信应用的 AgentId。仅限企业内部开发时使用。
         /// </summary>
-        public int AgentId { get; set; } = default!;
+        public int? AgentId { get; set; }
 
         /// <summary>
-        /// 获取或设置企业微信应用的 AgentSecret。
+        /// 获取或设置企业微信应用的 AgentSecret。仅限企业内部开发时使用。
         /// </summary>
-        public string AgentSecret { get; set; } = default!;
+        public string? AgentSecret { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业微信服务商 Secret。仅限第三方应用开发时使用。
+        /// </summary>
+        public string? ProviderSecret { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业微信第三方应用的 SuiteId。仅限第三方应用开发时使用。
+        /// </summary>
+        public string? SuiteId { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业微信第三方应用的 SuiteSecret。仅限第三方应用开发时使用。
+        /// </summary>
+        public string? SuiteSecret { get; set; }
     }
 }

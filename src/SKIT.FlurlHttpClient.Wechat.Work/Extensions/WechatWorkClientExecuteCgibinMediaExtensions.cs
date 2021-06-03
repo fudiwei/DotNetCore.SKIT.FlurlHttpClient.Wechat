@@ -15,6 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/media/upload 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90253 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90389 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -77,6 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/media/uploadimg 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90256 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90392 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -118,6 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/media/get 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90254 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90390 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -140,6 +143,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/media/get/jssdk 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90255 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90391 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

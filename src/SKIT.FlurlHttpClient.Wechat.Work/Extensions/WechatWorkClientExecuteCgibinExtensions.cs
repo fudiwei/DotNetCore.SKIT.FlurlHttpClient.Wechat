@@ -34,6 +34,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/getcallbackip 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90930 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91116 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinGetCallbackIpResponse> ExecuteCgibinGetCallbackIpAsync(this WechatWorkClient client, Models.CgibinGetCallbackIpRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "getcallbackip")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestAsync<Models.CgibinGetCallbackIpResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/get_api_domain_ip 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92520 </para>
         /// </summary>

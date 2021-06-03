@@ -25,12 +25,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// 获取当前客户端使用的企业微信应用的 AgentId。
         /// </summary>
-        public int AgentId { get; }
+        internal int? AgentId { get; }
 
         /// <summary>
         /// 获取当前客户端使用的企业微信应用的 AgentSecret。
         /// </summary>
-        internal string AgentSecret { get; }
+        internal string? AgentSecret { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的企业微信服务商 Secret。
+        /// </summary>
+        internal string? ProviderSecret { get; set; }
+
+        /// <summary>
+        /// 获取当前客户端使用的企业微信第三方应用的 SuiteId。
+        /// </summary>
+        internal string? SuiteId { get; set; }
+
+        /// <summary>
+        /// 获取当前客户端使用的企业微信第三方应用的 SuiteSecret。
+        /// </summary>
+        internal string? SuiteSecret { get; set; }
 
         /// <summary>
         /// 获取当前客户端使用的 JSON 序列化器。
@@ -52,6 +67,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             CorpId = options.CorpId;
             AgentId = options.AgentId;
             AgentSecret = options.AgentSecret;
+            ProviderSecret = options.ProviderSecret;
+            SuiteId = options.SuiteId;
+            SuiteSecret = options.SuiteSecret;
 
             ProxyFlurlClient.BaseUrl = options.Endpoints ?? WechatWorkEndpoints.DEFAULT;
             ProxyFlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));

@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     public class CgibinGetApiDomainIpResponse : WechatWorkResponse
     {
         /// <summary>
-        /// 获取或设置企业微信服务器 IP 地址列表。
+        /// 获取或设置企业微信服务器 IP 段列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ip_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ip_list")]

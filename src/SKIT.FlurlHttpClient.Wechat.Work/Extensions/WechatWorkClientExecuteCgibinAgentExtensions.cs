@@ -14,6 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/agent/get 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90227 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90363 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -39,6 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/agent/list 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90227 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90363 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -79,6 +81,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinAgentSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/agent/set_scope 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90583 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinAgentSetScopeResponse> ExecuteCgibinAgentSetScopeAsync(this WechatWorkClient client, Models.CgibinAgentSetScopeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (!request.AgentId.HasValue)
+                request.AgentId = client.AgentId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "agent", "set_scope")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinAgentSetScopeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region Workbench
