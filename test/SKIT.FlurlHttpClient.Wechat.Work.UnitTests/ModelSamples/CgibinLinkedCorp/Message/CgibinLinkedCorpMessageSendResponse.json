@@ -1,0 +1,7 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "invaliduser": [ "userid1", "userid2", "CorpId1/userid1", "CorpId2/userid2" ],
+    "invalidparty": [ "partyid1", "partyid2", "LinkedId1/partyid1", "LinkedId2/partyid2" ],
+    "invalidtag": [ 3, 4 ]
+}

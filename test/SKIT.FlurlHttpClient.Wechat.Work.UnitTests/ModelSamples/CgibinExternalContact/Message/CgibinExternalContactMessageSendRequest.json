@@ -1,0 +1,57 @@
+﻿{
+    "to_external_user": [ "external_userid1", "external_userid2" ],
+    "to_parent_userid": [ "parent_userid1", "parent_userid2" ],
+    "to_student_userid": [ "student_userid1", "student_userid2" ],
+    "to_party": [ 3, 4 ],
+    "toall": 0,
+    "msgtype": "text",
+    "agentid": 1,
+    "text": {
+        "content": "你的快递已到，请携带工卡前往邮件中心领取。\n出发前可查看<a href=\"http://work.weixin.qq.com\">邮件中心视频实况</a>，聪明避开排队。"
+    },
+    "image": {
+        "media_id": "MEDIA_ID"
+    },
+    "voice": {
+        "media_id": "MEDIA_ID"
+    },
+    "video": {
+        "media_id": "MEDIA_ID",
+        "title": "Title",
+        "description": "Description"
+    },
+    "file": {
+        "media_id": "1Yv-zXfHjSjU-7LH-GwtYqDGS-zz6w22KmWAT5COgP7o"
+    },
+    "news": {
+        "articles": [
+            {
+                "title": "中秋节礼品领取",
+                "description": "今年中秋节公司有豪礼相送",
+                "url": "URL",
+                "picurl": "http://res.mail.qq.com/node/ww/wwopenmng/images/independent/doc/test_pic_msg1.png"
+            }
+        ]
+    },
+    "mpnews": {
+        "articles": [
+            {
+                "title": "Title",
+                "thumb_media_id": "MEDIA_ID",
+                "author": "Author",
+                "content_source_url": "URL",
+                "content": "Content",
+                "digest": "Digest description"
+            }
+        ]
+    },
+    "miniprogram": {
+        "appid": "APPID",
+        "title": "欢迎报名夏令营",
+        "thumb_media_id": "MEDIA_ID",
+        "pagepath": "PAGE_PATH"
+    },
+    "enable_id_trans": 0,
+    "enable_duplicate_check": 0,
+    "duplicate_check_interval": 1800
+}

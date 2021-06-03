@@ -1,0 +1,16 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "statistics": [
+        {
+            "agentid": 1000002,
+            "app_name": "应用1",
+            "count": 101
+        },
+        {
+            "agentid": 1000003,
+            "app_name": "应用2",
+            "count": 102
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "corpid": "wwddddccc7775555aaa",
+    "contact_sync": {
+        "access_token": "accesstoken000001",
+        "expires_in": 1800
+    },
+    "auth_user_info": {
+        "userid": "zhangshan"
+    },
+    "state": "TestState123",
+    "template_id": "tpltest"
+}

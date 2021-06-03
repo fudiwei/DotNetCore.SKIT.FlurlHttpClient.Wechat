@@ -1,0 +1,53 @@
+﻿{
+    "chatid": "CHATID",
+    "msgtype": "text",
+    "text": {
+        "content": "你的快递已到\n请携带工卡前往邮件中心领取"
+    },
+    "image": {
+        "media_id": "MEDIAID"
+    },
+    "voice": {
+        "media_id": "MEDIA_ID"
+    },
+    "video": {
+        "media_id": "MEDIA_ID",
+        "description": "Description",
+        "title": "Title"
+    },
+    "file": {
+        "media_id": "1Yv-zXfHjSjU-7LH-GwtYqDGS-zz6w22KmWAT5COgP7o"
+    },
+    "textcard": {
+        "title": "领奖通知",
+        "description": "<div class=\"gray\">2016年9月26日</div> <div class=\"normal\"> 恭喜你抽中iPhone 7一台，领奖码:520258</div><div class=\"highlight\">请于2016年10月10日前联系行 政同事领取</div>",
+        "url": "https://work.weixin.qq.com/",
+        "btntxt": "更多"
+    },
+    "news": {
+        "articles": [
+            {
+                "title": "中秋节礼品领取",
+                "description": "今年中秋节公司有豪礼相送",
+                "url": "https://work.weixin.qq.com/",
+                "picurl": "http://res.mail.qq.com/node/ww/wwopenmng/images/independent/doc/test_pic_msg1.png"
+            }
+        ]
+    },
+    "mpnews": {
+        "articles": [
+            {
+                "title": "地球一小时",
+                "thumb_media_id": "biz_get(image)",
+                "author": "Author",
+                "content_source_url": "https://work.weixin.qq.com",
+                "content": "3月24日20:30-21:30 \n办公区将关闭照明一小时，请各部门同事相互转告",
+                "digest": "3月24日20:30-21:30 \n办公区将关闭照明一小时"
+            }
+        ]
+    },
+    "markdown": {
+        "content": "您的会议室已经预定，稍后会同步到`邮箱`>**事项详情**>事　项：<font color=\"info\">开会</font>>组织者：@miglioguan>参与者：@miglioguan、@kunliu、@jamdeezhou、@kanexiong、@kisonwang>>会议室：<font color=\"info\">广州TIT 1楼 301</font>>日　期：<font color=\"warning\">2018年5月18日</font>>时　间：<font color=\"comment\">上午9:00-11:00</font>>>请准时参加会议。>>如需修改会议信息，请点击：[修改会议信息](https://work.weixin.qq.com)"
+    },
+    "safe": 0
+}

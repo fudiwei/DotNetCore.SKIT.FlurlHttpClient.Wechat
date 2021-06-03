@@ -1,0 +1,10 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "chat_info": {
+        "chatid": "CHATID",
+        "name": "NAME",
+        "owner": "userid2",
+        "userlist": [ "userid1", "userid2", "userid3" ]
+    }
+}

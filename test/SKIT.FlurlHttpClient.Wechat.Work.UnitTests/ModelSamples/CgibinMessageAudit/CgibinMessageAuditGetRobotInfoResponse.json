@@ -1,0 +1,9 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "robot_id": "wbxxxxxxxxxxxxxxxxxxxxxxxx",
+        "name": "机器人A",
+        "creator_userid": "zhangsan"
+    }
+}

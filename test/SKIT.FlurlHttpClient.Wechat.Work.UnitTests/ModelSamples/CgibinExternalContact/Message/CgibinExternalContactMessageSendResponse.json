@@ -1,0 +1,8 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "invalid_external_user": [ "external_userid1" ],
+    "invalid_parent_userid": [ "parent_userid1" ],
+    "invalid_student_userid": [ "student_userid1" ],
+    "invalid_party": [ 3, 4 ]
+}
