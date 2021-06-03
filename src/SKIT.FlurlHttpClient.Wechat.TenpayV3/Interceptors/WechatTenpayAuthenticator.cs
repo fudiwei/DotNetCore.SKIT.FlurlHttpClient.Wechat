@@ -33,10 +33,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
 
             if (flurlCall.HttpRequestMessage.Content is MultipartFormDataContent)
             {
-                // NOTICE: multipart/form-data 文件上传请求的待签名参数需特殊处理。
+                // NOTICE: multipart/form-data 文件上传请求的待签名参数需特殊处理
                 var httpContent = (MultipartFormDataContent)flurlCall.HttpRequestMessage.Content;
                 body = httpContent
-                    .Where(e => "meta".Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')))
+                    .Where(e => Constants.FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')))
                     .Select(e => e.ReadAsStringAsync().ConfigureAwait(false).GetAwaiter().GetResult())
                     .Single();
             }

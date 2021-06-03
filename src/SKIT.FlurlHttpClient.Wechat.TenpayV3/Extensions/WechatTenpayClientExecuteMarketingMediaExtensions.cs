@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             using var fileContent = new ByteArrayContent(request.FileBytes);
             using var metaContent = new ByteArrayContent(Encoding.UTF8.GetBytes(client.JsonSerializer.Serialize(request)));
             using var httpContent = new MultipartFormDataContent(boundary);
-            httpContent.Add(metaContent, "\"meta\"");                                                                  // NOTICE: meta 必须要加双引号
+            httpContent.Add(metaContent, "\"" + Constants.FormDataFields.FORMDATA_META + "\"");                        // NOTICE: meta 必须要加双引号
             httpContent.Add(fileContent, "\"file\"", "\"" + request.FileName + "\"");                                  // NOTICE: file 必须要加双引号
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary); // NOTICE: boundary 不能加引号
             metaContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
