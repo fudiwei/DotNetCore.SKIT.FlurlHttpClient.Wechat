@@ -5,7 +5,7 @@ using Newtonsoft.Json.Converters;
 
 namespace Newtonsoft.Json.Converters
 {
-    public class CommonWithoutSeparatorsDateTimeOffsetConverter : JsonConverter<DateTimeOffset>
+    internal class CommonWithoutSeparatorsDateTimeOffsetConverter : JsonConverter<DateTimeOffset>
     {
         private readonly JsonConverter<DateTimeOffset?> _converter = new CommonWithoutSeparatorsNullableDateTimeOffsetConverter();
 

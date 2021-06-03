@@ -22,18 +22,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             [System.Text.Json.Serialization.JsonPropertyName("nullable_datetime_rfc3339")]
             [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
             public DateTimeOffset? NullableDateTimeWithRFC3339 { get; set; }
-
-            [Newtonsoft.Json.JsonProperty("datetime_common_nosep")]
-            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.CommonWithoutSeparatorsDateTimeOffsetConverter))]
-            [System.Text.Json.Serialization.JsonPropertyName("datetime_common_nosep")]
-            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.CommonWithoutSeparatorsDateTimeOffsetConverter))]
-            public DateTimeOffset DateTimeWithFullNoSep { get; set; }
-
-            [Newtonsoft.Json.JsonProperty("nullable_datetime_common_nosep")]
-            [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.CommonWithoutSeparatorsNullableDateTimeOffsetConverter))]
-            [System.Text.Json.Serialization.JsonPropertyName("nullable_datetime_common_nosep")]
-            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.CommonWithoutSeparatorsNullableDateTimeOffsetConverter))]
-            public DateTimeOffset? NullableDateTimeWithFullNoSep { get; set; }
         }
         
         class JsonStringTypedStringListOrArrayTestEntity
@@ -61,7 +49,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         public void JsonDateTimeOffsetTest()
         {
             const string FORMAT_RFC3339 = "yyyy-MM-dd'T'HH:mm:sszzz";
-            const string FORMAT_FullNoSep = "yyyyMMddHHmmss";
 
             string datestr = "2018-06-08T10:34:56+08:00";
             var date = DateTimeOffset.Parse(datestr);
@@ -70,40 +57,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.Equal(datestr, date.ToString(FORMAT_RFC3339));
 
             raw.DateTimeWithRFC3339 = date;
-            raw.DateTimeWithFullNoSep = date;
             raw.NullableDateTimeWithRFC3339 = date;
-            raw.NullableDateTimeWithFullNoSep = date;
             var json = new FlurlNewtonsoftJsonSerializer().Serialize(raw);
             var entity = new FlurlNewtonsoftJsonSerializer().Deserialize<JsonDateTimeOffsetTestEntity>(json);
 
             Assert.Contains($"\"datetime_rfc3339\":\"{datestr}\"", json);
-            Assert.Contains($"\"datetime_common_nosep\":\"{date.ToString(FORMAT_FullNoSep)}\"", json);
             Assert.Contains($"\"nullable_datetime_rfc3339\":\"{datestr}\"", json);
-            Assert.Contains($"\"nullable_datetime_common_nosep\":\"{date.ToString(FORMAT_FullNoSep)}\"", json);
             Assert.Equal(raw.DateTimeWithRFC3339, entity.DateTimeWithRFC3339);
-            Assert.Equal(raw.DateTimeWithFullNoSep, entity.DateTimeWithFullNoSep);
             Assert.Equal(raw.NullableDateTimeWithRFC3339, entity.NullableDateTimeWithRFC3339);
-            Assert.Equal(raw.NullableDateTimeWithFullNoSep, entity.NullableDateTimeWithFullNoSep);
 
             raw.NullableDateTimeWithRFC3339 = null;
-            raw.NullableDateTimeWithFullNoSep = null;
             json = new FlurlNewtonsoftJsonSerializer().Serialize(raw);
             entity = new FlurlNewtonsoftJsonSerializer().Deserialize<JsonDateTimeOffsetTestEntity>(json);
 
             Assert.Equal(datestr, date.ToString(FORMAT_RFC3339));
             Assert.DoesNotContain($"\"nullable_datetime_rfc3339\"", json);
-            Assert.DoesNotContain($"\"nullable_datetime_common_nosep\"", json);
             Assert.Null(entity.NullableDateTimeWithRFC3339);
-            Assert.Null(entity.NullableDateTimeWithFullNoSep);
 
             json = new FlurlSystemTextJsonSerializer().Serialize(raw);
             entity = new FlurlSystemTextJsonSerializer().Deserialize<JsonDateTimeOffsetTestEntity>(json);
 
             Assert.Equal(datestr, date.ToString(FORMAT_RFC3339));
             Assert.DoesNotContain($"\"nullable_datetime_rfc3339\"", json);
-            Assert.DoesNotContain($"\"nullable_datetime_common_nosep\"", json);
             Assert.Null(entity.NullableDateTimeWithRFC3339);
-            Assert.Null(entity.NullableDateTimeWithFullNoSep);
         }
 
         [Fact(DisplayName = "字符串类型的字符串列表、数组 JSON 序列化 / 反序列化")]

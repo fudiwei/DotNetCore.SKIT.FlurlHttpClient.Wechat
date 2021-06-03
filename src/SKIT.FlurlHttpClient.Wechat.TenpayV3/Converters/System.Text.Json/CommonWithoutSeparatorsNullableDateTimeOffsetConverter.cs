@@ -5,7 +5,7 @@ using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    public class CommonWithoutSeparatorsNullableDateTimeOffsetConverter : JsonConverter<DateTimeOffset?>
+    internal class CommonWithoutSeparatorsNullableDateTimeOffsetConverter : JsonConverter<DateTimeOffset?>
     {
         private const string DATETIME_FORMAT = Newtonsoft.Json.Converters.CommonWithoutSeparatorsNullableDateTimeOffsetConverter.DATETIME_FORMAT;
 
