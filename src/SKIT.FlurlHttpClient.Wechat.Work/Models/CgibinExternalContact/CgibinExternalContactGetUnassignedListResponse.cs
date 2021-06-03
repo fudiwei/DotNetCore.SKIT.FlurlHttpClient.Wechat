@@ -43,11 +43,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public Types.DismissedUser[] DismissedUserList { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置是否是最后一条记录。
+        /// 获取或设置翻页是否结束。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_last")]
         [System.Text.Json.Serialization.JsonPropertyName("is_last")]
-        public bool IsLast { get; set; }
+        public bool IsEnding { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

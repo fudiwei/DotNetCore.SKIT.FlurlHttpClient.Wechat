@@ -235,7 +235,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("poi_seq")]
                 [System.Text.Json.Serialization.JsonPropertyName("poi_seq")]
-                public string? POISequenceNumber { get; set; }
+                public string? POISequence { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户下单付款时间戳。
