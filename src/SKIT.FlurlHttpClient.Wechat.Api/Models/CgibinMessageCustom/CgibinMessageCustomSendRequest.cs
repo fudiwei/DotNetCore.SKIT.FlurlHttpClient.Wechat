@@ -30,11 +30,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string MediaId { get; set; } = string.Empty;
             }
 
-            public class NewsMessage : ImageMessage
+            public class MpNewsMessage : ImageMessage
             {
             }
 
-            public class ArticlesMessage
+            public class NewsMessage
             {
                 public static class Types
                 {
@@ -297,14 +297,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mpnews")]
         [System.Text.Json.Serialization.JsonPropertyName("mpnews")]
-        public Types.NewsMessage? MessageContentForNews { get; set; }
+        public Types.MpNewsMessage? MessageContentForMpNews { get; set; }
 
         /// <summary>
         /// 获取或设置图文链接消息内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("news")]
         [System.Text.Json.Serialization.JsonPropertyName("news")]
-        public Types.ArticlesMessage? MessageContentForArticles { get; set; }
+        public Types.NewsMessage? MessageContentForNews { get; set; }
 
         /// <summary>
         /// 获取或设置图文链接消息内容。

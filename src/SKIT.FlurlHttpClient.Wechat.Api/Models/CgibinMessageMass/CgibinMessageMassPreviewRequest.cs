@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public bool? IsOnlyFansCanComment { get; set; }
             }
 
-            public class NewsMessage : ImageMessage
+            public class MpNewsMessage : ImageMessage
             {
             }
 
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mpnews")]
         [System.Text.Json.Serialization.JsonPropertyName("mpnews")]
-        public Types.NewsMessage? MessageContentForNews { get; set; }
+        public Types.MpNewsMessage? MessageContentForMpNews { get; set; }
 
         /// <summary>
         /// 获取或设置图片消息内容。

@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
             }
 
-            public class NewsMessage : CgibinMessageMassSendRequest.Types.NewsMessage
+            public class MpNewsMessage : CgibinMessageMassSendRequest.Types.MpNewsMessage
             {
             }
 
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mpnews")]
         [System.Text.Json.Serialization.JsonPropertyName("mpnews")]
-        public Types.NewsMessage? MessageContentForNews { get; set; }
+        public Types.MpNewsMessage? MessageContentForMpNews { get; set; }
 
         /// <summary>
         /// 获取或设置多张图片消息内容。
