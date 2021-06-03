@@ -1,0 +1,24 @@
+﻿{
+    "creator_userid": "zhangsan",
+    "title": "新建会议",
+    "meeting_start": 1600000000,
+    "meeting_duration": 3600,
+    "description": "新建会议描述",
+    "type": 1,
+    "remind_time": 60,
+    "agentid": 1000014,
+    "attendees": {
+        "userid": [
+            "lisi",
+            "wangwu"
+        ],
+        "external_userid": [
+            "woabc",
+            "woced"
+        ],
+        "device_sn": [
+            "devsn1",
+            "devsn2"
+        ]
+    }
+}

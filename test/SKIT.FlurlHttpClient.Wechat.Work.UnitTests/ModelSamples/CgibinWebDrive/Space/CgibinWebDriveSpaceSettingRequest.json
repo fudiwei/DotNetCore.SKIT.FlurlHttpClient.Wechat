@@ -1,0 +1,9 @@
+﻿{
+    "userid": "USERID",
+    "spaceid": "SPACEID",
+    "enable_watermark": true,
+    "add_member_only_admin": true,
+    "enable_share_url": false,
+    "share_url_no_approve": true,
+    "share_url_no_approve_default_auth": 4
+}

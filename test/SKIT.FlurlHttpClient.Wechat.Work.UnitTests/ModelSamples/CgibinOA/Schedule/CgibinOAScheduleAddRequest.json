@@ -1,0 +1,29 @@
+﻿{
+    "schedule": {
+        "organizer": "userid1",
+        "start_time": 1571274600,
+        "end_time": 1571320210,
+        "attendees": [
+            {
+                "userid": "userid2"
+            }
+        ],
+        "summary": "需求评审会议",
+        "description": "2.0版本需求初步评审",
+        "reminders": {
+            "is_remind": 1,
+            "remind_before_event_secs": 3600,
+            "is_repeat": 1,
+            "repeat_type": 7,
+            "repeat_until": 1606976813,
+            "is_custom_repeat": 1,
+            "repeat_interval": 1,
+            "repeat_day_of_week": [ 3, 7 ],
+            "repeat_day_of_month": [ 10, 21 ],
+            "timezone": 8
+        },
+        "location": "广州国际媒体港10楼1005会议室",
+        "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA"
+    },
+    "agentid": 1000014
+}

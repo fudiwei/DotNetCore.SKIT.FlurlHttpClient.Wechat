@@ -1,0 +1,9 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "next_cursor": "1223",
+    "meetingid_list": [
+        "meetingid1",
+        "meetingid2"
+    ]
+}

@@ -1,0 +1,23 @@
+﻿{
+    "meetingid": "XXXXXXXXX",
+    "title": "新需求",
+    "meeting_start": 1600000000,
+    "meeting_duration": 10000,
+    "description": "test",
+    "type": 1,
+    "remind_time": 60,
+    "attendees": {
+        "userid": [
+            "lisi",
+            "wangwu"
+        ],
+        "external_userid": [
+            "woabc",
+            "woced"
+        ],
+        "device_sn": [
+            "devsn1",
+            "devsn2"
+        ]
+    }
+}

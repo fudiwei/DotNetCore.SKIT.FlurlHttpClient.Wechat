@@ -1,0 +1,20 @@
+﻿{
+    "calendar": {
+        "organizer": "userid1",
+        "readonly": 1,
+        "set_as_default": 1,
+        "summary": "test_summary",
+        "color": "#FF3030",
+        "description": "test_describe",
+        "shares": [
+            {
+                "userid": "userid2"
+            },
+            {
+                "userid": "userid3",
+                "readonly": 1
+            }
+        ]
+    },
+    "agentid": 1000014
+}

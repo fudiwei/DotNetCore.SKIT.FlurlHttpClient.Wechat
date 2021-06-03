@@ -1,0 +1,18 @@
+﻿{
+    "calendar": {
+        "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
+        "readonly": 1,
+        "summary": "test_summary",
+        "color": "#FF3030",
+        "description": "test_describe_1",
+        "shares": [
+            {
+                "userid": "userid1"
+            },
+            {
+                "userid": "userid2",
+                "readonly": 1
+            }
+        ]
+    }
+}

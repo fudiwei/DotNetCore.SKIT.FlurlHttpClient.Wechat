@@ -1,0 +1,230 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "group": [
+        {
+            "grouptype": 1,
+            "groupid": 69,
+            "checkindate": [
+                {
+                    "workdays": [
+                        1,
+                        2,
+                        3,
+                        4,
+                        5
+                    ],
+                    "checkintime": [
+                        {
+                            "work_sec": 36000,
+                            "off_work_sec": 43200,
+                            "remind_work_sec": 35400,
+                            "remind_off_work_sec": 43200
+                        },
+                        {
+                            "work_sec": 50400,
+                            "off_work_sec": 72000,
+                            "remind_work_sec": 49800,
+                            "remind_off_work_sec": 72000
+                        }
+                    ],
+                    "noneed_offwork": true,
+                    "limit_aheadtime": 10800000,
+                    "flex_on_duty_time": 0,
+                    "flex_off_duty_time": 0
+                }
+            ],
+            "spe_workdays": [
+                {
+                    "timestamp": 1512144000,
+                    "notes": "必须打卡的日期",
+                    "checkintime": [
+                        {
+                            "work_sec": 32400,
+                            "off_work_sec": 61200,
+                            "remind_work_sec": 31800,
+                            "remind_off_work_sec": 61200
+                        }
+                    ]
+                }
+            ],
+            "spe_offdays": [
+                {
+                    "timestamp": 1512057600,
+                    "notes": "不需要打卡的日期",
+                    "checkintime": []
+                }
+            ],
+            "sync_holidays": true,
+            "groupname": "打卡规则1",
+            "need_photo": true,
+            "wifimac_infos": [
+                {
+                    "wifiname": "Tencent-WiFi-1",
+                    "wifimac": "c0:7b:bc:37:f8:d3"
+                },
+                {
+                    "wifiname": "Tencent-WiFi-2",
+                    "wifimac": "70:10:5c:7d:f6:d5"
+                }
+            ],
+            "note_can_use_local_pic": false,
+            "allow_checkin_offworkday": true,
+            "allow_apply_offworkday": true,
+            "loc_infos": [
+                {
+                    "lat": 30547030,
+                    "lng": 104062890,
+                    "loc_title": "腾讯成都大厦",
+                    "loc_detail": "四川省成都市武侯区高新南区天府三街",
+                    "distance": 300
+                },
+                {
+                    "lat": 23097490,
+                    "lng": 113323750,
+                    "loc_title": "T.I.T创意园",
+                    "loc_detail": "广东省广州市海珠区新港中路397号",
+                    "distance": 300
+                }
+            ],
+            "range": {
+                "partyid": [],
+                "userid": [ "icef", "LiJingZhong" ],
+                "tagid": [ 2 ]
+            },
+            "create_time": 1606204343,
+            "white_users": [ "canno" ],
+            "type": 0,
+            "reporterinfo": {
+                "reporters": [
+                    {
+                        "userid": "brant"
+                    }
+                ],
+                "updatetime": 1606305508
+            },
+            "ot_info": {
+                "type": 2,
+                "allow_ot_workingday": true,
+                "allow_ot_nonworkingday": false,
+                "otcheckinfo": {
+                    "ot_workingday_time_start": 1800,
+                    "ot_workingday_time_min": 1800,
+                    "ot_workingday_time_max": 14400,
+                    "ot_nonworkingday_time_min": 1800,
+                    "ot_nonworkingday_time_max": 14400,
+                    "ot_workingday_restinfo": {
+                        "type": 2,
+                        "fix_time_rule": {
+                            "fix_time_begin_sec": 43200,
+                            "fix_time_end_sec": 46800
+                        },
+                        "cal_ottime_rule": {
+                            "items": [
+                                {
+                                    "ot_time": 18000,
+                                    "rest_time": 3600
+                                }
+                            ]
+                        }
+                    },
+                    "ot_nonworkingday_restinfo": {
+                        "type": 2,
+                        "fix_time_rule": {
+                            "fix_time_begin_sec": 43200,
+                            "fix_time_end_sec": 46800
+                        },
+                        "cal_ottime_rule": {
+                            "items": [
+                                {
+                                    "ot_time": 18000,
+                                    "rest_time": 3600
+                                }
+                            ]
+                        }
+                    },
+                    "ot_nonworkingday_spanday_time": 0
+                },
+                "uptime": 1606275664,
+                "otapplyinfo": {
+                    "allow_ot_workingday": true,
+                    "allow_ot_nonworkingday": true,
+                    "uptime": 1606275664,
+                    "ot_workingday_restinfo": {
+                        "type": 2,
+                        "fix_time_rule": {
+                            "fix_time_begin_sec": 43200,
+                            "fix_time_end_sec": 46800
+                        },
+                        "cal_ottime_rule": {
+                            "items": [
+                                {
+                                    "ot_time": 18000,
+                                    "rest_time": 3600
+                                }
+                            ]
+                        }
+                    },
+                    "ot_nonworkingday_restinfo": {
+                        "type": 2,
+                        "fix_time_rule": {
+                            "fix_time_begin_sec": 43200,
+                            "fix_time_end_sec": 46800
+                        },
+                        "cal_ottime_rule": {
+                            "items": [
+                                {
+                                    "ot_time": 18000,
+                                    "rest_time": 3600
+                                }
+                            ]
+                        }
+                    },
+                    "ot_nonworkingday_spanday_time": 0
+                }
+            },
+            "allow_apply_bk_cnt": -1,
+            "option_out_range": 0,
+            "create_userid": "gaogao",
+            "use_face_detect": false,
+            "allow_apply_bk_day_limit": -1,
+            "update_userid": "sandy",
+            "schedulelist": [
+                {
+                    "schedule_id": 221,
+                    "schedule_name": "2",
+                    "time_section": [
+                        {
+                            "time_id": 1,
+                            "work_sec": 32400,
+                            "off_work_sec": 61200,
+                            "remind_work_sec": 31800,
+                            "remind_off_work_sec": 61200,
+                            "rest_begin_time": 43200,
+                            "rest_end_time": 46800,
+                            "allow_rest": false
+                        }
+                    ],
+                    "limit_aheadtime": 14400000,
+                    "noneed_offwork": false,
+                    "limit_offtime": 14400,
+                    "flex_on_duty_time": 0,
+                    "flex_off_duty_time": 0,
+                    "allow_flex": false,
+                    "late_rule": {
+                        "allow_offwork_after_time": false,
+                        "timerules": [
+                            {
+                                "offwork_after_time": 3600,
+                                "onwork_flex_time": 3600
+                            }
+                        ]
+                    },
+                    "max_allow_arrive_early": 0,
+                    "max_allow_arrive_late": 0
+                }
+            ],
+            "offwork_interval_time": 300
+        }
+    ]
+}

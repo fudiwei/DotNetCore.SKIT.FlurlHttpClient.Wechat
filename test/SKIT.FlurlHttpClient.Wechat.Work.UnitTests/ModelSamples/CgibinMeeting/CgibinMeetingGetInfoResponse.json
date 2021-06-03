@@ -1,0 +1,47 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "creator_userid": "zhangsan",
+    "title": "title",
+    "reserve_meeting_start": 1600000000,
+    "reserve_meeting_duration": 1600003600,
+    "meeting_start": 1600000007,
+    "meeting_duration": 1800,
+    "description": "test meeting description",
+    "main_department": 1,
+    "type": 1,
+    "status": 1,
+    "remind_time": 60,
+    "attendees": {
+        "member": [
+            {
+                "userid": "lisi",
+                "status": 1
+            },
+            {
+                "userid": "zhangsan",
+                "status": 2
+            }
+        ],
+        "external_user": [
+            {
+                "external_userid": "woabc",
+                "status": 3
+            },
+            {
+                "external_userid": "woefd",
+                "status": 4
+            }
+        ],
+        "device": [
+            {
+                "device_sn": "devicesn1",
+                "status": 5
+            },
+            {
+                "device_sn": "devicesn1",
+                "status": 5
+            }
+        ]
+    }
+}

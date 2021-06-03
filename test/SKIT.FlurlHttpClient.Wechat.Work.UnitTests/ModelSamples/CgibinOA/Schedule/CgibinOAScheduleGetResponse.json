@@ -1,0 +1,43 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "schedule_list": [
+        {
+            "schedule_id": "17c7d2bd9f20d652840f72f59e796AAA",
+            "organizer": "userid1",
+            "attendees": [
+                {
+                    "userid": "userid2",
+                    "response_status": 1
+                }
+            ],
+            "summary": "test_summary",
+            "description": "test_content",
+            "reminders": {
+                "is_remind": 1,
+                "is_repeat": 1,
+                "remind_before_event_secs": 3600,
+                "remind_time_diffs": [
+                    -3600
+                ],
+                "repeat_type": 7,
+                "repeat_until": 1606976813,
+                "is_custom_repeat": 1,
+                "repeat_interval": 1,
+                "repeat_day_of_week": [ 3, 7 ],
+                "repeat_day_of_month": [ 10, 21 ],
+                "timezone": 8,
+                "exclude_time_list": [
+                    {
+                        "start_time": 1571361000
+                    }
+                ]
+            },
+            "location": "test_place",
+            "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
+            "start_time": 1571274600,
+            "end_time": 1571579410,
+            "status": 1
+        }
+    ]
+}
