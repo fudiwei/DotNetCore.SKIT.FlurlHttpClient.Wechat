@@ -1,0 +1,238 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "info": {
+        "sp_no": "201909270002",
+        "sp_name": "全字段",
+        "sp_status": 1,
+        "template_id": "Bs5KJ2NT4ncf4ZygaE8MB3779yUW8nsMaJd3mmE9v",
+        "apply_time": 1569584428,
+        "applyer": {
+            "userid": "WuJunJie",
+            "partyid": "2"
+        },
+        "sp_record": [
+            {
+                "sp_status": 1,
+                "approverattr": 1,
+                "details": [
+                    {
+                        "approver": {
+                            "userid": "WuJunJie"
+                        },
+                        "speech": "",
+                        "sp_status": 1,
+                        "sptime": 0,
+                        "media_id": []
+                    },
+                    {
+                        "approver": {
+                            "userid": "WangXiaoMing"
+                        },
+                        "speech": "",
+                        "sp_status": 1,
+                        "sptime": 0,
+                        "media_id": []
+                    }
+                ]
+            }
+        ],
+        "notifyer": [
+            {
+                "userid": "LiuXiaoGang"
+            }
+        ],
+        "apply_data": {
+            "contents": [
+                {
+                    "control": "Text",
+                    "id": "Text-15111111111",
+                    "title": [
+                        {
+                            "text": "文本控件",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "value": {
+                        "text": "文本填写的内容",
+                        "new_number": "700",
+                        "new_money": "700",
+                        "date": {
+                            "type": "day",
+                            "s_timestamp": "1569859200"
+                        },
+                        "selector": {
+                            "type": "multi",
+                            "options": [
+                                {
+                                    "key": "option-15111111111",
+                                    "value": [
+                                        {
+                                            "text": "选项1",
+                                            "lang": "zh_CN"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "key": "option-15222222222",
+                                    "value": [
+                                        {
+                                            "text": "选项2",
+                                            "lang": "zh_CN"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        "members": [
+                            {
+                                "userid": "WuJunJie",
+                                "name": "Jackie"
+                            },
+                            {
+                                "userid": "WangXiaoMing",
+                                "name": "Tom"
+                            }
+                        ],
+                        "departments": [
+                            {
+                                "openapi_id": "2",
+                                "name": "销售部"
+                            },
+                            {
+                                "openapi_id": "3",
+                                "name": "生产部"
+                            }
+                        ],
+                        "files": [
+                            {
+                                "file_id": "WWCISP_v2z8qZENw2qwSiNroVKykbxxMXvmI1lELzG-fo25Y9n1duozezKEu6zSIvOHPCd9_8s934AJncRz5f9G4E_nCQonUHLdiAnCLjfZQQwVaiG7krKzyGB1MpYa9ZVkk0gQ7P8HvO_SOdwzLwpyUZ3Tm2ApyoO_78nTM-iEkf_TILqXuYxKd7ByYL34wMA9Czf6Iy151tHbcYNvbNZZHTnL4UMQdohJ_MPYA2Wz00IebZb3_UuIk5MdJSH_IKlZn9Ms5"
+                            },
+                            {
+                                "file_id": "WWCISP_gZ3BMg5hwI1Adi16NwzJgpi9zp6QQjMdYcuemVWBeHnmMK3QJOYiIIkHvRIh0ysZcAo6gJp069o5tx7qxVzin1Q9LKswff624E1qCCmt088ISBVPScoqEiG4YTI_Kltrqn7b0wvMTudd9lIE3ywgHatPRWKxsHNsSxEY_FuaFWlGHzxcYKNq_LIfVBXZGji-C5bXp23MwpTcCXYfWPfSEpEeXW5c5sQscY_MeW5uc0gITpeFKFXARXmKC62_u7Ln"
+                            }
+                        ],
+                        "children": [
+                            {
+                                "list": [
+                                    {
+                                        "control": "Text",
+                                        "id": "Text-15111111111",
+                                        "title": [
+                                            {
+                                                "text": "明细内文本控件",
+                                                "lang": "zh_CN"
+                                            }
+                                        ],
+                                        "value": {
+                                            "text": "明细文本"
+                                        }
+                                    }
+                                ]
+                            }
+                        ],
+                        "vacation": {
+                            "selector": {
+                                "type": "single",
+                                "options": [
+                                    {
+                                        "key": "3",
+                                        "value": [
+                                            {
+                                                "text": "病假",
+                                                "lang": "zh_CN"
+                                            }
+                                        ]
+                                    }
+                                ]
+                            },
+                            "attendance": {
+                                "date_range": {
+                                    "type": "hour",
+                                    "new_begin": 1568077200,
+                                    "new_end": 1568368800,
+                                    "new_duration": 291600
+                                },
+                                "type": 1
+                            }
+                        },
+                        "attendance": {
+                            "date_range": {
+                                "type": "halfday",
+                                "new_begin": 1599494400,
+                                "new_end": 1599667199,
+                                "new_duration": 172800
+                            },
+                            "type": 4,
+                            "slice_info": {
+                                "day_items": [
+                                    {
+                                        "daytime": 1599494400,
+                                        "duration": 86400
+                                    },
+                                    {
+                                        "daytime": 1599580800,
+                                        "duration": 86400
+                                    }
+                                ],
+                                "duration": 172800,
+                                "state": 1
+                            }
+                        },
+                        "punch_correction": {
+                            "state": "迟到",
+                            "time": 1570550400
+                        },
+                        "date_range": {
+                            "type": "halfday",
+                            "new_begin": 1570550400,
+                            "new_end": 1570593600,
+                            "new_duration": 86400
+                        },
+                        "location": {
+                            "latitude": "30.547239",
+                            "longitude": "104.063291",
+                            "title": "腾讯科技(成都)有限公司(腾讯成都大厦)",
+                            "address": "四川省成都市武侯区天府三街198号腾讯成都大厦A座",
+                            "time": 1605690460
+                        },
+                        "related_approval": [
+                            {
+                                "template_names": [
+                                    {
+                                        "text": "模板A",
+                                        "lang": "zh_CN"
+                                    },
+                                    {
+                                        "text": "",
+                                        "lang": "en"
+                                    }
+                                ],
+                                "sp_status": 1,
+                                "name": "小明",
+                                "create_time": 1605690437,
+                                "sp_no": "202011180001"
+                            }
+                        ],
+                        "formula": {
+                            "value": "5.0"
+                        }
+                    }
+                }
+            ]
+        },
+        "comments": [
+            {
+                "commentUserInfo": {
+                    "userid": "WuJunJie"
+                },
+                "commenttime": 1569584111,
+                "commentcontent": "这是备注信息",
+                "commentid": "6741314136717778040",
+                "media_id": [
+                    "WWCISP_Xa1dXIyC9VC2vGTXyBjUXh4GQ31G-a7jilEjFjkYBfncSJv0kM1cZAIXULWbbtosVqA7hprZIUkl4GP0DYZKDrIay9vCzeQelmmHiczwfn80v51EtuNouzBhUBTWo9oQIIzsSftjaVmd4EC_dj5-rayfDl6yIIRdoUs1V_Gz6Pi3yH37ELOgLNAPYUSJpA6V190Xunl7b0s5K5XC9c7eX5vlJek38rB_a2K-kMFMiM1mHDqnltoPa_NT9QynXuHi"
+                ]
+            }
+        ]
+    }
+}

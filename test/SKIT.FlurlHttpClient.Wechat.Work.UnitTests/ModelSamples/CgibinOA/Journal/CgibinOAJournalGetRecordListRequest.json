@@ -1,0 +1,20 @@
+﻿{
+    "starttime": 1606230000,
+    "endtime": 1606361304,
+    "cursor": 0,
+    "limit": 10,
+    "filters": [
+        {
+            "key": "creator",
+            "value": "kele"
+        },
+        {
+            "key": "department",
+            "value": "1"
+        },
+        {
+            "key": "template_id",
+            "value": "3TmALk1ogfgKiQE3e3jRwnTUhMTh8vca1N8zUVNUx"
+        }
+    ]
+}

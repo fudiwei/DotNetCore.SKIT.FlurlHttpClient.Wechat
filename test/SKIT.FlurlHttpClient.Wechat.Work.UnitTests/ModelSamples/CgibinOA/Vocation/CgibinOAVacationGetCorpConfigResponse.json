@@ -1,0 +1,42 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "lists": [
+        {
+            "id": 1,
+            "name": "年假",
+            "time_attr": 0,
+            "duration_type": 0,
+            "quota_attr": {
+                "type": 2,
+                "autoreset_time": 0,
+                "autoreset_duration": 0
+            },
+            "perday_duration": 86400
+        },
+        {
+            "id": 2,
+            "name": "事假",
+            "time_attr": 0,
+            "duration_type": 0,
+            "quota_attr": {
+                "type": 2,
+                "autoreset_time": 0,
+                "autoreset_duration": 0
+            },
+            "perday_duration": 86400
+        },
+        {
+            "id": 3,
+            "name": "病假",
+            "time_attr": 0,
+            "duration_type": 0,
+            "quota_attr": {
+                "type": 2,
+                "autoreset_time": 0,
+                "autoreset_duration": 0
+            },
+            "perday_duration": 86400
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "lists": [
+        {
+            "id": 1,
+            "assignduration": 0,
+            "usedduration": 0,
+            "leftduration": 604800,
+            "vacationname": "年假"
+        },
+        {
+            "id": 2,
+            "assignduration": 0,
+            "usedduration": 0,
+            "leftduration": 1296000,
+            "vacationname": "事假"
+        },
+        {
+            "id": 3,
+            "assignduration": 0,
+            "usedduration": 0,
+            "leftduration": 0,
+            "vacationname": "病假"
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "template_names": [
+        {
+            "text": "全字段",
+            "lang": "zh_CN"
+        }
+    ],
+    "template_content": {
+        "controls": [
+            {
+                "property": {
+                    "control": "Selector",
+                    "id": "Selector-15111111111",
+                    "title": [
+                        {
+                            "text": "单选控件",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "这是单选控件的说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 0
+                },
+                "config": {
+                    "date": {
+                        "type": "day"
+                    },
+                    "selector": {
+                        "type": "single",
+                        "options": [
+                            {
+                                "key": "option-15111111111",
+                                "value": [
+                                    {
+                                        "text": "选项1",
+                                        "lang": "zh_CN"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "option-15222222222",
+                                "value": [
+                                    {
+                                        "text": "选项2",
+                                        "lang": "zh_CN"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "contact": {
+                        "type": "multi",
+                        "mode": "department"
+                    },
+                    "table": {
+                        "children": [
+                            {
+                                "property": {
+                                    "control": "Text",
+                                    "id": "Text-15111111111",
+                                    "title": [
+                                        {
+                                            "text": "明细内文本控件",
+                                            "lang": "zh_CN"
+                                        }
+                                    ],
+                                    "placeholder": [
+                                        {
+                                            "text": "这是明细内文本控件的说明",
+                                            "lang": "zh_CN"
+                                        }
+                                    ],
+                                    "require": 0,
+                                    "un_print": 0
+                                }
+                            }
+                        ]
+                    },
+                    "attendance": {
+                        "date_range": {
+                            "type": "hour"
+                        },
+                        "type": 3
+                    },
+                    "vacation_list": {
+                        "item": [
+                            {
+                                "id": 1,
+                                "name": [
+                                    {
+                                        "text": "年假",
+                                        "lang": "zh_CN"
+                                    }
+                                ]
+                            },
+                            {
+                                "id": 2,
+                                "name": [
+                                    {
+                                        "text": "事假",
+                                        "lang": "zh_CN"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}
