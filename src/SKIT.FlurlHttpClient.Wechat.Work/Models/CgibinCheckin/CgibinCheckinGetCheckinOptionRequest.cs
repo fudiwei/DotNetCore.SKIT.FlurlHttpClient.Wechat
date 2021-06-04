@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置指定成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("useridlist")]
-        [System.Text.Json.Serialization.JsonPropertyName("dateuseridlisttime")]
+        [System.Text.Json.Serialization.JsonPropertyName("useridlist")]
         public IList<string> UserIdList { get; set; } = new List<string>();
     }
 }

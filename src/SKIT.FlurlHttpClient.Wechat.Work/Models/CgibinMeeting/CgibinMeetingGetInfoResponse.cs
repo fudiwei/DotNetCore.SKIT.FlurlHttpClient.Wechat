@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置会议预约开始时间戳。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("reserve_meeting_start")]
-        [System.Text.Json.Serialization.JsonPropertyName("meetingreserve_meeting_start_start")]
+        [System.Text.Json.Serialization.JsonPropertyName("reserve_meeting_start")]
         public long ReserveStartTimestamp { get; set; }
 
         /// <summary>

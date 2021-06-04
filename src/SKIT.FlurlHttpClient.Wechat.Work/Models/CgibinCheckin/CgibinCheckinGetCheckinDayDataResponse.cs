@@ -176,31 +176,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                         public static class Types
                         {
-                            public class ApprovalDataList
+                            public class MultiLangText : CgibinOAGetTemplateDetailResponse.Types.MultiLangText
+                            {
+                            }
+
+                            public class ApprovalData
                             {
                                 /// <summary>
                                 /// 获取或设置数据列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("data")]
                                 [System.Text.Json.Serialization.JsonPropertyName("data")]
-                                public ApprovalDataItem[] Items { get; set; } = default!;
-                            }
-
-                            public class ApprovalDataItem
-                            {
-                                /// <summary>
-                                /// 获取或设置语言类型。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("lang")]
-                                [System.Text.Json.Serialization.JsonPropertyName("lang")]
-                                public string Language { get; set; } = default!;
-
-                                /// <summary>
-                                /// 获取或设置文本信息。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("text")]
-                                [System.Text.Json.Serialization.JsonPropertyName("text")]
-                                public string Text { get; set; } = default!;
+                                public MultiLangText[] Data { get; set; } = default!;
                             }
                         }
 
@@ -216,14 +203,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sp_title")]
                         [System.Text.Json.Serialization.JsonPropertyName("sp_title")]
-                        public Types.ApprovalDataList ApprovalTitleDataList { get; set; } = default!;
+                        public Types.ApprovalData ApprovalTitleData { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置假勤摘要描述数据列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sp_description")]
                         [System.Text.Json.Serialization.JsonPropertyName("sp_description")]
-                        public Types.ApprovalDataList ApprovalDescriptionDataList { get; set; } = default!;
+                        public Types.ApprovalData ApprovalDescriptionData { get; set; } = default!;
                     }
 
                     public class Vacation
@@ -243,7 +230,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public int Type { get; set; }
 
                         /// <summary>
-                        /// 获取或设置请假类型。
+                        /// 获取或设置假期类型标识。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("vacation_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("vacation_id")]
