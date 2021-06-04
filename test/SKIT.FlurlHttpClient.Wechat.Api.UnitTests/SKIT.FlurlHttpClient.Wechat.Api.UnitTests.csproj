@@ -33,6 +33,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\SKIT.FlurlHttpClient.Wechat.Api\SKIT.FlurlHttpClient.Wechat.Api.csproj" />
+        <ProjectReference Include="..\SKIT.FlurlHttpClient.Wechat.TestTools\SKIT.FlurlHttpClient.Wechat.TestTools.csproj" />
     </ItemGroup>
 
 </Project>

@@ -30,6 +30,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\SKIT.FlurlHttpClient.Wechat.TenpayV3\SKIT.FlurlHttpClient.Wechat.TenpayV3.csproj" />
+        <ProjectReference Include="..\SKIT.FlurlHttpClient.Wechat.TestTools\SKIT.FlurlHttpClient.Wechat.TestTools.csproj" />
     </ItemGroup>
 
 </Project>

@@ -7,7 +7,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayConverterTests
+    public class WechatConverterTests
     {
         class JsonDateTimeOffsetTestEntity
         {

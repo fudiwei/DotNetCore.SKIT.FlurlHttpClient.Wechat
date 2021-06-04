@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <LangVersion>8.0</LangVersion>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\SKIT.FlurlHttpClient.Wechat\SKIT.FlurlHttpClient.Wechat.csproj" />
+    </ItemGroup>
+
+</Project>

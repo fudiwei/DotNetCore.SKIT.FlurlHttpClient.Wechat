@@ -27,6 +27,7 @@
 
     <ItemGroup>
         <ProjectReference Include="..\..\src\SKIT.FlurlHttpClient.Wechat.Work\SKIT.FlurlHttpClient.Wechat.Work.csproj" />
+        <ProjectReference Include="..\SKIT.FlurlHttpClient.Wechat.TestTools\SKIT.FlurlHttpClient.Wechat.TestTools.csproj" />
     </ItemGroup>
 
 </Project>
