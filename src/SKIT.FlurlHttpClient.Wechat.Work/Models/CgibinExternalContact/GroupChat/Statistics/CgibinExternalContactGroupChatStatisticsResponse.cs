@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/groupchat/statistic 接口的响应。</para>
     /// </summary>
-    public class CgibinExternalContactGroupChatStatisticResponse : WechatWorkResponse
+    public class CgibinExternalContactGroupChatStatisticsResponse : WechatWorkResponse
     {
         public static class Types
         {
@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Statistic
+                    public class Statistics
                     {
                         /// <summary>
                         /// 获取或设置新增客户群数量。
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("data")]
                 [System.Text.Json.Serialization.JsonPropertyName("data")]
-                public Types.Statistic Statistic { get; set; } = default!;
+                public Types.Statistics Statistics { get; set; } = default!;
             }
         }
 

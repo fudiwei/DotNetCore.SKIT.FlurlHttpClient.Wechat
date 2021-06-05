@@ -6,11 +6,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/groupchat/statistic_group_by_day 接口的请求。</para>
     /// </summary>
-    public class CgibinExternalContactGroupChatStatisticGroupByDayRequest : WechatWorkRequest
+    public class CgibinExternalContactGroupChatStatisticsGroupByDayRequest : WechatWorkRequest
     {
         public static class Types
         {
-            public class OwnerFilter : CgibinExternalContactGroupChatStatisticRequest.Types.OwnerFilter
+            public class OwnerFilter : CgibinExternalContactGroupChatStatisticsRequest.Types.OwnerFilter
             {
             }
         }

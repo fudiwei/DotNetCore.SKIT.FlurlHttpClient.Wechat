@@ -593,8 +593,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.DepartmentId.HasValue)
-                flurlReq.SetQueryParam("id", request.DepartmentId);
+            if (request.ParentDepartmentId.HasValue)
+                flurlReq.SetQueryParam("id", request.ParentDepartmentId);
 
             return await client.SendRequestAsync<Models.CgibinSchoolDepartmentListResponse>(flurlReq, cancellationToken: cancellationToken);
         }

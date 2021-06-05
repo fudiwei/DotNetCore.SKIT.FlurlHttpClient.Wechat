@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/groupchat/statistic_group_by_day 接口的响应。</para>
     /// </summary>
-    public class CgibinExternalContactGroupChatStatisticGroupByDayResponse : WechatWorkResponse
+    public class CgibinExternalContactGroupChatStatisticsGroupByDayResponse : WechatWorkResponse
     {
         public static class Types
         {
@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Statistic : CgibinExternalContactGroupChatStatisticResponse.Types.Data.Types.Statistic
+                    public class Statistics : CgibinExternalContactGroupChatStatisticsResponse.Types.Data.Types.Statistics
                     {
                     }
                 }
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("data")]
                 [System.Text.Json.Serialization.JsonPropertyName("data")]
-                public Types.Statistic Statistic { get; set; } = default!;
+                public Types.Statistics Statistics { get; set; } = default!;
             }
         }
 

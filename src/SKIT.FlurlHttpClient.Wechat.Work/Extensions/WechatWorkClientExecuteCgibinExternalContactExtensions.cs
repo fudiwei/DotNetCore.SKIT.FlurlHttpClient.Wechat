@@ -617,7 +617,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
-        #region GroupChatStatistic
+        #region GroupChatStatistics
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/groupchat/statistic 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92133 </para>
@@ -627,7 +627,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGroupChatStatisticResponse> ExecuteCgibinExternalContactGroupChatStatisticAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatStatisticRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGroupChatStatisticsResponse> ExecuteCgibinExternalContactGroupChatStatisticsAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatStatisticsRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -637,7 +637,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatStatisticResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatStatisticsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -649,7 +649,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGroupChatStatisticGroupByDayResponse> ExecuteCgibinExternalContactGroupChatStatisticGroupByDayAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatStatisticGroupByDayRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGroupChatStatisticsGroupByDayResponse> ExecuteCgibinExternalContactGroupChatStatisticsGroupByDayAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatStatisticsGroupByDayRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -659,7 +659,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatStatisticGroupByDayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatStatisticsGroupByDayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
         #endregion
