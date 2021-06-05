@@ -266,6 +266,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/user/get_active_stat 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92714 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinUserGetActiveStatResponse> ExecuteCgibinUserGetActiveStatAsync(this WechatWorkClient client, Models.CgibinUserGetActiveStatRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "user", "get_active_stat")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserGetActiveStatResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        #region Auth
+        /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/user/authsucc 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90203 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90339 </para>
@@ -289,24 +311,53 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/user/get_active_stat 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92714 </para>
+        /// <para>异步调用 [GET] /cgi-bin/user/list_member_auth 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94513 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinUserGetActiveStatResponse> ExecuteCgibinUserGetActiveStatAsync(this WechatWorkClient client, Models.CgibinUserGetActiveStatRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinUserListMemberAuthResponse> ExecuteCgibinUserListMemberAuthAsync(this WechatWorkClient client, Models.CgibinUserListMemberAuthRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "user", "get_active_stat")
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "user", "list_member_auth")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserGetActiveStatResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            if (!string.IsNullOrEmpty(request.NextCursor))
+                flurlReq.SetQueryParam("cursor", request.NextCursor);
+
+            if (request.Limit.HasValue)
+                flurlReq.SetQueryParam("limit", request.Limit);
+
+            return await client.SendRequestAsync<Models.CgibinUserListMemberAuthResponse>(flurlReq, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/user/check_member_auth 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94514 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinUserCheckMemberAuthResponse> ExecuteCgibinUserCheckMemberAuthAsync(this WechatWorkClient client, Models.CgibinUserCheckMemberAuthRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "user", "check_member_auth")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("open_userid", request.OpenUserId);
+
+            return await client.SendRequestAsync<Models.CgibinUserCheckMemberAuthResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

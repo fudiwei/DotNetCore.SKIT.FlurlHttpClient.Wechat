@@ -47,6 +47,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [System.Text.Json.Serialization.JsonPropertyName("is_mic")]
                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
                         public bool IsMic { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置邀请人的成员账号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("invitor_userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("invitor_userid")]
+                        public string? InvitorUserId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置邀请人的外部联系人账号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("invitor_external_userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("invitor_external_userid")]
+                        public string? InvitorExternalUserId { get; set; }
                     }
 
                     public class ExternalUser
@@ -96,6 +110,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [System.Text.Json.Serialization.JsonPropertyName("is_mic")]
                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
                         public bool IsMic { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置邀请人的成员账号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("invitor_userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("invitor_userid")]
+                        public string? InvitorUserId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置邀请人的外部联系人账号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("invitor_external_userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("invitor_external_userid")]
+                        public string? InvitorExternalUserId { get; set; }
                     }
                 }
 

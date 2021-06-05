@@ -367,6 +367,50 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("btn")]
                 public IList<Types.Button> ButtonList { get; set; } = new List<Types.Button>();
             }
+
+            public class TemplateMessage
+            {
+                public static class Types
+                {
+                    public class KeyValue
+                    {
+                        /// <summary>
+                        /// 获取或设置消息内容的 Key。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("key")]
+                        [System.Text.Json.Serialization.JsonPropertyName("key")]
+                        public string Key { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置消息内容的值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("value")]
+                        [System.Text.Json.Serialization.JsonPropertyName("value")]
+                        public string Value { get; set; } = string.Empty;
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置模板 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("template_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("template_id")]
+                public string TemplateId { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置点击模板消息后的跳转链接。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("url")]
+                [System.Text.Json.Serialization.JsonPropertyName("url")]
+                public string Url { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置消息内容键值对。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("content_item")]
+                [System.Text.Json.Serialization.JsonPropertyName("content_item")]
+                public IList<Types.KeyValue> ContentItemList { get; set; } = new List<Types.KeyValue>();
+            }
         }
 
         /// <summary>
@@ -481,11 +525,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public Types.TaskCardMessage? MessageContentForTaskCard { get; set; }
 
         /// <summary>
+        /// 获取或设置模板消息信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("template_msg")]
+        [System.Text.Json.Serialization.JsonPropertyName("template_msg")]
+        public Types.TemplateMessage? MessageContentForTemplate { get; set; }
+
+        /// <summary>
         /// 获取或设置应用 ID。如果不指定将使用构造 <see cref="WechatWorkClient"/> 时的 <see cref="WechatWorkClientOptions.AgentId"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("agentid")]
         [System.Text.Json.Serialization.JsonPropertyName("agentid")]
         public int? AgentId { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户选择凭证列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("selected_ticket_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("selected_ticket_list")]
+        public IList<string>? SelectedTicketList { get; set; }
 
         /// <summary>
         /// 获取或设置是否是保密消息。

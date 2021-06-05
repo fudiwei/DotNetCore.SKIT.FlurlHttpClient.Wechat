@@ -221,6 +221,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public int? AppId { get; set; }
 
                         /// <summary>
+                        /// 获取或设置授权模式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("auth_mode")]
+                        [System.Text.Json.Serialization.JsonPropertyName("auth_mode")]
+                        public int AuthMode { get; set; }
+
+                        /// <summary>
                         /// 获取或设置应用权限信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("privilege")]

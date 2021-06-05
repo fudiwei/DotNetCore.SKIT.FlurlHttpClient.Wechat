@@ -98,6 +98,78 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         #region User
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/school/user/get 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92337 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92038 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSchoolUserGetResponse> ExecuteCgibinSchoolUserGetAsync(this WechatWorkClient client, Models.CgibinSchoolUserGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "school", "user", "get")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("userid", request.StudentOrParentUserId);
+
+            return await client.SendRequestAsync<Models.CgibinSchoolUserGetResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/school/user/list 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92338 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92043 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSchoolUserListResponse> ExecuteCgibinSchoolUserListAsync(this WechatWorkClient client, Models.CgibinSchoolUserListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "school", "user", "list")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("department_id", request.DeparmentId);
+
+            if (request.RequireFetchChild.HasValue)
+                flurlReq.SetQueryParam("fetch_child", request.RequireFetchChild.Value ? 1 : 0);
+
+            return await client.SendRequestAsync<Models.CgibinSchoolUserListResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/school/user/list_parent 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92446 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSchoolUserListParentResponse> ExecuteCgibinSchoolUserListParentAsync(this WechatWorkClient client, Models.CgibinSchoolUserListParentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "school", "user", "list_parent")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("department_id", request.DeparmentId);
+
+            return await client.SendRequestAsync<Models.CgibinSchoolUserListParentResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
         #region UserStudent
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/create_student 接口。</para>
@@ -368,76 +440,70 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
+        #region UserHealth
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/school/user/get 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92337 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92038 </para>
+        /// <para>异步调用 [POST] /cgi-bin/school/user/get_teacher_customize_health_info 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93744 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinSchoolUserGetResponse> ExecuteCgibinSchoolUserGetAsync(this WechatWorkClient client, Models.CgibinSchoolUserGetRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinSchoolUserGetTeacherCustomizeHealthInfoResponse> ExecuteCgibinSchoolUserGetTeacherCustomizeHealthInfoAsync(this WechatWorkClient client, Models.CgibinSchoolUserGetTeacherCustomizeHealthInfoRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "school", "user", "get")
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "school", "user", "get_teacher_customize_health_info")
                 .SetOptions(request)
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("userid", request.StudentOrParentUserId);
+                .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CgibinSchoolUserGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserGetTeacherCustomizeHealthInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/school/user/list 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92338 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92043 </para>
+        /// <para>异步调用 [POST] /cgi-bin/school/user/get_student_customize_health_info 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93745 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinSchoolUserListResponse> ExecuteCgibinSchoolUserListAsync(this WechatWorkClient client, Models.CgibinSchoolUserListRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinSchoolUserGetStudentCustomizeHealthInfoResponse> ExecuteCgibinSchoolUserGetStudentCustomizeHealthInfoAsync(this WechatWorkClient client, Models.CgibinSchoolUserGetStudentCustomizeHealthInfoRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "school", "user", "list")
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "school", "user", "get_student_customize_health_info")
                 .SetOptions(request)
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("department_id", request.DeparmentId);
+                .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.RequireFetchChild.HasValue)
-                flurlReq.SetQueryParam("fetch_child", request.RequireFetchChild.Value ? 1 : 0);
-
-            return await client.SendRequestAsync<Models.CgibinSchoolUserListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserGetStudentCustomizeHealthInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/school/user/list_parent 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92446 </para>
+        /// <para>异步调用 [POST] /cgi-bin/school/user/get_health_qrcode 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93746 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinSchoolUserListParentResponse> ExecuteCgibinSchoolUserListParentAsync(this WechatWorkClient client, Models.CgibinSchoolUserListParentRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinSchoolUserGetHealthQrcodeResponse> ExecuteCgibinSchoolUserGetHealthQrcodeAsync(this WechatWorkClient client, Models.CgibinSchoolUserGetHealthQrcodeRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "school", "user", "list_parent")
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "school", "user", "get_health_qrcode")
                 .SetOptions(request)
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("department_id", request.DeparmentId);
+                .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CgibinSchoolUserListParentResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserGetHealthQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+        #endregion
         #endregion
 
         #region Department

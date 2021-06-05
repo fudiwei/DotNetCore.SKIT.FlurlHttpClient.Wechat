@@ -4,23 +4,23 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/dial/get_dial_record 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/health/get_report_answer 接口的请求。</para>
     /// </summary>
-    public class CgibinDialogGetDialogRecordRequest : WechatWorkRequest
+    public class CgibinHealthGetReportAnswerRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置指定查询的开始时间戳。
+        /// 获取或设置任务 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("start_time")]
-        [System.Text.Json.Serialization.JsonPropertyName("start_time")]
-        public long? StartTimestamp { get; set; }
+        [Newtonsoft.Json.JsonProperty("jobid")]
+        [System.Text.Json.Serialization.JsonPropertyName("jobid")]
+        public string ReportJobId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置指定查询的结束时间戳。
+        /// 获取或设置任务日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("end_time")]
-        [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        public long? EndTimestamp { get; set; }
+        [Newtonsoft.Json.JsonProperty("date")]
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        public string DateString { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置分页起始位置。
