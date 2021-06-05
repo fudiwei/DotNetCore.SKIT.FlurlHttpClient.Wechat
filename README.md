@@ -1,6 +1,6 @@
 ﻿# SKIT.FlurlHttpClient.Wechat
 
-基于 `Flurl.Http` 的微信 API HTTP 客户端，支持公众平台、开放平台、商户平台等模块。
+基于 `Flurl.Http` 的微信 API HTTP 客户端，支持公众平台、开放平台、商户平台、企业微信等模块。
 
 > [`Flurl.Http`](https://flurl.dev/) 是一个轻量级 HTTP 库，是 .NET 中最受欢迎扩展库之一，在 NuGet 上的累计下载量超过 1200 万、日均下载量超过 5 千、GitHub 2.6k Stars（数据统计截至 2021-05-01）。
 >
