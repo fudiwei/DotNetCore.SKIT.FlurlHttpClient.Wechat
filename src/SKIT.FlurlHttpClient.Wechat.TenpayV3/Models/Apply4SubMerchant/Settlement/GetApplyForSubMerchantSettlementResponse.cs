@@ -56,5 +56,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("verify_result")]
         [System.Text.Json.Serialization.JsonPropertyName("verify_result")]
         public string VerifyResult { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置汇款验证失败原因。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("verify_fail_reason")]
+        [System.Text.Json.Serialization.JsonPropertyName("verify_fail_reason")]
+        public string? VerifyFailReason { get; set; }
     }
 }
