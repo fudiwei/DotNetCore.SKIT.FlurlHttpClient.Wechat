@@ -58,11 +58,39 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? Remark { get; set; }
 
         /// <summary>
-        /// 获取或设置提现备注。
+        /// 获取或设置银行提现备注。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_memo")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_memo")]
         public string? BankMemo { get; set; }
+
+        /// <summary>
+        /// 获取或设置出款账户类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("account_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("account_type")]
+        public string AccountType { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置银行账号（掩码显示）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("account_number")]
+        [System.Text.Json.Serialization.JsonPropertyName("account_number")]
+        public string AccountNumber { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置开户银行。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("account_bank")]
+        [System.Text.Json.Serialization.JsonPropertyName("account_bank")]
+        public string AccountBank { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置开户开户银行全称（含支行）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("bank_name")]
+        [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
+        public string BankBranchName { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置失败原因。
