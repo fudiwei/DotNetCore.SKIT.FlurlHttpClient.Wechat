@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 1111,
+    "errmsg": "userid not found",
+    "result_list": [
+        {
+            "student_userid": "lisi",
+            "errcode": 1111,
+            "errmsg": "userid not found"
+        }
+    ]
+}

@@ -4,6 +4,7 @@
     "external_contact": {
         "external_userid": "woAJ2GCAAAXtWyujaWJHDDGi0mACHAAA",
         "name": "李四",
+        "foreign_key": "lisi",
         "position": "Manager",
         "avatar": "http://p.qlogo.cn/bizmail/IcsdgagqefergqerhewSdage/0",
         "corp_name": "腾讯",
@@ -11,6 +12,18 @@
         "type": 2,
         "gender": 1,
         "unionid": "ozynqsulJFCZ2z1aYeS8h-nuasdAAA",
+        "is_subscribe": 1,
+        "subscriber_info": {
+            "tag_id": [
+                "TAG_ID1",
+                "TAG_ID2"
+            ],
+            "remark_mobiles": [
+                "10000000000",
+                "10000000001"
+            ],
+            "remark": "李小明-爸爸"
+        },
         "external_profile": {
             "external_attr": [
                 {

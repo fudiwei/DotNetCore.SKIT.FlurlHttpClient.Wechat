@@ -1,0 +1,15 @@
+﻿{
+    "students": [
+        {
+            "student_userid": "zhangsan",
+            "new_student_userid": "zhangsan_new",
+            "name": "张三",
+            "department": [ 1, 2 ]
+        },
+        {
+            "student_userid": "lisi",
+            "name": "李四",
+            "department": [ 3, 4 ]
+        }
+    ]
+}

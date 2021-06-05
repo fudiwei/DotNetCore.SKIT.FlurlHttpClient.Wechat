@@ -1,0 +1,25 @@
+﻿{
+    "parents": [
+        {
+            "parent_userid": "zhangsan_baba",
+            "new_parent_userid": "zhangsan_baba_new",
+            "mobile": "10000000000",
+            "children": [
+                {
+                    "student_userid": "zhangsan",
+                    "relation": "爸爸"
+                }
+            ]
+        },
+        {
+            "parent_userid": "lisi_mama",
+            "mobile": "10000000001",
+            "children": [
+                {
+                    "student_userid": "lisi",
+                    "relation": "妈妈"
+                }
+            ]
+        }
+    ]
+}

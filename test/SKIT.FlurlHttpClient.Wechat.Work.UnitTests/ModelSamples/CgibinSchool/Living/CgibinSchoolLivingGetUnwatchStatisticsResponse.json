@@ -1,0 +1,25 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "ending": 1,
+    "next_key": "NEXT_KEY",
+    "stat_info": {
+        "students": [
+            {
+                "student_userid": "zhansan_child",
+                "parent_userid": "zhangsan",
+                "partyids": [
+                    10,
+                    11
+                ]
+            },
+            {
+                "student_userid": "lisi_child",
+                "parent_userid": "lisi",
+                "partyids": [
+                    5
+                ]
+            }
+        ]
+    }
+}

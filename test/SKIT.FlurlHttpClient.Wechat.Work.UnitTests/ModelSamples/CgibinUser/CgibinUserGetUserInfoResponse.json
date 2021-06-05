@@ -4,5 +4,15 @@
     "UserId": "USERID",
     "DeviceId": "DEVICEID",
     "OpenId": "OPENID",
-    "external_userid": "EXTERNAL_USERID"
+    "external_userid": "EXTERNAL_USERID",
+    "parents": [
+        {
+            "corpid": "wxCorpId1",
+            "parent_userid": "zhangsan"
+        },
+        {
+            "corpid": "wxCorpId2",
+            "parent_userid": "lisi"
+        }
+    ]
 }

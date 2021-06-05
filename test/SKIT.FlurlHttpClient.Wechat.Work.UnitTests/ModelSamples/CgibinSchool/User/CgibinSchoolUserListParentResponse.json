@@ -1,0 +1,31 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "parents": [
+        {
+            "parent_userid": "zhangsan_parent",
+            "mobile": "18900000000",
+            "is_subscribe": 1,
+            "external_userid": "xxx",
+            "children": [
+                {
+                    "student_userid": "zhangsan",
+                    "relation": "爸爸",
+                    "name": "张三"
+                }
+            ]
+        },
+        {
+            "parent_userid": "lisi_parent",
+            "mobile": "18900000001",
+            "is_subscribe": 0,
+            "children": [
+                {
+                    "student_userid": "lisi",
+                    "relation": "妈妈",
+                    "name": "李四"
+                }
+            ]
+        }
+    ]
+}

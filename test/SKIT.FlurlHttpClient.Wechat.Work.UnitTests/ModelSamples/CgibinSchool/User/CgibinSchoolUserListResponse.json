@@ -1,0 +1,47 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "students": [
+        {
+            "student_userid": "zhangsan",
+            "name": "张三",
+            "department": [ 1, 2 ],
+            "parents": [
+                {
+                    "parent_userid": "zhangsan_parent1",
+                    "relation": "爸爸",
+                    "mobile": "18000000001",
+                    "is_subscribe": 1,
+                    "external_userid": "xxx"
+                },
+                {
+                    "parent_userid": "zhangsan_parent2",
+                    "relation": "妈妈",
+                    "mobile": "18000000002",
+                    "is_subscribe": 0
+                }
+            ]
+        },
+        {
+            "student_userid": "lisi",
+            "name": "李四",
+            "department": [ 4, 5 ],
+            "parents": [
+                {
+                    "parent_userid": "lisi_parent1",
+                    "relation": "爷爷",
+                    "mobile": "18000000003",
+                    "is_subscribe": 1,
+                    "external_userid": "xxx"
+                },
+                {
+                    "parent_userid": "lisi_parent2",
+                    "relation": "妈妈",
+                    "mobile": "18000000004",
+                    "is_subscribe": 1,
+                    "external_userid": "xxx"
+                }
+            ]
+        }
+    ]
+}
