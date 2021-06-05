@@ -1,0 +1,48 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "order_info": {
+        "order_id": "order_id",
+        "desc": "test",
+        "urge_type": 1,
+        "case_name": "测试事件",
+        "grid_name": "测试网格",
+        "grid_id": "grid_id",
+        "create_time": 12345678,
+        "image_urls": [
+            "https://image1.qq.com",
+            "https://image2.qq.com"
+        ],
+        "video_media_ids": [
+            "mediaid1",
+            "mediaid2"
+        ],
+        "location": {
+            "name": "测试小区",
+            "address": "实例小区，不真实存在，经纬度无意义",
+            "latitude": 0,
+            "longitude": 0
+        },
+        "processor_userids": [
+            "zhangsan",
+            "lisi"
+        ],
+        "process_list": [
+            {
+                "process_type": 1,
+                "solve_userid": "zhangsan",
+                "process_desc": "第一个流程",
+                "status": 1,
+                "solved_time": 123456789,
+                "image_urls": [
+                    "https://image1.qq.com",
+                    "https://image2.qq.com"
+                ],
+                "video_media_ids": [
+                    "mediaid1",
+                    "mediaid2"
+                ]
+            }
+        ]
+    }
+}

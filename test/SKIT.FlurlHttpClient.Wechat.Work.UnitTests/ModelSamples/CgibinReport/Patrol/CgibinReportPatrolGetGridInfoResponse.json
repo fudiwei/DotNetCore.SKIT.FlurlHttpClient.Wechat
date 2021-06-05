@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "grid_list": [
+        {
+            "grid_id": "grid_id",
+            "grid_name": "1",
+            "grid_admin": [
+                "zhangsan",
+                "lisi"
+            ]
+        }
+    ]
+}
