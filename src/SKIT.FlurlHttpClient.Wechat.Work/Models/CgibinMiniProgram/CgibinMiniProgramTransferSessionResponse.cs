@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     public class CgibinMiniProgramTransferSessionResponse : WechatWorkResponse
     {
         /// <summary>
-        /// 获取或设置下级企业的用户账号。
+        /// 获取或设置下级企业的成员账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]

@@ -8,6 +8,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// </summary>
     public class CgibinUserGetUserInfoResponse : WechatWorkResponse
     {
+        public static class Types
+        {
+            public class Parent
+            {
+                /// <summary>
+                /// 获取或设置家长所在学校的 CorpId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("corpid")]
+                [System.Text.Json.Serialization.JsonPropertyName("corpid")]
+                public string CorpId { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置家长账号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("parent_userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("parent_userid")]
+                public string ParentUserId { get; set; } = default!;
+            }
+        }
+
         /// <summary>
         /// 获取或设置成员账号。
         /// </summary>
@@ -35,5 +55,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("DeviceId")]
         [System.Text.Json.Serialization.JsonPropertyName("DeviceId")]
         public string? DeviceId { get; set; }
+
+        /// <summary>
+        /// 获取或设置家长列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("parents")]
+        [System.Text.Json.Serialization.JsonPropertyName("parents")]
+        public Types.Parent[]? ParentList { get; set; }
     }
 }

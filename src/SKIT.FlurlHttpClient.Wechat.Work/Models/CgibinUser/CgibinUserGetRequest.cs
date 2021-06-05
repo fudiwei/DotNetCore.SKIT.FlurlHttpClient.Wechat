@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     public class CgibinUserGetRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置用户账号。
+        /// 获取或设置成员账号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

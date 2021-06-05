@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stat_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("stat_time")]
-                public long StatTimestamp { get; set; }
+                public long StatisticsTimestamp { get; set; }
 
                 /// <summary>
                 /// 获取或设置统计数据。

@@ -80,8 +80,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/externalcontact/get 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92113 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92114 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92265 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92322 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91670 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -233,6 +235,49 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactUnionIdToExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/convert_to_openid 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92323 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92292 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactConvertToOpenIdResponse> ExecuteCgibinExternalContactConvertToOpenIdAsync(this WechatWorkClient client, Models.CgibinExternalContactConvertToOpenIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "externalcontact", "convert_to_openid")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactConvertToOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/batch_to_external_userid 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92506 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactBatchToExternalUserIdResponse> ExecuteCgibinExternalContactBatchToExternalUserIdAsync(this WechatWorkClient client, Models.CgibinExternalContactBatchToExternalUserIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "externalcontact", "batch_to_external_userid")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactBatchToExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region ContactWay
@@ -937,6 +982,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/message/send 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/91609 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92321 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92291 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -956,6 +1003,74 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactMessageSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Subscribe
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/externalcontact/get_subscribe_qr_code 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92320 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92197 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetSubscribeQrcodeResponse> ExecuteCgibinExternalContactGetSubscribeQrcodeAsync(this WechatWorkClient client, Models.CgibinExternalContactGetSubscribeQrcodeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "externalcontact", "message", "get_subscribe_qr_code")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestAsync<Models.CgibinExternalContactGetSubscribeQrcodeResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/set_subscribe_mode 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92318 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92290 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactSetSubscribeModeResponse> ExecuteCgibinExternalContactSetSubscribeModeAsync(this WechatWorkClient client, Models.CgibinExternalContactSetSubscribeModeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "externalcontact", "message", "set_subscribe_mode")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactSetSubscribeModeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/externalcontact/get_subscribe_mode 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92318 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92290 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetSubscribeModeResponse> ExecuteCgibinExternalContactGetSubscribeModeAsync(this WechatWorkClient client, Models.CgibinExternalContactGetSubscribeModeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "externalcontact", "message", "get_subscribe_mode")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestAsync<Models.CgibinExternalContactGetSubscribeModeResponse>(flurlReq, cancellationToken: cancellationToken);
         }
         #endregion
     }

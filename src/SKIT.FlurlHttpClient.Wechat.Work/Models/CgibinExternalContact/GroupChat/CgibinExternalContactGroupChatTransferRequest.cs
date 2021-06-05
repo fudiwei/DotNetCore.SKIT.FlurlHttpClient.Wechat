@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chat_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_id_list")]
-        public IList<string> ChatIdList { get; set; } = new List<string>();
+        public IList<string> GroupChatIdList { get; set; } = new List<string>();
 
         /// <summary>
         /// 获取或设置新群主成员账号。

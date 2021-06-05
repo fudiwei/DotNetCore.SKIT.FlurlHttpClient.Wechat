@@ -14,6 +14,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
+                    public class Subscriber
+                    {
+                        /// <summary>
+                        /// 获取或设置学校为家长设置的企业标签 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("tag_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
+                        public string[]? TagId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置学校为家长设置的备注。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("remark")]
+                        [System.Text.Json.Serialization.JsonPropertyName("remark")]
+                        public string? Remark { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置学校为家长设置的备注手机号码列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("remark_mobiles")]
+                        [System.Text.Json.Serialization.JsonPropertyName("remark_mobiles")]
+                        public string[]? RemarkMobileNumberList { get; set; }
+                    }
+
                     public class ExternalProfile : CgibinUserGetResponse.Types.ExternalProfile
                     { 
                     }
@@ -32,6 +56,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
                 public string Name { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置由企业或服务商在导入家长时指定的关键字。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("foreign_key")]
+                [System.Text.Json.Serialization.JsonPropertyName("foreign_key")]
+                public string? ForeignKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置外部联系人 UnionId。
@@ -81,6 +112,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("corp_full_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("corp_full_name")]
                 public string? CorpFullName { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否关注了“学校通知”。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_subscribe")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_subscribe")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                public bool? IsSubscribe { get; set; }
+
+                /// <summary>
+                /// 获取或设置学校为家长设置的信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("subscriber_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("subscriber_info")]
+                public Types.Subscriber? Subscriber { get; set; }
 
                 /// <summary>
                 /// 获取或设置对外属性信息。
@@ -190,7 +237,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string? State { get; set; }
 
                 /// <summary>
-                /// 获取或设置发起添加的用户账号。
+                /// 获取或设置发起添加的成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("oper_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("oper_userid")]

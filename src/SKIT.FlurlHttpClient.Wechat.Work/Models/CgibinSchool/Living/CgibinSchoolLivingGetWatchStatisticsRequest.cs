@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/living/get_watch_stat 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/school/living/get_watch_stat 接口的请求。</para>
     /// </summary>
-    public class CgibinLivingGetWatchStatRequest : WechatWorkRequest
+    public class CgibinSchoolLivingGetWatchStatisticsRequest : WechatWorkRequest
     {
         /// <summary>
         /// 获取或设置直播 ID。
@@ -20,6 +20,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_key")]
         [System.Text.Json.Serialization.JsonPropertyName("next_key")]
-        public string? NextKey { get; set; }
+        public string? NextCursor { get; set; }
     }
 }

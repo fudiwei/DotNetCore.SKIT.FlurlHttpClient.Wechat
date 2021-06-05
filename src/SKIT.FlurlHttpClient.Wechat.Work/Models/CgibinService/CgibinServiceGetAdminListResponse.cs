@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Admin
+            public class Administrator
             {
                 /// <summary>
                 /// 获取或设置成员账号。
@@ -40,6 +40,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("admin")]
         [System.Text.Json.Serialization.JsonPropertyName("admin")]
-        public Types.Admin[]? AdminList { get; set; }
+        public Types.Administrator[]? AdministratorList { get; set; }
     }
 }

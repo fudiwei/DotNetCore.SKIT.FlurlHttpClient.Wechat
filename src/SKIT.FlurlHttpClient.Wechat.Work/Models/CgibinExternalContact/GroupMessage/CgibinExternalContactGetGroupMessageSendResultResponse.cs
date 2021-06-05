@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("chat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("chat_id")]
-                public string? ChatId { get; set; }
+                public string? GroupChatId { get; set; }
 
                 /// <summary>
                 /// 获取或设置外部联系人账号。

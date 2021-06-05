@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     public class CgibinUserBatchDeleteRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置用户账号列表。
+        /// 获取或设置成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("useridlist")]
         [System.Text.Json.Serialization.JsonPropertyName("useridlist")]

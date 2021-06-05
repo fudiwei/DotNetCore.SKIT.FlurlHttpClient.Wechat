@@ -81,6 +81,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/living/delete_replay_data 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93874 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93719 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93743 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93860 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -170,6 +172,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/living/get_user_all_livingid 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93634 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93714 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93739 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93856 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -197,7 +201,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinLivingGetWatchStatResponse> ExecuteCgibinLivingGetWatchStatAsync(this WechatWorkClient client, Models.CgibinLivingGetWatchStatRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinLivingGetWatchStatisticsResponse> ExecuteCgibinLivingGetWatchStatisticsAsync(this WechatWorkClient client, Models.CgibinLivingGetWatchStatisticsRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -207,7 +211,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLivingGetWatchStatResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLivingGetWatchStatisticsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

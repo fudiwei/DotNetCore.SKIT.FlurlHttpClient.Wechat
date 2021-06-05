@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class Customer
+            public class Result
             {
                 /// <summary>
                 /// 获取或设置错误码。
@@ -29,10 +29,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         }
 
         /// <summary>
-        /// 获取或设置客户列表。
+        /// 获取或设置结果列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customer")]
         [System.Text.Json.Serialization.JsonPropertyName("customer")]
-        public Types.Customer[] CustomerList { get; set; } = default!;
+        public Types.Result[] ResultList { get; set; } = default!;
     }
 }

@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/living/get_watch_stat 接口的响应。</para>
     /// </summary>
-    public class CgibinLivingGetWatchStatResponse : WechatWorkResponse
+    public class CgibinLivingGetWatchStatisticsResponse : WechatWorkResponse
     {
         public static class Types
         {
@@ -136,6 +136,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_key")]
         [System.Text.Json.Serialization.JsonPropertyName("next_key")]
-        public string? NextKey { get; set; }
+        public string? NextCursor { get; set; }
     }
 }
