@@ -95,6 +95,25 @@
             }
         ]
     },
+    "selected_ticket_list": [ "xxx", "yyy" ],
+    "template_msg": {
+        "template_id": "ttxxlGlgIAwJrCTFjtndfgHPoIySyk6w",
+        "url": "http://www.qq.com",
+        "content_item": [
+            {
+                "key": "会议室",
+                "value": "402"
+            },
+            {
+                "key": "会议地点",
+                "value": "广州TIT-402会议室"
+            },
+            {
+                "key": "会议时间",
+                "value": "2018年8月1日 09:00-09:30"
+            }
+        ]
+    },
     "safe": 0,
     "enable_id_trans": 0,
     "enable_duplicate_check": 0,

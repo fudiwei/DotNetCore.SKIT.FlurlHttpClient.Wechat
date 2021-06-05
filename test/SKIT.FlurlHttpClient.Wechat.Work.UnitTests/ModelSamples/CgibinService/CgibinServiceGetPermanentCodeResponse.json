@@ -33,6 +33,7 @@
                 "round_logo_url": "xxxxxx",
                 "square_logo_url": "yyyyyy",
                 "appid": 1,
+                "auth_mode": 1,
                 "privilege": {
                     "level": 1,
                     "allow_party": [ 1, 2, 3 ],

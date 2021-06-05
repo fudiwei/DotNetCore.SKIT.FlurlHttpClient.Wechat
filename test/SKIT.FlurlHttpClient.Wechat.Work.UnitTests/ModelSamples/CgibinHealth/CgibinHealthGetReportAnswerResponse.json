@@ -1,0 +1,62 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "answers": [
+        {
+            "id_type": 1,
+            "userid": "userid2",
+            "report_values": [
+                {
+                    "question_id": 1,
+                    "single_choice": 2
+                },
+                {
+                    "question_id": 2,
+                    "text": "广东省广州市"
+                },
+                {
+                    "question_id": 3,
+                    "multi_choice": [
+                        1,
+                        3
+                    ]
+                },
+                {
+                    "question_id": 4,
+                    "fileid": [
+                        "XXXXXXX"
+                    ]
+                }
+            ]
+        },
+        {
+            "id_type": 2,
+            "student_userid": "student_userid1",
+            "parent_userid": "parent_userid1",
+            "report_values": [
+                {
+                    "question_id": 1,
+                    "single_choice": 1
+                },
+                {
+                    "question_id": 2,
+                    "text": "广东省深圳市"
+                },
+                {
+                    "question_id": 3,
+                    "multi_choice": [
+                        1,
+                        2,
+                        3
+                    ]
+                },
+                {
+                    "question_id": 4,
+                    "fileid": [
+                        "XXXXXXX"
+                    ]
+                }
+            ]
+        }
+    ]
+}
