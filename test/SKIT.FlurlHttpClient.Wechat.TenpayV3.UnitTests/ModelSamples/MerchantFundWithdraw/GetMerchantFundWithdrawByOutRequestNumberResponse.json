@@ -9,5 +9,8 @@
     "remark": "交易提现",
     "bank_memo": "微信提现",
     "account_type": "BASIC",
-    "solution": "请修改结算银行卡信息"
+    "solution": "请修改结算银行卡信息",
+    "account_number": "1178",
+    "account_bank": "招商银行",
+    "bank_name": "中国工商银行股份有限公司深圳软件园支行"
 }
