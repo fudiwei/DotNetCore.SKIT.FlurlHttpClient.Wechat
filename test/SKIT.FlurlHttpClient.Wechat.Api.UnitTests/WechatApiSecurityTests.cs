@@ -8,7 +8,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
-    public class WechatApiUtilityTests
+    public class WechatApiSecurityTests
     {
         [Fact(DisplayName = "信息摘要（SHA-1）")]
         public void Sha1HashTest()
