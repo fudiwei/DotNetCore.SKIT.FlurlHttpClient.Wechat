@@ -1,0 +1,38 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+{
+    /// <summary>
+    /// <para>表示 EVENT.share_agent_change 或 INFO.share_agent_change 事件的数据。</para>
+    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90240 </para>
+    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93373 </para>
+    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90376 </para>
+    /// </summary>
+    public class ShareAgentChangeEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    {
+        /// <summary>
+        /// 获取或设置第三方应用的 SuiteId。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("SuiteId", IsNullable = true)]
+        public string? SuiteId { get; set; }
+
+        /// <summary>
+        /// 获取或设置上级企业 CorpId。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("CorpId", IsNullable = true)]
+        public string? ParentCorpId { get; set; }
+
+        /// <summary>
+        /// 获取或设置上级企业应用 ID。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("AgentId")]
+        public int ParentAgentId { get; set; }
+
+        /// <summary>
+        /// 获取或设置下级企业应用 ID。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("AppId", IsNullable = true)]
+        public int? AgentId { get; set; }
+    }
+}
