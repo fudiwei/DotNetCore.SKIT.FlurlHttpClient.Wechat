@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string PdfUrl { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置发票文件 URL 有效时间（单位：秒）。
+        /// 获取或设置发票文件 URL 有效期（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pdf_url_expire_time")]
         [System.Text.Json.Serialization.JsonPropertyName("pdf_url_expire_time")]

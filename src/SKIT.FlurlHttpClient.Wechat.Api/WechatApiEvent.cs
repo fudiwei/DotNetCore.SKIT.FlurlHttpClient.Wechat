@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public string? Event { get; set; }
 
         /// <summary>
-        /// 获取或设置消息创建时间。
+        /// 获取或设置消息创建时间戳。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("CreateTime")]
         [System.Text.Json.Serialization.JsonPropertyName("CreateTime")]

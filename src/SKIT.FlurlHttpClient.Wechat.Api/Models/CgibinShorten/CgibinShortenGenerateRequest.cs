@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CgibinShortenGenerateRequest : WechatApiRequest
     {
         /// <summary>
-        /// 获取或设置有效时间（单位：秒）。
+        /// 获取或设置有效期（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("expire_seconds")]
         [System.Text.Json.Serialization.JsonPropertyName("expire_seconds")]

@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CgibinShortenFetchResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置二维码类型有效时间（单位：秒）。
+        /// 获取或设置二维码类型有效期（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("expire_seconds")]
         [System.Text.Json.Serialization.JsonPropertyName("expire_seconds")]

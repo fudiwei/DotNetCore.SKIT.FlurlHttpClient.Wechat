@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置二维码有效时间（单位：秒）。
+        /// 获取或设置二维码有效期（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("expire_seconds")]
         [System.Text.Json.Serialization.JsonPropertyName("expire_seconds")]

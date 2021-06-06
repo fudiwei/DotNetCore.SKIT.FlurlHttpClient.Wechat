@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string ComponentAccessToken { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置第三方平台 AccessToken 有效时间（单位：秒）。
+        /// 获取或设置第三方平台 AccessToken 有效期（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("expires_in")]
         [System.Text.Json.Serialization.JsonPropertyName("expires_in")]

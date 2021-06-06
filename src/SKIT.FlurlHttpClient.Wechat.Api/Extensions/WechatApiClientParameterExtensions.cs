@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     public static class WechatApiClientParameterExtensions
     {
         /// <summary>
-        /// <para>生成客户端 JS-SDK 初始化所需的参数。</para>
+        /// <para>生成客户端 JS-SDK `wx.config` 所需的参数。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62 </para>
         /// </summary>
         /// <param name="client"></param>
@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
-            string sign = Utilities.Sha1Util.Hash($"jsapi_ticket={jsapiTicket}&noncestr={nonce}&timestamp={timestamp}&url={url.Split('#')[0]}").ToLower();
+            string sign = Security.SHA1Utility.Hash($"jsapi_ticket={jsapiTicket}&noncestr={nonce}&timestamp={timestamp}&url={url.Split('#')[0]}").ToLower();
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             sortedParams.Add(client.AppId);
             sortedParams.Add(nonce);
             sortedParams.Add(wxcardTicket);
-            string cardSign = Utilities.Sha1Util.Hash(string.Join(string.Empty, sortedParams)).ToLower();
+            string cardSign = Security.SHA1Utility.Hash(string.Join(string.Empty, sortedParams)).ToLower();
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
