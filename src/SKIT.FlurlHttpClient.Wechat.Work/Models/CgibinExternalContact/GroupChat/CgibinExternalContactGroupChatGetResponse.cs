@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public Types.Invitor? Invitor { get; set; }
 
                         /// <summary>
-                        /// 获取或设置入群场景。
+                        /// 获取或设置入群场景值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("join_scene")]
                         [System.Text.Json.Serialization.JsonPropertyName("join_scene")]

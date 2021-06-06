@@ -169,7 +169,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("group_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("group_name")]
-                        public string? GroupName { get; set; }
+                        public string? TagGroupName { get; set; }
                     }
                 }
 

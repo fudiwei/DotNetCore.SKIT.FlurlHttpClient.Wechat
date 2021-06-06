@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-                public string GroupId { get; set; } = default!;
+                public string TagGroupId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置企业标签分组名称。
@@ -102,6 +102,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag_group")]
         [System.Text.Json.Serialization.JsonPropertyName("tag_group")]
-        public Types.TagGroup[] GroupList { get; set; } = default!;
+        public Types.TagGroup[] TagGroupList { get; set; } = default!;
     }
 }

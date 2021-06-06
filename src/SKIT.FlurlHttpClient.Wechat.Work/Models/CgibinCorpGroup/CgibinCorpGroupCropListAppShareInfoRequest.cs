@@ -13,6 +13,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("agentid")]
         [System.Text.Json.Serialization.JsonPropertyName("agentid")]
-        public int? AgentId { get; set; }
+        public int? ParentAgentId { get; set; }
     }
 }

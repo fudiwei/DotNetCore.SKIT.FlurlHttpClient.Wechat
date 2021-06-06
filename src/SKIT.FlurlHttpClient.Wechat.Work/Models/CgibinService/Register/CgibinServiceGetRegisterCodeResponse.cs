@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string RegisterCode { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置注册码有效时间（单位：秒）。
+        /// 获取或设置注册码有效期（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("expires_in")]
         [System.Text.Json.Serialization.JsonPropertyName("expires_in")]

@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string AccessToken { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置授权方凭证有效时间（单位：秒）。
+        /// 获取或设置授权方凭证有效期（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("expires_in")]
         [System.Text.Json.Serialization.JsonPropertyName("expires_in")]

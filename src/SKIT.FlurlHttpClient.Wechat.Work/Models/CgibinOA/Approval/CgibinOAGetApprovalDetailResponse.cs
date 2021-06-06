@@ -174,28 +174,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("members")]
                                         [System.Text.Json.Serialization.JsonPropertyName("members")]
-                                        public IList<ContactControlValueForUser>? ContactMembers { get; set; }
+                                        public ContactControlValueForUser[]? ContactMembers { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置 Contact 控件部门值。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("departments")]
                                         [System.Text.Json.Serialization.JsonPropertyName("departments")]
-                                        public IList<ContactControlValueForDepartment>? ContactDepartments { get; set; }
+                                        public ContactControlValueForDepartment[]? ContactDepartments { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置 File 控件值。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("files")]
                                         [System.Text.Json.Serialization.JsonPropertyName("files")]
-                                        public IList<FileControlValue>? Files { get; set; }
+                                        public FileControlValue[]? Files { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置 Table 控件值。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("children")]
                                         [System.Text.Json.Serialization.JsonPropertyName("children")]
-                                        public IList<TableControlValue>? TableChildren { get; set; }
+                                        public TableControlValue[]? TableChildren { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置 Attendance 控件值。
@@ -223,7 +223,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("related_approval")]
                                         [System.Text.Json.Serialization.JsonPropertyName("related_approval")]
-                                        public IList<RelatedApprovalControlValue>? RelatedApprovals { get; set; }
+                                        public RelatedApprovalControlValue[]? RelatedApprovals { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置 Formula 控件值。
@@ -753,14 +753,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sp_record")]
                 [System.Text.Json.Serialization.JsonPropertyName("sp_record")]
-                public IList<Types.Record> RecordList { get; set; } = default!;
+                public Types.Record[] RecordList { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置评论列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("comments")]
                 [System.Text.Json.Serialization.JsonPropertyName("comments")]
-                public IList<Types.Comment> CommentList { get; set; } = default!;
+                public Types.Comment[] CommentList { get; set; } = default!;
             }
         }
 

@@ -20,6 +20,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tag_group")]
         [System.Text.Json.Serialization.JsonPropertyName("tag_group")]
-        public Types.TagGroup Group { get; set; } = default!;
+        public Types.TagGroup TagGroup { get; set; } = default!;
     }
 }
