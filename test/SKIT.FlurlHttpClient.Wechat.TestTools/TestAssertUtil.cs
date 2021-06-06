@@ -142,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat
             foreach (string file in lstFile)
             {
                 string json = File.ReadAllText(file);
-                string name = Path.GetFileNameWithoutExtension(file);
+                string name = Path.GetFileNameWithoutExtension(file).Split('.')[0];
 
                 Type type = assembly.GetType($"{assembly.GetName().Name}.Models.{name}");
                 if (type == null)
@@ -189,7 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat
             foreach (string file in lstJsonFile)
             {
                 string json = File.ReadAllText(file);
-                string name = Path.GetFileNameWithoutExtension(file);
+                string name = Path.GetFileNameWithoutExtension(file).Split('.')[0];
 
                 Type type = assembly.GetType($"{assembly.GetName().Name}.Events.{name}");
                 if (type == null)
@@ -207,7 +207,7 @@ namespace SKIT.FlurlHttpClient.Wechat
             foreach (string file in lstXmlFile)
             {
                 string xml = File.ReadAllText(file);
-                string name = Path.GetFileNameWithoutExtension(file);
+                string name = Path.GetFileNameWithoutExtension(file).Split('.')[0];
 
                 Type type = assembly.GetType($"{assembly.GetName().Name}.Events.{name}");
                 if (type == null)
