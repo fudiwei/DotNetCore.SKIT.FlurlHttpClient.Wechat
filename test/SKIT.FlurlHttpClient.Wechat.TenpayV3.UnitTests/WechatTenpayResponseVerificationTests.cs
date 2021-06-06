@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             // 通过证书验证签名
             Assert.True(TestClients.Instance.VerifyResponseSignatureByCertificate(response, certificate: certificateModel.EncryptCertificate.CipherText));
             // 通过公钥验证签名
-            Assert.True(TestClients.Instance.VerifyResponseSignature(response, publicKey: Utilities.RsaUtil.ExportPublicKey(certificateModel.EncryptCertificate.CipherText)));
+            Assert.True(TestClients.Instance.VerifyResponseSignature(response, publicKey: Utilities.RSAUtility.ExportPublicKey(certificateModel.EncryptCertificate.CipherText)));
         }
     }
 }
