@@ -9,23 +9,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/E_Invoice/Vendor_API_List.html#6 </para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Nontax_Bill/API_list.html#2.3 </para>
     /// </summary>
-    public class UserAuthorizeInvoiceEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
+    public class UserAuthorizeInvoiceEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable, WechatApiEvent.Types.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置授权成功的订单号。
         /// </summary>
+        [Newtonsoft.Json.JsonProperty("SuccOrderId")]
+        [System.Text.Json.Serialization.JsonPropertyName("SuccOrderId")]
         [System.Xml.Serialization.XmlElement("SuccOrderId", IsNullable = true)]
         public string? SuccessOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置授权失败的订单号。
         /// </summary>
+        [Newtonsoft.Json.JsonProperty("FailOrderId")]
+        [System.Text.Json.Serialization.JsonPropertyName("FailOrderId")]
         [System.Xml.Serialization.XmlElement("FailOrderId", IsNullable = true)]
         public string? FailOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置授权来源。
         /// </summary>
+        [Newtonsoft.Json.JsonProperty("Source")]
+        [System.Text.Json.Serialization.JsonPropertyName("Source")]
         [System.Xml.Serialization.XmlElement("Source")]
         public string Source { get; set; } = default!;
     }

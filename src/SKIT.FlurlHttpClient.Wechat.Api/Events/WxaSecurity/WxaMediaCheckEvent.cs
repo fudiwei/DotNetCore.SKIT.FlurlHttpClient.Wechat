@@ -14,7 +14,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("isrisky")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("isrisky")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
         public bool IsRisky { get; set; }
