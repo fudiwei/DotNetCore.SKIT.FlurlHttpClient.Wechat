@@ -56,10 +56,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             {
                 try
                 {
-                    plainJson = Utilities.AesUtil.DecryptWithGCM(
-                        aesKey: client.MerchantV3Secret,
-                        nonce: resource.Nonce,
-                        associatedData: resource.AssociatedData,
+                    plainJson = Utilities.AESUtility.DecryptWithGCM(
+                        key: client.MerchantV3Secret,
+                        iv: resource.Nonce,
+                        aad: resource.AssociatedData,
                         cipherText: resource.CipherText
                     );
                 }

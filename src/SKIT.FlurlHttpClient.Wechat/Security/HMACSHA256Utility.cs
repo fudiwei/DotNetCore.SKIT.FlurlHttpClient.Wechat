@@ -2,12 +2,12 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
+namespace SKIT.FlurlHttpClient.Wechat.Security
 {
     /// <summary>
-    /// HMAC-SHA-1 算法工具类。
+    /// HMAC-SHA-256 算法工具类。
     /// </summary>
-    public static class HmacSha256Util
+    public static class HMACSHA256Utility
     {
         /// <summary>
         /// 获取信息摘要。

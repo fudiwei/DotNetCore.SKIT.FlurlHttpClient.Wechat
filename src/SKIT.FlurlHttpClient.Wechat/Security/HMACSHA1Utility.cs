@@ -2,38 +2,43 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
+namespace SKIT.FlurlHttpClient.Wechat.Security
 {
     /// <summary>
-    /// SHA-1 算法工具类。
+    /// HMAC-SHA-1 算法工具类。
     /// </summary>
-    public static class Sha1Util
+    public static class HMACSHA1Utility
     {
         /// <summary>
         /// 获取信息摘要。
         /// </summary>
+        /// <param name="secretBytes">密钥字节数组。</param>
         /// <param name="bytes">信息字节数组。</param>
         /// <returns>信息摘要。</returns>
-        public static string Hash(byte[] bytes)
+        public static string Hash(byte[] secretBytes, byte[] bytes)
         {
+            if (secretBytes == null) throw new ArgumentNullException(nameof(secretBytes));
             if (bytes == null) throw new ArgumentNullException(nameof(bytes));
 
-            using SHA1 sha = SHA1.Create();
-            byte[] hashBytes = sha.ComputeHash(bytes);
+            using HMAC hmac = new HMACSHA1(secretBytes);
+            byte[] hashBytes = hmac.ComputeHash(bytes);
             return BitConverter.ToString(hashBytes).Replace("-", "");
         }
 
         /// <summary>
         /// 获取信息摘要。
         /// </summary>
+        /// <param name="secret">密钥。</param>
         /// <param name="message">文本信息。</param>
         /// <returns>信息摘要。</returns>
-        public static string Hash(string message)
+        public static string Hash(string secret, string message)
         {
+            if (secret == null) throw new ArgumentNullException(nameof(secret));
             if (message == null) throw new ArgumentNullException(nameof(message));
 
+            byte[] secretBytes = Encoding.UTF8.GetBytes(secret);
             byte[] bytes = Encoding.UTF8.GetBytes(message);
-            return Hash(bytes);
+            return Hash(secretBytes, bytes);
         }
     }
 }

@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                     {
                         try
                         {
-                            signText = Utilities.RsaUtil.SignWithSHA256(_mchCertPk, plainText);
+                            signText = Utilities.RSAUtility.SignWithSHA256(_mchCertPk, plainText);
                         }
                         catch (Exception ex)
                         {

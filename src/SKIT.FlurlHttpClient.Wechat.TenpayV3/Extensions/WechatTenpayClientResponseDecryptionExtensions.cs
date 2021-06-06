@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 {
                     try
                     {
-                        accountValidationModel.AccountNameEncryptedData = Utilities.RsaUtil.DecryptWithECB(
+                        accountValidationModel.AccountNameEncryptedData = Utilities.RSAUtility.DecryptWithECB(
                             client.MerchantCertPrivateKey, 
                             accountValidationModel.AccountNameEncryptedData
                         );
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 {
                     try
                     {
-                        accountValidationModel.AccountNumberEncryptedData = Utilities.RsaUtil.DecryptWithECB(
+                        accountValidationModel.AccountNumberEncryptedData = Utilities.RSAUtility.DecryptWithECB(
                             client.MerchantCertPrivateKey,
                             accountValidationModel.AccountNumberEncryptedData!
                         );
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     {
                         try
                         {
-                            downloadBillModel.EncryptKeyEncryptedData = Utilities.RsaUtil.DecryptWithECB(
+                            downloadBillModel.EncryptKeyEncryptedData = Utilities.RSAUtility.DecryptWithECB(
                                 client.MerchantCertPrivateKey,
                                 downloadBillModel.EncryptKeyEncryptedData
                             );
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 {
                     try
                     {
-                        response.PayerPhoneEncryptedData = Utilities.RsaUtil.DecryptWithECB(
+                        response.PayerPhoneEncryptedData = Utilities.RSAUtility.DecryptWithECB(
                             client.MerchantCertPrivateKey,
                             response.PayerPhoneEncryptedData!
                         );
@@ -188,10 +188,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     {
                         try
                         {
-                            certificateModel.EncryptCertificate.CipherText = Utilities.AesUtil.DecryptWithGCM(
-                                aesKey: client.MerchantV3Secret,
-                                nonce: certificateModel.EncryptCertificate.Nonce,
-                                associatedData: certificateModel.EncryptCertificate.AssociatedData,
+                            certificateModel.EncryptCertificate.CipherText = Utilities.AESUtility.DecryptWithGCM(
+                                key: client.MerchantV3Secret,
+                                iv: certificateModel.EncryptCertificate.Nonce,
+                                aad: certificateModel.EncryptCertificate.AssociatedData,
                                 cipherText: certificateModel.EncryptCertificate.CipherText
                             );
                         }
@@ -242,7 +242,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     {
                         try
                         {
-                            complaintModel.PayerPhoneEncryptedData = Utilities.RsaUtil.DecryptWithECB(
+                            complaintModel.PayerPhoneEncryptedData = Utilities.RSAUtility.DecryptWithECB(
                                 client.MerchantCertPrivateKey,
                                 complaintModel.PayerPhoneEncryptedData!
                             );
@@ -290,7 +290,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     {
                         try
                         {
-                            guideModel.UserNameEncryptedData = Utilities.RsaUtil.DecryptWithECB(
+                            guideModel.UserNameEncryptedData = Utilities.RSAUtility.DecryptWithECB(
                                 client.MerchantCertPrivateKey,
                                 guideModel.UserNameEncryptedData
                             );
@@ -305,7 +305,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     {
                         try
                         {
-                            guideModel.UserMobileEncryptedData = Utilities.RsaUtil.DecryptWithECB(
+                            guideModel.UserMobileEncryptedData = Utilities.RSAUtility.DecryptWithECB(
                                 client.MerchantCertPrivateKey,
                                 guideModel.UserMobileEncryptedData
                             );

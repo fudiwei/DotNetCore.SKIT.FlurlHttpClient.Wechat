@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             try
             {
-                return Utilities.RsaUtil.VerifyWithSHA256(
+                return Utilities.RSAUtility.VerifyWithSHA256(
                     publicKey: publicKey,
                     plainText: GetPlainTextForSignature(response),
                     signature: response.WechatpaySignature
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             try
             {
-                return Utilities.RsaUtil.VerifyWithSHA256ByCertificate(
+                return Utilities.RSAUtility.VerifyWithSHA256ByCertificate(
                     certificate: certificate,
                     plainText: GetPlainTextForSignature(response),
                     signature: response.WechatpaySignature

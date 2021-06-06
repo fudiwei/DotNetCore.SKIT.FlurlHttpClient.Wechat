@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
             if (string.IsNullOrEmpty(request.FileHash))
-                request.FileHash = Utilities.Sha256Util.Hash(request.FileBytes).ToLower();
+                request.FileHash = Security.SHA256Utility.Hash(request.FileBytes).ToLower();
 
             if (string.IsNullOrEmpty(request.FileContentType))
             {
@@ -81,7 +81,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".mp4";
 
             if (string.IsNullOrEmpty(request.FileHash))
-                request.FileHash = Utilities.Sha256Util.Hash(request.FileBytes).ToLower();
+                request.FileHash = Security.SHA256Utility.Hash(request.FileBytes).ToLower();
 
             if (string.IsNullOrEmpty(request.FileContentType))
             {

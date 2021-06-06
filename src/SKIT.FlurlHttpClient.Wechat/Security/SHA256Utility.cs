@@ -1,14 +1,13 @@
 ﻿using System;
+using System.Security.Cryptography;
 using System.Text;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Digests;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
+namespace SKIT.FlurlHttpClient.Wechat.Security
 {
     /// <summary>
     /// SHA-256 算法工具类。
     /// </summary>
-    public static class Sha256Util
+    public static class SHA256Utility
     {
         /// <summary>
         /// 获取信息摘要。
@@ -19,10 +18,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (bytes == null) throw new ArgumentNullException(nameof(bytes));
 
-            IDigest digest = new Sha256Digest();
-            byte[] hashBytes = new byte[digest.GetDigestSize()];
-            digest.BlockUpdate(bytes, 0, bytes.Length);
-            digest.DoFinal(hashBytes, 0);
+            using SHA256 sha = SHA256.Create();
+            byte[] hashBytes = sha.ComputeHash(bytes);
             return BitConverter.ToString(hashBytes).Replace("-", "");
         }
 

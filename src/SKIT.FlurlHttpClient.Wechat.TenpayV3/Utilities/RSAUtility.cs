@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
     /// <summary>
     /// RSA 算法工具类。
     /// </summary>
-    public static class RsaUtil
+    public static class RSAUtility
     {
         // REF: https://github.com/bcgit/bc-csharp/blob/master/crypto/src/security/CipherUtilities.cs
         private const string RSA_CIPHER_ALG = "RSA/ECB/PKCS1";
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 使用证书基于 SHA-256 算法验证签名。
         /// </summary>
-        /// <param name="publicKey">证书（cer 格式）。</param>
+        /// <param name="certificate">证书（cer 格式）。</param>
         /// <param name="plainText">待验证的文本数据。</param>
         /// <param name="signature">经 Base64 编码的待验证的签名。</param>
         /// <returns>验证结果。</returns>
