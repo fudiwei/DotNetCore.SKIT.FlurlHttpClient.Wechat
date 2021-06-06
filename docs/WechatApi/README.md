@@ -12,7 +12,7 @@
 
 -   基于微信公众平台 & 开放平台 API 封装。
 
--   提供了微信公众平台 & 开放平台 API 所需的 SHA-1、HMAC-SHA-256 等算法工具类。
+-   提供了微信公众平台 & 开放平台 API 所需的 SHA-1、HMAC-SHA-256、AES 等算法工具类。
 
 -   提供了 JS-SDK 签名、解析回调通知事件等扩展方法。
 
@@ -144,7 +144,7 @@ var request = new CgibinUserInfoRequest()
     AccessToken = "微信 AccessToken",
     OpenId = "微信 OpenId"
 };
-var response = await TestClients.Instance.ExecuteCgibinUserInfoAsync(request);
+var response = await client.ExecuteCgibinUserInfoAsync(request);
 ```
 
 ---

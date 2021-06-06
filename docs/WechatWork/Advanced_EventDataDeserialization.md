@@ -9,13 +9,11 @@
 ```csharp
 /* 如果是 JSON 格式的通知内容 */
 string callbackJson = "{ ... }";
-var callbackModel = client.DeserializeEventFromJson<Events.WxaMediaCheckEvent>(callbackJson);
+var callbackModel = client.DeserializeEventFromJson<Events.AddScheduleEvent>(callbackJson);
 
 /* 如果是 XML 格式的通知内容 */
 string callbackXml = "<xml> ... </xml>";
 var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml);
 ```
 
-完整的回调通知模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Api/Events_ 目录。
-
-需要注意的是，如果在微信公众平台后台配置中选择了明文模式，则无需对数据进行解密。
+完整的回调通知模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Work/Events_ 目录。

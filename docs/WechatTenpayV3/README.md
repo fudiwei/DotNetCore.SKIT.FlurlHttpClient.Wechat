@@ -16,7 +16,7 @@
 
 -   请求时自动生成签名，无需开发者手动干预。
 
--   提供了微信支付所需的 RSA、AES-GCM、SHA-256 等算法工具类。
+-   提供了微信支付所需的 RSA、AES、SHA-256 等算法工具类。
 
 -   提供了调起支付签名、解析响应敏感数据、解析回调通知事件敏感数据等扩展方法。
 
@@ -110,7 +110,7 @@ var request = new CreatePayTransactionJsapiRequest()
         OpenId = "微信 OpenId"
     }
 };
-var response = await TestClients.Instance.ExecuteCreatePayTransactionJsapiAsync(request);
+var response = await client.ExecuteCreatePayTransactionJsapiAsync(request);
 ```
 
 ---
@@ -132,39 +132,3 @@ var response = await TestClients.Instance.ExecuteCreatePayTransactionJsapiAsync(
 -   [如何解密回调通知事件中的敏感数据？](./Advanced_EventDataDecryption.md)
 
 -   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Payment.md)
-
----
-
-## 常见问题
-
-### 1. 为什么要“造轮子”？
-
-目前网络上还没有基于微信支付 v3 版 API 封装的 .NET 客户端，遑论开源了；这都 2021 年了，官方本身提供的示例代码还只能运行在 .NET Framework on Windows 上；就连 RSA 签名这么基础的东西都没有人封装（确切的说是因为 RSA 有很多种分块模式和填充模式，网上能找到的往往只封装了其中一种，但却未必符合微信支付的要求）。
-
-于是萌生了自己封装一个库的想法，打算解决这几个痛点，同时也是推广一下微软官方的 `System.Text.Json`。
-
-### 2. 本库与[盛派微信 SDK（Senparc.Weixin）](https://github.com/JeffreySu/WeiXinMPSDK)有什么区别？
-
--   本库只支持微信支付 v3 版 API；盛派微信 SDK 只支持微信支付 v2 版 API（年前作者开了新坑似乎是想提供 v3 版支持，不过目前只封装了部分接口，进展比较缓慢）。原则上官方已经停止更新 v2 版 API，现在接口只做日常维护，所以有条件的话还是应该尽快升级。
-
--   本库封装了目前微信支付官方提供的所有 API，包括直连商户和服务商两种模式；盛派微信 SDK 只提供了常用的 API，只完整支持直连商户模式、部分支持服务商模式。
-
--   本库的接口模型遵循的是微软官方推荐的 C# 属性命名方式（大驼峰命名法）；盛派微信 SDK 提供的是微信支付接口本身的命名方式（蛇形命名法和小驼峰命名法混杂）。
-
--   本库专注于 API 本身的封装；盛派微信 SDK 提供了大而全的功能，与 ASP.NET / ASP.NET Core 深度集成。
-
-### 3. 为什么不支持企业付款、现金红包等功能？
-
-请注意前文所描述的微信支付 API 一览表，有部分功能并非封装遗漏，而是官方尚未提供支持。
-
-如果你确实需要这部分功能，可以考虑使用上面提到过的[盛派微信 SDK（Senparc.Weixin）](https://github.com/JeffreySu/WeiXinMPSDK)，也很不错。
-
-当官方更新相关的 API 后，本库也会在第一时间保持跟进。
-
-### 4. 看了源码，发现模型定义里很多同样的代码是复制粘贴的，为什么不继承？
-
-关于这点得吐槽微信支付提供的 API 了，很显然微信内部也是很多个 Team 在共同开发，每个 Team、甚至每个人的字段命名风格、约束条件、接口规则都大相径庭，虽然号称 v3 版 API 是 “RESTful” 的，却没一个统一标准。
-
-举个例子，以分页查询为例，看似字段相同，都由 `offset`、`limit` + `total_count`、`data` 这几个字段构成，但某些接口的 `offset`、`limit` 字段是可选参数，某些却是必填项；某些值从 `0` 起始，某些却是从 `1` 起始；某些接口的 `total_count`、`data` 字段一定会返回，某些却是一定不返回，某些只在特定条件下返回。一共七八个分页查询的接口，却有四五种分页的数据结构，这种情况下很难抽象出一个公共的基类出来。
-
-同样一个东西在不同接口里竟然拼法不一样；同样是表示数组有的是 JSON、有的却是字符串；诸如此类“奇葩”的情况很多很多。本库已经尽可能在条件允许的范围内抽象出了一些公共基类，聊胜于无。

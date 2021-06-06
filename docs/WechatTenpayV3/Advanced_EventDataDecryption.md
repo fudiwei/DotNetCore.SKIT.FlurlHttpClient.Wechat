@@ -8,12 +8,12 @@
 
 对于回调通知事件的敏感信息，微信支付平台使用了商户公钥基于 RSA 算法加密。
 
-开发者利用本库提供的 `RsaUtil` 工具类自行解密相关字段。
+开发者利用本库提供的 `RSAUtility` 工具类自行解密相关字段。
 
 此外，本库还封装了直接解密事件的扩展方法，下面给出一个示例：
 
 ```csharp
-string callbackJson = "..."; // 微信支付平台发来的通知内容
+string callbackJson = "{ ... }"; // 微信支付平台发来的通知内容
 
 var callbackModel = client.DeserializeEvent(callbackJson); // 得到通知对象
 if ("TRANSACTION.SUCCESS".Equals(callbackModel.EventType))
