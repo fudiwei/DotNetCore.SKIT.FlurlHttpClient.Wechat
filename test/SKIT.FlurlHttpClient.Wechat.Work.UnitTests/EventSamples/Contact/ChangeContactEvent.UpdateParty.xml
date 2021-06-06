@@ -1,0 +1,11 @@
+﻿<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[sys]]></FromUserName>
+    <CreateTime>1403610513</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[change_contact]]></Event>
+    <ChangeType>update_party</ChangeType>
+    <Id>2</Id>
+    <Name><![CDATA[张三]]></Name>
+    <ParentId><![CDATA[1]]></ParentId>
+</xml>

@@ -1,0 +1,12 @@
+﻿<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[FromUser]]></FromUserName>
+    <CreateTime>123456789</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[LOCATION]]></Event>
+    <Latitude>23.104</Latitude>
+    <Longitude>113.320</Longitude>
+    <Precision>65.000</Precision>
+    <AgentID>1</AgentID>
+    <AppType><![CDATA[wxwork]]></AppType>
+</xml>

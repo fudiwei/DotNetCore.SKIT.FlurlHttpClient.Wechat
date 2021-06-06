@@ -38,6 +38,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
             Assert.Null(ex);
         }
 
+        [Fact(DisplayName = "验证 API 事件定义")]
+        public void ApiEventsDefinitionTest()
+        {
+            string workdir = Path.Combine(Environment.CurrentDirectory, "EventSamples");
+            Assert.True(Directory.Exists(workdir));
+
+            TestAssertUtil.VerifyApiEventsDefinition(_assembly, workdir, out var ex);
+
+            if (ex != null)
+                throw ex;
+
+            Assert.Null(ex);
+        }
+
         [Fact(DisplayName = "验证 API 接口命名")]
         public void ApiExtensionsNamingTest()
         {

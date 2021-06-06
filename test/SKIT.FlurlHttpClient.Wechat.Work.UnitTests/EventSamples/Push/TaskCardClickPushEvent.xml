@@ -1,0 +1,10 @@
+﻿<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[FromUser]]></FromUserName>
+    <CreateTime>123456789</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[taskcard_click]]></Event>
+    <EventKey><![CDATA[key111]]></EventKey>
+    <TaskId><![CDATA[taskid111]]></TaskId >
+    <AgentId>1</AgentId>
+</xml>

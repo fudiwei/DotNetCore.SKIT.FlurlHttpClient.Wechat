@@ -1,0 +1,13 @@
+﻿<xml>
+    <ToUserName><![CDATA[wx28dbb14e3720FAKE]]></ToUserName>
+    <FromUserName><![CDATA[FromUser]]></FromUserName>
+    <CreateTime>1425284517</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[batch_job_result]]></Event>
+    <BatchJob>
+        <JobId><![CDATA[S0MrnndvRG5fadSlLwiBqiDDbM143UqTmKP3152FZk4]]></JobId>
+        <JobType><![CDATA[sync_user]]></JobType>
+        <ErrCode>0</ErrCode>
+        <ErrMsg><![CDATA[ok]]></ErrMsg>
+    </BatchJob>
+</xml>
