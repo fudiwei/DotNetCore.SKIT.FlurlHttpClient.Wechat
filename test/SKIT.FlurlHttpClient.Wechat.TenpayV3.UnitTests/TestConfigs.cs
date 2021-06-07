@@ -13,6 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
             using var stream = File.OpenRead("appsettings.local.json");
             using var json = JsonDocument.Parse(stream);
+
             var config = json.RootElement.GetProperty("WechatConfig");
             WechatAppId = config.GetProperty("AppId").GetString();
             WechatMerchantId = config.GetProperty("MerchantId").GetString();
@@ -20,6 +21,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             WechatMerchantCertSerialNumber = config.GetProperty("MerchantCertSerialNumber").GetString();
             WechatMerchantCertPrivateKey = config.GetProperty("MerchantCertPrivateKey").GetString();
             WechatOpenId = config.GetProperty("OpenId").GetString();
+
+            ProjectSourceDirectory = json.RootElement.GetProperty("ProjectSourceDirectory").GetString();
+            ProjectTestDirectory = json.RootElement.GetProperty("ProjectTestDirectory").GetString();
         }
 
         public static readonly string WechatAppId;
@@ -28,5 +32,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         public static readonly string WechatMerchantCertSerialNumber;
         public static readonly string WechatMerchantCertPrivateKey;
         public static readonly string WechatOpenId;
+
+        public static readonly string ProjectSourceDirectory;
+        public static readonly string ProjectTestDirectory;
     }
 }

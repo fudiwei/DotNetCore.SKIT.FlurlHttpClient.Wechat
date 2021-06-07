@@ -11,12 +11,8 @@
         <Content Include="appsettings.local.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
-        <Content Include="ModelSamples/**/*.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
-        <Content Include="EventSamples/**/*.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
+        <Content Include="ModelSamples/**/*.json" />
+        <Content Include="EventSamples/**/*.json" />
     </ItemGroup>
 
     <ItemGroup>

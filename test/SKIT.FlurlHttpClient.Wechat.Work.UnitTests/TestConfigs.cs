@@ -13,14 +13,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             using var stream = File.OpenRead("appsettings.local.json");
             using var json = JsonDocument.Parse(stream);
+
             var config = json.RootElement.GetProperty("WechatConfig");
             WechatCorpId = config.GetProperty("CorpId").GetString();
             WechatAgentId = int.Parse(config.GetProperty("AgentId").GetString());
             WechatAgentSecret = config.GetProperty("AgentSecret").GetString();
+
+            ProjectSourceDirectory = json.RootElement.GetProperty("ProjectSourceDirectory").GetString();
+            ProjectTestDirectory = json.RootElement.GetProperty("ProjectTestDirectory").GetString();
         }
 
         public static readonly string WechatCorpId;
         public static readonly int WechatAgentId;
         public static readonly string WechatAgentSecret;
+
+        public static readonly string ProjectSourceDirectory;
+        public static readonly string ProjectTestDirectory;
     }
 }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat
@@ -78,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat
 
                 if (!name.EndsWith("Request") && !name.EndsWith("Response"))
                 {
-                    lstError.Add(new Exception($"`{name}` 类名结尾应为 \"Request\" 或 \"eponse\"。"));
+                    lstError.Add(new Exception($"`{name}` 类名结尾应为 \"Request\" 或 \"Response\"。"));
                     continue;
                 }
 
@@ -299,6 +300,137 @@ namespace SKIT.FlurlHttpClient.Wechat
                     {
                         lstError.Add(new Exception($"`{extType.Name}.{methodInfo.Name}` 方法与响应模型应同名。"));
                         continue;
+                    }
+                }
+            }
+
+            if (lstError.Any())
+            {
+                exception = new AggregateException(lstError);
+                return false;
+            }
+
+            exception = null;
+            return true;
+        }
+
+        public static bool VerifyApiExtensionsSourceCodeStyle(string workdir, out Exception exception)
+        {
+            if (workdir == null) throw new ArgumentNullException(nameof(workdir));
+
+            var lstError = new List<Exception>();
+
+            var lstCodeFile = TestIOUtil.GetAllFiles(workdir)
+                .Where(e => string.Equals(Path.GetExtension(e), ".cs", StringComparison.InvariantCultureIgnoreCase))
+                .Where(e => Path.GetFileNameWithoutExtension(e).StartsWith("Wechat"))
+                .Where(e => Path.GetFileNameWithoutExtension(e).Contains("ClientExecute"))
+                .Where(e => Path.GetFileNameWithoutExtension(e).EndsWith("Extensions"))
+                .ToArray();
+            if (!lstCodeFile.Any())
+            {
+                lstError.Add(new Exception($"路径 \"{workdir}\" 下不存在 CSharp 格式的源代码文件，请检查路径是否正确。"));
+            }
+
+            foreach (string file in lstCodeFile)
+            {
+                string filename = Path.GetFileName(file);
+
+                string[] array = File.ReadAllText(file)
+                    .Split("<summary>", StringSplitOptions.RemoveEmptyEntries)
+                    .Where(e => e.Contains("Async"))
+                    .ToArray();
+                for (int i = 0; i < array.Length; i++)
+                {
+                    string sourcecode = array[i];
+
+                    var regexPara = new Regex("<para(([\\s\\S])*?)</para>").Match(sourcecode);
+                    if (!regexPara.Success)
+                    {
+                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释不齐全，未能匹配到 \"<para> ... </para>\"。"));
+                        continue;
+                    }
+
+                    var regexApi = new Regex("\\[(\\S*)\\]\\s*(\\S*)").Match(regexPara.Groups[1].Value);
+                    if (!regexApi.Success)
+                    {
+                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释不齐全，未能匹配到 \"异步调用 ... 接口\"。"));
+                        continue;
+                    }
+
+                    string expectedMethod = regexApi.Groups[1].Value.Trim();
+                    string expectedUrl = regexApi.Groups[2].Value.Split('?')[0].Trim();
+                    if (!sourcecode.Contains(".SetOptions"))
+                    {
+                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，未能匹配到 \".SetOptions( ... )\"。"));
+                        continue;
+                    }
+
+                    string actualMethod = sourcecode.Contains($".{nameof(IWechatClient.CreateRequest)}(new HttpMethod(\"") ?
+                        sourcecode.Split($".{nameof(IWechatClient.CreateRequest)}(new HttpMethod(\"")[1].Split("\"")[0] :
+                        sourcecode.Contains($".{nameof(IWechatClient.CreateRequest)}(HttpMethod.") ?
+                        sourcecode.Split($".{nameof(IWechatClient.CreateRequest)}(HttpMethod.")[1].Split(",")[0] :
+                        string.Empty;
+                    if (!string.Equals(expectedMethod, actualMethod, StringComparison.OrdinalIgnoreCase))
+                    {
+                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口谓词不一致。"));
+                        continue;
+                    }
+
+                    string actualUrl = sourcecode
+                        .Split($"{nameof(IWechatClient.CreateRequest)}(", StringSplitOptions.RemoveEmptyEntries)[1]
+                        .Substring(sourcecode.Split($"{nameof(IWechatClient.CreateRequest)}(", StringSplitOptions.RemoveEmptyEntries)[1].Split(",")[0].Length + 1)
+                        .Split('\n')[0]
+                        .Trim()
+                        .TrimEnd(')', ';')
+                        .Trim();
+                    string[] expectedUrlSegments = expectedUrl.Split('/', StringSplitOptions.RemoveEmptyEntries);
+                    string[] actualUrlSegments = actualUrl.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(e => e.Trim()).ToArray();
+                    if (expectedUrlSegments.Length != actualUrlSegments.Length)
+                    {
+                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                        continue;
+                    }
+                    else
+                    {
+                        for (int urlSegmentIndex = 0; urlSegmentIndex < expectedUrlSegments.Length; urlSegmentIndex++)
+                        {
+                            string expectedUrlSegment = expectedUrlSegments[urlSegmentIndex];
+                            string actualUrlSegment = actualUrlSegments[urlSegmentIndex];
+                            if (expectedUrlSegment.Contains("{"))
+                            {
+                                if (actualUrlSegment.StartsWith("\""))
+                                {
+                                    lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                                    break;
+                                }
+                            }
+                            else
+                            {
+                                actualUrlSegment = actualUrlSegment.Replace("\"", string.Empty);
+                                if (!string.Equals(expectedUrlSegment, actualUrlSegment))
+                                {
+                                    lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    if ("GET".Equals(actualMethod, StringComparison.OrdinalIgnoreCase))
+                    {
+                        if (!sourcecode.Contains("flurlReq, cancellationToken"))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 为简单请求但包含了请求正文。"));
+                            continue;
+                        }
+                    }
+                    else
+                    {
+                        if (sourcecode.Contains("flurlReq, cancellationToken"))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 为非简单请求但不包含请求正文。"));
+                            continue;
+                        }
                     }
                 }
             }
