@@ -73,7 +73,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "marketing", "partnerships");
+                .CreateRequest(HttpMethod.Get, "marketing", "partnerships")
+                .SetOptions(request);
 
             if (request.Partner != null)
                 flurlReq.SetQueryParam("partner", client.JsonSerializer.Serialize(request.Partner));

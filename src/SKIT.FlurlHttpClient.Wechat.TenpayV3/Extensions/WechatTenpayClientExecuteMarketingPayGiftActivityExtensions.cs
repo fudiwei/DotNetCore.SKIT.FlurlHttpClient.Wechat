@@ -172,7 +172,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Delete, "marketing", "paygiftactivity", "activities", request.ActivityId, "merchants", "delete")
+                .CreateRequest(HttpMethod.Post, "marketing", "paygiftactivity", "activities", request.ActivityId, "merchants", "delete")
                 .SetOptions(request);
 
             return await client.SendRequestWithJsonAsync<Models.DeleteMarketingPayGiftActivityMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

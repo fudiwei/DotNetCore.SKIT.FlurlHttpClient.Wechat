@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "apply4subject", "applyment")
+                .CreateRequest(HttpMethod.Post, "goldplan", "merchants", "changegoldplanstatus")
                 .SetOptions(request);
 
             return await client.SendRequestWithJsonAsync<Models.ChangeGoldPlanStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "goldplan", "merchants", "hangecustompagestatus")
+                .CreateRequest(HttpMethod.Post, "goldplan", "merchants", "changecustompagestatus")
                 .SetOptions(request);
 
             return await client.SendRequestWithJsonAsync<Models.ChangeGoldPlanCustomPageStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

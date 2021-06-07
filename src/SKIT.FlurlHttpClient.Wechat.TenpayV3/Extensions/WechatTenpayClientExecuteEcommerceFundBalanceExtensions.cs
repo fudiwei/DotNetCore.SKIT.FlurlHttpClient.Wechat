@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /ecommerce/fund/balance/enddaybalance/{sub_mchid} 接口。</para>
+        /// <para>异步调用 [GET] /ecommerce/fund/enddaybalance/{sub_mchid} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_7_2.shtml </para>
         /// </summary>
         /// <param name="client"></param>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "fund", "enddaybalance", "balance", request.SubMerchantId)
+                .CreateRequest(HttpMethod.Get, "ecommerce", "fund", "enddaybalance", request.SubMerchantId)
                 .SetOptions(request)
                 .SetQueryParam("date", request.DateString);
 

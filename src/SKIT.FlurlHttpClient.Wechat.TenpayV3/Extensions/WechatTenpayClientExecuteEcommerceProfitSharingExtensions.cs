@@ -157,7 +157,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "profitsharing", "orders", request.TransactionId, "amounts", HttpMethod.Get)
+                .CreateRequest(HttpMethod.Get, "ecommerce", "profitsharing", "orders", request.TransactionId, "amounts")
                 .SetOptions(request);
 
             return await client.SendRequestAsync<Models.GetEcommerceProfitSharingOrderAmountsResponse>(flurlReq, cancellationToken: cancellationToken);

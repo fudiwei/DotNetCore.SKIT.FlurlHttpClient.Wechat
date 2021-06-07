@@ -29,7 +29,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "certificates");
+                .CreateRequest(HttpMethod.Get, "certificates")
+                .SetOptions(request);
 
             return await client.SendRequestAsync<Models.QueryCertificatesResponse>(flurlReq, cancellationToken: cancellationToken);
         }

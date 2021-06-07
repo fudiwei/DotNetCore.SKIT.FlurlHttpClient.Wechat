@@ -105,7 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.MerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "transactions", "native")
+                .CreateRequest(HttpMethod.Post, "pay", "partner", "transactions", "native")
                 .SetOptions(request);
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayPartnerTransactionNativeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

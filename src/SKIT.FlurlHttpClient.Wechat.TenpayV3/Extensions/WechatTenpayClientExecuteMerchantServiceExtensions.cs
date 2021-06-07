@@ -179,7 +179,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "merchant-service", "complaint-notifications");
+                .CreateRequest(HttpMethod.Get, "merchant-service", "complaint-notifications")
+                .SetOptions(request);
 
             return await client.SendRequestAsync<Models.GetMerchantServiceComplaintNotificationResponse>(flurlReq, cancellationToken: cancellationToken);
         }

@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "bill/tradebill")
+                .CreateRequest(HttpMethod.Get, "bill", "tradebill")
                 .SetOptions(request)
                 .SetQueryParam("bill_date", request.BillDateString);
 
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "bill/fundflowbill")
+                .CreateRequest(HttpMethod.Get, "bill", "fundflowbill")
                 .SetOptions(request)
                 .SetQueryParam("bill_date", request.BillDateString);
 
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /billdownload/file 接口。</para>
+        /// <para>异步调用 [GET] /{download_url} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_3_8.shtml </para>
@@ -121,7 +121,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, request.DownloadUrl);
+                .CreateRequest(HttpMethod.Get, request.DownloadUrl)
+                .SetOptions(request);
 
             return await client.SendRequestAsync<Models.DownloadBillFileResponse>(flurlReq, cancellationToken: cancellationToken);
         }
