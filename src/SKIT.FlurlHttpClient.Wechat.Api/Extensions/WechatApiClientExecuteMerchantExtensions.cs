@@ -583,7 +583,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "merchant", "shelf", "getbyid")
+                .CreateRequest(HttpMethod.Get, "merchant", "shelf", "getall")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 

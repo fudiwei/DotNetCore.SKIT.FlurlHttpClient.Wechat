@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/menu/delete 接口。</para>
+        /// <para>异步调用 [GET] /cgi-bin/menu/delete 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Deleting_Custom-Defined_Menu.html </para>
         /// </summary>
         /// <param name="client"></param>
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "menu", "delete")
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "menu", "delete")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 

@@ -233,7 +233,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("voice_id", request.VoiceId)
                 .SetQueryParam("lang", request.Language);
 
-            return await client.SendRequestAsync<Models.CgibinMediaVoiceQueryRecognitionResultForTextResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMediaVoiceQueryRecognitionResultForTextResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

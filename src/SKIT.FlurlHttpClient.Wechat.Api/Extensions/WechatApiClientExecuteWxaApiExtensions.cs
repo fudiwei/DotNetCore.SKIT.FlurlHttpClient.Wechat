@@ -295,7 +295,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "wxaapi", "log", "get_client_version")
+                .CreateRequest(HttpMethod.Get, "wxaapi", "userlog", "userlog_search")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("date", request.DateString)
@@ -728,12 +728,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxaapi", "broadcast", "room", "getassistantlist")
+                .CreateRequest(HttpMethod.Get, "wxaapi", "broadcast", "room", "getassistantlist")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("roomId", request.RoomId);
 
-            return await client.SendRequestWithJsonAsync<Models.WxaApiBroadcastRoomGetAssistantListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.WxaApiBroadcastRoomGetAssistantListResponse>(flurlReq, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -815,7 +815,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxaapi", "broadcast", "room", "getsubanchor")
+                .CreateRequest(HttpMethod.Get, "wxaapi", "broadcast", "room", "getsubanchor")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("roomId", request.RoomId);
