@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CgibinCardInvoiceReimburseGetInvoiceInfoResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinCardInvoiceReimburseGetInvoiceInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CgibinCardInvoiceReimburseUpdateInvoiceStatusResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinCardInvoiceReimburseUpdateInvoiceStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CgibinCardInvoiceReimburseUpdateStatusBatchResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinCardInvoiceReimburseUpdateStatusBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CgibinCardInvoiceReimburseGetInvoiceBatchResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinCardInvoiceReimburseGetInvoiceBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

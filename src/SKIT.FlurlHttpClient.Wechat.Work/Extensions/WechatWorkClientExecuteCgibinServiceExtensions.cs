@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_pre_auth_code")
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "set_session_info")
                 .SetOptions(request)
                 .SetQueryParam("suite_access_token", request.AccessToken);
 
@@ -242,7 +242,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "service", "get_login_info")
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_login_info")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 

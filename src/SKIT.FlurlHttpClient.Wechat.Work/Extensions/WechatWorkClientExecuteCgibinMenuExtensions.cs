@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     public static class WechatWorkClientExecuteCgibinMenuExtensions
     {
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/menu/create 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/menu/create 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90231 </para>
         /// </summary>
         /// <param name="client"></param>

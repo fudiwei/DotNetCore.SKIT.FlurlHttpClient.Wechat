@@ -528,7 +528,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/transfer_result 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/resigned/transfer_result 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94082 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94101 </para>
         /// </summary>
@@ -1022,7 +1022,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "externalcontact", "message", "get_subscribe_qr_code")
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "externalcontact", "get_subscribe_qr_code")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
@@ -1044,7 +1044,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "externalcontact", "message", "set_subscribe_mode")
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "externalcontact", "set_subscribe_mode")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
@@ -1066,7 +1066,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "externalcontact", "message", "get_subscribe_mode")
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "externalcontact", "get_subscribe_mode")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
