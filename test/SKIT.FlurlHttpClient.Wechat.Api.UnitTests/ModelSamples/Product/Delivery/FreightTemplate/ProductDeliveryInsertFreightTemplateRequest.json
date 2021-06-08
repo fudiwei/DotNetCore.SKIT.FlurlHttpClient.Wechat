@@ -1,0 +1,62 @@
+﻿{
+    "freight_template": {
+        "name": "新疆西藏高邮费,北京市条件包邮，其他地区低邮费",
+        "valuation_type": 1,
+        "send_time": 7,
+        "address_info": {
+            "province_name": "北京市",
+            "city_name": "北京市",
+            "county_name": "东城区"
+        },
+        "delivery_type": 1,
+        "delivery_id": [ "" ],
+        "shipping_method": 2,
+        "all_condition_free_detail": {
+            "condition_free_detail_list": [
+                {
+                    "address_infos": [
+                        {
+                            "province_name": "北京市"
+                        }
+                    ],
+                    "min_piece": 2,
+                    "min_amount": 100,
+                    "valuation_flag": 1,
+                    "amount_flag": 1
+                }
+            ]
+        },
+        "all_freight_calc_method": {
+            "freight_calc_method_list": [
+                {
+                    "address_info": [
+                        {
+                            "province_name": "新疆维吾尔自治区"
+                        },
+                        {
+                            "province_name": "西藏自治区"
+                        }
+                    ],
+                    "is_default": false,
+                    "first_val_amount": 1,
+                    "first_price": 1000,
+                    "second_val_amount": 1,
+                    "second_price": 800
+                },
+                {
+                    "address_info": [],
+                    "is_default": true,
+                    "first_val_amount": 1,
+                    "first_price": 800,
+                    "second_val_amount": 1,
+                    "second_price": 400
+                }
+
+            ]
+        },
+        "is_default": 0,
+        "not_send_area": {
+            "address_info": []
+        }
+    }
+}

@@ -1,0 +1,33 @@
+﻿{
+    "appid": "xxx",
+    "name_info": {
+        "nickname": "昵称",
+        "abbr": "简称",
+        "introduction": "简介",
+        "naming_other_stuff": [ "补充材料" ]
+    },
+    "return_info": {
+        "address_info": {
+            "user_name": "陈先生",
+            "postal_code": "2435245",
+            "province_name": "广东",
+            "city_name": "广州",
+            "county_name": "海珠区",
+            "detail_info": "大塘",
+            "national_code": "234234",
+            "tel_number": "24534252"
+        },
+        "mail": "邮箱",
+        "company_address": {
+            "user_name": "陈先生",
+            "postal_code": "2435245",
+            "province_name": "广东",
+            "city_name": "广州",
+            "county_name": "海珠区",
+            "detail_info": "大塘",
+            "national_code": "234234",
+            "tel_number": "24534252"
+        }
+    }
+
+}

@@ -1,0 +1,17 @@
+﻿{
+    "order_id": 123456,
+    "delivery_list": [
+        {
+            "delivery_id": "1",
+            "is_all_product": true,
+            "waybill_id": "23424324253",
+            "product_infos": [
+                {
+                    "product_cnt": 0,
+                    "product_id": 0,
+                    "sku_id": 0
+                }
+            ]
+        }
+    ]
+}

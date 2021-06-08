@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": [
+        {
+            "sku_id": 12343455,
+            "out_sku_id": "1024",
+            "create_time": "2020-03-25 12:05:25"
+        }
+    ]
+}

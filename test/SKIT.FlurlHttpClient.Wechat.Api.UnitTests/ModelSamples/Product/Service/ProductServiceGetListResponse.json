@@ -1,0 +1,12 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "service_list": [
+        {
+            "service_id": 12,
+            "service_name": "一键搬家",
+            "expire_time": "2020-08-05 00:00:00",
+            "service_type": 2
+        }
+    ]
+}

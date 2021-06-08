@@ -1,0 +1,9 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "product_id": 23423523452345235,
+        "out_product_id": "1234566",
+        "update_time": "2020-06-20 10:00:00"
+    }
+}

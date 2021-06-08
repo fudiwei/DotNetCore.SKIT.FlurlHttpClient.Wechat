@@ -1,0 +1,15 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "brands": [
+        {
+            "first_cat_id": 123,
+            "second_cat_id": 123,
+            "third_cat_id": 124,
+            "brand_info": {
+                "brand_id": 0,
+                "brand_name": "测试"
+            }
+        }
+    ]
+}

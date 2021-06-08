@@ -1,0 +1,26 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "same_city_template": {
+        "template_id": 60114,
+        "shipper": "Shipper_MerchantSend",
+        "scope": 5000,
+        "same_city_valuation": {
+            "type": "ValuationType_Free"
+        },
+        "special_time": {
+            "type": "ValuationType_Free"
+        },
+        "delivery_time": {
+            "start_business_hour": 9,
+            "start_business_minute": 30,
+            "end_business_hour": 22,
+            "end_business_minute": 0,
+            "book_time": 1440,
+            "first_val_meter": 3000,
+            "first_val_minutes": 30,
+            "second_val_meter": 1000,
+            "second_val_minutes": 10
+        }
+    }
+}

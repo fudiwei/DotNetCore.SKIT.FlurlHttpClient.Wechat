@@ -1,0 +1,64 @@
+﻿{
+    "out_product_id": "1234566",
+    "title": "任天堂 Nintendo Switch 国行续航增强版 NS家用体感游戏机掌机 便携掌上游戏机 红蓝主机",
+    "sub_title": "JD自营更放心】【国行Switch，更安心的保修服务，更快的国行服务器】一台主机三种模式，游戏掌机，随时随地，一起趣玩。",
+    "head_img": [
+        "https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SZ/reserved/6059ade300096eb200000000f19f9d09000000a000004f50"
+    ],
+    "desc_info": {
+        "imgs": [
+            "https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SZ/reserved/6059ade300096eb200000000f19f9d09000000a000004f50"
+        ]
+    },
+    "brand_id": 2100000000,
+    "cats": [
+        {
+            "cat_id": 6033,
+            "level": 1
+        },
+        {
+            "cat_id": 6057,
+            "level": 2
+        },
+        {
+            "cat_id": 6091,
+            "level": 3
+        }
+    ],
+    "attrs": [
+        {
+            "attr_key": "商品毛重",
+            "attr_value": "380g"
+        },
+        {
+            "attr_key": "商品产地",
+            "attr_value": "中国大陆"
+        }
+    ],
+    "model": "国行续航增强版",
+    "express_info": {
+        "template_id": 5189
+    },
+    "skus": [
+        {
+            "out_product_id": "1234566",
+            "out_sku_id": "1024",
+            "thumb_img": "https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SZ/reserved/6059ade300096eb200000000f19f9d09000000a000004f50",
+            "sale_price": 1300,
+            "market_price": 1500,
+            "stock_num": 100,
+            "sku_code": "A24525252",
+            "barcode": "13251454",
+            "sku_attrs": [
+                {
+                    "attr_key": "选择颜色",
+                    "attr_value": "红蓝主机"
+                },
+                {
+                    "attr_key": "选择套装",
+                    "attr_value": "主机+保护套"
+                }
+            ]
+        }
+    ]
+}

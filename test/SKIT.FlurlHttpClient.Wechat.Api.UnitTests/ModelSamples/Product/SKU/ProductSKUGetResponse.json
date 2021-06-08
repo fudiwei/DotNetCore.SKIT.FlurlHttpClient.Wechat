@@ -1,0 +1,27 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "product_id": 23423523452345235,
+        "out_product_id": "1234566",
+        "out_sku_id": "1024",
+        "sku_id": 2352525,
+        "thumb_img": "http://img10.360buyimg.com/n1/s450x450_jfs/t1/100778/17/13648/424215/5e590a40E2d68e774/e171d222a0c9b763.jpg",
+        "sale_price": 1300,
+        "market_price": 1500,
+        "stock_num": 100,
+        "sku_code": "A24525252",
+        "barcode": 13251454,
+        "status": 5,
+        "sku_attrs": [
+            {
+                "attr_key": "选择颜色",
+                "attr_value": "红蓝主机"
+            },
+            {
+                "attr_key": "选择套装",
+                "attr_value": "主机+保护套"
+            }
+        ]
+    }
+}
