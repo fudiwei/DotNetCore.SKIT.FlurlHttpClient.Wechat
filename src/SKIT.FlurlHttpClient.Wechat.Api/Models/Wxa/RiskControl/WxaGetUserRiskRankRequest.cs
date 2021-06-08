@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("extended_info")]
         [System.Text.Json.Serialization.JsonPropertyName("extended_info")]
-        public string? Ext { get; set; }
+        public string? ExtendedInformation { get; set; }
 
         /// <summary>
         /// 获取或设置是否是测试调用。

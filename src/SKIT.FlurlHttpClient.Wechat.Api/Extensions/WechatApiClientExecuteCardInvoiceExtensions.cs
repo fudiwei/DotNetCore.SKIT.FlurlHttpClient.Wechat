@@ -182,8 +182,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (string.IsNullOrEmpty(request.AppId))
                 request.AppId = client.AppId;
 
-            if (request.CardExt != null && string.IsNullOrEmpty(request.CardExt.Nonce))
-                request.CardExt.Nonce = Guid.NewGuid().ToString("N");
+            if (request.CardExtra != null && string.IsNullOrEmpty(request.CardExtra.Nonce))
+                request.CardExtra.Nonce = Guid.NewGuid().ToString("N");
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "card", "invoice", "insert")

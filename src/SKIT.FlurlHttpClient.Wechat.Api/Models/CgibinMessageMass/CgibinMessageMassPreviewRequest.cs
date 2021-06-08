@@ -104,7 +104,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_ext")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_ext")]
-                public string? CardExt { get; set; }
+                public string? CardExtra { get; set; }
             }
         }
 

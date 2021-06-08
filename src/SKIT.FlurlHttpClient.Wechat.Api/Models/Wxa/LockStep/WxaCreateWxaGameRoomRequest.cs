@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("room_ext_info")]
         [System.Text.Json.Serialization.JsonPropertyName("room_ext_info")]
-        public string? RoomExt { get; set; }
+        public string? RoomExtra { get; set; }
 
         /// <summary>
         /// 获取或设置是否需要在创建房间时同时生成一个随机的游戏种子。

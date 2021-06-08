@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("time_cost")]
                                 [System.Text.Json.Serialization.JsonPropertyName("time_cost")]
-                                public int TimeCost { get; set; }
+                                public int CostTime { get; set; }
                             }
                         }
 
@@ -41,14 +41,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("aver_time_cost")]
                         [System.Text.Json.Serialization.JsonPropertyName("aver_time_cost")]
-                        public int AverageTimeCost { get; set; }
+                        public int AverageCostTime { get; set; }
 
                         /// <summary>
                         /// 获取或设置请求最大耗时（单位：毫秒）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("max_time_cost")]
                         [System.Text.Json.Serialization.JsonPropertyName("max_time_cost")]
-                        public int MaxTimeCost { get; set; }
+                        public int MaxCostTime { get; set; }
 
                         /// <summary>
                         /// 获取或设置共请求了多少多次。
@@ -120,14 +120,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("aver_time_cost")]
                 [System.Text.Json.Serialization.JsonPropertyName("aver_time_cost")]
-                public int AverageTimeCost { get; set; }
+                public int AverageCostTime { get; set; }
 
                 /// <summary>
                 /// 获取或设置打开页面的最大耗时（单位：毫秒）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("max_time_cost")]
                 [System.Text.Json.Serialization.JsonPropertyName("max_time_cost")]
-                public int MaxTimeCost { get; set; }
+                public int MaxCostTime { get; set; }
 
                 /// <summary>
                 /// 获取或设置共打开了多少次该页面。

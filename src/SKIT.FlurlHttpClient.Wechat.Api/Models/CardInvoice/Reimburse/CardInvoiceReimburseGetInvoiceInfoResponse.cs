@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class InvoiceItem : CardInvoiceInsertRequest.Types.CardExt.Types.InvoiceCard.Types.Invoice.Types.InvoiceItem
+                    public class InvoiceItem : CardInvoiceInsertRequest.Types.CardExtra.Types.InvoiceCard.Types.Invoice.Types.InvoiceItem
                     {
                     }
                 }

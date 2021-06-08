@@ -168,7 +168,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string ProductCode { get; set; } = string.Empty;
             }
 
-            public class AttributeExt
+            public class AttributeExtra
             {
                 public static class Types
                 {
@@ -312,7 +312,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("attrext")]
         [System.Text.Json.Serialization.JsonPropertyName("attrext")]
-        public Types.AttributeExt? AttributeExt { get; set; }
+        public Types.AttributeExtra? AttributeExtra { get; set; }
 
         /// <summary>
         /// 获取或设置运费信息。

@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("detail_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("detail_list")]
-                public Types.GoodsDetail[]? GoodsDetailList { get; set; }
+                public IList<Types.GoodsDetail>? GoodsDetailList { get; set; }
             }
 
             public class Shop

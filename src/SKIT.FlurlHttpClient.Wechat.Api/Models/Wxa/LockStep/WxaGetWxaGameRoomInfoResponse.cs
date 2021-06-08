@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("member_ext_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("member_ext_info")]
-                        public string MemberExt { get; set; } = default!;
+                        public string MemberExtra { get; set; } = default!;
                     }
                 }
 
@@ -142,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("room_ext_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("room_ext_info")]
-                public string RoomExt { get; set; } = default!;
+                public string RoomExtra { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置游戏随机种子。

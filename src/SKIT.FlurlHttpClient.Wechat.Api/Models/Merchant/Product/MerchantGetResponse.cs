@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                     }
 
-                    public class AttributeExt : MerchantCreateRequest.Types.AttributeExt
+                    public class AttributeExtra : MerchantCreateRequest.Types.AttributeExtra
                     {
                     }
 
@@ -163,7 +163,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attrext")]
                 [System.Text.Json.Serialization.JsonPropertyName("attrext")]
-                public Types.AttributeExt AttributeExt { get; set; } = default!;
+                public Types.AttributeExtra AttributeExtra { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置运费信息。

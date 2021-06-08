@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class CardExt
+            public class CardExtra
             {
                 public static class Types
                 {
@@ -108,6 +108,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_ext")]
         [System.Text.Json.Serialization.JsonPropertyName("card_ext")]
-        public Types.CardExt CardExt { get; set; } = new Types.CardExt();
+        public Types.CardExtra CardExtra { get; set; } = new Types.CardExtra();
     }
 }

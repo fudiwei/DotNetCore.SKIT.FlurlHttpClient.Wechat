@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("qrcode_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("qrcode_info")]
                 [System.Xml.Serialization.XmlElement("qrcode_info", IsNullable = true)]
-                public string? QrcodeExt { get; set; }
+                public string? QrcodeExtra { get; set; }
             }
         }
 
