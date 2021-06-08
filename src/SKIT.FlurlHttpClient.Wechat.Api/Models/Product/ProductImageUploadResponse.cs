@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? MediaId { get; set; }
 
                 /// <summary>
-                /// 获取或设置支付 MediaId。
+                /// 获取或设置支付专用 MediaId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pay_media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("pay_media_id")]
