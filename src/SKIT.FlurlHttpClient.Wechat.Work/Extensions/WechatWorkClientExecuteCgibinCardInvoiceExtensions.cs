@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinCardInvoiceReimburseGetInvoiceBatchResponse> ExecuteCgibinCardInvoiceReimburseGetInvoiceBatchAsync(this WechatWorkClient client, Models.CgibinCardInvoiceReimburseGetInvoiceBatchRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinCardInvoiceReimburseGetInvoiceInfoBatchResponse> ExecuteCgibinCardInvoiceReimburseGetInvoiceInfoBatchAsync(this WechatWorkClient client, Models.CgibinCardInvoiceReimburseGetInvoiceInfoBatchRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinCardInvoiceReimburseGetInvoiceBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinCardInvoiceReimburseGetInvoiceInfoBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

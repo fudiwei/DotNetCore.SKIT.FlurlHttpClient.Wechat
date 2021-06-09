@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/oa/approval/getapprovalinfo 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/oa/getapprovalinfo 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/91816 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94603 </para>
         /// </summary>
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "approval", "getapprovalinfo")
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "getapprovalinfo")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/oa/approval/getapprovaldetail 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/oa/getapprovaldetail 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/91983 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92634 </para>
         /// </summary>
@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "approval", "getapprovaldetail")
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "getapprovaldetail")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 

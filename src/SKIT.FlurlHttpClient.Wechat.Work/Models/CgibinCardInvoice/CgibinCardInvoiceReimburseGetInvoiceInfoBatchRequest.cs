@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/card/invoice/reimburse/getinvoicebatch 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/card/invoice/reimburse/getinvoiceinfobatch 接口的请求。</para>
     /// </summary>
-    public class CgibinCardInvoiceReimburseGetInvoiceBatchRequest : WechatWorkRequest
+    public class CgibinCardInvoiceReimburseGetInvoiceInfoBatchRequest : WechatWorkRequest
     {
         public static class Types
         {

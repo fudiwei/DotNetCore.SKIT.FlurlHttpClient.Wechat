@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/oa/journal/get_record_list 接口的响应。</para>
+    /// <para>表示 [POST] /cgi-bin/oa/journal/get_record_detail 接口的响应。</para>
     /// </summary>
     public class CgibinOAJournalGetRecordDetailResponse : WechatWorkResponse
     {
