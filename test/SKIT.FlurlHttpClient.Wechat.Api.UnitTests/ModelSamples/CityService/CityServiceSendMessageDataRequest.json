@@ -1,0 +1,31 @@
+﻿{
+    "openid": "OPENID",
+    "biz_template_id": "ngqIpbwh8bUfcSsECmogfXcV14J0tQlEpBO27izEYtY",
+    "result_page_style_id": "cUjfPSEtwasWQFsJ5PXo218PexBaHy5jg_peVDe4WkY",
+    "deal_msg_style_id": "cUjfPSEtwasWQFsJ5PXo24LeNjWbwMObXSHPNjVZ0uQ",
+    "card_style_id": "cUjfPSEtwasWQFsJ5PXo2z8LSM0Q6FH05DCerWEVkDs",
+    "order_no": "ORDER_NO",
+    "url": "http://weixin.qq.com/download",
+    "data": {
+        "first": {
+            "value": "恭喜你购买成功！",
+            "color": "#173177"
+        },
+        "keynote1": {
+            "value": "巧克力",
+            "color": "#173177"
+        },
+        "keynote2": {
+            "value": "39.8元",
+            "color": "#173177"
+        },
+        "keynote3": {
+            "value": "2014年9月22日",
+            "color": "#173177"
+        },
+        "remark": {
+            "value": "欢迎再次购买！",
+            "color": "#173177"
+        }
+    }
+}
