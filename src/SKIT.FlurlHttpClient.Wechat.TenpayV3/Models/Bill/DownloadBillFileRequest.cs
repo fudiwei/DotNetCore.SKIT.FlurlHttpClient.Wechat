@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /billdownload/file 接口的请求。</para>
+    /// <para>表示 [GET] /{download_url} 接口的请求。</para>
     /// </summary>
     public class DownloadBillFileRequest : WechatTenpayRequest
     {

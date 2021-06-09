@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /marketing/paygiftactivity/activities/{activity_id} 接口的响应。</para>
+    /// <para>表示 [GET] /marketing/paygiftactivity/activities/{activity_id} 接口的响应。</para>
     /// </summary>
     public class GetMarketingPayGiftActivityByActivityIdResponse : WechatTenpayResponse
     {

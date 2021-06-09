@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public static class WechatTenpayClientExecuteMerchantFundBalanceExtensions
     {
         /// <summary>
-        /// <para>异步调用 [GET] /merchant/fund/balance/{sub_mchid} 接口。</para>
+        /// <para>异步调用 [GET] /merchant/fund/balance/{account_type} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_7_3.shtml </para>
         /// </summary>
         /// <param name="client"></param>

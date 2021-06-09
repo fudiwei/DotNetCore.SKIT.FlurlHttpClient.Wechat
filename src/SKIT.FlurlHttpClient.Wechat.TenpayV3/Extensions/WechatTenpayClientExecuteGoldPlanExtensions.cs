@@ -95,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /goldplan/merchants/open-advertising-close 接口。</para>
+        /// <para>异步调用 [POST] /goldplan/merchants/close-advertising-show 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_5_5.shtml </para>
         /// </summary>
         /// <param name="client"></param>
@@ -108,7 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "goldplan", "merchants", "open-advertising-close")
+                .CreateRequest(HttpMethod.Post, "goldplan", "merchants", "close-advertising-show")
                 .SetOptions(request);
 
             return await client.SendRequestWithJsonAsync<Models.CloseGoldPlanAdvertisingShowResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

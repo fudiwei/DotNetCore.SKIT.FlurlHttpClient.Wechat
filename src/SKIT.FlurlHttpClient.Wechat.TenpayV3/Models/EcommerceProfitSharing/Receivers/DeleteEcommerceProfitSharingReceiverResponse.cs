@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /ecommerce/profitsharing/receivers/delete 接口的响应。</para>
+    /// <para>表示 [POST] /ecommerce/profitsharing/receivers/delete 接口的响应。</para>
     /// </summary>
     public class DeleteEcommerceProfitSharingReceiverResponse : WechatTenpayResponse
     {

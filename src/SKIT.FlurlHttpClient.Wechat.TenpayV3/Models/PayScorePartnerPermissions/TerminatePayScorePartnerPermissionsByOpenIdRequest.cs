@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /payscore/permissions/terminate 接口的请求。</para>
+    /// <para>表示 [POST] /payscore/partner/permissions/terminate 接口的请求。</para>
     /// </summary>
     public class TerminatePayScorePartnerPermissionsByOpenIdRequest : TerminatePayScorePermissionsByOpenIdRequest
     {
