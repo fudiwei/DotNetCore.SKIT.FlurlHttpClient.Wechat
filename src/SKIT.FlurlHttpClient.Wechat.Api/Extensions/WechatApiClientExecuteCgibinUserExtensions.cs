@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinUserResponse> ExecuteCgibinUserAsync(this WechatApiClient client, Models.CgibinUserRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinUserGetResponse> ExecuteCgibinUserGetAsync(this WechatApiClient client, Models.CgibinUserGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (!string.IsNullOrEmpty(request.NextOpenId))
                 flurlReq.SetQueryParam("next_openid", request.NextOpenId);
 
-            return await client.SendRequestAsync<Models.CgibinUserResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CgibinUserGetResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /wxaapi/log/jserr_list 接口的响应。</para>
+    /// <para>表示 [POST] /wxaapi/log/get_performance 接口的响应。</para>
     /// </summary>
     public class WxaApiLogGetPerformanceResponse : WechatApiResponse
     {

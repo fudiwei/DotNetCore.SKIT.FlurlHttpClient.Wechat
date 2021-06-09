@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/user/get 接口的响应。</para>
     /// </summary>
-    public class CgibinUserResponse : WechatApiResponse
+    public class CgibinUserGetResponse : WechatApiResponse
     {
         public static class Types
         {

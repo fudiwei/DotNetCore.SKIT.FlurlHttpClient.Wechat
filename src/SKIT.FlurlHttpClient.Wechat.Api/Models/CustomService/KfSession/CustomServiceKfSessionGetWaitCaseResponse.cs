@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /customservice/kfsession/waitcase 接口的响应。</para>
+    /// <para>表示 [GET] /customservice/kfsession/getwaitcase 接口的响应。</para>
     /// </summary>
     public class CustomServiceKfSessionGetWaitCaseResponse : WechatApiResponse
     {

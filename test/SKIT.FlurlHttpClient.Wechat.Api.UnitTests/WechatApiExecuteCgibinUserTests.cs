@@ -57,14 +57,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             Assert.Equal(0, response.ErrorCode);
         }
 
-        [Fact(DisplayName = "[GET] /cgi-bin/user")]
-        public async Task CgibinUserTest()
+        [Fact(DisplayName = "[GET] /cgi-bin/user/get")]
+        public async Task CgibinUserGetTest()
         {
-            var request = new Models.CgibinUserRequest()
+            var request = new Models.CgibinUserGetRequest()
             {
                 AccessToken = TestConfigs.WechatAccessToken
             };
-            var response = await TestClients.Instance.ExecuteCgibinUserAsync(request);
+            var response = await TestClients.Instance.ExecuteCgibinUserGetAsync(request);
 
             Assert.NotEmpty(response.Data.OpenIdList);
             Assert.True(response.Total > 0);

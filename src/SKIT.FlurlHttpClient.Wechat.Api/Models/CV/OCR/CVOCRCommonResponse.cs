@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cv/ocr/bankcard 接口的响应。</para>
+    /// <para>表示 [POST] /cv/ocr/comm 接口的响应。</para>
     /// </summary>
     public class CVOCRCommonResponse : WechatApiResponse
     {

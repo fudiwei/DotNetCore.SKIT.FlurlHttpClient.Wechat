@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/guide/getguidebuyerchatrecord 接口的响应。</para>
+    /// <para>表示 [POST] /cgi-bin/guide/rebindguideacctforbuyer 接口的响应。</para>
     /// </summary>
     public class CgibinGuideRebindGuideAccountForBuyerResponse : WechatApiResponse
     {

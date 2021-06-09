@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /tcb/sendsms2 接口的响应。</para>
+    /// <para>表示 [POST] /tcb/sendsmsv2 接口的响应。</para>
     /// </summary>
     public class TcbSendSmsV2Response : WechatApiResponse
     {

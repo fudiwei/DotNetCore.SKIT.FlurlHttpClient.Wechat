@@ -858,8 +858,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         #region GiftCardOrder
         /// <summary>
-        /// <para>异步调用 [POST] /card/paygiftcard/order/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#4 </para>
+        /// <para>异步调用 [POST] /card/giftcard/order/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -871,7 +871,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "paygiftcard", "order", "get")
+                .CreateRequest(HttpMethod.Post, "card", "giftcard", "order", "get")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
@@ -879,8 +879,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /card/paygiftcard/order/batchget 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#4 </para>
+        /// <para>异步调用 [POST] /card/giftcard/order/batchget 接口。</para>
+        /// <para>REF:https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -892,7 +892,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "paygiftcard", "order", "batchget")
+                .CreateRequest(HttpMethod.Post, "card", "giftcard", "order", "batchget")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 
@@ -900,8 +900,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /card/paygiftcard/order/refund 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Manage_Member_Card.html#4 </para>
+        /// <para>异步调用 [POST] /card/giftcard/order/refund 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -913,7 +913,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "paygiftcard", "order", "refund")
+                .CreateRequest(HttpMethod.Post, "card", "giftcard", "order", "refund")
                 .SetOptions(request)
                 .SetQueryParam("access_token", request.AccessToken);
 

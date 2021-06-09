@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /customservice/msgrecord/getmsglist 接口的响应。</para>
+    /// <para>表示 [POST] /customservice/msgrecord/getmsglist 接口的响应。</para>
     /// </summary>
     public class CustomServiceMessageRecordGetMessageListResponse : WechatApiResponse
     {

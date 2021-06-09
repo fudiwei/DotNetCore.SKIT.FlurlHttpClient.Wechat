@@ -9,14 +9,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CustomServiceMessageRecordGetMessageListRequest : WechatApiRequest
     {
         /// <summary>
-        /// 获取或设置起始时间戳。
+        /// 获取或设置指定起始时间戳。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("starttime")]
         [System.Text.Json.Serialization.JsonPropertyName("starttime")]
         public long StartTimestamp { get; set; }
 
         /// <summary>
-        /// 获取或设置结束时间戳。
+        /// 获取或设置指定结束时间戳。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("endtime")]
         [System.Text.Json.Serialization.JsonPropertyName("endtime")]
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long MessageId { get; set; } = 1;
 
         /// <summary>
-        /// 获取或设置每次获取条数。
+        /// 获取或设置分页每页数量。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("number")]
         [System.Text.Json.Serialization.JsonPropertyName("number")]
