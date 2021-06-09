@@ -1,0 +1,26 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "pid": "oUkIc71zinc2mtlfC7K-NfGJxxNE_328751529",
+            "productInfo": {
+                "productId": "14495674",
+                "title": "洗衣液",
+                "subTitle": "",
+                "headImg": [
+                    "https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SZ/reserved/601151160005275c000000003e9f9d09000000a000004f50"
+                ],
+                "minPrice": 12300,
+                "shopName": "猪腩肉小商店"
+            },
+            "shareInfo": {
+                "appId": "wxb825f130c284597f",
+                "path": "plugin-private://wx34345ae5855f892d/pages/productDetail/productDetail?productId=14495788&ticket=dasdfa2V0NzIx123MTI4MDAxODadfdI4NDE3NabcMA",
+                "wxaCode": "data:image/jpeg;base64,iVBORw0KGgoAAAANSUhEUgAAAa4A",
+                "promotionWording": "好评💦好价速撸🔰价格实惠🐸\n————\n黄酒\n\n开抢啦：123元，比市场价优惠2311元",
+                "promotionUrl": "https://mmbizurl.cn/s/017btcGpB"
+            }
+        }
+    ]
+}
