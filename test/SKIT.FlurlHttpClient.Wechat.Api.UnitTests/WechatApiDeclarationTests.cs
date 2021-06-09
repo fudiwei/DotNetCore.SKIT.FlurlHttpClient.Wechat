@@ -63,13 +63,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             Assert.Null(ex);
         }
 
-        [Fact(DisplayName = "验证 API 接口文档注释")]
-        public void ApiExtensionsDocumentationTest()
+        [Fact(DisplayName = "验证代码规范")]
+        public void CodeStyleTest()
         {
-            string workdir = Path.Combine(TestConfigs.ProjectSourceDirectory, "Extensions");
+            string workdir = Path.Combine(TestConfigs.ProjectSourceDirectory);
             Assert.True(Directory.Exists(workdir));
 
-            TestAssertUtil.VerifyApiExtensionsSourceCodeStyle(workdir, out var ex);
+            TestAssertUtil.VerifySourceCodeStyle(workdir, out var ex);
 
             if (ex != null)
                 throw ex;

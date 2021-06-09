@@ -314,121 +314,285 @@ namespace SKIT.FlurlHttpClient.Wechat
             return true;
         }
 
-        public static bool VerifyApiExtensionsSourceCodeStyle(string workdir, out Exception exception)
+        public static bool VerifySourceCodeStyle(string workdir, out Exception exception)
         {
             if (workdir == null) throw new ArgumentNullException(nameof(workdir));
 
             var lstError = new List<Exception>();
 
-            var lstCodeFile = TestIOUtil.GetAllFiles(workdir)
+            var lstExtensionsCodeFile = TestIOUtil.GetAllFiles(workdir)
                 .Where(e => string.Equals(Path.GetExtension(e), ".cs", StringComparison.InvariantCultureIgnoreCase))
+                .Where(e => Path.GetDirectoryName(e).StartsWith(Path.Combine(workdir, "Extensions")))
                 .Where(e => Path.GetFileNameWithoutExtension(e).StartsWith("Wechat"))
                 .Where(e => Path.GetFileNameWithoutExtension(e).Contains("ClientExecute"))
                 .Where(e => Path.GetFileNameWithoutExtension(e).EndsWith("Extensions"))
                 .ToArray();
-            if (!lstCodeFile.Any())
+            var lstModelsCodeFile = TestIOUtil.GetAllFiles(workdir)
+                .Where(e => string.Equals(Path.GetExtension(e), ".cs", StringComparison.InvariantCultureIgnoreCase))
+                .Where(e => Path.GetDirectoryName(e).StartsWith(Path.Combine(workdir, "Models")))
+                .Where(e => Path.GetFileNameWithoutExtension(e).EndsWith("Request") || Path.GetFileNameWithoutExtension(e).EndsWith("Response"))
+                .ToArray();
+            if (!lstExtensionsCodeFile.Any() || !lstModelsCodeFile.Any())
             {
                 lstError.Add(new Exception($"路径 \"{workdir}\" 下不存在 CSharp 格式的源代码文件，请检查路径是否正确。"));
             }
 
-            foreach (string file in lstCodeFile)
+            foreach (string extCodeFilePath in lstExtensionsCodeFile)
             {
-                string filename = Path.GetFileName(file);
+                string extCodeFileName = Path.GetFileName(extCodeFilePath);
 
-                string[] array = File.ReadAllText(file)
+                string[] array = File.ReadAllText(extCodeFilePath)
                     .Split("<summary>", StringSplitOptions.RemoveEmptyEntries)
                     .Where(e => e.Contains("Async"))
                     .ToArray();
                 for (int i = 0; i < array.Length; i++)
                 {
-                    string sourcecode = array[i];
-
-                    var regexPara = new Regex("<para(([\\s\\S])*?)</para>").Match(sourcecode);
-                    if (!regexPara.Success)
+                    bool TryCheckExtensionSourceCode(string sourceCode, out (string Name, string Method, string Url)? request)
                     {
-                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释不齐全，未能匹配到 \"<para> ... </para>\"。"));
-                        continue;
+                        request = null;
+
+                        // 匹配 <para> ... </para> 结构
+                        var regexPara = new Regex("<para(([\\s\\S])*?)</para>").Match(sourceCode);
+                        if (!regexPara.Success)
+                        {
+                            lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释不齐全，未能匹配到 \"<para> ... </para>\"。"));
+                            return false;
+                        }
+
+                        // 匹配 [...] ... 结构
+                        var regexApi = new Regex("\\[(\\S*)\\]\\s*(\\S*)").Match(regexPara.Groups[1].Value);
+                        if (!regexApi.Success)
+                        {
+                            lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释不齐全，未能匹配到 \"异步调用 ... 接口\"。"));
+                            return false;
+                        }
+
+                        // 比对请求谓词
+                        string expectedMethod = regexApi.Groups[1].Value.Trim();
+                        string expectedUrl = regexApi.Groups[2].Value.Split('?')[0].Trim();
+                        string actualMethod = sourceCode.Contains($".{nameof(IWechatClient.CreateRequest)}(new HttpMethod(\"") ?
+                            sourceCode.Split($".{nameof(IWechatClient.CreateRequest)}(new HttpMethod(\"")[1].Split("\"")[0] :
+                            sourceCode.Contains($".{nameof(IWechatClient.CreateRequest)}(HttpMethod.") ?
+                            sourceCode.Split($".{nameof(IWechatClient.CreateRequest)}(HttpMethod.")[1].Split(",")[0] :
+                            string.Empty;
+                        if (!string.Equals(expectedMethod, actualMethod, StringComparison.OrdinalIgnoreCase))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口谓词不一致。"));
+                            return false;
+                        }
+
+                        // 比对请求路由
+                        string actualUrl = sourceCode
+                            .Split($"{nameof(IWechatClient.CreateRequest)}(", StringSplitOptions.RemoveEmptyEntries)[1]
+                            .Substring(sourceCode.Split($"{nameof(IWechatClient.CreateRequest)}(", StringSplitOptions.RemoveEmptyEntries)[1].Split(",")[0].Length + 1)
+                            .Split('\n')[0]
+                            .Trim()
+                            .TrimEnd(')', ';')
+                            .Trim();
+                        string[] expectedUrlSegments = expectedUrl.Split('/', StringSplitOptions.RemoveEmptyEntries);
+                        string[] actualUrlSegments = actualUrl.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(e => e.Trim()).ToArray();
+                        if (expectedUrlSegments.Length != actualUrlSegments.Length)
+                        {
+                            lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                            return false;
+                        }
+                        else
+                        {
+                            for (int urlSegmentIndex = 0; urlSegmentIndex < expectedUrlSegments.Length; urlSegmentIndex++)
+                            {
+                                string expectedUrlSegment = expectedUrlSegments[urlSegmentIndex];
+                                string actualUrlSegment = actualUrlSegments[urlSegmentIndex];
+                                if (expectedUrlSegment.Contains("{"))
+                                {
+                                    if (actualUrlSegment.StartsWith("\""))
+                                    {
+                                        lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                                        break;
+                                    }
+                                }
+                                else
+                                {
+                                    actualUrlSegment = actualUrlSegment.Replace("\"", string.Empty);
+                                    if (!string.Equals(expectedUrlSegment, actualUrlSegment))
+                                    {
+                                        lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
+                        // 比对 .SetOptions() 方法
+                        if (!sourceCode.Contains(".SetOptions"))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段代码有误，未能匹配到 \".SetOptions( ... )\"。"));
+                            return false;
+                        }
+
+                        // 比对 .SendRequestAsync() 方法
+                        if ("GET".Equals(actualMethod, StringComparison.OrdinalIgnoreCase))
+                        {
+                            if (!sourceCode.Contains("flurlReq, cancellationToken"))
+                            {
+                                lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段代码有误，`[{expectedMethod}] {expectedUrl}` 为简单请求但包含了请求正文。"));
+                                return false;
+                            }
+                        }
+                        else
+                        {
+                            if (sourceCode.Contains("flurlReq, cancellationToken"))
+                            {
+                                lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段代码有误，`[{expectedMethod}] {expectedUrl}` 为非简单请求但不包含请求正文。"));
+                                return false;
+                            }
+                        }
+
+                        string apiName = new Regex("Execute([a-zA-Z0-9]*)Async").Match(sourceCode).Groups[1].Value;
+                        request = (apiName, expectedMethod, expectedUrl);
+                        return true;
+                    }
+                    bool TryCheckRequestModelSourceCode(string filePath, string expectedRequestMethod, string expectedRequestUrl)
+                    {
+                        string reqCodeFileName = Path.GetFileName(filePath);
+                        string reqCodeSourceCode = File.ReadAllText(filePath);
+
+                        // 匹配 <para> ... </para> 结构
+                        var regexPara = new Regex("<para(([\\s\\S])*?)</para>").Match(reqCodeSourceCode);
+                        if (!regexPara.Success)
+                        {
+                            lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档注释不齐全，未能匹配到 \"<para> ... </para>\"。"));
+                            return false;
+                        }
+
+                        // 匹配 [...] ... 结构
+                        var regexApi = new Regex("\\[(\\S*)\\]\\s*(\\S*)").Match(regexPara.Groups[1].Value);
+                        if (!regexApi.Success)
+                        {
+                            lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档注释不齐全，未能匹配到 \"异步调用 ... 接口\"。"));
+                            return false;
+                        }
+
+                        // 比对请求谓词
+                        string actualMethod = regexApi.Groups[1].Value.Trim();
+                        if (!string.Equals(expectedRequestMethod, actualMethod, StringComparison.OrdinalIgnoreCase))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档注释有误，与实际接口谓词不一致。"));
+                            return false;
+                        }
+
+                        // 对比请求路由
+                        string actualUrl = regexApi.Groups[2].Value.Split('?')[0].Trim();
+                        if (!string.Equals(expectedRequestUrl, actualUrl, StringComparison.OrdinalIgnoreCase))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档注释有误，与实际接口路由不一致。"));
+                            return false;
+                        }
+
+                        // 检验是否包含 `default!` 的赋值
+                        if (new Regex("/=\\s*default!/").IsMatch(reqCodeSourceCode))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型不应包含 `= default!` 赋值。"));
+                            return false;
+                        }
+
+                        // 检验是否包含 `new class()` 的赋值
+                        if (new Regex("/=\\s*new\\s[a-zA-Z0-9.]*\\(\\)/").IsMatch(reqCodeSourceCode))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型不应包含 `= new class()` 赋值。"));
+                            return false;
+                        }
+
+                        // 检验是否包含数组类型字段
+                        if (new Regex("/public\\s*[a-zA-Z0-9.]*\\[\\]\\s*[a-zA-Z0-9]*\\s*{\\s*get;\\s*set;\\s*}/").IsMatch(reqCodeSourceCode.Replace("byte[]", string.Empty).Replace("Byte[]", string.Empty)))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型不应包含数组类型字段。"));
+                            return false;
+                        }
+
+                        // 如果是 GET 请求，检查是否包含 JSON 序列化字段
+                        if ("GET".Equals(expectedRequestMethod, StringComparison.OrdinalIgnoreCase))
+                        {
+                            if (new Regex("/\\[Newtonsoft.Json.JsonProperty\\(\"[a-zA-Z0-9_]*\"\\)\\]/").IsMatch(reqCodeSourceCode))
+                            {
+                                lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型为简单请求、不应包含可 JSON 序列化字段。"));
+                                return false;
+                            }
+
+                            if (new Regex("/\\[System.Text.Json.Serialization.JsonPropertyName\\(\"[a-zA-Z0-9_]*\"\\)\\]/").IsMatch(reqCodeSourceCode))
+                            {
+                                lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型为简单请求、不应包含可 JSON 序列化字段。"));
+                                return false;
+                            }
+                        }
+
+                        return true;
+                    }
+                    bool TryCheckResponseModelSourceCode(string filePath, string expectedRequestMethod, string expectedRequestUrl)
+                    {
+                        string resCodeFileName = Path.GetFileName(filePath);
+                        string resCodeSourceCode = File.ReadAllText(filePath);
+
+                        // 匹配 <para> ... </para> 结构
+                        var regexPara = new Regex("<para(([\\s\\S])*?)</para>").Match(resCodeSourceCode);
+                        if (!regexPara.Success)
+                        {
+                            lstError.Add(new Exception($"源代码 \"{resCodeFileName}\" 下文档注释不齐全，未能匹配到 \"<para> ... </para>\"。"));
+                            return false;
+                        }
+
+                        // 匹配 [...] ... 结构
+                        var regexApi = new Regex("\\[(\\S*)\\]\\s*(\\S*)").Match(regexPara.Groups[1].Value);
+                        if (!regexApi.Success)
+                        {
+                            lstError.Add(new Exception($"源代码 \"{resCodeFileName}\" 下文档注释不齐全，未能匹配到 \"异步调用 ... 接口\"。"));
+                            return false;
+                        }
+
+                        // 比对请求谓词
+                        string actualMethod = regexApi.Groups[1].Value.Trim();
+                        if (!string.Equals(expectedRequestMethod, actualMethod, StringComparison.OrdinalIgnoreCase))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{resCodeFileName}\" 下文档注释有误，与实际接口谓词不一致。"));
+                            return false;
+                        }
+
+                        // 对比请求路由
+                        string actualUrl = regexApi.Groups[2].Value.Split('?')[0].Trim();
+                        if (!string.Equals(expectedRequestUrl, actualUrl, StringComparison.OrdinalIgnoreCase))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{resCodeFileName}\" 下文档注释有误，与实际接口路由不一致。"));
+                            return false;
+                        }
+
+                        // 检验是否包含 `string.Empty` 的赋值
+                        if (new Regex("/=\\s*string.Empty/").IsMatch(resCodeSourceCode))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{resCodeSourceCode}\" 下文档代码有误，响应模型不应包含 `= string.Empty` 赋值。"));
+                            return false;
+                        }
+
+                        // 检验是否包含列表类型字段
+                        if (new Regex("/public\\s*IList<[a-zA-Z0-9.]*>\\s*[a-zA-Z0-9]*\\s*{\\s*get;\\s*set;\\s*}/").IsMatch(resCodeSourceCode))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{resCodeSourceCode}\" 下文档代码有误，响应模型不应包含列表类型字段。"));
+                            return false;
+                        }
+
+                        return true;
                     }
 
-                    var regexApi = new Regex("\\[(\\S*)\\]\\s*(\\S*)").Match(regexPara.Groups[1].Value);
-                    if (!regexApi.Success)
+                    if (!TryCheckExtensionSourceCode(array[i], out var request))
                     {
-                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释不齐全，未能匹配到 \"异步调用 ... 接口\"。"));
-                        continue;
-                    }
-
-                    string expectedMethod = regexApi.Groups[1].Value.Trim();
-                    string expectedUrl = regexApi.Groups[2].Value.Split('?')[0].Trim();
-                    if (!sourcecode.Contains(".SetOptions"))
-                    {
-                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，未能匹配到 \".SetOptions( ... )\"。"));
-                        continue;
-                    }
-
-                    string actualMethod = sourcecode.Contains($".{nameof(IWechatClient.CreateRequest)}(new HttpMethod(\"") ?
-                        sourcecode.Split($".{nameof(IWechatClient.CreateRequest)}(new HttpMethod(\"")[1].Split("\"")[0] :
-                        sourcecode.Contains($".{nameof(IWechatClient.CreateRequest)}(HttpMethod.") ?
-                        sourcecode.Split($".{nameof(IWechatClient.CreateRequest)}(HttpMethod.")[1].Split(",")[0] :
-                        string.Empty;
-                    if (!string.Equals(expectedMethod, actualMethod, StringComparison.OrdinalIgnoreCase))
-                    {
-                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口谓词不一致。"));
-                        continue;
-                    }
-
-                    string actualUrl = sourcecode
-                        .Split($"{nameof(IWechatClient.CreateRequest)}(", StringSplitOptions.RemoveEmptyEntries)[1]
-                        .Substring(sourcecode.Split($"{nameof(IWechatClient.CreateRequest)}(", StringSplitOptions.RemoveEmptyEntries)[1].Split(",")[0].Length + 1)
-                        .Split('\n')[0]
-                        .Trim()
-                        .TrimEnd(')', ';')
-                        .Trim();
-                    string[] expectedUrlSegments = expectedUrl.Split('/', StringSplitOptions.RemoveEmptyEntries);
-                    string[] actualUrlSegments = actualUrl.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(e => e.Trim()).ToArray();
-                    if (expectedUrlSegments.Length != actualUrlSegments.Length)
-                    {
-                        lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
                         continue;
                     }
                     else
                     {
-                        for (int urlSegmentIndex = 0; urlSegmentIndex < expectedUrlSegments.Length; urlSegmentIndex++)
+                        string requestModelFileName = lstModelsCodeFile.Single(e => string.Equals(Path.GetFileNameWithoutExtension(e), $"{request.Value.Name}Request"));
+                        string responseModelFileName = lstModelsCodeFile.Single(e => string.Equals(Path.GetFileNameWithoutExtension(e), $"{request.Value.Name}Response"));
+                        bool isValidReq = TryCheckRequestModelSourceCode(requestModelFileName, request.Value.Method, request.Value.Url);
+                        bool isValidRes = TryCheckResponseModelSourceCode(responseModelFileName, request.Value.Method, request.Value.Url);
+                        if (!isValidReq || !isValidRes)
                         {
-                            string expectedUrlSegment = expectedUrlSegments[urlSegmentIndex];
-                            string actualUrlSegment = actualUrlSegments[urlSegmentIndex];
-                            if (expectedUrlSegment.Contains("{"))
-                            {
-                                if (actualUrlSegment.StartsWith("\""))
-                                {
-                                    lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
-                                    break;
-                                }
-                            }
-                            else
-                            {
-                                actualUrlSegment = actualUrlSegment.Replace("\"", string.Empty);
-                                if (!string.Equals(expectedUrlSegment, actualUrlSegment))
-                                {
-                                    lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
-                                    break;
-                                }
-                            }
-                        }
-                    }
-
-                    if ("GET".Equals(actualMethod, StringComparison.OrdinalIgnoreCase))
-                    {
-                        if (!sourcecode.Contains("flurlReq, cancellationToken"))
-                        {
-                            lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 为简单请求但包含了请求正文。"));
-                            continue;
-                        }
-                    }
-                    else
-                    {
-                        if (sourcecode.Contains("flurlReq, cancellationToken"))
-                        {
-                            lstError.Add(new Exception($"源代码 \"{filename}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 为非简单请求但不包含请求正文。"));
                             continue;
                         }
                     }

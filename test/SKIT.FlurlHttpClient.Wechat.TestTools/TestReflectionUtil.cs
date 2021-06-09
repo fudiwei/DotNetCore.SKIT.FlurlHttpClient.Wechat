@@ -60,14 +60,22 @@ namespace SKIT.FlurlHttpClient.Wechat
         {
             if (type == null) throw new ArgumentNullException(nameof(type));
 
-            var lstProperty = type.GetProperties(BindingFlags.Public | BindingFlags.Instance).ToList();
+            static Type[] GetAllNestedTypes(Type type)
+            {
+                return type.GetNestedTypes()
+                    .Where(e =>
+                        e.IsClass &&
+                        !e.IsAbstract &&
+                        !e.IsInterface
+                    )
+                    .SelectMany(e =>
+                        GetAllNestedTypes(e)
+                    )
+                    .ToArray();
+            }
 
-            type.GetNestedTypes()
-                .Where(e =>
-                    e.IsClass &&
-                    !e.IsAbstract &&
-                    !e.IsInterface
-                )
+            var lstProperty = type.GetProperties(BindingFlags.Public | BindingFlags.Instance).ToList();
+            GetAllNestedTypes(type)
                 .ToList()
                 .ForEach(e =>
                 {
