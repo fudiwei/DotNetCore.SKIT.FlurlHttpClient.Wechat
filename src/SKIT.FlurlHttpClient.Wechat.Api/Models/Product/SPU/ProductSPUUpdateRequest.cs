@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Description : ProductSPUAddRequest.Types.Description
+            public class Description : ProductSPUAddRequest.Types.Detail
             {
             }
 

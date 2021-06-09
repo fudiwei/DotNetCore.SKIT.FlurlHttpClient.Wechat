@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Description
+            public class Detail
             {
                 /// <summary>
                 /// 获取或设置商品详情图片 Url 列表。
@@ -164,7 +164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("desc_info")]
         [System.Text.Json.Serialization.JsonPropertyName("desc_info")]
-        public Types.Description Description { get; set; } = new Types.Description();
+        public Types.Detail Detail { get; set; } = new Types.Detail();
 
         /// <summary>
         /// 获取或设置品牌 ID。
