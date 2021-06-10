@@ -193,73 +193,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetAdminListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
-        /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/service/getuserinfo3rd 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91121 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91155 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinServiceUserInfo3rdResponse> ExecuteCgibinServiceUserInfo3rdAsync(this WechatWorkClient client, Models.CgibinServiceUserInfo3rdRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "service", "getuserinfo3rd")
-                .SetOptions(request)
-                .SetQueryParam("suite_access_token", request.AccessToken)
-                .SetQueryParam("code", request.Code);
-
-            return await client.SendRequestAsync<Models.CgibinServiceUserInfo3rdResponse>(flurlReq, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/service/getuserdetail3rd 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91122 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91156 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinServiceUserDetail3rdResponse> ExecuteCgibinServiceUserDetail3rdAsync(this WechatWorkClient client, Models.CgibinServiceUserDetail3rdRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "getuserdetail3rd")
-                .SetOptions(request)
-                .SetQueryParam("suite_access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinServiceUserDetail3rdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/service/get_login_info 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91125 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91158 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinServiceGetLoginInfoResponse> ExecuteCgibinServiceGetLoginInfoAsync(this WechatWorkClient client, Models.CgibinServiceGetLoginInfoRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_login_info")
-                .SetOptions(request)
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetLoginInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
         #region Register
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/service/get_register_code 接口。</para>
@@ -370,6 +303,75 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
+        #region OAuth
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/service/getuserinfo3rd 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91121 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91155 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceUserInfo3rdResponse> ExecuteCgibinServiceUserInfo3rdAsync(this WechatWorkClient client, Models.CgibinServiceUserInfo3rdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Get, "cgi-bin", "service", "getuserinfo3rd")
+                .SetOptions(request)
+                .SetQueryParam("suite_access_token", request.AccessToken)
+                .SetQueryParam("code", request.Code);
+
+            return await client.SendRequestAsync<Models.CgibinServiceUserInfo3rdResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/getuserdetail3rd 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91122 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91156 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceUserDetail3rdResponse> ExecuteCgibinServiceUserDetail3rdAsync(this WechatWorkClient client, Models.CgibinServiceUserDetail3rdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "getuserdetail3rd")
+                .SetOptions(request)
+                .SetQueryParam("suite_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceUserDetail3rdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/get_login_info 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91125 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91158 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceGetLoginInfoResponse> ExecuteCgibinServiceGetLoginInfoAsync(this WechatWorkClient client, Models.CgibinServiceGetLoginInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_login_info")
+                .SetOptions(request)
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetLoginInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Contact
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/service/contact/id_translate 接口。</para>
@@ -435,6 +437,176 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("jobid", request.JobId);
 
             return await client.SendRequestAsync<Models.CgibinServiceBatchGetResultResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Device
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/add_device 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90626 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceAddDeviceResponse> ExecuteCgibinServiceAddDeviceAsync(this WechatWorkClient client, Models.CgibinServiceAddDeviceRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "add_device")
+                .SetOptions(request)
+                .SetQueryParam("provider_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceAddDeviceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/get_device_auth_info 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90753 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceGetDeviceAuthInfoResponse> ExecuteCgibinServiceGetDeviceAuthInfoAsync(this WechatWorkClient client, Models.CgibinServiceGetDeviceAuthInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_device_auth_info")
+                .SetOptions(request)
+                .SetQueryParam("provider_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetDeviceAuthInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/reset_secret_no 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90753 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceResetSecretNumberResponse> ExecuteCgibinServiceResetSecretNumberAsync(this WechatWorkClient client, Models.CgibinServiceResetSecretNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "reset_secret_no")
+                .SetOptions(request)
+                .SetQueryParam("provider_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceResetSecretNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/list_device 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91346 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceListDeviceResponse> ExecuteCgibinServiceListDeviceAsync(this WechatWorkClient client, Models.CgibinServiceListDeviceRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "list_device")
+                .SetOptions(request)
+                .SetQueryParam("provider_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceListDeviceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/fetch_device_log 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91475 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceFetchDeviceLogResponse> ExecuteCgibinServiceFetchDeviceLogAsync(this WechatWorkClient client, Models.CgibinServiceFetchDeviceLogRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "fetch_device_log")
+                .SetOptions(request)
+                .SetQueryParam("provider_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceFetchDeviceLogResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/hardware/get_device_feature 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/92739 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinHardwareGetDeviceFeatureResponse> ExecuteCgibinHardwareGetDeviceFeatureAsync(this WechatWorkClient client, Models.CgibinHardwareGetDeviceFeatureRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "hardware", "get_device_feature")
+                .SetOptions(request)
+                .SetQueryParam("provider_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinHardwareGetDeviceFeatureResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/del_device 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/92770 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceDeleteDeviceResponse> ExecuteCgibinServiceDeleteDeviceAsync(this WechatWorkClient client, Models.CgibinServiceDeleteDeviceRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "del_device")
+                .SetOptions(request)
+                .SetQueryParam("provider_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceDeleteDeviceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/set_printer_support_state 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/92782 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceSetPrinterSupportStateResponse> ExecuteCgibinServiceSetPrinterSupportStateAsync(this WechatWorkClient client, Models.CgibinServiceSetPrinterSupportStateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "set_printer_support_state")
+                .SetOptions(request)
+                .SetQueryParam("provider_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceSetPrinterSupportStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
