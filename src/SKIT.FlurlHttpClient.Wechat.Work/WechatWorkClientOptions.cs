@@ -8,13 +8,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     public class WechatWorkClientOptions
     {
         /// <summary>
-        /// <para>获取或设置请求超时时间（单位：毫秒）。</para>
+        /// 获取或设置请求超时时间（单位：毫秒）。
         /// <para>默认值：30000</para>
         /// </summary>
         public int Timeout { get; set; } = 30 * 1000;
 
         /// <summary>
-        /// <para>获取或设置企业微信 API 域名。</para>
+        /// 获取或设置企业微信 API 域名。
         /// <para>默认值：<see cref="WechatWorkEndpoints.DEFAULT"/></para>
         /// </summary>
         public string? Endpoints { get; set; } = WechatWorkEndpoints.DEFAULT;

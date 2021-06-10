@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     public class CgibinTicketGetRequest : CgibinGetJsapiTicketRequest
     {
         /// <summary>
-        /// <para>获取或设置票据类型。</para>
+        /// 获取或设置票据类型。
         /// <para>默认值：agent_config</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
