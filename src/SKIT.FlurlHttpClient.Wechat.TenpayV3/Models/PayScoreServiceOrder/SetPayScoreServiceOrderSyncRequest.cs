@@ -60,6 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
         /// <summary>
         /// 获取或设置场景类型。
+        /// <para>默认值：Order_Paid</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]

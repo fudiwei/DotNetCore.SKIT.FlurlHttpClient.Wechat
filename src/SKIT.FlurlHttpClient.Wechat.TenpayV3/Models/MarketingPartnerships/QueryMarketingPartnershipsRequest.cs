@@ -15,21 +15,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// <summary>
                 /// 获取或设置合作方类别。
                 /// </summary>
-        [Newtonsoft.Json.JsonProperty("type")]
+                [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
                 public string Type { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置合作方 AppId。与字段 <see cref="MerchantId"/> 二选一。
                 /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
+                [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
                 public string? AppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置合作方商户号。与字段 <see cref="AppId"/> 二选一。
                 /// </summary>
-        [Newtonsoft.Json.JsonProperty("merchant_id")]
+                [Newtonsoft.Json.JsonProperty("merchant_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_id")]
                 public string? MerchantId { get; set; }
             }
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// <summary>
                 /// 获取或设置授权业务类别。
                 /// </summary>
-        [Newtonsoft.Json.JsonProperty("business_type")]
+                [Newtonsoft.Json.JsonProperty("business_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_type")]
                 public string BusinessType { get; set; } = string.Empty;
 
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// <summary>
                 /// 获取或设置授权批次 ID。
                 /// </summary>
-        [Newtonsoft.Json.JsonProperty("stock_id")]
+                [Newtonsoft.Json.JsonProperty("stock_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("stock_id")]
                 public string? StockId { get; set; }
             }
@@ -62,14 +62,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// <summary>
         /// 获取或设置合作方信息。
         /// </summary>
-                [Newtonsoft.Json.JsonIgnore]
+        [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public Types.Partner Partner { get; set; } = new Types.Partner();
 
         /// <summary>
         /// 获取或设置被授权数据。
         /// </summary>
-                [Newtonsoft.Json.JsonIgnore]
+        [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public Types.AuthorizedData AuthorizedData { get; set; } = new Types.AuthorizedData();
 

@@ -13,6 +13,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("apply_permissions_token")]
         [System.Text.Json.Serialization.JsonPropertyName("apply_permissions_token")]
-        public string ApplyPermissionsToken { get; set; } = string.Empty;
+        public string ApplyPermissionsToken { get; set; } = default!;
     }
 }
