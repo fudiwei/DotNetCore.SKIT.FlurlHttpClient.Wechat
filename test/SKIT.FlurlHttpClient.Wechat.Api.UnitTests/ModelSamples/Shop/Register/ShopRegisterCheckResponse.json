@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "status": 2,
+        "access_info": {
+            "spu_audit_success": 1,
+            "pay_order_success": 0
+        }
+    }
+}

@@ -1,0 +1,12 @@
+﻿{
+    "order_id": 123456,
+    "out_order_id": "xxxxx",
+    "openid": "oTVP50O53a7jgmawAmxKukNlq3XI",
+    "finish_all_delivery": 0,
+    "delivery_list": [
+        {
+            "delivery_id": "SF",
+            "waybill_id": "23424324253"
+        }
+    ]
+}

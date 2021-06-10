@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": [
+        {
+            "first_cat_id": 6870,
+            "second_cat_id": 6911,
+            "third_cat_id": 6930,
+            "first_cat_name": "美妆护肤",
+            "second_cat_name": "香水彩妆",
+            "third_cat_name": "隔离霜/妆前乳"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "status": 9,
+        "brand_id": 0,
+        "reject_reason": "请重新提交审核"
+    }
+}
