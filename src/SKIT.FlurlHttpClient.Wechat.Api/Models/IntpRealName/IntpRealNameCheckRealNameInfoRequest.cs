@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string RealName { get; set; } = string.Empty;
 
         /// <summary>
-        /// <para>获取或设置需要校验的证件类型。</para>
+        /// 获取或设置需要校验的证件类型。
         /// <para>默认值：1</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cred_type")]

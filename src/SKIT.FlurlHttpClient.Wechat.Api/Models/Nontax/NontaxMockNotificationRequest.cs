@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string NotifyUrl { get; set; } = string.Empty;
 
         /// <summary>
-        /// <para>获取或设置协议版本号。</para>
+        /// 获取或设置协议版本号。
         /// <para>默认值：1</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version")]

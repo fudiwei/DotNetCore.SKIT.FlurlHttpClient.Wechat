@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CVOCRIdCardRequest : CVOCRCommonRequest
     {
         /// <summary>
-        /// <para>获取或设置图片识别模式。</para>
+        /// 获取或设置图片识别模式。
         /// <para>默认值：photo</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]

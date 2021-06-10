@@ -31,6 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置设备类型。
+        /// <para>默认值：@_all</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device")]
         [System.Text.Json.Serialization.JsonPropertyName("device")]
@@ -38,6 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置下载代码包类型。
+        /// <para>默认值：@_all</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_download_code")]
         [System.Text.Json.Serialization.JsonPropertyName("is_download_code")]
@@ -45,6 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置网络环境类型。
+        /// <para>默认值：@_all</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("networktype")]
         [System.Text.Json.Serialization.JsonPropertyName("networktype")]

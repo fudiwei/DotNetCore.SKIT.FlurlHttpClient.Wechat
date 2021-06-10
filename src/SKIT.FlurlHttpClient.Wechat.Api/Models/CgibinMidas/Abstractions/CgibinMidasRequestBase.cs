@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string MidasEnv { get; set; } = string.Empty;
 
         /// <summary>
-        /// <para>获取或设置平台标识。</para>
+        /// 获取或设置平台标识。
         /// <para>默认值：android</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pf")]

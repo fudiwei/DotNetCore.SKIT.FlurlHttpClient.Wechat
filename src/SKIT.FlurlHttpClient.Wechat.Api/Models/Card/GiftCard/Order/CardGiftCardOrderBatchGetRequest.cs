@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long? EndTimestamp { get; set; }
 
         /// <summary>
-        /// <para>获取或设置排序方式。</para>
+        /// 获取或设置排序方式。
         /// <para>默认值：ASC</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sort_type")]

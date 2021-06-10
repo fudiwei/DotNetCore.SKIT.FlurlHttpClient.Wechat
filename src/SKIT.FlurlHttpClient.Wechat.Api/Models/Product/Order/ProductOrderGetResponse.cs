@@ -42,25 +42,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public long SKUId { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置 SKU 数量。
+                                /// 获取或设置商品数量。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("sku_cnt")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sku_cnt")]
-                                public int SKUCount { get; set; }
+                                public int Count { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置正在售后流程中的 SKU 数量。
+                                /// 获取或设置正在售后流程中的商品数量。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("on_aftersale_sku_cnt")]
                                 [System.Text.Json.Serialization.JsonPropertyName("on_aftersale_sku_cnt")]
-                                public int OnAftersaleSKUCount { get; set; }
+                                public int OnAftersaleCount { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置已完成售后流程的 SKU 数量。
+                                /// 获取或设置已完成售后流程的商品数量。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("finish_aftersale_sku_cnt")]
                                 [System.Text.Json.Serialization.JsonPropertyName("finish_aftersale_sku_cnt")]
-                                public int FinishAftersaleSKUCount { get; set; }
+                                public int FinishAftersaleCount { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置商品标题。
@@ -108,13 +108,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public string PrepayId { get; set; } = default!;
 
                                 /// <summary>
-                                /// 获取或设置微信支付交易单号。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("transaction_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                                public string? TransactionId { get; set; }
-
-                                /// <summary>
                                 /// 获取或设置预支付时间。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("prepay_time")]
@@ -122,6 +115,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("prepay_time")]
                                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.CommonDateTimeOffsetConverter))]
                                 public DateTimeOffset PrepayTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置微信支付交易单号。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("transaction_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
+                                public string? TransactionId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置付款时间。
@@ -164,7 +164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public int DiscountedFee { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置是否有优惠（单位：分）。
+                                /// 获取或设置是否有优惠。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("is_discounted")]
                                 [System.Text.Json.Serialization.JsonPropertyName("is_discounted")]
@@ -367,7 +367,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long OrderId { get; set; }
 
                 /// <summary>
-                /// 获取或设置商家自定义 ID。
+                /// 获取或设置商家自定义订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]

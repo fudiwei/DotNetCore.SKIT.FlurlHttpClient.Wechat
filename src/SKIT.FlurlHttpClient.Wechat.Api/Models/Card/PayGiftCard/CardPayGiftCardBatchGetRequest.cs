@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CardPayGiftCardBatchGetRequest : WechatApiRequest
     {
         /// <summary>
-        /// <para>获取或设置营销规则类型。</para>
+        /// 获取或设置营销规则类型。
         /// <para>默认值：RULE_TYPE_PAY_MEMBER_CARD</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]

@@ -17,6 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置输入状态。
+        /// <para>默认值：Typing</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("command")]
         [System.Text.Json.Serialization.JsonPropertyName("command")]

@@ -10,6 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         /// <summary>
         /// 获取或设置文件格式。
+        /// <para>默认值：mp3</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

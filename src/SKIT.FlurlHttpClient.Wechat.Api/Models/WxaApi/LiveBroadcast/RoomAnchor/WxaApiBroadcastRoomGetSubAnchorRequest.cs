@@ -11,8 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置直播间 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("roomId")]
-        [System.Text.Json.Serialization.JsonPropertyName("roomId")]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         public long RoomId { get; set; }
     }
 }
