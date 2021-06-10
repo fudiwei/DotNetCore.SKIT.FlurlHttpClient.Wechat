@@ -21,6 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>生成客户端 JS-SDK `wx.config` 所需的参数。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90136/90506 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90144/90539 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90152/90777 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="jsapiTicket"></param>
@@ -49,6 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>生成客户端 JS-SDK `wx.agentConfig` 所需的参数。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90136/90506 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90144/90539 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90152/90777 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="jsapiTicket"></param>

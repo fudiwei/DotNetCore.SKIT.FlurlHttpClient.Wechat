@@ -7,6 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>表示 VOICE 事件的数据。</para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90239 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90375 </para>
+    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90855 </para>
     /// </summary>
     public class VoiceMessageEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
     {

@@ -15,6 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/card/invoice/reimburse/getinvoiceinfo 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90284 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90420 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90902 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -37,6 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/card/invoice/reimburse/updateinvoicestatus 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90285 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90421 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90903 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -59,6 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/card/invoice/reimburse/updatestatusbatch 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90286 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90422 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90904 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -81,6 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/card/invoice/reimburse/getinvoiceinfobatch 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90287 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90423 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90905 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

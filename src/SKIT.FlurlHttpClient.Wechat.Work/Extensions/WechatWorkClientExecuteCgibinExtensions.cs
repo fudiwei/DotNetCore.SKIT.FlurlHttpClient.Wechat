@@ -37,6 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [GET] /cgi-bin/getcallbackip 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90930 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91116 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91148 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

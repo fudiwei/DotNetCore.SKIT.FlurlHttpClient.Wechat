@@ -39,6 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/corp/getopenapprovaldata 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90269 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93798 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91188 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

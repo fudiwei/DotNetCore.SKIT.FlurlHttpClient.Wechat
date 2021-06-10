@@ -15,6 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [GET] /cgi-bin/agent/get 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90227 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90363 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90845 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -41,6 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [GET] /cgi-bin/agent/list 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90227 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90363 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90845 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -86,6 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/agent/set_scope 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90583 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90807 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
