@@ -489,21 +489,14 @@ namespace SKIT.FlurlHttpClient.Wechat
                         }
 
                         // 检验是否包含 `default!` 的赋值
-                        if (new Regex("/=\\s*default!/").IsMatch(reqCodeSourceCode))
+                        if (new Regex("=\\s*default!").IsMatch(reqCodeSourceCode))
                         {
                             lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型不应包含 `= default!` 赋值。"));
                             return false;
                         }
 
-                        // 检验是否包含 `new class()` 的赋值
-                        if (new Regex("/=\\s*new\\s[a-zA-Z0-9.]*\\(\\)/").IsMatch(reqCodeSourceCode))
-                        {
-                            lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型不应包含 `= new class()` 赋值。"));
-                            return false;
-                        }
-
                         // 检验是否包含数组类型字段
-                        if (new Regex("/public\\s*[a-zA-Z0-9.]*\\[\\]\\s*[a-zA-Z0-9]*\\s*{\\s*get;\\s*set;\\s*}/").IsMatch(reqCodeSourceCode.Replace("byte[]", string.Empty).Replace("Byte[]", string.Empty)))
+                        if (new Regex("public\\s*[a-zA-Z0-9.]*\\[\\]\\s*[a-zA-Z0-9]*\\s*{\\s*get;\\s*set;\\s*}").IsMatch(reqCodeSourceCode.Replace("byte[]", string.Empty).Replace("Byte[]", string.Empty)))
                         {
                             lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型不应包含数组类型字段。"));
                             return false;
@@ -512,13 +505,13 @@ namespace SKIT.FlurlHttpClient.Wechat
                         // 如果是 GET 请求，检查是否包含 JSON 序列化字段
                         if ("GET".Equals(expectedRequestMethod, StringComparison.OrdinalIgnoreCase))
                         {
-                            if (new Regex("/\\[Newtonsoft.Json.JsonProperty\\(\"[a-zA-Z0-9_]*\"\\)\\]/").IsMatch(reqCodeSourceCode))
+                            if (new Regex("\\[Newtonsoft.Json.JsonProperty\\(\"[a-zA-Z0-9_]*\"\\)\\]").IsMatch(reqCodeSourceCode))
                             {
                                 lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型为简单请求、不应包含可 JSON 序列化字段。"));
                                 return false;
                             }
 
-                            if (new Regex("/\\[System.Text.Json.Serialization.JsonPropertyName\\(\"[a-zA-Z0-9_]*\"\\)\\]/").IsMatch(reqCodeSourceCode))
+                            if (new Regex("\\[System.Text.Json.Serialization.JsonPropertyName\\(\"[a-zA-Z0-9_]*\"\\)\\]").IsMatch(reqCodeSourceCode))
                             {
                                 lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型为简单请求、不应包含可 JSON 序列化字段。"));
                                 return false;
@@ -565,16 +558,23 @@ namespace SKIT.FlurlHttpClient.Wechat
                         }
 
                         // 检验是否包含 `string.Empty` 的赋值
-                        if (new Regex("/=\\s*string.Empty/").IsMatch(resCodeSourceCode))
+                        if (new Regex("=\\s*string.Empty").IsMatch(resCodeSourceCode))
                         {
-                            lstError.Add(new Exception($"源代码 \"{resCodeSourceCode}\" 下文档代码有误，响应模型不应包含 `= string.Empty` 赋值。"));
+                            lstError.Add(new Exception($"源代码 \"{resCodeFileName}\" 下文档代码有误，响应模型不应包含 `= string.Empty` 赋值。"));
+                            return false;
+                        }
+
+                        // 检验是否包含 `new class()` 的赋值
+                        if (new Regex("=\\s*new\\s[a-zA-Z0-9.]*\\(\\)").IsMatch(resCodeSourceCode))
+                        {
+                            lstError.Add(new Exception($"源代码 \"{resCodeFileName}\" 下文档代码有误，请求模型不应包含 `= new class()` 赋值。"));
                             return false;
                         }
 
                         // 检验是否包含列表类型字段
-                        if (new Regex("/public\\s*IList<[a-zA-Z0-9.]*>\\s*[a-zA-Z0-9]*\\s*{\\s*get;\\s*set;\\s*}/").IsMatch(resCodeSourceCode))
+                        if (new Regex("public\\s*IList<[a-zA-Z0-9.]*>\\s*[a-zA-Z0-9]*\\s*{\\s*get;\\s*set;\\s*}").IsMatch(resCodeSourceCode))
                         {
-                            lstError.Add(new Exception($"源代码 \"{resCodeSourceCode}\" 下文档代码有误，响应模型不应包含列表类型字段。"));
+                            lstError.Add(new Exception($"源代码 \"{resCodeFileName}\" 下文档代码有误，响应模型不应包含列表类型字段。"));
                             return false;
                         }
 
