@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public override string? AccessToken { get; set; } = string.Empty;
+        public string ProviderAccessToken { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置推广包 ID。

@@ -211,7 +211,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_register_code")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetRegisterCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -233,7 +233,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_register_info")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetRegisterInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -296,7 +296,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "media", "upload")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken)
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken)
                 .SetQueryParam("type", request.Type);
 
             return await client.SendRequestAsync<Models.CgibinServiceMediaUploadResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
@@ -366,7 +366,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_login_info")
                 .SetOptions(request)
-                .SetQueryParam("access_token", request.AccessToken);
+                .SetQueryParam("access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetLoginInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -389,7 +389,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "contact", "id_translate")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceContactIdTranslateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -410,7 +410,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "contact", "sort")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceContactSortResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -433,7 +433,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Get, "cgi-bin", "service", "batch", "getresult")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken)
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken)
                 .SetQueryParam("jobid", request.JobId);
 
             return await client.SendRequestAsync<Models.CgibinServiceBatchGetResultResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -457,7 +457,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "add_device")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceAddDeviceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -478,7 +478,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_device_auth_info")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetDeviceAuthInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -499,7 +499,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "reset_secret_no")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceResetSecretNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -520,7 +520,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "list_device")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceListDeviceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -541,7 +541,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "fetch_device_log")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceFetchDeviceLogResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -562,7 +562,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "hardware", "get_device_feature")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinHardwareGetDeviceFeatureResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -583,7 +583,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "del_device")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceDeleteDeviceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -604,7 +604,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "set_printer_support_state")
                 .SetOptions(request)
-                .SetQueryParam("provider_access_token", request.AccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceSetPrinterSupportStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
