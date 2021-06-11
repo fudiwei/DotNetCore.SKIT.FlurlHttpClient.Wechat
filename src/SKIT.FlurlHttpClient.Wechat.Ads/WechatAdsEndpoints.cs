@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         /// <summary>
         /// 主域名（默认）。
         /// </summary>
-        public const string DEFAULT = "https://api.weixin.qq.com";
+        public const string DEFAULT = "https://api.weixin.qq.com/marketing";
     }
 }
