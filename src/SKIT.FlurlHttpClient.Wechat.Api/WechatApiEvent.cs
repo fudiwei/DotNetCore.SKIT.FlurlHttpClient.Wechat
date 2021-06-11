@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// 获取或设置开发者账号。
+        /// 获取或设置消息接收方账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ToUserName")]
         [System.Text.Json.Serialization.JsonPropertyName("ToUserName")]
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public string? ToUserName { get; set; }
 
         /// <summary>
-        /// 获取或设置发送方账号。
+        /// 获取或设置消息发送方账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("FromUserName")]
         [System.Text.Json.Serialization.JsonPropertyName("FromUserName")]
@@ -53,6 +53,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         [System.Text.Json.Serialization.JsonPropertyName("Event")]
         [System.Xml.Serialization.XmlElement("Event", IsNullable = true)]
         public string? Event { get; set; }
+
+        /// <summary>
+        /// 获取或设置第三方平台 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        [System.Xml.Serialization.XmlElement("AppId", IsNullable = true)]
+        public string? ComponentAppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置消息类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        [System.Xml.Serialization.XmlElement("InfoType", IsNullable = true)]
+        public string? InfoType { get; set; }
 
         /// <summary>
         /// 获取或设置消息创建时间戳。

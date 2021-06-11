@@ -230,5 +230,49 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiSetAuthorizerOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/component/fastregisterweapp?action=create 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Register_Mini_Programs/Fast_Registration_Interface_document.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinComponentFastRegisterWeappCreateResponse> ExecuteCgibinComponentFastRegisterWeappCreateAsync(this WechatApiClient client, Models.CgibinComponentFastRegisterWeappCreateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "fastregisterweapp")
+                .SetOptions(request)
+                .SetQueryParam("action", "create")
+                .SetQueryParam("component_access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinComponentFastRegisterWeappCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/component/fastregisterweapp?action=search 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Register_Mini_Programs/Fast_Registration_Interface_document.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinComponentFastRegisterWeappSearchResponse> ExecuteCgibinComponentFastRegisterWeappSearchAsync(this WechatApiClient client, Models.CgibinComponentFastRegisterWeappSearchRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "fastregisterweapp")
+                .SetOptions(request)
+                .SetQueryParam("action", "search")
+                .SetQueryParam("component_access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinComponentFastRegisterWeappSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }

@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "open", "create")
                 .SetOptions(request)
-                .SetQueryParam("access_token", request.AuthorizerAccessToken);
+                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOpenCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "open", "bind")
                 .SetOptions(request)
-                .SetQueryParam("access_token", request.AuthorizerAccessToken);
+                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOpenBindResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "open", "unbind")
                 .SetOptions(request)
-                .SetQueryParam("access_token", request.AuthorizerAccessToken);
+                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOpenUnbindResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "open", "get")
                 .SetOptions(request)
-                .SetQueryParam("access_token", request.AuthorizerAccessToken);
+                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOpenGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

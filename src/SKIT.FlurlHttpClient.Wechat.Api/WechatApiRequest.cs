@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// 获取或设置微信 AccessToken。
-        /// <para>注意：部分开放平台的接口中该字段表示授权方 AccessToken。</para>
+        /// <para>注意：部分开放平台的接口中该字段表示授权方的 AuthorizerAccessToken。</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

@@ -10,18 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     public class ComponentVerifyTicketEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
     {
         /// <summary>
-        /// 获取或设置第三方平台 AppId。
-        /// </summary>
-        [System.Xml.Serialization.XmlElement("AppId")]
-        public string AppId { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置信息类型。
-        /// </summary>
-        [System.Xml.Serialization.XmlElement("InfoType")]
-        public string InfoType { get; set; } = default!;
-
-        /// <summary>
         /// 获取或设置验证票据。
         /// </summary>
         [System.Xml.Serialization.XmlElement("ComponentVerifyTicket")]
