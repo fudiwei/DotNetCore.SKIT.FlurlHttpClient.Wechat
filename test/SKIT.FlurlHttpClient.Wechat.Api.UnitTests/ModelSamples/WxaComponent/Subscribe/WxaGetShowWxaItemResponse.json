@@ -1,0 +1,9 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "can_open": 1,
+    "is_open": 1,
+    "appid": "展示的公众号appid",
+    "nickname": "展示的公众号nickname",
+    "headimg": "展示的公众号头像"
+}

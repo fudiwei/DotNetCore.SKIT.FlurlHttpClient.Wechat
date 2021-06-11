@@ -1,0 +1,10 @@
+﻿{
+    "action": "get",
+    "is_pre_fetch_open": true,
+    "pre_fetch_type": 0,
+    "pre_fetch_url": "https://fff.com",
+    "is_period_fetch_open": true,
+    "period_fetch_type": 1,
+    "period_env": "test-pfyol",
+    "period_function_name": "login"
+}

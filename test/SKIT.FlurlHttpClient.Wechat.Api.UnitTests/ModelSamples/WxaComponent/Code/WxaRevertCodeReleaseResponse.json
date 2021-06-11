@@ -1,0 +1,18 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "template_list": [
+        {
+            "commit_time": 1488965944,
+            "user_version": "VVV",
+            "user_desc": "AAS",
+            "app_version": 111
+        },
+        {
+            "commit_time": 1504790906,
+            "user_version": "11",
+            "user_desc": "111111",
+            "app_version": 222
+        }
+    ]
+}

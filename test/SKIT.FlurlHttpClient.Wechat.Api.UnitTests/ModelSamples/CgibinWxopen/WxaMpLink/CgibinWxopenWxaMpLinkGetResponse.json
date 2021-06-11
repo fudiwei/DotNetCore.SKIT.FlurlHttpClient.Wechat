@@ -1,0 +1,40 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "wxopens": {
+        "items": [
+            {
+                "status": 1,
+                "username": "gh_xxxxxxxxx",
+                "appid": "xxxxx",
+                "source": "SOURCE_NORMAL",
+                "nickname": "aaaaaaa",
+                "selected": 1,
+                "nearby_display_status": 0,
+                "released": 1,
+                "headimg_url": "http://xxx.png",
+                "func_infos": [
+                    {
+                        "status": 0,
+                        "id": 1,
+                        "name": "微信认证"
+                    },
+                    {
+                        "status": 0,
+                        "id": 2,
+                        "name": "微信支付"
+                    }
+                ],
+                "email": "xxxx@qq.com"
+            },
+            {
+                "status": 3,
+                "username": "gh_xxxxxxxxxx",
+                "source": "SOURCE_NORMAL",
+                "headimg_url": "http://yyy.png",
+                "func_infos": [],
+                "nickname": "bbbbbbb"
+            }
+        ]
+    }
+}

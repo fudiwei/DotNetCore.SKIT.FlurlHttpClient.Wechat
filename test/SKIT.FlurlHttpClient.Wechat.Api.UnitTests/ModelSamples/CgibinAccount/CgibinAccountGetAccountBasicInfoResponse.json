@@ -1,0 +1,32 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "appid": "wx8ee51415c94040e4",
+    "account_type": 3,
+    "principal_type": 1,
+    "principal_name": "么么哒哒",
+    "realname_status": 1,
+    "wx_verify_info": {
+        "qualification_verify": true,
+        "naming_verify": false,
+        "annual_review": false,
+        "annual_review_begin_time": 1724244347,
+        "annual_review_end_time": 1732020347
+    },
+    "signature_info": {
+        "signature": "211111111111111111",
+        "modify_used_count": 1,
+        "modify_quota": 5
+    },
+    "head_image_info": {
+        "head_image_url": "http://wx.qlogo.cn/mmhead/Q3auHgzwzM4IuJTbLicibpJwrHjLMdmYJRUQ9MnLepR7jog01aSV7K6A/0",
+        "modify_used_count": 1,
+        "modify_quota": 5
+    },
+    "registered_country": 1017,
+    "nickname_info": {
+        "nickname": "帐号名称长度 111111122",
+        "modify_used_count": 2,
+        "modify_quota": 2
+    }
+}

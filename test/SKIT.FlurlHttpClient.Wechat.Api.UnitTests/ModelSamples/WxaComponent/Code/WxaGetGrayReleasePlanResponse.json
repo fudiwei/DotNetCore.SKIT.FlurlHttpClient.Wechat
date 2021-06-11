@@ -1,0 +1,9 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "gray_release_plan": {
+        "status": 1,
+        "create_timestamp": 1517553721,
+        "gray_percentage": 8
+    }
+}

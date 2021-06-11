@@ -1,0 +1,40 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "records": [
+        {
+            "appeal_record_id": 4111001,
+            "appeal_time": 1600055800,
+            "appeal_from": 0,
+            "appeal_status": 1,
+            "punish_description": "内容涉嫌欺诈",
+            "materials": [
+                {
+                    "illegal_material": {
+                        "content": "违规内容1",
+                        "content_url": "https://xxxxx"
+                    },
+                    "appeal_material": {
+                        "reason": "内容是正常的",
+                        "proof_material_ids": [
+                            "xxxx",
+                            "xxxx"
+                        ]
+                    }
+                },
+                {
+                    "illegal_material": {
+                        "content": "违规内容2",
+                        "content_url": "https://yyyyy"
+                    },
+                    "appeal_material": {
+                        "reason": "内容是正常的",
+                        "proof_material_ids": [
+                            "zzzz"
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}

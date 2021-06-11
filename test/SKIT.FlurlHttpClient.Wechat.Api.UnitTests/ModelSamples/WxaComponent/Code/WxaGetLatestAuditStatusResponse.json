@@ -1,0 +1,8 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "auditid": "1234567",
+    "status": 1,
+    "reason": "帐号信息不合规范",
+    "ScreenShot": "xx|yy|zz"
+}
