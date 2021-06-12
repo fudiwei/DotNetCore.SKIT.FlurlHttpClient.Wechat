@@ -1,0 +1,28 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "data": {
+        "list": [
+            {
+                "audience_id": 12345,
+                "custom_audience_file_id": 12345,
+                "name": "设备人群包",
+                "user_id_type": "HASH_IMEI",
+                "operation_type": "APPEND",
+                "process_status": "PENDING",
+                "process_code": 0,
+                "error_message": "",
+                "user_count": 100,
+                "valid_line_count": 100,
+                "line_count": 120,
+                "created_time": "2017-01-12 19:20:36"
+            }
+        ],
+        "page_info": {
+            "page": 1,
+            "page_size": 10,
+            "total_number": 1,
+            "total_page": 1
+        }
+    }
+}

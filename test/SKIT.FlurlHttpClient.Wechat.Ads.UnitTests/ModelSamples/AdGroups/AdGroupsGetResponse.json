@@ -1,0 +1,42 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "data": {
+        "list": [
+            {
+                "campaign_id": 23456,
+                "adgroup_id": 123456,
+                "adgroup_name": "朋友圈广告组测试1",
+                "site_set": [ "SITE_SET_WECHAT" ],
+                "optimization_goal": "OPTIMIZATIONGOAL_IMPRESSION",
+                "billing_event": "BILLINGEVENT_IMPRESSION",
+                "bid_amount": 20000,
+                "daily_budget": 1000000,
+                "product_type": "PRODUCT_TYPE_LINK_WECHAT",
+                "product_refs_id": "",
+                "targeting": {
+                    "geo_location": {
+                        "regions": [ 110000, 310000 ],
+                        "location_types": [ "LIVE_IN" ]
+                    },
+                    "age": [ "20~30" ],
+                    "gender": [ "FEMALE" ]
+                },
+                "begin_date": "2017-06-11",
+                "end_date": "2017-06-13",
+                "time_series": "111111111111111111111111111111111111000000000000111111111111111111111111111111111111000000000000111111111111111111111111111111111111000000000000111111111111111111111111111111111111000000000000111111111111111111111111111111111111000000000000111111111111111111111111111111111111000000000000111111111111111111111111111111111111000000000000",
+                "configured_status": "AD_STATUS_NORMAL",
+                "system_status": "AD_STATUS_NORMAL",
+                "reject_message": "",
+                "created_time": 1013554516,
+                "last_modified_time": 103435226
+            }
+        ],
+        "page_info": {
+            "total_number": 1,
+            "total_page": 1,
+            "page_size": 10,
+            "page": 1
+        }
+    }
+}

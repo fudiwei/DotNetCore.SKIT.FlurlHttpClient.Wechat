@@ -343,7 +343,7 @@ namespace SKIT.FlurlHttpClient.Wechat
 
                 string[] array = File.ReadAllText(extCodeFilePath)
                     .Split("<summary>", StringSplitOptions.RemoveEmptyEntries)
-                    .Where(e => e.Contains("Async"))
+                    .Where(e => e.Contains("Async") && !e.Contains("public static class"))
                     .ToArray();
                 for (int i = 0; i < array.Length; i++)
                 {

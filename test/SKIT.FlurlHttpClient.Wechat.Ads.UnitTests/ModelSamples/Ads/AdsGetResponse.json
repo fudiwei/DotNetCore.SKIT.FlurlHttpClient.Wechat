@@ -1,0 +1,41 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "data": {
+        "list": [
+            {
+                "campaign_id": 23456,
+                "adgroup_id": 123456,
+                "ad_id": 456789,
+                "ad_name": "朋友圈广告测试1",
+                "adcreative": {
+                    "campaign_id": 23456,
+                    "adcreative_id": 345678,
+                    "adcreative_name": "朋友圈广告创意1",
+                    "adcreative_template_id": 263,
+                    "adcreative_elements": {
+                        "title": "微信，是一个生活方式！",
+                        "image_list": [ "51959:7ef00101f6284a318ccf5" ]
+                    },
+                    "destination_url": "https://weixin.qq.com",
+                    "site_set": [ "SITE_SET_WECHAT" ],
+                    "product_type": "PRODUCT_TYPE_LINK_WECHAT",
+                    "product_refs_id": "",
+                    "created_time": 1013554516,
+                    "last_modified_time": 103435226
+                },
+                "configured_status": "AD_STATUS_NORMAL",
+                "system_status": "AD_STATUS_NORMAL",
+                "reject_message": "",
+                "created_time": 1013554516,
+                "last_modified_time": 103435226
+            }
+        ],
+        "page_info": {
+            "total_number": 1,
+            "total_page": 1,
+            "page_size": 10,
+            "page": 1
+        }
+    }
+}
