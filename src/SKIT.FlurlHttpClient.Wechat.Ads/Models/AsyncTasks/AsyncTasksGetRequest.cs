@@ -4,17 +4,10 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /images/get 接口的请求。</para>
+    /// <para>表示 [GET] /async_tasks/get 接口的请求。</para>
     /// </summary>
-    public class ImagesGetRequest : WechatAdsRequest
+    public class AsyncTasksGetRequest : WechatAdsRequest
     {
-        /// <summary>
-        /// 获取或设置图片 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? ImageId { get; set; }
-
         /// <summary>
         /// 获取或设置过滤条件。
         /// </summary>

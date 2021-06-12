@@ -4,23 +4,30 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /images/get 接口的请求。</para>
+    /// <para>表示 [GET] /daily_reports/get 接口的请求。</para>
     /// </summary>
-    public class ImagesGetRequest : WechatAdsRequest
+    public class DailyReportsGetRequest : WechatAdsRequest
     {
         /// <summary>
-        /// 获取或设置图片 ID。
+        /// 获取或设置时间范围。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string? ImageId { get; set; }
+        public Abstractions.CommonDateRange DateRange { get; set; } = new Abstractions.CommonDateRange();
 
         /// <summary>
-        /// 获取或设置过滤条件。
+        /// 获取或设置报表类型。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<Abstractions.CommonFilter>? Filters { get; set; }
+        public string? ReportType { get; set; }
+
+        /// <summary>
+        /// 获取或设置报表层级。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? ReportLevel { get; set; }
 
         /// <summary>
         /// 获取或设置页大小。

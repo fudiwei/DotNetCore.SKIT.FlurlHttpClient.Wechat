@@ -4,36 +4,36 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /images/add 接口的请求。</para>
+    /// <para>表示 [POST] /custom_audience_files/add 接口的请求。</para>
     /// </summary>
-    public class ImagesAddRequest : WechatAdsRequest
+    public class CustomAudienceFilesAddRequest : WechatAdsRequest
     {
         /// <summary>
-        /// 获取或设置图片文件字节数组。
+        /// 获取或设置自定义人群 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public int CustomAudienceId { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户 ID 类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string UserIdType { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置文件操作类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string OperationType { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置压缩文件字节数组。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public byte[] FileBytes { get; set; } = new byte[0];
-
-        /// <summary>
-        /// 获取或设置图片文件名。如果不指定将由系统自动生成。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? FileName { get; set; }
-
-        /// <summary>
-        /// 获取或设置图片文件 Conent-Type。如果不指定将由系统自动生成。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? FileContentType { get; set; }
-
-        /// <summary>
-        /// 获取或设置图片文件的 MD5 哈希值。如果不指定将由系统自动生成。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? FileHash { get; set; }
     }
 }

@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         public int FileSize { get; set; }
 
                         /// <summary>
-                        /// 获取或设置图片文件的哈希值。
+                        /// 获取或设置图片文件的 MD5 哈希值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("signature")]
                         [System.Text.Json.Serialization.JsonPropertyName("signature")]
