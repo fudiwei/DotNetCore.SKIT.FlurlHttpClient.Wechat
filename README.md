@@ -1,6 +1,6 @@
 ﻿# SKIT.FlurlHttpClient.Wechat
 
-基于 `Flurl.Http` 的微信 API HTTP 客户端，支持公众平台、开放平台、商户平台、企业微信等模块。
+基于 `Flurl.Http` 的微信 API HTTP 客户端，支持公众平台、开放平台、商户平台、企业微信、广告平台等模块。
 
 > [`Flurl.Http`](https://flurl.dev/) 是一个轻量级 HTTP 库，是 .NET 中最受欢迎扩展库之一，在 NuGet 上的累计下载量超过 1700 万、日均下载量超过 6 千、GitHub 2.6k Stars（数据统计截至 2021-06-01）。
 >
@@ -38,7 +38,7 @@
 | 公众平台（公众号、小程序） & 开放平台模块 |      [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Api.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Api)      |   [文档](./docs/WechatApi/README.md)    |
 |         商户平台（微信支付）模块          | [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3) | [文档](./docs/WechatTenpayV3/README.md) |
 |          企业微信（企业号）模块           |     [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Work.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Work)     |   [文档](./docs/WechatWork/README.md)   |
-|          广告平台（广点通）模块           |                                                                                    _开发中_                                                                                    |                                         |
+|          广告平台（广点通）模块           |       [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Ads.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Ads.Work)       |   [文档](./docs/WechatAds/README.md)    |
 
 ---
 

@@ -4,19 +4,19 @@
 [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.Api.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Api)
 [![GitHub License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/blob/main/LICENSE)
 
-基于 `Flurl.Http` 的微信公众平台 & 开放平台 API 客户端。
+基于 `Flurl.Http` 的[微信公众平台]((https://mp.weixin.qq.com/)) & [微信开放平台]((https://open.weixin.qq.com/)) API 客户端。
 
 ---
 
 ## 功能
 
--   基于微信公众平台 & 开放平台 API 封装。
+-   基于微信公众平台 & 微信开放平台 API 封装。
 
--   提供了微信公众平台 & 开放平台 API 所需的 SHA-1、HMAC-SHA-256、AES 等算法工具类。
+-   提供了微信公众平台 & 微信开放平台 API 所需的 SHA-1、HMAC-SHA-256、AES 等算法工具类。
 
 -   提供了 JS-SDK 签名、解析回调通知事件等扩展方法。
 
--   完整微信公众平台 & 开放平台 API 一览：
+-   完整微信公众平台 & 微信开放平台 API 一览：
 
     |     |               微信 API               |           所属平台           |         备注         |
     | :-: | :----------------------------------: | :--------------------------: | :------------------: |
