@@ -10,19 +10,40 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Business
+            public class POI
             {
                 public static class Types
                 {
-                    public class Base : CgibinPOIGetPOIResponse.Types.Business.Types.Base
+                    public class Base : CgibinPOIGetPOIResponse.Types.POI.Types.Base
                     {
                         /// <summary>
-                        /// 获取或设置商户门店 ID。
+                        /// 获取或设置门店 ID。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("poi_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("poi_id")]
                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedStringConverter))]
-                        public string? POIId { get; set; }
+                        public string POIId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置腾讯地图的位置点 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("mapid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("mapid")]
+                        public string? MapPOIId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置迁移状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("upgrade_status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("upgrade_status")]
+                        public int? UpgradeStatus { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置迁移驳回的理由。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("upgrade_comment")]
+                        [System.Text.Json.Serialization.JsonPropertyName("upgrade_comment")]
+                        public string? UpgradeRejectReason { get; set; }
                     }
                 }
 
@@ -40,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_list")]
         [System.Text.Json.Serialization.JsonPropertyName("business_list")]
-        public Types.Business[] BusinessList { get; set; } = default!;
+        public Types.POI[] POIList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置门店总数量。

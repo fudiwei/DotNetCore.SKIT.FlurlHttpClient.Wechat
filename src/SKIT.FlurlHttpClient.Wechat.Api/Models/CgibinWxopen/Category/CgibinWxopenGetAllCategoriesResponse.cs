@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("url")]
                                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                                        public string ExampleUrl { get; set; } = default!;
+                                        public string? ExampleUrl { get; set; }
                                     }
                                 }
 

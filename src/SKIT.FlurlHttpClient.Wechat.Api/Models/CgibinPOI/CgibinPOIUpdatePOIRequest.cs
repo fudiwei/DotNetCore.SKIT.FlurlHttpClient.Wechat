@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                         public static class Types
                         {
-                            public class Photo : CgibinPOIAddPOIRequest.Types.Business.Types.Base.Types.Photo
+                            public class Photo : CgibinPOIAddPOIRequest.Types.POI.Types.Base.Types.Photo
                             {
                             }
                         }
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置营业时间。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("open_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("intopen_timeroduction")]
+                        [System.Text.Json.Serialization.JsonPropertyName("open_time")]
                         public string? OpenTime { get; set; }
 
                         /// <summary>

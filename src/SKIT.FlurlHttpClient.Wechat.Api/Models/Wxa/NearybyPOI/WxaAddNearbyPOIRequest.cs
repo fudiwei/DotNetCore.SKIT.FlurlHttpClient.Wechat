@@ -311,6 +311,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
+        /// 获取或设置附近地点 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("poi_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("poi_id")]
+        public string POIId { get; set; } = string.Empty;
+
+        /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_comm_nearby")]
@@ -318,6 +325,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [System.Text.Json.Serialization.JsonPropertyName("is_comm_nearby")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
         public bool IsCommonNearby { get; set; } = true;
+
+        /// <summary>
+        /// 获取或设置腾讯地图的位置点 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("map_poi_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("map_poi_id")]
+        public string? MapPOIId { get; set; }
 
         /// <summary>
         /// 获取或设置门店图片信息。
@@ -351,7 +365,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_name")]
         [System.Text.Json.Serialization.JsonPropertyName("store_name")]
-        public string StoreName { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置营业时间（格式：HHmm-HHmm）。
@@ -365,14 +379,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address")]
         [System.Text.Json.Serialization.JsonPropertyName("address")]
-        public string Addres { get; set; } = string.Empty;
-
-        /// <summary>
-        /// 获取或设置附近地点 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("poi_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("poi_id")]
-        public string POIId { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置主体名称。
@@ -386,27 +393,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_phone")]
-        public string ContractPhone { get; set; } = string.Empty;
+        public string TeleNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置经营资质证件号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("credential")]
         [System.Text.Json.Serialization.JsonPropertyName("credential")]
-        public string Credential { get; set; } = string.Empty;
+        public string LicenseNumber { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置证明材料媒体文件标识。
+        /// 获取或设置证明材料媒体文件标识列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qualification_list")]
         [System.Text.Json.Serialization.JsonPropertyName("qualification_list")]
-        public string? QualificationMediaId { get; set; }
-
-        /// <summary>
-        /// 获取或设置对应《在腾讯地图中搜索门店》中的 `sosomap_poi_uid` 字段。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("map_poi_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("map_poi_id")]
-        public string? MapPOIId { get; set; }
+        public IList<string>? QualificationMediaIdList { get; set; }
     }
 }
