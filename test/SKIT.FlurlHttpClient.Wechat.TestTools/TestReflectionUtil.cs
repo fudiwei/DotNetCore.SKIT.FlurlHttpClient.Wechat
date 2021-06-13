@@ -60,16 +60,22 @@ namespace SKIT.FlurlHttpClient.Wechat
         {
             if (type == null) throw new ArgumentNullException(nameof(type));
 
-            static Type[] GetAllNestedTypes(Type type)
+            static Type[] GetAllNestedTypes(Type externalType)
             {
-                return type.GetNestedTypes()
+                List<Type> lstType = new List<Type>();
+                foreach (Type innerType in externalType.GetNestedTypes())
+                {
+                    if (innerType.IsClass)
+                    {
+                        lstType.Add(innerType);
+                        lstType.AddRange(GetAllNestedTypes(innerType));
+                    }
+                }
+
+                return lstType
                     .Where(e =>
-                        e.IsClass &&
                         !e.IsAbstract &&
-                        !e.IsInterface
-                    )
-                    .SelectMany(e =>
-                        GetAllNestedTypes(e)
+                        e.IsNestedPublic
                     )
                     .ToArray();
             }
@@ -110,15 +116,22 @@ namespace SKIT.FlurlHttpClient.Wechat
                     }
                     else if (propInfo.PropertyType.IsArray)
                     {
-                        Type elType = propInfo.PropertyType.Assembly.GetType(propInfo.PropertyType.FullName.Replace("[]", string.Empty));
-                        object elObj = (elType == typeof(string)) ? string.Empty : Activator.CreateInstance(elType);
-                        elObj = Convert.ChangeType(elObj, elType);
-                        func(elObj);
+                        if (propInfo.PropertyType.FullName.Contains("[][]"))
+                        {
+                            // noop
+                        }
+                        else
+                        {
+                            Type elType = propInfo.PropertyType.Assembly.GetType(propInfo.PropertyType.FullName.Replace("[]", string.Empty));
+                            object elObj = (elType == typeof(string)) ? string.Empty : Activator.CreateInstance(elType);
+                            elObj = Convert.ChangeType(elObj, elType);
+                            func(elObj);
 
-                        Array prop = Array.CreateInstance(elType, 1);
-                        prop.SetValue(elObj, 0);
+                            Array prop = Array.CreateInstance(elType, 1);
+                            prop.SetValue(elObj, 0);
 
-                        propInfo.SetValue(obj, prop);
+                            propInfo.SetValue(obj, prop);
+                        }
                     }
                     else if (propInfo.PropertyType == typeof(string))
                     {
