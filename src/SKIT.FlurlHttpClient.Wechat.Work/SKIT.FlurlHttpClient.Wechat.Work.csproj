@@ -12,7 +12,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage WechatWork WeixinWork Wxwork 微信 企业微信 企业号 微信企业号</PackageTags>
-        <Version>1.0.0-rc.7.210611</Version>
+        <Version>1.0.0</Version>
         <Description>Flurl.Http client for Wechat Work Open API. 基于 Flurl.Http 的企业微信 API 客户端，支持企业内部开发、第三方应用开发、智慧硬件开发模式，支持基础服务、通讯录管理、客户联系、身份验证、应用管理、素材管理、设备管理、消息推送、OA、效率工具、企业互联、电子发票、家校沟通、家校应用、政民沟通等功能。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
