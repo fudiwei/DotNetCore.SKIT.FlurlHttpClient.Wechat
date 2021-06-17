@@ -140,6 +140,8 @@ var response = await client.ExecuteCgibinUserGetAsync(request);
 
 -   [如何指定 JSON 序列化器？](./Advanced_JsonSerializer.md)
 
+-   [如何使用拦截器？](./Advanced_Interceptor.md)
+
 -   [如何解析回调通知事件？](./Advanced_EventDataDeserialization.md)
 
 -   [如何生成 JS-SDK 初始化时所需的参数及签名？](./Advanced_JSSDK.md)

@@ -4,7 +4,7 @@
 [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.Api.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Api)
 [![GitHub License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/blob/main/LICENSE)
 
-基于 `Flurl.Http` 的[微信公众平台]((https://mp.weixin.qq.com/)) & [微信开放平台]((https://open.weixin.qq.com/)) API 客户端。
+基于 `Flurl.Http` 的[微信公众平台](<(https://mp.weixin.qq.com/)>) & [微信开放平台](<(https://open.weixin.qq.com/)>) API 客户端。
 
 ---
 
@@ -160,6 +160,8 @@ var response = await client.ExecuteCgibinUserInfoAsync(request);
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 
 -   [如何指定 JSON 序列化器？](./Advanced_JsonSerializer.md)
+
+-   [如何使用拦截器？](./Advanced_Interceptor.md)
 
 -   [如何解析回调通知事件？](./Advanced_EventDataDeserialization.md)
 

@@ -127,6 +127,8 @@ var response = await client.ExecuteCreatePayTransactionJsapiAsync(request);
 
 -   [如何指定 JSON 序列化器？](./Advanced_JsonSerializer.md)
 
+-   [如何使用拦截器？](./Advanced_Interceptor.md)
+
 -   [如何解密响应中的敏感数据？](./Advanced_ResponseDataDecryption.md)
 
 -   [如何解密回调通知事件中的敏感数据？](./Advanced_EventDataDecryption.md)

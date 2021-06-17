@@ -8,7 +8,7 @@
 
 默认情况下，本库使用 `System.Text.Json` 作为 JSON 序列化器。
 
-如果你更习惯于 `Newtonsoft.Json`，那么你可以在构造得到 `WechatTenpayClient` 对象后：
+如果你更习惯于 `Newtonsoft.Json`，那么你可以在构造得到 `WechatApiClient` 对象后：
 
 ```csharp
 client.Configure(settings =>
