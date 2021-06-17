@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (string.IsNullOrEmpty(callbackJson)) throw new ArgumentNullException(callbackJson);
 
-            return client.JsonSerializer.Deserialize<WechatTenpayEvent>(callbackJson);
+            return client.FlurlJsonSerializer.Deserialize<WechatTenpayEvent>(callbackJson);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 try
                 {
                     plainJson = Utilities.AESUtility.DecryptWithGCM(
-                        key: client.MerchantV3Secret,
+                        key: client.WechatMerchantV3Secret,
                         iv: resource.Nonce,
                         aad: resource.AssociatedData,
                         cipherText: resource.CipherText
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 throw new Exceptions.WechatTenpayEventDecryptionException("Unknown encrypt algorithm of the resource.");
             }
 
-            return client.JsonSerializer.Deserialize<T>(plainJson);
+            return client.FlurlJsonSerializer.Deserialize<T>(plainJson);
         }
     }
 }

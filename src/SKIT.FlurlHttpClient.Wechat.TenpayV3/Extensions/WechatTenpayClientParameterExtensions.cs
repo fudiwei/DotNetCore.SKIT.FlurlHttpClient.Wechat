@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             string nonce = Guid.NewGuid().ToString("N");
             string package = $"prepay_id={prepayId}";
             string sign = Utilities.RSAUtility.SignWithSHA256(
-                privateKey: client.MerchantCertPrivateKey,
+                privateKey: client.WechatMerchantCertPrivateKey,
                 plainText: $"{appId}\n{timestamp}\n{nonce}\n{package}"
             );
 
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <returns></returns>
         public static IDictionary<string, string> GenerateParametersForAppPayRequest(this WechatTenpayClient client, string appId, string prepayId)
         {
-            return GenerateParametersForAppPayRequest(client, merchantId: client.MerchantId, appId: appId, prepayId: prepayId);
+            return GenerateParametersForAppPayRequest(client, merchantId: client.WechatMerchantId, appId: appId, prepayId: prepayId);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string sign = Utilities.RSAUtility.SignWithSHA256(
-                privateKey: client.MerchantCertPrivateKey,
+                privateKey: client.WechatMerchantCertPrivateKey,
                 plainText: $"{appId}\n{timestamp}\n{nonce}\n{prepayId}"
             );
 

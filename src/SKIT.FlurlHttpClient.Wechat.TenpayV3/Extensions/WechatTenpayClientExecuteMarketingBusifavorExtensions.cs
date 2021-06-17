@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.BelongMerchantId))
-                request.BelongMerchantId = client.MerchantId;
+                request.BelongMerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "marketing", "busifavor", "stocks")
@@ -326,7 +326,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.MerchantId))
-                request.MerchantId = client.MerchantId;
+                request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Get, "marketing", "busifavor", "callbacks")
@@ -351,7 +351,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.MerchantId))
-                request.MerchantId = client.MerchantId;
+                request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "marketing", "busifavor", "callbacks")
@@ -375,10 +375,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.PayerMerchantId))
-                request.PayerMerchantId = client.MerchantId;
+                request.PayerMerchantId = client.WechatMerchantId;
 
             if (string.IsNullOrEmpty(request.PayeeMerchantId))
-                request.PayeeMerchantId = client.MerchantId;
+                request.PayeeMerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "marketing", "busifavor", "subsidy", "pay-receipts")
@@ -423,10 +423,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.PayerMerchantId))
-                request.PayerMerchantId = client.MerchantId;
+                request.PayerMerchantId = client.WechatMerchantId;
 
             if (string.IsNullOrEmpty(request.PayeeMerchantId))
-                request.PayeeMerchantId = client.MerchantId;
+                request.PayeeMerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "marketing", "busifavor", "subsidy", "return-receipts")

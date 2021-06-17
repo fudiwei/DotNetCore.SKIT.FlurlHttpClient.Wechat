@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.CombineMerchantId)) 
-                request.CombineMerchantId = client.MerchantId;
+                request.CombineMerchantId = client.WechatMerchantId;
 
             if (request.SubOrderList != null)
             {
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.CombineMerchantId))
-                request.CombineMerchantId = client.MerchantId;
+                request.CombineMerchantId = client.WechatMerchantId;
 
             if (request.SubOrderList != null)
             {
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.CombineMerchantId))
-                request.CombineMerchantId = client.MerchantId;
+                request.CombineMerchantId = client.WechatMerchantId;
 
             if (request.SubOrderList != null)
             {
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.CombineMerchantId))
-                request.CombineMerchantId = client.MerchantId;
+                request.CombineMerchantId = client.WechatMerchantId;
 
             if (request.SubOrderList != null)
             {
@@ -188,7 +188,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 foreach (var subOrder in request.SubOrderList)
                 {
                     if (string.IsNullOrEmpty(subOrder.MerchantId))
-                        subOrder.MerchantId = client.MerchantId;
+                        subOrder.MerchantId = client.WechatMerchantId;
                 }
             }
 

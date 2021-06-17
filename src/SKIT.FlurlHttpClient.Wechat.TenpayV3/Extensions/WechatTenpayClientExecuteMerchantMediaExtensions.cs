@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var fileContent = new ByteArrayContent(request.FileBytes);
-            using var metaContent = new StringContent(client.JsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
+            using var metaContent = new StringContent(client.FlurlJsonSerializer.Serialize(request), Encoding.UTF8, "application/json");
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(metaContent, "\"" + Constants.FormDataFields.FORMDATA_META + "\"");                        // NOTICE: meta 必须要加双引号
             httpContent.Add(fileContent, "\"file\"", "\"" + request.FileName + "\"");                                  // NOTICE: file 必须要加双引号
@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var fileContent = new ByteArrayContent(request.FileBytes);
-            using var metaContent = new ByteArrayContent(Encoding.UTF8.GetBytes(client.JsonSerializer.Serialize(request)));
+            using var metaContent = new ByteArrayContent(Encoding.UTF8.GetBytes(client.FlurlJsonSerializer.Serialize(request)));
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(metaContent, "\"meta\"");                                                                  // NOTICE: meta 必须要加双引号
             httpContent.Add(fileContent, "\"file\"", "\"" + request.FileName + "\"");                                  // NOTICE: file 必须要加双引号
