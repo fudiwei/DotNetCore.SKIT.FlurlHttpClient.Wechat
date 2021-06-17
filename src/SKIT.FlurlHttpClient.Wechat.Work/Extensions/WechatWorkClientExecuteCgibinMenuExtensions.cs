@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (!request.AgentId.HasValue)
-                request.AgentId = client.AgentId;
+                request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "menu", "create")
@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (!request.AgentId.HasValue)
-                request.AgentId = client.AgentId;
+                request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Get, "cgi-bin", "menu", "get")
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (!request.AgentId.HasValue)
-                request.AgentId = client.AgentId;
+                request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Get, "cgi-bin", "menu", "delete")

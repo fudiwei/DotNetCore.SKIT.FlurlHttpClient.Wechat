@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_provider_token")
                 .SetOptions(request);
 
-            var requestData = new { corpid = client.CorpId, provider_secret = client.AgentSecret };
+            var requestData = new { corpid = client.WechatCorpId, provider_secret = client.WechatAgentSecret };
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetProviderTokenResponse>(flurlReq, data: requestData, cancellationToken: cancellationToken);
         }
 
@@ -49,10 +49,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.SuiteId))
-                request.SuiteId = client.SuiteId;
+                request.SuiteId = client.WechatSuiteId;
 
             if (string.IsNullOrEmpty(request.SuiteSecret))
-                request.SuiteSecret = client.SuiteSecret;
+                request.SuiteSecret = client.WechatSuiteSecret;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "cgi-bin", "service", "get_suite_token")

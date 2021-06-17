@@ -20,39 +20,39 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// 获取当前客户端使用的企业微信 CorpId。
         /// </summary>
-        public string CorpId { get; }
+        public string WechatCorpId { get; }
 
         /// <summary>
         /// 获取当前客户端使用的企业微信应用的 AgentId。
         /// </summary>
-        internal int? AgentId { get; }
+        internal int? WechatAgentId { get; }
 
         /// <summary>
         /// 获取当前客户端使用的企业微信应用的 AgentSecret。
         /// </summary>
-        internal string? AgentSecret { get; }
+        internal string? WechatAgentSecret { get; }
 
         /// <summary>
         /// 获取当前客户端使用的企业微信服务商 Secret。
         /// </summary>
-        internal string? ProviderSecret { get; set; }
+        internal string? WechatProviderSecret { get; set; }
 
         /// <summary>
         /// 获取当前客户端使用的企业微信第三方应用的 SuiteId。
         /// </summary>
-        internal string? SuiteId { get; set; }
+        internal string? WechatSuiteId { get; set; }
 
         /// <summary>
         /// 获取当前客户端使用的企业微信第三方应用的 SuiteSecret。
         /// </summary>
-        internal string? SuiteSecret { get; set; }
+        internal string? WechatSuiteSecret { get; set; }
 
         /// <summary>
         /// 获取当前客户端使用的 JSON 序列化器。
         /// </summary>
-        internal ISerializer JsonSerializer
+        internal ISerializer FlurlJsonSerializer
         {
-            get { return ProxyFlurlClient.Settings?.JsonSerializer ?? new FlurlNewtonsoftJsonSerializer(); }
+            get { return FlurlClient.Settings?.JsonSerializer ?? new FlurlNewtonsoftJsonSerializer(); }
         }
 
         /// <summary>
@@ -64,15 +64,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
 
-            CorpId = options.CorpId;
-            AgentId = options.AgentId;
-            AgentSecret = options.AgentSecret;
-            ProviderSecret = options.ProviderSecret;
-            SuiteId = options.SuiteId;
-            SuiteSecret = options.SuiteSecret;
+            WechatCorpId = options.CorpId;
+            WechatAgentId = options.AgentId;
+            WechatAgentSecret = options.AgentSecret;
+            WechatProviderSecret = options.ProviderSecret;
+            WechatSuiteId = options.SuiteId;
+            WechatSuiteSecret = options.SuiteSecret;
 
-            ProxyFlurlClient.BaseUrl = options.Endpoints ?? WechatWorkEndpoints.DEFAULT;
-            ProxyFlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
+            FlurlClient.BaseUrl = options.Endpoints ?? WechatWorkEndpoints.DEFAULT;
+            FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
         }
 
         /// <summary>
@@ -90,17 +90,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// 异步发起请求。
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="request"></param>
+        /// <param name="flurlRequest"></param>
         /// <param name="content"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<T> SendRequestAsync<T>(IFlurlRequest request, HttpContent? content = null, CancellationToken cancellationToken = default)
+        public async Task<T> SendRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? content = null, CancellationToken cancellationToken = default)
             where T : WechatWorkResponse, new()
         {
             try
             {
-                using IFlurlResponse response = await base.SendRequestAsync(request, content, cancellationToken).ConfigureAwait(false);
-                return await GetResposneAsync<T>(response).ConfigureAwait(false);
+                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, content, cancellationToken).ConfigureAwait(false);
+                return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)
             {
@@ -112,17 +112,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// 异步发起请求。
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="request"></param>
+        /// <param name="flurlRequest"></param>
         /// <param name="data"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<T> SendRequestWithJsonAsync<T>(IFlurlRequest request, object? data = null, CancellationToken cancellationToken = default)
+        public async Task<T> SendRequestWithJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
             where T : WechatWorkResponse, new()
         {
             try
             {
-                using IFlurlResponse response = await base.SendRequestWithJsonAsync(request, data, cancellationToken).ConfigureAwait(false);
-                return await GetResposneAsync<T>(response).ConfigureAwait(false);
+                using IFlurlResponse flurlResponse = await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
+                return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)
             {
@@ -130,27 +130,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             }
         }
 
-        private async Task<T> GetResposneAsync<T>(IFlurlResponse response)
+        private async Task<T> GetResposneAsync<T>(IFlurlResponse flurlResponse)
             where T : WechatWorkResponse, new()
         {
-            string contentType = response.Headers.GetAll("Content-Type").FirstOrDefault() ?? string.Empty;
-            string contentDisposition = response.Headers.GetAll("Content-Disposition").FirstOrDefault() ?? string.Empty;
+            string contentType = flurlResponse.Headers.GetAll("Content-Type").FirstOrDefault() ?? string.Empty;
+            string contentDisposition = flurlResponse.Headers.GetAll("Content-Disposition").FirstOrDefault() ?? string.Empty;
             bool contentTypeIsNotJson =
-                (response.StatusCode != (int)HttpStatusCode.OK) ||
+                (flurlResponse.StatusCode != (int)HttpStatusCode.OK) ||
                 (!contentType.StartsWith("application/json") && !contentType.StartsWith("text/json") && !contentType.StartsWith("text/plain")) ||
                 (contentDisposition.StartsWith("attachment"));
 
-            T result = contentTypeIsNotJson ? new T() : await response.GetJsonAsync<T>().ConfigureAwait(false);
-            result.RawStatus = response.StatusCode;
+            T result = contentTypeIsNotJson ? new T() : await flurlResponse.GetJsonAsync<T>().ConfigureAwait(false);
+            result.RawStatus = flurlResponse.StatusCode;
             result.RawHeaders = new ReadOnlyDictionary<string, string>(
-                response.Headers
+                flurlResponse.Headers
                     .GroupBy(e => e.Name)
                     .ToDictionary(
                         k => k.Key,
                         v => string.Join(", ", v.Select(e => e.Value))
                     )
             );
-            result.RawBytes = await response.ResponseMessage.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
+            result.RawBytes = await flurlResponse.ResponseMessage.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
             return result;
         }
     }
