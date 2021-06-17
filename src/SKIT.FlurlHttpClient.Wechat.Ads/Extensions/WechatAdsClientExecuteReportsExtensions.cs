@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.DateRange != null)
-                flurlReq.SetQueryParam("date_range", client.JsonSerializer.Serialize(request.DateRange));
+                flurlReq.SetQueryParam("date_range", client.FlurlJsonSerializer.Serialize(request.DateRange));
 
             if (!string.IsNullOrEmpty(request.ReportType))
                 flurlReq.SetQueryParam("report_type", request.ReportType);
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .SetQueryParam("level", request.Level);
 
             if (request.Filters != null && request.Filters.Any())
-                flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
+                flurlReq.SetQueryParam("filtering", client.FlurlJsonSerializer.Serialize(request.Filters));
 
             return await client.SendRequestAsync<Models.RealtimeCostGetResponse>(flurlReq, cancellationToken: cancellationToken);
         }
