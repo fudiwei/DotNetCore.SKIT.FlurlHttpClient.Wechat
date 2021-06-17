@@ -10,6 +10,11 @@ namespace SKIT.FlurlHttpClient.Wechat
     public interface IWechatClient : IDisposable
     {
         /// <summary>
+        /// 获取当前客户端的拦截器集合。
+        /// </summary>
+        public WechatHttpCallInterceptorCollection Interceptors { get; }
+
+        /// <summary>
         /// 配置客户端。
         /// </summary>
         /// <param name="configure"></param>

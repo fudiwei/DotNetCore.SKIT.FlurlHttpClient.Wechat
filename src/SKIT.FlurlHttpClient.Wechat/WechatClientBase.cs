@@ -16,19 +16,39 @@ namespace SKIT.FlurlHttpClient.Wechat
     public abstract class WechatClientBase : IWechatClient
     {
         /// <summary>
-        /// 
+        /// <inheritdoc />
         /// </summary>
-        protected IFlurlClient ProxyFlurlClient { get; }
+        public WechatHttpCallInterceptorCollection Interceptors { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的 <see cref="IFlurlClient"/> 对象。
+        /// </summary>
+        protected IFlurlClient FlurlClient { get; }
 
         /// <summary>
         /// 
         /// </summary>
         protected WechatClientBase()
         {
-            ProxyFlurlClient = new FlurlClient();
-            ProxyFlurlClient.Configure(settings =>
+            Interceptors = new WechatHttpCallInterceptorCollection();
+            FlurlClient = new FlurlClient();
+            FlurlClient.Configure(flurlSettings =>
             {
-                settings.JsonSerializer = new FlurlSystemTextJsonSerializer();
+                flurlSettings.JsonSerializer = new FlurlSystemTextJsonSerializer();
+                flurlSettings.BeforeCallAsync = async (flurlCall) =>
+                {
+                    for (int i = 0, len = Interceptors.Count; i < len; i++)
+                    {
+                        await Interceptors[i].BeforeCallAsync(flurlCall);
+                    }
+                };
+                flurlSettings.AfterCallAsync = async (flurlCall) =>
+                {
+                    for (int i = Interceptors.Count - 1; i >= 0; i--)
+                    {
+                        await Interceptors[i].AfterCallAsync(flurlCall);
+                    }
+                };
             });
         }
 
@@ -37,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat
         {
             if (configure == null) throw new ArgumentNullException(nameof(configure));
             
-            ProxyFlurlClient.Configure(flurlSettings =>
+            FlurlClient.Configure(flurlSettings =>
             {
                 var settings = new WechatClientSettings();
                 settings.Timeout = flurlSettings.Timeout;
@@ -64,24 +84,24 @@ namespace SKIT.FlurlHttpClient.Wechat
         /// <inheritdoc/>
         public IFlurlRequest CreateRequest(HttpMethod method, params object[] urlSegments)
         {
-            return ProxyFlurlClient.Request(urlSegments).WithVerb(method);
+            return FlurlClient.Request(urlSegments).WithVerb(method);
         }
 
         /// <summary>
         /// 异步发起请求。
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="flurlRequest"></param>
         /// <param name="content"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        protected virtual async Task<IFlurlResponse> SendRequestAsync(IFlurlRequest request, HttpContent? content = null, CancellationToken cancellationToken = default)
+        protected virtual async Task<IFlurlResponse> SendRequestAsync(IFlurlRequest flurlRequest, HttpContent? content = null, CancellationToken cancellationToken = default)
         {
-            if (request == null) throw new ArgumentNullException(nameof(request));
+            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
 
-            var response = await request
-                .WithClient(ProxyFlurlClient)
+            var response = await flurlRequest
+                .WithClient(FlurlClient)
                 .AllowAnyHttpStatus()
-                .SendAsync(request.Verb, content, cancellationToken)
+                .SendAsync(flurlRequest.Verb, content, cancellationToken)
                 .ConfigureAwait(false);
             return response;
         }
@@ -89,18 +109,18 @@ namespace SKIT.FlurlHttpClient.Wechat
         /// <summary>
         /// 异步发起请求。
         /// </summary>
-        /// <param name="request"></param>
+        /// <param name="flurlRequest"></param>
         /// <param name="data"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        protected virtual async Task<IFlurlResponse> SendRequestWithJsonAsync(IFlurlRequest request, object? data = null, CancellationToken cancellationToken = default)
+        protected virtual async Task<IFlurlResponse> SendRequestWithJsonAsync(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
         {
-            if (request == null) throw new ArgumentNullException(nameof(request));
+            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
 
-            var response = await request
-                .WithClient(ProxyFlurlClient)
+            var response = await flurlRequest
+                .WithClient(FlurlClient)
                 .AllowAnyHttpStatus()
-                .SendJsonAsync(request.Verb, data, cancellationToken)
+                .SendJsonAsync(flurlRequest.Verb, data, cancellationToken)
                 .ConfigureAwait(false);
             return response;
         }
@@ -110,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat
         /// </summary>
         public virtual void Dispose()
         {
-            ProxyFlurlClient?.Dispose();
+            FlurlClient?.Dispose();
         }
     }
 }
