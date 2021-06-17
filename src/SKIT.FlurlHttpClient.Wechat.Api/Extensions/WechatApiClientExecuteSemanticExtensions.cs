@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "semantic", "semproxy", "search")

@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
-                { "appId", client.AppId },
+                { "appId", client.WechatAppId },
                 { "timestamp", timestamp },
                 { "nonceStr", nonce },
                 { "signature", sign }
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             SortedSet<string> sortedParams = new SortedSet<string>();
             sortedParams.Add(cardType);
             sortedParams.Add(timestamp);
-            sortedParams.Add(client.AppId);
+            sortedParams.Add(client.WechatAppId);
             sortedParams.Add(nonce);
             sortedParams.Add(wxcardTicket);
             string cardSign = Security.SHA1Utility.Hash(string.Join(string.Empty, sortedParams)).ToLower();

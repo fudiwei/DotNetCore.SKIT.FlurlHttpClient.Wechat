@@ -180,7 +180,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             if (request.CardExtra != null && string.IsNullOrEmpty(request.CardExtra.Nonce))
                 request.CardExtra.Nonce = Guid.NewGuid().ToString("N");

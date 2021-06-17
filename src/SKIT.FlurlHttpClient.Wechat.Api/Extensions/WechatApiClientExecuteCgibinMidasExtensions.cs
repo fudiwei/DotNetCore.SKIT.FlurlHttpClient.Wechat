@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             if (string.IsNullOrEmpty(request.AppId))
             {
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
             }
 
             if (!request.Timestamp.HasValue)
@@ -46,8 +46,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 string plainText = string.Join("&", paramMap.Select(e => $"{e.Key}={e.Value}"))
                     + $"&org_loc={reqLoc}"
                     + $"&method={method.ToUpper()}"
-                    + $"&secret={client.MidasAppKey}";
-                request.Signature = Security.HMACSHA256Utility.Hash(client.MidasAppKey ?? string.Empty, plainText).ToLower();
+                    + $"&secret={client.WechatMidasAppKey}";
+                request.Signature = Security.HMACSHA256Utility.Hash(client.WechatMidasAppKey ?? string.Empty, plainText).ToLower();
             }
 
             return request;

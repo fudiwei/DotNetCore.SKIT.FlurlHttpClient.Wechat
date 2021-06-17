@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "insertbill")
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "queryfee")
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "unifiedorder")
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "getorder")
@@ -169,7 +169,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "refund")
@@ -193,7 +193,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "downloadbill")
@@ -217,7 +217,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "notifyinconsistentorder")
@@ -241,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "mocknotification")
@@ -265,7 +265,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "mockqueryfee")
@@ -289,7 +289,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "micropay")
@@ -313,7 +313,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.AppId;
+                request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(HttpMethod.Post, "nontax", "getorderlist")
