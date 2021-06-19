@@ -40,7 +40,7 @@
 | 公众平台（公众号、小程序） & 开放平台模块 |      [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Api.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Api)      |   [文档](./docs/WechatApi/README.md)    |
 |         商户平台（微信支付）模块          | [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3) | [文档](./docs/WechatTenpayV3/README.md) |
 |          企业微信（企业号）模块           |     [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Work.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Work)     |   [文档](./docs/WechatWork/README.md)   |
-|          广告平台（广点通）模块           |       [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Ads.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Ads.Work)       |   [文档](./docs/WechatAds/README.md)    |
+|          广告平台（广点通）模块           |      [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Ads.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Ads)      |   [文档](./docs/WechatAds/README.md)    |
 
 ---
 
