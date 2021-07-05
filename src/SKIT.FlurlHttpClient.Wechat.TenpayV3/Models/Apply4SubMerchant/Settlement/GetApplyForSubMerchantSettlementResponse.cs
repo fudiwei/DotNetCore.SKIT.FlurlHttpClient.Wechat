@@ -41,14 +41,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_branch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_branch_id")]
-        public string BankBranchId { get; set; } = default!;
+        public string? BankBranchId { get; set; }
 
         /// <summary>
         /// 获取或设置开户开户银行全称（含支行）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_name")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
-        public string BankBranchName { get; set; } = default!;
+        public string? BankBranchName { get; set; }
 
         /// <summary>
         /// 获取或设置汇款验证结果。
