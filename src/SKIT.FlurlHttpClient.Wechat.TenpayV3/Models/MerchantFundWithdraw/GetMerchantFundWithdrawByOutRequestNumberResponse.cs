@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_name")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
-        public string BankBranchName { get; set; } = default!;
+        public string? BankBranchName { get; set; }
 
         /// <summary>
         /// 获取或设置失败原因。
