@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [GET] /brand/profitsharing/brand-configs/{brand_mchid} 接口的响应。</para>
     /// </summary>
-    public class GetBrandProfitBrandConfigsResponse : WechatTenpayResponse
+    public class GetBrandProfitSharingBrandConfigsResponse : WechatTenpayResponse
     {
         /// <summary>
         /// 获取或设置品牌主商户号。

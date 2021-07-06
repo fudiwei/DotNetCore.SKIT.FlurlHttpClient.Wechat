@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetEcommerceProfitSharingReturnOrderByOutOrderNumberRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置二级商户号。
+        /// 获取或设置微信子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
