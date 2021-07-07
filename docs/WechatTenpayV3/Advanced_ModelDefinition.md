@@ -308,6 +308,26 @@
 
     -   图片上传（营销专用）：`UploadMarketingMediaImage`
 
+-   资金应用
+
+    -   分账
+
+        -   请求分账：`CreateProfitSharingOrder`
+
+        -   查询分账结果：`GetProfitSharingOrderByOutOrderNu`
+
+        -   请求分账回退：`CreateProfitSharingReturnOrder`
+
+        -   查询分账回退结果：`GetProfitSharingReturnOrderByOutOrderNumber`
+
+        -   解冻剩余资金：`SetProfitSharingOrderUnfrozen`
+
+        -   查询剩余待分金额：`GetProfitSharingTransactionAmounts`
+
+        -   添加分账接收方：`AddProfitSharingReceiver`
+
+        -   删除分账接收方：`DeleteProfitSharingReceiver`
+
 -   风险合规
 
     -   消费者投诉 2.0
@@ -754,6 +774,26 @@
 
 -   资金应用
 
+    -   分账
+
+        -   请求分账：`CreateProfitSharingOrder`
+
+        -   查询分账结果：`GetProfitSharingOrderByOutOrderNu`
+
+        -   请求分账回退：`CreateProfitSharingReturnOrder`
+
+        -   查询分账回退结果：`GetProfitSharingReturnOrderByOutOrderNumber`
+
+        -   解冻剩余资金：`SetProfitSharingOrderUnfrozen`
+
+        -   查询剩余待分金额：`GetProfitSharingTransactionAmounts`
+
+        -   查询最大分账比例：`GetProfitSharingMerchantConfigs`
+
+        -   添加分账接收方：`AddProfitSharingReceiver`
+
+        -   删除分账接收方：`DeleteProfitSharingReceiver`
+
     -   连锁品牌分账
 
         -   请求分账：`CreateBrandProfitSharingOrder`
@@ -768,7 +808,7 @@
 
         -   查询订单剩余待分金额：`GetBrandProfitSharingOrderAmounts`
 
-        -   查询最大分账比例：`GetBrandProfitBrandConfigs`
+        -   查询最大分账比例：`GetBrandProfitSharingBrandConfigs`
 
         -   添加分账接收方：`AddBrandProfitSharingReceiver`
 
