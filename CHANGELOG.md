@@ -30,6 +30,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
+-   Release 1.2.0
+
+    -   **变更**：调整包含需加解密字段的接口模型，去除 `EncryptedData` 的字段名结尾。
+
 -   Release 1.1.0
 
     -   **新增**：新增分账相关接口。
