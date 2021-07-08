@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("payer_phone")]
-        public string? PayerPhoneEncryptedData { get; set; }
+        public string? PayerPhone { get; set; }
 
         /// <summary>
         /// 获取或设置投诉人 OpenId。

@@ -17,35 +17,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
-                public string NameEncryptedData { get; set; } = string.Empty;
+                public string Name { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置联系人手机号（需使用微信支付平台公钥加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
-                public string MobileEncryptedData { get; set; } = string.Empty;
+                public string Mobile { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置超级管理员身份证号码（需使用微信支付平台公钥加密）。与字段 <see cref="OpenId"/> 二选一。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_id_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_id_number")]
-                public string? IdCardNumberEncryptedData { get; set; }
+                public string? IdCardNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置超级管理员微信 OpenId。与字段 <see cref="IdCardNumberEncryptedData"/> 二选一。
+                /// 获取或设置超级管理员微信 OpenId。与字段 <see cref="IdCardNumber"/> 二选一。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
                 public string? OpenId { get; set; }
 
                 /// <summary>
-                /// 获取或设置联系邮箱（需使用微信支付平台公钥加密）。与字段 <see cref="OpenId"/> 二选一。
+                /// 获取或设置联系邮箱（需使用微信支付平台公钥加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_email")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_email")]
-                public string EmailEncryptedData { get; set; } = string.Empty;
+                public string Email { get; set; } = string.Empty;
             }
 
             public class Subject
@@ -198,14 +198,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id_card_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id_card_name")]
-                                public string IdCardNameEncryptedData { get; set; } = string.Empty;
+                                public string IdCardName { get; set; } = string.Empty;
 
                                 /// <summary>
                                 /// 获取或设置身份证号码（需使用微信支付平台公钥加密）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id_card_number")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
-                                public string IdCardNumberEncryptedData { get; set; } = string.Empty;
+                                public string IdCardNumber { get; set; } = string.Empty;
 
                                 /// <summary>
                                 /// 获取或设置身份证有效期开始时间（格式：yyyy-MM-dd）。
@@ -236,14 +236,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id_doc_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_name")]
-                                public string IdDocumentNameEncryptedData { get; set; } = string.Empty;
+                                public string IdDocumentName { get; set; } = string.Empty;
 
                                 /// <summary>
                                 /// 获取或设置证件号码（需使用微信支付平台公钥加密）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id_doc_number")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_number")]
-                                public string IdDocumentNumberEncryptedData { get; set; } = string.Empty;
+                                public string IdDocumentNumber { get; set; } = string.Empty;
 
                                 /// <summary>
                                 /// 获取或设置证件有效期开始时间（格式：yyyy-MM-dd）。
@@ -326,14 +326,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string NameEncryptedData { get; set; } = string.Empty;
+                        public string Name { get; set; } = string.Empty;
 
                         /// <summary>
                         /// 获取或设置证件号码（需使用微信支付平台公钥加密）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_number")]
-                        public string IdNumberEncryptedData { get; set; } = string.Empty;
+                        public string IdNumber { get; set; } = string.Empty;
 
                         /// <summary>
                         /// 获取或设置证件有效期开始时间（格式：yyyy-MM-dd）。
@@ -707,14 +707,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_name")]
-                public string AccountNameEncryptedData { get; set; } = string.Empty;
+                public string AccountName { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置银行账号（需使用微信支付平台公钥加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_number")]
-                public string AccountNumberEncryptedData { get; set; } = string.Empty;
+                public string AccountNumber { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置开户银行。

@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_name")]
-                public string AccountNameEncryptedData { get; set; } = default!;
+                public string AccountName { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置付款卡号（需使用商户私钥解密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_no")]
-                public string? AccountNumberEncryptedData { get; set; }
+                public string? AccountNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇款金额（单位：分）。

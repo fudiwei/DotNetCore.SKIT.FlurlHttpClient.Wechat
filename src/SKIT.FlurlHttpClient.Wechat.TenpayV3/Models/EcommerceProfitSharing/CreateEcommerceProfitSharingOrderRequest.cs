@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receiver_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("receiver_name")]
-                public string? NameEncryptedData { get; set; }
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置分账金额（单位：分）。

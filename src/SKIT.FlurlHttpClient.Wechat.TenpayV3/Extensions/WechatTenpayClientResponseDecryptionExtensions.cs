@@ -34,13 +34,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                 var accountValidationModel = response.AccountValidation;
 
-                if (!string.IsNullOrEmpty(accountValidationModel.AccountNameEncryptedData))
+                if (!string.IsNullOrEmpty(accountValidationModel.AccountName))
                 {
                     try
                     {
-                        accountValidationModel.AccountNameEncryptedData = Utilities.RSAUtility.DecryptWithECB(
+                        accountValidationModel.AccountName = Utilities.RSAUtility.DecryptWithECB(
                             client.WechatMerchantCertPrivateKey, 
-                            accountValidationModel.AccountNameEncryptedData
+                            accountValidationModel.AccountName
                         );
                     }
                     catch (Exception ex)
@@ -49,13 +49,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     }
                 }
 
-                if (!string.IsNullOrEmpty(accountValidationModel.AccountNumberEncryptedData))
+                if (!string.IsNullOrEmpty(accountValidationModel.AccountNumber))
                 {
                     try
                     {
-                        accountValidationModel.AccountNumberEncryptedData = Utilities.RSAUtility.DecryptWithECB(
+                        accountValidationModel.AccountNumber = Utilities.RSAUtility.DecryptWithECB(
                             client.WechatMerchantCertPrivateKey,
-                            accountValidationModel.AccountNumberEncryptedData!
+                            accountValidationModel.AccountNumber!
                         );
                     }
                     catch (Exception ex)
@@ -96,13 +96,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                 foreach (var downloadBillModel in response.DownloadBillList)
                 {
-                    if (!string.IsNullOrEmpty(downloadBillModel.EncryptKeyEncryptedData))
+                    if (!string.IsNullOrEmpty(downloadBillModel.EncryptKey))
                     {
                         try
                         {
-                            downloadBillModel.EncryptKeyEncryptedData = Utilities.RSAUtility.DecryptWithECB(
+                            downloadBillModel.EncryptKey = Utilities.RSAUtility.DecryptWithECB(
                                 client.WechatMerchantCertPrivateKey,
-                                downloadBillModel.EncryptKeyEncryptedData
+                                downloadBillModel.EncryptKey
                             );
                         }
                         catch (Exception ex)
@@ -140,13 +140,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             if (response.ComplaintDetail != null)
             {
-                if (!string.IsNullOrEmpty(response.PayerPhoneEncryptedData))
+                if (!string.IsNullOrEmpty(response.PayerPhone))
                 {
                     try
                     {
-                        response.PayerPhoneEncryptedData = Utilities.RSAUtility.DecryptWithECB(
+                        response.PayerPhone = Utilities.RSAUtility.DecryptWithECB(
                             client.WechatMerchantCertPrivateKey,
-                            response.PayerPhoneEncryptedData!
+                            response.PayerPhone!
                         );
                     }
                     catch (Exception ex)
@@ -238,13 +238,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                 foreach (var complaintModel in response.ComplaintList)
                 {
-                    if (!string.IsNullOrEmpty(complaintModel.PayerPhoneEncryptedData))
+                    if (!string.IsNullOrEmpty(complaintModel.PayerPhone))
                     {
                         try
                         {
-                            complaintModel.PayerPhoneEncryptedData = Utilities.RSAUtility.DecryptWithECB(
+                            complaintModel.PayerPhone = Utilities.RSAUtility.DecryptWithECB(
                                 client.WechatMerchantCertPrivateKey,
-                                complaintModel.PayerPhoneEncryptedData!
+                                complaintModel.PayerPhone!
                             );
                         }
                         catch (Exception ex)
@@ -286,13 +286,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                 foreach (var guideModel in response.GuideList)
                 {
-                    if (!string.IsNullOrEmpty(guideModel.UserNameEncryptedData))
+                    if (!string.IsNullOrEmpty(guideModel.UserName))
                     {
                         try
                         {
-                            guideModel.UserNameEncryptedData = Utilities.RSAUtility.DecryptWithECB(
+                            guideModel.UserName = Utilities.RSAUtility.DecryptWithECB(
                                 client.WechatMerchantCertPrivateKey,
-                                guideModel.UserNameEncryptedData
+                                guideModel.UserName
                             );
                         }
                         catch (Exception ex)
@@ -301,13 +301,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         }
                     }
 
-                    if (!string.IsNullOrEmpty(guideModel.UserMobileEncryptedData))
+                    if (!string.IsNullOrEmpty(guideModel.UserMobile))
                     {
                         try
                         {
-                            guideModel.UserMobileEncryptedData = Utilities.RSAUtility.DecryptWithECB(
+                            guideModel.UserMobile = Utilities.RSAUtility.DecryptWithECB(
                                 client.WechatMerchantCertPrivateKey,
-                                guideModel.UserMobileEncryptedData
+                                guideModel.UserMobile
                             );
                         }
                         catch (Exception ex)

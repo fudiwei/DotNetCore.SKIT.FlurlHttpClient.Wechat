@@ -27,14 +27,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? UserNameEncryptedData { get; set; }
+        public string? UserName { get; set; }
 
         /// <summary>
         /// 获取或设置企业微信的员工手机号码（需使用微信支付平台公钥加密）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mobile")]
         [System.Text.Json.Serialization.JsonPropertyName("mobile")]
-        public string? UserMobileEncryptedData { get; set; }
+        public string? UserMobile { get; set; }
 
         /// <summary>
         /// 获取或设置企业微信的员工个人二维码地址。

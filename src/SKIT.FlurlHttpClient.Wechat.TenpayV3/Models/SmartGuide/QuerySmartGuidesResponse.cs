@@ -38,14 +38,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string UserNameEncryptedData { get; set; } = default!;
+                public string UserName { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置企业微信的员工手机号码（需使用商户私钥解密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile")]
-                public string UserMobileEncryptedData { get; set; } = default!;
+                public string UserMobile { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置企业微信的员工工号。
