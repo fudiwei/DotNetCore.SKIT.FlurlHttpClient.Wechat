@@ -37,3 +37,5 @@ client.Interceptors.Add(new LoggingInterceptor(loggerFactory.CreateLogger()));
 ```
 
 拦截器的工作方式类似于洋葱模型。对于请求拦截器而言，将按照添加时的顺序依次执行；对于响应拦截器而言，将按照添加时的顺序逆序依次执行。
+
+拦截器在某些场景下非常有用。例如，你可以自行实现一个请求拦截器，自动在请求时注入 `AccessToken`。
