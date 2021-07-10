@@ -128,6 +128,16 @@ var request = new CgibinUserGetRequest()
     UserId = "企业成员账号"
 };
 var response = await client.ExecuteCgibinUserGetAsync(request);
+if (response.IsSuccessful())
+{
+    Console.WriteLine("名称：" + response.Name);
+    Console.WriteLine("头像：" + response.AvatarUrl);
+}
+else
+{
+    Console.WriteLine("错误代码：" + response.ErrorCode);
+    Console.WriteLine("错误描述：" + response.ErrorMessage);
+}
 ```
 
 ---

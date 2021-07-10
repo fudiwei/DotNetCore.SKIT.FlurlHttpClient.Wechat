@@ -149,6 +149,16 @@ var request = new CgibinUserInfoRequest()
     OpenId = "微信 OpenId"
 };
 var response = await client.ExecuteCgibinUserInfoAsync(request);
+if (response.IsSuccessful())
+{
+    Console.WriteLine("昵称：" + response.Nickname);
+    Console.WriteLine("头像：" + response.HeadImageUrl);
+}
+else
+{
+    Console.WriteLine("错误代码：" + response.ErrorCode);
+    Console.WriteLine("错误描述：" + response.ErrorMessage);
+}
 ```
 
 ---

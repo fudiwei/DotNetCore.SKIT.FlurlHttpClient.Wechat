@@ -110,6 +110,15 @@ var request = new CreatePayTransactionJsapiRequest()
     }
 };
 var response = await client.ExecuteCreatePayTransactionJsapiAsync(request);
+if (response.IsSuccessful())
+{
+    Console.WriteLine("PrepayId：" + response.PrepayId);
+}
+else
+{
+    Console.WriteLine("错误代码：" + response.ErrorCode);
+    Console.WriteLine("错误描述：" + response.ErrorMessage);
+}
 ```
 
 ---
