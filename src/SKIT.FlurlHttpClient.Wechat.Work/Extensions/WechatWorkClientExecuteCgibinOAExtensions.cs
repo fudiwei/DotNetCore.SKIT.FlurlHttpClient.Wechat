@@ -26,8 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "approval", "copytemplate")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "approval", "copytemplate")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAApprovalCopyTemplateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -48,8 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "gettemplatedetail")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "gettemplatedetail")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAGetTemplateDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -70,8 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "applyevent")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "applyevent")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAApplyEventResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -92,8 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "getapprovalinfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "getapprovalinfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAGetApprovalInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -114,8 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "getapprovaldetail")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "getapprovaldetail")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAGetApprovalDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -138,11 +133,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "oa", "vacation", "getcorpconf")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "oa", "vacation", "getcorpconf")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CgibinOAVacationGetCorpConfigResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAVacationGetCorpConfigResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -160,8 +154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "vacation", "getuservacationquota")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "vacation", "getuservacationquota")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAVacationGetUserVacationQuotaResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -182,8 +175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "vacation", "setoneuserquota")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "vacation", "setoneuserquota")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAVacationSetOneUserQuotaResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -205,8 +197,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "journal", "get_record_list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "journal", "get_record_list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAJournalGetRecordListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -226,8 +217,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "journal", "get_record_detail")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "journal", "get_record_detail")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAJournalGetRecordDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -247,8 +237,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "journal", "get_stat_list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "journal", "get_stat_list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAJournalGetStatListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -270,8 +259,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -291,8 +279,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -312,8 +299,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "edit")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "edit")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomEditResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -333,8 +319,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "del")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "del")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -355,8 +340,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "get_booking_info")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "get_booking_info")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomGetBookingInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -376,8 +360,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "book")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "book")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomBookResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -397,8 +380,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "cancel_book")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "cancel_book")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomCancelBookResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -422,8 +404,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "calendar", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "calendar", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOACalendarAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -444,8 +425,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "calendar", "update")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "calendar", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOACalendarUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -466,8 +446,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "calendar", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "calendar", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOACalendarGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -488,8 +467,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "calendar", "del")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "calendar", "del")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOACalendarDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -512,8 +490,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "schedule", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "schedule", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAScheduleAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -534,8 +511,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "schedule", "update")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "schedule", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAScheduleUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -556,8 +532,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "schedule", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "schedule", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAScheduleGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -578,8 +553,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "schedule", "get_by_calendar")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "schedule", "get_by_calendar")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAScheduleGetByCalendarResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -600,8 +574,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "oa", "schedule", "del")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "schedule", "del")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAScheduleDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

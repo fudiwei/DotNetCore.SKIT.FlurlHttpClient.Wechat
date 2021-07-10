@@ -30,12 +30,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "agent", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "agent", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("agentid", request.AgentId);
 
-            return await client.SendRequestAsync<Models.CgibinAgentGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinAgentGetResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -54,11 +53,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "agent", "list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "agent", "list")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CgibinAgentListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinAgentListResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -78,8 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "agent", "set")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "agent", "set")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinAgentSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -103,8 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "agent", "set_scope")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "agent", "set_scope")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinAgentSetScopeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -128,8 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "agent", "set_workbench_template")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "agent", "set_workbench_template")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinAgentSetWorkbenchTemplateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -152,8 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "agent", "get_workbench_template")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "agent", "get_workbench_template")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinAgentGetWorkbenchTemplateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -176,8 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "agent", "set_workbench_data")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "agent", "set_workbench_data")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinAgentSetWorkbenchDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

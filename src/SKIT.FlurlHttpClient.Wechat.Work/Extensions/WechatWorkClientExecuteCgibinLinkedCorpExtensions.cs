@@ -25,8 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "linkedcorp", "agent", "get_perm_list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "linkedcorp", "agent", "get_perm_list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinLinkedCorpAgentGetPermissionListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -46,8 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "linkedcorp", "user", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "linkedcorp", "user", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinLinkedCorpUserGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -67,8 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "linkedcorp", "user", "simplelist")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "linkedcorp", "user", "simplelist")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinLinkedCorpUserSimpleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -88,8 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "linkedcorp", "user", "list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "linkedcorp", "user", "list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinLinkedCorpUserListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -109,8 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "linkedcorp", "department", "list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "linkedcorp", "department", "list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinLinkedCorpDepartmentListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -134,8 +129,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "linkedcorp", "message", "send")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "linkedcorp", "message", "send")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinLinkedCorpMessageSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

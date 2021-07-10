@@ -25,14 +25,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "corp", "get_join_qrcode")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "corp", "get_join_qrcode")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.SizeType.HasValue)
                 flurlReq.SetQueryParam("size_type", request.SizeType.Value);
 
-            return await client.SendRequestAsync<Models.CgibinCorpGetJoinQrcodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGetJoinQrcodeResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -51,8 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "corp", "getopenapprovaldata")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corp", "getopenapprovaldata")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGetOpenApprovalDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

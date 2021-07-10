@@ -27,8 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "department", "create")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "department", "create")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -50,8 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "department", "update")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "department", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -73,12 +71,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "department", "delete")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "department", "delete")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("id", request.DepartmentId);
 
-            return await client.SendRequestAsync<Models.CgibinDepartmentDeleteResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentDeleteResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -97,14 +94,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "department", "list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "department", "list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.ParentDepartmentId.HasValue)
                 flurlReq.SetQueryParam("id", request.ParentDepartmentId.Value);
 
-            return await client.SendRequestAsync<Models.CgibinDepartmentListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentListResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

@@ -28,8 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "menu", "create")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "menu", "create")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("agentid", request.AgentId);
 
@@ -53,12 +52,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "menu", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "menu", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("agentid", request.AgentId);
 
-            return await client.SendRequestAsync<Models.CgibinMenuGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMenuGetResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -78,12 +76,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.AgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "menu", "delete")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "menu", "delete")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("agentid", request.AgentId);
 
-            return await client.SendRequestAsync<Models.CgibinMenuDeleteResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMenuDeleteResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

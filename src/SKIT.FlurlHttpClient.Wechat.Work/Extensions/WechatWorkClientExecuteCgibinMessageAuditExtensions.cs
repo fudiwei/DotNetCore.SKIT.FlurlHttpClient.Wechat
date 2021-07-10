@@ -25,12 +25,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "msgaudit", "get_robot_info")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "msgaudit", "get_robot_info")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("robot_id", request.RobotId);
 
-            return await client.SendRequestAsync<Models.CgibinMessageAuditGetRobotInfoResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMessageAuditGetRobotInfoResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -47,8 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "msgaudit", "get_permit_user_list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "msgaudit", "get_permit_user_list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMessageAuditGetPermitUserListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -68,8 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "msgaudit", "check_single_agree")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "msgaudit", "check_single_agree")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMessageAuditCheckSingleAgreeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -89,8 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "msgaudit", "check_room_agree")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "msgaudit", "check_room_agree")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMessageAuditCheckRoomAgreeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -110,8 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "msgaudit", "groupchat", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "msgaudit", "groupchat", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMessageAuditGroupChatGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

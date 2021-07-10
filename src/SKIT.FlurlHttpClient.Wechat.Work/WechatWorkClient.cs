@@ -87,19 +87,38 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// 使用当前客户端生成一个新的 <see cref="IFlurlRequest"/> 对象。
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="method"></param>
+        /// <param name="urlSegments"></param>
+        /// <returns></returns>
+        public IFlurlRequest CreateRequest(WechatWorkRequest request, HttpMethod method, params object[] urlSegments)
+        {
+            IFlurlRequest flurlRequest = FlurlClient.Request(urlSegments).WithVerb(method);
+
+            if (request.Timeout.HasValue)
+            {
+                flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
+            }
+
+            return flurlRequest;
+        }
+
+        /// <summary>
         /// 异步发起请求。
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="flurlRequest"></param>
-        /// <param name="content"></param>
+        /// <param name="httpContent"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<T> SendRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? content = null, CancellationToken cancellationToken = default)
+        public async Task<T> SendRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
             where T : WechatWorkResponse, new()
         {
             try
             {
-                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, content, cancellationToken).ConfigureAwait(false);
+                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
                 return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)

@@ -29,8 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.ParentAgentId = client.WechatAgentId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "corpgroup", "corp", "list_app_share_info")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "corp", "list_app_share_info")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCropListAppShareInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -50,8 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "corpgroup", "corp", "gettoken")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "corp", "gettoken")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCropGetTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
