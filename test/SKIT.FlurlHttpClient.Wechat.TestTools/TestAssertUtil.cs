@@ -370,10 +370,10 @@ namespace SKIT.FlurlHttpClient.Wechat
                         // 比对请求谓词
                         string expectedMethod = regexApi.Groups[1].Value.Trim();
                         string expectedUrl = regexApi.Groups[2].Value.Split('?')[0].Trim();
-                        string actualMethod = sourceCode.Contains(".CreateRequest(new HttpMethod(\"") ?
-                            sourceCode.Split(".CreateRequest(new HttpMethod(\"")[1].Split("\"")[0] :
-                            sourceCode.Contains(".CreateRequest(HttpMethod.") ?
-                            sourceCode.Split(".CreateRequest(HttpMethod.")[1].Split(",")[0] :
+                        string actualMethod = sourceCode.Contains(".CreateRequest(request, new HttpMethod(\"") ?
+                            sourceCode.Split(".CreateRequest(request, new HttpMethod(\"")[1].Split("\"")[0] :
+                            sourceCode.Contains(".CreateRequest(request, HttpMethod.") ?
+                            sourceCode.Split(".CreateRequest(request, HttpMethod.")[1].Split(",")[0] :
                             string.Empty;
                         if (!string.Equals(expectedMethod, actualMethod, StringComparison.OrdinalIgnoreCase))
                         {
@@ -383,8 +383,8 @@ namespace SKIT.FlurlHttpClient.Wechat
 
                         // 比对请求路由
                         string actualUrl = sourceCode
-                            .Split("CreateRequest(", StringSplitOptions.RemoveEmptyEntries)[1]
-                            .Substring(sourceCode.Split("CreateRequest(", StringSplitOptions.RemoveEmptyEntries)[1].Split(",")[0].Length + 1)
+                            .Split("CreateRequest(request,", StringSplitOptions.RemoveEmptyEntries)[1]
+                            .Substring(sourceCode.Split("CreateRequest(request,", StringSplitOptions.RemoveEmptyEntries)[1].Split(",")[0].Length + 1)
                             .Split('\n')[0]
                             .Trim()
                             .TrimEnd(')', ';')
@@ -422,23 +422,8 @@ namespace SKIT.FlurlHttpClient.Wechat
                             }
                         }
 
-                        // 比对 .SetOptions() 方法
-                        if (!sourceCode.Contains(".SetOptions"))
-                        {
-                            lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段代码有误，未能匹配到 \".SetOptions( ... )\"。"));
-                            return false;
-                        }
-
                         // 比对 .SendRequestAsync() 方法
-                        if ("GET".Equals(actualMethod, StringComparison.OrdinalIgnoreCase))
-                        {
-                            if (!sourceCode.Contains("flurlReq, cancellationToken"))
-                            {
-                                lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段代码有误，`[{expectedMethod}] {expectedUrl}` 为简单请求但包含了请求正文。"));
-                                return false;
-                            }
-                        }
-                        else
+                        if (!"GET".Equals(actualMethod, StringComparison.OrdinalIgnoreCase))
                         {
                             if (sourceCode.Contains("flurlReq, cancellationToken"))
                             {
