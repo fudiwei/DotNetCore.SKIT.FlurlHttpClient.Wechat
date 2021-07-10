@@ -12,7 +12,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage 微信</PackageTags>
-        <Version>1.0.0</Version>
+        <Version>1.0.1</Version>
         <Description>The core of a Flurl.Http client for Wechat. SKIT.FlurlClient.Wechat（含 SKIT.FlurlHttpClient.Wechat.Api、SKIT.FlurlHttpClient.Wechat.TenpayV3、SKIT.FlurlHttpClient.Wechat.Work、SKIT.FlurlHttpClient.Wechat.Ads 等模块）的核心库，具体用法请参阅开发文档。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
