@@ -25,8 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "adddelayedfunctiontask")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "adddelayedfunctiontask")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbAddDelayedFunctionTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -46,8 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "createpressuretesttask")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "createpressuretesttask")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbCreatePressureTestTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -68,8 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "createsendsmstask")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "createsendsmstask")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbCreateSendSmsTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -90,8 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "describeextensionuploadinfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "describeextensionuploadinfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbDescribeExtensionUploadInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -112,8 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "describesmsrecords")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "describesmsrecords")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbDescribeSmsRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -133,8 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "getopendata")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "getopendata")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("openid", request.OpenId);
 
@@ -155,8 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "getpressuretestreport")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "getpressuretestreport")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbGetPressureTestReportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -176,8 +169,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "getpressureteststatus")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "getpressureteststatus")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbGetPressureTestStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -198,8 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "getstatistics")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "getstatistics")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbGetStatisticsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -225,8 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "getvoipsign")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "getvoipsign")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("openid", request.OpenId);
 
@@ -248,8 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "cloudbasereport")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "cloudbasereport")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbCloudBaseReportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -270,8 +259,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "sendsms")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "sendsms")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbSendSmsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -292,8 +280,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "tcb", "sendsmsv2")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "tcb", "sendsmsv2")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.TcbSendSmsV2Response>(flurlReq, data: request, cancellationToken: cancellationToken);

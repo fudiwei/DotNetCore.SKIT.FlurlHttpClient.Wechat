@@ -69,8 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             InitRequest(client, HttpMethod.Post.Method, "/cgi-bin/midas/cancelpay", ref request);
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "midas", "cancelpay")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "midas", "cancelpay")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMidasCancelPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -92,8 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             InitRequest(client, HttpMethod.Post.Method, "/cgi-bin/midas/getbalance", ref request);
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "midas", "getbalance")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "midas", "getbalance")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMidasGetBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -115,8 +113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             InitRequest(client, HttpMethod.Post.Method, "/cgi-bin/midas/pay", ref request);
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "midas", "pay")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "midas", "pay")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMidasPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -138,8 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             InitRequest(client, HttpMethod.Post.Method, "/cgi-bin/midas/present", ref request);
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "midas", "present")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "midas", "present")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMidasPresentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -162,8 +158,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             InitRequest(client, HttpMethod.Post.Method, "/cgi-bin/midas/sandbox/cancelpay", ref request);
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "midas", "sandbox", "cancelpay")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "midas", "sandbox", "cancelpay")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMidasSandboxCancelPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -185,8 +180,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             InitRequest(client, HttpMethod.Post.Method, "/cgi-bin/midas/sandbox/getbalance", ref request);
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "midas", "sandbox", "getbalance")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "midas", "sandbox", "getbalance")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMidasSandboxGetBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -208,8 +202,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             InitRequest(client, HttpMethod.Post.Method, "/cgi-bin/midas/sandbox/pay", ref request);
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "midas", "sandbox", "pay")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "midas", "sandbox", "pay")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMidasSandboxPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -231,8 +224,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             InitRequest(client, HttpMethod.Post.Method, "/cgi-bin/midas/sandbox/present", ref request);
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "midas", "sandbox", "present")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "midas", "sandbox", "present")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMidasSandboxPresentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

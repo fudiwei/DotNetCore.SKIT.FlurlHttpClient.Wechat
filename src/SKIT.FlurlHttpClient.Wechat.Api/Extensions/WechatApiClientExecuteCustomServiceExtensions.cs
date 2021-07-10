@@ -28,8 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "customservice", "kfaccount", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "customservice", "kfaccount", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CustomServiceKfAccountAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -50,8 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "customservice", "kfaccount", "update")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "customservice", "kfaccount", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CustomServiceKfAccountUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -72,8 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "customservice", "kfaccount", "del")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "customservice", "kfaccount", "del")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("kf_account", request.KfAccount);
 
@@ -93,22 +90,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
-
-            string filename = Guid.NewGuid().ToString("N") + ".jpg";
-            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.HeadImageFileBytes ?? new byte[0]);
-            using var httpContent = new MultipartFormDataContent(boundary);
-            httpContent.Add(fileContent, "\"media\"", "\"" + filename + "\"");
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/jpeg");
-            fileContent.Headers.ContentLength = request.HeadImageFileBytes?.Length ?? 0;
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "customservice", "kfaccount", "uploadheadimg")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "customservice", "kfaccount", "uploadheadimg")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("kf_account", request.KfAccount);
 
-            return await client.SendRequestAsync<Models.CustomServiceKfAccountUploadHeadImageResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
+            using var fileContent = new ByteArrayContent(request.HeadImageFileBytes ?? new byte[0]);
+            using var httpContent = new MultipartFormDataContent(boundary);
+            httpContent.Add(fileContent, "\"media\"", "\"image.jpg\"");
+            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
+            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/jpeg");
+            fileContent.Headers.ContentLength = request.HeadImageFileBytes?.Length;
+
+            return await client.SendRequestAsync<Models.CustomServiceKfAccountUploadHeadImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -125,8 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "customservice", "kfaccount", "inviteworker")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "customservice", "kfaccount", "inviteworker")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CustomServiceKfAccountInviteWorkerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -148,8 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "customservice", "kfsession", "create")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "customservice", "kfsession", "create")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CustomServiceKfSessionCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -169,8 +162,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "customservice", "kfsession", "close")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "customservice", "kfsession", "close")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CustomServiceKfSessionCloseResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -190,12 +182,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "customservice", "kfsession", "getsession")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "customservice", "kfsession", "getsession")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("openid", request.OpenId);
 
-            return await client.SendRequestAsync<Models.CustomServiceKfSessionGetSessionResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CustomServiceKfSessionGetSessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -212,12 +203,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "customservice", "kfsession", "getsessionlist")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "customservice", "kfsession", "getsessionlist")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("kf_account", request.KfAccount);
 
-            return await client.SendRequestAsync<Models.CustomServiceKfSessionGetSessionListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CustomServiceKfSessionGetSessionListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -234,11 +224,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "customservice", "kfsession", "getwaitcase")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "customservice", "kfsession", "getwaitcase")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CustomServiceKfSessionGetWaitCaseResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CustomServiceKfSessionGetWaitCaseResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -257,8 +246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "customservice", "msgrecord", "getmsglist")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "customservice", "msgrecord", "getmsglist")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CustomServiceMessageRecordGetMessageListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

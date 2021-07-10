@@ -20,9 +20,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             if (fileBytes != null && fileBytes.Any())
             {
-                string filename = "image.png";
                 var fileContent = new ByteArrayContent(fileBytes);
-                httpContent.Add(fileContent, "\"img\"", "\"" + filename + "\"");
+                httpContent.Add(fileContent, "\"img\"", "\"image.png\"");
                 fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
                 fileContent.Headers.ContentLength = fileBytes.Length;
             }
@@ -48,15 +47,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "img", "qrcode")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "img", "qrcode")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (!string.IsNullOrEmpty(request.ImageUrl))
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVImageQrcodeResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVImageQrcodeResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -74,15 +72,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "img", "superresolution")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "img", "superresolution")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (!string.IsNullOrEmpty(request.ImageUrl))
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVImageSuperResolutionResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVImageSuperResolutionResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -100,15 +97,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "img", "aicrop")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "img", "aicrop")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (!string.IsNullOrEmpty(request.ImageUrl))
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVImageAICropResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVImageAICropResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -128,8 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "ocr", "idcard")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "ocr", "idcard")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.ImageMode);
 
@@ -137,7 +132,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVOCRIdCardResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVOCRIdCardResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -155,8 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "ocr", "bankcard")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "ocr", "bankcard")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.ImageMode);
 
@@ -164,7 +158,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVOCRBankCardResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVOCRBankCardResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -182,8 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "ocr", "driving")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "ocr", "driving")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.ImageMode);
 
@@ -191,7 +184,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVOCRDrivingResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVOCRDrivingResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -209,8 +202,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "ocr", "drivinglicense")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "ocr", "drivinglicense")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.ImageMode);
 
@@ -218,7 +210,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVOCRDrivingLicenseResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVOCRDrivingLicenseResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -236,8 +228,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "ocr", "bizlicense")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "ocr", "bizlicense")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.ImageMode);
 
@@ -245,7 +236,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVOCRBusinessLicenseResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVOCRBusinessLicenseResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -263,15 +254,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "ocr", "comm")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "ocr", "comm")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (!string.IsNullOrEmpty(request.ImageUrl))
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVOCRCommonResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVOCRCommonResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -288,15 +278,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cv", "ocr", "platenum")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cv", "ocr", "platenum")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (!string.IsNullOrEmpty(request.ImageUrl))
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
             using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
-            return await client.SendRequestAsync<Models.CVOCRPlateNumberResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CVOCRPlateNumberResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
         #endregion
     }

@@ -29,8 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "getpayfororder")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "getpayfororder")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetPayForOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -51,8 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "gamematch", "creatematchrule")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "gamematch", "creatematchrule")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGameMatchCreateMatchRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -72,8 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "gamematch", "deletematchrule")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "gamematch", "deletematchrule")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGameMatchDeleteMatchRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -93,8 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "gamematch", "getallmatchrule")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "gamematch", "getallmatchrule")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGameMatchGetAllMatchRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -114,8 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "gamematch", "setmatchopenstate")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "gamematch", "setmatchopenstate")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGameMatchSetMatchOpenStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -135,8 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "gamematch", "updatematchrule")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "gamematch", "updatematchrule")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGameMatchUpdateMatchRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -158,8 +152,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "getliveinfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "getliveinfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetLiveInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -181,8 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             request.Action = "get_replay";
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "getliveinfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "getliveinfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetLiveReplayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -202,8 +194,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "get_wxa_followers")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "get_wxa_followers")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetWxaFollowersResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -225,8 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "wxa", "business", "runtime", "adddevice")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "runtime", "adddevice")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessRuntimeAddDeviceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

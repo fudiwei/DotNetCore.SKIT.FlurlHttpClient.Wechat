@@ -26,8 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getusersummary")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getusersummary")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUserSummaryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -47,8 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getusercumulate")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getusercumulate")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUserCumulateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -68,8 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getarticlesummary")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getarticlesummary")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetArticleSummaryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -89,8 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getarticletotal")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getarticletotal")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetArticleTotalResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -112,8 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getuserread")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getuserread")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUserReadResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -133,8 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getuserreadhour")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getuserreadhour")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUserReadHourResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -154,8 +148,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getusershare")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getusershare")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUserShareResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -175,8 +168,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getusersharehour")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getusersharehour")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUserShareHourResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -198,8 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getupstreammsg")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getupstreammsg")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUpstreamMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -219,8 +210,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getupstreammsghour")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getupstreammsghour")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUpstreamMessageHourResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -240,8 +230,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getupstreammsgweek")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getupstreammsgweek")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUpstreamMessageWeekResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -261,8 +250,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getupstreammsgmonth")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getupstreammsgmonth")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUpstreamMessageMonthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -282,8 +270,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getupstreammsgdist")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getupstreammsgdist")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUpstreamMessageDistributionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -303,8 +290,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getupstreammsgdistweek")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getupstreammsgdistweek")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUpstreamMessageDistributionWeekResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -324,8 +310,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getupstreammsgdistmonth")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getupstreammsgdistmonth")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetUpstreamMessageDistributionMonthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -347,8 +332,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getinterfacesummary")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getinterfacesummary")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetInterfaceSummaryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -368,8 +352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getinterfacesummaryhour")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getinterfacesummaryhour")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetInterfaceSummaryHourResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -391,8 +374,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getcardbizuininfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getcardbizuininfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetCardBusinessInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -412,8 +394,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getcardcardinfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getcardcardinfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetCardCardInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -433,8 +414,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getcardmembercardinfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getcardmembercardinfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetCardMemberCardInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -454,8 +434,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getcardmembercarddetail")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getcardmembercarddetail")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetCardMemberCardDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -477,8 +456,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappiddailyretaininfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappiddailyretaininfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdDailyRetainInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -498,8 +476,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappidmonthlyretaininfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappidmonthlyretaininfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdMonthlyRetainInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -519,8 +496,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappidweeklyretaininfo")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappidweeklyretaininfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdWeeklyRetainInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -540,8 +516,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappiddailysummarytrend")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappiddailysummarytrend")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdDailySummaryTrendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -561,8 +536,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappiddailyvisittrend")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappiddailyvisittrend")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdDailyVisitTrendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -582,8 +556,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappidmonthlyvisittrend")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappidmonthlyvisittrend")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdMonthlyVisitTrendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -603,8 +576,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappidweeklyvisittrend")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappidweeklyvisittrend")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdWeeklyVisitTrendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -624,8 +596,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappiduserportrait")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappiduserportrait")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdUserPortraitResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -645,8 +616,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappidvisitdistribution")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappidvisitdistribution")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdVisitDistributionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -666,8 +636,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getweanalysisappidvisitpage")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getweanalysisappidvisitpage")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetWeAnalysisAppIdVisitPageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -689,8 +658,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "datacube", "getgameanalysisdata")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "datacube", "getgameanalysisdata")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.DataCubeGetGameAnalysisDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

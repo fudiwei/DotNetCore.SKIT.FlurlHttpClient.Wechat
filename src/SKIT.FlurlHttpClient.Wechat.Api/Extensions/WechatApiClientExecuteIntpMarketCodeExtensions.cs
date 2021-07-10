@@ -25,8 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "intp", "marketcode", "applycode")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "intp", "marketcode", "applycode")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.IntpMarketCodeApplyCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -46,8 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "intp", "marketcode", "applycodequery")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "intp", "marketcode", "applycodequery")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.IntpMarketCodeApplyCodeQueryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -67,8 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "intp", "marketcode", "applycodedownload")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "intp", "marketcode", "applycodedownload")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.IntpMarketCodeApplyCodeDownloadResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -88,8 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "intp", "marketcode", "codeactive")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "intp", "marketcode", "codeactive")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.IntpMarketCodeActiveCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -109,8 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "intp", "marketcode", "codeactivequery")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "intp", "marketcode", "codeactivequery")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.IntpMarketCodeActiveCodeQueryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -130,8 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "intp", "marketcode", "tickettocode")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "intp", "marketcode", "tickettocode")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.IntpMarketCodeTicketToCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

@@ -30,8 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "getbillauthurl")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "getbillauthurl")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxGetBillAuthUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -51,8 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "createbillcard")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "createbillcard")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxCreateBillCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -75,8 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "insertbill")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "insertbill")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxInsertBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -100,8 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "queryfee")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "queryfee")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxQueryFeeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -124,8 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "unifiedorder")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "unifiedorder")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxUnifiedOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -148,8 +143,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "getorder")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "getorder")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxGetOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -172,8 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "refund")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "refund")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -196,8 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "downloadbill")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "downloadbill")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxDownloadBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -220,8 +212,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "notifyinconsistentorder")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "notifyinconsistentorder")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxNotifyInconsistentOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -244,8 +235,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "mocknotification")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "mocknotification")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxMockNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -268,8 +258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "mockqueryfee")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "mockqueryfee")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxMockQueryFeeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -292,8 +281,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "micropay")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "micropay")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxMicroPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -316,8 +304,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "getorderlist")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "getorderlist")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxGetOrderListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -337,8 +324,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "getrealname")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "getrealname")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxGetRealNameResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -359,8 +345,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "vehicle", "querystate")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "vehicle", "querystate")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxVehicleQueryStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -380,8 +365,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "vehicle", "entrancenotify")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "vehicle", "entrancenotify")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxVehicleEntranceNotifyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -401,8 +385,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "nontax", "vehicle", "payapply")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "nontax", "vehicle", "payapply")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.NontaxVehiclePayApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

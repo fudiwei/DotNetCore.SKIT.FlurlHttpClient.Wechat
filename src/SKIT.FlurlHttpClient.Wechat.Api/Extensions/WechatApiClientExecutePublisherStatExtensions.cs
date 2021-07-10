@@ -25,8 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "publisher", "stat")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "publisher", "stat")
                 .SetQueryParam("action", "publisher_adpos_general")
                 .SetQueryParam("page", request.Page)
                 .SetQueryParam("page_size", request.Limit)
@@ -36,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (!string.IsNullOrEmpty(request.AdSlotName))
                 flurlReq.SetQueryParam("ad_slot", request.AdSlotName);
 
-            return await client.SendRequestAsync<Models.PublisherStatAdposGeneralResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.PublisherStatAdposGeneralResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -53,15 +52,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "publisher", "stat")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "publisher", "stat")
                 .SetQueryParam("action", "publisher_cps_general")
                 .SetQueryParam("page", request.Page)
                 .SetQueryParam("page_size", request.Limit)
                 .SetQueryParam("start_date", request.StartDateString)
                 .SetQueryParam("end_date", request.EndDateString);
 
-            return await client.SendRequestAsync<Models.PublisherStatCpsGeneralResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.PublisherStatCpsGeneralResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -78,15 +76,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "publisher", "stat")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "publisher", "stat")
                 .SetQueryParam("action", "publisher_settlement")
                 .SetQueryParam("page", request.Page)
                 .SetQueryParam("page_size", request.Limit)
                 .SetQueryParam("start_date", request.StartDateString)
                 .SetQueryParam("end_date", request.EndDateString);
 
-            return await client.SendRequestAsync<Models.PublisherStatSettlementResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.PublisherStatSettlementResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

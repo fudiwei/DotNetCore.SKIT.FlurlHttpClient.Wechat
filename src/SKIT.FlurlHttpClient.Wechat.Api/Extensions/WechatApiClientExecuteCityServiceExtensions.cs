@@ -26,8 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cityservice", "sendmsgdata")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cityservice", "sendmsgdata")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CityServiceSendMessageDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

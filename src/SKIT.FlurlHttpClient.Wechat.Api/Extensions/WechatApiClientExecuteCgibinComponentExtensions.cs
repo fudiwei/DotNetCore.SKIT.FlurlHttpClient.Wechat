@@ -31,8 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.ComponentSecret = client.WechatAppSecret;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "api_start_push_ticket")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_start_push_ticket");
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiStartPushTicketResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -57,8 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.ComponentSecret = client.WechatAppSecret;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "api_component_token")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_component_token");
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiComponentTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -80,8 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.ComponentAppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "api_create_preauthcode")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_create_preauthcode")
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiCreatePreAuthCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -104,8 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.ComponentAppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "api_query_auth")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_query_auth")
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiQueryAuthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -128,8 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.ComponentAppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "api_authorizer_token")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_authorizer_token")
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiAuthorizerTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -152,8 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.ComponentAppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "api_get_authorizer_info")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_get_authorizer_info")
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiGetAuthorizerInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -176,8 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.ComponentAppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "api_get_authorizer_list")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_get_authorizer_list")
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiGetAuthorizerListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -200,8 +193,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.ComponentAppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "api_get_authorizer_option")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_get_authorizer_option")
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiGetAuthorizerOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -224,8 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.ComponentAppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "api_set_authorizer_option")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "api_set_authorizer_option")
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentApiSetAuthorizerOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -245,8 +236,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "fastregisterweapp")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "fastregisterweapp")
                 .SetQueryParam("action", "create")
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
@@ -267,8 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "component", "fastregisterweapp")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "fastregisterweapp")
                 .SetQueryParam("action", "search")
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 

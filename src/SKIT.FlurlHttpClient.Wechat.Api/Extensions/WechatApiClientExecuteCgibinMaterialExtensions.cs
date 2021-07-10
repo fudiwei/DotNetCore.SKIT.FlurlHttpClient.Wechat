@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using Flurl;
 using Flurl.Http;
 
@@ -26,8 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "material", "add_news")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "material", "add_news")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMaterialAddNewsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -46,16 +46,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            const string TYPE_IMAGE = "image";
+            const string TYPE_THUMB = "thumb";
+            const string TYPE_VOICE = "voice";
+            const string TYPE_VIDEO = "video";
+
             if (string.IsNullOrEmpty(request.FileName))
             {
                 string ext = "";
-                if ("image".Equals(request.Type))
+                if (TYPE_IMAGE.Equals(request.Type))
                     ext = ".png";
-                else if ("thumb".Equals(request.Type))
+                else if (TYPE_THUMB.Equals(request.Type))
                     ext = ".jpg";
-                else if ("voice".Equals(request.Type))
+                else if (TYPE_VOICE.Equals(request.Type))
                     ext = ".mp3";
-                else if ("video".Equals(request.Type))
+                else if (TYPE_VIDEO.Equals(request.Type))
                     ext = ".mp4";
 
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ext;
@@ -63,45 +68,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             if (string.IsNullOrEmpty(request.FileContentType))
             {
-                if (request.FileName!.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/jpeg";
-                else if (request.FileName!.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/jpeg";
-                else if (request.FileName!.EndsWith(".png", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/png";
-                else if (request.FileName!.EndsWith(".gif", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/gif";
-                else if (request.FileName!.EndsWith(".mp3", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "audio/mpeg";
-                else if (request.FileName!.EndsWith(".amr", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "audio/amr";
-                else if (request.FileName!.EndsWith(".mp4", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "video/mp4";
+                if (TYPE_IMAGE.Equals(request.Type) || TYPE_THUMB.Equals(request.Type))
+                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
+                else if (TYPE_VOICE.Equals(request.Type))
+                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForVoice(request.FileName!) ?? "audio/mp3";
+                else if (TYPE_VIDEO.Equals(request.Type))
+                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForVideo(request.FileName!) ?? "video/mp4";
                 else
                     request.FileContentType = "application/octet-stream";
             }
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "material", "add_material")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("type", request.Type);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
             using var descContent = new ByteArrayContent(Encoding.UTF8.GetBytes(client.FlurlJsonSerializer.Serialize(request)));
             using var httpContent = new MultipartFormDataContent(boundary);
-            httpContent.Add(fileContent, "\"media\"", "\"" + request.FileName + "\"");
+            httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
-            fileContent.Headers.ContentLength = request.FileBytes?.Length ?? 0;
+            fileContent.Headers.ContentLength = request.FileBytes?.Length;
 
-            if ("video".Equals(request.Type))
+            if (TYPE_VIDEO.Equals(request.Type))
             {
                 httpContent.Add(descContent, "\"description\"");
             }
 
-            IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "material", "add_material")
-                .SetOptions(request)
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("type", request.Type);
-
-            return await client.SendRequestAsync<Models.CgibinMaterialAddMaterialResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.CgibinMaterialAddMaterialResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -118,8 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "material", "get_material")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "material", "get_material")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMaterialGetMaterialResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -139,8 +134,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "material", "get_material")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "material", "get_material")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMaterialGetMaterialAsNewsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -160,8 +154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "material", "get_material")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "material", "get_material")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMaterialGetMaterialAsVideoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -181,8 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "material", "del_material")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "material", "del_material")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMaterialDeleteMaterialResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -202,8 +194,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "material", "update_news")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "material", "update_news")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMaterialUpdateNewsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -223,11 +214,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "material", "get_materialcount")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "material", "get_materialcount")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CgibinMaterialGetMaterialCountResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMaterialGetMaterialCountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -244,8 +234,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "material", "batchget_material")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "material", "batchget_material")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMaterialBatchGetMaterialResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

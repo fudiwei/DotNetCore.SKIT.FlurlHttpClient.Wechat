@@ -33,8 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "create")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "create")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -54,8 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -75,8 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "batchget")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "batchget")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardBatchGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -99,8 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "update")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -120,8 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "modifystock")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "modifystock")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardModifyStockResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -141,8 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "delete")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "delete")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -162,8 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "paycell", "set")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "paycell", "set")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardPayCellSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -183,8 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "selfconsumecell", "set")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "selfconsumecell", "set")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardSelfConsumeCellSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -204,8 +196,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "qrcode", "create")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "qrcode", "create")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardQrcodeCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -225,8 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "landingpage", "create")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "landingpage", "create")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardLandingPageCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -246,8 +236,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "mpnews", "gethtml")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "mpnews", "gethtml")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardMpnewsGetHtmlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -267,8 +256,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "testwhitelist", "set")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "testwhitelist", "set")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardTestWhiteListSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -289,8 +277,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "code", "deposit")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "code", "deposit")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardCodeDepositResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -310,8 +297,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "code", "getdepositcount")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "code", "getdepositcount")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardCodeGetDepositCountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -331,8 +317,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "code", "checkcode")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "code", "checkcode")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardCodeCheckCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -355,8 +340,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "code", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "code", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardCodeGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -377,8 +361,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "code", "consume")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "code", "consume")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardCodeConsumeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -399,8 +382,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "code", "decrypt")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "code", "decrypt")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardCodeDecryptResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -420,8 +402,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "code", "update")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "code", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardCodeUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -441,8 +422,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "code", "unavailable")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "code", "unavailable")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardCodeUnavailableResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -464,8 +444,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "user", "getcardlist")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "user", "getcardlist")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardUserGetCardListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -487,8 +466,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "membercard", "activate", "geturl")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "membercard", "activate", "geturl")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardMemberCardActivateGetUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -508,8 +486,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "membercard", "activatetempinfo", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "membercard", "activatetempinfo", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardMemberCardActivateTempInfoGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -530,8 +507,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "membercard", "activate")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "membercard", "activate")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardMemberCardActivateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -551,8 +527,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "membercard", "activateuserform", "set")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "membercard", "activateuserform", "set")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardMemberCardActivateUserFormSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -572,8 +547,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "membercard", "updateuser")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "membercard", "updateuser")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardMemberCardUpdateUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -593,8 +567,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "membercard", "userinfo", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "membercard", "userinfo", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardMemberCardUserInfoGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -616,8 +589,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "meetingticket", "updateuser")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "meetingticket", "updateuser")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardMeetingTicketUpdateUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -637,8 +609,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "movieticket", "updateuser")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "movieticket", "updateuser")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardMovieTicketUpdateUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -658,8 +629,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "boardingpass", "checkin")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "boardingpass", "checkin")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardBoardingPassCheckinResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -681,8 +651,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "page", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "page", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardPageAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -702,8 +671,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "page", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "page", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardPageGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -723,8 +691,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "page", "update")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "page", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardPageUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -744,8 +711,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "page", "batchget")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "page", "batchget")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardPageBatchGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -765,8 +731,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "maintain", "set")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "maintain", "set")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardMaintainSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -786,8 +751,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "pay", "whitelist", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "pay", "whitelist", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardPayWhiteListAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -807,8 +771,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "pay", "submch", "bind")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "pay", "submch", "bind")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardPaySubMerchantBindResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -828,8 +791,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "wxa", "set")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "wxa", "set")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardWxaSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -849,8 +811,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "generalcard", "updateuser")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "generalcard", "updateuser")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGeneralCardUpdateUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -871,8 +832,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "order", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "order", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardOrderGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -892,8 +852,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "order", "batchget")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "order", "batchget")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardOrderBatchGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -913,8 +872,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "giftcard", "order", "refund")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "giftcard", "order", "refund")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardGiftCardOrderRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -937,8 +895,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "paygiftcard", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "paygiftcard", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardPayGiftCardAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -958,8 +915,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "paygiftcard", "delete")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "paygiftcard", "delete")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardPayGiftCardDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -979,8 +935,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "paygiftcard", "getbyid")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "paygiftcard", "getbyid")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardPayGiftCardGetByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -1000,8 +955,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "paygiftcard", "batchget")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "paygiftcard", "batchget")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardPayGiftCardBatchGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -1023,8 +977,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "submerchant", "submit")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "submerchant", "submit")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardSubMerchantSubmitResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -1044,11 +997,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "card", "getapplyprotocol")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "card", "getapplyprotocol")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.CardGetApplyProtocolResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CardGetApplyProtocolResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -1065,8 +1017,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "submerchant", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "submerchant", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardSubMerchantGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -1086,8 +1037,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "submerchant", "batchget")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "submerchant", "batchget")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardSubMerchantBatchGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -1109,8 +1059,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "storewxa", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "storewxa", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardStoreWxaGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -1130,8 +1079,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "card", "storewxa", "set")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "card", "storewxa", "set")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CardStoreWxaSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

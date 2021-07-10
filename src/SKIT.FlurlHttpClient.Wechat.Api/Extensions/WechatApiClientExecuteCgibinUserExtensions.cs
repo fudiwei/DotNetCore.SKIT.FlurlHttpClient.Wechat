@@ -25,13 +25,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "user", "info")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "user", "info")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("openid", request.OpenId)
                 .SetQueryParam("lang", request.Language);
 
-            return await client.SendRequestAsync<Models.CgibinUserInfoResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -48,8 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "user", "info", "batchget")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "user", "info", "batchget")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinUserInfoBatchGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -69,8 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "cgi-bin", "user", "info", "updateremark")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "user", "info", "updateremark")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinUserInfoUpdateRemarkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -90,14 +87,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "cgi-bin", "user", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "user", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (!string.IsNullOrEmpty(request.NextOpenId))
                 flurlReq.SetQueryParam("next_openid", request.NextOpenId);
 
-            return await client.SendRequestAsync<Models.CgibinUserGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

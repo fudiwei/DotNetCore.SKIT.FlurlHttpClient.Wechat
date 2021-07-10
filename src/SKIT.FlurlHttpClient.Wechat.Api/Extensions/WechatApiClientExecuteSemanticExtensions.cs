@@ -31,8 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppId = client.WechatAppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "semantic", "semproxy", "search")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "semantic", "semproxy", "search")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.SemanticSemproxySearchResponse<TDetail>>(flurlReq, data: request, cancellationToken: cancellationToken);
