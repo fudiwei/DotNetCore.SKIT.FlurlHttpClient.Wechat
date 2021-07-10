@@ -30,5 +30,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMiniProgramTransferSessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/miniprogram/jscode2session 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90136/91507 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMiniProgramJsCode2SessionResponse> ExecuteCgibinMiniProgramJsCode2SessionAsync(this WechatWorkClient client, Models.CgibinMiniProgramJsCode2SessionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "miniprogram", "jscode2session")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("js_code", request.JsCode)
+                .SetQueryParam("grant_type", request.GrantType);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMiniProgramJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }
