@@ -25,8 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "async_tasks", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "async_tasks", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.AsyncTasksAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -45,8 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "async_tasks", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "async_tasks", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.Filters != null && request.Filters.Any())
@@ -58,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Page.HasValue)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestAsync<Models.AsyncTasksGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.AsyncTasksGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region Files
@@ -75,13 +73,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "async_task_files", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "async_task_files", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("task_id", request.TaskId)
                 .SetQueryParam("file_id", request.FileId);
 
-            return await client.SendRequestAsync<Models.AsyncTaskFilesGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.AsyncTaskFilesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

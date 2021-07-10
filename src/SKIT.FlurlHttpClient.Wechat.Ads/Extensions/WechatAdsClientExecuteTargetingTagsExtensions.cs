@@ -25,12 +25,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "targeting_tags", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "targeting_tags", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.TagType);
 
-            return await client.SendRequestAsync<Models.TargetingTagsGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.TargetingTagsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

@@ -33,16 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             if (string.IsNullOrEmpty(request.FileContentType))
             {
-                if (request.FileName!.EndsWith(".swf", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "application/x-shockwave-flash";
-                else if (request.FileName!.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/jpeg";
-                else if (request.FileName!.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/jpeg";
-                else if (request.FileName!.EndsWith(".gif", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/gif";
-                else
-                    request.FileContentType = "image/png";
+                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
             }
 
             if (string.IsNullOrEmpty(request.FileHash))
@@ -53,16 +44,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
             using var httpContent = new MultipartFormDataContent(boundary);
-            httpContent.Add(fileContent, "\"file\"", "\"" + HttpUtility.UrlEncode(request.FileName) + "\"");
+            httpContent.Add(fileContent, "\"file\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
-            fileContent.Headers.ContentLength = request.FileBytes?.Length ?? 0;
+            fileContent.Headers.ContentLength = request.FileBytes?.Length;
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "images", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "images", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.ImagesAddResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.ImagesAddResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -78,8 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "images", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "images", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (!string.IsNullOrEmpty(request.ImageId))
@@ -94,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Page.HasValue)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestAsync<Models.ImagesGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.ImagesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

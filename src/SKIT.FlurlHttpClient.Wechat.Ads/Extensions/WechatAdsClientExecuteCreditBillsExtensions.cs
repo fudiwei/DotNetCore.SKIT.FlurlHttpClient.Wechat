@@ -24,8 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "credit_bills", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "credit_bills", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("bill_year", request.BillYear)
                 .SetQueryParam("bill_month", request.BillMonth);
@@ -36,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Page.HasValue)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestAsync<Models.CreditBillsGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CreditBillsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

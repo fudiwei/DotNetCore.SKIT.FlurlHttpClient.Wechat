@@ -24,8 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "fund_transfer", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "fund_transfer", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.FundTransferAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -44,11 +43,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "funds", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "funds", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.FundsGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.FundsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -64,8 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "fund_statements_detailed", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "fund_statements_detailed", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.DateRange != null)
@@ -80,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Page.HasValue)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestAsync<Models.FundStatementsDetailedGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.FundStatementsDetailedGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

@@ -24,8 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "sp_entrustment", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "sp_entrustment", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.SpEntrustmentAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -44,11 +43,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "sp_entrustment", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "sp_entrustment", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.SpEntrustmentGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.SpEntrustmentGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

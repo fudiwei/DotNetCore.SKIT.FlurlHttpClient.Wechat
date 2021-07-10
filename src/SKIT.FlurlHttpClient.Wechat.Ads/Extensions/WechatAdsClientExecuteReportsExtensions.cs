@@ -25,8 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "daily_reports", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "daily_reports", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.DateRange != null)
@@ -44,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Page.HasValue)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestAsync<Models.DailyReportsGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.DailyReportsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -60,8 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "realtime_cost", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "realtime_cost", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("date", request.DateString)
                 .SetQueryParam("level", request.Level);
@@ -69,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Filters != null && request.Filters.Any())
                 flurlReq.SetQueryParam("filtering", client.FlurlJsonSerializer.Serialize(request.Filters));
 
-            return await client.SendRequestAsync<Models.RealtimeCostGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.RealtimeCostGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

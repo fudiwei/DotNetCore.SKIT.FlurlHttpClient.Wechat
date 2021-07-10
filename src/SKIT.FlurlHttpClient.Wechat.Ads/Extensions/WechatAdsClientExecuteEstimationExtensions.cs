@@ -25,8 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "estimation", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "estimation", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.EstimationGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

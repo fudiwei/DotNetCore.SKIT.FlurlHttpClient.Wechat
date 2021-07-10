@@ -24,8 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "advertiser", "add")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "advertiser", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.AdvertiserAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -44,8 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "advertiser", "update")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "advertiser", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.AdvertiserUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -64,11 +62,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "advertiser", "get")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "advertiser", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.AdvertiserGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.AdvertiserGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
