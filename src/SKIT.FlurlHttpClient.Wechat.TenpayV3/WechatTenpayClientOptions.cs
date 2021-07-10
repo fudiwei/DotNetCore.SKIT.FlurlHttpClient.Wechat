@@ -4,7 +4,7 @@ using System.Reflection;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     /// <summary>
-    /// 一个用于构造 <see cref="WechatApiClient"/> 时使用的配置项。
+    /// 一个用于构造 <see cref="WechatTenpayClient"/> 时使用的配置项。
     /// </summary>
     public class WechatTenpayClientOptions
     {

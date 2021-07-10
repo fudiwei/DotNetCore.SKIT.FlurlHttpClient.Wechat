@@ -28,8 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "ecommerce", "subsidies", "create")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "subsidies", "create");
 
             return await client.SendRequestWithJsonAsync<Models.CreateEcommerceSubsidyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,8 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "ecommerce", "subsidies", "return")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "subsidies", "return");
 
             return await client.SendRequestWithJsonAsync<Models.CreateEcommerceSubsidyReturnResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -68,8 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "ecommerce", "subsidies", "cancel")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "subsidies", "cancel");
 
             return await client.SendRequestWithJsonAsync<Models.CancelEcommerceSubsidyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

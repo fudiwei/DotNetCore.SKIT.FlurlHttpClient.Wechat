@@ -28,8 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "permissions")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "permissions");
 
             return await client.SendRequestWithJsonAsync<Models.ApplyPayScorePermissionsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,11 +47,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "payscore", "permissions", "authorization-code", request.AuthorizationCode)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "payscore", "permissions", "authorization-code", request.AuthorizationCode)
                 .SetQueryParam("service_id", request.ServiceId);
 
-            return await client.SendRequestAsync<Models.GetPayScorePermissionsByAuthorizationCodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayScorePermissionsByAuthorizationCodeResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -69,8 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "permissions", "authorization-code", request.AuthorizationCode, "terminate")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "permissions", "authorization-code", request.AuthorizationCode, "terminate");
 
             return await client.SendRequestWithJsonAsync<Models.TerminatePayScorePermissionsByAuthorizationCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -89,12 +86,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "payscore", "permissions", "openid", request.OpenId!)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "payscore", "permissions", "openid", request.OpenId!)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("service_id", request.ServiceId);
 
-            return await client.SendRequestAsync<Models.GetPayScorePermissionsByOpenIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayScorePermissionsByOpenIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -111,8 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "permissions", "openid", request.OpenId!, "terminate")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "permissions", "openid", request.OpenId!, "terminate");
 
             return await client.SendRequestWithJsonAsync<Models.TerminatePayScorePermissionsByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

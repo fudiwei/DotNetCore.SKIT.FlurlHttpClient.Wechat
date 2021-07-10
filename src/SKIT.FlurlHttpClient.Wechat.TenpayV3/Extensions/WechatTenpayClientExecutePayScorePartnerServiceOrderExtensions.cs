@@ -28,8 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "partner", "serviceorder")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "partner", "serviceorder");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayScorePartnerServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,13 +47,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "payscore", "partner", "serviceorder")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "payscore", "partner", "serviceorder")
                 .SetQueryParam("out_order_no", request.OutOrderNumber)
                 .SetQueryParam("service_id", request.ServiceId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetPayScorePartnerServiceOrderByOutOrderNumberResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayScorePartnerServiceOrderByOutOrderNumberResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -71,13 +69,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "payscore", "partner", "serviceorder")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "payscore", "partner", "serviceorder")
                 .SetQueryParam("query_id", request.QueryId)
                 .SetQueryParam("service_id", request.ServiceId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetPayScorePartnerServiceOrderByQueryIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayScorePartnerServiceOrderByQueryIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -94,8 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "cancel")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "cancel");
 
             return await client.SendRequestWithJsonAsync<Models.CancelPayScorePartnerServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -114,8 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "modify")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "modify");
 
             return await client.SendRequestWithJsonAsync<Models.ModifyPayScorePartnerServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -134,8 +129,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "complete")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "complete");
 
             return await client.SendRequestWithJsonAsync<Models.SetPayScorePartnerServiceOrderCompleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -154,8 +148,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "pay")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "pay");
 
             return await client.SendRequestWithJsonAsync<Models.SetPayScorePartnerServiceOrderPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -174,8 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "sync")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "partner", "serviceorder", request.OutOrderNumber, "sync");
 
             return await client.SendRequestWithJsonAsync<Models.SetPayScorePartnerServiceOrderSyncResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

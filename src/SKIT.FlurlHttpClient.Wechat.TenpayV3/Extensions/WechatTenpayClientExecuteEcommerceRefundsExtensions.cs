@@ -28,8 +28,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "ecommerce", "refunds", "apply")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "refunds", "apply")
+                ;
 
             return await client.SendRequestWithJsonAsync<Models.CreateEcommerceRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,11 +48,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "refunds", "out-refund-no", request.OutRefundNumber)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "refunds", "out-refund-no", request.OutRefundNumber)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetEcommerceRefundByOutRefundNumberResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceRefundByOutRefundNumberResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -69,11 +68,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "refunds", "id", request.RefundId)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "refunds", "id", request.RefundId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetEcommerceRefundByRefundIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceRefundByRefundIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -90,8 +88,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "ecommerce", "refunds", request.RefundId, "return-advance")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "refunds", request.RefundId, "return-advance")
+                ;
 
             return await client.SendRequestWithJsonAsync<Models.CreateEcommerceRefundReturnAdvanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -110,11 +108,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "refunds", request.RefundId, "return-advance")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "refunds", request.RefundId, "return-advance")
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetEcommerceRefundReturnAdvanceResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceRefundReturnAdvanceResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

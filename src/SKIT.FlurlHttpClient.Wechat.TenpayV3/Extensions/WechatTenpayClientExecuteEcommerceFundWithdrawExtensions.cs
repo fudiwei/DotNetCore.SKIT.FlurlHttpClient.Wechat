@@ -28,8 +28,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "ecommerce", "fund", "withdraw")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "fund", "withdraw")
+                ;
 
             return await client.SendRequestWithJsonAsync<Models.CreateEcommerceFundWithdrawResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,11 +48,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "fund", "withdraw", "out-request-no", request.OutRequestNumber)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "fund", "withdraw", "out-request-no", request.OutRequestNumber)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetEcommerceFundWithdrawByOutRequestNumberResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceFundWithdrawByOutRequestNumberResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -69,11 +68,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "fund", "withdraw", request.WithdrawId)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "fund", "withdraw", request.WithdrawId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetEcommerceFundWithdrawByWithdrawIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceFundWithdrawByWithdrawIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

@@ -32,8 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "partner", "transactions", "app")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "app");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayPartnerTransactionAppResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -58,8 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "partner", "transactions", "jsapi")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "jsapi");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayPartnerTransactionJsapiResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -82,8 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "partner", "transactions", "h5")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "h5");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayPartnerTransactionH5Response>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -105,8 +102,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "partner", "transactions", "native")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "native");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayPartnerTransactionNativeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -133,12 +129,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "pay", "partner", "transactions", "out-trade-no", request.OutTradeNumber)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "pay", "partner", "transactions", "out-trade-no", request.OutTradeNumber)
                 .SetQueryParam("sp_mchid", request.MerchantId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetPayPartnerTransactionByOutTradeNumberResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayPartnerTransactionByOutTradeNumberResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -163,12 +158,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "pay", "partner", "transactions", "id", request.TransactionId)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "pay", "partner", "transactions", "id", request.TransactionId)
                 .SetQueryParam("sp_mchid", request.MerchantId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetPayPartnerTransactionByIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayPartnerTransactionByIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -193,8 +187,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "partner", "transactions", "out-trade-no", request.OutTradeNumber, "close")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "out-trade-no", request.OutTradeNumber, "close");
 
             return await client.SendRequestWithJsonAsync<Models.ClosePayPartnerTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

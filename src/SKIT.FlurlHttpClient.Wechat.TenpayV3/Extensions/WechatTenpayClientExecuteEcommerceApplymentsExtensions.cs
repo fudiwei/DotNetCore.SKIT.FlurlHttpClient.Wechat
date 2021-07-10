@@ -28,8 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "ecommerce", "applyments")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "applyments");
 
             return await client.SendRequestWithJsonAsync<Models.CreateEcommerceApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,10 +47,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "applyments", request.ApplymentId.ToString())
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "applyments", request.ApplymentId.ToString());
 
-            return await client.SendRequestAsync<Models.GetEcommerceApplymentByApplymentIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceApplymentByApplymentIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -68,10 +66,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "applyments", "out-request-no", request.OutRequestNumber)
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "applyments", "out-request-no", request.OutRequestNumber);
 
-            return await client.SendRequestAsync<Models.GetEcommerceApplymentByOutRequestNumberResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceApplymentByOutRequestNumberResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

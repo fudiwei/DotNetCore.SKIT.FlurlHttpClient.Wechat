@@ -31,8 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "transactions", "app")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "transactions", "app");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayTransactionAppResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -55,8 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "transactions", "jsapi")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "transactions", "jsapi");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayTransactionJsapiResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -78,8 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "transactions", "h5")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "transactions", "h5");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayTransactionH5Response>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -101,8 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "transactions", "native")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "transactions", "native");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePayTransactionNativeResponse >(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -128,11 +124,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "pay", "transactions", "out-trade-no", request.OutTradeNumber)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "pay", "transactions", "out-trade-no", request.OutTradeNumber)
                 .SetQueryParam("mchid", request.MerchantId);
 
-            return await client.SendRequestAsync<Models.GetPayTransactionByOutTradeNumberResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayTransactionByOutTradeNumberResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -156,11 +151,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "pay", "transactions", "id", request.TransactionId)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "pay", "transactions", "id", request.TransactionId)
                 .SetQueryParam("mchid", request.MerchantId);
 
-            return await client.SendRequestAsync<Models.GetPayTransactionByIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayTransactionByIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -184,8 +178,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "pay", "transactions", "out-trade-no", request.OutTradeNumber, "close")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "pay", "transactions", "out-trade-no", request.OutTradeNumber, "close");
 
             return await client.SendRequestWithJsonAsync<Models.ClosePayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

@@ -179,7 +179,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string ContactIdCardNumber { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置联系邮箱（需使用微信支付平台公钥加密）。与字段 <see cref="OpenId"/> 二选一。
+                /// 获取或设置联系邮箱（需使用微信支付平台公钥加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_email")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_email")]

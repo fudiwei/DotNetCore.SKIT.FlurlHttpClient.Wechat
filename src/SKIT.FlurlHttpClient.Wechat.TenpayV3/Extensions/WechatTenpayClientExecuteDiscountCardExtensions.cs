@@ -28,8 +28,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "discount-card", "cards")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "discount-card", "cards")
+                ;
 
             return await client.SendRequestWithJsonAsync<Models.PrepareDiscountCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,8 +48,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "discount-card", "cards", request.OutCardCode, "add-user-records")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "discount-card", "cards", request.OutCardCode, "add-user-records")
+                ;
 
             return await client.SendRequestWithJsonAsync<Models.AddDiscountCardUserRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -68,10 +68,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "discount-card", "cards", request.OutCardCode)
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Get, "discount-card", "cards", request.OutCardCode)
+                ;
 
-            return await client.SendRequestAsync<Models.GetDiscountCardByOutCardCodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetDiscountCardByOutCardCodeResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

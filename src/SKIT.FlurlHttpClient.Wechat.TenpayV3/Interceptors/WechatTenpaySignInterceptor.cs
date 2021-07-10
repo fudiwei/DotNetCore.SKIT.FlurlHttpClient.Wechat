@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
             }
             else
             {
-                body = flurlCall.RequestBody;
+                body = flurlCall.RequestBody ?? string.Empty;
             }
 
             string plainText = $"{method}\n{url}\n{timestamp}\n{nonce}\n{body}\n";

@@ -29,8 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "businesscircle", "points", "notify")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "businesscircle", "points", "notify");
 
             return await client.SendRequestWithJsonAsync<Models.NotifyBusinessCirclePointsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -50,14 +49,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "businesscircle", "user-authorizations", request.OpenId)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "businesscircle", "user-authorizations", request.OpenId)
                 .SetQueryParam("appid", request.AppId);
 
             if (!string.IsNullOrEmpty(request.SubMerchantId))
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetBusinessCircleUserAuthorizationByOpenIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetBusinessCircleUserAuthorizationByOpenIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

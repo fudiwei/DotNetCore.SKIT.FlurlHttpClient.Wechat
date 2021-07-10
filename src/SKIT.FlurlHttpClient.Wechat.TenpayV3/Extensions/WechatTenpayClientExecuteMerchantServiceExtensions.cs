@@ -5,6 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Web;
 using Flurl;
 using Flurl.Http;
 
@@ -30,8 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "merchant-service", "complaints-v2")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2")
                 .SetQueryParam("begin_date", request.BeginDateString)
                 .SetQueryParam("end_date", request.EndDateString);
 
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset.HasValue)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestAsync<Models.QueryMerchantServiceComplaintsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMerchantServiceComplaintsResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -62,10 +62,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId)
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId);
 
-            return await client.SendRequestAsync<Models.GetMerchantServiceComplaintByComplaintIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMerchantServiceComplaintByComplaintIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -83,8 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId, "negotiation-historys")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId, "negotiation-historys");
 
             if (request.Limit.HasValue)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
@@ -92,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset.HasValue)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestAsync<Models.QueryMerchantServiceComplaintNegotiationHistoriesResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMerchantServiceComplaintNegotiationHistoriesResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -113,8 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.ComplaintedMerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId, "response")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId, "response");
 
             return await client.SendRequestWithJsonAsync<Models.CreateMerchantServiceComplaintResponseResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -137,8 +134,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.ComplaintedMerchantId = client.WechatMerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId, "complete")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId, "complete");
 
             return await client.SendRequestWithJsonAsync<Models.SetMerchantServiceComplaintCompleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -158,8 +154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "merchant-service", "complaint-notifications")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "merchant-service", "complaint-notifications");
 
             return await client.SendRequestWithJsonAsync<Models.CreateMerchantServiceComplaintNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -179,10 +174,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "merchant-service", "complaint-notifications")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Get, "merchant-service", "complaint-notifications");
 
-            return await client.SendRequestAsync<Models.GetMerchantServiceComplaintNotificationResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMerchantServiceComplaintNotificationResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -200,8 +194,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Put, "merchant-service", "complaint-notifications")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Put, "merchant-service", "complaint-notifications");
 
             return await client.SendRequestWithJsonAsync<Models.UpdateMerchantServiceComplaintNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -221,8 +214,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Delete, "merchant-service", "complaint-notifications")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Delete, "merchant-service", "complaint-notifications");
 
             return await client.SendRequestWithJsonAsync<Models.DeleteMerchantServiceComplaintNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -248,31 +240,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileHash = Security.SHA256Utility.Hash(request.FileBytes).ToLower();
 
             if (string.IsNullOrEmpty(request.FileContentType))
-            {
-                if (request.FileName!.EndsWith(".bmp", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/bmp";
-                else if (request.FileName!.EndsWith(".jpg", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/jpeg";
-                else if (request.FileName!.EndsWith(".jpeg", StringComparison.OrdinalIgnoreCase))
-                    request.FileContentType = "image/jpeg";
-                else
-                    request.FileContentType = "image/png";
-            }
+                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "merchant-service", "images", "upload");
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var fileContent = new ByteArrayContent(request.FileBytes);
             using var metaContent = new ByteArrayContent(Encoding.UTF8.GetBytes(client.FlurlJsonSerializer.Serialize(request)));
             using var httpContent = new MultipartFormDataContent(boundary);
-            httpContent.Add(metaContent, "\"" + Constants.FormDataFields.FORMDATA_META + "\"");                        // NOTICE: meta 必须要加双引号
-            httpContent.Add(fileContent, "\"file\"", "\"" + request.FileName + "\"");                                  // NOTICE: file 必须要加双引号
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary); // NOTICE: boundary 不能加引号
+            httpContent.Add(metaContent, $"\"{Constants.FormDataFields.FORMDATA_META}\"");
+            httpContent.Add(fileContent, "\"file\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
+            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
             metaContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
-            IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "merchant-service", "images", "upload")
-                .SetOptions(request);
 
-            return await client.SendRequestAsync<Models.UploadMerchantServiceImageResponse>(flurlReq, content: httpContent, cancellationToken: cancellationToken);
+            return await client.SendRequestAsync<Models.UploadMerchantServiceImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
     }
 }

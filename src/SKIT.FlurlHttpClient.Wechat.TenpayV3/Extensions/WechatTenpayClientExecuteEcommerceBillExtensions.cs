@@ -28,8 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "bill", "fundflowbill")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "bill", "fundflowbill")
                 .SetQueryParam("bill_date", request.BillDateString)
                 .SetQueryParam("account_type", request.AccountType)
                 .SetQueryParam("algorithm", request.Algorithm);
@@ -37,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (!string.IsNullOrEmpty(request.TarType))
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
-            return await client.SendRequestAsync<Models.GetEcommerceBillFundflowBillResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceBillFundflowBillResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

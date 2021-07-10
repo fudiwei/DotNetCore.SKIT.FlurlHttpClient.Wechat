@@ -29,8 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "marketing", "partnerships", "build")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "marketing", "partnerships", "build")
                 .WithHeader("Idempotency-Key", request.IdempotencyKey);
 
             return await client.SendRequestWithJsonAsync<Models.BuildMarketingPartnershipResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -51,8 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "marketing", "partnerships", "terminate")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Post, "marketing", "partnerships", "terminate")
                 .WithHeader("Idempotency-Key", request.IdempotencyKey);
 
             return await client.SendRequestWithJsonAsync<Models.TerminateMarketingPartnershipResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -73,8 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "marketing", "partnerships")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Get, "marketing", "partnerships");
 
             if (request.Partner != null)
                 flurlReq.SetQueryParam("partner", client.FlurlJsonSerializer.Serialize(request.Partner));
@@ -88,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset.HasValue)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestAsync<Models.QueryMarketingPartnershipsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMarketingPartnershipsResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

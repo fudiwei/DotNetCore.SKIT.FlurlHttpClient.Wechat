@@ -78,25 +78,50 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// 使用当前客户端生成一个新的 <see cref="IFlurlRequest"/> 对象。
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="method"></param>
+        /// <param name="urlSegments"></param>
+        /// <returns></returns>
+        public IFlurlRequest CreateRequest(WechatTenpayRequest request, HttpMethod method, params object[] urlSegments)
+        {
+            IFlurlRequest flurlRequest = FlurlClient.Request(urlSegments).WithVerb(method);
+
+            if (request.Timeout.HasValue)
+            {
+                flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
+            }
+
+            if (!string.IsNullOrEmpty(request.WechatpayCertSerialNumber))
+            {
+                flurlRequest.Headers.Remove("Wechatpay-Serial");
+                flurlRequest.WithHeader("Wechatpay-Serial", request.WechatpayCertSerialNumber);
+            }
+
+            return flurlRequest;
+        }
+
+        /// <summary>
         /// 异步发起请求。
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="flurlRequest"></param>
-        /// <param name="content"></param>
+        /// <param name="httpContent"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<T> SendRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? content = null, CancellationToken cancellationToken = default)
+        public async Task<T> SendRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
             where T : WechatTenpayResponse, new()
         {
-            if (content != null)
+            if (httpContent != null)
             {
-                if (string.IsNullOrEmpty(content.Headers.ContentType?.MediaType))
-                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                if (string.IsNullOrEmpty(httpContent.Headers.ContentType?.MediaType))
+                    httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             }
 
             try
             {
-                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, content, cancellationToken).ConfigureAwait(false);
+                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
                 return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)

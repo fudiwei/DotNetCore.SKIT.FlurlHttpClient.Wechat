@@ -40,8 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "refund", "domestic", "refunds")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "refund", "domestic", "refunds");
 
             return await client.SendRequestWithJsonAsync<Models.CreateRefundDomesticRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -72,13 +71,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "refund", "domestic", "refunds", request.OutRefundNumber)
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Get, "refund", "domestic", "refunds", request.OutRefundNumber);
 
             if (!string.IsNullOrEmpty(request.SubMerchantId))
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetRefundDomesticRefundByOutRefundNumberResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetRefundDomesticRefundByOutRefundNumberResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

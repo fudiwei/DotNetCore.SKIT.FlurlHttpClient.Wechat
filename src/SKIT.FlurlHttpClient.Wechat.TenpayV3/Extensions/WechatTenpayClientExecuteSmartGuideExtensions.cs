@@ -29,8 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "smartguide", "guides")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "smartguide", "guides");
 
             return await client.SendRequestWithJsonAsync<Models.CreateSmartGuideResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -50,8 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "smartguide", "guides", request.GuideId, "assign")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "smartguide", "guides", request.GuideId, "assign");
 
             return await client.SendRequestWithJsonAsync<Models.AssignSmartGuideResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -71,8 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "smartguide", "guides")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "smartguide", "guides")
                 .SetQueryParam("store_id", request.StoreId.ToString());
 
             if (!string.IsNullOrEmpty(request.SubMerchantId))
@@ -93,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset.HasValue)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestAsync<Models.QuerySmartGuidesResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QuerySmartGuidesResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -111,8 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(new HttpMethod("PATCH"), "smartguide", "guides", request.GuideId)
-                .SetOptions(request);
+                .CreateRequest(request, new HttpMethod("PATCH"), "smartguide", "guides", request.GuideId);
 
             return await client.SendRequestWithJsonAsync<Models.UpdateSmartGuideResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

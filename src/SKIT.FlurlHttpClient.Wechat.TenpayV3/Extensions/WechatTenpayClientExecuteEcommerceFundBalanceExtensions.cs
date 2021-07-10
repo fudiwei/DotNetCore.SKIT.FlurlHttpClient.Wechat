@@ -29,13 +29,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "fund", "balance", request.SubMerchantId)
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "fund", "balance", request.SubMerchantId);
 
             if (!string.IsNullOrEmpty(request.AccountType))
                 flurlReq.SetQueryParam("account_type", request.AccountType);
 
-            return await client.SendRequestAsync<Models.GetEcommerceFundBalanceResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceFundBalanceResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -52,11 +51,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "ecommerce", "fund", "enddaybalance", request.SubMerchantId)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "fund", "enddaybalance", request.SubMerchantId)
                 .SetQueryParam("date", request.DateString);
 
-            return await client.SendRequestAsync<Models.GetEcommerceFundDayendBalanceResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceFundDayendBalanceResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

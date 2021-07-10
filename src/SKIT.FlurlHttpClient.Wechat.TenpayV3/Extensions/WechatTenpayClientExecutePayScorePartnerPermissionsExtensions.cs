@@ -28,8 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "partner", "permissions")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "partner", "permissions");
 
             return await client.SendRequestWithJsonAsync<Models.ApplyPayScorePartnerPermissionsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,12 +47,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "payscore", "partner", "permissions", "authorization-code", request.AuthorizationCode)
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "payscore", "partner", "permissions", "authorization-code", request.AuthorizationCode)
                 .SetQueryParam("service_id", request.ServiceId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestAsync<Models.GetPayScorePartnerPermissionsByAuthorizationCodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayScorePartnerPermissionsByAuthorizationCodeResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -70,8 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "partner", "permissions", "authorization-code", request.AuthorizationCode, "terminate")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "partner", "permissions", "authorization-code", request.AuthorizationCode, "terminate");
 
             return await client.SendRequestWithJsonAsync<Models.TerminatePayScorePartnerPermissionsByAuthorizationCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -90,8 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Get, "payscore", "partner", "permissions", "search")
-                .SetOptions(request)
+                .CreateRequest(request, HttpMethod.Get, "payscore", "partner", "permissions", "search")
                 .SetQueryParam("service_id", request.ServiceId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("appid", request.AppId)
@@ -103,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (!string.IsNullOrEmpty(request.SubOpenId))
                 flurlReq.SetQueryParam("sub_openid", request.SubOpenId);
 
-            return await client.SendRequestAsync<Models.GetPayScorePartnerPermissionsByOpenIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayScorePartnerPermissionsByOpenIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -120,8 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(HttpMethod.Post, "payscore", "partner", "permissions", "terminate")
-                .SetOptions(request);
+                .CreateRequest(request, HttpMethod.Post, "payscore", "partner", "permissions", "terminate");
 
             return await client.SendRequestWithJsonAsync<Models.TerminatePayScorePartnerPermissionsByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
