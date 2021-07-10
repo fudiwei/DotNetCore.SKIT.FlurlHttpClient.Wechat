@@ -19,20 +19,5 @@ namespace SKIT.FlurlHttpClient.Wechat
         /// </summary>
         /// <param name="configure"></param>
         public void Configure(Action<WechatClientSettings> configure);
-
-        /// <summary>
-        /// 使用当前客户端生成一个新的 <see cref="IFlurlRequest"/> 对象。
-        /// </summary>
-        /// <param name="urlSegments"></param>
-        /// <returns></returns>
-        IFlurlRequest CreateRequest(params object[] urlSegments);
-
-        /// <summary>
-        /// 使用当前客户端生成一个新的 <see cref="IFlurlRequest"/> 对象。
-        /// </summary>
-        /// <param name="method"></param>
-        /// <param name="urlSegments"></param>
-        /// <returns></returns>
-        IFlurlRequest CreateRequest(HttpMethod method, params object[] urlSegments);
     }
 }

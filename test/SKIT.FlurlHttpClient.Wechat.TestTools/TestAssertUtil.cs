@@ -370,10 +370,10 @@ namespace SKIT.FlurlHttpClient.Wechat
                         // 比对请求谓词
                         string expectedMethod = regexApi.Groups[1].Value.Trim();
                         string expectedUrl = regexApi.Groups[2].Value.Split('?')[0].Trim();
-                        string actualMethod = sourceCode.Contains($".{nameof(IWechatClient.CreateRequest)}(new HttpMethod(\"") ?
-                            sourceCode.Split($".{nameof(IWechatClient.CreateRequest)}(new HttpMethod(\"")[1].Split("\"")[0] :
-                            sourceCode.Contains($".{nameof(IWechatClient.CreateRequest)}(HttpMethod.") ?
-                            sourceCode.Split($".{nameof(IWechatClient.CreateRequest)}(HttpMethod.")[1].Split(",")[0] :
+                        string actualMethod = sourceCode.Contains(".CreateRequest(new HttpMethod(\"") ?
+                            sourceCode.Split(".CreateRequest(new HttpMethod(\"")[1].Split("\"")[0] :
+                            sourceCode.Contains(".CreateRequest(HttpMethod.") ?
+                            sourceCode.Split(".CreateRequest(HttpMethod.")[1].Split(",")[0] :
                             string.Empty;
                         if (!string.Equals(expectedMethod, actualMethod, StringComparison.OrdinalIgnoreCase))
                         {
@@ -383,8 +383,8 @@ namespace SKIT.FlurlHttpClient.Wechat
 
                         // 比对请求路由
                         string actualUrl = sourceCode
-                            .Split($"{nameof(IWechatClient.CreateRequest)}(", StringSplitOptions.RemoveEmptyEntries)[1]
-                            .Substring(sourceCode.Split($"{nameof(IWechatClient.CreateRequest)}(", StringSplitOptions.RemoveEmptyEntries)[1].Split(",")[0].Length + 1)
+                            .Split("CreateRequest(", StringSplitOptions.RemoveEmptyEntries)[1]
+                            .Substring(sourceCode.Split("CreateRequest(", StringSplitOptions.RemoveEmptyEntries)[1].Split(",")[0].Length + 1)
                             .Split('\n')[0]
                             .Trim()
                             .TrimEnd(')', ';')

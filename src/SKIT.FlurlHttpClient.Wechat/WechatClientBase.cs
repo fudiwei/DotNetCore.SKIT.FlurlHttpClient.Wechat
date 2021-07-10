@@ -75,33 +75,21 @@ namespace SKIT.FlurlHttpClient.Wechat
             });
         }
 
-        /// <inheritdoc/>
-        public IFlurlRequest CreateRequest(params object[] urlSegments)
-        {
-            return CreateRequest(HttpMethod.Get, urlSegments);
-        }
-
-        /// <inheritdoc/>
-        public IFlurlRequest CreateRequest(HttpMethod method, params object[] urlSegments)
-        {
-            return FlurlClient.Request(urlSegments).WithVerb(method);
-        }
-
         /// <summary>
         /// 异步发起请求。
         /// </summary>
         /// <param name="flurlRequest"></param>
-        /// <param name="content"></param>
+        /// <param name="httpContent"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        protected virtual async Task<IFlurlResponse> SendRequestAsync(IFlurlRequest flurlRequest, HttpContent? content = null, CancellationToken cancellationToken = default)
+        protected virtual async Task<IFlurlResponse> SendRequestAsync(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
         {
             if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
 
             var response = await flurlRequest
                 .WithClient(FlurlClient)
                 .AllowAnyHttpStatus()
-                .SendAsync(flurlRequest.Verb, content, cancellationToken)
+                .SendAsync(flurlRequest.Verb, httpContent, cancellationToken)
                 .ConfigureAwait(false);
             return response;
         }
@@ -117,12 +105,22 @@ namespace SKIT.FlurlHttpClient.Wechat
         {
             if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
 
-            var response = await flurlRequest
-                .WithClient(FlurlClient)
-                .AllowAnyHttpStatus()
-                .SendJsonAsync(flurlRequest.Verb, data, cancellationToken)
-                .ConfigureAwait(false);
-            return response;
+            if (flurlRequest.Verb == HttpMethod.Get)
+            {
+                return await flurlRequest
+                    .WithClient(FlurlClient)
+                    .AllowAnyHttpStatus()
+                    .SendAsync(flurlRequest.Verb, cancellationToken: cancellationToken)
+                    .ConfigureAwait(false);
+            }
+            else
+            {
+                return await flurlRequest
+                    .WithClient(FlurlClient)
+                    .AllowAnyHttpStatus()
+                    .SendJsonAsync(flurlRequest.Verb, data: data, cancellationToken: cancellationToken)
+                    .ConfigureAwait(false);
+            }
         }
 
         /// <summary>
