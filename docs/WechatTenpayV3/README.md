@@ -92,7 +92,7 @@ var client = new WechatTenpayClient(options);
 using SKIT.FlurlHttpClient.Wechat.TenpayV3;
 using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
 
-/* 示例：JSAPI 统一下单 */
+/* 以 JSAPI 统一下单接口为例 */
 var request = new CreatePayTransactionJsapiRequest()
 {
     OutTradeNumber = "商户订单号",

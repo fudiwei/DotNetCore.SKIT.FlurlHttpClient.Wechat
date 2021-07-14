@@ -73,7 +73,7 @@ var client = new WechatAdsClient(options);
 using SKIT.FlurlHttpClient.Wechat.Ads;
 using SKIT.FlurlHttpClient.Wechat.Ads.Models;
 
-/* 示例：创建推广计划 */
+/* 以创建推广计划接口为例 */
 var request = new CampaignsAddRequest()
 {
     AccessToken = "广告主的 AccessToken",
