@@ -1,0 +1,18 @@
+﻿{
+    "total_count": 0,
+    "offset": 0,
+    "limit": 0,
+    "data": [
+        {
+            "sub_mchid": "2480253391",
+            "account_type": "BASIC",
+            "income_record_type": "OFFLINERECHARGE",
+            "income_record_id": "4200000811202011056138519459",
+            "amount": 2734921,
+            "success_time": "2017-12-08T00:08:00.00+08:00",
+            "bank_name": "招商银行",
+            "bank_account_name": "北京三快科技有限公司",
+            "bank_account_number": "****6473"
+        }
+    ]
+}
