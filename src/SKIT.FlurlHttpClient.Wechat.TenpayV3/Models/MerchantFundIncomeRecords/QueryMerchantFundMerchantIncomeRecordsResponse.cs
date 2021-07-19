@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [GET] /merchantfund/merchant/income-records 接口的响应。</para>
     /// </summary>
-    public class QueryMerchantFundIncomeRecordsResponse : WechatTenpayResponse
+    public class QueryMerchantFundMerchantIncomeRecordsResponse : WechatTenpayResponse
     {
         public static class Types
         {

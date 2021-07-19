@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户批次单号。
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-        public string UserName { get; set; } = default!;
+        public virtual string UserName { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置转账发起时间。

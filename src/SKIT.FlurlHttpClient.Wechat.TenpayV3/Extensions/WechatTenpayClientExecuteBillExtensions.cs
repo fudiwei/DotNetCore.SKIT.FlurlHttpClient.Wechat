@@ -109,6 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter5_1_19.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_3.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter4_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_3.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

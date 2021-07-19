@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [GET] /merchantfund/merchant/income-records 接口的请求。</para>
     /// </summary>
-    public class QueryMerchantFundIncomeRecordsRequest : WechatTenpayRequest
+    public class QueryMerchantFundMerchantIncomeRecordsRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置账户类型。

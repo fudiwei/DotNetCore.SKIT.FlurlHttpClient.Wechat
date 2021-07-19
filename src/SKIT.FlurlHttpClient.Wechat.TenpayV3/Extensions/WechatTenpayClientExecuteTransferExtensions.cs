@@ -135,6 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [POST] /transfer/bill-receipt 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter4_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_1.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -154,6 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [GET] /transfer/bill-receipt/{out_batch_no} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter4_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_2.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -175,6 +177,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [POST] /transfer-detail/electronic-receipts 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter4_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_4.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -194,6 +197,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [GET] /transfer-detail/electronic-receipts 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter4_5.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_5.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

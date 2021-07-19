@@ -74,6 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [GET] /merchant/fund/withdraw/bill-type/{bill_type} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_8_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter6_3.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

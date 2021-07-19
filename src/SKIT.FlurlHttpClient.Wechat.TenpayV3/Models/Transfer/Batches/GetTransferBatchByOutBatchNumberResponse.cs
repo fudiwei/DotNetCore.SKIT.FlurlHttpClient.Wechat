@@ -174,19 +174,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("transfer_detail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_detail_list")]
         public Types.TransferDetail[]? TransferDetailList { get; set; }
-
-        /// <summary>
-        /// 获取或设置分页开始位置。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("offset")]
-        [System.Text.Json.Serialization.JsonPropertyName("offset")]
-        public int? Offset { get; set; }
-
-        /// <summary>
-        /// 获取或设置分页每页数量。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("limit")]
-        [System.Text.Json.Serialization.JsonPropertyName("limit")]
-        public int? Limit { get; set; }
     }
 }

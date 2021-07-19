@@ -381,5 +381,75 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return response;
         }
+
+        /// <summary>
+        /// <para>解密响应中返回的敏感数据。该方法会改变传入的响应信息。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static Models.GetPartnerTransferBatchDetailByOutDetailNumberResponse DecryptResponseEncryptedData(this WechatTenpayClient client, ref Models.GetPartnerTransferBatchDetailByOutDetailNumberResponse response)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (response == null) throw new ArgumentNullException(nameof(response));
+
+            if (string.IsNullOrEmpty(client.WechatMerchantCertPrivateKey))
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+
+            if (!response.IsSuccessful())
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+
+            if (!string.IsNullOrEmpty(response.UserName))
+            {
+                try
+                {
+                    response.UserName = Utilities.RSAUtility.DecryptWithECB(
+                        client.WechatMerchantCertPrivateKey,
+                        response.UserName
+                    );
+                }
+                catch (Exception ex)
+                {
+                    throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed.", ex);
+                }
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// <para>解密响应中返回的敏感数据。该方法会改变传入的响应信息。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public static Models.GetPartnerTransferBatchDetailByDetailIdResponse DecryptResponseEncryptedData(this WechatTenpayClient client, ref Models.GetPartnerTransferBatchDetailByDetailIdResponse response)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (response == null) throw new ArgumentNullException(nameof(response));
+
+            if (string.IsNullOrEmpty(client.WechatMerchantCertPrivateKey))
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+
+            if (!response.IsSuccessful())
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+
+            if (!string.IsNullOrEmpty(response.UserName))
+            {
+                try
+                {
+                    response.UserName = Utilities.RSAUtility.DecryptWithECB(
+                        client.WechatMerchantCertPrivateKey,
+                        response.UserName
+                    );
+                }
+                catch (Exception ex)
+                {
+                    throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed.", ex);
+                }
+            }
+
+            return response;
+        }
     }
 }

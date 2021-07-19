@@ -17,12 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [GET] /merchantfund/merchant/income-records 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter3_7.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter3_7.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.QueryMerchantFundIncomeRecordsResponse> ExecuteQueryMerchantFundIncomeRecordsAsync(this WechatTenpayClient client, Models.QueryMerchantFundIncomeRecordsRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.QueryMerchantFundMerchantIncomeRecordsResponse> ExecuteQueryMerchantFundMerchantIncomeRecordsAsync(this WechatTenpayClient client, Models.QueryMerchantFundMerchantIncomeRecordsRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -36,7 +37,33 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset.HasValue)
                 flurlReq.SetQueryParam("offset", request.Offset);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMerchantFundIncomeRecordsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMerchantFundMerchantIncomeRecordsResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /merchantfund/partner/income-records 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_6.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.QueryMerchantFundPartnerIncomeRecordsResponse> ExecuteQueryMerchantFundPartnerIncomeRecordsAsync(this WechatTenpayClient client, Models.QueryMerchantFundPartnerIncomeRecordsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "merchantfund", "partner", "income-records")
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("account_type", request.AccountType)
+                .SetQueryParam("date", request.DateString)
+                .SetQueryParam("limit", request.Limit);
+
+            if (request.Offset.HasValue)
+                flurlReq.SetQueryParam("offset", request.Offset);
+
+            return await client.SendRequestWithJsonAsync<Models.QueryMerchantFundPartnerIncomeRecordsResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }
