@@ -23,6 +23,6 @@ var request = new Models.QueryCertificatesRequest();
 var response = await client.ExecuteQueryCertificatesAsync(request);
 
 string cert = response.CertificateList.First().EncryptCertificate.CipherText; // 此时仍是密文
-client.DecryptResponseEncryptedData(response);
+client.DecryptResponseEncryptedData(ref response);
 string cert = response.CertificateList.First().EncryptCertificate.CipherText; // 此时已是明文
 ```
