@@ -121,7 +121,7 @@ var client = new WechatWorkClient(options);
 using SKIT.FlurlHttpClient.Wechat.Work;
 using SKIT.FlurlHttpClient.Wechat.Work.Models;
 
-/* 示例：获取用户信息 */
+/* 以获取用户信息接口为例 */
 var request = new CgibinUserGetRequest()
 {
     AccessToken = "企业微信应用的 AccessToken",

@@ -84,7 +84,7 @@
 
 -   GitHub：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat
 
--   Gitee：https://gitee.com/rhqyz/DotNetCore.SKIT.FlurlHttpClient.Wechat
+-   Gitee：https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat
 
 以上仓库地址同步更新，均可接受 Issue 或 Pull Request。
 
