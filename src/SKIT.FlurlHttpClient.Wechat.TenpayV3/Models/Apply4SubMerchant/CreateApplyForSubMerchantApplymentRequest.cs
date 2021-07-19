@@ -738,7 +738,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? BankBranchId { get; set; }
 
                 /// <summary>
-                /// 获取或设置开户开户银行全称（含支行）。与字段 <see cref="BankBranchId"/> 二选一。
+                /// 获取或设置开户银行全称（含支行）。与字段 <see cref="BankBranchId"/> 二选一。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
