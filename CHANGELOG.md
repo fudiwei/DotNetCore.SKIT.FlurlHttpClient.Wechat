@@ -38,7 +38,7 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
--   Release 1.3.0
+-   Release 1.3.1
 
     -   **新增**：新增批量转账到零钱相关接口。
 
