@@ -8,7 +8,7 @@
 >
 > [《微信支付开发者文档 - 开发指南：敏感信息加解密》](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
 
-对于部分接口返回的敏感信息，微信支付平台可能会使用两种方式进行加密：
+对于部分接口返回的敏感信息，微信商户平台可能会使用两种方式进行加密：
 
 -   使用商户公钥基于 RSA 算法加密。
 
@@ -23,6 +23,6 @@ var request = new Models.QueryCertificatesRequest();
 var response = await client.ExecuteQueryCertificatesAsync(request);
 
 string cert = response.CertificateList.First().EncryptCertificate.CipherText; // 此时仍是密文
-client.DecryptResponseEncryptedData(response);
+client.DecryptResponseEncryptedData(ref response);
 string cert = response.CertificateList.First().EncryptCertificate.CipherText; // 此时已是明文
 ```

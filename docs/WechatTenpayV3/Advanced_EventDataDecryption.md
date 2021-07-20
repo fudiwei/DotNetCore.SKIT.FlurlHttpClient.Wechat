@@ -6,19 +6,22 @@
 >
 > [《微信支付开发者文档 - 开发指南：证书和回调报文解密》](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_2.shtml)
 
-对于回调通知事件的敏感信息，微信支付平台使用了商户公钥基于 RSA 算法加密。
+对于回调通知事件的敏感信息，微信商户平台使用了商户公钥基于 RSA 算法加密。
 
-开发者利用本库提供的 `RSAUtility` 工具类自行解密相关字段。
+开发者可利用本库提供的 `RSAUtility` 工具类自行解密相关字段。
 
 此外，本库还封装了直接解密事件的扩展方法，下面给出一个示例：
 
 ```csharp
-string callbackJson = "{ ... }"; // 微信支付平台发来的通知内容
-
-var callbackModel = client.DeserializeEvent(callbackJson); // 得到通知对象
+/* 微信商户平台发来的通知内容 */
+string callbackJson = "{ ... }";
+/* 将 JSON 反序列化得到通知对象 */
+/* 你也可以将 WechatTenpayEvent 类型直接绑定到 MVC 模型上，这样就不再需要手动反序列化 */
+var callbackModel = client.DeserializeEvent(callbackJson);
 if ("TRANSACTION.SUCCESS".Equals(callbackModel.EventType))
 {
-    var callbackResource = client.DecryptEventResource<Events.TransactionResource>(callbackModel); // 得到支付通知敏感数据
+    /* 根据事件类型，解密得到支付通知敏感数据 */
+    var callbackResource = client.DecryptEventResource<Events.TransactionResource>(callbackModel);
     string outTradeNumber = callbackResource.OutTradeNumber;
     string transactionId = callbackResource.TransactionId;
 }

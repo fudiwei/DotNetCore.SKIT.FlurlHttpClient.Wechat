@@ -75,13 +75,16 @@
 ```csharp
 using SKIT.FlurlHttpClient.Wechat;
 using SKIT.FlurlHttpClient.Wechat.TenpayV3;
+using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
+var certStorer = new InMemoryCertificateStorer();
 var options = new WechatTenpayClientOptions()
 {
     MerchantId = "微信商户号",
     MerchantV3Secret = "微信商户 v3 API 密钥",
     MerchantCertSerialNumber = "微信商户证书序列号",
-    MerchantCertPrivateKey = "-----BEGIN PRIVATE KEY-----微信商户证书私钥-----END PRIVATE KEY-----"
+    MerchantCertPrivateKey = "-----BEGIN PRIVATE KEY-----微信商户证书私钥-----END PRIVATE KEY-----",
+    CertificateStorer = certStorer
 };
 var client = new WechatTenpayClient(options);
 ```
@@ -127,8 +130,6 @@ else
 
 -   [如何查看商户证书序列号？](./Advanced_MerchantCertSerialNumber.md)
 
--   [如何验证微信响应签名？](./Advanced_ResponseSignatureVerification.md)
-
 -   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Advanced_ModelDefinition.md)
 
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
@@ -137,7 +138,11 @@ else
 
 -   [如何使用拦截器？](./Advanced_Interceptor.md)
 
+-   [如何验证响应签名？](./Advanced_ResponseSignatureVerification.md)
+
 -   [如何解密响应中的敏感数据？](./Advanced_ResponseDataDecryption.md)
+
+-   [如何验证回调通知事件签名？](./Advanced_EventDataSignatureVerification.md)
 
 -   [如何解密回调通知事件中的敏感数据？](./Advanced_EventDataDecryption.md)
 
