@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.WechatpayCertSerialNumber);
             Assert.NotNull(response.WechatpaySignature);
 
-            TestClients.Instance.DecryptResponseEncryptedData(response);
+            TestClients.Instance.DecryptResponseEncryptedData(ref response);
             var certificateModel = response.CertificateList.SingleOrDefault(e => e.SerialNumber == response.WechatpayCertSerialNumber);
             Assert.NotNull(certificateModel);
 

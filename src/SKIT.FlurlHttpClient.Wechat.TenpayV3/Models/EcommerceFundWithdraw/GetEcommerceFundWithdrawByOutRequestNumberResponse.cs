@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string AccountBank { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置开户开户银行全称（含支行）。
+        /// 获取或设置开户银行全称（含支行）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_name")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
