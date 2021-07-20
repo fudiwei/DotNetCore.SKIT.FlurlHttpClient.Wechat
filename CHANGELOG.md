@@ -38,13 +38,21 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
+-   Release 1.3.0
+
+    -   **新增**：新增批量转账到零钱相关接口。
+
+    -   **新增**：新增服务商批量转账到零钱相关接口。
+
+    -   **新增**：新增 `ICertificateStorer` 接口，并基于此重新实现验签的扩展方法。
+
 -   Release 1.2.1
 
     -   **新增**：新增 `WechatTenpayV3Client.CreateRequest` 方法。
 
 -   Release 1.2.0
 
-    -   **变更**：调整包含需加解密字段的接口模型，去除 *EncryptedData* 的字段名结尾。
+    -   **变更**：调整包含需加解密字段的接口模型，去除 _EncryptedData_ 的字段名结尾。
 
 -   Release 1.1.0
 
