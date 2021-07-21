@@ -36,6 +36,7 @@
     "external_position": "高级产品经理",
     "external_profile": {
         "external_corp_name": "企业简称",
+        "wechat_channels": "视频号名称",
         "external_attr": [
             {
                 "type": 0,

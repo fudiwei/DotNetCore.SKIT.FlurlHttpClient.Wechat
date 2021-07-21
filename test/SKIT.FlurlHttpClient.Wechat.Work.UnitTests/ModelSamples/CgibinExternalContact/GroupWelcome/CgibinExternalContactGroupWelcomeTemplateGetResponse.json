@@ -18,5 +18,11 @@
         "pic_media_id": "MEDIA_ID",
         "appid": "wx8bd80126147df384",
         "page": "/path/index"
+    },
+    "file": {
+        "media_id": "1Yv-zXfHjSjU-7LH-GwtYqDGS-zz6w22KmWAT5COgP7o"
+    },
+    "video": {
+        "media_id": "MEDIA_ID"
     }
 }

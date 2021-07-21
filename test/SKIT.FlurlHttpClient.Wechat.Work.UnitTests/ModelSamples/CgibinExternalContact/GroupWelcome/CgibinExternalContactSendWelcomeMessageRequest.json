@@ -34,6 +34,12 @@
             "video": {
                 "media_id": "MEDIA_ID"
             }
+        },
+        {
+            "msgtype": "file",
+            "file": {
+                "media_id": "MEDIA_ID"
+            }
         }
     ]
 }

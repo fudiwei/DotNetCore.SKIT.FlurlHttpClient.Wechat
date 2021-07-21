@@ -15,20 +15,18 @@
                 "join_scene": 1,
                 "invitor": {
                     "userid": "jack"
-                }
-            },
-            {
-                "userid": "sam",
-                "type": 1,
-                "join_time": 1572505491,
-                "join_scene": 1
+                },
+                "group_nickname": "客服小张",
+                "name": "张三丰"
             },
             {
                 "userid": "wmOgQhDgAAuXFJGwbve4g4iXknfOAAAA",
                 "type": 2,
                 "unionid": "ozynqsulJFCZ2z1aYeS8h-nuasdAAA",
                 "join_time": 1572505491,
-                "join_scene": 1
+                "join_scene": 1,
+                "group_nickname": "顾客老王",
+                "name": "王语嫣"
             }
         ],
         "admin_list": [

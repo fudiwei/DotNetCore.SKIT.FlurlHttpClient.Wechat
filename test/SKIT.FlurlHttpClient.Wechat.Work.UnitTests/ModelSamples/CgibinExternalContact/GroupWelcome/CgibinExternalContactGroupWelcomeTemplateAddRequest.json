@@ -18,6 +18,12 @@
         "appid": "wx8bd80126147dfAAA",
         "page": "/path/index"
     },
+    "file": {
+        "media_id": "1Yv-zXfHjSjU-7LH-GwtYqDGS-zz6w22KmWAT5COgP7o"
+    },
+    "video": {
+        "media_id": "MEDIA_ID"
+    },
     "agentid": 1000014,
     "notify": 1
 }
