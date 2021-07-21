@@ -13,7 +13,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_1.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_1.shtml </para>
         /// </summary>
-        /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="callbackTimestamp">微信回调通知中的 Wechatpay-Timestamp 字段。</param>
         /// <param name="callbackNonce">微信回调通知中的 Wechatpay-Nonce 字段。</param>
@@ -21,14 +20,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="callbackSignature">微信回调通知中的 Wechatpay-Signature 字段。</param>
         /// <param name="callbackSerialNumber">微信回调通知中的 Wechatpay-Serial 字段。</param>
         /// <returns></returns>
-        public static bool VerifyEventSignature<TResponse>(
+        public static bool VerifyEventSignature(
             this WechatTenpayClient client, 
             string callbackTimestamp, 
             string callbackNonce, 
             string callbackBody,
             string callbackSignature,
             string callbackSerialNumber)
-            where TResponse : WechatTenpayResponse
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (callbackTimestamp == null) throw new ArgumentNullException(nameof(callbackTimestamp));
