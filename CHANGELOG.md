@@ -22,6 +22,12 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.1.0
+
+    -   **新增**：新增小程序获取用户加密 Key 相关接口。
+
+    -   **新增**：新增小程序生成 ShortLink 相关接口。
+
 -   Release 1.0.1
 
     -   **新增**：新增 `WechatApiClient.CreateRequest` 方法。
