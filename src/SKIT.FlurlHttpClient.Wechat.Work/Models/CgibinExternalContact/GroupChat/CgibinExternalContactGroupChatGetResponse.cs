@@ -58,6 +58,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public Types.Invitor? Invitor { get; set; }
 
                         /// <summary>
+                        /// 获取或设置成员名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置成员群昵称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("group_nickname")]
+                        [System.Text.Json.Serialization.JsonPropertyName("group_nickname")]
+                        public string? GroupNickname { get; set; }
+
+                        /// <summary>
                         /// 获取或设置入群场景值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("join_scene")]

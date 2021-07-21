@@ -268,6 +268,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactBatchToExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/opengid_to_chatid 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94822 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactOpenGroupIdToChatIdResponse> ExecuteCgibinExternalContactOpenGroupIdToChatIdAsync(this WechatWorkClient client, Models.CgibinExternalContactOpenGroupIdToChatIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "opengid_to_chatid")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactOpenGroupIdToChatIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
         #region ContactWay
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_contact_way 接口。</para>

@@ -164,6 +164,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string CorpName { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置视频号名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("wechat_channels")]
+                [System.Text.Json.Serialization.JsonPropertyName("wechat_channels")]
+                public string? WechatChannels { get; set; }
+
+                /// <summary>
                 /// 获取或设置对外自定义字段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("external_attr")]

@@ -29,6 +29,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             public class MiniProgramMessage : CgibinExternalContactSendWelcomeMessageRequest.Types.Attachment.Types.MiniProgram
             {
             }
+
+            public class FileMessage : CgibinExternalContactSendWelcomeMessageRequest.Types.Attachment.Types.File
+            {
+            }
         }
 
         /// <summary>
@@ -65,6 +69,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("miniprogram")]
         [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
         public Types.MiniProgramMessage? MiniProgram { get; set; }
+
+        /// <summary>
+        /// 获取或设置文件消息信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("file")]
+        [System.Text.Json.Serialization.JsonPropertyName("file")]
+        public Types.FileMessage? File { get; set; }
 
         /// <summary>
         /// 获取或设置是否通知成员将这条入群欢迎语应用到客户群中。

@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class TextMessage
+            public class Text
             {
                 /// <summary>
                 /// 获取或设置文本消息内容。
@@ -112,6 +112,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [System.Text.Json.Serialization.JsonPropertyName("pic_media_id")]
                         public string? PictureMediaId { get; set; }
                     }
+
+                    public class File
+                    {
+                        /// <summary>
+                        /// 获取或设置文件 MediaId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("media_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("media_id")]
+                        public string MediaId { get; set; } = string.Empty;
+                    }
                 }
 
                 /// <summary>
@@ -148,6 +158,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("miniprogram")]
                 [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
                 public Types.MiniProgram? MiniProgram { get; set; }
+
+                /// <summary>
+                /// 获取或设置文件附件信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("file")]
+                [System.Text.Json.Serialization.JsonPropertyName("file")]
+                public Types.File? File { get; set; }
             }
         }
 
@@ -177,7 +194,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("text")]
         [System.Text.Json.Serialization.JsonPropertyName("text")]
-        public Types.TextMessage? Text { get; set; }
+        public Types.Text? Text { get; set; }
 
         /// <summary>
         /// 获取或设置附件列表。

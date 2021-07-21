@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class TextMessage : CgibinExternalContactAddMessageTemplateRequest.Types.TextMessage
+            public class TextMessage : CgibinExternalContactAddMessageTemplateRequest.Types.Text
             {
             }
 

@@ -14,5 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("chat_id")]
         [System.Text.Json.Serialization.JsonPropertyName("chat_id")]
         public string GroupChatId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置是否需要返回群成员的名字。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("need_name")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("need_name")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        public bool? RequireMemberName { get; set; }
     }
 }
