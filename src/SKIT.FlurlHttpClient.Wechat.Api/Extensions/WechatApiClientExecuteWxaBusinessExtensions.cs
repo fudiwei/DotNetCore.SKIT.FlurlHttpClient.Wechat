@@ -222,5 +222,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessRuntimeAddDeviceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region Internet
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/getuserencryptkey 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/internet/internet.getUserEncryptKey.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessGetUserEncryptKeyResponse> ExecuteWxaBusinessGetUserEncryptKeyAsync(this WechatApiClient client, Models.WxaBusinessGetUserEncryptKeyRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "getuserencryptkey")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("openid", request.OpenId)
+                .SetQueryParam("signature", request.Signature)
+                .SetQueryParam("sig_method", request.SignMethod);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetUserEncryptKeyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
