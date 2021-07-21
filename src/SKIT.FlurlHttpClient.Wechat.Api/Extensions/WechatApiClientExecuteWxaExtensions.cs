@@ -813,6 +813,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region ShortLink
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/genwxashortlink 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/short-link/shortlink.generate.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGenerateWxaShortLinkResponse> ExecuteWxaGenerateWxaShortLinkAsync(this WechatApiClient client, Models.WxaGenerateWxaShortLinkRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "genwxashortlink")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGenerateWxaShortLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region WxaStore
         /// <summary>
         /// <para>异步调用 [GET] /wxa/get_merchant_category 接口。</para>
