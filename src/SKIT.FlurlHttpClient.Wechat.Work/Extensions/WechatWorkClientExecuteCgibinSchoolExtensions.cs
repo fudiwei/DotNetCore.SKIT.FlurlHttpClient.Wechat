@@ -94,7 +94,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         #region User
-
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/user/get 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92337 </para>
@@ -637,6 +636,48 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinSchoolLivingGetUnwatchStatisticsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Payment
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/school/get_payment_result 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94470 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSchoolGetPaymentResultResponse> ExecuteCgibinSchoolGetPaymentResultAsync(this WechatWorkClient client, Models.CgibinSchoolGetPaymentResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "school", "get_payment_result")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolGetPaymentResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/school/get_trade 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94471 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSchoolGetTradeResponse> ExecuteCgibinSchoolGetTradeAsync(this WechatWorkClient client, Models.CgibinSchoolGetTradeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "school", "get_trade")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolGetTradeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
