@@ -22,13 +22,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.WechatpaySignature);
 
             TestClients.Instance.DecryptResponseEncryptedData(ref response);
-            var certificateModel = response.CertificateList.SingleOrDefault(e => e.SerialNumber == response.WechatpayCertSerialNumber);
-            Assert.NotNull(certificateModel);
+            foreach (var certificateModel in response.CertificateList)
+            {
+                TestClients.GlobalCertificateStorer.Set(certificateModel.SerialNumber, certificateModel.EncryptCertificate.CipherText);
+            }
 
-            // 通过证书验证签名
-            Assert.True(TestClients.Instance.VerifyResponseSignatureByCertificate(response, certificate: certificateModel.EncryptCertificate.CipherText));
-            // 通过公钥验证签名
-            Assert.True(TestClients.Instance.VerifyResponseSignature(response, publicKey: Utilities.RSAUtility.ExportPublicKey(certificateModel.EncryptCertificate.CipherText)));
+            Assert.True(TestClients.Instance.VerifyResponseSignature(response));
         }
     }
 }
