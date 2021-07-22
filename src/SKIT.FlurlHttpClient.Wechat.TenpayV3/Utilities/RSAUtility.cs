@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Text;
+using System.Text.RegularExpressions;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.Crypto.Parameters;
@@ -213,10 +214,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             privateKey = privateKey
                 .Replace("-----BEGIN PRIVATE KEY-----", "")
-                .Replace("-----END PRIVATE KEY-----", "")
-                .Replace("\r", "")
-                .Replace("\n", "")
-                .Replace("\\s", "");
+                .Replace("-----END PRIVATE KEY-----", "");
+            privateKey = Regex.Replace(privateKey, "\\s+", "");
             return Convert.FromBase64String(privateKey);
         }
 
@@ -224,10 +223,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             publicKey = publicKey
                 .Replace("-----BEGIN PUBLIC KEY-----", "")
-                .Replace("-----END PUBLIC KEY-----", "")
-                .Replace("\r", "")
-                .Replace("\n", "")
-                .Replace("\\s", "");
+                .Replace("-----END PUBLIC KEY-----", "");
+            publicKey = Regex.Replace(publicKey, "\\s+", "");
             return Convert.FromBase64String(publicKey);
         }
 
