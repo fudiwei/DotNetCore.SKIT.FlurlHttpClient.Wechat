@@ -9,7 +9,7 @@ public class LoggingInterceptor : WechatHttpCallInterceptor
 {
     private readonly ILogger _logger;
 
-    public WechatAdsAgencyTokenInterceptor(ILogger logger)
+    public LoggingInterceptor(ILogger logger)
     {
         _logger = logger;
     }
