@@ -328,6 +328,10 @@
 
         -   删除分账接收方：`DeleteProfitSharingReceiver`
 
+        -   申请分账账单：`GetProfitSharingBill`
+
+        -   下载账单：`DownloadBillFile`
+
 -   风险合规
 
     -   消费者投诉 2.0
@@ -793,6 +797,10 @@
         -   添加分账接收方：`AddProfitSharingReceiver`
 
         -   删除分账接收方：`DeleteProfitSharingReceiver`
+
+        -   申请分账账单：`GetProfitSharingBill`
+
+        -   下载账单：`DownloadBillFile`
 
     -   连锁品牌分账
 

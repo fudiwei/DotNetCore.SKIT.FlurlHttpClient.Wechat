@@ -43,27 +43,27 @@ bool ret = RSAUtility.VerifyWithSHA256(publicKey, data, sign);
 
 ---
 
-#### 通过 `ICertificateStorer` 接口存取平台证书信息：
+#### 通过 `ICertificateManager` 接口存取平台证书信息：
 
-微信商户平台证书需要通过 API 的方式获取、且可能同时存在多个有效证书，本库提供了一个 `ICertificateStorer` 接口可用于存取证书信息。
+微信商户平台证书需要通过 API 的方式获取、且可能同时存在多个有效证书，本库提供了一个 `ICertificateManager` 接口可用于存取证书信息。
 
-你可以在构造得到 `WechatApiClient` 对象时指定证书存取器：
+你可以在构造得到 `WechatApiClient` 对象时指定证书管理器：
 
 ```csharp
-var certStorer = new InMemoryCertificateStorer(); // 为便于后续使用，该对象可使用全局单例的方式声明
-var options = new WechatTenpayClientOptions() { CertificateStorer = certStorer };
+var certManager = new InMemoryCertificateManager(); // 为便于后续使用，该对象可使用全局单例的方式声明
+var options = new WechatTenpayClientOptions() { CertificateManager = certManager };
 var client = new WechatTenpayClient(options);
 ```
 
-> 注：`InMemoryCertificateStorer` 是本库内置的基于内存实现的证书存取器；你也可实现 `ICertificateStorer` 接口，例如利用数据库或 Redis 等方式存取证书信息。
+> 注：`InMemoryCertificateManager` 是本库内置的基于内存实现的证书管理器；你也可实现 `ICertificateManager` 接口，例如利用数据库或 Redis 等方式存取证书信息。
 
-你应在后台周期性地调用 `QueryCertificatesAsync()` 方法，并在解密得到证书内容后，记录到证书存取器中：
+你应在后台周期性地调用 `QueryCertificatesAsync()` 方法，并在解密得到证书内容后，记录到证书管理器中：
 
 ```csharp
-certStorer.Set("CER 证书序列号", "CER 证书内容");
+certManager.Set("CER 证书序列号", "CER 证书内容");
 ```
 
-每个响应对象会包含一个名为 `WechatpayCertSerialNumber` 的公共字段，本库会根据该字段的值自动尝试在证书存取器中读取证书内容，并完成响应签名的验证：
+每个响应对象会包含一个名为 `WechatpayCertSerialNumber` 的公共字段，本库会根据该字段的值自动尝试在证书管理器中读取证书内容，并完成响应签名的验证：
 
 ```csharp
 bool ret = client.VerifyResponseSignature(response);

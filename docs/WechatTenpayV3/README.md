@@ -77,14 +77,14 @@ using SKIT.FlurlHttpClient.Wechat;
 using SKIT.FlurlHttpClient.Wechat.TenpayV3;
 using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
-var certStorer = new InMemoryCertificateStorer();
+var certManager = new InMemoryCertificateManager();
 var options = new WechatTenpayClientOptions()
 {
     MerchantId = "微信商户号",
     MerchantV3Secret = "微信商户 v3 API 密钥",
     MerchantCertSerialNumber = "微信商户证书序列号",
     MerchantCertPrivateKey = "-----BEGIN PRIVATE KEY-----微信商户证书私钥-----END PRIVATE KEY-----",
-    CertificateStorer = certStorer
+    CertificateManager = certManager
 };
 var client = new WechatTenpayClient(options);
 ```
