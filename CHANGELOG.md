@@ -6,9 +6,13 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat 更新日志</summary>
 
+-   Release 1.0.2
+
+    -   **新增**：新增 `IWechatClient.JsonSerializer` 属性。
+
 -   Release 1.0.1
 
-    -   **变更**：移除 `IWechatClient.CreateRequest` 方法。
+    -   **变更**：移除 `IWechatClient.CreateRequest()` 方法。
 
 -   Release 1.0.0
 
@@ -22,6 +26,12 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.2.0
+
+    -   **新增**：新增 `WechatApiClient.Credentials` 属性。
+
+    -   **变更**：移除 `WechatApiClient.FlurlJsonSerializer` 属性。
+
 -   Release 1.1.0
 
     -   **新增**：新增小程序获取用户加密 Key 相关接口。
@@ -30,7 +40,7 @@
 
 -   Release 1.0.1
 
-    -   **新增**：新增 `WechatApiClient.CreateRequest` 方法。
+    -   **新增**：新增 `WechatApiClient.CreateRequest()` 方法。
 
 -   Release 1.0.0
 
@@ -44,6 +54,18 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
+-   Release 1.4.0
+
+    -   **新增**：新增批量获取分账账单相关接口。
+
+    -   **新增**：随官方更新分账、服务商分账接口相关字段。
+
+    -   **新增**：新增 `WechatTenpayV3Client.Credentials` 属性。
+
+    -   **变更**：移除 `WechatTenpayV3Client.FlurlJsonSerializer` 属性。
+
+    -   **变更**：移除 `ICertificateStorer` 接口，新增 `CertificateManager` 抽象类。
+
 -   Release 1.3.1
 
     -   **新增**：新增批量转账到零钱相关接口。
@@ -54,7 +76,7 @@
 
 -   Release 1.2.1
 
-    -   **新增**：新增 `WechatTenpayV3Client.CreateRequest` 方法。
+    -   **新增**：新增 `WechatTenpayV3Client.CreateRequest()` 方法。
 
 -   Release 1.2.0
 
@@ -82,6 +104,12 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Work 更新日志</summary>
 
+-   Release 1.2.0
+
+    -   **新增**：新增 `WechatWorkClient.Credentials` 属性。
+
+    -   **变更**：移除 `WechatWorkClient.FlurlJsonSerializer` 属性。
+
 -   Release 1.1.0
 
     -   **新增**：随官方更新客户联系接口相关字段。
@@ -90,7 +118,7 @@
 
 -   Release 1.0.1
 
-    -   **新增**：新增 `WechatWorkClient.CreateRequest` 方法。
+    -   **新增**：新增 `WechatWorkClient.CreateRequest()` 方法。
 
     -   **新增**：新增企业微信小程序相关接口。
 
