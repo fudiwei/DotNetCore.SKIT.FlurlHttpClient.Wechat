@@ -111,7 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.WechatAppId;
+                request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "product", "register", "submit_merchantinfo")
@@ -134,7 +134,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.WechatAppId;
+                request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "product", "register", "submit_basicinfo")

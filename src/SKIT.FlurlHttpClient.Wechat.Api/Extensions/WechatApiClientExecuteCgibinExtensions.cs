@@ -29,8 +29,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "token")
                 .SetQueryParam("grant_type", request.GrantType)
-                .SetQueryParam("appid", client.WechatAppId)
-                .SetQueryParam("secret", client.WechatAppSecret);
+                .SetQueryParam("appid", client.Credentials.AppId)
+                .SetQueryParam("secret", client.Credentials.AppSecret);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -112,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.AppId))
-                request.AppId = client.WechatAppId;
+                request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "clear_quota")

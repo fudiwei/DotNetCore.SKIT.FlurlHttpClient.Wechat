@@ -29,8 +29,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "sns", "oauth2", "access_token")
                 .SetQueryParam("grant_type", request.GrantType)
-                .SetQueryParam("appid", client.WechatAppId)
-                .SetQueryParam("secret", client.WechatAppSecret)
+                .SetQueryParam("appid", client.Credentials.AppId)
+                .SetQueryParam("secret", client.Credentials.AppSecret)
                 .SetQueryParam("code", request.Code);
 
             return await client.SendRequestWithJsonAsync<Models.SnsOAuth2AccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "sns", "oauth2", "refresh_token")
                 .SetQueryParam("grant_type", request.GrantType)
-                .SetQueryParam("appid", client.WechatAppId)
+                .SetQueryParam("appid", client.Credentials.AppId)
                 .SetQueryParam("refresh_token", request.RefreshToken);
 
             return await client.SendRequestWithJsonAsync<Models.SnsOAuth2RefreshTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -124,8 +124,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "sns", "jscode2session")
                 .SetQueryParam("grant_type", request.GrantType)
-                .SetQueryParam("appid", client.WechatAppId)
-                .SetQueryParam("secret", client.WechatAppSecret)
+                .SetQueryParam("appid", client.Credentials.AppId)
+                .SetQueryParam("secret", client.Credentials.AppSecret)
                 .SetQueryParam("js_code", request.JsCode);
 
             return await client.SendRequestWithJsonAsync<Models.SnsJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -146,7 +146,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.ComponentAppId))
-                request.ComponentAppId = client.WechatAppId;
+                request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "sns", "component", "jscode2session")

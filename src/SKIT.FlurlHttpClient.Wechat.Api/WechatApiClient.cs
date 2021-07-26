@@ -18,37 +18,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     public class WechatApiClient : WechatClientBase
     {
         /// <summary>
-        /// 获取当前客户端使用的微信 AppId。
+        /// 获取当前客户端使用的微信公众平台凭证。
         /// </summary>
-        public string WechatAppId { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的微信 AppSecret。
-        /// </summary>
-        internal string WechatAppSecret { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的即时配送公司帐号 AppKey（用于即使配送相关接口的请求签名）。
-        /// </summary>
-        internal string? WechatImmeDeliveryAppKey { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的即时配送公司帐号 AppSecret（用于即使配送相关接口的请求签名）。
-        /// </summary>
-        internal string? WechatImmeDeliveryAppSecret { get; }
-
-        /// <summary>
-        /// 获取或设置米大师平台 AppKey（用于虚拟支付相关接口的请求签名）。
-        /// </summary>
-        internal string? WechatMidasAppKey { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的 JSON 序列化器。
-        /// </summary>
-        internal ISerializer FlurlJsonSerializer
-        {
-            get { return FlurlClient.Settings?.JsonSerializer ?? new FlurlNewtonsoftJsonSerializer(); }
-        }
+        public Settings.Credentials Credentials { get; }
 
         /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatApiClient"/> 类的新实例。
@@ -59,11 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
 
-            WechatAppId = options.AppId;
-            WechatAppSecret = options.AppSecret;
-            WechatImmeDeliveryAppKey = options.ImmeDeliveryAppKey;
-            WechatImmeDeliveryAppSecret = options.ImmeDeliveryAppSecret;
-            WechatMidasAppKey = options.MidasAppKey;
+            Credentials = new Settings.Credentials(options);
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatApiEndpoints.DEFAULT;
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
