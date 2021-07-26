@@ -20,37 +20,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public partial class WechatTenpayClient : WechatClientBase
     {
         /// <summary>
-        /// 获取当前客户端使用的微信商户号。
+        /// 获取当前客户端使用的微信商户平台凭证。
         /// </summary>
-        public string WechatMerchantId { get; }
+        public Settings.Credentials Credentials { get; }
 
         /// <summary>
-        /// 获取当前客户端使用的微信商户 API 证书序列号（用于请求签名）。
+        /// 获取当前客户端使用的微信商户平台证书管理器。
         /// </summary>
-        internal string WechatMerchantCertSerialNumber { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的微信商户 API 证书私钥（用于请求签名、响应数据解密）。
-        /// </summary>
-        internal string WechatMerchantCertPrivateKey { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的微信商户 API v3 密钥（用于事件数据解密）。
-        /// </summary>
-        internal string WechatMerchantV3Secret { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的微信商户平台证书存储器。
-        /// </summary>
-        internal Settings.ICertificateManager? WechatCertificateManager { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的 JSON 序列化器。
-        /// </summary>
-        internal ISerializer FlurlJsonSerializer
-        {
-            get { return FlurlClient.Settings?.JsonSerializer ?? new FlurlNewtonsoftJsonSerializer(); }
-        }
+        internal Settings.CertificateManager CertificateManager { get; }
 
         /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatTenpayClient"/> 类的新实例。
@@ -60,11 +37,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
 
-            WechatMerchantId = options.MerchantId;
-            WechatMerchantCertSerialNumber = options.MerchantCertSerialNumber;
-            WechatMerchantCertPrivateKey = options.MerchantCertPrivateKey;
-            WechatMerchantV3Secret = options.MerchantV3Secret;
-            WechatCertificateManager = options.CertificateManager;
+            Credentials = new Settings.Credentials(options);
+            CertificateManager = options.CertificateManager;
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
             FlurlClient.Headers.Remove("Accept");
@@ -76,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
 
             Interceptors.Add(new Interceptors.WechatTenpaySignInterceptor(
-                scheme: options.AuthScheme,
+                scheme: options.SignAlgorithm,
                 mchId: options.MerchantId,
                 mchCertSn: options.MerchantCertSerialNumber,
                 mchCertPk: options.MerchantCertPrivateKey

@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.CombineMerchantId)) 
-                request.CombineMerchantId = client.WechatMerchantId;
+                request.CombineMerchantId = client.Credentials.MerchantId;
 
             if (request.SubOrderList != null)
             {
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.CombineMerchantId))
-                request.CombineMerchantId = client.WechatMerchantId;
+                request.CombineMerchantId = client.Credentials.MerchantId;
 
             if (request.SubOrderList != null)
             {
@@ -95,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.CombineMerchantId))
-                request.CombineMerchantId = client.WechatMerchantId;
+                request.CombineMerchantId = client.Credentials.MerchantId;
 
             if (request.SubOrderList != null)
             {
@@ -127,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (string.IsNullOrEmpty(request.CombineMerchantId))
-                request.CombineMerchantId = client.WechatMerchantId;
+                request.CombineMerchantId = client.Credentials.MerchantId;
 
             if (request.SubOrderList != null)
             {
@@ -183,7 +183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 foreach (var subOrder in request.SubOrderList)
                 {
                     if (string.IsNullOrEmpty(subOrder.MerchantId))
-                        subOrder.MerchantId = client.WechatMerchantId;
+                        subOrder.MerchantId = client.Credentials.MerchantId;
                 }
             }
 

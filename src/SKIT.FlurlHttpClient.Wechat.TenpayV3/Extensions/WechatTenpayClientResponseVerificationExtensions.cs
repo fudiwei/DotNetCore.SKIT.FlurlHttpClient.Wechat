@@ -23,16 +23,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (response == null) throw new ArgumentNullException(nameof(response));
 
-            if (client.WechatCertificateManager == null)
+            if (client.CertificateManager == null)
             {
-                throw new Exceptions.WechatTenpayResponseVerificationException($"You must set an instance of `{nameof(Settings.ICertificateManager)}` at first.");
+                throw new Exceptions.WechatTenpayResponseVerificationException($"You must set an instance of `{nameof(Settings.CertificateManager)}` at first.");
             }
             else
             {
                 if (response.WechatpayCertSerialNumber == null)
                     throw new Exceptions.WechatTenpayResponseVerificationException("Cannot read the serial number in headers of this response.");
 
-                string? certificate = client.WechatCertificateManager.GetCertificate(response.WechatpayCertSerialNumber);
+                string? certificate = client.CertificateManager.GetCertificate(response.WechatpayCertSerialNumber);
                 if (certificate == null)
                     throw new Exceptions.WechatTenpayResponseVerificationException("Cannot get certificate by the serial number, may not be stored.");
 
