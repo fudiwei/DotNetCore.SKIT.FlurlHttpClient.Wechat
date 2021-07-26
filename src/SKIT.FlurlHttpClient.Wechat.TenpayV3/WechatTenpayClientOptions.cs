@@ -60,8 +60,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// 获取或设置微信商户平台证书存储器。
-        /// <para>默认值：<see cref="Settings.InMemoryCertificateStorer"/></para>
+        /// <para>默认值：<see cref="Settings.InMemoryCertificateManager"/></para>
         /// </summary>
-        public Settings.ICertificateStorer? CertificateStorer { get; set; } = new Settings.InMemoryCertificateStorer();
+        public Settings.ICertificateManager? CertificateManager { get; set; } = new Settings.InMemoryCertificateManager();
     }
 }

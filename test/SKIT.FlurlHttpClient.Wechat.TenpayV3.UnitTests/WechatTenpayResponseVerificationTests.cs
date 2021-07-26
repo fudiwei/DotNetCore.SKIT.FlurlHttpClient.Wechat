@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             TestClients.Instance.DecryptResponseEncryptedData(ref response);
             foreach (var certificateModel in response.CertificateList)
             {
-                TestClients.GlobalCertificateStorer.Set(certificateModel.SerialNumber, certificateModel.EncryptCertificate.CipherText);
+                TestClients.GlobalCertificateManager.SetCertificate(certificateModel.SerialNumber, certificateModel.EncryptCertificate.CipherText);
             }
 
             Assert.True(TestClients.Instance.VerifyResponseSignature(response));

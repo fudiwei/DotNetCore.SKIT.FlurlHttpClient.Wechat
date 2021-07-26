@@ -101,6 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_4_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_19.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_12.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_2_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_3_8.shtml </para>
@@ -108,6 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_5_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter5_1_19.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_12.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter4_3.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_3.shtml </para>
         /// </summary>

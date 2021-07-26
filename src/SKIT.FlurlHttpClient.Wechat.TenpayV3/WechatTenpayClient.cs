@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// 获取当前客户端使用的微信商户平台证书存储器。
         /// </summary>
-        internal Settings.ICertificateStorer? WechatCertificateStorer { get; }
+        internal Settings.ICertificateManager? WechatCertificateManager { get; }
 
         /// <summary>
         /// 获取当前客户端使用的 JSON 序列化器。
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             WechatMerchantCertSerialNumber = options.MerchantCertSerialNumber;
             WechatMerchantCertPrivateKey = options.MerchantCertPrivateKey;
             WechatMerchantV3Secret = options.MerchantV3Secret;
-            WechatCertificateStorer = options.CertificateStorer;
+            WechatCertificateManager = options.CertificateManager;
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
             FlurlClient.Headers.Remove("Accept");

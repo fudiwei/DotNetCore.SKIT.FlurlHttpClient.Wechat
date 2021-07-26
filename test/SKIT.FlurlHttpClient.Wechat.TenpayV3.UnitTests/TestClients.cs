@@ -6,18 +6,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
     {
         static TestClients()
         {
-            GlobalCertificateStorer = new Settings.InMemoryCertificateStorer();
+            GlobalCertificateManager = new Settings.InMemoryCertificateManager();
             Instance = new WechatTenpayClient(new WechatTenpayClientOptions()
             { 
                 MerchantId = TestConfigs.WechatMerchantId,
                 MerchantV3Secret = TestConfigs.WechatMerchantSecret,
                 MerchantCertSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,
                 MerchantCertPrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
-                CertificateStorer = GlobalCertificateStorer
+                CertificateManager = GlobalCertificateManager
             });
         }
 
-        public static readonly Settings.ICertificateStorer GlobalCertificateStorer;
+        public static readonly Settings.ICertificateManager GlobalCertificateManager;
 
         public static readonly WechatTenpayClient Instance;
     }
