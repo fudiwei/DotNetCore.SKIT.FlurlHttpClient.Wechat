@@ -21,6 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat
         public WechatHttpCallInterceptorCollection Interceptors { get; }
 
         /// <summary>
+        /// <inheritdoc />
+        /// </summary>
+        public ISerializer JsonSerializer
+        {
+            get { return FlurlClient.Settings?.JsonSerializer ?? FlurlHttp.GlobalSettings.JsonSerializer; }
+        }
+
+        /// <summary>
         /// 获取当前客户端使用的 <see cref="IFlurlClient"/> 对象。
         /// </summary>
         protected IFlurlClient FlurlClient { get; }

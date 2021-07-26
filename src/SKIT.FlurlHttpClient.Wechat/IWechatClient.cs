@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Net.Http;
 using Flurl.Http;
+using Flurl.Http.Configuration;
 
 namespace SKIT.FlurlHttpClient.Wechat
 {
@@ -13,6 +14,11 @@ namespace SKIT.FlurlHttpClient.Wechat
         /// 获取当前客户端的拦截器集合。
         /// </summary>
         public WechatHttpCallInterceptorCollection Interceptors { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的 JSON 序列化器。
+        /// </summary>
+        public ISerializer JsonSerializer { get; }
 
         /// <summary>
         /// 配置客户端。
