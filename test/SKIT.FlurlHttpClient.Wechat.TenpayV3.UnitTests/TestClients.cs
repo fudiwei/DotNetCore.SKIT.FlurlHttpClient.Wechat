@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             });
         }
 
-        public static readonly Settings.ICertificateManager GlobalCertificateManager;
+        public static readonly Settings.CertificateManager GlobalCertificateManager;
 
         public static readonly WechatTenpayClient Instance;
     }
