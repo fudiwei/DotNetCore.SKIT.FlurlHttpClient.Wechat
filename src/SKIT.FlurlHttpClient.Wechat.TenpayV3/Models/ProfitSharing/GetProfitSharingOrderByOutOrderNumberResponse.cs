@@ -55,6 +55,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? FailReason { get; set; }
 
                 /// <summary>
+                /// 获取或设置微信明细单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("detail_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
+                public string? DetailId { get; set; }
+
+                /// <summary>
                 /// 获取或设置分账创建时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
