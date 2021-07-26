@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 }
                 catch (Exception ex)
                 {
-                    throw new Exceptions.WechatTenpayEventDecryptionException("Decrypt event resource failed.", ex);
+                    throw new Exceptions.WechatTenpayEventDecryptionException("Decrypt event resource failed. Please see the `InnerException` for more details.", ex);
                 }
             }
             else

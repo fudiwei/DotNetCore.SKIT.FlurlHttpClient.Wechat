@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                         }
                         catch (Exception ex)
                         {
-                            throw new Exceptions.WechatTenpayRequestSignatureException("Generate signature of request failed.", ex);
+                            throw new Exceptions.WechatTenpayRequestSignatureException("Generate signature of request failed. Please see the `InnerException` for more details.", ex);
                         }
                     }
                     break;

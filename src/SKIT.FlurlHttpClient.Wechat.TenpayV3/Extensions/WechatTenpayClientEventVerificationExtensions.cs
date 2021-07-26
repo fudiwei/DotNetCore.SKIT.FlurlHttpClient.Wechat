@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 }
                 catch (Exception ex)
                 {
-                    throw new Exceptions.WechatTenpayResponseVerificationException("Verify event signature failed.", ex);
+                    throw new Exceptions.WechatTenpayResponseVerificationException("Verify event signature failed. Please see the `InnerException` for more details.", ex);
                 }
             }
         }
