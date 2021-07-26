@@ -10,6 +10,7 @@
             "description": "分给商户1900000110",
             "type": "MERCHANT_ID",
             "account": "1900000109",
+            "detail_id": "36011111111111111111111",
             "result": "SUCCESS",
             "fail_reason": "ACCOUNT_ABNORMAL",
             "create_time": "2015-05-20T13:29:35.120+08:00",
