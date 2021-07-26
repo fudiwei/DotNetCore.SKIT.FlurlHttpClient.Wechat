@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.Filters != null && request.Filters.Any())
-                flurlReq.SetQueryParam("filtering", client.FlurlJsonSerializer.Serialize(request.Filters));
+                flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
             if (request.PageSize.HasValue)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);

@@ -18,27 +18,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
     public class WechatAdsClient : WechatClientBase
     {
         /// <summary>
-        /// 获取当前客户端使用的微信广告平台服务商 ID。
+        /// 获取当前客户端使用的微信广告平台凭证。
         /// </summary>
-        public string WechatAgencyId { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的微信广告平台服务商 AppId。
-        /// </summary>
-        public string WechatAgencyAppId { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的微信广告平台服务商 ApiKey。
-        /// </summary>
-        internal string WechatAgencyApiKey { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的 JSON 序列化器。
-        /// </summary>
-        internal ISerializer FlurlJsonSerializer
-        {
-            get { return FlurlClient.Settings?.JsonSerializer ?? new FlurlNewtonsoftJsonSerializer(); }
-        }
+        public Settings.Credentials Credentials { get; }
 
         /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatAdsClient"/> 类的新实例。
@@ -49,9 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
 
-            WechatAgencyId = options.AgencyId;
-            WechatAgencyAppId = options.AgencyAppId;
-            WechatAgencyApiKey = options.AgencyApiKey;
+            Credentials = new Settings.Credentials(options);
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatAdsEndpoints.DEFAULT;
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));

@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.DateRange != null)
-                flurlReq.SetQueryParam("date_range", client.FlurlJsonSerializer.Serialize(request.DateRange));
+                flurlReq.SetQueryParam("date_range", client.JsonSerializer.Serialize(request.DateRange));
 
             if (!string.IsNullOrEmpty(request.TradeType))
                 flurlReq.SetQueryParam("trade_type", request.TradeType);
