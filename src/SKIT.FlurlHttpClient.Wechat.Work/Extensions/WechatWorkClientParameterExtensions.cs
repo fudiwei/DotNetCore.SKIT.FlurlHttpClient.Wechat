@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
-                { "appId", client.WechatCorpId },
+                { "appId", client.Credentials.CorpId },
                 { "timestamp", timestamp },
                 { "nonceStr", nonce },
                 { "signature", sign }
@@ -68,8 +68,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
-                { "corpid", client.WechatCorpId },
-                { "agentid", client.WechatAgentId?.ToString() ?? string.Empty },
+                { "corpid", client.Credentials.CorpId },
+                { "agentid", client.Credentials.AgentId?.ToString() ?? string.Empty },
                 { "timestamp", timestamp },
                 { "nonceStr", nonce },
                 { "signature", sign }

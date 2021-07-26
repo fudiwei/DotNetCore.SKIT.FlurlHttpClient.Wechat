@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (string.IsNullOrEmpty(callbackJson)) throw new ArgumentNullException(callbackJson);
 
-            return client.FlurlJsonSerializer.Deserialize<TEvent>(callbackJson);
+            return client.JsonSerializer.Deserialize<TEvent>(callbackJson);
         }
 
         /// <summary>

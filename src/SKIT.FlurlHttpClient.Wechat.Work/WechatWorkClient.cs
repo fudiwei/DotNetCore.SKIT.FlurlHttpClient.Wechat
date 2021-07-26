@@ -18,42 +18,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     public class WechatWorkClient : WechatClientBase
     {
         /// <summary>
-        /// 获取当前客户端使用的企业微信 CorpId。
+        /// 获取当前客户端使用的企业微信凭证。
         /// </summary>
-        public string WechatCorpId { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的企业微信应用的 AgentId。
-        /// </summary>
-        internal int? WechatAgentId { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的企业微信应用的 AgentSecret。
-        /// </summary>
-        internal string? WechatAgentSecret { get; }
-
-        /// <summary>
-        /// 获取当前客户端使用的企业微信服务商 Secret。
-        /// </summary>
-        internal string? WechatProviderSecret { get; set; }
-
-        /// <summary>
-        /// 获取当前客户端使用的企业微信第三方应用的 SuiteId。
-        /// </summary>
-        internal string? WechatSuiteId { get; set; }
-
-        /// <summary>
-        /// 获取当前客户端使用的企业微信第三方应用的 SuiteSecret。
-        /// </summary>
-        internal string? WechatSuiteSecret { get; set; }
-
-        /// <summary>
-        /// 获取当前客户端使用的 JSON 序列化器。
-        /// </summary>
-        internal ISerializer FlurlJsonSerializer
-        {
-            get { return FlurlClient.Settings?.JsonSerializer ?? new FlurlNewtonsoftJsonSerializer(); }
-        }
+        public Settings.Credentials Credentials { get; }
 
         /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatWorkClient"/> 类的新实例。
@@ -64,12 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
 
-            WechatCorpId = options.CorpId;
-            WechatAgentId = options.AgentId;
-            WechatAgentSecret = options.AgentSecret;
-            WechatProviderSecret = options.ProviderSecret;
-            WechatSuiteId = options.SuiteId;
-            WechatSuiteSecret = options.SuiteSecret;
+            Credentials = new Settings.Credentials(options);
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatWorkEndpoints.DEFAULT;
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));

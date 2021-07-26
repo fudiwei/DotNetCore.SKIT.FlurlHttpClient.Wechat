@@ -26,8 +26,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "gettoken")
-                .SetQueryParam("corpid", client.WechatCorpId)
-                .SetQueryParam("corpsecret", client.WechatAgentSecret);
+                .SetQueryParam("corpid", client.Credentials.CorpId)
+                .SetQueryParam("corpsecret", client.Credentials.AgentSecret);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinGetTokenResponse>(flurlReq, cancellationToken: cancellationToken);
         }
