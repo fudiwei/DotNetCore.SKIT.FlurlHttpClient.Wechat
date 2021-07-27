@@ -1,4 +1,4 @@
-﻿### 如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？
+﻿## 如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？
 
 ---
 
@@ -32,9 +32,9 @@ public class WechatApiClientFactory
             _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
         }
 
-        public Flurl.Http.IFlurlClient Get(Flurl.Url url)
+        public IFlurlClient Get(Flurl.Url url)
         {
-            return new FlurlClient(_httpClientFactory.CreateClient(url.ToUri()));
+            return new FlurlClient(_httpClientFactory.CreateClient(url.ToUri().Host));
         }
 
         public void Dispose()

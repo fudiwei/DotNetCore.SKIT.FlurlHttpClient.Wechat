@@ -1,4 +1,4 @@
-﻿### 如何验证响应签名？
+﻿## 如何验证响应签名？
 
 ---
 
@@ -16,7 +16,7 @@
 
 ---
 
-#### 密钥文件格式说明：
+### 密钥文件格式说明：
 
 需要注意的是，微信商户平台提供的是 PEM 格式的密钥文件，分为以下几种：
 
@@ -43,7 +43,7 @@ bool ret = RSAUtility.VerifyWithSHA256(publicKey, data, sign);
 
 ---
 
-#### 通过 `CertificateManager` 管理平台证书信息：
+### 通过 `CertificateManager` 管理平台证书信息：
 
 微信商户平台证书需要通过 API 的方式获取、且可能同时存在多个有效证书，本库提供了一个 `CertificateManager` 类型可用于管理证书信息。
 
