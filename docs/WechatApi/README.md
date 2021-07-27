@@ -179,6 +179,8 @@ else
 
 -   [如何生成 JS-SDK 初始化时所需的参数及签名？](./Advanced_JSSDK.md)
 
+-   [如何扩展额外的 API？](./Advanced_Extensions.md)
+
 ---
 
 ## 示例项目

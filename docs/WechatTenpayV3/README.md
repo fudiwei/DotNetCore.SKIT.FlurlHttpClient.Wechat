@@ -147,3 +147,5 @@ else
 -   [如何解密回调通知事件中的敏感数据？](./Advanced_EventDataDecryption.md)
 
 -   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Payment.md)
+
+-   [如何扩展额外的 API？](./Advanced_Extensions.md)
