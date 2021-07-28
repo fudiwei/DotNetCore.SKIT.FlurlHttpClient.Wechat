@@ -20,6 +20,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Services.HttpClients.Imple
         {
             _httpClientFactory = httpClientFactory;
             _wechatOptions = wechatOptions.Value;
+
+            FlurlHttp.GlobalSettings.FlurlClientFactory = new DelegatingFlurlClientFactory(_httpClientFactory);
         }
 
         public WechatApiClient Create(string appId)
@@ -27,8 +29,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Services.HttpClients.Imple
             var wechatAccount = _wechatOptions.Accounts?.FirstOrDefault(e => string.Equals(appId, e.AppId));
             if (wechatAccount == null)
                 throw new Exception("未在配置项中找到该 AppId 对应的微信账号。");
-
-            FlurlHttp.GlobalSettings.FlurlClientFactory = new DelegatingFlurlClientFactory(_httpClientFactory);
 
             return new WechatApiClient(new WechatApiClientOptions()
             {
