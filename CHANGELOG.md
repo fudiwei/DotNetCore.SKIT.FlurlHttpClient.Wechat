@@ -6,6 +6,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat 更新日志</summary>
 
+-   Release 1.0.3
+
+    -   **修复**：显式依赖 `System.Text.Encodings.Web`，修复部分场景下程序集加载问题。
+
 -   Release 1.0.2
 
     -   **新增**：新增 `IWechatClient.JsonSerializer` 属性。
@@ -25,6 +29,10 @@
 <details>
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
+
+-   Release 1.2.1
+
+    -   **修复**：修复生成小程序码接口的模型定义错误。
 
 -   Release 1.2.0
 
