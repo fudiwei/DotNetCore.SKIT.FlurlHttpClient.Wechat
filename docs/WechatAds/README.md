@@ -1,8 +1,10 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.Ads
 
+[![Gitee Stars](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/badge/star.svg)](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
+[![GitHub Stars](https://img.shields.io/github/stars/fudiwei/DotNetCore.SKIT.RestSharpClient.Wechat?logo=github)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
 [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Ads.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Ads)
 [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.Ads.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Ads)
-[![GitHub License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/blob/main/LICENSE)
+[![License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)](https://mit-license.org/)
 
 基于 `Flurl.Http` 的[微信广告平台](https://ad.weixin.qq.com/) API 客户端。
 
