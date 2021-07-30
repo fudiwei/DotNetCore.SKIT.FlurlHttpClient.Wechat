@@ -13,13 +13,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     /// </summary>
     public static class WechatApiClientEventExtensions
     {
+        private class EncryptedWechatApiEvent
+        {
+            [Newtonsoft.Json.JsonProperty("Encrypt")]
+            [System.Text.Json.Serialization.JsonPropertyName("Encrypt")]
+            public string EncryptedData { get; set; } = default!;
+
+            [Newtonsoft.Json.JsonProperty("TimeStamp")]
+            [System.Text.Json.Serialization.JsonPropertyName("TimeStamp")]
+            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedStringConverter))]
+            public string Timestamp { get; set; } = default!;
+
+            [Newtonsoft.Json.JsonProperty("Nonce")]
+            [System.Text.Json.Serialization.JsonPropertyName("Nonce")]
+            public string Nonce { get; set; } = default!;
+
+            [Newtonsoft.Json.JsonProperty("MsgSignature")]
+            [System.Text.Json.Serialization.JsonPropertyName("MsgSignature")]
+            public string Signature { get; set; } = default!;
+        }
+
         /// <summary>
         /// <para>从 JSON 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="callbackJson"></param>
+        /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
         /// <returns></returns>
-        public static TEvent DeserializeEventFromJson<TEvent>(this WechatApiClient client, string callbackJson)
+        public static TEvent DeserializeEventFromJson<TEvent>(this WechatApiClient client, string callbackJson, bool safety = false)
             where TEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable, new()
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
@@ -27,7 +48,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             try
             {
+                if (safety)
+                {
+                    if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
+                        throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no encoding AES key.");
+
+                    var encryptedEvent = client.JsonSerializer.Deserialize<EncryptedWechatApiEvent>(callbackJson);
+                    if (string.IsNullOrEmpty(encryptedEvent.EncryptedData))
+                        throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because of empty encrypted data.");
+
+                    callbackJson = Utilities.WxBizMsgCryptor.AESDecrypt(
+                        cipherText: encryptedEvent.EncryptedData, 
+                        encodingAESKey: client.Credentials.PushEncodingAESKey!, 
+                        out _
+                    );
+                }
+
                 return client.JsonSerializer.Deserialize<TEvent>(callbackJson);
+            }
+            catch (WechatApiException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -40,8 +81,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// </summary>
         /// <param name="client"></param>
         /// <param name="callbackXml"></param>
+        /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
         /// <returns></returns>
-        public static TEvent DeserializeEventFromXml<TEvent>(this WechatApiClient client, string callbackXml)
+        public static TEvent DeserializeEventFromXml<TEvent>(this WechatApiClient client, string callbackXml, bool safety = false)
             where TEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable, new()
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
@@ -49,10 +91,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             try
             {
+                if (safety)
+                {
+                    if (!Utilities.WxBizMsgCryptor.TryParseXml(callbackXml, out callbackXml!))
+                        throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because of empty encrypted data.");
+                }
+
                 using var reader = new StringReader(callbackXml);
 
                 XmlSerializer xmlSerializer = new XmlSerializer(typeof(TEvent), new XmlRootAttribute("xml"));
-                return (TEvent)xmlSerializer.Deserialize(reader);
+                return (TEvent)xmlSerializer.Deserialize(reader)!;
+            }
+            catch (WechatApiException)
+            {
+                throw;
             }
             catch (Exception ex)
             {
@@ -66,7 +118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <typeparam name="TEvent"></typeparam>
         /// <param name="client"></param>
         /// <param name="callbackModel"></param>
-        /// <param name="safety">是否是安全模式。</param>
+        /// <param name="safety">是否是安全模式（即是否需要加密）。</param>
         /// <returns></returns>
         public static string SerializeEventToJson<TEvent>(this WechatApiClient client, TEvent callbackModel, bool safety = false)
             where TEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable, new()
@@ -85,9 +137,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (safety)
             {
                 if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
-                    throw new Exceptions.WechatApiEventSerializationException ("Encrypt event failed, because of there is no encoding AES key.");
+                    throw new Exceptions.WechatApiEventSerializationException ("Encrypt event failed, because there is no encoding AES key.");
                 if (string.IsNullOrEmpty(client.Credentials.PushToken))
-                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because of there is no token.");
+                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no token.");
 
                 try
                 {
@@ -105,12 +157,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                         sMsgEncrypt: cipher
                     );
 
-                    json = client.JsonSerializer.Serialize(new Dictionary<string, string>()
+                    json = client.JsonSerializer.Serialize(new EncryptedWechatApiEvent()
                     {
-                        { "Encrypt", cipher },
-                        { "TimeStamp", timestamp },
-                        { "Nonce", nonce },
-                        { "MsgSignature", sign }
+                        EncryptedData = cipher,
+                        Timestamp = timestamp,
+                        Nonce = nonce,
+                        Signature = sign
                     });
                 }
                 catch (Exception ex)
@@ -128,7 +180,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <typeparam name="TEvent"></typeparam>
         /// <param name="client"></param>
         /// <param name="callbackModel"></param>
-        /// <param name="safety">是否是安全模式。</param>
+        /// <param name="safety">是否是安全模式（即是否需要加密）。</param>
         /// <returns></returns>
         public static string SerializeEventToXml<TEvent>(this WechatApiClient client, TEvent callbackModel, bool safety = false)
             where TEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable, new()
@@ -150,7 +202,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 xml = Regex.Replace(xml, "\\s+<\\w+ (xsi|d2p1):nil=\"true\"[^>]*/>", string.Empty, RegexOptions.IgnoreCase);
                 xml = Regex.Replace(xml, "<\\?xml[^>]*\\?>", string.Empty, RegexOptions.IgnoreCase);
             }
-            catch (System.Xml.XmlException ex)
+            catch (Exception ex)
             {
                 throw new Exceptions.WechatApiEventSerializationException("Serialize event failed. Please see the `InnerException` for more details.", ex);
             }
@@ -158,9 +210,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (safety)
             {
                 if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
-                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because of there is no encoding AES key.");
+                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no encoding AES key.");
                 if (string.IsNullOrEmpty(client.Credentials.PushToken))
-                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because of there is no token.");
+                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no token.");
 
                 try
                 {
