@@ -30,6 +30,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public string AppSecret { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置微信服务器推送的 EncodingAESKey。
+        /// </summary>
+        public string? PushEncodingAESKey { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信服务器推送的 Token。
+        /// </summary>
+        public string? PushToken { get; set; }
+
+        /// <summary>
         /// 获取或设置即时配送公司帐号 AppKey。
         /// </summary>
         public string? ImmeDeliveryAppKey { get; set; }

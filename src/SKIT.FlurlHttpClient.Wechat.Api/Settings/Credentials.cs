@@ -19,6 +19,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
         public string AppSecret { get; }
 
         /// <summary>
+        /// 初始化客户端时 <see cref="WechatApiClientOptions.PushEncodingAESKey"/> 的副本。
+        /// </summary>
+        public string? PushEncodingAESKey { get; }
+
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatApiClientOptions.PushToken"/> 的副本。
+        /// </summary>
+        public string? PushToken { get; }
+
+        /// <summary>
         /// 初始化客户端时 <see cref="WechatApiClientOptions.ImmeDeliveryAppKey"/> 的副本。
         /// </summary>
         public string? ImmeDeliveryAppKey { get; }
@@ -39,6 +49,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
 
             AppId = options.AppId;
             AppSecret = options.AppSecret;
+            PushEncodingAESKey = options.PushEncodingAESKey;
+            PushToken = options.PushToken;
             ImmeDeliveryAppKey = options.ImmeDeliveryAppKey;
             ImmeDeliveryAppSecret = options.ImmeDeliveryAppSecret;
             MidasAppKey = options.MidasAppKey;
