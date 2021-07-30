@@ -2,9 +2,7 @@
 
 ---
 
-你可根据官方文档的规则利用本库提供的 `WxBizMsgCryptor` 工具类自行解密回调通知事件的敏感信息。
-
-对于解密后得到的原始数据，本库封装了直接解析成事件模型的扩展方法，下面给出一个示例：
+对于微信推送过来的回调通知事件，本库封装了直接解析成事件模型的扩展方法，下面给出一个示例：
 
 ```csharp
 /* 如果是 JSON 格式的通知内容 */
@@ -18,4 +16,57 @@ var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(call
 
 完整的回调通知模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Api/Events_ 目录。
 
-需要注意的是，如果在微信公众平台后台配置中选择了明文模式，则无需对数据进行解密。
+---
+
+### 安全模式：
+
+在安全模式下，微信公众平台使用了一种特殊的 AES 算法对回调通知事件加密。
+
+开发者可利用本库提供的 `WxBizMsgCryptor` 工具类自行解密相关字段。
+
+此外，本库还封装了直接解密事件的扩展方法，下面给出一个示例：
+
+```csharp
+/* 在初始化客户端时需指定服务器推送的相关参数 */
+var options = new WechatApiClientOptions()
+{
+    AppId = "微信 AppId",
+    AppSecret = "微信 AppSecret",
+    PushEncodingAESKey = "服务器推送的 EncodingAESKey",
+    PushToken = "服务器推送的 Token"
+};
+var client = new WechatApiClient(options);
+
+/* 如果是 XML 格式的加密通知内容 */
+string callbackXml = "<xml> <Encrypt>...</Encrypt> </xml>";
+var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml, safety: true);
+```
+
+---
+
+### 被动回复：
+
+当用户发送消息给公众号、或某些特定的用户操作引发的事件推送时，开发者可以在响应中返回特定 XML 结构，来对该消息进行响应。
+
+本库还封装了直接序列化被动回复事件的扩展方法，下面给出一个示例：
+
+```csharp
+/* 以被动回复文本消息为例 */
+var replyModel = new Events.TextMessageReply()
+{
+    ToUserName = "接收方 OpenId",
+    FromUserName = "开发者 GhId",
+    MessageType = "text", 
+    Content = "被动回复的文本内容",
+    CreateTimestamp = 1234567890
+};
+string replyXml = client.SerializeEventToXml(replyModel);
+```
+
+如果是在安全模式下，那么可以：
+
+```csharp
+string replyXml = client.SerializeEventToXml(replyModel, safety: true);
+```
+
+更多的示例可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Api/Events/MpReply_ 目录。
