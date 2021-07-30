@@ -38,6 +38,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{35C9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5", "samples\SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5\SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.csproj", "{D1B321C9-3004-4645-A78D-A85C152062FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5", "samples\SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5\SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.csproj", "{65E51735-73CE-4E9B-AA65-4BF5E4C8A705}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +90,10 @@ Global
 		{D1B321C9-3004-4645-A78D-A85C152062FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D1B321C9-3004-4645-A78D-A85C152062FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D1B321C9-3004-4645-A78D-A85C152062FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65E51735-73CE-4E9B-AA65-4BF5E4C8A705}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E51735-73CE-4E9B-AA65-4BF5E4C8A705}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E51735-73CE-4E9B-AA65-4BF5E4C8A705}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E51735-73CE-4E9B-AA65-4BF5E4C8A705}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -105,6 +111,7 @@ Global
 		{DBF84F66-1436-4599-93AB-7C16A3A2C3A4} = {C95AF531-CF44-44AA-AC90-F4DF9F941674}
 		{561E0BFB-7817-41FE-BAF2-D78817679AC1} = {C95AF531-CF44-44AA-AC90-F4DF9F941674}
 		{D1B321C9-3004-4645-A78D-A85C152062FA} = {35C901ED-C234-4A91-9561-AD89B3BB788D}
+		{65E51735-73CE-4E9B-AA65-4BF5E4C8A705} = {35C901ED-C234-4A91-9561-AD89B3BB788D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F08ED64E-2517-4B51-A4BE-D33D56CC7B39}
