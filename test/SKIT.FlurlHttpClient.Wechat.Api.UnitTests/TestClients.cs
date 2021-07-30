@@ -6,7 +6,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
     {
         static TestClients()
         {
-            Instance = new WechatApiClient(TestConfigs.WechatAppId, TestConfigs.WechatAppSecret);
+            Instance = new WechatApiClient(new WechatApiClientOptions()
+            { 
+                AppId = TestConfigs.WechatAppId,
+                AppSecret =  TestConfigs.WechatAppSecret
+            });
         }
 
         public static readonly WechatApiClient Instance;
