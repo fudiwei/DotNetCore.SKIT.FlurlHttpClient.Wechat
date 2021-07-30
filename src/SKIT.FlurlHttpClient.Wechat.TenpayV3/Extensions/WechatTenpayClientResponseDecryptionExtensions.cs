@@ -21,10 +21,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (response.AccountValidation != null)
             {
@@ -81,10 +81,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (response.DownloadBillList != null)
             {
@@ -127,10 +127,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (response.ComplaintDetail != null)
             {
@@ -165,10 +165,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantV3Secret))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant secret.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant secret.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (response.CertificateList != null)
             {
@@ -217,10 +217,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (response.ComplaintList != null)
             {
@@ -263,10 +263,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (response.GuideList != null)
             {
@@ -324,10 +324,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (!string.IsNullOrEmpty(response.UserName))
             {
@@ -359,10 +359,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (!string.IsNullOrEmpty(response.UserName))
             {
@@ -394,10 +394,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (!string.IsNullOrEmpty(response.UserName))
             {
@@ -429,10 +429,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of there is no merchant private key.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because of the response is not successful.");
+                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
 
             if (!string.IsNullOrEmpty(response.UserName))
             {
