@@ -75,11 +75,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             return res;
         }
 
-        private static byte[] AESDecrypt(byte[] keyBytes, byte[] ivBytes, byte[] chiperBytes)
+        private static byte[] AESDecrypt(byte[] keyBytes, byte[] ivBytes, byte[] cipherBytes)
         {
             if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
             if (ivBytes == null) throw new ArgumentNullException(nameof(ivBytes));
-            if (chiperBytes == null) throw new ArgumentNullException(nameof(chiperBytes));
+            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
 
             using RijndaelManaged aes = new RijndaelManaged();
             aes.KeySize = 256;
@@ -94,9 +94,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             using (var ms = new MemoryStream())
             using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
             {
-                byte[] bMsg = new byte[chiperBytes.Length + 32 - chiperBytes.Length % 32];
-                Array.Copy(chiperBytes, bMsg, chiperBytes.Length);
-                cs.Write(chiperBytes, 0, chiperBytes.Length);
+                byte[] bMsg = new byte[cipherBytes.Length + 32 - cipherBytes.Length % 32];
+                Array.Copy(cipherBytes, bMsg, cipherBytes.Length);
+                cs.Write(cipherBytes, 0, cipherBytes.Length);
 
                 byte[] plainBytes = Decode2(ms.ToArray());
                 return plainBytes;
@@ -136,20 +136,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         /// <summary>
         /// AES 解密企业微信加密数据。
         /// </summary>
-        /// <param name="chiperText">企业微信推送来的加密文本内容（即 `Encrypt` 字段的值）。</param>
+        /// <param name="cipherText">企业微信推送来的加密文本内容（即 `Encrypt` 字段的值）。</param>
         /// <param name="encodingAESKey">企业微信后台设置的 EncodingAESKey。</param>
         /// <param name="corpId">企业微信 CorpId。</param>
         /// <returns>解密后的文本内容。</returns>
-        public static string AESDecrypt(string chiperText, string encodingAESKey, out string corpId)
+        public static string AESDecrypt(string cipherText, string encodingAESKey, out string corpId)
         {
-            if (chiperText == null) throw new ArgumentNullException(nameof(chiperText));
+            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
             if (encodingAESKey == null) throw new ArgumentNullException(nameof(encodingAESKey));
 
-            byte[] chiperBytes = Convert.FromBase64String(chiperText);
+            byte[] chiperBytes = Convert.FromBase64String(cipherText);
             byte[] keyBytes = Convert.FromBase64String(encodingAESKey + "=");
             byte[] ivBytes = new byte[16];
             Array.Copy(keyBytes, ivBytes, 16);
-            byte[] btmpMsg = AESDecrypt(chiperBytes: chiperBytes, ivBytes: ivBytes, keyBytes: keyBytes);
+            byte[] btmpMsg = AESDecrypt(cipherBytes: chiperBytes, ivBytes: ivBytes, keyBytes: keyBytes);
 
             int len = BitConverter.ToInt32(btmpMsg, 16);
             len = IPAddress.NetworkToHostOrder(len);
