@@ -275,7 +275,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
                 XmlDocument xmlDoc = new XmlDocument();
                 xmlDoc.LoadXml(xml);
 
-                XmlNode xmlRoot = xmlDoc.FirstChild;
+                XmlNode? xmlRoot = xmlDoc.FirstChild;
+                if (xmlRoot == null)
+                    return false;
+
                 encryptedMsg = xmlRoot["Encrypt"]?.InnerText?.ToString();
                 toUserName = xmlRoot["ToUserName"]?.InnerText?.ToString();
                 agentId = xmlRoot["AgentID"]?.InnerText?.ToString();

@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                         { "offer_id", HttpUtility.UrlEncode(request.MidasOfferId ?? string.Empty) },
                         { "zone_id", HttpUtility.UrlEncode(request.MidasZoneId ?? string.Empty) },
                         { "pf", HttpUtility.UrlEncode(request.Platform ?? string.Empty) },
-                        { "ts", request.Timestamp.ToString() }
+                        { "ts", request.Timestamp.ToString()! }
                     }
                 );
                 string plainText = string.Join("&", paramMap.Select(e => $"{e.Key}={e.Value}"))
