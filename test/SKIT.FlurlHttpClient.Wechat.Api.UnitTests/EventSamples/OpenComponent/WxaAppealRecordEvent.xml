@@ -9,8 +9,8 @@
     <appeal_time>1600055800</appeal_time>
     <appeal_count>1</appeal_count>
     <appeal_from>0</appeal_from>
-    <appeal_status>1|2|3|4</appeal_status>
-    <punish_description>内容涉嫌欺诈</punish_description>
+    <appeal_status>1</appeal_status>
+    <punish_description><![CDATA[内容涉嫌欺诈]]></punish_description>
     <material>
         <illegal_material>
             <content>违规内容1</content>

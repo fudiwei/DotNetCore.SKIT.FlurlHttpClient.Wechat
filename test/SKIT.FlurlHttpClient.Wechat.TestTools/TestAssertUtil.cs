@@ -221,11 +221,11 @@ namespace SKIT.FlurlHttpClient.Wechat
                 {
                     using StringReader reader = new StringReader(xml);
                     XmlSerializer xmlSerializer = new XmlSerializer(type, new XmlRootAttribute("xml"));
-                    xmlSerializer.Deserialize(reader);
+                    var obj = xmlSerializer.Deserialize(reader);
                 }
                 catch (Exception ex)
                 {
-                    exception = new Exception($"XML 反序列化 `{type.Name}` 遇到问题。", ex);
+                    lstError.Add(new Exception($"XML 反序列化 `{type.Name}` 遇到问题。", ex));
                 }
             }
 

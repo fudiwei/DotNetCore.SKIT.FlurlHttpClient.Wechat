@@ -1,14 +1,14 @@
 ﻿<xml>
     <ToUserName><![CDATA[toUser]]></ToUserName>
     <FromUserName><![CDATA[fromUser]]></FromUserName>
-    <CreateTime>时间戳</CreateTime>
+    <CreateTime>1234567890</CreateTime>
     <MsgType><![CDATA[event]]></MsgType>
     <Event><![CDATA[betaapp_verify_event]]></Event>
     <ApplyAuthorizationInfoNoitfy>
-        <appid>![CDATA[小程序appid]]</appid>
-        <mp_appid>![CDATA[公众号appid]]</mp_appid>
-        <status>![CDATA[0]]</status>
-        <msg>![CDATA[ok]]</msg>
-        <operation_time>![CDATA[操作的时间]]</operation_time>
+        <appid><![CDATA[小程序appid]]></appid>
+        <mp_appid><![CDATA[公众号appid]]></mp_appid>
+        <status><![CDATA[0]]></status>
+        <msg><![CDATA[ok]]></msg>
+        <operation_time><![CDATA[操作的时间]]></operation_time>
     </ApplyAuthorizationInfoNoitfy>
 </xml>

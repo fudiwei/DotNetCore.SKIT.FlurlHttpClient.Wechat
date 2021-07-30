@@ -34,8 +34,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// <summary>
                 /// 获取或设置错误信息。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("msg")]
+                [System.Xml.Serialization.XmlElement("msg", IsNullable = true)]
                 public string? ErrorMessage { get; set; }
+
+                /// <summary>
+                /// 获取或设置授权成功后生成的 Ticket。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("ticket", IsNullable = true)]
+                public string? Ticket { get; set; }
             }
         }
 

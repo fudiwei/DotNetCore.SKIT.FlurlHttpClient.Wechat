@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     {
         public new static class Types
         {
-            public class Data
+            public class EventData
             {
                 public static class Types
                 {
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("List")]
                 [System.Text.Json.Serialization.JsonPropertyName("List")]
-                [System.Xml.Serialization.XmlArray("List")]
+                [System.Xml.Serialization.XmlElement("List", typeof(Types.EventItem))]
                 public Types.EventItem[] EventList { get; set; } = default!;
             }
         }
@@ -59,6 +59,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("SubscribeMsgPopupEvent")]
         [System.Text.Json.Serialization.JsonPropertyName("SubscribeMsgPopupEvent")]
         [System.Xml.Serialization.XmlElement("SubscribeMsgPopupEvent")]
-        public Types.Data EventData { get; set; } = default!;
+        public Types.EventData EventData { get; set; } = default!;
     }
 }

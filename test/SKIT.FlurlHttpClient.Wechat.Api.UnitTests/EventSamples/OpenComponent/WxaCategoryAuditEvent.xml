@@ -5,7 +5,7 @@
     <MsgType><![CDATA[event]]></MsgType>
     <Event><![CDATA[wxa_category_audit]]></Event>
     <ret>2</ret>
-    <first>一级类目id</first>
-    <second>二级类目id</second>
-    <reason>驳回原因</reason>
+    <first>1</first>
+    <second>2</second>
+    <reason><![CDATA[驳回原因]]></reason>
 </xml>

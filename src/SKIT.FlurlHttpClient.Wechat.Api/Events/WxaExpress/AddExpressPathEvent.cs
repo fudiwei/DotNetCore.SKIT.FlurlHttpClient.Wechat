@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("Actions")]
         [System.Text.Json.Serialization.JsonPropertyName("Actions")]
-        [System.Xml.Serialization.XmlArray("Actions")]
+        [System.Xml.Serialization.XmlElement("Actions", Type = typeof(Types.Action))]
         public Types.Action[] ActionList { get; set; } = default!;
     }
 }

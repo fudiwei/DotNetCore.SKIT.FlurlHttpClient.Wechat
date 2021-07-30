@@ -167,7 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("DetailList")]
                 [System.Text.Json.Serialization.JsonPropertyName("DetailList")]
-                [System.Xml.Serialization.XmlArray("DetailList", IsNullable = true)]
+                [System.Xml.Serialization.XmlElement("DetailList", Type = typeof(Types.GoodsDetail))]
                 public Types.GoodsDetail[]? GoodsDetailList { get; set; }
             }
 

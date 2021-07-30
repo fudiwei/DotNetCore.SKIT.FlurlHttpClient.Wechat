@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     {
         public new static class Types
         {
-            public class Article
+            public class ArticleItem
             {
                 /// <summary>
                 /// 获取或设置图文链接。
@@ -37,6 +37,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [System.Xml.Serialization.XmlElement("Description")]
                 public string Description { get; set; } = string.Empty;
             }
+
+            public class ArticleList
+            {
+                /// <summary>
+                /// 获取或设置图文列表。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("item", Type = typeof(ArticleItem))]
+                public ArticleItem[] Items { get; set; } = new ArticleItem[0];
+            }
         }
 
         /// <summary>
@@ -48,9 +57,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// <summary>
         /// 获取或设置图文列表。
         /// </summary>
-        [System.Xml.Serialization.XmlArray("Articles")]
-        [System.Xml.Serialization.XmlArrayItem("item")]
-        public Types.Article[] ArticleList { get; set; } = new Types.Article[0];
+        [System.Xml.Serialization.XmlElement("Articles")]
+        public Types.ArticleList ArticleList { get; set; } = new Types.ArticleList();
 
         public NewsMessageReply()
         {

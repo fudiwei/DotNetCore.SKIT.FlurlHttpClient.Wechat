@@ -11,8 +11,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     {
         public new static class Types
         {
-            public class EventData : BetaAppAuthorizationApplyEvent.Types.EventData
+            public class EventData
             {
+                /// <summary>
+                /// 获取或设置小程序的 AppId。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("appid")]
+                public string MiniProgramAppId { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置公众号的 AppId。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("mp_appid")]
+                public string MediaPlatformAppId { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置错误码。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("status")]
+                public int ErrorCode { get; set; }
+
+                /// <summary>
+                /// 获取或设置错误信息。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("msg")]
+                public string? ErrorMessage { get; set; }
             }
         }
 

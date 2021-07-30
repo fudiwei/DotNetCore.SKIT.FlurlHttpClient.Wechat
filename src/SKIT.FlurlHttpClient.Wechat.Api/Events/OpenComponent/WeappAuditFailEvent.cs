@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// <summary>
         /// 获取或设置审核失败的原因。
         /// </summary>
-        [System.Xml.Serialization.XmlElement("FailTime", IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("Reason", IsNullable = true)]
         public string? FailReason { get; set; }
 
         /// <summary>

@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// <summary>
                 /// 获取或设置证明材料 MediaId 列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlArray("proof_material_ids")]
+                [System.Xml.Serialization.XmlElement("proof_material_id", Type = typeof(string))]
                 public string[] ProofMediaIdList { get; set; } = default!;
             }
         }
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// <summary>
         /// 获取或设置申诉材料列表。
         /// </summary>
-        [System.Xml.Serialization.XmlArray("materials", IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("material", Type = typeof(Types.Material), IsNullable = true)]
         public Types.Material[]? MaterialList { get; set; }
 
         /// <summary>
