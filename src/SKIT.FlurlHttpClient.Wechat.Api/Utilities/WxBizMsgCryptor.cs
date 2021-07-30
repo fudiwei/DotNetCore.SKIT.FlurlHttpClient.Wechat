@@ -75,11 +75,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             return res;
         }
 
-        private static byte[] AESDecrypt(byte[] keyBytes, byte[] ivBytes, byte[] chiperBytes)
+        private static byte[] AESDecrypt(byte[] keyBytes, byte[] ivBytes, byte[] ciperBytes)
         {
             if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
             if (ivBytes == null) throw new ArgumentNullException(nameof(ivBytes));
-            if (chiperBytes == null) throw new ArgumentNullException(nameof(chiperBytes));
+            if (ciperBytes == null) throw new ArgumentNullException(nameof(ciperBytes));
 
             using RijndaelManaged aes = new RijndaelManaged();
             aes.KeySize = 256;
@@ -94,9 +94,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             using (var ms = new MemoryStream())
             using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
             {
-                byte[] bMsg = new byte[chiperBytes.Length + 32 - chiperBytes.Length % 32];
-                Array.Copy(chiperBytes, bMsg, chiperBytes.Length);
-                cs.Write(chiperBytes, 0, chiperBytes.Length);
+                byte[] bMsg = new byte[ciperBytes.Length + 32 - ciperBytes.Length % 32];
+                Array.Copy(ciperBytes, bMsg, ciperBytes.Length);
+                cs.Write(ciperBytes, 0, ciperBytes.Length);
 
                 byte[] plainBytes = Decode2(ms.ToArray());
                 return plainBytes;
@@ -128,28 +128,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             using (var cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
             {
                 cs.Write(msgBytes, 0, msgBytes.Length);
-                byte[] chiperBytes = ms.ToArray();
-                return Convert.ToBase64String(chiperBytes);
+                byte[] cipherBytes = ms.ToArray();
+                return Convert.ToBase64String(cipherBytes);
             }
         }
 
         /// <summary>
         /// AES 解密微信回调加密数据。
         /// </summary>
-        /// <param name="chiperText">微信推送来的加密文本内容（即 `Encrypt` 字段的值）。</param>
+        /// <param name="cipherText">微信推送来的加密文本内容（即 `Encrypt` 字段的值）。</param>
         /// <param name="encodingAESKey">微信后台设置的 EncodingAESKey。</param>
         /// <param name="appId">微信 AppId。</param>
         /// <returns>解密后的文本内容。</returns>
-        public static string AESDecrypt(string chiperText, string encodingAESKey, out string appId)
+        public static string AESDecrypt(string cipherText, string encodingAESKey, out string appId)
         {
-            if (chiperText == null) throw new ArgumentNullException(nameof(chiperText));
+            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
             if (encodingAESKey == null) throw new ArgumentNullException(nameof(encodingAESKey));
 
-            byte[] chiperBytes = Convert.FromBase64String(chiperText);
+            byte[] cipherBytes = Convert.FromBase64String(cipherText);
             byte[] keyBytes = Convert.FromBase64String(encodingAESKey + "=");
             byte[] ivBytes = new byte[16];
             Array.Copy(keyBytes, ivBytes, 16);
-            byte[] btmpMsg = AESDecrypt(chiperBytes: chiperBytes, ivBytes: ivBytes, keyBytes: keyBytes);
+            byte[] btmpMsg = AESDecrypt(ciperBytes: cipherBytes, ivBytes: ivBytes, keyBytes: keyBytes);
 
             int len = BitConverter.ToInt32(btmpMsg, 16);
             len = IPAddress.NetworkToHostOrder(len);
