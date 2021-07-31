@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Options
 
         public WechatMerchant[] Merchants { get; set; } = Array.Empty<WechatMerchant>();
 
-        public string CallbackEntry { get; set; } = string.Empty;
+        public string CallbackUrl { get; set; } = string.Empty;
     }
 
     partial class WxpayOptions

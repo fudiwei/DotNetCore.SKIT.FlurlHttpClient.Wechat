@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Controllers
             var entity = _wechatAccessTokenEntityRepository.FirstOrDefault(e => e.AppId == appId);
             var client = _wechatApiHttpClientFactory.Create(appId);
             var request = new CgibinUserInfoRequest() { AccessToken = entity?.AccessToken, OpenId = openId };
-            var response = await client.ExecuteCgibinUserInfoAsync(request, HttpContext.RequestAborted);
+            var response = await client.ExecuteCgibinUserInfoAsync(request, cancellationToken: HttpContext.RequestAborted);
             if (!response.IsSuccessful())
             {
                 _logger.LogWarning(
