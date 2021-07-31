@@ -10,17 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class DeliveryCompanyList
-            {
-                /// <summary>
-                /// 获取或设置快递公司列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("company_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("company_list")]
-                public DeliveryCompanyItem[] Items { get; set; } = default!;
-            }
-
-            public class DeliveryCompanyItem
+            public class DeliveryCompany
             {
                 /// <summary>
                 /// 获取或设置快递公司 ID。
@@ -41,8 +31,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置快递公司列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("data")]
-        [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public Types.DeliveryCompanyList DeliveryCompanyList { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("company_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("company_list")]
+        public Types.DeliveryCompany[] DeliveryCompanyList { get; set; } = default!;
     }
 }
