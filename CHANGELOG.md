@@ -30,6 +30,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.3.1
+
+    -   **修复**：修复自定义交易组件获取快递公司列表接口的模型定义错误。
+
 -   Release 1.3.0
 
     -   **新增**：新增序列化回调通知事件实体类的扩展方法。
