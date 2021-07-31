@@ -6,16 +6,16 @@ using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Options
 {
-    public partial class WechatOptions : IOptions<WechatOptions>
+    public partial class WxpayOptions : IOptions<WxpayOptions>
     {
-        WechatOptions IOptions<WechatOptions>.Value => this;
+        WxpayOptions IOptions<WxpayOptions>.Value => this;
 
         public WechatMerchant[] Merchants { get; set; } = Array.Empty<WechatMerchant>();
 
         public string CallbackEntry { get; set; } = string.Empty;
     }
 
-    partial class WechatOptions
+    partial class WxpayOptions
     {
         public class WechatMerchant
         { 
