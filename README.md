@@ -80,6 +80,14 @@
 
 ---
 
+## 开源案例
+
+|   名称   |                      简介                      |                                              地址                                               |
+| :------: | :--------------------------------------------: | :---------------------------------------------------------------------------------------------: |
+| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [GitHub](./https://gihub.com/CoreUnion/CoreShop)｜[Gitee](https://gitee.com/CoreUnion/CoreShop) |
+
+---
+
 ## 贡献代码
 
 -   GitHub：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat
