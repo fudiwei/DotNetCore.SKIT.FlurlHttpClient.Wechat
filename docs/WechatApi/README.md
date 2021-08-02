@@ -179,6 +179,8 @@ else
 
 -   [如何解析回调通知事件？](./Advanced_EventDataDeserialization.md)
 
+-   [如何验证回调通知事件签名？](./Advanced_EventDataSignatureVerification.md)
+
 -   [如何生成 JS-SDK 初始化时所需的参数及签名？](./Advanced_JSSDK.md)
 
 -   [如何扩展额外的 API？](./Advanced_Extensions.md)

@@ -39,22 +39,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Controllers
         [Route("a-{app_id}/message-push")]
         public IActionResult VerifyMessage(
             [FromRoute(Name = "app_id")] string appId,
-            [FromQuery(Name = "signature")] string signature,
             [FromQuery(Name = "timestamp")] string timestamp,
             [FromQuery(Name = "nonce")] string nonce,
+            [FromQuery(Name = "signature")] string signature,
             [FromQuery(Name = "echostr")] string echoString)
         {
             // 验证服务器推送
             // 文档：https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html
 
-            var wechatAccount = _wechatOptions.Accounts?.FirstOrDefault(e => e.AppId == appId);
-            if (wechatAccount == null)
+            var client = _wechatApiHttpClientFactory.Create(appId);
+            bool valid = client.VerifyEventSignature(
+                callbackTimestamp: timestamp,
+                callbackNonce: nonce,
+                callbackSignature: signature
+            );
+            if (!valid)
+            {
                 return Content("fail");
-
-            ISet<string> set = new SortedSet<string>() { _wechatOptions.CallbackToken, timestamp!, nonce! };
-            string sign = SHA1Utility.Hash(string.Concat(set));
-            if (!string.Equals(sign, signature, StringComparison.InvariantCultureIgnoreCase))
-                return Content("fail");
+            }
 
             return Content(echoString);
         }
@@ -71,10 +73,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Controllers
             string content = await reader.ReadToEndAsync();
             _logger.LogInformation("接收到微信推送的数据：{0}", content);
 
-            var xDoc = XDocument.Parse(content);
-            string msgType = xDoc.Root!.Element("MsgType")!.Value.ToUpper();
-
             var client = _wechatApiHttpClientFactory.Create(appId);
+            var msgType = client.DeserializeEventFromXml(content).MessageType;
             switch (msgType)
             {
                 case "TEXT":
