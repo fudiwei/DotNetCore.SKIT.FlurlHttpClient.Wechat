@@ -36,6 +36,16 @@ string msgType = xDoc.Root?.Element("MsgType")?.Value?.ToUpper();
 ```csharp
 WechatApiEvent eventModel = client.DeserializeEventFromXml(callbackXml);
 string msgType = eventModel.MessageType?.ToUpper();
+
+switch (msgType)
+{
+    case "TEXT":
+        {
+            var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml);
+        }
+        break;
+    // 省略其他情况
+}
 ```
 
 ---
@@ -59,7 +69,7 @@ var options = new WechatApiClientOptions()
 };
 var client = new WechatApiClient(options);
 
-/* 如果是 XML 格式的加密通知内容 */
+/* 如果是 XML 格式的加密通知内容，以 text 事件为例 */
 string callbackXml = "<xml> <Encrypt>...</Encrypt> </xml>";
 var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml, safety: true);
 ```

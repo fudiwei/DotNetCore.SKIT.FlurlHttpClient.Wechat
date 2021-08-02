@@ -18,8 +18,33 @@ var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(call
 
 ---
 
+### 事件类型：
+
+由于企业微信会将全部事件推送到同一个回调通知地址上，开发者需要根据事件类型才能决定如何反序列化。
+
+这里给出一种解决方案：
+
+```csharp
+WechatApiEvent eventModel = client.DeserializeEventFromXml(callbackXml);
+string msgType = eventModel.MessageType?.ToUpper();
+
+switch (msgType)
+{
+    case "TEXT":
+        {
+            var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml);
+        }
+        break;
+    // 省略其他情况
+}
+```
+
+---
+
 ### 安全模式：
 
-在安全模式下，微信公众平台使用了一种特殊的 AES 算法对回调通知事件加密。
+与微信公众号不同的是，企业微信默认启用了安全模式，且不支持切换至明文模式。
 
 开发者可利用本库提供的 `WxBizMsgCryptor` 工具类自行解密相关字段。
+
+上文提到的扩展方法，已自动做解密处理。
