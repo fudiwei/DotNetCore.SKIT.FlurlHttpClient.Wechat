@@ -136,6 +136,14 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Work 更新日志</summary>
 
+-   Release 1.2.2
+
+    -   **新增**：新增序列化回调通知事件实体类的扩展方法。
+
+    -   **新增**：反序列化企业微信回调通知事件模型时支持安全模式。
+
+    -   **修复**：修复部分企业微信回调通知事件模型反序列化的问题。
+
 -   Release 1.2.0
 
     -   **新增**：新增 `WechatWorkClient.Credentials` 属性。
