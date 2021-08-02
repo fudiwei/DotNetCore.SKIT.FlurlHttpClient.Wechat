@@ -38,6 +38,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Settings
         /// </summary>
         public string? SuiteSecret { get; }
 
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatWorkClientOptions.PushEncodingAESKey"/> 的副本。
+        /// </summary>
+        public string? PushEncodingAESKey { get; }
+
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatWorkClientOptions.PushToken"/> 的副本。
+        /// </summary>
+        public string? PushToken { get; }
+
         internal Credentials(WechatWorkClientOptions options)
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
@@ -48,6 +58,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Settings
             ProviderSecret = options.ProviderSecret;
             SuiteId = options.SuiteId;
             SuiteSecret = options.SuiteSecret;
+            PushEncodingAESKey = options.PushEncodingAESKey;
+            PushToken = options.PushToken;
         }
     }
 }

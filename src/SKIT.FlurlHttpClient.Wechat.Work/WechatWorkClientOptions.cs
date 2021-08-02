@@ -48,5 +48,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// 获取或设置企业微信第三方应用的 SuiteSecret。仅限第三方应用开发时使用。
         /// </summary>
         public string? SuiteSecret { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业微信服务器推送的 EncodingAESKey。
+        /// </summary>
+        public string? PushEncodingAESKey { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业微信服务器推送的 Token。
+        /// </summary>
+        public string? PushToken { get; set; }
     }
 }

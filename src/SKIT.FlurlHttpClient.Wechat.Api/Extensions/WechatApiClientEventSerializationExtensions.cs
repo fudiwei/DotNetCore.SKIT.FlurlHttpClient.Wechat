@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     /// <summary>
-    /// 为 <see cref="WechatApiClient"/> 提供回调通知事件序列化的扩展方法。
+    /// 为 <see cref="WechatApiClient"/> 提供回调通知事件序列化相关的扩展方法。
     /// </summary>
     public static class WechatApiClientEventSerializationExtensions
     {

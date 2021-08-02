@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     /// <summary>
-    /// 为 <see cref="WechatApiClient"/> 提供回调通知事件验证的扩展方法。
+    /// 为 <see cref="WechatApiClient"/> 提供回调通知事件验证相关的扩展方法。
     /// </summary>
     public static class WechatApiClientEventVerificationExtensions
     {

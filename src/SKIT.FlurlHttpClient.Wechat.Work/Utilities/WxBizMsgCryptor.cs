@@ -138,9 +138,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         /// </summary>
         /// <param name="cipherText">企业微信推送来的加密文本内容（即 `Encrypt` 字段的值）。</param>
         /// <param name="encodingAESKey">企业微信后台设置的 EncodingAESKey。</param>
-        /// <param name="corpId">企业微信 CorpId。</param>
+        /// <param name="corpOrSuiteId">企业微信 CorpId 或第三方应用的 SuiteId。</param>
         /// <returns>解密后的文本内容。</returns>
-        public static string AESDecrypt(string cipherText, string encodingAESKey, out string corpId)
+        public static string AESDecrypt(string cipherText, string encodingAESKey, out string corpOrSuiteId)
         {
             if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
             if (encodingAESKey == null) throw new ArgumentNullException(nameof(encodingAESKey));
@@ -159,7 +159,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             Array.Copy(btmpMsg, 20, bMsg, 0, len);
             Array.Copy(btmpMsg, 20 + len, bCorpId, 0, btmpMsg.Length - 20 - len);
 
-            corpId = Encoding.UTF8.GetString(bCorpId);
+            corpOrSuiteId = Encoding.UTF8.GetString(bCorpId);
             return Encoding.UTF8.GetString(bMsg);
         }
 
@@ -168,13 +168,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         /// </summary>
         /// <param name="plainText">返回给企业微信的原始文本内容。</param>
         /// <param name="encodingAESKey">企业微信后台设置的 EncodingAESKey。</param>
-        /// <param name="corpId">企业微信 CorpId。</param>
+        /// <param name="corpOrSuiteId">企业微信 CorpId 或第三方应用的 SuiteId。</param>
         /// <returns>加密后的文本内容。</returns>
-        public static string AESEncrypt(string plainText, string encodingAESKey, string corpId)
+        public static string AESEncrypt(string plainText, string encodingAESKey, string corpOrSuiteId)
         {
             if (plainText == null) throw new ArgumentNullException(nameof(plainText));
             if (encodingAESKey == null) throw new ArgumentNullException(nameof(encodingAESKey));
-            if (corpId == null) throw new ArgumentNullException(nameof(corpId));
+            if (corpOrSuiteId == null) throw new ArgumentNullException(nameof(corpOrSuiteId));
 
             byte[] keyBytes = Convert.FromBase64String(encodingAESKey + "=");
             byte[] ivBytes = new byte[16];
@@ -182,7 +182,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 
             string randCode = CreateRandCode(16);
             byte[] bRand = Encoding.UTF8.GetBytes(randCode);
-            byte[] bCorpId = Encoding.UTF8.GetBytes(corpId);
+            byte[] bCorpId = Encoding.UTF8.GetBytes(corpOrSuiteId);
             byte[] bMsgTmp = Encoding.UTF8.GetBytes(plainText);
             byte[] bMsgLen = BitConverter.GetBytes(IPAddress.HostToNetworkOrder(bMsgTmp.Length));
             byte[] bMsg = new byte[bRand.Length + bMsgLen.Length + bCorpId.Length + bMsgTmp.Length];
