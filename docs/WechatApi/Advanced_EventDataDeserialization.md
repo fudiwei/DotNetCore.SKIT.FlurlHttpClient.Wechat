@@ -69,4 +69,4 @@ string replyXml = client.SerializeEventToXml(replyModel);
 string replyXml = client.SerializeEventToXml(replyModel, safety: true);
 ```
 
-更多的示例可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Api/Events/MpReply_ 目录。
+完整的被动回复模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Api/Events/MpReply_ 目录。
