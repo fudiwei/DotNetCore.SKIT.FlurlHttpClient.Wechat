@@ -16,9 +16,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             string xml = "<xml><ToUserName><![CDATA[toUser]]></ToUserName><FromUserName><![CDATA[fromUser]]></FromUserName><CreateTime>1348831860</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[this is a test]]></Content><MsgId>1234567890123456</MsgId></xml>";
 
             var xDoc = XDocument.Parse(xml);
-            string @event = xDoc.Root!.Element("MsgType")!.Value.ToUpper();
+            string msgType = xDoc.Root!.Element("MsgType")!.Value;
 
-            Assert.Equal("TEXT", @event);
+            Assert.Equal("TEXT", msgType, ignoreCase: true);
+
+            var eventModel = TestClients.Instance.DeserializeEventFromXml(xml);
+            Assert.Equal("TEXT", eventModel.MessageType, ignoreCase: true);
         }
 
         [Fact(DisplayName = "反序列化 TEXT 事件")]

@@ -48,11 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Controllers
             // 文档：https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html
 
             var client = _wechatApiHttpClientFactory.Create(appId);
-            bool valid = client.VerifyEventSignature(
-                callbackTimestamp: timestamp,
-                callbackNonce: nonce,
-                callbackSignature: signature
-            );
+            bool valid = client.VerifyEventSignatureForEcho(callbackTimestamp: timestamp, callbackNonce: nonce, callbackSignature: signature);
             if (!valid)
             {
                 return Content("fail");
