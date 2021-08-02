@@ -4,14 +4,15 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     /// <summary>
-    /// 为 <see cref="WechatApiClient"/> 提供回调通知事件序列化相关的扩展方法。
+    /// 为 <see cref="WechatApiClient"/> 提供回调通知事件的扩展方法。
     /// </summary>
-    public static class WechatApiClientEventSerializationExtensions
+    public static class WechatApiClientEventExtensions
     {
         private class EncryptedWechatApiEvent
         {
@@ -269,6 +270,90 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
 
             return xml;
+        }
+
+        /// <summary>
+        /// <para>验证回调通知事件签名。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
+        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 signature 字段。</param>
+        /// <returns></returns>
+        public static bool VerifyEventSignatureForEcho(this WechatApiClient client, string callbackTimestamp, string callbackNonce, string callbackSignature)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (callbackTimestamp == null) throw new ArgumentNullException(nameof(callbackTimestamp));
+            if (callbackNonce == null) throw new ArgumentNullException(nameof(callbackNonce));
+            if (callbackSignature == null) throw new ArgumentNullException(nameof(callbackSignature));
+
+            ISet<string> set = new SortedSet<string>() { client.Credentials.PushToken!, callbackTimestamp, callbackNonce };
+            string sign = Security.SHA1Utility.Hash(string.Concat(set));
+            return string.Equals(sign, callbackSignature, StringComparison.InvariantCultureIgnoreCase);
+        }
+
+        /// <summary>
+        /// <para>验证回调通知事件签名。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="callbackJson"></param>
+        /// <returns></returns>
+        public static bool VerifyEventSignatureFromJson(this WechatApiClient client, string callbackJson)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (callbackJson == null) throw new ArgumentNullException(nameof(callbackJson));
+
+            try
+            {
+                var encryptedEvent = client.JsonSerializer.Deserialize<EncryptedWechatApiEvent>(callbackJson);
+                return Utilities.WxBizMsgCryptor.VerifySignature(
+                    sToken: client.Credentials.PushToken!,
+                    sTimestamp: encryptedEvent.Timestamp,
+                    sNonce: encryptedEvent.Nonce,
+                    sMsgEncrypt: encryptedEvent.EncryptedData,
+                    sMsgSign: encryptedEvent.Signature
+                );
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// <para>验证回调通知事件签名。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="callbackXml"></param>
+        /// <returns></returns>
+        public static bool VerifyEventSignatureFromXml(this WechatApiClient client, string callbackXml)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (callbackXml == null) throw new ArgumentNullException(nameof(callbackXml));
+
+            try
+            {
+                XDocument xDoc = XDocument.Load(callbackXml);
+                string? timestamp = xDoc.Root?.Element("TimeStamp")?.Value;
+                string? nonce = xDoc.Root?.Element("Nonce")?.Value;
+                string? msgEncrypt = xDoc.Root?.Element("Encrypt")?.Value;
+                string? msgSignature = xDoc.Root?.Element("MsgSignature")?.Value;
+
+                return Utilities.WxBizMsgCryptor.VerifySignature(
+                    sToken: client.Credentials.PushToken!,
+                    sTimestamp: timestamp!,
+                    sNonce: nonce!,
+                    sMsgEncrypt: msgEncrypt!,
+                    sMsgSign: msgEncrypt!
+                );
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
