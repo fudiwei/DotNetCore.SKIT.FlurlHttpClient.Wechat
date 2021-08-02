@@ -30,6 +30,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.3.4
+
+    -   **修复**：修复安全模式下反序列化微信回调通知事件的问题。
+
 -   Release 1.3.3
 
     -   **新增**：新增验证微信回调通知事件签名的扩展方法。
