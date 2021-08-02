@@ -7,9 +7,9 @@ using System.Xml.Serialization;
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     /// <summary>
-    /// 为 <see cref="WechatWorkClient"/> 提供回调通知事件序列化相关的扩展方法。
+    /// 为 <see cref="WechatWorkClient"/> 提供回调通知事件的扩展方法。
     /// </summary>
-    public static class WechatWorkClientEventSerializationExtensions
+    public static class WechatWorkClientEventExtensions
     {
         private class EncryptedWechatWorkEvent
         {
@@ -46,11 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 if (string.IsNullOrEmpty(encryptedEvent.EncryptedData))
                     throw new Exceptions.WechatWorkEventSerializationException("Encrypt event failed, because of empty encrypted data.");
 
-                callbackJson = Utilities.WxBizMsgCryptor.AESDecrypt(
-                    cipherText: encryptedEvent.EncryptedData,
-                    encodingAESKey: client.Credentials.PushEncodingAESKey!,
-                    out _
-                );
+                callbackJson = Utilities.WxBizMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
 
                 return client.JsonSerializer.Deserialize<TEvent>(callbackJson);
             }
@@ -72,8 +68,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             try
             {
-                if (!Utilities.WxBizMsgCryptor.TryParseXml(callbackXml, out callbackXml!))
+                if (!Utilities.WxBizMsgCryptor.TryParseXml(callbackXml, out string? encryptedXml))
                     throw new Exceptions.WechatWorkEventSerializationException("Encrypt event failed, because of empty encrypted data.");
+
+                callbackXml = Utilities.WxBizMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
 
                 using var reader = new StringReader(callbackXml);
 

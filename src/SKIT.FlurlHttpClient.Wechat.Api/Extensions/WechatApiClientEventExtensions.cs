@@ -299,7 +299,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
         /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
         /// <param name="callbackJson">微信回调通知中请求正文（JSON 格式）。</param>
-        /// <param name="callbackSignature">微信回调通知中的 signature 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
         /// <returns></returns>
         public static bool VerifyEventSignatureFromJson(this WechatApiClient client, string callbackTimestamp, string callbackNonce, string callbackJson, string callbackSignature)
         {
@@ -331,7 +331,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
         /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
         /// <param name="callbackXml">微信回调通知中请求正文（XML 格式）。</param>
-        /// <param name="callbackSignature">微信回调通知中的 signature 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
         /// <returns></returns>
         public static bool VerifyEventSignatureFromXml(this WechatApiClient client, string callbackTimestamp, string callbackNonce, string callbackXml, string callbackSignature)
         {
