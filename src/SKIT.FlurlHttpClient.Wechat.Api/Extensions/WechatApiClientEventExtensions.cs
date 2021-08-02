@@ -51,11 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                     if (string.IsNullOrEmpty(encryptedEvent.EncryptedData))
                         throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because of empty encrypted data.");
 
-                    callbackJson = Utilities.WxBizMsgCryptor.AESDecrypt(
-                        cipherText: encryptedEvent.EncryptedData,
-                        encodingAESKey: client.Credentials.PushEncodingAESKey!,
-                        out _
-                    );
+                    callbackJson = Utilities.WxBizMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
                 }
 
                 return client.JsonSerializer.Deserialize<TEvent>(callbackJson);
@@ -80,8 +76,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             {
                 if (safety)
                 {
-                    if (!Utilities.WxBizMsgCryptor.TryParseXml(callbackXml, out callbackXml!))
+                    if (!Utilities.WxBizMsgCryptor.TryParseXml(callbackXml, out string? encryptedXml))
                         throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because of empty encrypted data.");
+
+                    callbackXml = Utilities.WxBizMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
                 }
 
                 using var reader = new StringReader(callbackXml);
@@ -298,9 +296,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackJson"></param>
+        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
+        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackJson">微信回调通知中请求正文（JSON 格式）。</param>
+        /// <param name="callbackSignature">微信回调通知中的 signature 字段。</param>
         /// <returns></returns>
-        public static bool VerifyEventSignatureFromJson(this WechatApiClient client, string callbackJson)
+        public static bool VerifyEventSignatureFromJson(this WechatApiClient client, string callbackTimestamp, string callbackNonce, string callbackJson, string callbackSignature)
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (callbackJson == null) throw new ArgumentNullException(nameof(callbackJson));
@@ -310,10 +311,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 var encryptedEvent = client.JsonSerializer.Deserialize<EncryptedWechatApiEvent>(callbackJson);
                 return Utilities.WxBizMsgCryptor.VerifySignature(
                     sToken: client.Credentials.PushToken!,
-                    sTimestamp: encryptedEvent.Timestamp,
-                    sNonce: encryptedEvent.Nonce,
+                    sTimestamp: callbackTimestamp,
+                    sNonce: callbackNonce,
                     sMsgEncrypt: encryptedEvent.EncryptedData,
-                    sMsgSign: encryptedEvent.Signature
+                    sMsgSign: callbackSignature
                 );
             }
             catch
@@ -327,27 +328,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackXml"></param>
+        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
+        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackXml">微信回调通知中请求正文（XML 格式）。</param>
+        /// <param name="callbackSignature">微信回调通知中的 signature 字段。</param>
         /// <returns></returns>
-        public static bool VerifyEventSignatureFromXml(this WechatApiClient client, string callbackXml)
+        public static bool VerifyEventSignatureFromXml(this WechatApiClient client, string callbackTimestamp, string callbackNonce, string callbackXml, string callbackSignature)
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (callbackXml == null) throw new ArgumentNullException(nameof(callbackXml));
 
             try
             {
-                XDocument xDoc = XDocument.Load(callbackXml);
-                string? timestamp = xDoc.Root?.Element("TimeStamp")?.Value;
-                string? nonce = xDoc.Root?.Element("Nonce")?.Value;
+                XDocument xDoc = XDocument.Parse(callbackXml);
                 string? msgEncrypt = xDoc.Root?.Element("Encrypt")?.Value;
-                string? msgSignature = xDoc.Root?.Element("MsgSignature")?.Value;
 
                 return Utilities.WxBizMsgCryptor.VerifySignature(
                     sToken: client.Credentials.PushToken!,
-                    sTimestamp: timestamp!,
-                    sNonce: nonce!,
+                    sTimestamp: callbackTimestamp,
+                    sNonce: callbackNonce,
                     sMsgEncrypt: msgEncrypt!,
-                    sMsgSign: msgEncrypt!
+                    sMsgSign: callbackSignature
                 );
             }
             catch
