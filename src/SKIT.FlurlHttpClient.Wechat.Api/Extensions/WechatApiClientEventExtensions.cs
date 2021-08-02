@@ -295,7 +295,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="callbackJson"></param>
@@ -324,7 +324,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="callbackXml"></param>
