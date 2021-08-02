@@ -65,17 +65,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Controllers
             [FromRoute(Name = "app_id")] string appId)
         {
             // 接收服务器推送
-            // 文档：https://developers.weixin.qq.com/miniprogram/dev/framework/server-ability/message-push.html
+            // 文档：https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_event_pushes.html
 
             using var reader = new StreamReader(Request.Body, Encoding.UTF8);
             string content = await reader.ReadToEndAsync();
             _logger.LogInformation("接收到微信推送的数据：{0}", content);
 
             var xDoc = XDocument.Parse(content);
-            string @event = xDoc.Root!.Element("Event")!.Value.ToUpper();
+            string msgType = xDoc.Root!.Element("MsgType")!.Value.ToUpper();
 
             var client = _wechatApiHttpClientFactory.Create(appId);
-            switch (@event)
+            switch (msgType)
             {
                 case "TEXT":
                     {

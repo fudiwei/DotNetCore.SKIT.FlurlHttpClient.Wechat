@@ -3,12 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
     public class WechatApiEventDeserializationTests
     {
+        [Fact(DisplayName = "获取事件消息类型")]
+        public void GetEventMessageTypeTest()
+        {
+            string xml = "<xml><ToUserName><![CDATA[toUser]]></ToUserName><FromUserName><![CDATA[fromUser]]></FromUserName><CreateTime>1348831860</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[this is a test]]></Content><MsgId>1234567890123456</MsgId></xml>";
+
+            var xDoc = XDocument.Parse(xml);
+            string @event = xDoc.Root!.Element("MsgType")!.Value.ToUpper();
+
+            Assert.Equal("TEXT", @event);
+        }
+
         [Fact(DisplayName = "反序列化 TEXT 事件")]
         public void DeserializeTextMessageEventTest()
         {
