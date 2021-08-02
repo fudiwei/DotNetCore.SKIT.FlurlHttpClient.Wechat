@@ -48,3 +48,26 @@ switch (msgType)
 开发者可利用本库提供的 `WxBizMsgCryptor` 工具类自行解密相关字段。
 
 上文提到的扩展方法，已自动做解密处理。
+
+---
+
+### 被动回复：
+
+当用户发送消息给企业微信应用、或某些特定的用户操作引发的事件推送时，开发者可以在响应中返回特定 XML 结构，来对该消息进行响应。
+
+本库还封装了直接序列化被动回复事件的扩展方法，下面给出一个示例：
+
+```csharp
+/* 以被动回复文本消息为例 */
+var replyModel = new Events.TextMessageReply()
+{
+    ToUserName = "接收方 OpenId",
+    FromUserName = "开发者 GhId",
+    MessageType = "text",
+    Content = "被动回复的文本内容",
+    CreateTimestamp = 1234567890
+};
+string replyXml = client.SerializeEventToXml(replyModel);
+```
+
+完整的被动回复模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Work/Events/Reply_ 目录。
