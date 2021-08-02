@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 /// <summary>
                 /// 获取或设置自定义字段列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlArray("Item")]
+                [System.Xml.Serialization.XmlElement("Item", Type = typeof(Types.Attribute))]
                 public Types.Attribute[] AttributeList { get; set; } = default!;
             }
         }

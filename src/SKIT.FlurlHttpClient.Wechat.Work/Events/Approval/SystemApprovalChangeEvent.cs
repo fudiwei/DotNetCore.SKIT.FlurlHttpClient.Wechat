@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                 /// <summary>
                                 /// 获取或设置审批意见附件 MediaId 列表。
                                 /// </summary>
-                                [System.Xml.Serialization.XmlArray("Attach", IsNullable = true)]
+                                [System.Xml.Serialization.XmlElement("Attach", Type = typeof(string), IsNullable = true)]
                                 public string[]? SpeechMediaIdList { get; set; }
                             }
                         }
@@ -106,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         /// <summary>
                         /// 获取或设置审批流程详情列表。
                         /// </summary>
-                        [System.Xml.Serialization.XmlArray("Details")]
+                        [System.Xml.Serialization.XmlElement("Details", typeof(Types.RecordDetail))]
                         public Types.RecordDetail[] DetailList { get; set; } = default!;
                     }
 
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         /// <summary>
                         /// 获取或设置评论内容附件 MediaId 列表。
                         /// </summary>
-                        [System.Xml.Serialization.XmlArray("Attach")]
+                        [System.Xml.Serialization.XmlElement("Attach", Type = typeof(string))]
                         public string[] MediaIdList { get; set; } = default!;
 
                         /// <summary>
@@ -201,19 +201,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 /// <summary>
                 /// 获取或设置抄送人列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlArray("Notifyer")]
+                [System.Xml.Serialization.XmlElement("Notifyer", Type = typeof(Types.Notifier))]
                 public Types.Notifier[]? NotifyerList { get; set; }
 
                 /// <summary>
                 /// 获取或设置审批流程列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlArray("SpRecord")]
+                [System.Xml.Serialization.XmlElement("SpRecord", Type = typeof(Types.Record))]
                 public Types.Record[] RecordList { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置评论列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlArray("Comments")]
+                [System.Xml.Serialization.XmlElement("Comments", Type = typeof(Types.Comment))]
                 public Types.Comment[] CommentList { get; set; } = default!;
             }
         }

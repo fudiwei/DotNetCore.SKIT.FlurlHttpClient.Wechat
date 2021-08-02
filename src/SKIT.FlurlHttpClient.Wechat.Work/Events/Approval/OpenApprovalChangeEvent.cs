@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                         /// <summary>
                                         /// 获取或设置审批人列表。
                                         /// </summary>
-                                        [System.Xml.Serialization.XmlArray("Item")]
+                                        [System.Xml.Serialization.XmlElement("Item", typeof(ApprovalerItem))]
                                         public ApprovalerItem[] Items { get; set; } = default!;
                                     }
 
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                                 /// <summary>
                                 /// 获取或设置节点审批人列表。
                                 /// </summary>
-                                [System.Xml.Serialization.XmlArray("Items")]
+                                [System.Xml.Serialization.XmlElement("Items")]
                                 public Types.ApprovalerList ApprovalerList { get; set; } = default!;
                             }
                         }
@@ -108,7 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         /// <summary>
                         /// 获取或设置审批流程详情列表。
                         /// </summary>
-                        [System.Xml.Serialization.XmlArray("ApprovalNode")]
+                        [System.Xml.Serialization.XmlElement("ApprovalNode", typeof(Types.RecordDetail))]
                         public Types.RecordDetail[] RecordDetailList { get; set; } = default!;
                     }
 
@@ -147,7 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                         /// <summary>
                         /// 获取或设置审批抄送列表。
                         /// </summary>
-                        [System.Xml.Serialization.XmlArray("NotifyNode")]
+                        [System.Xml.Serialization.XmlElement("NotifyNode", typeof(Types.Notifier))]
                         public Types.Notifier[] NotifierList { get; set; } = default!;
                     }
                 }
