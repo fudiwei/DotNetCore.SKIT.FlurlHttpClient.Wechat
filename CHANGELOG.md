@@ -86,6 +86,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
+-   Release 1.4.2
+
+    -   **变更**：验证响应或回调通知签名时不再抛出异常。
+
 -   Release 1.4.0
 
     -   **新增**：新增获取分账账单相关接口。
