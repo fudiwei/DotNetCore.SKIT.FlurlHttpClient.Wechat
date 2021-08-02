@@ -30,6 +30,12 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.3.2
+
+    -   **新增**：新增验证微信回调通知事件签名的扩展方法。
+
+    -   **新增**：反序列化微信回调通知事件模型时支持 `WechatApiEvent` 基类，以便业务逻辑判断。
+
 -   Release 1.3.1
 
     -   **修复**：修复自定义交易组件获取快递公司列表接口的模型定义错误。
