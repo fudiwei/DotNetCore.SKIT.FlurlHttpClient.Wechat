@@ -9,9 +9,9 @@ using System.Xml.Serialization;
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     /// <summary>
-    /// 为 <see cref="WechatApiClient"/> 提供回调通知事件的扩展方法。
+    /// 为 <see cref="WechatApiClient"/> 提供回调通知事件序列化的扩展方法。
     /// </summary>
-    public static class WechatApiClientEventExtensions
+    public static class WechatApiClientEventSerializationExtensions
     {
         private class EncryptedWechatApiEvent
         {
@@ -33,15 +33,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             public string Signature { get; set; } = default!;
         }
 
-        /// <summary>
-        /// <para>从 JSON 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="callbackJson"></param>
-        /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
-        /// <returns></returns>
-        public static TEvent DeserializeEventFromJson<TEvent>(this WechatApiClient client, string callbackJson, bool safety = false)
-            where TEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable, new()
+        private static TEvent InnerDeserializeEventFromJson<TEvent>(this WechatApiClient client, string callbackJson, bool safety)
+            where TEvent : WechatApiEvent
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (string.IsNullOrEmpty(callbackJson)) throw new ArgumentNullException(callbackJson);
@@ -58,8 +51,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                         throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because of empty encrypted data.");
 
                     callbackJson = Utilities.WxBizMsgCryptor.AESDecrypt(
-                        cipherText: encryptedEvent.EncryptedData, 
-                        encodingAESKey: client.Credentials.PushEncodingAESKey!, 
+                        cipherText: encryptedEvent.EncryptedData,
+                        encodingAESKey: client.Credentials.PushEncodingAESKey!,
                         out _
                     );
                 }
@@ -76,15 +69,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
         }
 
-        /// <summary>
-        /// <para>从 XML 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="callbackXml"></param>
-        /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
-        /// <returns></returns>
-        public static TEvent DeserializeEventFromXml<TEvent>(this WechatApiClient client, string callbackXml, bool safety = false)
-            where TEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable, new()
+        private static TEvent InnerDeserializeEventFromXml<TEvent>(this WechatApiClient client, string callbackXml, bool safety)
+            where TEvent : WechatApiEvent
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (string.IsNullOrEmpty(callbackXml)) throw new ArgumentNullException(callbackXml);
@@ -110,6 +96,58 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             {
                 throw new Exceptions.WechatApiEventSerializationException("Deserialize event failed. Please see the `InnerException` for more details.", ex);
             }
+        }
+
+        /// <summary>
+        /// <para>从 JSON 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
+        /// </summary>
+        /// <typeparam name="TEvent"></typeparam>
+        /// <param name="client"></param>
+        /// <param name="callbackJson"></param>
+        /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
+        /// <returns></returns>
+        public static TEvent DeserializeEventFromJson<TEvent>(this WechatApiClient client, string callbackJson, bool safety = false)
+            where TEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable, new()
+        {
+            return InnerDeserializeEventFromJson<TEvent>(client, callbackJson, safety);
+        }
+
+        /// <summary>
+        /// <para>从 JSON 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="callbackJson"></param>
+        /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
+        /// <returns></returns>
+        public static WechatApiEvent DeserializeEventFromJson(this WechatApiClient client, string callbackJson, bool safety = false)
+        {
+            return InnerDeserializeEventFromJson<WechatApiEvent>(client, callbackJson, safety);
+        }
+
+        /// <summary>
+        /// <para>从 XML 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
+        /// </summary>
+        /// <typeparam name="TEvent"></typeparam>
+        /// <param name="client"></param>
+        /// <param name="callbackXml"></param>
+        /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
+        /// <returns></returns>
+        public static TEvent DeserializeEventFromXml<TEvent>(this WechatApiClient client, string callbackXml, bool safety = false)
+            where TEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable, new()
+        {
+            return InnerDeserializeEventFromXml<TEvent>(client, callbackXml, safety);
+        }
+
+        /// <summary>
+        /// <para>从 XML 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="callbackXml"></param>
+        /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
+        /// <returns></returns>
+        public static WechatApiEvent DeserializeEventFromXml(this WechatApiClient client, string callbackXml, bool safety = false)
+        {
+            return InnerDeserializeEventFromXml<WechatApiEvent>(client, callbackXml, safety);
         }
 
         /// <summary>
