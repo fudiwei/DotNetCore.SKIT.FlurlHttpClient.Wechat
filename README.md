@@ -86,7 +86,7 @@
 
 | 项目名称 |                    项目简介                    |                                           项目地址                                            |
 | :------: | :--------------------------------------------: | :-------------------------------------------------------------------------------------------: |
-| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [GitHub](https://github.com/CoreUnion/CoreShop)｜[Gitee](https://gitee.com/CoreUnion/CoreShop) |
+| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [Gitee](https://gitee.com/CoreUnion/CoreShop)｜[GitHub](https://github.com/CoreUnion/CoreShop) |
 
 ---
 
