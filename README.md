@@ -9,7 +9,7 @@
 > 【附】微软官方关于 `System.Net.HttpWebRequest` 与 `System.Net.Http.HttpClient` 的说明：
 >
 > -   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.httpwebrequest#remarks
-> -   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient#httpclient-and-net-core）。
+> -   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient#httpclient-and-net-core）
 
 ---
 
@@ -68,7 +68,9 @@
 
 举个例子，以分页查询为例，看似字段相同，都由 _offset_、_cursor_、_page_、_limit_ + _data_、_total_count_、_next_cursor_ 这几个字段构成，但某些接口的 _offset_、_cursor_、_page_、_limit_ 字段是可选参数，某些却是必填项；某些 _page_ 值从 `0` 起始，某些却是从 `1` 起始；某些接口的 _data_、_total_count_、_next_cursor_ 字段一定会返回，某些却是一定不返回，某些只在特定条件下返回。一共十几个分页查询的接口，却有七八种分页的数据结构，这种情况下很难抽象出一个公共的基类出来。
 
-同样一个东西在不同接口里竟然拼法不一样；同样是表示数组有的是 JSON、有的却是字符串；诸如此类“奇葩”的情况很多很多。本库已经尽可能在条件允许的范围内抽象出了一些公共基类、并封装了各种奇怪场景下的 JsonConverter，聊胜于无。
+除此之外，同样一个东西在不同接口里竟然拼法不一样；同样是表示数组有的是 JSON、有的却是字符串；诸如此类“奇葩”的情况很多很多。
+
+本库已经尽可能在条件允许的范围内抽象出了一些公共基类、并封装了各种奇怪场景下的 JsonConverter，聊胜于无。
 
 ### 4. 为什么不支持 .NET Framework 4.0 / .NET Framework 4.5？
 
@@ -84,7 +86,7 @@
 
 | 项目名称 |                    项目简介                    |                                           项目地址                                            |
 | :------: | :--------------------------------------------: | :-------------------------------------------------------------------------------------------: |
-| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [GitHub](https://gihub.com/CoreUnion/CoreShop)｜[Gitee](https://gitee.com/CoreUnion/CoreShop) |
+| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [GitHub](https://github.com/CoreUnion/CoreShop)｜[Gitee](https://gitee.com/CoreUnion/CoreShop) |
 
 ---
 
