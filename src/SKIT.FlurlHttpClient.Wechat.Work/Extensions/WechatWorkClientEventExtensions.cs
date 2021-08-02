@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Xml.Linq;
 using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
@@ -248,6 +249,119 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             }
 
             return xml;
+        }
+
+        /// <summary>
+        /// <para>验证回调通知事件签名。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90139/90968 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90148/91144 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90156/91169 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
+        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackEcho">微信回调通知中的 echostr 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
+        /// <param name="replyEcho"></param>
+        /// <returns></returns>
+        public static bool VerifyEventSignatureForEcho(this WechatWorkClient client, string callbackTimestamp, string callbackNonce, string callbackEcho, string callbackSignature, out string? replyEcho)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (callbackTimestamp == null) throw new ArgumentNullException(nameof(callbackTimestamp));
+            if (callbackNonce == null) throw new ArgumentNullException(nameof(callbackNonce));
+            if (callbackEcho == null) throw new ArgumentNullException(nameof(callbackEcho));
+            if (callbackSignature == null) throw new ArgumentNullException(nameof(callbackSignature));
+
+            try
+            {
+                bool ret = Utilities.WxBizMsgCryptor.VerifySignature(
+                    sToken: client.Credentials.PushToken!,
+                    sTimestamp: callbackTimestamp,
+                    sNonce: callbackNonce,
+                    sMsgEncrypt: callbackEcho,
+                    sMsgSign: callbackSignature
+                );
+
+                if (ret)
+                {
+                    replyEcho = Utilities.WxBizMsgCryptor.AESDecrypt(cipherText: callbackEcho, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
+                    return true;
+                }
+            }
+            catch { }
+
+            replyEcho = null;
+            return false;
+        }
+
+        /// <summary>
+        /// <para>验证回调通知事件签名。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90139/90968 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90148/91144 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90156/91169 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
+        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackJson">微信回调通知中请求正文（JSON 格式）。</param>
+        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
+        /// <returns></returns>
+        public static bool VerifyEventSignatureFromJson(this WechatWorkClient client, string callbackTimestamp, string callbackNonce, string callbackJson, string callbackSignature)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (callbackJson == null) throw new ArgumentNullException(nameof(callbackJson));
+
+            try
+            {
+                var encryptedEvent = client.JsonSerializer.Deserialize<EncryptedWechatWorkEvent>(callbackJson);
+                return Utilities.WxBizMsgCryptor.VerifySignature(
+                    sToken: client.Credentials.PushToken!,
+                    sTimestamp: callbackTimestamp,
+                    sNonce: callbackNonce,
+                    sMsgEncrypt: encryptedEvent.EncryptedData,
+                    sMsgSign: callbackSignature
+                );
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// <para>验证回调通知事件签名。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90139/90968 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90148/91144 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90156/91169 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
+        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackXml">微信回调通知中请求正文（XML 格式）。</param>
+        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
+        /// <returns></returns>
+        public static bool VerifyEventSignatureFromXml(this WechatWorkClient client, string callbackTimestamp, string callbackNonce, string callbackXml, string callbackSignature)
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (callbackXml == null) throw new ArgumentNullException(nameof(callbackXml));
+
+            try
+            {
+                XDocument xDoc = XDocument.Parse(callbackXml);
+                string? msgEncrypt = xDoc.Root?.Element("Encrypt")?.Value;
+
+                return Utilities.WxBizMsgCryptor.VerifySignature(
+                    sToken: client.Credentials.PushToken!,
+                    sTimestamp: callbackTimestamp,
+                    sNonce: callbackNonce,
+                    sMsgEncrypt: msgEncrypt!,
+                    sMsgSign: callbackSignature
+                );
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
