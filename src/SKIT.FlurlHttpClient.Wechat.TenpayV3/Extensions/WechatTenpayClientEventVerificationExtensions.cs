@@ -35,39 +35,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (callbackSignature == null) throw new ArgumentNullException(nameof(callbackSignature));
             if (callbackSerialNumber == null) throw new ArgumentNullException(nameof(callbackSerialNumber));
 
-            if (client.CertificateManager == null)
+            if (client.CertificateManager != null)
             {
-                throw new Exceptions.WechatTenpayResponseVerificationException($"You must set an instance of `{nameof(Settings.CertificateManager)}` at first.");
-            }
-            else
-            {
-                string? certificate = client.CertificateManager.GetCertificate(callbackSerialNumber);
-                if (certificate == null)
-                    throw new Exceptions.WechatTenpayResponseVerificationException("Cannot get certificate by the serial number, may not be stored.");
-
-                string? publicKey = null;
                 try
                 {
-                    publicKey = Utilities.RSAUtility.ExportPublicKey(certificate);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exceptions.WechatTenpayResponseVerificationException("Cannot get public key of the certificate, may not be a valid certificate data.", ex);
-                }
+                    string certificate = client.CertificateManager.GetCertificate(callbackSerialNumber)!;
+                    string publicKey = Utilities.RSAUtility.ExportPublicKey(certificate);
 
-                try
-                {
                     return Utilities.RSAUtility.VerifyWithSHA256(
                         publicKey: publicKey,
                         plainText: GetPlainTextForSignature(timestamp: callbackTimestamp, nonce: callbackNonce, body: callbackBody),
                         signature: callbackSignature
                     );
                 }
-                catch (Exception ex)
-                {
-                    throw new Exceptions.WechatTenpayResponseVerificationException("Verify event signature failed. Please see the `InnerException` for more details.", ex);
-                }
+                catch { }
             }
+
+            return false;
         }
 
         private static string GetPlainTextForSignature(string timestamp, string nonce, string body)

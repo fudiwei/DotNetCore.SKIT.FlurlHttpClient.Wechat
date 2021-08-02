@@ -23,42 +23,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (response == null) throw new ArgumentNullException(nameof(response));
 
-            if (client.CertificateManager == null)
+            if (client.CertificateManager != null)
             {
-                throw new Exceptions.WechatTenpayResponseVerificationException($"You must set an instance of `{nameof(Settings.CertificateManager)}` at first.");
-            }
-            else
-            {
-                if (response.WechatpayCertSerialNumber == null)
-                    throw new Exceptions.WechatTenpayResponseVerificationException("Cannot read the serial number in headers of this response.");
-
-                string? certificate = client.CertificateManager.GetCertificate(response.WechatpayCertSerialNumber);
-                if (certificate == null)
-                    throw new Exceptions.WechatTenpayResponseVerificationException("Cannot get certificate by the serial number, may not be stored.");
-
-                string? publicKey = null;
                 try
                 {
-                    publicKey = Utilities.RSAUtility.ExportPublicKey(certificate);
-                }
-                catch (Exception ex)
-                {
-                    throw new Exceptions.WechatTenpayResponseVerificationException("Cannot get public key of the certificate, may not be a valid certificate data.", ex);
-                }
+                    string certificate = client.CertificateManager.GetCertificate(response.WechatpayCertSerialNumber)!;
+                    string publicKey = Utilities.RSAUtility.ExportPublicKey(certificate);
 
-                try
-                {
                     return Utilities.RSAUtility.VerifyWithSHA256(
                         publicKey: publicKey,
                         plainText: GetPlainTextForSignature(response),
                         signature: response.WechatpaySignature
                     );
                 }
-                catch (Exception ex)
-                {
-                    throw new Exceptions.WechatTenpayResponseVerificationException("Verify response signature failed.", ex);
-                }
+                catch { }
             }
+
+            return false;
         }
 
         private static string GetPlainTextForSignature(WechatTenpayResponse response)
