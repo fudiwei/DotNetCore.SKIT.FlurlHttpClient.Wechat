@@ -2,15 +2,6 @@
 
 基于 `Flurl.Http` 的微信 API HTTP 客户端，支持公众平台、开放平台、商户平台、企业微信、广告平台等模块。
 
-> [`Flurl.Http`](https://flurl.dev/) 是一个轻量级 HTTP 库，是 .NET 中最受欢迎扩展库之一，在 NuGet 上的累计下载量超过 1700 万、日均下载量超过 6 千、GitHub 2.6k Stars（数据统计截至 2021-06-01）。
->
-> 与另一个流行的 HTTP 库 [`RestSharp`](https://restsharp.dev/) 相比，`Flurl.Http` 底层基于 `System.Net.Http.HttpClient`，而 `RestSharp` 底层则基于 `System.Net.HttpWebRequest`，前者在多核多线程环境下的性能基准测试中表现要远优于后者，同时也是微软官方目前推荐的 HTTP 客户端方案。
->
-> 【附】微软官方关于 `System.Net.HttpWebRequest` 与 `System.Net.Http.HttpClient` 的说明：
->
-> -   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.httpwebrequest#remarks
-> -   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient#httpclient-and-net-core）
-
 ---
 
 ## 特性
@@ -52,9 +43,20 @@
 
 于是萌生了自己封装一个库的想法，打算解决这几个痛点，同时也是推广一下微软官方的 `System.Text.Json`。
 
-### 2. 本库与[盛派微信 SDK（Senparc.Weixin）](https://github.com/JeffreySu/WeiXinMPSDK)有什么区别？
+### 2. `Flurl.Http` 是什么？
 
--   本库专注于 API 本身的封装，捎带提供了一些用于加解密、序列化的工具类；盛派微信 SDK 提供了大而全的功能，可与 MVC / WebAPI 深度集成。
+[`Flurl.Http`](https://flurl.dev/) 是一个轻量级 HTTP 库，是 .NET 中最受欢迎扩展库之一，在 NuGet 上的累计下载量超过 1700 万、日均下载量超过 6 千、GitHub 2.6k Stars（数据统计截至 2021-06-01）。
+
+与另一个流行的 HTTP 库 [`RestSharp`](https://restsharp.dev/) 相比，`Flurl.Http` 底层基于 `System.Net.Http.HttpClient`，而 `RestSharp` 底层则基于 `System.Net.HttpWebRequest`，前者在多核多线程环境下的性能基准测试中表现要远优于后者，同时也是微软官方目前推荐的 HTTP 客户端方案。
+
+【附】微软官方关于 `System.Net.HttpWebRequest` 与 `System.Net.Http.HttpClient` 的说明：
+
+-   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.httpwebrequest#remarks
+-   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient#httpclient-and-net-core）
+
+### 3. 本库与[盛派微信 SDK（Senparc.Weixin）](https://github.com/JeffreySu/WeiXinMPSDK)有什么区别？
+
+-   本库专注于 API 本身的封装，捎带提供了一些用于加解密、序列化的工具类，使用起来更加灵活；盛派微信 SDK 提供了大而全的功能，可与 MVC / WebAPI 深度集成。
 
 -   本库的接口模型遵循的是微软官方推荐的 C# 属性命名方式（大驼峰命名法）；盛派微信 SDK 提供的是微信接口本身的命名方式（蛇形命名法和小驼峰命名法混杂）。
 
@@ -62,7 +64,7 @@
 
 -   本库只支持微信支付 v3 版 API；盛派微信 SDK 只支持微信支付 v2 版 API（年前作者开了新坑似乎是想提供 v3 版支持，不过目前只封装了部分接口，进展比较缓慢）。原则上官方已经停止更新 v2 版 API，现在接口只做日常维护，所以有条件的话还是应该尽快升级。如果你有使用 v2 版 API 的需求（比如企业提现、红包等几个尚未提供 v3 版 API 的接口），建议使用盛派微信 SDK。
 
-### 3. 看了源码，发现模型定义里很多同样的代码是复制粘贴的，为什么不继承？
+### 4. 看了源码，发现模型定义里很多同样的代码是复制粘贴的，为什么不继承？
 
 关于这点得吐槽微信提供的 API 了，很显然微信内部也是很多个 Team 在共同开发，每个 Team、甚至每个人的字段命名风格、约束条件、接口规则都大相径庭。就连微信支付虽然 v3 版 API 号称是 “RESTful” 的，却也没个统一标准。
 
@@ -72,7 +74,7 @@
 
 本库已经尽可能在条件允许的范围内抽象出了一些公共基类、并封装了各种奇怪场景下的 JsonConverter，聊胜于无。
 
-### 4. 为什么不支持 .NET Framework 4.0 / .NET Framework 4.5？
+### 5. 为什么不支持 .NET Framework 4.0 / .NET Framework 4.5？
 
 直接原因是本库的依赖库最低支持到 .NET Framework 4.6.1。
 
