@@ -30,6 +30,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.3.5
+
+    -   **修复**：修复获取图文素材接口模型的字段缺失问题。
+
 -   Release 1.3.4
 
     -   **修复**：修复安全模式下反序列化微信回调通知事件的问题。
