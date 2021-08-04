@@ -63,6 +63,8 @@ var client = new WechatTenpayClient(options);
 certManager.SetCertificate("CER 证书序列号", "CER 证书内容");
 ```
 
+当然，现在的平台证书离过期还有很久，你也可以选择“偷懒”：提前下载好平台证书，在程序启动时记录一次即可。
+
 每个响应对象会包含一个名为 `WechatpayCertSerialNumber` 的公共字段，本库会根据该字段的值自动尝试在证书管理器中读取证书内容，并完成响应签名的验证：
 
 ```csharp
