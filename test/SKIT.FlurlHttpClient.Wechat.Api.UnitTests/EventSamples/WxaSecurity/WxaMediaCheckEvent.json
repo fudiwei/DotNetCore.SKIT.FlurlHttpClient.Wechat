@@ -1,12 +1,23 @@
 ﻿{
-    "ToUserName": "gh_38cc49f9733b",
-    "FromUserName": "oH1fu0FdHqpToe2T6gBj0WyB8iS1",
-    "CreateTime": 1552465698,
+    "ToUserName": "gh_9df7d78a1234",
+    "FromUserName": "o4_t144jTUSEoxydysUA2E234_tc",
+    "CreateTime": 1626959646,
     "MsgType": "event",
     "Event": "wxa_media_check",
-    "isrisky": 0,
-    "extra_info_json": "",
-    "appid": "wxd8c59133dfcbfc71",
-    "trace_id": "967e945cd8a3e458f3c74dcb886068e9",
-    "status_code": 0
+    "appid": "wx8f16a5be77871234",
+    "trace_id": "60f96f1d-3845297a-1976a3ae",
+    "version": 2,
+    "detail": [
+        {
+            "strategy": "content_model",
+            "errcode": 0,
+            "suggest": "pass",
+            "label": 100,
+            "prob": 90
+        }
+    ],
+    "result": {
+        "suggest": "pass",
+        "label": 100
+    }
 }
