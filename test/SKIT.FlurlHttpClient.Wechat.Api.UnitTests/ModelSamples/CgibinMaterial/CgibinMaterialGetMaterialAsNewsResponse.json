@@ -3,6 +3,7 @@
         {
             "title": "TITLE",
             "thumb_media_id": "THUMB_MEDIA_ID",
+            "thumb_url": "thumb_url",
             "author": "AUTHOR",
             "digest": "DIGEST",
             "show_cover_pic": 1,

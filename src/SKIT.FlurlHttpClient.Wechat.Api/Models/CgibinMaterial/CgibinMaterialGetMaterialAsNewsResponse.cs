@@ -20,6 +20,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string ThumbnailMediaId { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置图文消息缩略图 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("thumb_url")]
+                [System.Text.Json.Serialization.JsonPropertyName("thumb_url")]
+                public string ThumbnailUrl { get; set; } = default!;
+
+                /// <summary>
                 /// 获取或设置图文消息标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("title")]
