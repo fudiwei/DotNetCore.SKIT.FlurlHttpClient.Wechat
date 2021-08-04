@@ -21,5 +21,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("media_type")]
         [System.Text.Json.Serialization.JsonPropertyName("media_type")]
         public int MediaType { get; set; }
+
+        /// <summary>
+        /// 获取或设置版本号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("version")]
+        [System.Text.Json.Serialization.JsonPropertyName("version")]
+        public int? Version { get; set; }
+
+        /// <summary>
+        /// 获取或设置场景值。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("scene")]
+        [System.Text.Json.Serialization.JsonPropertyName("scene")]
+        public int? Scene { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户的 OpenId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("openid")]
+        [System.Text.Json.Serialization.JsonPropertyName("openid")]
+        public string? OpenId { get; set; }
     }
 }

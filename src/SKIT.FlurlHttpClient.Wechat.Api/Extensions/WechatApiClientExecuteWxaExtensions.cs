@@ -344,7 +344,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /wxa/media_check_async 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/sec-check/security.mediaCheckAsync.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/sec-check/security.mediaCheckAsync-v1.html </para>
         /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/sec-check/security.mediaCheckAsync.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/sec-check/security.mediaCheckAsync-v1.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -365,7 +367,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /wxa/msg_sec_check 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/sec-check/security.msgSecCheck.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/sec-check/security.msgSecCheck-v1.html </para>
         /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/sec-check/security.msgSecCheck.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/sec-check/security.msgSecCheck-v1.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
