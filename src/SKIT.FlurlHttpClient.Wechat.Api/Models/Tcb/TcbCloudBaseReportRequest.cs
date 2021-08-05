@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env_id")]
         [System.Text.Json.Serialization.JsonPropertyName("env_id")]
-        public string EnvId { get; set; } = string.Empty;
+        public string EnvironmentId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置活动 ID。

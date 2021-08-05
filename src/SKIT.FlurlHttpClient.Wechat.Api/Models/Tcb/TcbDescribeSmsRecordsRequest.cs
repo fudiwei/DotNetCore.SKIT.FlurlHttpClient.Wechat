@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("EnvId")]
                 [System.Text.Json.Serialization.JsonPropertyName("EnvId")]
-                public string EnvId { get; set; } = string.Empty;
+                public string EnvironmentId { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置开始日期（格式：yyyy-MM-dd）。

@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pre_env")]
         [System.Text.Json.Serialization.JsonPropertyName("pre_env")]
-        public string? PreFetchEnvId { get; set; }
+        public string? PreFetchEnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置数据预拉取云函数名。
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("period_env")]
         [System.Text.Json.Serialization.JsonPropertyName("period_env")]
-        public string? PeriodFetchEnvId { get; set; }
+        public string? PeriodFetchEnvironmentId { get; set; }
 
         /// <summary>
         /// 获取或设置数据周期性拉取云函数名。

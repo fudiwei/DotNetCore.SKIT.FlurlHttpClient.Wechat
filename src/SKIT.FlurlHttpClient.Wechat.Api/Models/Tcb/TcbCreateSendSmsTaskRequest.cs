@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("env")]
         [System.Text.Json.Serialization.JsonPropertyName("env")]
-        public string EnvId { get; set; } = string.Empty;
+        public string EnvironmentId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置短信 CSV 文件地址。
