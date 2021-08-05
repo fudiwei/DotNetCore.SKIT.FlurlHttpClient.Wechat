@@ -133,9 +133,9 @@ var options = new WechatApiClientOptions()
 {
     AppId = "微信 AppId",
     AppSecret = "微信 AppSecret",
-    MidasAppKey = "米大师相关服务 AppKey",
-    ImmeDeliveryAppKey = "即时配送相关服务 AppKey",
-    ImmeDeliveryAppSecret = "即时配送相关服务 AppSecret"
+    MidasAppKey = "米大师相关服务 AppKey，不用则不填",
+    ImmeDeliveryAppKey = "即时配送相关服务 AppKey，不用则不填",
+    ImmeDeliveryAppSecret = "即时配送相关服务 AppSecret，不用则不填"
 };
 var client = new WechatApiClient(options);
 ```
