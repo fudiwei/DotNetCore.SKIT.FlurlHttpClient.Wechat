@@ -1,0 +1,20 @@
+﻿{
+    "env": "myttest-8gu57so0bd9f9e8a",
+    "functionname": "testfunc1",
+    "memorysize": 512,
+    "timeout": 2,
+    "environment_variables": [
+        {
+            "key": "test",
+            "value": "true"
+        }
+    ],
+    "public_net_config": {
+        "public_net_status": "DISABLE",
+        "eip_status": "DISABLE"
+    },
+    "vpc_config": {
+        "vpcid": "vpc-a9ejy7oi",
+        "subnetid": "subnet-oqw8aqbd"
+    }
+}
