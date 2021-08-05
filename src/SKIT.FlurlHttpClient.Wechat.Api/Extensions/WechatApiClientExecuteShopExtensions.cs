@@ -31,8 +31,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            var httpContent = new MultipartFormDataContent(boundary);
-            var fileContent = new ByteArrayContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = new MultipartFormDataContent(boundary);
+            using var fileContent = new ByteArrayContent(request.ImageFileBytes ?? new byte[0]);
             httpContent.Add(fileContent, "\"media\"", "\"image.png\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
