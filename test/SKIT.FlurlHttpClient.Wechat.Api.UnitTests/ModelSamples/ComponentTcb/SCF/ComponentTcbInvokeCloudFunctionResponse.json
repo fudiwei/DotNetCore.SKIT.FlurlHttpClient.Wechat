@@ -1,0 +1,5 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "resp_data": "{\"event\":{\"userInfo\":{\"appId\":\"SAMPLE_APPID\"}},\"appid\":\"SAMPLE_APPID\"}"
+}
