@@ -14,12 +14,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string ExternalUserId { get; set; } = string.Empty;
-
-        /// <summary>
-        /// 获取或设置翻页标记。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string? NextCursor { get; set; }
     }
 }

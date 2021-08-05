@@ -221,7 +221,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 {
                     using StringReader reader = new StringReader(xml);
                     XmlSerializer xmlSerializer = new XmlSerializer(type, new XmlRootAttribute("xml"));
-                    var obj = xmlSerializer.Deserialize(reader);
+                    xmlSerializer.Deserialize(reader);
                 }
                 catch (Exception ex)
                 {

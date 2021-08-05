@@ -96,9 +96,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("external_userid", request.ExternalUserId);
 
-            if (!string.IsNullOrEmpty(request.NextCursor))
-                request.NextCursor = request.NextCursor;
-
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
