@@ -1,0 +1,17 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "info_list": [
+        {
+            "env": "test2-4a89da",
+            "alias": "test2",
+            "create_time": "2020-04-04 14:10:28",
+            "update_time": "2020-04-04 14:10:36",
+            "status": "NORMAL",
+            "package_id": "basic",
+            "package_name": "基础版 1",
+            "dbinstance_id": "tnt-fpbvu9gpc",
+            "bucket_id": "6d79-myttest3-9gyi5pwab13c4d59-1304480914"
+        }
+    ]
+}
