@@ -27,17 +27,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
             if (flurlCall == null) throw new ArgumentNullException(nameof(flurlCall));
 
             string method = flurlCall.HttpRequestMessage.Method.ToString().ToUpper();
-            string url = flurlCall.HttpRequestMessage.RequestUri.PathAndQuery;
+            string url = flurlCall.HttpRequestMessage.RequestUri?.PathAndQuery ?? string.Empty;
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string body = string.Empty;
 
-            if (flurlCall.HttpRequestMessage.Content is MultipartFormDataContent)
+            if (flurlCall.HttpRequestMessage.Content is MultipartFormDataContent formdataContent)
             {
                 // NOTICE: multipart/form-data 文件上传请求的待签名参数需特殊处理
-                var httpContent = ((MultipartFormDataContent)flurlCall.HttpRequestMessage.Content)
-                    .Where(e => Constants.FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')))
-                    .SingleOrDefault();
+                var httpContent = formdataContent.SingleOrDefault(e => Constants.FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
                 if (httpContent != null)
                 {
                     body = await httpContent.ReadAsStringAsync().ConfigureAwait(false);
