@@ -1,0 +1,6 @@
+﻿{
+    "env": "test2-4a89da",
+    "file_path": "test_export",
+    "file_type": 1,
+    "query": "const Point = db.Geo.Point;db.collection(\\'geo\\').where({name: \\'x\\',age: _.gt(10).and(_.lt(20)),loc: new Point(113,23),array: [1,2]}).limit(10).skip(1).orderBy(\\'age\\',\\'asc\\').orderBy(\\'name\\', \\'desc\\').field({ name: true }).get()"
+}

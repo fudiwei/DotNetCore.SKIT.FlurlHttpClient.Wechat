@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "collections": [
+        {
+            "name": "testcollection",
+            "count": 0,
+            "size": 0,
+            "index_count": 2,
+            "index_size": 8192
+        }
+    ],
+    "total": 1
+}
