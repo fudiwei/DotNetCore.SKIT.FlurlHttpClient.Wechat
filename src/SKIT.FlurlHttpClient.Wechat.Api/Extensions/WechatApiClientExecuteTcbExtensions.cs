@@ -386,6 +386,166 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.TcbShareEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /tcb/usecloudaccesstoken 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/usecloudaccesstoken.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TcbUseCloudAccessTokenResponse> ExecuteTcbUseCloudAccessTokenAsync(this WechatApiClient client, Models.TcbUseCloudAccessTokenRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "tcb", "usecloudaccesstoken")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.TcbUseCloudAccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /tcb/uploadappconfig 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/uploadAppConfig.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TcbUploadAppConfigResponse> ExecuteTcbUploadAppConfigAsync(this WechatApiClient client, Models.TcbUploadAppConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "tcb", "uploadappconfig")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.TcbUploadAppConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /tcb/getappconfig 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/getAppConfig.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TcbGetAppConfigResponse> ExecuteTcbGetAppConfigAsync(this WechatApiClient client, Models.TcbGetAppConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "tcb", "getappconfig")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.TcbGetAppConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /tcb/setcallbackconfig 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/setcallbackconfig.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TcbSetCallbackConfigResponse> ExecuteTcbSetCallbackConfigAsync(this WechatApiClient client, Models.TcbSetCallbackConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "tcb", "setcallbackconfig")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.TcbSetCallbackConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /tcb/getcallbackconfig 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/getcallbackconfig.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TcbGetCallbackConfigResponse> ExecuteTcbGetCallbackConfigAsync(this WechatApiClient client, Models.TcbGetCallbackConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "tcb", "getcallbackconfig")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.TcbGetCallbackConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /tcb/getqcloudtoken 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/getqcloudtoken.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TcbGetQCloudTokenResponse> ExecuteTcbGetQCloudTokenAsync(this WechatApiClient client, Models.TcbGetQCloudTokenRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "tcb", "getqcloudtoken")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.TcbGetQCloudTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /tcb/wxpaylist 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/wxpaylist.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TcbWxpayListResponse> ExecuteTcbWxpayListAsync(this WechatApiClient client, Models.TcbWxpayListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "tcb", "wxpaylist")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.TcbWxpayListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /tcb/wxpayopenauth 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/common/wxpayopenauth.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TcbWxpayOpenAuthResponse> ExecuteTcbWxpayOpenAuthAsync(this WechatApiClient client, Models.TcbWxpayOpenAuthRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "tcb", "wxpayopenauth")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.TcbWxpayOpenAuthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
     }
 }

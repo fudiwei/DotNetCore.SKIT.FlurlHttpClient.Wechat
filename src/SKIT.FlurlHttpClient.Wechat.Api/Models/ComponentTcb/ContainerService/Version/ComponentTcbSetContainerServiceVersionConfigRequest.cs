@@ -8,6 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class ComponentTcbSetContainerServiceVersionConfigRequest : WechatApiRequest
     {
+        /// <summary>
         /// 获取或设置第三方平台 AccessToken。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
