@@ -1,0 +1,6 @@
+﻿{
+    "env": "mmtest-5g7z68c153d7ff4b",
+    "service_name": "echo",
+    "offset": 0,
+    "limit": 20
+}

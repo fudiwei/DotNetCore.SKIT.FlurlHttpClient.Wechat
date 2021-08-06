@@ -1,0 +1,14 @@
+﻿{
+    "env": "mmtest-5g7z68c153d7ff4b",
+    "service_name": "echo",
+    "items": [
+        {
+            "version_name": "echo-003",
+            "flow_ratio": 80
+        },
+        {
+            "version_name": "echo-008",
+            "flow_ratio": 20
+        }
+    ]
+}
