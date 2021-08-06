@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contents")]
         [System.Text.Json.Serialization.JsonPropertyName("contents")]
-        public Types.File[] FileList6 { get; set; } = default!;
+        public Types.File[] FileList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置内容是否被截断。
