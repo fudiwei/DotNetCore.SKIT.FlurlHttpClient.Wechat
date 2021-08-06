@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("updated_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset UpdateTime { get; set; } = default!;
+                public DateTimeOffset UpdateTime { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间。
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("created_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset CreateTime { get; set; } = default!;
+                public DateTimeOffset CreateTime { get; set; }
             }
         }
 

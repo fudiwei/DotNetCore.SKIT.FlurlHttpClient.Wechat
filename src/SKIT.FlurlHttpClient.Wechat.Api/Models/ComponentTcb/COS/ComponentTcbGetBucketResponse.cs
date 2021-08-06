@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("last_modified")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset LastModifiedTime { get; set; } = default!;
+                public DateTimeOffset LastModifiedTime { get; set; }
             }
         }
 
