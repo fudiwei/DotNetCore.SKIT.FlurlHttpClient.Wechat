@@ -1,0 +1,14 @@
+﻿{
+    "envs": [ "myttest2-9g1m6omv9fa12048", "myttest-8gu57so0bd9f9e8a" ],
+    "service_name": "echo",
+    "upload_type": "repository",
+    "repository_type": "github",
+    "repository": "https://github.com/maoyutao/wx-container-demo.git",
+    "code_detail": {
+        "name": {
+            "fullname": "maoyutao/wx-container-demo"
+        },
+        "url": "https://github.com/maoyutao/wx-container-demo.git"
+    },
+    "dockerfile_path": "Dockerfile"
+}

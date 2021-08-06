@@ -1,0 +1,16 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "fail_list": [
+        {
+            "env": "test",
+            "errormsg": "xx"
+        }
+    ],
+    "succ_list": [
+        {
+            "env": "test",
+            "version_name": "echo001"
+        }
+    ]
+}
