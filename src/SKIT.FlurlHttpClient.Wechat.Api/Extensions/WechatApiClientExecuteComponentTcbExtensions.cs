@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/modifyenv 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/modifyenv.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/modifyEnv.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -256,7 +256,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /tcb/invokecloudfunction 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/batchupdatetriggers.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/invokecloudfunction.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -721,6 +721,194 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.ComponentTcbStaticUploadFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Database
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/dbcollection 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbCollectionGet.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbCollectionAdd.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbCollectionDel.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDbCollectionResponse> ExecuteComponentTcbDbCollectionAsync(this WechatApiClient client, Models.ComponentTcbDbCollectionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "dbcollection")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDbCollectionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/dbrecord 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbRecordInsert.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbRecordDelete.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbRecordUpdate.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbRecordQuery.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDbRecordResponse> ExecuteComponentTcbDbRecordAsync(this WechatApiClient client, Models.ComponentTcbDbRecordRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "dbrecord")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDbRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/dbindex 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbIndexCreate.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbIndexDelete.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDbIndexResponse> ExecuteComponentTcbDbIndexAsync(this WechatApiClient client, Models.ComponentTcbDbIndexRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "dbindex")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDbIndexResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/dbimport 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbimport.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDbImportResponse> ExecuteComponentTcbDbImportAsync(this WechatApiClient client, Models.ComponentTcbDbImportRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "dbimport")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDbImportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/dbexport 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbexport.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDbExportResponse> ExecuteComponentTcbDbExportAsync(this WechatApiClient client, Models.ComponentTcbDbExportRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "dbexport")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDbExportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/dbmigrationstate 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbmigrationstate.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDbMigrationStateResponse> ExecuteComponentTcbDbMigrationStateAsync(this WechatApiClient client, Models.ComponentTcbDbMigrationStateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "dbmigrationstate")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDbMigrationStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/dbaggregate 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbaggregate.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDbAggregateResponse> ExecuteComponentTcbDbAggregateAsync(this WechatApiClient client, Models.ComponentTcbDbAggregateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "dbaggregate")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDbAggregateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/dbgetacl 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbGetACL.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDbGetACLResponse> ExecuteComponentTcbDbGetACLAsync(this WechatApiClient client, Models.ComponentTcbDbGetACLRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "dbgetacl")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDbGetACLResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/dbmodifyacl 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/dbModifyACL.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDbModifyACLResponse> ExecuteComponentTcbDbModifyACLAsync(this WechatApiClient client, Models.ComponentTcbDbModifyACLRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "dbmodifyacl")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDbModifyACLResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
