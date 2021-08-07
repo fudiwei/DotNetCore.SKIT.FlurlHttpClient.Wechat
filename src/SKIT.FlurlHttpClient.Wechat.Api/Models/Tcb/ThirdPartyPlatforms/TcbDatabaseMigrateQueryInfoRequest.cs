@@ -4,17 +4,10 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /componenttcb/dbmigrationstate 接口的请求。</para>
+    /// <para>表示 [POST] /tcb/databasemigratequeryinfo 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbDbMigrationStateRequest : WechatApiRequest
+    public class TcbDatabaseMigrateQueryInfoRequest : WechatApiRequest
     {
-        /// <summary>
-        /// 获取或设置第三方平台 AccessToken。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
-
         /// <summary>
         /// 获取或设置环境 ID。
         /// </summary>

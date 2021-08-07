@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /componenttcb/dbcollection 接口的响应。</para>
+    /// <para>表示 [POST] /tcb/databasecollectionget 接口的响应。</para>
     /// </summary>
-    public class ComponentTcbDbCollectionResponse : WechatApiResponse
+    public class TcbDatabaseCollectionGetResponse : WechatApiResponse
     {
         public static class Types
         {
@@ -47,6 +47,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("index_size")]
                 public int IndexSize { get; set; }
             }
+
+            public class Pagination
+            {
+                /// <summary>
+                /// 获取或设置分页起始位置。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("Offset")]
+                [System.Text.Json.Serialization.JsonPropertyName("Offset")]
+                public int Offset { get; set; }
+
+                /// <summary>
+                /// 获取或设置分页每页数量。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("Limit")]
+                [System.Text.Json.Serialization.JsonPropertyName("Limit")]
+                public int Limit { get; set; }
+
+                /// <summary>
+                /// 获取或设置总数量。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("Total")]
+                [System.Text.Json.Serialization.JsonPropertyName("Total")]
+                public int TotalCount { get; set; }
+            }
         }
 
         /// <summary>
@@ -54,13 +78,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("collections")]
         [System.Text.Json.Serialization.JsonPropertyName("collections")]
-        public Types.Collection[]? CollectionList { get; set; }
+        public Types.Collection[] CollectionList { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置总数量。
+        /// 获取或设置查询分页信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("total")]
-        [System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int? TotalCount { get; set; }
+        [Newtonsoft.Json.JsonProperty("pager")]
+        [System.Text.Json.Serialization.JsonPropertyName("pager")]
+        public Types.Pagination Pagination { get; set; } = default!;
     }
 }
