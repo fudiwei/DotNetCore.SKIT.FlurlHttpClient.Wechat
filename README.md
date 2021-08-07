@@ -28,12 +28,12 @@
 
 ## 模块
 
-|                   名称                    |                                                                                     NuGet                                                                                      |                                           其他                                           |
-| :---------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
-| 公众平台（公众号、小程序） & 开放平台模块 |      [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Api.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Api)      |      [开发文档](./docs/WechatApi/README.md)｜[示例项目](./docs/WechatApi/Sample.md)      |
-|         商户平台（微信支付）模块          | [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3) | [开发文档](./docs/WechatTenpayV3/README.md)｜[示例项目](./docs/WechatTenpayV3/Sample.md) |
-|          企业微信（企业号）模块           |     [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Work.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Work)     |                         [开发文档](./docs/WechatWork/README.md)                          |
-|          广告平台（广点通）模块           |      [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Ads.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Ads)      |                          [开发文档](./docs/WechatAds/README.md)                          |
+|                      名称                      |                                                                                     NuGet                                                                                      |                                           其他                                           |
+| :--------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------: |
+| 公众平台（公众号、小程序） <br> + 开放平台模块 |      [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Api.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Api)      |      [开发文档](./docs/WechatApi/README.md)｜[示例项目](./docs/WechatApi/Sample.md)      |
+|            商户平台（微信支付）模块            | [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3) | [开发文档](./docs/WechatTenpayV3/README.md)｜[示例项目](./docs/WechatTenpayV3/Sample.md) |
+|             企业微信（企业号）模块             |     [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Work.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Work)     |                         [开发文档](./docs/WechatWork/README.md)                          |
+|             广告平台（广点通）模块             |      [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Ads.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Ads)      |                          [开发文档](./docs/WechatAds/README.md)                          |
 
 ---
 
@@ -88,9 +88,9 @@
 
 ## 使用案例
 
-| 项目名称 |                    项目简介                    |                                            项目地址                                            |
-| :------: | :--------------------------------------------: | :--------------------------------------------------------------------------------------------: |
-| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [Gitee](https://gitee.com/CoreUnion/CoreShop)｜[GitHub](https://github.com/CoreUnion/CoreShop) |
+| 项目名称 |                    项目简介                    |                                              项目地址                                              |
+| :------: | :--------------------------------------------: | :------------------------------------------------------------------------------------------------: |
+| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [Gitee](https://gitee.com/CoreUnion/CoreShop) <br> [GitHub](https://github.com/CoreUnion/CoreShop) |
 
 注：以上案例均来自第三方，本人不对其项目做任何保证，仅作列举展示。如果你有项目也使用了本库、希望加到案例列表中，可以在 Issue 中提出。
 
