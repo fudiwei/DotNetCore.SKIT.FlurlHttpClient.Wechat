@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public int? FunctionMemorySize { get; set; }
 
         /// <summary>
-        /// 获取或设置超时时间（单位：秒））。
+        /// 获取或设置超时时间（单位：秒）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("timeout")]
         [System.Text.Json.Serialization.JsonPropertyName("timeout")]

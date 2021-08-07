@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             public class ConditionFreeDetail
                             {
                                 /// <summary>
-                                /// 获取或设置最低金额（单位：分））。
+                                /// 获取或设置最低金额（单位：分）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("min_free_price")]
                                 [System.Text.Json.Serialization.JsonPropertyName("min_free_price")]
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             public class TieredBillingDetail
                             {
                                 /// <summary>
-                                /// 获取或设置最低起送金额（单位：分））。
+                                /// 获取或设置最低起送金额（单位：分）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("min_send_price")]
                                 [System.Text.Json.Serialization.JsonPropertyName("min_send_price")]

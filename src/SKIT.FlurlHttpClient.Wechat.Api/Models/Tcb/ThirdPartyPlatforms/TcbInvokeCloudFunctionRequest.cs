@@ -6,15 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/invokecloudfunction 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbInvokeCloudFunctionRequest : WechatApiRequest
+    public class TcbInvokeCloudFunctionRequest : WechatApiRequest
     {
-        /// <summary>
-        /// 获取或设置第三方平台 AccessToken。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string ComponentAccessToken { get; set; } = string.Empty;
-
         /// <summary>
         /// 获取或设置环境 ID。
         /// </summary>
