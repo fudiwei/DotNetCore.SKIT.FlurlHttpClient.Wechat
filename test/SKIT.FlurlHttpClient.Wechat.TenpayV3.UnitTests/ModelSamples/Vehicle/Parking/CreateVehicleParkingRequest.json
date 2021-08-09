@@ -1,0 +1,10 @@
+﻿{
+    "sub_mchid": "1900000109",
+    "out_parking_no": "1231243",
+    "plate_number": "粤B888888",
+    "plate_color": "BLUE",
+    "notify_url": "https://yoursite.com/wxpay.html",
+    "start_time": "2017-08-26T10:43:39+08:00",
+    "parking_name": "欢乐海岸停车场",
+    "free_duration": 3600
+}

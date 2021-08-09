@@ -1,0 +1,12 @@
+﻿{
+    "sp_mchid": "10000100",
+    "parking_id": "5K8264ILTKCH16CQ250",
+    "out_parking_no": "1212313",
+    "plate_number": "粤B888888",
+    "plate_color": "BLUE",
+    "start_time": "2017-08-26T10:43:39+08:00",
+    "parking_name": "欢乐海岸停车场",
+    "free_duration": 3600,
+    "parking_state": "NORMAL",
+    "state_update_time": "2015-05-20T13:29:35.120+08:00"
+}
