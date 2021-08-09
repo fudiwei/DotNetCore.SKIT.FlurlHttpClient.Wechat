@@ -208,6 +208,16 @@
 
         -   商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
 
+    -   微信支付分停车服务
+
+        -   查询车牌服务开通信息：`GetVehicleParkingService`
+
+        -   创建停车入场：`CreateVehicleParking`
+
+        -   扣费受理：`CreateVehicleTransactionParking`
+
+        -   查询订单：`GetVehicleTransactionByOutTradeNumber`
+
 -   营销工具
 
     -   代金券
@@ -679,6 +689,16 @@
         -   商圈积分同步：`NotifyBusinessCirclePoints`
 
         -   商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
+
+    -   微信支付分停车服务
+
+        -   查询车牌服务开通信息：`GetVehicleParkingService`
+
+        -   创建停车入场：`CreateVehicleParking`
+
+        -   扣费受理：`CreateVehicleTransactionParking`
+
+        -   查询订单：`GetVehicleTransactionByOutTradeNumber`
 
 -   营销工具
 
