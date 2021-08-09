@@ -98,6 +98,12 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
+-   Release 1.5.0
+
+    -   **新增**：新增微信支付分停车服务相关接口。
+
+    -   **新增**：随官方更新电商分账、连锁品牌分账接口相关字段。
+
 -   Release 1.4.2
 
     -   **变更**：验证响应或回调通知签名时不再抛出异常。
