@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class UpdateMarketingBusifavorCallbackResponse : WechatTenpayResponse
     {
         /// <summary>
-        /// 获取或设置商户号。
+        /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
