@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             string nonce = Guid.NewGuid().ToString("N");
             string cardType = "INVOICE";
 
-            SortedSet<string> sortedParams = new SortedSet<string>();
+            ISet<string> sortedParams = new SortedSet<string>(StringComparer.Ordinal);
             sortedParams.Add(cardType);
             sortedParams.Add(timestamp);
             sortedParams.Add(client.Credentials.AppId);

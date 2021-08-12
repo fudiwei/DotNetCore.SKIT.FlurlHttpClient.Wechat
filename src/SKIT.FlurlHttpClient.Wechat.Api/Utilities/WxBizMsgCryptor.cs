@@ -231,7 +231,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             if (sNonce == null) throw new ArgumentNullException(nameof(sNonce));
             if (sMsgEncrypt == null) throw new ArgumentNullException(nameof(sMsgEncrypt));
 
-            ISet<string> set = new SortedSet<string>();
+            ISet<string> set = new SortedSet<string>(StringComparer.Ordinal);
             set.Add(sToken);
             set.Add(sTimestamp);
             set.Add(sNonce);
