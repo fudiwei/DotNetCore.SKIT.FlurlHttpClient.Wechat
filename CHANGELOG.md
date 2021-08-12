@@ -8,7 +8,7 @@
 
 -   Release 1.0.3
 
-    -   **修复**：显式依赖 `System.Text.Encodings.Web`，修复部分场景下程序集加载问题。
+    -   **修复**：显式依赖 `System.Text.Encodings.Web`，修复部分场景下程序集加载问题。（[Gitee Issue #I42V13](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I42V13)）
 
 -   Release 1.0.2
 
@@ -30,17 +30,19 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.4.1
+
+    -   **修复**：修复部分场景下生成微信回调通知事件签名错误的问题。（[GitHub Issue #4](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/4)）
+
 -   Release 1.4.0
 
     -   **新增**：新增第三方平台代云开发相关接口。
 
     -   **新增**：随官方更新内容安全相关字段。
 
-    -   **修复**：修复获取图文素材接口模型的字段缺失问题。
-
 -   Release 1.3.5
 
-    -   **修复**：修复获取图文素材接口模型的字段缺失问题。
+    -   **修复**：修复获取图文素材接口模型的字段缺失问题。（[Gitee Issue #I43QPI](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I43QPI)）
 
 -   Release 1.3.4
 
@@ -56,7 +58,7 @@
 
 -   Release 1.3.1
 
-    -   **修复**：修复自定义交易组件获取快递公司列表接口的模型定义错误。
+    -   **修复**：修复自定义交易组件获取快递公司列表接口的模型定义错误。（[Gitee Issue #I43AM2](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I43AM2)）
 
 -   Release 1.3.0
 
@@ -68,7 +70,7 @@
 
 -   Release 1.2.1
 
-    -   **修复**：修复生成小程序码接口的模型定义错误。
+    -   **修复**：修复生成小程序码接口的模型定义错误。（[Gitee Issue #I42XC0](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I42XC0)）
 
 -   Release 1.2.0
 
@@ -120,6 +122,8 @@
 
     -   **变更**：移除 `ICertificateStorer` 接口，新增 `CertificateManager` 抽象类。
 
+    -   **修复**：修复部分场景下生成请求签名的错误。（[GitHub Issue #2](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/2)）
+
 -   Release 1.3.1
 
     -   **新增**：新增批量转账到零钱相关接口。
@@ -144,7 +148,7 @@
 
     -   **新增**：随官方更新服务商提现、服务商结算账户接口相关字段。
 
-    -   **修复**：修复调起支付所需参数签名生成错误。
+    -   **修复**：修复调起支付所需参数签名生成错误。（[Gitee Issue #I3YY2C](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I3YY2C)）
 
 -   Release 1.0.0
 
@@ -157,6 +161,10 @@
 <details>
 
 <summary>SKIT.FlurlHttpClient.Wechat.Work 更新日志</summary>
+
+-   Release 1.2.3
+
+    -   **修复**：修复部分场景下生成微信回调通知事件签名错误的问题。（[GitHub Issue #4](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/4)）
 
 -   Release 1.2.2
 
