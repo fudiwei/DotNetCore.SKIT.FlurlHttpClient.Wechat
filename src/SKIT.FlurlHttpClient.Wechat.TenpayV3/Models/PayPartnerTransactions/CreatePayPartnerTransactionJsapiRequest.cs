@@ -6,9 +6,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /pay/partner/transactions/jsapi 接口的请求。</para>
     /// </summary>
-    public class CreatePayPartnerTransactionJsapiRequest : CreatePayTransactionJsapiRequest
+    public class CreatePayPartnerTransactionJsapiRequest : WechatTenpayRequest
     {
-        public new static class Types
+        public static class Types
         {
             public class Payer
             {
@@ -26,6 +26,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
                 public string? SubOpenId { get; set; }
             }
+
+            public class Amount : CreatePayTransactionJsapiRequest.Types.Amount
+            {
+            }
+
+            public class Detail : CreatePayTransactionJsapiRequest.Types.Detail
+            {
+            }
+
+            public class Scene : CreatePayTransactionJsapiRequest.Types.Scene
+            {
+            }
+
+            public class Settlement : CreatePayTransactionJsapiRequest.Types.Settlement
+            {
+            }
         }
 
         /// <summary>
@@ -33,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
-        public override string? MerchantId { get; set; }
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -47,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public override string AppId { get; set; } = string.Empty;
+        public string AppId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置子商户 AppId。
@@ -57,10 +73,82 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubAppId { get; set; }
 
         /// <summary>
+        /// 获取或设置商品描述。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("description")]
+        [System.Text.Json.Serialization.JsonPropertyName("description")]
+        public string Description { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置商户订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("out_trade_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
+        public string OutTradeNumber { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置交易结束时间。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("time_expire")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("time_expire")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        public DateTimeOffset? ExpireTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置附加数据。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("attach")]
+        [System.Text.Json.Serialization.JsonPropertyName("attach")]
+        public string? Attachment { get; set; }
+
+        /// <summary>
+        /// 获取或设置回调通知地址。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("notify_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
+        public string? NotifyUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置订单优惠标记。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("goods_tag")]
+        [System.Text.Json.Serialization.JsonPropertyName("goods_tag")]
+        public string? GoodsTag { get; set; }
+
+        /// <summary>
+        /// 获取或设置金额信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("amount")]
+        [System.Text.Json.Serialization.JsonPropertyName("amount")]
+        public Types.Amount Amount { get; set; } = new Types.Amount();
+
+        /// <summary>
         /// 获取或设置支付者信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payer")]
         [System.Text.Json.Serialization.JsonPropertyName("payer")]
-        public new Types.Payer? Payer { get; set; }
+        public Types.Payer Payer { get; set; } = new Types.Payer();
+
+        /// <summary>
+        /// 获取或设置商品信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("detail")]
+        [System.Text.Json.Serialization.JsonPropertyName("detail")]
+        public Types.Detail? Detail { get; set; }
+
+        /// <summary>
+        /// 获取或设置场景信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("scene_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
+        public Types.Scene? Scene { get; set; }
+
+        /// <summary>
+        /// 获取或设置结算信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("settle_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
+        public Types.Settlement? Settlement { get; set; }
     }
 }

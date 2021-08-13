@@ -34,12 +34,12 @@
     },
     "promotion_detail": [
         {
-            "promotion_id": "109519",
+            "coupon_id": "109519",
             "name": "单品惠-6",
             "scope": "SINGLE",
             "type": "DISCOUNT",
             "amount": 1,
-            "activity_id": "931386",
+            "stock_id": "931386",
             "wechatpay_contribute": 1,
             "merchant_contribute": 0,
             "other_contribute": 0

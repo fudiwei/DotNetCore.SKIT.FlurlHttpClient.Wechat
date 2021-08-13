@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public virtual string? MerchantId { get; set; }
+        public string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。
