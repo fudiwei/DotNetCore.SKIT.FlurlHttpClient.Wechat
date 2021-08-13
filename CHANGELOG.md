@@ -100,6 +100,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
+-   Release 1.5.1
+
+    -   **修复**：修复部分接口模型因继承问题在使用 System.Text.Json 时序列化有误的问题。（[Gitee Issue #I45C27](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I45C27)）
+
 -   Release 1.5.0
 
     -   **新增**：新增微信支付分停车服务相关接口。
