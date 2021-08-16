@@ -1,11 +1,5 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.Api
 
-[![Gitee Stars](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/badge/star.svg)](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
-[![GitHub Stars](https://img.shields.io/github/stars/fudiwei/DotNetCore.SKIT.RestSharpClient.Wechat?logo=github)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
-[![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Api.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Api)
-[![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.Api.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Api)
-[![License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)](https://mit-license.org/)
-
 基于 `Flurl.Http` 的[微信公众平台](<(https://mp.weixin.qq.com/)>) & [微信开放平台](<(https://open.weixin.qq.com/)>) API 客户端。
 
 ---

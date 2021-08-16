@@ -1,11 +1,5 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.TenpayV3
 
-[![Gitee Stars](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/badge/star.svg)](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
-[![GitHub Stars](https://img.shields.io/github/stars/fudiwei/DotNetCore.SKIT.RestSharpClient.Wechat?logo=github)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
-[![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3)
-[![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?sanitize=true)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3)
-[![License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)](https://mit-license.org/)
-
 基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/) API v3 版客户端。
 
 ---
