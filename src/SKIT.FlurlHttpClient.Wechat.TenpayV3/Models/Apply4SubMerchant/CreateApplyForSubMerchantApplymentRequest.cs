@@ -681,7 +681,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// 获取或设置优惠费率活动值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activities_rate")]
+                [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonActivityRateConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("activities_rate")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonActivityRateConverter))]
                 public double? ActivityRate { get; set; }
 
                 /// <summary>
@@ -773,6 +775,86 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("business_addition_msg")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_addition_msg")]
                 public string? BusinessAdditionMessage { get; set; }
+            }
+        }
+
+        internal static class Converters
+        {
+            internal class NewtonsoftJsonActivityRateConverter : Newtonsoft.Json.JsonConverter<double?>
+            {
+                public override bool CanRead
+                {
+                    get { return true; }
+                }
+
+                public override bool CanWrite
+                {
+                    get { return true; }
+                }
+
+                public override double? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, double? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
+                {
+                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
+                    {
+                        return existingValue;
+                    }
+                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.Integer ||
+                             reader.TokenType == Newtonsoft.Json.JsonToken.Float)
+                    {
+                        return serializer.Deserialize<double>(reader);
+                    }
+                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
+                    {
+                        string? value = serializer.Deserialize<string>(reader);
+                        if (value == null)
+                            return existingValue;
+
+                        return Convert.ToDouble(value);
+                    }
+
+                    throw new Newtonsoft.Json.JsonReaderException();
+                }
+
+                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, double? value, Newtonsoft.Json.JsonSerializer serializer)
+                {
+                    if (value.HasValue)
+                        writer.WriteValue(value.Value.ToString("0.00"));
+                    else
+                        writer.WriteNull();
+                }
+            }
+
+            internal class SystemTextJsonActivityRateConverter : System.Text.Json.Serialization.JsonConverter<double?>
+            {
+                public override double? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
+                {
+                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
+                    {
+                        return null;
+                    }
+                    else if (reader.TokenType == System.Text.Json.JsonTokenType.Number)
+                    {
+                        return reader.GetDouble();
+                    }
+                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
+                    {
+                        string? value = reader.GetString();
+                        if (value == null)
+                            return null;
+
+                        return Convert.ToDouble(value);
+                    }
+
+                    throw new System.Text.Json.JsonException();
+                }
+
+                public override void Write(System.Text.Json.Utf8JsonWriter writer, double? value, System.Text.Json.JsonSerializerOptions options)
+                {
+                    if (value.HasValue)
+                        writer.WriteStringValue(value.Value.ToString("0.00"));
+                    else
+                        writer.WriteNullValue();
+                }
             }
         }
 
