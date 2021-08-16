@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public static class WechatTenpayClientExecuteApplyForSubMerchantExtensions
     {
         /// <summary>
-        /// <para>异步调用 [POST] /applyment4sub/applyment 接口。</para>
+        /// <para>异步调用 [POST] /applyment4sub/applyment/ 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter11_1_1.shtml </para>
         /// </summary>
         /// <param name="client"></param>
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "applyment4sub", "applyment");
+                .CreateRequest(request, HttpMethod.Post, "applyment4sub", "applyment/"); // NOTICE: 注意 URL 结尾的反斜杠不能删除
 
             return await client.SendRequestWithJsonAsync<Models.CreateApplyForSubMerchantApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
