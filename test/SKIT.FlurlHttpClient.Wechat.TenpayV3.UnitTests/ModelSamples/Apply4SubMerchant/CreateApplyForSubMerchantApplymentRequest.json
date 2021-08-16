@@ -49,7 +49,7 @@
 				"doc_period_begin": "2019-06-06",
 				"doc_period_end": "2026-06-06"
 			},
-			"owner": "true"
+			"owner": true
 		},
 		"ubo_info": {
 			"id_type": "IDENTIFICATION_TYPE_IDCARD",
