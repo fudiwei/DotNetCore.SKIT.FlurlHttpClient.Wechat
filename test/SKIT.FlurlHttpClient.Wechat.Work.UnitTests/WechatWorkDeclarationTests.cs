@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
         [Fact(DisplayName = "验证 API 模型命名")]
         public void ApiModelsNamingTest()
         {
-            TestAssertUtil.VerifyApiModelsNaming(_assembly, out var ex);
+            CodeStyleUtil.VerifyApiModelsNaming(_assembly, out var ex);
 
             if (ex != null)
                 throw ex;
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
             string workdir = Path.Combine(TestConfigs.ProjectTestDirectory, "ModelSamples");
             Assert.True(Directory.Exists(workdir));
 
-            TestAssertUtil.VerifyApiModelsDefinition(_assembly, workdir, out var ex);
+            CodeStyleUtil.VerifyApiModelsDefinition(_assembly, workdir, out var ex);
 
             if (ex != null)
                 throw ex;
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
             string workdir = Path.Combine(TestConfigs.ProjectTestDirectory, "EventSamples");
             Assert.True(Directory.Exists(workdir));
 
-            TestAssertUtil.VerifyApiEventsDefinition(_assembly, workdir, out var ex);
+            CodeStyleUtil.VerifyApiEventsDefinition(_assembly, workdir, out var ex);
 
             if (ex != null)
                 throw ex;
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
         [Fact(DisplayName = "验证 API 接口命名")]
         public void ApiExtensionsNamingTest()
         {
-            TestAssertUtil.VerifyApiExtensionsNaming(_assembly, out var ex);
+            CodeStyleUtil.VerifyApiExtensionsNaming(_assembly, out var ex);
 
             if (ex != null)
                 throw ex;
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
             string workdir = Path.Combine(TestConfigs.ProjectSourceDirectory);
             Assert.True(Directory.Exists(workdir));
 
-            TestAssertUtil.VerifySourceCodeStyle(workdir, out var ex);
+            CodeStyleUtil.VerifySourceCodeStyle(workdir, out var ex);
 
             if (ex != null)
                 throw ex;

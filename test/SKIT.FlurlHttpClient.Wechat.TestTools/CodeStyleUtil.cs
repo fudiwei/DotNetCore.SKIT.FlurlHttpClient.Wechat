@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat
 {
-    public static class TestAssertUtil
+    public static class CodeStyleUtil
     {
         private static bool TryJsonize(string json, Type type, out Exception exception)
         {
@@ -400,8 +400,8 @@ namespace SKIT.FlurlHttpClient.Wechat
                         {
                             for (int urlSegmentIndex = 0; urlSegmentIndex < expectedUrlSegments.Length; urlSegmentIndex++)
                             {
-                                string expectedUrlSegment = expectedUrlSegments[urlSegmentIndex];
-                                string actualUrlSegment = actualUrlSegments[urlSegmentIndex];
+                                string expectedUrlSegment = expectedUrlSegments[urlSegmentIndex].Trim('/');
+                                string actualUrlSegment = actualUrlSegments[urlSegmentIndex].Trim('/');
                                 if (expectedUrlSegment.Contains("{"))
                                 {
                                     if (actualUrlSegment.StartsWith("\""))
@@ -412,7 +412,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                                 }
                                 else
                                 {
-                                    actualUrlSegment = actualUrlSegment.Replace("\"", string.Empty);
+                                    actualUrlSegment = actualUrlSegment.Replace("\"", string.Empty).Trim('/');
                                     if (!string.Equals(expectedUrlSegment, actualUrlSegment))
                                     {
                                         lstError.Add(new Exception($"源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
