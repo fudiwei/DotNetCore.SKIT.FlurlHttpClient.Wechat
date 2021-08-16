@@ -100,7 +100,7 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
--   Release 1.5.3
+-   Release 1.5.4
 
     -   **修复**：修复特约商户进件提交申请单接口请求模型定义错误的问题。（[Gitee Issue #I45RRM](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I45RRM)）
 
