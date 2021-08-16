@@ -287,7 +287,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("owner")]
                         [System.Text.Json.Serialization.JsonPropertyName("owner")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.StringTypedBooleanConverter))]
                         public bool IsOwner { get; set; }
                     }
 
