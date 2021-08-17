@@ -318,6 +318,10 @@
 
     -   图片上传（营销专用）：`UploadMarketingMediaImage`
 
+    -   银行定向促活
+
+        -   导入定向用户协议号：`UploadMarketingBankPackagesTasks`
+
 -   资金应用
 
     -   分账
