@@ -273,6 +273,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             try
             {
                 XmlDocument xmlDoc = new XmlDocument();
+                xmlDoc.XmlResolver = null;
                 xmlDoc.LoadXml(xml);
 
                 XmlNode? xmlRoot = xmlDoc.FirstChild;
