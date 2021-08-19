@@ -58,5 +58,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         /// </summary>
         [System.Xml.Serialization.XmlElement("FailReason", IsNullable = true)]
         public string? TransferFailReason { get; set; }
+
+        /// <summary>
+        /// 获取或设置删除客户的操作来源。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("Source", IsNullable = true)]
+        public string? Source { get; set; }
     }
 }
