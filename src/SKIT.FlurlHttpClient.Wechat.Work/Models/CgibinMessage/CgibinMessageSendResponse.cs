@@ -34,5 +34,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [System.Text.Json.Serialization.JsonPropertyName("invalidtag")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.SeparatedByVBarInt32ArrayConverter))]
         public int[]? InvalidTagIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置消息 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("msgid")]
+        [System.Text.Json.Serialization.JsonPropertyName("msgid")]
+        public string MessageId { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置更新卡片所需要消费的 Code。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("response_code")]
+        [System.Text.Json.Serialization.JsonPropertyName("response_code")]
+        public string? ResponseCode { get; set; }
     }
 }

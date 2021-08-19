@@ -145,6 +145,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("btntxt")]
                         [System.Text.Json.Serialization.JsonPropertyName("btntxt")]
                         public string? ButtonText { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置跳转的小程序 AppId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("appid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                        public string? MiniProgramAppId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置跳转的小程序页面路径。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pagepath")]
+                        [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
+                        public string? MiniProgramPagePath { get; set; }
                     }
                 }
 
@@ -368,48 +382,404 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public IList<Types.Button> ButtonList { get; set; } = new List<Types.Button>();
             }
 
-            public class TemplateMessage
+            public class TemplateCardMessage
             {
                 public static class Types
                 {
-                    public class KeyValue
+                    public class Source
                     {
                         /// <summary>
-                        /// 获取或设置消息内容的 Key。
+                        /// 获取或设置来源图片的 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("icon_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("icon_url")]
+                        public string IconUrl { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置来源图片的描述。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("desc")]
+                        [System.Text.Json.Serialization.JsonPropertyName("desc")]
+                        public string? Description { get; set; }
+                    }
+
+                    public class MainTitle
+                    {
+                        /// <summary>
+                        /// 获取或设置标题。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                        public string Title { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置描述。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("desc")]
+                        [System.Text.Json.Serialization.JsonPropertyName("desc")]
+                        public string? Description { get; set; }
+                    }
+
+                    public class Image
+                    {
+                        /// <summary>
+                        /// 获取或设置图片 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("url")]
+                        public string Url { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置图片的宽高比。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("aspect_ratio")]
+                        [System.Text.Json.Serialization.JsonPropertyName("aspect_ratio")]
+                        public double? AspectRatio { get; set; }
+                    }
+
+                    public class EmphasisContent : MainTitle
+                    {
+                    }
+
+                    public class VerticalContent : MainTitle
+                    {
+                    }
+
+                    public class HorizontalContent
+                    {
+                        /// <summary>
+                        /// 获取或设置二级标题。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("keyname")]
+                        [System.Text.Json.Serialization.JsonPropertyName("keyname")]
+                        public string Key { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置二级文本。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("value")]
+                        [System.Text.Json.Serialization.JsonPropertyName("value")]
+                        public string Value { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置链接类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public int? Type { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置跳转链接。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("url")]
+                        public string? Url { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置附件的 MediaId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("media_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("media_id")]
+                        public string? MediaId { get; set; }
+                    }
+
+                    public class Action
+                    {
+                        /// <summary>
+                        /// 获取或设置跳转链接类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public int? Type { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置跳转链接样式的文案内容。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                        public string Title { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置跳转链接。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("url")]
+                        public string? Url { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置跳转小程序的 AppId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("appid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                        public string? MiniProgramAppId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置跳转小程序的路径。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pagepath")]
+                        [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
+                        public string? MiniProgramPagePath { get; set; }
+                    }
+
+                    public class Button
+                    {
+                        /// <summary>
+                        /// 获取或设置按钮 Key 值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("key")]
                         [System.Text.Json.Serialization.JsonPropertyName("key")]
                         public string Key { get; set; } = string.Empty;
 
                         /// <summary>
-                        /// 获取或设置消息内容的值。
+                        /// 获取或设置按钮文案。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("value")]
-                        [System.Text.Json.Serialization.JsonPropertyName("value")]
-                        public string Value { get; set; } = string.Empty;
+                        [Newtonsoft.Json.JsonProperty("text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("text")]
+                        public string Text { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置按钮样式类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("style")]
+                        [System.Text.Json.Serialization.JsonPropertyName("style")]
+                        public int? Style { get; set; }
+                    }
+
+                    public class Checkbox
+                    {
+                        public static class Types
+                        {
+                            public class Option
+                            {
+                                /// <summary>
+                                /// 获取或设置选项 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("id")]
+                                public string Id { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置选项文案描述。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("text")]
+                                [System.Text.Json.Serialization.JsonPropertyName("text")]
+                                public string Text { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置是否要默认选中。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("is_checked")]
+                                [System.Text.Json.Serialization.JsonPropertyName("is_checked")]
+                                public bool IsChecked { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置是否可以选择。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("disable")]
+                                [System.Text.Json.Serialization.JsonPropertyName("disable")]
+                                public bool? IsDisabled { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置选择题 Key 值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("question_key")]
+                        [System.Text.Json.Serialization.JsonPropertyName("question_key")]
+                        public string QuestionKey { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置选择题模式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("mode")]
+                        [System.Text.Json.Serialization.JsonPropertyName("mode")]
+                        public int? Mode { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置选项列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("option_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("option_list")]
+                        public IList<Types.Option> OptionList { get; set; } = new List<Types.Option>();
+
+                        /// <summary>
+                        /// 获取或设置是否可以选择。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("disable")]
+                        [System.Text.Json.Serialization.JsonPropertyName("disable")]
+                        public bool? IsDisabled { get; set; }
+                    }
+
+                    public class Select
+                    {
+                        public static class Types
+                        {
+                            public class Option
+                            {
+                                /// <summary>
+                                /// 获取或设置选项 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("id")]
+                                public string Id { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置选项文案描述。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("text")]
+                                [System.Text.Json.Serialization.JsonPropertyName("text")]
+                                public string Text { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置是否可以选择。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("disable")]
+                                [System.Text.Json.Serialization.JsonPropertyName("disable")]
+                                public bool? IsDisabled { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置选择题 Key 值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("question_key")]
+                        [System.Text.Json.Serialization.JsonPropertyName("question_key")]
+                        public string QuestionKey { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置选择器标题。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                        public string Title { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置默认选定的选项 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("selected_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("selected_id")]
+                        public string? SelectedOptoinId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置选项列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("option_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("option_list")]
+                        public IList<Types.Option> OptionList { get; set; } = new List<Types.Option>();
+
+                        /// <summary>
+                        /// 获取或设置是否可以选择。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("disable")]
+                        [System.Text.Json.Serialization.JsonPropertyName("disable")]
+                        public bool? IsDisabled { get; set; }
                     }
                 }
 
                 /// <summary>
-                /// 获取或设置模板 ID。
+                /// 获取或设置模板卡片类型。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("template_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public string TemplateId { get; set; } = string.Empty;
+                [Newtonsoft.Json.JsonProperty("card_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("card_type")]
+                public string CardType { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置点击模板消息后的跳转链接。
+                /// 获取或设置图片样式信息。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("url")]
-                [System.Text.Json.Serialization.JsonPropertyName("url")]
-                public string Url { get; set; } = string.Empty;
+                [Newtonsoft.Json.JsonProperty("card_image")]
+                [System.Text.Json.Serialization.JsonPropertyName("card_image")]
+                public Types.Image? CardImage { get; set; }
 
                 /// <summary>
-                /// 获取或设置消息内容键值对。
+                /// 获取或设置卡片来源样式信息。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("content_item")]
-                [System.Text.Json.Serialization.JsonPropertyName("content_item")]
-                public IList<Types.KeyValue> ContentItemList { get; set; } = new List<Types.KeyValue>();
+                [Newtonsoft.Json.JsonProperty("source")]
+                [System.Text.Json.Serialization.JsonPropertyName("source")]
+                public Types.Source? Source { get; set; }
+
+                /// <summary>
+                /// 获取或设置一级标题信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("main_title")]
+                [System.Text.Json.Serialization.JsonPropertyName("main_title")]
+                public Types.MainTitle? MainTitle { get; set; }
+
+                /// <summary>
+                /// 获取或设置关键数据样式信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("emphasis_content")]
+                [System.Text.Json.Serialization.JsonPropertyName("emphasis_content")]
+                public Types.EmphasisContent? EmphasisContent { get; set; }
+
+                /// <summary>
+                /// 获取或设置二级普通文本。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_title_text")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_title_text")]
+                public string? SubTitleText { get; set; }
+
+                /// <summary>
+                /// 获取或设置二级垂直内容列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("vertical_content_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("vertical_content_list")]
+                public IList<Types.VerticalContent>? VerticalContentList { get; set; }
+
+                /// <summary>
+                /// 获取或设置二级文本列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("horizontal_content_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("horizontal_content_list")]
+                public IList<Types.HorizontalContent>? HorizontalContentList { get; set; }
+
+                /// <summary>
+                /// 获取或设置跳转指引样式的列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("jump_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("jump_list")]
+                public IList<Types.Action>? JumpActionList { get; set; }
+
+                /// <summary>
+                /// 获取或设置卡片的点击跳转事件信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("card_action")]
+                [System.Text.Json.Serialization.JsonPropertyName("card_action")]
+                public Types.Action? CardAction { get; set; }
+
+                /// <summary>
+                /// 获取或设置任务 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("task_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("task_id")]
+                public string? TaskId { get; set; }
+
+                /// <summary>
+                /// 获取或设置按钮列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("button_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("button_list")]
+                public IList<Types.Button>? ButtonList { get; set; }
+
+                /// <summary>
+                /// 获取或设置选择题信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("checkbox")]
+                [System.Text.Json.Serialization.JsonPropertyName("checkbox")]
+                public Types.Checkbox? Checkbox { get; set; }
+
+                /// <summary>
+                /// 获取或设置选择器列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("select_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("select_list")]
+                public IList<Types.Select>? SelectList { get; set; }
+
+                /// <summary>
+                /// 获取或设置提交按钮列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("submit_button")]
+                [System.Text.Json.Serialization.JsonPropertyName("submit_button")]
+                public Types.Button? SubmitButton { get; set; }
             }
         }
 
@@ -525,11 +895,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public Types.TaskCardMessage? MessageContentForTaskCard { get; set; }
 
         /// <summary>
-        /// 获取或设置模板消息信息。
+        /// 获取或设置模板卡片信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("template_msg")]
-        [System.Text.Json.Serialization.JsonPropertyName("template_msg")]
-        public Types.TemplateMessage? MessageContentForTemplate { get; set; }
+        [Newtonsoft.Json.JsonProperty("template_card")]
+        [System.Text.Json.Serialization.JsonPropertyName("template_card")]
+        public Types.TemplateCardMessage? MessageContentForTemplateCard { get; set; }
 
         /// <summary>
         /// 获取或设置应用 ID。如果不指定将使用构造 <see cref="WechatWorkClient"/> 时的 <see cref="WechatWorkClientOptions.AgentId"/> 参数。

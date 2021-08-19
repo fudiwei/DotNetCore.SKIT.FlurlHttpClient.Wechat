@@ -59,6 +59,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/message/update_template_card 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94888 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94888 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMessageUpdateTemplateCardResponse> ExecuteCgibinMessageUpdateTemplateCardAsync(this WechatWorkClient client, Models.CgibinMessageUpdateTemplateCardRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (!request.AgentId.HasValue)
+                request.AgentId = client.Credentials.AgentId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "message", "update_template_card");
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMessageUpdateTemplateCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/message/get_statistics 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92369 </para>
         /// </summary>
@@ -75,6 +98,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "message", "get_statistics");
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMessageGetStatisticsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/message/recall 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94867 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94867 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMessageRecallResponse> ExecuteCgibinMessageRecallAsync(this WechatWorkClient client, Models.CgibinMessageRecallRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "message", "recall");
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMessageRecallResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
