@@ -64,6 +64,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("msg_total")]
                         [System.Text.Json.Serialization.JsonPropertyName("msg_total")]
                         public int MessageTotalCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置截至当天新增迁移群数（仅教培行业返回）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("migrate_trainee_chat_cnt")]
+                        [System.Text.Json.Serialization.JsonPropertyName("migrate_trainee_chat_cnt")]
+                        public int? MigrateTraineeChatCount { get; set; }
                     }
                 }
 
