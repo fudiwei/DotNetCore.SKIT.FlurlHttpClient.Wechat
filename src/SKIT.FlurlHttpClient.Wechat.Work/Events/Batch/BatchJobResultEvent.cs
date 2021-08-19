@@ -7,6 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>表示 EVENT.batch_job_result 事件的数据。</para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90973 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90240 </para>
+    /// <para>REF; https://open.work.weixin.qq.com/api/doc/90000/90135/94946 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91135 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90376 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91167 </para>
