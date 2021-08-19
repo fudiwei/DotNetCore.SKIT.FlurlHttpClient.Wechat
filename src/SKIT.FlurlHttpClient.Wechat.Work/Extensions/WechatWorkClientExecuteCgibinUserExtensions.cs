@@ -354,5 +354,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinUserCheckMemberAuthResponse>(flurlReq, cancellationToken: cancellationToken);
         }
         #endregion
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/user/list_selected_ticket_user 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90001/90143/94894 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinUserListSelectedTicketUserResponse> ExecuteCgibinUserListSelectedTicketUserAsync(this WechatWorkClient client, Models.CgibinUserListSelectedTicketUserRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "user", "list_selected_ticket_user")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("selected_ticket", request.SelectedTicket);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserListSelectedTicketUserResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
     }
 }
