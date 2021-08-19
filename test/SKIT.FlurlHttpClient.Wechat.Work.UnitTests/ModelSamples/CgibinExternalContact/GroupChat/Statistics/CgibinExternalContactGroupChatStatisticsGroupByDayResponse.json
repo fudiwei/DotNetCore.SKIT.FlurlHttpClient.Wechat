@@ -11,7 +11,8 @@
                 "new_member_cnt": 0,
                 "member_total": 6,
                 "member_has_msg": 0,
-                "msg_total": 0
+                "msg_total": 0,
+                "migrate_trainee_chat_cnt": 3
             }
         },
         {
@@ -23,7 +24,8 @@
                 "new_member_cnt": 0,
                 "member_total": 6,
                 "member_has_msg": 0,
-                "msg_total": 0
+                "msg_total": 0,
+                "migrate_trainee_chat_cnt": 3
             }
         }
     ]
