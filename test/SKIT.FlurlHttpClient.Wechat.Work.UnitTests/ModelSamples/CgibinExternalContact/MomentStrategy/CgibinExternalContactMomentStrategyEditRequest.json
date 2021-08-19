@@ -1,0 +1,32 @@
+﻿{
+    "strategy_id": 1,
+    "strategy_name": "NAME",
+    "admin_list": [
+        "zhangsan",
+        "lisi"
+    ],
+    "privilege": {
+        "view_moment_list": true,
+        "send_moment": true
+    },
+    "range_add": [
+        {
+            "type": 1,
+            "userid": "zhangsan"
+        },
+        {
+            "type": 2,
+            "partyid": 1
+        }
+    ],
+    "range_del": [
+        {
+            "type": 1,
+            "userid": "lisi"
+        },
+        {
+            "type": 2,
+            "partyid": 2
+        }
+    ]
+}

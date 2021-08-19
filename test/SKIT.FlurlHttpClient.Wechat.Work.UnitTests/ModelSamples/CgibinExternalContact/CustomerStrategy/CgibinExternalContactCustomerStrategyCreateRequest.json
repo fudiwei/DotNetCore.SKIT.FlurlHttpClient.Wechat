@@ -1,0 +1,39 @@
+﻿{
+    "parent_id": 0,
+    "strategy_name": "NAME",
+    "admin_list": [
+        "zhangsan",
+        "lisi"
+    ],
+    "privilege": {
+        "view_customer_list": true,
+        "view_customer_data": true,
+        "view_room_list": true,
+        "contact_me": true,
+        "join_room": true,
+        "share_customer": false,
+        "oper_resign_customer": true,
+        "send_customer_msg": true,
+        "edit_welcome_msg": true,
+        "view_behavior_data": true,
+        "view_room_data": true,
+        "send_group_msg": true,
+        "room_deduplication": true,
+        "rapid_reply": true,
+        "onjob_customer_transfer": true,
+        "edit_anti_spam_rule": true,
+        "export_customer_list": true,
+        "export_customer_data": true,
+        "export_customer_group_list": true
+    },
+    "range": [
+        {
+            "type": 1,
+            "userid": "zhangsan"
+        },
+        {
+            "type": 2,
+            "partyid": 1
+        }
+    ]
+}

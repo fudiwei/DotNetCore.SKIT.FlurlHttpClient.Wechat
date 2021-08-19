@@ -1,0 +1,15 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "range": [
+        {
+            "type": 1,
+            "userid": "zhangsan"
+        },
+        {
+            "type": 2,
+            "partyid": 1
+        }
+    ],
+    "next_cursor": "NEXT_CURSOR"
+}

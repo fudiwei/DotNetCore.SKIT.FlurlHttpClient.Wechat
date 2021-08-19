@@ -1,0 +1,8 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "operator_open_userid": "xxx",
+    "open_userid_list": [ "xxxx", "xxxx" ],
+    "unauth_open_userid_list": [ "yyyy", "yyy" ],
+    "total": 10
+}

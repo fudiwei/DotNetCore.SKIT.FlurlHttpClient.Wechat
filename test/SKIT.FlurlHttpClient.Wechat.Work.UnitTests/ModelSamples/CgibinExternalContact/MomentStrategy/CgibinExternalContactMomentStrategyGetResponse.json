@@ -1,0 +1,18 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "strategy": {
+        "strategy_id": 1,
+        "parent_id": 0,
+        "strategy_name": "NAME",
+        "create_time": 1557838797,
+        "admin_list": [
+            "zhangsan",
+            "lisi"
+        ],
+        "privilege": {
+            "view_moment_list": true,
+            "send_moment": true
+        }
+    }
+}
