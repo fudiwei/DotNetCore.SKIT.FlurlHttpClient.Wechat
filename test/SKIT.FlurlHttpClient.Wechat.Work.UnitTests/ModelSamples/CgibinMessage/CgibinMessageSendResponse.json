@@ -3,5 +3,7 @@
     "errmsg": "ok",
     "invaliduser": "userid1|userid2",
     "invalidparty": "1|2",
-    "invalidtag": "3|4"
+    "invalidtag": "3|4",
+    "msgid": "xxxx",
+    "response_code": "xyzxyz"
 }
