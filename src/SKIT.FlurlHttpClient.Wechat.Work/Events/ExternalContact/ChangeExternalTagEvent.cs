@@ -32,12 +32,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         /// 获取或设置 ID 类型。
         /// </summary>
         [System.Xml.Serialization.XmlElement("TagType", IsNullable = true)]
-        public string IdType { get; set; } = default!;
+        public string? IdType { get; set; }
 
         /// <summary>
         /// 获取或设置企业标签或标签分组 ID。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Id", IsNullable = true)]
         public string? TagOrGroupId { get; set; }
+
+        /// <summary>
+        /// 获取或设置规则组 ID。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("StrategyId", IsNullable = true)]
+        public string? StrategyId { get; set; }
     }
 }
