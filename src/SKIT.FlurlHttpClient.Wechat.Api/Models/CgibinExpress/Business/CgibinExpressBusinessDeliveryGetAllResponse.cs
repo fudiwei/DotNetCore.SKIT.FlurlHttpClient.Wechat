@@ -50,18 +50,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// 获取或设置是否支持散单。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("can_use_cash")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("can_use_cash")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                 public bool? CanUseCash { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否支持查询面单余额。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("can_get_quota")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("can_get_quota")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                 public bool? CanUseQuota { get; set; }
 
                 /// <summary>

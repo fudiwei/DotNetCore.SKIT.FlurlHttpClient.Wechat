@@ -19,9 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置公众号的 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("same_admin")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("same_admin")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         public bool IsSameAdmin { get; set; }
     }
 }

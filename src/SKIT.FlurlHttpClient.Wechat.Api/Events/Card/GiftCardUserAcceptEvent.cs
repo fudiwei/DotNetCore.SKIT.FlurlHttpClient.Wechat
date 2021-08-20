@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsChatRoom")]
         [System.Text.Json.Serialization.JsonPropertyName("IsChatRoom")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsChatRoom")]
         public bool IsFromChatroom { get; set; }
     }

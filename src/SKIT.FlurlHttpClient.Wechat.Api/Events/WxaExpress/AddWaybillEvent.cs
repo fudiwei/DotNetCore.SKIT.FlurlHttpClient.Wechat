@@ -178,7 +178,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("UseInsured")]
                 [System.Text.Json.Serialization.JsonPropertyName("UseInsured")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                 [System.Xml.Serialization.XmlElement("UseInsured")]
                 public bool UseInsured { get; set; }
 

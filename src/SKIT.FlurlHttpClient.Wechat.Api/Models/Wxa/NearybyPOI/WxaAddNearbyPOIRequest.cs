@@ -321,9 +321,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <i>（使用默认值即可，无需修改）</i>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_comm_nearby")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("is_comm_nearby")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         public bool IsCommonNearby { get; set; } = true;
 
         /// <summary>

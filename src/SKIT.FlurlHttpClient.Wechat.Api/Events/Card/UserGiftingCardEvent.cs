@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsReturnBack")]
         [System.Text.Json.Serialization.JsonPropertyName("IsReturnBack")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsReturnBack")]
         public bool IsReturnBack { get; set; }
 
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsChatRoom")]
         [System.Text.Json.Serialization.JsonPropertyName("IsChatRoom")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsChatRoom")]
         public bool IsFromChatroom { get; set; }
     }

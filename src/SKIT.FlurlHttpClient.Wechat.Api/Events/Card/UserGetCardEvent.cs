@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsGiveByFriend")]
         [System.Text.Json.Serialization.JsonPropertyName("IsGiveByFriend")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsGiveByFriend")]
         public bool IsTransferedByFriend { get; set; }
 
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsRestoreMemberCard")]
         [System.Text.Json.Serialization.JsonPropertyName("IsRestoreMemberCard")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsRestoreMemberCard", IsNullable = true)]
         public bool? IsRestoreMemberCard { get; set; }
 
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsRecommendByFriend")]
         [System.Text.Json.Serialization.JsonPropertyName("IsRecommendByFriend")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsRecommendByFriend", IsNullable = true)]
         public bool? IsRecommendByFriend { get; set; }
 
