@@ -81,9 +81,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否通知成员将这条入群欢迎语应用到客户群中。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("notify")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? RequireNotify { get; set; }
 
         /// <summary>

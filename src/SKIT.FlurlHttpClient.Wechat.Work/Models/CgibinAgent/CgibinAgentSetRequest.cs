@@ -40,18 +40,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否上报用户地理位置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("report_location_flag")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("report_location_flag")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? IsReportLocation { get; set; }
 
         /// <summary>
         /// 获取或设置是否上报用户进入事件。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("isreportenter")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("isreportenter")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? IsReportEnter { get; set; }
 
         /// <summary>

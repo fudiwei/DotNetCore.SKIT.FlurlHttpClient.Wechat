@@ -76,9 +76,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否发送给应用可见范围内的所有人，包括互联企业的成员。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("toall")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("toall")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? IsToAll { get; set; }
 
         /// <summary>
@@ -169,9 +169,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否是保密消息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("safe")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("safe")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? IsSafe { get; set; }
     }
 }

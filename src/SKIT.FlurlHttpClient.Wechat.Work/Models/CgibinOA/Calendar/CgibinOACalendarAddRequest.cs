@@ -27,9 +27,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置共享者对日历是否只读权限。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("readonly")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                         public bool? IsReadonly { get; set; }
                     }
                 }
@@ -45,18 +45,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// 获取或设置组织者对日历是否只读权限。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("readonly")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                 public bool? IsReadonly { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否将该日历设置为组织者的默认日历。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("set_as_default")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("set_as_default")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                 public bool? IsDefault { get; set; }
 
                 /// <summary>

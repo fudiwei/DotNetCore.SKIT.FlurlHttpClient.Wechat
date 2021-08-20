@@ -62,9 +62,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置是否评论。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_comment")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("is_comment")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                         public bool IsComment { get; set; }
                     }
 
@@ -102,9 +102,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置是否评论。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_comment")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("is_comment")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                         public bool IsComment { get; set; }
                     }
                 }
@@ -136,9 +136,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置翻页是否结束。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ending")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("ending")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         public bool IsEnding { get; set; }
 
         /// <summary>

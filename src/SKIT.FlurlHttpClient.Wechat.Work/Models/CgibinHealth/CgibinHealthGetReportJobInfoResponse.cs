@@ -88,9 +88,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置是否必填。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_required")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("is_required")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                         public bool IsRequired { get; set; }
 
                         /// <summary>
@@ -155,9 +155,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// 获取或设置非工作日是否需要上报。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("skip_weekend")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("skip_weekend")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                 public bool IsSkipWeekend { get; set; }
 
                 /// <summary>

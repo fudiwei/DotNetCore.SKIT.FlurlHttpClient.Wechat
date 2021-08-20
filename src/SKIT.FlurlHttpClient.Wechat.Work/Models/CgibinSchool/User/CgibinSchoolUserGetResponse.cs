@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置是否关注了“学校通知”。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_subscribe")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("is_subscribe")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                         public bool IsSubscribe { get; set; }
 
                         /// <summary>
@@ -138,9 +138,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// 获取或设置是否关注了“学校通知”。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_subscribe")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_subscribe")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                 public bool IsSubscribe { get; set; }
 
                 /// <summary>

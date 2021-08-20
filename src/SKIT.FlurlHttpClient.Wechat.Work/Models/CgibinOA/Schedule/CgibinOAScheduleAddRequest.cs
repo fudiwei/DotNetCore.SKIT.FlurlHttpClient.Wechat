@@ -30,9 +30,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置是否需要提醒。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_remind")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("is_remind")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                         public bool? IsRemind { get; set; }
 
                         /// <summary>
@@ -53,9 +53,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置是否重复日程。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_repeat")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("is_repeat")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                         public bool? IsRepeat { get; set; }
 
                         /// <summary>
@@ -76,9 +76,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置是否自定义重复。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_custom_repeat")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("is_custom_repeat")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                         public bool? IsCustomRepeat { get; set; }
 
                         /// <summary>

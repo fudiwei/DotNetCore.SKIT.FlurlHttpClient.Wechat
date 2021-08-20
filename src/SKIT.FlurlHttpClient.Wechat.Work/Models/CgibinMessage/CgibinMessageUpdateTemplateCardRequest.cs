@@ -70,9 +70,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否更新整个任务接收人员。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("atall")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("atall")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? IsAtAll { get; set; }
 
         /// <summary>

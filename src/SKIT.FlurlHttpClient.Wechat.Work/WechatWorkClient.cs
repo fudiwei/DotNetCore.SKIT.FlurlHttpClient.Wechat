@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     /// <summary>
     /// 一个企业微信 API HTTP 客户端。
     /// </summary>
-    public class WechatWorkClient : WechatClientBase
+    public class WechatWorkClient : CommonClientBase, IWechatClient
     {
         /// <summary>
         /// 获取当前客户端使用的企业微信凭证。

@@ -12,9 +12,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否通话。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("istalked")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("istalked")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         public bool IsTalked { get; set; }
 
         /// <summary>

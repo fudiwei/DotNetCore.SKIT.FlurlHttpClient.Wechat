@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             [Newtonsoft.Json.JsonProperty("TimeStamp")]
             [System.Text.Json.Serialization.JsonPropertyName("TimeStamp")]
-            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedStringConverter))]
+            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
             public string Timestamp { get; set; } = default!;
 
             [Newtonsoft.Json.JsonProperty("Nonce")]

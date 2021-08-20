@@ -919,27 +919,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否是保密消息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("safe")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("safe")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? IsSafe { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启 ID 转译。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enable_id_trans")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("enable_id_trans")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? EnableIdTransform { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启重复消息检查。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enable_duplicate_check")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("enable_duplicate_check")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? EnableDuplicateCheck { get; set; }
 
         /// <summary>

@@ -117,9 +117,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// 获取或设置是否关注了“学校通知”。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_subscribe")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_subscribe")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                 public bool? IsSubscribe { get; set; }
 
                 /// <summary>

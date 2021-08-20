@@ -659,7 +659,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("commentid")]
                         [System.Text.Json.Serialization.JsonPropertyName("commentid")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedStringConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
                         public string CommentId { get; set; } = default!;
 
                         /// <summary>

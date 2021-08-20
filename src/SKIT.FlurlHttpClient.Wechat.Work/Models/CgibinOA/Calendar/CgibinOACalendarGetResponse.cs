@@ -27,9 +27,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置共享者对日历是否只读权限。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("readonly")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                         public bool IsReadonly { get; set; }
                     }
                 }
@@ -52,9 +52,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// 获取或设置组织者对日历是否只读权限。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("readonly")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                 public bool IsReadonly { get; set; }
 
                 /// <summary>

@@ -19,9 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否保留关联日程。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("keep_schedule")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumberTypedBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("keep_schedule")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         public bool? IsKeepSchedule { get; set; }
     }
 }

@@ -173,7 +173,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ThirdNo")]
                 [System.Text.Json.Serialization.JsonPropertyName("ThirdNo")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedStringConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
                 public string ThirdPartyApprovalNumber { get; set; } = default!;
 
                 /// <summary>
