@@ -6,6 +6,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat 更新日志</summary>
 
+-   Release 1.1.0
+
+    -   **变更**：引入 SKIT.FlurlHttpClient.Common 依赖，并废弃相关公共组件。
+
 -   Release 1.0.3
 
     -   **修复**：显式依赖 `System.Text.Encodings.Web`，修复部分场景下程序集加载问题。（[Gitee Issue #I42V13](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I42V13)）
@@ -29,6 +33,12 @@
 <details>
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
+
+-   Release 1.5.0
+
+    -   **变更**：升级核心库。
+
+    -   **修复**：修复潜在的 XXE 漏洞风险。
 
 -   Release 1.4.1
 
@@ -99,6 +109,10 @@
 <details>
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
+
+-   Release 1.7.0
+
+    -   **变更**：升级核心库。
 
 -   Release 1.6.0
 
@@ -177,6 +191,30 @@
 <details>
 
 <summary>SKIT.FlurlHttpClient.Wechat.Work 更新日志</summary>
+
+-   Release 1.3.0
+
+    -   **新增**：新增通讯录异步导出相关接口。
+
+    -   **新增**：新增获取选人 Ticket 对应的用户相关接口。
+
+    -   **新增**：新增客户联系规则组相关接口。
+
+    -   **新增**：新增客户朋友圈规则组相关接口。
+
+    -   **新增**：新增获取学校应用可使用的家长范围相关接口。
+
+    -   **新增**：随官方更新获取群聊数据统计数据接口相关字段。
+
+    -   **新增**：随官方更新企业通讯录接口相关字段。
+
+    -   **新增**：随官方更新客户标签回调通知事件回调模型。
+
+    -   **新增**：随官方更新企业客户回调通知事件回调模型。
+
+    -   **变更**：升级核心库。
+
+    -   **修复**：修复潜在的 XXE 漏洞风险。
 
 -   Release 1.2.3
 
