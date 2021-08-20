@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    internal class CommonWithoutSeparatorsNullableDateTimeOffsetConverter : JsonConverter<DateTimeOffset?>
+    internal class PureDigitalTextNullableDateTimeOffsetConverter : JsonConverter<DateTimeOffset?>
     {
-        private const string DATETIME_FORMAT = Newtonsoft.Json.Converters.CommonWithoutSeparatorsNullableDateTimeOffsetConverter.DATETIME_FORMAT;
+        private const string DATETIME_FORMAT = Newtonsoft.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter.DATETIME_FORMAT;
 
         public override DateTimeOffset? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     /// <summary>
     /// 一个微信支付 API HTTP 客户端。
     /// </summary>
-    public partial class WechatTenpayClient : WechatClientBase
+    public class WechatTenpayClient : CommonClientBase, IWechatClient
     {
         /// <summary>
         /// 获取当前客户端使用的微信商户平台凭证。

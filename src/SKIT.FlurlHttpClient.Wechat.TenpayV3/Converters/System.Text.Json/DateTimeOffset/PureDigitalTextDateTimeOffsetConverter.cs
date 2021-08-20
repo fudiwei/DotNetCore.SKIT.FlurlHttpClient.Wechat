@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    internal class CommonWithoutSeparatorsDateTimeOffsetConverter : JsonConverter<DateTimeOffset>
+    internal class PureDigitalTextDateTimeOffsetConverter : JsonConverter<DateTimeOffset>
     {
-        private readonly JsonConverter<DateTimeOffset?> _converter = new CommonWithoutSeparatorsNullableDateTimeOffsetConverter();
+        private readonly JsonConverter<DateTimeOffset?> _converter = new PureDigitalTextNullableDateTimeOffsetConverter();
 
         public override DateTimeOffset Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

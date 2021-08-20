@@ -1,13 +1,13 @@
 ﻿using System;
-using System.Globalization;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace Newtonsoft.Json.Converters
 {
-    internal class CommonWithoutSeparatorsDateTimeOffsetConverter : JsonConverter<DateTimeOffset>
+    internal class YesOrNoBooleanConverter : JsonConverter<bool>
     {
-        private readonly JsonConverter<DateTimeOffset?> _converter = new CommonWithoutSeparatorsNullableDateTimeOffsetConverter();
+        private readonly JsonConverter<bool?> _converter = new YesOrNoNullableBooleanConverter();
 
         public override bool CanRead
         {
@@ -19,12 +19,12 @@ namespace Newtonsoft.Json.Converters
             get { return true; }
         }
 
-        public override DateTimeOffset ReadJson(JsonReader reader, Type objectType, DateTimeOffset existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override bool ReadJson(JsonReader reader, Type objectType, bool existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             return _converter.ReadJson(reader, objectType, existingValue, hasExistingValue, serializer) ?? default;
         }
 
-        public override void WriteJson(JsonWriter writer, DateTimeOffset value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, bool value, JsonSerializer serializer)
         {
             _converter.WriteJson(writer, value, serializer);
         }

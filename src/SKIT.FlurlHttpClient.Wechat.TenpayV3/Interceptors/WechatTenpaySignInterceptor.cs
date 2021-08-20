@@ -7,7 +7,7 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
 {
-    internal class WechatTenpaySignInterceptor : WechatHttpCallInterceptor
+    internal class WechatTenpaySignInterceptor : FlurlHttpCallInterceptor
     {
         private readonly string _scheme;
         private readonly string _mchId;

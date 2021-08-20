@@ -29,17 +29,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
             }
         }
 
-        internal static class Converters
-        {
-            internal class NewtonsoftJsonYesOrNoConverter : Models.CreateVehicleTransactionParkingRequest.Converters.NewtonsoftJsonYesOrNoConverter
-            {
-            }
-
-            internal class SystemTextJsonYesOrNoConverter : Models.CreateVehicleTransactionParkingRequest.Converters.SystemTextJsonYesOrNoConverter
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
@@ -121,9 +110,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// 获取或设置用户是否还款。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_repaid")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonYesOrNoConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.YesOrNoNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("user_repaid")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonYesOrNoConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.YesOrNoNullableBooleanConverter))]
         public bool? IsUserRepaid { get; set; }
 
         /// <summary>

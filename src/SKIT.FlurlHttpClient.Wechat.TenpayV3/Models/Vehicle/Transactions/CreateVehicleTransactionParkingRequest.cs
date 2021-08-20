@@ -92,95 +92,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             }
         }
 
-        internal static class Converters
-        {
-            internal class NewtonsoftJsonYesOrNoConverter : Newtonsoft.Json.JsonConverter<bool?>
-            {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return true; }
-                }
-
-                public override bool? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, bool? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.Boolean)
-                    {
-                        return serializer.Deserialize<bool>(reader);
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
-                    {
-                        string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
-                            return existingValue;
-
-                        if ("Y".Equals(value))
-                            return true;
-                        else if ("N".Equals(value))
-                            return false;
-                    }
-
-                    throw new Newtonsoft.Json.JsonReaderException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, bool? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (value.HasValue)
-                        writer.WriteValue(value.Value ? "Y" : "N");
-                    else
-                        writer.WriteNull();
-                }
-            }
-
-            internal class SystemTextJsonYesOrNoConverter : System.Text.Json.Serialization.JsonConverter<bool?>
-            {
-                public override bool? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return null;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.True)
-                    {
-                        return true;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.False)
-                    {
-                        return false;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
-                    {
-                        string? value = reader.GetString();
-                        if (value == null)
-                            return null;
-
-                        if ("Y".Equals(value))
-                            return true;
-                        else if ("N".Equals(value))
-                            return false;
-                    }
-
-                    throw new System.Text.Json.JsonException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, bool? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (value.HasValue)
-                        writer.WriteStringValue(value.Value ? "Y" : "N");
-                    else
-                        writer.WriteNullValue();
-                }
-            }
-        }
-
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
@@ -248,9 +159,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// 获取或设置是否分账。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("profit_sharing")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonYesOrNoConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.YesOrNoNullableBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("profit_sharing")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonYesOrNoConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.YesOrNoNullableBooleanConverter))]
         public bool? IsProfitSharing { get; set; }
 
         /// <summary>
