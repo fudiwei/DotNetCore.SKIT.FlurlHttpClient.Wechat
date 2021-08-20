@@ -5,7 +5,7 @@
 拦截器是一种可以监视或重写请求调用的强大机制。下面给出一个用于记录传出请求和传入响应的拦截器简单示例：
 
 ```csharp
-public class LoggingInterceptor : WechatHttpCallInterceptor
+public class LoggingInterceptor : FlurlHttpCallInterceptor
 {
     private readonly ILogger _logger;
 
