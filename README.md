@@ -1,4 +1,4 @@
-﻿# SKIT.HttpClient.Wechat
+﻿# SKIT.FlurlHttpClient.Wechat
 
 [![Gitee Stars](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/badge/star.svg)](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
 [![Gitee Forks](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/badge/fork.svg)](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
