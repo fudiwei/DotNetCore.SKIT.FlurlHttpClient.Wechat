@@ -680,5 +680,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinSchoolGetTradeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region Agent
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/school/agent/get_allow_scope 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94895 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSchoolAgentGetAllowScopeResponse> ExecuteCgibinSchoolAgentGetAllowScopeAsync(this WechatWorkClient client, Models.CgibinSchoolAgentGetAllowScopeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "school", "agent", "get_allow_scope")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolAgentGetAllowScopeResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
