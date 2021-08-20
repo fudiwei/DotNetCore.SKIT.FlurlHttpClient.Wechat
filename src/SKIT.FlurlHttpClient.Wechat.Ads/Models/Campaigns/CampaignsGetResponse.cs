@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("budget_reach_date")]
                         [System.Text.Json.Serialization.JsonPropertyName("budget_reach_date")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumberTypedStringConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
                         public string? BudgetReachDateString { get; set; }
 
                         /// <summary>

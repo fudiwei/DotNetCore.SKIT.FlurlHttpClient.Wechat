@@ -7,7 +7,7 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Interceptors
 {
-    internal class WechatAdsAgencyTokenInterceptor : WechatHttpCallInterceptor
+    internal class WechatAdsAgencyTokenInterceptor : FlurlHttpCallInterceptor
     {
         private readonly string _agencyId;
         private readonly string _agencyApiKey;

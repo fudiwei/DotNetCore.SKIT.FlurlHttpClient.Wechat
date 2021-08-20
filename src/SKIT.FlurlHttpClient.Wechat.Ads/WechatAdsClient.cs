@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
     /// <summary>
     /// 一个微信广告平台 API HTTP 客户端。
     /// </summary>
-    public class WechatAdsClient : WechatClientBase
+    public class WechatAdsClient : CommonClientBase, IWechatClient
     {
         /// <summary>
         /// 获取当前客户端使用的微信广告平台凭证。
