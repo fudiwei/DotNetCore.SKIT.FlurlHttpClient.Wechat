@@ -21,6 +21,7 @@ client.Configure(settings =>
 
 ```csharp
 using System.Text.Json;
+using SKIT.FlurlHttpClient;
 using SKIT.FlurlHttpClient.Wechat;
 
 client.Configure(settings =>
@@ -35,6 +36,7 @@ client.Configure(settings =>
 
 ```csharp
 using Newtonsoft.Json;
+using SKIT.FlurlHttpClient;
 using SKIT.FlurlHttpClient.Wechat;
 
 client.Configure(settings =>
