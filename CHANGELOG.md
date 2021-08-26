@@ -34,6 +34,12 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.6.0
+
+    -   **新增**：新增小程序发送订阅消息的接口。
+
+    -   **变更**：调整 `IXmlSerializable`、`IJsonSerializable` 接口定义。
+
 -   Release 1.5.0
 
     -   **变更**：升级核心库。
