@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.create_map_poi_audit_info 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Stores/WeChat_Shop_Miniprogram_Interface.html#11 </para>
     /// </summary>
-    public class CreateMapPOIAuditInfoEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable, WechatApiEvent.Types.IXmlSerializable
+    public class CreateMapPOIAuditInfoEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置审核单 ID。

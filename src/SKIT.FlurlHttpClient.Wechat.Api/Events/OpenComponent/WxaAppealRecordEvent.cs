@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.wxa_appeal_record 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/records/record_event.html </para>
     /// </summary>
-    public class WxaAppealRecordEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
+    public class WxaAppealRecordEvent : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Material
             {

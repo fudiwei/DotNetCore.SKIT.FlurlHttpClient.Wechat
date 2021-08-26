@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.transport_precreate_order 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/immediate-delivery/by-provider/immediateDelivery.onOrderPreAdd.html </para>
     /// </summary>
-    public class TransportPreCreateOrderEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable
+    public class TransportPreCreateOrderEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Sender : Models.CgibinExpressLocalBusinessOrderAddRequest.Types.Sender
             {

@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示被动回复语音消息的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html#2 </para>
     /// </summary>
-    public class VoiceMessageReply : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
+    public class VoiceMessageReply : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Voice
             {

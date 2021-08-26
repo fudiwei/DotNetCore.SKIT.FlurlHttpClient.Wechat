@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.card_merchant_check_result 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Third-party_developer_mode.html#2 </para>
     /// </summary>
-    public class CardMerchantCheckResultEvent : CardPassCheckEvent, WechatApiEvent.Types.IJsonSerializable, WechatApiEvent.Types.IXmlSerializable
+    public class CardMerchantCheckResultEvent : CardPassCheckEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置子商户 ID。

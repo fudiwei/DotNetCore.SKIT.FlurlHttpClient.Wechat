@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.update_waybill_status 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/immediate-delivery/by-business/immediateDelivery.onOrderStatus.html </para>
     /// </summary>
-    public class UpdateWaybillStatusEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable
+    public class UpdateWaybillStatusEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Agent
             {

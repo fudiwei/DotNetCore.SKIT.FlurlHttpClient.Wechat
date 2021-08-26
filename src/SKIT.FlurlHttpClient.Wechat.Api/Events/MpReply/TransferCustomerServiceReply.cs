@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示被动回复转发消息的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Forwarding_of_messages_to_service_center.html </para>
     /// </summary>
-    public class TransferCustomerServiceReply : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
+    public class TransferCustomerServiceReply : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Transfer
             {

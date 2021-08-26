@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     [Serializable]
     public class WechatApiEvent
     {
-        public static class Types
+        public static class Serialization
         {
             [Newtonsoft.Json.JsonObject]
             public interface IJsonSerializable

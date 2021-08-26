@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 INFO.notify_third_fastregisterbetaapp 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/beta_Mini_Programs/fastregister.html </para>
     /// </summary>
-    public class NotifyThirdFastRegisterBetaAppEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
+    public class NotifyThirdFastRegisterBetaAppEvent : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class InfoData
             {

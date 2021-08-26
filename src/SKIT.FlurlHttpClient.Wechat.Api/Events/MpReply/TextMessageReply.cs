@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示被动回复文本消息的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html#0 </para>
     /// </summary>
-    public class TextMessageReply : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
+    public class TextMessageReply : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置消息内容。

@@ -10,9 +10,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/sec-check/security.mediaCheckAsync.html </para>
     /// <para>https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/sec-check/security.mediaCheckAsync-v1.html </para>
     /// </summary>
-    public class WxaMediaCheckEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable
+    public class WxaMediaCheckEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Result
             {

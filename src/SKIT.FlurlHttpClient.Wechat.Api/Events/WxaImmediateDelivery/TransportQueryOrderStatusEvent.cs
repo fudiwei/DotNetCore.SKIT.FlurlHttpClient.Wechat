@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.transport_query_order_status 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/immediate-delivery/by-provider/immediateDelivery.onOrderQuery.html </para>
     /// </summary>
-    public class TransportQueryOrderStatusEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable
+    public class TransportQueryOrderStatusEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable
     {
         /// <summary>
         /// 获取或设置商家 ID。

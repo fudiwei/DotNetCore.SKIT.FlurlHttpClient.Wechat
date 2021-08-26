@@ -106,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
         /// <returns></returns>
         public static TEvent DeserializeEventFromJson<TEvent>(this WechatApiClient client, string callbackJson, bool safety = false)
-            where TEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable, new()
+            where TEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, new()
         {
             return InnerDeserializeEventFromJson<TEvent>(client, callbackJson, safety);
         }
@@ -132,7 +132,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="safety">是否是安全模式（即是否需要解密）。</param>
         /// <returns></returns>
         public static TEvent DeserializeEventFromXml<TEvent>(this WechatApiClient client, string callbackXml, bool safety = false)
-            where TEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable, new()
+            where TEvent : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable, new()
         {
             return InnerDeserializeEventFromXml<TEvent>(client, callbackXml, safety);
         }
@@ -158,7 +158,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="safety">是否是安全模式（即是否需要加密）。</param>
         /// <returns></returns>
         public static string SerializeEventToJson<TEvent>(this WechatApiClient client, TEvent callbackModel, bool safety = false)
-            where TEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable, new()
+            where TEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, new()
         {
             string json;
 
@@ -220,7 +220,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="safety">是否是安全模式（即是否需要加密）。</param>
         /// <returns></returns>
         public static string SerializeEventToXml<TEvent>(this WechatApiClient client, TEvent callbackModel, bool safety = false)
-            where TEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable, new()
+            where TEvent : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable, new()
         {
             string xml;
 

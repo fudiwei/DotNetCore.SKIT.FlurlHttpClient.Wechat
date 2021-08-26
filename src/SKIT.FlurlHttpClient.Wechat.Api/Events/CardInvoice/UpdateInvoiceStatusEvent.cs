@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/E_Invoice/Invoicing_Platform_API_List.html#7 </para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Nontax_Bill/API_list.html#3.6 </para>
     /// </summary>
-    public class UpdateInvoiceStatusEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable, WechatApiEvent.Types.IXmlSerializable
+    public class UpdateInvoiceStatusEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置发票或非税票据卡券模板编号。

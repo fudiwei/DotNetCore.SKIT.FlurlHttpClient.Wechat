@@ -7,9 +7,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示被动回复音乐消息的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Passive_user_reply_message.html#4 </para>
     /// </summary>
-    public class MusicMessageReply : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
+    public class MusicMessageReply : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Music
             {
