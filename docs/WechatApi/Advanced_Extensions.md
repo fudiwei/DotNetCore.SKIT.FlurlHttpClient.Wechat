@@ -42,7 +42,7 @@ public static class MyFakeClientExtensions
 
 ```csharp
 /* 继承 WechatApiEvent 实现自定义的 JSON 格式的回调通知事件 */
-public class MyFakeEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializable
+public class MyFakeEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable
 {
     [Newtonsoft.Json.JsonProperty("my_fake_props")]
     [System.Text.Json.Serialization.JsonPropertyName("my_fake_props")]
@@ -50,7 +50,7 @@ public class MyFakeEvent : WechatApiEvent, WechatApiEvent.Types.IJsonSerializabl
 }
 
 /* 继承 WechatApiEvent 实现自定义的 XML 格式的回调通知事件 */
-public class MyFakeEvent : WechatApiEvent, WechatApiEvent.Types.IXmlSerializable
+public class MyFakeEvent : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
 {
     [System.Xml.Serialization.XmlElement("my_fake_props")]
     public string MyFakeProps { get; set; }
