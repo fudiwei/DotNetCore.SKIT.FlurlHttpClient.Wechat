@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("hit_condition")]
         [System.Text.Json.Serialization.JsonPropertyName("hit_condition")]
-        public bool IsHinted { get; set; }
+        public bool IsHit { get; set; }
 
         /// <summary>
         /// 获取或设置命中关键字的说明描述。
