@@ -490,16 +490,19 @@ namespace SKIT.FlurlHttpClient.Wechat
                         // 如果是 GET 请求，检查是否包含 JSON 序列化字段
                         if ("GET".Equals(expectedRequestMethod, StringComparison.OrdinalIgnoreCase))
                         {
-                            if (new Regex("\\[Newtonsoft.Json.JsonProperty\\(\"[a-zA-Z0-9_]*\"\\)\\]").IsMatch(reqCodeSourceCode))
+                            if (!reqCodeSourceCode.Contains("/* @codestyle-disable") || !reqCodeSourceCode.Contains("no-jsonable-property-in-get"))
                             {
-                                lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型为简单请求、不应包含可 JSON 序列化字段。"));
-                                return false;
-                            }
+                                if (new Regex("\\[Newtonsoft.Json.JsonProperty\\(\"[a-zA-Z0-9_]*\"\\)\\]").IsMatch(reqCodeSourceCode))
+                                {
+                                    lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型为简单请求、不应包含可 JSON 序列化字段。"));
+                                    return false;
+                                }
 
-                            if (new Regex("\\[System.Text.Json.Serialization.JsonPropertyName\\(\"[a-zA-Z0-9_]*\"\\)\\]").IsMatch(reqCodeSourceCode))
-                            {
-                                lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型为简单请求、不应包含可 JSON 序列化字段。"));
-                                return false;
+                                if (new Regex("\\[System.Text.Json.Serialization.JsonPropertyName\\(\"[a-zA-Z0-9_]*\"\\)\\]").IsMatch(reqCodeSourceCode))
+                                {
+                                    lstError.Add(new Exception($"源代码 \"{reqCodeFileName}\" 下文档代码有误，请求模型为简单请求、不应包含可 JSON 序列化字段。"));
+                                    return false;
+                                }
                             }
                         }
 
