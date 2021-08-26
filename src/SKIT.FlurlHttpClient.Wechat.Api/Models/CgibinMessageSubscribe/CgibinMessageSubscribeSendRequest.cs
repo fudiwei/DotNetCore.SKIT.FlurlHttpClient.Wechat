@@ -4,29 +4,12 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/message/subscribe/bizsend 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/message/subscribe/send 接口的请求。</para>
     /// </summary>
-    public class CgibinMessageSubscribeBusinessSendRequest : WechatApiRequest
+    public class CgibinMessageSubscribeSendRequest : WechatApiRequest
     {
         public static class Types
         {
-            public class MiniProgram
-            {
-                /// <summary>
-                /// 获取或设置小程序 AppId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("appid")]
-                public string AppId { get; set; } = string.Empty;
-
-                /// <summary>
-                /// 获取或设置小程序页面路径。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("pagepath")]
-                [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
-                public string PagePath { get; set; } = string.Empty;
-            }
-
             public class DataItem
             {
                 /// <summary>
@@ -53,18 +36,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string TemplateId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置点击消息跳转的链接。
+        /// 获取或设置小程序页面路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page")]
         [System.Text.Json.Serialization.JsonPropertyName("page")]
-        public string? Page { get; set; }
+        public string? MiniProgramPagePath { get; set; }
 
         /// <summary>
-        /// 获取或设置点击消息跳转的小程序信息。
+        /// 获取或设置小程序类型。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("miniprogram")]
-        [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
-        public Types.MiniProgram? MiniProgram { get; set; }
+        [Newtonsoft.Json.JsonProperty("miniprogram_state")]
+        [System.Text.Json.Serialization.JsonPropertyName("miniprogram_state")]
+        public string? MiniProgramState { get; set; }
 
         /// <summary>
         /// 获取或设置消息正文。
@@ -72,5 +55,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
         public IDictionary<string, Types.DataItem> Data { get; set; } = new Dictionary<string, Types.DataItem>();
+
+        /// <summary>
+        /// 获取或设置进入小程序的语言类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("lang")]
+        [System.Text.Json.Serialization.JsonPropertyName("lang")]
+        public string? Language { get; set; }
     }
 }

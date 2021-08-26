@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
+/* @codestyle-disable no-jsonable-property-in-get */
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
