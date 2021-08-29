@@ -29,7 +29,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "get_provider_token");
-
             var requestData = new { corpid = client.Credentials.CorpId, provider_secret = client.Credentials.ProviderSecret };
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetProviderTokenResponse>(flurlReq, data: requestData, cancellationToken: cancellationToken);
         }
