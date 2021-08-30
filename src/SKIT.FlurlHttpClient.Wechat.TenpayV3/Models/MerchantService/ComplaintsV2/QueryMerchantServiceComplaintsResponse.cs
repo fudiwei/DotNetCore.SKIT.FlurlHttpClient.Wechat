@@ -14,28 +14,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class ComplaintOrder
+                    public class ComplaintOrder : GetMerchantServiceComplaintByComplaintIdResponse.Types.ComplaintOrder
                     {
-                        /// <summary>
-                        /// 获取或设置微信订单号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("transaction_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                        public string TransactionId { get; set; } = default!;
+                    }
 
-                        /// <summary>
-                        /// 获取或设置商户订单号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("out_trade_no")]
-                        [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-                        public string OutTradeNumber { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置订单金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                        public int Amount { get; set; }
+                    public class ComplaintMedia : GetMerchantServiceComplaintByComplaintIdResponse.Types.ComplaintMedia
+                    {
                     }
                 }
 
@@ -88,7 +72,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("complaint_order_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("complaint_order_info")]
-                public Types.ComplaintOrder[]? ComplaintOrderList { get; set; }
+                public Types.ComplaintOrder[] ComplaintOrderList { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置投诉资料列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("complaint_media_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("complaint_media_list")]
+                public Types.ComplaintMedia[] ComplaintMediaList { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置问题描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("problem_description")]
+                [System.Text.Json.Serialization.JsonPropertyName("problem_description")]
+                public string ProblemDescription { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置投诉单是否已全额退款。

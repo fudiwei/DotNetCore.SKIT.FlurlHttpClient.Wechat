@@ -12,6 +12,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         {
             public class NegotiationHistory
             {
+                public static class Types
+                {
+                    public class ComplaintMedia : GetMerchantServiceComplaintByComplaintIdResponse.Types.ComplaintMedia
+                    { 
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置操作流水号。
                 /// </summary>
@@ -55,6 +62,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("image_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("image_list")]
                 public string[]? ImageUrlList { get; set; }
+
+                /// <summary>
+                /// 获取或设置投诉资料列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("complaint_media_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("complaint_media_list")]
+                public Types.ComplaintMedia[]? ComplaintMediaList { get; set; }
             }
         }
 
