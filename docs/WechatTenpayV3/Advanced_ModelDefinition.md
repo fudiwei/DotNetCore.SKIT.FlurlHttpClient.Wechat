@@ -370,6 +370,8 @@
 
         -   商户上传反馈图片：`UploadMerchantServiceImage`
 
+        -   下载图片：`DownloadMerchantServiceImage`
+
 -   其他能力
 
     -   图片上传：`UploadMerchantMediaImage`
@@ -879,6 +881,8 @@
         -   反馈处理完成：`SetMerchantServiceComplaintComplete`
 
         -   商户上传反馈图片：`UploadMerchantServiceImage`
+
+        -   下载图片：`DownloadMerchantServiceImage`
 
 -   其他能力
 
