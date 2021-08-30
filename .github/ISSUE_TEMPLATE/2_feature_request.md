@@ -1,10 +1,9 @@
 ---
 name: 请求新功能
 about: 需要某些新功能，或对现有实现提出更好的建议。
-title: "[FEATURE] 请一句话描述此建议"
+title: '[FEATURE] 请一句话描述此建议'
 labels: enhancement
 assignees: ''
-
 ---
 
 > **请注意：不符合格式要求的 Issue 可能会被直接关闭。**
