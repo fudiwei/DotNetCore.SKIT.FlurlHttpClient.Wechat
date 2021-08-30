@@ -198,6 +198,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Work 更新日志</summary>
 
+-   Release 1.3.1
+
+    -   **修复**：修复获取服务商凭证接口请求模型定义错误。
+
 -   Release 1.3.0
 
     -   **新增**：新增通讯录异步导出相关接口。
