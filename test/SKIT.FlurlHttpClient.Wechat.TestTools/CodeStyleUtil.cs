@@ -373,7 +373,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         string actualMethod = sourceCode.Contains(".CreateRequest(request, new HttpMethod(\"") ?
                             sourceCode.Split(".CreateRequest(request, new HttpMethod(\"")[1].Split("\"")[0] :
                             sourceCode.Contains(".CreateRequest(request, HttpMethod.") ?
-                            sourceCode.Split(".CreateRequest(request, HttpMethod.")[1].Split(",")[0] :
+                            sourceCode.Split(".CreateRequest(request, HttpMethod.")[1].Split(",")[0].Split(")")[0] :
                             string.Empty;
                         if (!string.Equals(expectedMethod, actualMethod, StringComparison.OrdinalIgnoreCase))
                         {
@@ -490,7 +490,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         // 如果是 GET 请求，检查是否包含 JSON 序列化字段
                         if ("GET".Equals(expectedRequestMethod, StringComparison.OrdinalIgnoreCase))
                         {
-                            if (!reqCodeSourceCode.Contains("/* @codestyle-disable") || !reqCodeSourceCode.Contains("no-jsonable-property-in-get"))
+                            if (!(reqCodeSourceCode.Contains("/* @codestyle-disable") && reqCodeSourceCode.Contains("no-jsonable-property-in-get")))
                             {
                                 if (new Regex("\\[Newtonsoft.Json.JsonProperty\\(\"[a-zA-Z0-9_]*\"\\)\\]").IsMatch(reqCodeSourceCode))
                                 {

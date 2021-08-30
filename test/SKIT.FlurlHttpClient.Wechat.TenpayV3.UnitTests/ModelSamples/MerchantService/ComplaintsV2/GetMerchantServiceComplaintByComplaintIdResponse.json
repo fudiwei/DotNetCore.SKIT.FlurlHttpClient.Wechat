@@ -6,6 +6,14 @@
     "complaint_state": "PENDING",
     "payer_phone": "sGdNeTHMQGlxCWiUyHu6XNO9GCYln2Luv4HhwJzZBfcL12sB",
     "payer_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
+    "complaint_media_list": [
+        {
+            "media_type": "USER_COMPLAINT_IMAGE",
+            "media_url": [
+                "https://api.mch.weixin.qq.com/v3/merchant-service/images/xxxxx"
+            ]
+        }
+    ],
     "complaint_order_info": [
         {
             "transaction_id": "4200000404201909069117582536",
@@ -15,5 +23,6 @@
     ],
     "complaint_full_refunded": true,
     "incoming_user_response": true,
+    "problem_description": "不满意商家服务",
     "user_complaint_times": 1
 }
