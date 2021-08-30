@@ -6,7 +6,7 @@ labels: enhancement
 assignees: ''
 ---
 
-> **请注意：不符合格式要求的 Issue 可能会被直接关闭。**
+> **⚠⚠ 请注意：不符合格式要求的 Issue 可能会被直接关闭。**
 
 ---
 

@@ -6,7 +6,7 @@ labels: bug
 assignees: ''
 ---
 
-> **请注意：不符合格式要求的 PR 可能会被直接关闭。**
+> **⚠⚠ 请注意：不符合格式要求的 PR 可能会被直接关闭。**
 
 ---
 
@@ -15,9 +15,7 @@ assignees: ''
 在提交此 PR 之前，请确保：
 
 -   [ ] 检查新的代码是否遵循了本项目的现有代码格式和命名标准。
-
 -   [ ] 编写新的单元测试、并运行已有的单元测试来验证你的更改，所有功能和修复的错误都必须进行以验证它们是否有效。
-
 -   [ ] 规范 Commit Log。
 
 以上内容规范请参阅 [CONTRIBUTING](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/blob/main/CONTRIBUTING.md)。
