@@ -33,6 +33,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
                 public int Amount { get; set; }
             }
+
+            public class ComplaintMedia
+            {
+                /// <summary>
+                /// 获取或设置媒体文件业务类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("media_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("media_type")]
+                public string MediaType { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置媒体文件 URL 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("media_url")]
+                [System.Text.Json.Serialization.JsonPropertyName("media_url")]
+                public string[] MediaUrl { get; set; } = default!;
+            }
         }
 
         /// <summary>
@@ -91,7 +108,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("complaint_order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_order_info")]
-        public Types.ComplaintOrder[]? ComplaintOrderList { get; set; }
+        public Types.ComplaintOrder[] ComplaintOrderList { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置投诉资料列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("complaint_media_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("complaint_media_list")]
+        public Types.ComplaintMedia[] ComplaintMediaList { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置问题描述。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("problem_description")]
+        [System.Text.Json.Serialization.JsonPropertyName("problem_description")]
+        public string ProblemDescription { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置投诉单是否已全额退款。
