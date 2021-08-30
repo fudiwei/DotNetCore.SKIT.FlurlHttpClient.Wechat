@@ -95,8 +95,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// 获取或设置结算信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settle_info")]
-        [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
                 public Types.Settlement? Settlement { get; set; }
+
+                /// <summary>
+                /// 获取或设置订单优惠标记。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_tag")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_tag")]
+                public string? GoodsTag { get; set; }
             }
 
             public class Payer
@@ -105,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// 获取或设置用户唯一标识。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
-        [System.Text.Json.Serialization.JsonPropertyName("openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("openid")]
                 public string OpenId { get; set; } = string.Empty;
             }
 
