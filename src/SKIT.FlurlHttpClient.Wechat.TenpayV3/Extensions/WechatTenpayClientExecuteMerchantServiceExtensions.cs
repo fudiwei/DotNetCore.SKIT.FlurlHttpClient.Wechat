@@ -257,5 +257,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendRequestAsync<Models.UploadMerchantServiceImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /{download_url} 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_18.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_18.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DownloadMerchantServiceImageResponse> ExecuteDownloadMerchantServiceImageAsync(this WechatTenpayClient client, Models.DownloadMerchantServiceImageRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get);
+            flurlReq.Url = new Url(new Uri(request.DownloadUrl));
+
+            return await client.SendRequestWithJsonAsync<Models.DownloadMerchantServiceImageResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
     }
 }
