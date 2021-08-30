@@ -116,6 +116,12 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
+-   Release 1.8.0
+
+    -   **新增**：随官方更新消费者投诉接口相关字段。
+
+    -   **新增**：新增消费者投诉下载图片相关接口。
+
 -   Release 1.7.0
 
     -   **变更**：升级核心库。
@@ -200,7 +206,7 @@
 
 -   Release 1.3.1
 
-    -   **修复**：修复获取服务商凭证接口请求模型定义错误。
+    -   **修复**：修复获取服务商凭证接口请求模型定义错误。（[GitHub PR #5](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/5)）
 
 -   Release 1.3.0
 
