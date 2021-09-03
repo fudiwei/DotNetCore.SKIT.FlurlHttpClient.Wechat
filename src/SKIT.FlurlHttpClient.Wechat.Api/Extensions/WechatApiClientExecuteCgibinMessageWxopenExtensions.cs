@@ -12,6 +12,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     public static class WechatApiClientExecuteCgibinMessageWxopenExtensions
     {
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/message/wxopen/template/uniform_send 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/uniform-message/uniformMessage.send.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMessageWxopenTemplateUniformSendResponse> ExecuteCgibinMessageWxopenTemplateUniformSendAsync(this WechatApiClient client, Models.CgibinMessageWxopenTemplateUniformSendRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "message", "wxopen", "template", "uniform_send")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMessageWxopenTemplateUniformSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/message/wxopen/activityid/create 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/updatable-message/updatableMessage.createActivityId.html </para>
         /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/updatable-message/updatableMessage.createActivityId.html </para>
