@@ -35,6 +35,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetPayForOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/checkencryptedmsg 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/user-info/auth.checkEncryptedData.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/user-info/auth.checkEncryptedData.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessCheckEncryptedMessageResponse> ExecuteWxaBusinessCheckEncryptedMessageAsync(this WechatApiClient client, Models.WxaBusinessCheckEncryptedMessageRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "checkencryptedmsg")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessCheckEncryptedMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
         #region GameMatch
         /// <summary>
         /// <para>异步调用 [POST] /wxa/business/gamematch/creatematchrule 接口。</para>
