@@ -34,9 +34,17 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.7.0
+
+    -   **新增**：新增小程序检查加密信息是否由微信生成的接口。
+
+    -   **新增**：新增小程序发送统一消息的接口。（[GitHub Issue #6](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/6)）
+
+    -   **新增**：新增 AES 解密工具类。
+
 -   Release 1.6.0
 
-    -   **新增**：新增小程序发送订阅消息的接口。
+    -   **新增**：新增小程序发送订阅消息的接口。（[Gitee Issue #I47D5T](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I47D5T)）
 
     -   **变更**：调整 `IXmlSerializable`、`IJsonSerializable` 接口定义。
 
@@ -172,7 +180,7 @@
 
     -   **新增**：新增服务商批量转账到零钱相关接口。
 
-    -   **新增**：新增 `ICertificateStorer` 接口，并基于此重新实现验签的扩展方法。
+    -   **新增**：新增 `ICertificateStorer` 接口，并基于此重新实现验签的扩展方法。（[GitHub Issue #1](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/1)）
 
 -   Release 1.2.1
 
