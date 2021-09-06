@@ -154,6 +154,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
                         public string Title { get; set; } = default!;
                     }
+
+                    public class WechatChannels
+                    {
+                        /// <summary>
+                        /// 获取或设置对外展示视频号状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("nickname")]
+                        [System.Text.Json.Serialization.JsonPropertyName("nickname")]
+                        public string? Nickname { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置对外展示视频号状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("status")]
+                        public int? Status { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -164,11 +181,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string CorpName { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置视频号名称。
+                /// 获取或设置视频号信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wechat_channels")]
                 [System.Text.Json.Serialization.JsonPropertyName("wechat_channels")]
-                public string? WechatChannels { get; set; }
+                public Types.WechatChannels? WechatChannels { get; set; }
 
                 /// <summary>
                 /// 获取或设置对外自定义字段列表。
