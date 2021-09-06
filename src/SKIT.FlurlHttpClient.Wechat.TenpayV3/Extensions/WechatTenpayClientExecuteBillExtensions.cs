@@ -94,6 +94,34 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// <para>异步调用 [GET] /bill/sub-merchant-fundflowbill 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_12.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetBillSubMerchantFundflowBillResponse> ExecuteGetBillSubMerchantFundflowBillAsync(this WechatTenpayClient client, Models.GetBillSubMerchantFundflowBillRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "bill", "sub-merchant-fundflowbill")
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("bill_date", request.BillDateString)
+                .SetQueryParam("algorithm", request.Algorithm);
+
+            if (!string.IsNullOrEmpty(request.AccountType))
+                flurlReq.SetQueryParam("account_type", request.AccountType);
+
+            if (!string.IsNullOrEmpty(request.TarType))
+                flurlReq.SetQueryParam("tar_type", request.TarType);
+
+            return await client.SendRequestWithJsonAsync<Models.GetBillSubMerchantFundflowBillResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [GET] /{download_url} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_8.shtml </para>
