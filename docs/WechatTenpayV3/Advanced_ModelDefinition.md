@@ -424,6 +424,8 @@
 
         -   申请资金账单：`GetBillFundflowBill`
 
+        -   申请单个子商户资金账单：`GetBillSubMerchantFundflowBill`
+
         -   下载账单：`DownloadBillFile`
 
     -   APP 支付
@@ -441,6 +443,8 @@
         -   申请交易账单：`GetBillTradeBill`
 
         -   申请资金账单：`GetBillFundflowBill`
+
+        -   申请单个子商户资金账单：`GetBillSubMerchantFundflowBill`
 
         -   下载账单：`DownloadBillFile`
 
@@ -460,6 +464,8 @@
 
         -   申请资金账单：`GetBillFundflowBill`
 
+        -   申请单个子商户资金账单：`GetBillSubMerchantFundflowBill`
+
         -   下载账单：`DownloadBillFile`
 
     -   Native 支付
@@ -478,6 +484,8 @@
 
         -   申请资金账单：`GetBillFundflowBill`
 
+        -   申请单个子商户资金账单：`GetBillSubMerchantFundflowBill`
+
         -   下载账单：`DownloadBillFile`
 
     -   小程序支付
@@ -495,6 +503,8 @@
         -   申请交易账单：`GetBillTradeBill`
 
         -   申请资金账单：`GetBillFundflowBill`
+
+        -   申请单个子商户资金账单：`GetBillSubMerchantFundflowBill`
 
         -   下载账单：`DownloadBillFile`
 
@@ -521,6 +531,8 @@
         -   申请交易账单：`GetBillTradeBill`
 
         -   申请资金账单：`GetBillFundflowBill`
+
+        -   申请单个子商户资金账单：`GetBillSubMerchantFundflowBill`
 
         -   下载账单：`DownloadBillFile`
 
