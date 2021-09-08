@@ -9,11 +9,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     public class CgibinExternalContactBatchGetByUserRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置成员账号。
+        /// 获取或设置成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("userid_list")]
-        public IList<string>? UserIdList { get; set; }
+        public IList<string> UserIdList { get; set; } = new List<string>();
 
         /// <summary>
         /// 获取或设置翻页标记。
