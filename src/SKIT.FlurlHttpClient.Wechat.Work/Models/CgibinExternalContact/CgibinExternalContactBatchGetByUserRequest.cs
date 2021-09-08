@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("userid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("userid_list")]
-        public string[]? UserIdList { get; set; }
+        public IList<string>? UserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。
