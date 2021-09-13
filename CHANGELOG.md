@@ -212,6 +212,10 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Work 更新日志</summary>
 
+-   Release 1.3.4
+
+    -   **修复**：修复应用消息相关接口的调用时参数缺失问题。（[GitHub Issue #10](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/10)）
+
 -   Release 1.3.3
 
     -   **修复**：修复批量获取客户详情时的请求模型定义错误。（[GitHub Issue #9](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/9)）
