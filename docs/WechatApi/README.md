@@ -51,7 +51,7 @@ var client = new WechatApiClient(options);
 using SKIT.FlurlHttpClient.Wechat.Api;
 using SKIT.FlurlHttpClient.Wechat.Api.Models;
 
-/* 以获取用户信息接口为例 */
+/* 以公众号获取用户信息接口为例 */
 var request = new CgibinUserInfoRequest()
 {
     AccessToken = "微信 AccessToken",
