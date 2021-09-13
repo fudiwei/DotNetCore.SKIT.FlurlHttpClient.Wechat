@@ -11,6 +11,7 @@
 此外，本库还封装了直接生成参数及签名的扩展方法，下面给出一个示例：
 
 ```csharp
+/* 以生成 wx.config() 所需参数为例 */
 var request = new Models.CgibinGetJsapiTicketRequest()
 {
     AccessToken = "企业微信应用的 AccessToken"

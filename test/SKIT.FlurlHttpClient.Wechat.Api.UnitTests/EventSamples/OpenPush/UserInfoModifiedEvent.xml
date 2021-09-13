@@ -1,0 +1,9 @@
+﻿<xml>
+    <ToUserName><![CDATA[gh_SDK_870882ca4b1]]></ToUserName>
+    <FromUserName><![CDATA[owAqB1v0ahK_Xlc7GshIDdf2yf7E]]></FromUserName>
+    <CreateTime>1626857200</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[user_info_modified]]></Event>
+    <openid><![CDATA[owAqB1nqaOYYWl0Ng484G2z5NIwU]]></openid>
+    <appid><![CDATA[wx13974bf780d3dc89]]></appid>
+</xml>

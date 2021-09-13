@@ -15,6 +15,7 @@
 此外，本库还封装了直接生成参数及签名的扩展方法，下面给出一个示例：
 
 ```csharp
+/* 以生成 JSAPI 调起支付所需参数为例 */
 var request = new Models.CreatePayTransactionJsapiRequest()
 {
     OutTradeNumber = "商户订单号",
