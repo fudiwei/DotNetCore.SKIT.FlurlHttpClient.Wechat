@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
 {
@@ -53,6 +49,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
             );
             if (!valid)
             {
+                // 注意：需提前注入 CertificateManager、并添加平台证书，才可以使用扩展方法执行验签操作
+                // 有关 CertificateManager 的用法请参阅《开发文档 / 高级技巧 / 如何验证回调通知事件签名？》
                 return new JsonResult(new { code = "FAIL", message = "验签失败" });
             }
 
