@@ -8,5 +8,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class ShopRegisterApplyRequest : WechatApiRequest
     {
+        /// <summary>
+        /// 获取或设置场景 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("scene_group_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("scene_group_id")]
+        public int SceneGroupId { get; set; }
     }
 }
