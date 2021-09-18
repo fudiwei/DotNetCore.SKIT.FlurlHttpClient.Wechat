@@ -78,6 +78,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public int Status { get; set; }
 
         /// <summary>
+        /// 获取或设置退款金额（单位：分）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("refund")]
+        [System.Text.Json.Serialization.JsonPropertyName("refund")]
+        public int RefundFee { get; set; }
+
+        /// <summary>
         /// 获取或设置发起申请时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("create_time")]
