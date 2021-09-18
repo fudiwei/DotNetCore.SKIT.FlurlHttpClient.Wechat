@@ -1,0 +1,30 @@
+﻿{
+    "order_flow": [
+        {
+            "order_id": 123456789123,
+            "status": "ORDER_FLOW_STATUS_TRANSACTION_PENDING_SETTLED",
+            "price": 1,
+            "order_price": 1,
+            "discount_fee": 0,
+            "service_fee": 0,
+            "handling_fee": 0,
+            "refund_fee": 0,
+            "settled_time": 0,
+            "order_time": 1625834352,
+            "refunding_type": 0
+        },
+        {
+            "order_id": 12345678229,
+            "status": "ORDER_FLOW_STATUS_TRANSACTION_PENDING_SETTLED",
+            "price": 1,
+            "order_price": 1,
+            "discount_fee": 0,
+            "service_fee": 0,
+            "handling_fee": 0,
+            "refund_fee": 0,
+            "settled_time": 0,
+            "order_time": 1625832229,
+            "refunding_type": 0
+        }
+    ]
+}
