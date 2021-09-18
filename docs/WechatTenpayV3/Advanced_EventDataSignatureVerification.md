@@ -6,6 +6,8 @@
 
 同样的，你既然可以利用本库提供的 `RSAUtility` 工具类自行进行签名验证，也可以通过 `CertificateManager` 尝试自动完成签名验证：
 
+注意，有关 `CertificateManager` 的具体用法，请务必阅读上方给出的相关文档。
+
 ```csharp
 bool ret = client.VerifyEventSignature(
     callbackTimestamp: "微信回调通知中的 Wechatpay-Timestamp 字段",
