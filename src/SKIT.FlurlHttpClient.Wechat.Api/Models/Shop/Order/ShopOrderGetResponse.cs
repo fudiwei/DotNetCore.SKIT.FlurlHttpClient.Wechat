@@ -61,6 +61,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("sale_price")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sale_price")]
                                 public int SalePrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置均摊价格（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("real_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("real_price")]
+                                public int RealPrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置小程序商品页面标题。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("title")]
+                                [System.Text.Json.Serialization.JsonPropertyName("title")]
+                                public string Title { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置小程序商品页面路径。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("path")]
+                                [System.Text.Json.Serialization.JsonPropertyName("path")]
+                                public string PagePath { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置商品头图 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("head_image")]
+                                [System.Text.Json.Serialization.JsonPropertyName("head_image")]
+                                public string HeadImageUrl { get; set; } = default!;
                             }
 
                             public class Payment
@@ -71,6 +99,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("pay_method")]
                                 [System.Text.Json.Serialization.JsonPropertyName("pay_method")]
                                 public string PayMethod { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置支付方式类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("pay_method_type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("pay_method_type")]
+                                public int PayMethodType { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置预支付单号。
@@ -188,6 +223,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("delivery_list")]
                                 public Types.DeliveryDetail[]? DeliveryDetailList { get; set; }
                             }
+
+                            public class Promotion
+                            {
+                                /// <summary>
+                                /// 获取或设置推广员用户名。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("finder_username")]
+                                [System.Text.Json.Serialization.JsonPropertyName("finder_username")]
+                                public string? FinderUsername { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置推广员昵称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("finder_nickname")]
+                                [System.Text.Json.Serialization.JsonPropertyName("finder_nickname")]
+                                public string? FinderNickname { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置推广员备注。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("finder_remark")]
+                                [System.Text.Json.Serialization.JsonPropertyName("finder_remark")]
+                                public string? FinderRemark { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置分享者的 OpenId。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sharer_openid")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sharer_openid")]
+                                public string? SharerOpenId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置直播开始时间。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("live_start_time")]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                [System.Text.Json.Serialization.JsonPropertyName("live_start_time")]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                public DateTimeOffset? LiveStartTime { get; set; }
+                            }
                         }
 
                         /// <summary>
@@ -224,6 +299,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("delivery_detail")]
                         [System.Text.Json.Serialization.JsonPropertyName("delivery_detail")]
                         public Types.Delivery? Delivery { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置推广信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("promotion_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("promotion_info")]
+                        public Types.Promotion? Promotion { get; set; }
                     }
                 }
 

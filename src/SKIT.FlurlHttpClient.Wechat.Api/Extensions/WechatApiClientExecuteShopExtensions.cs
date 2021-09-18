@@ -485,6 +485,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/scene/check 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/order/check_scene.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/order/check_scene.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -505,6 +506,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/order/add 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/order/add_order.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/order/add_order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -525,6 +527,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/order/pay 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/order/pay_order.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/order/pay_order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -545,6 +548,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/order/get 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/API/order/get_order.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/order/get_order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -560,6 +564,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.ShopOrderGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /shop/order/get_list_by_finder 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/order/get_order_list_by_finder.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ShopOrderGetListByFinderResponse> ExecuteShopOrderGetListByFinderAsync(this WechatApiClient client, Models.ShopOrderGetListByFinderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "shop", "order", "get_list_by_finder")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ShopOrderGetListByFinderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /shop/order/get_list_by_sharer 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/order/get_order_list_by_sharer.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ShopOrderGetListBySharerResponse> ExecuteShopOrderGetListBySharerAsync(this WechatApiClient client, Models.ShopOrderGetListBySharerRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "shop", "order", "get_list_by_sharer")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ShopOrderGetListBySharerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
