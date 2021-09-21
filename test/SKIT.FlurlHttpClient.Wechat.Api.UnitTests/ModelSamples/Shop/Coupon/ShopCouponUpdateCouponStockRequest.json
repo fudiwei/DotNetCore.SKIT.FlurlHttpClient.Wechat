@@ -1,0 +1,9 @@
+﻿{
+    "coupon_stock": {
+        "out_coupon_id": "coupon_id_1",
+        "stock_info": {
+            "issued_num": 60,
+            "receive_num": 40
+        }
+    }
+}

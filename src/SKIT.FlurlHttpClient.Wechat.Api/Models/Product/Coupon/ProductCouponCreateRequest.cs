@@ -116,28 +116,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("limit_num_one_person")]
                 [System.Text.Json.Serialization.JsonPropertyName("limit_num_one_person")]
-                public int LimitPerUser { get; set; }
+                public int? LimitPerUser { get; set; }
 
                 /// <summary>
                 /// 获取或设置领取总数量。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("total_num")]
                 [System.Text.Json.Serialization.JsonPropertyName("total_num")]
-                public int TotalNumber { get; set; }
+                public int? TotalNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置领取开始时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("start_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("start_time")]
-                public long StartTimestamp { get; set; }
+                public long? StartTimestamp { get; set; }
 
                 /// <summary>
                 /// 获取或设置领取结束时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("end_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-                public long EndTimestamp { get; set; }
+                public long? EndTimestamp { get; set; }
             }
 
             public class Validity
