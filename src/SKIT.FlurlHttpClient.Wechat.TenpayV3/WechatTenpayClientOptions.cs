@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// 获取或设置微信支付 API 域名。
         /// <para>默认值：<see cref="WechatTenpayEndpoints.DEFAULT"/></para>
         /// </summary>
-        public string? Endpoints { get; set; } = WechatTenpayEndpoints.DEFAULT;
+        public string Endpoints { get; set; } = WechatTenpayEndpoints.DEFAULT;
 
         /// <summary>
         /// 获取或设置声明应答中的错误描述使用的自然语言语种。

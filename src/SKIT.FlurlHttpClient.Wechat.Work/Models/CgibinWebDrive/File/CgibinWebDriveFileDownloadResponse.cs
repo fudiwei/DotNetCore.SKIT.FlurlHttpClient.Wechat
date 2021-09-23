@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wedrive/file_download 接口的响应。</para>
@@ -27,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cookie_value")]
         [System.Text.Json.Serialization.JsonPropertyName("cookie_value")]
-        public string? CookieValue { get; set; } = default!;
+        public string? CookieValue { get; set; }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.Ads
+﻿namespace SKIT.FlurlHttpClient.Wechat.Ads
 {
     /// <summary>
     /// 一个用于构造 <see cref="WechatAdsClient"/> 时使用的配置项。
@@ -17,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         /// 获取或设置微信广告平台 API 域名。
         /// <para>默认值：<see cref="WechatAdsEndpoints.DEFAULT"/></para>
         /// </summary>
-        public string? Endpoints { get; set; } = WechatAdsEndpoints.DEFAULT;
+        public string Endpoints { get; set; } = WechatAdsEndpoints.DEFAULT;
 
         /// <summary>
         /// 获取或设置微信广告平台服务商 ID。

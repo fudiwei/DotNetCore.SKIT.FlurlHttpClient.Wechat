@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [GET] /credit_bills/get 接口的请求。</para>
@@ -42,6 +39,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public override string? Version { get; set; } = "v1.1";
+        public override string Version { get; set; } = "v1.1";
     }
 }

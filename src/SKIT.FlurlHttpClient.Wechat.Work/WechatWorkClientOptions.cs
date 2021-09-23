@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     /// <summary>
     /// 一个用于构造 <see cref="WechatWorkClient"/> 时使用的配置项。
@@ -17,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// 获取或设置企业微信 API 域名。
         /// <para>默认值：<see cref="WechatWorkEndpoints.DEFAULT"/></para>
         /// </summary>
-        public string? Endpoints { get; set; } = WechatWorkEndpoints.DEFAULT;
+        public string Endpoints { get; set; } = WechatWorkEndpoints.DEFAULT;
 
         /// <summary>
         /// 获取或设置企业微信 CorpId。

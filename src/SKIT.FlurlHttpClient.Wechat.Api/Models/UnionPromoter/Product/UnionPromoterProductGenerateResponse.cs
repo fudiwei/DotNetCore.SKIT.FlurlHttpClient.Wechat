@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /union/promoter/product/generate 接口的响应。</para>
@@ -118,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("promotionUrl")]
                         [System.Text.Json.Serialization.JsonPropertyName("promotionUrl")]
-                        public string? PromotionUrl { get; set; } = default!;
+                        public string? PromotionUrl { get; set; }
 
                         /// <summary>
                         /// 获取或设置推广商品带券文案。
@@ -132,7 +129,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("couponPromotionUrl")]
                         [System.Text.Json.Serialization.JsonPropertyName("couponPromotionUrl")]
-                        public string? PromotionWithCouponUrl { get; set; } = default!;
+                        public string? PromotionWithCouponUrl { get; set; }
                     }
                 }
 

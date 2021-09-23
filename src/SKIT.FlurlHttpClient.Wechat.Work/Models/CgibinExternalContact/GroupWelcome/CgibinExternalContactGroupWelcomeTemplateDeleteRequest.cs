@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/group_welcome_template/del 接口的请求。</para>
@@ -13,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-        public string? TemplateId { get; set; } = string.Empty;
+        public string TemplateId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置授权方安装的应用 ID。

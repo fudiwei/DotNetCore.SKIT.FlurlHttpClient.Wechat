@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -894,7 +893,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("air_model")]
                 [System.Text.Json.Serialization.JsonPropertyName("air_model")]
-                public string? AirModel { get; set; } = string.Empty;
+                public string? AirModel { get; set; }
 
                 /// <summary>
                 /// 获取或设置起飞时间戳。

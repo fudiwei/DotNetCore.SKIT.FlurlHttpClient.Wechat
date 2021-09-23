@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /nontax/notifyinconsistentorder 接口的请求。</para>
@@ -20,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string? OrderId { get; set; } = string.Empty;
+        public string? OrderId { get; set; }
     }
 }

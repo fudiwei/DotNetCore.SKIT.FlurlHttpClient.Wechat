@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/meeting/get_user_meetingid 接口的请求。</para>
@@ -31,10 +28,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
         /// <summary>
         /// 获取或设置翻页标记。
+        /// <para>默认值：0</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cursor")]
         [System.Text.Json.Serialization.JsonPropertyName("cursor")]
-        public string? NextCursor { get; set; } = "0";
+        public string NextCursor { get; set; } = "0";
 
         /// <summary>
         /// 获取或设置分页每页数量。

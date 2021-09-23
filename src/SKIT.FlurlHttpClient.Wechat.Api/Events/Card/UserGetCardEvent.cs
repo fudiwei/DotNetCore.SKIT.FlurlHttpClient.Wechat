@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.user_get_card 事件的数据。</para>
@@ -42,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("UnionId")]
         [System.Text.Json.Serialization.JsonPropertyName("UnionId")]
         [System.Xml.Serialization.XmlElement("UnionId", IsNullable = true)]
-        public string? UnionId { get; set; } = default!;
+        public string? UnionId { get; set; }
 
         /// <summary>
         /// 获取或设置是否来自好友转增。

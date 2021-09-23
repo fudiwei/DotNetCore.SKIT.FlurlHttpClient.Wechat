@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /profitsharing/receivers/add 接口的请求。</para>
@@ -13,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string? SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。

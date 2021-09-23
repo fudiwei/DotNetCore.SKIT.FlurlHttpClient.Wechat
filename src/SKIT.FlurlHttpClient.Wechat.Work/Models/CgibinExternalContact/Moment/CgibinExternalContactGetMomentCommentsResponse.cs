@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_moment_comments 接口的响应。</para>
@@ -24,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("external_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-                public string? ExternalUserId { get; set; } = default!;
+                public string? ExternalUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置互动时间戳。

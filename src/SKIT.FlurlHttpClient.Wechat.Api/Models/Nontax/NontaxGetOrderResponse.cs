@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /nontax/getorder 接口的响应。</para>
@@ -98,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string? Url { get; set; } = default!;
+                        public string? Url { get; set; }
 
                         /// <summary>
                         /// 获取或设置随机字符串。

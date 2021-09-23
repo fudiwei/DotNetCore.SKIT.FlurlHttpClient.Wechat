@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -52,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_time")]
-                public string? LicenseValidDate { get; set; } = string.Empty;
+                public string? LicenseValidDate { get; set; }
             }
 
             public class OrganizationCertificate

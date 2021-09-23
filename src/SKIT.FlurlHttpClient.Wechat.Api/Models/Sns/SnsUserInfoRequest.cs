@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /sns/userinfo 接口的请求。</para>
@@ -13,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public override string? AccessToken { get; set; } = string.Empty;
+        public override string? AccessToken { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。

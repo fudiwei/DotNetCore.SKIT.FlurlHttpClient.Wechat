@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/submerchant/batchget 接口的请求。</para>
@@ -10,10 +7,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         /// <summary>
         /// 获取或设置起始的子商户 ID。
+        /// <para>默认值：0</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("begin_id")]
         [System.Text.Json.Serialization.JsonPropertyName("begin_id")]
-        public string? NextMerchantId { get; set; } = "0";
+        public string NextMerchantId { get; set; } = "0";
 
         /// <summary>
         /// 获取或设置分页每页数量。

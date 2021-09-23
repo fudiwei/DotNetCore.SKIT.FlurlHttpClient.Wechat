@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/code/get 接口的响应。</para>
@@ -24,14 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("code")]
                 [System.Text.Json.Serialization.JsonPropertyName("code")]
-                public string? CardCode { get; set; } = default!;
+                public string? CardCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置卡券编号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_number")]
-                public string? CardNumber { get; set; } = default!;
+                public string? CardNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置起用时间戳。
