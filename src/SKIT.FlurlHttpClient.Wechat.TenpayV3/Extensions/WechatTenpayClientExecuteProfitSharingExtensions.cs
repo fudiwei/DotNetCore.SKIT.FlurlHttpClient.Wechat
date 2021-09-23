@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /profitsharing/orders 接口。</para>
+        /// <para>异步调用 [GET] /profitsharing/orders/{out_order_no} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_2.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_2.shtml </para>
         /// </summary>
@@ -49,9 +49,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "profitsharing", "orders")
-                .SetQueryParam("transaction_id", request.TransactionId)
-                .SetQueryParam("out_order_no", request.OutOrderNumber);
+                .CreateRequest(request, HttpMethod.Get, "profitsharing", "orders", request.OutOrderNumber)
+                .SetQueryParam("transaction_id", request.TransactionId);
+
+            if (!string.IsNullOrEmpty(request.SubMerchantId))
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendRequestWithJsonAsync<Models.GetProfitSharingOrderByOutOrderNumberResponse>(flurlReq, cancellationToken: cancellationToken);
         }
