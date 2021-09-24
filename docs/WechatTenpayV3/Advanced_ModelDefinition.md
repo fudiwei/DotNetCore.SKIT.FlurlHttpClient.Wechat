@@ -597,6 +597,8 @@
 
         -   同步服务订单信息：`SetPayScorePartnerServiceOrderSync`
 
+        -   商户申请获取对账单：`GetPayScoreMerchantBill`
+
     -   微信支付分（免确认模式特有 API）
 
         -   商户预授权：`ApplyPayScorePartnerPermissions`
