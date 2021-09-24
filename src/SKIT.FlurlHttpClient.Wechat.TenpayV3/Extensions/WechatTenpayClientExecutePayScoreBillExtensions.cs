@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -33,9 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("algorithm", request.Algorithm)
                 .SetQueryParam("tar_type", request.TarType)
                 .SetQueryParam("algorithm", request.Algorithm);
-
-            if (!string.IsNullOrEmpty(request.TarType))
-                flurlReq.SetQueryParam("tar_type", request.TarType);
 
             return await client.SendRequestWithJsonAsync<Models.GetPayScoreMerchantBillResponse>(flurlReq, cancellationToken: cancellationToken);
         }
