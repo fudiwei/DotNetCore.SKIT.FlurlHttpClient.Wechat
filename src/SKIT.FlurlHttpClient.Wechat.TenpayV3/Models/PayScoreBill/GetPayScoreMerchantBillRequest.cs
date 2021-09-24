@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /ecommerce/bill/fundflowbill 接口的请求。</para>
+    /// <para>表示 [GET] /payscore/merchant-bill 接口的请求。</para>
     /// </summary>
-    public class GetEcommerceBillFundflowBillRequest : WechatTenpayRequest
+    public class GetPayScoreMerchantBillRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置账单日期（格式：yyyy-MM-dd）。
@@ -16,19 +16,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string BillDateString { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置资金账户类型。
-        /// <para>默认值：ALL</para>
+        /// 获取或设置服务 ID。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string AccountType { get; set; } = "ALL";
+        public string ServiceId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置压缩类型。
+        /// <para>默认值：GZIP</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string? TarType { get; set; }
+        public string TarType { get; set; } = "GZIP";
 
         /// <summary>
         /// 获取或设置加密算法。

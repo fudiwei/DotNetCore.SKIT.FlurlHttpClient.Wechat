@@ -1,0 +1,43 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Flurl;
+using Flurl.Http;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
+{
+    /// <summary>
+    /// 为 <see cref="WechatTenpayClient"/> 提供微信支付分账单相关的 API 扩展方法。
+    /// </summary>
+    public static class WechatTenpayClientExecutePayScoreBillExtensions
+    {
+        /// <summary>
+        /// <para>异步调用 [GET] /payscore/merchant-bill 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter6_1_29.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPayScoreMerchantBillResponse> ExecuteGetPayScoreMerchantBillAsync(this WechatTenpayClient client, Models.GetPayScoreMerchantBillRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "payscore", "merchant-bill")
+                .SetQueryParam("bill_date", request.BillDateString)
+                .SetQueryParam("algorithm", request.Algorithm)
+                .SetQueryParam("tar_type", request.TarType)
+                .SetQueryParam("algorithm", request.Algorithm);
+
+            if (!string.IsNullOrEmpty(request.TarType))
+                flurlReq.SetQueryParam("tar_type", request.TarType);
+
+            return await client.SendRequestWithJsonAsync<Models.GetPayScoreMerchantBillResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+    }
+}
