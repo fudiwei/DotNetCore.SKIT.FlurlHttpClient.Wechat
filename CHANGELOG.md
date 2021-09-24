@@ -146,15 +146,21 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
 
+-   Release 1.8.2
+
+    -   **新增**：新增商户申请获取微信支付分对账单相关接口。
+
+    -   **修复**：修复部分请求模型中可空字段的初值问题。（[Gitee Issue #I4BF0K](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4BF0K)）
+
 -   Release 1.8.1
 
     -   **修复**：修复查询分账结果接口的调用时参数缺失问题。（[Gitee Issue #I4BITZ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4BITZ)）
 
 -   Release 1.8.0
 
-    -   **新增**：随官方更新消费者投诉接口相关字段。
-
     -   **新增**：新增消费者投诉下载图片相关接口。
+
+    -   **新增**：随官方更新消费者投诉接口相关字段。
 
 -   Release 1.7.0
 
