@@ -72,13 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string StockId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置批次名称。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("stock_name")]
-        [System.Text.Json.Serialization.JsonPropertyName("stock_name")]
-        public string? StockName { get; set; }
-
-        /// <summary>
         /// 获取或设置商户请求单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_request_no")]
