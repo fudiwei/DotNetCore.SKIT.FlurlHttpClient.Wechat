@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "rule_list": [
+        {
+            "rule_id": "xxxx",
+            "rule_name": "rulename",
+            "create_time": 1600000000
+        }
+    ]
+}

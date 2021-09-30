@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimetamp { get; set; }
+                public long CreateTimestamp { get; set; }
             }
         }
 

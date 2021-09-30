@@ -1516,5 +1516,112 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactDeleteProductAlbumResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region InterceptRule
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_intercept_rule 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95097 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactAddInterceptRuleResponse> ExecuteCgibinExternalContactAddInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactAddInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "add_intercept_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactAddInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_intercept_rule_list 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95097 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetInterceptRuleListResponse> ExecuteCgibinExternalContactGetInterceptRuleListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetInterceptRuleListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_intercept_rule_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetInterceptRuleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_intercept_rule 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95097 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetInterceptRuleResponse> ExecuteCgibinExternalContactGetInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactGetInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_intercept_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/update_intercept_rule 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95097 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactUpdateInterceptRuleResponse> ExecuteCgibinExternalContactUpdateInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactUpdateInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "update_intercept_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactUpdateInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/del_intercept_rule 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95097 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactDeleteInterceptRuleResponse> ExecuteCgibinExternalContactDeleteInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactDeleteInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "del_intercept_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactDeleteInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

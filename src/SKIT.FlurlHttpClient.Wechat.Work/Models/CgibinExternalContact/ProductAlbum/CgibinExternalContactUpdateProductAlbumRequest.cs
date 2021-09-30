@@ -26,14 +26,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置商品价格（单位：分）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("price")]
         [System.Text.Json.Serialization.JsonPropertyName("price")]
-        public int Price { get; set; }
+        public int? Price { get; set; }
 
         /// <summary>
         /// 获取或设置商品编码。
