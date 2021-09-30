@@ -1,0 +1,16 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "customer_list": [
+        {
+            "external_userid": "wmxxxxxxxxxxxxxxxxxxxxxx",
+            "nickname": "张三",
+            "avatar": "http://xxxxx",
+            "gender": 1,
+            "unionid": "oxasdaosaosdasdasdasd"
+        }
+    ],
+    "invalid_external_userid": [
+        "zhangsan"
+    ]
+}

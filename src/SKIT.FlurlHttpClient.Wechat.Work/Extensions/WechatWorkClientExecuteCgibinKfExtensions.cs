@@ -289,6 +289,47 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfCustomerCancelUpgradeServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+        
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/customer/batchget 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95159 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95149 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfCustomerBatchGetResponse> ExecuteCgibinKfCustomerBatchGetAsync(this WechatWorkClient client, Models.CgibinKfCustomerBatchGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "customer", "batchget")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfCustomerBatchGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/kf/get_corp_qualification 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95153 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfGetCorpQualificationResponse> ExecuteCgibinKfGetCorpQualificationAsync(this WechatWorkClient client, Models.CgibinKfGetCorpQualificationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "kf", "get_corp_qualification")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfGetCorpQualificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
         
         /// <summary>
