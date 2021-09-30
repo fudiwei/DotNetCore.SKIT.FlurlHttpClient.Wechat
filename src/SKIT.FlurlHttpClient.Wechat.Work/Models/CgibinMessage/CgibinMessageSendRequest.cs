@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -401,6 +400,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("desc")]
                         [System.Text.Json.Serialization.JsonPropertyName("desc")]
                         public string? Description { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置来源图片的描述颜色类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("desc_color")]
+                        [System.Text.Json.Serialization.JsonPropertyName("desc_color")]
+                        public int? DescriptionColorType { get; set; }
                     }
 
                     public class MainTitle
@@ -435,6 +441,51 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("aspect_ratio")]
                         [System.Text.Json.Serialization.JsonPropertyName("aspect_ratio")]
                         public double? AspectRatio { get; set; }
+                    }
+
+                    public class QuoteArea
+                    {
+                        /// <summary>
+                        /// 获取或设置类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public int? Type { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置跳转链接。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("url")]
+                        public string? Url { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置跳转小程序的 AppId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("appid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                        public string? MiniProgramAppId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置跳转小程序的路径。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pagepath")]
+                        [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
+                        public string? MiniProgramPagePath { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置引用文献样式的标题。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                        public string? Title { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置引用文献样式的引用文案。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("quote_text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("quote_text")]
+                        public string? QuoteText { get; set; }
                     }
 
                     public class EmphasisContent : MainTitle
@@ -481,6 +532,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("media_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id")]
                         public string? MediaId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置成员账号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                        public string? UserId { get; set; }
                     }
 
                     public class Action
@@ -519,6 +577,43 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("pagepath")]
                         [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
                         public string? MiniProgramPagePath { get; set; }
+                    }
+
+                    public class ActionMenu
+                    {
+                        public static class Types
+                        {
+                            public class Action
+                            {
+                                /// <summary>
+                                /// 获取或设置操作按钮 Key。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("key")]
+                                [System.Text.Json.Serialization.JsonPropertyName("key")]
+                                public string Key { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置操作按钮文案。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("text")]
+                                [System.Text.Json.Serialization.JsonPropertyName("text")]
+                                public string Text { get; set; } = string.Empty;
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置菜单描述。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("desc")]
+                        [System.Text.Json.Serialization.JsonPropertyName("desc")]
+                        public string? Description { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置操作按钮列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("action_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("action_list")]
+                        public IList<Types.Action> ActionList { get; set; } = new List<Types.Action>();
                     }
 
                     public class Button
@@ -705,6 +800,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public Types.MainTitle? MainTitle { get; set; }
 
                 /// <summary>
+                /// 获取或设置引用文献信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("quote_area")]
+                [System.Text.Json.Serialization.JsonPropertyName("quote_area")]
+                public Types.QuoteArea? QuoteArea { get; set; }
+
+                /// <summary>
                 /// 获取或设置关键数据样式信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("emphasis_content")]
@@ -744,7 +846,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("card_action")]
                 [System.Text.Json.Serialization.JsonPropertyName("card_action")]
-                public Types.Action? CardAction { get; set; }
+                public Types.Action? Action { get; set; }
+
+                /// <summary>
+                /// 获取或设置卡片的右上角菜单信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("action_menu")]
+                [System.Text.Json.Serialization.JsonPropertyName("action_menu")]
+                public Types.ActionMenu? ActionMenu { get; set; }
 
                 /// <summary>
                 /// 获取或设置任务 ID。
@@ -780,6 +889,74 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("submit_button")]
                 [System.Text.Json.Serialization.JsonPropertyName("submit_button")]
                 public Types.Button? SubmitButton { get; set; }
+            }
+            
+            public class TemplateMessage
+            {
+                public static class Types
+                {
+                    public class MiniProgram
+                    {
+                        /// <summary>
+                        /// 获取或设置小程序 AppId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("appid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                        public string AppId { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置小程序页面路径。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pagepath")]
+                        [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
+                        public string PagePath { get; set; } = string.Empty;
+                    }
+
+                    public class DataItem
+                    {
+                        /// <summary>
+                        /// 获取或设置消息内容 Key。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("key")]
+                        [System.Text.Json.Serialization.JsonPropertyName("key")]
+                        public string Key { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置消息内容文本。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("value")]
+                        [System.Text.Json.Serialization.JsonPropertyName("value")]
+                        public string Value { get; set; } = string.Empty;
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置模板 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("template_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("template_id")]
+                public string TemplateId { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置点击消息跳转的 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("url")]
+                [System.Text.Json.Serialization.JsonPropertyName("url")]
+                public string? Url { get; set; }
+
+                /// <summary>
+                /// 获取或设置点击消息跳转的小程序信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("miniprogram")]
+                [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
+                public Types.MiniProgram? MiniProgram { get; set; }
+
+                /// <summary>
+                /// 获取或设置模板消息内容列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("content_item")]
+                [System.Text.Json.Serialization.JsonPropertyName("content_item")]
+                public IList<Types.DataItem>? DataList { get; set; }
             }
         }
 
@@ -895,11 +1072,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public Types.TaskCardMessage? MessageContentForTaskCard { get; set; }
 
         /// <summary>
-        /// 获取或设置模板卡片信息。
+        /// 获取或设置模板卡片消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_card")]
         [System.Text.Json.Serialization.JsonPropertyName("template_card")]
         public Types.TemplateCardMessage? MessageContentForTemplateCard { get; set; }
+
+        /// <summary>
+        /// 获取或设置模板信息信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("template_msg")]
+        [System.Text.Json.Serialization.JsonPropertyName("template_msg")]
+        public Types.TemplateMessage? MessageContentForTemplate { get; set; }
 
         /// <summary>
         /// 获取或设置应用 ID。如果不指定将使用构造 <see cref="WechatWorkClient"/> 时的 <see cref="WechatWorkClientOptions.AgentId"/> 参数。
