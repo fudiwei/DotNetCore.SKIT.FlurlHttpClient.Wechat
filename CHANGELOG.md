@@ -244,6 +244,16 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Work 更新日志</summary>
 
+-   Release 1.4.0
+
+    -   **新增**：新增微信客服相关接口。
+
+    -   **新增**：随官方更新发送应用消息相关接口模型。
+
+    -   **新增**：新增获取设备打卡数据相关接口。
+
+    -   **新增**：新增管理员变更相关的回调通知事件模型。
+
 -   Release 1.3.4
 
     -   **修复**：修复应用消息相关接口的调用时参数缺失问题。（[GitHub Issue #10](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/10)）
