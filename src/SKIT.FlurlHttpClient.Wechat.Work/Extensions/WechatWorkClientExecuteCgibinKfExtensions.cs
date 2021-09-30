@@ -225,6 +225,71 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinKfServiceStateTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region Customer
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/kf/customer/get_upgrade_service_config 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94674 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94702 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfCustomerGetUpgradeServiceConfigResponse> ExecuteCgibinKfCustomerGetUpgradeServiceConfigAsync(this WechatWorkClient client, Models.CgibinKfCustomerGetUpgradeServiceConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "kf", "customer", "get_upgrade_service_config")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfCustomerGetUpgradeServiceConfigResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/customer/upgrade_service 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94674 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94702 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfCustomerUpgradeServiceResponse> ExecuteCgibinKfCustomerUpgradeServiceAsync(this WechatWorkClient client, Models.CgibinKfCustomerUpgradeServiceRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "customer", "upgrade_service")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfCustomerUpgradeServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/customer/cancel_upgrade_service 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94674 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94702 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfCustomerCancelUpgradeServiceResponse> ExecuteCgibinKfCustomerCancelUpgradeServiceAsync(this WechatWorkClient client, Models.CgibinKfCustomerCancelUpgradeServiceRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "customer", "cancel_upgrade_service")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfCustomerCancelUpgradeServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
         
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/kf/send_msg 接口。</para>

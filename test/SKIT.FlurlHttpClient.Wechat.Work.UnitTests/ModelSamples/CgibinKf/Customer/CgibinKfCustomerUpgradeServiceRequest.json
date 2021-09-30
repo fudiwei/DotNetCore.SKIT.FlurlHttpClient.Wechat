@@ -1,0 +1,13 @@
+﻿{
+    "open_kfid": "kfxxxxxxxxxxxxxx",
+    "external_userid": "wmxxxxxxxxxxxxxxxxxx",
+    "type": 1,
+    "member": {
+        "userid": "zhangsan",
+        "wording": "你好，我是你的专属服务专员zhangsan"
+    },
+    "groupchat": {
+        "chat_id": "wraaaaaaaaaaaaaaaa",
+        "wording": "欢迎加入你的专属服务群"
+    }
+}
