@@ -10,14 +10,11 @@
         "hall_id": "233455656",
         "code_display_mode": "BARCODE"
     },
-    "stock_name": "8月1日活动券",
     "comment": "活动使用",
     "goods_name": "xxx商品使用",
     "out_request_no": "6122352020010133287985742",
     "display_pattern_info": {
         "description": "xxx门店可用",
-        "merchant_logo_url": "https://xxx",
-        "merchant_name": "微信支付",
         "background_color": "xxxxx",
         "coupon_image_url": "图片cdn地址"
     },
@@ -27,7 +24,6 @@
         "mini_programs_path": "/path/index/index"
     },
     "stock_send_rule": {
-        "natural_person_limit": false,
         "prevent_api_abuse": false
     },
     "notify_config": {
