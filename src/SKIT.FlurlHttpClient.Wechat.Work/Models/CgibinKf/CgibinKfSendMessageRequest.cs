@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("thumb_media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("thumb_media_id")]
-                public string ThumbnailMediaId { get; set; }= string.Empty;
+                public string ThumbnailMediaId { get; set; } = string.Empty;
             }
 
             public class MiniProgramMessage
@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("thumb_media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("thumb_media_id")]
-                public string ThumbnailMediaId { get; set; }= string.Empty;
+                public string ThumbnailMediaId { get; set; } = string.Empty;
             }
 
             public class MenuMessage
