@@ -1,0 +1,74 @@
+﻿{
+    "touser": "EXTERNAL_USERID",
+    "open_kfid": "OPEN_KFID",
+    "msgid": "MSGID",
+    "msgtype": "type",
+    "text": {
+        "content": "你购买的物品已发货，可点击链接查看物流状态http://work.weixin.qq.com/xxxxxx"
+    },
+    "image": {
+        "media_id": "MEDIA_ID"
+    },
+    "voice": {
+        "media_id": "MEDIA_ID"
+    },
+    "video": {
+        "media_id": "MEDIA_ID"
+    },
+    "file": {
+        "media_id": "1Yv-zXfHjSjU-7LH-GwtYqDGS-zz6w22KmWAT5COgP7o"
+    },
+    "link": {
+        "title": "企业如何增长？企业微信给出3个答案",
+        "desc": "今年中秋节公司有豪礼相送",
+        "url": "URL",
+        "thumb_media_id": "MEDIA_ID"
+    },
+    "miniprogram": {
+        "appid": "APPID",
+        "title": "欢迎报名夏令营",
+        "thumb_media_id": "MEDIA_ID",
+        "pagepath": "PAGE_PATH"
+    },
+    "msgmenu": {
+        "head_content": "您对本次服务是否满意呢? ",
+        "list": [
+            {
+                "type": "click",
+                "click": {
+                    "id": "101",
+                    "content": "满意"
+                }
+            },
+            {
+                "type": "click",
+                "click": {
+                    "id": "102",
+                    "content": "不满意"
+                }
+            },
+            {
+                "type": "view",
+                "view": {
+                    "url": "https://work.weixin.qq.com",
+                    "content": "点击跳转到自助查询页面"
+                }
+            },
+            {
+                "type": "miniprogram",
+                "miniprogram": {
+                    "appid": "wx123123123123123",
+                    "pagepath": "pages/index?userid=zhangsan&orderid=123123123",
+                    "content": "点击打开小程序查询更多"
+                }
+            }
+        ],
+        "tail_content": "欢迎再次光临"
+    },
+    "location": {
+        "name": "测试小区",
+        "address": "实例小区，不真实存在，经纬度无意义",
+        "latitude": 0,
+        "longitude": 0
+    }
+}

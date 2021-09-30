@@ -225,5 +225,47 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinKfServiceStateTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+        
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/send_msg 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94677 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94700 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfSendMessageResponse> ExecuteCgibinKfSendMessageAsync(this WechatWorkClient client, Models.CgibinKfSendMessageRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "send_msg")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfSendMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/send_msg_on_event 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95122 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94910 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfSendMessageOnEventResponse> ExecuteCgibinKfSendMessageOnEventAsync(this WechatWorkClient client, Models.CgibinKfSendMessageOnEventRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "send_msg_on_event")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfSendMessageOnEventResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }
