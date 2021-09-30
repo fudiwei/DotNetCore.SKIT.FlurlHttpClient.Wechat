@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -675,6 +673,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_moment_task 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95094 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95095 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactAddMomentTaskResponse> ExecuteCgibinExternalContactAddMomentTaskAsync(this WechatWorkClient client, Models.CgibinExternalContactAddMomentTaskRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "add_moment_task")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactAddMomentTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_task 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93333 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93443 </para>
@@ -693,6 +712,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_task_result 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95094 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95095 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetMomentTaskResultResponse> ExecuteCgibinExternalContactGetMomentTaskResultAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentTaskResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_task_result")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentTaskResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
