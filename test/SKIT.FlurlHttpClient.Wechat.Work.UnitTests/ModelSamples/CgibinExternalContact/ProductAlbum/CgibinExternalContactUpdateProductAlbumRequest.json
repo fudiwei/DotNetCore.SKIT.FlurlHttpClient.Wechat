@@ -1,0 +1,14 @@
+﻿{
+    "product_id": "xxxxxxxxxx",
+    "description": "世界上最好的商品",
+    "price": 30000,
+    "product_sn": "xxxxxx",
+    "attachments": [
+        {
+            "type": "image",
+            "image": {
+                "media_id": "MEDIA_ID"
+            }
+        }
+    ]
+}

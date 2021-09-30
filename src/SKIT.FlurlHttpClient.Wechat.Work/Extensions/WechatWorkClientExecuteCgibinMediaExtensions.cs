@@ -153,7 +153,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "media", "upload_attachment")
                 .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("type", request.Type);
+                .SetQueryParam("media_type", request.Type)
+                .SetQueryParam("attachment_type", request.AttachmentType);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);

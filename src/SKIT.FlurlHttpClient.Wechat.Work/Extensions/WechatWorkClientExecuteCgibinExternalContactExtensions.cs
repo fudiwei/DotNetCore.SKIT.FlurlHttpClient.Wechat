@@ -1409,5 +1409,112 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactMomentStrategyDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region ProductAlbum
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_product_album 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95096 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95131 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactAddProductAlbumResponse> ExecuteCgibinExternalContactAddProductAlbumAsync(this WechatWorkClient client, Models.CgibinExternalContactAddProductAlbumRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "add_product_album")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactAddProductAlbumResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_product_album_list 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95096 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95131 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetProductAlbumListResponse> ExecuteCgibinExternalContactGetProductAlbumListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetProductAlbumListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_product_album_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetProductAlbumListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_product_album 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95096 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95131 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetProductAlbumResponse> ExecuteCgibinExternalContactGetProductAlbumAsync(this WechatWorkClient client, Models.CgibinExternalContactGetProductAlbumRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_product_album")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetProductAlbumResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/update_product_album 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95096 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95131 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactUpdateProductAlbumResponse> ExecuteCgibinExternalContactUpdateProductAlbumAsync(this WechatWorkClient client, Models.CgibinExternalContactUpdateProductAlbumRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "update_product_album")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactUpdateProductAlbumResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/delete_product_album 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95096 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95131 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactDeleteProductAlbumResponse> ExecuteCgibinExternalContactDeleteProductAlbumAsync(this WechatWorkClient client, Models.CgibinExternalContactDeleteProductAlbumRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "delete_product_album")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactDeleteProductAlbumResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
