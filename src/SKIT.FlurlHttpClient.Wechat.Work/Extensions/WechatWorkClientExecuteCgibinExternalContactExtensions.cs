@@ -1540,7 +1540,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_intercept_rule_list 接口。</para>
+        /// <para>异步调用 [GET] /cgi-bin/externalcontact/get_intercept_rule_list 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95097 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95130 </para>
         /// </summary>
@@ -1554,10 +1554,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_intercept_rule_list")
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "externalcontact", "get_intercept_rule_list")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetInterceptRuleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetInterceptRuleListResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>

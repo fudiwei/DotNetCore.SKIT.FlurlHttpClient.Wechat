@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/kf/account/list 接口。</para>
+        /// <para>异步调用 [GET] /cgi-bin/kf/account/list 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94661 </para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94691 </para>
         /// </summary>
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "account", "list")
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "kf", "account", "list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfAccountListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -113,6 +113,72 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfAddContactWayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Servicer
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/servicer/add 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94646 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94695 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfServicerAddResponse> ExecuteCgibinKfServicerAddAsync(this WechatWorkClient client, Models.CgibinKfServicerAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "servicer", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfServicerAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/servicer/del 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94647 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94696 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfServicerDeleteResponse> ExecuteCgibinKfServicerDeleteAsync(this WechatWorkClient client, Models.CgibinKfServicerDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "servicer", "del")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfServicerDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/kf/servicer/list 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94645 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94697 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfServicerListResponse> ExecuteCgibinKfServicerListAsync(this WechatWorkClient client, Models.CgibinKfServicerListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "kf", "servicer", "list")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("open_kfid", request.OpenKfId);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfServicerListResponse>(flurlReq, cancellationToken: cancellationToken);
         }
         #endregion
     }
