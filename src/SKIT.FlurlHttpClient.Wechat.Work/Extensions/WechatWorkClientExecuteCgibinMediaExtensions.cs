@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Web;
@@ -107,6 +105,65 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             fileContent.Headers.ContentLength = request.FileBytes?.Length;
 
             return await client.SendRequestAsync<Models.CgibinMediaUploadImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/media/upload_attachment 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/95098 </para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95178 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMediaUploadAttachmentResponse> ExecuteCgibinMediaUploadAttachmentAsync(this WechatWorkClient client, Models.CgibinMediaUploadAttachmentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            const string TYPE_IMAGE = "image";
+            const string TYPE_VIDEO = "video";
+            const string TYPE_FILE = "file";
+
+            if (string.IsNullOrEmpty(request.FileName))
+            {
+                string ext = "";
+                if (TYPE_IMAGE.Equals(request.Type))
+                    ext = ".png";
+                else if (TYPE_VIDEO.Equals(request.Type))
+                    ext = ".mp4";
+                else if (TYPE_FILE.Equals(request.Type))
+                    ext = ".txt";
+
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ext;
+            }
+
+            if (string.IsNullOrEmpty(request.FileContentType))
+            {
+                if (TYPE_IMAGE.Equals(request.Type))
+                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
+                else if (TYPE_VIDEO.Equals(request.Type))
+                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForVideo(request.FileName!) ?? "video/mp4";
+                else if (TYPE_FILE.Equals(request.Type))
+                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForVoice(request.FileName!) ?? "text/plain";
+                else
+                    request.FileContentType = "application/octet-stream";
+            }
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "media", "upload_attachment")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("type", request.Type);
+
+            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var httpContent = new MultipartFormDataContent(boundary);
+            httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
+            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
+            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
+            fileContent.Headers.ContentLength = request.FileBytes?.Length;
+
+            return await client.SendRequestAsync<Models.CgibinMediaUploadAttachmentResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
