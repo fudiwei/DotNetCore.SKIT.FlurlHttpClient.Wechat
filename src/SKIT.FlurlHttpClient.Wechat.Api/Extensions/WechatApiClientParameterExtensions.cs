@@ -1,14 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web;
-using Flurl;
-using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
@@ -25,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="jsapiTicket"></param>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForJssdkConfigRequest(this WechatApiClient client, string jsapiTicket, string url)
+        public static IDictionary<string, string> GenerateParametersForJSSDKConfig(this WechatApiClient client, string jsapiTicket, string url)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (jsapiTicket is null) throw new ArgumentNullException(nameof(jsapiTicket));
@@ -51,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="client"></param>
         /// <param name="wxcardTicket"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForJssdkChooseInvoiceRequest(this WechatApiClient client, string wxcardTicket)
+        public static IDictionary<string, string> GenerateParametersForJSSDKChooseInvoice(this WechatApiClient client, string wxcardTicket)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (wxcardTicket is null) throw new ArgumentNullException(nameof(wxcardTicket));

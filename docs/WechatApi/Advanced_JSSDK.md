@@ -17,5 +17,5 @@ var request = new Models.CgibinTicketGetTicketRequest()
     AccessToken = "微信 AccessToken"
 };
 var response = await client.ExecuteCgibinTicketGetTicketAsync(request);
-var paramMap = client.GenerateParametersForJssdkConfigRequest(response.Ticket, "https://example.com");
+var paramMap = client.GenerateParametersForJssdkConfig(response.Ticket, "https://example.com");
 ```
