@@ -1,7 +1,7 @@
 ﻿# SKIT.FlurlHttpClient.Wechat
 
-[![Gitee Stars](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/badge/star.svg?white&title=Stars)](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
-[![Gitee Forks](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/badge/fork.svg?&title=Forks)](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
+[![Gitee Stars](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/badge/star.svg?title=Stars)](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
+[![Gitee Forks](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/badge/fork.svg?title=Forks)](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
 [![GitHub Stars](https://img.shields.io/github/stars/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat?logo=github&label=Stars)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
 [![GitHub Forks](https://img.shields.io/github/forks/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat?logo=github&label=Forks)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
 [![Visitors](https://visitor-badge.laobi.icu/badge?page_id=fudiwei.DotNetCore.SKIT.FlurlHttpClient.Wechat&title=Visitors)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
