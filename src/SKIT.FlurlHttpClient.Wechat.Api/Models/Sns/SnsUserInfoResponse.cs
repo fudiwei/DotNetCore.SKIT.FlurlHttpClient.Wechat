@@ -34,28 +34,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sex")]
         [System.Text.Json.Serialization.JsonPropertyName("sex")]
-        public int Sex { get; set; }
-
-        /// <summary>
-        /// 获取或设置用户所在城市。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("city")]
-        [System.Text.Json.Serialization.JsonPropertyName("city")]
-        public string City { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置用户所在省份。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("province")]
-        [System.Text.Json.Serialization.JsonPropertyName("province")]
-        public string Province { get; set; } = default!;
+        public int? Sex { get; set; }
 
         /// <summary>
         /// 获取或设置用户所在国家。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("country")]
         [System.Text.Json.Serialization.JsonPropertyName("country")]
-        public string Country { get; set; } = default!;
+        public string? Country { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户所在省份。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("province")]
+        [System.Text.Json.Serialization.JsonPropertyName("province")]
+        public string? Province { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户所在城市。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("city")]
+        [System.Text.Json.Serialization.JsonPropertyName("city")]
+        public string? City { get; set; }
 
         /// <summary>
         /// 获取或设置用户的头像 URL。
