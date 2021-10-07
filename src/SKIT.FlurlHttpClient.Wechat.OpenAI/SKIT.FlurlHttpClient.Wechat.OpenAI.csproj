@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFrameworks>net461; netstandard2.0; net5.0</TargetFrameworks>
+        <LangVersion>8.0</LangVersion>
+        <Nullable>enable</Nullable>
+        <NullableReferenceTypes>true</NullableReferenceTypes>
+    </PropertyGroup>
+
+    <PropertyGroup>
+        <PackageId>SKIT.FlurlHttpClient.Wechat.OpenAI</PackageId>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
+        <PackageTags>Flurl.Http Wechat Weixin MicroMessage WxOpenAI 微信 微信智能对话 微信对话开放平台 微信智能对话开放平台 智能对话平台</PackageTags>
+        <Version>0.1.0-alpha</Version>
+        <Description>基于 Flurl.Http 的微信对话开放平台（微信智能对话） API 客户端。</Description>
+        <Authors>Fu Diwei</Authors>
+        <RepositoryType>git</RepositoryType>
+        <RepositoryUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git</RepositoryUrl>
+        <GenerateDocumentationFile>true</GenerateDocumentationFile>
+        <IncludeSymbols>true</IncludeSymbols>
+        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461'" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\SKIT.FlurlHttpClient.Wechat\SKIT.FlurlHttpClient.Wechat.csproj" />
+    </ItemGroup>
+
+</Project>
