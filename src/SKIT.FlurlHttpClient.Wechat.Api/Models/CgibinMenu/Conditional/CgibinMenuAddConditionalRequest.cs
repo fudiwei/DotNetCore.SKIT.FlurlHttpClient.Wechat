@@ -24,40 +24,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int? TagId { get; set; }
 
                 /// <summary>
-                /// 获取或设置性别。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sex")]
-                [System.Text.Json.Serialization.JsonPropertyName("sex")]
-                public int? Sex { get; set; }
-
-                /// <summary>
                 /// 获取或设置客户端版本。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("client_platform_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("client_platform_type")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? ClientPlatformType { get; set; }
-
-                /// <summary>
-                /// 获取或设置国家。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("country")]
-                [System.Text.Json.Serialization.JsonPropertyName("country")]
-                public string? Country { get; set; }
-
-                /// <summary>
-                /// 获取或设置省份。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("province")]
-                [System.Text.Json.Serialization.JsonPropertyName("province")]
-                public string? Province { get; set; }
-
-                /// <summary>
-                /// 获取或设置城市。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("city")]
-                [System.Text.Json.Serialization.JsonPropertyName("city")]
-                public string? City { get; set; }
 
                 /// <summary>
                 /// 获取或设置语言。
