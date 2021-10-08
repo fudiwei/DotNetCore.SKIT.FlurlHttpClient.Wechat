@@ -1,0 +1,14 @@
+﻿{
+    "openid": "eafc6f616a3f0667800e0f92dc00ee88167bc010",
+    "resources": [
+        "bot",
+        "common",
+        "dict",
+        "word",
+        "skill",
+        "intent",
+        "openapi",
+        "skill_store"
+    ],
+    "authorization_type": "client_credentials"
+}

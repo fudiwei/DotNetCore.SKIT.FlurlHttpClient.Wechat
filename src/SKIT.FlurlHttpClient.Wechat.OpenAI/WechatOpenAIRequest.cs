@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         public virtual string? BotId { get; set; }
 
         /// <summary>
-        /// 获取或设置请求令牌。
+        /// 获取或设置接口访问令牌。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
