@@ -60,10 +60,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
             }
 
-            if (request.RequestId != null)
-            {
-                flurlRequest.WithHeader("request_id", request.RequestId);
-            }
+            if (request.RequestId == null)
+                request.RequestId = Guid.NewGuid().ToString("N");
+            flurlRequest.WithHeader("request_id", request.RequestId);
 
             if (request.BotId != null)
             {
@@ -128,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             string contentType = flurlResponse.Headers.GetAll("Content-Type").FirstOrDefault() ?? string.Empty;
             bool contentTypeIsNotJson =
                 (flurlResponse.StatusCode != (int)HttpStatusCode.OK) ||
-                (!contentType.StartsWith("application/json") && !contentType.StartsWith("text/json") && !contentType.StartsWith("text/plain"));
+                (!contentType.StartsWith("application/json") && !contentType.StartsWith("text/json"));
 
             T result = contentTypeIsNotJson ? new T() : await flurlResponse.GetJsonAsync<T>().ConfigureAwait(false);
             result.RawStatus = flurlResponse.StatusCode;

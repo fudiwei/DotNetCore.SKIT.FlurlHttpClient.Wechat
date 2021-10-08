@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     /// <summary>
     /// 表示微信智能对话 API 响应的泛型基类。
     /// </summary>
-    public abstract class WechatOpenAIResponse<TData>
+    public abstract class WechatOpenAIResponse<TData> : WechatOpenAIResponse
         where TData : class, new()
     {
         /// <summary>

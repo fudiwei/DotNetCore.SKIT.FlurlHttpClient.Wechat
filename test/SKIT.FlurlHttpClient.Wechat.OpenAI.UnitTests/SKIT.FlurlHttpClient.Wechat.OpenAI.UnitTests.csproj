@@ -7,6 +7,10 @@
 
     <ItemGroup>
         <None Remove=".gitignore" />
+        <None Remove="appsettings.local.json" />
+        <Content Include="appsettings.local.json">
+          <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
         <Content Include="appsettings.json">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
