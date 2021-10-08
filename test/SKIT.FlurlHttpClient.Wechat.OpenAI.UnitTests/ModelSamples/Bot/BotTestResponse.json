@@ -1,0 +1,18 @@
+﻿{
+    "code": 0,
+    "data": {
+        "ans_node_id": 9620273,
+        "ans_node_name": "吃啥",
+        "answer": "包子",
+        "answer_type": "text",
+        "bot_state": {
+            "err_msg": "",
+            "last_effective_time": "20210827113707"
+        },
+        "create_time": "1630035702",
+        "status": "GENERAL_FAQ",
+        "title": "中午吃什么"
+    },
+    "msg": "",
+    "request_id": "32482"
+}

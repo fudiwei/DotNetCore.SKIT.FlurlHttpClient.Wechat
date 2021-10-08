@@ -1,0 +1,18 @@
+﻿{
+    "code": 0,
+    "data": {
+        "list": [
+            {
+                "source": 1,
+                "msgType": "text",
+                "welcomeMsg": "你好",
+                "msgId": "5248",
+                "label": "全部",
+                "newSendInterval": 0
+            }
+        ],
+        "total": 1
+    },
+    "request_id": "18024ec0-837e-4873-825a-922247d4e57f"
+
+}

@@ -20,18 +20,18 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 public int State { get; set; }
 
                 /// <summary>
-                /// 获取或设置任务进度。
+                /// 获取或设置任务进度字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("progress")]
                 [System.Text.Json.Serialization.JsonPropertyName("progress")]
-                public string Progress { get; set; } = default!;
+                public string ProgressString { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置任务耗时。
+                /// 获取或设置任务耗时字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cost")]
                 [System.Text.Json.Serialization.JsonPropertyName("cost")]
-                public string Cost { get; set; } = default!;
+                public string CostString { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置导出任务的下载链接。

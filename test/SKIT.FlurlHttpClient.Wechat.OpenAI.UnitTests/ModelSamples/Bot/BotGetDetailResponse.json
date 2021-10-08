@@ -1,0 +1,19 @@
+﻿{
+    "code": 0,
+    "data": {
+        "default_answer": null,
+        "default_answer_switch": true,
+        "id": "3yrw9n5uknsox1pwzyz9ohb2eu4ta4wo",
+        "name_ch": "测试bot000121",
+        "name_en": "testBot000121",
+        "nickname": null,
+        "similar_question_recommend_num": 5,
+        "similarity": 0.9,
+        "similarity_low": 0.7,
+        "user_feedback": false,
+        "industry": 2,
+        "bot_type": 0
+    },
+    "msg": "请求成功",
+    "request_id": "255i0ug8-l9q4-3801-44ft-w7csjn9e5142"
+}

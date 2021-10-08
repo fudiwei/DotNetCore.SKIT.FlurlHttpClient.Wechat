@@ -1,0 +1,17 @@
+﻿{
+    "code": 0,
+    "msg": "请求成功",
+    "request_id": "255i0ug8-l9q4-3801-44ft-w7csjn9e5142",
+    "data": {
+        "list": [
+            {
+                "query": "你好啊啊啊",
+                "answer": "哈哈哈哈",
+                "count": 1
+            }
+        ],
+        "page_no": 1,
+        "page_size": 10,
+        "total": 1
+    }
+}

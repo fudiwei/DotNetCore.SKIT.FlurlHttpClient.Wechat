@@ -1,0 +1,40 @@
+﻿{
+    "code": 0,
+    "data": {
+        "count": 4,
+        "default_bot_count": 3,
+        "live_bot_count": 1,
+        "list": [
+            {
+                "id": "3yrw9n5uknsox1pwzyz9ohb2eu4ta4wo",
+                "name_ch": "测试bot000121",
+                "name_en": "testBot000121",
+                "auth": 200,
+                "bot_type": 0
+            },
+            {
+                "id": "sbcvmbvxrdkjg0axix5c9driwfwqbkum",
+                "name_ch": "测试bot0001211",
+                "name_en": "testBot0001211",
+                "auth": 200,
+                "bot_type": 1
+            },
+            {
+                "id": "td6kko408oo5afll4b7dh3l3ybmtsrgi",
+                "name_ch": "测试bot000111",
+                "name_en": "testBot00211",
+                "auth": 200,
+                "bot_type": 0
+            },
+            {
+                "id": "81wfgwcjmenfs3kkapwa97hwqfnrbu1z",
+                "name_ch": "测试bot00013",
+                "name_en": "testBot00013",
+                "auth": 200,
+                "bot_type": 0
+            }
+        ]
+    },
+    "msg": "success",
+    "request_id": "255i0ug8-l9q4-3801-44ft-w7csjn9e5142"
+}

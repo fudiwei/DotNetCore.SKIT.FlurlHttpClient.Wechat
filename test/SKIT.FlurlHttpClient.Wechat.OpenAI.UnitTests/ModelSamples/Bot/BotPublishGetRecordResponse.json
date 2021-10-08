@@ -1,0 +1,34 @@
+﻿{
+    "code": 0,
+    "data": {
+        "count": 3,
+        "list": [
+            {
+                "created_time": "2020-08-21 18:00:51",
+                "description": "",
+                "id": "65",
+                "open_id": "123456",
+                "status": 8,
+                "sync_status": 0
+            },
+            {
+                "created_time": "2020-08-21 19:00:52",
+                "description": "",
+                "id": "79",
+                "open_id": "123456",
+                "status": 8,
+                "sync_status": 1
+            },
+            {
+                "created_time": "2020-08-21 20:00:53",
+                "description": "",
+                "id": "555",
+                "open_id": "123456",
+                "status": 9,
+                "sync_status": 2
+            }
+        ]
+    },
+    "msg": "success",
+    "request_id": "255i0ug8-l9q4-3801-44ft-w7csjn9e5142"
+}
