@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("class_id")]
         [System.Text.Json.Serialization.JsonPropertyName("class_id")]
-        public int ClassId { get; set; }
+        public long ClassId { get; set; }
 
         /// <summary>
         /// 获取或设置排序方式。

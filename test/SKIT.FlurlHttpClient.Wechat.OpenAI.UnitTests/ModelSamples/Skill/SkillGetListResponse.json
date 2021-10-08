@@ -1,0 +1,26 @@
+﻿{
+    "code": 0,
+    "data": {
+        "count": 2,
+        "list": [
+            {
+                "id": 1205880,
+                "intent_count": 0,
+                "no_answer_intent_count": 0,
+                "type": 1,
+                "name": "天气询问",
+                "max_round": 10,
+                "wake_open": true,
+                "awaken_word": "你好",
+                "awaken_answer": [ "有什么可以帮忙的吗" ],
+                "exist_word": "再见",
+                "exist_answer": [ "祝您好运" ],
+                "cancel_intent_operation": true,
+                "cancel_answer": [ "已取消" ],
+                "no_cancel_answer": [ "没有可以取消的内容" ]
+            }
+        ]
+    },
+    "msg": "请求成功",
+    "request_id": "255i0ug8-l9q4-3801-44ft-w7csjn9e5142"
+}

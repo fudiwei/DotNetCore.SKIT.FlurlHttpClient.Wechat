@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public int ClassId { get; set; }
+                        public long ClassId { get; set; }
 
                         /// <summary>
                         /// 获取或设置话术名称。
