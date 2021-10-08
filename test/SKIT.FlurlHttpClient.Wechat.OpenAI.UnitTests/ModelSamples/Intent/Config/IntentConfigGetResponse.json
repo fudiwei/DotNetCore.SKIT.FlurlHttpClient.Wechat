@@ -1,0 +1,127 @@
+﻿{
+    "code": 0,
+    "msg": "请求成功",
+    "request_id": "255i0ug8-l9q4-3801-44ft-w7csjn9e5142",
+    "data": {
+        "slots": [
+            {
+                "name": "城市",
+                "dicts": [ "建筑", "公路" ],
+                "keep_ask": true,
+                "ask_content": [ "建筑1", "公路1" ]
+            }
+        ],
+        "pre": [
+            {
+                "skill": "音乐",
+                "intent": "点播"
+            }
+        ],
+        "next": [
+            {
+                "skill": "天气",
+                "intent": "询问"
+            }
+        ],
+        "keep_ask": true,
+        "keep_ask_num": 10,
+        "answer_config_type": 4,
+        "dynamic_ask_answer_config": {
+            "api": "_dynamic_list_selection_{}",
+            "question": "AskAnswerConfigQuestion",
+            "result": [
+                {
+                    "code": "0",
+                    "desc": "",
+                    "answer_config_type": 3,
+                    "answer": "",
+                    "ask_answer_config": {
+                        "api": "_bot_ask_{}",
+                        "question": "AskAnswerConfigQuestion",
+                        "result": [
+                            {
+                                "code": "0",
+                                "desc": "",
+                                "answer_config_type": 2,
+                                "answer": "",
+                                "ask_slot_answer_config": {
+                                    "api": "_bot_getinfo_{}",
+                                    "arguments": [
+                                        {
+                                            "name": "",
+                                            "slot": "Slot",
+                                            "ask_content": [ "111", "222" ]
+                                        }
+                                    ],
+                                    "result": [
+                                        {
+                                            "code": "0",
+                                            "desc": "",
+                                            "answer_config_type": 1,
+                                            "answer": "",
+                                            "api_answer_config": {
+                                                "api": "_http_service_{}",
+                                                "need_confirm": true,
+                                                "need_confirm_response": "城市好啊",
+                                                "http_method": "get",
+                                                "http_url": "HttpUrl111",
+                                                "arguments": {
+                                                    "input": [
+                                                        {
+                                                            "name": "InputName",
+                                                            "input": true,
+                                                            "desc": "Inputdesc",
+                                                            "slot": "InputSlot",
+                                                            "default_value": "defa",
+                                                            "ask_content": [ "ask" ]
+                                                        }
+                                                    ],
+                                                    "output": [
+                                                        {
+                                                            "name": "OutputName",
+                                                            "input": false,
+                                                            "desc": "desc",
+                                                            "slot": "OutputSlot",
+                                                            "default_value": ""
+                                                        }
+                                                    ]
+                                                },
+                                                "result": [
+                                                    {
+                                                        "code": "0",
+                                                        "desc": "",
+                                                        "answer_config_type": 0,
+                                                        "answer": "",
+                                                        "normal_answer_config": {
+                                                            "merge_answer": true,
+                                                            "answer": [
+                                                                {
+                                                                    "type": 0,
+                                                                    "content": "我在哪"
+                                                                },
+                                                                {
+                                                                    "type": 1,
+                                                                    "content": {
+                                                                        "title": "我是h5",
+                                                                        "description": "我是Description",
+                                                                        "url": "我是Url",
+                                                                        "pic_url": "我是PicUrl",
+                                                                        "type": "h5"
+                                                                    }
+                                                                }
+                                                            ]
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    ]
+                                }
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

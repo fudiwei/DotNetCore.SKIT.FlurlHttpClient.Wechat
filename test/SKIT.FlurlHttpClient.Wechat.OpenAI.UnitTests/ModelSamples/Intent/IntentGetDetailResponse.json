@@ -1,0 +1,24 @@
+﻿{
+    "code": 0,
+    "data": {
+        "id": 6326248,
+        "name": "温度bab1",
+        "questions": [
+            {
+                "counter_example": true,
+                "id": 92,
+                "question": "今天温度怎么样e",
+                "rank_level": 1,
+                "threshold": 0.9
+            }
+        ],
+        "rank_level": 1,
+        "skill_id": 1205882,
+        "switch": false,
+        "threshold": 0.9,
+        "frequency": 0,
+        "updated_time": 1588931008
+    },
+    "msg": "请求成功",
+    "request_id": "255i0ug8-l9q4-3801-44ft-w7csjn9e5142"
+}

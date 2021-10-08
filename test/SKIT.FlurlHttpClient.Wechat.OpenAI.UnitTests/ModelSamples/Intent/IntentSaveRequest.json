@@ -1,0 +1,20 @@
+﻿{
+    "intent_list": [
+        {
+            "intent_id": 0,
+            "skill_id": 1,
+            "name": "测试创建意图1",
+            "rank_level": 0.65,
+            "threshold": 0.7,
+            "switch": false
+        },
+        {
+            "intent_id": 0,
+            "skill_id": 1,
+            "name": "测试创建意图2",
+            "rank_level": 0.75,
+            "threshold": 0.7,
+            "switch": true
+        }
+    ]
+}

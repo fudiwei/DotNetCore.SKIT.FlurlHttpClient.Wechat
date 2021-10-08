@@ -1,0 +1,12 @@
+﻿{
+    "switch_list": [
+        {
+            "id": 1205882,
+            "switch": true
+        },
+        {
+            "id": 1205883,
+            "switch": false
+        }
+    ]
+}

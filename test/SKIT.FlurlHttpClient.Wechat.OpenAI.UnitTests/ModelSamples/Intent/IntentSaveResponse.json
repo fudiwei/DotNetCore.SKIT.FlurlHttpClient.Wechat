@@ -1,0 +1,18 @@
+﻿{
+    "code": 0,
+    "msg": "success",
+    "request_id": "255i0ug8-l9q4-3801-44ft-w7csjn9e5142",
+    "data": {
+        "count": 2,
+        "list": [
+            {
+                "intent_id": 45,
+                "intent_name": "测试创建意图1"
+            },
+            {
+                "intent_id": 20,
+                "intent_name": "测试创建意图2"
+            }
+        ]
+    }
+}
