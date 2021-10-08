@@ -1,0 +1,32 @@
+﻿{
+    "code": 0,
+    "data": {
+        "sys": {
+            "count": 243,
+            "list": [
+                {
+                    "id": 1,
+                    "name_ch": "时间范围类",
+                    "name_en": "$vd_time_range"
+                }
+            ]
+        },
+        "user": {
+            "count": 19,
+            "list": [
+                {
+                    "id": 100765,
+                    "name_ch": "美美美",
+                    "name_en": "mmm"
+                },
+                {
+                    "id": 100783,
+                    "name_ch": "测试重复词条",
+                    "name_en": "testduplacte"
+                }
+            ]
+        }
+    },
+    "msg": "",
+    "request_id": ""
+}

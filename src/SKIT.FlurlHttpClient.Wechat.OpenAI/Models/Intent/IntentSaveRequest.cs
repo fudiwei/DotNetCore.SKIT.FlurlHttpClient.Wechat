@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("intent_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("intent_id")]
-                public long IntentId { get; set; }
+                public long? IntentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置技能 ID。

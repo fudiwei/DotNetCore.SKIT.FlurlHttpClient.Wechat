@@ -10,28 +10,28 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     {
         public static class Types
         {
-            public class SkillIntent
+            public class Intent
             {
                 /// <summary>
                 /// 获取或设置技能名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("skill")]
                 [System.Text.Json.Serialization.JsonPropertyName("skill")]
-                public string Skill { get; set; } = string.Empty;
+                public string SkillName { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置原来意图名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("old_intent")]
                 [System.Text.Json.Serialization.JsonPropertyName("old_intent")]
-                public string? OldIntent { get; set; }
+                public string? OldIntentName { get; set; }
 
                 /// <summary>
                 /// 获取或设置意图名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("intent")]
                 [System.Text.Json.Serialization.JsonPropertyName("intent")]
-                public string Intent { get; set; } = string.Empty;
+                public string IntentName { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置相似度。
@@ -65,11 +65,11 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         }
 
         /// <summary>
-        /// 获取或设置技能意图列表。
+        /// 获取或设置意图列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
-        public IList<Types.SkillIntent> SkillIntentList { get; set; } = new List<Types.SkillIntent>();
+        public IList<Types.Intent> IntentList { get; set; } = new List<Types.Intent>();
 
         /// <summary>
         /// 获取或设置导入模式。

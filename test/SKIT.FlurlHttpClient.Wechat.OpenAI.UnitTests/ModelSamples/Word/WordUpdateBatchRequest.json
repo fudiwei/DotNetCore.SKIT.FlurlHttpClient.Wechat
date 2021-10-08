@@ -1,0 +1,12 @@
+﻿{
+    "dict_id": 1,
+    "data": [
+        {
+            "id": 1,
+            "name": "test",
+            "weight": 0.8,
+            "switch": true,
+            "synonyms": [ "你好", "又是愉快第一天" ]
+        }
+    ]
+}
