@@ -13,6 +13,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// 获取或设置授权方 AppId。
         /// </summary>
         [System.Xml.Serialization.XmlElement("AuthorizerAppid")]
-        public string AuthorizerAppid { get; set; } = default!;
+        public string AuthorizerAppId { get; set; } = default!;
     }
 }
