@@ -7,7 +7,7 @@
 [![Visitors](https://visitor-badge.laobi.icu/badge?page_id=fudiwei.DotNetCore.SKIT.FlurlHttpClient.Wechat&title=Visitors)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
 [![License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat?label=License)](https://mit-license.org/)
 
-基于 `Flurl.Http` 的微信 API HTTP 客户端，支持公众平台、开放平台、商户平台、企业微信、广告平台等模块。
+基于 `Flurl.Http` 的微信 API HTTP 客户端，支持公众平台、开放平台、商户平台、企业微信、广告平台、对话开放平台等模块。
 
 > 更多 SKIT.FlurlHttpClient 系列开发工具包请[点此查看](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient)。
 
@@ -43,7 +43,7 @@
 |            商户平台（微信支付）模块            | [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.TenpayV3.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3) | [开发文档](./docs/WechatTenpayV3/README.md)｜[示例项目](./docs/WechatTenpayV3/Sample.md) |
 |             企业微信（企业号）模块             |         [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Work.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Work) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.Work.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Work)         |                         [开发文档](./docs/WechatWork/README.md)                          |
 |             广告平台（广点通）模块             |           [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.Ads.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Ads) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.Ads.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.Ads)           |                          [开发文档](./docs/WechatAds/README.md)                          |
-|          对话开放平台（智能对话）模块          |                                                                                                                                                                                                                                                                                                                                                                                    |                                         _开发中_                                         |
+|          对话开放平台（智能对话）模块          |     [![NuGet Version](https://img.shields.io/nuget/v/SKIT.FlurlHttpClient.Wechat.OpenAI.svg?label=NuGet)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.OpenAI) <br> [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.OpenAI.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.OpenAI)     |                        [开发文档](./docs/WechatOpenAI/README.md)                         |
 
 ---
 
