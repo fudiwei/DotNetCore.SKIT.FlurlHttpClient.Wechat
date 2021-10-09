@@ -8,7 +8,13 @@
 
 -   基于微信对话开放平台 API 封装。
 
--   请求时自动生成请求唯一标识，无需开发者手动干预。
+-   支持平台接入、第三方接入两种模式。
+
+-   对于第三方接入，请求时自动生成加密参数，无需开发者手动干预。
+
+-   对于平台接入，请求时自动生成请求唯一标识，无需开发者手动干预。
+
+-   提供了解析回调通知事件等扩展方法。
 
 ---
 
@@ -34,8 +40,11 @@ using SKIT.FlurlHttpClient.Wechat.OpenAI;
 
 var options = new WechatOpenAIClientOptions()
 {
-    ClientId = "微信智能对话 ClientId",
-    ClientKey = "微信智能对话 ClientKey"
+    ClientId = "微信智能对话 ClientId，仅第三方接入需要",
+    ClientKey = "微信智能对话 ClientKey，仅第三方接入需要",
+    AppId = "微信智能对话 AppId，仅平台接入需要",
+    PushToken = "微信智能对话 Token，仅平台接入需要",
+    PushEncodingAESKey = "微信智能对话 EncodingAESKey，仅平台接入需要"
 };
 var client = new WechatOpenAIClient(options);
 ```
