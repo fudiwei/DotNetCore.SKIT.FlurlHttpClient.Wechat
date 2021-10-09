@@ -31,19 +31,19 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// <summary>
         /// 获取或设置事件。
         /// </summary>
-        [XmlElement("event")]
+        [XmlElement("event", IsNullable = true)]
         public string? Event { get; set; }
 
         /// <summary>
         /// 获取或设置客服人员的昵称。
         /// </summary>
-        [XmlElement("kefuname")]
+        [XmlElement("kefuname", IsNullable = true)]
         public string? KfName { get; set; }
 
         /// <summary>
         /// 获取或设置客服人员的头像 URL。
         /// </summary>
-        [XmlElement("kefuavatar")]
+        [XmlElement("kefuavatar", IsNullable = true)]
         public string? KfAvatarUrl { get; set; }
     }
 }
