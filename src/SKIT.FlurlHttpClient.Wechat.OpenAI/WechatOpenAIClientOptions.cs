@@ -18,13 +18,28 @@
         public string Endpoints { get; set; } = WechatOpenAIEndpoints.DEFAULT;
 
         /// <summary>
-        /// 获取或设置微信智能对话 ClientId。
+        /// 获取或设置微信智能对话 ClientId。仅限第三方平台接入时使用。
         /// </summary>
-        public string ClientId { get; set; } = default!;
+        public string? ClientId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信智能对话 ClientKey。
+        /// 获取或设置微信智能对话 ClientKey。仅限第三方平台接入时使用。
         /// </summary>
-        public string ClientKey { get; set; } = default!;
+        public string? ClientKey { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信智能对话 AppId。仅限平台接入时使用。
+        /// </summary>
+        public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信智能对话服务器推送的 EncodingAESKey。仅限平台接入时使用。
+        /// </summary>
+        public string? PushEncodingAESKey { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信智能对话服务器推送的 Token。仅限平台接入时使用。
+        /// </summary>
+        public string? PushToken { get; set; }
     }
 }
