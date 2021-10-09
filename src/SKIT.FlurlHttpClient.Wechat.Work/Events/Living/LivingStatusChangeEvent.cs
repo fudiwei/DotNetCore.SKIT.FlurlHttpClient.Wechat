@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94145 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94308 </para>
     /// </summary>
-    public class LivingStatusChangeEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class LivingStatusChangeEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置应用 ID。

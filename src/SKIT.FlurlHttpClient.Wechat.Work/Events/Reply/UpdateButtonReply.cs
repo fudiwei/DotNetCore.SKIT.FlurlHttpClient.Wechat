@@ -8,9 +8,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90241#%E6%A8%A1%E6%9D%BF%E5%8D%A1%E7%89%87%E6%9B%B4%E6%96%B0%E6%B6%88%E6%81%AF </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90377#%E6%A8%A1%E6%9D%BF%E5%8D%A1%E7%89%87%E6%9B%B4%E6%96%B0%E6%B6%88%E6%81%AF </para>
     /// </summary>
-    public class UpdateButtonReply : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class UpdateButtonReply : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Button
             {

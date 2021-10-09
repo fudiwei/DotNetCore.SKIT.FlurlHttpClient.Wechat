@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>表示 INFO.disconnect_info 事件的数据。</para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90751 </para>
     /// </summary>
-    public class DisconnectInfoEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class DisconnectInfoEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置服务商 CorpId。

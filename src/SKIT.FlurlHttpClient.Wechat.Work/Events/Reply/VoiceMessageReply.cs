@@ -9,9 +9,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90377#%E8%AF%AD%E9%9F%B3%E6%B6%88%E6%81%AF </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90859#%E8%AF%AD%E9%9F%B3%E6%B6%88%E6%81%AF </para>
     /// </summary>
-    public class VoiceMessageReply : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class VoiceMessageReply : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Voice
             {

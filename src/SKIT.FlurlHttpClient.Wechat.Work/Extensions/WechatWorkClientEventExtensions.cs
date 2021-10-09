@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="callbackJson"></param>
         /// <returns></returns>
         public static TEvent DeserializeEventFromJson<TEvent>(this WechatWorkClient client, string callbackJson)
-            where TEvent : WechatWorkEvent, WechatWorkEvent.Types.IJsonSerializable, new()
+            where TEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IJsonSerializable, new()
         {
             return InnerDeserializeEventFromJson<TEvent>(client, callbackJson);
         }
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="callbackXml"></param>
         /// <returns></returns>
         public static TEvent DeserializeEventFromXml<TEvent>(this WechatWorkClient client, string callbackXml)
-            where TEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable, new()
+            where TEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable, new()
         {
             return InnerDeserializeEventFromXml<TEvent>(client, callbackXml);
         }
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="callbackModel"></param>
         /// <returns></returns>
         public static string SerializeEventToJson<TEvent>(this WechatWorkClient client, TEvent callbackModel)
-            where TEvent : WechatWorkEvent, WechatWorkEvent.Types.IJsonSerializable, new()
+            where TEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IJsonSerializable, new()
         {
             string json;
 
@@ -203,7 +203,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="callbackModel"></param>
         /// <returns></returns>
         public static string SerializeEventToXml<TEvent>(this WechatWorkClient client, TEvent callbackModel)
-            where TEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable, new()
+            where TEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable, new()
         {
             string xml;
 

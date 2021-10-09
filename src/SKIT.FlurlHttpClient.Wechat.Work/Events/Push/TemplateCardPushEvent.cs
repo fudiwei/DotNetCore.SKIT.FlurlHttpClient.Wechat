@@ -8,9 +8,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90240 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90240 </para>
     /// </summary>
-    public class TemplateCardPushEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class TemplateCardPushEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class SelectItem
             {

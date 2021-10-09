@@ -5,7 +5,7 @@
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94670 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94699 </para>
     /// </summary>
-    public class KfMessageEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class KfMessageEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置调用拉取消息的 Token。

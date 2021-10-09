@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92051 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92050 </para>
     /// </summary>
-    public class ChangeSchoolContactEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class ChangeSchoolContactEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置第三方应用的 SuiteId。

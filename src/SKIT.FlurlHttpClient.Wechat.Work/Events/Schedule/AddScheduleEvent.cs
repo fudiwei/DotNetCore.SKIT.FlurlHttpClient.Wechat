@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93651 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93704 </para>
     /// </summary>
-    public class AddScheduleEvent : WechatWorkEvent, WechatWorkEvent.Types.IJsonSerializable, WechatWorkEvent.Types.IXmlSerializable
+    public class AddScheduleEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IJsonSerializable, WechatWorkEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置日程 ID。

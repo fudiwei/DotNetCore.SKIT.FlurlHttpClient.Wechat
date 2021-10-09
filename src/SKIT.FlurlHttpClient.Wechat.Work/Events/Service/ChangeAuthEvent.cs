@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>表示 INFO.change_auth 事件的数据。</para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90642 </para>
     /// </summary>
-    public class ChangeAuthEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class ChangeAuthEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置第三方应用的 SuiteId。

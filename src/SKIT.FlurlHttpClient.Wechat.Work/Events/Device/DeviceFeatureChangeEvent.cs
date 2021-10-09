@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>表示 INFO.device_feature_change 事件的数据。</para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90751 </para>
     /// </summary>
-    public class DeviceFeatureChangeEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class DeviceFeatureChangeEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
         /// <summary>
         /// 获取或设置服务商 CorpId。

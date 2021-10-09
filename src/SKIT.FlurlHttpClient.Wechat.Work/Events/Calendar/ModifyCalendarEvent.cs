@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93651 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93704 </para>
     /// </summary>
-    public class ModifyCalendarEvent : AddCalendarEvent, WechatWorkEvent.Types.IJsonSerializable, WechatWorkEvent.Types.IXmlSerializable
+    public class ModifyCalendarEvent : AddCalendarEvent, WechatWorkEvent.Serialization.IJsonSerializable, WechatWorkEvent.Serialization.IXmlSerializable
     {
     }
 }

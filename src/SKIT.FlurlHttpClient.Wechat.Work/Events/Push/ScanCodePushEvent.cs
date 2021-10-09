@@ -9,9 +9,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90376 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90858 </para>
     /// </summary>
-    public class ScanCodePushEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class ScanCodePushEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class ScanCode
             {

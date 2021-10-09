@@ -8,9 +8,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90269 </para>
     /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93798 </para>
     /// </summary>
-    public class OpenApprovalChangeEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+    public class OpenApprovalChangeEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
-        public new static class Types
+        public static class Types
         {
             public class Approval
             {
