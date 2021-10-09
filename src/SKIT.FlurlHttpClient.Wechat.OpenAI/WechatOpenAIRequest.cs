@@ -12,6 +12,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
+        [System.Xml.Serialization.XmlIgnore]
+        [System.Xml.Serialization.SoapIgnore]
         public virtual int? Timeout { get; set; }
 
         /// <summary>
@@ -19,6 +21,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
+        [System.Xml.Serialization.XmlIgnore]
+        [System.Xml.Serialization.SoapIgnore]
         public virtual string? RequestId { get; set; }
 
         /// <summary>
@@ -26,6 +30,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
+        [System.Xml.Serialization.XmlIgnore]
+        [System.Xml.Serialization.SoapIgnore]
         public virtual string? BotId { get; set; }
 
         /// <summary>
@@ -33,6 +39,17 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
+        [System.Xml.Serialization.XmlIgnore]
+        [System.Xml.Serialization.SoapIgnore]
         public virtual string? AccessToken { get; set; }
+    }
+
+    public abstract class WechatOpenAIRequestEncryptedXmlable : WechatOpenAIRequest
+    {
+        /// <summary>
+        /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatOpenAIClient"/> 时的 <see cref="WechatOpenAIClientOptions.AppId"/> 参数。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("appid")]
+        public string? AppId { get; set; }
     }
 }

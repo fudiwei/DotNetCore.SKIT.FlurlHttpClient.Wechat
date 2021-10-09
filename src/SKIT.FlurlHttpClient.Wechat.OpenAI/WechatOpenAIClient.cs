@@ -112,6 +112,15 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         {
             try
             {
+                if (data is WechatOpenAIRequestEncryptedXmlable xmlData)
+                {
+                    if (xmlData.AppId == null)
+                        xmlData.AppId = Credentials.AppId;
+
+                    string xml = Utilities.XmlUtility.Serialize(xmlData);
+                    data = new { encrypt = Utilities.WxBizMsgCryptor.AESEncrypt(plainText: xml, encodingAESKey: Credentials.PushEncodingAESKey!, appId: xmlData.AppId!)  };
+                }
+
                 using IFlurlResponse flurlResponse = await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
                 return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
             }

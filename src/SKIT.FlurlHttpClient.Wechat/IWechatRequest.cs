@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat
+﻿namespace SKIT.FlurlHttpClient.Wechat
 {
     /// <summary>
     /// SKIT.FlurlHttpClient.Wechat 请求接口。

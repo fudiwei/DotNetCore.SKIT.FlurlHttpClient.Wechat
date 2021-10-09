@@ -11,6 +11,7 @@
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
         </Content>
         <Content Include="ModelSamples/**/*.json" />
+        <Content Include="EventSamples/**/*.xml" />
     </ItemGroup>
 
     <ItemGroup>

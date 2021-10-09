@@ -32,16 +32,30 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <summary>
         /// 获取微信智能对话 API 返回的错误码。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("code")]
-        [System.Text.Json.Serialization.JsonPropertyName("code")]
-        public virtual int ErrorCode { get; set; }
+        [Newtonsoft.Json.JsonProperty("errcode")]
+        [System.Text.Json.Serialization.JsonPropertyName("errcode")]
+        public virtual int? ErrorCode { get; set; }
 
         /// <summary>
-        /// 获取微信智能对话 API 返回的错误描述。
+        /// 获取微信智能对话 API 返回的错误信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("errmsg")]
+        [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
+        public virtual string? ErrorMessage { get; set; }
+
+        /// <summary>
+        /// 获取微信智能对话 API 返回的状态码。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("code")]
+        [System.Text.Json.Serialization.JsonPropertyName("code")]
+        public virtual int? Code { get; set; }
+
+        /// <summary>
+        /// 获取微信智能对话 API 返回的调用信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg")]
         [System.Text.Json.Serialization.JsonPropertyName("msg")]
-        public virtual string? ErrorMessage { get; set; }
+        public virtual string? Message { get; set; }
 
         /// <summary>
         /// 获取微信智能对话 API 返回的请求唯一标识。
@@ -51,12 +65,12 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         public virtual string? RequestId { get; set; }
 
         /// <summary>
-        /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200、且 errcode 值为 0）。
+        /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200、且 code 和 errcode 值都为 0）。
         /// </summary>
         /// <returns></returns>
         public virtual bool IsSuccessful()
         {
-            return RawStatus == 200 && ErrorCode == 0;
+            return RawStatus == 200 && ErrorCode.GetValueOrDefault() == 0 && Code.GetValueOrDefault() == 0;
         }
     }
 
