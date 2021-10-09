@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     /// <para>表示 [POST] /openapi/setautoreply/{TOKEN} 接口的请求。</para>
     /// </summary>
     [XmlRoot("xml")]
-    public class OpenApiBatchSetAutoReplyRequest : WechatOpenAIRequestEncryptedXmlable
+    public class OpenApiBatchSetAutoReplyRequest : WechatOpenAIRequest, WechatOpenAIRequest.Serialization.IEncryptedXmlable
     {
         /// <summary>
         /// 获取或设置管理员 ID。

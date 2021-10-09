@@ -7,6 +7,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     /// </summary>
     public abstract class WechatOpenAIRequest : IWechatRequest
     {
+        public static class Serialization
+        {
+            public interface IEncryptedXmlable
+            { 
+            }
+        }
+
         /// <summary>
         /// 获取或设置请求超时时间（单位：毫秒）。如果不指定将使用构造 <see cref="WechatOpenAIClient"/> 时的 <see cref="WechatOpenAIClientOptions.Timeout"/> 参数，这在需要指定特定耗时请求（比如上传或下载文件）的超时时间时很有用。
         /// </summary>
@@ -42,14 +49,5 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         [System.Xml.Serialization.XmlIgnore]
         [System.Xml.Serialization.SoapIgnore]
         public virtual string? AccessToken { get; set; }
-    }
-
-    public abstract class WechatOpenAIRequestEncryptedXmlable : WechatOpenAIRequest
-    {
-        /// <summary>
-        /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatOpenAIClient"/> 时的 <see cref="WechatOpenAIClientOptions.AppId"/> 参数。
-        /// </summary>
-        [System.Xml.Serialization.XmlElement("appid")]
-        public string? AppId { get; set; }
     }
 }

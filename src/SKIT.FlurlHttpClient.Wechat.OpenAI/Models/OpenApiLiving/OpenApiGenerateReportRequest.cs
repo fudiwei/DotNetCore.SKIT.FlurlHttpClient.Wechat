@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     /// <para>表示 [POST] /openapi/generatereport/{TOKEN} 接口的请求。</para>
     /// </summary>
     [XmlRoot("xml")]
-    public class OpenApiGenerateReportRequest : WechatOpenAIRequestEncryptedXmlable
+    public class OpenApiGenerateReportRequest : WechatOpenAIRequest, WechatOpenAIRequest.Serialization.IEncryptedXmlable
     {        
         /// <summary>
         /// 获取或设置直播 ID。

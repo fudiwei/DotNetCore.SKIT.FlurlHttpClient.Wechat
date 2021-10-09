@@ -8,8 +8,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     /// <para>表示 [POST] /openapi/sendmsg/{TOKEN} 接口的请求。</para>
     /// </summary>
     [XmlRoot("xml")]
-    public class OpenApiSendMessageRequest : WechatOpenAIRequestEncryptedXmlable
-    {        
+    public class OpenApiSendMessageRequest : WechatOpenAIRequest, WechatOpenAIRequest.Serialization.IEncryptedXmlable
+    {
+        /// <summary>
+        /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatOpenAIClient"/> 时的 <see cref="WechatOpenAIClientOptions.AppId"/> 参数。
+        /// </summary>
+        [XmlElement("appid")]
+        public string? AppId { get; set; }
+
         /// <summary>
         /// 获取或设置用户的 OpenId。
         /// </summary>
