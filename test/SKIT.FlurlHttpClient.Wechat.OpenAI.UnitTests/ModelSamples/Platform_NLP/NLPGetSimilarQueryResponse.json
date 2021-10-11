@@ -1,0 +1,20 @@
+﻿{
+    "data": [
+        {
+            "question": "你还好吗",
+            "score": 0.9911637194339746,
+            "source": "generation"
+        },
+        {
+            "question": "你怎么样",
+            "score": 0.8547977341846155,
+            "source": "generation"
+        },
+        {
+            "question": "你怎么样啊",
+            "score": 0.8517300445116354,
+            "source": "generation"
+        }
+    ],
+    "costime": 1394
+}
