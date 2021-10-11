@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     public class UserRegisterRequest : WechatOpenAIRequest
     {
         /// <summary>
-        /// 获取或设置平台自定义用户名。
+        /// 获取或设置用户 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("uid")]
         [System.Text.Json.Serialization.JsonPropertyName("uid")]

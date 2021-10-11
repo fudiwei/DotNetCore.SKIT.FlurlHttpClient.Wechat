@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "sign", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "sign", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiSignResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "aibot", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "aibot", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiAIBotResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "gethotquerylist", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "gethotquerylist", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiGetHotQueryListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

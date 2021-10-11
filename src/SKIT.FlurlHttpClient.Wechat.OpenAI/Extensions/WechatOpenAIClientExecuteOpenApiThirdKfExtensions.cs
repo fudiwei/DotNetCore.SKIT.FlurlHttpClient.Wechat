@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "sendmsg", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "sendmsg", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiSendMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "kefustate", "get", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "kefustate", "get", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiKefuStateGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "kefustate", "change", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "kefustate", "change", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiKefuStateChangeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

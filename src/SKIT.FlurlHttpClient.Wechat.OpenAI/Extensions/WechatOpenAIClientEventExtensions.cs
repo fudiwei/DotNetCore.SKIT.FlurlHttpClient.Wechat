@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 if (!Utilities.WxBizMsgCryptor.TryParseXml(callbackXml, out string? encryptedXml))
                     throw new Exceptions.WechatOpenAIEventSerializationException("Encrypt event failed, because of empty encrypted data.");
 
-                callbackXml = Utilities.WxBizMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
+                callbackXml = Utilities.WxBizMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.EncodingAESKey!, out _);
 
                 using var reader = new StringReader(callbackXml);
 
@@ -106,20 +106,20 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             }
 
 
-            if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
+            if (string.IsNullOrEmpty(client.Credentials.EncodingAESKey))
                 throw new Exceptions.WechatOpenAIEventSerializationException("Encrypt event failed, because there is no encoding AES key.");
-            if (string.IsNullOrEmpty(client.Credentials.PushToken))
+            if (string.IsNullOrEmpty(client.Credentials.Token))
                 throw new Exceptions.WechatOpenAIEventSerializationException("Encrypt event failed, because there is no token.");
 
             try
             {
                 string cipher = Utilities.WxBizMsgCryptor.AESEncrypt(
                     plainText: xml,
-                    encodingAESKey: client.Credentials.PushEncodingAESKey!,
+                    encodingAESKey: client.Credentials.EncodingAESKey!,
                     appId: client.Credentials.AppId!
                 );
 
-                xml = Utilities.WxBizMsgCryptor.WrapXml(sToken: client.Credentials.PushToken!, sMsgEncrypt: cipher);
+                xml = Utilities.WxBizMsgCryptor.WrapXml(sToken: client.Credentials.Token!, sMsgEncrypt: cipher);
             }
             catch (Exception ex)
             {

@@ -17,6 +17,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
             var config = json.RootElement.GetProperty("WechatConfig");
             WechatClientId = config.GetProperty("ClientId").GetString();
             WechatClientKey = config.GetProperty("ClientKey").GetString();
+            WechatAppId = config.GetProperty("AppId").GetString();
+            WechatToken = config.GetProperty("Token").GetString();
+            WechatEncodingAESKey = config.GetProperty("EncodingAESKey").GetString();
             WechatAccessToken = config.GetProperty("AccessToken").GetString();
 
             ProjectSourceDirectory = json.RootElement.GetProperty("ProjectSourceDirectory").GetString();
@@ -25,6 +28,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
 
         public static readonly string WechatClientId;
         public static readonly string WechatClientKey;
+        public static readonly string WechatAppId;
+        public static readonly string WechatToken;
+        public static readonly string WechatEncodingAESKey;
         public static readonly string WechatAccessToken;
 
         public static readonly string ProjectSourceDirectory;

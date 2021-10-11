@@ -115,11 +115,43 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 if (data is WechatOpenAIRequest.Serialization.IEncryptedXmlable)
                 {
                     string plainXml = Utilities.XmlUtility.Serialize(data);
-                    string encryptedXml = Utilities.WxBizMsgCryptor.AESEncrypt(plainText: plainXml, encodingAESKey: Credentials.PushEncodingAESKey!, appId: Credentials.AppId!);
+                    string encryptedXml = Utilities.WxBizMsgCryptor.AESEncrypt(plainText: plainXml, encodingAESKey: Credentials.EncodingAESKey!, appId: Credentials.AppId!);
                     data = new { encrypt = encryptedXml };
                 }
 
                 using IFlurlResponse flurlResponse = await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
+                return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
+            }
+            catch (FlurlHttpException ex)
+            {
+                throw new WechatOpenAIException(ex.Message, ex);
+            }
+        }
+
+        /// <summary>
+        /// 异步发起请求。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="flurlRequest"></param>
+        /// <param name="data"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<T> SendRequestWithUrlEncodedAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
+            where T : WechatOpenAIResponse, new()
+        {
+            try
+            {
+                if (data is WechatOpenAIRequest.Serialization.IEncryptedUrlEncodedFormData)
+                {
+                    string jwt = Utilities.JWTUtility.EncodeWithHS256(payload: data, secret: Credentials.EncodingAESKey!);
+                    data = new { query = jwt };
+                }
+
+                using IFlurlResponse flurlResponse = await flurlRequest
+                    .WithClient(FlurlClient)
+                    .AllowAnyHttpStatus()
+                    .SendUrlEncodedAsync(flurlRequest.Verb, data, cancellationToken)
+                    .ConfigureAwait(false);
                 return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)

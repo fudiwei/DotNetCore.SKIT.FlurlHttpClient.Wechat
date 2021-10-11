@@ -33,13 +33,13 @@
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信智能对话服务器推送的 EncodingAESKey。仅限平台接入时使用。
+        /// 获取或设置微信智能对话 Token。仅限平台接入时使用。
         /// </summary>
-        public string? PushEncodingAESKey { get; set; }
+        public string? Token { get; set; }
 
         /// <summary>
-        /// 获取或设置微信智能对话服务器推送的 Token。仅限平台接入时使用。
+        /// 获取或设置微信智能对话 EncodingAESKey。仅限平台接入时使用。
         /// </summary>
-        public string? PushToken { get; set; }
+        public string? EncodingAESKey { get; set; }
     }
 }

@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Settings
         public string? AppId { get; }
 
         /// <summary>
-        /// 初始化客户端时 <see cref="WechatOpenAIClientOptions.PushToken"/> 的副本。
+        /// 初始化客户端时 <see cref="WechatOpenAIClientOptions.Token"/> 的副本。
         /// </summary>
-        public string? PushToken { get; }
+        public string? Token { get; }
 
         /// <summary>
-        /// 初始化客户端时 <see cref="WechatOpenAIClientOptions.PushEncodingAESKey"/> 的副本。
+        /// 初始化客户端时 <see cref="WechatOpenAIClientOptions.EncodingAESKey"/> 的副本。
         /// </summary>
-        public string? PushEncodingAESKey { get; }
+        public string? EncodingAESKey { get; }
 
         internal Credentials(WechatOpenAIClientOptions options)
         {
@@ -40,8 +40,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Settings
             ClientId = options.ClientId;
             ClientKey = options.ClientKey;
             AppId = options.AppId;
-            PushToken = options.PushToken;
-            PushEncodingAESKey = options.PushEncodingAESKey;
+            Token = options.Token;
+            EncodingAESKey = options.EncodingAESKey;
         }
     }
 }

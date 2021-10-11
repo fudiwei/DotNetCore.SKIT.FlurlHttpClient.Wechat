@@ -9,7 +9,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
             Instance = new WechatOpenAIClient(new WechatOpenAIClientOptions()
             { 
                 ClientId = TestConfigs.WechatClientId,
-                ClientKey =  TestConfigs.WechatClientKey
+                ClientKey = TestConfigs.WechatClientKey,
+                AppId = TestConfigs.WechatAppId,
+                Token = TestConfigs.WechatToken,
+                EncodingAESKey = TestConfigs.WechatEncodingAESKey
             });
         }
 

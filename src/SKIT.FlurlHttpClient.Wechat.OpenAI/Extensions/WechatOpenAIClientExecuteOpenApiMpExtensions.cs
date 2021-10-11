@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "getbindlink", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "getbindlink", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiGetBindLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "getbindlist", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "getbindlist", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiGetBindListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "unbindmp", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "unbindmp", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiUnbindMpResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "geth5link", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "geth5link", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.OpenApiGetH5LinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -108,13 +108,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 request.FileContentType = "image/jpeg";
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "openapi", "assetsupload", client.Credentials.PushToken!);
+                .CreateRequest(request, HttpMethod.Post, "openapi", "assetsupload", client.Credentials.Token!);
 
             using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
             using var paramContent = new StringContent(
                 Utilities.WxBizMsgCryptor.AESEncrypt(
                     plainText: Utilities.XmlUtility.Serialize(request),
-                    encodingAESKey: client.Credentials.PushEncodingAESKey!,
+                    encodingAESKey: client.Credentials.EncodingAESKey!,
                     appId: client.Credentials.AppId!
                 ), 
                 Encoding.UTF8

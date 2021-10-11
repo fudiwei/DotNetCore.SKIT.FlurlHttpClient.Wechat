@@ -497,7 +497,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         // 如果是 GET 请求，检查是否包含 JSON 序列化字段
                         if ("GET".Equals(expectedRequestMethod, StringComparison.OrdinalIgnoreCase))
                         {
-                            if (!(reqCodeSourceCode.Contains("/* @codestyle-disable") && reqCodeSourceCode.Contains("no-jsonable-property-in-get")))
+                            if (!(reqCodeSourceCode.Contains("/* @codestyle-disable") && reqCodeSourceCode.Contains("no-jsonable-property-in-request-get")))
                             {
                                 if (new Regex("\\[Newtonsoft.Json.JsonProperty\\(\"[a-zA-Z0-9_]*\"\\)\\]").IsMatch(reqCodeSourceCode))
                                 {
@@ -560,10 +560,13 @@ namespace SKIT.FlurlHttpClient.Wechat
                         }
 
                         // 检验是否包含 `new class()` 的赋值
-                        if (new Regex("=\\s*new\\s[a-zA-Z0-9.]*\\(\\)").IsMatch(resCodeSourceCode))
+                        if (!(resCodeSourceCode.Contains("/* @codestyle-disable") && resCodeSourceCode.Contains("no-instantiated-property-in-response")))
                         {
-                            lstError.Add(new Exception($"源代码 \"{resCodeFileName}\" 下代码有误，请求模型不应包含 `= new class()` 赋值。"));
-                            return false;
+                            if (new Regex("=\\s*new\\s[a-zA-Z0-9.]*\\(\\)").IsMatch(resCodeSourceCode))
+                            {
+                                lstError.Add(new Exception($"源代码 \"{resCodeFileName}\" 下代码有误，响应模型不应包含 `= new class()` 赋值。"));
+                                return false;
+                            }
                         }
 
                         // 检验是否包含列表类型字段
