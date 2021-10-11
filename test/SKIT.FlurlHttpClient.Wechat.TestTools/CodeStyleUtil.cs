@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 string json = File.ReadAllText(file);
                 string name = Path.GetFileNameWithoutExtension(file).Split('.')[0];
 
-                Type type = assembly.GetType($"{assembly.GetName().Name}.Models.{name}");
+                Type type = assembly.GetTypes().SingleOrDefault(e => e.FullName.StartsWith($"{assembly.GetName().Name}.Models.") && e.Name == name);
                 if (type == null)
                 {
                     lstError.Add(new Exception($"类型 `{name}`不存在。"));
@@ -192,7 +192,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 string json = File.ReadAllText(file);
                 string name = Path.GetFileNameWithoutExtension(file).Split('.')[0];
 
-                Type type = assembly.GetType($"{assembly.GetName().Name}.Events.{name}");
+                Type type = assembly.GetTypes().SingleOrDefault(e => e.FullName.StartsWith($"{assembly.GetName().Name}.Events.") && e.Name == name);
                 if (type == null)
                 {
                     lstError.Add(new Exception($"类型 `{name}`不存在。"));
@@ -209,8 +209,8 @@ namespace SKIT.FlurlHttpClient.Wechat
             {
                 string xml = File.ReadAllText(file);
                 string name = Path.GetFileNameWithoutExtension(file).Split('.')[0];
-
-                Type type = assembly.GetType($"{assembly.GetName().Name}.Events.{name}");
+                
+                Type type = assembly.GetTypes().SingleOrDefault(e => e.FullName.StartsWith($"{assembly.GetName().Name}.Events.") && e.Name == name);
                 if (type == null)
                 {
                     lstError.Add(new Exception($"类型 `{name}`不存在。"));
