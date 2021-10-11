@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
             Credentials = new Settings.Credentials(options);
 
-            FlurlClient.BaseUrl = options.Endpoints ?? WechatOpenAIEndpoints.DEFAULT;
+            FlurlClient.BaseUrl = options.Endpoints ?? WechatOpenAIEndpoints.PLATFORM;
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
         }
 

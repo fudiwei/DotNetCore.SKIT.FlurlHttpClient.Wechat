@@ -8,8 +8,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     public static class WechatOpenAIEndpoints
     {
         /// <summary>
-        /// 主域名（默认）。
+        /// 平台接入（默认）。
         /// </summary>
-        public const string DEFAULT = "https://openaiapi.weixin.qq.com";
+        public const string PLATFORM = "https://openai.weixin.qq.com";
+
+        /// <summary>
+        /// 第三方接入。
+        /// </summary>
+        public const string THIRDPARTY = "https://openaiapi.weixin.qq.com";
     }
 }

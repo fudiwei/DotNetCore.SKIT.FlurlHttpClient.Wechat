@@ -13,9 +13,9 @@
 
         /// <summary>
         /// 获取或设置微微信智能对话 API 域名。
-        /// <para>默认值：<see cref="WechatOpenAIEndpoints.DEFAULT"/></para>
+        /// <para>默认值：<see cref="WechatOpenAIEndpoints.PLATFORM"/></para>
         /// </summary>
-        public string Endpoints { get; set; } = WechatOpenAIEndpoints.DEFAULT;
+        public string Endpoints { get; set; } = WechatOpenAIEndpoints.PLATFORM;
 
         /// <summary>
         /// 获取或设置微信智能对话 ClientId。仅限第三方平台接入时使用。
