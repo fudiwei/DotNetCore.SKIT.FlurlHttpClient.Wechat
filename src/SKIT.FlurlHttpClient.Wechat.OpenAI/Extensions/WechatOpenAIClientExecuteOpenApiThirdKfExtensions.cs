@@ -11,6 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <summary>
         /// <para>异步调用 [POST] /openapi/sendmsg/{TOKEN} 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/thirdkefu/sendmsg.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/sendmsg.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

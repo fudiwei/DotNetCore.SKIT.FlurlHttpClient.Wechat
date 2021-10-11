@@ -8,13 +8,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     /// <para>表示 [POST] /openapi/setautoreply/{TOKEN} 接口的请求。</para>
     /// </summary>
     [XmlRoot("xml")]
-    public class OpenApiBatchSetAutoReplyRequest : WechatOpenAIRequest, WechatOpenAIRequest.Serialization.IEncryptedXmlable
+    public class OpenApiSetAutoReplyRequest : WechatOpenAIRequest, WechatOpenAIRequest.Serialization.IEncryptedXmlable
     {
         /// <summary>
         /// 获取或设置管理员 ID。
         /// </summary>
         [XmlElement("managerid")]
-        public string ManagerId { get; set; } = string.Empty;
+        public string ManagetId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置技能名称。
@@ -25,20 +25,20 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// <summary>
         /// 获取或设置标准问题。
         /// </summary>
-        [XmlElement("title", IsNullable = true)]
+        [XmlElement("title")]
         public string Title { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置自动回答的内容。
         /// </summary>
-        [XmlElement("content", IsNullable = true)]
+        [XmlElement("content")]
         public string Content { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置要设置的相似问题列表。
+        /// 获取或设置相似问题列表。
         /// </summary>
         [XmlArray("list")]
         [XmlArrayItem("question", Type = typeof(string))]
-        public List<string> QuestionId { get; set; } = new List<string>();
+        public List<string> QuestionList { get; set; } = new List<string>();
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /openapi/getbindlink/{TOKEN} 接口的响应。</para>
+    /// <para>表示 [POST] /openapi/getbindlist/{TOKEN} 接口的响应。</para>
     /// </summary>
     public class OpenApiGetBindListResponse : WechatOpenAIResponse
     {

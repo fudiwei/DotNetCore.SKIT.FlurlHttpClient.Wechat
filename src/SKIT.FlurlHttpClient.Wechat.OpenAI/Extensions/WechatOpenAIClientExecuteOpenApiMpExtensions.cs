@@ -96,16 +96,16 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.OpenApiAssetsUploadResponse> ExecuteFileUploadAsync(this WechatOpenAIClient client, Models.FileUploadRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.OpenApiAssetsUploadResponse> ExecuteOpenApiAssetsUploadAsync(this WechatOpenAIClient client, Models.OpenApiAssetsUploadRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName == null)
-                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".csv";
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
 
             if (request.FileContentType == null)
-                request.FileContentType = "text/csv";
+                request.FileContentType = "image/jpeg";
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "openapi", "assetsupload", client.Credentials.PushToken!);
