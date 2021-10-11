@@ -11,9 +11,9 @@
         <PackageId>SKIT.FlurlHttpClient.Wechat.OpenAI</PackageId>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
-        <PackageTags>Flurl.Http Wechat Weixin MicroMessage WxOpenAI 微信 微信智能对话 微信对话开放平台 微信智能对话开放平台 智能对话平台</PackageTags>
-        <Version>0.1.0-alpha</Version>
-        <Description>基于 Flurl.Http 的微信对话开放平台（微信智能对话） API 客户端。</Description>
+        <PackageTags>Flurl.Http Wechat Weixin MicroMessage WechatAI WechatOpenAI WexinAI WeixinOpenAI 微信 微信智能对话 微信对话开放平台 微信智能对话开放平台 智能对话平台</PackageTags>
+        <Version>1.0.0-beta.211011</Version>
+        <Description>基于 Flurl.Http 的微信对话开放平台（微信智能对话） API 客户端，支持平台接入、第三方接入模式，支持智能对话、NLP、通用接口、机器人、技能、意图、语义槽、词典、词条、对话开放接口、技能商店、数据统计等功能。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git</RepositoryUrl>
