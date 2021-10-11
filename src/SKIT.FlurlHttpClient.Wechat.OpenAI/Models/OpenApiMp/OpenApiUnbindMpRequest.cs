@@ -13,8 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("authorizer_appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("authorizer_appid")]
+        [XmlElement("authorizer_appid")]
         public string AuthorizerAppId { get; set; } = string.Empty;
     }
 }

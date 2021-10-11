@@ -24,12 +24,11 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                         public string? ErrorMessage { get; set; }
 
                         /// <summary>
-                        /// 获取或设置最后有效时间戳。
+                        /// 获取或设置最后有效时间字符串。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("last_effective_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("last_effective_time")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public long LastEffectiveTimestamp { get; set; }
+                        public string? LastEffectiveTimeString { get; set; }
                     }
                 }
 
