@@ -38,24 +38,51 @@
 using SKIT.FlurlHttpClient.Wechat;
 using SKIT.FlurlHttpClient.Wechat.OpenAI;
 
-var options = new WechatOpenAIClientOptions()
+/* 如果是平台接入 */
+var options = new WechatOpenAIPlatformClientOptions()
 {
-    ClientId = "微信智能对话 ClientId，仅第三方接入需要",
-    ClientKey = "微信智能对话 ClientKey，仅第三方接入需要",
-    AppId = "微信智能对话 AppId，仅平台接入需要",
-    PushToken = "微信智能对话 Token，仅平台接入需要",
-    PushEncodingAESKey = "微信智能对话 EncodingAESKey，仅平台接入需要"
+    AppId = "微信智能对话 AppId",
+    Token = "微信智能对话 Token",
+    EncodingAESKey = "微信智能对话 EncodingAESKey"
 };
-var client = new WechatOpenAIClient(options);
+var client = new WechatOpenAIPlatformClient(options);
+
+/* 如果是第三方接入 */
+var options = new WechatOpenAIThirdPartyClientOptions()
+{
+    ClientId = "微信智能对话 ClientId",
+    ClientKey = "微信智能对话 ClientKey"
+};
+var client = new WechatOpenAIThirdPartyClient(options);
 ```
 
 ### 请求 & 响应：
 
 ```csharp
 using SKIT.FlurlHttpClient.Wechat.OpenAI;
-using SKIT.FlurlHttpClient.Wechat.OpenAI.Models;
+using SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform;
+using SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty;
 
-/* 以创建机器人接口为例 */
+/* 以平台接入：发送客服消息接口为例 */
+var request = new SendMessageRequest()
+{
+    AppId = "公众号或小程序的 AppId",
+    OpenId = "用户的 OpenId",
+    Message = "消息内容",
+    Channel = 0
+};
+var response = await client.ExecuteSendMessageAsync(request);
+if (response.IsSuccessful())
+{
+    Console.WriteLine("返回消息：" + response.ErrorMessage);
+}
+else
+{
+    Console.WriteLine("返回代码：" + response.ReturnCode);
+    Console.WriteLine("返回错误：" + response.ReturnError);
+}
+
+/* 以第三方接入：创建机器人接口为例 */
 var request = new BotSaveRequest()
 {
     AccessToken = "微信智能对话 X-OPENAI-TOKEN",
