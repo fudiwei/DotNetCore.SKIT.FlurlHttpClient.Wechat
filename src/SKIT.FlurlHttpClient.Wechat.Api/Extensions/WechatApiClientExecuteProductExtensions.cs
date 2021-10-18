@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("resp_type", request.ResponseType);
 
-            if (!string.IsNullOrEmpty(request.ImageUrl))
+            if (request.ImageUrl != null)
             {
                 flurlReq.SetQueryParam("upload_type", 1)
                         .SetQueryParam("img_url", request.ImageUrl);
@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.AppId))
+            if (request.AppId == null)
                 request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
@@ -133,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.AppId))
+            if (request.AppId == null)
                 request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client

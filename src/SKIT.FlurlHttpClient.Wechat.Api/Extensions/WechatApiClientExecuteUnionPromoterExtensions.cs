@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.QueryType.HasValue)
                 flurlReq.SetQueryParam("queryType", request.QueryType.Value);
 
-            if (!string.IsNullOrEmpty(request.Query))
+            if (request.Query != null)
                 flurlReq.SetQueryParam("query", request.Query);
 
             if (request.MaxPrice.HasValue)
@@ -308,7 +308,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.EndTimestamp.HasValue)
                 flurlReq.SetQueryParam("endTimestamp", request.EndTimestamp.Value);
 
-            if (!string.IsNullOrEmpty(request.CommissionStatus))
+            if (request.CommissionStatus != null)
                 flurlReq.SetQueryParam("commissionStatus", request.CommissionStatus);
 
             return await client.SendRequestWithJsonAsync<Models.UnionPromoterOrderSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

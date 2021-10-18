@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             const string TYPE_VOICE = "voice";
             const string TYPE_VIDEO = "video";
 
-            if (string.IsNullOrEmpty(request.FileName))
+            if (request.FileName == null)
             {
                 string ext = "";
                 if (TYPE_IMAGE.Equals(request.Type))
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ext;
             }
 
-            if (string.IsNullOrEmpty(request.FileContentType))
+            if (request.FileContentType == null)
             {
                 if (TYPE_IMAGE.Equals(request.Type) || TYPE_THUMB.Equals(request.Type))
                     request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";

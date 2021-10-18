@@ -20,17 +20,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (reqLoc == null) throw new ArgumentNullException(nameof(reqLoc));
             if (request == null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.AppId))
+            if (request.AppId == null)
             {
                 request.AppId = client.Credentials.AppId;
             }
 
-            if (!request.Timestamp.HasValue)
+            if (request.Timestamp == null)
             {
                 request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
             }
 
-            if (string.IsNullOrEmpty(request.Signature))
+            if (request.Signature == null)
             {
                 IDictionary<string, string> paramMap = new SortedDictionary<string, string>(
                     new Dictionary<string, string>()

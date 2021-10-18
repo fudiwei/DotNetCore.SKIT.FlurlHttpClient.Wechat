@@ -24,10 +24,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComponentAppId))
+            if (request.ComponentAppId == null)
                 request.ComponentAppId = client.Credentials.AppId;
 
-            if (string.IsNullOrEmpty(request.ComponentSecret))
+            if (request.ComponentSecret == null)
                 request.ComponentSecret = client.Credentials.AppSecret;
 
             IFlurlRequest flurlReq = client
@@ -49,10 +49,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComponentAppId))
+            if (request.ComponentAppId == null)
                 request.ComponentAppId = client.Credentials.AppId;
 
-            if (string.IsNullOrEmpty(request.ComponentSecret))
+            if (request.ComponentSecret == null)
                 request.ComponentSecret = client.Credentials.AppSecret;
 
             IFlurlRequest flurlReq = client
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComponentAppId))
+            if (request.ComponentAppId == null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComponentAppId))
+            if (request.ComponentAppId == null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComponentAppId))
+            if (request.ComponentAppId == null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
@@ -143,7 +143,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComponentAppId))
+            if (request.ComponentAppId == null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComponentAppId))
+            if (request.ComponentAppId == null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
@@ -189,7 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComponentAppId))
+            if (request.ComponentAppId == null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
@@ -212,7 +212,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComponentAppId))
+            if (request.ComponentAppId == null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client

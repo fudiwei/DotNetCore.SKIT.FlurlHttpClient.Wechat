@@ -209,10 +209,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.Nonce))
+            if (request.Nonce == null)
                 request.Nonce = Guid.NewGuid().ToString("N");
 
-            if (!request.Timestamp.HasValue)
+            if (request.Timestamp == null)
                 request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
 
             IFlurlRequest flurlReq = client
