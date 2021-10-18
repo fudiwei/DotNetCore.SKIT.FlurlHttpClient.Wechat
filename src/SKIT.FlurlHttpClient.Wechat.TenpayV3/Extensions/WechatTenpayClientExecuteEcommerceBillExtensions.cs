@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("account_type", request.AccountType)
                 .SetQueryParam("algorithm", request.Algorithm);
 
-            if (!string.IsNullOrEmpty(request.TarType))
+            if (request.TarType != null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
             return await client.SendRequestWithJsonAsync<Models.GetEcommerceBillFundflowBillResponse>(flurlReq, cancellationToken: cancellationToken);

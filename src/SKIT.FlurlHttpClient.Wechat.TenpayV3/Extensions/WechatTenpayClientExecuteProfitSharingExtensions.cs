@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "profitsharing", "orders", request.OutOrderNumber)
                 .SetQueryParam("transaction_id", request.TransactionId);
 
-            if (!string.IsNullOrEmpty(request.SubMerchantId))
+            if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendRequestWithJsonAsync<Models.GetProfitSharingOrderByOutOrderNumberResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("out_order_no", request.OutOrderNumber)
                 .SetQueryParam("out_return_no", request.OutReturnNumber);
 
-            if (!string.IsNullOrEmpty(request.SubMerchantId))
+            if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendRequestWithJsonAsync<Models.GetProfitSharingReturnOrderByOutOrderNumberResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -221,10 +221,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "profitsharing", "bills")
                 .SetQueryParam("bill_date", request.BillDateString);
 
-            if (!string.IsNullOrEmpty(request.SubMerchantId))
+            if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            if (!string.IsNullOrEmpty(request.TarType))
+            if (request.TarType != null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
             return await client.SendRequestWithJsonAsync<Models.GetProfitSharingBillResponse>(flurlReq, cancellationToken: cancellationToken);

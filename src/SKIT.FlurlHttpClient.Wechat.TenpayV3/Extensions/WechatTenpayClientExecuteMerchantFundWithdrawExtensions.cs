@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "merchant", "fund", "withdraw", "bill-type", request.BillType)
                 .SetQueryParam("bill_date", request.BillDateString);
 
-            if (!string.IsNullOrEmpty(request.TarType))
+            if (request.TarType != null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
             return await client.SendRequestWithJsonAsync<Models.GetMerchantFundWithdrawBillResponse>(flurlReq, cancellationToken: cancellationToken);

@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.BelongMerchantId))
+            if (request.BelongMerchantId == null)
                 request.BelongMerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
@@ -155,25 +155,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "marketing", "busifavor", "users", request.OpenId, "coupons")
                 .SetQueryParam("appid", request.AppId);
 
-            if (!string.IsNullOrEmpty(request.StockId))
+            if (request.StockId != null)
                 flurlReq.SetQueryParam("stock_id", request.StockId);
 
-            if (!string.IsNullOrEmpty(request.CouponState))
+            if (request.CouponState != null)
                 flurlReq.SetQueryParam("coupon_state", request.CouponState);
 
-            if (!string.IsNullOrEmpty(request.CreatorMerchantId))
+            if (request.CreatorMerchantId != null)
                 flurlReq.SetQueryParam("creator_mchid", request.CreatorMerchantId);
 
-            if (!string.IsNullOrEmpty(request.SenderMerchantId))
+            if (request.SenderMerchantId != null)
                 flurlReq.SetQueryParam("sender_mchid", request.SenderMerchantId);
 
-            if (!string.IsNullOrEmpty(request.BelongMerchantId))
+            if (request.BelongMerchantId != null)
                 flurlReq.SetQueryParam("belong_merchant", request.BelongMerchantId);
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
             return await client.SendRequestWithJsonAsync<Models.QueryMarketingBusifavorUserCouponsResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -312,7 +312,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.MerchantId))
+            if (request.MerchantId == null)
                 request.MerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
@@ -336,7 +336,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.MerchantId))
+            if (request.MerchantId == null)
                 request.MerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
@@ -359,10 +359,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.PayerMerchantId))
+            if (request.PayerMerchantId == null)
                 request.PayerMerchantId = client.Credentials.MerchantId;
 
-            if (string.IsNullOrEmpty(request.PayeeMerchantId))
+            if (request.PayeeMerchantId == null)
                 request.PayeeMerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
@@ -405,10 +405,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.PayerMerchantId))
+            if (request.PayerMerchantId == null)
                 request.PayerMerchantId = client.Credentials.MerchantId;
 
-            if (string.IsNullOrEmpty(request.PayeeMerchantId))
+            if (request.PayeeMerchantId == null)
                 request.PayeeMerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client

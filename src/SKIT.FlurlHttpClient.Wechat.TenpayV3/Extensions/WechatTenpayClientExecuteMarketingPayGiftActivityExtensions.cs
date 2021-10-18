@@ -73,13 +73,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("limit", request.Limit.ToString())
                 .SetQueryParam("offset", request.Offset.ToString());
 
-            if (!string.IsNullOrEmpty(request.ActivityName))
+            if (request.ActivityName != null)
                 flurlReq.SetQueryParam("activity_name", request.ActivityName);
 
-            if (!string.IsNullOrEmpty(request.ActivityStatus))
+            if (request.ActivityStatus != null)
                 flurlReq.SetQueryParam("activity_status", request.ActivityStatus);
 
-            if (!string.IsNullOrEmpty(request.AwardType))
+            if (request.AwardType != null)
                 flurlReq.SetQueryParam("award_type", request.AwardType);
 
             return await client.SendRequestWithJsonAsync<Models.QueryMarketingPayGiftActivitiesResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -142,10 +142,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId, "merchants");
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
             return await client.SendRequestWithJsonAsync<Models.QueryMarketingPayGiftActivityMerchantsResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -188,10 +188,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId, "goods");
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
             return await client.SendRequestWithJsonAsync<Models.QueryMarketingPayGiftActivityGoodsResponse>(flurlReq, cancellationToken: cancellationToken);

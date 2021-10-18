@@ -30,13 +30,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.FileName))
+            if (request.FileName == null)
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
-            if (string.IsNullOrEmpty(request.FileHash))
+            if (request.FileHash == null)
                 request.FileHash = Security.SHA256Utility.Hash(request.FileBytes).ToLower();
 
-            if (string.IsNullOrEmpty(request.FileContentType))
+            if (request.FileContentType == null)
                 request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
 
             IFlurlRequest flurlReq = client

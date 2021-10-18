@@ -43,13 +43,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "bill", "tradebill")
                 .SetQueryParam("bill_date", request.BillDateString);
 
-            if (!string.IsNullOrEmpty(request.SubMerchantId))
+            if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            if (!string.IsNullOrEmpty(request.BillType))
+            if (request.BillType != null)
                 flurlReq.SetQueryParam("bill_type", request.BillType);
 
-            if (!string.IsNullOrEmpty(request.TarType))
+            if (request.TarType != null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
             return await client.SendRequestWithJsonAsync<Models.GetBillTradeBillResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -84,10 +84,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "bill", "fundflowbill")
                 .SetQueryParam("bill_date", request.BillDateString);
 
-            if (!string.IsNullOrEmpty(request.AccountType))
+            if (request.AccountType != null)
                 flurlReq.SetQueryParam("account_type", request.AccountType);
 
-            if (!string.IsNullOrEmpty(request.TarType))
+            if (request.TarType != null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
             return await client.SendRequestWithJsonAsync<Models.GetBillFundflowBillResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -117,10 +117,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("bill_date", request.BillDateString)
                 .SetQueryParam("algorithm", request.Algorithm);
 
-            if (!string.IsNullOrEmpty(request.AccountType))
+            if (request.AccountType != null)
                 flurlReq.SetQueryParam("account_type", request.AccountType);
 
-            if (!string.IsNullOrEmpty(request.TarType))
+            if (request.TarType != null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
             return await client.SendRequestWithJsonAsync<Models.GetBillSubMerchantFundflowBillResponse>(flurlReq, cancellationToken: cancellationToken);

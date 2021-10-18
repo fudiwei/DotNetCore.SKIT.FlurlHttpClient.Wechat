@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "businesscircle", "user-authorizations", request.OpenId)
                 .SetQueryParam("appid", request.AppId);
 
-            if (!string.IsNullOrEmpty(request.SubMerchantId))
+            if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendRequestWithJsonAsync<Models.GetBusinessCircleUserAuthorizationByOpenIdResponse>(flurlReq, cancellationToken: cancellationToken);

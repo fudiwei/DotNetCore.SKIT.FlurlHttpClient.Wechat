@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("date", request.DateString)
                 .SetQueryParam("limit", request.Limit);
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset);
 
             return await client.SendRequestWithJsonAsync<Models.QueryMerchantFundMerchantIncomeRecordsResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("date", request.DateString)
                 .SetQueryParam("limit", request.Limit);
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset);
 
             return await client.SendRequestWithJsonAsync<Models.QueryMerchantFundPartnerIncomeRecordsResponse>(flurlReq, cancellationToken: cancellationToken);
