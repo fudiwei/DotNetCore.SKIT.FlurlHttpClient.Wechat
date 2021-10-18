@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "corp", "get_join_qrcode")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.SizeType.HasValue)
+            if (request.SizeType != null)
                 flurlReq.SetQueryParam("size_type", request.SizeType.Value);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGetJoinQrcodeResponse>(flurlReq, cancellationToken: cancellationToken);
