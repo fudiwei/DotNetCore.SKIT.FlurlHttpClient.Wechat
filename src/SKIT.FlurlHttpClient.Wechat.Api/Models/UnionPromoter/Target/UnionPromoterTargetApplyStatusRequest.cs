@@ -11,8 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置定向计划 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("planId")]
-        [System.Text.Json.Serialization.JsonPropertyName("planId")]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         public string PlanId { get; set; } = string.Empty;
     }
 }
