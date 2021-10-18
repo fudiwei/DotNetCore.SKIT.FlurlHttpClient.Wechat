@@ -161,6 +161,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         #region LiveBroadcast
         /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/applyliveinfo 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Business/live_player/applyliveinfo.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessApplyLiveInfoResponse> ExecuteWxaBusinessApplyLiveInfoAsync(this WechatApiClient client, Models.WxaBusinessApplyLiveInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "applyliveinfo")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessApplyLiveInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /wxa/business/getliveinfo 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/liveplayer/studio-api.html#2 </para>
         /// </summary>
