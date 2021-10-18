@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         {
             IFlurlRequest flurlRequest = FlurlClient.Request(urlSegments).WithVerb(method);
 
-            if (request.Timeout.HasValue)
+            if (request.Timeout != null)
             {
                 flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
             }

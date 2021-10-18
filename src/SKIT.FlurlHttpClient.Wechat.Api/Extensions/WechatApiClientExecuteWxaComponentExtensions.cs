@@ -610,7 +610,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.Action != null)
                 flurlReq.SetQueryParam("action", request.Action);
 
-            if (request.AppVersion.HasValue)
+            if (request.AppVersion != null)
                 flurlReq.SetQueryParam("app_version", request.AppVersion.Value);
 
             return await client.SendRequestWithJsonAsync<Models.WxaRevertCodeReleaseResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

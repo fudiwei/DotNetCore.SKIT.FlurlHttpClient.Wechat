@@ -163,7 +163,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("page", request.Page)
                 .SetQueryParam("num", request.Limit);
 
-            if (request.Type.HasValue)
+            if (request.Type != null)
                 flurlReq.SetQueryParam("type", request.Type);
 
             return await client.SendRequestWithJsonAsync<Models.WxaApiFeedbackListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -301,13 +301,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.FilterMessage != null)
                 flurlReq.SetQueryParam("filterMsg", request.FilterMessage);
 
-            if (request.LogLevel.HasValue)
+            if (request.LogLevel != null)
                 flurlReq.SetQueryParam("level", request.LogLevel.Value);
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("start", request.Offset.Value);
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value);
 
             return await client.SendRequestWithJsonAsync<Models.WxaApiUserLogSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -994,13 +994,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.Keyword != null)
                 flurlReq.SetQueryParam("keyword", request.Keyword);
 
-            if (request.Role.HasValue)
+            if (request.Role != null)
                 flurlReq.SetQueryParam("role", request.Role.Value);
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value);
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value);
 
             return await client.SendRequestWithJsonAsync<Models.WxaApiBroadcastRoleGetRoleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
