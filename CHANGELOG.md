@@ -34,6 +34,20 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.10.0
+
+    -   **新增**：新增第三方平台申请开通直播相关接口。
+
+    -   **新增**：新增小程序联盟定向计划推广相关接口。
+
+    -   **新增**：新增小程序联盟自定义用户参数管理相关接口。
+
+    -   **新增**：随官方更新小程序联盟推客端相关接口模型。
+
+    -   **修复**：修复 XmlSerializer 潜在的内存泄漏问题。（[GitHub Issue #11](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/11)）
+
+    -   **修复**：修复 AES 解密结果结尾有冗余的空白字符问题。
+
 -   Release 1.9.0
 
     -   **新增**：新增标准版交易组件售后相关接口。
