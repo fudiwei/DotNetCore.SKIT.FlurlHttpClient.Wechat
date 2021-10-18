@@ -46,10 +46,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.SuiteId))
+            if (request.SuiteId == null)
                 request.SuiteId = client.Credentials.SuiteId;
 
-            if (string.IsNullOrEmpty(request.SuiteSecret))
+            if (request.SuiteSecret == null)
                 request.SuiteSecret = client.Credentials.SuiteSecret;
 
             IFlurlRequest flurlReq = client
@@ -246,7 +246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             const string TYPE_VOICE = "voice";
             const string TYPE_VIDEO = "video";
 
-            if (string.IsNullOrEmpty(request.FileName))
+            if (request.FileName == null)
             {
                 string ext = "";
                 if (TYPE_IMAGE.Equals(request.Type))
@@ -259,7 +259,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ext;
             }
 
-            if (string.IsNullOrEmpty(request.FileContentType))
+            if (request.FileContentType == null)
             {
                 if (TYPE_IMAGE.Equals(request.Type))
                     request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";

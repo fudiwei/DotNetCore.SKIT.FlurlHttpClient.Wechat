@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "department", "list")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.ParentDepartmentId.HasValue)
+            if (request.ParentDepartmentId != null)
                 flurlReq.SetQueryParam("id", request.ParentDepartmentId.Value);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentListResponse>(flurlReq, cancellationToken: cancellationToken);

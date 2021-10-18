@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (!request.ParentAgentId.HasValue)
+            if (request.ParentAgentId == null)
                 request.ParentAgentId = client.Credentials.AgentId;
 
             IFlurlRequest flurlReq = client
