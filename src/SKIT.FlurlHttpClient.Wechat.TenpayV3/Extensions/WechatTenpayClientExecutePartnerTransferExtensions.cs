@@ -50,14 +50,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "partner-transfer", "batches", "batch-id", request.BatchId)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail);
 
-            if (request.Offset.HasValue)
+            if (request.DetailStatus != null)
+                flurlReq.SetQueryParam("detail_status", request.DetailStatus);
+
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value);
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value);
-
-            if (!string.IsNullOrEmpty(request.DetailStatus))
-                flurlReq.SetQueryParam("detail_status", request.DetailStatus);
 
             return await client.SendRequestWithJsonAsync<Models.GetPartnerTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -98,14 +98,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "partner-transfer", "batches", "out-batch-no", request.OutBatchNumber)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail);
 
-            if (request.Offset.HasValue)
+            if (request.DetailStatus != null)
+                flurlReq.SetQueryParam("detail_status", request.DetailStatus);
+
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value);
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value);
-
-            if (!string.IsNullOrEmpty(request.DetailStatus))
-                flurlReq.SetQueryParam("detail_status", request.DetailStatus);
 
             return await client.SendRequestWithJsonAsync<Models.GetPartnerTransferBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

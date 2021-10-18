@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("plate_color", request.PlateColor)
                 .SetQueryParam("openid", request.OpenId);
 
-            if (!string.IsNullOrEmpty(request.SubMerchantId))
+            if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendRequestWithJsonAsync<Models.GetVehicleParkingServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "vehicle", "transactions", "out-trade-no", request.OutTradeNumber);
 
-            if (!string.IsNullOrEmpty(request.SubMerchantId))
+            if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendRequestWithJsonAsync<Models.GetVehicleTransactionByOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

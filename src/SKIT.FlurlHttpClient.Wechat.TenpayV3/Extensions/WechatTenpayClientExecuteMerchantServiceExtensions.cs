@@ -35,13 +35,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("begin_date", request.BeginDateString)
                 .SetQueryParam("end_date", request.EndDateString);
 
-            if (!string.IsNullOrEmpty(request.ComplaintedMerchantId))
+            if (request.ComplaintedMerchantId != null)
                 flurlReq.SetQueryParam("complainted_mchid", request.ComplaintedMerchantId);
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
             return await client.SendRequestWithJsonAsync<Models.QueryMerchantServiceComplaintsResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -84,10 +84,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId, "negotiation-historys");
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
             return await client.SendRequestWithJsonAsync<Models.QueryMerchantServiceComplaintNegotiationHistoriesResponse>(flurlReq, cancellationToken: cancellationToken);
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComplaintedMerchantId))
+            if (request.ComplaintedMerchantId == null)
                 request.ComplaintedMerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ComplaintedMerchantId))
+            if (request.ComplaintedMerchantId == null)
                 request.ComplaintedMerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
@@ -233,13 +233,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.FileName))
+            if (request.FileName == null)
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
-            if (string.IsNullOrEmpty(request.FileHash))
+            if (request.FileHash == null)
                 request.FileHash = Security.SHA256Utility.Hash(request.FileBytes).ToLower();
 
-            if (string.IsNullOrEmpty(request.FileContentType))
+            if (request.FileContentType == null)
                 request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
 
             IFlurlRequest flurlReq = client

@@ -68,12 +68,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             IFlurlRequest flurlRequest = FlurlClient.Request(urlSegments).WithVerb(method);
 
-            if (request.Timeout.HasValue)
+            if (request.Timeout != null)
             {
                 flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
             }
 
-            if (!string.IsNullOrEmpty(request.WechatpayCertSerialNumber))
+            if (request.WechatpayCertSerialNumber != null)
             {
                 flurlRequest.Headers.Remove("Wechatpay-Serial");
                 flurlRequest.WithHeader("Wechatpay-Serial", request.WechatpayCertSerialNumber);

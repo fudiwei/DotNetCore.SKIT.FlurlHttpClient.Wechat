@@ -28,14 +28,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.CombineMerchantId)) 
+            if (request.CombineMerchantId == null) 
                 request.CombineMerchantId = client.Credentials.MerchantId;
 
             if (request.SubOrderList != null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (string.IsNullOrEmpty(subOrder.MerchantId))
+                    if (subOrder.MerchantId == null)
                         subOrder.MerchantId = request.CombineMerchantId;
                 }
             }
@@ -62,14 +62,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.CombineMerchantId))
+            if (request.CombineMerchantId == null)
                 request.CombineMerchantId = client.Credentials.MerchantId;
 
             if (request.SubOrderList != null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (string.IsNullOrEmpty(subOrder.MerchantId))
+                    if (subOrder.MerchantId == null)
                         subOrder.MerchantId = request.CombineMerchantId;
                 }
             }
@@ -94,14 +94,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.CombineMerchantId))
+            if (request.CombineMerchantId == null)
                 request.CombineMerchantId = client.Credentials.MerchantId;
 
             if (request.SubOrderList != null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (string.IsNullOrEmpty(subOrder.MerchantId))
+                    if (subOrder.MerchantId == null)
                         subOrder.MerchantId = request.CombineMerchantId;
                 }
             }
@@ -126,14 +126,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.CombineMerchantId))
+            if (request.CombineMerchantId == null)
                 request.CombineMerchantId = client.Credentials.MerchantId;
 
             if (request.SubOrderList != null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (string.IsNullOrEmpty(subOrder.MerchantId))
+                    if (subOrder.MerchantId == null)
                         subOrder.MerchantId = request.CombineMerchantId;
                 }
             }
@@ -182,7 +182,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (string.IsNullOrEmpty(subOrder.MerchantId))
+                    if (subOrder.MerchantId == null)
                         subOrder.MerchantId = client.Credentials.MerchantId;
                 }
             }

@@ -72,22 +72,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "smartguide", "guides")
                 .SetQueryParam("store_id", request.StoreId.ToString());
 
-            if (!string.IsNullOrEmpty(request.SubMerchantId))
+            if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            if (!string.IsNullOrEmpty(request.UserId))
+            if (request.UserId != null)
                 flurlReq.SetQueryParam("userid", request.UserId);
 
-            if (!string.IsNullOrEmpty(request.UserMobile))
+            if (request.UserMobile != null)
                 flurlReq.SetQueryParam("mobile", request.UserMobile);
 
-            if (!string.IsNullOrEmpty(request.UserWorkId))
+            if (request.UserWorkId != null)
                 flurlReq.SetQueryParam("work_id", request.UserWorkId);
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
             return await client.SendRequestWithJsonAsync<Models.QuerySmartGuidesResponse>(flurlReq, cancellationToken: cancellationToken);

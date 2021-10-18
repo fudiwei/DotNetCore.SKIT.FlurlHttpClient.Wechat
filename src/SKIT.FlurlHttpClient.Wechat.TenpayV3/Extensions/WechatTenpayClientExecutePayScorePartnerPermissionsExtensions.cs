@@ -93,10 +93,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("sub_appid", request.SubAppId);
 
-            if (!string.IsNullOrEmpty(request.OpenId))
+            if (request.OpenId != null)
                 flurlReq.SetQueryParam("openid", request.OpenId);
 
-            if (!string.IsNullOrEmpty(request.SubOpenId))
+            if (request.SubOpenId != null)
                 flurlReq.SetQueryParam("sub_openid", request.SubOpenId);
 
             return await client.SendRequestWithJsonAsync<Models.GetPayScorePartnerPermissionsByOpenIdResponse>(flurlReq, cancellationToken: cancellationToken);

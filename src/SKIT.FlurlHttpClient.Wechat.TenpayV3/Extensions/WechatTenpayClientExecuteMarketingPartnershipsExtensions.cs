@@ -79,10 +79,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.AuthorizedData != null)
                 flurlReq.SetQueryParam("authorized_data", client.JsonSerializer.Serialize(request.AuthorizedData));
 
-            if (request.Limit.HasValue)
+            if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
 
-            if (request.Offset.HasValue)
+            if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
             return await client.SendRequestWithJsonAsync<Models.QueryMarketingPartnershipsResponse>(flurlReq, cancellationToken: cancellationToken);
