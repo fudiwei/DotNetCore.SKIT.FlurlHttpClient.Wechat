@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -9,6 +10,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
     internal static class XmlUtility
     {
+        // REF: https://docs.microsoft.com/zh-cn/dotnet/api/system.xml.serialization.xmlserializer#dynamically-generated-assemblies
+        private static Hashtable _serializers = new Hashtable();
+
         public static string Serialize(Type type, object obj)
         {
             string xml;
@@ -20,10 +24,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             settings.WriteEndDocumentOnClose = false;
             settings.NamespaceHandling = NamespaceHandling.OmitDuplicates;
 
+            string skey = type.AssemblyQualifiedName;
+            XmlSerializer? xmlSerializer = (XmlSerializer)_serializers[skey];
+            if (xmlSerializer == null)
+            {
+                xmlSerializer = new XmlSerializer(type, new XmlRootAttribute("xml"));
+                _serializers[skey] = xmlSerializer;
+            }
+
             using var stream = new MemoryStream();
             using var writer = XmlWriter.Create(stream, settings);
-
-            XmlSerializer xmlSerializer = new XmlSerializer(type, new XmlRootAttribute("xml"));
             XmlSerializerNamespaces xmlNamespace = new XmlSerializerNamespaces();
             xmlNamespace.Add(string.Empty, string.Empty);
             xmlSerializer.Serialize(writer, obj, xmlNamespace);
