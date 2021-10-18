@@ -658,7 +658,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <returns></returns>
         public static async Task<Models.MerchantCommonUploadImageResponse> ExecuteMerchantCommonUploadImageAsync(this WechatApiClient client, Models.MerchantCommonUploadImageRequest request, CancellationToken cancellationToken = default)
         {
-            if (string.IsNullOrEmpty(request.FileName))
+            if (request.FileName == null)
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
             IFlurlRequest flurlReq = client

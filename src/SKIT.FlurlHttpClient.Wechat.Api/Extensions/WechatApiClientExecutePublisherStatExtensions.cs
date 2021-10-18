@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("start_date", request.StartDateString)
                 .SetQueryParam("end_date", request.EndDateString);
 
-            if (!string.IsNullOrEmpty(request.AdSlotName))
+            if (request.AdSlotName != null)
                 flurlReq.SetQueryParam("ad_slot", request.AdSlotName);
 
             return await client.SendRequestWithJsonAsync<Models.PublisherStatAdposGeneralResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

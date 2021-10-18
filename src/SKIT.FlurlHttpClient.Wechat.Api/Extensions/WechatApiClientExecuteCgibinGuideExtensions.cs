@@ -49,9 +49,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "guide", "getguideacct")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (!string.IsNullOrEmpty(request.GuideAccount))
+            if (request.GuideAccount != null)
                 flurlReq.SetQueryParam("guide_account", request.GuideAccount);
-            else if (!string.IsNullOrEmpty(request.GuideOpenId))
+            else if (request.GuideOpenId != null)
                 flurlReq.SetQueryParam("guide_openid", request.GuideOpenId);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinGuideGetGuideAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

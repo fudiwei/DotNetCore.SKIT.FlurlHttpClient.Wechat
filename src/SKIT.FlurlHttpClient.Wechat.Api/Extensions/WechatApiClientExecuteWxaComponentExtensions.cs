@@ -483,7 +483,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateRequest(request, HttpMethod.Get, "wxa", "get_qrcode")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (!string.IsNullOrEmpty(request.PagePath))
+            if (request.PagePath != null)
                 flurlReq.SetQueryParam("path", request.PagePath);
 
             return await client.SendRequestWithJsonAsync<Models.WxaGetQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -607,7 +607,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateRequest(request, HttpMethod.Get, "wxa", "revertcoderelease")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (!string.IsNullOrEmpty(request.Action))
+            if (request.Action != null)
                 flurlReq.SetQueryParam("action", request.Action);
 
             if (request.AppVersion.HasValue)

@@ -289,16 +289,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("begintime", request.BeginTimestamp)
                 .SetQueryParam("endtime", request.EndTimestamp);
 
-            if (!string.IsNullOrEmpty(request.TraceId))
+            if (request.TraceId != null)
                 flurlReq.SetQueryParam("traceId", request.TraceId);
 
-            if (!string.IsNullOrEmpty(request.PagePath))
+            if (request.PagePath != null)
                 flurlReq.SetQueryParam("url", request.PagePath);
 
-            if (!string.IsNullOrEmpty(request.UserId))
+            if (request.UserId != null)
                 flurlReq.SetQueryParam("id", request.UserId);
 
-            if (!string.IsNullOrEmpty(request.FilterMessage))
+            if (request.FilterMessage != null)
                 flurlReq.SetQueryParam("filterMsg", request.FilterMessage);
 
             if (request.LogLevel.HasValue)
@@ -414,7 +414,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("roomId", request.RoomId);
 
-            if (!string.IsNullOrEmpty(request.CustomParameter))
+            if (request.CustomParameter != null)
                 flurlReq.SetQueryParam("params", request.CustomParameter);
 
             return await client.SendRequestWithJsonAsync<Models.WxaApiBroadcastRoomGetSharedCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -991,7 +991,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "role", "getrolelist")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (!string.IsNullOrEmpty(request.Keyword))
+            if (request.Keyword != null)
                 flurlReq.SetQueryParam("keyword", request.Keyword);
 
             if (request.Role.HasValue)

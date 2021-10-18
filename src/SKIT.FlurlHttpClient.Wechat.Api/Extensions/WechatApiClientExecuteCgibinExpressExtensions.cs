@@ -17,12 +17,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client == null) throw new ArgumentNullException(nameof(request));
             if (client == null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.ShopId))
+            if (request.ShopId == null)
             {
                 request.ShopId = client.Credentials.ImmeDeliveryAppKey;
             }
 
-            if (string.IsNullOrEmpty(request.DeliverySignature))
+            if (request.DeliverySignature == null)
             {
                 string plainText = $"{request.ShopId}{request.ShopOrderId}{client.Credentials.ImmeDeliveryAppSecret}";
                 request.DeliverySignature = Security.SHA1Utility.Hash(plainText).ToLower();
