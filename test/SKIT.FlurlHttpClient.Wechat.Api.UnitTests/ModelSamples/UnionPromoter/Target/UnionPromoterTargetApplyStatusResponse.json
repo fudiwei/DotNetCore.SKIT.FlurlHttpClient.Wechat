@@ -1,0 +1,13 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "planId": "1964112935262240768",
+        "promoterStatus": 1,
+        "applyTime": 1626692835,
+        "joinTime": 0,
+        "applyReason": "okok",
+        "rejectTime": 0,
+        "removeTime": 0
+    }
+}

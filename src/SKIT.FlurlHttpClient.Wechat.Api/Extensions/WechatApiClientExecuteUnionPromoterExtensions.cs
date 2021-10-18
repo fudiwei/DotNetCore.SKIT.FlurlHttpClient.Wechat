@@ -250,5 +250,69 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.UnionPromoterOrderSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region Target
+        /// <summary>
+        /// <para>异步调用 [GET] /union/promoter/target/plan_info 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/target_plan/target_plan.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnionPromoterTargetPlanInfoResponse> ExecuteUnionPromoterTargetPlanInfoAsync(this WechatApiClient client, Models.UnionPromoterTargetPlanInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "target", "plan_info")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("planInvitationUrl", request.PlanInvitaionUrl);
+
+            return await client.SendRequestWithJsonAsync<Models.UnionPromoterTargetPlanInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /union/promoter/target/apply_target 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/target_plan/target_plan.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnionPromoterTargetApplyTargetResponse> ExecuteUnionPromoterTargetApplyTargetAsync(this WechatApiClient client, Models.UnionPromoterTargetApplyTargetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "target", "apply_target")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.UnionPromoterTargetApplyTargetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /union/promoter/target/apply_status 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/target_plan/target_plan.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnionPromoterTargetApplyStatusResponse> ExecuteUnionPromoterTargetApplyStatusAsync(this WechatApiClient client, Models.UnionPromoterTargetApplyStatusRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "target", "apply_status")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("planId", request.PlanId);
+
+            return await client.SendRequestWithJsonAsync<Models.UnionPromoterTargetApplyStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
