@@ -31,16 +31,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.DateRange != null)
                 flurlReq.SetQueryParam("date_range", client.JsonSerializer.Serialize(request.DateRange));
 
-            if (!string.IsNullOrEmpty(request.ReportType))
+            if (request.ReportType != null)
                 flurlReq.SetQueryParam("report_type", request.ReportType);
 
-            if (!string.IsNullOrEmpty(request.ReportLevel))
+            if (request.ReportLevel != null)
                 flurlReq.SetQueryParam("level", request.ReportLevel);
 
-            if (request.PageSize.HasValue)
+            if (request.PageSize != null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page.HasValue)
+            if (request.Page != null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
             return await client.SendRequestWithJsonAsync<Models.DailyReportsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

@@ -64,12 +64,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         {
             IFlurlRequest flurlRequest = FlurlClient.Request(urlSegments).WithVerb(method);
 
-            if (request.Timeout.HasValue)
+            if (request.Timeout != null)
             {
                 flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
             }
 
-            if (!string.IsNullOrEmpty(request.Version))
+            if (request.Version != null)
             {
                 flurlRequest.SetQueryParam("version", request.Version);
             }

@@ -26,17 +26,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrEmpty(request.FileName))
+            if (request.FileName == null)
             {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower();
             }
 
-            if (string.IsNullOrEmpty(request.FileContentType))
+            if (request.FileContentType == null)
             {
                 request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
             }
 
-            if (string.IsNullOrEmpty(request.FileHash))
+            if (request.FileHash == null)
             {
                 request.FileHash = Security.MD5Utility.Hash(request.FileBytes ?? new byte[0]);
             }
@@ -71,16 +71,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Get, "images", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (!string.IsNullOrEmpty(request.ImageId))
+            if (request.ImageId != null)
                 flurlReq.SetQueryParam("image_id", request.ImageId);
 
-            if (request.Filters != null && request.Filters.Any())
+            if (request.Filters != null)
                 flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
-            if (request.PageSize.HasValue)
+            if (request.PageSize != null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page.HasValue)
+            if (request.Page != null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
             return await client.SendRequestWithJsonAsync<Models.ImagesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

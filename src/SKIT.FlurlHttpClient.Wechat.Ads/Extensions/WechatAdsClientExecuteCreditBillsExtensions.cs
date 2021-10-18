@@ -29,10 +29,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .SetQueryParam("bill_year", request.BillYear)
                 .SetQueryParam("bill_month", request.BillMonth);
 
-            if (request.PageSize.HasValue)
+            if (request.PageSize != null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page.HasValue)
+            if (request.Page != null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
             return await client.SendRequestWithJsonAsync<Models.CreditBillsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
