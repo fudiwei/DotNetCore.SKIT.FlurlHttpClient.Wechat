@@ -138,34 +138,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("from", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            if (request.QueryType.HasValue)
+            if (request.QueryType != null)
                 flurlReq.SetQueryParam("queryType", request.QueryType.Value);
 
             if (request.Query != null)
                 flurlReq.SetQueryParam("query", request.Query);
 
-            if (request.MaxPrice.HasValue)
+            if (request.MaxPrice != null)
                 flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
 
-            if (request.MinPrice.HasValue)
+            if (request.MinPrice != null)
                 flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
 
-            if (request.MinCommissionValue.HasValue)
+            if (request.MinCommissionValue != null)
                 flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
 
-            if (request.MinCommissionRatio.HasValue)
+            if (request.MinCommissionRatio != null)
                 flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
 
-            if (request.SortType.HasValue)
+            if (request.SortType != null)
                 flurlReq.SetQueryParam("sortType", request.SortType.Value);
 
-            if (request.HasCoupon.HasValue)
+            if (request.HasCoupon != null)
                 flurlReq.SetQueryParam("hasCoupon", request.HasCoupon.Value ? 1 : 0);
 
             if (request.ShopAppIdList != null)
                 flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
 
-            if (request.CategoryId.HasValue)
+            if (request.CategoryId != null)
                 flurlReq.SetQueryParam("categoryId", request.CategoryId);
 
             if (request.CategoryIdList != null)
@@ -199,28 +199,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("from", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            if (request.MaxPrice.HasValue)
+            if (request.MaxPrice != null)
                 flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
 
-            if (request.MinPrice.HasValue)
+            if (request.MinPrice != null)
                 flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
 
-            if (request.MinCommissionValue.HasValue)
+            if (request.MinCommissionValue != null)
                 flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
 
-            if (request.MinCommissionRatio.HasValue)
+            if (request.MinCommissionRatio != null)
                 flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
 
-            if (request.SortType.HasValue)
+            if (request.SortType != null)
                 flurlReq.SetQueryParam("sortType", request.SortType.Value);
 
-            if (request.HasCoupon.HasValue)
+            if (request.HasCoupon != null)
                 flurlReq.SetQueryParam("hasCoupon", request.HasCoupon.Value ? 1 : 0);
 
             if (request.ShopAppIdList != null)
                 flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
 
-            if (request.CategoryId.HasValue)
+            if (request.CategoryId != null)
                 flurlReq.SetQueryParam("categoryId", request.CategoryId);
 
             if (request.CategoryIdList != null)
@@ -302,10 +302,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("page", request.Page);
 
-            if (request.StartTimestamp.HasValue)
+            if (request.StartTimestamp != null)
                 flurlReq.SetQueryParam("startTimestamp", request.StartTimestamp.Value);
 
-            if (request.EndTimestamp.HasValue)
+            if (request.EndTimestamp != null)
                 flurlReq.SetQueryParam("endTimestamp", request.EndTimestamp.Value);
 
             if (request.CommissionStatus != null)
