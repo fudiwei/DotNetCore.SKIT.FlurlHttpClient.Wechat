@@ -67,13 +67,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Get, "custom_audiences", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.CustomAudienceId.HasValue)
+            if (request.CustomAudienceId != null)
                 flurlReq.SetQueryParam("audience_id", request.CustomAudienceId.Value);
 
-            if (request.PageSize.HasValue)
+            if (request.PageSize != null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page.HasValue)
+            if (request.Page != null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
             return await client.SendRequestWithJsonAsync<Models.CustomAudiencesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -126,16 +126,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Get, "custom_audience_files", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.CustomAudienceId.HasValue)
+            if (request.CustomAudienceId != null)
                 flurlReq.SetQueryParam("audience_id", request.CustomAudienceId.Value);
 
-            if (request.CustomAudienceFileId.HasValue)
+            if (request.CustomAudienceFileId != null)
                 flurlReq.SetQueryParam("custom_audience_file_id", request.CustomAudienceFileId.Value);
 
-            if (request.PageSize.HasValue)
+            if (request.PageSize != null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page.HasValue)
+            if (request.Page != null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
             return await client.SendRequestWithJsonAsync<Models.CustomAudienceFilesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

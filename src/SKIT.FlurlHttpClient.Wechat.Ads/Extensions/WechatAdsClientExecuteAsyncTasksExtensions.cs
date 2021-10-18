@@ -50,10 +50,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Filters != null && request.Filters.Any())
                 flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
-            if (request.PageSize.HasValue)
+            if (request.PageSize != null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page.HasValue)
+            if (request.Page != null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
             return await client.SendRequestWithJsonAsync<Models.AsyncTasksGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);

@@ -66,16 +66,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Get, "adcreatives", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.AdCreativeId.HasValue)
+            if (request.AdCreativeId != null)
                 flurlReq.SetQueryParam("adcreative_id", request.AdCreativeId.Value);
 
-            if (request.Filters != null && request.Filters.Any())
+            if (request.Filters != null)
                 flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
-            if (request.PageSize.HasValue)
+            if (request.PageSize != null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page.HasValue)
+            if (request.Page != null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
             return await client.SendRequestWithJsonAsync<Models.AdCreativesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
