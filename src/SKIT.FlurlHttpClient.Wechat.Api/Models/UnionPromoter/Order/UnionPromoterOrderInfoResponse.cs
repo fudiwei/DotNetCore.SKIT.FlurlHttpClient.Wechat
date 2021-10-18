@@ -25,6 +25,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public long ProductId { get; set; }
 
                         /// <summary>
+                        /// 获取或设置 SKU ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("skuId")]
+                        [System.Text.Json.Serialization.JsonPropertyName("skuId")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public long SKUId { get; set; }
+
+                        /// <summary>
                         /// 获取或设置商品标题。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
@@ -48,6 +56,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int Price { get; set; }
 
                         /// <summary>
+                        /// 获取或设置商品数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("productCnt")]
+                        [System.Text.Json.Serialization.JsonPropertyName("productCnt")]
+                        public int ProductCount { get; set; }
+
+                        /// <summary>
                         /// 获取或设置佣金比例（单位：万分之一）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ratio")]
@@ -64,11 +79,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int CommissionValue { get; set; }
 
                         /// <summary>
+                        /// 获取或设置预估佣金金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("estimatedCommission")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonCurrencyConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("estimatedCommission")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonCurrencyConverter))]
+                        public int EstimatedCommissionValue { get; set; }
+
+                        /// <summary>
                         /// 获取或设置分佣状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("commissionStatus")]
                         [System.Text.Json.Serialization.JsonPropertyName("commissionStatus")]
                         public string CommissionStatus { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置分佣状态更新时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("commissionStatusUpdateTime")]
+                        [System.Text.Json.Serialization.JsonPropertyName("commissionStatusUpdateTime")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public long? CommissionStatusUpdateTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置结算时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("profitShardingSucTime")]
+                        [System.Text.Json.Serialization.JsonPropertyName("profitShardingSucTime")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public long? ProfitShardingSuccessTimestamp { get; set; }
 
                         /// <summary>
                         /// 获取或设置商品类目名称，使用逗号分隔。
@@ -85,11 +125,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public Promotion? Promotion { get; set; }
 
                         /// <summary>
-                        /// 获取或设置自定义扩展参数。
+                        /// 获取或设置自定义参数。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("customizeInfo")]
                         [System.Text.Json.Serialization.JsonPropertyName("customizeInfo")]
-                        public string? CustomizeExtra { get; set; }
+                        public string? CustomizeInfo { get; set; }
                     }
 
                     public class Promotion

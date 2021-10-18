@@ -1,0 +1,128 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "productList": [
+        {
+            "productId": "7554942",
+            "product": {
+                "productId": "7554942",
+                "status": 5,
+                "info": {
+                    "title": "新增商品并保存case_UpProduct",
+                    "subTitle": "这是商品子标题",
+                    "headImg": [
+                        "https://wxamusic.wx.qq.com/wxasr/getminipic/zncFu89-HApz37MU8ZbwXB-7W09r7a2spQoE8wPrMFG4kgySC04JEIgbjTy8izde?media-id=zncFu89-HApz37MU8ZbwXB-7W09r7a2spQoE8wPrMFG4kgySC04JEIgbjTy8izde&amp;appid=wx678687fa5226e237"
+                    ],
+                    "category": [
+                        {
+                            "catId": "1247",
+                            "name": "家具"
+                        },
+                        {
+                            "catId": "1267",
+                            "name": "儿童家具"
+                        },
+                        {
+                            "catId": "1270",
+                            "name": "儿童床"
+                        }
+                    ],
+                    "brand": "",
+                    "brandId": "2100000000",
+                    "model": "",
+                    "detail": {
+                        "detailImg": [
+                            "https://wxamusic.wx.qq.com/wxasr/getminipic/zncFu89-HApz37MU8ZbwXB-7W09r7a2spQoE8wPrMFG4kgySC04JEIgbjTy8izde?media-id=zncFu89-HApz37MU8ZbwXB-7W09r7a2spQoE8wPrMFG4kgySC04JEIgbjTy8izde&amp;appid=wx678687fa5226e237"
+                        ]
+                    },
+                    "param": [],
+                    "minPrice": 2000,
+                    "totalStockNum": 0
+                },
+                "skus": []
+            },
+            "leagueExInfo": {
+                "hasCommission": 1,
+                "commissionRatio": 8000,
+                "commissionValue": 1600
+            },
+            "shopInfo": {
+                "name": "猪腩肉小商店",
+                "headImgUrl": "http://wx.qlogo.cn/mmhead/Q3auHgzwzM77ia7ibuPAQBJgME8gFF9APicaSpd7evrLCVb5hn2zsUBOw"
+            }
+        },
+        {
+            "productId": "6565746",
+            "product": {
+                "productId": "6565746",
+                "status": 5,
+                "info": {
+                    "title": "测试假发",
+                    "subTitle": "测试假发",
+                    "headImg": [
+                        "https://snsdy.tc.qq.com/161/20304/snscosdownload/SZ/reserved/5fd316dc0000ef4b0000000043785609000000a000004f50"
+                    ],
+                    "category": [
+                        {
+                            "catId": "1001",
+                            "name": ""
+                        },
+                        {
+                            "catId": "1030",
+                            "name": ""
+                        },
+                        {
+                            "catId": "1031",
+                            "name": ""
+                        }
+                    ],
+                    "brandId": "2100000000",
+                    "detail": {
+                        "detailImg": []
+                    },
+                    "param": [],
+                    "minPrice": 100,
+                    "totalStockNum": 39995
+                },
+                "skus": [
+                    {
+                        "skuId": "11913889",
+                        "status": 5,
+                        "productSkuInfo": {
+                            "thumbImg": "",
+                            "skuCode": "",
+                            "salePrice": 100,
+                            "marketPrice": 100,
+                            "stockInfo": {
+                                "stockNum": 20000
+                            }
+                        }
+                    },
+                    {
+                        "skuId": "11915862",
+                        "status": 5,
+                        "productSkuInfo": {
+                            "thumbImg": "",
+                            "skuCode": "",
+                            "salePrice": 100,
+                            "marketPrice": 100,
+                            "stockInfo": {
+                                "stockNum": 20000
+                            }
+                        }
+                    }
+                ]
+            },
+            "leagueExInfo": {
+                "hasCommission": 1,
+                "commissionRatio": 3300,
+                "commissionValue": 33
+            },
+            "shopInfo": {
+                "name": "沅沅小可爱",
+                "headImgUrl": "http://wx.qlogo.cn/mmhead/574VdhMFwaETvsGUwOpJsHAWaM3UDznibq3MMMiaOPSt7Ir1ecTLOfJQ/0"
+            }
+        }
+    ],
+    "total": 100
+}

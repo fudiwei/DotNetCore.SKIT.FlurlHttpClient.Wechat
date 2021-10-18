@@ -162,6 +162,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("totalStockNum")]
                                 [System.Text.Json.Serialization.JsonPropertyName("totalStockNum")]
                                 public int TotalStock { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置总销量。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("totalSoldNum")]
+                                [System.Text.Json.Serialization.JsonPropertyName("totalSoldNum")]
+                                public int TotalSales { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置总订单数量。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("totalOrderNum")]
+                                [System.Text.Json.Serialization.JsonPropertyName("totalOrderNum")]
+                                public int TotalOrderCount { get; set; }
                             }
 
                             public class SKU
