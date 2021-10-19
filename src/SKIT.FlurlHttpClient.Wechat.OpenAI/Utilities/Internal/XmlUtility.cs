@@ -11,18 +11,19 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Utilities
     internal static class XmlUtility
     {
         // REF: https://docs.microsoft.com/zh-cn/dotnet/api/system.xml.serialization.xmlserializer#dynamically-generated-assemblies
-        private static Hashtable _serializers = new Hashtable();
+        private static readonly Hashtable _xmlSerializers = new Hashtable();
+        private static readonly XmlRootAttribute _xmlRoot = new XmlRootAttribute("xml");
 
         private static XmlSerializer GetTypedSerializer(Type type)
         {
             if (type == null) throw new ArgumentNullException(nameof(type));
 
             string skey = type.AssemblyQualifiedName ?? type.GetHashCode().ToString();
-            XmlSerializer? xmlSerializer = (XmlSerializer?)_serializers[skey];
+            XmlSerializer? xmlSerializer = (XmlSerializer?)_xmlSerializers[skey];
             if (xmlSerializer == null)
             {
-                xmlSerializer = new XmlSerializer(type, new XmlRootAttribute("xml"));
-                _serializers[skey] = xmlSerializer;
+                xmlSerializer = new XmlSerializer(type, _xmlRoot);
+                _xmlSerializers[skey] = xmlSerializer;
             }
 
             return xmlSerializer;
