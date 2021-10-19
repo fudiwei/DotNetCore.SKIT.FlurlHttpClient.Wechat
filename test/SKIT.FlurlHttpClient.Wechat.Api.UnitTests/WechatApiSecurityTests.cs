@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
@@ -40,13 +33,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         {
             string iv = "KEWv/gyiIwAfHvjrLeaX6w==";
             string key = "YZJqKnNFi0KAiKUc0ggC2g==";
-            string cipherData = "Gu2PVnxVWl+jK4F8c0liG1TiwQfaibvddu8eU1zWDDmVpPlM8ewsDzDr3l8VMY01ifZgFWNsr5QyBG0IKwM6lJNXzZHkaK9AQ4ZkVq7PYwdqNQkrg0QmKzntLMTRVNuY+TqPhXGPrOhup/orxwwCUBqheFPPwVbMeOdwrpVNyOdtsHRWQUefXN5UtDBb40pPHon4DbiHBQb5TjBPMrEF2Q==";
+            string cipherText = "Gu2PVnxVWl+jK4F8c0liGxfkB5Bj3m5HRvwgEIk1Yb+36RZ3Bg7YmUnud/ooiHz0PQroipsH7GCjlGwUeT04NwmrFaP1y3dRYPLpS43ed9QZWcFIFo+8vTs3Zco6S98DUvaNEAs8duhz/BzfBOZaIHMziRqEtPFI0ZDzCgJluBirJ6Wl3UkygZ5/QLo3KA53qGdip7K48Rq8XbCwuidTCw==";
             
-            string actualPlainData = Utilities.AESUtility.DecryptWithCBC(encodingKey: key, encodingIV: iv, encodingCipherText: cipherData).Trim();
-            string actualPhoneNumber = JsonConvert.DeserializeObject<JToken>(actualPlainData)["phoneNumber"].ToObject<string>();
-            string expectedPhoneNumber = "18677245613";
-
-            Assert.Equal(expectedPhoneNumber, actualPhoneNumber, ignoreCase: true);
+            string expectedPlainData = "{\"phoneNumber\":\"186****5613\",\"purePhoneNumber\":\"186****5613\",\"countryCode\":\"86\",\"watermark\":{\"timestamp\":1634545675,\"appid\":\"wxc****17e87e0e0a7\"}}";
+            string actualPlainData = Utilities.AESUtility.DecryptWithCBC(encodingKey: key, encodingIV: iv, encodingCipherText: cipherText);
+            
+            Assert.Equal(expectedPlainData, actualPlainData, ignoreCase: true);
         }
     }
 }
