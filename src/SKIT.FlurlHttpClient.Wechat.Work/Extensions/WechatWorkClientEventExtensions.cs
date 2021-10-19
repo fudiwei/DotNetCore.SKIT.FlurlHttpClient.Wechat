@@ -71,11 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                     throw new Exceptions.WechatWorkEventSerializationException("Encrypt event failed, because of empty encrypted data.");
 
                 callbackXml = Utilities.WxBizMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
-
-                using var reader = new StringReader(callbackXml);
-
-                XmlSerializer xmlSerializer = new XmlSerializer(typeof(TEvent), new XmlRootAttribute("xml"));
-                return (TEvent)xmlSerializer.Deserialize(reader)!;
+                return Utilities.XmlUtility.Deserialize<TEvent>(callbackXml);
             }
             catch (WechatWorkException)
             {
