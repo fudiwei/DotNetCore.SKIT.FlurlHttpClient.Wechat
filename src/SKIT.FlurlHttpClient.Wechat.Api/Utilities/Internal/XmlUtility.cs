@@ -17,8 +17,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         {
             if (type == null) throw new ArgumentNullException(nameof(type));
 
-            string skey = type.AssemblyQualifiedName;
-            XmlSerializer? xmlSerializer = (XmlSerializer)_serializers[skey];
+            string skey = type.AssemblyQualifiedName ?? type.GetHashCode().ToString();
+            XmlSerializer? xmlSerializer = (XmlSerializer?)_serializers[skey];
             if (xmlSerializer == null)
             {
                 xmlSerializer = new XmlSerializer(type, new XmlRootAttribute("xml"));
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         {
             using var reader = new StringReader(xml);
             XmlSerializer serializer = GetTypedSerializer(type);
-            return serializer.Deserialize(reader);
+            return serializer.Deserialize(reader)!;
         }
 
         public static T Deserialize<T>(string xml)
