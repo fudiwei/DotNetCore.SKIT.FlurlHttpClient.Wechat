@@ -4,9 +4,9 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/draft/batchget 接口的响应。</para>
+    /// <para>表示 [POST] /cgi-bin/freepublish/batchget 接口的响应。</para>
     /// </summary>
-    public class CgibinDraftBatchGetResponse : WechatApiResponse
+    public class CgibinFreePublishBatchGetResponse : WechatApiResponse
     {
         public static class Types
         {
@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                         public static class Types
                         {
-                            public class Article : CgibinDraftGetResponse.Types.Article
+                            public class Article : CgibinFreePublishGetArticleResponse.Types.Article
                             {
                             }
                         }
@@ -33,11 +33,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置草稿的 MediaId。
+                /// 获取或设置图文消息的 ArticleId。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("media_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                public string MediaId { get; set; } = default!;
+                [Newtonsoft.Json.JsonProperty("article_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("article_id")]
+                public string ArticleId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置草稿内容。
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置草稿列表。
+        /// 获取或设置图文消息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]

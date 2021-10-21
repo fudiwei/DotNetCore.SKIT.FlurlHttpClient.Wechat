@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     {
         public static class Types
         {
-            public class Data
+            public class EventData
             {
                 /// <summary>
                 /// 获取或设置顾问微信号。
@@ -61,6 +61,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("GuideScanEvent")]
         [System.Text.Json.Serialization.JsonPropertyName("GuideScanEvent")]
         [System.Xml.Serialization.XmlElement("GuideScanEvent")]
-        public Types.Data EventData { get; set; } = default!;
+        public Types.EventData EventData { get; set; } = default!;
     }
 }
