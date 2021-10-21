@@ -30,6 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string MediaId { get; set; } = string.Empty;
             }
 
+            [Obsolete("相关接口将于 2021-12-31 下线")]
             public class MpNewsMessage : ImageMessage
             {
             }
@@ -76,6 +77,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("articles")]
                 [System.Text.Json.Serialization.JsonPropertyName("articles")]
                 public IList<Types.Article> ArticleList { get; set; } = new List<Types.Article>();
+            }
+
+            public class MpNewsArticleMessage
+            {
+                /// <summary>
+                /// 获取或设置图文消息的 ArticleId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("article_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("article_id")]
+                public string ArticleId { get; set; } = string.Empty;
             }
 
             public class LinkMessage
@@ -295,6 +306,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置图文消息内容。
         /// </summary>
+        [Obsolete("相关接口将于 2021-12-31 下线")]
         [Newtonsoft.Json.JsonProperty("mpnews")]
         [System.Text.Json.Serialization.JsonPropertyName("mpnews")]
         public Types.MpNewsMessage? MessageContentForMpNews { get; set; }
@@ -305,6 +317,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("news")]
         [System.Text.Json.Serialization.JsonPropertyName("news")]
         public Types.NewsMessage? MessageContentForNews { get; set; }
+
+        /// <summary>
+        /// 获取或设置图文消息内容。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mpnewsarticle")]
+        [System.Text.Json.Serialization.JsonPropertyName("mpnewsarticle")]
+        public Types.MpNewsArticleMessage? MessageContentForMpNewsArticle { get; set; }
 
         /// <summary>
         /// 获取或设置图文链接消息内容。
