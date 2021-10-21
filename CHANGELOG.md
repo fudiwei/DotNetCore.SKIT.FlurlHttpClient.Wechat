@@ -34,6 +34,16 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.11.0
+
+    -   **新增**：新增草稿箱相关接口。
+
+    -   **新增**：新增发布能力相关接口。
+
+    -   **新增**：随官方更新客服消息相关接口模型。
+
+    -   **新增**：随官方更新自定义菜单相关接口模型。
+
 -   Release 1.10.1
 
     -   **修复**：修复 XmlSerializer 潜在的内存泄漏问题。（[GitHub Issue #11](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/11)）
