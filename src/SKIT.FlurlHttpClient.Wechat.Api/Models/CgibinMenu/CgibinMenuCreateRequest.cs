@@ -41,11 +41,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? Url { get; set; }
 
                 /// <summary>
-                /// 获取或设置媒体文件标识 ID。
+                /// 获取或设置媒体文件标识。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
                 public string? MediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置图文消息的 ArticleId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("article_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("article_id")]
+                public string? ArticleId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序的 AppId。
