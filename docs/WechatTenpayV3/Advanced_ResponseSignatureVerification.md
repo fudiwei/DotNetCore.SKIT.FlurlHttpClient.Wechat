@@ -8,11 +8,24 @@
 >
 > [《微信支付开发者文档 - 平台证书：更新指引》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay5_0.shtml)
 
-验签过程中需要使用的微信商户平台证书，开发者可通过本库封装的 `QueryCertificatesAsync()` 方法来获取。
+验签过程中需要使用的平台证书，开发者可通过本库封装的 `QueryCertificatesAsync()` 方法来获取。
 
 每个响应对象均包含名为 `WechatpayTimestamp`、`WechatpayNonce`、`WechatpaySignature` 的几个公共字段，你可根据官方文档的规则利用本库提供的 `RSAUtility` 工具类自行进行签名验证。
 
 具体用法可以参考项目目录下的 _test/SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests/WechatTenpayResponseVerificationTests.cs_ 文件给出的测试用例。
+
+---
+
+### 重要说明
+
+请在开发过程中注意区分**商户证书**和**平台证书**：
+
+-   **商户证书**用于生成请求的签名，需要在构建客户端配置项时指定（即 `WechatTenpayClientOptions` 对象中的证书序列号和公钥）；
+-   **平台证书**用于验证响应或回调的签名，需要通过接口获取（即 `QueryCertificatesAsync` 方法，注意证书内容需要解密）。
+
+如果你在后面的验签过程出现验签不通过的情况，请先检查是否混淆了这两个证书。
+
+关于证书的更多注意事项，请参阅[《微信支付开发者文档 - 常见问题：证书相关》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay7_0.shtml)
 
 ---
 
@@ -71,4 +84,41 @@ certManager.SetCertificate("CER 证书序列号", "CER 证书内容");
 
 ```csharp
 bool ret = client.VerifyResponseSignature(response);
+```
+
+---
+
+### 自定义 `CertificateManager` 实现
+
+上一小节提到，你可自行继承并实现一个 `CertificateManager`，例如利用数据库或 Redis 等方式存取证书信息。
+
+下面给出一个利用 Redis 存储的示例代码：
+
+```csharp
+using StackExchange.Redis;
+
+public class RedisCertificateManager : CertificateManager
+{
+    private readonly ConnectionMultiplexer _connection;
+
+    public RedisCertificateManager(string connectionString)
+    {
+        _connection = ConnectionMultiplexer.Connect(connectionString);
+    }
+
+    private string GenerateRedisKey(string serialNumber)
+    {
+        return string.Format("wxpaypc-{0}", serialNumber);
+    }
+
+    public override string GetCertificate(string serialNumber)
+    {
+        return _connection.StringGet(GenerateRedisKey(serialNumber));
+    }
+
+    public override void SetCertificate(string serialNumber, string certificate)
+    {
+        _connection.StringSet(GenerateRedisKey(serialNumber), certificate, TimeSpan.FromDays(90));
+    }
+}
 ```

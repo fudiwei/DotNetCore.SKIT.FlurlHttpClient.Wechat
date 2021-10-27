@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 {
@@ -32,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
     /// </summary>
     public class InMemoryCertificateManager : CertificateManager
     {
-        public IDictionary<string, string> _dict;
+        private readonly IDictionary<string, string> _dict;
 
         public InMemoryCertificateManager()
         {

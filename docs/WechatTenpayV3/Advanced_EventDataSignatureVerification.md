@@ -6,7 +6,7 @@
 
 同样的，你既可以利用本库提供的 `RSAUtility` 工具类自行进行签名验证，也可以通过 `CertificateManager` 尝试自动完成签名验证：
 
-注意，有关 `CertificateManager` 的具体用法，请务必阅读上方给出的相关文档。
+请注意，有关 `CertificateManager` 的具体用法、及相关证书或公钥格式的说明，请务必先阅读上方给出的相关文档。
 
 ```csharp
 bool ret = client.VerifyEventSignature(

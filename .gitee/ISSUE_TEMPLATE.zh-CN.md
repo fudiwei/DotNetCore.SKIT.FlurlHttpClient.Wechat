@@ -44,7 +44,7 @@
 
 1. 操作系统：请填写发生问题的操作系统环境信息（如：Windows Server 2012 R2）
 2. .NET 版本：请填写发生问题的 .NET 环境信息（如：.NET Framework 4.7.2 / .NET 5.0）
-3. 使用的模块及版本：请填写发生问题的模板信息（如：SKIT.FlurlHttpClient.Wechat.Api 1.0.0）
+3. 使用的模块及版本：请填写发生问题的模块信息（如：SKIT.FlurlHttpClient.Wechat.Api 1.0.0）
 4. 其他环境信息。
 
 ---
