@@ -63,7 +63,12 @@
         "merchant_logo_url": "https://xxx",
         "merchant_name": "微信支付",
         "background_color": "Color020",
-        "coupon_image_url": "https://qpic.cn/xxx"
+        "coupon_image_url": "https://qpic.cn/xxx",
+        "finder_info": {
+            "finder_id": "sph6Rngt2T4RlUf",
+            "finder_video_cover_image_url": "https://wxpaylogo.qpic.cn/xxx",
+            "finder_video_id": "export/UzFfAgtgekIEAQAAAAAAb4MgnPInmAAAAAstQy6ubaLX4KHWvLEZgBPEwIEgVnk9HIP-zNPgMJofG6tpdGPJNg_ojtEjoT94"
+        }
     },
     "coupon_code_mode": "WECHATPAY_MODE"
 }

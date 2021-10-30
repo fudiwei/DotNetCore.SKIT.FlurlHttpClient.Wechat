@@ -51,11 +51,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? MiniProgramPath { get; set; }
             }
 
-            public class Entrance : CreateMarketingBusifavorStockRequest.Types.Entrance
+            public class CustomEntrance : CreateMarketingBusifavorStockRequest.Types.CustomEntrance
             {
             }
 
-            public class Pattern : CreateMarketingBusifavorStockRequest.Types.Pattern
+            public class DisplayPattern : CreateMarketingBusifavorStockRequest.Types.DisplayPattern
             {
             }
 
@@ -97,14 +97,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("custom_entrance")]
         [System.Text.Json.Serialization.JsonPropertyName("custom_entrance")]
-        public Types.Entrance? CustomEntrance { get; set; }
+        public Types.CustomEntrance? CustomEntrance { get; set; }
 
         /// <summary>
         /// 获取或设置样式设置信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("display_pattern_info")]
         [System.Text.Json.Serialization.JsonPropertyName("display_pattern_info")]
-        public Types.Pattern? DisplayPattern { get; set; }
+        public Types.DisplayPattern? DisplayPattern { get; set; }
 
         /// <summary>
         /// 获取或设置事件通知配置信息。

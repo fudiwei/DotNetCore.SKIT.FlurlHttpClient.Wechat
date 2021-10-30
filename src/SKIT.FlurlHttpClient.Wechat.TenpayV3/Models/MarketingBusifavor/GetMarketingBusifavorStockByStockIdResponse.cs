@@ -292,7 +292,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? MiniProgramPath { get; set; }
             }
 
-            public class Entrance
+            public class CustomEntrance
             {
                 public static class Types
                 {
@@ -364,8 +364,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? CodeDisplayMode { get; set; }
             }
 
-            public class Pattern
+            public class DisplayPattern
             {
+                public static class Types
+                {
+                    public class Finder
+                    {
+                        /// <summary>
+                        /// 获取或设置视频号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finder_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
+                        public string? FinderId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频封面图片媒体文件地址。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finder_video_cover_image_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finder_video_cover_image_url")]
+                        public string? FinderVideoCoverImageMediaUrl { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finder_video_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finder_video_id")]
+                        public string? FinderVideoId { get; set; }
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置使用须知。
                 /// </summary>
@@ -400,6 +427,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("coupon_image_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_image_url")]
                 public string? CouponImageMediaUrl { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频号信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("finder_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("finder_info")]
+                public Types.Finder? Finder { get; set; }
             }
 
             public class NotifyConfig
@@ -515,14 +549,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("custom_entrance")]
         [System.Text.Json.Serialization.JsonPropertyName("custom_entrance")]
-        public Types.Entrance CustomEntrance { get; set; } = default!;
+        public Types.CustomEntrance CustomEntrance { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置样式设置信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("display_pattern_info")]
         [System.Text.Json.Serialization.JsonPropertyName("display_pattern_info")]
-        public Types.Pattern DisplayPattern { get; set; } = default!;
+        public Types.DisplayPattern DisplayPattern { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置事件通知配置信息。

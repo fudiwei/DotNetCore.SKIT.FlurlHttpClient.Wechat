@@ -18,11 +18,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                     {
                     }
 
-                    public class Entrance : GetMarketingBusifavorUserCouponByCouponCodeResponse.Types.Entrance
+                    public class CustomEntrance : GetMarketingBusifavorUserCouponByCouponCodeResponse.Types.CustomEntrance
                     {
                     }
 
-                    public class Pattern : GetMarketingBusifavorUserCouponByCouponCodeResponse.Types.Pattern
+                    public class DisplayPattern : GetMarketingBusifavorUserCouponByCouponCodeResponse.Types.DisplayPattern
                     {
                     }
                 }
@@ -97,14 +97,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("custom_entrance")]
                 [System.Text.Json.Serialization.JsonPropertyName("custom_entrance")]
-                public Types.Entrance? CustomEntrance { get; set; }
+                public Types.CustomEntrance? CustomEntrance { get; set; }
 
                 /// <summary>
                 /// 获取或设置样式设置信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("display_pattern_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("display_pattern_info")]
-                public Types.Pattern DisplayPattern { get; set; } = default!;
+                public Types.DisplayPattern DisplayPattern { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置适用商品范围。
