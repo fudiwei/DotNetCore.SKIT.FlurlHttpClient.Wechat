@@ -34,6 +34,12 @@
 
 <summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
 
+-   Release 1.12.0
+
+    -   **新增**：新增网络检测相关接口。
+
+    -   **新增**：新增 OpenAPI 管理相关接口。
+
 -   Release 1.11.0
 
     -   **新增**：新增草稿箱相关接口。
