@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
     /// <summary>
     /// 微信广告平台 API 响应的基类。
     /// </summary>
-    public abstract class WechatAdsResponse : IWechatResponse
+    public abstract class WechatAdsResponse : ICommonResponse
     {
         /// <summary>
         /// 获取原始的 HTTP 响应状态码。

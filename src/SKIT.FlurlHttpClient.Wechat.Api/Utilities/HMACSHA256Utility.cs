@@ -2,12 +2,12 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace SKIT.FlurlHttpClient.Wechat.Security
+namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
     /// <summary>
-    /// HMAC-SHA-1 算法工具类。
+    /// HMAC-SHA-256 算法工具类。
     /// </summary>
-    public static class HMACSHA1Utility
+    public static class HMACSHA256Utility
     {
         /// <summary>
         /// 获取信息摘要。
@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Security
             if (secretBytes == null) throw new ArgumentNullException(nameof(secretBytes));
             if (bytes == null) throw new ArgumentNullException(nameof(bytes));
 
-            using HMAC hmac = new HMACSHA1(secretBytes);
+            using HMAC hmac = new HMACSHA256(secretBytes);
             byte[] hashBytes = hmac.ComputeHash(bytes);
             return BitConverter.ToString(hashBytes).Replace("-", "");
         }

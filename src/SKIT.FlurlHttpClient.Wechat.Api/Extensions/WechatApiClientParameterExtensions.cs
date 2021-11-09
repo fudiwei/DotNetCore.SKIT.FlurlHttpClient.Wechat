@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
-            string sign = Security.SHA1Utility.Hash($"jsapi_ticket={jsapiTicket}&noncestr={nonce}&timestamp={timestamp}&url={url.Split('#')[0]}").ToLower();
+            string sign = Utilities.SHA1Utility.Hash($"jsapi_ticket={jsapiTicket}&noncestr={nonce}&timestamp={timestamp}&url={url.Split('#')[0]}").ToLower();
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             sortedParams.Add(client.Credentials.AppId);
             sortedParams.Add(nonce);
             sortedParams.Add(wxcardTicket);
-            string cardSign = Security.SHA1Utility.Hash(string.Join(string.Empty, sortedParams)).ToLower();
+            string cardSign = Utilities.SHA1Utility.Hash(string.Join(string.Empty, sortedParams)).ToLower();
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {

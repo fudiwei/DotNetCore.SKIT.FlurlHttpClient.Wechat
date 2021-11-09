@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     /// <summary>
     /// 表示微信 API 响应的基类。
     /// </summary>
-    public abstract class WechatApiResponse : IWechatResponse
+    public abstract class WechatApiResponse : ICommonResponse
     {
         /// <summary>
         /// 获取原始的 HTTP 响应状态码。

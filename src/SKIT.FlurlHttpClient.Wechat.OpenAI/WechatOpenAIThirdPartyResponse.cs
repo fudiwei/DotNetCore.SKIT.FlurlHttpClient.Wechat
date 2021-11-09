@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     /// <summary>
     /// 表示微信智能对话第三方接入 API 响应的基类。
     /// </summary>
-    public abstract class WechatOpenAIThirdPartyResponse : IWechatResponse
+    public abstract class WechatOpenAIThirdPartyResponse : ICommonResponse
     {
         /// <summary>
         /// 获取原始的 HTTP 响应状态码。

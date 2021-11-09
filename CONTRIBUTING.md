@@ -124,7 +124,6 @@
 
     - **必须**：提交记录中的 `<scope>`，可取值为：
 
-        - _core_：关于 `SKIT.FlurlHttpClient.Wechat` 项目的变化；
         - _wxapi_：关于 `SKIT.FlurlHttpClient.Wechat.Api` 项目的变化；
         - _tenpayv3_：关于 `SKIT.FlurlHttpClient.Wechat.TenpayV3` 项目的变化；
         - _work_：关于 `SKIT.FlurlHttpClient.Wechat.Work` 项目的变化；

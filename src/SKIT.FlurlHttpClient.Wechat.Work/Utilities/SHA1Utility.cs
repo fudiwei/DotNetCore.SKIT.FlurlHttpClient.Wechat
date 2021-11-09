@@ -2,12 +2,12 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace SKIT.FlurlHttpClient.Wechat.Security
+namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 {
     /// <summary>
-    /// SHA-256 算法工具类。
+    /// SHA-1 算法工具类。
     /// </summary>
-    public static class SHA256Utility
+    public static class SHA1Utility
     {
         /// <summary>
         /// 获取信息摘要。
@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Security
         {
             if (bytes == null) throw new ArgumentNullException(nameof(bytes));
 
-            using SHA256 sha = SHA256.Create();
+            using SHA1 sha = SHA1.Create();
             byte[] hashBytes = sha.ComputeHash(bytes);
             return BitConverter.ToString(hashBytes).Replace("-", "");
         }

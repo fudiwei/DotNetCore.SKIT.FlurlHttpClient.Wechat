@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
-using Flurl.Http.Configuration;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     /// <summary>
     /// 一个企业微信 API HTTP 客户端。
     /// </summary>
-    public class WechatWorkClient : CommonClientBase, IWechatClient
+    public class WechatWorkClient : CommonClientBase, ICommonClient
     {
         /// <summary>
         /// 获取当前客户端使用的企业微信凭证。

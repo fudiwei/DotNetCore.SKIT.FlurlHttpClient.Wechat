@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     /// <summary>
     /// 一个微信智能对话平台接入 API HTTP 客户端。
     /// </summary>
-    public class WechatOpenAIPlatformClient : CommonClientBase, IWechatClient
+    public class WechatOpenAIPlatformClient : CommonClientBase, ICommonClient
     {
         /// <summary>
         /// 获取当前客户端使用的微信智能对话平台凭证。

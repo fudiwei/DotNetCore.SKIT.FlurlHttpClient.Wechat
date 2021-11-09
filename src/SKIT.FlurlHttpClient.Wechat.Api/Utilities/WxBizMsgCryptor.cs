@@ -81,7 +81,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             if (ivBytes == null) throw new ArgumentNullException(nameof(ivBytes));
             if (ciperBytes == null) throw new ArgumentNullException(nameof(ciperBytes));
 
-            using RijndaelManaged aes = new RijndaelManaged();
+            using var aes = Aes.Create();
             aes.KeySize = 256;
             aes.BlockSize = 128;
             aes.Mode = CipherMode.CBC;
@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             if (ivBytes == null) throw new ArgumentNullException(nameof(ivBytes));
             if (plainBytes == null) throw new ArgumentNullException(nameof(plainBytes));
 
-            using var aes = new RijndaelManaged();
+            using var aes = Aes.Create();
             aes.KeySize = AES_KEY_SIZE;
             aes.BlockSize = AES_BLOCK_SIZE;
             //aes.Padding = PaddingMode.PKCS7;
@@ -238,7 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             set.Add(sMsgEncrypt);
 
             string rawText = string.Join(string.Empty, set.ToArray());
-            string signText = Security.SHA1Utility.Hash(rawText);
+            string signText = Utilities.SHA1Utility.Hash(rawText);
             return signText.ToLower();
         }
 
@@ -270,7 +270,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             try
             {
                 XmlDocument xmlDoc = new XmlDocument();
-                xmlDoc.XmlResolver = null;
+                xmlDoc.XmlResolver = null!;
                 xmlDoc.LoadXml(xml);
 
                 XmlNode? xmlRoot = xmlDoc.FirstChild;

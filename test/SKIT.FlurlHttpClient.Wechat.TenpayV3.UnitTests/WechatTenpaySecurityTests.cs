@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             string rawData = "This is raw data string.";
 
-            string actualHash = Security.SHA256Utility.Hash(rawData);
+            string actualHash = Utilities.SHA256Utility.Hash(rawData);
             string expectedHash = "5bd1e86d96a5ec138242ee3c743ea004bc8e215ef8ab72178133a6460034f216";
 
             Assert.Equal(expectedHash, actualHash, ignoreCase: true);

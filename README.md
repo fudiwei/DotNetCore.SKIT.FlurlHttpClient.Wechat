@@ -17,7 +17,7 @@
 
 -   基于 `Flurl.Http`，可与 `IHttpClientFactory` 集成。
 
--   支持 .NET Framework 4.6.1+、.NET Standard 2.0+、.NET Core 2.0+、.NET 5。
+-   支持 .NET Framework 4.6.1+、.NET Standard 2.0+、.NET Core 2.0+、.NET 5、.NET 6。
 
 -   支持 Windows / Linux / macOS 多平台部署。
 

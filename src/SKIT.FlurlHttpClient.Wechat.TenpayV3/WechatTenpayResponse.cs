@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     /// <summary>
     /// 表示微信支付 API 响应的基类。
     /// </summary>
-    public abstract class WechatTenpayResponse : IWechatResponse
+    public abstract class WechatTenpayResponse : ICommonResponse
     {
         /// <summary>
         /// 获取原始的 HTTP 响应状态码。

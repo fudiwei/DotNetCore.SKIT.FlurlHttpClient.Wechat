@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             if (request.FileHash == null)
             {
-                request.FileHash = Security.MD5Utility.Hash(request.FileBytes ?? new byte[0]);
+                request.FileHash = Utilities.MD5Utility.Hash(request.FileBytes ?? new byte[0]);
             }
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");

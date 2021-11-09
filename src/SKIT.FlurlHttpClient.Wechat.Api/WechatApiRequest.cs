@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     /// <summary>
     /// 表示微信 API 请求的基类。
     /// </summary>
-    public abstract class WechatApiRequest : IWechatRequest
+    public abstract class WechatApiRequest : ICommonRequest
     {
         /// <summary>
         /// 获取或设置请求超时时间（单位：毫秒）。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.Timeout"/> 参数，这在需要指定特定耗时请求（比如上传或下载文件）的超时时间时很有用。

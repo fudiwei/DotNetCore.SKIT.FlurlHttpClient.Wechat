@@ -2,7 +2,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace SKIT.FlurlHttpClient.Wechat.Security
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Utilities
 {
     /// <summary>
     /// MD5 算法工具类。

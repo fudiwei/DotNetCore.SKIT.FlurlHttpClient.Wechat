@@ -1,18 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Xml;
-using System.Xml.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Controllers
 {
-    using SKIT.FlurlHttpClient.Wechat.Security;
     using SKIT.FlurlHttpClient.Wechat.Api.Events;
 
     [ApiController]

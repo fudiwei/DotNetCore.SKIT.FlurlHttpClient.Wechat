@@ -3,7 +3,7 @@
     /// <summary>
     /// 微信广告平台 API 请求的基类。
     /// </summary>
-    public abstract class WechatAdsRequest : IWechatRequest
+    public abstract class WechatAdsRequest : ICommonRequest
     {
         /// <summary>
         /// 获取或设置请求超时时间（单位：毫秒）。如果不指定将使用构造 <see cref="WechatAdsClient"/> 时的 <see cref="WechatAdsClientOptions.Timeout"/> 参数，这在需要指定特定耗时请求（比如上传或下载文件）的超时时间时很有用。

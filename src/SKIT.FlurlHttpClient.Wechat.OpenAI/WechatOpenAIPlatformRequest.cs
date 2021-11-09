@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     /// <summary>
     /// 表示微信智能对话平台接入 API 请求的基类。
     /// </summary>
-    public abstract class WechatOpenAIPlatformRequest : IWechatRequest
+    public abstract class WechatOpenAIPlatformRequest : ICommonRequest
     {
         public static class Serialization
         {

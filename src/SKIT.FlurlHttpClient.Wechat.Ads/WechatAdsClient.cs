@@ -1,21 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
-using Flurl.Http.Configuration;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads
 {
     /// <summary>
     /// 一个微信广告平台 API HTTP 客户端。
     /// </summary>
-    public class WechatAdsClient : CommonClientBase, IWechatClient
+    public class WechatAdsClient : CommonClientBase, ICommonClient
     {
         /// <summary>
         /// 获取当前客户端使用的微信广告平台凭证。
