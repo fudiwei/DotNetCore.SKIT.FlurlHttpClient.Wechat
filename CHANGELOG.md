@@ -4,35 +4,13 @@
 
 <details>
 
-<summary>SKIT.FlurlHttpClient.Wechat 更新日志</summary>
+<summary>[展开查看] SKIT.FlurlHttpClient.Wechat.Api 模块更新日志</summary>
 
--   Release 1.1.0
+-   Release 2.0.0
 
-    -   **变更**：引入 SKIT.FlurlHttpClient.Common 依赖，并废弃相关公共组件。
+    -   **新增**：适配 .NET 6.0。
 
--   Release 1.0.3
-
-    -   **修复**：显式依赖 `System.Text.Encodings.Web`，修复部分场景下程序集加载问题。（[Gitee Issue #I42V13](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I42V13)）
-
--   Release 1.0.2
-
-    -   **新增**：新增 `IWechatClient.JsonSerializer` 属性。
-
--   Release 1.0.1
-
-    -   **变更**：移除 `IWechatClient.CreateRequest()` 方法。
-
--   Release 1.0.0
-
-    -   首次发布。
-
-</details>
-
----
-
-<details>
-
-<summary>SKIT.FlurlHttpClient.Wechat.Api 更新日志</summary>
+    -   **变更**：升级核心库。
 
 -   Release 1.12.0
 
@@ -190,7 +168,15 @@
 
 <details>
 
-<summary>SKIT.FlurlHttpClient.Wechat.TenpayV3 更新日志</summary>
+<summary>[展开查看] SKIT.FlurlHttpClient.Wechat.TenpayV3 模块更新日志</summary>
+
+-   Release 2.0.0
+
+    - **新增**：随官方更新商家券相关接口模型。
+
+    -   **新增**：适配 .NET 6.0。
+
+    -   **变更**：升级核心库。
 
 -   Release 1.8.2
 
@@ -288,7 +274,13 @@
 
 <details>
 
-<summary>SKIT.FlurlHttpClient.Wechat.Work 更新日志</summary>
+<summary>[展开查看] SKIT.FlurlHttpClient.Wechat.Work 模块更新日志</summary>
+
+-   Release 2.0.0
+
+    -   **新增**：适配 .NET 6.0。
+
+    -   **变更**：升级核心库。
 
 -   Release 1.4.0
 
