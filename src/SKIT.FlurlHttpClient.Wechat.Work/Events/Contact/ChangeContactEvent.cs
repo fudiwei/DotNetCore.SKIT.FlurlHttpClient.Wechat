@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 /// <summary>
                 /// 获取或设置自定义字段列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("Item", Type = typeof(Types.Attribute))]
+                [System.Xml.Serialization.XmlArrayItem("Item", Type = typeof(Types.Attribute))]
                 public Types.Attribute[] AttributeList { get; set; } = default!;
             }
         }
@@ -118,6 +118,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         /// </summary>
         [System.Xml.Serialization.XmlElement("UserID", IsNullable = true)]
         public string? UserId { get; set; }
+
+        /// <summary>
+        /// 获取或设置新的用户成员账号。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("NewUserID", IsNullable = true)]
+        public string? NewUserId { get; set; }
 
         /// <summary>
         /// 获取或设置用户成员别名。

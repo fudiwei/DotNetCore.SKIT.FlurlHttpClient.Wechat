@@ -14,6 +14,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         {
             public class SelectItem
             {
+                public static class Types
+                {
+                    public class OptionIdList
+                    {
+                        /// <summary>
+                        /// 获取或设置选项列表。
+                        /// </summary>
+                        [System.Xml.Serialization.XmlArrayItem("OpitonId", Type = typeof(string))]
+                        public string[] Items { get; set; } = default!;
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置问题的 Key 值。
                 /// </summary>
@@ -23,8 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 /// <summary>
                 /// 获取或设置选项 ID 列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("OpitonIds", Type = typeof(string))]
-                public string[] OptionIdList { get; set; } = default!;
+                [System.Xml.Serialization.XmlElement("OpitonIds")]
+                public Types.OptionIdList OptionIdList { get; set; } = default!;
             }
 
             public class SelectList
@@ -32,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
                 /// <summary>
                 /// 获取或设置下拉框列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("SelectedItem", Type = typeof(SelectItem))]
+                [System.Xml.Serialization.XmlArrayItem("SelectedItem", Type = typeof(SelectItem))]
                 public SelectItem[]? Items { get; set; } = default!;
             }
         }
@@ -70,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         /// <summary>
         /// 获取或设置下拉框列表。
         /// </summary>
-        [System.Xml.Serialization.XmlElement("SelectList")]
-        public Types.SelectList? SelectList { get; set; } = default!;
+        [System.Xml.Serialization.XmlElement("SelectedItems")]
+        public Types.SelectList SelectList { get; set; } = default!;
     }
 }

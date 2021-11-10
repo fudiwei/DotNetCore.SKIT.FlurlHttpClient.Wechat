@@ -16,6 +16,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         public string ServiceCorpId { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置授权方的 CorpId。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("AuthCorpId", IsNullable = true)]
+        public string? AuthorizerCorpId { get; set; }
+
+        /// <summary>
         /// 获取或设置设备序列号。
         /// </summary>
         [System.Xml.Serialization.XmlElement("DeviceSn")]

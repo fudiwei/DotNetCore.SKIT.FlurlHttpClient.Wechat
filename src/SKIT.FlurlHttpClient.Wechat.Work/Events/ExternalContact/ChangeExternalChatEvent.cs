@@ -51,5 +51,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         /// </summary>
         [System.Xml.Serialization.XmlElement("QuitScene", IsNullable = true)]
         public int? QuitScene { get; set; }
+
+        /// <summary>
+        /// 获取或设置成员变更数量。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("MemChangeCnt", IsNullable = true)]
+        public int? MemberChangedCount { get; set; }
     }
 }

@@ -5,6 +5,6 @@
     <MsgType><![CDATA[event]]></MsgType>
     <Event><![CDATA[taskcard_click]]></Event>
     <EventKey><![CDATA[key111]]></EventKey>
-    <TaskId><![CDATA[taskid111]]></TaskId >
-    <AgentId>1</AgentId>
+    <TaskId><![CDATA[taskid111]]></TaskId>
+    <AgentID>1</AgentID>
 </xml>
