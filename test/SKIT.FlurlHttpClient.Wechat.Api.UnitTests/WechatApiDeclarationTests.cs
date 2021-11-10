@@ -28,8 +28,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         public void ApiModelsDefinitionTest()
         {
             string workdir = Path.Combine(TestConfigs.ProjectTestDirectory, "ModelSamples");
-            Assert.True(Directory.Exists(workdir));
-
             CodeStyleUtil.VerifyApiModelsDefinition(_assembly, workdir, out var ex);
 
             if (ex != null)
@@ -42,8 +40,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         public void ApiEventsDefinitionTest()
         {
             string workdir = Path.Combine(TestConfigs.ProjectTestDirectory, "EventSamples");
-            Assert.True(Directory.Exists(workdir));
-
             CodeStyleUtil.VerifyApiEventsDefinition(_assembly, workdir, out var ex);
 
             if (ex != null)
@@ -67,8 +63,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         public void CodeStyleTest()
         {
             string workdir = Path.Combine(TestConfigs.ProjectSourceDirectory);
-            Assert.True(Directory.Exists(workdir));
-
             CodeStyleUtil.VerifySourceCodeStyle(workdir, out var ex);
 
             if (ex != null)

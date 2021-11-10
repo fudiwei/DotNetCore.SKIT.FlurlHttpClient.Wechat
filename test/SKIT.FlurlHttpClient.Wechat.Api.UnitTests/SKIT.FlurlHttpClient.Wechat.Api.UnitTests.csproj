@@ -2,21 +2,26 @@
 
     <PropertyGroup>
 		<TargetFrameworks>netcoreapp3.1; net6.0</TargetFrameworks>
-        <LangVersion>8.0</LangVersion>
+		<LangVersion>9.0</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
         <None Remove=".gitignore" />
-        <Content Include="appsettings.json">
-            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-        </Content>
+		<Content Include="appsettings.json">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+		</Content>
+		<Content Include="appsettings.*.json" Condition="'$(Configuration)' == 'Debug'">
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+		</Content>
         <Content Include="ModelSamples/**/*.json" />
         <Content Include="EventSamples/**/*.json" />
         <Content Include="EventSamples/**/*.xml" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.11.0" />
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
         <PackageReference Include="xunit" Version="2.4.1" />
         <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
             <PrivateAssets>all</PrivateAssets>
