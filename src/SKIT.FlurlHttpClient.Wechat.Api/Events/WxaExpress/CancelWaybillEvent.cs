@@ -36,9 +36,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("OrderId")]
-        [System.Text.Json.Serialization.JsonPropertyName("OrderId")]
-        [System.Xml.Serialization.XmlElement("OrderId")]
+        [Newtonsoft.Json.JsonProperty("OrderID")]
+        [System.Text.Json.Serialization.JsonPropertyName("OrderID")]
+        [System.Xml.Serialization.XmlElement("OrderID")]
         public string OrderId { get; set; } = default!;
 
         /// <summary>

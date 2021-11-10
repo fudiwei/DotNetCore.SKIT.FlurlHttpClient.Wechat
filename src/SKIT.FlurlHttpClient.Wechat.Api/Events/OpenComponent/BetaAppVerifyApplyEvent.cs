@@ -26,6 +26,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 public string MediaPlatformAppId { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置操作时间字符串（格式：yyyy-MM-dd HH:mm）。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("operation_time")]
+                public string OperateTimeString { get; set; } = default!;
+
+                /// <summary>
                 /// 获取或设置错误码。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("status")]
@@ -34,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// <summary>
                 /// 获取或设置错误信息。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("msg")]
+                [System.Xml.Serialization.XmlElement("msg", IsNullable = true)]
                 public string? ErrorMessage { get; set; }
             }
         }

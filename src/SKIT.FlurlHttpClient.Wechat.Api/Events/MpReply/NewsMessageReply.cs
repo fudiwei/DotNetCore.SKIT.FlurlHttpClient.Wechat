@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// <summary>
                 /// 获取或设置图文列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("item", Type = typeof(ArticleItem))]
+                [System.Xml.Serialization.XmlArrayItem("item", Type = typeof(ArticleItem))]
                 public ArticleItem[] Items { get; set; } = new ArticleItem[0];
             }
         }

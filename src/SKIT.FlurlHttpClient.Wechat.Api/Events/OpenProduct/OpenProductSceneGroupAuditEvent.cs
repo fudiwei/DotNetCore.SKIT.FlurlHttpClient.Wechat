@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-                [System.Xml.Serialization.XmlElement("status")]
+                [System.Xml.Serialization.XmlElement("group_id")]
                 public int GroupId { get; set; }
 
                 /// <summary>
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scene_group_ext_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene_group_ext_list")]
-                [System.Xml.Serialization.XmlElement("scene_group_ext_list", Type = typeof(Types.SceneGroupExtra))]
+                [System.Xml.Serialization.XmlArrayItem("scene_group_ext_list", Type = typeof(Types.SceneGroupExtra))]
                 public Types.SceneGroupExtra[] SceneGroupExtraList { get; set; } = default!;
             }
         }

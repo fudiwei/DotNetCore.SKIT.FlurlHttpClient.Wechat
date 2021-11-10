@@ -167,7 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("DetailList")]
                 [System.Text.Json.Serialization.JsonPropertyName("DetailList")]
-                [System.Xml.Serialization.XmlElement("DetailList", Type = typeof(Types.GoodsDetail))]
+                [System.Xml.Serialization.XmlArrayItem("DetailList", Type = typeof(Types.GoodsDetail))]
                 public Types.GoodsDetail[]? GoodsDetailList { get; set; }
             }
 
@@ -246,9 +246,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("OrderId")]
-        [System.Text.Json.Serialization.JsonPropertyName("OrderId")]
-        [System.Xml.Serialization.XmlElement("OrderId")]
+        [Newtonsoft.Json.JsonProperty("OrderID")]
+        [System.Text.Json.Serialization.JsonPropertyName("OrderID")]
+        [System.Xml.Serialization.XmlElement("OrderID")]
         public string OrderId { get; set; } = default!;
 
         /// <summary>

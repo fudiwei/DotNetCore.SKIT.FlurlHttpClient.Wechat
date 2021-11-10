@@ -14,5 +14,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [System.Xml.Serialization.XmlElement("DelayTime")]
         public long DelayTimestamp { get; set; }
+
+        /// <summary>
+        /// 获取或设置审核拒绝原因。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("Reason", IsNullable = true)]
+        public string? RejectReason { get; set; }
     }
 }
