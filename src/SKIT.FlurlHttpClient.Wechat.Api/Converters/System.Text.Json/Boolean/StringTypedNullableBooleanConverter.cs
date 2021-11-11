@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
@@ -27,9 +24,9 @@ namespace System.Text.Json.Converters
                 if (value == null)
                     return null;
 
-                if ("true".Equals(value, StringComparison.InvariantCultureIgnoreCase))
+                if ("true".Equals(value, StringComparison.OrdinalIgnoreCase))
                     return true;
-                else if ("false".Equals(value, StringComparison.InvariantCultureIgnoreCase))
+                else if ("false".Equals(value, StringComparison.OrdinalIgnoreCase))
                     return false;
             }
 

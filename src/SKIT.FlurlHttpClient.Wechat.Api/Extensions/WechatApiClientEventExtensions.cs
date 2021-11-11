@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
@@ -271,7 +269,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             ISet<string> set = new SortedSet<string>(StringComparer.Ordinal) { client.Credentials.PushToken!, callbackTimestamp, callbackNonce };
             string sign = Utilities.SHA1Utility.Hash(string.Concat(set));
-            return string.Equals(sign, callbackSignature, StringComparison.InvariantCultureIgnoreCase);
+            return string.Equals(sign, callbackSignature, StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>

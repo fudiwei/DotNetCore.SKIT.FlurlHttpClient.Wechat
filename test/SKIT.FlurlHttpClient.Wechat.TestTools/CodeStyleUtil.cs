@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
@@ -215,7 +214,7 @@ namespace SKIT.FlurlHttpClient.Wechat
             var lstError = new List<Exception>();
 
             var lstFilePath = TestIOUtil.GetAllFiles(workdir)
-                .Where(e => string.Equals(Path.GetExtension(e), ".json", StringComparison.InvariantCultureIgnoreCase))
+                .Where(e => string.Equals(Path.GetExtension(e), ".json", StringComparison.OrdinalIgnoreCase))
                 .ToList();
             if (!lstFilePath.Any())
             {
@@ -233,7 +232,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                     continue;
                 }
 
-                if (string.Equals(Path.GetExtension(filePath), ".json", StringComparison.InvariantCultureIgnoreCase))
+                if (string.Equals(Path.GetExtension(filePath), ".json", StringComparison.OrdinalIgnoreCase))
                 {
                     string json = File.ReadAllText(filePath);
                     if (!TryJsonize(type, json, out Exception ex))
@@ -263,8 +262,8 @@ namespace SKIT.FlurlHttpClient.Wechat
 
             var lstFilePath = TestIOUtil.GetAllFiles(workdir)
                 .Where(e =>
-                    string.Equals(Path.GetExtension(e), ".json", StringComparison.InvariantCultureIgnoreCase) ||
-                    string.Equals(Path.GetExtension(e), ".xml", StringComparison.InvariantCultureIgnoreCase)
+                    string.Equals(Path.GetExtension(e), ".json", StringComparison.OrdinalIgnoreCase) ||
+                    string.Equals(Path.GetExtension(e), ".xml", StringComparison.OrdinalIgnoreCase)
                 )
                 .ToArray();
             if (!lstFilePath.Any())
@@ -283,7 +282,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                     continue;
                 }
 
-                if (string.Equals(Path.GetExtension(filePath), ".json", StringComparison.InvariantCultureIgnoreCase))
+                if (string.Equals(Path.GetExtension(filePath), ".json", StringComparison.OrdinalIgnoreCase))
                 {
                     string json = File.ReadAllText(filePath);
 
@@ -292,7 +291,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         lstError.Add(ex);
                     }
                 }
-                else if (string.Equals(Path.GetExtension(filePath), ".xml", StringComparison.InvariantCultureIgnoreCase))
+                else if (string.Equals(Path.GetExtension(filePath), ".xml", StringComparison.OrdinalIgnoreCase))
                 {
                     string xml = File.ReadAllText(filePath);
 
@@ -392,13 +391,13 @@ namespace SKIT.FlurlHttpClient.Wechat
             var lstError = new List<Exception>();
 
             var lstExtensionsCodeFile = TestIOUtil.GetAllFiles(workdir)
-                .Where(e => string.Equals(Path.GetExtension(e), ".cs", StringComparison.InvariantCultureIgnoreCase))
+                .Where(e => string.Equals(Path.GetExtension(e), ".cs", StringComparison.OrdinalIgnoreCase))
                 .Where(e => Path.GetDirectoryName(e).StartsWith(Path.Combine(workdir, "Extensions")))
                 .Where(e => Path.GetFileNameWithoutExtension(e).Contains("ClientExecute"))
                 .Where(e => Path.GetFileNameWithoutExtension(e).EndsWith("Extensions"))
                 .ToArray();
             var lstModelsCodeFile = TestIOUtil.GetAllFiles(workdir)
-                .Where(e => string.Equals(Path.GetExtension(e), ".cs", StringComparison.InvariantCultureIgnoreCase))
+                .Where(e => string.Equals(Path.GetExtension(e), ".cs", StringComparison.OrdinalIgnoreCase))
                 .Where(e => Path.GetDirectoryName(e).StartsWith(Path.Combine(workdir, "Models")))
                 .Where(e => Path.GetFileNameWithoutExtension(e).EndsWith("Request") || Path.GetFileNameWithoutExtension(e).EndsWith("Response"))
                 .ToArray();
