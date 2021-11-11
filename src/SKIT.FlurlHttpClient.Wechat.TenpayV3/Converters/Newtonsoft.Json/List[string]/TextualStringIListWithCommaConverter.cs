@@ -5,9 +5,9 @@ using Newtonsoft.Json.Converters;
 
 namespace Newtonsoft.Json.Converters
 {
-    internal class StringTypedStringIListConverter : JsonConverter<IList<string>?>
+    internal class TextualStringIListWithCommaConverter : JsonConverter<IList<string>?>
     {
-        private readonly JsonConverter<List<string>?> _converter = new StringTypedStringListConverter();
+        private readonly JsonConverter<List<string>?> _converter = new TextualStringListWithCommaConverter();
 
         public override bool CanRead
         {

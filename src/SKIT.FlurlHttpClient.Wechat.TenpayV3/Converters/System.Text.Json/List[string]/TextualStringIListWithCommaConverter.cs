@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    internal class JsonTypedStringListConverter : JsonConverter<List<string>?>
+    internal class TextualStringIListWithCommaConverter : JsonConverter<List<string>?>
     {
         public override List<string>? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -19,7 +20,7 @@ namespace System.Text.Json.Converters
                 if (value == null)
                     return null;
 
-                return JsonSerializer.Deserialize<List<string>>(value, options);
+                return value.Split(',').ToList();
             }
 
             throw new JsonException();
@@ -28,7 +29,7 @@ namespace System.Text.Json.Converters
         public override void Write(Utf8JsonWriter writer, List<string>? value, JsonSerializerOptions options)
         {
             if (value != null)
-                writer.WriteStringValue(JsonSerializer.Serialize(value, options));
+                writer.WriteStringValue(string.Join(",", value));
             else
                 writer.WriteNullValue();
         }

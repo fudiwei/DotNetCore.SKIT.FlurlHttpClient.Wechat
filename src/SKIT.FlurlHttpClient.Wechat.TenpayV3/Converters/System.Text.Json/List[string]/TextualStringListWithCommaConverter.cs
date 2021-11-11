@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    internal class JsonTypedStringIListConverter : JsonConverter<IList<string>?>
+    internal class TextualStringListWithCommaConverter : JsonConverter<IList<string>?>
     {
-        private readonly JsonConverter<List<string>?> _converter = new JsonTypedStringListConverter();
+        private readonly JsonConverter<List<string>?> _converter = new TextualStringIListWithCommaConverter();
 
         public override IList<string>? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
