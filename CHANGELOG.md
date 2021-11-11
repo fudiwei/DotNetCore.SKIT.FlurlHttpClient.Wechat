@@ -170,9 +170,15 @@
 
 <summary>[展开查看] SKIT.FlurlHttpClient.Wechat.TenpayV3 模块更新日志</summary>
 
+-   Release 2.0.1
+
+    -   **变更**：升级外部依赖库 `Portable.BouncyCastle`。
+
+    -   **修复**：修复查询代金券相关接口的响应模型定义错误。（[Gitee Issue #I4HRYL](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4HRYL)）
+
 -   Release 2.0.0
 
-    - **新增**：随官方更新商家券相关接口模型。
+    -   **新增**：随官方更新商家券相关接口模型。
 
     -   **新增**：适配 .NET 6.0。
 
