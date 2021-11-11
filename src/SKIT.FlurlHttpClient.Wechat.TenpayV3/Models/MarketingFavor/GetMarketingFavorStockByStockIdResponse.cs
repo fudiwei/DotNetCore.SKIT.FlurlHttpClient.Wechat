@@ -85,9 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// 获取或设置指定支付方式列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("trade_type")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.JsonTypedStringArrayConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.JsonTypedStringArrayConverter))]
                 public string[]? TradeTypeList { get; set; }
 
                 /// <summary>
