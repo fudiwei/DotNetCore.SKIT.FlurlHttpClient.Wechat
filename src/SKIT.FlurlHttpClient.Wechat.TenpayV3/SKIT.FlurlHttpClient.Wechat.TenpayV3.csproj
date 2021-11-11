@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Portable.BouncyCastle" Version="1.8.10" />
+        <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
 		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.0.0" />
     </ItemGroup>
 
