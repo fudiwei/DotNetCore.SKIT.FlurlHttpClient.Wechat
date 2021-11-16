@@ -6,6 +6,10 @@
 
 <summary>[展开查看] SKIT.FlurlHttpClient.Wechat.Api 模块更新日志</summary>
 
+-   Release 2.0.1
+
+    -   **修复**：修复部分回调通知事件模型字段缺失的问题。
+
 -   Release 2.0.0
 
     -   **新增**：适配 .NET 6.0。
