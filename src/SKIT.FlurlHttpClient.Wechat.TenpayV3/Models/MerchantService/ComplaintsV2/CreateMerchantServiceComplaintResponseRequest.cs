@@ -35,5 +35,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("response_images")]
         [System.Text.Json.Serialization.JsonPropertyName("response_images")]
         public IList<string>? ResponseMediaIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置跳转链接。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("jump_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("jump_url")]
+        public string? JumpUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置跳转链接文案。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("jump_url_text")]
+        [System.Text.Json.Serialization.JsonPropertyName("jump_url_text")]
+        public string? JumpUrlText { get; set; }
     }
 }
