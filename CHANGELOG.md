@@ -174,6 +174,10 @@
 
 <summary>[展开查看] SKIT.FlurlHttpClient.Wechat.TenpayV3 模块更新日志</summary>
 
+-   Release 2.0.3
+
+    -   **修复**：修复创建代金券批次相关接口的请求模型定义错误。（[Gitee Issue #I4ITW6](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4ITW6)）
+
 -   Release 2.0.2
 
     -   **修复**：修复发放代金券批次相关接口的请求模型定义错误。（[Gitee Issue #I4IJDR](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4IJDR)）
