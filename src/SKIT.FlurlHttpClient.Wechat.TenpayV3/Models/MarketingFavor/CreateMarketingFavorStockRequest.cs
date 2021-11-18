@@ -17,42 +17,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("max_coupons")]
                 [System.Text.Json.Serialization.JsonPropertyName("max_coupons")]
-                public int MaxCoupons { get; set; }
+                public int? MaxCoupons { get; set; }
 
                 /// <summary>
                 /// 获取或设置发放总预算（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("max_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("max_amount")]
-                public long MaxAmount { get; set; }
+                public long? MaxAmount { get; set; }
 
                 /// <summary>
                 /// 获取或设置单天预算发放上限（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("max_amount_by_day")]
                 [System.Text.Json.Serialization.JsonPropertyName("max_amount_by_day")]
-                public long MaxAmountPerDay { get; set; }
+                public long? MaxAmountPerDay { get; set; }
 
                 /// <summary>
                 /// 获取或设置单个用户可领个数。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("max_coupons_per_user")]
                 [System.Text.Json.Serialization.JsonPropertyName("max_coupons_per_user")]
-                public int MaxCouponsPerUser { get; set; }
+                public int? MaxCouponsPerUser { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启自然人限制。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("natural_person_limit")]
                 [System.Text.Json.Serialization.JsonPropertyName("natural_person_limit")]
-                public bool IsNaturalPersonLimit { get; set; }
+                public bool? IsNaturalPersonLimit { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启防刷拦截。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("prevent_api_abuse")]
                 [System.Text.Json.Serialization.JsonPropertyName("prevent_api_abuse")]
-                public bool IsPreventApiAbuse { get; set; }
+                public bool? IsPreventApiAbuse { get; set; }
             }
 
             public class CouponUseRule

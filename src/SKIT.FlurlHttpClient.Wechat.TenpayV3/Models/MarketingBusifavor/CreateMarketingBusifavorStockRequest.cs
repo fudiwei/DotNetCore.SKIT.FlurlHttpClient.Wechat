@@ -17,14 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("max_coupons")]
                 [System.Text.Json.Serialization.JsonPropertyName("max_coupons")]
-                public int MaxCoupons { get; set; }
+                public int? MaxCoupons { get; set; }
 
                 /// <summary>
                 /// 获取或设置单个用户可领个数。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("max_coupons_per_user")]
                 [System.Text.Json.Serialization.JsonPropertyName("max_coupons_per_user")]
-                public int MaxCouponsPerUser { get; set; }
+                public int? MaxCouponsPerUser { get; set; }
 
                 /// <summary>
                 /// 获取或设置单天发放上限个数。
