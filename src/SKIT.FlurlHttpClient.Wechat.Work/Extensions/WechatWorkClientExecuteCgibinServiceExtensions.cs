@@ -585,5 +585,67 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceMiniProgramJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region ExternalContactMigration
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_new_external_userid 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95327 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetNewExternalUserIdResponse> ExecuteCgibinExternalContactGetNewExternalUserIdAsync(this WechatWorkClient client, Models.CgibinExternalContactGetNewExternalUserIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_new_external_userid")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetNewExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/externalcontact/finish_external_userid_migration 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95327 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceExternalContactFinishExternalUserIdMigrationResponse> ExecuteCgibinServiceExternalContactFinishExternalUserIdMigrationAsync(this WechatWorkClient client, Models.CgibinServiceExternalContactFinishExternalUserIdMigrationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "externalcontact", "finish_external_userid_migration")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceExternalContactFinishExternalUserIdMigrationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/externalcontact/unionid_to_external_userid_3rd 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95327 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceExternalContactUnionIdToExternalUserId3rdResponse> ExecuteCgibinServiceExternalContactUnionIdToExternalUserId3rdAsync(this WechatWorkClient client, Models.CgibinServiceExternalContactUnionIdToExternalUserId3rdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "externalcontact", "unionid_to_external_userid_3rd")
+                .SetQueryParam("suite_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceExternalContactUnionIdToExternalUserId3rdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

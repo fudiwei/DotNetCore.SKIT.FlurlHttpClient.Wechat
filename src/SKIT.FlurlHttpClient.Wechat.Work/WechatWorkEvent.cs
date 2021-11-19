@@ -66,16 +66,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// 获取或设置消息类型。
         /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
+        [Newtonsoft.Json.JsonProperty("InfoType")]
+        [System.Text.Json.Serialization.JsonPropertyName("InfoType")]
         [XmlElement("InfoType", IsNullable = true)]
         public string? InfoType { get; set; }
 
         /// <summary>
         /// 获取或设置消息时间戳。
         /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
+        [Newtonsoft.Json.JsonProperty("TimeStamp")]
+        [System.Text.Json.Serialization.JsonPropertyName("TimeStamp")]
         [XmlElement("TimeStamp", IsNullable = true)]
         public long? InfoTimestamp { get; set; }
     }
