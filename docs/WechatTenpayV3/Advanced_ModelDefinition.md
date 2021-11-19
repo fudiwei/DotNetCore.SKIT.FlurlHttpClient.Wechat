@@ -941,6 +941,16 @@
 
         -   下载图片：`DownloadMerchantServiceImage`
 
+    -   商户违规回调通知
+
+        -   创建商户违规通知回调地址：`CreateMerchantRiskManageViolationNotification`
+
+        -   查询商户违规通知回调地址：`GetMerchantRiskManageViolationNotification`
+
+        -   更新商户违规通知回调地址：`UpdateMerchantRiskManageViolationNotification`
+
+        -   删除商户违规通知回调地址：`DeleteMerchantRiskManageViolationNotification`
+
 -   其他能力
 
     -   图片上传：`UploadMerchantMediaImage`
