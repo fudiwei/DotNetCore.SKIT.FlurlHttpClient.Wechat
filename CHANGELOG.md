@@ -294,6 +294,16 @@
 
 <summary>[展开查看] SKIT.FlurlHttpClient.Wechat.Work 模块更新日志</summary>
 
+-   Release 2.1.0
+
+    -   **新增**：随官方更新企业通讯录成员相关接口模型。
+
+    -   **新增**：新增代开发应用 ExternalUserId 转换接口。
+
+    -   **新增**：适配企业微信帐号 ID 安全性全面升级。
+
+    -   **修复**：修复部分回调通知事件模型字段缺失的问题。
+
 -   Release 2.0.0
 
     -   **新增**：适配 .NET 6.0。
