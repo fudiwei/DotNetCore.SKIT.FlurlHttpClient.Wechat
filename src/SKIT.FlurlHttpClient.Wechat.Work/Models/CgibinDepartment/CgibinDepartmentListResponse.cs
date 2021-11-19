@@ -46,6 +46,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("order")]
                 [System.Text.Json.Serialization.JsonPropertyName("order")]
                 public int DepartmentOrder { get; set; }
+
+                /// <summary>
+                /// 获取或设置部门负责人成员账号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("department_leader")]
+                [System.Text.Json.Serialization.JsonPropertyName("department_leader")]
+                public string[]? LeaderUserIdList { get; set; }
             }
         }
 

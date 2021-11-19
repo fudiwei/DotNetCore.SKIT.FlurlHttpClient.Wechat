@@ -9,6 +9,7 @@
     "email": "zhangsan@gzdev.com",
     "is_leader_in_dept": [ 1 ],
     "enable": 1,
+    "direct_leader": [ "lisi", "wangwu" ],
     "avatar_mediaid": "2-G6nrLmr5EC3MNb_-zL1dDdzkd0p7cNliYu9V5w7o8K0",
     "telephone": "020-123456",
     "alias": "jackzhang",

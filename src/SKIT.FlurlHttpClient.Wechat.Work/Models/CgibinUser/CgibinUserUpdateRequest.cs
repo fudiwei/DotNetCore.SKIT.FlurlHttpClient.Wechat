@@ -111,6 +111,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public int? MainDepartmentId { get; set; }
 
         /// <summary>
+        /// 获取或设置直属上级成员账号列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("direct_leader")]
+        [System.Text.Json.Serialization.JsonPropertyName("direct_leader")]
+        public IList<string>? DirectLeaderUserIdList { get; set; }
+
+        /// <summary>
         /// 获取或设置头像 MediaId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("avatar_mediaid")]
