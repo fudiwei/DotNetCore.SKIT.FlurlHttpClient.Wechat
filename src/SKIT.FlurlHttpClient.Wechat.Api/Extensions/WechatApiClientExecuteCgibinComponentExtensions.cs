@@ -263,5 +263,65 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.CgibinComponentFastRegisterWeappSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/component/modify_wxa_server_domain 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/domain/modify_server_domain.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinComponentModifyWxaServerDomainResponse> ExecuteCgibinComponentModifyWxaServerDomainAsync(this WechatApiClient client, Models.CgibinComponentModifyWxaServerDomainRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "modify_wxa_server_domain")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinComponentModifyWxaServerDomainResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/component/get_domain_confirmfile 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/domain/get_domain_confirmfile.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinComponentGetDomainConfirmFileResponse> ExecuteCgibinComponentGetDomainConfirmFileAsync(this WechatApiClient client, Models.CgibinComponentGetDomainConfirmFileRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "get_domain_confirmfile")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinComponentGetDomainConfirmFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/component/modify_wxa_jump_domain 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/domain/modify_jump_domain.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinComponentModifyWxaJumpDomainResponse> ExecuteCgibinComponentModifyWxaJumpDomainAsync(this WechatApiClient client, Models.CgibinComponentModifyWxaJumpDomainRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "modify_wxa_jump_domain")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinComponentModifyWxaJumpDomainResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }

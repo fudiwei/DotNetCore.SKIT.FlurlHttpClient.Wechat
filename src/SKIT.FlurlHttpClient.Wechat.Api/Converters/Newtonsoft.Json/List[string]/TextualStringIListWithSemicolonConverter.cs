@@ -5,9 +5,9 @@ using Newtonsoft.Json.Converters;
 
 namespace Newtonsoft.Json.Converters
 {
-    internal class TextualInt32IListConverter : JsonConverter<IList<int>?>
+    internal class TextualStringIListWithSemicolonConverter : JsonConverter<IList<string>?>
     {
-        private readonly JsonConverter<List<int>?> _converter = new TextualInt32ListConverter();
+        private readonly JsonConverter<List<string>?> _converter = new TextualStringListWithSemicolonConverter();
 
         public override bool CanRead
         {
@@ -19,26 +19,26 @@ namespace Newtonsoft.Json.Converters
             get { return true; }
         }
 
-        public override IList<int>? ReadJson(JsonReader reader, Type objectType, IList<int>? existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override IList<string>? ReadJson(JsonReader reader, Type objectType, IList<string>? existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
             return _converter.ReadJson(reader, objectType, ConvertIListToList(existingValue), hasExistingValue, serializer);
         }
 
-        public override void WriteJson(JsonWriter writer, IList<int>? value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, IList<string>? value, JsonSerializer serializer)
         {
             _converter.WriteJson(writer, ConvertIListToList(value), serializer);
         }
 
-        private List<int>? ConvertIListToList(IList<int>? src)
+        private List<string>? ConvertIListToList(IList<string>? src)
         {
             if (src == null) 
                 return null;
 
-            List<int>? dest = src as List<int>;
+            List<string>? dest = src as List<string>;
             if (dest != null)
                 return dest;
 
-            return new List<int>(src);
+            return new List<string>(src);
         }
     }
 }
