@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    internal class StringTypedBooleanConverter : JsonConverter<bool>
+    internal class TextualBooleanConverter : JsonConverter<bool>
     {
-        private readonly JsonConverter<bool?> _converter = new StringTypedNullableBooleanConverter();
+        private readonly JsonConverter<bool?> _converter = new TextualNullableBooleanConverter();
 
         public override bool Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

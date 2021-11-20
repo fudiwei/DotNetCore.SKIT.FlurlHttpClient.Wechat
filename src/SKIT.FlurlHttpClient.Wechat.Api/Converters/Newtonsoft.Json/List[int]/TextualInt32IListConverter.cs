@@ -5,7 +5,7 @@ using Newtonsoft.Json.Converters;
 
 namespace Newtonsoft.Json.Converters
 {
-    internal class StringTypedInt32IListConverter : JsonConverter<IList<int>?>
+    internal class TextualInt32IListConverter : JsonConverter<IList<int>?>
     {
         private readonly JsonConverter<List<int>?> _converter = new StringTypedInt32ListConverter();
 

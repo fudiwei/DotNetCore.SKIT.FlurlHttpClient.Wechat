@@ -6,7 +6,7 @@ using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    internal class StringTypedInt32ListConverter : JsonConverter<List<int>?>
+    internal class TextualInt32ListConverter : JsonConverter<List<int>?>
     {
         public override List<int>? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

@@ -2,7 +2,7 @@
 
 namespace System.Text.Json.Converters
 {
-    internal class StringTypedNullableBooleanConverter : JsonConverter<bool?>
+    internal class TextualNullableBooleanConverter : JsonConverter<bool?>
     {
         public override bool? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

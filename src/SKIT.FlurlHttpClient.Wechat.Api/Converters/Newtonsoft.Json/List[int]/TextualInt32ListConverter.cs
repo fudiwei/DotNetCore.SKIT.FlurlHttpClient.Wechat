@@ -6,7 +6,7 @@ using Newtonsoft.Json.Converters;
 
 namespace Newtonsoft.Json.Converters
 {
-    internal class StringTypedInt32ListConverter : JsonConverter<List<int>?>
+    internal class TextualInt32ListConverter : JsonConverter<List<int>?>
     {
         public override bool CanRead
         {

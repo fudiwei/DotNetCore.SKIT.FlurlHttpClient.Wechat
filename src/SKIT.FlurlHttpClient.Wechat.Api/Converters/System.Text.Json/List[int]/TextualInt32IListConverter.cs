@@ -5,9 +5,9 @@ using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    internal class StringTypedInt32IListConverter : JsonConverter<IList<int>?>
+    internal class TextualInt32IListConverter : JsonConverter<IList<int>?>
     {
-        private readonly JsonConverter<List<int>?> _converter = new StringTypedInt32ListConverter();
+        private readonly JsonConverter<List<int>?> _converter = new TextualInt32ListConverter();
 
         public override IList<int>? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
