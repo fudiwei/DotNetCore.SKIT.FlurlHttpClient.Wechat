@@ -153,6 +153,7 @@ public class RedisCertificateManager : CertificateManager
 
     public override IEnumerable<CertificateEntry> AllEntries()
     {
+        // 生产环境中不应该使用 Redis KEYS 命令，这里代码仅作参考
         RedisKey[] keys = Connection.GetServer().Keys($"{REDIS_KEY_PREFIX}*");
         RedisValue[] values = Connection.GetDatabase().StringGet(keys);
         return values.Where(e => e.HasValue).Select(e => JsonConvert.DeserializeObject<CertificateEntry>(e.ToString()));
