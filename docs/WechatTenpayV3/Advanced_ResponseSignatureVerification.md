@@ -25,7 +25,7 @@
 
 需要注意的是，平台为商户提供的是 PEM 格式的密钥文件，需注意文件格式之间的不同。
 
-有关密钥文件格式的更多介绍，请参阅本文档[《高级技巧 - 如何加密请求中的敏感数据？》](./Advanced_RequestDataEncryption.md)的有关章节。
+有关密钥文件格式的更多介绍，请参阅本文档[《高级技巧 - 如何加密请求中的敏感数据？》](./Advanced_RequestSensitiveDataEncryption.md)的有关章节。
 
 ---
 
@@ -54,7 +54,7 @@ bool ret = RSAUtility.VerifyWithSHA256(publicKey, data, sign);
 bool ret = client.VerifyResponseSignature(response);
 ```
 
-需要注意的是，使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请参阅本文档[《高级技巧 - 如何加密请求中的敏感数据？》](./Advanced_RequestDataEncryption.md)的有关章节。
+需要注意的是，使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请参阅本文档[《高级技巧 - 如何加密请求中的敏感数据？》](./Advanced_RequestSensitiveDataEncryption.md)的有关章节。
 
 ---
 

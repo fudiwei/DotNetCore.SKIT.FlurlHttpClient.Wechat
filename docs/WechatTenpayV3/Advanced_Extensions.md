@@ -49,3 +49,27 @@ public class MyFakeEvent : WechatTenpayEvent.Types.IDecryptedResource
     public string MyFakeProps { get; set; }
 }
 ```
+
+---
+
+### 敏感信息字段
+
+如果你扩展的自定义请求或响应模型中包含敏感信息字段，并希望可以通过本库提供的 `EncryptRequestSensitiveProperty()` 和 `DecryptResponseSensitiveProperty()` 两个扩展方法来实现自动加、解密，那么你需要在定义模型时额外指定一个特性：
+
+```csharp
+public class MyFakeRequest : WechatTenpayRequest
+{
+    [Newtonsoft.Json.JsonProperty("my_fake_props")]
+    [System.Text.Json.Serialization.JsonPropertyName("my_fake_props")]
+    [WechatTenpaySensitiveProperty("my_alg")]
+    public string MyFakeProps { get; set; }
+}
+
+public class MyFakeResponse : WechatTenpayResponse
+{
+    [Newtonsoft.Json.JsonProperty("my_fake_props")]
+    [System.Text.Json.Serialization.JsonPropertyName("my_fake_props")]
+    [WechatTenpaySensitiveProperty("my_alg")]
+    public string MyFakeProps { get; set; }
+}
+```

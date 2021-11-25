@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using SKIT.FlurlHttpClient.Wechat.TenpayV3;
 using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
 using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
@@ -49,7 +47,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.BackgroundSe
                     var response = await client.ExecuteQueryCertificatesAsync(request, cancellationToken: stoppingToken);
                     if (response.IsSuccessful())
                     {
-                        response = client.DecryptResponseSensitiveProperty(response);
+                        // 注意：如果启用了 AutoDecryptResponseSensitiveProperty，则无需再手动执行下面被注释的解密方法
+                        // response = client.DecryptResponseSensitiveProperty(response);
+
                         foreach (var certificateModel in response.CertificateList)
                         {
                             _certificateManager.AddEntry(new CertificateEntry(certificateModel));

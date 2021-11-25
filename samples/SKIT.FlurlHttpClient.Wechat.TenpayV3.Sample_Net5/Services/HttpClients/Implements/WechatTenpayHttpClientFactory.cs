@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
 using Flurl.Http.Configuration;
@@ -41,7 +39,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.HttpClients.
                 MerchantV3Secret = wechatMerchant.SecretV3,
                 MerchantCertSerialNumber = wechatMerchant.CertSerialNumber,
                 MerchantCertPrivateKey = wechatMerchant.CertPrivateKey,
-                CertificateManager = _certificateManager
+                CertificateManager = _certificateManager,
+                AutoEncryptRequestSensitiveProperty = true,
+                AutoDecryptResponseSensitiveProperty = true
             });
         }
     }

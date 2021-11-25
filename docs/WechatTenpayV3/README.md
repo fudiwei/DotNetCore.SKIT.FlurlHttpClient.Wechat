@@ -102,13 +102,13 @@ else
 
 -   [如何验证响应签名？](./Advanced_ResponseSignatureVerification.md)
 
--   [如何加密请求中的敏感数据？](./Advanced_RequestDataEncryption.md)
+-   [如何加密请求中的敏感数据？](./Advanced_RequestSensitiveDataEncryption.md)
 
--   [如何解密响应中的敏感数据？](./Advanced_ResponseDataDecryption.md)
+-   [如何解密响应中的敏感数据？](./Advanced_ResponseSensitiveDataDecryption.md)
 
--   [如何验证回调通知事件签名？](./Advanced_EventDataSignatureVerification.md)
+-   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
 
--   [如何解密回调通知事件中的敏感数据？](./Advanced_EventDataDecryption.md)
+-   [如何解密回调通知事件中的敏感数据？](./Advanced_EventResourceDecryption.md)
 
 -   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Payment.md)
 
