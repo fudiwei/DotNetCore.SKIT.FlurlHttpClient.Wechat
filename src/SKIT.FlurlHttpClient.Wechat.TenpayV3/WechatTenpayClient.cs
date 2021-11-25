@@ -170,7 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             result.WechatpaySignature = flurlResponse.Headers.GetAll("Wechatpay-Signature").FirstOrDefault() ?? string.Empty;
             result.WechatpayCertSerialNumber = flurlResponse.Headers.GetAll("Wechatpay-Serial").FirstOrDefault() ?? string.Empty;
 
-            if (AutoDecryptResponseSensitiveProperty)
+            if (AutoDecryptResponseSensitiveProperty && result.IsSuccessful())
             {
                 this.DecryptResponseSensitiveProperty(result);
             }
