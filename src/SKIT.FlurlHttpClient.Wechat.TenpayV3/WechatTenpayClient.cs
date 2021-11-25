@@ -87,10 +87,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 flurlRequest.WithHeader("Wechatpay-Serial", request.WechatpayCertSerialNumber);
             }
 
-            if (AutoDecryptResponseSensitiveProperty)
+            if (AutoEncryptRequestSensitiveProperty)
             {
-                // this.EncryptRequestSensitiveProperty(request);
-                throw new NotImplementedException();
+                this.EncryptRequestSensitiveProperty(request);
             }
 
             return flurlRequest;

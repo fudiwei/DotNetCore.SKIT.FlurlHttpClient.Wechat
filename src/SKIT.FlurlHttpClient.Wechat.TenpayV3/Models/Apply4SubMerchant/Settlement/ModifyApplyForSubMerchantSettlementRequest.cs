@@ -27,6 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_number")]
         [System.Text.Json.Serialization.JsonPropertyName("account_number")]
+        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
         public string AccountNumber { get; set; } = string.Empty;
 
         /// <summary>

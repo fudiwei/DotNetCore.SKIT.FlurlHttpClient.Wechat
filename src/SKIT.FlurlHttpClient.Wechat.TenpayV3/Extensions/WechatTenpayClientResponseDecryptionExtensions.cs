@@ -1,17 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供响应敏感数据解密的扩展方法。
+    /// 为 <see cref="WechatTenpayClient"/> 提供响应模型敏感数据解密的扩展方法。
     /// </summary>
     public static class WechatTenpayClientResponseDecryptionExtensions
     {
         /// <summary>
-        /// <para>解密响应中返回的敏感数据。该方法会改变传入的响应信息。</para>
+        /// <para>解密响应中返回的敏感数据。该方法会改变传入的响应模型对象。</para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="response"></param>
@@ -21,9 +19,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (response == null) throw new ArgumentNullException(nameof(response));
-
-            if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
             if (!response.IsSuccessful())
                 throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because the response is not successful.");
@@ -40,6 +35,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     {
                         if (Constants.EncryptionAlgorithms.AEAD_AES_256_GCM.Equals(certificateModel.EncryptCertificate?.Algorithm))
                         {
+                            if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
+                                throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
+
                             certificateModel.EncryptCertificate.CipherText = Utilities.AESUtility.DecryptWithGCM(
                                 key: client.Credentials.MerchantV3Secret,
                                 iv: certificateModel.EncryptCertificate.Nonce,

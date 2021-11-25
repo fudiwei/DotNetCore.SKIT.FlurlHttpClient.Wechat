@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             {
                 try
                 {
-                    var cert = client.CertificateManager.GetEntry(callbackSerialNumber)!;
+                    var cert = client.CertificateManager.GetEntry(callbackSerialNumber);
                     if (!cert.HasValue)
                     {
                         error = new Exceptions.WechatTenpayEventVerificationException("Verify signature of event failed, because there is no platform certificate matched the serial number.");

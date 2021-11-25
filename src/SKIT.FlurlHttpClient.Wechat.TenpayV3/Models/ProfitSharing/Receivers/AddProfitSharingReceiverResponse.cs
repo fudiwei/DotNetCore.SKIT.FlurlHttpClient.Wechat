@@ -30,10 +30,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string Account { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置接收方名称。
+        /// 获取或设置接收方名称（需使用商户私钥解密）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
+        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
         public string? Name { get; set; }
 
         /// <summary>

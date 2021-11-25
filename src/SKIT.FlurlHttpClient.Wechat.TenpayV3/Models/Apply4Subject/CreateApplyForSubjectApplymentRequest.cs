@@ -17,6 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
                 public string Name { get; set; } = string.Empty;
 
                 /// <summary>
@@ -24,6 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
                 public string Mobile { get; set; } = string.Empty;
 
                 /// <summary>
@@ -31,6 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_card_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
                 public string IdCardNumber { get; set; } = string.Empty;
             }
 
@@ -255,6 +258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("identification_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("identification_name")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
                 public string IdentificationName { get; set; } = string.Empty;
 
                 /// <summary>
@@ -262,6 +266,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("identification_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("identification_number")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
                 public string IdentificationNumber { get; set; } = string.Empty;
 
                 /// <summary>
