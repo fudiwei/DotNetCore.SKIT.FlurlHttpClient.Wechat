@@ -20,6 +20,36 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             });
         }, isThreadSafe: false);
 
+        [Fact(DisplayName = "解密响应中的敏感数据（[GET] /certificates）")]
+        public async Task DecryptResponseSensitiveProperty_QueryCertificatesResponse()
+        {
+            var client1 = new WechatTenpayClient(new WechatTenpayClientOptions()
+            {
+                MerchantId = TestConfigs.WechatMerchantId,
+                MerchantV3Secret = TestConfigs.WechatMerchantSecret,
+                MerchantCertSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,
+                MerchantCertPrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
+                AutoEncryptRequestSensitiveProperty = true,
+                AutoDecryptResponseSensitiveProperty = true
+            });
+            var request1 = new Models.QueryCertificatesRequest();
+            var response1 = await client1.ExecuteQueryCertificatesAsync(request1);
+            Assert.DoesNotContain(response1.CertificateList, (e => !e.EncryptCertificate.CipherText.StartsWith("-----BEGIN CERTIFICATE-----")));
+
+            var client2 = new WechatTenpayClient(new WechatTenpayClientOptions()
+            {
+                MerchantId = TestConfigs.WechatMerchantId,
+                MerchantV3Secret = TestConfigs.WechatMerchantSecret,
+                MerchantCertSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,
+                MerchantCertPrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
+                AutoEncryptRequestSensitiveProperty = false,
+                AutoDecryptResponseSensitiveProperty = false
+            });
+            var request2 = new Models.QueryCertificatesRequest();
+            var response2 = await client2.ExecuteQueryCertificatesAsync(request2);
+            Assert.DoesNotContain(response2.CertificateList, (e => e.EncryptCertificate.CipherText.StartsWith("-----BEGIN CERTIFICATE-----")));
+        }
+
         [Fact(DisplayName = "解密响应中的敏感数据（[GET] /ecommerce/applyments/out-request-no/{out_request_no}）")]
         public void DecryptResponseSensitiveProperty_GetEcommerceApplymentByOutRequestNumberResponseTest()
         {
