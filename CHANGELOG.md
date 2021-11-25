@@ -180,6 +180,18 @@
 
 <summary>[展开查看] SKIT.FlurlHttpClient.Wechat.TenpayV3 模块更新日志</summary>
 
+-   Release 2.1.0
+
+    -   **新增**：新增商户平台处置通知相关接口。
+
+    -   **新增**：随官方更新消费者投诉相关接口模型。
+
+    -   **新增**：新增基于反射和特性的自动加密请求中敏感信息字段的功能。
+
+    -   **新增**：新增基于反射和特性的自动解密响应中敏感信息字段的功能。
+
+    -   **变更**：移除原有的解密响应中敏感信息字段的扩展方法。
+
 -   Release 2.0.3
 
     -   **修复**：修复创建代金券批次相关接口的请求模型定义错误。（[Gitee Issue #I4ITW6](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4ITW6)）

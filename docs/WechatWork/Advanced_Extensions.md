@@ -38,7 +38,7 @@ public static class MyFakeClientExtensions
 }
 ```
 
-同样的，你也可自行扩展回调通知事件模型：
+同样地，你也可自行扩展回调通知事件模型：
 
 ```csharp
 /* 继承 WechatWorkEvent 实现自定义的 JSON 格式的回调通知事件 */

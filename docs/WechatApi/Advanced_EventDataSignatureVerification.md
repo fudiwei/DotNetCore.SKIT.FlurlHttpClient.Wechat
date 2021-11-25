@@ -6,7 +6,7 @@
 >
 > [《微信官方文档 - 开始开发：接入指南》](https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html)
 
-同样的，你既可以利用本库提供的 `SHA1Utility`、`WxBizMsgCryptor` 工具类自行进行签名验证，也可以通过扩展方法实现：
+同样地，你既可以利用本库提供的 `SHA1Utility`、`WxBizMsgCryptor` 工具类自行进行签名验证，也可以通过扩展方法实现：
 
 ```csharp
 /* 验证微信服务器 */

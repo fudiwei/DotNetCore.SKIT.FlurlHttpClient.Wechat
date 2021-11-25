@@ -8,21 +8,43 @@
 >
 > [《微信支付开发者文档 - 开发指南：敏感信息加解密》](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
 
-对于部分接口返回的敏感信息，微信商户平台可能会使用两种方式进行加密：
+---
 
--   使用商户公钥基于 RSA 算法加密。
+### 解密流程
 
--   使用商户 API v3 密钥基于 AEAD-AES-GCM 算法加密。
+对于部分接口响应返回的敏感信息，微信商户平台可能会需要使用以下方式进行解密：
 
-开发者利用本库提供的 `RSAUtility`、`AESUtility` 工具类自行解密相关字段。
+-   使用商户私钥基于 RSA 算法解密。
 
-此外，本库还封装了直接解密响应的扩展方法，下面给出一个示例：
+-   使用商户 API v3 密钥基于 AEAD-AES-GCM 算法解密。
+
+开发者利用本库提供的 `RSAUtility`、`AESUtility` 工具类自行解密相关字段。下面给出一个使用 `RSAUtility` 工具类解密数据的示例代码：
+
+```csharp
+string chiperText = "待解密的数据";
+string privateKey = "PKCS#8 私钥内容";
+/* 通过私钥解密数据 */
+string plainText = RSAUtility.DecryptWithECB(privateKey, chiperText);
+```
+
+此外，本库还封装了直接解密响应中敏感信息字段的扩展方法，下面给出一个示例代码：
 
 ```csharp
 var request = new Models.QueryCertificatesRequest();
 var response = await client.ExecuteQueryCertificatesAsync(request);
 
-string cert = response.CertificateList.First().EncryptCertificate.CipherText; // 此时仍是密文
-client.DecryptResponseEncryptedData(ref response);
-string cert = response.CertificateList.First().EncryptCertificate.CipherText; // 此时已是明文
+string temp = response.CertificateList.First().EncryptCertificate.CipherText; // 此时仍是密文
+client.DecryptResponseSensitiveProperty(response);
+string temp = response.CertificateList.First().EncryptCertificate.CipherText; // 此时已是明文
 ```
+
+如果你希望本库在响应后能自动完成这项操作，你可以在构造得到 `WechatApiClient` 对象时指定自动化参数：
+
+```csharp
+var options = new WechatTenpayClientOptions() { AutoDecryptResponseSensitiveProperty = true };
+var client = new WechatTenpayClient(options);
+```
+
+这样，本库会在实际收到响应后自动为你调用 `DecryptResponseSensitiveProperty()` 方法。
+
+此外，该扩展方法使用反射、并依赖 `WechatTenpaySensitivePropertyAttribute` 特性，相比较手动解密，可能会存在一定的性能开销。

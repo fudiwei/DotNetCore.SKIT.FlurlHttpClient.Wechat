@@ -26,12 +26,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public Settings.CertificateManager CertificateManager { get; }
 
         /// <summary>
-        /// 获取是否自动加密请求中的敏感字段数据。
+        /// 获取是否自动加密请求中的敏感信息字段。
         /// </summary>
         protected bool AutoEncryptRequestSensitiveProperty { get; }
 
         /// <summary>
-        /// 获取是否自动解密请求中的敏感字段数据。
+        /// 获取是否自动解密请求中的敏感信息字段。
         /// </summary>
         protected bool AutoDecryptResponseSensitiveProperty { get; }
 

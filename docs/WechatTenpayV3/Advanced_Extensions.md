@@ -38,7 +38,7 @@ public static class MyFakeClientExtensions
 }
 ```
 
-同样的，你也可自行扩展回调通知事件的敏感数据模型：
+同样地，你也可自行扩展回调通知事件的敏感数据模型：
 
 ```csharp
 /* 实现自定义的 JSON 格式的回调通知事件敏感数据 */

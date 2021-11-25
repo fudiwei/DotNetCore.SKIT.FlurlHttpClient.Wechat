@@ -102,6 +102,8 @@ else
 
 -   [如何验证响应签名？](./Advanced_ResponseSignatureVerification.md)
 
+-   [如何加密请求中的敏感数据？](./Advanced_RequestDataEncryption.md)
+
 -   [如何解密响应中的敏感数据？](./Advanced_ResponseDataDecryption.md)
 
 -   [如何验证回调通知事件签名？](./Advanced_EventDataSignatureVerification.md)
