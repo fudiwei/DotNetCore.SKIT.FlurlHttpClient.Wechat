@@ -38,6 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             };
             var data = MockClientInstance.Value.EncryptRequestSensitiveProperty(mock);
 
+            Assert.Equal(RSA_CERTSN, data.WechatpayCertSerialNumber);
             Assert.Equal(MockText, data.Account);
             Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.Name));
         }

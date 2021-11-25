@@ -57,7 +57,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                                 throw new Exceptions.WechatTenpayEventVerificationException("Encrypt request failed, because there is no platform certificate in the manager.");
                             }
 
-                            certificate = certs.First().Certificate;
+                            var cert = certs.First();
+                            certificate = cert.Certificate;
+                            request.WechatpayCertSerialNumber = cert.SerialNumber;
                         }
 
                         return Utilities.RSAUtility.EncryptWithECBByCertificate(
