@@ -133,29 +133,55 @@ client.EncryptRequestSensitiveProperty(request);
 
 ```csharp
 using StackExchange.Redis;
+using Newtonsoft.Json;
 
 public class RedisCertificateManager : CertificateManager
 {
-    private readonly ConnectionMultiplexer _connection;
+    private const string REDIS_KEY_PREFIX = "wxpaypc-";
+
+    protected ConnectionMultiplexer Connection { get; }
 
     public RedisCertificateManager(string connectionString)
     {
-        _connection = ConnectionMultiplexer.Connect(connectionString);
+        Connection = ConnectionMultiplexer.Connect(connectionString);
     }
 
-    private string GenerateRedisKey(string serialNumber)
+    protected string GenerateRedisKey(string serialNumber)
     {
-        return string.Format("wxpaypc-{0}", serialNumber);
+        return $"{REDIS_KEY_PREFIX}{serialNumber}";
     }
 
-    public override string GetCertificate(string serialNumber)
+    public override IEnumerable<CertificateEntry> AllEntries()
     {
-        return _connection.StringGet(GenerateRedisKey(serialNumber));
+        RedisKey[] keys = Connection.GetServer().Keys($"{REDIS_KEY_PREFIX}*");
+        RedisValue[] values = Connection.GetDatabase().StringGet(keys);
+        return values.Where(e => e.HasValue).Select(e => JsonConvert.DeserializeObject<CertificateEntry>(e.ToString()));
     }
 
-    public override void SetCertificate(string serialNumber, string certificate)
+    public override void AddEntry(CertificateEntry entry)
     {
-        _connection.StringSet(GenerateRedisKey(serialNumber), certificate, TimeSpan.FromDays(90));
+        string key = GenerateRedisKey(serialNumber);
+        string value = JsonConvert.SerializeObject(entry);
+        TimeSpan expiresIn = entry.ExpireTime - DateTimeOffset.Now;
+        Connection.GetDatabase().StringSet(key, value, expiresIn);
+    }
+
+    public override CertificateEntry? GetEntry(string serialNumber)
+    {
+        string key = GenerateRedisKey(serialNumber);
+        string value = Connection.GetDatabase().StringGet(GenerateRedisKey(serialNumber));
+        if (!string.IsNullOrEmpty(value))
+        {
+            return JsonConvert.DeserializeObject<CertificateEntry>(value);
+        }
+
+        return null;
+    }
+
+    public override bool RemoveEntry(string serialNumber)
+    {
+        string key = GenerateRedisKey(serialNumber);
+        return Connection.GetDatabase().KeyDelete(key);
     }
 }
 ```
