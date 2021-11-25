@@ -1,5 +1,6 @@
 ﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 {
@@ -49,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
         public override IEnumerable<CertificateEntry> AllEntries()
         {
-            return _dict.Values;
+            return _dict.Values.Where(e => e.IsAvailable()).ToArray();
         }
 
         public override void AddEntry(CertificateEntry entry)

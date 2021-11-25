@@ -59,6 +59,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public string MerchantCertPrivateKey { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置是否自动加密请求中的敏感字段数据。
+        /// </summary>
+        public bool AutoEncryptRequestSensitiveProperty { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否自动解密请求中的敏感字段数据。
+        /// </summary>
+        public bool AutoDecryptResponseSensitiveProperty { get; set; }
+
+        /// <summary>
         /// 获取或设置微信商户平台证书管理器。
         /// <para>默认值：<see cref="Settings.InMemoryCertificateManager"/></para>
         /// </summary>

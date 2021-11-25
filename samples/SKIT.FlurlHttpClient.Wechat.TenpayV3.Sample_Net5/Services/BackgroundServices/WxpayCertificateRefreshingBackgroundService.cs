@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.BackgroundSe
                     var response = await client.ExecuteQueryCertificatesAsync(request, cancellationToken: stoppingToken);
                     if (response.IsSuccessful())
                     {
-                        client.DecryptResponseEncryptedData(ref response);
+                        response = client.DecryptResponseSensitiveProperty(response);
                         foreach (var certificateModel in response.CertificateList)
                         {
                             _certificateManager.AddEntry(new CertificateEntry(certificateModel));

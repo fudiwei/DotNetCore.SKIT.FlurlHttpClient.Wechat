@@ -58,6 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payer_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("payer_phone")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
                 public string? PayerPhone { get; set; }
 
                 /// <summary>

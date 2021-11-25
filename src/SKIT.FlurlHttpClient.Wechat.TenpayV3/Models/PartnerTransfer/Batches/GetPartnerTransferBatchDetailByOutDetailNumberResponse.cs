@@ -20,6 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("username")]
         [System.Text.Json.Serialization.JsonPropertyName("username")]
+        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
         public override string UserName { get; set; } = default!;
     }
 }

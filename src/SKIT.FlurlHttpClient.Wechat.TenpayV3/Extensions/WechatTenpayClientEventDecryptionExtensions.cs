@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
             else
             {
-                throw new Exceptions.WechatTenpayEventDecryptionException("Unknown encrypt algorithm of the resource.");
+                throw new Exceptions.WechatTenpayEventDecryptionException("Unsupported encrypt algorithm of the resource.");
             }
 
             return client.JsonSerializer.Deserialize<T>(plainJson);

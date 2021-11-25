@@ -42,6 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ciphertext")]
                         [System.Text.Json.Serialization.JsonPropertyName("ciphertext")]
+                        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.AEAD_AES_256_GCM)]
                         public string CipherText { get; set; } = default!;
                     }
                 }

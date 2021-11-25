@@ -45,6 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encrypt_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_key")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
                 public string EncryptKey { get; set; } = default!;
 
                 /// <summary>

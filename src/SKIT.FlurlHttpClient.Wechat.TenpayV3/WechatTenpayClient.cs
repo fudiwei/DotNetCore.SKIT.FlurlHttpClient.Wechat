@@ -23,7 +23,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// 获取当前客户端使用的微信商户平台证书管理器。
         /// </summary>
-        internal Settings.CertificateManager CertificateManager { get; }
+        public Settings.CertificateManager CertificateManager { get; }
+
+        /// <summary>
+        /// 获取是否自动加密请求中的敏感字段数据。
+        /// </summary>
+        protected bool AutoEncryptRequestSensitiveProperty { get; }
+
+        /// <summary>
+        /// 获取是否自动解密请求中的敏感字段数据。
+        /// </summary>
+        protected bool AutoDecryptResponseSensitiveProperty { get; }
 
         /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatTenpayClient"/> 类的新实例。
@@ -35,6 +45,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             Credentials = new Settings.Credentials(options);
             CertificateManager = options.CertificateManager;
+            AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty;
+            AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
             FlurlClient.Headers.Remove("Accept");
@@ -73,6 +85,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             {
                 flurlRequest.Headers.Remove("Wechatpay-Serial");
                 flurlRequest.WithHeader("Wechatpay-Serial", request.WechatpayCertSerialNumber);
+            }
+
+            if (AutoDecryptResponseSensitiveProperty)
+            {
+                // this.EncryptRequestSensitiveProperty(request);
+                throw new NotImplementedException();
             }
 
             return flurlRequest;
@@ -152,6 +170,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             result.WechatpayTimestamp = flurlResponse.Headers.GetAll("Wechatpay-Timestamp").FirstOrDefault() ?? string.Empty;
             result.WechatpaySignature = flurlResponse.Headers.GetAll("Wechatpay-Signature").FirstOrDefault() ?? string.Empty;
             result.WechatpayCertSerialNumber = flurlResponse.Headers.GetAll("Wechatpay-Serial").FirstOrDefault() ?? string.Empty;
+
+            if (AutoDecryptResponseSensitiveProperty)
+            {
+                this.DecryptResponseSensitiveProperty(result);
+            }
+
             return result;
         }
     }
