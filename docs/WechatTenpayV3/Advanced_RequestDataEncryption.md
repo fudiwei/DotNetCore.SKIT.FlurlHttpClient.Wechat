@@ -31,9 +31,9 @@
 
 -   以 `-----BEGIN PUBLIC KEY-----` 开头、 `-----END PUBLIC KEY-----` 结尾的是 **PKCS#8 公钥**文件。
 
--   以 `-----BEGIN CERTIFICATE--- --` 开头、 `-----END CERTIFICATE-----` 结尾的是 **CER 证书**文件，可从中导出 PKCS#8 公钥。
+-   以 `-----BEGIN CERTIFICATE--- --` 开头、 `-----END CERTIFICATE-----` 结尾的是 **CRT/CER 证书**文件，可从中导出 PKCS#8 公钥和证书序列号。
 
-谨记，`QueryCertificatesAsync()` 方法返回的结果是 CER 证书，需要先通过 `RSAUtility` 工具类导出 PKCS#8 公钥，再进行数据加密；当然，`RSAUtility` 也封装了直接通过 CER 证书加密的方法。
+谨记，`QueryCertificatesAsync()` 方法返回的结果是 CRT/CER 证书，需要先通过 `RSAUtility` 工具类导出 PKCS#8 公钥，再进行数据加密；当然，`RSAUtility` 也封装了直接通过 CRT/CER 证书加密的方法。
 
 ---
 
@@ -47,7 +47,7 @@
 
 ```csharp
 string plainText = "待加密的数据";
-string certificate = "CER 证书内容";
+string certificate = "CRT/CER 证书内容";
 /* 通过证书加密数据 */
 string cipherText = RSAUtility.EncryptWithECBByCertificate(certificate, plainText);
 /* 通过公钥加密数据 */
@@ -107,9 +107,9 @@ var client = new WechatTenpayClient(options);
 
 ```csharp
 /* 注意：QueryCertificatesAsync() 接口返回值需解密后再存入 */
-/* 　　　存入的证书式请参考上一小节给出的 CER 证书文件示例 */
+/* 　　　存入的证书式请参考上一小节给出的 CRT/CER 证书文件示例 */
 /* 　　　示例项目中也包含一段关于此的演示程序 */
-certManager.SetEntry(new CertificateEntry("CER 证书序列号", "CER 证书内容", "证书生效时间", "证书过期时间"));
+certManager.SetEntry(new CertificateEntry("CRT/CER 证书序列号", "CRT/CER 证书内容", "证书生效时间", "证书过期时间"));
 ```
 
 当然，现在的平台证书离过期还有很久，你也可以选择“偷懒”：提前下载好平台证书，在程序启动时记录一次即可。

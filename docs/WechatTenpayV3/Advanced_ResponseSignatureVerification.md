@@ -40,7 +40,7 @@
 ```csharp
 string data = "拼接好的验签数据";
 string sign = "待验证的签名";
-string certificate = "CER 证书内容";
+string certificate = "CRT/CER 证书内容";
 /* 通过证书验证签名 */
 bool ret = RSAUtility.VerifyWithSHA256ByCertificate(certificate, data, sign);
 /* 通过公钥验证签名 */
