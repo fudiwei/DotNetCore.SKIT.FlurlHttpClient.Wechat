@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         public string SerialNumber { get; }
 
         /// <summary>
-        /// 获取证书内容（CER 格式，即 -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE）
+        /// 获取证书内容（CRT/CER 格式，即 -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE）
         /// </summary>
         public string Certificate { get; }
 
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
             if (string.IsNullOrEmpty(certificate))
                 throw new ArgumentException("The value of `certificate` can not be empty.", nameof(serialNumber));
             if (!certificate.Trim().StartsWith("-----BEGIN CERTIFICATE-----") || !certificate.Trim().EndsWith("-----END CERTIFICATE-----"))
-                throw new ArgumentException("The value of `certificate` is an invalid .cer file content.", nameof(serialNumber));
+                throw new ArgumentException("The value of `certificate` is an invalid certificate file content.", nameof(serialNumber));
 
             SerialNumber = serialNumber;
             Certificate = certificate;

@@ -190,7 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         }
 
         /// <summary>
-        /// <para>从 CER 证书中提取 PKCS#8 公钥。</para>
+        /// <para>从 CRT/CER 证书中提取 PKCS#8 公钥。</para>
         /// <para>
         ///     即从 -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----
         ///     转为 -----BEGIN PUBLIC KEY----- ..... -----END PUBLIC KEY-----

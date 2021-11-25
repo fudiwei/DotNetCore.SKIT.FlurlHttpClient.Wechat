@@ -12,11 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         [Fact(DisplayName = "[POST] /profitsharing/receivers/add")]
         public async Task AddProfitSharingReceiverTest()
         {
-            var cert = TestClients.Instance.DecryptResponseSensitiveProperty(await TestClients.Instance.ExecuteQueryCertificatesAsync(new Models.QueryCertificatesRequest()));
-            foreach (var certificateModel in cert.CertificateList)
-            {
-                TestClients.GlobalCertificateManager.AddEntry(new Settings.CertificateEntry(certificateModel));
-            }
+            await TestClients.InitializeCertificateManagerAsync();
 
             var request = new Models.AddProfitSharingReceiverRequest()
             {

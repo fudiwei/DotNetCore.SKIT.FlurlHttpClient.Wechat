@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
@@ -15,6 +16,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 MerchantCertPrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
                 CertificateManager = GlobalCertificateManager
             });
+        }
+
+        internal static async Task InitializeCertificateManagerAsync()
+        {
+            var request = new Models.QueryCertificatesRequest();
+            var response = await Instance.ExecuteQueryCertificatesAsync(request);
+
+            response = Instance.DecryptResponseSensitiveProperty(response);
+            foreach (var certificateModel in response.CertificateList)
+            {
+                GlobalCertificateManager.AddEntry(new Settings.CertificateEntry(certificateModel));
+            }
         }
 
         public static readonly Settings.CertificateManager GlobalCertificateManager;
