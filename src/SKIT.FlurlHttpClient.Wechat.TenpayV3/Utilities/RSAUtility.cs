@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using Org.BouncyCastle.Crypto;
@@ -16,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
     public static class RSAUtility
     {
         // REF: https://github.com/bcgit/bc-csharp/blob/master/crypto/src/security/CipherUtilities.cs
-        private const string RSA_CIPHER_ALG = "RSA/ECB/PKCS1";
+        private const string RSA_CIPHER_ALG = "RSA/ECB/OAEPWITHSHA1ANDMGF1PADDING";
         // REF: https://github.com/bcgit/bc-csharp/blob/master/crypto/src/security/SignerUtilities.cs
         private const string RSA_SIGNER_ALG = "SHA-256withRSA";
 
