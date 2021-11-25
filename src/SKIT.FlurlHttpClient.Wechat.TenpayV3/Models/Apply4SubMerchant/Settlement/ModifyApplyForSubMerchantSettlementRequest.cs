@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /apply4sub/sub_merchants/{sub_mchid}/modify-settlement 接口的请求。</para>
@@ -23,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string AccountType { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置银行账号（需使用微信支付平台公钥加密）。
+        /// 获取或设置银行账号（需使用平台公钥/证书加密）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_number")]
         [System.Text.Json.Serialization.JsonPropertyName("account_number")]

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -27,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string Account { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置分账个人姓名（需使用微信支付平台公钥加密）。
+                /// 获取或设置分账个人姓名（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]

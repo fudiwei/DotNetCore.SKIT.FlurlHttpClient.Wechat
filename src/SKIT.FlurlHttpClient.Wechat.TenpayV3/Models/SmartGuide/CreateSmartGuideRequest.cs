@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /smartguide/guides 接口的请求。</para>
@@ -37,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string UserId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置企业微信的员工姓名（需使用微信支付平台公钥加密）。
+        /// 获取或设置企业微信的员工姓名（需使用平台公钥/证书加密）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -45,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string UserName { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置企业微信的员工手机号码（需使用微信支付平台公钥加密）。
+        /// 获取或设置企业微信的员工手机号码（需使用平台公钥/证书加密）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mobile")]
         [System.Text.Json.Serialization.JsonPropertyName("mobile")]

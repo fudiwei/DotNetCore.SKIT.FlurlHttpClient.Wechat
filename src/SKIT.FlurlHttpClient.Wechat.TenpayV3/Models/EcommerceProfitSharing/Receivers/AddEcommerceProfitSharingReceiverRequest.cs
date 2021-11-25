@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /ecommerce/profitsharing/receivers/add 接口的请求。</para>
@@ -37,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? Name { get; set; }
 
         /// <summary>
-        /// 获取或设置接收方个人姓名（需使用微信支付平台公钥加密）。
+        /// 获取或设置接收方个人姓名（需使用平台公钥/证书加密）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("encrypted_name")]
         [System.Text.Json.Serialization.JsonPropertyName("encrypted_name")]

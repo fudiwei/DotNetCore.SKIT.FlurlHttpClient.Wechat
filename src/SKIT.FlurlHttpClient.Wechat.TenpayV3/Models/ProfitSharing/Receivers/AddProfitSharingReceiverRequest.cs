@@ -41,7 +41,7 @@
         public string Account { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置接收方名称（需使用微信支付平台公钥加密）。
+        /// 获取或设置接收方名称（需使用平台公钥/证书加密）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]

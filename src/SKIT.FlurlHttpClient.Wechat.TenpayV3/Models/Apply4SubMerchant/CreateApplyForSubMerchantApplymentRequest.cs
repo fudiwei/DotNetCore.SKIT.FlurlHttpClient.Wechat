@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Contact
             {
                 /// <summary>
-                /// 获取或设置超级管理员姓名（需使用微信支付平台公钥加密）。
+                /// 获取或设置超级管理员姓名（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string Name { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置联系人手机号（需使用微信支付平台公钥加密）。
+                /// 获取或设置联系人手机号（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string Mobile { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置超级管理员身份证号码（需使用微信支付平台公钥加密）。与字段 <see cref="OpenId"/> 二选一。
+                /// 获取或设置超级管理员身份证号码（需使用平台公钥/证书加密）。与字段 <see cref="OpenId"/> 二选一。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_id_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_id_number")]
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? OpenId { get; set; }
 
                 /// <summary>
-                /// 获取或设置联系邮箱（需使用微信支付平台公钥加密）。
+                /// 获取或设置联系邮箱（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_email")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_email")]
@@ -198,7 +198,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 public string IdCardBackCopyMediaId { get; set; } = string.Empty;
 
                                 /// <summary>
-                                /// 获取或设置身份证姓名（需使用微信支付平台公钥加密）。
+                                /// 获取或设置身份证姓名（需使用平台公钥/证书加密）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id_card_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id_card_name")]
@@ -206,7 +206,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 public string IdCardName { get; set; } = string.Empty;
 
                                 /// <summary>
-                                /// 获取或设置身份证号码（需使用微信支付平台公钥加密）。
+                                /// 获取或设置身份证号码（需使用平台公钥/证书加密）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id_card_number")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
@@ -238,7 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 public string IdDocumentCopyMediaId { get; set; } = string.Empty;
 
                                 /// <summary>
-                                /// 获取或设置证件姓名（需使用微信支付平台公钥加密）。
+                                /// 获取或设置证件姓名（需使用平台公钥/证书加密）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id_doc_name")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_name")]
@@ -246,7 +246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 public string IdDocumentName { get; set; } = string.Empty;
 
                                 /// <summary>
-                                /// 获取或设置证件号码（需使用微信支付平台公钥加密）。
+                                /// 获取或设置证件号码（需使用平台公钥/证书加密）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id_doc_number")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_number")]
@@ -329,7 +329,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? IdDocumentCopyMediaId { get; set; }
 
                         /// <summary>
-                        /// 获取或设置受益人姓名（需使用微信支付平台公钥加密）。
+                        /// 获取或设置受益人姓名（需使用平台公钥/证书加密）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -337,7 +337,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string Name { get; set; } = string.Empty;
 
                         /// <summary>
-                        /// 获取或设置证件号码（需使用微信支付平台公钥加密）。
+                        /// 获取或设置证件号码（需使用平台公钥/证书加密）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_number")]
@@ -714,7 +714,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string AccountType { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置开户名称（需使用微信支付平台公钥加密）。
+                /// 获取或设置开户名称（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_name")]
@@ -722,7 +722,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string AccountName { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置银行账号（需使用微信支付平台公钥加密）。
+                /// 获取或设置银行账号（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("account_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("account_number")]

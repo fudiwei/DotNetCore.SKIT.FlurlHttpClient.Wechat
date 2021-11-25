@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -13,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Contact
             {
                 /// <summary>
-                /// 获取或设置联系人姓名（需使用微信支付平台公钥加密）。
+                /// 获取或设置联系人姓名（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
@@ -21,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string Name { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置联系人手机号（需使用微信支付平台公钥加密）。
+                /// 获取或设置联系人手机号（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile")]
@@ -29,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string Mobile { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置联系人身份证号码（需使用微信支付平台公钥加密）。
+                /// 获取或设置联系人身份证号码（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_card_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
@@ -254,7 +253,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string IdentificationType { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置证件姓名（需使用微信支付平台公钥加密）。
+                /// 获取或设置证件姓名（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("identification_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("identification_name")]
@@ -262,7 +261,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string IdentificationName { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置证件号码（需使用微信支付平台公钥加密）。
+                /// 获取或设置证件号码（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("identification_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("identification_number")]

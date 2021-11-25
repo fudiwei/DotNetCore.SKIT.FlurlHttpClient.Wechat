@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -41,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string OpenId { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置收款用户姓名（需使用微信支付平台公钥加密）。
+                /// 获取或设置收款用户姓名（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_name")]
@@ -49,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string UserName { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置收款用户身份证号（需使用微信支付平台公钥加密）。
+                /// 获取或设置收款用户身份证号（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_id_card")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_id_card")]
