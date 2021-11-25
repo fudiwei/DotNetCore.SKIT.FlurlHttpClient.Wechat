@@ -180,6 +180,10 @@
 
 <summary>[展开查看] SKIT.FlurlHttpClient.Wechat.TenpayV3 模块更新日志</summary>
 
+-   Release 2.1.1
+
+    -   **修复**：修复部分场景下 RSA 加密请求敏感信息字段错误的问题。（[Gitee Issue #I4JIZC](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4JIZC)）
+
 -   Release 2.1.0
 
     -   **新增**：新增商户平台处置通知相关接口。
