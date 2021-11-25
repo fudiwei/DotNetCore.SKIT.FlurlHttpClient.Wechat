@@ -20,6 +20,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public static bool VerifyResponseSignature<TResponse>(this WechatTenpayClient client, TResponse response)
             where TResponse : WechatTenpayResponse
         {
+            return VerifyResponseSignature(client, response, out _);
+        }
+
+        /// <summary>
+        /// <para>验证响应签名。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_1.shtml </para>
+        /// </summary>
+        /// <typeparam name="TResponse"></typeparam>
+        /// <param name="client"></param>
+        /// <param name="response"></param>
+        /// <param name="error"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static bool VerifyResponseSignature<TResponse>(this WechatTenpayClient client, TResponse response, out Exception? error)
+            where TResponse : WechatTenpayResponse
+        {
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (response == null) throw new ArgumentNullException(nameof(response));
 
@@ -27,18 +44,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             {
                 try
                 {
-                    string certificate = client.CertificateManager.GetCertificate(response.WechatpayCertSerialNumber)!;
-                    string publicKey = Utilities.RSAUtility.ExportPublicKey(certificate);
+                    var cert = client.CertificateManager.GetEntry(response.WechatpayCertSerialNumber)!;
+                    if (!cert.HasValue)
+                    {
+                        error = new Exceptions.WechatTenpayResponseVerificationException("Verify signature of response failed, because there is no platform certificate matched the serial number.");
+                        return false;
+                    }
 
-                    return Utilities.RSAUtility.VerifyWithSHA256(
-                        publicKey: publicKey,
+                    error = null;
+                    return Utilities.RSAUtility.VerifyWithSHA256ByCertificate(
+                        certificate: cert.Value.Certificate,
                         plainText: GetPlainTextForSignature(response),
                         signature: response.WechatpaySignature
                     );
                 }
-                catch { }
+                catch (Exception ex) 
+                {
+                    error = new Exceptions.WechatTenpayResponseVerificationException("Verify signature of response failed. Please see the `InnerException` for more details.", ex);
+                    return false;
+                }
             }
 
+            error = new Exceptions.WechatTenpayResponseVerificationException("Verify signature of response failed, because there is no platform certificate in the manager.");
             return false;
         }
 

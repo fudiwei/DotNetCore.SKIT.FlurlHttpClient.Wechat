@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Concurrent;
+﻿using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
@@ -10,18 +9,30 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
     public abstract class CertificateManager
     {
         /// <summary>
-        /// 根据证书序列号获取证书（cer 格式）。
+        /// 获取存储的全部证书。
+        /// </summary>
+        /// <returns></returns>
+        public abstract IEnumerable<CertificateEntry> AllEntries();
+
+        /// <summary>
+        /// 添加一个证书实体。
+        /// </summary>
+        /// <param name="entry"></param>
+        public abstract void AddEntry(CertificateEntry entry);
+
+        /// <summary>
+        /// 根据证书序列号获取证书实体。
         /// </summary>
         /// <param name="serialNumber"></param>
         /// <returns></returns>
-        public abstract string? GetCertificate(string serialNumber);
+        public abstract CertificateEntry? GetEntry(string serialNumber);
 
         /// <summary>
-        /// 设置证书序列号与证书（cer 格式）的映射关系。
+        /// 移除指定的证书实体。
         /// </summary>
         /// <param name="serialNumber"></param>
-        /// <param name="certificate"></param>
-        public abstract void SetCertificate(string serialNumber, string certificate);
+        /// <returns></returns>
+        public abstract bool RemoveEntry(string serialNumber);
     }
 
     /// <summary>
@@ -29,26 +40,40 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
     /// </summary>
     public class InMemoryCertificateManager : CertificateManager
     {
-        private readonly IDictionary<string, string> _dict;
+        private readonly ConcurrentDictionary<string, CertificateEntry> _dict;
 
         public InMemoryCertificateManager()
         {
-            _dict = new ConcurrentDictionary<string, string>();
+            _dict = new ConcurrentDictionary<string, CertificateEntry>();
         }
 
-        public override string? GetCertificate(string serialNumber)
+        public override IEnumerable<CertificateEntry> AllEntries()
         {
-            if (serialNumber == null) throw new ArgumentNullException(nameof(serialNumber));
-
-            return _dict[serialNumber];
+            return _dict.Values;
         }
 
-        public override void SetCertificate(string serialNumber, string certificate)
+        public override void AddEntry(CertificateEntry entry)
         {
-            if (serialNumber == null) throw new ArgumentNullException(nameof(serialNumber));
-            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+            _dict.TryRemove(entry.SerialNumber, out _);
+            _dict.TryAdd(entry.SerialNumber, entry);
+        }
 
-            _dict[serialNumber] = certificate;
+        public override CertificateEntry? GetEntry(string serialNumber)
+        {
+            if (_dict.TryGetValue(serialNumber, out var entry))
+            {
+                if (entry.IsAvailable())
+                    return entry;
+
+                _dict.TryRemove(serialNumber, out _);
+            }
+
+            return null;
+        }
+
+        public override bool RemoveEntry(string serialNumber)
+        {
+            return _dict.TryRemove(serialNumber, out _);
         }
     }
 }
