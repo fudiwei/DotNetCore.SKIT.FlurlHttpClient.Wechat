@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using var stream = File.OpenRead("appsettings.local.json");
                 using var jdoc = JsonDocument.Parse(stream);
 
-                var config = jdoc.RootElement.GetProperty("WechatConfig");
+                var config = jdoc.RootElement.GetProperty("TestConfig");
                 WechatAppId = config.GetProperty("AppId").GetString();
                 WechatMerchantId = config.GetProperty("MerchantId").GetString();
                 WechatMerchantSecret = config.GetProperty("MerchantSecret").GetString();
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
             catch (Exception ex)
             {
-                throw new Exception("加载配置文件 appsettings.local.json 失败", ex);
+                throw new Exception("加载配置文件 appsettings.local.json 失败，请查看 `InnerException` 了解具体失败原因", ex);
             }
         }
 

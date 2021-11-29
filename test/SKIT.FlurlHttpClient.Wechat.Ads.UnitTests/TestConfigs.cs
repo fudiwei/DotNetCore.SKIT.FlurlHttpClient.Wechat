@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.UnitTests
                 using var stream = File.OpenRead("appsettings.local.json");
                 using var jdoc = JsonDocument.Parse(stream);
 
-                var config = jdoc.RootElement.GetProperty("WechatConfig");
+                var config = jdoc.RootElement.GetProperty("TestConfig");
                 WechatAgencyId = config.GetProperty("AgencyId").GetString();
                 WechatAgencyAppId = config.GetProperty("AgencyAppId").GetString();
                 WechatAgencyApiKey = config.GetProperty("AgencyApiKey").GetString();
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.UnitTests
             }
             catch (Exception ex)
             {
-                throw new Exception("加载配置文件 appsettings.local.json 失败", ex);
+                throw new Exception("加载配置文件 appsettings.local.json 失败，请查看 `InnerException` 了解具体失败原因", ex);
             }
         }
 
