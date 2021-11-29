@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 使用私钥基于 SHA-256 算法生成签名。
         /// </summary>
-        /// <param name="privateKey">PKCS#8 私钥（pem 格式）。</param>
+        /// <param name="privateKey">PKCS#8 私钥（PEM 格式）。</param>
         /// <param name="plainText">待签名的文本数据。</param>
         /// <returns>经 Base64 编码的签名。</returns>
         public static string SignWithSHA256(string privateKey, string plainText)
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 使用公钥基于 SHA-256 算法验证签名。
         /// </summary>
-        /// <param name="publicKey">PKCS#8 公钥（pem 格式）。</param>
+        /// <param name="publicKey">PKCS#8 公钥（PEM 格式）。</param>
         /// <param name="plainText">待验证的文本数据。</param>
         /// <param name="signature">经 Base64 编码的待验证的签名。</param>
         /// <returns>验证结果。</returns>
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 使用证书基于 SHA-256 算法验证签名。
         /// </summary>
-        /// <param name="certificate">证书（cer 格式）。</param>
+        /// <param name="certificate">证书（PEM 格式）。</param>
         /// <param name="plainText">待验证的文本数据。</param>
         /// <param name="signature">经 Base64 编码的待验证的签名。</param>
         /// <returns>验证结果。</returns>
@@ -126,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 使用私钥基于 ECB 模式解密数据。
         /// </summary>
-        /// <param name="privateKey">PKCS#8 私钥（pem 格式）。</param>
+        /// <param name="privateKey">PKCS#8 私钥（PEM 格式）。</param>
         /// <param name="cipherText">经 Base64 编码的待解密数据。</param>
         /// <returns>解密后的文本数据。</returns>
         public static string DecryptWithECB(string privateKey, string cipherText)
@@ -158,7 +158,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 使用公钥基于 ECB 模式加密数据。
         /// </summary>
-        /// <param name="publicKey">PKCS#8 公钥（pem 格式）。</param>
+        /// <param name="publicKey">PKCS#8 公钥（PEM 格式）。</param>
         /// <param name="plainText">待加密的文本数据。</param>
         /// <returns>经 Base64 编码的加密数据。</returns>
         public static string EncryptWithECB(string publicKey, string plainText)
@@ -175,7 +175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 使用证书基于 ECB 模式加密数据。
         /// </summary>
-        /// <param name="certificate">证书（cer 格式）。</param>
+        /// <param name="certificate">证书（PEM 格式）。</param>
         /// <param name="plainText">待加密的文本数据。</param>
         /// <returns>经 Base64 编码的加密数据。</returns>
         public static string EncryptWithECBByCertificate(string certificate, string plainText)
@@ -190,16 +190,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         }
 
         /// <summary>
-        /// <para>从 CRT/CER 证书中提取 PKCS#8 公钥。</para>
+        /// <para>从 CRT/CER 证书中导出 PKCS#8 公钥。</para>
         /// <para>
         ///     即从 -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----
         ///     转为 -----BEGIN PUBLIC KEY----- ..... -----END PUBLIC KEY-----
         /// </para>
         /// </summary>
-        /// <param name="certificate">证书（cer 格式）。</param>
-        /// <returns>PKCS#8 公钥（pem 格式）。</returns>
+        /// <param name="certificate">证书（PEM 格式）。</param>
+        /// <returns>PKCS#8 公钥（PEM 格式）。</returns>
         public static string ExportPublicKey(string certificate)
         {
+            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+
             using (TextWriter swriter = new StringWriter())
             {
                 RsaKeyParameters rsaKeyParams = ConvertCertificateToPublicKeyParams(certificate);
@@ -208,6 +210,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                 pemWriter.Writer.Flush();
                 return swriter.ToString()!;
             }
+        }
+
+        /// <summary>
+        /// <para>从 CRT/CER 证书中导出证书序列号。</para>
+        /// </summary>
+        /// <param name="certificate">证书（PEM 格式）。</param>
+        /// <returns>证书序列号。</returns>
+        public static string ExportSerialNumber(string certificate)
+        {
+            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+
+            X509Certificate cert = ParseX509Certificate(certificate);
+            return cert.CertificateStructure.SerialNumber.Value.ToString();
         }
 
         private static byte[] ConvertPkcs8PrivateKeyToByteArray(string privateKey)
@@ -230,11 +245,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
         private static RsaKeyParameters ConvertCertificateToPublicKeyParams(string certificate)
         {
+            X509Certificate cert = ParseX509Certificate(certificate);
+            return (RsaKeyParameters)cert.GetPublicKey();
+        }
+
+        private static X509Certificate ParseX509Certificate(string certificate)
+        {
             using (TextReader sreader = new StringReader(certificate))
             {
                 PemReader pemReader = new PemReader(sreader);
-                X509Certificate cert = (X509Certificate)pemReader.ReadObject();
-                return (RsaKeyParameters)cert.GetPublicKey();
+                return (X509Certificate)pemReader.ReadObject();
             }
         }
 
