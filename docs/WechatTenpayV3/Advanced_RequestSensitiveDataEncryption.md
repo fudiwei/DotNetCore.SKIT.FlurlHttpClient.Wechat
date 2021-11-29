@@ -97,7 +97,7 @@ var client = new WechatTenpayClient(options);
 
 ```csharp
 var manager = new InMemoryCertificateManager(); // 为便于后续使用，该对象可使用全局单例的方式声明
-var options = new WechatTenpayClientOptions() { CertificateManager = certManager };
+var options = new WechatTenpayClientOptions() { CertificateManager = manager };
 var client = new WechatTenpayClient(options);
 ```
 
@@ -109,7 +109,7 @@ var client = new WechatTenpayClient(options);
 /* 注意：QueryCertificatesAsync() 接口返回值需解密后再存入 */
 /* 　　　存入的证书式请参考上一小节给出的 CRT/CER 证书文件示例 */
 /* 　　　示例项目中也包含一段关于此的演示程序 */
-certManager.SetEntry(new CertificateEntry("CRT/CER 证书序列号", "CRT/CER 证书内容", "证书生效时间", "证书过期时间"));
+manager.SetEntry(new CertificateEntry("CRT/CER 证书序列号", "CRT/CER 证书内容", "证书生效时间", "证书过期时间"));
 ```
 
 当然，现在的平台证书离过期还有很久，你也可以选择“偷懒”：提前下载好平台证书，在程序启动时记录一次即可。

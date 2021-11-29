@@ -39,14 +39,14 @@ using SKIT.FlurlHttpClient.Wechat;
 using SKIT.FlurlHttpClient.Wechat.TenpayV3;
 using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
-var certManager = new InMemoryCertificateManager();
+var manager = new InMemoryCertificateManager();
 var options = new WechatTenpayClientOptions()
 {
     MerchantId = "微信商户号",
     MerchantV3Secret = "微信商户 v3 API 密钥",
     MerchantCertSerialNumber = "微信商户证书序列号",
     MerchantCertPrivateKey = "-----BEGIN PRIVATE KEY-----微信商户证书私钥-----END PRIVATE KEY-----",
-    CertificateManager = certManager // 证书管理器的具体用法请参阅下文的高级技巧
+    CertificateManager = manager // 证书管理器的具体用法请参阅下文的高级技巧
 };
 var client = new WechatTenpayClient(options);
 ```
@@ -100,15 +100,15 @@ else
 
 -   [如何使用拦截器？](./Advanced_Interceptor.md)
 
--   [如何验证响应签名？](./Advanced_ResponseSignatureVerification.md)
-
 -   [如何加密请求中的敏感数据？](./Advanced_RequestSensitiveDataEncryption.md)
 
 -   [如何解密响应中的敏感数据？](./Advanced_ResponseSensitiveDataDecryption.md)
 
--   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
+-   [如何验证响应签名？](./Advanced_ResponseSignatureVerification.md)
 
 -   [如何解密回调通知事件中的敏感数据？](./Advanced_EventResourceDecryption.md)
+
+-   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
 
 -   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Payment.md)
 

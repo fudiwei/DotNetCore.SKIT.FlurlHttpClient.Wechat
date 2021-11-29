@@ -51,7 +51,7 @@
 
 ### 1. 为什么要“造轮子”？
 
-这都 2021 年了，官方本身提供的示例代码还只能运行在 .NET Framework on Windows 上；就连 RSA 签名这么基础的东西都没有人封装（确切的说是因为 RSA 有很多种分块模式和填充模式，网上能找到的往往只封装了其中一种，但却未必符合微信的要求）；全网你也找不到一个封装 API 尽可能全的 .NET SDK，开源的项目不少，但作者都能坚持下去的不多。
+这都 2021 年了，官方本身提供的示例代码还只能运行在 .NET Framework on Windows 上；就连 RSA 签名这么基础的东西都没有人封装（确切地说是因为 RSA 有很多种分块模式和填充模式，网上能找到的往往只封装了其中一种，但却未必符合微信的要求）；全网很难找到一个封装微信 API 尽可能全的 .NET SDK，开源的项目有不少，但作者能坚持下去的不多。
 
 于是萌生了自己封装一个库的想法，打算解决这几个痛点，同时也是推广一下微软官方的 `System.Text.Json`。
 
@@ -61,10 +61,10 @@
 
 与另一个流行的 HTTP 库 [`RestSharp`](https://restsharp.dev/) 相比，`Flurl.Http` 底层基于 `System.Net.Http.HttpClient`，而 `RestSharp` 底层则基于 `System.Net.HttpWebRequest`，前者在多核多线程环境下的性能基准测试中表现要远优于后者，同时也是微软官方目前推荐的 HTTP 客户端方案。
 
-【附】微软官方关于 `System.Net.HttpWebRequest` 与 `System.Net.Http.HttpClient` 的说明：
-
--   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.httpwebrequest#remarks
--   https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient#httpclient-and-net-core）
+> 微软官方关于 `System.Net.HttpWebRequest` 与 `System.Net.Http.HttpClient` 的说明：
+>
+> -   [《Microsoft Docs - HttpWebRequest 类（Systen.Net）》](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.httpwebrequest#remarks)
+> -   [《Microsoft Docs - HttpClient 类（Systen.Net.Http）》](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient#httpclient-and-net-core)
 
 ### 3. 本库与[盛派微信 SDK（Senparc.Weixin）](https://github.com/JeffreySu/WeiXinMPSDK)有什么区别？
 
@@ -106,9 +106,9 @@
 
 ## 使用案例
 
-| 项目名称 |                    项目简介                    |                                            项目地址                                            |
-| :------: | :--------------------------------------------: | :--------------------------------------------------------------------------------------------: |
-| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [Gitee](https://gitee.com/CoreUnion/CoreShop)｜[GitHub](https://github.com/CoreUnion/CoreShop) |
+| 项目名称 |                    项目简介                    |                                                  项目地址                                                  |
+| :------: | :--------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
+| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [Gitee Repo](https://gitee.com/CoreUnion/CoreShop)<br>[GitHub Repo](https://github.com/CoreUnion/CoreShop) |
 
 注：以上案例均来自第三方，本项目不对其项目做任何保证，仅作列举展示。如果你有项目也使用了本库、希望加到案例列表中，可以在 Issue 中提出。
 
@@ -116,9 +116,9 @@
 
 ## 参与贡献
 
--   GitHub：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat
+-   GitHub Repo：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git
 
--   Gitee：https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat
+-   Gitee Repo：https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git
 
 以上仓库地址同步更新，均可接受 Issue 或 Pull Request。
 
