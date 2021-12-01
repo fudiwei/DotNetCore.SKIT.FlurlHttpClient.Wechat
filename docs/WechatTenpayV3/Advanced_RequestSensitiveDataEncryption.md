@@ -133,7 +133,6 @@ client.EncryptRequestSensitiveProperty(request);
 
 ```csharp
 using StackExchange.Redis;
-using Newtonsoft.Json;
 
 public class RedisCertificateManager : CertificateManager
 {
