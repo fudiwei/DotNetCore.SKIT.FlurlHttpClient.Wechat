@@ -28,6 +28,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         /// </summary>
         public DateTimeOffset ExpireTime { get; }
 
+        [Newtonsoft.Json.JsonConstructor]
+        [System.Text.Json.Serialization.JsonConstructor]
         public CertificateEntry(string serialNumber, string certificate, DateTimeOffset effectiveTime, DateTimeOffset expireTime)
         {
             if (string.IsNullOrEmpty(serialNumber))
