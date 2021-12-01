@@ -68,14 +68,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Controllers
             var msgType = client.DeserializeEventFromXml(content).MessageType;
             switch (msgType)
             {
-                case "TEXT":
+                case "text":
                     {
                         var eventModel = client.DeserializeEventFromXml<TextMessageEvent>(content);
                         // Do Something
                     }
                     break;
 
-                case "IMAGE":
+                case "image":
                     {
                         var eventModel = client.DeserializeEventFromXml<ImageMessageEvent>(content);
                         // Do Something
