@@ -129,7 +129,7 @@ client.EncryptRequestSensitiveProperty(request);
 
 上一小节提到，你可自行继承并实现一个 `CertificateManager`，例如利用数据库或 Redis 等方式存取证书信息。
 
-下面给出一个利用 Redis 存储的示例代码：
+下面给出一个利用 Redis 的 HASH 数据结构存储的示例代码：
 
 ```csharp
 using StackExchange.Redis;
@@ -139,41 +139,76 @@ public class RedisCertificateManager : CertificateManager
 {
     private const string REDIS_KEY_PREFIX = "wxpaypc-";
 
-    protected ConnectionMultiplexer Connection { get; }
+    private readonly ConnectionMultiplexer Connection { get; }
 
     public RedisCertificateManager(string connectionString)
     {
         Connection = ConnectionMultiplexer.Connect(connectionString);
     }
 
-    protected string GenerateRedisKey(string serialNumber)
+    private string GenerateRedisKey(string serialNumber)
     {
         return $"{REDIS_KEY_PREFIX}{serialNumber}";
+    }
+
+    private CertificateEntry ConvertHashEntriesToCertificateEntry(HashEntry[] values)
+    {
+        if (values == null) throw new ArgumentNullException(nameof(values));
+
+        IDictionary<string, string> map = values.ToDictionary(k => k.Name.ToString(), v => v.Value.ToString());
+        return new CertificateEntry(
+            serialNumber: map[nameof(CertificateEntry.SerialNumber)],
+            certificate: map[nameof(CertificateEntry.Certificate)],
+            effectiveTime: DateTimeOffset.Parse(map[nameof(CertificateEntry.EffectiveTime)]),
+            expireTime: DateTimeOffset.Parse(map[nameof(CertificateEntry.ExpireTime)])
+        );
+    }
+
+    private HashEntry[] ConvertCertificateEntryToHashEntries(CertificateEntry entry)
+    {
+        return new HashEntry[]
+        {
+            new HashEntry(nameof(CertificateEntry.SerialNumber), entry.SerialNumber),
+            new HashEntry(nameof(CertificateEntry.Certificate), entry.Certificate),
+            new HashEntry(nameof(CertificateEntry.EffectiveTime), entry.EffectiveTime.ToString()),
+            new HashEntry(nameof(CertificateEntry.ExpireTime), entry.ExpireTime.ToString())
+        };
     }
 
     public override IEnumerable<CertificateEntry> AllEntries()
     {
         // 生产环境中不应该使用 Redis KEYS 命令，这里代码仅作参考
+        // 你可以使用 SCAN + CURSOR 来实现类似功能
         RedisKey[] keys = Connection.GetServer().Keys($"{REDIS_KEY_PREFIX}*");
-        RedisValue[] values = Connection.GetDatabase().StringGet(keys);
-        return values.Where(e => e.HasValue).Select(e => JsonConvert.DeserializeObject<CertificateEntry>(e.ToString()));
+        if (keys.Any())
+        {
+            Task[] pipelineTasks = keys.Select(key => Connection.GetDatabase().HashGetAllAsync(key)).ToArray();
+            Connection.WaitAll(pipelineTasks);
+
+            return pipelineTasks
+                .Where(t => t.IsCompletedSuccessfully && t.Result.Any())
+                .Select(t => ConvertHashEntriesToCertificateEntry(t.Result))
+                .ToArray();
+        }
+
+        return Array.Empty<CertificateEntry>();
     }
 
     public override void AddEntry(CertificateEntry entry)
     {
         string key = GenerateRedisKey(serialNumber);
-        string value = JsonConvert.SerializeObject(entry);
-        TimeSpan expiresIn = entry.ExpireTime - DateTimeOffset.Now;
-        Connection.GetDatabase().StringSet(key, value, expiresIn);
+        HashEntry[] values = ConvertCertificateEntryToHashEntries(entry);
+        Connection.GetDatabase().HashSet(key, values);
+        Connection.GetDatabase().KeyExpire(key, entry.ExpireTime - DateTimeOffset.Now);
     }
 
     public override CertificateEntry? GetEntry(string serialNumber)
     {
         string key = GenerateRedisKey(serialNumber);
-        string value = Connection.GetDatabase().StringGet(GenerateRedisKey(serialNumber));
-        if (!string.IsNullOrEmpty(value))
+        HashEntry[] values = Connection.GetDatabase().HashGetAll(key);
+        if (values.Any())
         {
-            return JsonConvert.DeserializeObject<CertificateEntry>(value);
+            return ConvertHashEntriesToCertificateEntry(values);
         }
 
         return null;
