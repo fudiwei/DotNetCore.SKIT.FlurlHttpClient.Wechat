@@ -13,7 +13,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             InnerReplacePropertyStringValue(ref obj, replacement, null);
         }
 
-        
         private static void InnerReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacement replacement, PropertyInfo? currentProp)
         {
             if (obj == null) throw new ArgumentNullException(nameof(obj));
@@ -25,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
             if (objType.IsArray || obj is IList || obj is IDictionary)
             {
-                EachCollectionProperty(ref obj, objType, replacement, null);
+                InnerReplaceEachCollectionPropertyStringValue(ref obj, objType, replacement, null);
             }
             else
             {
@@ -55,12 +54,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                         object? value = childProp.GetValue(obj, null);
                         if (value is null)
                             continue;
-                        EachCollectionProperty(ref value, propType, replacement, childProp);
+
+                        InnerReplaceEachCollectionPropertyStringValue(ref value, propType, replacement, childProp);
                     }
                 }
             }
         }
-        private static void EachCollectionProperty<T>(ref T obj, Type objType, ReplacePropertyStringValueReplacement replacement, PropertyInfo? currentProp)
+        
+        private static void InnerReplaceEachCollectionPropertyStringValue<T>(ref T obj, Type objType, ReplacePropertyStringValueReplacement replacement, PropertyInfo? currentProp)
         {
             if (objType.IsArray)
             {

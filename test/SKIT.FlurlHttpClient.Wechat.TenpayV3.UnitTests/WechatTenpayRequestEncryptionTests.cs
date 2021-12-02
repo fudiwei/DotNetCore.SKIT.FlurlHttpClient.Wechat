@@ -42,5 +42,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.Equal(MockText, data.Account);
             Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.Name));
         }
+
+        [Fact(DisplayName = "加密请求中的敏感数据（[POST] /profitsharing/orders）")]
+        public void DecryptResponseSensitiveProperty_CreateProfitSharingOrderRequest()
+        {
+            var mock = new Models.CreateProfitSharingOrderRequest()
+            {
+                ReceiverList = new List<Models.CreateProfitSharingOrderRequest.Types.Receiver>()
+                { 
+                    new Models.CreateProfitSharingOrderRequest.Types.Receiver()
+                    {
+                        Account = MockText,
+                        Name = MockText
+                    }
+                }
+            };
+            var data = MockClientInstance.Value.EncryptRequestSensitiveProperty(mock);
+
+            Assert.Equal(RSA_CERTSN, data.WechatpayCertSerialNumber);
+            Assert.Equal(MockText, data.ReceiverList[0].Account);
+            Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.ReceiverList[0].Name));
+        }
     }
 }
