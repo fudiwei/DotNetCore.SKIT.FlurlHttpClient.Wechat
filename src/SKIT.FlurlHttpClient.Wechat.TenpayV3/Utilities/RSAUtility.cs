@@ -1,6 +1,5 @@
 ﻿using System;
 using System.IO;
-using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using Org.BouncyCastle.Crypto;
@@ -222,7 +221,33 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             if (certificate == null) throw new ArgumentNullException(nameof(certificate));
 
             X509Certificate cert = ParseX509Certificate(certificate);
-            return cert.CertificateStructure.SerialNumber.Value.ToString();
+            return cert.SerialNumber.ToString(16);
+        }
+
+        /// <summary>
+        /// <para>从 CRT/CER 证书中导出证书颁发时间。</para>
+        /// </summary>
+        /// <param name="certificate">证书（PEM 格式）。</param>
+        /// <returns>证书颁发时间。</returns>
+        public static DateTimeOffset ExportEffectiveTime(string certificate)
+        {
+            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+
+            X509Certificate cert = ParseX509Certificate(certificate);
+            return new DateTimeOffset(cert.NotBefore);
+        }
+
+        /// <summary>
+        /// <para>从 CRT/CER 证书中导出证书过期时间。</para>
+        /// </summary>
+        /// <param name="certificate">证书（PEM 格式）。</param>
+        /// <returns>证书过期时间。</returns>
+        public static DateTimeOffset ExportExpireTime(string certificate)
+        {
+            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+
+            X509Certificate cert = ParseX509Certificate(certificate);
+            return new DateTimeOffset(cert.NotAfter);
         }
 
         private static byte[] ConvertPkcs8PrivateKeyToByteArray(string privateKey)
@@ -243,12 +268,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             return Convert.FromBase64String(publicKey);
         }
 
-        private static RsaKeyParameters ConvertCertificateToPublicKeyParams(string certificate)
-        {
-            X509Certificate cert = ParseX509Certificate(certificate);
-            return (RsaKeyParameters)cert.GetPublicKey();
-        }
-
         private static X509Certificate ParseX509Certificate(string certificate)
         {
             using (TextReader sreader = new StringReader(certificate))
@@ -256,6 +275,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                 PemReader pemReader = new PemReader(sreader);
                 return (X509Certificate)pemReader.ReadObject();
             }
+        }
+
+        private static RsaKeyParameters ConvertCertificateToPublicKeyParams(string certificate)
+        {
+            X509Certificate cert = ParseX509Certificate(certificate);
+            return (RsaKeyParameters)cert.GetPublicKey();
         }
 
         private static byte[] SignWithSHA256(RsaKeyParameters rsaKeyParams, byte[] plainBytes)
