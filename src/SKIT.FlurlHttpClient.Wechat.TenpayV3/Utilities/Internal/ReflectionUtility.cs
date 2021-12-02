@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Reflection;
 
@@ -13,6 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             InnerReplacePropertyStringValue(ref obj, replacement, null);
         }
 
+        
         private static void InnerReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacement replacement, PropertyInfo? currentProp)
         {
             if (obj == null) throw new ArgumentNullException(nameof(obj));
@@ -22,6 +23,45 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             if (!objType.IsClass)
                 throw new NotSupportedException();
 
+            if (objType.IsArray || obj is IList || obj is IDictionary)
+            {
+                EachCollectionProperty(ref obj, objType, replacement, null);
+            }
+            else
+            {
+                foreach (var childProp in objType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+                {
+                    if (!childProp.CanWrite)
+                        continue;
+
+                    Type propType = childProp.PropertyType;
+                    if (propType == typeof(string))
+                    {
+                        string oldValue = (string)childProp.GetValue(obj, null)!;
+                        string newValue = replacement(obj, childProp, oldValue);
+                        childProp.SetValue(obj, newValue);
+                    }
+                    else if (propType.IsClass)
+                    {
+                        object? value = childProp.GetValue(obj, null);
+                        if (value is null)
+                            continue;
+
+                        InnerReplacePropertyStringValue(ref value, replacement, childProp);
+                        childProp.SetValue(obj, value);
+                    }
+                    else
+                    {
+                        object? value = childProp.GetValue(obj, null);
+                        if (value is null)
+                            continue;
+                        EachCollectionProperty(ref value, propType, replacement, childProp);
+                    }
+                }
+            }
+        }
+        private static void EachCollectionProperty<T>(ref T obj, Type objType, ReplacePropertyStringValueReplacement replacement, PropertyInfo? currentProp)
+        {
             if (objType.IsArray)
             {
                 var array = (obj as Array)!;
@@ -107,35 +147,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     else
                     {
                         continue;
-                    }
-                }
-            }
-            else
-            {
-                foreach (var childProp in objType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
-                {
-                    if (!childProp.CanWrite)
-                        continue;
-
-                    Type propType = childProp.PropertyType;
-                    if (propType == typeof(string))
-                    {
-                        object? value = childProp.GetValue(obj, null);
-                        if (value is null)
-                            continue;
-
-                        string oldValue = (string)value!;
-                        string newValue = replacement(obj, childProp, oldValue);
-                        childProp.SetValue(obj, newValue);
-                    }
-                    else if (propType.IsClass)
-                    {
-                        object? value = childProp.GetValue(obj, null);
-                        if (value is null)
-                            continue;
-
-                        InnerReplacePropertyStringValue(ref value, replacement, childProp);
-                        childProp.SetValue(obj, value);
                     }
                 }
             }
