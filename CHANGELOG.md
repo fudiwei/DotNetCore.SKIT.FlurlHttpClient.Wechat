@@ -204,6 +204,12 @@
 
 <summary>[展开查看] SKIT.FlurlHttpClient.Wechat.TenpayV3 模块更新日志</summary>
 
+-   Release 2.1.2
+
+    -   **修复**：修复部分嵌套类型中属性的敏感数据不能自动加密的问题。（[Gitee Issue #I4K40Y](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4K40Y)）
+
+    -   **修复**：修复 `CertificateEntry` 不支持 JSON 反序列化的问题。（[Gitee Issue #I4KP8H](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4KP8H)）
+
 -   Release 2.1.1
 
     -   **修复**：修复部分场景下 RSA 加密请求敏感信息字段错误的问题。（[Gitee Issue #I4JIZC](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4JIZC)）
