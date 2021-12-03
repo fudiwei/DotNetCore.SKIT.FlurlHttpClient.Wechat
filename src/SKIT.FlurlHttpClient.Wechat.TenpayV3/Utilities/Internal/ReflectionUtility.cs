@@ -6,14 +6,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 {
     internal static class ReflectionUtility
     {
-        public delegate (bool Modified, string NewValue) ReplacePropertyStringValueReplacement(object target, PropertyInfo currentProp, string oldValue);
+        public delegate (bool Modified, string NewValue) ReplacePropertyStringValueReplacementHandler(object target, PropertyInfo currentProp, string oldValue);
 
-        public static void ReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacement replacement)
+        public static void ReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacementHandler replacement)
         {
             InnerReplacePropertyStringValue(ref obj, replacement);
         }
 
-        private static void InnerReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacement replacement)
+        private static void InnerReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacementHandler replacement)
         {
             if (obj == null) throw new ArgumentNullException(nameof(obj));
             if (replacement == null) throw new ArgumentNullException(nameof(replacement));
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             }
         }
         
-        private static void InnerReplaceEachCollectionPropertyStringValue<T>(ref T obj, Type objType, ReplacePropertyStringValueReplacement replacement, PropertyInfo? currentProp)
+        private static void InnerReplaceEachCollectionPropertyStringValue<T>(ref T obj, Type objType, ReplacePropertyStringValueReplacementHandler replacement, PropertyInfo? currentProp)
         {
             if (objType.IsArray)
             {
