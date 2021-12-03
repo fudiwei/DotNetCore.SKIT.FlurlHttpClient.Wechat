@@ -69,8 +69,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             if (objType.IsArray)
             {
                 var array = (obj as Array)!;
-                if (array.IsReadOnly)
-                    return;
 
                 for (int i = 0, len = array.Length; i < len; i++)
                 {
@@ -88,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
                         var oldValue = (string)element!;
                         var resHandler = replacement(obj!, currentProp, oldValue);
-                        if (resHandler.Modified)
+                        if (resHandler.Modified && !array.IsReadOnly)
                         {
                             array.SetValue(resHandler.NewValue, i);
                         }
@@ -96,7 +94,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     else if (elementType.IsClass)
                     {
                         InnerReplacePropertyStringValue(ref element, replacement);
-                        array.SetValue(element, i);
+                        //if (!array.IsReadOnly)
+                        //{ 
+                        //    array.SetValue(element, i);
+                        //}
                     }
                     else
                     {
@@ -107,8 +108,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             else if (obj is IList)
             {
                 var list = (obj as IList)!;
-                if (list.IsReadOnly)
-                    return;
 
                 for (int i = 0, len = list.Count; i < len; i++)
                 {
@@ -126,7 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
                         var oldValue = (string)element!;
                         var resHandler = replacement(obj, currentProp, oldValue);
-                        if (resHandler.Modified)
+                        if (resHandler.Modified && !list.IsReadOnly)
                         {
                             list[i] = resHandler.NewValue;
                         }
@@ -134,7 +133,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     else if (elementType.IsClass)
                     {
                         InnerReplacePropertyStringValue(ref element, replacement);
-                        list[i] = element;
+                        //if (!list.IsReadOnly)
+                        //{
+                        //    list[i] = element;
+                        //}
                     }
                     else
                     {
@@ -145,8 +147,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             else if (obj is IDictionary)
             {
                 var dict = (obj as IDictionary)!;
-                if (dict.IsReadOnly)
-                    return;
 
                 foreach (DictionaryEntry entry in dict)
                 {
@@ -164,7 +164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
                         string oldValue = (string)entryValue!;
                         var resHandler = replacement(obj, currentProp, oldValue);
-                        if (resHandler.Modified)
+                        if (resHandler.Modified && !dict.IsReadOnly)
                         {
                             dict[entry.Key] = resHandler.NewValue;
                         }
@@ -172,7 +172,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     else if (entryValueType.IsClass)
                     {
                         InnerReplacePropertyStringValue(ref entryValue, replacement);
-                        dict[entry.Key] = entryValue;
+                        if (!dict.IsReadOnly)
+                        {
+                            dict[entry.Key] = entryValue;
+                        }
                     }
                     else
                     {
