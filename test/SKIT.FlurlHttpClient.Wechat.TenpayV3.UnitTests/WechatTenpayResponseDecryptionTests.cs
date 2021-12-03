@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
@@ -56,6 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             var mock = new Models.GetEcommerceApplymentByOutRequestNumberResponse()
             {
                 RawStatus = 200,
+                RawHeaders = new ReadOnlyDictionary<string, string>(new Dictionary<string, string>() { { "K", "V" } }),
                 ApplymentState = MockText,
                 AccountValidation = new Models.GetEcommerceApplymentByOutRequestNumberResponse.Types.AccountValidation()
                 {

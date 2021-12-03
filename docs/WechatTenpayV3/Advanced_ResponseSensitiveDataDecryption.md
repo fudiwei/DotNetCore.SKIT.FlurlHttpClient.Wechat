@@ -47,4 +47,4 @@ var client = new WechatTenpayClient(options);
 
 这样，本库会在实际收到响应后自动为你调用 `DecryptResponseSensitiveProperty()` 方法。
 
-此外，该扩展方法使用反射、并依赖 `WechatTenpaySensitivePropertyAttribute` 特性，相比较手动解密，可能会存在一定的性能开销。
+此外，该扩展方法使用反射、并依赖 `WechatTenpaySensitiveAttribute`、`WechatTenpaySensitivePropertyAttribute` 特性，相比较手动解密，可能会存在一定的性能开销。

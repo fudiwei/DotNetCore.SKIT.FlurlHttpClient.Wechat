@@ -85,7 +85,7 @@ var client = new WechatTenpayClient(options);
 
 需要注意的是，使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请参阅下一小节。
 
-此外，该扩展方法使用反射、并依赖 `WechatTenpaySensitivePropertyAttribute` 特性，相比较手动加密，可能会存在一定的性能开销。
+此外，该扩展方法使用反射、并依赖 `WechatTenpaySensitiveAttribute`、`WechatTenpaySensitivePropertyAttribute` 特性，相比较手动加密，可能会存在一定的性能开销。
 
 ---
 
