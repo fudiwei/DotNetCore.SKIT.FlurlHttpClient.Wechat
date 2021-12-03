@@ -6,14 +6,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 {
     internal static class ReflectionUtility
     {
-        public delegate string ReplacePropertyStringValueReplacement(object obj, PropertyInfo prop, string value);
+        public delegate (bool Modified, string NewValue) ReplacePropertyStringValueReplacement(object target, PropertyInfo currentProp, string oldValue);
 
         public static void ReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacement replacement)
         {
-            InnerReplacePropertyStringValue(ref obj, replacement, null);
+            InnerReplacePropertyStringValue(ref obj, replacement);
         }
 
-        private static void InnerReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacement replacement, PropertyInfo? currentProp)
+        private static void InnerReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacement replacement)
         {
             if (obj == null) throw new ArgumentNullException(nameof(obj));
             if (replacement == null) throw new ArgumentNullException(nameof(replacement));
@@ -37,8 +37,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     if (propType == typeof(string))
                     {
                         string oldValue = (string)childProp.GetValue(obj, null)!;
-                        string newValue = replacement(obj, childProp, oldValue);
-                        childProp.SetValue(obj, newValue);
+                        var result = replacement(obj, childProp, oldValue);
+                        if (result.Modified)
+                        {
+                            childProp.SetValue(obj, result.NewValue);
+                        }
                     }
                     else if (propType.IsClass)
                     {
@@ -46,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                         if (value is null)
                             continue;
 
-                        InnerReplacePropertyStringValue(ref value, replacement, childProp);
+                        InnerReplacePropertyStringValue(ref value, replacement);
                         childProp.SetValue(obj, value);
                     }
                     else
@@ -83,13 +86,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                         if (!currentProp.CanWrite)
                             continue;
 
-                        string oldValue = (string)element!;
-                        string newValue = replacement(obj!, currentProp, oldValue);
-                        array.SetValue(newValue, i);
+                        var oldValue = (string)element!;
+                        var resHandler = replacement(obj!, currentProp, oldValue);
+                        if (resHandler.Modified)
+                        {
+                            array.SetValue(resHandler.NewValue, i);
+                        }
                     }
                     else if (elementType.IsClass)
                     {
-                        InnerReplacePropertyStringValue(ref element, replacement, currentProp);
+                        InnerReplacePropertyStringValue(ref element, replacement);
                         array.SetValue(element, i);
                     }
                     else
@@ -118,13 +124,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                         if (!currentProp.CanWrite)
                             continue;
 
-                        string oldValue = (string)element!;
-                        string newValue = replacement(obj, currentProp, oldValue);
-                        list[i] = newValue;
+                        var oldValue = (string)element!;
+                        var resHandler = replacement(obj, currentProp, oldValue);
+                        if (resHandler.Modified)
+                        {
+                            list[i] = resHandler.NewValue;
+                        }
                     }
                     else if (elementType.IsClass)
                     {
-                        InnerReplacePropertyStringValue(ref element, replacement, currentProp);
+                        InnerReplacePropertyStringValue(ref element, replacement);
                         list[i] = element;
                     }
                     else
@@ -154,12 +163,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                             continue;
 
                         string oldValue = (string)entryValue!;
-                        string newValue = replacement(obj, currentProp, oldValue);
-                        dict[entry.Key] = newValue;
+                        var resHandler = replacement(obj, currentProp, oldValue);
+                        if (resHandler.Modified)
+                        {
+                            dict[entry.Key] = resHandler.NewValue;
+                        }
                     }
                     else if (entryValueType.IsClass)
                     {
-                        InnerReplacePropertyStringValue(ref entryValue, replacement, currentProp);
+                        InnerReplacePropertyStringValue(ref entryValue, replacement);
                         dict[entry.Key] = entryValue;
                     }
                     else

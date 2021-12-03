@@ -27,11 +27,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 if (requireEncrypt)
                 {
                     // 遍历并加密被标记为敏感数据的字段
-                    Utilities.ReflectionUtility.ReplacePropertyStringValue(ref request, (obj, prop, value) =>
+                    Utilities.ReflectionUtility.ReplacePropertyStringValue(ref request, (target, currentProp, oldValue) =>
                     {
-                        var attr = prop.GetCustomAttribute<WechatTenpaySensitivePropertyAttribute>();
+                        var attr = currentProp.GetCustomAttribute<WechatTenpaySensitivePropertyAttribute>();
                         if (attr == null)
-                            return value;
+                            return (false, oldValue);
 
                         if (Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB.Equals(attr.Algorithm))
                         {
@@ -65,10 +65,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                                 request.WechatpayCertSerialNumber = cert.SerialNumber;
                             }
 
-                            return Utilities.RSAUtility.EncryptWithECBByCertificate(
+                            string newValue = Utilities.RSAUtility.EncryptWithECBByCertificate(
                                 certificate: certificate,
-                                plainText: value
+                                plainText: oldValue
                             );
+                            return (true, newValue);
                         }
                         else
                         {

@@ -59,18 +59,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 if (requireDecrypt)
                 {
                     // 遍历并解密被标记为敏感数据的字段
-                    Utilities.ReflectionUtility.ReplacePropertyStringValue(ref response, (obj, prop, value) =>
+                    Utilities.ReflectionUtility.ReplacePropertyStringValue(ref response, (target, currentProp, oldValue) =>
                     {
-                        var attr = prop.GetCustomAttribute<WechatTenpaySensitivePropertyAttribute>();
+                        var attr = currentProp.GetCustomAttribute<WechatTenpaySensitivePropertyAttribute>();
                         if (attr == null)
-                            return value;
+                            return (false, oldValue);
 
                         if (Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB.Equals(attr.Algorithm))
                         {
-                            return Utilities.RSAUtility.DecryptWithECB(
+                            string newValue = Utilities.RSAUtility.DecryptWithECB(
                                 privateKey: client.Credentials.MerchantCertPrivateKey,
-                                cipherText: value
+                                cipherText: oldValue
                             );
+                            return (true, newValue);
                         }
                         else
                         {
