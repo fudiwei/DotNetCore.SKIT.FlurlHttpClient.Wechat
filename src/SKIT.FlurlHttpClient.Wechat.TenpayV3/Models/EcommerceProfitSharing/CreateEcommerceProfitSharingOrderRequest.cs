@@ -5,6 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /ecommerce/profitsharing/orders 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class CreateEcommerceProfitSharingOrderRequest : WechatTenpayRequest
     {
         public static class Types

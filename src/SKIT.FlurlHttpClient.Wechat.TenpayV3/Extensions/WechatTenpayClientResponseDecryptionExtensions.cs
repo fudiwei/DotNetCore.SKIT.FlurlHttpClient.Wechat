@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
@@ -54,25 +55,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     return response;
                 }
 
-                // 遍历并解密被标记为敏感数据的字段
-                Utilities.ReflectionUtility.ReplacePropertyStringValue(ref response, (obj, prop, value) =>
+                bool requireDecrypt = response.GetType().GetCustomAttributes<WechatTenpaySensitiveAttribute>(inherit: true).Any();
+                if (requireDecrypt)
                 {
-                    var attr = prop.GetCustomAttribute<WechatTenpaySensitivePropertyAttribute>();
-                    if (attr == null)
-                        return value;
+                    // 遍历并解密被标记为敏感数据的字段
+                    Utilities.ReflectionUtility.ReplacePropertyStringValue(ref response, (obj, prop, value) =>
+                    {
+                        var attr = prop.GetCustomAttribute<WechatTenpaySensitivePropertyAttribute>();
+                        if (attr == null)
+                            return value;
 
-                    if (Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB.Equals(attr.Algorithm))
-                    {
-                        return Utilities.RSAUtility.DecryptWithECB(
-                            privateKey: client.Credentials.MerchantCertPrivateKey,
-                            cipherText: value
-                        );
-                    }
-                    else
-                    {
-                        throw new Exceptions.WechatTenpayResponseDecryptionException("Unsupported decryption algorithm.");
-                    }
-                });
+                        if (Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB.Equals(attr.Algorithm))
+                        {
+                            return Utilities.RSAUtility.DecryptWithECB(
+                                privateKey: client.Credentials.MerchantCertPrivateKey,
+                                cipherText: value
+                            );
+                        }
+                        else
+                        {
+                            throw new Exceptions.WechatTenpayResponseDecryptionException("Unsupported decryption algorithm.");
+                        }
+                    });
+                }
             }
             catch (Exception ex) when (!(ex is Exceptions.WechatTenpayResponseDecryptionException))
             {

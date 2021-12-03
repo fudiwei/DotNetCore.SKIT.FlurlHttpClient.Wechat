@@ -3,6 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /ecommerce/profitsharing/receivers/add 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class AddEcommerceProfitSharingReceiverRequest : WechatTenpayRequest
     {
         /// <summary>

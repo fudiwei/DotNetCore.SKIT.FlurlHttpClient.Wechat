@@ -6,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [GET] /certificates 接口的响应。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class QueryCertificatesResponse : WechatTenpayResponse
     {
         public static class Types

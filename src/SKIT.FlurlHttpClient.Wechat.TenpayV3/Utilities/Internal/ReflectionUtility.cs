@@ -66,6 +66,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             if (objType.IsArray)
             {
                 var array = (obj as Array)!;
+                if (array.IsReadOnly)
+                    return;
+
                 for (int i = 0, len = array.Length; i < len; i++)
                 {
                     object? element = array.GetValue(i);
@@ -77,9 +80,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     {
                         if (currentProp == null)
                             continue;
+                        if (!currentProp.CanWrite)
+                            continue;
 
                         string oldValue = (string)element!;
-                        string newValue = replacement(obj, currentProp, oldValue);
+                        string newValue = replacement(obj!, currentProp, oldValue);
                         array.SetValue(newValue, i);
                     }
                     else if (elementType.IsClass)
@@ -93,8 +98,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     }
                 }
             }
-            else if (obj is IList list)
+            else if (obj is IList)
             {
+                var list = (obj as IList)!;
+                if (list.IsReadOnly)
+                    return;
+
                 for (int i = 0, len = list.Count; i < len; i++)
                 {
                     object? element = list[i];
@@ -105,6 +114,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     if (elementType == typeof(string))
                     {
                         if (currentProp == null)
+                            continue;
+                        if (!currentProp.CanWrite)
                             continue;
 
                         string oldValue = (string)element!;
@@ -122,8 +133,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     }
                 }
             }
-            else if (obj is IDictionary dict)
+            else if (obj is IDictionary)
             {
+                var dict = (obj as IDictionary)!;
+                if (dict.IsReadOnly)
+                    return;
+
                 foreach (DictionaryEntry entry in dict)
                 {
                     object? entryValue = entry.Value;
@@ -134,6 +149,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     if (entryValueType == typeof(string))
                     {
                         if (currentProp == null)
+                            continue;
+                        if (!currentProp.CanWrite)
                             continue;
 
                         string oldValue = (string)entryValue!;

@@ -6,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [GET] /transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no} 接口的响应。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class GetTransferBatchDetailByOutDetailNumberResponse : WechatTenpayResponse
     {
         /// <summary>

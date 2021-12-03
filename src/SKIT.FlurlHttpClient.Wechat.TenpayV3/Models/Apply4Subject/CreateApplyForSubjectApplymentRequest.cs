@@ -5,6 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /apply4subject/applyment 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class CreateApplyForSubjectApplymentRequest : WechatTenpayRequest
     {
         public static class Types

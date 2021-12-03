@@ -6,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [GET] /bill/sub-merchant-fundflowbill 接口的响应。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class GetBillSubMerchantFundflowBillResponse : WechatTenpayResponse
     {
         public static class Types

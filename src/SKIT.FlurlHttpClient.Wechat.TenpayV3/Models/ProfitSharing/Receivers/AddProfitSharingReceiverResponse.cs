@@ -6,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /profitsharing/receivers/add 接口的响应。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class AddProfitSharingReceiverResponse : WechatTenpayResponse
     {
         /// <summary>

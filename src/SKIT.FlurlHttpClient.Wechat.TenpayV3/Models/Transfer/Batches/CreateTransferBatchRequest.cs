@@ -5,6 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /transfer/batches 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class CreateTransferBatchRequest : WechatTenpayRequest
     {
         public static class Types

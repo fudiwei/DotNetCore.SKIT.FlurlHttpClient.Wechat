@@ -3,6 +3,7 @@
     /// <summary>
     /// <para>表示 [PATCH] /smartguide/guides/{guide_id} 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class UpdateSmartGuideRequest : WechatTenpayRequest
     {
         /// <summary>

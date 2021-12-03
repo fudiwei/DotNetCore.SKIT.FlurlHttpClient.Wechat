@@ -3,6 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /apply4sub/sub_merchants/{sub_mchid}/modify-settlement 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class ModifyApplyForSubMerchantSettlementRequest : WechatTenpayRequest
     {
         /// <summary>

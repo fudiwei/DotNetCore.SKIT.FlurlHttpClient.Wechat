@@ -6,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [GET] /ecommerce/applyments/out-request-no/{out_request_no} 接口的响应。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class GetEcommerceApplymentByOutRequestNumberResponse : WechatTenpayResponse
     {
         public static class Types
