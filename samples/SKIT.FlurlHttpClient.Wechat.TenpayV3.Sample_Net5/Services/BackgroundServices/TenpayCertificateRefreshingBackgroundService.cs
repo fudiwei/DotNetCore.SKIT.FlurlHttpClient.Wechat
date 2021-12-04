@@ -10,30 +10,30 @@ using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.BackgroundServices
 {
-    class WxpayCertificateRefreshingBackgroundService : BackgroundService
+    class TenpayCertificateRefreshingBackgroundService : BackgroundService
     {
         private readonly ILogger _logger;
-        private readonly Options.WxpayOptions _wxpayOptions;
-        private readonly CertificateManager _certificateManager;
-        private readonly HttpClients.IWechatTenpayHttpClientFactory _wechatTenpayHttpClientFactory;
+        private readonly Options.TenpayOptions _tenpayOptions;
+        private readonly CertificateManager _tenpayCertificateManager;
+        private readonly HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
 
-        public WxpayCertificateRefreshingBackgroundService(
+        public TenpayCertificateRefreshingBackgroundService(
             ILoggerFactory loggerFactory,
-            IOptions<Options.WxpayOptions> wxpayOptions,
-            CertificateManager certificateManager,
-            HttpClients.IWechatTenpayHttpClientFactory wechatTenpayHttpClientFactory)
+            IOptions<Options.TenpayOptions> tenpayOptions,
+            CertificateManager tenpayCertificateManager,
+            HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
-            _wxpayOptions = wxpayOptions.Value;
-            _certificateManager = certificateManager;
-            _wechatTenpayHttpClientFactory = wechatTenpayHttpClientFactory;
+            _tenpayOptions = tenpayOptions.Value;
+            _tenpayCertificateManager = tenpayCertificateManager;
+            _tenpayHttpClientFactory = tenpayHttpClientFactory;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                var wxpayMerchant = _wxpayOptions.Merchants.FirstOrDefault();
+                var wxpayMerchant = _tenpayOptions.Merchants.FirstOrDefault();
                 if (wxpayMerchant == null)
                 {
                     _logger.LogWarning("未找到微信商户配置项。");
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.BackgroundSe
 
                 try
                 {
-                    var client = _wechatTenpayHttpClientFactory.Create(wxpayMerchant.MerchantId);
+                    var client = _tenpayHttpClientFactory.Create(wxpayMerchant.MerchantId);
                     var request = new QueryCertificatesRequest();
                     var response = await client.ExecuteQueryCertificatesAsync(request, cancellationToken: stoppingToken);
                     if (response.IsSuccessful())
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.BackgroundSe
 
                         foreach (var certificateModel in response.CertificateList)
                         {
-                            _certificateManager.AddEntry(new CertificateEntry(certificateModel));
+                            _tenpayCertificateManager.AddEntry(new CertificateEntry(certificateModel));
                         }
 
                         _logger.LogInformation("刷新微信商户平台证书成功。");

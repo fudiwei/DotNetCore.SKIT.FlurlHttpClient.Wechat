@@ -12,12 +12,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.HttpClients.
     partial class WechatTenpayHttpClientFactory : IWechatTenpayHttpClientFactory
     {
         private readonly System.Net.Http.IHttpClientFactory _httpClientFactory;
-        private readonly Options.WxpayOptions _wechatOptions;
+        private readonly Options.TenpayOptions _wechatOptions;
         private readonly CertificateManager _certificateManager;
 
         public WechatTenpayHttpClientFactory(
             System.Net.Http.IHttpClientFactory httpClientFactory,
-            IOptions<Options.WxpayOptions> wechatOptions,
+            IOptions<Options.TenpayOptions> wechatOptions,
             CertificateManager certificateManager)
         {
             _httpClientFactory = httpClientFactory;

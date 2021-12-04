@@ -14,22 +14,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
 {
     [ApiController]
     [Route("order")]
-    public class WxpayOrderController : ControllerBase
+    public class TenpayOrderController : ControllerBase
     {
         private readonly ILogger _logger;
+        private readonly Options.TenpayOptions _tenpayOptions;
+        private readonly Services.HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
 
-        private readonly Options.WxpayOptions _wxpayOptions;
-
-        private readonly Services.HttpClients.IWechatTenpayHttpClientFactory _wechatTenpayHttpClientFactory;
-
-        public WxpayOrderController(
+        public TenpayOrderController(
             ILoggerFactory loggerFactory,
-            IOptions<Options.WxpayOptions> wxpayOptions,
-            Services.HttpClients.IWechatTenpayHttpClientFactory wechatTenpayHttpClientFactory)
+            IOptions<Options.TenpayOptions> tenpayOptions,
+            Services.HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
-            _wxpayOptions = wxpayOptions.Value;
-            _wechatTenpayHttpClientFactory = wechatTenpayHttpClientFactory;
+            _tenpayOptions = tenpayOptions.Value;
+            _tenpayHttpClientFactory = tenpayHttpClientFactory;
         }
 
         [HttpPost]
@@ -39,13 +37,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
             // JSAPI 下单
             // 文档：https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_1.shtml
 
-            var client = _wechatTenpayHttpClientFactory.Create(requestModel.MerchantId);
+            var client = _tenpayHttpClientFactory.Create(requestModel.MerchantId);
             var request = new CreatePayTransactionJsapiRequest()
             {
                 OutTradeNumber = "SAMPLE_OTN_" + DateTimeOffset.Now.ToString("yyyyMMddHHmmssfff"),
                 AppId = requestModel.AppId,
                 Description = "演示订单",
-                NotifyUrl = _wxpayOptions.CallbackUrl,
+                NotifyUrl = _tenpayOptions.NotifyUrl,
                 Amount = new CreatePayTransactionJsapiRequest.Types.Amount() { Total = requestModel.Amount },
                 Payer = new CreatePayTransactionJsapiRequest.Types.Payer() { OpenId = requestModel.OpenId }
             };

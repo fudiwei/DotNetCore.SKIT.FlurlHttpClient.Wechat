@@ -14,22 +14,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
 {
     [ApiController]
     [Route("refund")]
-    public class WxpayRefundController : ControllerBase
+    public class TenpayRefundController : ControllerBase
     {
         private readonly ILogger _logger;
+        private readonly Options.TenpayOptions _tenpayOptions;
+        private readonly Services.HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
 
-        private readonly Options.WxpayOptions _wxpayOptions;
-
-        private readonly Services.HttpClients.IWechatTenpayHttpClientFactory _wechatTenpayHttpClientFactory;
-
-        public WxpayRefundController(
+        public TenpayRefundController(
             ILoggerFactory loggerFactory,
-            IOptions<Options.WxpayOptions> wxpayOptions,
-            Services.HttpClients.IWechatTenpayHttpClientFactory wechatTenpayHttpClientFactory)
+            IOptions<Options.TenpayOptions> tenpayOptions,
+            Services.HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
-            _wxpayOptions = wxpayOptions.Value;
-            _wechatTenpayHttpClientFactory = wechatTenpayHttpClientFactory;
+            _tenpayOptions = tenpayOptions.Value;
+            _tenpayHttpClientFactory = tenpayHttpClientFactory;
         }
 
         [HttpPost]
@@ -39,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
             // 申请退款
             // 文档：https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_9.shtml
 
-            var client = _wechatTenpayHttpClientFactory.Create(requestModel.MerchantId);
+            var client = _tenpayHttpClientFactory.Create(requestModel.MerchantId);
             var request = new CreateRefundDomesticRefundRequest()
             {
                 TransactionId = requestModel.TransactionId,
@@ -50,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
                     Refund = requestModel.RefundAmount
                 },
                 Reason = "示例退款",
-                NotifyUrl = _wxpayOptions.CallbackUrl
+                NotifyUrl = _tenpayOptions.NotifyUrl
             };
             var response = await client.ExecuteCreateRefundDomesticRefundAsync(request, cancellationToken: HttpContext.RequestAborted);
             if (!response.IsSuccessful())

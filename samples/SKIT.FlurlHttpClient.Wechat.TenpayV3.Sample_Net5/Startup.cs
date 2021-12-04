@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5
 
             // 注入配置项
             services.AddOptions();
-            services.Configure<Options.WxpayOptions>(Configuration.GetSection(nameof(Options.WxpayOptions)));
+            services.Configure<Options.TenpayOptions>(Configuration.GetSection(nameof(Options.TenpayOptions)));
 
             // 注入工厂 HTTP 客户端
             services.AddHttpClient();
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5
             services.AddSingleton<Services.HttpClients.IWechatTenpayHttpClientFactory, Services.HttpClients.Implements.WechatTenpayHttpClientFactory>();
 
             // 注入后台任务
-            services.AddHostedService<Services.BackgroundServices.WxpayCertificateRefreshingBackgroundService>();
+            services.AddHostedService<Services.BackgroundServices.TenpayCertificateRefreshingBackgroundService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

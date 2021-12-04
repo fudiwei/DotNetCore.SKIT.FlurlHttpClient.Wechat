@@ -8,18 +8,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
 {
     [ApiController]
     [Route("notify")]
-    public class WxpayNotifyController : ControllerBase
+    public class TenpayNotifyController : ControllerBase
     {
         private readonly ILogger _logger;
+        private readonly Services.HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
 
-        private readonly Services.HttpClients.IWechatTenpayHttpClientFactory _wechatTenpayHttpClientFactory;
-
-        public WxpayNotifyController(
+        public TenpayNotifyController(
             ILoggerFactory loggerFactory,
-            Services.HttpClients.IWechatTenpayHttpClientFactory wechatTenpayHttpClientFactory)
+            Services.HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
-            _wechatTenpayHttpClientFactory = wechatTenpayHttpClientFactory;
+            _tenpayHttpClientFactory = tenpayHttpClientFactory;
         }
 
 
@@ -39,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
             string content = await reader.ReadToEndAsync();
             _logger.LogInformation("接收到微信支付推送的数据：{0}", content);
 
-            var client = _wechatTenpayHttpClientFactory.Create(merchantId);
+            var client = _tenpayHttpClientFactory.Create(merchantId);
             bool valid = client.VerifyEventSignature(
                 callbackTimestamp: timestamp,
                 callbackNonce: nonce,
