@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
@@ -148,12 +149,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         private async Task<T> GetResposneAsync<T>(IFlurlResponse flurlResponse)
             where T : WechatTenpayResponse, new()
         {
-            string contentType = flurlResponse.Headers.GetAll("Content-Type").FirstOrDefault() ?? string.Empty;
-            bool contentTypeIsNotJson =
-                (flurlResponse.StatusCode == (int)HttpStatusCode.NoContent) ||
-                (flurlResponse.StatusCode == (int)HttpStatusCode.OK && !contentType.StartsWith("application/json") && !contentType.StartsWith("text/json"));
+            string mediaType = flurlResponse.Headers.GetAll("Content-Type").FirstOrDefault() ?? "application/octet-stream";
+            bool jsonable = (flurlResponse.StatusCode != (int)HttpStatusCode.NoContent) &&
+                (mediaType.StartsWith("application/json") || !mediaType.StartsWith("text/json"));
 
-            T result = contentTypeIsNotJson ? new T() : await flurlResponse.GetJsonAsync<T>().ConfigureAwait(false);
+            byte[] bytes = await flurlResponse.GetBytesAsync().ConfigureAwait(false);
+            T result = jsonable ? JsonSerializer.Deserialize<T>(Encoding.UTF8.GetString(bytes)) : new T();
+
             result.RawStatus = flurlResponse.StatusCode;
             result.RawHeaders = new ReadOnlyDictionary<string, string>(
                 flurlResponse.Headers
@@ -163,7 +165,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         v => string.Join(", ", v.Select(e => e.Value))
                     )
             );
-            result.RawBytes = await flurlResponse.ResponseMessage.Content.ReadAsByteArrayAsync().ConfigureAwait(false);
+            result.RawBytes = bytes;
             result.WechatpayRequestId = flurlResponse.Headers.GetAll("Request-ID").FirstOrDefault() ?? string.Empty;
             result.WechatpayNonce = flurlResponse.Headers.GetAll("Wechatpay-Nonce").FirstOrDefault() ?? string.Empty;
             result.WechatpayTimestamp = flurlResponse.Headers.GetAll("Wechatpay-Timestamp").FirstOrDefault() ?? string.Empty;
