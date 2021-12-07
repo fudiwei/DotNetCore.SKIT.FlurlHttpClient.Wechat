@@ -136,11 +136,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public bool? CanModifyAfterActivate { get; set; }
 
                 /// <summary>
-                /// 获取或设置平台提供的通用开卡信息字段列表。
+                /// 获取或设置平台提供的通用开卡信息字段名称列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("common_field_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("common_field_list")]
-                public string[]? CommonFieldList { get; set; }
+                public string[]? CommonFieldNameList { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户自定义的开卡信息字段列表。

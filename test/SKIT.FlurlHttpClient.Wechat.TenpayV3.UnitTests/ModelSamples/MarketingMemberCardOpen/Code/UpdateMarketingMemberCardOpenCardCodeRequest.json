@@ -1,0 +1,14 @@
+﻿{
+    "membership_number": "316510891298",
+    "background_picture_url": "https://wxpaylogo.qpic.cn/wxpaylogo/PiajxSqBRaEIPAeia7Imvtsn7sYGNcEj33YzVvJF88ECQ19LXId8ZL2Q/0",
+    "level": "钻石会员",
+    "out_request_no": "100002322019090134234sfdf",
+    "balance_information": {
+        "before_balance": 888,
+        "balance": 888,
+        "add_balance": 100,
+        "balance_remark": "购买一杯珍珠奶茶，消耗30元"
+    },
+    "need_inform_balance": true,
+    "need_inform_level": true
+}

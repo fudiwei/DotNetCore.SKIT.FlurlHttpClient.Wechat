@@ -230,7 +230,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int Offset { get; set; }
 
         /// <summary>
-        /// 获取或设置活动总数量。
+        /// 获取或设置会员卡总数量。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_count")]
         [System.Text.Json.Serialization.JsonPropertyName("total_count")]
