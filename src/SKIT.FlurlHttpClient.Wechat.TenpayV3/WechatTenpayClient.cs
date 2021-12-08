@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -149,11 +148,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         private async Task<T> GetResposneAsync<T>(IFlurlResponse flurlResponse)
             where T : WechatTenpayResponse, new()
         {
-            string mediaType = flurlResponse.Headers.GetAll("Content-Type").FirstOrDefault() ?? "application/octet-stream";
-            bool jsonable = (flurlResponse.StatusCode != (int)HttpStatusCode.NoContent) &&
-                (mediaType.StartsWith("application/json") || !mediaType.StartsWith("text/json"));
-
             byte[] bytes = await flurlResponse.GetBytesAsync().ConfigureAwait(false);
+            bool jsonable = bytes.Length > 1 &&
+                (bytes[0] == 91 && bytes[bytes.Length - 1] == 93) || // "[...]"
+                (bytes[0] == 123 && bytes[bytes.Length - 1] == 125); // "{...}"
             T result = jsonable ? JsonSerializer.Deserialize<T>(Encoding.UTF8.GetString(bytes)) : new T();
 
             result.RawStatus = flurlResponse.StatusCode;
