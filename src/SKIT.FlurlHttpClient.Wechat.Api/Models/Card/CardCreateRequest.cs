@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -842,7 +841,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("init_bonus")]
                 [System.Text.Json.Serialization.JsonPropertyName("init_bonus")]
-                public int? InitialBouns { get; set; }
+                public int? InitialBonus { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否支持余额。
