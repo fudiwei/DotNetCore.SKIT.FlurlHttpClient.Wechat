@@ -1,0 +1,35 @@
+﻿{
+    "show_bonus": false,
+    "show_favor": false,
+    "bonus": {
+        "init_bonus": 100,
+        "bonus_value_word": "我的积分",
+        "bonus_cost_title": "积分兑换",
+        "bonus_cost_word": "500积分=2小时免费停车券",
+        "bonus_jump_word": "更多礼品",
+        "bonus_jump_appid": "wxea9c30a90fs8d3fe",
+        "bonus_jump_path": "/pages/bonus/bonus",
+        "bonus_support_appid": "wxea9c30a90fs8d3fe",
+        "bonus_support_path": "pages/selfbonus/selfbonus"
+    },
+    "favor": {
+        "show_coupon": true,
+        "member_price_word": "周二会员全场八折",
+        "member_price_appid": "wxea9c30a90fs8d3fe",
+        "member_price_path": "pages/favor/favor"
+    },
+    "show_fapiao": false,
+    "fapiao": {
+        "fapiao_jump_word": "查看我的发票",
+        "fapiao_jump_appid": "wxea9c30a90fs8d3fe",
+        "fapiao_jump_path": "pages/fapiao/fapiao"
+    },
+    "show_guide": false,
+    "guide": {
+        "staff_name": "酒店管家-何小明",
+        "head_image_url": "https://wxpaylogo.qpic.cn/wxpaylogo/PiajxSqBRaEIPAeia7Imvtsn7sYGNcEj33YzVvJF88ECQ19LXId8ZL2Q/0",
+        "contact_information_name": "微信号",
+        "contact_information_value": "weixin123",
+        "phone_number": "0755-12345677"
+    }
+}

@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("init_level")]
         [System.Text.Json.Serialization.JsonPropertyName("init_level")]
-        public string? InitializedLevel { get; set; }
+        public string? InitialLevel { get; set; }
 
         /// <summary>
         /// 获取或设置储值信息。

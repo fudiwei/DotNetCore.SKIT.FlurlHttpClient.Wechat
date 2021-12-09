@@ -420,5 +420,89 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendRequestWithJsonAsync<Models.ActivateMarketingMemberCardOpenCardCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+        
+        #region Activation
+        /// <summary>
+        /// <para>异步调用 [PATCH] /marketing/membercard-open/cards/{card_id}/rights 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_1.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UpdateMarketingMemberCardOpenCardRightsResponse> ExecuteUpdateMarketingMemberCardOpenCardRightsAsync(this WechatTenpayClient client, Models.UpdateMarketingMemberCardOpenCardRightsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId, "rights");
+
+            return await client.SendRequestWithJsonAsync<Models.UpdateMarketingMemberCardOpenCardRightsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [PATCH] /marketing/membercard-open/cards/{card_id}/codes/{code}/rights 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_2.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UpdateMarketingMemberCardOpenCardCodeRightsResponse> ExecuteUpdateMarketingMemberCardOpenCardCodeRightsAsync(this WechatTenpayClient client, Models.UpdateMarketingMemberCardOpenCardCodeRightsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, new HttpMethod("PATCH"), "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "rights");
+
+            return await client.SendRequestWithJsonAsync<Models.UpdateMarketingMemberCardOpenCardCodeRightsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/prepare 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter10_3.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.PrepareMarketingMemberCardOpenCardCodeBonusResponse> ExecutePrepareMarketingMemberCardOpenCardCodeBonusAsync(this WechatTenpayClient client, Models.PrepareMarketingMemberCardOpenCardCodeBonusRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.MerchantId == null)
+                request.MerchantId = client.Credentials.MerchantId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "bonus", "prepare");
+
+            return await client.SendRequestWithJsonAsync<Models.PrepareMarketingMemberCardOpenCardCodeBonusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/commit 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter10_2.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CommitMarketingMemberCardOpenCardCodeBonusResponse> ExecuteCommitMarketingMemberCardOpenCardCodeBonusAsync(this WechatTenpayClient client, Models.CommitMarketingMemberCardOpenCardCodeBonusRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.MerchantId == null)
+                request.MerchantId = client.Credentials.MerchantId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "marketing", "membercard-open", "cards", request.CardId, "codes", request.Code, "bonus", "commit");
+
+            return await client.SendRequestWithJsonAsync<Models.CommitMarketingMemberCardOpenCardCodeBonusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
