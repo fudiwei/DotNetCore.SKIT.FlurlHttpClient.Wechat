@@ -204,6 +204,10 @@
 
 <summary>[展开查看] SKIT.FlurlHttpClient.Wechat.TenpayV3 模块更新日志</summary>
 
+-   Release 2.2.0
+
+    -   **新增**：新增会员卡相关接口。
+
 -   Release 2.1.3
 
     -   **修复**：修复部分响应模型解密敏感数据字段时抛出异常的问题。（[GitHub Issue #17](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/17)）
