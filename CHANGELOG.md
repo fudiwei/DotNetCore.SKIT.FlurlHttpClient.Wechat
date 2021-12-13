@@ -204,6 +204,10 @@
 
 <summary>[展开查看] SKIT.FlurlHttpClient.Wechat.TenpayV3 模块更新日志</summary>
 
+-   Release 2.2.1
+
+    -   **修复**：修复空响应时无法正确反序列化的问题。
+
 -   Release 2.2.0
 
     -   **新增**：新增会员卡相关接口。
