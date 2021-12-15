@@ -1,0 +1,19 @@
+﻿{
+    "touser": "OPENID",
+    "template_id": "TEMPLATE_ID",
+    "page": "index",
+    "data": {
+        "name01": {
+            "value": "某某"
+        },
+        "amount01": {
+            "value": "￥100"
+        },
+        "thing01": {
+            "value": "广州至北京"
+        },
+        "date01": {
+            "value": "2018-01-01"
+        }
+    }
+}
