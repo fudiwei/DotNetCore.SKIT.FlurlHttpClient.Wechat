@@ -112,8 +112,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         {
             byte[] bytes = await flurlResponse.GetBytesAsync().ConfigureAwait(false);
             bool jsonable =
-                (bytes.Length > 1 && bytes[0] == 91 && bytes[bytes.Length - 1] == 93) || // "[...]"
-                (bytes.Length > 1 && bytes[0] == 123 && bytes[bytes.Length - 1] == 125); // "{...}"
+                (bytes.FirstOrDefault() == 91 && bytes.LastOrDefault() == 93) || // "[...]"
+                (bytes.FirstOrDefault() == 123 && bytes.LastOrDefault() == 125); // "{...}"
 
             T result = jsonable ? JsonSerializer.Deserialize<T>(Encoding.UTF8.GetString(bytes)) : new T();
 

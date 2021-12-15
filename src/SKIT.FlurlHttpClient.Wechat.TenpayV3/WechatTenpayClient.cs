@@ -149,10 +149,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             where T : WechatTenpayResponse, new()
         {
             byte[] bytes = await flurlResponse.GetBytesAsync().ConfigureAwait(false);
-            bool jsonable = 
-                (bytes.Length > 1 && bytes[0] == 91 && bytes[bytes.Length - 1] == 93) || // "[...]"
-                (bytes.Length > 1 && bytes[0] == 123 && bytes[bytes.Length - 1] == 125); // "{...}"
+            bool jsonable =
+                (bytes.FirstOrDefault() == 91 && bytes.LastOrDefault() == 93) || // "[...]"
+                (bytes.FirstOrDefault() == 123 && bytes.LastOrDefault() == 125); // "{...}"
+
             T result = jsonable ? JsonSerializer.Deserialize<T>(Encoding.UTF8.GetString(bytes)) : new T();
+            result.WechatpayRequestId = flurlResponse.Headers.GetAll("Request-ID").FirstOrDefault() ?? string.Empty;
+            result.WechatpayNonce = flurlResponse.Headers.GetAll("Wechatpay-Nonce").FirstOrDefault() ?? string.Empty;
+            result.WechatpayTimestamp = flurlResponse.Headers.GetAll("Wechatpay-Timestamp").FirstOrDefault() ?? string.Empty;
+            result.WechatpaySignature = flurlResponse.Headers.GetAll("Wechatpay-Signature").FirstOrDefault() ?? string.Empty;
+            result.WechatpayCertSerialNumber = flurlResponse.Headers.GetAll("Wechatpay-Serial").FirstOrDefault() ?? string.Empty;
 
             result.RawStatus = flurlResponse.StatusCode;
             result.RawHeaders = new ReadOnlyDictionary<string, string>(
@@ -164,11 +170,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     )
             );
             result.RawBytes = bytes;
-            result.WechatpayRequestId = flurlResponse.Headers.GetAll("Request-ID").FirstOrDefault() ?? string.Empty;
-            result.WechatpayNonce = flurlResponse.Headers.GetAll("Wechatpay-Nonce").FirstOrDefault() ?? string.Empty;
-            result.WechatpayTimestamp = flurlResponse.Headers.GetAll("Wechatpay-Timestamp").FirstOrDefault() ?? string.Empty;
-            result.WechatpaySignature = flurlResponse.Headers.GetAll("Wechatpay-Signature").FirstOrDefault() ?? string.Empty;
-            result.WechatpayCertSerialNumber = flurlResponse.Headers.GetAll("Wechatpay-Serial").FirstOrDefault() ?? string.Empty;
 
             if (AutoDecryptResponseSensitiveProperty && result.IsSuccessful())
             {
