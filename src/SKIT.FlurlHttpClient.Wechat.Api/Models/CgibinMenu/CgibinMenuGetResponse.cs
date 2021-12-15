@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -119,6 +118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置性别。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2021-12-31 下线。")]
                         [Newtonsoft.Json.JsonProperty("sex")]
                         [System.Text.Json.Serialization.JsonPropertyName("sex")]
                         public int? Sex { get; set; }
@@ -134,6 +134,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置国家。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2021-12-31 下线。")]
                         [Newtonsoft.Json.JsonProperty("country")]
                         [System.Text.Json.Serialization.JsonPropertyName("country")]
                         public string? Country { get; set; }
@@ -141,6 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置省份。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2021-12-31 下线。")]
                         [Newtonsoft.Json.JsonProperty("province")]
                         [System.Text.Json.Serialization.JsonPropertyName("province")]
                         public string? Province { get; set; }
@@ -148,6 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置城市。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2021-12-31 下线。")]
                         [Newtonsoft.Json.JsonProperty("city")]
                         [System.Text.Json.Serialization.JsonPropertyName("city")]
                         public string? City { get; set; }

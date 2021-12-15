@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -29,13 +28,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置用户的昵称。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2021-12-27 下线。")]
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-                public string Nickname { get; set; } = default!;
+                public string? Nickname { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户的性别。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2021-12-31 下线。")]
                 [Newtonsoft.Json.JsonProperty("sex")]
                 [System.Text.Json.Serialization.JsonPropertyName("sex")]
                 public int? Sex { get; set; }
@@ -43,6 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置用户所在国家。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2021-12-31 下线。")]
                 [Newtonsoft.Json.JsonProperty("country")]
                 [System.Text.Json.Serialization.JsonPropertyName("country")]
                 public string? Country { get; set; }
@@ -50,6 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置用户所在省份。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2021-12-31 下线。")]
                 [Newtonsoft.Json.JsonProperty("province")]
                 [System.Text.Json.Serialization.JsonPropertyName("province")]
                 public string? Province { get; set; }
@@ -57,6 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置用户所在城市。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2021-12-31 下线。")]
                 [Newtonsoft.Json.JsonProperty("city")]
                 [System.Text.Json.Serialization.JsonPropertyName("city")]
                 public string? City { get; set; }
@@ -71,9 +75,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置用户的头像 URL。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2021-12-27 下线。")]
                 [Newtonsoft.Json.JsonProperty("headimgurl")]
                 [System.Text.Json.Serialization.JsonPropertyName("headimgurl")]
-                public string HeadImageUrl { get; set; } = default!;
+                public string? HeadImageUrl { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户是否订阅该公众号标识。

@@ -30,7 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string MediaId { get; set; } = string.Empty;
             }
 
-            [Obsolete("相关接口将于 2021-12-31 下线")]
             public class MpNewsMessage : ImageMessage
             {
             }
@@ -306,7 +305,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置图文消息内容。
         /// </summary>
-        [Obsolete("相关接口将于 2021-12-31 下线")]
+        [Obsolete("相关接口或字段于 2021-12-31 下线。")]
         [Newtonsoft.Json.JsonProperty("mpnews")]
         [System.Text.Json.Serialization.JsonPropertyName("mpnews")]
         public Types.MpNewsMessage? MessageContentForMpNews { get; set; }
