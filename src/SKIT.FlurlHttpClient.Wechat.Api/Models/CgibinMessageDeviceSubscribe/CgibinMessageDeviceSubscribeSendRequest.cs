@@ -24,8 +24,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置接收消息的用户 OpenId 列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("touser")]
-        [System.Text.Json.Serialization.JsonPropertyName("touser")]
+        [Newtonsoft.Json.JsonProperty("to_openid_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("to_openid_list")]
         public IList<string> ToUserOpenIdList { get; set; } = new List<string>();
 
         /// <summary>

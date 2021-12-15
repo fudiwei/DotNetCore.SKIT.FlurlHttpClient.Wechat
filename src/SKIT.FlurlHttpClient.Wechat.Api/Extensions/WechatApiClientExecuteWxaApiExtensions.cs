@@ -1007,5 +1007,88 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
         #endregion
+
+        #region MiniShop
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/minishop/complaintOrderDetail 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/complaint.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiMiniShopComplaintOrderDetailResponse> ExecuteWxaApiMiniShopComplaintOrderDetailAsync(this WechatApiClient client, Models.WxaApiMiniShopComplaintOrderDetailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxaapi", "minishop", "complaintOrderDetail")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("complaintOrderId", request.ComplaintOrderId);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiMiniShopComplaintOrderDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/minishop/bussiRespondComplaint 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/complaint.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiMiniShopBusinessRespondComplaintResponse> ExecuteWxaApiMiniShopBusinessRespondComplaintAsync(this WechatApiClient client, Models.WxaApiMiniShopBusinessRespondComplaintRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxaapi", "minishop", "bussiRespondComplaint")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiMiniShopBusinessRespondComplaintResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/minishop/bussiSupplyProof 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/complaint.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiMiniShopBusinessSupplyProofResponse> ExecuteWxaApiMiniShopBusinessSupplyProofAsync(this WechatApiClient client, Models.WxaApiMiniShopBusinessSupplyProofRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxaapi", "minishop", "bussiSupplyProof")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiMiniShopBusinessSupplyProofResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/minishop/bussiSupplyRefund 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/complaint.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiMiniShopBusinessSupplyRefundResponse> ExecuteWxaApiMiniShopBusinessSupplyRefundAsync(this WechatApiClient client, Models.WxaApiMiniShopBusinessSupplyRefundRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxaapi", "minishop", "bussiSupplyRefund")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiMiniShopBusinessSupplyRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

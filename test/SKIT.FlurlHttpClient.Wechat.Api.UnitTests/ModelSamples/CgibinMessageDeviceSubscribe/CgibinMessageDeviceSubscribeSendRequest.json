@@ -1,19 +1,13 @@
 ﻿{
-    "touser": "OPENID",
+    "to_openid_list": [ "OPENID_1", "OPENID_2" ],
+    "sn": "XXXXXXX",
     "template_id": "TEMPLATE_ID",
     "page": "index",
+    "miniprogram_state": "formal",
+    "lang": "zh_CN",
     "data": {
-        "name01": {
-            "value": "某某"
-        },
-        "amount01": {
-            "value": "￥100"
-        },
-        "thing01": {
-            "value": "广州至北京"
-        },
-        "date01": {
-            "value": "2018-01-01"
+        "time1": {
+            "value": "2021-09-10 19:00:00"
         }
     }
 }

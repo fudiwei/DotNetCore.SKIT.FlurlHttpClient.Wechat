@@ -2,10 +2,6 @@
     "touser": "OPENID",
     "template_id": "TEMPLATE_ID",
     "url": "URL",
-    "miniprogram": {
-        "appid": "xiaochengxuappid12345",
-        "pagepath": "index?foo=bar"
-    },
     "scene": "SCENE",
     "title": "TITLE",
     "data": {
