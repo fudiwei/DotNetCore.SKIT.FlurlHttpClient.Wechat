@@ -26,11 +26,11 @@
 
 ---
 
-### 更新日志
+### 模块 `SKIT.FlurlHttpClient.Wechat.Api` 更新日志
 
 <details>
 
-<summary>[展开查看] SKIT.FlurlHttpClient.Wechat.Api 模块更新日志</summary>
+<summary>[展开查看]</summary>
 
 -   Release 2.2.0
 
@@ -210,9 +210,13 @@
 
 </details>
 
+---
+
+### 模块 `SKIT.FlurlHttpClient.Wechat.TenpayV3` 更新日志
+
 <details>
 
-<summary>[展开查看] SKIT.FlurlHttpClient.Wechat.TenpayV3 模块更新日志</summary>
+<summary>[展开查看]</summary>
 
 -   Release 2.2.1
 
@@ -362,9 +366,19 @@
 
 </details>
 
+---
+
+### 模块 `SKIT.FlurlHttpClient.Wechat.Work` 更新日志
+
 <details>
 
-<summary>[展开查看] SKIT.FlurlHttpClient.Wechat.Work 模块更新日志</summary>
+<summary>[展开查看]</summary>
+
+-   Release 2.2.0
+
+    -   **新增**：新增会议室预定的回调通知事件模型。
+
+    -   **新增**：新增根据会议 ID 查询会议室预订详情的相关接口。
 
 -   Release 2.1.0
 
