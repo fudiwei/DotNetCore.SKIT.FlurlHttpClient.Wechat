@@ -347,6 +347,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/oa/meetingroom/get_booking_info_by_meeting_id 接口。</para>
+        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93620 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinOAMeetingRoomGetBookingInfoByMeetingIdResponse> ExecuteCgibinOAMeetingRoomGetBookingInfoByMeetingIdAsync(this WechatWorkClient client, Models.CgibinOAMeetingRoomGetBookingInfoByMeetingIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "get_booking_info_by_meeting_id")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomGetBookingInfoByMeetingIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/oa/meetingroom/book 接口。</para>
         /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93620 </para>
         /// </summary>
