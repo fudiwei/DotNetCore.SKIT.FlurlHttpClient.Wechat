@@ -1,0 +1,9 @@
+﻿<xml>
+	<ToUserName><![CDATA[toUser]]></ToUserName>
+	<FromUserName><![CDATA[fromUser]]></FromUserName>
+	<CreateTime>1348831860</CreateTime>
+	<MsgType><![CDATA[event]]></MsgType>
+	<Event><![CDATA[book_meeting_room]]></Event>
+	<MeetingRoomId>1</MeetingRoomId>
+	<MeetingId><![CDATA[mtebsada6e027c123cbafAAA ]]></MeetingId>
+</xml>
