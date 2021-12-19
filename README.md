@@ -68,9 +68,9 @@
 
 ### 3. 本库与[盛派微信 SDK（Senparc.Weixin）](https://github.com/JeffreySu/WeiXinMPSDK)有什么区别？
 
--   本库专注于 API 本身的封装，捎带提供了一些用于加解密、序列化的工具类，使用起来更加灵活；盛派微信 SDK 提供了大而全的功能，可与 MVC / WebAPI 深度集成。
+-   本库专注于 API 本身的封装，捎带提供了一些用于加解密、序列化的工具类，使用起来更加灵活，不限任何框架或项目类型；盛派微信 SDK 提供了大而全的功能，与 MVC / WebAPI 深度集成。
 
--   本库的接口模型遵循的是微软官方推荐的 C# 属性命名方式（大驼峰命名法）；盛派微信 SDK 提供的是微信接口本身的命名方式（蛇形命名法和小驼峰命名法混杂）。
+-   本库的接口模型遵循的是微软官方推荐的 C# 属性命名方式（帕斯卡命名法）；盛派微信 SDK 提供的是微信接口本身的命名方式（蛇形命名法和驼峰命名法混杂）。
 
 -   本库封装了**目前微信官方提供的所有 API**（部分不支持的已在各模块文档中列出具体原因）；盛派微信 SDK 只提供了常用的 API。
 
@@ -108,7 +108,7 @@
 
 | 项目名称 |                    项目简介                    |                                                  项目地址                                                  |
 | :------: | :--------------------------------------------: | :--------------------------------------------------------------------------------------------------------: |
-| CoreShop | 核心商城系统：支持可视化布局的 .NET 小程序商城 | [Gitee Repo](https://gitee.com/CoreUnion/CoreShop)<br>[GitHub Repo](https://github.com/CoreUnion/CoreShop) |
+| CoreShop | 核心商城系统：支持可视化布局的 .NET 商城系统。 | [![Gitee Stars](https://gitee.com/CoreUnion/CoreShop/badge/star.svg?title=Stars)](https://gitee.com/CoreUnion/CoreShop)<br>[![GitHub Stars](https://img.shields.io/github/stars/CoreUnion/CoreShop?logo=github&label=Stars)](https://github.com/CoreUnion/CoreShop) |
 
 注：以上案例均来自第三方，本项目不对其项目做任何保证，仅作列举展示。如果你有项目也使用了本库、希望加到案例列表中，可以在 Issue 中提出。
 
