@@ -102,5 +102,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("user_card_status")]
         [System.Text.Json.Serialization.JsonPropertyName("user_card_status")]
         public string CardStatus { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置用户性别。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sex")]
+        [System.Text.Json.Serialization.JsonPropertyName("sex")]
+        public string MemberSex { get; set; } = default!;
     }
 }
