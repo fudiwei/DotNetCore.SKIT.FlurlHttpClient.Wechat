@@ -16,6 +16,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public class WechatTenpayClient : CommonClientBase, ICommonClient
     {
         /// <summary>
+        /// 商户号
+        /// </summary>
+        public string MerchantId { get; set; }
+        /// <summary>
         /// 获取当前客户端使用的微信商户平台凭证。
         /// </summary>
         public Settings.Credentials Credentials { get; }
@@ -43,6 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
 
+            MerchantId= options.MerchantId;
             Credentials = new Settings.Credentials(options);
             CertificateManager = options.CertificateManager;
             AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty;

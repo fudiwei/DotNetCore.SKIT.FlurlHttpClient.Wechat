@@ -27,6 +27,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         /// <param name="serialNumber"></param>
         /// <returns></returns>
         public abstract CertificateEntry? GetEntry(string serialNumber);
+        /// <summary>
+        /// 根据商户号获取证书实体。
+        /// </summary>
+        /// <param name="merchantId"></param>
+        /// <returns></returns>
+        public abstract CertificateEntry? GetEntryByMerchantId(string merchantId);
 
         /// <summary>
         /// 移除指定的证书实体。
@@ -71,7 +77,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
             return null;
         }
+        public override CertificateEntry? GetEntryByMerchantId(string merchantId)
+        {
+            foreach (CertificateEntry entry in _dict.Values.Where(o => o.MerchantId == merchantId))
+            {
+                if (entry.IsAvailable())
+                    return entry;
 
+                _dict.TryRemove(entry.SerialNumber, out _);
+            }
+
+            return null;
+        }
         public override bool RemoveEntry(string serialNumber)
         {
             return _dict.TryRemove(serialNumber, out _);

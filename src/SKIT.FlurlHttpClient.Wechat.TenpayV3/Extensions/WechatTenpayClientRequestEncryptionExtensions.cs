@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors;
+using System;
 using System.Linq;
 using System.Reflection;
 
@@ -53,16 +54,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                             }
                             else
                             {
-                                // 如果未在请求中指定特定的平台证书序列号，从管理器中取过期时间最远的
-                                var certs = client.CertificateManager.AllEntries().OrderByDescending(e => e.ExpireTime);
-                                if (!certs.Any())
+                                // 如果未在请求中指定特定的平台证书序列号，从管理器中对应的
+                                // var certs = client.CertificateManager.AllEntries().OrderByDescending(e => e.ExpireTime);
+                                var cert = client.CertificateManager.GetEntryByMerchantId(client.MerchantId);
+                                if (cert == null)
                                 {
                                     throw new Exceptions.WechatTenpayEventVerificationException("Encrypt request failed, because there is no platform certificate in the manager.");
                                 }
 
-                                var cert = certs.First();
-                                certificate = cert.Certificate;
-                                request.WechatpayCertSerialNumber = cert.SerialNumber;
+                                // var cert = certs.First();
+                                certificate = cert.Value.Certificate;
+                                request.WechatpayCertSerialNumber = cert.Value.SerialNumber;
                             }
 
                             string newValue = Utilities.RSAUtility.EncryptWithECBByCertificate(

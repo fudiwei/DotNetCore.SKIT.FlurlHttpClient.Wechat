@@ -8,6 +8,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
     public struct CertificateEntry : IEquatable<CertificateEntry>
     {
         /// <summary>
+        /// 
+        /// </summary>
+        public string MerchantId { get; }
+        /// <summary>
         /// 获取证书序列号。
         /// <para>序列号相同的实体将被视为同一个证书。</para>
         /// </summary>
@@ -30,6 +34,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
         [Newtonsoft.Json.JsonConstructor]
         [System.Text.Json.Serialization.JsonConstructor]
+        public CertificateEntry(string merchantId, string serialNumber, string certificate, DateTimeOffset effectiveTime, DateTimeOffset expireTime)
+        {
+            if (string.IsNullOrEmpty(serialNumber))
+                throw new ArgumentException("The value of `serialNumber` can not be empty.", nameof(serialNumber));
+            if (string.IsNullOrEmpty(certificate))
+                throw new ArgumentException("The value of `certificate` can not be empty.", nameof(certificate));
+            if (!certificate.Trim().StartsWith("-----BEGIN CERTIFICATE-----") || !certificate.Trim().EndsWith("-----END CERTIFICATE-----"))
+                throw new ArgumentException("The value of `certificate` is an invalid certificate file content.", nameof(certificate));
+
+            MerchantId = merchantId;
+            SerialNumber = serialNumber;
+            Certificate = certificate;
+            EffectiveTime = effectiveTime;
+            ExpireTime = expireTime;
+        }
+
+        [Newtonsoft.Json.JsonConstructor]
+        [System.Text.Json.Serialization.JsonConstructor]
         public CertificateEntry(string serialNumber, string certificate, DateTimeOffset effectiveTime, DateTimeOffset expireTime)
         {
             if (string.IsNullOrEmpty(serialNumber))
@@ -39,6 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
             if (!certificate.Trim().StartsWith("-----BEGIN CERTIFICATE-----") || !certificate.Trim().EndsWith("-----END CERTIFICATE-----"))
                 throw new ArgumentException("The value of `certificate` is an invalid certificate file content.", nameof(certificate));
 
+            MerchantId = String.Empty;
             SerialNumber = serialNumber;
             Certificate = certificate;
             EffectiveTime = effectiveTime;
@@ -51,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
                 throw new ArgumentException("The value of `certificate` can not be empty.", nameof(certificate));
             if (!certificate.Trim().StartsWith("-----BEGIN CERTIFICATE-----") || !certificate.Trim().EndsWith("-----END CERTIFICATE-----"))
                 throw new ArgumentException("The value of `certificate` is an invalid certificate file content.", nameof(certificate));
-
+            MerchantId = String.Empty;
             SerialNumber = Utilities.RSAUtility.ExportSerialNumber(certificate);
             Certificate = certificate;
             EffectiveTime = Utilities.RSAUtility.ExportEffectiveTime(certificate);
@@ -60,9 +83,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
         public CertificateEntry(Models.QueryCertificatesResponse.Types.Certificate cert)
             : this(cert.SerialNumber, cert.EncryptCertificate.CipherText, cert.EffectiveTime, cert.ExpireTime)
-        { 
+        {
         }
-
+        public CertificateEntry(string merchantId, Models.QueryCertificatesResponse.Types.Certificate cert)
+          : this(merchantId, cert.SerialNumber, cert.EncryptCertificate.CipherText, cert.EffectiveTime, cert.ExpireTime)
+        {
+        }
         public bool IsAvailable()
         {
             DateTimeOffset now = DateTimeOffset.Now;
@@ -76,7 +102,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
         public override bool Equals(object? obj)
         {
-            if (ReferenceEquals(null, obj)) 
+            if (ReferenceEquals(null, obj))
                 return false;
 
             return (obj is CertificateEntry other) && Equals(other);
