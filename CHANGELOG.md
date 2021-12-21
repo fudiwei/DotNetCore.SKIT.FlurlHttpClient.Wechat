@@ -32,6 +32,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.2.1
+
+    -   **修复**：修复获取会员卡信息接口模型的字段缺失问题。（[Gitee PR #3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/3)）。
+
 -   Release 2.2.0
 
     -   **新增**：新增小程序硬件设备相关接口。
@@ -412,7 +416,7 @@
 
 -   Release 1.3.3
 
-    -   **修复**：修复批量获取客户详情时的请求模型定义错误。（[GitHub Issue #9](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/9)）
+    -   **修复**：修复批量获取客户详情时的请求模型定义错误。（[GitHub PR #9](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/9)）
 
 -   Release 1.3.2
 
@@ -420,7 +424,7 @@
 
 -   Release 1.3.1
 
-    -   **修复**：修复获取服务商凭证接口请求模型定义错误。（[GitHub Issue #5](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/5)）
+    -   **修复**：修复获取服务商凭证接口请求模型定义错误。（[GitHub PR #5](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/5)）
 
 -   Release 1.3.0
 

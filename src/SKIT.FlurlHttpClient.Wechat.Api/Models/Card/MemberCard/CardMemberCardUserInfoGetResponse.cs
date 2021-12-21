@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/membercard/userinfo/get 接口的响应。</para>
@@ -69,6 +64,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string Nickname { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置用户性别。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sex")]
+        [System.Text.Json.Serialization.JsonPropertyName("sex")]
+        public string Sex { get; set; } = default!;
+
+        /// <summary>
         /// 获取或设置会员卡编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("membership_number")]
@@ -102,12 +104,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("user_card_status")]
         [System.Text.Json.Serialization.JsonPropertyName("user_card_status")]
         public string CardStatus { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置用户性别。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sex")]
-        [System.Text.Json.Serialization.JsonPropertyName("sex")]
-        public string MemberSex { get; set; } = default!;
     }
 }
