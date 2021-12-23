@@ -33,43 +33,45 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.BackgroundSe
         {
             while (!stoppingToken.IsCancellationRequested)
             {
-                var wxpayMerchant = _tenpayOptions.Merchants.FirstOrDefault();
-                if (wxpayMerchant == null)
+                var count = _tenpayOptions.Merchants.Count();
+                if (count == 0)
                 {
                     _logger.LogWarning("未找到微信商户配置项。");
                     break;
                 }
 
-                try
+                foreach (var wxpayMerchant in _tenpayOptions.Merchants)
                 {
-                    var client = _tenpayHttpClientFactory.Create(wxpayMerchant.MerchantId);
-                    var request = new QueryCertificatesRequest();
-                    var response = await client.ExecuteQueryCertificatesAsync(request, cancellationToken: stoppingToken);
-                    if (response.IsSuccessful())
+                    try
                     {
-                        // 注意：如果启用了 AutoDecryptResponseSensitiveProperty，则无需再手动执行下面被注释的解密方法
-                        // response = client.DecryptResponseSensitiveProperty(response);
-
-                        foreach (var certificateModel in response.CertificateList)
+                        var client = _tenpayHttpClientFactory.Create(wxpayMerchant.MerchantId);
+                        var request = new QueryCertificatesRequest();
+                        var response = await client.ExecuteQueryCertificatesAsync(request, cancellationToken: stoppingToken);
+                        if (response.IsSuccessful())
                         {
-                            _tenpayCertificateManager.AddEntry(new CertificateEntry(client.MerchantId, certificateModel));
+                            // 注意：如果启用了 AutoDecryptResponseSensitiveProperty，则无需再手动执行下面被注释的解密方法
+                            // response = client.DecryptResponseSensitiveProperty(response);
+
+                            foreach (var certificateModel in response.CertificateList)
+                            {
+                                _tenpayCertificateManager.AddEntry(new CertificateEntry(client.MerchantId, certificateModel));
+                            }
+
+                            _logger.LogInformation("刷新微信商户平台证书成功。");
                         }
-
-                        _logger.LogInformation("刷新微信商户平台证书成功。");
+                        else
+                        {
+                            _logger.LogWarning(
+                                "刷新微信商户平台证书失败（状态码：{0}，错误代码：{1}，错误描述：{2}）。",
+                                response.RawStatus, response.ErrorCode, response.ErrorMessage
+                            );
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        _logger.LogWarning(
-                            "刷新微信商户平台证书失败（状态码：{0}，错误代码：{1}，错误描述：{2}）。",
-                            response.RawStatus, response.ErrorCode, response.ErrorMessage
-                        );
+                        _logger.LogError(ex, "刷新微信商户平台证书遇到异常。");
                     }
                 }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, "刷新微信商户平台证书遇到异常。");
-                }
-
                 await Task.Delay(TimeSpan.FromDays(1)); // 每隔 1 天轮询刷新
             }
         }
