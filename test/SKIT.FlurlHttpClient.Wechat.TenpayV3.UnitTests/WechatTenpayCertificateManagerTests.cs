@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         [Fact(DisplayName = "序列化与反序列化 `CertificateEntry`")]
         public void CertificateEntrySerializationTest()
         {
-            var entry = new Settings.CertificateEntry("SN", "-----BEGIN CERTIFICATE-----END CERTIFICATE-----", DateTimeOffset.Now, DateTimeOffset.Now);
+            var entry = new Settings.CertificateEntry("merchantId", "SN", "-----BEGIN CERTIFICATE-----END CERTIFICATE-----", DateTimeOffset.Now, DateTimeOffset.Now);
 
             var serialized1 = Newtonsoft.Json.JsonConvert.SerializeObject(entry);
             var deserialized1 = Newtonsoft.Json.JsonConvert.DeserializeObject<Settings.CertificateEntry>(serialized1);

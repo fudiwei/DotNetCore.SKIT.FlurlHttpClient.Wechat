@@ -50,41 +50,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
             ExpireTime = expireTime;
         }
 
-        [Newtonsoft.Json.JsonConstructor]
-        [System.Text.Json.Serialization.JsonConstructor]
-        public CertificateEntry(string serialNumber, string certificate, DateTimeOffset effectiveTime, DateTimeOffset expireTime)
-        {
-            if (string.IsNullOrEmpty(serialNumber))
-                throw new ArgumentException("The value of `serialNumber` can not be empty.", nameof(serialNumber));
-            if (string.IsNullOrEmpty(certificate))
-                throw new ArgumentException("The value of `certificate` can not be empty.", nameof(certificate));
-            if (!certificate.Trim().StartsWith("-----BEGIN CERTIFICATE-----") || !certificate.Trim().EndsWith("-----END CERTIFICATE-----"))
-                throw new ArgumentException("The value of `certificate` is an invalid certificate file content.", nameof(certificate));
 
-            MerchantId = String.Empty;
-            SerialNumber = serialNumber;
-            Certificate = certificate;
-            EffectiveTime = effectiveTime;
-            ExpireTime = expireTime;
-        }
-
-        public CertificateEntry(string certificate)
+        public CertificateEntry(string merchantId,string certificate)
         {
             if (string.IsNullOrEmpty(certificate))
                 throw new ArgumentException("The value of `certificate` can not be empty.", nameof(certificate));
             if (!certificate.Trim().StartsWith("-----BEGIN CERTIFICATE-----") || !certificate.Trim().EndsWith("-----END CERTIFICATE-----"))
                 throw new ArgumentException("The value of `certificate` is an invalid certificate file content.", nameof(certificate));
-            MerchantId = String.Empty;
+            MerchantId = merchantId;
             SerialNumber = Utilities.RSAUtility.ExportSerialNumber(certificate);
             Certificate = certificate;
             EffectiveTime = Utilities.RSAUtility.ExportEffectiveTime(certificate);
             ExpireTime = Utilities.RSAUtility.ExportExpireTime(certificate);
         }
 
-        public CertificateEntry(Models.QueryCertificatesResponse.Types.Certificate cert)
-            : this(cert.SerialNumber, cert.EncryptCertificate.CipherText, cert.EffectiveTime, cert.ExpireTime)
-        {
-        }
         public CertificateEntry(string merchantId, Models.QueryCertificatesResponse.Types.Certificate cert)
           : this(merchantId, cert.SerialNumber, cert.EncryptCertificate.CipherText, cert.EffectiveTime, cert.ExpireTime)
         {

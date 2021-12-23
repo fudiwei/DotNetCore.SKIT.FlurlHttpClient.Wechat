@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.BackgroundSe
 
                         foreach (var certificateModel in response.CertificateList)
                         {
-                            _tenpayCertificateManager.AddEntry(new CertificateEntry(certificateModel));
+                            _tenpayCertificateManager.AddEntry(new CertificateEntry(client.MerchantId, certificateModel));
                         }
 
                         _logger.LogInformation("刷新微信商户平台证书成功。");

@@ -44,6 +44,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.HttpClients.
                 AutoDecryptResponseSensitiveProperty = true
             });
         }
+        /// <summary>
+        /// 获取默认第一个配置的微信商户或服务商户
+        /// </summary>
+        /// <returns></returns>
+        public WechatTenpayClient Create(bool isServiceProvider = false)
+        {
+            var wechatMerchant = _wechatOptions.Merchants?.FirstOrDefault(o => o.IsServiceProvider == isServiceProvider);
+            if (wechatMerchant == null)
+                throw new Exception("未在配置项中找到任何微信商户号。");
+
+            return new WechatTenpayClient(new WechatTenpayClientOptions()
+            {
+                MerchantId = wechatMerchant.MerchantId,
+                MerchantV3Secret = wechatMerchant.SecretV3,
+                MerchantCertSerialNumber = wechatMerchant.CertSerialNumber,
+                MerchantCertPrivateKey = wechatMerchant.CertPrivateKey,
+                CertificateManager = _certificateManager,
+                AutoEncryptRequestSensitiveProperty = true,
+                AutoDecryptResponseSensitiveProperty = true
+            });
+        }
     }
 
     partial class WechatTenpayHttpClientFactory
