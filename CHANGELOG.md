@@ -222,6 +222,11 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.2.2
+
+    -   **修复**：修复二级商户进件提交申请单接口因 URL 结尾反斜杠问题而无法正常请求的问题。（[GitHub Issue #19](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/19)）
+
+
 -   Release 2.2.1
 
     -   **修复**：修复空响应时无法正确反序列化的问题。
