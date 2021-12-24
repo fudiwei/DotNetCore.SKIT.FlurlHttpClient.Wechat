@@ -96,7 +96,7 @@ var client = new WechatTenpayClient(options);
 你可以在构造得到 `WechatApiClient` 对象时指定证书管理器：
 
 ```csharp
-var manager = new InMemoryCertificateManager(); // 为便于后续使用，该对象可使用全局单例的方式声明
+var manager = new InMemoryCertificateManager(); // 为便于后续使用，该对象可使用同一商户号下全局单例的方式声明
 var options = new WechatTenpayClientOptions() { CertificateManager = manager };
 var client = new WechatTenpayClient(options);
 ```
