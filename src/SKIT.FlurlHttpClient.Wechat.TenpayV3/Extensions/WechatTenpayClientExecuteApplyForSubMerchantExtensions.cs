@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            // NOTICE: 注意 URL 结尾的反斜杠不能删除
+            // NOTICE: 注意本接口 URL 结尾的反斜杠不能删除
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "applyment4sub", "applyment/");
 

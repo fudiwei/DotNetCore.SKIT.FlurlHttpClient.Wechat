@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Flurl;
 using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
@@ -15,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public static class WechatTenpayClientExecuteEcommerceApplymentsExtensions
     {
         /// <summary>
-        /// <para>异步调用 [POST] /ecommerce/applyments 接口。</para>
+        /// <para>异步调用 [POST] /ecommerce/applyments/ 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_1_1.shtml </para>
         /// </summary>
         /// <param name="client"></param>
@@ -27,8 +24,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            // NOTICE: 注意本接口 URL 结尾的反斜杠不能删除
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "ecommerce", "applyments");
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "applyments/");
 
             return await client.SendRequestWithJsonAsync<Models.CreateEcommerceApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

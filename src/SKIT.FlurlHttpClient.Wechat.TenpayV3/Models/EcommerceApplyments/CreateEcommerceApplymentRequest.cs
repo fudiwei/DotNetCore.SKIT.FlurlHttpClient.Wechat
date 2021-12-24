@@ -3,7 +3,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /ecommerce/applyments 接口的请求。</para>
+    /// <para>表示 [POST] /ecommerce/applyments/ 接口的请求。</para>
     /// </summary>
     [WechatTenpaySensitive]
     public class CreateEcommerceApplymentRequest : WechatTenpayRequest
