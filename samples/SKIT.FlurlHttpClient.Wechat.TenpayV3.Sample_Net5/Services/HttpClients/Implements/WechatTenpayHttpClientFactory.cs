@@ -12,34 +12,34 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.HttpClients.
     partial class WechatTenpayHttpClientFactory : IWechatTenpayHttpClientFactory
     {
         private readonly System.Net.Http.IHttpClientFactory _httpClientFactory;
-        private readonly Options.TenpayOptions _wechatOptions;
-        private readonly CertificateManager _certificateManager;
+        private readonly Options.TenpayOptions _tenpayOptions;
+        private readonly IWechatTenpayCertificateManagerFactory _tenpayCertificateManagerFactory;
 
         public WechatTenpayHttpClientFactory(
             System.Net.Http.IHttpClientFactory httpClientFactory,
-            IOptions<Options.TenpayOptions> wechatOptions,
-            CertificateManager certificateManager)
+            IOptions<Options.TenpayOptions> tenpayOptions,
+            IWechatTenpayCertificateManagerFactory tenpayCertificateManagerFactory)
         {
             _httpClientFactory = httpClientFactory;
-            _wechatOptions = wechatOptions.Value;
-            _certificateManager = certificateManager;
+            _tenpayOptions = tenpayOptions.Value;
+            _tenpayCertificateManagerFactory = tenpayCertificateManagerFactory;
 
             FlurlHttp.GlobalSettings.FlurlClientFactory = new DelegatingFlurlClientFactory(_httpClientFactory);
         }
 
         public WechatTenpayClient Create(string merchantId)
         {
-            var wechatMerchant = _wechatOptions.Merchants?.FirstOrDefault(e => string.Equals(merchantId, e.MerchantId));
-            if (wechatMerchant == null)
+            var merchantOptions = _tenpayOptions.Merchants?.FirstOrDefault(e => string.Equals(merchantId, e.MerchantId));
+            if (merchantOptions == null)
                 throw new Exception("未在配置项中找到该 MerchantId 对应的微信商户号。");
 
             return new WechatTenpayClient(new WechatTenpayClientOptions()
             {
-                MerchantId = wechatMerchant.MerchantId,
-                MerchantV3Secret = wechatMerchant.SecretV3,
-                MerchantCertSerialNumber = wechatMerchant.CertSerialNumber,
-                MerchantCertPrivateKey = wechatMerchant.CertPrivateKey,
-                CertificateManager = _certificateManager,
+                MerchantId = merchantOptions.MerchantId,
+                MerchantV3Secret = merchantOptions.SecretV3,
+                MerchantCertSerialNumber = merchantOptions.CertSerialNumber,
+                MerchantCertPrivateKey = merchantOptions.CertPrivateKey,
+                CertificateManager = _tenpayCertificateManagerFactory.Create(merchantOptions.MerchantId),
                 AutoEncryptRequestSensitiveProperty = true,
                 AutoDecryptResponseSensitiveProperty = true
             });

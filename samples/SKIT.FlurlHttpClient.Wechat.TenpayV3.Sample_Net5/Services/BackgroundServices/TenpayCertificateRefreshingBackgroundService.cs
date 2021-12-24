@@ -14,18 +14,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.BackgroundSe
     {
         private readonly ILogger _logger;
         private readonly Options.TenpayOptions _tenpayOptions;
-        private readonly CertificateManager _tenpayCertificateManager;
         private readonly HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
 
         public TenpayCertificateRefreshingBackgroundService(
             ILoggerFactory loggerFactory,
             IOptions<Options.TenpayOptions> tenpayOptions,
-            CertificateManager tenpayCertificateManager,
             HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
             _tenpayOptions = tenpayOptions.Value;
-            _tenpayCertificateManager = tenpayCertificateManager;
             _tenpayHttpClientFactory = tenpayHttpClientFactory;
         }
 
@@ -52,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.BackgroundSe
 
                         foreach (var certificateModel in response.CertificateList)
                         {
-                            _tenpayCertificateManager.AddEntry(new CertificateEntry(certificateModel));
+                            client.CertificateManager.AddEntry(new CertificateEntry(certificateModel));
                         }
 
                         _logger.LogInformation("刷新微信商户平台证书成功。");
