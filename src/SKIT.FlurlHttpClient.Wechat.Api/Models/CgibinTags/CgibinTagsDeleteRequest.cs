@@ -1,12 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/tags/delete 接口的请求。</para>
     /// </summary>
-    public class CgibinTagsDeleteRequest : WechatApiRequest
+    public class CgibinTagsDeleteRequest : WechatApiRequest, ISendRequest<CgibinTagsDeleteResponse>
     {
         public static class Types
         {
@@ -27,5 +29,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("tag")]
         [System.Text.Json.Serialization.JsonPropertyName("tag")]
         public Types.Tag Tag { get; set; } = new Types.Tag();
+
+        public Task<CgibinTagsDeleteResponse> Send(WechatApiClient client, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+
+            return client.ExecuteCgibinTagsDeleteAsync(this, cancellationToken);
+        }
     }
 }
