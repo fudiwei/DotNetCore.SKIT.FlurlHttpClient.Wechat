@@ -30,6 +30,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     // 遍历并加密被标记为敏感数据的字段
                     Utilities.ReflectionUtility.ReplacePropertyStringValue(ref request, (target, currentProp, oldValue) =>
                     {
+                        if (oldValue == null)
+                            return (false, oldValue);
+
                         var attr = currentProp.GetCustomAttribute<WechatTenpaySensitivePropertyAttribute>();
                         if (attr == null)
                             return (false, oldValue);
