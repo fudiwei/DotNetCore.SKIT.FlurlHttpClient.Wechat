@@ -2,9 +2,9 @@
 
 ---
 
-示例项目位于 _samples/SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5_。
+示例项目位于 _samples/SKIT.FlurlHttpClient.Wechat.Api.Sample_Net6_。
 
-示例项目基于 .NET 5.0 实现，依赖以下第三方库：
+示例项目基于 .NET 6.0 实现，依赖以下第三方库：
 
 -   [`DistributedLock`](https://github.com/madelson/DistributedLock)：分布式锁。
 

@@ -29,17 +29,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.HttpClients.
 
         public WechatTenpayClient Create(string merchantId)
         {
-            var merchantOptions = _tenpayOptions.Merchants?.FirstOrDefault(e => string.Equals(merchantId, e.MerchantId));
-            if (merchantOptions == null)
+            // 注意：这里的工厂方法是为了演示多租户而存在的；如果你的项目只存在唯一一个租户，那么直接注入 `WechatTenpayClient` 就可以
+
+            var tenpayMerchantOptions = _tenpayOptions.Merchants?.FirstOrDefault(e => string.Equals(merchantId, e.MerchantId));
+            if (tenpayMerchantOptions == null)
                 throw new Exception("未在配置项中找到该 MerchantId 对应的微信商户号。");
 
             return new WechatTenpayClient(new WechatTenpayClientOptions()
             {
-                MerchantId = merchantOptions.MerchantId,
-                MerchantV3Secret = merchantOptions.SecretV3,
-                MerchantCertSerialNumber = merchantOptions.CertSerialNumber,
-                MerchantCertPrivateKey = merchantOptions.CertPrivateKey,
-                CertificateManager = _tenpayCertificateManagerFactory.Create(merchantOptions.MerchantId),
+                MerchantId = tenpayMerchantOptions.MerchantId,
+                MerchantV3Secret = tenpayMerchantOptions.SecretV3,
+                MerchantCertSerialNumber = tenpayMerchantOptions.CertSerialNumber,
+                MerchantCertPrivateKey = tenpayMerchantOptions.CertPrivateKey,
+                CertificateManager = _tenpayCertificateManagerFactory.Create(tenpayMerchantOptions.MerchantId),
                 AutoEncryptRequestSensitiveProperty = true,
                 AutoDecryptResponseSensitiveProperty = true
             });

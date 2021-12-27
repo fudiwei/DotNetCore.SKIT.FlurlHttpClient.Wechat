@@ -38,9 +38,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{35C901ED-C234-4A91-9561-AD89B3BB788D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5", "samples\SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5\SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.csproj", "{D1B321C9-3004-4645-A78D-A85C152062FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.Api.Sample_Net6", "samples\SKIT.FlurlHttpClient.Wechat.Api.Sample_Net6\SKIT.FlurlHttpClient.Wechat.Api.Sample_Net6.csproj", "{D1B321C9-3004-4645-A78D-A85C152062FA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5", "samples\SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5\SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.csproj", "{65E51735-73CE-4E9B-AA65-4BF5E4C8A705}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net6", "samples\SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net6\SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net6.csproj", "{65E51735-73CE-4E9B-AA65-4BF5E4C8A705}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

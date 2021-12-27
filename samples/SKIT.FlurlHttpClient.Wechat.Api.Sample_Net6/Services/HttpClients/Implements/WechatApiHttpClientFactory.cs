@@ -26,14 +26,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Services.HttpClients.Imple
 
         public WechatApiClient Create(string appId)
         {
-            var wechatAccount = _wechatOptions.Accounts?.FirstOrDefault(e => string.Equals(appId, e.AppId));
-            if (wechatAccount == null)
+            var wechatAccountOptions = _wechatOptions.Accounts?.FirstOrDefault(e => string.Equals(appId, e.AppId));
+            if (wechatAccountOptions == null)
                 throw new Exception("未在配置项中找到该 AppId 对应的微信账号。");
 
             return new WechatApiClient(new WechatApiClientOptions()
             {
-                AppId = wechatAccount.AppId,
-                AppSecret = wechatAccount.AppSecret
+                AppId = wechatAccountOptions.AppId,
+                AppSecret = wechatAccountOptions.AppSecret
             });
         }
     }

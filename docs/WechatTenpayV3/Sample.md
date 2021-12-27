@@ -2,9 +2,9 @@
 
 ---
 
-示例项目位于 _samples/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5_。
+示例项目位于 _samples/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net6_。
 
-示例项目基于 .NET 5.0 实现。
+示例项目基于 .NET 6.0 实现。
 
 示例项目实现了以下功能：
 
