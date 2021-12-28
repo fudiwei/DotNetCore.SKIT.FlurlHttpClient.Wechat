@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using NMemory;
+﻿using NMemory;
 using NMemory.Tables;
 
-namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Services.Repositories.Implements
+namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.Repositories.Implements
 {
     internal class GlobalDatabase
     {

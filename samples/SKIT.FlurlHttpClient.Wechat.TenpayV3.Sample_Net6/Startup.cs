@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 {
     public class Startup
     {
@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5
         {
             services.AddControllers();
 
-            // 注入配置项
+            // 注入配置项（内容见 `appsettings.json` 文件）
             services.AddOptions();
             services.Configure<Options.TenpayOptions>(Configuration.GetSection(nameof(Options.TenpayOptions)));
 

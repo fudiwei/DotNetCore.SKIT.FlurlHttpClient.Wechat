@@ -4,28 +4,31 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Options
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
 {
     public partial class TenpayOptions : IOptions<TenpayOptions>
     {
         TenpayOptions IOptions<TenpayOptions>.Value => this;
 
-        public WechatMerchant[] Merchants { get; set; } = Array.Empty<WechatMerchant>();
+        public Types.WechatMerchant[] Merchants { get; set; } = Array.Empty<Types.WechatMerchant>();
 
         public string NotifyUrl { get; set; } = string.Empty;
     }
 
     partial class TenpayOptions
     {
-        public class WechatMerchant
-        { 
-            public string MerchantId { get; set; } = string.Empty;
+        public static class Types
+        {
+            public class WechatMerchant
+            {
+                public string MerchantId { get; set; } = string.Empty;
 
-            public string SecretV3 { get; set; } = string.Empty;
+                public string SecretV3 { get; set; } = string.Empty;
 
-            public string CertSerialNumber { get; set; } = string.Empty;
+                public string CertSerialNumber { get; set; } = string.Empty;
 
-            public string CertPrivateKey { get; set; } = string.Empty;
+                public string CertPrivateKey { get; set; } = string.Empty;
+            }
         }
     }
 }

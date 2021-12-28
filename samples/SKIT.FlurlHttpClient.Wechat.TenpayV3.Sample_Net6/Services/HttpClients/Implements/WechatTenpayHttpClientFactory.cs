@@ -5,10 +5,8 @@ using Flurl.Http;
 using Flurl.Http.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.HttpClients.Implements
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
 {
-    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
-
     partial class WechatTenpayHttpClientFactory : IWechatTenpayHttpClientFactory
     {
         private readonly System.Net.Http.IHttpClientFactory _httpClientFactory;
@@ -29,7 +27,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Services.HttpClients.
 
         public WechatTenpayClient Create(string merchantId)
         {
-            // 注意：这里的工厂方法是为了演示多租户而存在的；如果你的项目只存在唯一一个租户，那么直接注入 `WechatTenpayClient` 就可以
+            // NOTICE:
+            //   这里的工厂方法是为了演示多租户而存在的，可根据商户号生成不同的 API 客户端。
+            //   如果你的项目只存在唯一一个租户，那么直接注入 `WechatTenpayClient` 即可。
 
             var tenpayMerchantOptions = _tenpayOptions.Merchants?.FirstOrDefault(e => string.Equals(merchantId, e.MerchantId));
             if (tenpayMerchantOptions == null)

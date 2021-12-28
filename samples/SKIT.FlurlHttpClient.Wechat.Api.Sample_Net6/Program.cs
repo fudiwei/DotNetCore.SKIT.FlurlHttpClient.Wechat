@@ -1,12 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5
+namespace SKIT.FlurlHttpClient.Wechat.Api.Sample
 {
     public class Program
     {
@@ -15,6 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
 
             Host.CreateDefaultBuilder(args)
+                .UseServiceProviderFactory(new AutofacServiceProviderFactory())
                 .ConfigureWebHostDefaults(builder =>
                 {
                     builder.UseStartup<Startup>();

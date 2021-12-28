@@ -2,11 +2,13 @@
 
 ---
 
-示例项目位于 _samples/SKIT.FlurlHttpClient.Wechat.Api.Sample_Net6_。
+示例项目基于 .NET 6.0 实现，位于 _samples/SKIT.FlurlHttpClient.Wechat.Api.Sample_Net6_。
 
-示例项目基于 .NET 6.0 实现，依赖以下第三方库：
+示例项目依赖以下第三方库：
 
--   [`DistributedLock`](https://github.com/madelson/DistributedLock)：分布式锁。
+-   [`Autofac`](https://github.com/autofac/Autofac)：依赖注入容器；
+
+-   [`DistributedLock`](https://github.com/madelson/DistributedLock)：分布式锁；
 
 -   [`NMemory`](https://github.com/zzzprojects/nmemory)：内存数据库。
 
@@ -22,19 +24,7 @@
 
 ---
 
-### 关于 AccessToken 的刷新机制：
-
-示例项目遵循微信官方建议的“使用中控服务器统一获取和刷新”原则，实现了 AccessToken 的主动刷新机制，开发者不需要、也不应该在业务代码中手动执行刷新操作。
-
-所谓“主动刷新机制”，即由系统在后台周期性地执行刷新操作，在需要使用 AccessToken 时直接读取已有的记录即可，无需关心 AccessToken 是否过期。
-
-与之相对应的是“被动刷新机制”，即在每次读取时先判断已有的记录是否过期，如果未过期则直接返回，如果过期则执行一次刷新操作后再返回。
-
-开发者可根据业务需要自行实现被动刷新机制，也可以二者相结合。
-
----
-
-### 【重要】使用须知：
+### 【重要】使用前须知：
 
 示例项目仅作为业务上的参考，不代表可直接用于生产。
 
@@ -61,3 +51,15 @@
 #### 4. 安全性：
 
 示例项目中不包含授权认证等相关的业务逻辑，开发者可根据业务需要自行实现。
+
+---
+
+### 【附录】关于 AccessToken 的刷新机制：
+
+示例项目遵循微信官方建议的“使用中控服务器统一获取和刷新”原则，实现了 AccessToken 的主动刷新机制，开发者不需要、也不应该在业务代码中手动执行刷新操作。
+
+所谓“主动刷新机制”，即由系统在后台周期性地执行刷新操作，在需要使用 AccessToken 时直接读取已有的记录即可，无需关心 AccessToken 是否过期。
+
+与之相对应的是“被动刷新机制”，即在每次读取时先判断已有的记录是否过期，如果未过期则直接返回，如果过期则执行一次刷新操作后再返回。
+
+开发者可根据业务需要自行实现被动刷新机制，也可以二者相结合。

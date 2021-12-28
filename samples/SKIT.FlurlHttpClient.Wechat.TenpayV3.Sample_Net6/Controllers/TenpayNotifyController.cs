@@ -4,10 +4,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 {
     [ApiController]
-    [Route("notify")]
+    [Route("api/notify")]
     public class TenpayNotifyController : ControllerBase
     {
         private readonly ILogger _logger;
@@ -31,9 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
             [FromHeader(Name = "Wechatpay-Signature")] string signature,
             [FromHeader(Name = "Wechatpay-Serial")] string serialNumber)
         {
-            // 接收服务器推送
-            // 文档：https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_2.shtml
-
             using var reader = new StreamReader(Request.Body, Encoding.UTF8);
             string content = await reader.ReadToEndAsync();
             _logger.LogInformation("接收到微信支付推送的数据：{0}", content);
@@ -48,8 +45,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
             );
             if (!valid)
             {
-                // 注意：需提前注入 CertificateManager、并添加平台证书，才可以使用扩展方法执行验签操作
-                // 有关 CertificateManager 的用法请参阅《开发文档 / 高级技巧 / 如何验证回调通知事件签名？》
+                // NOTICE:
+                //   需提前注入 CertificateManager、并添加平台证书，才可以使用扩展方法执行验签操作。
+                //   有关 CertificateManager 的用法请参阅《开发文档 / 高级技巧 / 如何验证回调通知事件签名？》。
+                //   后续如何解密并反序列化，请参阅《开发文档 / 高级技巧 / 如何解密回调通知事件中的敏感数据？》。
+
                 return new JsonResult(new { code = "FAIL", message = "验签失败" });
             }
 

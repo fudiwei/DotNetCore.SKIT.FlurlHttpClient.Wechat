@@ -1,32 +1,25 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
-namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Controllers
+namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Controllers
 {
     using SKIT.FlurlHttpClient.Wechat.Api.Events;
 
     [ApiController]
-    [Route("notify")]
+    [Route("api/notify")]
     public class WechatNotifyController : ControllerBase
     {
         private readonly ILogger _logger;
-
-        private readonly Options.WechatOptions _wechatOptions;
-
         private readonly Services.HttpClients.IWechatApiHttpClientFactory _wechatApiHttpClientFactory;
 
         public WechatNotifyController(
             ILoggerFactory loggerFactory,
-            IOptions<Options.WechatOptions> wechatOptions,
             Services.HttpClients.IWechatApiHttpClientFactory wechatApiHttpClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
-            _wechatOptions = wechatOptions.Value;
             _wechatApiHttpClientFactory = wechatApiHttpClientFactory;
         }
 

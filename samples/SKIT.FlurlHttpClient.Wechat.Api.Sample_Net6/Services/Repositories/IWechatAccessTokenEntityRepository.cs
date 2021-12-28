@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Services.Repositories
+namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.Repositories
 {
     public interface IWechatAccessTokenEntityRepository : IEnumerable<Models.WechatAccessTokenEntity>
     {

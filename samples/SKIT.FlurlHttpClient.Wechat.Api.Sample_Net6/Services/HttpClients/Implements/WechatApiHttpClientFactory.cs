@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
 using Flurl.Http.Configuration;
 using Microsoft.Extensions.Options;
 
-namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Services.HttpClients.Implements
+namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.HttpClients.Implements
 {
     partial class WechatApiHttpClientFactory : IWechatApiHttpClientFactory
     {
@@ -26,6 +24,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Services.HttpClients.Imple
 
         public WechatApiClient Create(string appId)
         {
+            // NOTICE:
+            //   这里的工厂方法是为了演示多租户而存在的，可根据 AppId 生成不同的 API 客户端。
+            //   如果你的项目只存在唯一一个租户，那么直接注入 `WechatApiClient` 即可。
+
             var wechatAccountOptions = _wechatOptions.Accounts?.FirstOrDefault(e => string.Equals(appId, e.AppId));
             if (wechatAccountOptions == null)
                 throw new Exception("未在配置项中找到该 AppId 对应的微信账号。");

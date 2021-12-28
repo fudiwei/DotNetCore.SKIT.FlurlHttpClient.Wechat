@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5
+namespace SKIT.FlurlHttpClient.Wechat.Api.Sample
 {
     public class Startup
     {
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5
         {
             services.AddControllers();
 
-            // 注入配置项
+            // 注入配置项（内容见 `appsettings.json` 文件）
             services.AddOptions();
             services.Configure<Options.WechatOptions>(Configuration.GetSection(nameof(Options.WechatOptions)));
 

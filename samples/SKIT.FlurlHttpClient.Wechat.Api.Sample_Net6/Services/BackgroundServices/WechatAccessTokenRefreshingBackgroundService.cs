@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using SKIT.FlurlHttpClient.Wechat.Api;
-using SKIT.FlurlHttpClient.Wechat.Api.Models;
 
-namespace SKIT.FlurlHttpClient.Wechat.Api.Sample_Net5.Services.BackgroundServices
+namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.BackgroundServices
 {
+    using SKIT.FlurlHttpClient.Wechat.Api;
+    using SKIT.FlurlHttpClient.Wechat.Api.Models;
+
     class WechatAccessTokenRefreshingBackgroundService : BackgroundService
     {
         private readonly ILogger _logger;

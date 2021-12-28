@@ -1,19 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using SKIT.FlurlHttpClient.Wechat.TenpayV3;
-using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3;
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
+
     [ApiController]
-    [Route("refund")]
+    [Route("api/refund")]
     public class TenpayRefundController : ControllerBase
     {
         private readonly ILogger _logger;
@@ -34,9 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5.Controllers
         [Route("")]
         public async Task<IActionResult> CreateRefund([FromBody] Models.CreateRefundRequest requestModel)
         {
-            // 申请退款
-            // 文档：https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_9.shtml
-
             var client = _tenpayHttpClientFactory.Create(requestModel.MerchantId);
             var request = new CreateRefundDomesticRefundRequest()
             {
