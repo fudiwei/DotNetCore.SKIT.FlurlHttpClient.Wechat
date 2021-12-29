@@ -36,8 +36,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     Type propType = childProp.PropertyType;
                     if (propType == typeof(string))
                     {
-                        string oldValue = (string)childProp.GetValue(obj, null)!;
-                        var result = replacement(obj, childProp, oldValue);
+                        string value = (string)childProp.GetValue(obj, null)!;
+                        if (value is null)
+                            continue;
+
+                        var result = replacement(obj, childProp, value);
                         if (result.Modified)
                         {
                             childProp.SetValue(obj, result.NewValue);
