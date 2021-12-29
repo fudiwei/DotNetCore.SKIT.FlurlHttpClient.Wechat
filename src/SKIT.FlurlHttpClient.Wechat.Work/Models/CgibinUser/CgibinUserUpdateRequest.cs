@@ -90,11 +90,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public IList<int>? DepartmentIdList { get; set; }
 
         /// <summary>
-        /// 获取或设置部门排序列表。
+        /// 获取或设置部门次序列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order")]
         [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public IList<int>? DepartmentOrderList { get; set; }
+        public IList<long>? DepartmentOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置部门领导状态列表。

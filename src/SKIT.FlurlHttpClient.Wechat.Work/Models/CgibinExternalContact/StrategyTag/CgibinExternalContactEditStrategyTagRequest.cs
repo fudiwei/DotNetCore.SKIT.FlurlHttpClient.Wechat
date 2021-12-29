@@ -27,6 +27,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order")]
         [System.Text.Json.Serialization.JsonPropertyName("order")]
-        public int? TagOrGroupOrder { get; set; }
+        public long? TagOrGroupOrder { get; set; }
     }
 }

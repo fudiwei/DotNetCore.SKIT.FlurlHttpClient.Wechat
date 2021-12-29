@@ -216,10 +216,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         public string? DepartmentParentId { get; set; }
 
         /// <summary>
-        /// 获取或设置部门排序值。
+        /// 获取或设置部门次序值。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Order", IsNullable = true)]
-        public int? DepartmentOrder { get; set; }
+        public long? DepartmentOrder { get; set; }
 
         /// <summary>
         /// 获取或设置标签 ID。
