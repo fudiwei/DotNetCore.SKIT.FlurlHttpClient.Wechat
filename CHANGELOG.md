@@ -32,6 +32,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.3.0
+
+    -   **新增**：新增第三方平台代公众号发起网页授权相关接口。
+
 -   Release 2.2.1
 
     -   **修复**：修复获取会员卡信息接口模型的字段缺失问题。（[Gitee PR #3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/3)）。
