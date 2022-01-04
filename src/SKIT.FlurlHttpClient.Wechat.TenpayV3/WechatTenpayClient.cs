@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
@@ -49,12 +47,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
-            FlurlClient.Headers.Remove("Accept");
-            FlurlClient.Headers.Remove("Accept-Language");
-            FlurlClient.Headers.Remove("User-Agent");
-            FlurlClient.WithHeader("Accept", "application/json");
-            FlurlClient.WithHeader("Accept-Language", options.AcceptLanguage);
-            FlurlClient.WithHeader("User-Agent", options.UserAgent);
+            FlurlClient.Headers.Remove(Contants.HttpHeaders.Accept);
+            FlurlClient.Headers.Remove(Contants.HttpHeaders.AcceptLanguage);
+            FlurlClient.Headers.Remove(Contants.HttpHeaders.UserAgent);
+            FlurlClient.WithHeader(Contants.HttpHeaders.Accept, "application/json");
+            FlurlClient.WithHeader(Contants.HttpHeaders.AcceptLanguage, options.AcceptLanguage);
+            FlurlClient.WithHeader(Contants.HttpHeaders.UserAgent, options.UserAgent);
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
 
             Interceptors.Add(new Interceptors.WechatTenpaySignInterceptor(
@@ -106,6 +104,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public async Task<T> SendRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
             where T : WechatTenpayResponse, new()
         {
+            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
+
             if (httpContent != null)
             {
                 if (string.IsNullOrEmpty(httpContent.Headers.ContentType?.MediaType))
@@ -115,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             try
             {
                 using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
-                return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)
             {
@@ -134,10 +134,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public async Task<T> SendRequestWithJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
             where T : WechatTenpayResponse, new()
         {
+            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
+
             try
             {
-                using IFlurlResponse flurlResponse = await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
-                return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
+                bool isSimpleRequest = data == null ||
+                    flurlRequest.Verb == HttpMethod.Get ||
+                    flurlRequest.Verb == HttpMethod.Head ||
+                    flurlRequest.Verb == HttpMethod.Options;
+                using IFlurlResponse flurlResponse = isSimpleRequest ?
+                    await base.SendRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false) :
+                    await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)
             {
@@ -145,31 +153,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
         }
 
-        private async Task<T> GetResposneAsync<T>(IFlurlResponse flurlResponse)
-            where T : WechatTenpayResponse, new()
+        private new async Task<TResponse> WrapResponseWithJsonAsync<TResponse>(IFlurlResponse flurlResponse, CancellationToken cancellationToken = default)
+            where TResponse : WechatTenpayResponse, new()
         {
-            byte[] bytes = await flurlResponse.GetBytesAsync().ConfigureAwait(false);
-            bool jsonable =
-                (bytes.FirstOrDefault() == 91 && bytes.LastOrDefault() == 93) || // "[...]"
-                (bytes.FirstOrDefault() == 123 && bytes.LastOrDefault() == 125); // "{...}"
-
-            T result = jsonable ? JsonSerializer.Deserialize<T>(Encoding.UTF8.GetString(bytes)) : new T();
+            TResponse result = await base.WrapResponseWithJsonAsync<TResponse>(flurlResponse, cancellationToken);
             result.WechatpayRequestId = flurlResponse.Headers.GetAll("Request-ID").FirstOrDefault() ?? string.Empty;
             result.WechatpayNonce = flurlResponse.Headers.GetAll("Wechatpay-Nonce").FirstOrDefault() ?? string.Empty;
             result.WechatpayTimestamp = flurlResponse.Headers.GetAll("Wechatpay-Timestamp").FirstOrDefault() ?? string.Empty;
             result.WechatpaySignature = flurlResponse.Headers.GetAll("Wechatpay-Signature").FirstOrDefault() ?? string.Empty;
             result.WechatpayCertSerialNumber = flurlResponse.Headers.GetAll("Wechatpay-Serial").FirstOrDefault() ?? string.Empty;
-
-            result.RawStatus = flurlResponse.StatusCode;
-            result.RawHeaders = new ReadOnlyDictionary<string, string>(
-                flurlResponse.Headers
-                    .GroupBy(e => e.Name)
-                    .ToDictionary(
-                        k => k.Key,
-                        v => string.Join(", ", v.Select(e => e.Value))
-                    )
-            );
-            result.RawBytes = bytes;
 
             if (AutoDecryptResponseSensitiveProperty && result.IsSuccessful())
             {
