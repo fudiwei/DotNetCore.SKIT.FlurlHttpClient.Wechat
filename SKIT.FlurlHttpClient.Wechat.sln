@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{3E34ADB9-1F5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.Api", "src\SKIT.FlurlHttpClient.Wechat.Api\SKIT.FlurlHttpClient.Wechat.Api.csproj", "{082C1F69-7932-473F-A700-49584371BE8C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SKIT.FlurlHttpClient.Wechat.TenpayV2", "src\SKIT.FlurlHttpClient.Wechat.TenpayV2\SKIT.FlurlHttpClient.Wechat.TenpayV2.csproj", "{18DEF654-1EDF-46C7-8430-685D6236E9C5}"
+EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.TenpayV3", "src\SKIT.FlurlHttpClient.Wechat.TenpayV3\SKIT.FlurlHttpClient.Wechat.TenpayV3.csproj", "{6FE502D4-C43D-49C9-9E57-D1EE566FD1C3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SKIT.FlurlHttpClient.Wechat.Work", "src\SKIT.FlurlHttpClient.Wechat.Work\SKIT.FlurlHttpClient.Wechat.Work.csproj", "{CDD123E6-2622-4368-BAEE-8B95F05F1AB2}"
@@ -106,6 +108,10 @@ Global
 		{7667F0D3-B41D-43C2-B69D-A68FE230EBF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7667F0D3-B41D-43C2-B69D-A68FE230EBF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7667F0D3-B41D-43C2-B69D-A68FE230EBF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18DEF654-1EDF-46C7-8430-685D6236E9C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18DEF654-1EDF-46C7-8430-685D6236E9C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18DEF654-1EDF-46C7-8430-685D6236E9C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18DEF654-1EDF-46C7-8430-685D6236E9C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +132,7 @@ Global
 		{D1B321C9-3004-4645-A78D-A85C152062FA} = {35C901ED-C234-4A91-9561-AD89B3BB788D}
 		{65E51735-73CE-4E9B-AA65-4BF5E4C8A705} = {35C901ED-C234-4A91-9561-AD89B3BB788D}
 		{7667F0D3-B41D-43C2-B69D-A68FE230EBF7} = {35C901ED-C234-4A91-9561-AD89B3BB788D}
+		{18DEF654-1EDF-46C7-8430-685D6236E9C5} = {3E34ADB9-1F52-4C96-9A42-DE782DE1AAA3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F08ED64E-2517-4B51-A4BE-D33D56CC7B39}
