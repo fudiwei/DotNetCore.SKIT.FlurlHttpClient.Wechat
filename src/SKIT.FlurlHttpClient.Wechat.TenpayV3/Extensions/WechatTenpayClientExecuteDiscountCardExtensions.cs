@@ -71,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "discount-card", "cards", request.OutCardCode)
                 ;
 
-            return await client.SendRequestWithJsonAsync<Models.GetDiscountCardByOutCardCodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetDiscountCardByOutCardCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

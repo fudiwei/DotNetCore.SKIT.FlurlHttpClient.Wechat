@@ -462,7 +462,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         string[] actualUrlSegments = actualUrl.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(e => e.Trim()).ToArray();
                         if (expectedUrlSegments.Length != actualUrlSegments.Length)
                         {
-                            lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                            lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致（段数不等）。"));
                             return false;
                         }
                         else
@@ -475,7 +475,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                                 {
                                     if (actualUrlSegment.StartsWith("\""))
                                     {
-                                        lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                                        lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致（预期为变量展位符，实际为常量字符串）。"));
                                         break;
                                     }
                                 }
@@ -484,7 +484,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                                     actualUrlSegment = actualUrlSegment.Replace("\"", string.Empty).Trim('/');
                                     if (!string.Equals(expectedUrlSegment, actualUrlSegment))
                                     {
-                                        lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                                        lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致（预期为常量展位符，实际为变量字符串）。"));
                                         break;
                                     }
                                 }

@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId)
                 .SetQueryParam("stock_creator_mchid", request.StockCreatorMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingFavorStockByStockIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMarketingFavorStockByStockIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Status != null)
                 flurlReq.SetQueryParam("status", request.Status);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingFavorStocksResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMarketingFavorStocksResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -192,7 +192,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("limit", request.Limit.ToString())
                 .SetQueryParam("offset", request.Offset.ToString());
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingFavorStockMerchantsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMarketingFavorStockMerchantsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("limit", request.Limit.ToString())
                 .SetQueryParam("offset", request.Offset.ToString());
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingFavorStockItemsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMarketingFavorStockItemsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -239,7 +239,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "use-flow")
                 ;
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingFavorStockUseFlowResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMarketingFavorStockUseFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -260,7 +260,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "refund-flow")
                 ;
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingFavorStockRefundFlowResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMarketingFavorStockRefundFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -305,7 +305,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "marketing", "favor", "users", request.OpenId, "coupons", request.CouponId)
                 .SetQueryParam("appid", request.AppId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingFavorUserCouponByCouponIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMarketingFavorUserCouponByCouponIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -347,7 +347,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingFavorUserCouponsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMarketingFavorUserCouponsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

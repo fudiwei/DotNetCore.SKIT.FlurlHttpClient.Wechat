@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.TarType != null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
-            return await client.SendRequestWithJsonAsync<Models.GetBillTradeBillResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetBillTradeBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.TarType != null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
-            return await client.SendRequestWithJsonAsync<Models.GetBillFundflowBillResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetBillFundflowBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.TarType != null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
-            return await client.SendRequestWithJsonAsync<Models.GetBillSubMerchantFundflowBillResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetBillSubMerchantFundflowBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -156,10 +156,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get);
+                .CreateRequest(request, HttpMethod.Get, request.DownloadUrl);
             flurlReq.Url = new Url(new Uri(request.DownloadUrl));
 
-            return await client.SendRequestWithJsonAsync<Models.DownloadBillFileResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.DownloadBillFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
