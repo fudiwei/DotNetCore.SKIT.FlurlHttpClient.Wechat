@@ -14,12 +14,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         {
             var request = new Models.CgibinTagsCreateRequest()
             {
-                Tag = new Models.CgibinTagsCreateRequest.Types.Tag() 
-                { 
-                    Name = "FAKE_TAGNAME" 
+                AccessToken = TestConfigs.WechatAccessToken,
+                Tag = new Models.CgibinTagsCreateRequest.Types.Tag()
+                {
+                    Name = "FAKE_TAGNAME"
                 }
             };
-            var response = await request.Send();
+            var response = await TestClients.Instance.ExecuteCgibinTagsCreateAsync(request);
 
             Assert.True(response.Tag.Id > 0);
             Assert.Equal(request.Tag.Name, response.Tag.Name);
@@ -28,8 +29,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         [Fact(DisplayName = "[POST] /cgi-bin/tags/get")]
         public async Task CgibinTagsGetTest()
         {
-            var request = new Models.CgibinTagsGetRequest();
-            var response = await request.Send();
+            var request = new Models.CgibinTagsGetRequest()
+            {
+                AccessToken = TestConfigs.WechatAccessToken
+            };
+            var response = await TestClients.Instance.ExecuteCgibinTagsGetAsync(request);
 
             Assert.NotEmpty(response.Tags);
             Assert.True(response.Tags.First().Id > 0);

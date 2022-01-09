@@ -1,14 +1,12 @@
 using System;
 using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/user/tag/get 接口的请求。</para>
     /// </summary>
-    public class CgibinUserTagGetRequest : WechatApiRequest, ISendRequest<CgibinUserTagGetResponse>
+    public class CgibinUserTagGetRequest : WechatApiRequest, IMapResponse<CgibinUserTagGetRequest, CgibinUserTagGetResponse>
     {
         /// <summary>
         /// 获取或设置标签 ID。
@@ -23,12 +21,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("next_openid")]
         [System.Text.Json.Serialization.JsonPropertyName("next_openid")]
         public string? NextOpenId { get; set; }
-
-        public Task<CgibinUserTagGetResponse> Send(WechatApiClient client, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-
-            return client.ExecuteCgibinUserTagGetAsync(this, cancellationToken);
-        }
     }
 }
