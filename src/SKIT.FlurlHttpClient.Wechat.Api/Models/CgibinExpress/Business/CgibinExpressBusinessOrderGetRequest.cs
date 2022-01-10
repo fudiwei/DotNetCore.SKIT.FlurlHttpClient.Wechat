@@ -35,5 +35,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
         public string? WaybillId { get; set; }
+
+        /// <summary>
+        /// 获取或设置打印面单类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("print_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("print_type")]
+        public int? PrintType { get; set; }
     }
 }
