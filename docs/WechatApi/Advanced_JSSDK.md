@@ -30,4 +30,4 @@ var paramMap = client.GenerateParametersForJSSDKConfig(response.Ticket, "https:/
 
 -   生成公众号网页授权 URL：`GenerateParameterizedUrlForConnectOAuth2Authorize`
 
--   生成代公众号网页授权 URL：`GenerateParameterizedUrlForConnectOAuth2Authorize`
+-   生成代公众号网页授权 URL：`GenerateParameterizedUrlForComponentConnectOAuth2Authorize`

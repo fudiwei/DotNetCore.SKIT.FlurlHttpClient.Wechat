@@ -21,3 +21,15 @@ var paramMap = client.GenerateParametersForJssdkConfigRequest(response.Ticket, "
 ```
 
 需要注意的是，企业微信 JS-SDK 存在两种初始化方式，生成签名时所需要的 Ticket 获取方式并不相同，请开发者根据需要自行选择。
+
+---
+
+### 【附】生成参数相关扩展方法速查表：
+
+-   生成企业号 JS-SDK `wx.config` 所需的参数字典：`GenerateParametersForJSSDKConfig`
+
+-   生成企业号 JS-SDK `wx.agentConfig` 所需的参数字典：`GenerateParametersForJSSDKAgentConfig`
+
+-   生成企业号网页授权 URL：`GenerateParameterizedUrlForConnectOAuth2Authorize`
+
+-   生成企业号扫码授权 URL：`GenerateParameterizedUrlForSSOQrcodeConnectAuthorize`
