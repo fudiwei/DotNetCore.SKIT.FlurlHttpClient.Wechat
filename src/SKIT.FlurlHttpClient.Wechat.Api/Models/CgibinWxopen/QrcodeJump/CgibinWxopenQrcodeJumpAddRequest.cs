@@ -20,28 +20,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("permit_sub_rule")]
         [System.Text.Json.Serialization.JsonPropertyName("permit_sub_rule")]
-        public int PermitSubRule { get; set; }
+        public int? PermitSubRule { get; set; }
 
         /// <summary>
         /// 获取或设置发布状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
-        public int State { get; set; }
+        public int? State { get; set; }
+
+        /// <summary>
+        /// 获取或设置小程序 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string? MiniProgramAppId { get; set; }
 
         /// <summary>
         /// 获取或设置小程序页面路径。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("path")]
         [System.Text.Json.Serialization.JsonPropertyName("path")]
-        public string PagePath { get; set; } = string.Empty;
+        public string MiniProgramPagePath { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置测试范围。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_version")]
         [System.Text.Json.Serialization.JsonPropertyName("open_version")]
-        public int OpenVersion { get; set; }
+        public int? OpenVersion { get; set; }
 
         /// <summary>
         /// 获取或设置测试链接列表。
