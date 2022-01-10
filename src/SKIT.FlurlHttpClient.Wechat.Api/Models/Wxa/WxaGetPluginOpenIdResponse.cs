@@ -1,7 +1,7 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /wxa/getpluginopenpid 接口的响应。</para>
+    /// <para>表示 [POST] /wxa/getpluginopenpid 接口的响应。</para>
     /// </summary>
     public class WxaGetPluginOpenIdResponse : WechatApiResponse
     {
