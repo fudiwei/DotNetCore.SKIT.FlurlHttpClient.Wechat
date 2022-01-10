@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         private const string BASE_URL = "https://open.weixin.qq.com/";
 
         /// <summary>
-        /// <para>生成客户端 JS-SDK `wx.config` 所需的参数。</para>
+        /// <para>生成公众号 JS-SDK `wx.config` 所需的参数字典。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62 </para>
         /// </summary>
         /// <param name="client"></param>
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>生成客户端 JS-SDK `wx.chooseInvoice` 接口所需的参数。</para>
+        /// <para>生成公众号 JS-SDK `wx.chooseInvoice` 接口所需的参数字典。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Auto-print/API_Documentation.html#_6-4-%E5%8F%91%E7%A5%A8%E7%AD%BE%E5%90%8D%E6%96%B9%E6%B3%95 </para>
         /// </summary>
         /// <param name="client"></param>
