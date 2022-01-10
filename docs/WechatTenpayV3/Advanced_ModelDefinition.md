@@ -57,7 +57,7 @@
 
 ---
 
-### 【附 1】直连商户模式 API 模型命名速查表：
+### 【附】直连商户模式 API 模型命名速查表：
 
 注：树形结构与[微信支付开发者文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/index.shtml)目录结构保持一致。
 
@@ -425,7 +425,7 @@
 
 ---
 
-### 【附 2】服务商模式 API 模型命名速查表：
+### 【附】服务商模式 API 模型命名速查表：
 
 注：树形结构与[微信支付开发者文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/index.shtml)目录结构保持一致。
 

@@ -32,6 +32,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.4.0
+
+    -   **新增**：新增获取小程序插件用户的唯一标识相关接口。
+
+    -   **新增**：随官方更新扫描二维码打开小程序的相关接口模型。
+
+    -   **新增**：随官方更新物流助手相关接口模型。
+
+    -   **变更**：升级公共组件。
+
 -   Release 2.3.0
 
     -   **新增**：新增第三方平台代公众号发起网页授权相关接口。
@@ -235,7 +245,6 @@
 -   Release 2.2.2
 
     -   **修复**：修复二级商户进件提交申请单接口因 URL 结尾反斜杠问题而无法正常请求的问题。（[GitHub Issue #19](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/19)）
-
 
 -   Release 2.2.1
 
