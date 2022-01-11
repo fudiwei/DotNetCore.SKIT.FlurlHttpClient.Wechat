@@ -74,6 +74,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             IFlurlRequest flurlRequest = FlurlClient.Request(urlSegments).WithVerb(method);
 
+            if (AutoEncryptRequestSensitiveProperty)
+            {
+                this.EncryptRequestSensitiveProperty(request);
+            }
+
             if (request.Timeout != null)
             {
                 flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
@@ -83,11 +88,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             {
                 flurlRequest.Headers.Remove("Wechatpay-Serial");
                 flurlRequest.WithHeader("Wechatpay-Serial", request.WechatpayCertSerialNumber);
-            }
-
-            if (AutoEncryptRequestSensitiveProperty)
-            {
-                this.EncryptRequestSensitiveProperty(request);
             }
 
             return flurlRequest;
