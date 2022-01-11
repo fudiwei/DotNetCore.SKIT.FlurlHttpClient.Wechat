@@ -46,15 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("user_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_name")]
                 [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
-                public string UserName { get; set; } = string.Empty;
-
-                /// <summary>
-                /// 获取或设置收款用户身份证号（需使用平台公钥/证书加密）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("user_id_card")]
-                [System.Text.Json.Serialization.JsonPropertyName("user_id_card")]
-                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
-                public string UserIdCardNumber { get; set; } = string.Empty;
+                public string? UserName { get; set; }
             }
         }
 
