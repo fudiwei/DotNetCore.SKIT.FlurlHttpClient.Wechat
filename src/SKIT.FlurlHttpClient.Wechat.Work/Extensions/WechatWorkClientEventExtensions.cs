@@ -210,7 +210,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 throw new Exceptions.WechatWorkEventSerializationException("Serialize event failed. Please see the `InnerException` for more details.", ex);
             }
 
-
             if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
                 throw new Exceptions.WechatWorkEventSerializationException("Encrypt event failed, because there is no encoding AES key.");
             if (string.IsNullOrEmpty(client.Credentials.PushToken))
