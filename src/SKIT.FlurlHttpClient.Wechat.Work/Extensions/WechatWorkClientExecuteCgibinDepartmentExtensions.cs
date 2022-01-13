@@ -102,5 +102,51 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentListResponse>(flurlReq, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/department/simplelist 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95350 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95406 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinDepartmentSimpleListResponse> ExecuteCgibinDepartmentSimpleListAsync(this WechatWorkClient client, Models.CgibinDepartmentSimpleListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "department", "simplelist")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            if (request.ParentDepartmentId != null)
+                flurlReq.SetQueryParam("id", request.ParentDepartmentId.Value);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentSimpleListResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/department/get 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95351 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95407 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinDepartmentGetResponse> ExecuteCgibinDepartmentGetAsync(this WechatWorkClient client, Models.CgibinDepartmentGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "department", "get")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("id", request.DepartmentId);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentGetResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
     }
 }
