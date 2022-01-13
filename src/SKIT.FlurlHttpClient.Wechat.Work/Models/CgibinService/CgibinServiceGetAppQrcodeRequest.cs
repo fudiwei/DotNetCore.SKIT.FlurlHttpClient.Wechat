@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string? AppId { get; set; }
+        public int? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置安装渠道。

@@ -597,6 +597,50 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAScheduleDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region ScheduleAttendees
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/oa/schedule/add_attendees 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93648 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93703 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinOAScheduleAddAttendeesResponse> ExecuteCgibinOAScheduleAddAttendeesAsync(this WechatWorkClient client, Models.CgibinOAScheduleAddAttendeesRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "schedule", "add_attendees")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAScheduleAddAttendeesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/oa/schedule/del_attendees 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93648 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93703 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinOAScheduleDeleteAttendeesResponse> ExecuteCgibinOAScheduleDeleteAttendeesAsync(this WechatWorkClient client, Models.CgibinOAScheduleDeleteAttendeesRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "schedule", "del_attendees")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAScheduleDeleteAttendeesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
         #endregion
     }
 }
