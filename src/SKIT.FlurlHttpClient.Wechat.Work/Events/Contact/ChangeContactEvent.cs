@@ -153,6 +153,12 @@
         public string? UserEmail { get; set; }
 
         /// <summary>
+        /// 获取或设置用户企业邮箱。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("BizMail", IsNullable = true)]
+        public string? UserBusinessEmail { get; set; }
+
+        /// <summary>
         /// 获取或设置用户手机号码。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Mobile", IsNullable = true)]

@@ -210,14 +210,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string? Alias { get; set; }
 
         /// <summary>
-        /// 获取或设置邮箱。与字段 <see cref="MobileNumber"/> 二选一。
+        /// 获取或设置邮箱。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("email")]
         [System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
 
         /// <summary>
-        /// 获取或设置手机号码。与字段 <see cref="Email"/> 二选一。
+        /// 获取或设置企业邮箱。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("biz_mail")]
+        [System.Text.Json.Serialization.JsonPropertyName("biz_mail")]
+        public string? BusinessEmail { get; set; }
+
+        /// <summary>
+        /// 获取或设置手机号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mobile")]
         [System.Text.Json.Serialization.JsonPropertyName("mobile")]

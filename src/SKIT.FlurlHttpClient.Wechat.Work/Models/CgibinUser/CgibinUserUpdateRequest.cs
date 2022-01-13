@@ -47,6 +47,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string? Email { get; set; }
 
         /// <summary>
+        /// 获取或设置企业邮箱。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("biz_mail")]
+        [System.Text.Json.Serialization.JsonPropertyName("biz_mail")]
+        public string? BusinessEmail { get; set; }
+
+        /// <summary>
         /// 获取或设置手机号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mobile")]
