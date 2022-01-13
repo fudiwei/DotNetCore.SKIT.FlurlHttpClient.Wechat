@@ -18,5 +18,11 @@
         /// </summary>
         [System.Xml.Serialization.XmlElement("AuthCode")]
         public string AuthCode { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置扫码或者授权链接中的自定义参数。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("State", IsNullable = true)]
+        public string? State { get; set; }
     }
 }

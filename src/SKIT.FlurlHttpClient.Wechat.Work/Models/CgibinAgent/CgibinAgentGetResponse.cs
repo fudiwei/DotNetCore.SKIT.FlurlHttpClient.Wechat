@@ -140,5 +140,12 @@
         [Newtonsoft.Json.JsonProperty("home_url")]
         [System.Text.Json.Serialization.JsonPropertyName("home_url")]
         public string? HomeUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置代开发发布状态。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("customized_publish_status")]
+        [System.Text.Json.Serialization.JsonPropertyName("customized_publish_status")]
+        public int? CustomizedPublishStatus { get; set; }
     }
 }

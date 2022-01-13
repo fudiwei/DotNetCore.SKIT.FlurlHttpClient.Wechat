@@ -1,4 +1,6 @@
 ﻿{
-    "state": "test",
-    "templateid_list": [ "dk1", "dk2" ]
+    "errcode": 0,
+    "errmsg": "ok",
+    "qrcode_url": "xxxxx",
+    "expires_in": 864000
 }
