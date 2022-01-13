@@ -47,6 +47,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("groupchat_range")]
         [System.Text.Json.Serialization.JsonPropertyName("groupchat_range")]
-        public Types.GroupChatRange? GroupChatRange { get; set; } 
+        public Types.GroupChatRange? GroupChatRange { get; set; }
     }
 }

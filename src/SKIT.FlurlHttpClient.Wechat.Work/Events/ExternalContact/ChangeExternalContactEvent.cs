@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.change_external_contact 或 INFO.change_external_contact 事件的数据。</para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92130 </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92005 </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92277 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92130 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92005 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92277 </para>
     /// </summary>
     public class ChangeExternalContactEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {

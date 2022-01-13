@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/service/get_auth_info 接口的响应。</para>
@@ -115,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             }
 
             public class Authorization
-            { 
+            {
                 public static class Types
                 {
                     public class Agent

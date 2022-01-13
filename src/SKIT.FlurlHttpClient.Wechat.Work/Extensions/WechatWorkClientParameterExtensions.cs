@@ -9,9 +9,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>生成企业号 JS-SDK `wx.config` 所需的参数字典。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90136/90506 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90144/90539 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90152/90777 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90506 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90539 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90777 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="jsapiTicket"></param>
@@ -38,9 +38,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业号 JS-SDK `wx.agentConfig` 所需的参数字典。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90136/90506 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90144/90539 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90152/90777 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90506 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90539 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90777 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="jsapiTicket"></param>
@@ -68,8 +68,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业号网页授权 URL。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/91022 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91120 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91022 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91120 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="redirectUrl"></param>
@@ -91,8 +91,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业号扫码授权 URL。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/91019 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91124 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91019 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91124 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="redirectUrl"></param>

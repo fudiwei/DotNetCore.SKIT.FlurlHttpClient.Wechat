@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 INFO.remark_device_name 事件的数据。</para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90751 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90751 </para>
     /// </summary>
     public class RemarkDeviceNameEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {

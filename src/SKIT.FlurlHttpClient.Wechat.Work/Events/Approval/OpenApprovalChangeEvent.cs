@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.open_approval_change 事件的数据。</para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90269 </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93798 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90269 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/93798 </para>
     /// </summary>
     public class OpenApprovalChangeEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {

@@ -40,6 +40,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_tag")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_tag")]
-        public IList<int>? AllowedTagIdList { get; set; } 
+        public IList<int>? AllowedTagIdList { get; set; }
     }
 }

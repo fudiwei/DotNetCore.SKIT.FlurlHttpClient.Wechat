@@ -2,7 +2,7 @@
 {
     /// <summary>
     /// <para>表示 agree_external_userid_migration 事件的数据。</para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/95327 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/95327 </para>
     /// </summary>
     public class AgreeExternalUserIdMigrationEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable, WechatWorkEvent.Serialization.IJsonSerializable
     {

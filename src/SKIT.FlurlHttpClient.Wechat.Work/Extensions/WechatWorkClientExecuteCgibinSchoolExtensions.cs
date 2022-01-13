@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -13,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/set_teacher_view_mode 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92652 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92652 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -33,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/get_teacher_view_mode 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92652 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92652 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -53,8 +51,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/set_arch_sync_mode 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92345 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92083 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92345 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92083 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -74,8 +72,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/set_upgrade_info 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92949 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92950 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92949 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92950 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -96,8 +94,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region User
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/user/get 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92337 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92038 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92337 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92038 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -118,8 +116,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/user/list 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92338 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92043 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92338 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92043 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -143,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/user/list_parent 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92446 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92446 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -165,8 +163,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region UserStudent
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/create_student 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92325 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92035 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92325 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92035 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -186,8 +184,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/user/delete_student 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92326 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92039 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92326 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92039 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -208,8 +206,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/update_student 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92327 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92041 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92327 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92041 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -229,8 +227,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/batch_create_student 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92328 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92037 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92328 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92037 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -250,8 +248,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/batch_delete_student 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92329 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92040 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92329 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92040 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -271,8 +269,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/batch_update_student 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92330 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92042 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92330 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92042 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -294,8 +292,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region UserParent
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/create_parent 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92331 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92077 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92331 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92077 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -315,8 +313,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/user/delete_parent 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92332 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92079 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92332 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92079 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -337,8 +335,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/update_parent 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92333 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92081 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92333 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92081 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -358,8 +356,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/batch_create_parent 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92334 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92078 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92334 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92078 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -379,8 +377,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/batch_delete_parent 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92335 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92080 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92335 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92080 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -400,8 +398,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/batch_update_parent 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92336 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92082 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92336 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92082 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -423,7 +421,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region UserHealth
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/get_teacher_customize_health_info 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93744 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93744 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -443,7 +441,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/get_student_customize_health_info 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93745 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93745 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -463,7 +461,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/user/get_health_qrcode 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93746 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93746 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -486,8 +484,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region Department
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/department/create 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92340 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92296 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92340 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92296 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -507,8 +505,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/department/update 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92341 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92297 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92341 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92297 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -528,8 +526,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/department/delete 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92342 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92298 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92342 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92298 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -550,8 +548,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/department/list 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92343 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92299 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92343 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92299 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -576,8 +574,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region Living
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/living/get_living_info 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93740 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93857 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93740 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93857 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -598,8 +596,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/living/get_watch_stat 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93741 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93858 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93741 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93858 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -619,8 +617,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/living/get_unwatch_stat 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93742 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93859 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93742 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93859 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -642,7 +640,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region Payment
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/get_payment_result 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94470 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94470 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -662,7 +660,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/school/get_trade 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94471 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94471 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -684,7 +682,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region Agent
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/agent/get_allow_scope 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94895 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94895 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

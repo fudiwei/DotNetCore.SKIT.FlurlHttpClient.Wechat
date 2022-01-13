@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -13,9 +11,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/batch/invite 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90975 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91127 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91159 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90975 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91127 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91159 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -35,9 +33,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/batch/syncuser 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90980 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91130 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91163 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90980 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91130 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91163 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -57,9 +55,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/batch/replaceuser 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90981 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91131 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91164 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90981 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91131 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91164 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -79,9 +77,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/batch/replaceparty 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90981 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91132 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91165 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90981 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91132 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91165 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -101,9 +99,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/batch/getresult 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90983 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/91133 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/91166 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90983 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91133 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91166 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

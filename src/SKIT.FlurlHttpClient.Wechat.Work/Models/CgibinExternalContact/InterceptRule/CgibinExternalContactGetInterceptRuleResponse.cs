@@ -8,7 +8,7 @@
         public static class Types
         {
             public class Rule : CgibinExternalContactGetInterceptRuleListResponse.Types.Rule
-            {    
+            {
                 public static class Types
                 {
                     public class ExtraRule
@@ -38,7 +38,7 @@
                         public int[]? DepartmentIdList { get; set; }
                     }
                 }
-                
+
                 /// <summary>
                 /// 获取或设置敏感词列表。
                 /// </summary>

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.living_status_change 事件的数据。</para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/94145 </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/94308 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/94145 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/94308 </para>
     /// </summary>
     public class LivingStatusChangeEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
