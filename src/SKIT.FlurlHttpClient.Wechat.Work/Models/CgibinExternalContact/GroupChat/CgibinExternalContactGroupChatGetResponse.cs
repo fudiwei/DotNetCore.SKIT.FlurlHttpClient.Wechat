@@ -81,6 +81,13 @@
                         [Newtonsoft.Json.JsonProperty("join_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("join_time")]
                         public long JoinTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置入群渠道。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("state")]
+                        [System.Text.Json.Serialization.JsonPropertyName("state")]
+                        public string? State { get; set; }
                     }
 
                     public class Administrator

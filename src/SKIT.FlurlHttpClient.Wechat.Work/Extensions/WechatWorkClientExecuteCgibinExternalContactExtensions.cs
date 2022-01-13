@@ -668,6 +668,88 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatStatisticsGroupByDayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region JoinWay
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/groupchat/add_join_way 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92229 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGroupChatAddJoinWayResponse> ExecuteCgibinExternalContactGroupChatAddJoinWayAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatAddJoinWayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "groupchat", "add_join_way")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatAddJoinWayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/groupchat/get_join_way 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92229 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGroupChatGetJoinWayResponse> ExecuteCgibinExternalContactGroupChatGetJoinWayAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatGetJoinWayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "groupchat", "get_join_way")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatGetJoinWayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/groupchat/update_join_way 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92229 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGroupChatUpdateJoinWayResponse> ExecuteCgibinExternalContactGroupChatUpdateJoinWayAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatUpdateJoinWayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "groupchat", "update_join_way")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatUpdateJoinWayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/groupchat/del_join_way 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92229 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGroupChatDeleteJoinWayResponse> ExecuteCgibinExternalContactGroupChatDeleteJoinWayAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatDeleteJoinWayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "groupchat", "del_join_way")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatDeleteJoinWayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
         #endregion
 
         #region Moment
