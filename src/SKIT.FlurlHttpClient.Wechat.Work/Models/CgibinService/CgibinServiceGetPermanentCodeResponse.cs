@@ -136,5 +136,12 @@
         [Newtonsoft.Json.JsonProperty("register_code_info")]
         [System.Text.Json.Serialization.JsonPropertyName("register_code_info")]
         public Types.Register? Register { get; set; }
+
+        /// <summary>
+        /// 获取或设置扫码或者授权链接中的自定义参数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("state")]
+        [System.Text.Json.Serialization.JsonPropertyName("state")]
+        public string? State { get; set; }
     }
 }

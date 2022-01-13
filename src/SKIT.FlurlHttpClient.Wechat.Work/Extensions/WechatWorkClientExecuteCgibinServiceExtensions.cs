@@ -184,6 +184,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetAdminListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/get_customized_auth_url 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95436 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceGetCustomizedAuthUrlResponse> ExecuteCgibinServiceGetCustomizedAuthUrlAsync(this WechatWorkClient client, Models.CgibinServiceGetCustomizedAuthUrlRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "get_customized_auth_url")
+                .SetQueryParam("provider_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetCustomizedAuthUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
         #region Register
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/service/get_register_code 接口。</para>
