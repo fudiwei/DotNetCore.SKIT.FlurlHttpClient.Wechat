@@ -52,6 +52,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
             }
 
+            if (request is WechatTenpaySignableRequest signableRequest)
+            {
+                if (signableRequest.NonceString == null)
+                {
+                    signableRequest.NonceString = Guid.NewGuid().ToString("N");
+                }
+
+                if (signableRequest.SignType == null)
+                {
+                    signableRequest.SignType = SignType;
+                }
+
+                if (signableRequest.Signature == null)
+                {
+                    // TODO
+                    throw new NotImplementedException();
+                }
+            }
+
             return flurlRequest;
         }
 

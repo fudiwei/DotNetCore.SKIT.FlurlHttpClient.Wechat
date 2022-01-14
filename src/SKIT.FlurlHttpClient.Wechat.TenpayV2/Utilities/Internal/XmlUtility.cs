@@ -1,42 +1,21 @@
-﻿using System;
-using System.Collections;
-using System.IO;
-using System.Xml.Serialization;
+﻿using System.Xml;
+using Newtonsoft.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 {
     internal static class XmlUtility
     {
-        // REF: https://docs.microsoft.com/zh-cn/dotnet/api/system.xml.serialization.xmlserializer#dynamically-generated-assemblies
-        private static readonly Hashtable _xmlSerializers = new Hashtable();
-        private static readonly XmlRootAttribute _xmlRoot = new XmlRootAttribute("xml");
-
-        private static XmlSerializer GetTypedSerializer(Type type)
+        public static string ConvertFromJson(string json)
         {
-            if (type == null) throw new ArgumentNullException(nameof(type));
-
-            string skey = type.AssemblyQualifiedName ?? type.GetHashCode().ToString();
-            XmlSerializer? xmlSerializer = (XmlSerializer?)_xmlSerializers[skey];
-            if (xmlSerializer == null)
-            {
-                xmlSerializer = new XmlSerializer(type, _xmlRoot);
-                _xmlSerializers[skey] = xmlSerializer;
-            }
-
-            return xmlSerializer;
+            XmlDocument xmlDocument = JsonConvert.DeserializeXmlNode(json);
+            return xmlDocument.InnerXml;
         }
 
-        public static object Deserialize(Type type, string xml)
+        public static string ConvertToJson(string xml)
         {
-            using var reader = new StringReader(xml);
-            XmlSerializer serializer = GetTypedSerializer(type);
-            return serializer.Deserialize(reader)!;
-        }
-
-        public static T Deserialize<T>(string xml)
-           where T : class
-        {
-            return (T)Deserialize(typeof(T), xml);
+            XmlDocument xmlDocument = new XmlDocument();
+            xmlDocument.LoadXml(xml);
+            return JsonConvert.SerializeXmlNode(xmlDocument);
         }
     }
 }

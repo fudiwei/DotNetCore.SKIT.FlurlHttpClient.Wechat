@@ -16,7 +16,7 @@
     /// <summary>
     /// 表示微信支付 API 请求的基类。
     /// </summary>
-    public abstract class WechatTenpaySignRequest : WechatTenpayRequest
+    public abstract class WechatTenpaySignableRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置随机字符串。如果不指定将由系统自动生成。
@@ -31,5 +31,12 @@
         [Newtonsoft.Json.JsonProperty("sign")]
         [System.Text.Json.Serialization.JsonPropertyName("sign")]
         public virtual string? Signature { get; set; }
+
+        /// <summary>
+        /// 获取或设置签名方式。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.SignType"/> 参数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sign_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
+        public virtual string? SignType { get; set; }
     }
 }

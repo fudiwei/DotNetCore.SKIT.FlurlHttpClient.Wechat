@@ -92,4 +92,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             return RawStatus == 200 && "SUCCESS".Equals(ReturnCode) && string.IsNullOrEmpty(ErrorCode);
         }
     }
+
+    /// <summary>
+    /// 表示微信支付 API 响应的基类。
+    /// </summary>
+    public abstract class WechatTenpaySignableResponse : WechatTenpayResponse
+    {
+        /// <summary>
+        /// 获取或设置随机字符串。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("nonce_str")]
+        [System.Text.Json.Serialization.JsonPropertyName("nonce_str")]
+        public virtual string? NonceString { get; set; }
+
+        /// <summary>
+        /// 获取或设置请求签名。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sign")]
+        [System.Text.Json.Serialization.JsonPropertyName("sign")]
+        public virtual string? Signature { get; set; }
+    }
 }
