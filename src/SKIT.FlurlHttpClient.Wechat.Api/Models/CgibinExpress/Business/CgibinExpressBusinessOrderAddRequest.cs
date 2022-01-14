@@ -168,8 +168,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置商品缩略图 URL。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("img_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("img_url")]
+                        [Newtonsoft.Json.JsonProperty("goods_img_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_img_url")]
                         public string? ImageUrl { get; set; }
 
                         /// <summary>
