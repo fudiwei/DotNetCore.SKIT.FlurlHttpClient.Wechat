@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/offline/update_same_city_template 接口的请求。</para>
@@ -54,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public static class Types
                         {
                             public class ExtraBillingDetail : ProductOfflineGetSameCityTemplateResponse.Types.Template.Types.SpecialTimeValuation.Types.ExtraBillingDetail
-                            { 
+                            {
                             }
                         }
 

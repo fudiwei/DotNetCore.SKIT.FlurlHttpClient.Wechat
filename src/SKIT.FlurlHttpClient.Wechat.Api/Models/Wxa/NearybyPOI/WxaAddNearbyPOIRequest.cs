@@ -172,7 +172,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         writer.WriteNullValue();
                 }
             }
-            
+
             internal class NewtonsoftJsonServiceConverter : Newtonsoft.Json.JsonConverter<Types.Service?>
             {
                 public override bool CanRead

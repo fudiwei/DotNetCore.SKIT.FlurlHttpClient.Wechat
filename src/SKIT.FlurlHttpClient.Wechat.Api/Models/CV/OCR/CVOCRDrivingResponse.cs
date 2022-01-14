@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cv/ocr/driving 接口的响应。</para>
@@ -28,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             }
 
             public class ImageSize : CVImageQrcodeResponse.Types.ImageSize
-            { 
+            {
             }
         }
 

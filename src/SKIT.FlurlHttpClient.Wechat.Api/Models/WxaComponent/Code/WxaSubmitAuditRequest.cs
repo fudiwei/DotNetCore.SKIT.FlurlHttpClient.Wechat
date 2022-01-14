@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("third_class")]
                 public string? ThirdCategoryName { get; set; }
             }
-            
+
             public class Preview
             {
                 /// <summary>
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pic_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("pic_id_list")]
-                public IList<string>? PictureMediaIdList { get; set; } 
+                public IList<string>? PictureMediaIdList { get; set; }
             }
 
             public class UGCDeclaration

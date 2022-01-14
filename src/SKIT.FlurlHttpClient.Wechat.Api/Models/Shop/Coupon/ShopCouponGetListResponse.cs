@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/coupon/get_list 接口的响应。</para>
@@ -15,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public static class Types
                 {
                     public class Coupon : ShopCouponGetResponse.Types.Result.Types.Coupon
-                    { 
+                    {
                     }
 
                     public class CouponStock

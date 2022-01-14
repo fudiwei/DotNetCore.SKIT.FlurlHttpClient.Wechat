@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /componenttcb/createcsversion 接口的请求。</para>
@@ -241,7 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("branch")]
         [System.Text.Json.Serialization.JsonPropertyName("branch")]
-        public string? Branch { get; set; } 
+        public string? Branch { get; set; }
 
         /// <summary>
         /// 获取或设置包名称。

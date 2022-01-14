@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -669,7 +667,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
 
             return await client.SendRequestAsync<Models.MerchantCommonUploadImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
-}
+        }
         #endregion
     }
 }

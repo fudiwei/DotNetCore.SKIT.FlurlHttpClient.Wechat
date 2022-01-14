@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 /* @codestyle-disable no-jsonable-property-in-request-get */
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -70,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     }
 
                     public class AddressType : ShippingMethods
-                    { 
+                    {
                     }
                 }
 

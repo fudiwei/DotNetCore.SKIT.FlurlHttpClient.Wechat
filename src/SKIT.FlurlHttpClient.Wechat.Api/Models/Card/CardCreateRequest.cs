@@ -783,7 +783,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     }
 
                     public class CustomField : MembershipCard.Types.CustomField
-                    { 
+                    {
                     }
                 }
 

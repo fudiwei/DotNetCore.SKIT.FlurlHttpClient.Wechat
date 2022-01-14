@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
@@ -18,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             [System.Xml.Serialization.XmlRoot("xml")]
             public interface IXmlSerializable
-            { 
+            {
             }
         }
 
