@@ -12,4 +12,24 @@
         [System.Text.Json.Serialization.JsonIgnore]
         public virtual int? Timeout { get; set; }
     }
+
+    /// <summary>
+    /// 表示微信支付 API 请求的基类。
+    /// </summary>
+    public abstract class WechatTenpaySignRequest : WechatTenpayRequest
+    {
+        /// <summary>
+        /// 获取或设置随机字符串。如果不指定将由系统自动生成。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("nonce_str")]
+        [System.Text.Json.Serialization.JsonPropertyName("nonce_str")]
+        public virtual string? NonceString { get; set; }
+
+        /// <summary>
+        /// 获取或设置请求签名。如果不指定将由系统自动生成。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sign")]
+        [System.Text.Json.Serialization.JsonPropertyName("sign")]
+        public virtual string? Signature { get; set; }
+    }
 }

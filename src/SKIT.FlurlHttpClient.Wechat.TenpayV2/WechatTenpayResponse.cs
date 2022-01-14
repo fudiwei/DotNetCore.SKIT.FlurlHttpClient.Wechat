@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
@@ -57,33 +56,40 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         }
 
         /// <summary>
+        /// 获取微信支付 API 返回的状态码。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("return_code")]
+        [System.Text.Json.Serialization.JsonPropertyName("return_code")]
+        public virtual string? ReturnCode { get; set; }
+
+        /// <summary>
+        /// 获取微信支付 API 返回的状态描述。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("return_msg")]
+        [System.Text.Json.Serialization.JsonPropertyName("return_msg")]
+        public virtual string? ReturnMessage { get; set; }
+
+        /// <summary>
         /// 获取微信支付 API 返回的错误码。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("code")]
-        [System.Text.Json.Serialization.JsonPropertyName("code")]
+        [Newtonsoft.Json.JsonProperty("err_code")]
+        [System.Text.Json.Serialization.JsonPropertyName("err_code")]
         public virtual string? ErrorCode { get; set; }
 
         /// <summary>
-        /// 获取微信支付 API 返回的错误描述。
+        /// 获取微信支付 API 返回的状态描述。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("message")]
-        [System.Text.Json.Serialization.JsonPropertyName("message")]
-        public virtual string? ErrorMessage { get; set; }
+        [Newtonsoft.Json.JsonProperty("err_code_des")]
+        [System.Text.Json.Serialization.JsonPropertyName("err_code_des")]
+        public virtual string? ErrorCodeDescription { get; set; }
 
         /// <summary>
-        /// 获取微信支付 API 返回的错误详细信息。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("detail")]
-        [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        public virtual Dictionary<string, object>? ErrorDetail { get; set; }
-
-        /// <summary>
-        /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200 或 204、且 code 值为空）。
+        /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200、且 return_code 值 SUCCESS）。
         /// </summary>
         /// <returns></returns>
         public virtual bool IsSuccessful()
         {
-            return (RawStatus == 200 || RawStatus == 204) && string.IsNullOrEmpty(ErrorCode);
+            return RawStatus == 200 && "SUCCESS".Equals(ReturnCode) && string.IsNullOrEmpty(ErrorCode);
         }
     }
 }
