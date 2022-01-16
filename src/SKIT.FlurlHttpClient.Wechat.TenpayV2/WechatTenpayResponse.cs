@@ -84,12 +84,39 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         public virtual string? ErrorCodeDescription { get; set; }
 
         /// <summary>
+        /// 获取或设置业务结果。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("result_code")]
+        [System.Text.Json.Serialization.JsonPropertyName("result_code")]
+        public virtual string? ResultCode { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mch_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
+        public virtual string? MerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public virtual string? AppId { get; set; }
+
+        /// <summary>
         /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200、且 return_code 值 SUCCESS）。
         /// </summary>
         /// <returns></returns>
         public virtual bool IsSuccessful()
         {
-            return RawStatus == 200 && "SUCCESS".Equals(ReturnCode) && string.IsNullOrEmpty(ErrorCode);
+            bool ret = RawStatus == 200 && "SUCCESS".Equals(ReturnCode) && string.IsNullOrEmpty(ErrorCode);
+            if (ret)
+            {
+                return string.IsNullOrEmpty(ResultCode) || "SUCCESS".Equals(ResultCode);
+            }
+
+            return false;
         }
     }
 
@@ -106,7 +133,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         public virtual string? NonceString { get; set; }
 
         /// <summary>
-        /// 获取或设置请求签名。
+        /// 获取或设置签名类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sign_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
+        public virtual string? SignType { get; set; }
+
+        /// <summary>
+        /// 获取或设置签名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign")]
         [System.Text.Json.Serialization.JsonPropertyName("sign")]

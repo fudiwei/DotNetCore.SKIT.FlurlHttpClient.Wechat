@@ -11,6 +11,20 @@
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public virtual int? Timeout { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mch_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
+        public string? MerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.AppId"/> 参数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string? AppId { get; set; }
     }
 
     /// <summary>
@@ -26,17 +40,17 @@
         public virtual string? NonceString { get; set; }
 
         /// <summary>
-        /// 获取或设置请求签名。如果不指定将由系统自动生成。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sign")]
-        [System.Text.Json.Serialization.JsonPropertyName("sign")]
-        public virtual string? Signature { get; set; }
-
-        /// <summary>
         /// 获取或设置签名方式。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.SignType"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
         public virtual string? SignType { get; set; }
+
+        /// <summary>
+        /// 获取或设置签名。如果不指定将由系统自动生成。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sign")]
+        [System.Text.Json.Serialization.JsonPropertyName("sign")]
+        public virtual string? Signature { get; set; }
     }
 }

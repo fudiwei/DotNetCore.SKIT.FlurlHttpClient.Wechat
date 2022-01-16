@@ -32,5 +32,10 @@
         /// 获取或设置微信商户 API 密钥（注意与 API v3 密钥相区分）。
         /// </summary>
         public string MerchantSecret { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        public string? AppId { get; set; }
     }
 }
