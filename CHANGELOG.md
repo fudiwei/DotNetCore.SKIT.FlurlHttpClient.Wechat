@@ -32,6 +32,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.6.0
+
+    -   **新增**：随官方更新生成小程序码相关接口模型。（[GitHub PR #27](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/27)）
+
+    -   **新增**：随官方更新生成 URL Scheme、URL Link 相关接口模型。
+
 -   Release 2.5.0
 
     -   **新增**：新增换取用户手机号相关接口。
@@ -54,7 +60,7 @@
 
 -   Release 2.2.1
 
-    -   **修复**：修复获取会员卡信息接口模型的字段缺失问题。（[Gitee PR #3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/3)）。
+    -   **修复**：修复获取会员卡信息接口模型的字段缺失问题。（[Gitee PR #3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/3)）
 
 -   Release 2.2.0
 
@@ -244,7 +250,7 @@
 
 -   Release 2.3.1
 
-    -   **新增**：随官方文档更新发起批量转账相关接口模型。
+    -   **新增**：随官方更新发起批量转账相关接口模型。
 
     -   **修复**：修复无法自动为请求设置平台证书序列号的问题。
 

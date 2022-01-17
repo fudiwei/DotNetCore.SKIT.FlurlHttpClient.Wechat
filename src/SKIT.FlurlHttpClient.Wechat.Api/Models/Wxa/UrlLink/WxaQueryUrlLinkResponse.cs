@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("env")]
                         [System.Text.Json.Serialization.JsonPropertyName("env")]
-                        public string EnvironmentId { get; set; } = string.Empty;
+                        public string EnvironmentId { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置静态网站自定义域名。

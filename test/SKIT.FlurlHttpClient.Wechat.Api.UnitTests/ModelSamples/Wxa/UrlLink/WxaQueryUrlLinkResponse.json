@@ -10,7 +10,7 @@
         "env_version": "release",
         "cloud_base": {
             "env": "",
-            "doamin": "",
+            "domain": "",
             "path": "",
             "query": "",
             "resource_appid": ""
