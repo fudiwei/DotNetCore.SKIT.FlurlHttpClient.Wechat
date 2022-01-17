@@ -132,7 +132,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                     else if (reader.TokenType == Newtonsoft.Json.JsonToken.StartObject)
                     {
                         var jObject = serializer.Deserialize<Newtonsoft.Json.Linq.JObject>(reader);
-                        return Utilities.ReflectionUtility.DeserializeFromJson<QueryMerchantCustomsCustomDeclarationResponse>(ref jObject, serializer);
+                        return Utilities.JsonUtility.DeserializeWhenHasNArray<QueryMerchantCustomsCustomDeclarationResponse>(ref jObject, serializer);
                     }
 
                     throw new Newtonsoft.Json.JsonSerializationException();
@@ -155,7 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                     else if (reader.TokenType == System.Text.Json.JsonTokenType.StartObject)
                     {
                         var jElement = System.Text.Json.JsonDocument.ParseValue(ref reader).RootElement.Clone();
-                        return Utilities.ReflectionUtility.DeserializeFromJson<QueryMerchantCustomsCustomDeclarationResponse>(ref jElement);
+                        return Utilities.JsonUtility.DeserializeWhenHasNArray<QueryMerchantCustomsCustomDeclarationResponse>(ref jElement);
                     }
 
                     throw new NotImplementedException();
