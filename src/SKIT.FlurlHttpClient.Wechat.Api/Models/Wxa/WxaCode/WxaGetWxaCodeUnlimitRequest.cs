@@ -53,5 +53,19 @@
         [Newtonsoft.Json.JsonProperty("is_hyaline")]
         [System.Text.Json.Serialization.JsonPropertyName("is_hyaline")]
         public bool? IsHyaline { get; set; }
+
+        /// <summary>
+        /// 检查page 是否存在，为 true 时 page 必须是已经发布的小程序存在的页面（否则报错）；为 false 时允许小程序未发布或者 page 不存在， 但page 有数量上限（60000个）请勿滥用
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("check_path")]
+        [System.Text.Json.Serialization.JsonPropertyName("check_path")]
+        public bool? IsCheckPath { get; set; }
+
+        /// <summary>
+        /// 要打开的小程序版本。正式版为 "release"，体验版为 "trial"，开发版为 "develop"
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("env_version")]
+        [System.Text.Json.Serialization.JsonPropertyName("env_version")]
+        public string? EnvVersion { get; set; }
     }
 }
