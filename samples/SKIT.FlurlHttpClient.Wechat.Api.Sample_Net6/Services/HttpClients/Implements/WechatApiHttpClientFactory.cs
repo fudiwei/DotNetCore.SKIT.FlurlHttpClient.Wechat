@@ -35,7 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.HttpClients.Implements
             return new WechatApiClient(new WechatApiClientOptions()
             {
                 AppId = wechatAccountOptions.AppId,
-                AppSecret = wechatAccountOptions.AppSecret
+                AppSecret = wechatAccountOptions.AppSecret,
+                PushToken = _wechatOptions.CallbackToken
             });
         }
     }
