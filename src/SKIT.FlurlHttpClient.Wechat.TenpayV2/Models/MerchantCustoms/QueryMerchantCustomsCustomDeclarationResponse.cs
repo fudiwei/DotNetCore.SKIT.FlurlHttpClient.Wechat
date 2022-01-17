@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -124,9 +125,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
                 public override QueryMerchantCustomsCustomDeclarationResponse? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, QueryMerchantCustomsCustomDeclarationResponse? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
                 {
-                    var jObject = serializer.Deserialize<Newtonsoft.Json.Linq.JObject>(reader);
+                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
+                    {
+                        return existingValue;
+                    }
+                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.StartObject)
+                    {
+                        var jObject = serializer.Deserialize<Newtonsoft.Json.Linq.JObject>(reader);
+                        return Utilities.ReflectionUtility.DeserializeFromJson<QueryMerchantCustomsCustomDeclarationResponse>(ref jObject, serializer);
+                    }
 
-                    // TODO:
+                    throw new Newtonsoft.Json.JsonSerializationException();
                 }
 
                 public override void WriteJson(Newtonsoft.Json.JsonWriter writer, QueryMerchantCustomsCustomDeclarationResponse? value, Newtonsoft.Json.JsonSerializer serializer)
@@ -139,7 +148,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
             {
                 public override QueryMerchantCustomsCustomDeclarationResponse? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
-                    // TODO:
+                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
+                    {
+                        return default;
+                    }
+                    else if (reader.TokenType == System.Text.Json.JsonTokenType.StartObject)
+                    {
+                        var jElement = System.Text.Json.JsonDocument.ParseValue(ref reader).RootElement.Clone();
+                        return Utilities.ReflectionUtility.DeserializeFromJson<QueryMerchantCustomsCustomDeclarationResponse>(ref jElement);
+                    }
+
+                    throw new NotImplementedException();
                 }
 
                 public override void Write(System.Text.Json.Utf8JsonWriter writer, QueryMerchantCustomsCustomDeclarationResponse? value, System.Text.Json.JsonSerializerOptions options)
@@ -159,8 +178,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// <summary>
         /// 获取或设置记录列表。
         /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
+        [Newtonsoft.Json.JsonProperty("#$n")]
+        [System.Text.Json.Serialization.JsonPropertyName("#$n")]
         public Types.Record[] RecordList { get; set; } = default!;
 
         /// <summary>
