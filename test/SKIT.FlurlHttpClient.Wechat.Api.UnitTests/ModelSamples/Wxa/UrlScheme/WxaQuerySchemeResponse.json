@@ -1,0 +1,16 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "scheme_info": {
+        "appid": "appid",
+        "path": "",
+        "query": "",
+        "create_time": 611928113,
+        "expire_time": 0,
+        "env_version": "release"
+    },
+    "scheme_quota": {
+        "long_time_used": 100,
+        "long_time_limit": 100000
+    }
+}

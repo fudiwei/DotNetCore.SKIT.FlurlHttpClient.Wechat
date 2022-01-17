@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openlink")]
         [System.Text.Json.Serialization.JsonPropertyName("openlink")]
-        public string OpenLink { get; set; } = default!;
+        public string UrlScheme { get; set; } = default!;
     }
 }

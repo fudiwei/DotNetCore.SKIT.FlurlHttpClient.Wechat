@@ -22,6 +22,13 @@
                 [Newtonsoft.Json.JsonProperty("query")]
                 [System.Text.Json.Serialization.JsonPropertyName("query")]
                 public string? Query { get; set; }
+
+                /// <summary>
+                /// 获取或设置要打开的小程序版本。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("env_version")]
+                [System.Text.Json.Serialization.JsonPropertyName("env_version")]
+                public string? EnvironmentVersion { get; set; }
             }
         }
 
@@ -37,7 +44,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_expire")]
         [System.Text.Json.Serialization.JsonPropertyName("is_expire")]
-        public bool? IsExpire { get; set; }
+        public bool? IsExpirable { get; set; }
+
+        /// <summary>
+        /// 获取或设置到期失效类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("expire_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("expire_type")]
+        public int ExpireType { get; set; }
 
         /// <summary>
         /// 获取或设置到期失效的时间戳。
@@ -45,5 +59,12 @@
         [Newtonsoft.Json.JsonProperty("expire_time")]
         [System.Text.Json.Serialization.JsonPropertyName("expire_time")]
         public long? ExpireTimestamp { get; set; }
+
+        /// <summary>
+        /// 获取或设置到期失效的时间间隔（单位：天）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("expire_interval")]
+        [System.Text.Json.Serialization.JsonPropertyName("expire_interval")]
+        public int? ExpireInterval { get; set; }
     }
 }

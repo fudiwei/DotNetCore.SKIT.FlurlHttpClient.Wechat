@@ -59,7 +59,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("check_path")]
         [System.Text.Json.Serialization.JsonPropertyName("check_path")]
-        public bool? RequireCheckPagePath { get; set; }
+        public bool? RequireCheckPath { get; set; }
 
         /// <summary>
         /// 获取或设置要打开的小程序版本。

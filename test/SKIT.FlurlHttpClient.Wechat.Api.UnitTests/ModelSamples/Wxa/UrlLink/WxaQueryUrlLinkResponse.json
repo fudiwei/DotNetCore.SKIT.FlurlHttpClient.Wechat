@@ -1,0 +1,23 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "url_link_info": {
+        "appid": "appid",
+        "path": "",
+        "query": "",
+        "create_time": 611928113,
+        "expire_time": 0,
+        "env_version": "release",
+        "cloud_base": {
+            "env": "",
+            "doamin": "",
+            "path": "",
+            "query": "",
+            "resource_appid": ""
+        }
+    },
+    "url_link_quota": {
+        "long_time_used": 100,
+        "long_time_limit": 100000
+    }
+}

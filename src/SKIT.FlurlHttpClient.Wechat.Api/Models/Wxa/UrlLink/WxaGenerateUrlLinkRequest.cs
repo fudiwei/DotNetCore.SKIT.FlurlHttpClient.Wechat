@@ -36,6 +36,13 @@
                 [Newtonsoft.Json.JsonProperty("query")]
                 [System.Text.Json.Serialization.JsonPropertyName("query")]
                 public string? Query { get; set; }
+
+                /// <summary>
+                /// 获取或设置第三方平台的 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("resource_appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("resource_appid")]
+                public string? ResourceAppId { get; set; }
             }
         }
 
@@ -54,11 +61,18 @@
         public string? Query { get; set; }
 
         /// <summary>
+        /// 获取或设置要打开的小程序版本。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("env_version")]
+        [System.Text.Json.Serialization.JsonPropertyName("env_version")]
+        public string? EnvironmentVersion { get; set; }
+
+        /// <summary>
         /// 获取或设置是否到期失效。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_expire")]
         [System.Text.Json.Serialization.JsonPropertyName("is_expire")]
-        public bool? IsExpire { get; set; }
+        public bool? IsExpirable { get; set; }
 
         /// <summary>
         /// 获取或设置失效类型。
@@ -75,7 +89,7 @@
         public long? ExpireTimestamp { get; set; }
 
         /// <summary>
-        /// 获取或设置到期失效的间隔天数。
+        /// 获取或设置到期失效的时间间隔（单位：天）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("expire_interval")]
         [System.Text.Json.Serialization.JsonPropertyName("expire_interval")]
