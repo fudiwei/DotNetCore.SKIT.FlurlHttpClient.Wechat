@@ -126,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class PropertyPromotionListNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Promotion[]?>
+            internal class ResponsePropertyPromotionListNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Promotion[]?>
             {
                 public override bool CanRead
                 {
@@ -165,7 +165,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 }
             }
 
-            internal class PropertyPromotionListSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Promotion[]?>
+            internal class ResponsePropertyPromotionListSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Promotion[]?>
             {
                 public override Types.Promotion[]? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
@@ -322,9 +322,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置优惠信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promotion_detail")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.PropertyPromotionListNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyPromotionListNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.PropertyPromotionListSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyPromotionListSystemTextJsonConverter))]
         public Types.Promotion[]? PromotionList { get; set; }
     }
 }

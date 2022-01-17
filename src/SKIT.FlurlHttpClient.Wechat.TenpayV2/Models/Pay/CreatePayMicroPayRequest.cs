@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class PropertyDetailNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Detail?>
+            internal class ResponsePropertyDetailNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Detail?>
             {
                 public override bool CanRead
                 {
@@ -162,7 +162,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 }
             }
 
-            internal class PropertyDetailSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Detail?>
+            internal class ResponsePropertyDetailSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Detail?>
             {
                 public override Types.Detail? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
@@ -191,7 +191,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 }
             }
 
-            internal class PropertySceneNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Scene?>
+            internal class ResponsePropertySceneNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Scene?>
             {
                 public override bool CanRead
                 {
@@ -230,7 +230,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 }
             }
 
-            internal class PropertySceneSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Scene?>
+            internal class ResponsePropertySceneSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Scene?>
             {
                 public override Types.Scene? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
@@ -373,18 +373,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置商品信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.PropertyDetailNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyDetailNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.PropertyDetailSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyDetailSystemTextJsonConverter))]
         public Types.Detail? Detail { get; set; }
 
         /// <summary>
         /// 获取或设置场景信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene_info")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.PropertySceneNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertySceneNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.PropertySceneSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertySceneSystemTextJsonConverter))]
         public Types.Scene? Scene { get; set; }
 
         /// <summary>
