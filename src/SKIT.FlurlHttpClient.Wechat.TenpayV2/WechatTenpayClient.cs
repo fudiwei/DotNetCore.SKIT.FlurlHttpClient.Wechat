@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
                 if (signableRequest.Signature == null)
                 {
-                    // TODO
+                    // TODO: 生成签名算法
                     throw new NotImplementedException();
                 }
             }
@@ -99,6 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             try
             {
+                // TODO: JSON2XML
                 throw new NotImplementedException();
             }
             catch (FlurlHttpException ex)
@@ -110,6 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         private async Task<TResponse> WrapResponseWithXmlAsync<TResponse>(IFlurlResponse flurlResponse, CancellationToken cancellationToken = default)
             where TResponse : WechatTenpayResponse, new()
         {
+            // TODO: XML2JSON
             throw new NotImplementedException();
         }
     }

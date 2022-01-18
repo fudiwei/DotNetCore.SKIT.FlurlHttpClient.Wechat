@@ -3,9 +3,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /pay/micropay 接口的响应。</para>
+    /// <para>表示 [POST] /payitil/report 接口的响应。</para>
     /// </summary>
-    public class CreatePayMicroPayResponse : WechatTenpaySignableResponse
+    public class SubmitPayITILReportResponse : WechatTenpaySignableResponse
     {
         public static class Types
         {

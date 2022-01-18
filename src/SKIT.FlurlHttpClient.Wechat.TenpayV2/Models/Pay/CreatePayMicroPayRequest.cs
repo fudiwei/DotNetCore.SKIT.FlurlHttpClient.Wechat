@@ -123,140 +123,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponsePropertyDetailNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Detail?>
+            internal class ResponsePropertyDetailNewtonsoftJsonConverter : Newtonsoft.Json.Converters.AbstractObjectIsJsonConverter<Types.Detail>
             {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return true; }
-                }
-
-                public override Types.Detail? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, Types.Detail? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
-                    {
-                        string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
-                            return existingValue;
-
-                        return Newtonsoft.Json.JsonConvert.DeserializeObject<Types.Detail>(value);
-                    }
-
-                    throw new Newtonsoft.Json.JsonReaderException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.Detail? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (value != null)
-                        writer.WriteValue(Newtonsoft.Json.JsonConvert.SerializeObject(value));
-                    else
-                        writer.WriteNull();
-                }
             }
 
-            internal class ResponsePropertyDetailSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Detail?>
+            internal class ResponsePropertyDetailSystemTextJsonConverter : System.Text.Json.Converters.AbstractObjectIsJsonConverter<Types.Detail>
             {
-                public override Types.Detail? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return null;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
-                    {
-                        string? value = reader.GetString();
-                        if (value == null)
-                            return null;
-
-                        return System.Text.Json.JsonSerializer.Deserialize<Types.Detail>(value);
-                    }
-
-                    throw new System.Text.Json.JsonException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.Detail? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (value != null)
-                        writer.WriteStringValue(System.Text.Json.JsonSerializer.Serialize(value));
-                    else
-                        writer.WriteNullValue();
-                }
             }
 
-            internal class ResponsePropertySceneNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Scene?>
+            internal class ResponsePropertySceneNewtonsoftJsonConverter : Newtonsoft.Json.Converters.AbstractObjectIsJsonConverter<Types.Scene>
             {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return true; }
-                }
-
-                public override Types.Scene? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, Types.Scene? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
-                    {
-                        string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
-                            return existingValue;
-
-                        return Newtonsoft.Json.JsonConvert.DeserializeObject<Types.Scene>(value);
-                    }
-
-                    throw new Newtonsoft.Json.JsonReaderException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.Scene? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (value != null)
-                        writer.WriteValue(Newtonsoft.Json.JsonConvert.SerializeObject(value));
-                    else
-                        writer.WriteNull();
-                }
             }
 
-            internal class ResponsePropertySceneSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Scene?>
+            internal class ResponsePropertySceneSystemTextJsonConverter : System.Text.Json.Converters.AbstractObjectIsJsonConverter<Types.Scene>
             {
-                public override Types.Scene? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return null;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
-                    {
-                        string? value = reader.GetString();
-                        if (value == null)
-                            return null;
-
-                        return System.Text.Json.JsonSerializer.Deserialize<Types.Scene>(value);
-                    }
-
-                    throw new System.Text.Json.JsonException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.Scene? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (value != null)
-                        writer.WriteStringValue(System.Text.Json.JsonSerializer.Serialize(value));
-                    else
-                        writer.WriteNullValue();
-                }
             }
         }
 
