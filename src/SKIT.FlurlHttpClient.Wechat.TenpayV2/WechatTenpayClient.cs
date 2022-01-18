@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     /// <summary>
     /// 一个微信支付 API HTTP 客户端。
     /// </summary>
-    public class WechatTenpayClient : CommonClientBase, ICommonClient
+    public partial class WechatTenpayClient : CommonClientBase, ICommonClient
     {
         /// <summary>
         /// 获取当前客户端使用的微信商户平台凭证。
@@ -34,6 +34,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
+            FlurlClient.Configure((settings) => 
+                settings.HttpClientFactory = new Settings.HttpClientFactory(
+                    options.MerchantCertificateBytes, 
+                    options.MerchantCertificatePassword ?? options.MerchantId
+                )
+            );
         }
 
         /// <summary>

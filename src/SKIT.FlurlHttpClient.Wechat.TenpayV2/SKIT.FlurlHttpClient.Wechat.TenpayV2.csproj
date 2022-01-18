@@ -23,6 +23,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Reference Include="System.Net.Http.WebRequest" Condition="'$(TargetFramework)' == 'net461' Or '$(TargetFramework)' == 'net47'" />
         <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461' Or '$(TargetFramework)' == 'net47'" />
     </ItemGroup>
 

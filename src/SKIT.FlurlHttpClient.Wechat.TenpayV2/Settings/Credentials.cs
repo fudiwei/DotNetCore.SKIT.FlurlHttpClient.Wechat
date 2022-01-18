@@ -15,6 +15,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
         public string MerchantSecret { get; }
 
         /// <summary>
+        /// 初始化客户端时 <see cref="WechatTenpayClientOptions.MerchantCertificateBytes"/> 的副本。
+        /// </summary>
+        public byte[]? MerchantCertificateBytes { get; set; }
+
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatTenpayClientOptions.MerchantCertificatePassword"/> 的副本。
+        /// </summary>
+        public string? MerchantCertificatePassword { get; set; }
+
+        /// <summary>
         /// 初始化客户端时 <see cref="WechatTenpayClientOptions.AppId"/> 的副本。
         /// </summary>
         public string? AppId { get; }
@@ -25,6 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
 
             MerchantId = options.MerchantId;
             MerchantSecret = options.MerchantSecret;
+            MerchantCertificateBytes = options.MerchantCertificateBytes;
+            MerchantCertificatePassword = options.MerchantCertificatePassword;
             AppId = options.AppId;
         }
     }
