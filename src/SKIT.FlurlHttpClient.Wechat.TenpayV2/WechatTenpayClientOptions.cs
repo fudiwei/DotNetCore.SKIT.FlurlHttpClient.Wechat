@@ -34,7 +34,7 @@
         public string MerchantSecret { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置微信 AppId。
+        /// 获取或设置微信 AppId。若一个商户号下关联多个 AppId 的，该参数可以置空，改为在请求时传入。
         /// </summary>
         public string? AppId { get; set; }
     }

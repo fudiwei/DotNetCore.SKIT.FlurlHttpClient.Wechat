@@ -180,14 +180,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                 return jToken;
             }
 
-            StringBuilder stringBuilder = new StringBuilder();
-            using TextWriter stringWriter = new StringWriter(stringBuilder);
-            serializer = serializer ?? Newtonsoft.Json.JsonSerializer.CreateDefault();
-            serializer.Serialize(stringWriter, obj, typeof(T));
-            string rawJson = stringBuilder.ToString();
+            //StringBuilder stringBuilder = new StringBuilder();
+            //using TextWriter stringWriter = new StringWriter(stringBuilder);
+            //serializer = serializer ?? Newtonsoft.Json.JsonSerializer.CreateDefault();
+            //serializer.Serialize(stringWriter, obj, typeof(T));
+            //string rawJson = stringBuilder.ToString();
 
-            Newtonsoft.Json.Linq.JToken jToken = Newtonsoft.Json.Linq.JToken.Parse(rawJson);
-            return Flatten(jToken).ToString(serializer.Formatting);
+            //Newtonsoft.Json.Linq.JToken jToken = Newtonsoft.Json.Linq.JToken.Parse(rawJson);
+            //return Flatten(jToken).ToString(serializer.Formatting);
+
+            // TODO
+            return default!;
         }
 
         public static T DeserializeWhenHasNArray<T>(ref Newtonsoft.Json.Linq.JObject jObject, Newtonsoft.Json.JsonSerializer? serializer = null)
@@ -338,7 +341,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                     narrProp.PropertyInfo.SetValue(result, array);
                 }
             }
-            string json = SerializeWhenHasNArray<T>(result, options);
             return result;
         }
     }

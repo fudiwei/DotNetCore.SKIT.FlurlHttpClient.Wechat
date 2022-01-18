@@ -13,6 +13,7 @@ namespace Newtonsoft.Json.Converters
 
         public override bool CanWrite
         {
+            // TODO
             get { return false; }
         }
 
@@ -34,7 +35,7 @@ namespace Newtonsoft.Json.Converters
         public override void WriteJson(JsonWriter writer, T? value, JsonSerializer serializer)
         {
             if (value != null)
-                writer.WriteRaw(SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities.JsonUtility.SerializeWhenHasNArray<T>(value, serializer));
+                writer.WriteRaw(SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities.JsonUtility.SerializeWhenHasNArray(value, serializer));
             else
                 writer.WriteNull();
         }
