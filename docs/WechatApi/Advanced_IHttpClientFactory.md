@@ -15,15 +15,13 @@
 如果你想手动管理 `HttpClient`，那么可以参考下面基于 DI/IoC 的代码实现：
 
 ```csharp
-using Flurl.Http;
-using Flurl.Http.Configuration;
 using Microsoft.Extensions.Options;
 using SKIT.FlurlHttpClient.Wechat.Api;
 using SKIT.FlurlHttpClient.Wechat.Api.Models;
 
 public class WechatApiClientFactory
 {
-    internal class DelegatingFlurlClientFactory : IFlurlClientFactory
+    internal class DelegatingFlurlClientFactory : Flurl.Http.Configuration.DefaultHttpClientFactory
     {
         private readonly System.Net.Http.IHttpClientFactory _httpClientFactory;
 
@@ -32,14 +30,9 @@ public class WechatApiClientFactory
             _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
         }
 
-        public IFlurlClient Get(Flurl.Url url)
+        public override System.Net.Http.HttpClient CreateHttpClient(System.Net.Http.HttpMessageHandler handler)
         {
-            return new FlurlClient(_httpClientFactory.CreateClient(url.ToUri().Host));
-        }
-
-        public void Dispose()
-        {
-            // Do Nothing
+            return _httpClientFactory.CreateClient();
         }
     }
 
@@ -52,13 +45,13 @@ public class WechatApiClientFactory
     {
         _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
         _wechatApiClientOptions = wechatApiClientOptions ?? throw new ArgumentNullException(nameof(wechatApiClientOptions));
-
-        Flurl.Http.FlurlHttp.GlobalSettings.FlurlClientFactory = new DelegatingFlurlClientFactory(_httpClientFactory);
     }
 
     public WechatApiClient CreateClient()
     {
-        return new WechatApiClient(_wechatApiClientOptions.Value);
+        WechatApiClient client = new WechatApiClient(_wechatApiClientOptions.Value);
+        client.Configure((settings) => settings.FlurlHttpClientFactory = new DelegatingFlurlClientFactory(_httpClientFactory));
+        return client;
     }
 }
 ```
