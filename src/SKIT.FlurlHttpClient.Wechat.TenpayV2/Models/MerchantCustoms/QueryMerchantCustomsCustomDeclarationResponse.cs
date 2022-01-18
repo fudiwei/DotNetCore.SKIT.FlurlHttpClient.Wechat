@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -111,63 +110,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<QueryMerchantCustomsCustomDeclarationResponse?>
+            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.NArrayObjectConverter<QueryMerchantCustomsCustomDeclarationResponse>
             {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return false; }
-                }
-
-                public override QueryMerchantCustomsCustomDeclarationResponse? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, QueryMerchantCustomsCustomDeclarationResponse? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.StartObject)
-                    {
-                        var jObject = serializer.Deserialize<Newtonsoft.Json.Linq.JObject>(reader);
-                        return Utilities.JsonUtility.DeserializeWhenHasNArray<QueryMerchantCustomsCustomDeclarationResponse>(ref jObject, serializer);
-                    }
-
-                    throw new Newtonsoft.Json.JsonSerializationException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, QueryMerchantCustomsCustomDeclarationResponse? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    throw new NotImplementedException();
-                }
             }
 
-            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<QueryMerchantCustomsCustomDeclarationResponse?>
+            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Converters.NArrayObjectConverter<QueryMerchantCustomsCustomDeclarationResponse>
             {
-                public override QueryMerchantCustomsCustomDeclarationResponse? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return default;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.StartObject)
-                    {
-                        var jElement = System.Text.Json.JsonDocument.ParseValue(ref reader).RootElement.Clone();
-                        return Utilities.JsonUtility.DeserializeWhenHasNArray<QueryMerchantCustomsCustomDeclarationResponse>(ref jElement);
-                    }
-
-                    throw new NotImplementedException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, QueryMerchantCustomsCustomDeclarationResponse? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    throw new NotImplementedException();
-                }
             }
         }
-        
+
         /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>

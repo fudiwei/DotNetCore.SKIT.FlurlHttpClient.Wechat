@@ -1,4 +1,3 @@
-using System;
 using System.Linq;
 using System.Reflection;
 
@@ -50,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             return result;
         }
 
-        public static T DeserializeWhenHasNArray<T>(ref System.Text.Json.JsonElement jElement)
+        public static T DeserializeWhenHasNArray<T>(ref System.Text.Json.JsonElement jElement, System.Text.Json.JsonSerializerOptions options = null)
             where T : class, new()
         {
             var props = typeof(T).GetProperties(BindingFlags.Instance | BindingFlags.Public)
