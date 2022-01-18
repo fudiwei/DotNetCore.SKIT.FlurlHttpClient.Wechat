@@ -40,7 +40,7 @@
         public virtual string? NonceString { get; set; }
 
         /// <summary>
-        /// 获取或设置签名方式。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.SignType"/> 参数。
+        /// 获取或设置签名方式。需注意部分接口不支持指定签名方式。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_type")]

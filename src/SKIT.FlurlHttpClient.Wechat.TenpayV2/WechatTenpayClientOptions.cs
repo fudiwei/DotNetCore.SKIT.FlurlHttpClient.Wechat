@@ -18,12 +18,6 @@
         public string Endpoints { get; set; } = WechatTenpayEndpoints.DEFAULT;
 
         /// <summary>
-        /// 获取或设置微信支付 API 签名方式。
-        /// <para>默认值：<see cref="Constants.SignTypes.MD5"/></para>
-        /// </summary>
-        public string SignType { get; set; } = Constants.SignTypes.MD5;
-
-        /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
         public string MerchantId { get; set; } = default!;

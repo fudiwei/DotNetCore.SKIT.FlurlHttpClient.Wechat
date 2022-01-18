@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Linq;
 using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
@@ -17,11 +20,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         public Settings.Credentials Credentials { get; }
 
         /// <summary>
-        /// 获取当前客户端使用的微信 API 请求签名方式。
-        /// </summary>
-        protected string SignType { get; }
-
-        /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatTenpayClient"/> 类的新实例。
         /// </summary>
         /// <param name="options">配置项。</param>
@@ -30,7 +28,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (options == null) throw new ArgumentNullException(nameof(options));
 
             Credentials = new Settings.Credentials(options);
-            SignType = options.SignType;
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
@@ -75,13 +72,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                     signableRequest.NonceString = Guid.NewGuid().ToString("N");
                 }
 
-                if (signableRequest.SignType == null)
-                {
-                    signableRequest.SignType = SignType;
-                }
-
                 if (signableRequest.Signature == null)
                 {
+                    string signType = signableRequest.SignType ?? Constants.SignTypes.MD5;
+
                     // TODO: 生成签名算法
                     throw new NotImplementedException();
                 }
@@ -105,8 +99,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             try
             {
-                // TODO: JSON2XML
-                throw new NotImplementedException();
+                bool isSimpleRequest = data == null ||
+                    flurlRequest.Verb == HttpMethod.Get ||
+                    flurlRequest.Verb == HttpMethod.Head ||
+                    flurlRequest.Verb == HttpMethod.Options;
+                if (isSimpleRequest)
+                {
+                    using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false);
+                    return await WrapResponseWithXmlAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+                }
+                else
+                {
+                    string json = JsonSerializer.Serialize(data);
+                    string xml = Utilities.XmlUtility.ConvertFromJson(json);
+
+                    using HttpContent httpContent = new StringContent(xml, Encoding.UTF8, "text/xml");
+                    using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
+                    return await WrapResponseWithXmlAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+                }
             }
             catch (FlurlHttpException ex)
             {
@@ -117,8 +127,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         private async Task<TResponse> WrapResponseWithXmlAsync<TResponse>(IFlurlResponse flurlResponse, CancellationToken cancellationToken = default)
             where TResponse : WechatTenpayResponse, new()
         {
-            // TODO: XML2JSON
-            throw new NotImplementedException();
+            TResponse tmp = await WrapResponseAsync<TResponse>(flurlResponse, cancellationToken);
+            byte tmpb1 = tmp.RawBytes.SkipWhile(b => b <= 32).FirstOrDefault(),
+                 tmpb2 = tmp.RawBytes.Reverse().SkipWhile(b => b <= 32).FirstOrDefault();
+            bool xmlable = tmp.RawStatus == 200 && (tmpb1 == 60 && tmpb2 == 62); // "<...>"
+
+            TResponse result;
+            if (xmlable)
+            {
+                string xml = Encoding.UTF8.GetString(tmp.RawBytes);
+                string json = Utilities.XmlUtility.ConvertToJson(xml);
+
+                result = JsonSerializer.Deserialize<TResponse>(json);
+                result.RawStatus = tmp.RawStatus;
+                result.RawHeaders = tmp.RawHeaders;
+                result.RawBytes = tmp.RawBytes;
+            }
+            else
+            {
+                result = tmp;
+            }
+
+            return result;
         }
     }
 }
