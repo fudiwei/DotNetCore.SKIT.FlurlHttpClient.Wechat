@@ -32,6 +32,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.6.1
+
+    -   **修复**：修复获取小程序订阅消息公共模板标题时出现的 200019 错误。（[GitHub Issue #28](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/28)）
+
 -   Release 2.6.0
 
     -   **新增**：随官方更新生成小程序码相关接口模型。（[GitHub PR #27](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/27)）
