@@ -129,8 +129,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// <summary>
         /// 获取或设置记录列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("#$n")]
-        [System.Text.Json.Serialization.JsonPropertyName("#$n")]
+        [Newtonsoft.Json.JsonProperty(Utilities.JsonUtility.PROPERTY_NAME_NARRAY)]
+        [System.Text.Json.Serialization.JsonPropertyName(Utilities.JsonUtility.PROPERTY_NAME_NARRAY)]
         public Types.Record[] RecordList { get; set; } = default!;
 
         /// <summary>
