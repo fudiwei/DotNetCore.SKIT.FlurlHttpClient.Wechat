@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
+using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
@@ -50,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             if (array == null) throw new ArgumentException(nameof(array));
             if (elementType == null) throw new ArgumentException(nameof(elementType));
 
-            static object CreateNArrayElementIfEmpty(Array array, Type elementType, int index)
+            static object AppendNArrayElement(Array array, Type elementType, int index)
             {
                 object? element = array.GetValue(index);
                 if (element == null)
@@ -73,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                 return element;
             }
 
-            object? element = CreateNArrayElementIfEmpty(array, elementType, index);
+            object? element = AppendNArrayElement(array, elementType, index);
 
             if (value is Newtonsoft.Json.Linq.JToken jToken)
             {
@@ -81,13 +83,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                 var prop = props.SingleOrDefault(p => string.Equals(p.PropertyName.Replace("$n", index.ToString()), key));
                 if (prop != null)
                 {
-                    Newtonsoft.Json.JsonSerializer serializer = new Newtonsoft.Json.JsonSerializer();
+                    Newtonsoft.Json.JsonSerializer serializer = Newtonsoft.Json.JsonSerializer.CreateDefault();
                     foreach (Newtonsoft.Json.JsonConverterAttribute attribute in prop.PropertyInfo.GetCustomAttributes<Newtonsoft.Json.JsonConverterAttribute>(inherit: true))
                     {
                         Newtonsoft.Json.JsonConverter converter = (Newtonsoft.Json.JsonConverter)Activator.CreateInstance(attribute.ConverterType, attribute.ConverterParameters);
                         serializer.Converters.Add(converter);
                     }
-                    
+
                     object tmp = jToken.ToObject(prop.PropertyType, serializer);
                     prop.PropertyInfo.SetValue(element, tmp);
                 }
@@ -102,6 +104,56 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             }
 
             return element;
+        }
+
+        public static string SerializeWhenHasNArray<T>(T obj, Newtonsoft.Json.JsonSerializer? serializer = null)
+            where T : class, new()
+        {
+            if (obj == null) throw new ArgumentNullException(nameof(obj));
+
+            static Newtonsoft.Json.Linq.JToken FlattenNArrayJObject(Newtonsoft.Json.Linq.JToken jToken)
+            {
+                if (jToken.Type == Newtonsoft.Json.Linq.JTokenType.Array)
+                {
+                    foreach (Newtonsoft.Json.Linq.JToken jElToken in jToken)
+                    {
+                        FlattenNArrayJObject(jElToken);
+                    }
+                }
+                else if (jToken.Type == Newtonsoft.Json.Linq.JTokenType.Object)
+                {
+                    string[] keys = ((Newtonsoft.Json.Linq.JObject)jToken).Properties().Select(p => p.Name).ToArray();
+                    foreach (string key in keys)
+                    {
+                        if (!PROPERTY_NAME_NARRAY.Equals(key))
+                            continue;
+
+                        int i = 0;
+                        foreach (Newtonsoft.Json.Linq.JToken jElToken in jToken[key])
+                        {
+                            foreach (Newtonsoft.Json.Linq.JProperty jElKey in jElToken)
+                            {
+                                jToken[jElKey.Name.Replace("$n", i.ToString())] = jElKey.Value;
+                            }
+
+                            i++;
+                        }
+                    }
+
+                    jToken[PROPERTY_NAME_NARRAY]?.Parent?.Remove();
+                }
+
+                return jToken;
+            }
+
+            StringBuilder stringBuilder = new StringBuilder();
+            using TextWriter stringWriter = new StringWriter(stringBuilder);
+            serializer = serializer ?? Newtonsoft.Json.JsonSerializer.CreateDefault();
+            serializer.Serialize(stringWriter, obj, typeof(T));
+
+            Newtonsoft.Json.Linq.JToken jToken = Newtonsoft.Json.Linq.JToken.Parse(stringBuilder.ToString());
+            jToken = FlattenNArrayJObject(jToken);
+            return jToken.ToString(serializer.Formatting);
         }
 
         public static T DeserializeWhenHasNArray<T>(ref Newtonsoft.Json.Linq.JObject jObject, Newtonsoft.Json.JsonSerializer? serializer = null)
@@ -138,7 +190,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                     throw new Newtonsoft.Json.JsonSerializationException($"Could not find member `{jKey.Name}` on object of type `{typeof(T).Name}`.");
                 }
             }
+
+            string json = SerializeWhenHasNArray(result, serializer);
             return result;
+        }
+
+        public static string SerializeWhenHasNArray<T>(T obj, System.Text.Json.JsonSerializerOptions options = null)
+            where T : class, new()
+        {
+            if (obj == null) throw new ArgumentNullException(nameof(obj));
+
+            throw new NotImplementedException();
         }
 
         public static T DeserializeWhenHasNArray<T>(ref System.Text.Json.JsonElement jElement, System.Text.Json.JsonSerializerOptions options = null)
@@ -192,7 +254,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             if (props == null)
             {
                 props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                    .Where(p => p.CanRead && p.CanWrite && !p.GetCustomAttributes<Newtonsoft.Json.JsonIgnoreAttribute>(inherit: true).Any())
+                    .Where(p => 
+                        (p.CanRead && !p.GetCustomAttributes<Newtonsoft.Json.JsonIgnoreAttribute>(inherit: true).Any()) &&
+                        (p.CanWrite || p.GetCustomAttributes<Newtonsoft.Json.JsonPropertyAttribute>(inherit: true).Any())
+                    )
                     .Select(p =>
                     {
                         string name = p.GetCustomAttribute<Newtonsoft.Json.JsonPropertyAttribute>(inherit: true)?.PropertyName ?? p.Name;
@@ -219,10 +284,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             if (props == null)
             {
                 props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                    .Where(p => p.CanRead && p.CanWrite && !p.GetCustomAttributes<Newtonsoft.Json.JsonIgnoreAttribute>(inherit: true).Any())
+                    .Where(p => 
+                        (p.CanRead && !p.GetCustomAttributes<System.Text.Json.Serialization.JsonIgnoreAttribute>(inherit: true).Any()) &&
+                        (p.CanWrite || p.GetCustomAttributes<System.Text.Json.Serialization.JsonIncludeAttribute>(inherit: true).Any())
+                    )
                     .Select(p =>
                     {
-                        string name = p.GetCustomAttribute<Newtonsoft.Json.JsonPropertyAttribute>(inherit: true)?.PropertyName ?? p.Name;
+                        string name = p.GetCustomAttribute<System.Text.Json.Serialization.JsonPropertyNameAttribute>(inherit: true)?.Name ?? p.Name;
                         return new TypedJsonProperty
                         (
                             propertyName: name,

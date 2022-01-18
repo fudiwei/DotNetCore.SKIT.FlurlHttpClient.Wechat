@@ -33,7 +33,10 @@ namespace Newtonsoft.Json.Converters
 
         public override void WriteJson(JsonWriter writer, T? value, JsonSerializer serializer)
         {
-            throw new NotImplementedException();
+            if (value != null)
+                writer.WriteRaw(SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities.JsonUtility.SerializeWhenHasNArray<T>(value, serializer));
+            else
+                writer.WriteNull();
         }
     }
 }
