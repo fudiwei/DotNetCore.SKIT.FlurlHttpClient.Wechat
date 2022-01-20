@@ -2,7 +2,7 @@
 
 namespace System.Text.Json.Converters
 {
-    internal class StringTypedNullableBooleanConverter : JsonConverter<bool?>
+    internal class YesOrNoNullableBooleanConverter : JsonConverter<bool?>
     {
         public override bool? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
@@ -18,15 +18,15 @@ namespace System.Text.Json.Converters
             {
                 return false;
             }
-            else if (reader.TokenType == JsonTokenType.String)
+            else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
             {
                 string? value = reader.GetString();
                 if (value == null)
                     return null;
 
-                if ("true".Equals(value, StringComparison.OrdinalIgnoreCase))
+                if ("Y".Equals(value))
                     return true;
-                else if ("false".Equals(value, StringComparison.OrdinalIgnoreCase))
+                else if ("N".Equals(value))
                     return false;
             }
 
@@ -36,7 +36,7 @@ namespace System.Text.Json.Converters
         public override void Write(Utf8JsonWriter writer, bool? value, JsonSerializerOptions options)
         {
             if (value.HasValue)
-                writer.WriteStringValue(value.Value ? "true" : "false");
+                writer.WriteStringValue(value.Value ? "Y" : "N");
             else
                 writer.WriteNullValue();
         }

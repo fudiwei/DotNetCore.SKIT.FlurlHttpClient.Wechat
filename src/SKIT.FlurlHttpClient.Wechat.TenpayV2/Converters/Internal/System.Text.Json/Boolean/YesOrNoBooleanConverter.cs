@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text.Json;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    internal class StringTypedBooleanConverter : JsonConverter<bool>
+    internal class YesOrNoBooleanConverter : JsonConverter<bool>
     {
-        private readonly JsonConverter<bool?> _converter = new StringTypedNullableBooleanConverter();
+        private readonly JsonConverter<bool?> _converter = new YesOrNoNullableBooleanConverter();
 
         public override bool Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {

@@ -1,0 +1,14 @@
+﻿{
+    "return_code": "",
+    "return_msg": "",
+    "appid": "",
+    "sub_appid": "",
+    "mch_id": "",
+    "sub_mch_id": "",
+    "nonce_str": "",
+    "sign": "",
+    "result_code": "",
+    "err_code": "",
+    "openid": "",
+    "sub_openid": ""
+}

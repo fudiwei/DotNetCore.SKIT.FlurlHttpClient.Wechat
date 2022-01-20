@@ -1,0 +1,17 @@
+﻿{
+    "appid": "wxdace645e0bc2c424",
+    "attach": "test",
+    "auth_code": "130050378319653252",
+    "body": "被扫测试",
+    "detail": "{\"cost_price\":1,\"receipt_id\":\"wx123\",\"goods_detail\":[{\"goods_id\":\"商品编码\",\"wxpay_goods_id\":\"1001\",\"goods_name\":\"iPhone6s 16G\",\"quantity\":1,\"price\":1},{\"goods_id\":\"商品编码\",\"wxpay_goods_id\":\"1002\",\"goods_name\":\"iPhone6s 32G\",\"quantity\":1,\"price\":1}]}",
+    "device_info": "TEST01",
+    "goods_tag": "MEETING",
+    "mch_id": "1900009001",
+    "nonce_str": "4b4f6f692547affd2c8fadb39fed603a",
+    "out_trade_no": "19000090011489146530",
+    "spbill_create_ip": "14.23.150.211",
+    "sub_mch_id": "11383918",
+    "total_fee": "503",
+    "version": "1.0",
+    "sign": "144FF79B7391FE1BD0708470B7D8A2E3"
+}
