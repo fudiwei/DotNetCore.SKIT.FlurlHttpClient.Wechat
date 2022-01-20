@@ -32,21 +32,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_order_id_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_order_id_$n")]
-                public string? SubOrderIdList { get; set; }
+                public string? SubOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置海关。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("customs_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("customs_$n")]
-                public string CustomsList { get; set; } = default!;
+                public string Customs { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置商户海关备案号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mch_customs_no_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("mch_customs_no_$n")]
-                public string MerchantCustomsNumberList { get; set; } = default!;
+                public string MerchantCustomsNumber { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置关税（单位：分）。
