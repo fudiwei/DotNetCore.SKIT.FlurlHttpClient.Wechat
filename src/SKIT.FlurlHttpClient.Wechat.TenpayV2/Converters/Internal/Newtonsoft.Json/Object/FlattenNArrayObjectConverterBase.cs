@@ -3,7 +3,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Newtonsoft.Json.Converters
 {
-    internal abstract partial class AbstractObjectIsNArrayConverter<T> : JsonConverter<T?>
+    internal abstract partial class FlattenNArrayObjectConverterBase<T> : JsonConverter<T?>
         where T : class, new()
     {
         public override bool CanRead

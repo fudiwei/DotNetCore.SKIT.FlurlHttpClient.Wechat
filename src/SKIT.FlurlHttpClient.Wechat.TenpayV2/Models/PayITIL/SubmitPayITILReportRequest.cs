@@ -55,11 +55,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponsePropertyTradeListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.AbstractObjectIsJsonConverter<IList<Types.Trade>>
+            internal class ResponsePropertyTradeListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<Types.Trade>>
             {
             }
 
-            internal class ResponsePropertyTradeListSystemTextJsonConverter : System.Text.Json.Converters.AbstractObjectIsJsonConverter<IList<Types.Trade>>
+            internal class ResponsePropertyTradeListSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<Types.Trade>>
             {
             }
         }

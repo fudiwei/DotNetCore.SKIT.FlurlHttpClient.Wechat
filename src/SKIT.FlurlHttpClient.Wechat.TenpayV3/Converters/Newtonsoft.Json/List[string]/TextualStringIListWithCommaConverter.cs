@@ -2,12 +2,23 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.Linq;
 
 namespace Newtonsoft.Json.Converters
 {
-    internal class TextualStringIListWithCommaConverter : JsonConverter<IList<string>?>
+    internal class TextualStringIListWithCommaConverter : JsonConverter
     {
-        private readonly JsonConverter<List<string>?> _converter = new TextualStringListWithCommaConverter();
+        public override bool CanConvert(Type objectType)
+        {
+            bool ret = objectType == typeof(IList<string>) || objectType == typeof(List<string>);
+            if (!ret)
+            {
+                ret = objectType.IsGenericType &&
+                      objectType.GetGenericTypeDefinition() == typeof(List<>) &&
+                      objectType.GetElementType() == typeof(string);
+            }
+            return ret;
+        }
 
         public override bool CanRead
         {
@@ -19,26 +30,32 @@ namespace Newtonsoft.Json.Converters
             get { return true; }
         }
 
-        public override IList<string>? ReadJson(JsonReader reader, Type objectType, IList<string>? existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            return _converter.ReadJson(reader, objectType, ConvertIListToList(existingValue), hasExistingValue, serializer);
-        }
-
-        public override void WriteJson(JsonWriter writer, IList<string>? value, JsonSerializer serializer)
-        {
-            _converter.WriteJson(writer, ConvertIListToList(value), serializer);
-        }
-
-        private List<string>? ConvertIListToList(IList<string>? src)
-        {
-            if (src == null) 
+            if (reader.TokenType == JsonToken.Null)
+            {
                 return null;
+            }
+            else if (reader.TokenType == JsonToken.String)
+            {
+                string? value = serializer.Deserialize<string>(reader);
+                if (value == null)
+                    return null;
+                if (string.IsNullOrEmpty(value))
+                    return new List<string>();
 
-            List<string>? dest = src as List<string>;
-            if (dest != null)
-                return dest;
+                return value.Split(',').ToList();
+            }
 
-            return new List<string>(src);
+            throw new JsonReaderException();
+        }
+
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
+        {
+            if (value != null)
+                writer.WriteValue(string.Join(",", value));
+            else
+                writer.WriteNull();
         }
     }
 }

@@ -112,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                         options = new System.Text.Json.JsonSerializerOptions();
                     }
                     else
-                    { 
+                    {
                         options = new System.Text.Json.JsonSerializerOptions(options);
                     }
 
