@@ -32,13 +32,39 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.6.1
+
+    -   **修复**：修复获取小程序订阅消息公共模板标题时出现的 200019 错误。（[GitHub Issue #28](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/28)）
+
+-   Release 2.6.0
+
+    -   **新增**：随官方更新生成小程序码相关接口模型。（[GitHub PR #27](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/27)）
+
+    -   **新增**：随官方更新生成 URL Scheme、URL Link 相关接口模型。
+
+-   Release 2.5.0
+
+    -   **新增**：新增换取用户手机号相关接口。
+
+-   Release 2.4.0
+
+    -   **新增**：新增获取小程序插件用户的唯一标识相关接口。
+
+    -   **新增**：随官方更新扫描二维码打开小程序的相关接口模型。
+
+    -   **新增**：随官方更新物流助手相关接口模型。
+
+    -   **新增**：新增生成参数化 URL 的扩展方法。
+
+    -   **变更**：升级公共组件。
+
 -   Release 2.3.0
 
     -   **新增**：新增第三方平台代公众号发起网页授权相关接口。
 
 -   Release 2.2.1
 
-    -   **修复**：修复获取会员卡信息接口模型的字段缺失问题。（[Gitee PR #3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/3)）。
+    -   **修复**：修复获取会员卡信息接口模型的字段缺失问题。（[Gitee PR #3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/3)）
 
 -   Release 2.2.0
 
@@ -226,10 +252,21 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.3.1
+
+    -   **新增**：随官方更新发起批量转账相关接口模型。
+
+    -   **修复**：修复无法自动为请求设置平台证书序列号的问题。
+
+-   Release 2.3.0
+
+    -   **新增**：新增银行组件相关接口。
+
+    -   **变更**：升级公共组件。
+
 -   Release 2.2.2
 
     -   **修复**：修复二级商户进件提交申请单接口因 URL 结尾反斜杠问题而无法正常请求的问题。（[GitHub Issue #19](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/19)）
-
 
 -   Release 2.2.1
 
@@ -386,6 +423,32 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 2.4.0
+
+    -   **新增**：新增获取单个部门和子部门 ID 列表的相关接口。
+
+    -   **新增**：新增上下游相关接口。
+
+    -   **新增**：新增客户群加入群聊管理相关接口。
+
+    -   **新增**：新增获取带参授权链接相关接口。
+
+    -   **新增**：随官方调整获取指定的应用详情相关接口模型。
+
+    -   **新增**：新增获取带参的应用二维码相关接口。
+
+    -   **新增**：新增日程参与者相关接口。
+
+    -   **新增**：随官方更新成员相关接口模型。
+
+-   Release 2.3.0
+
+    -   **新增**：新增生成参数化 URL 的扩展方法。
+
+    -   **变更**：升级公共组件。
+
+    -   **变更**：重命名生成 JS-SDK 客户端签名参数的扩展方法。
 
 -   Release 2.2.1
 

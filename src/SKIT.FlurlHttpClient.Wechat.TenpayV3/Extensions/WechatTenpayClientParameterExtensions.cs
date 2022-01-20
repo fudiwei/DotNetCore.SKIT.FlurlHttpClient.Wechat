@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public static class WechatTenpayClientParameterExtensions
     {
         /// <summary>
-        /// <para>生成客户端 JSAPI / 小程序调起支付所需的参数。</para>
+        /// <para>生成客户端 JSAPI / 小程序调起支付所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_8.shtml </para>
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>生成 APP 调起支付所需的参数。</para>
+        /// <para>生成 APP 调起支付所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_6.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_2_4.shtml </para>
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>生成 APP 调起支付所需的参数。</para>
+        /// <para>生成 APP 调起支付所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_6.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_2_4.shtml </para>

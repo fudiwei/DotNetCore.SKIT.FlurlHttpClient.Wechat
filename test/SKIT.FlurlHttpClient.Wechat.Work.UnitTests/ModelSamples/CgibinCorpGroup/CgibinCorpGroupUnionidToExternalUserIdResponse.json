@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "external_userid_info": [
+        {
+            "corpid": "AAAAA",
+            "external_userid": "BBBB"
+        },
+        {
+            "corpid": "CCCCC",
+            "external_userid": "DDDDD"
+        }
+    ]
+}

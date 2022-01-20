@@ -44,7 +44,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("errcode")]
                 [System.Text.Json.Serialization.JsonPropertyName("errcode")]
-                public int ErrorCode { get; set; } 
+                public int ErrorCode { get; set; }
 
                 /// <summary>
                 /// 获取或设置错误信息。
@@ -59,7 +59,7 @@
                 [Newtonsoft.Json.JsonProperty("moment_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("moment_id")]
                 public string MomentId { get; set; } = default!;
-                
+
                 /// <summary>
                 /// 获取或设置不合法的执行者信息。
                 /// </summary>

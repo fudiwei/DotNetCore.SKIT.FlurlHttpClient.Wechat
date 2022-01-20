@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.change_school_contact 或 INFO.change_school_contact 事件的数据。</para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92032 </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/92052 </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92051 </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/92050 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92032 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92052 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92051 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92050 </para>
     /// </summary>
     public class ChangeSchoolContactEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {

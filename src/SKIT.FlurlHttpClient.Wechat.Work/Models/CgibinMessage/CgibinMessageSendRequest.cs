@@ -890,7 +890,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("submit_button")]
                 public Types.Button? SubmitButton { get; set; }
             }
-            
+
             public class TemplateMessage
             {
                 public static class Types

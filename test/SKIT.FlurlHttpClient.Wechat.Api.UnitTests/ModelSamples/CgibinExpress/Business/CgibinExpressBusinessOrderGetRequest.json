@@ -2,5 +2,6 @@
     "order_id": "01234567890123456789",
     "openid": "oABC123456",
     "delivery_id": "SF",
-    "waybill_id": "123456789"
+    "waybill_id": "123456789",
+    "print_type": 1
 }

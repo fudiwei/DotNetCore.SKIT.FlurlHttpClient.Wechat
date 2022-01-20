@@ -1,16 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Flurl;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
-    /// <summary>
-    /// 为 <see cref="WechatApiClient"/> 提供客户端调起 JS-SDK 签名的扩展方法。
-    /// </summary>
     public static class WechatApiClientParameterExtensions
     {
+        private const string BASE_URL = "https://open.weixin.qq.com/";
+
         /// <summary>
-        /// <para>生成客户端 JS-SDK `wx.config` 所需的参数。</para>
+        /// <para>生成公众号 JS-SDK `wx.config` 所需的参数字典。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#62 </para>
         /// </summary>
         /// <param name="client"></param>
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>生成客户端 JS-SDK `wx.chooseInvoice` 接口所需的参数。</para>
+        /// <para>生成公众号 JS-SDK `wx.chooseInvoice` 接口所需的参数字典。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Auto-print/API_Documentation.html#_6-4-%E5%8F%91%E7%A5%A8%E7%AD%BE%E5%90%8D%E6%96%B9%E6%B3%95 </para>
         /// </summary>
         /// <param name="client"></param>
@@ -68,6 +68,52 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 { "cardType", cardType },
                 { "cardSign", cardSign }
             });
+        }
+
+        /// <summary>
+        /// <para>生成公众号网页授权 URL。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/Wechat_webpage_authorization.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="scope"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForConnectOAuth2Authorize(this WechatApiClient client, string redirectUrl, string scope, string? state = null)
+        {
+            return new Url(BASE_URL)
+                .AppendPathSegments("connect", "oauth2", "authorize")
+                .SetQueryParam("appid", client.Credentials.AppId)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("response_type", "code")
+                .SetQueryParam("scope", scope)
+                .SetQueryParam("state", state)
+                .SetFragment("wechat_redirect")
+                .ToString();
+        }
+
+        /// <summary>
+        /// <para>生成代公众号网页授权 URL。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Official_Accounts/official_account_website_authorization.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="scope"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForComponentConnectOAuth2Authorize(this WechatApiClient client, string appId, string redirectUrl, string scope, string? state = null)
+        {
+            return new Url(BASE_URL)
+                .AppendPathSegments("connect", "oauth2", "authorize")
+                .SetQueryParam("appid", appId)
+                .SetQueryParam("component_appid", client.Credentials.AppId)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("response_type", "code")
+                .SetQueryParam("scope", scope)
+                .SetQueryParam("state", state)
+                .SetFragment("wechat_redirect")
+                .ToString();
         }
     }
 }

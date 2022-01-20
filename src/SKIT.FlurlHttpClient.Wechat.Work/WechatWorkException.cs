@@ -13,13 +13,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <inheritdoc/>
-        public WechatWorkException(string message) 
+        public WechatWorkException(string message)
             : base(message)
         {
         }
 
         /// <inheritdoc/>
-        public WechatWorkException(string message, Exception innerException) 
+        public WechatWorkException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

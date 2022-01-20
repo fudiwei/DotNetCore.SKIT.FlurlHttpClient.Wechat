@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -161,7 +159,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.CardPayCellSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /card/selfconsumecell/set 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Create_a_Coupon_Voucher_or_Card.html#14 </para>

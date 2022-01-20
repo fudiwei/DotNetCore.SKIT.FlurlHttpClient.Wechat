@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     public static class WechatApiClientExecuteCgibinMidasExtensions
     {
         private static T InitRequest<T>(WechatApiClient client, string method, string reqLoc, ref T request)
-            where T : Models.CgibinMidasRequestBase, new ()
+            where T : Models.CgibinMidasRequestBase, new()
         {
             if (client == null) throw new ArgumentNullException(nameof(request));
             if (method == null) throw new ArgumentNullException(nameof(method));

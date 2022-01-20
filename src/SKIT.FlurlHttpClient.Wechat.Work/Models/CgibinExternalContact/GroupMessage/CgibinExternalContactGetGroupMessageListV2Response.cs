@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_groupmsg_list_v2 接口的响应。</para>
@@ -15,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public static class Types
                 {
                     public class Text : CgibinExternalContactAddMessageTemplateRequest.Types.Text
-                    { 
+                    {
                     }
 
                     public class Attachment : CgibinExternalContactAddMessageTemplateRequest.Types.Attachment

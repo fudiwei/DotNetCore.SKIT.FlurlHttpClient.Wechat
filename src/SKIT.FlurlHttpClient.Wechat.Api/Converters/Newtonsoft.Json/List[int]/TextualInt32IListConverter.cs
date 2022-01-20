@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace Newtonsoft.Json.Converters
 {
@@ -31,7 +29,7 @@ namespace Newtonsoft.Json.Converters
 
         private List<int>? ConvertIListToList(IList<int>? src)
         {
-            if (src == null) 
+            if (src == null)
                 return null;
 
             List<int>? dest = src as List<int>;

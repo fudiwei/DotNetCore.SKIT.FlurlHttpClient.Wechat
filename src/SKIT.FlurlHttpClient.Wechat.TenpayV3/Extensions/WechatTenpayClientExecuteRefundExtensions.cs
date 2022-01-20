@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetRefundDomesticRefundByOutRefundNumberResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetRefundDomesticRefundByOutRefundNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

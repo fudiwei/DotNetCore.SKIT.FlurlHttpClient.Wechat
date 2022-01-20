@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; } 
+        public string? Name { get; set; }
 
         /// <summary>
         /// 获取或设置头像的 MediaId。

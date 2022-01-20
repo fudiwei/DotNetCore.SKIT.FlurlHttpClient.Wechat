@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "merchant-risk-manage", "violation-notifications");
 
-            return await client.SendRequestWithJsonAsync<Models.GetMerchantRiskManageViolationNotificationResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

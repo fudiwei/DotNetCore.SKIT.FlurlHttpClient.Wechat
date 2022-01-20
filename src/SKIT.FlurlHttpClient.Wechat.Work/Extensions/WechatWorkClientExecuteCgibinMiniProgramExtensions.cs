@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -13,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/miniprogram/transfer_session 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93403 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93403 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -33,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/miniprogram/jscode2session 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90136/91507 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91507 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -34,3 +34,11 @@ var request = new Models.CreatePayTransactionJsapiRequest()
 var response = await client.ExecuteQueryCertificatesAsync(request);
 var paramMap = client.GenerateParametersForJsapiPayRequest(request.AppId, response.PrepayId);
 ```
+
+---
+
+### 【附】生成参数相关扩展方法速查表：
+
+-   生成客户端 JSAPI / 小程序调起支付所需的参数字典：`GenerateParametersForJsapiPayRequest`
+
+-   生成 APP 调起支付所需的参数字典：`GenerateParametersForAppPayRequest`

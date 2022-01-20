@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/checkin/getcorpcheckinoption 接口的响应。</para>
@@ -381,7 +378,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimestamp { get; set; } 
+                public long CreateTimestamp { get; set; }
             }
         }
 

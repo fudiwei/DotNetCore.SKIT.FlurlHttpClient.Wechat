@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -23,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public static class Types
                                 {
                                     public class Attribute : ProductSKUGetResponse.Types.SKU.Types.Attribute
-                                    { 
+                                    {
                                     }
                                 }
 
@@ -193,7 +192,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                     }
 
                                     public class Address : ProductAddressGetResponse.Types.Address.Types.AddressDetail
-                                    { 
+                                    {
                                     }
 
                                     public class ExpressFee

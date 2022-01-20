@@ -18,13 +18,13 @@
         [Newtonsoft.Json.JsonProperty("external_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
         public string ExternalUserId { get; set; } = string.Empty;
-        
+
         /// <summary>
         /// 获取或设置会话状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_state")]
         [System.Text.Json.Serialization.JsonPropertyName("service_state")]
-        public int ServiceState { get; set; } 
+        public int ServiceState { get; set; }
 
         /// <summary>
         /// 获取或设置接待人员的 UserId。

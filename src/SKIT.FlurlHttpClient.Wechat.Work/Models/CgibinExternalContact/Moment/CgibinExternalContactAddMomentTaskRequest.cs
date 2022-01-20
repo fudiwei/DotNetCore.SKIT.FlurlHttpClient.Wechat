@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("video")]
                 public Types.Video? Video { get; set; }
             }
-        
+
             public class VisibleRange
             {
                 public static class Types

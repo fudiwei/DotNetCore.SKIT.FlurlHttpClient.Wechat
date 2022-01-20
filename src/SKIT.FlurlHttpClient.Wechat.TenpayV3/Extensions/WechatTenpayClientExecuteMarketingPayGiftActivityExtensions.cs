@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingPayGiftActivityByActivityIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMarketingPayGiftActivityByActivityIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.AwardType != null)
                 flurlReq.SetQueryParam("award_type", request.AwardType);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingPayGiftActivitiesResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMarketingPayGiftActivitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -148,7 +148,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingPayGiftActivityMerchantsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMarketingPayGiftActivityMerchantsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingPayGiftActivityGoodsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMarketingPayGiftActivityGoodsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -1257,7 +1254,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ProductOrderBatchGetAftersaleOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /product/order/getaftersaleorder 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/order/getaftersaleorder.html </para>

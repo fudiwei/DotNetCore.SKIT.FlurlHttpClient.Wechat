@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -11,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public static class Types
         {
             public class DataItem : CgibinMessageTemplateSendRequest.Types.DataItem
-            { 
+            {
             }
         }
 

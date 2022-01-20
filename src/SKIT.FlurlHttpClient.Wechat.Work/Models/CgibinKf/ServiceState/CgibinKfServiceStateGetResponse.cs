@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_state")]
         [System.Text.Json.Serialization.JsonPropertyName("service_state")]
-        public int ServiceState { get; set; } 
+        public int ServiceState { get; set; }
 
         /// <summary>
         /// 获取或设置接待人员的 UserId。

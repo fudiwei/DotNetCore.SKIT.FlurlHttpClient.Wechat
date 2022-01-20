@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     /// <summary>
     /// 表示微信 API 请求的基类。

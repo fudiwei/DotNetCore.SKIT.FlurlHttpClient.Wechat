@@ -17,5 +17,17 @@ var request = new Models.CgibinTicketGetTicketRequest()
     AccessToken = "微信 AccessToken"
 };
 var response = await client.ExecuteCgibinTicketGetTicketAsync(request);
-var paramMap = client.GenerateParametersForJssdkConfig(response.Ticket, "https://example.com");
+var paramMap = client.GenerateParametersForJSSDKConfig(response.Ticket, "https://example.com");
 ```
+
+---
+
+### 【附】生成参数相关扩展方法速查表：
+
+-   生成公众号 JS-SDK `wx.config` 所需的参数字典：`GenerateParametersForJSSDKConfig`
+
+-   生成公众号 JS-SDK `wx.chooseInvoice` 所需的参数字典：`GenerateParametersForJSSDKChooseInvoice`
+
+-   生成公众号网页授权 URL：`GenerateParameterizedUrlForConnectOAuth2Authorize`
+
+-   生成代公众号网页授权 URL：`GenerateParameterizedUrlForComponentConnectOAuth2Authorize`

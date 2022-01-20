@@ -1,7 +1,5 @@
 ﻿using System;
-using System.IO;
 using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
@@ -210,7 +208,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 throw new Exceptions.WechatWorkEventSerializationException("Serialize event failed. Please see the `InnerException` for more details.", ex);
             }
 
-
             if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
                 throw new Exceptions.WechatWorkEventSerializationException("Encrypt event failed, because there is no encoding AES key.");
             if (string.IsNullOrEmpty(client.Credentials.PushToken))
@@ -236,9 +233,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90139/90968 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90148/91144 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90156/91169 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90930 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91116 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91148 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
@@ -279,9 +276,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90139/90968 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90148/91144 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90156/91169 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90930 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91116 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91148 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
@@ -313,9 +310,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90139/90968 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90148/91144 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90156/91169 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90930 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91116 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91148 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>

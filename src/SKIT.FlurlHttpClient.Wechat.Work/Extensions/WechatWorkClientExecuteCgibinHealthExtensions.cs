@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -13,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/health/get_health_report_stat 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93676 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93676 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -33,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/health/get_report_jobids 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93677 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93677 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -53,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/health/get_report_job_info 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93678 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93678 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -73,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/health/get_report_answer 接口。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/93679 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93679 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

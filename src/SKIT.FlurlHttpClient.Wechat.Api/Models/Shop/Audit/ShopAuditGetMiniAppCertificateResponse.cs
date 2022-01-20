@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/audit/get_miniapp_certificate 接口的响应。</para>
@@ -33,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("trademark_registration_certificate")]
                 public string[]? TrademarkRegistrationCertificateUrlList { get; set; }
             }
-            
+
             public class Category
             {
                 /// <summary>

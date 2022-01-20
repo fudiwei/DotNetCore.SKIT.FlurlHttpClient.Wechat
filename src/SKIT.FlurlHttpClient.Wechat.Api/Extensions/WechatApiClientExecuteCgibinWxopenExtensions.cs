@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -176,6 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wxopen/qrcodejumpadd 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/qrcode/qrcodejumpadd.html </para>
         /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/qrcode/qrcodejumpadd.html </para>
         /// </summary>
         /// <param name="client"></param>

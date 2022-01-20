@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/order/get 接口的请求。</para>
@@ -35,5 +32,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("waybill_id")]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
         public string? WaybillId { get; set; }
+
+        /// <summary>
+        /// 获取或设置打印面单类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("print_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("print_type")]
+        public int? PrintType { get; set; }
     }
 }

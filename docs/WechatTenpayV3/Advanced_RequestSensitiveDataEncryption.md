@@ -77,7 +77,11 @@ var response = await client.ExecuteAddProfitSharingReceiverAsync(request);
 如果你希望本库在请求前能自动完成这项操作，你可以在构造得到 `WechatApiClient` 对象时指定自动化参数：
 
 ```csharp
-var options = new WechatTenpayClientOptions() { AutoEncryptRequestSensitiveProperty = true };
+var options = new WechatTenpayClientOptions() 
+{ 
+    // 其他配置项略
+    AutoEncryptRequestSensitiveProperty = true 
+};
 var client = new WechatTenpayClient(options);
 ```
 
@@ -97,7 +101,11 @@ var client = new WechatTenpayClient(options);
 
 ```csharp
 var manager = new InMemoryCertificateManager(); // 为便于后续使用，该对象可使用同一商户号下全局单例的方式声明
-var options = new WechatTenpayClientOptions() { CertificateManager = manager };
+var options = new WechatTenpayClientOptions() 
+{ 
+    // 其他配置项略
+    CertificateManager = manager 
+};
 var client = new WechatTenpayClient(options);
 ```
 

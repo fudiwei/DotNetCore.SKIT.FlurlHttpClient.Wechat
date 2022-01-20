@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     /// <summary>
     /// <para>微信 API 接口域名。</para>

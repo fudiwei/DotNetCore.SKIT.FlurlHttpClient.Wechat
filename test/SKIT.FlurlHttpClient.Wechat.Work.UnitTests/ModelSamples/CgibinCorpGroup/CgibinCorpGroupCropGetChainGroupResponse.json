@@ -1,0 +1,18 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "groups": [
+        {
+            "groupid": 2,
+            "group_name": "一级经销商",
+            "parentid": 1,
+            "order": 1
+        },
+        {
+            "groupid": 3,
+            "group_name": "二级经销商",
+            "parentid": 2,
+            "order": 3
+        }
+    ]
+}

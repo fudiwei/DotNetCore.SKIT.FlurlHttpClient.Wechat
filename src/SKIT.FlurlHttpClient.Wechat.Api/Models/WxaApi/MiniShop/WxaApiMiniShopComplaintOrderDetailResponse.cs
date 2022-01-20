@@ -122,7 +122,7 @@
                 [System.Text.Json.Serialization.JsonPropertyName("expireTime")]
                 public long ExpireTimestamp { get; set; }
             }
-        
+
             public class ComplaintHistory
             {
                 /// <summary>

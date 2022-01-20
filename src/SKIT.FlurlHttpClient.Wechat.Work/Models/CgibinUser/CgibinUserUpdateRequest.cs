@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -46,6 +45,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("email")]
         [System.Text.Json.Serialization.JsonPropertyName("email")]
         public string? Email { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业邮箱。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("biz_mail")]
+        [System.Text.Json.Serialization.JsonPropertyName("biz_mail")]
+        public string? BusinessEmail { get; set; }
 
         /// <summary>
         /// 获取或设置手机号码。

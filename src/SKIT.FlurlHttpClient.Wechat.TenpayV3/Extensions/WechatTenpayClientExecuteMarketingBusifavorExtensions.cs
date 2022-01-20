@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "marketing", "busifavor", "stocks", request.StockId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingBusifavorStockByStockIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMarketingBusifavorStockByStockIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -134,7 +134,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "marketing", "busifavor", "users", request.OpenId, "coupons", request.CouponCode, "appids", request.AppId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingBusifavorUserCouponByCouponCodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMarketingBusifavorUserCouponByCouponCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingBusifavorUserCouponsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMarketingBusifavorUserCouponsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -319,7 +319,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "marketing", "busifavor", "callbacks")
                 .SetQueryParam("mchid", request.MerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingBusifavorCallbackResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMarketingBusifavorCallbackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -388,7 +388,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "marketing", "busifavor", "subsidy", "pay-receipts", request.SubsidyReceiptId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingBusifavorSubsidyPayReceiptBySubsidyReceiptIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMarketingBusifavorSubsidyPayReceiptBySubsidyReceiptIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
