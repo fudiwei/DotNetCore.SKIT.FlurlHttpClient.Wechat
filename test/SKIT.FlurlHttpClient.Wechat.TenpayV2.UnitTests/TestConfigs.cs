@@ -18,13 +18,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
                 using var jdoc = JsonDocument.Parse(stream);
 
                 var config = jdoc.RootElement.GetProperty("TestConfig");
-                WechatAppId = config.GetProperty("AppId").GetString();
-                WechatMerchantId = config.GetProperty("MerchantId").GetString();
-                WechatMerchantSecret = config.GetProperty("MerchantSecret").GetString();
-                WechatOpenId = config.GetProperty("OpenId").GetString();
+                WechatAppId = config.GetProperty("AppId").GetString()!;
+                WechatMerchantId = config.GetProperty("MerchantId").GetString()!;
+                WechatMerchantSecret = config.GetProperty("MerchantSecret").GetString()!;
+                WechatOpenId = config.GetProperty("OpenId").GetString()!;
 
-                ProjectSourceDirectory = jdoc.RootElement.GetProperty("ProjectSourceDirectory").GetString();
-                ProjectTestDirectory = jdoc.RootElement.GetProperty("ProjectTestDirectory").GetString();
+                ProjectSourceDirectory = jdoc.RootElement.GetProperty("ProjectSourceDirectory").GetString()!;
+                ProjectTestDirectory = jdoc.RootElement.GetProperty("ProjectTestDirectory").GetString()!;
             }
             catch (Exception ex)
             {

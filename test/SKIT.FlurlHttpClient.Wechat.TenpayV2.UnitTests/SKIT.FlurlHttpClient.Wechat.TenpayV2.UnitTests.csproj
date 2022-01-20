@@ -1,8 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>netcoreapp3.1; net6.0</TargetFrameworks>
-		<LangVersion>9.0</LangVersion>
+		<TargetFrameworks>net461; netcoreapp3.1; net6.0</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<NullableReferenceTypes>true</NullableReferenceTypes>
+		<IsPackable>false</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>
