@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net461; net47; netstandard2.0; net5.0; net6.0</TargetFrameworks>
+        <TargetFrameworks>net47; netstandard2.0; net5.0; net6.0</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <Nullable>enable</Nullable>
         <NullableReferenceTypes>true</NullableReferenceTypes>
@@ -15,7 +15,7 @@
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage Tenpay WechatPay WeixinPay Wxpay 微信 微信支付 微信商户</PackageTags>
         <Version>1.0.0-beta</Version>
-        <Description>基于 Flurl.Http 的微信支付 API v2 版客户端，支持直连商户、服务商模式，仅包含微信支付未提供 v3 版 API 的部分功能。如需微信支付 v3 版 API 客户端，欢迎使用 `SKIT.FlurlHttpClient.Wechat.TenpayV2`。</Description>
+        <Description>基于 Flurl.Http 的微信支付 API v2 版客户端，支持直连商户、服务商模式，仅包含微信支付未提供 v3 版 API 的部分功能。如需微信支付 v3 版 API 客户端，欢迎使用 `SKIT.FlurlHttpClient.Wechat.TenpayV3`。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git</RepositoryUrl>

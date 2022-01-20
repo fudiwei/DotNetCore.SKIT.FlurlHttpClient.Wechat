@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,9 +30,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
-            FlurlClient.Configure((settings) => 
+            FlurlClient.Configure((settings) =>
                 settings.HttpClientFactory = new Settings.HttpClientFactory(
-                    options.MerchantCertificateBytes, 
+                    options.MerchantCertificateBytes,
                     options.MerchantCertificatePassword ?? options.MerchantId
                 )
             );

@@ -7,7 +7,7 @@
 
 基于 `Flurl.Http` 的微信商户平台 API v2 版客户端。
 
-**注意**：本库仅包含微信官方尚未提供 v3 版 API 的部分接口，如需使用 v3 版 API 请移步 [点此查看](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3)。
+**注意**：本库仅仅包含微信支付未提供 v3 版 API 的部分功能，如需微信支付 v3 版 API 客户端，欢迎使用 [`SKIT.FlurlHttpClient.Wechat.TenpayV3`](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3)。
 
 ---
 

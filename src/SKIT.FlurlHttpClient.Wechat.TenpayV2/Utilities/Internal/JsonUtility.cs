@@ -238,7 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             if (obj == null) throw new ArgumentNullException(nameof(obj));
 
             static System.Text.Json.Nodes.JsonNode Flatten(
-                System.Text.Json.Nodes.JsonNode jNode, 
+                System.Text.Json.Nodes.JsonNode jNode,
                 System.Text.Json.JsonSerializerOptions jsonSerializerOptions,
                 System.Text.Json.JsonDocumentOptions jsonDocumentOptions,
                 System.Text.Json.Nodes.JsonNodeOptions jsonNodeOptions)
@@ -304,8 +304,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             };
             System.Text.Json.Nodes.JsonNode jNode = System.Text.Json.Nodes.JsonNode.Parse(rawJson, jsonNodeOptions, jsonDocumentOptions)!;
             return Flatten(jNode, jsonSerializerOptions, jsonDocumentOptions, jsonNodeOptions)
-                .ToJsonString(new System.Text.Json.JsonSerializerOptions() 
-                { 
+                .ToJsonString(new System.Text.Json.JsonSerializerOptions()
+                {
                     WriteIndented = jsonSerializerOptions.WriteIndented,
                     Encoder = jsonSerializerOptions.Encoder
                 });
@@ -345,7 +345,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
         }
     }
 
-    partial class JsonUtility
+    internal partial class JsonUtility
     {
         private sealed class InnerTypedJsonProperty
         {
@@ -376,7 +376,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             if (props == null)
             {
                 props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                    .Where(p => 
+                    .Where(p =>
                         (p.CanRead && !p.GetCustomAttributes<Newtonsoft.Json.JsonIgnoreAttribute>(inherit: true).Any()) &&
                         (p.CanWrite || p.GetCustomAttributes<Newtonsoft.Json.JsonPropertyAttribute>(inherit: true).Any())
                     )
@@ -406,7 +406,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             if (props == null)
             {
                 props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                    .Where(p => 
+                    .Where(p =>
                         (p.CanRead && !p.GetCustomAttributes<System.Text.Json.Serialization.JsonIgnoreAttribute>(inherit: true).Any()) &&
                         (p.CanWrite || p.GetCustomAttributes<System.Text.Json.Serialization.JsonIncludeAttribute>(inherit: true).Any())
                     )
