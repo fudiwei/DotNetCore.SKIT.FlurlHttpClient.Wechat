@@ -13,8 +13,7 @@ namespace Newtonsoft.Json.Converters
 
         public override bool CanWrite
         {
-            // TODO
-            get { return false; }
+            get { return true; }
         }
 
         public override T? ReadJson(JsonReader reader, Type objectType, T? existingValue, bool hasExistingValue, JsonSerializer serializer)

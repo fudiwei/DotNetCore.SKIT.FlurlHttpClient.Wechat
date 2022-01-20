@@ -347,7 +347,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 
     partial class JsonUtility
     {
-        private sealed class TypedJsonProperty
+        private sealed class InnerTypedJsonProperty
         {
             public string PropertyName { get; }
 
@@ -357,7 +357,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 
             public bool IsNArrayProperty { get; }
 
-            public TypedJsonProperty(string propertyName, PropertyInfo propertyInfo, bool isNArrayProperty)
+            public InnerTypedJsonProperty(string propertyName, PropertyInfo propertyInfo, bool isNArrayProperty)
             {
                 PropertyName = propertyName;
                 PropertyInfo = propertyInfo;
@@ -367,12 +367,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 
         private static readonly Hashtable _mappedTypeJsonProperties = new Hashtable();
 
-        private static TypedJsonProperty[] GetTypedNewtonsoftJsonProperties(Type type)
+        private static InnerTypedJsonProperty[] GetTypedNewtonsoftJsonProperties(Type type)
         {
             if (type == null) throw new ArgumentNullException(nameof(type));
 
             string skey = "Newtosoft.Json:" + (type.AssemblyQualifiedName ?? type.GetHashCode().ToString());
-            var props = (TypedJsonProperty[]?)_mappedTypeJsonProperties[skey];
+            var props = (InnerTypedJsonProperty[]?)_mappedTypeJsonProperties[skey];
             if (props == null)
             {
                 props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
@@ -383,7 +383,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                     .Select(p =>
                     {
                         string name = p.GetCustomAttribute<Newtonsoft.Json.JsonPropertyAttribute>(inherit: true)?.PropertyName ?? p.Name;
-                        return new TypedJsonProperty
+                        return new InnerTypedJsonProperty
                         (
                             propertyName: name,
                             propertyInfo: p,
@@ -397,12 +397,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             return props;
         }
 
-        private static TypedJsonProperty[] GetTypedSystemTextJsonProperties(Type type)
+        private static InnerTypedJsonProperty[] GetTypedSystemTextJsonProperties(Type type)
         {
             if (type == null) throw new ArgumentNullException(nameof(type));
 
             string skey = "System.Text.Json:" + (type.AssemblyQualifiedName ?? type.GetHashCode().ToString());
-            var props = (TypedJsonProperty[]?)_mappedTypeJsonProperties[skey];
+            var props = (InnerTypedJsonProperty[]?)_mappedTypeJsonProperties[skey];
             if (props == null)
             {
                 props = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
@@ -413,7 +413,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                     .Select(p =>
                     {
                         string name = p.GetCustomAttribute<System.Text.Json.Serialization.JsonPropertyNameAttribute>(inherit: true)?.Name ?? p.Name;
-                        return new TypedJsonProperty
+                        return new InnerTypedJsonProperty
                         (
                             propertyName: name,
                             propertyInfo: p,
