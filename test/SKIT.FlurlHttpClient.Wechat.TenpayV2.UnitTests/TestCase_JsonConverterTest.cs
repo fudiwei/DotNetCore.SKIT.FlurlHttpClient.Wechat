@@ -64,6 +64,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
             Assert.Equal("FEE_TYPE_1", parsedObjBySystemTextJson.RecordList[1].FeeType);
             Assert.Equal(DateTimeOffset.Parse("2001-01-01 11:22:33"), parsedObjByNewtonsoftJson.RecordList[1].ModifyTime);
             Assert.Equal(DateTimeOffset.Parse("2001-01-01 11:22:33"), parsedObjBySystemTextJson.RecordList[1].ModifyTime);
+
+            string unparsedJsonByNewtonsoftJson = newtonsoftJsonSerializer.Serialize(parsedObjByNewtonsoftJson);
+            string unparsedJsonBySystemTextJson = systemTextJsonSerializer.Serialize(parsedObjByNewtonsoftJson);
+
+            Assert.Contains("return_code", unparsedJsonByNewtonsoftJson);
+            Assert.Contains("return_code", unparsedJsonBySystemTextJson);
+            Assert.Contains("return_msg", unparsedJsonByNewtonsoftJson);
+            Assert.Contains("return_msg", unparsedJsonBySystemTextJson);
+            Assert.Contains("sub_order_no_0", unparsedJsonByNewtonsoftJson);
+            Assert.Contains("sub_order_no_0", unparsedJsonBySystemTextJson);
+            Assert.Contains("sub_order_id_0", unparsedJsonByNewtonsoftJson);
+            Assert.Contains("sub_order_id_0", unparsedJsonBySystemTextJson);
+            Assert.DoesNotContain("#n", unparsedJsonByNewtonsoftJson);
+            Assert.DoesNotContain("#n", unparsedJsonBySystemTextJson);
+            Assert.DoesNotContain("$n", unparsedJsonByNewtonsoftJson);
+            Assert.DoesNotContain("$n", unparsedJsonBySystemTextJson);
         }
     }
 }

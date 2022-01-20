@@ -83,10 +83,13 @@ namespace System.Text.Json.Converters
 
         public override void Write(Utf8JsonWriter writer, T? value, JsonSerializerOptions options)
         {
-            //if (value != null)
-            //    writer.WriteRawValue(SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities.JsonUtility.SerializeWhenHasNArray<T>(value, options));
-            //else
-            //    writer.WriteNullValue();
+            if (value is null)
+            {
+                writer.WriteNullValue();
+                return;
+            }
+
+            throw new NotImplementedException();
         }
 
         private static InnerTypedJsonProperty[] GetTypedJsonProperties(Type type)

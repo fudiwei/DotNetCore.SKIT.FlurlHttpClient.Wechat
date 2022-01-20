@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 {
+    [Obsolete]
     internal static partial class JsonUtility
     {
         public const string PROPERTY_WILDCARD_NARRAY_ELEMENT = "$n";
