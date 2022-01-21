@@ -89,8 +89,8 @@ namespace System.Text.Json.Converters
                 return;
             }
 
-            return;
-            throw new NotImplementedException();
+            // TODO
+            //throw new NotImplementedException();
         }
 
         private static InnerTypedJsonProperty[] GetTypedJsonProperties(Type type)
