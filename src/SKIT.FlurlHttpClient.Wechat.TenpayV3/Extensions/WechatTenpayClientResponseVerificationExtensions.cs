@@ -40,11 +40,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (response == null) throw new ArgumentNullException(nameof(response));
 
-            if (client.CertificateManager != null)
+            if (client.PlatformCertificateManager != null)
             {
                 try
                 {
-                    var cert = client.CertificateManager.GetEntry(response.WechatpayCertSerialNumber)!;
+                    var cert = client.PlatformCertificateManager.GetEntry(response.WechatpayCertificateSerialNumber)!;
                     if (!cert.HasValue)
                     {
                         error = new Exceptions.WechatTenpayResponseVerificationException("Verify signature of response failed, because there is no platform certificate matched the serial number.");

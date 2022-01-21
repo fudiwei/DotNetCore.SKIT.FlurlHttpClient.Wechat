@@ -15,14 +15,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         public string MerchantV3Secret { get; }
 
         /// <summary>
-        /// 初始化客户端时 <see cref="WechatTenpayClientOptions.MerchantCertSerialNumber"/> 的副本。
+        /// 初始化客户端时 <see cref="WechatTenpayClientOptions.MerchantCertificateSerialNumber"/> 的副本。
         /// </summary>
-        public string MerchantCertSerialNumber { get; }
+        public string MerchantCertificateSerialNumber { get; }
 
         /// <summary>
-        /// 初始化客户端时 <see cref="WechatTenpayClientOptions.MerchantCertPrivateKey"/> 的副本。
+        /// 初始化客户端时 <see cref="WechatTenpayClientOptions.MerchantCertificatePrivateKey"/> 的副本。
         /// </summary>
-        public string MerchantCertPrivateKey { get; }
+        public string MerchantCertificatePrivateKey { get; }
 
         internal Credentials(WechatTenpayClientOptions options)
         {
@@ -30,8 +30,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
             MerchantId = options.MerchantId;
             MerchantV3Secret = options.MerchantV3Secret;
-            MerchantCertSerialNumber = options.MerchantCertSerialNumber;
-            MerchantCertPrivateKey = options.MerchantCertPrivateKey;
+            MerchantCertificateSerialNumber = options.MerchantCertificateSerialNumber;
+            MerchantCertificatePrivateKey = options.MerchantCertificatePrivateKey;
         }
     }
 }

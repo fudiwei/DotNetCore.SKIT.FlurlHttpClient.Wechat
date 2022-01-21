@@ -35,9 +35,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Imple
             {
                 MerchantId = tenpayMerchantConfig.MerchantId,
                 MerchantV3Secret = tenpayMerchantConfig.SecretV3,
-                MerchantCertSerialNumber = tenpayMerchantConfig.CertSerialNumber,
-                MerchantCertPrivateKey = tenpayMerchantConfig.CertPrivateKey,
-                CertificateManager = _tenpayCertificateManagerFactory.Create(tenpayMerchantConfig.MerchantId),
+                MerchantCertificateSerialNumber = tenpayMerchantConfig.CertSerialNumber,
+                MerchantCertificatePrivateKey = tenpayMerchantConfig.CertPrivateKey,
+                PlatformCertificateManager = _tenpayCertificateManagerFactory.Create(tenpayMerchantConfig.MerchantId),
                 AutoEncryptRequestSensitiveProperty = true,
                 AutoDecryptResponseSensitiveProperty = true
             };

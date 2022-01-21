@@ -60,11 +60,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (callbackSignature == null) throw new ArgumentNullException(nameof(callbackSignature));
             if (callbackSerialNumber == null) throw new ArgumentNullException(nameof(callbackSerialNumber));
 
-            if (client.CertificateManager != null)
+            if (client.PlatformCertificateManager != null)
             {
                 try
                 {
-                    var cert = client.CertificateManager.GetEntry(callbackSerialNumber);
+                    var cert = client.PlatformCertificateManager.GetEntry(callbackSerialNumber);
                     if (!cert.HasValue)
                     {
                         error = new Exceptions.WechatTenpayEventVerificationException("Verify signature of event failed, because there is no platform certificate matched the serial number.");

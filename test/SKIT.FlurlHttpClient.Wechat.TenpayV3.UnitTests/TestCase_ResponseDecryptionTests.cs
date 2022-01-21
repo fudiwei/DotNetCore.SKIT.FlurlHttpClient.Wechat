@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             return new WechatTenpayClient(new WechatTenpayClientOptions()
             {
-                MerchantCertPrivateKey = RSA_PRIVATE_KEY
+                MerchantCertificatePrivateKey = RSA_PRIVATE_KEY
             });
         }, isThreadSafe: false);
 
@@ -26,8 +26,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 MerchantId = TestConfigs.WechatMerchantId,
                 MerchantV3Secret = TestConfigs.WechatMerchantSecret,
-                MerchantCertSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,
-                MerchantCertPrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
+                MerchantCertificateSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,
+                MerchantCertificatePrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
                 AutoEncryptRequestSensitiveProperty = true,
                 AutoDecryptResponseSensitiveProperty = true
             });
@@ -39,8 +39,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 MerchantId = TestConfigs.WechatMerchantId,
                 MerchantV3Secret = TestConfigs.WechatMerchantSecret,
-                MerchantCertSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,
-                MerchantCertPrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
+                MerchantCertificateSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,
+                MerchantCertificatePrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
                 AutoEncryptRequestSensitiveProperty = false,
                 AutoDecryptResponseSensitiveProperty = false
             });

@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             ));
             return new WechatTenpayClient(new WechatTenpayClientOptions()
             {
-                CertificateManager = certManager
+                PlatformCertificateManager = certManager
             });
         }, isThreadSafe: false);
 
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             };
             var data = MockClientInstance.Value.EncryptRequestSensitiveProperty(mock);
 
-            Assert.Equal(RSA_CERTSN, data.WechatpayCertSerialNumber);
+            Assert.Equal(RSA_CERTSN, data.WechatpayCertificateSerialNumber);
             Assert.Equal(MockText, data.Account);
             Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.Name!));
         }
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             };
             var data = MockClientInstance.Value.EncryptRequestSensitiveProperty(mock);
 
-            Assert.Equal(RSA_CERTSN, data.WechatpayCertSerialNumber);
+            Assert.Equal(RSA_CERTSN, data.WechatpayCertificateSerialNumber);
             Assert.Equal(MockText, data.ReceiverList[0].Account);
             Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.ReceiverList[0].Name!));
         }

@@ -35,15 +35,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                         if (Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB.Equals(attr.Algorithm))
                         {
-                            if (client.CertificateManager == null)
+                            if (client.PlatformCertificateManager == null)
                                 throw new Exceptions.WechatTenpayRequestEncryptionException("Encrypt request failed, because there is no platform certificate in the manager.");
 
                             string certificate;
 
-                            if (!string.IsNullOrEmpty(request.WechatpayCertSerialNumber))
+                            if (!string.IsNullOrEmpty(request.WechatpayCertificateSerialNumber))
                             {
                                 // 如果已在请求中指定特定的平台证书序列号，直接从管理器中取值
-                                var cert = client.CertificateManager.GetEntry(request.WechatpayCertSerialNumber!);
+                                var cert = client.PlatformCertificateManager.GetEntry(request.WechatpayCertificateSerialNumber!);
                                 if (!cert.HasValue)
                                 {
                                     throw new Exceptions.WechatTenpayEventVerificationException("Encrypt request failed, because there is no platform certificate matched the serial number.");
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                             else
                             {
                                 // 如果未在请求中指定特定的平台证书序列号，从管理器中取过期时间最远的
-                                var certs = client.CertificateManager.AllEntries().OrderByDescending(e => e.ExpireTime);
+                                var certs = client.PlatformCertificateManager.AllEntries().OrderByDescending(e => e.ExpireTime);
                                 if (!certs.Any())
                                 {
                                     throw new Exceptions.WechatTenpayEventVerificationException("Encrypt request failed, because there is no platform certificate in the manager.");
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                                 var cert = certs.First();
                                 certificate = cert.Certificate;
-                                request.WechatpayCertSerialNumber = cert.SerialNumber;
+                                request.WechatpayCertificateSerialNumber = cert.SerialNumber;
                             }
 
                             string newValue = Utilities.RSAUtility.EncryptWithECBByCertificate(

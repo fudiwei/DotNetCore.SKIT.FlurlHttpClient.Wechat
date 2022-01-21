@@ -14,14 +14,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public class WechatTenpayClient : CommonClientBase, ICommonClient
     {
         /// <summary>
-        /// 获取当前客户端使用的微信商户平台凭证。
+        /// 获取当前客户端使用的微信支付商户凭证。
         /// </summary>
         public Settings.Credentials Credentials { get; }
 
         /// <summary>
-        /// 获取当前客户端使用的微信商户平台证书管理器。
+        /// 获取当前客户端使用的微信支付平台证书管理器。
         /// </summary>
-        public Settings.CertificateManager CertificateManager { get; }
+        public Settings.CertificateManager PlatformCertificateManager { get; }
 
         /// <summary>
         /// 获取是否自动加密请求中的敏感信息字段。
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (options == null) throw new ArgumentNullException(nameof(options));
 
             Credentials = new Settings.Credentials(options);
-            CertificateManager = options.CertificateManager;
+            PlatformCertificateManager = options.PlatformCertificateManager;
             AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty;
             AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
@@ -58,8 +58,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             Interceptors.Add(new Interceptors.WechatTenpaySignInterceptor(
                 scheme: options.SignAlgorithm,
                 mchId: options.MerchantId,
-                mchCertSn: options.MerchantCertSerialNumber,
-                mchCertPk: options.MerchantCertPrivateKey
+                mchCertSn: options.MerchantCertificateSerialNumber,
+                mchCertPk: options.MerchantCertificatePrivateKey
             ));
         }
 
@@ -84,10 +84,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
             }
 
-            if (request.WechatpayCertSerialNumber != null)
+            if (request.WechatpayCertificateSerialNumber != null)
             {
                 flurlRequest.Headers.Remove("Wechatpay-Serial");
-                flurlRequest.WithHeader("Wechatpay-Serial", request.WechatpayCertSerialNumber);
+                flurlRequest.WithHeader("Wechatpay-Serial", request.WechatpayCertificateSerialNumber);
             }
 
             return flurlRequest;
@@ -161,7 +161,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             result.WechatpayNonce = flurlResponse.Headers.GetAll("Wechatpay-Nonce").FirstOrDefault() ?? string.Empty;
             result.WechatpayTimestamp = flurlResponse.Headers.GetAll("Wechatpay-Timestamp").FirstOrDefault() ?? string.Empty;
             result.WechatpaySignature = flurlResponse.Headers.GetAll("Wechatpay-Signature").FirstOrDefault() ?? string.Empty;
-            result.WechatpayCertSerialNumber = flurlResponse.Headers.GetAll("Wechatpay-Serial").FirstOrDefault() ?? string.Empty;
+            result.WechatpayCertificateSerialNumber = flurlResponse.Headers.GetAll("Wechatpay-Serial").FirstOrDefault() ?? string.Empty;
 
             if (AutoDecryptResponseSensitiveProperty && result.IsSuccessful())
             {
