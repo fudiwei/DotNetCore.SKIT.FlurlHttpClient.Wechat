@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
-    class TestConfigs
+    internal class TestConfigs
     {
         static TestConfigs()
         {

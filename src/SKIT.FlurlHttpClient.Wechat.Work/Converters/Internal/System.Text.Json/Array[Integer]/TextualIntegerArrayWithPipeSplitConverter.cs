@@ -1,12 +1,9 @@
-﻿using System.Linq;
-using System.Text.Json.Serialization;
+﻿using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
     internal class TextualIntegerArrayWithPipeSplitConverter : JsonConverter<int[]?>
     {
-        private const string SEPARATOR = "|";
-
         public override int[]? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             if (reader.TokenType == JsonTokenType.Null)
