@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
@@ -15,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
         public string NotifyUrl { get; set; } = string.Empty;
     }
 
-    partial class TenpayOptions
+    public partial class TenpayOptions
     {
         public static class Types
         {

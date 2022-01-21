@@ -1,8 +1,3 @@
-using System.Web;
-using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Routing;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 {
     public class WebApiApplication : HttpApplication

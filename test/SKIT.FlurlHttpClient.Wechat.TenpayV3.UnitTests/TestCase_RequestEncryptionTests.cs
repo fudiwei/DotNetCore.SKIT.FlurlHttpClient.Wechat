@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
@@ -17,9 +14,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             var certManager = new Settings.InMemoryCertificateManager();
             certManager.AddEntry(new Settings.CertificateEntry(
-                serialNumber: RSA_CERTSN, 
-                certificate: RSA_CERTIFICATE, 
-                effectiveTime: DateTimeOffset.MinValue, 
+                serialNumber: RSA_CERTSN,
+                certificate: RSA_CERTIFICATE,
+                effectiveTime: DateTimeOffset.MinValue,
                 expireTime: DateTimeOffset.MaxValue
             ));
             return new WechatTenpayClient(new WechatTenpayClientOptions()
@@ -49,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             var mock = new Models.CreateProfitSharingOrderRequest()
             {
                 ReceiverList = new List<Models.CreateProfitSharingOrderRequest.Types.Receiver>()
-                { 
+                {
                     new Models.CreateProfitSharingOrderRequest.Types.Receiver()
                     {
                         Account = MockText,

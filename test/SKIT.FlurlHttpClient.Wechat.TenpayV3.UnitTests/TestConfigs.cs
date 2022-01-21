@@ -4,7 +4,7 @@ using System.Text.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    class TestConfigs
+    internal class TestConfigs
     {
         static TestConfigs()
         {

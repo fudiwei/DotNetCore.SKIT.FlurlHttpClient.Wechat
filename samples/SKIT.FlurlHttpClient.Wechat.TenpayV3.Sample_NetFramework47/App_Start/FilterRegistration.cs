@@ -1,6 +1,4 @@
-﻿using System.Web.Mvc;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 {
     public class FilterRegistration
     {

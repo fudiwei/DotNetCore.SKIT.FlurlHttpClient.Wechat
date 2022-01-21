@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -176,14 +175,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// 获取或设置优惠使用记录流水号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("reward_usage_serial_no")]
-                [System.Text.Json.Serialization.JsonPropertyName("reward_usage_serial_no")]
+                        [System.Text.Json.Serialization.JsonPropertyName("reward_usage_serial_no")]
                         public string SerialNumber { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置优惠 ID。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("reward_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("reward_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("reward_id")]
                         public string RewardId { get; set; } = default!;
 
                         /// <summary>

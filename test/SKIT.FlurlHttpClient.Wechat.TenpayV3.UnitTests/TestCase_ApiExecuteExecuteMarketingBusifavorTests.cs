@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -18,19 +15,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 StockType = "NORMAL",
                 OutRequestNumber = "TEST_ORN_" + DateTimeOffset.Now.ToString("yyyyMMddHHmmssfff"),
                 StockSendRule = new Models.CreateMarketingBusifavorStockRequest.Types.StockSendRule()
-                { 
+                {
                     MaxCoupons = 1,
                     MaxCouponsPerUser = 1
                 },
                 CouponUseRule = new Models.CreateMarketingBusifavorStockRequest.Types.CouponUseRule()
-                { 
+                {
                     CouponAvailableTime = new Models.CreateMarketingBusifavorStockRequest.Types.CouponUseRule.Types.CouponAvailableTime()
                     {
                         AvailableBeginTime = DateTime.Today.AddDays(1),
                         AvailableEndTime = DateTime.Today.AddDays(31)
                     },
                     NormalCoupon = new Models.CreateMarketingBusifavorStockRequest.Types.CouponUseRule.Types.NormalCoupon()
-                    { 
+                    {
                         DiscountAmount = 1,
                         TransactionMinimum = 1
                     },
@@ -44,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
         }
-        
+
         [Fact(DisplayName = "测试用例：调用 API [GET] /marketing/busifavor/stocks/{stock_id}")]
         public async Task TestExecuteGetMarketingBusifavorStockByStockId()
         {

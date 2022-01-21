@@ -1,13 +1,6 @@
-﻿using System;
-using System.Diagnostics;
-using System.Threading.Tasks;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
 {
-    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
-    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
-
-    class TenpayCertificateRefreshingBackgroundJob
+    internal class TenpayCertificateRefreshingBackgroundJob
     {
         private readonly HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
 

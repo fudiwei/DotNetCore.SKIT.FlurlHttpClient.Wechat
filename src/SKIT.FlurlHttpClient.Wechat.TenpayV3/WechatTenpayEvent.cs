@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
@@ -50,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
 
             public interface IDecryptedResource
-            { 
+            {
             }
         }
 

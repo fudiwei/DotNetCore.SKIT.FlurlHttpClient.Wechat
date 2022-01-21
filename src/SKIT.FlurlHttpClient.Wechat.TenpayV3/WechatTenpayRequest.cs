@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     /// <summary>
     /// 表示微信支付 API 请求的基类。

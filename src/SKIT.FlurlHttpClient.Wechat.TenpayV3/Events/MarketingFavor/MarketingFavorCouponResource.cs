@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
@@ -38,11 +37,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
             }
 
             public class NormalCoupon : Models.QueryMarketingFavorUserCouponsResponse.Types.Coupon.Types.NormalCoupon
-            { 
+            {
             }
 
             public class Consumption : Models.QueryMarketingFavorUserCouponsResponse.Types.Coupon.Types.Consumption
-            { 
+            {
             }
         }
 

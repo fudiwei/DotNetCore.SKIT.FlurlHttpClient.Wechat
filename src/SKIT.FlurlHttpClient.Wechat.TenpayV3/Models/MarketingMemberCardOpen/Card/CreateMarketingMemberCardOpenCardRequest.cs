@@ -100,11 +100,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? Url { get; set; }
             }
 
-            public class UserForm 
+            public class UserForm
             {
                 public static class Types
                 {
-                    public class CustomField 
+                    public class CustomField
                     {
                         /// <summary>
                         /// 获取或设置字段类型。
@@ -112,14 +112,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
                         public string Type { get; set; } = string.Empty;
-                        
+
                         /// <summary>
                         /// 获取或设置字段名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
                         public string Name { get; set; } = string.Empty;
-                        
+
                         /// <summary>
                         /// 获取或设置字段值。
                         /// </summary>

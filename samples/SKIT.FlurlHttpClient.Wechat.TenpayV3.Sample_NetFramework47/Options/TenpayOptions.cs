@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text.RegularExpressions;
-using System.Web.Configuration;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
 {
     public partial class TenpayOptions
     {
@@ -31,14 +26,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
         }, isThreadSafe: true);
     }
 
-    partial class TenpayOptions
+    public partial class TenpayOptions
     {
         public Types.WechatMerchant[] Merchants { get; set; } = Array.Empty<Types.WechatMerchant>();
 
         public string NotifyUrl { get; set; } = string.Empty;
     }
 
-    partial class TenpayOptions
+    public partial class TenpayOptions
     {
         public static class Types
         {

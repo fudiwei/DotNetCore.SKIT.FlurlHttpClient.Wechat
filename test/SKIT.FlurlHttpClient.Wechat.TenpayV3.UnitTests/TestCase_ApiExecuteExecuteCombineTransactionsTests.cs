@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -64,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     }
                 },
                 CombinePayer = new Models.CreateCombineTransactionJsapiRequest.Types.Payer()
-                { 
+                {
                     OpenId = TestConfigs.WechatOpenId
                 },
                 NotifyUrl = "http://127.0.0.1"
@@ -149,7 +146,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 CombineAppId = TestConfigs.WechatAppId,
                 CombineOutTradeNumber = "FAKE_OUTTRADENO",
                 SubOrderList = new Models.CloseCombineTransactionRequest.Types.SubOrder[]
-                { 
+                {
                     new Models.CloseCombineTransactionRequest.Types.SubOrder()
                     {
                         OutTradeNumber = "FAKE_OUTTRADENO"

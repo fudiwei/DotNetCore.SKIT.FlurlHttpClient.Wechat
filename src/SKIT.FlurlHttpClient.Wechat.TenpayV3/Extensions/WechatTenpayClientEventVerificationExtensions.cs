@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
@@ -21,9 +20,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="callbackSerialNumber">微信回调通知中的 Wechatpay-Serial 字段。</param>
         /// <returns></returns>
         public static bool VerifyEventSignature(
-            this WechatTenpayClient client, 
-            string callbackTimestamp, 
-            string callbackNonce, 
+            this WechatTenpayClient client,
+            string callbackTimestamp,
+            string callbackNonce,
             string callbackBody,
             string callbackSignature,
             string callbackSerialNumber)

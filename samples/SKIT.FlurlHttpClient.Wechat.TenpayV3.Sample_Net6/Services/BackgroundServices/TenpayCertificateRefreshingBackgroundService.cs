@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Hosting;
@@ -11,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundService
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
-    class TenpayCertificateRefreshingBackgroundService : BackgroundService
+    internal class TenpayCertificateRefreshingBackgroundService : BackgroundService
     {
         private readonly ILogger _logger;
         private readonly Options.TenpayOptions _tenpayOptions;

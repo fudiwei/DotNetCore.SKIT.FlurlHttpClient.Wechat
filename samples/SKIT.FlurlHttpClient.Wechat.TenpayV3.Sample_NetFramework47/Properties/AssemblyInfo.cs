@@ -1,6 +1,4 @@
-﻿using System.Reflection;
-using System.Runtime.InteropServices;
-
+﻿
 [assembly: AssemblyTitle("SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_NetFramework47")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]

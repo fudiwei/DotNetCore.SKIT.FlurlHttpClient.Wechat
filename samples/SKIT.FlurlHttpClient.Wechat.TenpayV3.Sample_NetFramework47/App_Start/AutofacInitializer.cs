@@ -1,11 +1,4 @@
-﻿using System.Reflection;
-using System.Web.Mvc;
-using Autofac;
-using Autofac.Integration.Mvc;
-using Autofac.Integration.WebApi;
-using Hangfire;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 {
     public class AutofacInitializer
     {

@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Exceptions
         }
 
         /// <inheritdoc/>
-        internal WechatTenpayRequestSignatureException(string message) 
+        internal WechatTenpayRequestSignatureException(string message)
             : base(message)
         {
         }
 
         /// <inheritdoc/>
-        internal WechatTenpayRequestSignatureException(string message, Exception innerException) 
+        internal WechatTenpayRequestSignatureException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -70,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
             Assert.NotNull(response.H5Url);
         }
-        
+
         [Fact(DisplayName = "测试用例：调用 API [POST] /pay/transactions/native")]
         public async Task TestExecuteCreatePayTransactionNative()
         {
@@ -89,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
             Assert.NotNull(response.QrcodeUrl);
         }
-        
+
         [Fact(DisplayName = "测试用例：调用 API [GET] /pay/transactions/id/{transaction_id}")]
         public async Task TestExecuteGetPayTransactionById()
         {
@@ -124,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.TradeStateDescription);
             Assert.True(response.Amount.Total > 0);
         }
-        
+
         [Fact(DisplayName = "测试用例：调用 API [POST] /pay/transactions/out-trade-no/{out_trade_no}/close")]
         public async Task TestExecuteClosePayTransaction()
         {

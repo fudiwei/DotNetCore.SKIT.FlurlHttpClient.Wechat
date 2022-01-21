@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                 }
             }
         }
-        
+
         private static void InnerReplaceEachCollectionPropertyStringValue<T>(ref T obj, Type objType, ReplacePropertyStringValueReplacementHandler replacement, PropertyInfo? currentProp)
         {
             if (objType.IsArray)

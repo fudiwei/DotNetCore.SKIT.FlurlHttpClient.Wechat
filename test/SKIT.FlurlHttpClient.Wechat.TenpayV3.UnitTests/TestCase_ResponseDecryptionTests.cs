@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -84,9 +82,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 RawStatus = 200,
                 DownloadBillCount = 1,
                 DownloadBillList = new Models.GetEcommerceBillFundflowBillResponse.Types.DownloadBill[]
-                { 
+                {
                     new Models.GetEcommerceBillFundflowBillResponse.Types.DownloadBill()
-                    { 
+                    {
                         DownloadUrl = MockText,
                         EncryptKey = Utilities.RSAUtility.EncryptWithECB(RSA_PUBLIC_KEY, MockText)
                     },

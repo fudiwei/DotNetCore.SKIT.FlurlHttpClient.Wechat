@@ -58,14 +58,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("membership_number")]
         [System.Text.Json.Serialization.JsonPropertyName("membership_number")]
-        public string? MembershipNumber { get; set; } 
+        public string? MembershipNumber { get; set; }
 
         /// <summary>
         /// 获取或设置用户等级。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("level")]
         [System.Text.Json.Serialization.JsonPropertyName("level")]
-        public string? Level { get; set; } 
+        public string? Level { get; set; }
 
         /// <summary>
         /// 获取或设置背景图片媒体文件地址。

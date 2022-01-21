@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Globalization;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
 
 namespace Newtonsoft.Json.Converters
 {
@@ -24,7 +22,7 @@ namespace Newtonsoft.Json.Converters
             if (reader.TokenType == JsonToken.Null)
             {
                 return existingValue;
-            } 
+            }
             else if (reader.TokenType == JsonToken.String)
             {
                 string? value = serializer.Deserialize<string>(reader);

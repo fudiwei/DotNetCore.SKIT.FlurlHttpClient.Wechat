@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                     {
                     }
 
-                    public class AdditionalStatement: GetMarketingMemberCardOpenCardByCardIdResponse.Types.AdditionalStatement
+                    public class AdditionalStatement : GetMarketingMemberCardOpenCardByCardIdResponse.Types.AdditionalStatement
                     {
                     }
                 }

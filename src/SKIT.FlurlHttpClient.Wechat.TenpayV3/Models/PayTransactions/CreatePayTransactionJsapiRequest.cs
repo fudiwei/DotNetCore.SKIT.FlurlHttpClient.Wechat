@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -27,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Detail : CreatePayTransactionAppRequest.Types.Detail
             {
             }
-            
+
             public class Scene : CreatePayTransactionAppRequest.Types.Scene
             {
             }

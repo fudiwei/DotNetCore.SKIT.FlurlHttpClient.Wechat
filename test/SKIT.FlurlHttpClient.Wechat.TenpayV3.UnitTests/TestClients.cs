@@ -1,15 +1,14 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    class TestClients
+    internal class TestClients
     {
         static TestClients()
         {
             var certificateManager = new Settings.InMemoryCertificateManager();
             Instance = new WechatTenpayClient(new WechatTenpayClientOptions()
-            { 
+            {
                 MerchantId = TestConfigs.WechatMerchantId,
                 MerchantV3Secret = TestConfigs.WechatMerchantSecret,
                 MerchantCertSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,

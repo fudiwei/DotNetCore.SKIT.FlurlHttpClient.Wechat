@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -20,15 +19,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 AvailableBeginTime = DateTime.Today.AddDays(1),
                 AvailableEndTime = DateTime.Today.AddDays(31),
                 StockUseRule = new Models.CreateMarketingFavorStockRequest.Types.StockUseRule()
-                { 
+                {
                     MaxCoupons = 1,
                     MaxAmount = 1,
                     MaxCouponsPerUser = 1
                 },
                 CouponUseRule = new Models.CreateMarketingFavorStockRequest.Types.CouponUseRule()
-                { 
+                {
                     NormalCoupon = new Models.CreateMarketingFavorStockRequest.Types.CouponUseRule.Types.NormalCoupon()
-                    { 
+                    {
                         CouponAmount = 1,
                         TransactionMinimum = 1
                     },
@@ -41,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
         }
-        
+
         [Fact(DisplayName = "测试用例：调用 API [POST] /marketing/favor/stocks/{stock_id}/start")]
         public async Task TestExecuteStartMarketingFavorStock()
         {

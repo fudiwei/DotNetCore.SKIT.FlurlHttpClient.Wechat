@@ -1,14 +1,5 @@
-﻿using System;
-using System.Diagnostics;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web.Http;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 {
-    using SKIT.FlurlHttpClient.Wechat.TenpayV3;
-    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
-
     [RoutePrefix("api/refund")]
     public class TenpayRefundController : ApiController
     {

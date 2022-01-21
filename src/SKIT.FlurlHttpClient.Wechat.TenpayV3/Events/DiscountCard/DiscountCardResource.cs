@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
@@ -13,11 +12,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public static class Types
         {
             public class TimeRange : Models.GetDiscountCardByOutCardCodeResponse.Types.TimeRange
-            { 
+            {
             }
 
             public class Payment : Models.GetDiscountCardByOutCardCodeResponse.Types.Payment
-            { 
+            {
             }
 
             public class Objective : Models.GetDiscountCardByOutCardCodeResponse.Types.Objective

@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
 {
-    partial class WechatTenpayHttpClientFactory : IWechatTenpayHttpClientFactory
+    internal partial class WechatTenpayHttpClientFactory : IWechatTenpayHttpClientFactory
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly Options.TenpayOptions _tenpayOptions;
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Imple
         }
     }
 
-    partial class WechatTenpayHttpClientFactory
+    internal partial class WechatTenpayHttpClientFactory
     {
         internal class DelegatingFlurlClientFactory : Flurl.Http.Configuration.DefaultHttpClientFactory
         {

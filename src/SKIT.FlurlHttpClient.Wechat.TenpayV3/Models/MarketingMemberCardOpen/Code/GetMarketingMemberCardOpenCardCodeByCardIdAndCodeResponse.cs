@@ -243,28 +243,28 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string? OpenId { get; set; } 
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡编号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("membership_number")]
         [System.Text.Json.Serialization.JsonPropertyName("membership_number")]
-        public string? MembershipNumber { get; set; } 
+        public string? MembershipNumber { get; set; }
 
         /// <summary>
         /// 获取或设置用户等级。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("level")]
         [System.Text.Json.Serialization.JsonPropertyName("level")]
-        public string? Level { get; set; } 
+        public string? Level { get; set; }
 
         /// <summary>
         /// 获取或设置用户昵称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
-        public string? Nickname { get; set; } 
+        public string? Nickname { get; set; }
 
         /// <summary>
         /// 获取或设置用户头像 URL。
@@ -300,14 +300,14 @@
         [Newtonsoft.Json.JsonProperty("bonus_value")]
         [System.Text.Json.Serialization.JsonPropertyName("bonus_value")]
         public int? BonusValue { get; set; }
-        
+
         /// <summary>
         /// 获取或设置用户开卡时填写的个人信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_information")]
         [System.Text.Json.Serialization.JsonPropertyName("user_information")]
         public Types.UserInformation? UserInformation { get; set; }
-        
+
         /// <summary>
         /// 获取或设置会员服务项列表。
         /// </summary>

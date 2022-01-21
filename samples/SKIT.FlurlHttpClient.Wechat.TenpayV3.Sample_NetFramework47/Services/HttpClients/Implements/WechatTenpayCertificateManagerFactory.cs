@@ -1,10 +1,6 @@
-﻿using System.Collections.Concurrent;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
 {
-    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
-
-    partial class WechatTenpayCertificateManagerFactory : IWechatTenpayCertificateManagerFactory
+    internal partial class WechatTenpayCertificateManagerFactory : IWechatTenpayCertificateManagerFactory
     {
         private readonly ConcurrentDictionary<string, CertificateManager> _dict;
 
