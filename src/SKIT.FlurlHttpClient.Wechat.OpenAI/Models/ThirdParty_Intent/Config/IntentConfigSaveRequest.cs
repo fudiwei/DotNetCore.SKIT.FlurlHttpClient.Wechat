@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
 {
@@ -59,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
             }
 
             public class Next : Previous
-            { 
+            {
             }
 
             public class NormalAnswerConfig
@@ -251,7 +250,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
                 /// <summary>
                 /// 获取或设置语义槽信息追问 API。
                 /// </summary>
-                    [Newtonsoft.Json.JsonProperty("api")]
+                [Newtonsoft.Json.JsonProperty("api")]
                 [System.Text.Json.Serialization.JsonPropertyName("api")]
                 public string Api { get; set; } = string.Empty;
 

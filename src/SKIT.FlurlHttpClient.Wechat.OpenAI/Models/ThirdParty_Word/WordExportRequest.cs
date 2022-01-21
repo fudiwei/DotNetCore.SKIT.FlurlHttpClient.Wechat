@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
 {
     /// <summary>
     /// <para>表示 [POST] /v2/word/export 接口的请求。</para>

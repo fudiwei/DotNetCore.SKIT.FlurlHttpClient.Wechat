@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 /* @codestyle-disable no-instantiated-property-in-response */
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform

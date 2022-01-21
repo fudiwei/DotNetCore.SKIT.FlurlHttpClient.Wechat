@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 {
     /// <summary>
     /// 表示微信智能对话第三方接入 API 请求的基类。

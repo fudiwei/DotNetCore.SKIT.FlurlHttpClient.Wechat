@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Events.Platform
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Events.Platform
 {
     /// <summary>
     /// <para>表示 userEnter 事件的数据。</para>
@@ -37,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Events.Platform
         /// 获取或设置消息内容。
         /// </summary>
         [System.Xml.Serialization.XmlElement("content")]
-        public Types.Content? Content { get; set; } 
+        public Types.Content? Content { get; set; }
 
         /// <summary>
         /// 获取或设置客服接入状态。

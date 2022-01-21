@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
 {
     /// <summary>
     /// <para>表示 [POST] /v1/openapi/create 接口的请求。</para>
@@ -14,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
         [Newtonsoft.Json.JsonProperty("name")]
         [System.Text.Json.Serialization.JsonPropertyName("name")]
         public string Name { get; set; } = string.Empty;
-        
+
         /// <summary>
         /// 获取或设置联系电话。
         /// </summary>
