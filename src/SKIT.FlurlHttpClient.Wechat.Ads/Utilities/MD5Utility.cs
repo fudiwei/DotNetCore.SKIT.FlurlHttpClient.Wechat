@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Utilities
     public static class MD5Utility
     {
         /// <summary>
-        /// 获取信息摘要。
+        /// 获取 MD5 信息摘要。
         /// </summary>
         /// <param name="bytes">信息字节数组。</param>
         /// <returns>信息摘要。</returns>
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Utilities
         }
 
         /// <summary>
-        /// 获取信息摘要。
+        /// 获取 MD5 信息摘要。
         /// </summary>
         /// <param name="message">文本信息。</param>
         /// <returns>信息摘要。</returns>
