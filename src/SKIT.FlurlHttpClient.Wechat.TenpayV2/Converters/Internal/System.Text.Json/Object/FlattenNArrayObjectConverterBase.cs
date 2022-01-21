@@ -89,6 +89,7 @@ namespace System.Text.Json.Converters
                 return;
             }
 
+            return;
             throw new NotImplementedException();
         }
 

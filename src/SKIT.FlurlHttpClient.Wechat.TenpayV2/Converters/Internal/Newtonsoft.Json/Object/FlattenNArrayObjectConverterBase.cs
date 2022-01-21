@@ -105,6 +105,7 @@ namespace Newtonsoft.Json.Converters
                 return;
             }
 
+            return;
             throw new NotImplementedException();
         }
 
