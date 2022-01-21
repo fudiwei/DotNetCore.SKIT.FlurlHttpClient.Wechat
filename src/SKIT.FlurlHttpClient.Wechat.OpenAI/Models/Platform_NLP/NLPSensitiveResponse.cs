@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 
         internal static class Converters
         {
-            internal class NewtonsoftJsonResultArrayConverter : Newtonsoft.Json.JsonConverter<Types.Result[]?>
+            internal class ResponsePropertyResultArrayNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Result[]?>
             {
                 public override bool CanRead
                 {
@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
                 }
             }
 
-            internal class SystemTextJsonResultArrayConverter : System.Text.Json.Serialization.JsonConverter<Types.Result[]?>
+            internal class ResponsePropertyResultArraySystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Result[]?>
             {
                 public override Types.Result[]? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
@@ -193,9 +193,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
         /// 获取或设置结果。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("result")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonResultArrayConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyResultArrayNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("result")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonResultArrayConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyResultArraySystemTextJsonConverter))]
         public Types.Result[] ResultList { get; set; } = default!;
     }
 }

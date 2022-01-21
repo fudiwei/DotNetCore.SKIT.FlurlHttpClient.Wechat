@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
 {
-    public class WechatOpenAIJWTTests
+    public class TestCase_JWTUtilityTests
     {
-        [Fact(DisplayName = "JWT 编码（HS256）")]
-        public void JWTEncodeWithHS256Test()
+        [Fact(DisplayName = "测试用例：JWT HS256 编码")]
+        public void TestJWTEncodeWithHS256()
         {
             object payload = new
             {
