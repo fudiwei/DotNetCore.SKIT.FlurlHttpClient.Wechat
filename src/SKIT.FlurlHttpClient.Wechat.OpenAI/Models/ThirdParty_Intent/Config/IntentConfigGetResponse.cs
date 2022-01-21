@@ -81,7 +81,8 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("content")]
                                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                                public object Content { get; set; } = default!;
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectReadOnlyConverter))]
+                                public dynamic Content { get; set; } = default!;
                             }
                         }
 
