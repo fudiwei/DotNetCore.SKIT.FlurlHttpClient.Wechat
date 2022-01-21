@@ -964,27 +964,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置接收消息的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("touser")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.SeparatedByVBarStringIListConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("touser")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.SeparatedByVBarStringIListConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringListWithPipeSplitConverter))]
         public IList<string>? ToUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("toparty")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.SeparatedByVBarInt32IListConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualIntegerListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("toparty")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.SeparatedByVBarInt32IListConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualIntegerListWithPipeSplitConverter))]
         public IList<int>? ToDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的标签 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("totag")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.SeparatedByVBarInt32IListConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualIntegerListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("totag")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.SeparatedByVBarInt32IListConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualIntegerListWithPipeSplitConverter))]
         public IList<int>? ToTagIdList { get; set; }
 
         /// <summary>

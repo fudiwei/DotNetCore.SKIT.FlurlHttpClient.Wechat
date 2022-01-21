@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Linq;
 
 namespace Newtonsoft.Json.Converters
 {
-    internal class SeparatedByVBarInt32ArrayConverter : JsonConverter<int[]?>
+    internal class TextualIntegerArrayWithPipeSplitConverter : JsonConverter<int[]?>
     {
-        private const string SEPARATOR = "|";
-
         public override bool CanRead
         {
             get { return true; }
@@ -27,28 +24,29 @@ namespace Newtonsoft.Json.Converters
             {
                 string? value = serializer.Deserialize<string>(reader);
                 if (value == null)
-                    return existingValue;
+                    return null;
+                if (string.IsNullOrEmpty(value))
+                    return Array.Empty<int>();
 
-                try
+                string[] strArr = value.Split('|');
+                int[] intArr = new int[strArr.Length];
+                for (int i = 0; i < strArr.Length; i++)
                 {
-                    return value
-                        .Split(new string[] { SEPARATOR }, StringSplitOptions.RemoveEmptyEntries)
-                        .Select(e => int.Parse(e))
-                        .ToArray();
+                    if (!int.TryParse(strArr[i], out int j))
+                        throw new JsonSerializationException("Unexpected token when parsing string to integer.");
+
+                    intArr[i] = j;
                 }
-                catch (FormatException ex)
-                {
-                    throw new JsonReaderException(ex.Message, ex);
-                }
+                return intArr;
             }
 
-            throw new JsonReaderException();
+            throw new JsonSerializationException();
         }
 
         public override void WriteJson(JsonWriter writer, int[]? value, JsonSerializer serializer)
         {
             if (value != null)
-                writer.WriteValue(string.Join(SEPARATOR, value));
+                writer.WriteValue(string.Join("|", value));
             else
                 writer.WriteNull();
         }

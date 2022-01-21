@@ -8,10 +8,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
-    public class WechatWorkEventDeserializationTests
+    public class TestCase_EventTests
     {
-        [Fact(DisplayName = "验签并解密回调数据")]
-        public void GetEventMessageTypeTest()
+        [Fact(DisplayName = "测试用例：验签并解密回调数据")]
+        public void TestDeserializeEventFromXml()
         {
             string callbacMsgSig = "477715d11cdb4164915debcba66cb864d751f3e6";
             string callbacTimeStamp = "1409659813";
@@ -32,6 +32,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
             Assert.Equal("hello", eventModel.Content);
             Assert.Equal("wx5823bf96d3bd56c7", eventModel.ToUserName);
             Assert.Equal("mycreate", eventModel.FromUserName);
+        }
+
+        [Fact(DisplayName = "测试用例：验证微信服务器")]
+        public void TestVerifyEventSignatureForEcho()
+        {
+            string callbacMsgSig = "5c45ff5e21c57e6ad56bac8758b79b1d9ac89fd3";
+            string callbacTimeStamp = "1409659589";
+            string callbacNonce = "263014780";
+            string callbackEcho = "P9nAzCzyDtyTWESHep1vC5X9xho/qYX3Zpb4yKa9SKld1DsH3Iyt3tP3zNdtp+4RPcs8TgAE7OaBO+FZXvnaqQ==";
+
+            var options = new WechatWorkClientOptions()
+            {
+                CorpId = "wx5823bf96d3bd56c7",
+                PushEncodingAESKey = "jWmYm7qr5nMoAUwZRjGtBxmz3KA1tkAj3ykkR6q2B2C",
+                PushToken = "QDG6eK"
+            };
+            var client = new WechatWorkClient(options);
+
+            Assert.True(client.VerifyEventSignatureForEcho(callbacTimeStamp, callbacNonce, callbackEcho, callbacMsgSig, out string replyEcho));
+            Assert.Equal("1616140317555161061", replyEcho);
         }
     }
 }

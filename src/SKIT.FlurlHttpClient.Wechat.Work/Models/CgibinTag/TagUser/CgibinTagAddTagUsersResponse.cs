@@ -9,9 +9,9 @@
         /// 获取或设置无效的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidlist")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.SeparatedByVBarStringArrayConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringArrayWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("invalidlist")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.SeparatedByVBarStringArrayConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringArrayWithPipeSplitConverter))]
         public string[]? InvalidUserIdList { get; set; }
 
         /// <summary>

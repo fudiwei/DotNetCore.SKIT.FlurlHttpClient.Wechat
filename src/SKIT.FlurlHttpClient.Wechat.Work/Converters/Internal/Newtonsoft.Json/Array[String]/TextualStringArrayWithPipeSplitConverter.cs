@@ -2,10 +2,8 @@
 
 namespace Newtonsoft.Json.Converters
 {
-    internal class SeparatedByVBarStringArrayConverter : JsonConverter<string[]?>
+    internal class TextualStringArrayWithPipeSplitConverter : JsonConverter<string[]?>
     {
-        private const string SEPARATOR = "|";
-
         public override bool CanRead
         {
             get { return true; }
@@ -26,18 +24,20 @@ namespace Newtonsoft.Json.Converters
             {
                 string? value = serializer.Deserialize<string>(reader);
                 if (value == null)
-                    return existingValue;
+                    return null;
+                if (string.IsNullOrEmpty(value))
+                    return Array.Empty<string>();
 
-                return value.Split(new string[] { SEPARATOR }, StringSplitOptions.RemoveEmptyEntries);
+                return value.Split('|');
             }
 
-            throw new JsonReaderException();
+            throw new JsonSerializationException();
         }
 
         public override void WriteJson(JsonWriter writer, string[]? value, JsonSerializer serializer)
         {
             if (value != null)
-                writer.WriteValue(string.Join(SEPARATOR, value));
+                writer.WriteValue(string.Join("|", value));
             else
                 writer.WriteNull();
         }

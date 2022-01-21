@@ -3,7 +3,7 @@ using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
-    internal class SeparatedByVBarInt32ArrayConverter : JsonConverter<int[]?>
+    internal class TextualIntegerArrayWithPipeSplitConverter : JsonConverter<int[]?>
     {
         private const string SEPARATOR = "|";
 
@@ -18,18 +18,19 @@ namespace System.Text.Json.Converters
                 string? value = reader.GetString();
                 if (value == null)
                     return null;
+                if (string.IsNullOrEmpty(value))
+                    return Array.Empty<int>();
 
-                try
+                string[] strArr = value.Split('|');
+                int[] intArr = new int[strArr.Length];
+                for (int i = 0; i < strArr.Length; i++)
                 {
-                    return value
-                        .Split(new string[] { SEPARATOR }, StringSplitOptions.RemoveEmptyEntries)
-                        .Select(e => int.Parse(e))
-                        .ToArray();
+                    if (!int.TryParse(strArr[i], out int j))
+                        throw new JsonException("Unexpected token when parsing string to integer.");
+
+                    intArr[i] = j;
                 }
-                catch (FormatException ex)
-                {
-                    throw new JsonException(ex.Message, ex);
-                }
+                return intArr;
             }
 
             throw new JsonException();
@@ -38,7 +39,7 @@ namespace System.Text.Json.Converters
         public override void Write(Utf8JsonWriter writer, int[]? value, JsonSerializerOptions options)
         {
             if (value != null)
-                writer.WriteStringValue(string.Join(SEPARATOR, value));
+                writer.WriteStringValue(string.Join("|", value));
             else
                 writer.WriteNullValue();
         }
