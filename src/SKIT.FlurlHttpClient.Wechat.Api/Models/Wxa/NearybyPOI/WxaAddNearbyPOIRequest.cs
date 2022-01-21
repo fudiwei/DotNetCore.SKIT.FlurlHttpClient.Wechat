@@ -105,208 +105,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         internal static class Converters
         {
-            internal class NewtonsoftJsonPictureConverter : Newtonsoft.Json.JsonConverter<Types.Picture?>
+            internal class RequestPropertyPictureNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Picture?>
             {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return true; }
-                }
-
-                public override Types.Picture? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, Types.Picture? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
-                    {
-                        string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
-                            return existingValue;
-
-                        return Newtonsoft.Json.JsonConvert.DeserializeObject<Types.Picture>(value);
-                    }
-
-                    throw new Newtonsoft.Json.JsonReaderException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.Picture? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (value != null)
-                        writer.WriteValue(Newtonsoft.Json.JsonConvert.SerializeObject(value, Newtonsoft.Json.Formatting.None));
-                    else
-                        writer.WriteNull();
-                }
             }
 
-            internal class SystemTextJsonPictureConverter : System.Text.Json.Serialization.JsonConverter<Types.Picture?>
+            internal class RequestPropertyPictureSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Picture?>
             {
-                public override Types.Picture? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return null;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
-                    {
-                        string? value = reader.GetString();
-                        if (value == null)
-                            return null;
-
-                        return System.Text.Json.JsonSerializer.Deserialize<Types.Picture>(value, options);
-                    }
-
-                    throw new System.Text.Json.JsonException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.Picture? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (value != null)
-                        writer.WriteStringValue(System.Text.Json.JsonSerializer.Serialize(value, options));
-                    else
-                        writer.WriteNullValue();
-                }
             }
 
-            internal class NewtonsoftJsonServiceConverter : Newtonsoft.Json.JsonConverter<Types.Service?>
+            internal class RequestPropertyServiceNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Service?>
             {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return true; }
-                }
-
-                public override Types.Service? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, Types.Service? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
-                    {
-                        string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
-                            return existingValue;
-
-                        return Newtonsoft.Json.JsonConvert.DeserializeObject<Types.Service>(value);
-                    }
-
-                    throw new Newtonsoft.Json.JsonReaderException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.Service? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (value != null)
-                        writer.WriteValue(Newtonsoft.Json.JsonConvert.SerializeObject(value, Newtonsoft.Json.Formatting.None));
-                    else
-                        writer.WriteNull();
-                }
             }
 
-            internal class SystemTextJsonServiceConverter : System.Text.Json.Serialization.JsonConverter<Types.Service?>
+            internal class RequestPropertyServiceSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Service?>
             {
-                public override Types.Service? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return null;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
-                    {
-                        string? value = reader.GetString();
-                        if (value == null)
-                            return null;
-
-                        return System.Text.Json.JsonSerializer.Deserialize<Types.Service>(value, options);
-                    }
-
-                    throw new System.Text.Json.JsonException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.Service? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (value != null)
-                        writer.WriteStringValue(System.Text.Json.JsonSerializer.Serialize(value, options));
-                    else
-                        writer.WriteNullValue();
-                }
             }
 
-            internal class NewtonsoftJsonKfConverter : Newtonsoft.Json.JsonConverter<Types.Kf?>
+            internal class RequsetPropertyKfNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Kf?>
             {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return true; }
-                }
-
-                public override Types.Kf? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, Types.Kf? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
-                    {
-                        string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
-                            return existingValue;
-
-                        return Newtonsoft.Json.JsonConvert.DeserializeObject<Types.Kf>(value);
-                    }
-
-                    throw new Newtonsoft.Json.JsonReaderException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.Kf? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (value != null)
-                        writer.WriteValue(Newtonsoft.Json.JsonConvert.SerializeObject(value, Newtonsoft.Json.Formatting.None));
-                    else
-                        writer.WriteNull();
-                }
             }
 
-            internal class SystemTextJsonKfConverter : System.Text.Json.Serialization.JsonConverter<Types.Kf?>
+            internal class RequestPropertyKfSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Kf?>
             {
-                public override Types.Kf? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return null;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
-                    {
-                        string? value = reader.GetString();
-                        if (value == null)
-                            return null;
-
-                        return System.Text.Json.JsonSerializer.Deserialize<Types.Kf>(value, options);
-                    }
-
-                    throw new System.Text.Json.JsonException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.Kf? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (value != null)
-                        writer.WriteStringValue(System.Text.Json.JsonSerializer.Serialize(value, options));
-                    else
-                        writer.WriteNullValue();
-                }
             }
         }
 
@@ -337,27 +157,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置门店图片信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pic_list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonPictureConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyPictureNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonPictureConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyPictureSystemTextJsonConverter))]
         public Types.Picture Picture { get; set; } = new Types.Picture();
 
         /// <summary>
         /// 获取或设置服务标签信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_infos")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonServiceConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyServiceNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("service_infos")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonServiceConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyServiceSystemTextJsonConverter))]
         public Types.Service Service { get; set; } = new Types.Service();
 
         /// <summary>
         /// 获取或设置客服信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("kf_info")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonKfConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequsetPropertyKfNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("kf_info")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonKfConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyKfSystemTextJsonConverter))]
         public Types.Kf? Kf { get; set; }
 
         /// <summary>

@@ -2,7 +2,7 @@
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class TestCase_AesUtilityTests
+    public class TestCase_AESUtilityTests
     {
         [Fact(DisplayName = "测试用例：AES-GCM 解密")]
         public void TestAESGCMDecrypt()

@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tagid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("tagid_list")]
-        public int[] TagIdList { get; set; } = default!;
+        public string[] TagIdList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置打印员数量。

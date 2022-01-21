@@ -4,6 +4,9 @@ using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
+    /// <summary>
+    /// AES 算法工具类。
+    /// </summary>
     public static class AESUtility
     {
         /// <summary>

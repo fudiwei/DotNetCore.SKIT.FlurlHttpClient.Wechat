@@ -9,6 +9,8 @@
 
     <PropertyGroup>
         <PackageId>SKIT.FlurlHttpClient.Wechat.Api</PackageId>
+		<PackageIcon>LOGO.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage MiniProgram MiniGame MiniStore 微信 公众号 服务号 订阅号 小程序 小游戏 小商店 公众平台 开放平台 微信公众号 微信服务号 微信订阅号 微信小程序 微信小游戏 微信小商店 微信公众平台 微信开放平台</PackageTags>
@@ -17,17 +19,28 @@
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git</RepositoryUrl>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <IncludeSymbols>true</IncludeSymbols>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<Deterministic>true</Deterministic>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../../LOGO.png" Pack="true" PackagePath="/" />
+		<None Include="README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
 
     <ItemGroup>
         <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461'" />
     </ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.1.1" />
+		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.2.0" />
 	</ItemGroup>
 
 </Project>

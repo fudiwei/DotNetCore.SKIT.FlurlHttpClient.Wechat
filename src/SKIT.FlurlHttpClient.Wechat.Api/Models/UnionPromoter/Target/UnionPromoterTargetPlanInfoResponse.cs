@@ -63,8 +63,9 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("extInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("extInfo")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectReadOnlyConverter))]
 
-                public object Extra { get; set; } = default!;
+                public dynamic? Extra { get; set; }
             }
 
             public class Product

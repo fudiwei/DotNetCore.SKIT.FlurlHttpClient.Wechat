@@ -32,9 +32,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置业务域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_jump_h5_domain")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringIListWithSemicolonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringListWithSemicolonSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_jump_h5_domain")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringIListWithSemicolonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringListWithSemicolonSplitConverter))]
         public IList<string>? WxaJumpH5DomainList { get; set; }
     }
 }

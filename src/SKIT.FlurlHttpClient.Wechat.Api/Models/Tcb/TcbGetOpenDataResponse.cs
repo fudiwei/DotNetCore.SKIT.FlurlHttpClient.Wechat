@@ -21,7 +21,8 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("json")]
                 [System.Text.Json.Serialization.JsonPropertyName("json")]
-                public object Data { get; set; } = default!;
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectReadOnlyConverter))]
+                public dynamic? Data { get; set; }
             }
         }
 

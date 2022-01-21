@@ -3,7 +3,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class TestCase_RsaUtilityTests
+    public class TestCase_RSAUtilityTests
     {
         // 此处测试的 RSA 证书/公钥/私钥是自签名生成的，仅供执行 RSA 相关的单元测试，不能用于调用微信支付 API。
         private const string RSA_CERT_SN = "3050f72e2dce03e7efe49557dd231d176649afbd";
