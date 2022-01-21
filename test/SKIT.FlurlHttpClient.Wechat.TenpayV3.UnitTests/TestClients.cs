@@ -7,14 +7,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
     {
         static TestClients()
         {
-            GlobalCertificateManager = new Settings.InMemoryCertificateManager();
+            var certificateManager = new Settings.InMemoryCertificateManager();
             Instance = new WechatTenpayClient(new WechatTenpayClientOptions()
             { 
                 MerchantId = TestConfigs.WechatMerchantId,
                 MerchantV3Secret = TestConfigs.WechatMerchantSecret,
                 MerchantCertSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,
                 MerchantCertPrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
-                CertificateManager = GlobalCertificateManager
+                CertificateManager = certificateManager
             });
         }
 
@@ -26,11 +26,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             response = Instance.DecryptResponseSensitiveProperty(response);
             foreach (var certificateModel in response.CertificateList)
             {
-                GlobalCertificateManager.AddEntry(new Settings.CertificateEntry(certificateModel));
+                Instance.CertificateManager.AddEntry(new Settings.CertificateEntry(certificateModel));
             }
         }
-
-        public static readonly Settings.CertificateManager GlobalCertificateManager;
 
         public static readonly WechatTenpayClient Instance;
     }

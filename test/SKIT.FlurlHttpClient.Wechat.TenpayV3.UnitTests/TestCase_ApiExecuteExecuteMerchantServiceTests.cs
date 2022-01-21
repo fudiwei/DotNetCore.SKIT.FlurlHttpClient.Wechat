@@ -7,10 +7,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayExecuteMerchantServiceTests
+    public class TestCase_ApiExecuteExecuteMerchantServiceTests
     {
-        [Fact(DisplayName = "[GET] /merchant-service/complaints-v2")]
-        public async Task QueryMerchantServiceComplaintsTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /merchant-service/complaints-v2")]
+        public async Task TestExecuteQueryMerchantServiceComplaints()
         {
             var request = new Models.QueryMerchantServiceComplaintsRequest()
             {
@@ -31,8 +31,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
-        [Fact(DisplayName = "[GET] /merchant-service/complaints-v2/{merchant_id}")]
-        public async Task GetMerchantServiceComplaintByComplaintIdTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /merchant-service/complaints-v2/{merchant_id}")]
+        public async Task TestExecuteGetMerchantServiceComplaintByComplaintId()
         {
             var request = new Models.GetMerchantServiceComplaintByComplaintIdRequest()
             {
@@ -47,8 +47,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.True(response.UserComplaintTimes >= 1);
         }
 
-        [Fact(DisplayName = "[GET] /merchant-service/complaints-v2/{merchant_id}/negotiation-historys")]
-        public async Task QueryMerchantServiceComplaintNegotiationHistoriesTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /merchant-service/complaints-v2/{merchant_id}/negotiation-historys")]
+        public async Task TestExecuteQueryMerchantServiceComplaintNegotiationHistories()
         {
             var request = new Models.QueryMerchantServiceComplaintNegotiationHistoriesRequest()
             {
@@ -68,8 +68,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
-        [Fact(DisplayName = "[POST] /merchant-service/complaint-notifications")]
-        public async Task CreateMerchantServiceComplaintNotificationTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /merchant-service/complaint-notifications")]
+        public async Task TestExecuteCreateMerchantServiceComplaintNotification()
         {
             var request = new Models.CreateMerchantServiceComplaintNotificationRequest()
             {
@@ -82,8 +82,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.NotifyUrl);
         }
 
-        [Fact(DisplayName = "[GET] /merchant-service/complaint-notifications")]
-        public async Task GetMerchantServiceComplaintNotificationTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /merchant-service/complaint-notifications")]
+        public async Task TestExecuteGetMerchantServiceComplaintNotification()
         {
             var request = new Models.GetMerchantServiceComplaintNotificationRequest();
             var response = await TestClients.Instance.ExecuteGetMerchantServiceComplaintNotificationAsync(request);
@@ -93,8 +93,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.NotifyUrl);
         }
         
-        [Fact(DisplayName = "[PUT] /merchant-service/complaint-notifications")]
-        public async Task UpdateMerchantServiceComplaintNotificationTest()
+        [Fact(DisplayName = "测试用例：调用 API [PUT] /merchant-service/complaint-notifications")]
+        public async Task TestExecuteUpdateMerchantServiceComplaintNotification()
         {
             var request = new Models.UpdateMerchantServiceComplaintNotificationRequest()
             {
@@ -107,8 +107,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.NotifyUrl);
         }
 
-        [Fact(DisplayName = "[DELETE] /merchant-service/complaint-notifications")]
-        public async Task DeleteMerchantServiceComplaintNotificationTest()
+        [Fact(DisplayName = "测试用例：调用 API [DELETE] /merchant-service/complaint-notifications")]
+        public async Task TestExecuteDeleteMerchantServiceComplaintNotification()
         {
             var request = new Models.DeleteMerchantServiceComplaintNotificationRequest();
             var response = await TestClients.Instance.ExecuteDeleteMerchantServiceComplaintNotificationAsync(request);
@@ -116,8 +116,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.True(response.IsSuccessful());
         }
 
-        [Fact(DisplayName = "[POST] /merchant-service/images/upload")]
-        public async Task UploadMerchantServiceImageTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /merchant-service/images/upload")]
+        public async Task TestExecuteUploadMerchantServiceImage()
         {
             var request = new Models.UploadMerchantServiceImageRequest()
             { 

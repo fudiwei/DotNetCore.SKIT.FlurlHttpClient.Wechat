@@ -3,10 +3,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayCertificateManagerTests
+    public class TestCase_CertificateManagerTests
     {
-        [Fact(DisplayName = "序列化与反序列化 `CertificateEntry`")]
-        public void CertificateEntrySerializationTest()
+        [Fact(DisplayName = "测试用例：`CertificateEntry` 序列化")]
+        public void TestCertificateEntrySerialization()
         {
             var entry = new Settings.CertificateEntry("SN", "-----BEGIN CERTIFICATE-----END CERTIFICATE-----", DateTimeOffset.Now, DateTimeOffset.Now);
 

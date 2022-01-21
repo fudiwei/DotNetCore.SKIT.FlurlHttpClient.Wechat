@@ -9,6 +9,8 @@
 
     <PropertyGroup>
         <PackageId>SKIT.FlurlHttpClient.Wechat.TenpayV3</PackageId>
+		<PackageIcon>LOGO.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage Tenpay WechatPay WeixinPay Wxpay 微信 微信支付 微信商户</PackageTags>
@@ -17,10 +19,21 @@
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git</RepositoryUrl>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <IncludeSymbols>true</IncludeSymbols>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<Deterministic>true</Deterministic>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../../LOGO.png" Pack="true" PackagePath="/" />
+		<None Include="README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
 
     <ItemGroup>
         <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461' Or '$(TargetFramework)' == 'net47'" />
@@ -29,7 +42,7 @@
     <ItemGroup>
         <PackageReference Include="System.ValueTuple" Version="4.5.0" Condition="'$(TargetFramework)' == 'net461'" />
         <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
-		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.1.1" />
+		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.2.0" />
     </ItemGroup>
 
 </Project>

@@ -7,10 +7,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayExecutePayTransactionsTests
+    public class TestCase_ApiExecuteExecutePayTransactionsTests
     {
-        [Fact(DisplayName = "[POST] /pay/transactions/app")]
-        public async Task CreatePayTransactionAppTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /pay/transactions/app")]
+        public async Task TestExecuteCreatePayTransactionApp()
         {
             var request = new Models.CreatePayTransactionAppRequest()
             {
@@ -28,8 +28,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.PrepayId);
         }
 
-        [Fact(DisplayName = "[POST] /pay/transactions/jsapi")]
-        public async Task CreatePayTransactionJsapiTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /pay/transactions/jsapi")]
+        public async Task TestExecuteCreatePayTransactionJsapi()
         {
             var request = new Models.CreatePayTransactionJsapiRequest()
             {
@@ -52,8 +52,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.PrepayId);
         }
 
-        [Fact(DisplayName = "[POST] /pay/transactions/h5")]
-        public async Task CreatePayTransactionH5Test()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /pay/transactions/h5")]
+        public async Task TestExecuteCreatePayTransactionH5()
         {
             var request = new Models.CreatePayTransactionH5Request()
             {
@@ -71,8 +71,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.H5Url);
         }
         
-        [Fact(DisplayName = "[POST] /pay/transactions/native")]
-        public async Task CreatePayTransactionNativeTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /pay/transactions/native")]
+        public async Task TestExecuteCreatePayTransactionNative()
         {
             var request = new Models.CreatePayTransactionNativeRequest()
             {
@@ -90,8 +90,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.QrcodeUrl);
         }
         
-        [Fact(DisplayName = "[GET] /pay/transactions/id/{transaction_id}")]
-        public async Task GetPayTransactionByIdTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /pay/transactions/id/{transaction_id}")]
+        public async Task TestExecuteGetPayTransactionById()
         {
             var request = new Models.GetPayTransactionByIdRequest()
             {
@@ -108,8 +108,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.True(response.Amount.Total > 0);
         }
 
-        [Fact(DisplayName = "[GET] /pay/transactions/out-trade-no/{out_trade_no}")]
-        public async Task GetPayTransactionByOutTradeNumberTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /pay/transactions/out-trade-no/{out_trade_no}")]
+        public async Task TestExecuteGetPayTransactionByOutTradeNumber()
         {
             var request = new Models.GetPayTransactionByOutTradeNumberRequest()
             {
@@ -125,8 +125,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.True(response.Amount.Total > 0);
         }
         
-        [Fact(DisplayName = "[POST] /pay/transactions/out-trade-no/{out_trade_no}/close")]
-        public async Task ClosePayTransactionTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /pay/transactions/out-trade-no/{out_trade_no}/close")]
+        public async Task TestExecuteClosePayTransaction()
         {
             var request = new Models.ClosePayTransactionRequest()
             {

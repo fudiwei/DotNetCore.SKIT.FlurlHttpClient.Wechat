@@ -7,10 +7,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayExecuteMarketingBusifavorTests
+    public class TestCase_ApiExecuteExecuteMarketingBusifavorTests
     {
-        [Fact(DisplayName = "[POST] /marketing/busifavor/stocks")]
-        public async Task CreateMarketingBusifavorStockTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /marketing/busifavor/stocks")]
+        public async Task TestExecuteCreateMarketingBusifavorStock()
         {
             var request = new Models.CreateMarketingBusifavorStockRequest()
             {
@@ -45,8 +45,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.StockId);
         }
         
-        [Fact(DisplayName = "[GET] /marketing/busifavor/stocks/{stock_id}")]
-        public async Task GetMarketingBusifavorStockByStockIdTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /marketing/busifavor/stocks/{stock_id}")]
+        public async Task TestExecuteGetMarketingBusifavorStockByStockId()
         {
             var request = new Models.GetMarketingBusifavorStockByStockIdRequest()
             {
@@ -64,8 +64,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.CouponCodeMode);
         }
 
-        [Fact(DisplayName = "[GET] /marketing/busifavor/users/{openid}/coupons")]
-        public async Task QueryMarketingBusifavorUserCouponsTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /marketing/busifavor/users/{openid}/coupons")]
+        public async Task TestExecuteQueryMarketingBusifavorUserCoupons()
         {
             var request = new Models.QueryMarketingBusifavorUserCouponsRequest()
             {
@@ -78,8 +78,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.True(response.IsSuccessful());
         }
 
-        [Fact(DisplayName = "[POST] /marketing/busifavor/callbacks")]
-        public async Task UpdateMarketingBusifavorCallbackTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /marketing/busifavor/callbacks")]
+        public async Task TestExecuteUpdateMarketingBusifavorCallback()
         {
             var request = new Models.UpdateMarketingBusifavorCallbackRequest()
             {
@@ -91,8 +91,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.NotifyUrl);
         }
 
-        [Fact(DisplayName = "[GET] /marketing/busifavor/callbacks")]
-        public async Task GetMarketingBusifavorCallbackTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /marketing/busifavor/callbacks")]
+        public async Task TestExecuteGetMarketingBusifavorCallback()
         {
             var request = new Models.GetMarketingBusifavorCallbackRequest();
             var response = await TestClients.Instance.ExecuteGetMarketingBusifavorCallbackAsync(request);

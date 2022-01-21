@@ -4,7 +4,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {
-    public class TestCase_JsonConverterTest
+    public class TestCase_JsonConverterTests
     {
         [Fact(DisplayName = "测试用例：自定义转换器之 `FlattenNArrayObjectConverterBase`")]
         public void TestFlattenNArrayObjectConverter()

@@ -7,10 +7,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayExecuteMarketingPartnershipsTests
+    public class TestCase_ApiExecuteExecuteMarketingPartnershipsTests
     {
-        [Fact(DisplayName = "[POST] /marketing/partnerships/build")]
-        public async Task BuildMarketingPartnershipTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /marketing/partnerships/build")]
+        public async Task TestExecuteBuildMarketingPartnership()
         {
             var request = new Models.BuildMarketingPartnershipRequest()
             { 
@@ -30,8 +30,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.State);
         }
 
-        [Fact(DisplayName = "[GET] /marketing/partnerships")]
-        public async Task QueryMarketingPartnershipsTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /marketing/partnerships")]
+        public async Task TestExecuteQueryMarketingPartnerships()
         {
             var request = new Models.QueryMarketingPartnershipsRequest()
             {

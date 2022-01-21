@@ -7,10 +7,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayExecuteRefundTests
+    public class TestCase_ApiExecuteExecuteRefundTests
     {
-        [Fact(DisplayName = "[POST] /refund/domestic/refunds")]
-        public async Task CreateRefundDomesticRefundTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /refund/domestic/refunds")]
+        public async Task TestExecuteCreateRefundDomesticRefund()
         {
             var request = new Models.CreateRefundDomesticRefundRequest()
             {
@@ -36,8 +36,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.True(response.Amount.PayerRefund > 0);
         }
 
-        [Fact(DisplayName = "[GET] /refund/domestic/refunds/{out_refund_no}")]
-        public async Task GetRefundDomesticRefundByOutRefundNumberTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /refund/domestic/refunds/{out_refund_no}")]
+        public async Task TestExecuteGetRefundDomesticRefundByOutRefundNumber()
         {
             var request = new Models.GetRefundDomesticRefundByOutRefundNumberRequest()
             {

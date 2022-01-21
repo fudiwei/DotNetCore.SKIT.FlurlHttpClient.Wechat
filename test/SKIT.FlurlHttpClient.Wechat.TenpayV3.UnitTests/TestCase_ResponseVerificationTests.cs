@@ -7,10 +7,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayResponseVerificationTests
+    public class TestCase_ResponseVerificationTests
     {
-        [Fact(DisplayName = "验证响应签名")]
-        public async Task VerifyResponseSignatureTest()
+        [Fact(DisplayName = "测试用例：验证响应签名")]
+        public async Task TestVerifyResponseSignature()
         {
             await TestClients.InitializeCertificateManagerAsync();
 

@@ -7,7 +7,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayRequestEncryptionTests
+    public class TestCase_RequestEncryptionTests
     {
         private const string RSA_CERTSN = "mock_sn";
         private const string RSA_CERTIFICATE = "-----BEGIN CERTIFICATE-----MIID9jCCAt6gAwIBAgIUFGJAVFxIU/1hoxpZC8Tc2xKFJHowDQYJKoZIhvcNAQELBQAwXjELMAkGA1UEBhMCQ04xEzARBgNVBAoTClRlbnBheS5jb20xHTAbBgNVBAsTFFRlbnBheS5jb20gQ0EgQ2VudGVyMRswGQYDVQQDExJUZW5wYXkuY29tIFJvb3QgQ0EwHhcNMjAwODAxMDczNTE5WhcNMjUwNzMxMDczNTE5WjCBhzETMBEGA1UEAwwKMTYwMTEwMzMxNDEbMBkGA1UECgwS5b6u5L+h5ZWG5oi357O757ufMTMwMQYDVQQLDCroo5XkurrvvIjkuIrmtbfvvInmlZnogrLnp5HmioDmnInpmZDlhazlj7gxCzAJBgNVBAYMAkNOMREwDwYDVQQHDAhTaGVuWmhlbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKq4IUw5Rq6iTUahjkr+aYvmn3Hg2tHNDyIru7ZdthXw27BCwnwwDyufq6SBwXypuf3wXKpcFggZo5dwjDR6XxlGXzNDKdW7JQkTxQXqABZZVCq4yMMkVns3xbmDfAI57bW0O0F40+NOqmU9gjqRwGNvE9bE8N3y2VyxYcz53rU4FCrlCOfsFeF1Z3usbWOK5IOYXjmdzr96xVWasO0URJ60GwDZyGxRdkzd5kJy6HnVVqOUbn3t7mKbGkzQq/j+D+pyMlhjtRV475ks5uex4gVWZgEqT1b9sx1pUQvVPr6/ZXtqTJwSg/YvSCx5RBiYCskAyA/5XH9t1p/WV1zFhXUCAwEAAaOBgTB/MAkGA1UdEwQCMAAwCwYDVR0PBAQDAgTwMGUGA1UdHwReMFwwWqBYoFaGVGh0dHA6Ly9ldmNhLml0cnVzLmNvbS5jbi9wdWJsaWMvaXRydXNjcmw/Q0E9MUJENDIyMEU1MERCQzA0QjA2QUQzOTc1NDk4NDZDMDFDM0U4RUJEMjANBgkqhkiG9w0BAQsFAAOCAQEAU44msdPGFg/r5JcWgUDEXWOqqCDiFNjWbhM/rO0A3TCV0yP5o7Se/yLsDizHGTUzZ2qg3bC02nn4RysEyMVQ+9tXsOtXQBHrmoZ5vS8ndqbE1YO33N6zxIUb0IN3yGZh3oVmQgTYYe1is4i5Sfiy7JdR6/uUrwQN13fzPaDCnNx6iVzrPSJJf1xiFdtpFFtK021prjMYG7csHiFQeelgyE8XtlQuLk0tsHBrJ2FHSdV4HISqONz0hMPL0xsZkBD/L/bvR3L0lqe8bsHOBCJOMyjxucI21mBRd7tc4AGiJlQt5jrUrbos5hul4/QUq7hFfZNDrEBMINbMyIpYWRbIqQ==-----END CERTIFICATE-----";
@@ -28,8 +28,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             });
         }, isThreadSafe: false);
 
-        [Fact(DisplayName = "加密请求中的敏感数据（[POST] /profitsharing/receivers/add）")]
-        public void DecryptResponseSensitiveProperty_AddProfitSharingReceiverRequest()
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /profitsharing/receivers/add）")]
+        public void TestEncryptResponseSensitiveProperty_AddProfitSharingReceiverRequest()
         {
             var mock = new Models.AddProfitSharingReceiverRequest()
             {
@@ -40,11 +40,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
             Assert.Equal(RSA_CERTSN, data.WechatpayCertSerialNumber);
             Assert.Equal(MockText, data.Account);
-            Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.Name));
+            Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.Name!));
         }
 
-        [Fact(DisplayName = "加密请求中的敏感数据（[POST] /profitsharing/orders）")]
-        public void DecryptResponseSensitiveProperty_CreateProfitSharingOrderRequest()
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /profitsharing/orders）")]
+        public void TestEncryptResponseSensitiveProperty_CreateProfitSharingOrderRequest()
         {
             var mock = new Models.CreateProfitSharingOrderRequest()
             {
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
             Assert.Equal(RSA_CERTSN, data.WechatpayCertSerialNumber);
             Assert.Equal(MockText, data.ReceiverList[0].Account);
-            Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.ReceiverList[0].Name));
+            Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.ReceiverList[0].Name!));
         }
     }
 }

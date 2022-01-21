@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
     public static class SHA256Utility
     {
         /// <summary>
-        /// 获取信息摘要。
+        /// 获取 SHA-256 信息摘要。
         /// </summary>
         /// <param name="bytes">信息字节数组。</param>
         /// <returns>信息摘要。</returns>
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         }
 
         /// <summary>
-        /// 获取信息摘要。
+        /// 获取 SHA-256 信息摘要。
         /// </summary>
         /// <param name="message">文本信息。</param>
         /// <returns>信息摘要。</returns>

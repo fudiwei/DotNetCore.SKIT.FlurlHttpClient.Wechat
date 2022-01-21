@@ -7,10 +7,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayExecuteCombineTransactionsTests
+    public class TestCase_ApiExecuteExecuteCombineTransactionsTests
     {
-        [Fact(DisplayName = "[POST] /combine-transactions/app")]
-        public async Task CreateCombineTransactionAppTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /combine-transactions/app")]
+        public async Task TestExecuteCreateCombineTransactionApp()
         {
             var request = new Models.CreateCombineTransactionAppRequest()
             {
@@ -35,8 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.PrepayId);
         }
 
-        [Fact(DisplayName = "[POST] /combine-transactions/jsapi")]
-        public async Task CreateCombineTransactionJsapiTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /combine-transactions/jsapi")]
+        public async Task TestExecuteCreateCombineTransactionJsapi()
         {
             var request = new Models.CreateCombineTransactionJsapiRequest()
             {
@@ -74,8 +74,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.PrepayId);
         }
 
-        [Fact(DisplayName = "[POST] /combine-transactions/h5")]
-        public async Task CreateCombineTransactionH5Test()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /combine-transactions/h5")]
+        public async Task TestExecuteCreateCombineTransactionH5()
         {
             var request = new Models.CreateCombineTransactionH5Request()
             {
@@ -100,8 +100,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.H5Url);
         }
 
-        [Fact(DisplayName = "[POST] /combine-transactions/native")]
-        public async Task CreateCombineTransactionNativeTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /combine-transactions/native")]
+        public async Task TestExecuteCreateCombineTransactionNative()
         {
             var request = new Models.CreateCombineTransactionNativeRequest()
             {
@@ -126,8 +126,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.QrcodeUrl);
         }
 
-        [Fact(DisplayName = "[GET] /combine-transactions/out-trade-no/{combine_out_trade_no}")]
-        public async Task GetCombineTransactionByCombineOutTradeNumberTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /combine-transactions/out-trade-no/{combine_out_trade_no}")]
+        public async Task TestExecuteGetCombineTransactionByCombineOutTradeNumber()
         {
             var request = new Models.GetCombineTransactionByCombineOutTradeNumberRequest()
             {
@@ -141,8 +141,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotEmpty(response.SubOrderList);
         }
 
-        [Fact(DisplayName = "[POST] /combine-transactions/out-trade-no/{combine_out_trade_no}/close")]
-        public async Task CloseCombineTransactionTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /combine-transactions/out-trade-no/{combine_out_trade_no}/close")]
+        public async Task TestExecuteCloseCombineTransaction()
         {
             var request = new Models.CloseCombineTransactionRequest()
             {

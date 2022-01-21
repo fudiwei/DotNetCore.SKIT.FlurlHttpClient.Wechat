@@ -7,10 +7,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayExecuteBillTests
+    public class TestCase_ApiExecuteExecuteBillTests
     {
-        [Fact(DisplayName = "[GET] /bill/tradebill")]
-        public async Task GetBillTradeBillTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /bill/tradebill")]
+        public async Task TestExecuteGetBillTradeBill()
         {
             var request = new Models.GetBillTradeBillRequest()
             {
@@ -24,8 +24,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.DownloadUrl);
         }
 
-        [Fact(DisplayName = "[GET] /bill/fundflowbill")]
-        public async Task GetBillFundflowBillTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /bill/fundflowbill")]
+        public async Task TestExecuteGetBillFundflowBill()
         {
             var request = new Models.GetBillFundflowBillRequest()
             {
@@ -39,8 +39,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.DownloadUrl);
         }
 
-        [Fact(DisplayName = "[GET] /billdownload/file")]
-        public async Task DownloadBillFileTest()
+        [Fact(DisplayName = "测试用例：调用 API [GET] /billdownload/file")]
+        public async Task TestExecuteDownloadBillFile()
         {
             var request = new Models.DownloadBillFileRequest()
             {

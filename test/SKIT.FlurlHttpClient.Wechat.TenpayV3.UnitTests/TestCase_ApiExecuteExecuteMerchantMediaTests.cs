@@ -7,10 +7,10 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class WechatTenpayExecuteMerchantMediaTests
+    public class TestCase_ApiExecuteExecuteMerchantMediaTests
     {
-        [Fact(DisplayName = "[POST] /merchant/media/upload")]
-        public async Task UploadMerchantServiceImageTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /merchant/media/upload")]
+        public async Task TestExecuteUploadMerchantServiceImage()
         {
             var request = new Models.UploadMerchantMediaImageRequest()
             { 
@@ -23,8 +23,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.MediaId);
         }
 
-        [Fact(DisplayName = "[POST] /merchant/media/video_upload")]
-        public async Task UploadMerchantServiceVideoTest()
+        [Fact(DisplayName = "测试用例：调用 API [POST] /merchant/media/video_upload")]
+        public async Task TestExecuteUploadMerchantServiceVideo()
         {
             var request = new Models.UploadMerchantMediaVideoRequest()
             {
