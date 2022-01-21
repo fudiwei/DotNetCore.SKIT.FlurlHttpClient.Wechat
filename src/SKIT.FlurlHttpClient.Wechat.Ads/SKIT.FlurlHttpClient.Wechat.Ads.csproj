@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage WechatAds WechatAdvertisting 微信 广告平台 微信广告平台 腾讯广告平台 广点通 微信广点通 腾讯广点通</PackageTags>
-        <Version>2.0.0-rc.2</Version>
+        <Version>2.0.0-rc.3</Version>
         <Description>基于 Flurl.Http 的微信广告平台（广点通）API 客户端。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
