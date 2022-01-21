@@ -32,6 +32,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.7.0
+
+    -   **新增**：随官方更新生成自定义交易组件上传图片相关接口模型。（[Gitee Issue #I4RONZ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4RONZ)）
+
+    -   **变更**：升级公共组件。
+
 -   Release 2.6.1
 
     -   **修复**：修复获取小程序订阅消息公共模板标题时出现的 200019 错误。（[GitHub Issue #28](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/28)）
