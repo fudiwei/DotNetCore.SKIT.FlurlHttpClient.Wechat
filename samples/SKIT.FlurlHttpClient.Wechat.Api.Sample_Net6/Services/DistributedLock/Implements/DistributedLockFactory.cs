@@ -5,7 +5,7 @@ using Medallion.Threading.FileSystem;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.DistributedLock.Implements
 {
-    class DistributedLockFactory : IDistributedLockFactory
+    internal class DistributedLockFactory : IDistributedLockFactory
     {
         private readonly DirectoryInfo _lockFileDirectory = new DirectoryInfo(Environment.CurrentDirectory);
 

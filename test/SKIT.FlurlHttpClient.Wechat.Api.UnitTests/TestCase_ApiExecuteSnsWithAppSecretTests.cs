@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
@@ -34,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             Assert.NotNull(response.AccessToken);
             Assert.NotNull(response.RefreshToken);
         }
-        
+
         [Fact(DisplayName = "测试用例：调用 API [GET] /sns/jscode2session")]
         public async Task TestExecuteSnsJsCode2Session()
         {

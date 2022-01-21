@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Options
         public string CallbackToken { get; set; } = string.Empty;
     }
 
-    partial class WechatOptions
+    public partial class WechatOptions
     {
         public static class Types
         {

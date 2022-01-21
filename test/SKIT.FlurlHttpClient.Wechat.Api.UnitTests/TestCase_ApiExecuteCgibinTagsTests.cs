@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -15,9 +12,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             var request = new Models.CgibinTagsCreateRequest()
             {
                 AccessToken = TestConfigs.WechatAccessToken,
-                Tag = new Models.CgibinTagsCreateRequest.Types.Tag() 
-                { 
-                    Name = "FAKE_TAGNAME" 
+                Tag = new Models.CgibinTagsCreateRequest.Types.Tag()
+                {
+                    Name = "FAKE_TAGNAME"
                 }
             };
             var response = await TestClients.Instance.ExecuteCgibinTagsCreateAsync(request);

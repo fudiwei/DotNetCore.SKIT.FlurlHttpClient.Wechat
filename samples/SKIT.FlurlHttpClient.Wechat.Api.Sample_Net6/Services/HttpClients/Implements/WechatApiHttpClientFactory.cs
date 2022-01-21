@@ -5,7 +5,7 @@ using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.HttpClients.Implements
 {
-    partial class WechatApiHttpClientFactory : IWechatApiHttpClientFactory
+    internal partial class WechatApiHttpClientFactory : IWechatApiHttpClientFactory
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly Options.WechatOptions _wechatOptions;
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.HttpClients.Implements
         }
     }
 
-    partial class WechatApiHttpClientFactory
+    internal partial class WechatApiHttpClientFactory
     {
         internal class DelegatingFlurlClientFactory : Flurl.Http.Configuration.DefaultHttpClientFactory
         {

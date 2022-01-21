@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
@@ -13,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         public async Task TestMidasRequestSignature()
         {
             var client = new WechatApiClient(new WechatApiClientOptions()
-            { 
+            {
                 AppId = "wx1234567",
                 AppSecret = "",
                 MidasAppKey = "zNLgAGgqsEWJOg1nFVaO5r7fAlIQxr1u"

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
@@ -35,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                 ToUserOpenId = TestConfigs.WechatOpenId,
                 MessageType = "text",
                 MessageContentForText = new Models.CgibinMessageMassPreviewRequest.Types.TextMessage()
-                { 
+                {
                     Content = "FAKE_CONTENT"
                 },
                 AccessToken = TestConfigs.WechatAccessToken

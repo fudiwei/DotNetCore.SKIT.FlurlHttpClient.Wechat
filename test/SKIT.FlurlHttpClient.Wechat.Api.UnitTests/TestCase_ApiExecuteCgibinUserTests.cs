@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -20,7 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             var response = await TestClients.Instance.ExecuteCgibinUserInfoAsync(request);
 
             Assert.NotEmpty(response.OpenId);
-            Assert.NotEmpty(response.Nickname);
             Assert.True(response.IsSubscribed);
         }
 
@@ -30,8 +26,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             var request = new Models.CgibinUserInfoBatchGetRequest()
             {
                 AccessToken = TestConfigs.WechatAccessToken,
-                UserList = new Models.CgibinUserInfoBatchGetRequest.Types.User[] 
-                { 
+                UserList = new Models.CgibinUserInfoBatchGetRequest.Types.User[]
+                {
                     new Models.CgibinUserInfoBatchGetRequest.Types.User() { OpenId = TestConfigs.WechatOpenId }
                 }
             };
@@ -39,7 +35,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 
             Assert.NotEmpty(response.UserList);
             Assert.NotEmpty(response.UserList.First().OpenId);
-            Assert.NotEmpty(response.UserList.First().Nickname);
             Assert.True(response.UserList.First().IsSubscribed);
         }
 

@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.BackgroundServices
     using SKIT.FlurlHttpClient.Wechat.Api;
     using SKIT.FlurlHttpClient.Wechat.Api.Models;
 
-    class WechatAccessTokenRefreshingBackgroundService : BackgroundService
+    internal class WechatAccessTokenRefreshingBackgroundService : BackgroundService
     {
         private readonly ILogger _logger;
         private readonly Options.WechatOptions _wechatOptions;
@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.BackgroundServices
             if (!response.IsSuccessful())
             {
                 _logger.LogWarning(
-                    "刷新 AppId 为 {0} 微信 AccessToken 失败（状态码：{1}，错误代码：{2}，错误描述：{3}）。", 
+                    "刷新 AppId 为 {0} 微信 AccessToken 失败（状态码：{1}，错误代码：{2}，错误描述：{3}）。",
                     appId, response.RawStatus, response.ErrorCode, response.ErrorMessage
                 );
                 return; // 请求失败

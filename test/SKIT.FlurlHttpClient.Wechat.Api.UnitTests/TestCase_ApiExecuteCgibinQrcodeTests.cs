@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
@@ -18,9 +14,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                 ExpiresIn = 30,
                 ActionType = "QR_STR_SCENE",
                 Action = new Models.CgibinQrcodeCreateRequest.Types.Action()
-                { 
+                {
                     Scene = new Models.CgibinQrcodeCreateRequest.Types.Action.Types.Scene()
-                    { 
+                    {
                         SceneString = "FAKE_SCENESTR"
                     }
                 }
