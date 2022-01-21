@@ -252,6 +252,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.4.0
+
+    -   **变更**：升级公共组件。
+
+    -   **变更**：重命名部分与证书有关的参数名，涉及到变化的类有 `WechatTenpayClientOptions`、`WechatTenpayClient`、`WechatTenpayRequest`、`WechatTenpayResponse`。
+
 -   Release 2.3.1
 
     -   **新增**：随官方更新发起批量转账相关接口模型。
