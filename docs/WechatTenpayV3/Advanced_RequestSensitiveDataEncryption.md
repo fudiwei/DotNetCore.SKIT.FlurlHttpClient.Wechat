@@ -104,7 +104,7 @@ var manager = new InMemoryCertificateManager(); // 为便于后续使用，该�
 var options = new WechatTenpayClientOptions() 
 { 
     // 其他配置项略
-    CertificateManager = manager 
+    PlatformCertificateManager = manager 
 };
 var client = new WechatTenpayClient(options);
 ```
@@ -122,14 +122,14 @@ manager.SetEntry(new CertificateEntry("CRT/CER 证书序列号", "CRT/CER 证书
 
 当然，现在的平台证书离过期还有很久，你也可以选择“偷懒”：提前下载好平台证书，在程序启动时记录一次即可。
 
-每个请求模型对象会包含一个名为 `WechatpayCertSerialNumber` 的公共字段，本库会根据该字段的值自动尝试在证书管理器中读取证书内容，并完成请求中敏感信息字段加密：
+每个请求模型对象会包含一个名为 `WechatpayCertificateSerialNumber` 的公共字段，本库会根据该字段的值自动尝试在证书管理器中读取证书内容，并完成请求中敏感信息字段加密：
 
 ```csharp
-request.WechatpayCertSerialNumber = "平台证书序列号";
+request.WechatpayCertificateSerialNumber = "平台证书序列号";
 client.EncryptRequestSensitiveProperty(request);
 ```
 
-对于存在待加密敏感信息字段的请求模型对象而言，如果你不指定 `WechatpayCertSerialNumber` 字段的值，本库会自动从 `CertificateManager` 挑选一个离过期时间最远的证书。
+对于存在待加密敏感信息字段的请求模型对象而言，如果你不指定 `WechatpayCertificateSerialNumber` 字段的值，本库会自动从 `CertificateManager` 挑选一个离过期时间最远的证书。
 
 ---
 
