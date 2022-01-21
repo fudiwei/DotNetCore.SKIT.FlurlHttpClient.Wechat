@@ -14,7 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                public string MediaId { get; set; } = default!;
+                public string? MediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置图片临时 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("temp_img_url")]
+                [System.Text.Json.Serialization.JsonPropertyName("temp_img_url")]
+                public string? TempImageUrl { get; set; }
             }
         }
 
