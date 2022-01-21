@@ -111,11 +111,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             try
             {
                 bool isSimpleRequest = data == null ||
-                    flurlRequest.Verb == HttpMethod.Get || 
-                    flurlRequest.Verb == HttpMethod.Head || 
+                    flurlRequest.Verb == HttpMethod.Get ||
+                    flurlRequest.Verb == HttpMethod.Head ||
                     flurlRequest.Verb == HttpMethod.Options;
                 using IFlurlResponse flurlResponse = isSimpleRequest ?
-                    await base.SendRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false):
+                    await base.SendRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false) :
                     await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
             }

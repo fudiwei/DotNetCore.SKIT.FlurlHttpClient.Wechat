@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [POST] /adgroups/update 接口的请求。</para>
@@ -10,8 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
     {
         public static class Types
         {
-            public class Target : AdGroupsAddRequest.Types.Target 
-            { 
+            public class Target : AdGroupsAddRequest.Types.Target
+            {
             }
         }
 

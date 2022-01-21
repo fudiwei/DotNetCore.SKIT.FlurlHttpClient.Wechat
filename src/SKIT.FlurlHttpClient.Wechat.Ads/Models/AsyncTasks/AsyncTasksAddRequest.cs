@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
@@ -90,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 [Newtonsoft.Json.JsonProperty("task_type_wechat_advertising_data_spec")]
                 [System.Text.Json.Serialization.JsonPropertyName("task_type_wechat_advertising_data_spec")]
                 public Types.WechatAdvertisingDataSpec? WechatAdvertisingDataSpec { get; set; }
-                
+
                 /// <summary>
                 /// 获取或设置微信门店小时报表查询条件所需条件信息。
                 /// </summary>

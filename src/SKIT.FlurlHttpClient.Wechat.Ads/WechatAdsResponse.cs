@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads
 {
@@ -29,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public int RawStatus
-        { 
+        {
             get { return ((ICommonResponse)this).RawStatus; }
             internal set { ((ICommonResponse)this).RawStatus = value; }
         }
