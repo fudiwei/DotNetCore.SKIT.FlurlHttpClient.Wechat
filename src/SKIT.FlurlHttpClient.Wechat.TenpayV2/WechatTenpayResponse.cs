@@ -91,6 +91,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         public virtual string? ResultCode { get; set; }
 
         /// <summary>
+        /// 获取或设置微信商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public abstract string? MerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public abstract string? AppId { get; set; }
+
+        /// <summary>
         /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200、且 return_code 值 SUCCESS）。
         /// </summary>
         /// <returns></returns>

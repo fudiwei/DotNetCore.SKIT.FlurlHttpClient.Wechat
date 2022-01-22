@@ -120,18 +120,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         }
 
         /// <summary>
-        /// 获取或设置微信商户号。
+        /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-        public string MerchantId { get; set; } = default!;
+        public override string? MerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信 AppId。
+        /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
+        public override string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置微信支付订单号。

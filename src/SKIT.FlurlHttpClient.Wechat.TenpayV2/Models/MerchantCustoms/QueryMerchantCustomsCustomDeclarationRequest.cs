@@ -6,18 +6,18 @@
     public class QueryMerchantCustomsCustomDeclarationRequest : WechatTenpaySignableRequest
     {
         /// <summary>
-        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
+        /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-        public string? MerchantId { get; set; }
+        public override string? MerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.AppId"/> 参数。
+        /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string? AppId { get; set; }
+        public override string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。

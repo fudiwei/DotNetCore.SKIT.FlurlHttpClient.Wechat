@@ -6,11 +6,18 @@
     public class GetRiskPublicKeyResponse : WechatTenpaySignableResponse
     {
         /// <summary>
-        /// 获取或设置微信商户号。
+        /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-        public string MerchantId { get; set; } = default!;
+        public override string? MerchantId { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public override string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置 RSA 公钥。

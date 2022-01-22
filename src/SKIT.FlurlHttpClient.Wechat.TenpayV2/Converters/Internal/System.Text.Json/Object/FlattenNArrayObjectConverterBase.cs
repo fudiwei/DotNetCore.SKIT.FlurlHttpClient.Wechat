@@ -104,9 +104,14 @@ namespace System.Text.Json.Converters
             {
                 typedJsonProperties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
                     .Where(p =>
-                        (p.CanRead && !p.GetCustomAttributes<JsonIgnoreAttribute>(inherit: true).Any()) &&
-                        (p.CanWrite || p.GetCustomAttributes<JsonIncludeAttribute>(inherit: true).Any())
-                    )
+                    {
+                        if (p.CanWrite || p.GetCustomAttributes<JsonIncludeAttribute>(inherit: true).Any())
+                        {
+                            return !p.GetCustomAttributes<JsonIgnoreAttribute>(inherit: false).Any();
+                        }
+
+                        return false;
+                    })
                     .Select(p =>
                     {
                         string name = p.GetCustomAttribute<JsonPropertyNameAttribute>(inherit: true)?.Name ?? p.Name;

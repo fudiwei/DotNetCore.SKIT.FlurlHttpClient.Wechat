@@ -9,11 +9,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
         {
             [Newtonsoft.Json.JsonProperty("appid")]
             [System.Text.Json.Serialization.JsonPropertyName("appid")]
-            public string? AppId { get; set; }
+            public override string? AppId { get; set; }
 
             [Newtonsoft.Json.JsonProperty("mch_id")]
             [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-            public string? MerchantId { get; set; }
+            public override string? MerchantId { get; set; }
 
             [Newtonsoft.Json.JsonProperty("device_info")]
             [System.Text.Json.Serialization.JsonPropertyName("device_info")]

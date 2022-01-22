@@ -8,18 +8,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     public class CreatePayMarketingTransfersPromotionTransferResponse : WechatTenpaySignableResponse
     {
         /// <summary>
-        /// 获取或设置微信商户号。
+        /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public override string? MerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置微信 AppId。
+        /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_appid")]
-        public string AppId { get; set; } = default!;
+        public override string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户订单号。

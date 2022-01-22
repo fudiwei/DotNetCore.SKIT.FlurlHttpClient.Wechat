@@ -120,9 +120,14 @@ namespace Newtonsoft.Json.Converters
             {
                 typedJsonProperties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
                     .Where(p =>
-                        (p.CanRead && !p.GetCustomAttributes<JsonIgnoreAttribute>(inherit: true).Any()) &&
-                        (p.CanWrite || p.GetCustomAttributes<JsonPropertyAttribute>(inherit: true).Any())
-                    )
+                    {
+                        if (p.CanWrite || p.GetCustomAttributes<JsonPropertyAttribute>(inherit: true).Any())
+                        {
+                            return !p.GetCustomAttributes<JsonIgnoreAttribute>(inherit: false).Any();
+                        }
+
+                        return false;
+                    })
                     .Select(p =>
                     {
                         string name = p.GetCustomAttribute<JsonPropertyAttribute>(inherit: true)?.PropertyName ?? p.Name;

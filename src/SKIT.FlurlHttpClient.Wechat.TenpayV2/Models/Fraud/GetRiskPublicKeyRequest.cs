@@ -6,15 +6,21 @@
     public class GetRiskPublicKeyRequest : WechatTenpaySignableRequest
     {
         /// <summary>
-        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
+        /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-        public string? MerchantId { get; set; }
+        public override string? MerchantId { get; set; }
 
         /// <summary>
         /// <inheritdoc/>
-        /// <para>默认值：<see cref="Constants.SignTypes.MD5"/></para>
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public override string? AppId { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
