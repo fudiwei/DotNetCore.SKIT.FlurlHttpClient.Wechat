@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 
 namespace Newtonsoft.Json.Converters
 {
@@ -105,8 +106,54 @@ namespace Newtonsoft.Json.Converters
                 return;
             }
 
-            // TODO
-            //throw new NotImplementedException();
+            writer.WriteStartObject();
+
+            JsonObjectContract jsonContract = (JsonObjectContract)serializer.ContractResolver.ResolveContract(typeof(T));
+            foreach (JsonProperty jsonProperty in jsonContract.Properties)
+            {
+                if (jsonProperty.Ignored) 
+                    continue;
+                if (!(jsonProperty.ShouldSerialize == null || jsonProperty.ShouldSerialize(value)))
+                    continue;
+
+                string propertyKey = jsonProperty.PropertyName;
+                object? propertyValue = jsonProperty.ValueProvider.GetValue(value);
+
+                if (!PROPERTY_NAME_NARRAY.Equals(propertyKey))
+                {
+                    // 处理普通属性
+                    writer.WritePropertyName(propertyKey);
+
+                    if (jsonProperty.Converter != null && jsonProperty.Converter.CanWrite)
+                    {
+                        jsonProperty.Converter.WriteJson(writer, propertyValue, serializer);
+                    }
+                    else
+                    {
+                        serializer.Serialize(writer, propertyValue);
+                    }
+                }
+                else
+                {
+                    // 处理 $n 属性
+                    int i = 0;
+                    foreach (JToken? jSubToken in JArray.FromObject(propertyValue))
+                    {
+                        if (jSubToken == null)
+                            continue;
+
+                        foreach (JProperty jSubKey in jSubToken)
+                        {
+                            writer.WritePropertyName(jSubKey.Name.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, i.ToString()));
+                            serializer.Serialize(writer, jSubKey.Value);
+                        }
+
+                        i++;
+                    }
+                }
+            }
+
+            writer.WriteEndObject();
         }
 
         private static InnerTypedJsonProperty[] GetTypedJsonProperties(Type type)
