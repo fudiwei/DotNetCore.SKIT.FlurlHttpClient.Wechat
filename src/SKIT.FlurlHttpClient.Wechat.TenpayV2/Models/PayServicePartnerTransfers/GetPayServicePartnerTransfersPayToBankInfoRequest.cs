@@ -1,9 +1,9 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /mmpaymkttransfers/gettransferinfo 接口的请求。</para>
+    /// <para>表示 [POST] /mmpaysptrans/query_bank 接口的请求。</para>
     /// </summary>
-    public class GetPayMarketingTransfersTransferInfoRequest : WechatTenpaySignableRequest
+    public class GetPayServicePartnerTransfersPayToBankInfoRequest : WechatTenpaySignableRequest
     {
         /// <summary>
         /// <inheritdoc/>
@@ -15,8 +15,8 @@
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         public override string? AppId { get; set; }
 
         /// <summary>

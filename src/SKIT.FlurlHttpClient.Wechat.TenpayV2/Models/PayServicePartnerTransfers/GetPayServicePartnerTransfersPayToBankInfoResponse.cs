@@ -3,9 +3,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /mmpaymkttransfers/gettransferinfo 接口的响应。</para>
+    /// <para>表示 [POST] /mmpaysptrans/query_bank 接口的响应。</para>
     /// </summary>
-    public class GetPayMarketingTransfersTransferInfoResponse : WechatTenpaySignableResponse
+    public class GetPayServicePartnerTransfersPayToBankInfoResponse : WechatTenpaySignableResponse
     {
         /// <summary>
         /// <inheritdoc/>
@@ -17,8 +17,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         public override string? AppId { get; set; }
 
         /// <summary>
@@ -29,39 +29,39 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public string PartnerTradeNumber { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置微信付款单号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("detail_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
-        public string PaymentNumber { get; set; } = default!;
-
-        /// <summary>
         /// 获取或设置金额（单位：分）。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("payment_amount")]
-        [System.Text.Json.Serialization.JsonPropertyName("payment_amount")]
+        [Newtonsoft.Json.JsonProperty("amount")]
+        [System.Text.Json.Serialization.JsonPropertyName("amount")]
         public int Amount { get; set; }
 
         /// <summary>
-        /// 获取或设置终端设备号。
+        /// 获取或设置微信付款单号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("desc")]
-        [System.Text.Json.Serialization.JsonPropertyName("desc")]
-        public string? Description { get; set; }
+        [Newtonsoft.Json.JsonProperty("payment_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("payment_no")]
+        public string PaymentNumber { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
+        /// 获取或设置收款方银行卡号的 MD5 哈希值。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("openid")]
-        [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("bank_no_md5")]
+        [System.Text.Json.Serialization.JsonPropertyName("bank_no_md5")]
+        public string BankNumberMD5Value { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置收款用户姓名。
+        /// 获取或设置收款方用户名的 MD5 哈希值。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("transfer_name")]
-        [System.Text.Json.Serialization.JsonPropertyName("transfer_name")]
-        public string? UserName { get; set; }
+        [Newtonsoft.Json.JsonProperty("true_name_md5")]
+        [System.Text.Json.Serialization.JsonPropertyName("true_name_md5")]
+        public string UserNameMD5Value { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置手续费金额（单位：分）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("cmms_amt")]
+        [System.Text.Json.Serialization.JsonPropertyName("cmms_amt")]
+        public int CMMSAmount { get; set; }
 
         /// <summary>
         /// 获取或设置转账状态。
@@ -71,22 +71,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public string Status { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置转账时间。
+        /// 获取或设置下单时间。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("transfer_time")]
+        [Newtonsoft.Json.JsonProperty("create_time")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularDateTimeOffsetConverter))]
-        [System.Text.Json.Serialization.JsonPropertyName("transfer_time")]
+        [System.Text.Json.Serialization.JsonPropertyName("create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
-        public DateTimeOffset TransferTime { get; set; }
+        public DateTimeOffset CreateTime { get; set; }
 
         /// <summary>
-        /// 获取或设置付款成功时间。
+        /// 获取或设置转账成功时间。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("payment_time")]
+        [Newtonsoft.Json.JsonProperty("pay_succ_time")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
-        [System.Text.Json.Serialization.JsonPropertyName("payment_time")]
+        [System.Text.Json.Serialization.JsonPropertyName("pay_succ_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
-        public DateTimeOffset? PaymentTime { get; set; }
+        public DateTimeOffset? PaySuccessTime { get; set; }
 
         /// <summary>
         /// 获取或设置失败原因。

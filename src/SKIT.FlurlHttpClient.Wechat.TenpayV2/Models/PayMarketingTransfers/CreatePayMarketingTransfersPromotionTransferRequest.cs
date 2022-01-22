@@ -20,7 +20,7 @@
         public override string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置商户订单号。
+        /// 获取或设置商户付款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partner_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("partner_trade_no")]
@@ -52,7 +52,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("desc")]
         [System.Text.Json.Serialization.JsonPropertyName("desc")]
-        public string Description { get; set; } = string.Empty;
+        public string? Description { get; set; }
 
         /// <summary>
         /// 获取或设置校验用户姓名选项。

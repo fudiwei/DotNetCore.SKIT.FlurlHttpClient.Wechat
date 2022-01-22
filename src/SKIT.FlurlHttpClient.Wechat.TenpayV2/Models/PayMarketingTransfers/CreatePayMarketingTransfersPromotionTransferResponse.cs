@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public override string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置商户订单号。
+        /// 获取或设置商户付款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partner_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("partner_trade_no")]
@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_no")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_no")]
-        public string PaymentDetailId { get; set; } = default!;
+        public string PaymentNumber { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置付款成功时间。
