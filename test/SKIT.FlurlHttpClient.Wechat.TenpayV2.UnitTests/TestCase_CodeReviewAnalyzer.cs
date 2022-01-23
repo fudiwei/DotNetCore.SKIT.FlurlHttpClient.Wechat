@@ -31,6 +31,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
             Assert.Null(ex);
         }
 
+        [Fact(DisplayName = "代码评审：分析 API 事件定义")]
+        public void ApiEventsDefinitionTest()
+        {
+            string workdir = Path.Combine(TestConfigs.ProjectTestDirectory, "EventSamples");
+            CodeStyleUtil.VerifyApiEventsDefinition(SourceAssembly, workdir, out var ex);
+
+            if (ex != null)
+                throw ex;
+
+            Assert.Null(ex);
+        }
+
         [Fact(DisplayName = "代码评审：分析 API 接口命名")]
         public void TestApiExtensionsNaming()
         {

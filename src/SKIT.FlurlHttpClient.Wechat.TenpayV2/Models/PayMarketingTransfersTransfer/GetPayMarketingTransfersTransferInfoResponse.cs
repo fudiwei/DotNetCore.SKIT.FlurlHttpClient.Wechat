@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("payment_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
-        public DateTimeOffset? PaymentTime { get; set; }
+        public DateTimeOffset? SuccessTime { get; set; }
 
         /// <summary>
         /// 获取或设置失败原因。
