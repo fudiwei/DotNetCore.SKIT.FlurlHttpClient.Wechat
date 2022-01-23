@@ -111,7 +111,7 @@ namespace Newtonsoft.Json.Converters
             JsonObjectContract jsonContract = (JsonObjectContract)serializer.ContractResolver.ResolveContract(value.GetType());
             foreach (JsonProperty jsonProperty in jsonContract.Properties)
             {
-                if (jsonProperty.Ignored) 
+                if (jsonProperty.Ignored)
                     continue;
                 if (!(jsonProperty.ShouldSerialize == null || jsonProperty.ShouldSerialize(value)))
                     continue;

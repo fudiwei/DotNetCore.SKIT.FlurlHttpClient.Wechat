@@ -21,6 +21,7 @@
 
         /// <summary>
         /// <inheritdoc/>
+        /// <para>默认值：<see cref="Constants.SignTypes.MD5"/></para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_type")]

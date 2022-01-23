@@ -17,7 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// </summary>
         /// <param name="client"></param>
         /// <param name="packageString"></param>
-        /// <param name="packageString"></param>
         /// <returns></returns>
         public static IDictionary<string, string> GenerateParametersForJsapiSendBusinessRedPack(this WechatTenpayClient client, string packageString)
         {
@@ -27,7 +26,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string signType = Constants.SignTypes.MD5;
-            string sign = Utilities.MD5Utility.Hash($"timeStamp={timestamp}&nonceStr={nonce}&package={packageString}&signType={signType}&key={client.Credentials.MerchantSecret}");
+            string signData = $"timeStamp={timestamp}&nonceStr={nonce}&package={packageString}&signType={signType}&key={client.Credentials.MerchantSecret}";
+            string sign = Utilities.MD5Utility.Hash(signData);
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
@@ -36,6 +36,107 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 { "package", HttpUtility.UrlEncode(packageString) },
                 { "signType", signType },
                 { "paySign", sign }
+            });
+        }
+
+        /// <summary>
+        /// <para>生成客户端 JSAPI 调起支付押金所需的参数字典。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=7_7&index=2&p=27 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="prepayId"></param>
+        /// <param name="signType"></param>
+        /// <returns></returns>
+        public static IDictionary<string, string> GenerateParametersForJsapiGetBrandPayRequest(this WechatTenpayClient client, string appId, string prepayId, string? signType)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (prepayId is null) throw new ArgumentNullException(nameof(prepayId));
+
+            signType = signType ?? Constants.SignTypes.MD5;
+
+            string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
+            string nonce = Guid.NewGuid().ToString("N");
+            string package = $"prepay_id={prepayId}";
+            string signData = $"appId={appId}&timeStamp={timestamp}&nonceStr={nonce}&package={package}&signType={signType}&key={client.Credentials.MerchantSecret}";
+            string sign;
+
+            switch (signType)
+            {
+                case Constants.SignTypes.MD5:
+                    {
+                        sign = Utilities.MD5Utility.Hash(signData);
+                    }
+                    break;
+                case Constants.SignTypes.HMAC_SHA256:
+                    {
+                        sign = Utilities.HMACUtility.HashWithSHA256(client.Credentials.MerchantSecret, signData);
+                    }
+                    break;
+                default:
+                    throw new NotSupportedException();
+            }
+
+            return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
+            {
+                { "appId", appId },
+                { "timeStamp", timestamp },
+                { "nonceStr", nonce },
+                { "package", package },
+                { "signType", signType },
+                { "paySign", sign }
+            });
+        }
+
+
+        /// <summary>
+        /// <para>生成客户端 App 调起支付押金所需的参数字典。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_9&index=4 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="subAppId"></param>
+        /// <param name="prepayId"></param>
+        /// <param name="signType"></param>
+        /// <returns></returns>
+        public static IDictionary<string, string> GenerateParametersForAppGetBrandPayRequest(this WechatTenpayClient client, string appId, string subAppId, string prepayId, string? signType)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (prepayId is null) throw new ArgumentNullException(nameof(prepayId));
+
+            signType = signType ?? Constants.SignTypes.MD5;
+
+            string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
+            string nonce = Guid.NewGuid().ToString("N");
+            string package = "Sign=WXPay";
+            string signData = $"appid={appId}&timestamp={timestamp}&noncestr={nonce}&package={package}&partnerid={subAppId}&prepayid={prepayId}&signType={signType}&key={client.Credentials.MerchantSecret}";
+            string sign;
+
+            switch (signType)
+            {
+                case Constants.SignTypes.MD5:
+                    {
+                        sign = Utilities.MD5Utility.Hash(signData);
+                    }
+                    break;
+                case Constants.SignTypes.HMAC_SHA256:
+                    {
+                        sign = Utilities.HMACUtility.HashWithSHA256(client.Credentials.MerchantSecret, signData);
+                    }
+                    break;
+                default:
+                    throw new NotSupportedException();
+            }
+
+            return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
+            {
+                { "appid", appId },
+                { "partnerid", subAppId },
+                { "prepayid", prepayId },
+                { "package", package },
+                { "noncestr", nonce },
+                { "timestamp", timestamp },
+                { "sign", sign }
             });
         }
     }

@@ -38,6 +38,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("total_amount")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int TotalAmount { get; set; }
 
         /// <summary>

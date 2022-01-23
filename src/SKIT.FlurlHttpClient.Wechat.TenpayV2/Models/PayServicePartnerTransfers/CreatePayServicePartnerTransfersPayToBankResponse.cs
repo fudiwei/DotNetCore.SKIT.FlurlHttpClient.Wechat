@@ -31,6 +31,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int Amount { get; set; }
 
         /// <summary>
@@ -45,6 +46,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cmms_amt")]
         [System.Text.Json.Serialization.JsonPropertyName("cmms_amt")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int CMMSAmount { get; set; }
     }
 }

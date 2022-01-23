@@ -40,6 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("payment_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("payment_amount")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int Amount { get; set; }
 
         /// <summary>

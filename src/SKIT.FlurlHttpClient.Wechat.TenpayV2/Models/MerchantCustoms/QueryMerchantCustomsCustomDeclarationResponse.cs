@@ -53,6 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("duty_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("duty_$n")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? Duty { get; set; }
 
                 /// <summary>
@@ -74,6 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transport_fee_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("transport_fee_$n")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? TransportFee { get; set; }
 
                 /// <summary>
@@ -81,6 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_fee_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_fee_$n")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? ProductFee { get; set; }
 
                 /// <summary>
@@ -152,6 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("count")]
         [System.Text.Json.Serialization.JsonPropertyName("count")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int RecordCount { get; set; }
 
         /// <summary>

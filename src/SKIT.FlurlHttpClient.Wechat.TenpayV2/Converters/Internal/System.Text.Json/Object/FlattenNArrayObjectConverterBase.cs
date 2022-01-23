@@ -121,7 +121,7 @@ namespace System.Text.Json.Converters
                         }
 
                         i++;
-                    }    
+                    }
                 }
             }
 

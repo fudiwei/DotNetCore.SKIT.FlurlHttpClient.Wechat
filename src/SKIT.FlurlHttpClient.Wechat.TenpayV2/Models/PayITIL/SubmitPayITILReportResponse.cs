@@ -27,6 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("quantity")]
                         [System.Text.Json.Serialization.JsonPropertyName("quantity")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public int Quantity { get; set; }
 
                         /// <summary>
@@ -34,6 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("price")]
                         [System.Text.Json.Serialization.JsonPropertyName("price")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public int Price { get; set; }
 
                         /// <summary>
@@ -41,6 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("discount_amount")]
                         [System.Text.Json.Serialization.JsonPropertyName("discount_amount")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public int DiscountAmount { get; set; }
 
                         /// <summary>
@@ -85,6 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int Amount { get; set; }
 
                 /// <summary>
@@ -99,6 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wxpay_contribute")]
                 [System.Text.Json.Serialization.JsonPropertyName("wxpay_contribute")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? WechatpayContribute { get; set; }
 
                 /// <summary>
@@ -106,6 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_contribute")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_contribute")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? MerchantContribute { get; set; }
 
                 /// <summary>
@@ -113,6 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("other_contribute")]
                 [System.Text.Json.Serialization.JsonPropertyName("other_contribute")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? OtherContribute { get; set; }
 
                 /// <summary>
@@ -226,14 +233,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_fee")]
-        public int? FouponFee { get; set; }
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public int? CouponFee { get; set; }
 
         /// <summary>
         /// 获取或设置现金支付金额（单位：分）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cash_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("cash_fee")]
-        public int CashFee { get; set; }
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public int? CashFee { get; set; }
 
         /// <summary>
         /// 获取或设置现金支付货币类型。
