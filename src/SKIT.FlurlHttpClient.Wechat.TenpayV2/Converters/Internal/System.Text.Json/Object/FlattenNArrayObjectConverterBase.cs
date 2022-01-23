@@ -108,9 +108,7 @@ namespace System.Text.Json.Converters
                 {
                     // 处理 $n 属性
                     int i = 0;
-
-                    Array array = (Array)typedJsonProperty.PropertyInfo.GetValue(value);
-                    foreach (object element in array)
+                    foreach (object element in (Array)typedJsonProperty.PropertyInfo.GetValue(value))
                     {
                         if (element is null)
                             continue;
@@ -121,6 +119,8 @@ namespace System.Text.Json.Converters
                             writer.WritePropertyName(jSubKey.Key.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, i.ToString()));
                             jSubKey.Value?.WriteTo(writer, options);
                         }
+
+                        i++;
                     }    
                 }
             }
