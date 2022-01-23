@@ -49,9 +49,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /mmpaymkttransfers/sendminiprogramhb 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_2&index=3 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_2&index=3 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.SendPayMarketingTransfersMiniProgramRedPackResponse> ExecuteSendPayMarketingTransfersMiniProgramRedPackAsync(this WechatTenpayClient client, Models.SendPayMarketingTransfersMiniProgramRedPackRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendminiprogramhb");
+
+            return await client.SendRequestWithXmlAsync<Models.SendPayMarketingTransfersMiniProgramRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/gethbinfo 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6&index=5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_6&index=5 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_6&index=5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_6&index=5 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

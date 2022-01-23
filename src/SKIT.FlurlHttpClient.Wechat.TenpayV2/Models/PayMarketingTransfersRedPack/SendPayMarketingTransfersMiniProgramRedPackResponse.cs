@@ -1,9 +1,9 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /mmpaymkttransfers/sendredpack 接口的响应。</para>
+    /// <para>表示 [POST] /mmpaymkttransfers/sendminiprogramhb 接口的响应。</para>
     /// </summary>
-    public class SendPayMarketingTransfersRedPackResponse : WechatTenpaySignableResponse
+    public class SendPayMarketingTransfersMiniProgramRedPackResponse : WechatTenpaySignableResponse
     {
         /// <summary>
         /// <inheritdoc/>
@@ -46,5 +46,12 @@
         [Newtonsoft.Json.JsonProperty("send_listid")]
         [System.Text.Json.Serialization.JsonPropertyName("send_listid")]
         public string PaymentNumber { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置 JSAPI 参数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("package")]
+        [System.Text.Json.Serialization.JsonPropertyName("package")]
+        public string PackageString { get; set; } = default!;
     }
 }

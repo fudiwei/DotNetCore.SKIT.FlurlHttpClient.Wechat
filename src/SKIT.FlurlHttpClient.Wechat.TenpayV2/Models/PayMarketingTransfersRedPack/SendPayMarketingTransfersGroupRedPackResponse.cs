@@ -20,18 +20,18 @@
         public override string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置商户付款单号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("partner_trade_no")]
-        [System.Text.Json.Serialization.JsonPropertyName("partner_trade_no")]
-        public string PartnerTradeNumber { get; set; } = default!;
-
-        /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_billno")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_billno")]
         public string MerchantBillNumber { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置商户付款单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("partner_trade_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("partner_trade_no")]
+        public string PartnerTradeNumber { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置接受红包的种子用户 OpenId。
@@ -50,8 +50,8 @@
         /// <summary>
         /// 获取或设置微信红包订单号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("detail_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
+        [Newtonsoft.Json.JsonProperty("send_listid")]
+        [System.Text.Json.Serialization.JsonPropertyName("send_listid")]
         public string PaymentNumber { get; set; } = default!;
     }
 }
