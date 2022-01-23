@@ -108,7 +108,7 @@ namespace Newtonsoft.Json.Converters
 
             writer.WriteStartObject();
 
-            JsonObjectContract jsonContract = (JsonObjectContract)serializer.ContractResolver.ResolveContract(typeof(T));
+            JsonObjectContract jsonContract = (JsonObjectContract)serializer.ContractResolver.ResolveContract(value.GetType());
             foreach (JsonProperty jsonProperty in jsonContract.Properties)
             {
                 if (jsonProperty.Ignored) 
@@ -185,6 +185,7 @@ namespace Newtonsoft.Json.Converters
                             isNArrayProperty: PROPERTY_NAME_NARRAY.Equals(name) && p.PropertyType.IsArray && p.PropertyType.GetElementType()!.IsClass
                         );
                     })
+                    .OrderBy(e => e.PropertyInfo.GetCustomAttribute<JsonPropertyAttribute>(inherit: true)?.Order)
                     .ToArray();
                 _mappedTypeJsonProperties[mappedTypeKey] = typedJsonProperties;
             }

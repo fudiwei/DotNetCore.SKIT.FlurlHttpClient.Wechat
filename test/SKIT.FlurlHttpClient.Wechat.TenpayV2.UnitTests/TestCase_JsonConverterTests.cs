@@ -68,14 +68,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
             string unparsedJsonByNewtonsoftJson = newtonsoftJsonSerializer.Serialize(parsedObjByNewtonsoftJson);
             string unparsedJsonBySystemTextJson = systemTextJsonSerializer.Serialize(parsedObjByNewtonsoftJson);
 
+            Assert.Null(Record.Exception(() => Newtonsoft.Json.JsonConvert.DeserializeObject(unparsedJsonByNewtonsoftJson)));
+            Assert.Null(Record.Exception(() => System.Text.Json.JsonDocument.Parse(unparsedJsonBySystemTextJson)));
             Assert.Contains("return_code", unparsedJsonByNewtonsoftJson);
             Assert.Contains("return_code", unparsedJsonBySystemTextJson);
+            Assert.Contains("RETURN_CODE", unparsedJsonByNewtonsoftJson);
+            Assert.Contains("RETURN_CODE", unparsedJsonBySystemTextJson);
             Assert.Contains("return_msg", unparsedJsonByNewtonsoftJson);
             Assert.Contains("return_msg", unparsedJsonBySystemTextJson);
+            Assert.Contains("RETURN_MSG", unparsedJsonByNewtonsoftJson);
+            Assert.Contains("RETURN_MSG", unparsedJsonBySystemTextJson);
             Assert.Contains("sub_order_no_0", unparsedJsonByNewtonsoftJson);
             Assert.Contains("sub_order_no_0", unparsedJsonBySystemTextJson);
+            Assert.Contains("SUB_ORDER_NO_0", unparsedJsonByNewtonsoftJson);
+            Assert.Contains("SUB_ORDER_NO_0", unparsedJsonBySystemTextJson);
             Assert.Contains("sub_order_id_0", unparsedJsonByNewtonsoftJson);
             Assert.Contains("sub_order_id_0", unparsedJsonBySystemTextJson);
+            Assert.Contains("SUB_ORDER_ID_0", unparsedJsonByNewtonsoftJson);
+            Assert.Contains("SUB_ORDER_ID_0", unparsedJsonBySystemTextJson);
             Assert.DoesNotContain("#n", unparsedJsonByNewtonsoftJson);
             Assert.DoesNotContain("#n", unparsedJsonBySystemTextJson);
             Assert.DoesNotContain("$n", unparsedJsonByNewtonsoftJson);

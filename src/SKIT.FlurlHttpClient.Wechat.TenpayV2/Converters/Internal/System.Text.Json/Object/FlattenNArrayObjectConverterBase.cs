@@ -1,6 +1,8 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 
@@ -89,8 +91,41 @@ namespace System.Text.Json.Converters
                 return;
             }
 
-            // TODO
-            //throw new NotImplementedException();
+            writer.WriteStartObject();
+
+            foreach (InnerTypedJsonProperty typedJsonProperty in GetTypedJsonProperties(value.GetType()))
+            {
+                if (!typedJsonProperty.IsNArrayProperty)
+                {
+                    // 处理普通属性
+                    string propertyKey = typedJsonProperty.PropertyName;
+                    object? propertyValue = typedJsonProperty.PropertyInfo.GetValue(value);
+
+                    writer.WritePropertyName(propertyKey);
+                    JsonSerializer.Serialize(writer, propertyValue, options);
+                }
+                else
+                {
+                    // TODO: 处理 $n 属性
+                    int i = 0;
+
+                    Array array = (Array)typedJsonProperty.PropertyInfo.GetValue(value);
+                    foreach (object element in array)
+                    {
+                        if (element is null)
+                            continue;
+
+                        JsonObject jSubObject = JsonSerializer.SerializeToNode(element, options)!.AsObject();
+                        foreach (KeyValuePair<string, JsonNode?> jSubKey in jSubObject)
+                        {
+                            writer.WritePropertyName(jSubKey.Key.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, i.ToString()));
+                            jSubKey.Value?.WriteTo(writer, options);
+                        }
+                    }    
+                }
+            }
+
+            writer.WriteEndObject();
         }
 
         private static InnerTypedJsonProperty[] GetTypedJsonProperties(Type type)
@@ -122,6 +157,7 @@ namespace System.Text.Json.Converters
                             isNArrayProperty: PROPERTY_NAME_NARRAY.Equals(name) && p.PropertyType.IsArray && p.PropertyType.GetElementType()!.IsClass
                         );
                     })
+                    .OrderBy(e => e.PropertyInfo.GetCustomAttribute<JsonPropertyOrderAttribute>(inherit: true)?.Order)
                     .ToArray();
                 _mappedTypeJsonProperties[mappedTypeKey] = typedJsonProperties;
             }
