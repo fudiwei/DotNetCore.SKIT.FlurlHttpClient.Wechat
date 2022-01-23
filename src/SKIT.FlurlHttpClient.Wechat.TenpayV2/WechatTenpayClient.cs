@@ -83,12 +83,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             if (request.MerchantId == null)
             {
-                request.MerchantId = request.MerchantId;
+                request.MerchantId = Credentials.MerchantId;
             }
 
             if (request.AppId == null)
             {
-                request.AppId = request.AppId;
+                request.AppId = Credentials.AppId;
             }
 
             if (request is WechatTenpaySignableRequest signableRequest)
