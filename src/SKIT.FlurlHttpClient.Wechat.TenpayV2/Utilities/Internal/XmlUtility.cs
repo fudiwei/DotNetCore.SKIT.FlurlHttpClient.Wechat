@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             }
 
             JObject jObject = JsonConvert.DeserializeObject<JObject>(JsonConvert.SerializeXNode(xElement));
-            string json = jObject.Children().Single().Children().Single().ToString(Newtonsoft.Json.Formatting.None);
+            string json = (jObject.First as JProperty)?.Value?.ToString(Newtonsoft.Json.Formatting.None) ?? "{}";
             return json;
         }
     }
