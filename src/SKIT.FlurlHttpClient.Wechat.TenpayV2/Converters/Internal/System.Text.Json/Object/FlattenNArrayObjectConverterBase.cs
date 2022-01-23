@@ -106,7 +106,7 @@ namespace System.Text.Json.Converters
                 }
                 else
                 {
-                    // TODO: 处理 $n 属性
+                    // 处理 $n 属性
                     int i = 0;
 
                     Array array = (Array)typedJsonProperty.PropertyInfo.GetValue(value);

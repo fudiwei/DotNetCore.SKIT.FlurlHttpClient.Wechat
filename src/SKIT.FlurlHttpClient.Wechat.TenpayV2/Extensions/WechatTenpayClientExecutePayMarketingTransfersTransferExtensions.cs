@@ -6,7 +6,7 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
-    public static class WechatTenpayClientExecutePayMarketingTransfersExtensions
+    public static class WechatTenpayClientExecutePayMarketingTransfersTransferExtensions
     {
         /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/promotion/transfers 接口。</para>
