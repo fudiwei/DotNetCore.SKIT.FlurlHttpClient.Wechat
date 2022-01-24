@@ -1,15 +1,15 @@
 ﻿using System;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 {
     /// <summary>
-    /// <para>表示 [POST] /pay/orderquery 接口的响应。</para>
+    /// <para>表示退款结果通知的模型。</para>
     /// </summary>
-    [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponseClassNewtonsoftJsonConverter))]
-    [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponseClassSystemTextJsonConverter))]
-    public class GetPayOrderResponse : WechatTenpaySignableResponse
+    [Newtonsoft.Json.JsonConverter(typeof(Converters.EventClassNewtonsoftJsonConverter))]
+    [System.Text.Json.Serialization.JsonConverter(typeof(Converters.EventClassSystemTextJsonConverter))]
+    public class OrderEvent : WechatTenpayEvent
     {
-        public static class Types
+        public new static class Types
         {
             public class Coupon
             {
@@ -34,94 +34,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_fee_$n")]
                 public int CouponFee { get; set; }
             }
-
-            public class Detail
-            {
-                public static class Types
-                {
-                    public class DiscountDetail
-                    {
-                        /// <summary>
-                        /// 获取或设置商品编码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_id")]
-                        public string GoodsId { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置商品名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
-                        public string GoodsName { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置代金券批次 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("coupon_batch_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("coupon_batch_id")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
-                        public string CouponBatchId { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置代金券 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("coupon_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("coupon_id")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
-                        public string CouponId { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置代金券支付金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("coupon_fee")]
-                        [System.Text.Json.Serialization.JsonPropertyName("coupon_fee")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int CouponFee { get; set; }
-                    }
-                }
-
-                /// <summary>
-                /// 获取或设置单品优惠列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("discount_detail")]
-                [System.Text.Json.Serialization.JsonPropertyName("discount_detail")]
-                public Types.DiscountDetail[]? DiscountList { get; set; }
-            }
         }
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<GetPayOrderResponse>
+            internal class EventClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<OrderEvent>
             {
             }
 
-            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<GetPayOrderResponse>
-            {
-            }
-
-            internal class ResponsePropertyDetailNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Detail>
-            {
-            }
-
-            internal class ResponsePropertyDetailSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Detail>
+            internal class EventClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<OrderEvent>
             {
             }
         }
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("mch_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-        public override string? MerchantId { get; set; }
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public override string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -294,14 +218,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [System.Text.Json.Serialization.JsonPropertyName("time_end")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
         public DateTimeOffset? EndTime { get; set; }
-
-        /// <summary>
-        /// 获取或设置商品信息。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("detail")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyDetailNewtonsoftJsonConverter))]
-        [System.Text.Json.Serialization.JsonPropertyName("detail")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyDetailSystemTextJsonConverter))]
-        public Types.Detail? Detail { get; set; }
     }
 }

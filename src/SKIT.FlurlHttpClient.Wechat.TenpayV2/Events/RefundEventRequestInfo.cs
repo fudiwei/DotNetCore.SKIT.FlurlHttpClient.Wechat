@@ -8,6 +8,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
     public class RefundEventRequestInfo : WechatTenpayEvent.Types.IDecryptedRequestInfo
     {
         /// <summary>
+        /// 获取或设置子商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_mch_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
+        public string? SubMerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
+        public string? SubAppId { get; set; }
+
+        /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
