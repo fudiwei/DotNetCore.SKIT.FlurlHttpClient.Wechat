@@ -195,5 +195,60 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             return await client.SendRequestWithXmlAsync<Models.GetPayRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /pay/downloadbill 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_6&index=8 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_6&index=6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_6&index=8 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_6&index=6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_11.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DownloadPayBillResponse> ExecuteDownloadPayBillAsync(this WechatTenpayClient client, Models.DownloadPayBillRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "pay", "downloadbill");
+
+            return await client.SendRequestWithXmlAsync<Models.DownloadPayBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /pay/downloadfundflow 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_18&index=7 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_18&index=7 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_18&index=7 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_18&index=9 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_18&index=7 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_18&index=7 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DownloadPayFundFlowResponse> ExecuteDownloadPayFundFlowAsync(this WechatTenpayClient client, Models.DownloadPayFundFlowRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "pay", "downloadfundflow");
+
+            return await client.SendRequestWithXmlAsync<Models.DownloadPayFundFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }

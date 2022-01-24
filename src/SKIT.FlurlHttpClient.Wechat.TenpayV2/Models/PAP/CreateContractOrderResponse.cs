@@ -104,5 +104,10 @@
         [Newtonsoft.Json.JsonProperty("contract_display_account")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_display_account")]
         public string? ContractDisplayAccount { get; set; }
+
+        public override bool IsSuccessful()
+        {
+            return base.IsSuccessful() && "SUCCESS".Equals(ContractResultCode) && string.IsNullOrEmpty(ContractErrorCode);
+        }
     }
 }

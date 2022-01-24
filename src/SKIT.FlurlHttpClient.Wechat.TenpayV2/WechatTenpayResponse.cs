@@ -117,13 +117,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <returns></returns>
         public virtual bool IsSuccessful()
         {
-            bool ret = RawStatus == 200 && "SUCCESS".Equals(ReturnCode) && string.IsNullOrEmpty(ErrorCode);
-            if (ret)
-            {
-                return string.IsNullOrEmpty(ResultCode) || "SUCCESS".Equals(ResultCode);
-            }
-
-            return false;
+            bool ret1 = RawStatus == 200 && "SUCCESS".Equals(ReturnCode);
+            bool ret2 = string.IsNullOrEmpty(ErrorCode) || "0".Equals(ErrorCode);
+            bool ret3 = string.IsNullOrEmpty(ResultCode) || "SUCCESS".Equals(ResultCode);
+            return ret1 && ret2 && ret3;
         }
     }
 
