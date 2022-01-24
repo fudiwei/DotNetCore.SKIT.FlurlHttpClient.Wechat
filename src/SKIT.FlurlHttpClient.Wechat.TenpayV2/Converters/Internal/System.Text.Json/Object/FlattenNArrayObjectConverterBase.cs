@@ -258,11 +258,12 @@ namespace System.Text.Json.Converters
             if (isTheRawGenericType) 
                 return true;
 
-            while (type != null && type != typeof(object))
+            Type? tmp = type;
+            while (tmp != null && tmp != typeof(object))
             {
-                isTheRawGenericType = IsTheRawGenericType(type);
+                isTheRawGenericType = IsTheRawGenericType(tmp);
                 if (isTheRawGenericType) return true;
-                type = type.BaseType;
+                tmp = tmp.BaseType;
             }
 
             return false;
