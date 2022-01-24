@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
     [System.Text.Json.Serialization.JsonConverter(typeof(Converters.EventClassSystemTextJsonConverter))]
     public class OrderEvent : WechatTenpayEvent
     {
-        public new static class Types
+        public static new class Types
         {
             public class Coupon
             {

@@ -6,11 +6,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 {
     internal static class RequestSigner
     {
-        public static string Sign(IDictionary<string, string> paramsMap, string secret, string? signType)
+        public static string Sign(IDictionary<string, string?> paramsMap, string secret, string? signType)
         {
             if (paramsMap == null) throw new ArgumentNullException(nameof(paramsMap));
 
-            IDictionary<string, string> sortedParamsMap = new SortedDictionary<string, string>(paramsMap, StringComparer.OrdinalIgnoreCase);
+            IDictionary<string, string?> sortedParamsMap = new SortedDictionary<string, string?>(paramsMap, StringComparer.OrdinalIgnoreCase);
             string sortedQueryString = string.Join("&", sortedParamsMap.Where(e => !string.IsNullOrEmpty(e.Value)).Select(e => $"{e.Key}={e.Value}"));
             return SignFromSortedQueryString(sortedQueryString, secret, signType);
         }

@@ -19,6 +19,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
             };
             var response = await TestClients.Instance.ExecuteCreatePayMicroPayAsync(request);
 
+            Assert.NotNull(response.ReturnCode);
+            Assert.NotNull(response.ReturnMessage);
             Assert.NotNull(response.TransactionId);
         }
     }

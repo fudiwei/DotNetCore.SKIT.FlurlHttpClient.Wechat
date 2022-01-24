@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <param name="error"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static bool VerifyEventSignature(this WechatTenpayClient client, string callbackBody,out Exception? error)
+        public static bool VerifyEventSignature(this WechatTenpayClient client, string callbackBody, out Exception? error)
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (callbackBody == null) throw new ArgumentNullException(nameof(callbackBody));

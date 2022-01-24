@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Web;
+using Flurl;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
@@ -10,6 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     /// </summary>
     public static class WechatTenpayClientParameterExtensions
     {
+        private const string BASE_URL = "https://api.mch.weixin.qq.com";
+
         /// <summary>
         /// <para>生成客户端小程序调起领取红包所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_3&index=4 </para>
@@ -124,9 +127,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <returns></returns>
         public static IDictionary<string, string> GenerateParametersForAppGetBrandPayRequest(this WechatTenpayClient client, string appId, string prepayId, string? signType)
         {
-            return GenerateParametersForAppGetBrandPayRequest(client, merchantId: client.Credentials.MerchantId, appId: appId, prepayId: prepayId, signType: signType); 
+            return GenerateParametersForAppGetBrandPayRequest(client, merchantId: client.Credentials.MerchantId, appId: appId, prepayId: prepayId, signType: signType);
         }
-    
+
         /// <summary>
         /// <para>生成客户端小程序调起支付所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=5 </para>
@@ -158,6 +161,180 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 { "signType", signType },
                 { "paySign", sign }
             });
+        }
+
+        /// <summary>
+        /// <para>生成客户端公众号唤起微信委托代扣的 URL。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_1.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="planId"></param>
+        /// <param name="contractCode"></param>
+        /// <param name="requestSerialNumber"></param>
+        /// <param name="contractDisplayAccount"></param>
+        /// <param name="notifyUrl"></param>
+        /// <param name="requireReturnWeb"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForForMediaPlatformPAPPayEntrustWeb(this WechatTenpayClient client, string appId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, bool? requireReturnWeb)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+
+            string version = "1.0";
+            string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
+            IDictionary<string, string?> paramsMap = new Dictionary<string, string?>()
+            {
+                { "appid", appId },
+                { "mch_id", client.Credentials.MerchantId },
+                { "plan_id", planId.ToString() },
+                { "contract_code", contractCode },
+                { "request_serial", requestSerialNumber.ToString() },
+                { "contract_display_account", contractDisplayAccount },
+                { "notify_url", notifyUrl },
+                { "version", version },
+                { "timestamp", timestamp },
+                { "return_web", requireReturnWeb.HasValue ? requireReturnWeb.Value ? "1" : "0" : null }
+            };
+            string sign = Utilities.RequestSigner.Sign(paramsMap, client.Credentials.MerchantSecret, Constants.SignTypes.MD5);
+
+            return new Url(BASE_URL)
+                .AppendPathSegments("papay", "entrustweb")
+                .SetQueryParams(paramsMap)
+                .SetQueryParam("sign", sign)
+                .ToString();
+        }
+
+        /// <summary>
+        /// <para>生成客户端公众号唤起微信委托代扣的 URL。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_1.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="subMerchantId"></param>
+        /// <param name="subAppId"></param>
+        /// <param name="planId"></param>
+        /// <param name="contractCode"></param>
+        /// <param name="requestSerialNumber"></param>
+        /// <param name="contractDisplayAccount"></param>
+        /// <param name="notifyUrl"></param>
+        /// <param name="requireReturnWeb"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForForMediaPlatformPAPPayPartnerEntrustWeb(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, bool? requireReturnWeb)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+
+            string version = "1.0";
+            string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
+            IDictionary<string, string?> paramsMap = new Dictionary<string, string?>()
+            {
+                { "appid", appId },
+                { "mch_id", client.Credentials.MerchantId },
+                { "sub_appid", subAppId },
+                { "sub_mch_id", subMerchantId },
+                { "plan_id", planId.ToString() },
+                { "contract_code", contractCode },
+                { "request_serial", requestSerialNumber.ToString() },
+                { "contract_display_account", contractDisplayAccount },
+                { "notify_url", notifyUrl },
+                { "version", version },
+                { "timestamp", timestamp },
+                { "return_web", requireReturnWeb.HasValue ? requireReturnWeb.Value ? "1" : "0" : null }
+            };
+            string sign = Utilities.RequestSigner.Sign(paramsMap, client.Credentials.MerchantSecret, Constants.SignTypes.MD5);
+
+            return new Url(BASE_URL)
+                .AppendPathSegments("papay", "partner", "entrustweb")
+                .SetQueryParams(paramsMap)
+                .SetQueryParam("sign", sign)
+                .ToString();
+        }
+
+        /// <summary>
+        /// <para>生成客户端小程序唤起微信委托代扣页面所需的参数字典。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_3.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="planId"></param>
+        /// <param name="contractCode"></param>
+        /// <param name="requestSerialNumber"></param>
+        /// <param name="contractDisplayAccount"></param>
+        /// <param name="notifyUrl"></param>
+        /// <param name="outerId"></param>
+        /// <returns></returns>
+        public static IDictionary<string, string> GenerateParametersForForMiniProgramPAPPayEntrust(this WechatTenpayClient client, string appId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, string? outerId)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+
+            string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
+            IDictionary<string, string?> paramsMap = new Dictionary<string, string?>()
+            {
+                { "appid", appId },
+                { "mch_id", client.Credentials.MerchantId },
+                { "plan_id", planId.ToString() },
+                { "contract_code", contractCode },
+                { "request_serial", requestSerialNumber.ToString() },
+                { "contract_display_account", contractDisplayAccount },
+                { "notify_url", notifyUrl },
+                { "timestamp", timestamp },
+                { "outerid", outerId }
+            };
+            paramsMap["sign"] = Utilities.RequestSigner.Sign(paramsMap, client.Credentials.MerchantSecret, Constants.SignTypes.MD5);
+
+            return new ReadOnlyDictionary<string, string>(paramsMap!);
+        }
+
+        /// <summary>
+        /// <para>生成客户端小程序唤起微信委托代扣页面所需的参数字典。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_3.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="subMerchantId"></param>
+        /// <param name="subAppId"></param>
+        /// <param name="planId"></param>
+        /// <param name="contractCode"></param>
+        /// <param name="requestSerialNumber"></param>
+        /// <param name="contractDisplayAccount"></param>
+        /// <param name="notifyUrl"></param>
+        /// <param name="clientIp"></param>
+        /// <param name="deviceId"></param>
+        /// <param name="userMobile"></param>
+        /// <param name="userEmail"></param>
+        /// <param name="userQQ"></param>
+        /// <param name="openId"></param>
+        /// <param name="idCardNumber"></param>
+        /// <param name="outerId"></param>
+        /// <returns></returns>
+        public static IDictionary<string, string> GenerateParametersForForMiniProgramPAPPayEntrust(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, string clientIp, string? deviceId, string? userMobile, string? userEmail, string? userQQ, string? openId, string? idCardNumber, string? outerId)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+
+            string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
+            IDictionary<string, string?> paramsMap = new Dictionary<string, string?>()
+            {
+                { "appid", appId },
+                { "mch_id", client.Credentials.MerchantId },
+                { "sub_appid", subAppId },
+                { "sub_mch_id", subMerchantId },
+                { "plan_id", planId.ToString() },
+                { "contract_code", contractCode },
+                { "request_serial", requestSerialNumber.ToString() },
+                { "contract_display_account", contractDisplayAccount },
+                { "notify_url", notifyUrl },
+                { "timestamp", timestamp },
+                { "clientip", clientIp },
+                { "deviceid", deviceId },
+                { "mobile", userMobile },
+                { "email", userEmail },
+                { "qq", userQQ },
+                { "openid", openId },
+                { "creid", idCardNumber },
+                { "outerid", outerId }
+            };
+            paramsMap["sign"] = Utilities.RequestSigner.Sign(paramsMap, client.Credentials.MerchantSecret, Constants.SignTypes.MD5);
+
+            return new ReadOnlyDictionary<string, string>(paramsMap!);
         }
     }
 }
