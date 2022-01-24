@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 TestReflectionUtil.InitializeProperties(instance);
 
                 newtonsoftJsonSerializer.Serialize(instance, type);
-                //systemTextJsonSerializer.Serialize(instance, type);
+                systemTextJsonSerializer.Serialize(instance, type);
             }
             catch (Exception ex)
             {
