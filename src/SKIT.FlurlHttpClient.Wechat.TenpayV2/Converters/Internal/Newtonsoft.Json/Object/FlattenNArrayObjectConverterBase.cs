@@ -74,13 +74,14 @@ namespace Newtonsoft.Json.Converters
                     if (typedJsonProperty != null)
                     {
                         // 处理普通属性
+                        JsonSerializer tmpSerializer = serializer;
                         if (typedJsonProperty.JsonConverter != null)
                         {
-                            serializer = JsonSerializer.CreateDefault(serializer.ExtractSerializerSettings());
-                            serializer.Converters.Add(typedJsonProperty.JsonConverter);
+                            tmpSerializer = JsonSerializer.CreateDefault(serializer.ExtractSerializerSettings());
+                            tmpSerializer.Converters.Add(typedJsonProperty.JsonConverter);
                         }
 
-                        object? value = jObject[typedJsonProperty.PropertyName]?.ToObject(typedJsonProperty.PropertyType, serializer);
+                        object? value = jObject[typedJsonProperty.PropertyName]?.ToObject(typedJsonProperty.PropertyType, tmpSerializer);
                         typedJsonProperty.PropertyInfo.SetValue(tObject, value);
                     }
                     else if (TryMatchNArrayIndex(jKey.Name, out int index))
@@ -89,8 +90,10 @@ namespace Newtonsoft.Json.Converters
                         InnerTypedJsonProperty narrayJsonProperty = typedJsonProperties.Single(e => e.PropertyIsNArray);
                         object? value = narrayJsonProperty.PropertyInfo.GetValue(tObject);
 
+                        JsonSerializer tmpSerializer = serializer;
+
                         Array array = CreateOrExpandNArray(value, narrayJsonProperty.PropertyType.GetElementType()!, index + 1);
-                        object? element = CreateOrUpdateNArrayElement(array, index, jKey.Name, jKey.Value, serializer);
+                        object? element = CreateOrUpdateNArrayElement(array, index, jKey.Name, jKey.Value, tmpSerializer);
                         narrayJsonProperty.PropertyInfo.SetValue(tObject, array);
                     }
                     else if (serializer.MissingMemberHandling == MissingMemberHandling.Error)
@@ -125,6 +128,11 @@ namespace Newtonsoft.Json.Converters
 
                 string propertyKey = jsonProperty.PropertyName;
                 object? propertyValue = jsonProperty.ValueProvider.GetValue(value);
+                if (propertyValue is null)
+                {
+                    if (serializer.NullValueHandling == NullValueHandling.Ignore)
+                        continue;
+                }
 
                 if (!PROPERTY_NAME_NARRAY.Equals(propertyKey))
                 {
@@ -158,8 +166,6 @@ namespace Newtonsoft.Json.Converters
                             writer.WritePropertyName(jSubKey.Name.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, i.ToString()));
                             serializer.Serialize(writer, jSubKey.Value);
                         }
-
-                        i++;
                     }
                 }
             }
@@ -189,7 +195,7 @@ namespace Newtonsoft.Json.Converters
                     .Select(p =>
                     {
                         string name = p.GetCustomAttribute<JsonPropertyAttribute>(inherit: true)?.PropertyName ?? p.Name;
-                        JsonConverter converter = p.GetCustomAttributes<JsonConverterAttribute>(inherit: true)
+                        JsonConverter? converter = p.GetCustomAttributes<JsonConverterAttribute>(inherit: true)
                             .OrderByDescending(attr => attr.IsDefaultAttribute())
                             .Select(attr => (JsonConverter)Activator.CreateInstance(attr.ConverterType, attr.ConverterParameters)!)
                             .FirstOrDefault();

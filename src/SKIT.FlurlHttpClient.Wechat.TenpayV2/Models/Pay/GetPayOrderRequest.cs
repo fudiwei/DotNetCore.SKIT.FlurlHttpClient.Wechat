@@ -1,9 +1,9 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /deposit/reverse 接口的请求。</para>
+    /// <para>表示 [POST] /pay/orderquery 接口的请求。</para>
     /// </summary>
-    public class ReverseDepositRequest : WechatTenpaySignableRequest
+    public class GetPayOrderRequest : WechatTenpaySignableRequest
     {
         /// <summary>
         /// <inheritdoc/>
@@ -41,20 +41,10 @@
         public string? OutTradeNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信支付订单号。与字段 <see cref="OutTradeNumber"/> 二选一。
+        /// 获取或设置微信订单号。与字段 <see cref="OutTradeNumber"/> 二选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
         public string? TransactionId { get; set; }
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// <para>默认值：<see cref="Constants.SignTypes.HMAC_SHA256"/></para>
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sign_type")]
-        [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
-#pragma warning disable CS8765
-        public override string SignType { get; set; } = Constants.SignTypes.HMAC_SHA256;
-#pragma warning restore CS8765
     }
 }

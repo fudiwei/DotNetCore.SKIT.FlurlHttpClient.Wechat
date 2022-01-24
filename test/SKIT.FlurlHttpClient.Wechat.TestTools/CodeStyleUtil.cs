@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
@@ -221,7 +222,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 lstError.Add(new Exception($"[模型] \"{workdir}\" 下不存在示例文件，请检查配置的扫描路径是否正确。"));
             }
 
-            foreach (string filePath in lstFilePath)
+            Parallel.ForEach(lstFilePath, (filePath) =>
             {
                 string name = Path.GetFileNameWithoutExtension(filePath).Split('.')[0];
 
@@ -229,7 +230,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 if (type == null)
                 {
                     lstError.Add(new Exception($"[模型] 扫描到示例文件 \"{filePath}\"，但类型 `{name}` 不存在。"));
-                    continue;
+                    return;
                 }
 
                 if (string.Equals(Path.GetExtension(filePath), ".json", StringComparison.OrdinalIgnoreCase))
@@ -240,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         lstError.Add(ex);
                     }
                 }
-            }
+            });
 
             if (lstError.Any())
             {

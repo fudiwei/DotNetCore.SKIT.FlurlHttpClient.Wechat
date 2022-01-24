@@ -6,7 +6,7 @@
     public class GetSubMerchantDevelopConfigResponse : WechatTenpaySignableResponse
     {
         public static class Types
-        { 
+        {
             public class AppIdConfigList
             {
                 /// <summary>

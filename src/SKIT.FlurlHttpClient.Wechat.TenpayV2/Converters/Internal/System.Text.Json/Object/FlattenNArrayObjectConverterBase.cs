@@ -64,13 +64,14 @@ namespace System.Text.Json.Converters
                     if (typedJsonProperty != null)
                     {
                         // 处理普通属性
+                        JsonSerializerOptions tmpOptions = options;
                         if (typedJsonProperty.JsonConverter != null)
                         {
-                            options = new JsonSerializerOptions(options);
-                            options.Converters.Add(typedJsonProperty.JsonConverter);
+                            tmpOptions = new JsonSerializerOptions(options);
+                            tmpOptions.Converters.Add(typedJsonProperty.JsonConverter);
                         }
 
-                        object? value = JsonSerializer.Deserialize(jKey.Value, typedJsonProperty.PropertyType, options);
+                        object? value = JsonSerializer.Deserialize(jKey.Value, typedJsonProperty.PropertyType, tmpOptions);
                         typedJsonProperty.PropertyInfo.SetValue(tObject, value);
                     }
                     else if (TryMatchNArrayIndex(jKey.Name, out int index))
@@ -79,8 +80,10 @@ namespace System.Text.Json.Converters
                         InnerTypedJsonProperty narrayJsonProperty = typedJsonProperties.Single(e => e.PropertyIsNArray);
                         object? value = narrayJsonProperty.PropertyInfo.GetValue(tObject);
 
+                        JsonSerializerOptions tmpOptions = options;
+
                         Array array = CreateOrExpandNArray(value, narrayJsonProperty.PropertyType.GetElementType()!, index + 1);
-                        object? element = CreateOrUpdateNArrayElement(array, index, jKey.Name, jKey.Value, options);
+                        object? element = CreateOrUpdateNArrayElement(array, index, jKey.Name, jKey.Value, tmpOptions);
                         narrayJsonProperty.PropertyInfo.SetValue(tObject, array);
                     }
                 }
@@ -102,10 +105,11 @@ namespace System.Text.Json.Converters
 
             foreach (InnerTypedJsonProperty typedJsonProperty in GetTypedJsonProperties(value.GetType()))
             {
+                JsonSerializerOptions tmpOptions = options;
                 if (typedJsonProperty.JsonConverter != null)
                 {
-                    options = new JsonSerializerOptions(options);
-                    options.Converters.Add(typedJsonProperty.JsonConverter);
+                    tmpOptions = new JsonSerializerOptions(options);
+                    tmpOptions.Converters.Add(typedJsonProperty.JsonConverter);
                 }
 
                 if (!typedJsonProperty.PropertyIsNArray)
@@ -113,9 +117,19 @@ namespace System.Text.Json.Converters
                     // 处理普通属性
                     string propertyKey = typedJsonProperty.PropertyName;
                     object? propertyValue = typedJsonProperty.PropertyInfo.GetValue(value);
+                    if (propertyValue is null)
+                    {
+                        if (tmpOptions.DefaultIgnoreCondition == JsonIgnoreCondition.Always || tmpOptions.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingNull)
+                            continue;
+                    }
+                    else if (propertyValue == (typedJsonProperty.PropertyType.IsValueType ? Activator.CreateInstance(typedJsonProperty.PropertyType) : null))
+                    {
+                        if (tmpOptions.DefaultIgnoreCondition == JsonIgnoreCondition.Always || tmpOptions.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingDefault)
+                            continue;
+                    }
 
                     writer.WritePropertyName(propertyKey);
-                    JsonSerializer.Serialize(writer, propertyValue, options);
+                    writer.WriteRawValue(JsonSerializer.Serialize(propertyValue, tmpOptions), skipInputValidation: true);
                 }
                 else
                 {
@@ -130,14 +144,12 @@ namespace System.Text.Json.Converters
                         if (element is null)
                             continue;
 
-                        JsonObject jSubObject = JsonSerializer.SerializeToNode(element, options)!.AsObject();
+                        JsonObject jSubObject = JsonSerializer.SerializeToNode(element, tmpOptions)!.AsObject();
                         foreach (KeyValuePair<string, JsonNode?> jSubKey in jSubObject)
                         {
                             writer.WritePropertyName(jSubKey.Key.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, i.ToString()));
-                            jSubKey.Value?.WriteTo(writer, options);
+                            writer.WriteRawValue(jSubKey.Value?.ToJsonString(tmpOptions)!, skipInputValidation: true);
                         }
-
-                        i++;
                     }
                 }
             }
@@ -167,7 +179,13 @@ namespace System.Text.Json.Converters
                     .Select(p =>
                     {
                         string name = p.GetCustomAttribute<JsonPropertyNameAttribute>(inherit: true)?.Name ?? p.Name;
-                        JsonConverter converter = p.GetCustomAttributes<JsonConverterAttribute>(inherit: true)
+                        if (name.Equals("modify_time_$n"))
+                        {
+                            var cs = p.GetCustomAttributes<JsonConverterAttribute>(inherit: true);
+                            Console.Write(p.Name);
+                        }
+
+                        JsonConverter? converter = p.GetCustomAttributes<JsonConverterAttribute>(inherit: true)
                             .OrderByDescending(attr => attr.IsDefaultAttribute())
                             .Select(attr => (JsonConverter)Activator.CreateInstance(attr.ConverterType)!)
                             .FirstOrDefault();
@@ -222,7 +240,7 @@ namespace System.Text.Json.Converters
             return src;
         }
 
-        private static object CreateOrUpdateNArrayElement(Array array, int index, string jKey, JsonElement jValue, JsonSerializerOptions serializerOptions = null)
+        private static object CreateOrUpdateNArrayElement(Array array, int index, string jKey, JsonElement jValue, JsonSerializerOptions serializerOptions)
         {
             if (array == null) throw new ArgumentNullException(nameof(array));
             if (index < 0) throw new ArgumentOutOfRangeException(nameof(index));

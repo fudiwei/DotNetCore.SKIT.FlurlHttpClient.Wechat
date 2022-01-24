@@ -91,6 +91,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         public virtual string? ResultCode { get; set; }
 
         /// <summary>
+        /// 获取或设置业务结果描述。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("result_msg")]
+        [System.Text.Json.Serialization.JsonPropertyName("result_msg")]
+        public virtual string? ResultMessage { get; set; }
+
+        /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]

@@ -1,9 +1,9 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /deposit/reverse 接口的响应。</para>
+    /// <para>表示 [POST] /pay/closeorder 接口的请求。</para>
     /// </summary>
-    public class ReverseDepositResponse : WechatTenpaySignableResponse
+    public class ClosePayOrderRequest : WechatTenpaySignableRequest
     {
         /// <summary>
         /// <inheritdoc/>
@@ -32,5 +32,12 @@
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
         public string? SubAppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置商户订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("out_trade_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
+        public string OutTradeNumber { get; set; } = string.Empty;
     }
 }
