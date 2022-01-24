@@ -91,8 +91,8 @@
         /// 获取或设置授权目录列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jsapi_path_list")]
-        [System.Text.Json.Serialization.JsonPropertyName("jsapi_path_list")]
         [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyJsapiPathListNewtonsoftJsonConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("jsapi_path_list")]
         [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyJsapiPathListSystemTextJsonConverter))]
         public Types.JsapiPathList JsapiPathList { get; set; } = default!;
     }
