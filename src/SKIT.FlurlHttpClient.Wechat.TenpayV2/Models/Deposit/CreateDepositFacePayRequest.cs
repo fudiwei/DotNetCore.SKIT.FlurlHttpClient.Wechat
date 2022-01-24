@@ -9,11 +9,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     {
         public static class Types
         {
-            public class Detail : CreatePayMicroPayRequest.Types.Detail
+            public class Detail : CreatePayUnifiedOrderRequest.Types.Detail
             {
             }
 
-            public class Scene : CreatePayMicroPayRequest.Types.Scene
+            public class Scene : CreatePayUnifiedOrderRequest.Types.Scene
             {
             }
         }

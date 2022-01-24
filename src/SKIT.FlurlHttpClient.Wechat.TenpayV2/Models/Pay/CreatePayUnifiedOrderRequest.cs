@@ -1,20 +1,139 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /deposit/unifiedorder 接口的请求。</para>
+    /// <para>表示 [POST] /pay/unifiedorder 接口的请求。</para>
     /// </summary>
-    public class CreateDepositUnifiedOrderRequest : WechatTenpaySignableRequest
+    public class CreatePayUnifiedOrderRequest : WechatTenpaySignableRequest
     {
         public static class Types
         {
-            public class Detail : CreatePayUnifiedOrderRequest.Types.Detail
+            public class Detail
             {
+                public static class Types
+                {
+                    public class GoodsDetail
+                    {
+                        /// <summary>
+                        /// 获取或设置商户侧商品编码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_id")]
+                        public string MerchantGoodsId { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置微信侧商品编码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wxpay_goods_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wxpay_goods_id")]
+                        public string? WechatpayGoodsId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品分类。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_category")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_category")]
+                        public string? GoodsCategory { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
+                        public string? GoodsName { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("quantity")]
+                        [System.Text.Json.Serialization.JsonPropertyName("quantity")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public int Quantity { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品单价（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("price")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public int Price { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品描述。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("body")]
+                        [System.Text.Json.Serialization.JsonPropertyName("body")]
+                        public string? Body { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置订单原价（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("cost_price")]
+                [System.Text.Json.Serialization.JsonPropertyName("cost_price")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public int? CostPrice { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品小票 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("receipt_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("receipt_id")]
+                public string? ReceiptId { get; set; }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public List<Types.GoodsDetail>? GoodsList { get; set; }
             }
 
-            public class Scene : CreatePayUnifiedOrderRequest.Types.Scene
+            public class Scene
             {
+                public static class Types
+                {
+                    public class Store
+                    {
+                        /// <summary>
+                        /// 获取或设置门店编号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("id")]
+                        public string Id { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置门店名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置地区编码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("area_code")]
+                        [System.Text.Json.Serialization.JsonPropertyName("area_code")]
+                        public string? AreaCode { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置详细地址。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("address")]
+                        [System.Text.Json.Serialization.JsonPropertyName("address")]
+                        public string? Address { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置门店信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_info")]
+                public Types.Store? Store { get; set; }
             }
         }
 
@@ -137,6 +256,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public string TradeType { get; set; } = string.Empty;
 
         /// <summary>
+        /// 获取或设置订单优惠标记。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("goods_tag")]
+        [System.Text.Json.Serialization.JsonPropertyName("goods_tag")]
+        public string? GoodsTag { get; set; }
+
+        /// <summary>
         /// 获取或设置通知地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_url")]
@@ -192,6 +318,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
         [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertySceneSystemTextJsonConverter))]
         public Types.Scene? Scene { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否分账。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("profit_sharing")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.YesOrNoNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("profit_sharing")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.YesOrNoNullableBooleanConverter))]
+        public bool? IsProfitSharing { get; set; }
 
         /// <summary>
         /// 获取或设置是否开放电子发票入口。

@@ -9,6 +9,34 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     public static class WechatTenpayClientExecutePayExtensions
     {
         /// <summary>
+        /// <para>异步调用 [POST] /pay/unifiedorder 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_1&index=1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_1&index=1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_1&index=1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_1&index=1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_1 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayUnifiedOrderResponse> ExecuteCreatePayUnifiedOrderAsync(this WechatTenpayClient client, Models.CreatePayUnifiedOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "pay", "unifiedorder");
+
+            return await client.SendRequestWithXmlAsync<Models.CreatePayUnifiedOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /pay/micropay 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_10&index=1 </para>
