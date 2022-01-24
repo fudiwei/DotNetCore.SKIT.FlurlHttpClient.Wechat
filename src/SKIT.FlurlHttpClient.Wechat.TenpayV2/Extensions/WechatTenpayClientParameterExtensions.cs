@@ -26,8 +26,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string signType = Constants.SignTypes.MD5;
-            string signData = $"timeStamp={timestamp}&nonceStr={nonce}&package={packageString}&signType={signType}&key={client.Credentials.MerchantSecret}";
-            string sign = Utilities.MD5Utility.Hash(signData);
+            string signData = $"timeStamp={timestamp}&nonceStr={nonce}&package={packageString}&signType={signType}";
+            string sign = Utilities.RequestSigner.SignFromSortedQueryString(signData, client.Credentials.MerchantSecret, signType);
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
@@ -60,24 +60,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string package = $"prepay_id={prepayId}";
-            string signData = $"appId={appId}&timeStamp={timestamp}&nonceStr={nonce}&package={package}&signType={signType}&key={client.Credentials.MerchantSecret}";
-            string sign;
-
-            switch (signType)
-            {
-                case Constants.SignTypes.MD5:
-                    {
-                        sign = Utilities.MD5Utility.Hash(signData);
-                    }
-                    break;
-                case Constants.SignTypes.HMAC_SHA256:
-                    {
-                        sign = Utilities.HMACUtility.HashWithSHA256(client.Credentials.MerchantSecret, signData);
-                    }
-                    break;
-                default:
-                    throw new NotSupportedException();
-            }
+            string signData = $"appId={appId}&timeStamp={timestamp}&nonceStr={nonce}&package={package}&signType={signType}";
+            string sign = Utilities.RequestSigner.SignFromSortedQueryString(signData, client.Credentials.MerchantSecret, signType);
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
@@ -112,24 +96,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             string nonce = Guid.NewGuid().ToString("N");
             string partnerId = merchantId;
             string package = "Sign=WXPay";
-            string signData = $"appid={appId}&timestamp={timestamp}&noncestr={nonce}&package={package}&partnerid={partnerId}&prepayid={prepayId}&signType={signType}&key={client.Credentials.MerchantSecret}";
-            string sign;
-
-            switch (signType)
-            {
-                case Constants.SignTypes.MD5:
-                    {
-                        sign = Utilities.MD5Utility.Hash(signData);
-                    }
-                    break;
-                case Constants.SignTypes.HMAC_SHA256:
-                    {
-                        sign = Utilities.HMACUtility.HashWithSHA256(client.Credentials.MerchantSecret, signData);
-                    }
-                    break;
-                default:
-                    throw new NotSupportedException();
-            }
+            string signData = $"appid={appId}&timestamp={timestamp}&noncestr={nonce}&package={package}&partnerid={partnerId}&prepayid={prepayId}&signType={signType}";
+            string sign = Utilities.RequestSigner.SignFromSortedQueryString(signData, client.Credentials.MerchantSecret, signType);
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
@@ -156,8 +124,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <returns></returns>
         public static IDictionary<string, string> GenerateParametersForAppGetBrandPayRequest(this WechatTenpayClient client, string appId, string prepayId, string? signType)
         {
-            return GenerateParametersForAppGetBrandPayRequest(client, merchantId: client.Credentials.MerchantId, appId: appId, prepayId: prepayId, signType: signType);        }
-
+            return GenerateParametersForAppGetBrandPayRequest(client, merchantId: client.Credentials.MerchantId, appId: appId, prepayId: prepayId, signType: signType); 
+        }
+    
         /// <summary>
         /// <para>生成客户端小程序调起支付所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7&index=5 </para>
@@ -178,24 +147,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string package = $"prepay_id={prepayId}";
-            string signData = $"appId={appId}&timeStamp={timestamp}&nonceStr={nonce}&package={package}&signType={signType}&key={client.Credentials.MerchantSecret}";
-            string sign;
-
-            switch (signType)
-            {
-                case Constants.SignTypes.MD5:
-                    {
-                        sign = Utilities.MD5Utility.Hash(signData);
-                    }
-                    break;
-                case Constants.SignTypes.HMAC_SHA256:
-                    {
-                        sign = Utilities.HMACUtility.HashWithSHA256(client.Credentials.MerchantSecret, signData);
-                    }
-                    break;
-                default:
-                    throw new NotSupportedException();
-            }
+            string signData = $"appId={appId}&timeStamp={timestamp}&nonceStr={nonce}&package={package}&signType={signType}";
+            string sign = Utilities.RequestSigner.SignFromSortedQueryString(signData, client.Credentials.MerchantSecret, signType);
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {

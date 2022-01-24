@@ -18,12 +18,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             JProperty[] jProps = jObject.Properties().OrderBy(p => p.Name).ToArray();
             foreach (JProperty jProp in jProps)
             {
-                if (jProp.Type == JTokenType.Null)
+                if (jProp.Value.Type == JTokenType.Null)
                 {
                     continue;
                 }
-
-                if (jProp.Type == JTokenType.String)
+                else if (jProp.Value.Type == JTokenType.String)
                 {
                     if (string.IsNullOrEmpty((string)jProp.Value))
                         continue;

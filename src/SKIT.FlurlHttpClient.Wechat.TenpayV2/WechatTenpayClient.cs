@@ -100,27 +100,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
                 if (signableRequest.Signature == null)
                 {
-                    string signData = JsonSerializer.Serialize(signableRequest);
-                    signData = Utilities.JsonUtility.ParseToSortedQueryString(signData);
-                    signData = signData + $"&key={Credentials.MerchantSecret}";
-
-                    string signType = signableRequest.SignType ?? Constants.SignTypes.MD5;
-                    switch (signType)
+                    try
                     {
-                        case Constants.SignTypes.MD5:
-                            {
-                                signableRequest.Signature = Utilities.MD5Utility.Hash(signData).ToUpper();
-                            }
-                            break;
-
-                        case Constants.SignTypes.HMAC_SHA256:
-                            {
-                                signableRequest.Signature = Utilities.HMACUtility.HashWithSHA256(Credentials.MerchantSecret, signData).ToUpper();
-                            }
-                            break;
-
-                        default:
-                            throw new Exceptions.WechatTenpayRequestSignatureException("Unsupported sign type.");
+                        signableRequest.Signature = Utilities.RequestSigner.SignFromJson(
+                            json: JsonSerializer.Serialize(signableRequest),
+                            secret: Credentials.MerchantSecret,
+                            signType: signableRequest.SignType
+                        );
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exceptions.WechatTenpayRequestSignatureException("Generate signature of request failed. Please see the `InnerException` for more details.", ex);
                     }
                 }
             }
