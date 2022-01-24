@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             XCData[] xCDatas = xElement.DescendantNodes().OfType<XCData>().ToArray();
             foreach (XCData xCData in xCDatas)
             {
-                xCData.Parent.Add(xCData.Value);
+                xCData.Parent!.Add(xCData.Value);
                 xCData.Remove();
             }
 

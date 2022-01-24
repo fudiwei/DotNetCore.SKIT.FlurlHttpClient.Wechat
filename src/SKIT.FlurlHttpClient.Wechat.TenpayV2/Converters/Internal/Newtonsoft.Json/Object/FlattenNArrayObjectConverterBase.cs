@@ -136,9 +136,13 @@ namespace Newtonsoft.Json.Converters
                 else
                 {
                     // 处理 $n 属性
-                    int i = 0;
-                    foreach (JToken? jSubToken in JArray.FromObject(propertyValue))
+                    if (propertyValue is null)
+                        continue;
+
+                    JArray jArray = JArray.FromObject(propertyValue);
+                    for (int i = 0, len = jArray.Count; i < len; i++)
                     {
+                        JToken? jSubToken = jArray[i];
                         if (jSubToken == null)
                             continue;
 

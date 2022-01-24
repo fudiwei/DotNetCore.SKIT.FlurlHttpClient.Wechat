@@ -107,9 +107,13 @@ namespace System.Text.Json.Converters
                 else
                 {
                     // 处理 $n 属性
-                    int i = 0;
-                    foreach (object element in (Array)typedJsonProperty.PropertyInfo.GetValue(value))
+                    Array? array = (Array?)typedJsonProperty.PropertyInfo.GetValue(value);
+                    if (array is null)
+                        continue;
+
+                    for (int i = 0, len = array.Length; i < len; i++)
                     {
+                        object? element = array.GetValue(i);
                         if (element is null)
                             continue;
 
@@ -234,7 +238,7 @@ namespace System.Text.Json.Converters
                 serializerOptions = (serializerOptions == null) ? new JsonSerializerOptions() : new JsonSerializerOptions(serializerOptions);
                 foreach (JsonConverterAttribute attribute in typedJsonProperty.PropertyInfo.GetCustomAttributes<JsonConverterAttribute>(inherit: true))
                 {
-                    JsonConverter converter = (JsonConverter)Activator.CreateInstance(attribute.ConverterType!);
+                    JsonConverter converter = (JsonConverter)Activator.CreateInstance(attribute.ConverterType!)!;
                     serializerOptions.Converters.Add(converter!);
                 }
 
