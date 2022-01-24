@@ -118,6 +118,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_3&index=5 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_3&index=3 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_3 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_17.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -146,6 +148,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_4&index=6 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_4&index=4 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_4 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_13.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -174,6 +178,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_5&index=7 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_5&index=5 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_14.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
