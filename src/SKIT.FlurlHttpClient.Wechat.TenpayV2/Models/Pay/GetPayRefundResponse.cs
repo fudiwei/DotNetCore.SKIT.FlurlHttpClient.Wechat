@@ -3,16 +3,23 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /deposit/refundquery 接口的响应。</para>
+    /// <para>表示 [POST] /pay/refundquery 接口的响应。</para>
     /// </summary>
     [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponseClassNewtonsoftJsonConverter))]
     [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponseClassSystemTextJsonConverter))]
-    public class GetDepositRefundResponse : WechatTenpaySignableResponse
+    public class GetPayRefundResponse : WechatTenpaySignableResponse
     {
         public static class Types
         {
             public class Refund
             {
+                /// <summary>
+                /// 获取或设置商户退款单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_refund_no_$n")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_refund_no_$n")]
+                public string OutRefundId { get; set; } = default!;
+
                 /// <summary>
                 /// 获取或设置微信退款单号。
                 /// </summary>
@@ -73,14 +80,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 public int? CouponRefundFee { get; set; }
 
                 /// <summary>
-                /// 获取或设置现金退款金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("cash_refund_fee_$n")]
-                [System.Text.Json.Serialization.JsonPropertyName("cash_refund_fee_$n")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int? CashRefundFee { get; set; }
-
-                /// <summary>
                 /// 获取或设置退款成功时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_success_time_$n")]
@@ -93,11 +92,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<GetDepositRefundResponse>
+            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<GetPayRefundResponse>
             {
             }
 
-            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<GetDepositRefundResponse>
+            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<GetPayRefundResponse>
             {
             }
         }
@@ -185,8 +184,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// <summary>
         /// 获取或设置记录总数。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("refund_count")]
-        [System.Text.Json.Serialization.JsonPropertyName("refund_count")]
+        [Newtonsoft.Json.JsonProperty("total_refund_count")]
+        [System.Text.Json.Serialization.JsonPropertyName("total_refund_count")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int TotalRefundCount { get; set; }
     }

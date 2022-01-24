@@ -34,8 +34,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
             Assert.Equal("ERR_CODE_DESC", parsedObjBySystemTextJson.ErrorCodeDescription);
             Assert.Equal("TRANSACTION_ID", parsedObjByNewtonsoftJson.TransactionId);
             Assert.Equal("TRANSACTION_ID", parsedObjBySystemTextJson.TransactionId);
-            Assert.Equal(2, parsedObjByNewtonsoftJson.RecordCount);
-            Assert.Equal(2, parsedObjBySystemTextJson.RecordCount);
+            Assert.Equal(2, parsedObjByNewtonsoftJson.TotalRecordCount);
+            Assert.Equal(2, parsedObjBySystemTextJson.TotalRecordCount);
             Assert.Equal("SUB_ORDER_NO_0", parsedObjByNewtonsoftJson.RecordList[0].SubOrderNumber);
             Assert.Equal("SUB_ORDER_NO_0", parsedObjBySystemTextJson.RecordList[0].SubOrderNumber);
             Assert.Equal("SUB_ORDER_ID_0", parsedObjByNewtonsoftJson.RecordList[0].SubOrderId);

@@ -105,5 +105,61 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             return await client.SendRequestWithXmlAsync<Models.ClosePayOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /secapi/pay/refund 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_4 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_4 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_4&index=6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_4&index=4 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_4 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_4 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_4 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_4&index=6 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_4&index=4 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_4 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayRefundResponse> ExecuteCreatePayRefundAsync(this WechatTenpayClient client, Models.CreatePayRefundRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "secapi", "pay", "refund");
+
+            return await client.SendRequestWithXmlAsync<Models.CreatePayRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /pay/refundquery 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_5&index=7 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_5&index=5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_5&index=7 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_5&index=5 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_5 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPayRefundResponse> ExecuteGetPayRefundAsync(this WechatTenpayClient client, Models.GetPayRefundRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "pay", "refundquery");
+
+            return await client.SendRequestWithXmlAsync<Models.GetPayRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }
