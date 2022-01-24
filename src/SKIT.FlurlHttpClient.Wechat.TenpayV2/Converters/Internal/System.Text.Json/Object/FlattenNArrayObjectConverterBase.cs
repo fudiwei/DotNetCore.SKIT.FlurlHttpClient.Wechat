@@ -105,13 +105,6 @@ namespace System.Text.Json.Converters
 
             foreach (InnerTypedJsonProperty typedJsonProperty in GetTypedJsonProperties(value.GetType()))
             {
-                JsonSerializerOptions tmpOptions = options;
-                if (typedJsonProperty.JsonConverter != null)
-                {
-                    tmpOptions = new JsonSerializerOptions(options);
-                    tmpOptions.Converters.Add(typedJsonProperty.JsonConverter);
-                }
-
                 if (!typedJsonProperty.PropertyIsNArray)
                 {
                     // 处理普通属性
@@ -119,17 +112,35 @@ namespace System.Text.Json.Converters
                     object? propertyValue = typedJsonProperty.PropertyInfo.GetValue(value);
                     if (propertyValue is null)
                     {
-                        if (tmpOptions.DefaultIgnoreCondition == JsonIgnoreCondition.Always || tmpOptions.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingNull)
+                        if (options.DefaultIgnoreCondition == JsonIgnoreCondition.Always || options.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingNull)
                             continue;
                     }
-                    else if (propertyValue == (typedJsonProperty.PropertyType.IsValueType ? Activator.CreateInstance(typedJsonProperty.PropertyType) : null))
+                    else if (propertyValue == (propertyValue.GetType().IsValueType ? Activator.CreateInstance(propertyValue.GetType()) : null))
                     {
-                        if (tmpOptions.DefaultIgnoreCondition == JsonIgnoreCondition.Always || tmpOptions.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingDefault)
+                        if (options.DefaultIgnoreCondition == JsonIgnoreCondition.Always || options.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingDefault)
                             continue;
                     }
 
-                    writer.WritePropertyName(propertyKey);
-                    writer.WriteRawValue(JsonSerializer.Serialize(propertyValue, tmpOptions), skipInputValidation: true);
+                    JsonSerializerOptions tmpOptions = options;
+                    JsonConverter? tmpConverter = typedJsonProperty.JsonConverter;
+                    if (tmpConverter != null)
+                    {
+                        tmpOptions = new JsonSerializerOptions(options);
+                        tmpOptions.Converters.Add(tmpConverter);
+                    }
+
+                    if (tmpConverter != null && CheckTypeIsSubclassOf(tmpConverter.GetType(), typeof(TextualObjectInJsonFormatConverterBase<>)))
+                    {
+                        // TODO: 优化
+                        tmpOptions.Converters.Remove(tmpConverter);
+                        writer.WritePropertyName(propertyKey);
+                        writer.WriteStringValue(JsonSerializer.Serialize(propertyValue, tmpOptions));
+                    }
+                    else
+                    {
+                        writer.WritePropertyName(propertyKey);
+                        writer.WriteRawValue(JsonSerializer.Serialize(propertyValue, tmpOptions), skipInputValidation: true);
+                    }
                 }
                 else
                 {
@@ -144,6 +155,14 @@ namespace System.Text.Json.Converters
                         if (element is null)
                             continue;
 
+                        JsonSerializerOptions tmpOptions = options;
+                        JsonConverter? tmpConverter = GetTypedJsonConverter(element.GetType());
+                        if (tmpConverter != null)
+                        {
+                            tmpOptions = new JsonSerializerOptions(options);
+                            tmpOptions.Converters.Add(tmpConverter);
+                        }
+
                         JsonObject jSubObject = JsonSerializer.SerializeToNode(element, tmpOptions)!.AsObject();
                         foreach (KeyValuePair<string, JsonNode?> jSubKey in jSubObject)
                         {
@@ -155,6 +174,36 @@ namespace System.Text.Json.Converters
             }
 
             writer.WriteEndObject();
+        }
+
+        private static JsonConverter? GetTypedJsonConverter(MemberInfo? memberInfo)
+        {
+            if (memberInfo == null)
+                return null;
+
+            return memberInfo.GetCustomAttributes<JsonConverterAttribute>(inherit: true)
+                .OrderByDescending(attr => attr.IsDefaultAttribute())
+                .Select(attr =>
+                {
+                    JsonConverter? converter = null;
+
+                    if (memberInfo is Type type)
+                    {
+                        converter = attr.CreateConverter(type);
+                    }
+                    else if (memberInfo is PropertyInfo propertyInfo)
+                    {
+                        converter = attr.CreateConverter(propertyInfo.PropertyType);
+                    }
+
+                    if (converter == null && attr.ConverterType != null)
+                    {
+                        converter = (JsonConverter)Activator.CreateInstance(attr.ConverterType)!;
+                    }
+
+                    return converter;
+                })
+                .FirstOrDefault(converter => converter != null);
         }
 
         private static InnerTypedJsonProperty[] GetTypedJsonProperties(Type type)
@@ -182,19 +231,14 @@ namespace System.Text.Json.Converters
                         if (name.Equals("modify_time_$n"))
                         {
                             var cs = p.GetCustomAttributes<JsonConverterAttribute>(inherit: true);
-                            Console.Write(p.Name);
                         }
 
-                        JsonConverter? converter = p.GetCustomAttributes<JsonConverterAttribute>(inherit: true)
-                            .OrderByDescending(attr => attr.IsDefaultAttribute())
-                            .Select(attr => (JsonConverter)Activator.CreateInstance(attr.ConverterType)!)
-                            .FirstOrDefault();
                         return new InnerTypedJsonProperty
                         (
                             propertyName: name,
                             propertyInfo: p,
                             propertyIsNArray: PROPERTY_NAME_NARRAY.Equals(name) && p.PropertyType.IsArray && p.PropertyType.GetElementType()!.IsClass,
-                            jsonConverter: converter
+                            jsonConverter: GetTypedJsonConverter(p)
                         );
                     })
                     .OrderBy(e => e.PropertyInfo.GetCustomAttribute<JsonPropertyOrderAttribute>(inherit: true)?.Order)
@@ -203,6 +247,25 @@ namespace System.Text.Json.Converters
             }
 
             return typedJsonProperties;
+        }
+
+        private static bool CheckTypeIsSubclassOf(Type type, Type generic)
+        {
+            bool IsTheRawGenericType(Type test)
+                => generic == (test.IsGenericType ? test.GetGenericTypeDefinition() : test);
+
+            bool isTheRawGenericType = type.GetInterfaces().Any(IsTheRawGenericType);
+            if (isTheRawGenericType) 
+                return true;
+
+            while (type != null && type != typeof(object))
+            {
+                isTheRawGenericType = IsTheRawGenericType(type);
+                if (isTheRawGenericType) return true;
+                type = type.BaseType;
+            }
+
+            return false;
         }
 
         private static bool TryMatchNArrayIndex(string key, out int index)
