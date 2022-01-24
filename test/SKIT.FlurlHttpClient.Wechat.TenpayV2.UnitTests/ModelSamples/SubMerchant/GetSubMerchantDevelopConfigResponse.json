@@ -1,0 +1,6 @@
+﻿{
+    "return_code": "SUCCESS",
+    "return_msg": "签名失败",
+    "jsapi_path_list": "{\"jsapi_path_list\":[\"http://www.qq.com/abcd/\",\"http://www.qq.com/abcdedfg/\"]}",
+    "appid_config_list": "{\"appid_config_list\":[{\"subscribe_appid\":\"wxa9d9651ae82ec4b9\",\"sub_appid\":null},{\"subscribe_appid\":\"wxa9d9651ae82ec4b9\",\"sub_appid\":\"wxa9d9651ae82ec4b9\"}]}"
+}
