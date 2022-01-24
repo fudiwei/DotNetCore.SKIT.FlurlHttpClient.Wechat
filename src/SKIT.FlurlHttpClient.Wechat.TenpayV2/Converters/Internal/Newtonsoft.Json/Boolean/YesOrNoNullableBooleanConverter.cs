@@ -14,17 +14,17 @@ namespace Newtonsoft.Json.Converters
             get { return true; }
         }
 
-        public override bool? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, bool? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
+        public override bool? ReadJson(JsonReader reader, Type objectType, bool? existingValue, bool hasExistingValue, JsonSerializer serializer)
         {
-            if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
+            if (reader.TokenType == JsonToken.Null)
             {
                 return existingValue;
             }
-            else if (reader.TokenType == Newtonsoft.Json.JsonToken.Boolean)
+            else if (reader.TokenType == JsonToken.Boolean)
             {
                 return serializer.Deserialize<bool>(reader);
             }
-            else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
+            else if (reader.TokenType == JsonToken.String)
             {
                 string? value = serializer.Deserialize<string>(reader);
                 if (value == null)
@@ -36,10 +36,10 @@ namespace Newtonsoft.Json.Converters
                     return false;
             }
 
-            throw new Newtonsoft.Json.JsonReaderException();
+            throw new JsonReaderException();
         }
 
-        public override void WriteJson(Newtonsoft.Json.JsonWriter writer, bool? value, Newtonsoft.Json.JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, bool? value, JsonSerializer serializer)
         {
             if (value.HasValue)
                 writer.WriteValue(value.Value ? "Y" : "N");

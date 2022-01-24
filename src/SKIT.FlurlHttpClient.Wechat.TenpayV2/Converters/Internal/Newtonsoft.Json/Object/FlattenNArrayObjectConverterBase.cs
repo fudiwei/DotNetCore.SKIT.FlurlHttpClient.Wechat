@@ -25,13 +25,16 @@ namespace Newtonsoft.Json.Converters
 
             public Type PropertyType { get { return PropertyInfo.PropertyType; } }
 
-            public bool IsNArrayProperty { get; }
+            public bool PropertyIsNArray { get; }
 
-            public InnerTypedJsonProperty(string propertyName, PropertyInfo propertyInfo, bool isNArrayProperty)
+            public JsonConverter? JsonConverter { get; }
+
+            public InnerTypedJsonProperty(string propertyName, PropertyInfo propertyInfo, bool propertyIsNArray, JsonConverter? jsonConverter)
             {
                 PropertyName = propertyName;
                 PropertyInfo = propertyInfo;
-                IsNArrayProperty = isNArrayProperty;
+                PropertyIsNArray = propertyIsNArray;
+                JsonConverter = jsonConverter;
             }
         }
 
@@ -59,7 +62,7 @@ namespace Newtonsoft.Json.Converters
             else if (reader.TokenType == JsonToken.StartObject)
             {
                 InnerTypedJsonProperty[] typedJsonProperties = GetTypedJsonProperties(objectType);
-                if (typedJsonProperties.Count(p => p.IsNArrayProperty) != 1)
+                if (typedJsonProperties.Count(p => p.PropertyIsNArray) != 1)
                     throw new JsonSerializationException("The number of `$n` properties must be only one.");
 
                 JObject jObject = JObject.Load(reader);
@@ -71,22 +74,26 @@ namespace Newtonsoft.Json.Converters
                     if (typedJsonProperty != null)
                     {
                         // 处理普通属性
-                        object? value = serializer is null ?
-                            jObject[typedJsonProperty.PropertyName]?.ToObject(typedJsonProperty.PropertyType) :
-                            jObject[typedJsonProperty.PropertyName]?.ToObject(typedJsonProperty.PropertyType, serializer);
+                        if (typedJsonProperty.JsonConverter != null)
+                        {
+                            serializer = JsonSerializer.CreateDefault(serializer.ExtractSerializerSettings());
+                            serializer.Converters.Add(typedJsonProperty.JsonConverter);
+                        }
+
+                        object? value = jObject[typedJsonProperty.PropertyName]?.ToObject(typedJsonProperty.PropertyType, serializer);
                         typedJsonProperty.PropertyInfo.SetValue(tObject, value);
                     }
                     else if (TryMatchNArrayIndex(jKey.Name, out int index))
                     {
                         // 处理 $n 属性
-                        InnerTypedJsonProperty narrayJsonProperty = typedJsonProperties.Single(e => e.IsNArrayProperty);
+                        InnerTypedJsonProperty narrayJsonProperty = typedJsonProperties.Single(e => e.PropertyIsNArray);
                         object? value = narrayJsonProperty.PropertyInfo.GetValue(tObject);
 
                         Array array = CreateOrExpandNArray(value, narrayJsonProperty.PropertyType.GetElementType()!, index + 1);
                         object? element = CreateOrUpdateNArrayElement(array, index, jKey.Name, jKey.Value, serializer);
                         narrayJsonProperty.PropertyInfo.SetValue(tObject, array);
                     }
-                    else if (serializer?.MissingMemberHandling == MissingMemberHandling.Error)
+                    else if (serializer.MissingMemberHandling == MissingMemberHandling.Error)
                     {
                         throw new JsonSerializationException($"Could not find member `{jKey.Name}` on object of type `{objectType.Name}`.");
                     }
@@ -182,11 +189,16 @@ namespace Newtonsoft.Json.Converters
                     .Select(p =>
                     {
                         string name = p.GetCustomAttribute<JsonPropertyAttribute>(inherit: true)?.PropertyName ?? p.Name;
+                        JsonConverter converter = p.GetCustomAttributes<JsonConverterAttribute>(inherit: true)
+                            .OrderByDescending(attr => attr.IsDefaultAttribute())
+                            .Select(attr => (JsonConverter)Activator.CreateInstance(attr.ConverterType, attr.ConverterParameters)!)
+                            .FirstOrDefault();
                         return new InnerTypedJsonProperty
                         (
                             propertyName: name,
                             propertyInfo: p,
-                            isNArrayProperty: PROPERTY_NAME_NARRAY.Equals(name) && p.PropertyType.IsArray && p.PropertyType.GetElementType()!.IsClass
+                            propertyIsNArray: PROPERTY_NAME_NARRAY.Equals(name) && p.PropertyType.IsArray && p.PropertyType.GetElementType()!.IsClass,
+                            jsonConverter: converter
                         );
                     })
                     .OrderBy(e => e.PropertyInfo.GetCustomAttribute<JsonPropertyAttribute>(inherit: true)?.Order)
@@ -232,7 +244,7 @@ namespace Newtonsoft.Json.Converters
             return src;
         }
 
-        private static object CreateOrUpdateNArrayElement(Array array, int index, string jKey, JToken? jValue, JsonSerializer? serializer = null)
+        private static object CreateOrUpdateNArrayElement(Array array, int index, string jKey, JToken? jValue, JsonSerializer serializer)
         {
             if (array == null) throw new ArgumentNullException(nameof(array));
             if (index < 0) throw new ArgumentOutOfRangeException(nameof(index));
@@ -263,11 +275,10 @@ namespace Newtonsoft.Json.Converters
                 .SingleOrDefault(p => string.Equals(p.PropertyName.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, index.ToString()), jKey));
             if (typedJsonProperty != null)
             {
-                serializer = serializer ?? JsonSerializer.CreateDefault();
-                foreach (JsonConverterAttribute attribute in typedJsonProperty.PropertyInfo.GetCustomAttributes<JsonConverterAttribute>(inherit: true))
+                if (typedJsonProperty.JsonConverter != null)
                 {
-                    JsonConverter converter = (JsonConverter)Activator.CreateInstance(attribute.ConverterType, attribute.ConverterParameters)!;
-                    serializer.Converters.Add(converter);
+                    serializer = JsonSerializer.CreateDefault(serializer.ExtractSerializerSettings());
+                    serializer.Converters.Add(typedJsonProperty.JsonConverter);
                 }
 
                 object? obj = jValue?.ToObject(typedJsonProperty.PropertyType, serializer);
