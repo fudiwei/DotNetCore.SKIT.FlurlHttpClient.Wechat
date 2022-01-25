@@ -8,6 +8,7 @@
             { 
                 MerchantId = TestConfigs.WechatMerchantId,
                 MerchantSecret = TestConfigs.WechatMerchantSecret,
+                MerchantCertificateBytes = TestConfigs.WechatMerchantCertificateBytes,
                 AppId = TestConfigs.WechatAppId
             });
         }

@@ -21,6 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
                 WechatAppId = config.GetProperty("AppId").GetString()!;
                 WechatMerchantId = config.GetProperty("MerchantId").GetString()!;
                 WechatMerchantSecret = config.GetProperty("MerchantSecret").GetString()!;
+                WechatMerchantCertificateBytes = config.GetProperty("MerchantCertificateBase64String").GetBytesFromBase64();
                 WechatOpenId = config.GetProperty("OpenId").GetString()!;
 
                 ProjectSourceDirectory = jdoc.RootElement.GetProperty("ProjectSourceDirectory").GetString()!;
@@ -35,6 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
         public static readonly string WechatAppId;
         public static readonly string WechatMerchantId;
         public static readonly string WechatMerchantSecret;
+        public static readonly byte[] WechatMerchantCertificateBytes;
         public static readonly string WechatOpenId;
 
         public static readonly string ProjectSourceDirectory;
