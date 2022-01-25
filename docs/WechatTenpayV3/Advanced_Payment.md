@@ -41,4 +41,4 @@ var paramMap = client.GenerateParametersForJsapiPayRequest(request.AppId, respon
 
 -   生成客户端 JSAPI / 小程序调起支付所需的参数字典：`GenerateParametersForJsapiPayRequest`
 
--   生成 APP 调起支付所需的参数字典：`GenerateParametersForAppPayRequest`
+-   生成客户端 APP 调起支付所需的参数字典：`GenerateParametersForAppPayRequest`
