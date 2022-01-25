@@ -60,5 +60,12 @@
         [Newtonsoft.Json.JsonProperty("code_url")]
         [System.Text.Json.Serialization.JsonPropertyName("code_url")]
         public string? CodeUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置支付跳转链接。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mweb_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("mweb_url")]
+        public string? MobileWebUrl { get; set; }
     }
 }

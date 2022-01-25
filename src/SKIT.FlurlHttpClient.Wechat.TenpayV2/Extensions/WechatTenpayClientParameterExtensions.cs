@@ -306,7 +306,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <param name="idCardNumber"></param>
         /// <param name="outerId"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForMiniProgramPAPPayEntrust(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, string clientIp, string? deviceId, string? userMobile, string? userEmail, string? userQQ, string? openId, string? idCardNumber, string? outerId)
+        public static IDictionary<string, string> GenerateParametersForMiniProgramPAPPayPartnerEntrust(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, string clientIp, string? deviceId, string? userMobile, string? userEmail, string? userQQ, string? openId, string? idCardNumber, string? outerId)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
