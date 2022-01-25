@@ -2,6 +2,8 @@
 
 基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/) API v3 版客户端。
 
+如需微信支付 v2 版 API 客户端，请移步 [`SKIT.FlurlHttpClient.WechantTenpayV2`](../WechatTenpayV2/README.md) 模块。
+
 ---
 
 ## 功能
