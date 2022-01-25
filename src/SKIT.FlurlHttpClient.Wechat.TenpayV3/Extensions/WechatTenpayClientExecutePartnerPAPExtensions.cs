@@ -24,6 +24,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            if (request.MerchantId == null)
+                request.MerchantId = client.Credentials.MerchantId;
+
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "partner-papay", "contracts", request.ContractId, "notify");
 

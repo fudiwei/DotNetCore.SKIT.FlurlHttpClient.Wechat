@@ -3,46 +3,26 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 {
     /// <summary>
-    /// <para>表示退款结果通知的模型。</para>
+    /// <para>表示扣款服务扣款结果通知的模型。</para>
     /// </summary>
     [Newtonsoft.Json.JsonConverter(typeof(Converters.EventClassNewtonsoftJsonConverter))]
     [System.Text.Json.Serialization.JsonConverter(typeof(Converters.EventClassSystemTextJsonConverter))]
-    public class OrderEvent : WechatTenpayEvent
+    public class PAPOrderEvent : WechatTenpayEvent
     {
         public static new class Types
         {
-            public class Coupon
+            public class Coupon : OrderEvent.Types.Coupon
             {
-                /// <summary>
-                /// 获取或设置代金券 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_id_$n")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_id_$n")]
-                public string CouponId { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置代金券类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_type_$n")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_type_$n")]
-                public string CouponType { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置代金券金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_fee_$n")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_fee_$n")]
-                public int CouponFee { get; set; }
             }
         }
 
         internal static class Converters
         {
-            internal class EventClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<OrderEvent>
+            internal class EventClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<PAPOrderEvent>
             {
             }
 
-            internal class EventClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<OrderEvent>
+            internal class EventClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<PAPOrderEvent>
             {
             }
         }
@@ -99,20 +79,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         public string TradeState { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置交易状态描述。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("trade_state_desc")]
-        [System.Text.Json.Serialization.JsonPropertyName("trade_state_desc")]
-        public string TradeStateDescription { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置交易类型。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("trade_type")]
-        [System.Text.Json.Serialization.JsonPropertyName("trade_type")]
-        public string TradeType { get; set; } = default!;
-
-        /// <summary>
         /// 获取或设置付款银行。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_type")]
@@ -133,14 +99,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         [Newtonsoft.Json.JsonProperty("fee_type")]
         [System.Text.Json.Serialization.JsonPropertyName("fee_type")]
         public string? FeeType { get; set; }
-
-        /// <summary>
-        /// 获取或设置应结订单金额（单位：分）。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("settlement_total_fee")]
-        [System.Text.Json.Serialization.JsonPropertyName("settlement_total_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public int? SettlementFee { get; set; }
 
         /// <summary>
         /// 获取或设置代金券金额。
@@ -209,5 +167,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         [System.Text.Json.Serialization.JsonPropertyName("time_end")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
         public DateTimeOffset? EndTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置委托代扣协议 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("contract_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
+        public string ContractId { get; set; } = default!;
     }
 }

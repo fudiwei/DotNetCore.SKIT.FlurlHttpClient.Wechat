@@ -109,5 +109,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             return await client.SendRequestWithXmlAsync<Models.DeletePAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /papay/querycontract 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_7.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPAPPayContractResponse> ExecuteGetPAPPayContractAsync(this WechatTenpayClient client, Models.GetPAPPayContractRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "papay", "querycontract");
+
+            return await client.SendRequestWithXmlAsync<Models.GetPAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }
