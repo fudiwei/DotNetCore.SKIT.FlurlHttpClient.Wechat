@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage Tenpay WechatPay WeixinPay Wxpay 微信 微信支付 微信商户</PackageTags>
-        <Version>1.0.0-beta.1</Version>
+        <Version>1.0.0-beta.2</Version>
         <Description>基于 Flurl.Http 的微信支付 API v2 版客户端，支持普通商户、境内服务商、银行服务商模式，仅包含微信支付未提供 v3 版 API 的部分功能。如需微信支付 v3 版 API 客户端，欢迎使用 `SKIT.FlurlHttpClient.Wechat.TenpayV3`。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
