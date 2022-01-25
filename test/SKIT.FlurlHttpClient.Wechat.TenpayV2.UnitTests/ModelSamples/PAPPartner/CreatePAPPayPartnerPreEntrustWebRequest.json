@@ -1,0 +1,15 @@
+﻿{
+    "appid": "wxcbda96de0b165486",
+    "mch_id": "1200009811",
+    "sub_appid": "wxcbda96de0b165489",
+    "sub_mch_id": "1900000109",
+    "plan_id": "12535",
+    "contract_code": "100000",
+    "request_serial": "1000",
+    "contract_display_account": "微信代扣",
+    "notify_url": "https://weixin.qq.com",
+    "version": "1.0",
+    "sign": "C380BEC2BFD727A4B6845133519F3AD6",
+    "timestamp": "1414488825",
+    "return_app": "Y"
+}

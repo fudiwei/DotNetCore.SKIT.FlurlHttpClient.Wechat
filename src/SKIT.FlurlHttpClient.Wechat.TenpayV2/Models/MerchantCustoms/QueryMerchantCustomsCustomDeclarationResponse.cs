@@ -53,6 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("duty_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("duty_$n")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? Duty { get; set; }
 
                 /// <summary>
@@ -74,6 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transport_fee_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("transport_fee_$n")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? TransportFee { get; set; }
 
                 /// <summary>
@@ -81,6 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_fee_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_fee_$n")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? ProductFee { get; set; }
 
                 /// <summary>
@@ -120,6 +123,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         }
 
         /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mch_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
+        public override string? MerchantId { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public override string? AppId { get; set; }
+
+        /// <summary>
         /// 获取或设置微信支付订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
@@ -138,7 +155,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("count")]
         [System.Text.Json.Serialization.JsonPropertyName("count")]
-        public int RecordCount { get; set; }
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public int TotalRecordCount { get; set; }
 
         /// <summary>
         /// 获取或设置验核机构。

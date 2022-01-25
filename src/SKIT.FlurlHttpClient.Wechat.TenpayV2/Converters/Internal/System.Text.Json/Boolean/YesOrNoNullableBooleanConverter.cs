@@ -18,7 +18,7 @@ namespace System.Text.Json.Converters
             {
                 return false;
             }
-            else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
+            else if (reader.TokenType == JsonTokenType.String)
             {
                 string? value = reader.GetString();
                 if (value == null)

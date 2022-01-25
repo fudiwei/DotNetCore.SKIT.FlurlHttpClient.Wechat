@@ -6,6 +6,20 @@
     public class CreateMerchantCustomsCustomDeclarationRequest : WechatTenpaySignableRequest
     {
         /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mch_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
+        public override string? MerchantId { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public override string? AppId { get; set; }
+
+        /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
@@ -45,6 +59,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("duty")]
         [System.Text.Json.Serialization.JsonPropertyName("duty")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int? Duty { get; set; }
 
         /// <summary>
@@ -66,6 +81,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("order_fee")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int? OrderFee { get; set; }
 
         /// <summary>
@@ -73,6 +89,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transport_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("transport_fee")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int? TransportFee { get; set; }
 
         /// <summary>
@@ -80,6 +97,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("product_fee")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int? ProductFee { get; set; }
 
         /// <summary>

@@ -39,6 +39,33 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         }
 
         /// <summary>
+        /// 用指定的微信商户号和微信商户 API 密钥初始化 <see cref="WechatTenpayClient"/> 类的新实例。
+        /// </summary>
+        /// <param name="merchantId">微信商户号。</param>
+        /// <param name="merchantSecret">微信商户 API 密钥。</param>
+        public WechatTenpayClient(string merchantId, string merchantSecret)
+            : this(new WechatTenpayClientOptions() { MerchantId = merchantId, MerchantSecret = merchantSecret })
+        {
+            if (merchantId == null) throw new ArgumentNullException(nameof(merchantId));
+            if (merchantSecret == null) throw new ArgumentNullException(nameof(merchantSecret));
+        }
+
+        /// <summary>
+        /// 用指定的微信商户号、微信商户 API 密钥和微信商户证书内容初始化 <see cref="WechatTenpayClient"/> 类的新实例。
+        /// </summary>
+        /// <param name="merchantId">微信商户号。</param>
+        /// <param name="merchantSecret">微信商户 API 密钥。</param>
+        /// <param name="merchantCertificateBytes">微信商户 API 证书内容字节数组。</param>
+        /// <param name="merchantCertificatePassword">微信商户 API 证书导入密码。</param>
+        public WechatTenpayClient(string merchantId, string merchantSecret, byte[] merchantCertificateBytes, string? merchantCertificatePassword = null)
+            : this(new WechatTenpayClientOptions() { MerchantId = merchantId, MerchantSecret = merchantSecret, MerchantCertificateBytes = merchantCertificateBytes, MerchantCertificatePassword = merchantCertificatePassword })
+        {
+            if (merchantId == null) throw new ArgumentNullException(nameof(merchantId));
+            if (merchantSecret == null) throw new ArgumentNullException(nameof(merchantSecret));
+            if (merchantCertificateBytes == null) throw new ArgumentNullException(nameof(merchantCertificateBytes));
+        }
+
+        /// <summary>
         /// 使用当前客户端生成一个新的 <see cref="IFlurlRequest"/> 对象。
         /// </summary>
         /// <param name="request"></param>
@@ -73,10 +100,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
                 if (signableRequest.Signature == null)
                 {
-                    string signType = signableRequest.SignType ?? Constants.SignTypes.MD5;
-
-                    // TODO: 生成签名算法
-                    throw new NotImplementedException();
+                    try
+                    {
+                        signableRequest.Signature = Utilities.RequestSigner.SignFromJson(
+                            json: JsonSerializer.Serialize(signableRequest),
+                            secret: Credentials.MerchantSecret,
+                            signType: signableRequest.SignType
+                        );
+                    }
+                    catch (Exception ex)
+                    {
+                        throw new Exceptions.WechatTenpayRequestSignatureException("Generate signature of request failed. Please see the `InnerException` for more details.", ex);
+                    }
                 }
             }
 

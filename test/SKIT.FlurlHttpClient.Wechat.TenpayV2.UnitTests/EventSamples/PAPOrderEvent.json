@@ -1,0 +1,21 @@
+﻿{
+    "appid": "wx2421b1c4370ec43b",
+    "attach": "支付测试",
+    "bank_type": "CFT",
+    "fee_type": "CNY",
+    "is_subscribe": "Y",
+    "mch_id": "10000100",
+    "sub_mch_id": "10000100",
+    "nonce_str": "5d2b6c2a8db53831f7eda20af46e531c",
+    "openid": "oUpF8uMEb4qRXf22hE3X68TekukE",
+    "out_trade_no": "1409811653",
+    "cash_fee": "1000",
+    "trade_state": "SUCCESS",
+    "result_code": "SUCCESS",
+    "return_code": "SUCCESS",
+    "sign": "B552ED6B279343CB493C5DD0D78AB241",
+    "time_end": "20140903131540",
+    "total_fee": "1",
+    "transaction_id": "1004400740201409030005092168",
+    "contract_id": "Wx15463511252015071056489715"
+}

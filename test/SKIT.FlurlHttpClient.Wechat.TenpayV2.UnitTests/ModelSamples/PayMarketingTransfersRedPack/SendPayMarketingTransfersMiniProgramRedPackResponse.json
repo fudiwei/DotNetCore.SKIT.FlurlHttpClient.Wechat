@@ -1,0 +1,14 @@
+﻿{
+    "return_code": "SUCCESS",
+    "return_msg": "发放成功",
+    "result_code": "SUCCESS",
+    "err_code": "SUCCESS",
+    "err_code_des": "发放成功",
+    "mch_billno": "2334580734271081478888000026",
+    "mch_id": "11475856",
+    "wxappid": "wxd27ebc41b85ce36d",
+    "re_openid": "oeDV3t7xy1IkfYFzgOsCZvdRzx3U",
+    "total_amount": "10",
+    "send_listid": "1000041701201609263000000204000",
+    "package": "sendid=242e8abd163d300019b2cae74ba8e8c06e3f0e51ab84d16b3c80decd22a5b672&ver=8&sign=4110d649a5aef52dd6b95654ddf91ca7d5411ac159ace4e1a766b7d3967a1c3dfe1d256811445a4abda2d9cfa4a9b377a829258bd00d90313c6c346f2349fe5d&mchid=11475856&appid=wxd27ebc41b85ce36d"
+}

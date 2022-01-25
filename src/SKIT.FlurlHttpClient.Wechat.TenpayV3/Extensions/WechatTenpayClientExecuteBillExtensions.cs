@@ -155,7 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, request.DownloadUrl);
-            flurlReq.Url = new Url(new Uri(request.DownloadUrl));
+            flurlReq.Url = Url.Parse(request.DownloadUrl);
 
             return await client.SendRequestWithJsonAsync<Models.DownloadBillFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

@@ -91,18 +91,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         public virtual string? ResultCode { get; set; }
 
         /// <summary>
+        /// 获取或设置业务结果描述。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("result_msg")]
+        [System.Text.Json.Serialization.JsonPropertyName("result_msg")]
+        public virtual string? ResultMessage { get; set; }
+
+        /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("mch_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("mch_id")]
-        public virtual string? MerchantId { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public abstract string? MerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public virtual string? AppId { get; set; }
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public abstract string? AppId { get; set; }
 
         /// <summary>
         /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200、且 return_code 值 SUCCESS）。
@@ -110,13 +117,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <returns></returns>
         public virtual bool IsSuccessful()
         {
-            bool ret = RawStatus == 200 && "SUCCESS".Equals(ReturnCode) && string.IsNullOrEmpty(ErrorCode);
-            if (ret)
-            {
-                return string.IsNullOrEmpty(ResultCode) || "SUCCESS".Equals(ResultCode);
-            }
-
-            return false;
+            bool ret1 = RawStatus == 200 && "SUCCESS".Equals(ReturnCode);
+            bool ret2 = string.IsNullOrEmpty(ErrorCode) || "0".Equals(ErrorCode);
+            bool ret3 = string.IsNullOrEmpty(ResultCode) || "SUCCESS".Equals(ResultCode);
+            return ret1 && ret2 && ret3;
         }
     }
 

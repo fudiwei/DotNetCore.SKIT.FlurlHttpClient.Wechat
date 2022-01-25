@@ -7,7 +7,8 @@
             Instance = new WechatTenpayClient(new WechatTenpayClientOptions()
             { 
                 MerchantId = TestConfigs.WechatMerchantId,
-                MerchantSecret = TestConfigs.WechatMerchantSecret
+                MerchantSecret = TestConfigs.WechatMerchantSecret,
+                AppId = TestConfigs.WechatAppId
             });
         }
 
