@@ -150,6 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_4 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_3.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_13.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=9_4&index=5&p=202 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -180,6 +181,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_5 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_14.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=9_5&index=6&p=202 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -211,6 +213,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_6 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_1.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_11.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=9_6&index=3&p=202 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

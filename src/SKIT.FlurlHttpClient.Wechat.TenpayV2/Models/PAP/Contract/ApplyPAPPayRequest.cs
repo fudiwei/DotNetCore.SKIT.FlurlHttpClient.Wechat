@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /pay/pappayapply 接口的请求。</para>
     /// </summary>
-    public class CreatePAPPayApplyRequest : WechatTenpaySignableRequest
+    public class ApplyPAPPayRequest : WechatTenpaySignableRequest
     {
         public static class Types
         {

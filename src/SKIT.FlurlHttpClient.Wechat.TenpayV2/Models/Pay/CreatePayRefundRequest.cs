@@ -68,7 +68,7 @@
         [Newtonsoft.Json.JsonProperty("refund_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("refund_fee")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public int RefundTotalFee { get; set; }
+        public int RefundFee { get; set; }
 
         /// <summary>
         /// 获取或设置货币类型。

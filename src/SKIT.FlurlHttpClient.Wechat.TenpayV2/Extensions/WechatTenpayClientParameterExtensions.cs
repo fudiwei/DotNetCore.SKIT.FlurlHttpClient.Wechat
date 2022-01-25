@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <param name="notifyUrl"></param>
         /// <param name="requireReturnWeb"></param>
         /// <returns></returns>
-        public static string GenerateParameterizedUrlForForMediaPlatformPAPPayEntrustWeb(this WechatTenpayClient client, string appId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, bool? requireReturnWeb)
+        public static string GenerateParameterizedUrlForMediaPlatformPAPPayEntrustWeb(this WechatTenpayClient client, string appId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, bool? requireReturnWeb)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
@@ -219,7 +219,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <param name="notifyUrl"></param>
         /// <param name="requireReturnWeb"></param>
         /// <returns></returns>
-        public static string GenerateParameterizedUrlForForMediaPlatformPAPPayPartnerEntrustWeb(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, bool? requireReturnWeb)
+        public static string GenerateParameterizedUrlForMediaPlatformPAPPayPartnerEntrustWeb(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, bool? requireReturnWeb)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
@@ -262,7 +262,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <param name="notifyUrl"></param>
         /// <param name="outerId"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForForMiniProgramPAPPayEntrust(this WechatTenpayClient client, string appId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, string? outerId)
+        public static IDictionary<string, string> GenerateParametersForMiniProgramPAPPayEntrust(this WechatTenpayClient client, string appId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, string? outerId)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
@@ -306,7 +306,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <param name="idCardNumber"></param>
         /// <param name="outerId"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForForMiniProgramPAPPayEntrust(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, string clientIp, string? deviceId, string? userMobile, string? userEmail, string? userQQ, string? openId, string? idCardNumber, string? outerId)
+        public static IDictionary<string, string> GenerateParametersForMiniProgramPAPPayEntrust(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, int planId, string contractCode, long requestSerialNumber, string contractDisplayAccount, string notifyUrl, string clientIp, string? deviceId, string? userMobile, string? userEmail, string? userQQ, string? openId, string? idCardNumber, string? outerId)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
@@ -335,6 +335,138 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             paramsMap["sign"] = Utilities.RequestSigner.Sign(paramsMap, client.Credentials.MerchantSecret, Constants.SignTypes.MD5);
 
             return new ReadOnlyDictionary<string, string>(paramsMap!);
+        }
+
+        /// <summary>
+        /// <para>生成客户端小程序唤起开通车主服务页面所需的参数字典。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_101&index=10&p=202 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="subMerchantId"></param>
+        /// <param name="subAppId"></param>
+        /// <param name="openId"></param>
+        /// <param name="subOpenId"></param>
+        /// <param name="tradeScene"></param>
+        /// <param name="plateNumber"></param>
+        /// <param name="channelType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static IDictionary<string, string> GenerateParametersForMiniProgramVehiclePAPPayPartnerAuth(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, string? openId, string? subOpenId, string tradeScene, string? plateNumber, string? channelType)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+
+            string nonce = Guid.NewGuid().ToString("N");
+            string signType = Constants.SignTypes.HMAC_SHA256;
+            IDictionary<string, string?> paramsMap = new Dictionary<string, string?>()
+            {
+                { "nonce_str", nonce },
+                { "appid", appId },
+                { "mch_id", client.Credentials.MerchantId },
+                { "sub_appid", subAppId },
+                { "sub_mch_id", subMerchantId },
+                { "sign_type", signType },
+                { "openid", openId },
+                { "sub_openid", subOpenId },
+                { "trade_scene", tradeScene },
+                { "plate_number", plateNumber },
+                { "channel_type", channelType }
+            };
+            paramsMap["sign"] = Utilities.RequestSigner.Sign(paramsMap, client.Credentials.MerchantSecret, signType);
+
+            return new ReadOnlyDictionary<string, string>(paramsMap!);
+        }
+
+        /// <summary>
+        /// <para>生成客户端 App 唤起开通车主服务页面所需的参数字典。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_101&index=10&p=202 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="subMerchantId"></param>
+        /// <param name="subAppId"></param>
+        /// <param name="openId"></param>
+        /// <param name="subOpenId"></param>
+        /// <param name="tradeScene"></param>
+        /// <param name="plateNumber"></param>
+        /// <param name="channelType"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static IDictionary<string, string> GenerateParametersForAppVehiclePAPPayPartnerAuth(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, string? openId, string? subOpenId, string tradeScene, string? plateNumber, string? channelType)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+
+            return GenerateParametersForMiniProgramVehiclePAPPayPartnerAuth(
+                client,
+                appId: appId,
+                subMerchantId: subMerchantId,
+                subAppId: subAppId,
+                openId: openId,
+                subOpenId: subOpenId,
+                tradeScene: tradeScene,
+                plateNumber: plateNumber,
+                channelType: channelType
+            );
+        }
+
+        /// <summary>
+        /// <para>生成客户端小程序唤起免密支付升级无感支付页面所需的参数字典。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_102&index=11&p=202 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="subMerchantId"></param>
+        /// <param name="subAppId"></param>
+        /// <param name="openId"></param>
+        /// <param name="plateNumber"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static IDictionary<string, string> GenerateParametersForMiniProgramVehiclePAPPayPartnerNoSensePayment(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, string? openId, string? plateNumber)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+
+            string nonce = Guid.NewGuid().ToString("N");
+            string signType = Constants.SignTypes.HMAC_SHA256;
+            IDictionary<string, string?> paramsMap = new Dictionary<string, string?>()
+            {
+                { "nonce_str", nonce },
+                { "appid", appId },
+                { "mch_id", client.Credentials.MerchantId },
+                { "sub_appid", subAppId },
+                { "sub_mch_id", subMerchantId },
+                { "sign_type", signType },
+                { "openid", openId },
+                { "plate_number", plateNumber }
+            };
+            paramsMap["sign"] = Utilities.RequestSigner.Sign(paramsMap, client.Credentials.MerchantSecret, signType);
+
+            return new ReadOnlyDictionary<string, string>(paramsMap!);
+        }
+
+        /// <summary>
+        /// <para>生成客户端 App 唤起免密支付升级无感支付页面所需的参数字典。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_101&index=10&p=202 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="subMerchantId"></param>
+        /// <param name="subAppId"></param>
+        /// <param name="openId"></param>
+        /// <param name="plateNumber"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static IDictionary<string, string> GenerateParametersForAppVehiclePAPPayPartnerNoSensePayment(this WechatTenpayClient client, string appId, string subMerchantId, string? subAppId, string? openId, string? plateNumber)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+
+            return GenerateParametersForMiniProgramVehiclePAPPayPartnerNoSensePayment(
+                client,
+                appId: appId,
+                subMerchantId: subMerchantId,
+                subAppId: subAppId,
+                openId: openId,
+                plateNumber: plateNumber
+            );
         }
     }
 }

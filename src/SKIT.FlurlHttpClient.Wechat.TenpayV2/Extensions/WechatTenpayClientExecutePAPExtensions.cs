@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CreatePAPPayApplyResponse> ExecuteCreatePAPPayApplyAsync(this WechatTenpayClient client, Models.CreatePAPPayApplyRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ApplyPAPPayResponse> ExecuteApplyPAPPayAsync(this WechatTenpayClient client, Models.ApplyPAPPayRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "pay", "pappayapply");
 
-            return await client.SendRequestWithXmlAsync<Models.CreatePAPPayApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithXmlAsync<Models.ApplyPAPPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

@@ -1,0 +1,11 @@
+﻿{
+    "mch_id": "100000981",
+    "sub_mch_id": "10000100",
+    "appid": "wxcbda96de0b165486",
+    "nonce_str": "5K8264ILTKCH16CQ2502SI8ZNMTM67VS",
+    "sign_type": "HMAC-SHA256",
+    "trade_scene": "PARKING",
+    "sign": "EE088059BBC9141264F8D14293AD6C4BB94CEA8C08AA98FBF93E262D445F8FF5",
+    "openid": " oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
+    "plate_number": "粤A00000"
+}
