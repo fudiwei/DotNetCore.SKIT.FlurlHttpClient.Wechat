@@ -112,7 +112,7 @@ else
 
 -   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
 
--   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Payment.md)
+-   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Parameters.md)
 
 -   [如何扩展额外的 API？](./Advanced_Extensions.md)
 
