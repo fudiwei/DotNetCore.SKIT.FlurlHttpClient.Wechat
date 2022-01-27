@@ -15,7 +15,6 @@ jobs:
       fail-fast: false
       matrix:
         language: [csharp]
-        configuration: [Debug, Release]
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v2
@@ -25,8 +24,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 6.0.x
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v1.0.2
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
       with:
