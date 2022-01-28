@@ -140,7 +140,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("allow_party")]
                                 [System.Text.Json.Serialization.JsonPropertyName("allow_party")]
-                                public int[]? AllowedDepartmentIdList { get; set; }
+                                public long[]? AllowedDepartmentIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置可见标签 ID 列表。
@@ -161,7 +161,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("extra_party")]
                                 [System.Text.Json.Serialization.JsonPropertyName("extra_party")]
-                                public int[]? ExtraDepartmentIdList { get; set; }
+                                public long[]? ExtraDepartmentIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置额外标签 ID 列表。

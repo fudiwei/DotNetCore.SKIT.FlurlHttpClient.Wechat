@@ -237,7 +237,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("openapi_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("openapi_id")]
-                                public int DepartmentId { get; set; }
+                                public long DepartmentId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置成员名称。
@@ -476,7 +476,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("choose_department")]
         [System.Text.Json.Serialization.JsonPropertyName("choose_department")]
-        public int? ApplicantDepartmentId { get; set; }
+        public long? ApplicantDepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置审批模板 ID。

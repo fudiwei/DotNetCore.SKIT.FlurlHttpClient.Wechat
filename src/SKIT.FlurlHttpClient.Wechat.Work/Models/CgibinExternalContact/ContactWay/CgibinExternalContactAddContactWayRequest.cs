@@ -180,7 +180,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("party")]
         [System.Text.Json.Serialization.JsonPropertyName("party")]
-        public IList<int>? DepartmentIdList { get; set; }
+        public IList<long>? DepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否临时会话模式。

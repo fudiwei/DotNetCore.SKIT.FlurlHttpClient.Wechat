@@ -44,6 +44,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("partylist")]
         [System.Text.Json.Serialization.JsonPropertyName("partylist")]
-        public int[] DepartmentIdList { get; set; } = default!;
+        public long[] DepartmentIdList { get; set; } = default!;
     }
 }

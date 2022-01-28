@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("departmentid")]
                 [System.Text.Json.Serialization.JsonPropertyName("departmentid")]
-                public int? DepartmentId { get; set; }
+                public long? DepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置权限。

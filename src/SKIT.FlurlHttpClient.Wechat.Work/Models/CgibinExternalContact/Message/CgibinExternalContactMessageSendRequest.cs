@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("to_party")]
         [System.Text.Json.Serialization.JsonPropertyName("to_party")]
-        public IList<int>? ToDepartmentIdList { get; set; }
+        public IList<long>? ToDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置是否发送给学校的所有家长。

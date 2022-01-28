@@ -28,7 +28,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("main_department")]
                 [System.Text.Json.Serialization.JsonPropertyName("main_department")]
-                public int? AnchorMainDepartmentId { get; set; }
+                public long? AnchorMainDepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播标题。

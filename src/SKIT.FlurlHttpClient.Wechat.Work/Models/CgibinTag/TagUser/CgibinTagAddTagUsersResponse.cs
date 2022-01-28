@@ -19,6 +19,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidparty")]
         [System.Text.Json.Serialization.JsonPropertyName("invalidparty")]
-        public int[]? InvalidDepartmentIdList { get; set; }
+        public long[]? InvalidDepartmentIdList { get; set; }
     }
 }

@@ -210,7 +210,7 @@
         /// 获取或设置部门 ID。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Id", IsNullable = true)]
-        public int? DepartmentId { get; set; }
+        public long? DepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置上级部门 ID。

@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public int DepartmentId { get; set; }
+        public long DepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置是否递归获取子部门成员。

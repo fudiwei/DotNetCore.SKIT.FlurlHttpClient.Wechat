@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_list")]
-                public IList<int>? DepartmentIdList { get; set; }
+                public IList<long>? DepartmentIdList { get; set; }
             }
         }
 

@@ -973,10 +973,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置接收消息的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("toparty")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualIntegerListWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualLongListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("toparty")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualIntegerListWithPipeSplitConverter))]
-        public IList<int>? ToDepartmentIdList { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualLongListWithPipeSplitConverter))]
+        public IList<long>? ToDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的标签 ID 列表。

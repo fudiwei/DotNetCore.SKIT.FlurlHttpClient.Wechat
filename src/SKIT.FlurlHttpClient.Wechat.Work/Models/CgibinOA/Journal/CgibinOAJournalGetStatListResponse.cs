@@ -29,7 +29,7 @@
                         [Newtonsoft.Json.JsonProperty("open_partyid")]
                         [System.Text.Json.Serialization.JsonPropertyName("open_partyid")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int DepartmentId { get; set; }
+                        public long DepartmentId { get; set; }
                     }
 
                     public class Tag

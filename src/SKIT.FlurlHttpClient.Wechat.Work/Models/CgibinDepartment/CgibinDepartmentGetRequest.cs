@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public int DepartmentId { get; set; }
+        public long DepartmentId { get; set; }
     }
 }

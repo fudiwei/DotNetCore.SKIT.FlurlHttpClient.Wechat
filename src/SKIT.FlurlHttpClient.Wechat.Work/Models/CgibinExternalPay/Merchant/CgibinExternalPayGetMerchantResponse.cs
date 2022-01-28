@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("partyid")]
                 [System.Text.Json.Serialization.JsonPropertyName("partyid")]
-                public int[]? DepartmentIdList { get; set; }
+                public long[]? DepartmentIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置标签 ID 列表。

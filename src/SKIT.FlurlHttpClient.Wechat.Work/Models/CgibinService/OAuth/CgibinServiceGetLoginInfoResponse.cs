@@ -76,7 +76,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
-                        public int DepartmentId { get; set; }
+                        public long DepartmentId { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否有可写权限。
