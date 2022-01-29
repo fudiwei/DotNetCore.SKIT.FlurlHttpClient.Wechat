@@ -45,6 +45,11 @@ namespace System.Text.Json.Converters
 
         private static readonly Hashtable _mappedTypeJsonProperties = new Hashtable();
 
+        public override bool CanConvert(Type typeToConvert)
+        {
+            return typeToConvert.IsClass && !typeToConvert.IsAbstract && !typeToConvert.IsInterface;
+        }
+
         public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             if (reader.TokenType == JsonTokenType.Null)
@@ -130,12 +135,12 @@ namespace System.Text.Json.Converters
                     {
                         // TODO: 优化
                         tmpOptions.Converters.Remove(typedJsonProperty.JsonConverter);
-                        writer.WritePropertyName(propertyName);
+                        writer.WritePropertyName(tmpOptions.PropertyNamingPolicy?.ConvertName(propertyName) ?? propertyName);
                         writer.WriteStringValue(JsonSerializer.Serialize(propertyValue, tmpOptions));
                     }
                     else
                     {
-                        writer.WritePropertyName(propertyName);
+                        writer.WritePropertyName(tmpOptions.PropertyNamingPolicy?.ConvertName(propertyName) ?? propertyName);
                         writer.WriteRawValue(JsonSerializer.Serialize(propertyValue, tmpOptions), skipInputValidation: true);
                     }
                 }
@@ -155,13 +160,14 @@ namespace System.Text.Json.Converters
                         JsonObject jSubObject = JsonSerializer.SerializeToNode(element, tmpOptions)!.AsObject();
                         foreach (KeyValuePair<string, JsonNode?> jSubProperty in jSubObject)
                         {
-                            writer.WritePropertyName(jSubProperty.Key.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, i.ToString()));
-                            writer.WriteRawValue(jSubProperty.Value?.ToJsonString(tmpOptions)!, skipInputValidation: true);
+                            string subPropertyName = jSubProperty.Key.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, i.ToString());
+                            JsonNode? subPropertyValue = jSubProperty.Value;
+                            writer.WritePropertyName(tmpOptions.PropertyNamingPolicy?.ConvertName(subPropertyName) ?? subPropertyName);
+                            writer.WriteRawValue(subPropertyValue?.ToJsonString(tmpOptions)!, skipInputValidation: true);
                         }
                     }
                 }
             }
-
             writer.WriteEndObject();
         }
 

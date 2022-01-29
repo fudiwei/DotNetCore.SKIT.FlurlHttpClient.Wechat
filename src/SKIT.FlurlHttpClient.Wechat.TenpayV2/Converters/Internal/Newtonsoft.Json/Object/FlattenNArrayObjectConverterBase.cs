@@ -17,7 +17,7 @@ namespace Newtonsoft.Json.Converters
         public const string PROPERTY_NAME_NARRAY = "#n";
     }
 
-    internal abstract partial class FlattenNArrayObjectConverterBase<T> : JsonConverter<T?>
+    internal abstract partial class FlattenNArrayObjectConverterBase<T> : JsonConverter
         where T : class, new()
     {
         private sealed class InnerTypedJsonPropertyInfo
@@ -59,7 +59,12 @@ namespace Newtonsoft.Json.Converters
             get { return true; }
         }
 
-        public override T? ReadJson(JsonReader reader, Type objectType, T? existingValue, bool hasExistingValue, JsonSerializer serializer)
+        public override bool CanConvert(Type objectType)
+        {
+            return objectType.IsClass && !objectType.IsAbstract && !objectType.IsInterface;
+        }
+
+        public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.Null)
             {
@@ -117,7 +122,7 @@ namespace Newtonsoft.Json.Converters
             throw new JsonSerializationException();
         }
 
-        public override void WriteJson(JsonWriter writer, T? value, JsonSerializer serializer)
+        public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
             if (value is null)
             {
