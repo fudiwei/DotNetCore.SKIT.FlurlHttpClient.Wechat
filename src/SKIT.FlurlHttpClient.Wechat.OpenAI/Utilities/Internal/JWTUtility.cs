@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Utilities
 {
-    internal static class JWTUtility
+    internal static class JwtUtility
     {
         private static readonly Lazy<IJwtEncoder> _encoder = new Lazy<IJwtEncoder>(() =>
         {

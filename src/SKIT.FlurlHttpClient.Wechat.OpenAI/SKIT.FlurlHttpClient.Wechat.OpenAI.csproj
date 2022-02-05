@@ -40,7 +40,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="JWT" Version="8.8.1" />
+        <PackageReference Include="JWT" Version="8.9.0" />
 		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.2.0" />
 	</ItemGroup>
 

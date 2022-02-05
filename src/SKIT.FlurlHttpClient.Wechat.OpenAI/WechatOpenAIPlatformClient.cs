@@ -139,7 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             {
                 if (data is WechatOpenAIPlatformRequest.Serialization.IEncryptedUrlEncoded)
                 {
-                    string jwt = Utilities.JWTUtility.EncodeWithHS256(payload: data, secret: Credentials.EncodingAESKey!);
+                    string jwt = Utilities.JwtUtility.EncodeWithHS256(payload: data, secret: Credentials.EncodingAESKey!);
                     data = new { query = jwt };
                 }
 
