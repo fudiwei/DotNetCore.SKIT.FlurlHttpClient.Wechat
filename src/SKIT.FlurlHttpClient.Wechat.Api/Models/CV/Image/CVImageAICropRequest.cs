@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cv/img/aicrop 接口的请求。</para>
     /// </summary>
-    public class CVImageAICropRequest : CVImageQrcodeRequest
+    public class CVImageAICropRequest : CVImageQrcodeRequest, IMapResponse<CVImageAICropRequest, CVImageAICropResponse>
     {
         /// <summary>
         /// 获取或设置裁剪宽高比列表。

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /sns/component/jscode2session 接口的请求。</para>
     /// </summary>
-    public class SnsComponentJsCode2SessionRequest : SnsJsCode2SessionRequest
+    public class SnsComponentJsCode2SessionRequest : SnsJsCode2SessionRequest, IMapResponse<SnsComponentJsCode2SessionRequest, SnsComponentJsCode2SessionResponse>
     {
         /// <summary>
         /// 获取或设置微信 AppId。
