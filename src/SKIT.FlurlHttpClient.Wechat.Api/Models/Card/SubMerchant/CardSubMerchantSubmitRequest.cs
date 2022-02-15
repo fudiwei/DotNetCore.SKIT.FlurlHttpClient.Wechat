@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/submerchant/submit 接口的请求。</para>
     /// </summary>
-    public class CardSubMerchantSubmitRequest : WechatApiRequest
+    public class CardSubMerchantSubmitRequest : WechatApiRequest, IMapResponse<CardSubMerchantSubmitRequest, CardSubMerchantSubmitResponse>
     {
         public static class Types
         {

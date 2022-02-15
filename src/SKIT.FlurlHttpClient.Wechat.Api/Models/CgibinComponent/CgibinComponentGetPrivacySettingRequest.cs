@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/getprivacysetting 接口的请求。</para>
     /// </summary>
-    public class CgibinComponentGetPrivacySettingRequest : WechatApiRequest
+    public class CgibinComponentGetPrivacySettingRequest : WechatApiRequest, IMapResponse<CgibinComponentGetPrivacySettingRequest, CgibinComponentGetPrivacySettingResponse>
     {
         public static class Types
         {

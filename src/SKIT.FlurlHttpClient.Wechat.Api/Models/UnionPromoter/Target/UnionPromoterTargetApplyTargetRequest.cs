@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /union/promoter/target/apply_target 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterTargetApplyTargetRequest : WechatApiRequest
+    public class UnionPromoterTargetApplyTargetRequest : WechatApiRequest, IMapResponse<UnionPromoterTargetApplyTargetRequest, UnionPromoterTargetApplyTargetResponse>
     {
         /// <summary>
         /// 获取或设置定向计划 ID。

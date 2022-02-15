@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/unbind_tester 接口的请求。</para>
     /// </summary>
-    public class WxaUnbindTesterRequest : WechatApiRequest
+    public class WxaUnbindTesterRequest : WechatApiRequest, IMapResponse<WxaUnbindTesterRequest, WxaUnbindTesterResponse>
     {
         /// <summary>
         /// 获取或设置体验者微信号。与字段 <see cref="UserString"/> 二选一。

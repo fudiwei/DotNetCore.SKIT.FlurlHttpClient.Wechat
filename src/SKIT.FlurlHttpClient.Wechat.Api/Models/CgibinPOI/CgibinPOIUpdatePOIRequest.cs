@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/poi/updatepoi 接口的请求。</para>
     /// </summary>
-    public class CgibinPOIUpdatePOIRequest : WechatApiRequest
+    public class CgibinPOIUpdatePOIRequest : WechatApiRequest, IMapResponse<CgibinPOIUpdatePOIRequest, CgibinPOIUpdatePOIResponse>
     {
         public static class Types
         {

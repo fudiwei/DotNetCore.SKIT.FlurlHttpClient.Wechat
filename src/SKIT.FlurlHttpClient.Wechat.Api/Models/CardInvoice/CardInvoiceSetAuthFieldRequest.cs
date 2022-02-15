@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/invoice/setbizattr?action=set_auth_field 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceSetAuthFieldRequest : WechatApiRequest
+    public class CardInvoiceSetAuthFieldRequest : WechatApiRequest, IMapResponse<CardInvoiceSetAuthFieldRequest, CardInvoiceSetAuthFieldResponse>
     {
         public static class Types
         {

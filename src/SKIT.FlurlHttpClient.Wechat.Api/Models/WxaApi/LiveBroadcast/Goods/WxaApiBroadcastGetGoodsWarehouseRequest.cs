@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/getgoodswarehouse 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastGetGoodsWarehouseRequest : WechatApiRequest
+    public class WxaApiBroadcastGetGoodsWarehouseRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastGetGoodsWarehouseRequest, WxaApiBroadcastGetGoodsWarehouseResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID 列表。

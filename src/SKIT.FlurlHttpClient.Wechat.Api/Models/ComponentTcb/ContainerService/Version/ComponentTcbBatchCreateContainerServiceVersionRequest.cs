@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /componenttcb/batchcreatecsversion 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbBatchCreateContainerServiceVersionRequest : WechatApiRequest
+    public class ComponentTcbBatchCreateContainerServiceVersionRequest : WechatApiRequest, IMapResponse<ComponentTcbBatchCreateContainerServiceVersionRequest, ComponentTcbBatchCreateContainerServiceVersionResponse>
     {
         public static class Types
         {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cv/ocr/comm 接口的请求。</para>
     /// </summary>
-    public class CVOCRCommonRequest : WechatApiRequest
+    public class CVOCRCommonRequest : WechatApiRequest, IMapResponse<CVOCRCommonRequest, CVOCRCommonResponse>
     {
         /// <summary>
         /// 获取或设置要识别的图片 URL。与字段 <see cref="ImageFileBytes"/> 二选一。

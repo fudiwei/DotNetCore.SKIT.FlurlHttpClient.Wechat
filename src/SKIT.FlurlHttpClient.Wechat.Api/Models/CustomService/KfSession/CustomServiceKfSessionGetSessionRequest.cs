@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /customservice/kfsession/getsession 接口的请求。</para>
     /// </summary>
-    public class CustomServiceKfSessionGetSessionRequest : WechatApiRequest
+    public class CustomServiceKfSessionGetSessionRequest : WechatApiRequest, IMapResponse<CustomServiceKfSessionGetSessionRequest, CustomServiceKfSessionGetSessionResponse>
     {
         /// <summary>
         /// 获取或设置用户 OpenId。

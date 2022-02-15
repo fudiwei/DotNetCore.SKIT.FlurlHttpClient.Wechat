@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/callback/check 接口的请求。</para>
     /// </summary>
-    public class CgibinCallbackCheckRequest : WechatApiRequest
+    public class CgibinCallbackCheckRequest : WechatApiRequest, IMapResponse<CgibinCallbackCheckRequest, CgibinCallbackCheckResponse>
     {
         /// <summary>
         /// 获取或设置执行的检测动作。

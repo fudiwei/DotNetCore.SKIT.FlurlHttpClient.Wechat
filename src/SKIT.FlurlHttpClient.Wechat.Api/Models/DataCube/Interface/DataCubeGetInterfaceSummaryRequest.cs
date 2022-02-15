@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /datacube/getinterfacesummary 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetInterfaceSummaryRequest : WechatApiRequest
+    public class DataCubeGetInterfaceSummaryRequest : WechatApiRequest, IMapResponse<DataCubeGetInterfaceSummaryRequest, DataCubeGetInterfaceSummaryResponse>
     {
         /// <summary>
         /// 获取或设置获取数据的起始日期（格式：yyyy-MM-dd）。

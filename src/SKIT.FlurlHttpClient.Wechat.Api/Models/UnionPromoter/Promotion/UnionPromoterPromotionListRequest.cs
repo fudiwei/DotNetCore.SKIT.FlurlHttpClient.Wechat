@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /union/promoter/promotion/list 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterPromotionListRequest : WechatApiRequest
+    public class UnionPromoterPromotionListRequest : WechatApiRequest, IMapResponse<UnionPromoterPromotionListRequest, UnionPromoterPromotionListResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

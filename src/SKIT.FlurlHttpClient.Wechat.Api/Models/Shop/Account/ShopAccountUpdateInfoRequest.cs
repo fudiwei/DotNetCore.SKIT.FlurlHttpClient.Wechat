@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/account/update_info 接口的请求。</para>
     /// </summary>
-    public class ShopAccountUpdateInfoRequest : WechatApiRequest
+    public class ShopAccountUpdateInfoRequest : WechatApiRequest, IMapResponse<ShopAccountUpdateInfoRequest, ShopAccountUpdateInfoResponse>
     {
         /// <summary>
         /// 获取或设置客服页面路径。

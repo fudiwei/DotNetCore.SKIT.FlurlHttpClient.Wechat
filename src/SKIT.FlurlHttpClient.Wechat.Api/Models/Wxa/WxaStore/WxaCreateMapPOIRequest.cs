@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/create_map_poi 接口的请求。</para>
     /// </summary>
-    public class WxaCreateMapPOIRequest : WechatApiRequest
+    public class WxaCreateMapPOIRequest : WechatApiRequest, IMapResponse<WxaCreateMapPOIRequest, WxaCreateMapPOIResponse>
     {
         /// <summary>
         /// 获取或设置原门店 ID。

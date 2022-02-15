@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 /* @codestyle-disable no-jsonable-property-in-request-get */
@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /union/promoter/product/select 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterProductSelectRequest : WechatApiRequest
+    public class UnionPromoterProductSelectRequest : WechatApiRequest, IMapResponse<UnionPromoterProductSelectRequest, UnionPromoterProductSelectResponse>
     {
         public static class Types
         {

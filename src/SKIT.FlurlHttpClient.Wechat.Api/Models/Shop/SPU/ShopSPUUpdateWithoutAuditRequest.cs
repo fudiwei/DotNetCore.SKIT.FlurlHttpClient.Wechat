@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/spu/update_without_audit 接口的请求。</para>
     /// </summary>
-    public class ShopSPUUpdateWithoutAuditRequest : WechatApiRequest
+    public class ShopSPUUpdateWithoutAuditRequest : WechatApiRequest, IMapResponse<ShopSPUUpdateWithoutAuditRequest, ShopSPUUpdateWithoutAuditResponse>
     {
         public static class Types
         {

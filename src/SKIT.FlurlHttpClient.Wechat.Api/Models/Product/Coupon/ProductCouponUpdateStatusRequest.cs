@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/coupon/update_status 接口的请求。</para>
     /// </summary>
-    public class ProductCouponUpdateStatusRequest : WechatApiRequest
+    public class ProductCouponUpdateStatusRequest : WechatApiRequest, IMapResponse<ProductCouponUpdateStatusRequest, ProductCouponUpdateStatusResponse>
     {
         /// <summary>
         /// 获取或设置优惠券 ID。

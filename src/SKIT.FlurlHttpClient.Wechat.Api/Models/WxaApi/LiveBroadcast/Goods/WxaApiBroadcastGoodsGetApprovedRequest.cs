@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /wxaapi/broadcast/goods/getapproved 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastGoodsGetApprovedRequest : WechatApiRequest
+    public class WxaApiBroadcastGoodsGetApprovedRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastGoodsGetApprovedRequest, WxaApiBroadcastGoodsGetApprovedResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

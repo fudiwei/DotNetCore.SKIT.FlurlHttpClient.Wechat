@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /union/promoter/order/search 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterOrderSearchRequest : WechatApiRequest
+    public class UnionPromoterOrderSearchRequest : WechatApiRequest, IMapResponse<UnionPromoterOrderSearchRequest, UnionPromoterOrderSearchResponse>
     {
         /// <summary>
         /// 获取或设置分页页数（从 1 开始）。

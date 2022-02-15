@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/ticket/getticket 接口的请求。</para>
     /// </summary>
-    public class CgibinTicketGetTicketRequest : WechatApiRequest
+    public class CgibinTicketGetTicketRequest : WechatApiRequest, IMapResponse<CgibinTicketGetTicketRequest, CgibinTicketGetTicketResponse>
     {
         /// <summary>
         /// 获取或设置票据类型。

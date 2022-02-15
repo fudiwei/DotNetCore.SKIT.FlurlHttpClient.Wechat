@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/quota/get 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressBusinessQuotaGetRequest : WechatApiRequest
+    public class CgibinExpressBusinessQuotaGetRequest : WechatApiRequest, IMapResponse<CgibinExpressBusinessQuotaGetRequest, CgibinExpressBusinessQuotaGetResponse>
     {
         /// <summary>
         /// 获取或设置快递公司 ID。

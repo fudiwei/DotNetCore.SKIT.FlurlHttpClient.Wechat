@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/media_check_async 接口的请求。</para>
     /// </summary>
-    public class WxaMediaCheckRequest : WechatApiRequest
+    public class WxaMediaCheckRequest : WechatApiRequest, IMapResponse<WxaMediaCheckRequest, WxaMediaCheckResponse>
     {
         /// <summary>
         /// 获取或设置多媒体 URL。

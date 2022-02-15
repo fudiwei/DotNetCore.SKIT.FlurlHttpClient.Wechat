@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/getopendata 接口的请求。</para>
     /// </summary>
-    public class TcbGetOpenDataRequest : WechatApiRequest
+    public class TcbGetOpenDataRequest : WechatApiRequest, IMapResponse<TcbGetOpenDataRequest, TcbGetOpenDataResponse>
     {
         /// <summary>
         /// 获取或设置用户唯一标识。

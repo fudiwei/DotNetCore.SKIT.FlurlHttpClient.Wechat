@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/role/addrole 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoleAddRoleRequest : WechatApiRequest
+    public class WxaApiBroadcastRoleAddRoleRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoleAddRoleRequest, WxaApiBroadcastRoleAddRoleResponse>
     {
         /// <summary>
         /// 获取或设置角色类型。

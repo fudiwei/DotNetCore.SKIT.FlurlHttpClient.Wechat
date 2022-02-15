@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /nontax/vehicle/payapply 接口的请求。</para>
     /// </summary>
-    public class NontaxVehiclePayApplyRequest : WechatApiRequest
+    public class NontaxVehiclePayApplyRequest : WechatApiRequest, IMapResponse<NontaxVehiclePayApplyRequest, NontaxVehiclePayApplyResponse>
     {
         public static class Types
         {

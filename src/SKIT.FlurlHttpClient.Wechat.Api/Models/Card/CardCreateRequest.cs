@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/create 接口的请求。</para>
     /// </summary>
-    public class CardCreateRequest : WechatApiRequest
+    public class CardCreateRequest : WechatApiRequest, IMapResponse<CardCreateRequest, CardCreateResponse>
     {
         public static class Types
         {

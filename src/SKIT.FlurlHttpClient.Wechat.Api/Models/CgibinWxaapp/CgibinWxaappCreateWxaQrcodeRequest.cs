@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxaapp/createwxaqrcode 接口的请求。</para>
     /// </summary>
-    public class CgibinWxaappCreateWxaQrcodeRequest : WechatApiRequest
+    public class CgibinWxaappCreateWxaQrcodeRequest : WechatApiRequest, IMapResponse<CgibinWxaappCreateWxaQrcodeRequest, CgibinWxaappCreateWxaQrcodeResponse>
     {
         /// <summary>
         /// 获取或设置扫码进入的小程序页面路径。

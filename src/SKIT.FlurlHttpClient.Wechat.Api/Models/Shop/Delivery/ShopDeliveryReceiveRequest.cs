@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/delivery/recieve 接口的请求。</para>
     /// </summary>
-    public class ShopDeliveryReceiveRequest : WechatApiRequest
+    public class ShopDeliveryReceiveRequest : WechatApiRequest, IMapResponse<ShopDeliveryReceiveRequest, ShopDeliveryReceiveResponse>
     {
         /// <summary>
         /// 获取或设置订单 ID。与字段 <see cref="OutOrderId"/> 二选一。

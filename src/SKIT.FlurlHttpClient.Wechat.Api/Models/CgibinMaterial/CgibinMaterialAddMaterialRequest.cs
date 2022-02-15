@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/material/add_material 接口的请求。</para>
     /// </summary>
-    public class CgibinMaterialAddMaterialRequest : WechatApiRequest
+    public class CgibinMaterialAddMaterialRequest : WechatApiRequest, IMapResponse<CgibinMaterialAddMaterialRequest, CgibinMaterialAddMaterialResponse>
     {
         /// <summary>
         /// 获取或设置媒体文件类型。

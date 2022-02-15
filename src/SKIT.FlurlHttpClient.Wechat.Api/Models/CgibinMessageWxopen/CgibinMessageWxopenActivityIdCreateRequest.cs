@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/message/wxopen/activityid/create 接口的请求。</para>
     /// </summary>
-    public class CgibinMessageWxopenActivityIdCreateRequest : WechatApiRequest
+    public class CgibinMessageWxopenActivityIdCreateRequest : WechatApiRequest, IMapResponse<CgibinMessageWxopenActivityIdCreateRequest, CgibinMessageWxopenActivityIdCreateResponse>
     {
         /// <summary>
         /// 获取或设置分享者用户唯一标识。

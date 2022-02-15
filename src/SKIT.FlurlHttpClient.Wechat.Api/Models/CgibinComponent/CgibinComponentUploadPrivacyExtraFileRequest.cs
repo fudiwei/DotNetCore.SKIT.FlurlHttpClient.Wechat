@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/uploadprivacyextfile 接口的请求。</para>
     /// </summary>
-    public class CgibinComponentUploadPrivacyExtraFileRequest : WechatApiRequest
+    public class CgibinComponentUploadPrivacyExtraFileRequest : WechatApiRequest, IMapResponse<CgibinComponentUploadPrivacyExtraFileRequest, CgibinComponentUploadPrivacyExtraFileResponse>
     {
         /// <summary>
         /// 获取或设置图片文件字节数组。

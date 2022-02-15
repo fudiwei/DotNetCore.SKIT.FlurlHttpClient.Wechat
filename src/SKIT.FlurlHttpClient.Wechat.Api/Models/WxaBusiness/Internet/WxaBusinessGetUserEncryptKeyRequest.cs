@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/business/getuserencryptkey 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGetUserEncryptKeyRequest : WechatApiRequest
+    public class WxaBusinessGetUserEncryptKeyRequest : WechatApiRequest, IMapResponse<WxaBusinessGetUserEncryptKeyRequest, WxaBusinessGetUserEncryptKeyResponse>
     {
         /// <summary>
         /// 获取或设置用户 OpenId。

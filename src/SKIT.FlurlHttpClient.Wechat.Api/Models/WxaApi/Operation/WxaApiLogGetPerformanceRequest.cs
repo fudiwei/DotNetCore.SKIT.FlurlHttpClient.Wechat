@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxaapi/log/get_performance 接口的请求。</para>
     /// </summary>
-    public class WxaApiLogGetPerformanceRequest : WechatApiRequest
+    public class WxaApiLogGetPerformanceRequest : WechatApiRequest, IMapResponse<WxaApiLogGetPerformanceRequest, WxaApiLogGetPerformanceResponse>
     {
         /// <summary>
         /// 获取或设置查询耗时类型。

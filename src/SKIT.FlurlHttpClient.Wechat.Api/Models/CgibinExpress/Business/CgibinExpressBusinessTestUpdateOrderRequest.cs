@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/test_update_order 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressBusinessTestUpdateOrderRequest : WechatApiRequest
+    public class CgibinExpressBusinessTestUpdateOrderRequest : WechatApiRequest, IMapResponse<CgibinExpressBusinessTestUpdateOrderRequest, CgibinExpressBusinessTestUpdateOrderResponse>
     {
         /// <summary>
         /// 获取或设置商户订单号。

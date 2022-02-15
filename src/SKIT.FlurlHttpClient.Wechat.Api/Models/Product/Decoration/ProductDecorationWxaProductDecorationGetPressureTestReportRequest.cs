@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/decoration/wxaproduct_decoration_get_pressure_test_report 接口的请求。</para>
     /// </summary>
-    public class ProductDecorationWxaProductDecorationGetPressureTestReportRequest : WechatApiRequest
+    public class ProductDecorationWxaProductDecorationGetPressureTestReportRequest : WechatApiRequest, IMapResponse<ProductDecorationWxaProductDecorationGetPressureTestReportRequest, ProductDecorationWxaProductDecorationGetPressureTestReportResponse>
     {
         /// <summary>
         /// 获取或设置压测 ID。

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /merchant/order/getbyfilter 接口的请求。</para>
     /// </summary>
-    public class MerchantOrderGetByFilterRequest : WechatApiRequest
+    public class MerchantOrderGetByFilterRequest : WechatApiRequest, IMapResponse<MerchantOrderGetByFilterRequest, MerchantOrderGetByFilterResponse>
     {
         /// <summary>
         /// 获取或设置指定订单状态。

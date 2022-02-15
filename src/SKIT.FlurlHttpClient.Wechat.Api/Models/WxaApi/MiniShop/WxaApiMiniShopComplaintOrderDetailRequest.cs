@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxaapi/minishop/complaintOrderDetail 接口的请求。</para>
     /// </summary>
-    public class WxaApiMiniShopComplaintOrderDetailRequest : WechatApiRequest
+    public class WxaApiMiniShopComplaintOrderDetailRequest : WechatApiRequest, IMapResponse<WxaApiMiniShopComplaintOrderDetailRequest, WxaApiMiniShopComplaintOrderDetailResponse>
     {
         /// <summary>
         /// 获取或设置投诉单号。

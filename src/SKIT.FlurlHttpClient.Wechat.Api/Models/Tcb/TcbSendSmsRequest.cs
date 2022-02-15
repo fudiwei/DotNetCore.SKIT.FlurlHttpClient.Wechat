@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/sendsms 接口的请求。</para>
     /// </summary>
-    public class TcbSendSmsRequest : WechatApiRequest
+    public class TcbSendSmsRequest : WechatApiRequest, IMapResponse<TcbSendSmsRequest, TcbSendSmsResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

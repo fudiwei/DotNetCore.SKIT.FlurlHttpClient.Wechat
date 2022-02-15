@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxaapi/log/jserr_detail 接口的请求。</para>
     /// </summary>
-    public class WxaApiLogJsErrorDetailRequest : WechatApiRequest
+    public class WxaApiLogJsErrorDetailRequest : WechatApiRequest, IMapResponse<WxaApiLogJsErrorDetailRequest, WxaApiLogJsErrorDetailResponse>
     {
         /// <summary>
         /// 获取或设置开始日期（格式：yyyy-MM-dd）。

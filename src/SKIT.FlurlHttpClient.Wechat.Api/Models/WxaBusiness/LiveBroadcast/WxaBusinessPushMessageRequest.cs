@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/business/push_message 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessPushMessageRequest : WechatApiRequest
+    public class WxaBusinessPushMessageRequest : WechatApiRequest, IMapResponse<WxaBusinessPushMessageRequest, WxaBusinessPushMessageResponse>
     {
         /// <summary>
         /// 获取或设置直播间 ID。

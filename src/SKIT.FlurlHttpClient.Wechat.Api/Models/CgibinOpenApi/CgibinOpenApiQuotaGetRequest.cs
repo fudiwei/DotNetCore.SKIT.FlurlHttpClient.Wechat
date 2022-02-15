@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/openapi/quota/get 接口的请求。</para>
     /// </summary>
-    public class CgibinOpenApiQuotaGetRequest : WechatApiRequest
+    public class CgibinOpenApiQuotaGetRequest : WechatApiRequest, IMapResponse<CgibinOpenApiQuotaGetRequest, CgibinOpenApiQuotaGetResponse>
     {
         /// <summary>
         /// 获取或设置 API 请求地址。

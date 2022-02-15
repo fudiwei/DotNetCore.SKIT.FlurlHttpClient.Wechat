@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/invoice/reimburse/getinvoicebatch 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceReimburseGetInvoiceBatchRequest : WechatApiRequest
+    public class CardInvoiceReimburseGetInvoiceBatchRequest : WechatApiRequest, IMapResponse<CardInvoiceReimburseGetInvoiceBatchRequest, CardInvoiceReimburseGetInvoiceBatchResponse>
     {
         public static class Types
         {

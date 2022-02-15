@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/offline/update_same_city_template 接口的请求。</para>
     /// </summary>
-    public class ProductOfflineUpdateSameCityTemplateRequest : WechatApiRequest
+    public class ProductOfflineUpdateSameCityTemplateRequest : WechatApiRequest, IMapResponse<ProductOfflineUpdateSameCityTemplateRequest, ProductOfflineUpdateSameCityTemplateResponse>
     {
         public static class Types
         {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/getappealrecords 接口的请求。</para>
     /// </summary>
-    public class WxaGetAppealRecordsRequest : WechatApiRequest
+    public class WxaGetAppealRecordsRequest : WechatApiRequest, IMapResponse<WxaGetAppealRecordsRequest, WxaGetAppealRecordsResponse>
     {
         /// <summary>
         /// 获取或设置违规处罚记录 ID。

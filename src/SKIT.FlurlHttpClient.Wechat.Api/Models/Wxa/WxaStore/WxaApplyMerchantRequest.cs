@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/apply_merchant 接口的请求。</para>
     /// </summary>
-    public class WxaApplyMerchantRequest : WechatApiRequest
+    public class WxaApplyMerchantRequest : WechatApiRequest, IMapResponse<WxaApplyMerchantRequest, WxaApplyMerchantResponse>
     {
         /// <summary>
         /// 获取或设置一级类目 ID。

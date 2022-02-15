@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /componenttcb/delcsversion 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbDeleteContainerServiceVersionRequest : WechatApiRequest
+    public class ComponentTcbDeleteContainerServiceVersionRequest : WechatApiRequest, IMapResponse<ComponentTcbDeleteContainerServiceVersionRequest, ComponentTcbDeleteContainerServiceVersionResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

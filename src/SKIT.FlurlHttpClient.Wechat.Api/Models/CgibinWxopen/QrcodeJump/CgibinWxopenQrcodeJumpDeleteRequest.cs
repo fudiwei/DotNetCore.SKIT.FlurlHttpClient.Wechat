@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/qrcodejumpdelete 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenQrcodeJumpDeleteRequest : WechatApiRequest
+    public class CgibinWxopenQrcodeJumpDeleteRequest : WechatApiRequest, IMapResponse<CgibinWxopenQrcodeJumpDeleteRequest, CgibinWxopenQrcodeJumpDeleteResponse>
     {
         /// <summary>
         /// 获取或设置匹配前缀。

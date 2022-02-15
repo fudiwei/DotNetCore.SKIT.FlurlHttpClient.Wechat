@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/rebindguideacctforbuyer 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideRebindGuideAccountForBuyerRequest : WechatApiRequest
+    public class CgibinGuideRebindGuideAccountForBuyerRequest : WechatApiRequest, IMapResponse<CgibinGuideRebindGuideAccountForBuyerRequest, CgibinGuideRebindGuideAccountForBuyerResponse>
     {
         /// <summary>
         /// 获取或设置原顾问微信号。与字段 <see cref="OldGuideOpenId"/> 二选一。

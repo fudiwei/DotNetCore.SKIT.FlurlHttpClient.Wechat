@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/changeopenid 接口的请求。</para>
     /// </summary>
-    public class CgibinChangeOpenIdRequest : WechatApiRequest
+    public class CgibinChangeOpenIdRequest : WechatApiRequest, IMapResponse<CgibinChangeOpenIdRequest, CgibinChangeOpenIdResponse>
     {
         /// <summary>
         /// 获取或设置原帐号的微信 AppId。

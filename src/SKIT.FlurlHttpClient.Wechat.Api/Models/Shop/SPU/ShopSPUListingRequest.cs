@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/spu/listing 接口的请求。</para>
     /// </summary>
-    public class ShopSPUListingRequest : WechatApiRequest
+    public class ShopSPUListingRequest : WechatApiRequest, IMapResponse<ShopSPUListingRequest, ShopSPUListingResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。与字段 <see cref="OutProductId"/> 二选一。

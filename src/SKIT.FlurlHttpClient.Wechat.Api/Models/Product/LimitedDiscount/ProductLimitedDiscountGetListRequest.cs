@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/limiteddiscount/get_list 接口的请求。</para>
     /// </summary>
-    public class ProductLimitedDiscountGetListRequest : WechatApiRequest
+    public class ProductLimitedDiscountGetListRequest : WechatApiRequest, IMapResponse<ProductLimitedDiscountGetListRequest, ProductLimitedDiscountGetListResponse>
     {
         /// <summary>
         /// 获取或设置指定抢购任务状态。

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/getcategoriesbytype 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenGetCategoriesByTypeRequest : WechatApiRequest
+    public class CgibinWxopenGetCategoriesByTypeRequest : WechatApiRequest, IMapResponse<CgibinWxopenGetCategoriesByTypeRequest, CgibinWxopenGetCategoriesByTypeResponse>
     {
         /// <summary>
         /// 获取或设置主体类型。

@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /sns/auth 接口的请求。</para>
     /// </summary>
-    public class SnsAuthRequest : WechatApiRequest
+    public class SnsAuthRequest : WechatApiRequest, IMapResponse<SnsAuthRequest, SnsAuthResponse>
     {
         /// <summary>
         /// 获取或设置网页授权接口调用凭证（注意与全局 AccessToken 相区分）。

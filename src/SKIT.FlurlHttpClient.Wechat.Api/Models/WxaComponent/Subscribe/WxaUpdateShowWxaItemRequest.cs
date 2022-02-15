@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/updateshowwxaitem 接口的请求。</para>
     /// </summary>
-    public class WxaUpdateShowWxaItemRequest : WechatApiRequest
+    public class WxaUpdateShowWxaItemRequest : WechatApiRequest, IMapResponse<WxaUpdateShowWxaItemRequest, WxaUpdateShowWxaItemResponse>
     {
         /// <summary>
         /// 获取或设置是否打开扫码关注组件。

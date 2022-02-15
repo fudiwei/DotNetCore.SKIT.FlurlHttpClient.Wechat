@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxaapi/newtmpl/deltemplate 接口的请求。</para>
     /// </summary>
-    public class WxaApiNewTemplateDeleteTemplateRequest : WechatApiRequest
+    public class WxaApiNewTemplateDeleteTemplateRequest : WechatApiRequest, IMapResponse<WxaApiNewTemplateDeleteTemplateRequest, WxaApiNewTemplateDeleteTemplateResponse>
     {
         /// <summary>
         /// 获取或设置要删除的模板 ID。

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /publisher/stat?action=publisher_settlement 接口的请求。</para>
     /// </summary>
-    public class PublisherStatSettlementRequest : WechatApiRequest
+    public class PublisherStatSettlementRequest : WechatApiRequest, IMapResponse<PublisherStatSettlementRequest, PublisherStatSettlementResponse>
     {
         /// <summary>
         /// 获取或设置分页页数（从 1 开始）。

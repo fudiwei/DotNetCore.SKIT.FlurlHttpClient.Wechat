@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /sns/oauth2/refresh_token 接口的请求。</para>
     /// </summary>
-    public class SnsOAuth2RefreshTokenRequest : WechatApiRequest
+    public class SnsOAuth2RefreshTokenRequest : WechatApiRequest, IMapResponse<SnsOAuth2RefreshTokenRequest, SnsOAuth2RefreshTokenResponse>
     {
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>

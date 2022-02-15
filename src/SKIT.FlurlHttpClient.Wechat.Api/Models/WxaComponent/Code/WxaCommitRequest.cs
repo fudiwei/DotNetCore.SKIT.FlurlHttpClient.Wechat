@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/commit 接口的请求。</para>
     /// </summary>
-    public class WxaCommitRequest : WechatApiRequest
+    public class WxaCommitRequest : WechatApiRequest, IMapResponse<WxaCommitRequest, WxaCommitResponse>
     {
         /// <summary>
         /// 获取或设置代码模板 ID。

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/newguidegroup 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideNewGuideGroupRequest : WechatApiRequest
+    public class CgibinGuideNewGuideGroupRequest : WechatApiRequest, IMapResponse<CgibinGuideNewGuideGroupRequest, CgibinGuideNewGuideGroupResponse>
     {
         /// <summary>
         /// 获取或设置顾问分组名称。

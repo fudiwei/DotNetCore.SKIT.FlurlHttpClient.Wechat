@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/funds/submitwithdraw 接口的请求。</para>
     /// </summary>
-    public class ProductFundsSubmitWithdrawRequest : WechatApiRequest
+    public class ProductFundsSubmitWithdrawRequest : WechatApiRequest, IMapResponse<ProductFundsSubmitWithdrawRequest, ProductFundsSubmitWithdrawResponse>
     {
         /// <summary>
         /// 获取或设置提现金额（单位：分）。

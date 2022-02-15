@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/invoice/reimburse/updateinvoicestatus 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceReimburseUpdateInvoiceStatusRequest : WechatApiRequest
+    public class CardInvoiceReimburseUpdateInvoiceStatusRequest : WechatApiRequest, IMapResponse<CardInvoiceReimburseUpdateInvoiceStatusRequest, CardInvoiceReimburseUpdateInvoiceStatusResponse>
     {
         /// <summary>
         /// 获取或设置发票卡券模板编号。

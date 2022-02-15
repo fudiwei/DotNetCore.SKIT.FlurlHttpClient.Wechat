@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /merchant/shelf/getbyid 接口的请求。</para>
     /// </summary>
-    public class MerchantShelfGetByIdRequest : WechatApiRequest
+    public class MerchantShelfGetByIdRequest : WechatApiRequest, IMapResponse<MerchantShelfGetByIdRequest, MerchantShelfGetByIdResponse>
     {
         /// <summary>
         /// 获取或设置货架 ID。

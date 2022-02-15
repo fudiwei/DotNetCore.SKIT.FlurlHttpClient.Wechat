@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/business/gamematch/setmatchopenstate 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGameMatchSetMatchOpenStateRequest : WechatApiRequest
+    public class WxaBusinessGameMatchSetMatchOpenStateRequest : WechatApiRequest, IMapResponse<WxaBusinessGameMatchSetMatchOpenStateRequest, WxaBusinessGameMatchSetMatchOpenStateResponse>
     {
         /// <summary>
         /// 获取或设置匹配池对应的 ID。

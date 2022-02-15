@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/template/api_add_template 接口的请求。</para>
     /// </summary>
-    public class CgibinTemplateAddTemplateRequest : WechatApiRequest
+    public class CgibinTemplateAddTemplateRequest : WechatApiRequest, IMapResponse<CgibinTemplateAddTemplateRequest, CgibinTemplateAddTemplateResponse>
     {
         /// <summary>
         /// 获取或设置模板库中模板的编号。

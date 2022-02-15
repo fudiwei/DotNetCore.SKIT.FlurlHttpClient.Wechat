@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/qrcode/gen 接口的请求。</para>
     /// </summary>
-    public class ProductQrcodeGenerateRequest : WechatApiRequest
+    public class ProductQrcodeGenerateRequest : WechatApiRequest, IMapResponse<ProductQrcodeGenerateRequest, ProductQrcodeGenerateResponse>
     {
         /// <summary>
         /// 获取或设置需要验证的身份。

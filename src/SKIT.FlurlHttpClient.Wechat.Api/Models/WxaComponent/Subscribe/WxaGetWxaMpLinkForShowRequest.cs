@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /wxa/getwxamplinkforshow 接口的请求。</para>
     /// </summary>
-    public class WxaGetWxaMpLinkForShowRequest : WechatApiRequest
+    public class WxaGetWxaMpLinkForShowRequest : WechatApiRequest, IMapResponse<WxaGetWxaMpLinkForShowRequest, WxaGetWxaMpLinkForShowResponse>
     {
         /// <summary>
         /// 获取或设置分页页数（从 0 开始）。

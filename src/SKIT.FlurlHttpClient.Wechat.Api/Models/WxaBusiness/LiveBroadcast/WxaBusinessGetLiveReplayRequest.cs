@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/business/getliveinfo?action=get_replay 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGetLiveReplayRequest : WechatApiRequest
+    public class WxaBusinessGetLiveReplayRequest : WechatApiRequest, IMapResponse<WxaBusinessGetLiveReplayRequest, WxaBusinessGetLiveReplayResponse>
     {
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/tags/members/batchuntagging 接口的请求。</para>
     /// </summary>
-    public class CgibinTagsMembersBatchUntaggingRequest : WechatApiRequest
+    public class CgibinTagsMembersBatchUntaggingRequest : WechatApiRequest, IMapResponse<CgibinTagsMembersBatchUntaggingRequest, CgibinTagsMembersBatchUntaggingResponse>
     {
         /// <summary>
         /// 获取或设置要取消标签的用户 OpenId 列表。

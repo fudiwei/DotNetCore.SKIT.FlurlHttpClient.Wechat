@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /nontax/notifyinconsistentorder 接口的请求。</para>
     /// </summary>
-    public class NontaxNotifyInconsistentOrderRequest : WechatApiRequest
+    public class NontaxNotifyInconsistentOrderRequest : WechatApiRequest, IMapResponse<NontaxNotifyInconsistentOrderRequest, NontaxNotifyInconsistentOrderResponse>
     {
         /// <summary>
         /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.AppId"/> 参数。

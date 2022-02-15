@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/submit_audit 接口的请求。</para>
     /// </summary>
-    public class WxaSubmitAuditRequest : WechatApiRequest
+    public class WxaSubmitAuditRequest : WechatApiRequest, IMapResponse<WxaSubmitAuditRequest, WxaSubmitAuditResponse>
     {
         public static class Types
         {

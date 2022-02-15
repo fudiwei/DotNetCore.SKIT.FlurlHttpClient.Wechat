@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/spu/get_list 接口的请求。</para>
     /// </summary>
-    public class ProductSPUGetListRequest : WechatApiRequest
+    public class ProductSPUGetListRequest : WechatApiRequest, IMapResponse<ProductSPUGetListRequest, ProductSPUGetListResponse>
     {
         /// <summary>
         /// 获取或设置指定商品上线状态。

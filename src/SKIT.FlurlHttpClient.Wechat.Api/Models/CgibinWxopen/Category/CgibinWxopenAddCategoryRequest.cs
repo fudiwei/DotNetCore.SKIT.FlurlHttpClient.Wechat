@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/addcategory 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenAddCategoryRequest : WechatApiRequest
+    public class CgibinWxopenAddCategoryRequest : WechatApiRequest, IMapResponse<CgibinWxopenAddCategoryRequest, CgibinWxopenAddCategoryResponse>
     {
         public static class Types
         {

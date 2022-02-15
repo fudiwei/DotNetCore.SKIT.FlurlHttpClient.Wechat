@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /intp/realname/getauthurl 接口的请求。</para>
     /// </summary>
-    public class IntpRealNameGetAuthUrlRequest : WechatApiRequest
+    public class IntpRealNameGetAuthUrlRequest : WechatApiRequest, IMapResponse<IntpRealNameGetAuthUrlRequest, IntpRealNameGetAuthUrlResponse>
     {
         /// <summary>
         /// 获取或设置用户授权完成后回跳的 URL。

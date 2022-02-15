@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/giftcard/wxa/set 接口的请求。</para>
     /// </summary>
-    public class CardGiftCardWxaSetRequest : WechatApiRequest
+    public class CardGiftCardWxaSetRequest : WechatApiRequest, IMapResponse<CardGiftCardWxaSetRequest, CardGiftCardWxaSetResponse>
     {
         /// <summary>
         /// 获取或设置微信小程序 AppId。

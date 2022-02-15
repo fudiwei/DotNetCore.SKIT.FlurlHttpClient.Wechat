@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /wxa/checksession 接口的请求。</para>
     /// </summary>
-    public class WxaCheckSessionRequest : WechatApiRequest
+    public class WxaCheckSessionRequest : WechatApiRequest, IMapResponse<WxaCheckSessionRequest, WxaCheckSessionResponse>
     {
         /// <summary>
         /// 获取或设置用户唯一标识。

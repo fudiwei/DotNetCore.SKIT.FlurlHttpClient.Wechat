@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/draft/batchget 接口的请求。</para>
     /// </summary>
-    public class CgibinDraftBatchGetRequest : WechatApiRequest
+    public class CgibinDraftBatchGetRequest : WechatApiRequest, IMapResponse<CgibinDraftBatchGetRequest, CgibinDraftBatchGetResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

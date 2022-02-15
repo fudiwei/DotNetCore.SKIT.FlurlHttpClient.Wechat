@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/audit/result 接口的请求。</para>
     /// </summary>
-    public class ShopAuditResultRequest : WechatApiRequest
+    public class ShopAuditResultRequest : WechatApiRequest, IMapResponse<ShopAuditResultRequest, ShopAuditResultResponse>
     {
         /// <summary>
         /// 获取或设置审核单 ID。

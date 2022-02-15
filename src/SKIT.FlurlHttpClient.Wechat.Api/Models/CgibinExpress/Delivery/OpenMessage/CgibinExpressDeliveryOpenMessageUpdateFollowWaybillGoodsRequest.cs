@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/delivery/open_msg/update_follow_waybill_goods 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressDeliveryOpenMessageUpdateFollowWaybillGoodsRequest : WechatApiRequest
+    public class CgibinExpressDeliveryOpenMessageUpdateFollowWaybillGoodsRequest : WechatApiRequest, IMapResponse<CgibinExpressDeliveryOpenMessageUpdateFollowWaybillGoodsRequest, CgibinExpressDeliveryOpenMessageUpdateFollowWaybillGoodsResponse>
     {
         public static class Types
         {

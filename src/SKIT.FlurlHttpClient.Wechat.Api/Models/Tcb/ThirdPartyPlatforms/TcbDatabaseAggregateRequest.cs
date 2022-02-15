@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/databaseaggregate 接口的请求。</para>
     /// </summary>
-    public class TcbDatabaseAggregateRequest : WechatApiRequest
+    public class TcbDatabaseAggregateRequest : WechatApiRequest, IMapResponse<TcbDatabaseAggregateRequest, TcbDatabaseAggregateResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

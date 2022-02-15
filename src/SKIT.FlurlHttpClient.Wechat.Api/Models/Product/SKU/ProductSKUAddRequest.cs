@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/sku/add 接口的请求。</para>
     /// </summary>
-    public class ProductSKUAddRequest : WechatApiRequest
+    public class ProductSKUAddRequest : WechatApiRequest, IMapResponse<ProductSKUAddRequest, ProductSKUAddResponse>
     {
         public static class Types
         {
