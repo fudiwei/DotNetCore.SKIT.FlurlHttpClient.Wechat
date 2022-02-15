@@ -15,9 +15,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             var request = new Models.CgibinTagsCreateRequest()
             {
                 AccessToken = TestConfigs.WechatAccessToken,
-                Tag = new Models.CgibinTagsCreateRequest.Types.Tag()
-                {
-                    Name = "FAKE_TAGNAME"
+                Tag = new Models.CgibinTagsCreateRequest.Types.Tag() 
+                { 
+                    Name = "FAKE_TAGNAME" 
                 }
             };
             var response = await TestClients.Instance.ExecuteCgibinTagsCreateAsync(request);
