@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/school/department/list 接口的响应。</para>
@@ -44,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id")]
                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public int DepartmentId { get; set; }
+                public long DepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门名称。
@@ -65,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parentid")]
                 [System.Text.Json.Serialization.JsonPropertyName("parentid")]
-                public int ParentDepartmentId { get; set; }
+                public long ParentDepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置标准年级。
@@ -82,11 +79,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public int? RegisterYear { get; set; }
 
                 /// <summary>
-                /// 获取或设置排序值。
+                /// 获取或设置次序值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order")]
                 [System.Text.Json.Serialization.JsonPropertyName("order")]
-                public int? Order { get; set; }
+                public long? Order { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门管理员列表。

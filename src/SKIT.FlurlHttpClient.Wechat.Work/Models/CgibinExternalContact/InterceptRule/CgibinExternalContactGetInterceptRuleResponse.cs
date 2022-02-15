@@ -8,7 +8,7 @@
         public static class Types
         {
             public class Rule : CgibinExternalContactGetInterceptRuleListResponse.Types.Rule
-            {    
+            {
                 public static class Types
                 {
                     public class ExtraRule
@@ -35,10 +35,10 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("department_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("department_list")]
-                        public int[]? DepartmentIdList { get; set; }
+                        public long[]? DepartmentIdList { get; set; }
                     }
                 }
-                
+
                 /// <summary>
                 /// 获取或设置敏感词列表。
                 /// </summary>

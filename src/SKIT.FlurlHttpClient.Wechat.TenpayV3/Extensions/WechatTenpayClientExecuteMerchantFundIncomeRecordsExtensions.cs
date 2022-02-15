@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -37,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMerchantFundMerchantIncomeRecordsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMerchantFundMerchantIncomeRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -63,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset != null)
                 flurlReq.SetQueryParam("offset", request.Offset);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMerchantFundPartnerIncomeRecordsResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.QueryMerchantFundPartnerIncomeRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

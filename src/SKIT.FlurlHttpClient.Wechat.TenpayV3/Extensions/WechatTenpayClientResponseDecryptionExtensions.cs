@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     {
                         if (Constants.EncryptionAlgorithms.AEAD_AES_256_GCM.Equals(certificateModel.EncryptCertificate?.Algorithm))
                         {
-                            if (string.IsNullOrEmpty(client.Credentials.MerchantCertPrivateKey))
+                            if (string.IsNullOrEmpty(client.Credentials.MerchantCertificatePrivateKey))
                                 throw new Exceptions.WechatTenpayResponseDecryptionException("Decrypt response failed, because there is no merchant private key.");
 
                             certificateModel.EncryptCertificate.CipherText = Utilities.AESUtility.DecryptWithGCM(
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         if (Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB.Equals(attr.Algorithm))
                         {
                             string newValue = Utilities.RSAUtility.DecryptWithECB(
-                                privateKey: client.Credentials.MerchantCertPrivateKey,
+                                privateKey: client.Credentials.MerchantCertificatePrivateKey,
                                 cipherText: oldValue
                             );
                             return (true, newValue);

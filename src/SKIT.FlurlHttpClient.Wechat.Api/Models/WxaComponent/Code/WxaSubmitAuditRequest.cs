@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -76,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("third_class")]
                 public string? ThirdCategoryName { get; set; }
             }
-            
+
             public class Preview
             {
                 /// <summary>
@@ -91,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pic_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("pic_id_list")]
-                public IList<string>? PictureMediaIdList { get; set; } 
+                public IList<string>? PictureMediaIdList { get; set; }
             }
 
             public class UGCDeclaration
@@ -136,77 +134,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             }
         }
 
-        internal static class Converters
-        {
-            internal class NewtonsoftJsonMediaIdListConverter : Newtonsoft.Json.JsonConverter<IList<string>?>
-            {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return true; }
-                }
-
-                public override IList<string>? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, IList<string>? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
-                    {
-                        string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
-                            return existingValue;
-
-                        return value.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    }
-
-                    throw new Newtonsoft.Json.JsonReaderException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, IList<string>? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (value != null)
-                        writer.WriteValue(string.Join("|", value));
-                    else
-                        writer.WriteNull();
-                }
-            }
-
-            internal class SystemTextJsonMediaIdListConverter : System.Text.Json.Serialization.JsonConverter<IList<string>?>
-            {
-                public override IList<string>? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return null;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
-                    {
-                        string? value = reader.GetString();
-                        if (value == null)
-                            return null;
-
-                        return value.Split(new char[] { '|' }, StringSplitOptions.RemoveEmptyEntries).ToList();
-                    }
-
-                    throw new System.Text.Json.JsonException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, IList<string>? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (value != null)
-                        writer.WriteStringValue(string.Join("|", value));
-                    else
-                        writer.WriteNullValue();
-                }
-            }
-        }
-
         /// <summary>
         /// 获取或设置审核页面列表。
         /// </summary>
@@ -239,9 +166,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置反馈附件 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("feedback_stuff")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonMediaIdListConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("feedback_stuff")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonMediaIdListConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringListWithPipeSplitConverter))]
         public IList<string>? FeedbackStuffMediaIdList { get; set; }
 
         /// <summary>

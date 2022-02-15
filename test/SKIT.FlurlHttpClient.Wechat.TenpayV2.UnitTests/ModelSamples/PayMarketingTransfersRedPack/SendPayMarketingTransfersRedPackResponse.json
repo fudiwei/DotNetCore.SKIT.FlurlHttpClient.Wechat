@@ -1,0 +1,12 @@
+﻿{
+    "return_code": "SUCCESS",
+    "return_msg": "发放成功.",
+    "result_code": "SUCCESS",
+    "err_code": "0",
+    "err_code_des": "发放成功.",
+    "mch_billno": "0010010404201411170000046545",
+    "mch_id": "10010404",
+    "wxappid": "wx6fa7e3bab7e15415",
+    "re_openid": "onqOjjmM1tad-3ROpncN-yUfa6uI",
+    "total_amount": "1"
+}

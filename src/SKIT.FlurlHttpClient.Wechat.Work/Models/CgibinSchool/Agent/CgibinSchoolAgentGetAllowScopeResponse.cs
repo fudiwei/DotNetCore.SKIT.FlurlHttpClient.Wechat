@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/school/agent/get_allow_scope 接口的响应。</para>
@@ -37,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("departments")]
                 [System.Text.Json.Serialization.JsonPropertyName("departments")]
-                public int[] DepartmentIdList { get; set; } = default!;
+                public long[] DepartmentIdList { get; set; } = default!;
             }
         }
 

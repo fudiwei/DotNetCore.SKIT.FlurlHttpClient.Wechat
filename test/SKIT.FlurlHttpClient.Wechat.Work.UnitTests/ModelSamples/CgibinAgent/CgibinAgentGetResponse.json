@@ -21,5 +21,6 @@
     "redirect_domain": "open.work.weixin.qq.com",
     "report_location_flag": 0,
     "isreportenter": 0,
-    "home_url": "https://open.work.weixin.qq.com"
+    "home_url": "https://open.work.weixin.qq.com",
+    "customized_publish_status": 1
 }

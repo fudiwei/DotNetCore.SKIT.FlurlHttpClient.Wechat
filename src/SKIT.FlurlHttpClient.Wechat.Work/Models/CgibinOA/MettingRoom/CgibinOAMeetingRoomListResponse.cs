@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/meetingroom/list 接口的响应。</para>
@@ -22,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// <summary>
                 /// 获取或设置会议室 ID。
                 /// </summary>
-                    [Newtonsoft.Json.JsonProperty("meetingroom_id")]
+                [Newtonsoft.Json.JsonProperty("meetingroom_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("meetingroom_id")]
                 public int MeetingRoomId { get; set; }
 

@@ -5,7 +5,7 @@
     /// </summary>
     public class UpdateMarketingMemberCardOpenCardCodeRightsRequest : WechatTenpayRequest
     {
-        public static class Types 
+        public static class Types
         {
             public class Guide : UpdateMarketingMemberCardOpenCardRightsRequest.Types.Guide
             {

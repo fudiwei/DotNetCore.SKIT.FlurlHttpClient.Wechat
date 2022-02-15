@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
         public CertificateEntry(Models.QueryCertificatesResponse.Types.Certificate cert)
             : this(cert.SerialNumber, cert.EncryptCertificate.CipherText, cert.EffectiveTime, cert.ExpireTime)
-        { 
+        {
         }
 
         public bool IsAvailable()
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
         public override bool Equals(object? obj)
         {
-            if (ReferenceEquals(null, obj)) 
+            if (ReferenceEquals(null, obj))
                 return false;
 
             return (obj is CertificateEntry other) && Equals(other);

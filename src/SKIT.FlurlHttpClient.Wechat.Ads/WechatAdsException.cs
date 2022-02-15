@@ -13,13 +13,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         }
 
         /// <inheritdoc/>
-        public WechatAdsException(string message) 
+        public WechatAdsException(string message)
             : base(message)
         {
         }
 
         /// <inheritdoc/>
-        public WechatAdsException(string message, Exception innerException) 
+        public WechatAdsException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

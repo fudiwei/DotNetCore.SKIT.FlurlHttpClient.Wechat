@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -209,7 +208,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("pic_file_list")]
                 public IList<PictureFile> PictureFileList { get; set; } = new List<PictureFile>();
             }
-            
+
             public class Supplementary
             {
                 /// <summary>

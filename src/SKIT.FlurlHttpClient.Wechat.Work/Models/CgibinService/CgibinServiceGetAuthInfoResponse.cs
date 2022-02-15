@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/service/get_auth_info 接口的响应。</para>
@@ -115,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             }
 
             public class Authorization
-            { 
+            {
                 public static class Types
                 {
                     public class Agent
@@ -143,7 +140,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("allow_party")]
                                 [System.Text.Json.Serialization.JsonPropertyName("allow_party")]
-                                public int[]? AllowedDepartmentIdList { get; set; }
+                                public long[]? AllowedDepartmentIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置可见标签 ID 列表。
@@ -164,7 +161,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("extra_party")]
                                 [System.Text.Json.Serialization.JsonPropertyName("extra_party")]
-                                public int[]? ExtraDepartmentIdList { get; set; }
+                                public long[]? ExtraDepartmentIdList { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置额外标签 ID 列表。

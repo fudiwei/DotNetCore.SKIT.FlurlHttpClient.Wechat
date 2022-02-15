@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.transport_precreate_order 事件的数据。</para>
@@ -16,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
             }
 
             public class Receiver : Models.CgibinExpressLocalBusinessOrderAddRequest.Types.Receiver
-            { 
+            {
             }
 
             public class Cargo : Models.CgibinExpressLocalBusinessOrderAddRequest.Types.Cargo

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
     /// <summary>
     /// <para>表示 [POST] /nlp/translate_en2cn/{TOKEN} 接口的请求。</para>
@@ -34,5 +31,5 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
         public Types.Data Data { get; set; } = new Types.Data();
-}
+    }
 }

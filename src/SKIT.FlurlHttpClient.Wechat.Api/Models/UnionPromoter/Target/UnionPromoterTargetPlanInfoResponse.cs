@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /union/promoter/target/plan_info 接口的响应。</para>
@@ -66,8 +63,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("extInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("extInfo")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectReadOnlyConverter))]
 
-                public object Extra { get; set; } = default!;
+                public dynamic? Extra { get; set; }
             }
 
             public class Product

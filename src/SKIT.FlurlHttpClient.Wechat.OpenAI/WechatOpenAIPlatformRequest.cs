@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 {
     /// <summary>
     /// 表示微信智能对话平台接入 API 请求的基类。
@@ -10,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         public static class Serialization
         {
             public interface IEncryptedXmlable
-            { 
+            {
             }
 
             public interface IEncryptedUrlEncoded

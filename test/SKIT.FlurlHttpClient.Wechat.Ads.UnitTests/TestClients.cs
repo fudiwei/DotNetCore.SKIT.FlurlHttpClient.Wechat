@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.Ads.UnitTests
+﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.UnitTests
 {
     class TestClients
     {

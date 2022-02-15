@@ -188,63 +188,63 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("init_bonus")]
                 [System.Text.Json.Serialization.JsonPropertyName("init_bonus")]
-                public int InitialBonusValue { get; set; } 
+                public int InitialBonusValue { get; set; }
 
                 /// <summary>
                 /// 获取或设置积分值文案。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bonus_value_word")]
                 [System.Text.Json.Serialization.JsonPropertyName("bonus_value_word")]
-                public string? ValueWords { get; set; } 
+                public string? ValueWords { get; set; }
 
                 /// <summary>
                 /// 获取或设置积分价值项标题。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bonus_cost_title")]
                 [System.Text.Json.Serialization.JsonPropertyName("bonus_cost_title")]
-                public string? CostTitle { get; set; } 
+                public string? CostTitle { get; set; }
 
                 /// <summary>
                 /// 获取或设置积分价值项文案。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bonus_cost_word")]
                 [System.Text.Json.Serialization.JsonPropertyName("bonus_cost_word")]
-                public string? CostWords { get; set; } 
+                public string? CostWords { get; set; }
 
                 /// <summary>
                 /// 获取或设置跳转文案。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bonus_jump_word")]
                 [System.Text.Json.Serialization.JsonPropertyName("bonus_jump_word")]
-                public string? JumpWords { get; set; } 
+                public string? JumpWords { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bonus_jump_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("bonus_jump_appid")]
-                public string? MiniProgramAppId { get; set; } 
+                public string? MiniProgramAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bonus_jump_path")]
                 [System.Text.Json.Serialization.JsonPropertyName("bonus_jump_path")]
-                public string? MiniProgramPath { get; set; } 
+                public string? MiniProgramPath { get; set; }
 
                 /// <summary>
                 /// 获取或设置自助小程序 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bonus_support_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("bonus_support_appid")]
-                public string? SupportMiniProgramAppId { get; set; } 
+                public string? SupportMiniProgramAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置自助小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bonus_support_path")]
                 [System.Text.Json.Serialization.JsonPropertyName("bonus_support_path")]
-                public string? SupportMiniProgramPath { get; set; } 
+                public string? SupportMiniProgramPath { get; set; }
             }
 
             public class Favor
@@ -268,14 +268,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("member_price_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("member_price_appid")]
-                public string? MiniProgramAppId { get; set; } 
+                public string? MiniProgramAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("member_price_path")]
                 [System.Text.Json.Serialization.JsonPropertyName("member_price_path")]
-                public string? MiniProgramPath { get; set; } 
+                public string? MiniProgramPath { get; set; }
             }
 
             public class ServiceModule
@@ -322,21 +322,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fapiao_jump_word")]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_jump_word")]
-                public string? JumpWords { get; set; } 
+                public string? JumpWords { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fapiao_jump_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_jump_appid")]
-                public string? MiniProgramAppId { get; set; } 
+                public string? MiniProgramAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序页面路径。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fapiao_jump_path")]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_jump_path")]
-                public string? MiniProgramPath { get; set; } 
+                public string? MiniProgramPath { get; set; }
             }
 
             public class Guide
@@ -374,7 +374,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-                public string? PhoneNumber { get; set; } 
+                public string? PhoneNumber { get; set; }
             }
         }
 

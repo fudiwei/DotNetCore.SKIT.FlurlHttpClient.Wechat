@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -20,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("party")]
         [System.Text.Json.Serialization.JsonPropertyName("party")]
-        public IList<int>? DepartmentIdList { get; set; }
+        public IList<long>? DepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置标签 ID 列表。

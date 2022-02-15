@@ -2,6 +2,8 @@
 
 基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/) API v3 版客户端。
 
+如需微信支付 v2 版 API 客户端，请移步 [`SKIT.FlurlHttpClient.WechantTenpayV2`](../WechatTenpayV2/README.md) 模块。
+
 ---
 
 ## 功能
@@ -44,9 +46,9 @@ var options = new WechatTenpayClientOptions()
 {
     MerchantId = "微信商户号",
     MerchantV3Secret = "微信商户 v3 API 密钥",
-    MerchantCertSerialNumber = "微信商户证书序列号",
-    MerchantCertPrivateKey = "-----BEGIN PRIVATE KEY-----微信商户证书私钥-----END PRIVATE KEY-----",
-    CertificateManager = manager // 证书管理器的具体用法请参阅下文的高级技巧
+    MerchantCertificateSerialNumber = "微信商户证书序列号",
+    MerchantCertificatePrivateKey = "-----BEGIN PRIVATE KEY-----微信商户证书私钥，即 `apiclient_key.pem` 文件内容-----END PRIVATE KEY-----",
+    PlatformCertificateManager = manager // 证书管理器的具体用法请参阅下文的高级技巧与加密、验签有关的章节
 };
 var client = new WechatTenpayClient(options);
 ```
@@ -90,7 +92,7 @@ else
 
 ## 高级技巧
 
--   [如何查看商户证书序列号？](./Advanced_MerchantCertSerialNumber.md)
+-   [如何查看商户证书序列号？](./Advanced_MerchantCertificateSerialNumber.md)
 
 -   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Advanced_ModelDefinition.md)
 
@@ -110,7 +112,7 @@ else
 
 -   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
 
--   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Payment.md)
+-   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Parameters.md)
 
 -   [如何扩展额外的 API？](./Advanced_Extensions.md)
 

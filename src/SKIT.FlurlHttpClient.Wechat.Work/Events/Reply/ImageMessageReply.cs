@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示被动回复图片消息的数据。</para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90241#%E5%9B%BE%E7%89%87%E6%B6%88%E6%81%AF </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90377#%E5%9B%BE%E7%89%87%E6%B6%88%E6%81%AF </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90151/90859#%E5%9B%BE%E7%89%87%E6%B6%88%E6%81%AF </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90241#%E5%9B%BE%E7%89%87%E6%B6%88%E6%81%AF </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90377#%E5%9B%BE%E7%89%87%E6%B6%88%E6%81%AF </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90859#%E5%9B%BE%E7%89%87%E6%B6%88%E6%81%AF </para>
     /// </summary>
     public class ImageMessageReply : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {

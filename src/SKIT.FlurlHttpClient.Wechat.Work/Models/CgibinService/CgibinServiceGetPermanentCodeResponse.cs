@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/service/get_permanent_code 接口的响应。</para>
@@ -139,5 +136,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("register_code_info")]
         [System.Text.Json.Serialization.JsonPropertyName("register_code_info")]
         public Types.Register? Register { get; set; }
+
+        /// <summary>
+        /// 获取或设置扫码或者授权链接中的自定义参数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("state")]
+        [System.Text.Json.Serialization.JsonPropertyName("state")]
+        public string? State { get; set; }
     }
 }

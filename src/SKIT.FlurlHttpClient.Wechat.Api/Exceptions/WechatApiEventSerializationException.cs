@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Exceptions
         }
 
         /// <inheritdoc/>
-        internal WechatApiEventSerializationException(string message) 
+        internal WechatApiEventSerializationException(string message)
             : base(message)
         {
         }
 
         /// <inheritdoc/>
-        internal WechatApiEventSerializationException(string message, Exception innerException) 
+        internal WechatApiEventSerializationException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

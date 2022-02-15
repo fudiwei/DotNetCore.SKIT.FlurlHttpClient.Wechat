@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net472; netcoreapp3.1; net6.0</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<NullableReferenceTypes>true</NullableReferenceTypes>
+		<IsPackable>false</IsPackable>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <None Remove=".gitignore" />
+        <None Remove="appsettings - 复制.json" />
+        <None Remove="appsettings.local.json" />
+        <Content Include="appsettings.json">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+			<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+        </Content>
+        <Content Include="appsettings.*.json" Condition="'$(Configuration)' == 'Debug'">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        </Content>
+		<Content Include="ModelSamples/**/*.json" />
+		<Content Include="EventSamples/**/*.json" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
+        <PackageReference Include="xunit" Version="2.4.1" />
+        <PackageReference Include="xunit.runner.visualstudio" Version="2.4.3">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\src\SKIT.FlurlHttpClient.Wechat.TenpayV2\SKIT.FlurlHttpClient.Wechat.TenpayV2.csproj" />
+        <ProjectReference Include="..\SKIT.FlurlHttpClient.Wechat.TestTools\SKIT.FlurlHttpClient.Wechat.TestTools.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string? AppId { get; set; } 
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡 Logo 媒体文件地址。

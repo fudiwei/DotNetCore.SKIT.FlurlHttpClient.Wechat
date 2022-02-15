@@ -1,13 +1,11 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
 {
-    class TestClients
+    internal class TestClients
     {
         static TestClients()
         {
             InstanceForPlatform = new WechatOpenAIPlatformClient(new WechatOpenAIPlatformClientOptions()
-            { 
+            {
                 AppId = TestConfigs.WechatAppId,
                 Token = TestConfigs.WechatToken,
                 EncodingAESKey = TestConfigs.WechatEncodingAESKey

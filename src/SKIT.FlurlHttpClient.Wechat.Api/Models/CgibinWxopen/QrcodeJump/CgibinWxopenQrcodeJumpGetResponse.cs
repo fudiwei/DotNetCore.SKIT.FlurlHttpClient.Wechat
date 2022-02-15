@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/qrcodejumpget 接口的响应。</para>
@@ -24,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("permit_sub_rule")]
                 [System.Text.Json.Serialization.JsonPropertyName("permit_sub_rule")]
-                public int PermitSubRule { get; set; }
+                public int? PermitSubRule { get; set; }
 
                 /// <summary>
                 /// 获取或设置发布状态。
@@ -38,21 +35,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("path")]
                 [System.Text.Json.Serialization.JsonPropertyName("path")]
-                public string PagePath { get; set; } = default!;
+                public string MiniProgramPagePath { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置测试范围。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("open_version")]
                 [System.Text.Json.Serialization.JsonPropertyName("open_version")]
-                public int OpenVersion { get; set; }
+                public int? OpenVersion { get; set; }
 
                 /// <summary>
                 /// 获取或设置测试链接列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("debug_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("debug_url")]
-                public string[] DebugUrlList { get; set; } = default!;
+                public string[]? DebugUrlList { get; set; } = default!;
             }
         }
 
@@ -61,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list_size")]
         [System.Text.Json.Serialization.JsonPropertyName("list_size")]
-        public int Total { get; set; }
+        public int TotalCount { get; set; }
 
         /// <summary>
         /// 获取或设置二维码规则列表。
@@ -84,6 +81,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("qrcodejump_open")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
-        public bool IsQrcodeJumpStore { get; set; }
+        public bool IsQrcodeJumpOpen { get; set; }
     }
 }

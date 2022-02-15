@@ -1,8 +1,6 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
-    class TestClients
+    internal class TestClients
     {
         static TestClients()
         {

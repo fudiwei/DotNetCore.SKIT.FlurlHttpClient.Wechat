@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Text.RegularExpressions;
 using System.Xml.Serialization;
 
@@ -21,7 +22,10 @@ namespace SKIT.FlurlHttpClient.Wechat
             newtonsoftJsonSettings.CheckAdditionalContent = true;
             newtonsoftJsonSettings.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Error;
             var newtonsoftJsonSerializer = new FlurlNewtonsoftJsonSerializer(newtonsoftJsonSettings);
-            var systemTextJsonSerializer = new FlurlSystemTextJsonSerializer();
+
+            var systemTextJsonOptions = FlurlSystemTextJsonSerializer.GetDefaultSerializerOptions();
+            systemTextJsonOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+            var systemTextJsonSerializer = new FlurlSystemTextJsonSerializer(systemTextJsonOptions);
 
             try
             {
@@ -154,14 +158,13 @@ namespace SKIT.FlurlHttpClient.Wechat
             var lstModelType = TestReflectionUtil.GetAllApiModelsTypes(assembly);
             var lstError = new List<Exception>();
 
-            foreach (Type modelType in lstModelType)
+            Parallel.ForEach(lstModelType, (modelType) =>
             {
                 string name = modelType.Name.Split('`')[0];
 
                 if (!name.EndsWith("Request") && !name.EndsWith("Response"))
                 {
                     lstError.Add(new Exception($"[模型] `{name}` 类名结尾应为 \"Request\" 或 \"Response\"。"));
-                    continue;
                 }
 
                 if (name.EndsWith("Request"))
@@ -169,13 +172,11 @@ namespace SKIT.FlurlHttpClient.Wechat
                     if (!typeof(ICommonRequest).IsAssignableFrom(modelType))
                     {
                         lstError.Add(new Exception($"[模型] `{name}` 是请求模型，需实现自 `{nameof(ICommonRequest)}`。"));
-                        continue;
                     }
 
                     if (!lstModelType.Any(e => e.Name == $"{name.Substring(0, name.Length - "Request".Length)}Response"))
                     {
                         lstError.Add(new Exception($"[模型] `{name}` 是请求模型，但不存在对应的响应模型。"));
-                        continue;
                     }
                 }
 
@@ -184,16 +185,14 @@ namespace SKIT.FlurlHttpClient.Wechat
                     if (!typeof(ICommonResponse).IsAssignableFrom(modelType))
                     {
                         lstError.Add(new Exception($"[模型] `{name}` 是响应模型，需实现自 `{nameof(ICommonResponse)}`。"));
-                        continue;
                     }
 
                     if (!lstModelType.Any(e => e.Name == $"{name.Substring(0, name.Length - "Response".Length)}Request"))
                     {
                         lstError.Add(new Exception($"[模型] `{name}` 是响应模型，但不存在对应的请求模型。"));
-                        continue;
                     }
                 }
-            }
+            });
 
             if (lstError.Any())
             {
@@ -221,7 +220,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 lstError.Add(new Exception($"[模型] \"{workdir}\" 下不存在示例文件，请检查配置的扫描路径是否正确。"));
             }
 
-            foreach (string filePath in lstFilePath)
+            Parallel.ForEach(lstFilePath, (filePath) =>
             {
                 string name = Path.GetFileNameWithoutExtension(filePath).Split('.')[0];
 
@@ -229,7 +228,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 if (type == null)
                 {
                     lstError.Add(new Exception($"[模型] 扫描到示例文件 \"{filePath}\"，但类型 `{name}` 不存在。"));
-                    continue;
+                    return;
                 }
 
                 if (string.Equals(Path.GetExtension(filePath), ".json", StringComparison.OrdinalIgnoreCase))
@@ -240,7 +239,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         lstError.Add(ex);
                     }
                 }
-            }
+            });
 
             if (lstError.Any())
             {
@@ -271,7 +270,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 lstError.Add(new Exception($"[模型] \"{workdir}\" 下不存在示例文件，请检查配置的扫描路径是否正确。"));
             }
 
-            foreach (string filePath in lstFilePath)
+            Parallel.ForEach(lstFilePath, (filePath) =>
             {
                 string name = Path.GetFileNameWithoutExtension(filePath).Split('.')[0];
 
@@ -279,7 +278,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                 if (type == null)
                 {
                     lstError.Add(new Exception($"[模型] 扫描到示例文件 \"{filePath}\"，但类型 `{name}` 不存在。"));
-                    continue;
+                    return;
                 }
 
                 if (string.Equals(Path.GetExtension(filePath), ".json", StringComparison.OrdinalIgnoreCase))
@@ -300,7 +299,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         lstError.Add(ex);
                     }
                 }
-            }
+            });
 
             if (lstError.Any())
             {
@@ -319,7 +318,7 @@ namespace SKIT.FlurlHttpClient.Wechat
             var lstExtType = TestReflectionUtil.GetAllApiExtensionsTypes(assembly);
             var lstError = new List<Exception>();
 
-            foreach (Type extensionsType in lstExtType)
+            Parallel.ForEach(lstExtType, (extensionsType) =>
             {
                 MethodInfo[] lstMethod = extensionsType.GetMethods()
                     .Where(e =>
@@ -372,7 +371,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         continue;
                     }
                 }
-            }
+            });
 
             if (lstError.Any())
             {
@@ -406,12 +405,12 @@ namespace SKIT.FlurlHttpClient.Wechat
                 lstError.Add(new Exception($"[风格] \"{workdir}\" 下不存在源代码文件，请检查配置的扫描路径是否正确。"));
             }
 
-            foreach (string extCodeFilePath in lstExtensionsCodeFile)
+            Parallel.ForEach(lstExtensionsCodeFile, (extCodeFilePath) =>
             {
                 string extCodeFileName = Path.GetFileName(extCodeFilePath);
 
                 string[] segments = File.ReadAllText(extCodeFilePath)
-                    .Split("<summary>", StringSplitOptions.RemoveEmptyEntries)
+                    .Split(new string[] { "<summary>" }, StringSplitOptions.RemoveEmptyEntries)
                     .Where(e => e.Contains("Async") && !e.Contains("public static class"))
                     .ToArray();
                 for (int i = 0; i < segments.Length; i++)
@@ -440,9 +439,9 @@ namespace SKIT.FlurlHttpClient.Wechat
                         string expectedMethod = regexApi.Groups[1].Value.Trim();
                         string expectedUrl = regexApi.Groups[2].Value.Split('?')[0].Trim();
                         string actualMethod = sourceCode.Contains(".CreateRequest(request, new HttpMethod(\"") ?
-                            sourceCode.Split(".CreateRequest(request, new HttpMethod(\"")[1].Split("\"")[0] :
+                            sourceCode.Split(new string[] { ".CreateRequest(request, new HttpMethod(\"" }, StringSplitOptions.None)[1].Split('\"')[0] :
                             sourceCode.Contains(".CreateRequest(request, HttpMethod.") ?
-                            sourceCode.Split(".CreateRequest(request, HttpMethod.")[1].Split(",")[0].Split(")")[0] :
+                            sourceCode.Split(new string[] { ".CreateRequest(request, HttpMethod." }, StringSplitOptions.None)[1].Split(',')[0].Split(')')[0] :
                             string.Empty;
                         if (!string.Equals(expectedMethod, actualMethod, StringComparison.OrdinalIgnoreCase))
                         {
@@ -452,17 +451,17 @@ namespace SKIT.FlurlHttpClient.Wechat
 
                         // 比对请求路由
                         string actualUrl = sourceCode
-                            .Split("CreateRequest(request,", StringSplitOptions.RemoveEmptyEntries)[1]
-                            .Substring(sourceCode.Split("CreateRequest(request,", StringSplitOptions.RemoveEmptyEntries)[1].Split(",")[0].Length + 1)
+                            .Split(new string[] { "CreateRequest(request," }, StringSplitOptions.RemoveEmptyEntries)[1]
+                            .Substring(sourceCode.Split(new string[] { "CreateRequest(request," }, StringSplitOptions.RemoveEmptyEntries)[1].Split(',')[0].Length + 1)
                             .Split('\n')[0]
                             .Trim()
                             .TrimEnd(')', ';')
                             .Trim();
-                        string[] expectedUrlSegments = expectedUrl.Split('/', StringSplitOptions.RemoveEmptyEntries);
-                        string[] actualUrlSegments = actualUrl.Split(',', StringSplitOptions.RemoveEmptyEntries).Select(e => e.Trim()).ToArray();
+                        string[] expectedUrlSegments = expectedUrl.Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
+                        string[] actualUrlSegments = actualUrl.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries).Select(e => e.Trim()).ToArray();
                         if (expectedUrlSegments.Length != actualUrlSegments.Length)
                         {
-                            lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                            lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致：节长不等（实际 {actualUrlSegments.Length}，期望 {expectedUrlSegments.Length}）。"));
                             return false;
                         }
                         else
@@ -475,7 +474,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                                 {
                                     if (actualUrlSegment.StartsWith("\""))
                                     {
-                                        lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                                        lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致：第 {urlSegmentIndex} 节值不同。"));
                                         break;
                                     }
                                 }
@@ -484,7 +483,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                                     actualUrlSegment = actualUrlSegment.Replace("\"", string.Empty).Trim('/');
                                     if (!string.Equals(expectedUrlSegment, actualUrlSegment))
                                     {
-                                        lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致。"));
+                                        lstError.Add(new Exception($"[风格] 源代码 \"{extCodeFileName}\" 下第 {i + 1} 段文档注释有误，`[{expectedMethod}] {expectedUrl}` 与实际接口路由不一致：第 {urlSegmentIndex} 节值不同。"));
                                         break;
                                     }
                                 }
@@ -676,7 +675,7 @@ namespace SKIT.FlurlHttpClient.Wechat
                         }
                     }
                 }
-            }
+            });
 
             if (lstError.Any())
             {

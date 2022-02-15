@@ -1,0 +1,18 @@
+﻿{
+    "sign": "E1EE61A91C8E90F299DE6AE075D60A2D",
+    "mch_billno": "0010010404201411170000046545",
+    "mch_id": "1000888888",
+    "sub_mch_id": "1000888888",
+    "wxappid": "wxcbda96de0b165486",
+    "send_name": "send_name",
+    "re_openid": "onqOjjmM1tad-3ROpncN-yUfa6uI",
+    "total_amount": "600",
+    "amt_type": "ALL_RAND",
+    "total_num": "3",
+    "wishing": "恭喜发财",
+    "act_name": "新年红包",
+    "remark": "新年红包",
+    "scene_id": "PRODUCT_2",
+    "nonce_str": "50780e0cca98c8c8e814883e5caa672e",
+    "risk_info": "posttime%3d123123412%26clientversion%3d234134%26mobile%3d122344545%26deviceid%3dIOS"
+}

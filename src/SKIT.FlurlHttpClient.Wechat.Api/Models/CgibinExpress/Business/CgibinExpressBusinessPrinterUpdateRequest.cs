@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -26,9 +25,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置打印员面单打印权限列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tagid_list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualInt32IListConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringListWithCommaSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("tagid_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualInt32IListConverter))]
-        public IList<int>? TagIdList { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringListWithCommaSplitConverter))]
+        public IList<string>? TagIdList { get; set; }
     }
 }

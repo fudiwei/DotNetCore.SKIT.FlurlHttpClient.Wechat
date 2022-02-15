@@ -1,0 +1,12 @@
+﻿{
+    "mch_id": "10000098",
+    "appid": "wxcbda96de0b165486",
+    "nonce_str": "5K8264ILTKCH16CQ2502SI8ZNMTM67VS",
+    "sign": "C380BEC2BFD727A4B6845133519F3AD6",
+    "body": "水电代扣",
+    "out_trade_no": "217752501201407033233368018",
+    "total_fee": "888",
+    "spbill_create_ip": "8.8.8.8",
+    "notify_url": "http://yoursite.com/wxpay.html",
+    "contract_id": "Wx15463511252015071056489715"
+}

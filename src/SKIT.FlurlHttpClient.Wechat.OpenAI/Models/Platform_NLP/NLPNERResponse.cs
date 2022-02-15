@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
     /// <summary>
     /// <para>表示 [POST] /nlp/ner/{TOKEN} 接口的响应。</para>
@@ -38,7 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("norm")]
                 [System.Text.Json.Serialization.JsonPropertyName("norm")]
-                public object Norm { get; set; } = default!;
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectReadOnlyConverter))]
+                public dynamic Norm { get; set; } = default!;
             }
         }
 

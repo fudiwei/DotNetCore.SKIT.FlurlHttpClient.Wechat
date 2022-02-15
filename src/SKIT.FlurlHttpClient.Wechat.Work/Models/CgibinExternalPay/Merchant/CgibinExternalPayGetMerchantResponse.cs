@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalpay/getmerchant 接口的响应。</para>
@@ -24,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("partyid")]
                 [System.Text.Json.Serialization.JsonPropertyName("partyid")]
-                public int[]? DepartmentIdList { get; set; }
+                public long[]? DepartmentIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置标签 ID 列表。

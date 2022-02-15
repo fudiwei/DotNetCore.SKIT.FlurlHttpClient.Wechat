@@ -9,25 +9,38 @@
 
     <PropertyGroup>
         <PackageId>SKIT.FlurlHttpClient.Wechat.Work</PackageId>
+		<PackageIcon>LOGO.png</PackageIcon>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage WechatWork WeixinWork Wxwork 微信 企业微信 企业号 微信企业号</PackageTags>
-        <Version>2.2.0</Version>
+        <Version>2.5.1</Version>
         <Description>基于 Flurl.Http 的企业微信 API 客户端，支持企业内部开发、第三方应用开发、智慧硬件开发模式，支持基础服务、通讯录管理、客户联系、身份验证、应用管理、素材管理、设备管理、消息推送、OA、效率工具、企业互联、电子发票、家校沟通、家校应用、政民沟通等功能。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git</RepositoryUrl>
-        <GenerateDocumentationFile>true</GenerateDocumentationFile>
-        <IncludeSymbols>true</IncludeSymbols>
-        <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+		<Deterministic>true</Deterministic>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="../../LOGO.png" Pack="true" PackagePath="/" />
+		<None Include="README.md" Pack="true" PackagePath="/" />
+	</ItemGroup>
 
     <ItemGroup>
         <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461'" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.0.0" />
+        <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.2.0" />
     </ItemGroup>
 
 </Project>

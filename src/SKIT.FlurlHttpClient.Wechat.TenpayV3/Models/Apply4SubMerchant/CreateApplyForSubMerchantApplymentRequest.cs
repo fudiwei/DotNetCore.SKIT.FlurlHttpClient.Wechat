@@ -692,9 +692,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// 获取或设置优惠费率活动值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activities_rate")]
-                [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonActivityRateConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyActivityRateNewtonsoftJsonConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("activities_rate")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonActivityRateConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyActivityRateSystemTextJsonConverter))]
                 public double? ActivityRate { get; set; }
 
                 /// <summary>
@@ -793,7 +793,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
         internal static class Converters
         {
-            internal class NewtonsoftJsonActivityRateConverter : Newtonsoft.Json.JsonConverter<double?>
+            internal class RequestPropertyActivityRateNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<double?>
             {
                 public override bool CanRead
                 {
@@ -837,7 +837,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 }
             }
 
-            internal class SystemTextJsonActivityRateConverter : System.Text.Json.Serialization.JsonConverter<double?>
+            internal class RequestPropertyActivityRateSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<double?>
             {
                 public override double? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {

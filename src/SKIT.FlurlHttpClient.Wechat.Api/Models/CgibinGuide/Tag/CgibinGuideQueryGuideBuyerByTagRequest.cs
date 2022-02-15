@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -34,6 +33,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("push_count")]
         [System.Text.Json.Serialization.JsonPropertyName("push_count")]
-        public int? PushCount { get; set; } 
+        public int? PushCount { get; set; }
     }
 }

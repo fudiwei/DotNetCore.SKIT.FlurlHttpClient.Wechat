@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Exceptions
         }
 
         /// <inheritdoc/>
-        internal WechatWorkEventSerializationException(string message) 
+        internal WechatWorkEventSerializationException(string message)
             : base(message)
         {
         }
 
         /// <inheritdoc/>
-        internal WechatWorkEventSerializationException(string message, Exception innerException) 
+        internal WechatWorkEventSerializationException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

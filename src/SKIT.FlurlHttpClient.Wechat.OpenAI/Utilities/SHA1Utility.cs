@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Utilities
     public static class SHA1Utility
     {
         /// <summary>
-        /// 获取信息摘要。
+        /// 获取 SHA-1 信息摘要。
         /// </summary>
         /// <param name="bytes">信息字节数组。</param>
         /// <returns>信息摘要。</returns>
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Utilities
         }
 
         /// <summary>
-        /// 获取信息摘要。
+        /// 获取 SHA-1 信息摘要。
         /// </summary>
         /// <param name="message">文本信息。</param>
         /// <returns>信息摘要。</returns>

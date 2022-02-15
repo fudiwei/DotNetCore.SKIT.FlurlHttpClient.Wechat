@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -151,12 +149,66 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "sns", "component", "jscode2session")
                 .SetQueryParam("grant_type", request.GrantType)
+                .SetQueryParam("js_code", request.JsCode)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("component_appid", request.ComponentAppId)
-                .SetQueryParam("component_access_token", request.ComponentAccessToken)
-                .SetQueryParam("js_code", request.JsCode);
+                .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.SnsComponentJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /sns/oauth2/component/access_token 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Official_Accounts/official_account_website_authorization.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.SnsOAuth2ComponentAccessTokenResponse> ExecuteSnsOAuth2ComponentAccessTokenAsync(this WechatApiClient client, Models.SnsOAuth2ComponentAccessTokenRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.ComponentAppId == null)
+                request.ComponentAppId = client.Credentials.AppId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "sns", "oauth2", "component", "access_token")
+                .SetQueryParam("grant_type", request.GrantType)
+                .SetQueryParam("code", request.Code)
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("component_appid", request.ComponentAppId)
+                .SetQueryParam("component_access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.SnsOAuth2ComponentAccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /sns/oauth2/component/refresh_token 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Official_Accounts/official_account_website_authorization.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.SnsOAuth2ComponentRefreshTokenResponse> ExecuteSnsOAuth2ComponentRefreshTokenAsync(this WechatApiClient client, Models.SnsOAuth2ComponentRefreshTokenRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.ComponentAppId == null)
+                request.ComponentAppId = client.Credentials.AppId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "sns", "oauth2", "component", "refresh_token")
+                .SetQueryParam("grant_type", request.GrantType)
+                .SetQueryParam("refresh_token", request.RefreshToken)
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("component_appid", request.ComponentAppId)
+                .SetQueryParam("component_access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.SnsOAuth2ComponentRefreshTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

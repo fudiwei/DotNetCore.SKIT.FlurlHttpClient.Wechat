@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
@@ -21,9 +20,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="callbackSerialNumber">微信回调通知中的 Wechatpay-Serial 字段。</param>
         /// <returns></returns>
         public static bool VerifyEventSignature(
-            this WechatTenpayClient client, 
-            string callbackTimestamp, 
-            string callbackNonce, 
+            this WechatTenpayClient client,
+            string callbackTimestamp,
+            string callbackNonce,
             string callbackBody,
             string callbackSignature,
             string callbackSerialNumber)
@@ -61,11 +60,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (callbackSignature == null) throw new ArgumentNullException(nameof(callbackSignature));
             if (callbackSerialNumber == null) throw new ArgumentNullException(nameof(callbackSerialNumber));
 
-            if (client.CertificateManager != null)
+            if (client.PlatformCertificateManager != null)
             {
                 try
                 {
-                    var cert = client.CertificateManager.GetEntry(callbackSerialNumber);
+                    var cert = client.PlatformCertificateManager.GetEntry(callbackSerialNumber);
                     if (!cert.HasValue)
                     {
                         error = new Exceptions.WechatTenpayEventVerificationException("Verify signature of event failed, because there is no platform certificate matched the serial number.");

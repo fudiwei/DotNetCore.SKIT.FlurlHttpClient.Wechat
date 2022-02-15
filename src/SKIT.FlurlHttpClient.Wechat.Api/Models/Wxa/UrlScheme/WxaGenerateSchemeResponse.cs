@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/generatescheme 接口的响应。</para>
@@ -13,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openlink")]
         [System.Text.Json.Serialization.JsonPropertyName("openlink")]
-        public string OpenLink { get; set; } = default!;
+        public string UrlScheme { get; set; } = default!;
     }
 }

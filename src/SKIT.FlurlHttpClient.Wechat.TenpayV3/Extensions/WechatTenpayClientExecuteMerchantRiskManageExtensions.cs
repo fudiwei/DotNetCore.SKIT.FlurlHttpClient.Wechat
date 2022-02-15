@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
-using Flurl;
 using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
@@ -51,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "merchant-risk-manage", "violation-notifications");
 
-            return await client.SendRequestWithJsonAsync<Models.GetMerchantRiskManageViolationNotificationResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

@@ -39,24 +39,36 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public string SignAlgorithm { get; set; } = Constants.SignAlgorithms.WECHATPAY2_SHA256_RSA2048;
 
         /// <summary>
-        /// 获取或设置微信商户号。
+        /// 获取或设置微信支付商户号。
         /// </summary>
         public string MerchantId { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置微信商户 API v3 密钥（注意与 API 密钥相区分）。
+        /// 获取或设置微信支付商户 API v3 密钥（注意与 API 密钥相区分）。
         /// </summary>
         public string MerchantV3Secret { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置微信商户 API 证书序列号。
+        /// <i>（本参数已废弃，请使用 <see cref="MerchantCertificateSerialNumber"/> 参数）</i>
         /// </summary>
-        public string MerchantCertSerialNumber { get; set; } = default!;
+        [Obsolete("本参数已废弃，请使用 `MerchantCertificateSerialNumber` 参数")]
+        public string MerchantCertSerialNumber { get { return MerchantCertificateSerialNumber; } set { MerchantCertificateSerialNumber = value; } }
 
         /// <summary>
-        /// 获取或设置微信商户 API 证书私钥。
+        /// 获取或设置微信支付商户 API 证书序列号。
         /// </summary>
-        public string MerchantCertPrivateKey { get; set; } = default!;
+        public string MerchantCertificateSerialNumber { get; set; } = default!;
+
+        /// <summary>
+        /// <i>（本参数已废弃，请使用 <see cref="MerchantCertificatePrivateKey"/> 参数）</i>
+        /// </summary>
+        [Obsolete("本参数已废弃，请使用 `MerchantCertificatePrivateKey` 参数")]
+        public string MerchantCertPrivateKey { get { return MerchantCertificatePrivateKey; } set { MerchantCertificatePrivateKey = value; } }
+
+        /// <summary>
+        /// 获取或设置微信支付商户 API 证书私钥（通常为 `apiclient_key.pem` 文件内容）。
+        /// </summary>
+        public string MerchantCertificatePrivateKey { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置是否自动加密请求中的敏感字段数据。
@@ -69,9 +81,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public bool AutoDecryptResponseSensitiveProperty { get; set; }
 
         /// <summary>
-        /// 获取或设置微信商户平台证书管理器。
+        /// <i>（本参数已废弃，请使用 <see cref="PlatformCertificateManager"/> 参数）</i>
+        /// </summary>
+        [Obsolete("本参数已废弃，请使用 `PlatformCertificateManager` 参数")]
+        public Settings.CertificateManager CertificateManager { get { return PlatformCertificateManager; } set { PlatformCertificateManager = value; } }
+
+        /// <summary>
+        /// 获取或设置微信支付平台证书管理器。
         /// <para>默认值：<see cref="Settings.InMemoryCertificateManager"/></para>
         /// </summary>
-        public Settings.CertificateManager CertificateManager { get; set; } = new Settings.InMemoryCertificateManager();
+        public Settings.CertificateManager PlatformCertificateManager { get; set; } = new Settings.InMemoryCertificateManager();
     }
 }

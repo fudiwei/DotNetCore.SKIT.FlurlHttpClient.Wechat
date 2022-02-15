@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/living/get_living_info 接口的响应。</para>
@@ -31,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("main_department")]
                 [System.Text.Json.Serialization.JsonPropertyName("main_department")]
-                public int? AnchorMainDepartmentId { get; set; }
+                public long? AnchorMainDepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置直播标题。

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
     /// <summary>
     /// <para>表示 [POST] /nlp/document_classify/{TOKEN} 接口的响应。</para>

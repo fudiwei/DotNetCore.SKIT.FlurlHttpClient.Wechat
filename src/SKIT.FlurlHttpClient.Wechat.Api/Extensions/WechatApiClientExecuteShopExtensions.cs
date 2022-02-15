@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -28,17 +25,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "shop", "img", "upload")
-                .SetQueryParam("access_token", request.AccessToken);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("resp_type", request.ResponseType);
 
-            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var httpContent = new MultipartFormDataContent(boundary);
-            using var fileContent = new ByteArrayContent(request.ImageFileBytes ?? new byte[0]);
-            httpContent.Add(fileContent, "\"media\"", "\"image.png\"");
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
-            fileContent.Headers.ContentLength = request.ImageFileBytes?.Length;
+            if (request.ImageUrl != null)
+            {
+                flurlReq.SetQueryParam("upload_type", 1)
+                        .SetQueryParam("img_url", request.ImageUrl);
 
-            return await client.SendRequestAsync<Models.ShopImageUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+                return await client.SendRequestWithJsonAsync<Models.ShopImageUploadResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            }
+            else
+            {
+                flurlReq.SetQueryParam("upload_type", 0);
+
+                string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
+                using var httpContent = new MultipartFormDataContent(boundary);
+                using var fileContent = new ByteArrayContent(request.ImageFileBytes ?? new byte[0]);
+                httpContent.Add(fileContent, "\"media\"", "\"image.png\"");
+                httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
+                fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
+                fileContent.Headers.ContentLength = request.ImageFileBytes?.Length;
+
+                return await client.SendRequestAsync<Models.ShopImageUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            }
         }
 
         #region Register

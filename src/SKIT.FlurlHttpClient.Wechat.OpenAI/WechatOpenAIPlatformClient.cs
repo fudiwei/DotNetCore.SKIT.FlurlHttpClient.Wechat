@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.ObjectModel;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
@@ -75,10 +72,12 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         public async Task<T> SendRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
             where T : WechatOpenAIPlatformResponse, new()
         {
+            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
+
             try
             {
                 using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
-                return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)
             {
@@ -97,6 +96,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         public async Task<T> SendRequestWithJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
             where T : WechatOpenAIPlatformResponse, new()
         {
+            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
+
             try
             {
                 if (data is WechatOpenAIPlatformRequest.Serialization.IEncryptedXmlable)
@@ -106,8 +107,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     data = new { encrypt = encryptedXml };
                 }
 
-                using IFlurlResponse flurlResponse = await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
-                return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
+                bool isSimpleRequest = data == null ||
+                    flurlRequest.Verb == HttpMethod.Get ||
+                    flurlRequest.Verb == HttpMethod.Head ||
+                    flurlRequest.Verb == HttpMethod.Options;
+                using IFlurlResponse flurlResponse = isSimpleRequest ?
+                    await base.SendRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false) :
+                    await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)
             {
@@ -126,11 +133,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         public async Task<T> SendRequestWithUrlEncodedAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
             where T : WechatOpenAIPlatformResponse, new()
         {
+            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
+
             try
             {
                 if (data is WechatOpenAIPlatformRequest.Serialization.IEncryptedUrlEncoded)
                 {
-                    string jwt = Utilities.JWTUtility.EncodeWithHS256(payload: data, secret: Credentials.EncodingAESKey!);
+                    string jwt = Utilities.JwtUtility.EncodeWithHS256(payload: data, secret: Credentials.EncodingAESKey!);
                     data = new { query = jwt };
                 }
 
@@ -139,36 +148,12 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     .AllowAnyHttpStatus()
                     .SendUrlEncodedAsync(flurlRequest.Verb, data, cancellationToken)
                     .ConfigureAwait(false);
-                return await GetResposneAsync<T>(flurlResponse).ConfigureAwait(false);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
             }
             catch (FlurlHttpException ex)
             {
                 throw new WechatOpenAIException(ex.Message, ex);
             }
-        }
-
-        private async Task<T> GetResposneAsync<T>(IFlurlResponse flurlResponse)
-            where T : WechatOpenAIPlatformResponse, new()
-        {
-            byte[] bytes = await flurlResponse.GetBytesAsync().ConfigureAwait(false);
-            bool jsonable =
-                (bytes.FirstOrDefault() == 91 && bytes.LastOrDefault() == 93) || // "[...]"
-                (bytes.FirstOrDefault() == 123 && bytes.LastOrDefault() == 125); // "{...}"
-
-            T result = jsonable ? JsonSerializer.Deserialize<T>(Encoding.UTF8.GetString(bytes)) : new T();
-
-            result.RawStatus = flurlResponse.StatusCode;
-            result.RawHeaders = new ReadOnlyDictionary<string, string>(
-                flurlResponse.Headers
-                    .GroupBy(e => e.Name)
-                    .ToDictionary(
-                        k => k.Key,
-                        v => string.Join(", ", v.Select(e => e.Value))
-                    )
-            );
-            result.RawBytes = bytes;
-
-            return result;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -50,9 +49,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置商品价格（单位：分）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("price")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonCurrencyConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyCurrencyNewtonsoftJsonConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("price")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonCurrencyConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyCurrencySystemTextJsonConverter))]
                         public int Price { get; set; }
 
                         /// <summary>
@@ -73,18 +72,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置佣金金额（单位：分）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("commission")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonCurrencyConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyCurrencyNewtonsoftJsonConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("commission")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonCurrencyConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyCurrencySystemTextJsonConverter))]
                         public int CommissionValue { get; set; }
 
                         /// <summary>
                         /// 获取或设置预估佣金金额（单位：分）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("estimatedCommission")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonCurrencyConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyCurrencyNewtonsoftJsonConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("estimatedCommission")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonCurrencyConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyCurrencySystemTextJsonConverter))]
                         public int EstimatedCommissionValue { get; set; }
 
                         /// <summary>
@@ -197,7 +196,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         internal static class Converters
         {
-            internal class NewtonsoftJsonCurrencyConverter : Newtonsoft.Json.JsonConverter<int>
+            internal class ResponsePropertyCurrencyNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<int>
             {
                 public override bool CanRead
                 {
@@ -240,7 +239,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
             }
 
-            internal class SystemTextJsonCurrencyConverter : System.Text.Json.Serialization.JsonConverter<int>
+            internal class ResponsePropertyCurrencySystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<int>
             {
                 public override int Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {

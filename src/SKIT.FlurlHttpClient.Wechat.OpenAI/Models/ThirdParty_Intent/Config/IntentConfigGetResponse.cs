@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
+﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
 {
     /// <summary>
     /// <para>表示 [POST] /v2/intent/config/get 接口的响应。</para>
@@ -84,7 +81,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("content")]
                                 [System.Text.Json.Serialization.JsonPropertyName("content")]
-                                public object Content { get; set; } = default!;
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectReadOnlyConverter))]
+                                public dynamic Content { get; set; } = default!;
                             }
                         }
 

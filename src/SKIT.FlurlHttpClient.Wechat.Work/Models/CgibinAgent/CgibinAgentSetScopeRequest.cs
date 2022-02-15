@@ -33,13 +33,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_party")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_party")]
-        public IList<int>? AllowedDepartmentIdList { get; set; }
+        public IList<long>? AllowedDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置可见标签 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_tag")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_tag")]
-        public IList<int>? AllowedTagIdList { get; set; } 
+        public IList<int>? AllowedTagIdList { get; set; }
     }
 }

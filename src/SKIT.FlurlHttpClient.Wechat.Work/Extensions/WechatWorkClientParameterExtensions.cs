@@ -1,33 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Net.Http;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web;
 using Flurl;
-using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
-    /// <summary>
-    /// 为 <see cref="WechatWorkClient"/> 提供客户端调起 JS-SDK 签名的扩展方法。
-    /// </summary>
     public static class WechatWorkClientParameterExtensions
     {
         /// <summary>
-        /// <para>生成客户端 JS-SDK `wx.config` 所需的参数。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90136/90506 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90144/90539 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90152/90777 </para>
+        /// <para>生成企业号 JS-SDK `wx.config` 所需的参数字典。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90506 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90539 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90777 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="jsapiTicket"></param>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForJssdkConfigRequest(this WechatWorkClient client, string jsapiTicket, string url)
+        public static IDictionary<string, string> GenerateParametersForJSSDKConfig(this WechatWorkClient client, string jsapiTicket, string url)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (jsapiTicket is null) throw new ArgumentNullException(nameof(jsapiTicket));
@@ -47,16 +37,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>生成客户端 JS-SDK `wx.agentConfig` 所需的参数。</para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90136/90506 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90144/90539 </para>
-        /// <para>REF: https://open.work.weixin.qq.com/api/doc/90002/90152/90777 </para>
+        /// <para>生成企业号 JS-SDK `wx.agentConfig` 所需的参数字典。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90506 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90539 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90777 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="jsapiTicket"></param>
         /// <param name="url"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForJssdkAgentConfigRequest(this WechatWorkClient client, string jsapiTicket, string url)
+        public static IDictionary<string, string> GenerateParametersForJSSDKAgentConfig(this WechatWorkClient client, string jsapiTicket, string url)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (jsapiTicket is null) throw new ArgumentNullException(nameof(jsapiTicket));
@@ -74,6 +64,53 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 { "nonceStr", nonce },
                 { "signature", sign }
             });
+        }
+
+        /// <summary>
+        /// <para>生成企业号网页授权 URL。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91022 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91120 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="scope"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForConnectOAuth2Authorize(this WechatWorkClient client, string redirectUrl, string scope, string? state = null)
+        {
+            return new Url("https://open.weixin.qq.com")
+                .AppendPathSegments("connect", "oauth2", "authorize")
+                .SetQueryParam("appid", string.IsNullOrEmpty(client.Credentials.SuiteId) ? client.Credentials.CorpId : client.Credentials.SuiteId)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("response_type", "code")
+                .SetQueryParam("scope", scope)
+                .SetQueryParam("state", state)
+                .SetFragment("wechat_redirect")
+                .ToString();
+        }
+
+        /// <summary>
+        /// <para>生成企业号扫码授权 URL。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91019 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91124 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="state"></param>
+        /// <param name="language"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForSSOQrcodeConnectAuthorize(this WechatWorkClient client, string redirectUrl, string? state = null, string? language = null, string? userType = null)
+        {
+            return new Url("https://open.work.weixin.qq.com")
+                .AppendPathSegments("wwopen", "sso", "qrConnect")
+                .SetQueryParam("appid", client.Credentials.CorpId)
+                .SetQueryParam("agentid", client.Credentials.AgentId)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("state", state)
+                .SetQueryParam("lang", language)
+                .SetQueryParam("usertype", userType)
+                .ToString();
         }
     }
 }

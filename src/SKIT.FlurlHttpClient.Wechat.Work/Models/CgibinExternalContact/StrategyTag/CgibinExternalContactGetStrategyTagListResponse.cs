@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_strategy_tag_list 接口的响应。</para>
@@ -35,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("order")]
                         [System.Text.Json.Serialization.JsonPropertyName("order")]
-                        public int Order { get; set; }
+                        public long Order { get; set; }
 
                         /// <summary>
                         /// 获取或设置创建时间戳。
@@ -72,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order")]
                 [System.Text.Json.Serialization.JsonPropertyName("order")]
-                public int Order { get; set; }
+                public long Order { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间戳。

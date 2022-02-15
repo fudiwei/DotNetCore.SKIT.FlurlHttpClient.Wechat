@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/getapprovaldetail 接口的响应。</para>
@@ -29,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("partyid")]
                         [System.Text.Json.Serialization.JsonPropertyName("partyid")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int DepartmentId { get; set; }
+                        public long DepartmentId { get; set; }
                     }
 
                     public class Notifier
@@ -326,7 +323,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("openapi_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("openapi_id")]
-                                        public int DepartmentId { get; set; }
+                                        public long DepartmentId { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置成员名称。

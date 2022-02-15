@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/groupchat/get 接口的响应。</para>
@@ -84,6 +81,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("join_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("join_time")]
                         public long JoinTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置入群渠道。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("state")]
+                        [System.Text.Json.Serialization.JsonPropertyName("state")]
+                        public string? State { get; set; }
                     }
 
                     public class Administrator

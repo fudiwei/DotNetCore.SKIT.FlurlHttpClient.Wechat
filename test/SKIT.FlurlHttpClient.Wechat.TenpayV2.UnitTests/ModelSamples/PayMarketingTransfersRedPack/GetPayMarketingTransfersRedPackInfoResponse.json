@@ -1,0 +1,30 @@
+﻿{
+    "return_code": "SUCCESS",
+    "return_msg": "OK",
+    "result_code": "SUCCESS",
+    "err_code": "SUCCESS",
+    "err_code_des": "OK",
+    "mch_billno": "9010080799701411170000046603",
+    "mch_id": "11475856",
+    "detail_id": "10000417012016080830956240040",
+    "status": "RECEIVED",
+    "send_type": "ACTIVITY",
+    "hb_type": "NORMAL",
+    "total_num": "1",
+    "total_amount": "100",
+    "send_time": "2016-08-08 21:49:22",
+    "hblist": {
+        "hbinfo": [
+            {
+                "openid": "oHkLxtzmyHXX6FW_cAWo_orTSRXs",
+                "amount": "100",
+                "rcv_time": "2016-08-08 21:49:46"
+            },
+            {
+                "openid": "oHkLxtzmyHXX6FW_cAWo_orTSRXs",
+                "amount": "100",
+                "rcv_time": "2016-08-08 21:49:46"
+            }
+        ]
+    }
+}

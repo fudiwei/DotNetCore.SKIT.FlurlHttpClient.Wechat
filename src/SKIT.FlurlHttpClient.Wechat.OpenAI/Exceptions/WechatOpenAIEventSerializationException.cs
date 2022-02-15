@@ -10,13 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Exceptions
         }
 
         /// <inheritdoc/>
-        internal WechatOpenAIEventSerializationException(string message) 
+        internal WechatOpenAIEventSerializationException(string message)
             : base(message)
         {
         }
 
         /// <inheritdoc/>
-        internal WechatOpenAIEventSerializationException(string message, Exception innerException) 
+        internal WechatOpenAIEventSerializationException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

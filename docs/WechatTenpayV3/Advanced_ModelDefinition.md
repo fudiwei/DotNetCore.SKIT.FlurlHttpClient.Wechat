@@ -57,7 +57,7 @@
 
 ---
 
-### 【附 1】直连商户模式 API 模型命名速查表：
+### 【附】直连商户模式 API 模型命名速查表：
 
 注：树形结构与[微信支付开发者文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/index.shtml)目录结构保持一致。
 
@@ -243,6 +243,10 @@
 
         -   服务人员信息更新：`UpdateSmartGuide`
 
+    -   扣款服务
+
+        -   预扣费通知：`NotifyPAPPayContracts`
+
 -   行业方案
 
     -   智慧商圈
@@ -389,6 +393,36 @@
 
         -   下载账单：`DownloadBillFile`
 
+    -   批量转账到零钱
+
+        -   发起批量转账：`CreateTransferBatch`
+
+        -   微信批次单号查询批次单：`GetTransferBatchByBatchId`
+
+        -   微信明细单号查询明细单：`GetTransferBatchDetailByDetailId`
+
+        -   商家批次单号查询批次单：`GetTransferBatchByOutBatchNumber`
+
+        -   商家明细单号查询明细单：`GetTransferBatchDetailByOutDetailNumber`
+
+        -   转账电子回单申请受理：`CreateTransferBillReceipt`
+
+        -   查询转账电子回单：`GetTransferBillReceiptByOutBatchNumber`
+
+        -   转账明细电子回单受理：`CreateTransferDetailElectronicReceipt`
+
+        -   查询转账明细电子回单受理结果：`GetTransferDetailElectronicReceiptByOutDetailNumber`
+
+        -   下载电子回单：`DownloadBillFile`
+
+        -   查询账户实时余额：`GetMerchantFundBalance`
+
+        -   查询账户日终余额：`GetMerchantFundDayendBalance`
+
+    -   来账识别
+
+        -   商户银行来账查询：`QueryMerchantFundMerchantIncomeRecords`
+
 -   风险合规
 
     -   消费者投诉 2.0
@@ -421,11 +455,25 @@
 
     -   视频上传：`UploadMerchantMediaVideo`
 
+    -   银行组件：
+
+        -   获取对私银行卡号开户银行：`QueryCapitalBanksByBankAccount`
+
+        -   查询支持个人业务的银行列表：`QueryCapitalBanksPersonalBanking`
+
+        -   查询支持对公业务的银行列表：`QueryCapitalBanksCorporateBanking`
+
+        -   查询省份列表：`QueryCapitalAreasProvinces`
+
+        -   查询城市列表：`QueryCapitalAreasCities`
+
+        -   查询支行列表：`QueryCapitalBanksBranches`
+
 </details>
 
 ---
 
-### 【附 2】服务商模式 API 模型命名速查表：
+### 【附】服务商模式 API 模型命名速查表：
 
 注：树形结构与[微信支付开发者文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/index.shtml)目录结构保持一致。
 
@@ -632,6 +680,10 @@
         -   开通广告展示：`OpenGoldPlanAdvertisingShow`
 
         -   关闭广告展示：`CloseGoldPlanAdvertisingShow`
+
+    -   扣款服务
+
+        -   预扣费通知：`NotifyPartnerPAPPayContracts`
 
 -   行业方案
 
@@ -904,6 +956,40 @@
         -   添加分账接收方：`AddBrandProfitSharingReceiver`
 
         -   删除分账接收方：`DeleteBrandProfitSharingReceiver`
+
+    -   批量转账到零钱
+
+        -   发起批量转账：`CreatePartnerTransferBatch`
+
+        -   微信批次单号查询批次单：`GetPartnerTransferBatchByBatchId`
+
+        -   微信明细单号查询明细单：`GetPartnerTransferBatchDetailByDetailId`
+
+        -   商家批次单号查询批次单：`GetPartnerTransferBatchByOutBatchNumber`
+
+        -   商家明细单号查询明细单：`GetPartnerTransferBatchDetailByOutDetailNumber`
+
+        -   转账电子回单申请受理：`CreateTransferBillReceipt`
+
+        -   查询转账电子回单：`GetTransferBillReceiptByOutBatchNumber`
+
+        -   转账明细电子回单受理：`CreateTransferDetailElectronicReceipt`
+
+        -   查询转账明细电子回单受理结果：`GetTransferDetailElectronicReceiptByOutDetailNumber`
+
+        -   下载电子回单：`DownloadBillFile`
+
+        -   查询特约商户账户实时余额：`GetEcommerceFundBalance`
+
+        -   查询账户实时余额：`GetMerchantFundBalance`
+
+        -   查询账户日终余额：`GetMerchantFundDayendBalance`
+
+    -   来账识别
+
+        -   特约商户银行来账查询：`QueryMerchantFundPartnerIncomeRecords`
+
+        -   服务商银行来账查询：`QueryMerchantFundMerchantIncomeRecords`
 
 -   风险合规
 

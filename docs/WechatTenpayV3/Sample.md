@@ -2,15 +2,19 @@
 
 ---
 
-示例项目位于 _samples/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5_。
+示例项目基于 .NET Framework 4.7 和 .NET 6.0 实现，分别位于 _samples/SKIT.FlurlHttpClient.Wechat.Sample_NetFramework47_ 和 _samples/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net6_。
 
-示例项目基于 .NET 5.0 实现。
+示例项目依赖以下第三方库：
+
+-   [`Autofac`](https://github.com/autofac/Autofac)：依赖注入容器。
+
+-   [`Hangfire`](https://github.com/HangfireIO/Hangfire)：后台作业调度框架。
 
 示例项目实现了以下功能：
 
 -   多租户商户号；
 
--   微信商户平台证书自动更新。
+-   微信商户平台证书自动更新；
 
 -   验证并接收微信服务器推送数据；
 
@@ -18,7 +22,7 @@
 
 ---
 
-### 【重要】使用须知：
+### 【重要】使用前须知：
 
 示例项目仅作为业务上的参考，不代表可直接用于生产。
 

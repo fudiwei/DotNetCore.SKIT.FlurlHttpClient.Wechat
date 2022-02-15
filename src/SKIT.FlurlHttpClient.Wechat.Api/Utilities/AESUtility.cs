@@ -1,13 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Security;
 using System.Security.Cryptography;
 using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
+    /// <summary>
+    /// AES 算法工具类。
+    /// </summary>
     public static class AESUtility
     {
         /// <summary>

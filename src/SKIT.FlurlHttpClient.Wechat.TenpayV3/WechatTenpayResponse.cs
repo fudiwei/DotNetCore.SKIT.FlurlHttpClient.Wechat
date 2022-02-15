@@ -9,25 +9,52 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public abstract class WechatTenpayResponse : ICommonResponse
     {
         /// <summary>
+        /// 
+        /// </summary>
+        int ICommonResponse.RawStatus { get; set; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        IDictionary<string, string> ICommonResponse.RawHeaders { get; set; } = default!;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        byte[] ICommonResponse.RawBytes { get; set; } = default!;
+
+        /// <summary>
         /// 获取原始的 HTTP 响应状态码。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public int RawStatus { get; internal set; }
+        public int RawStatus
+        {
+            get { return ((ICommonResponse)this).RawStatus; }
+            internal set { ((ICommonResponse)this).RawStatus = value; }
+        }
 
         /// <summary>
         /// 获取原始的 HTTP 响应表头集合。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IDictionary<string, string> RawHeaders { get; internal set; } = default!;
+        public IDictionary<string, string> RawHeaders
+        {
+            get { return ((ICommonResponse)this).RawHeaders; }
+            internal set { ((ICommonResponse)this).RawHeaders = value; }
+        }
 
         /// <summary>
         /// 获取原始的 HTTP 响应正文。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] RawBytes { get; internal set; } = default!;
+        public byte[] RawBytes
+        {
+            get { return ((ICommonResponse)this).RawBytes; }
+            internal set { ((ICommonResponse)this).RawBytes = value; }
+        }
 
         /// <summary>
         /// 获取微信请求唯一标识。
@@ -58,11 +85,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public string WechatpaySignature { get; internal set; } = default!;
 
         /// <summary>
+        /// <i>（本参数已废弃，请使用 <see cref="WechatpayCertificateSerialNumber"/> 参数）</i>
+        /// </summary>
+        [Obsolete("本参数已废弃，请使用 `WechatpayCertificateSerialNumber` 参数")]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string WechatpayCertSerialNumber { get { return WechatpayCertificateSerialNumber; } set { WechatpayCertificateSerialNumber = value; } }
+
+        /// <summary>
         /// 获取微信应答签名使用的微信支付平台证书序列号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string WechatpayCertSerialNumber { get; internal set; } = default!;
+        public string WechatpayCertificateSerialNumber { get; internal set; } = default!;
 
         /// <summary>
         /// 获取微信支付 API 返回的错误码。

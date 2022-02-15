@@ -13,13 +13,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         }
 
         /// <inheritdoc/>
-        public WechatOpenAIException(string message) 
+        public WechatOpenAIException(string message)
             : base(message)
         {
         }
 
         /// <inheritdoc/>
-        public WechatOpenAIException(string message, Exception innerException) 
+        public WechatOpenAIException(string message, Exception innerException)
             : base(message, innerException)
         {
         }

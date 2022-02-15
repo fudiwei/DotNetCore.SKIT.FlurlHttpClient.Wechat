@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/tag/addtagusers 接口的响应。</para>
@@ -12,9 +9,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置无效的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidlist")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.SeparatedByVBarStringArrayConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringArrayWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("invalidlist")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.SeparatedByVBarStringArrayConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringArrayWithPipeSplitConverter))]
         public string[]? InvalidUserIdList { get; set; }
 
         /// <summary>
@@ -22,6 +19,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidparty")]
         [System.Text.Json.Serialization.JsonPropertyName("invalidparty")]
-        public int[]? InvalidDepartmentIdList { get; set; }
+        public long[]? InvalidDepartmentIdList { get; set; }
     }
 }

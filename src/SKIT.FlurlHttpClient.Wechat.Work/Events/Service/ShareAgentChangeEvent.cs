@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.share_agent_change 或 INFO.share_agent_change 事件的数据。</para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90000/90135/90240 </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/93373 </para>
-    /// <para>REF: https://open.work.weixin.qq.com/api/doc/90001/90143/90376 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90240 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/93373 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90376 </para>
     /// </summary>
     public class ShareAgentChangeEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {

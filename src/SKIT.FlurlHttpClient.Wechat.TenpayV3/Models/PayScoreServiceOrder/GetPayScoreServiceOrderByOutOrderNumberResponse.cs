@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -350,7 +349,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("need_collection")]
         [System.Text.Json.Serialization.JsonPropertyName("need_collection")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.StringTypedNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableBooleanConverter))]
         public bool? RequireCollection { get; set; }
 
         /// <summary>

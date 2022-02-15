@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/agent/get 接口的响应。</para>
@@ -40,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("partyid")]
                 [System.Text.Json.Serialization.JsonPropertyName("partyid")]
-                public int[] DepartmentIdList { get; set; } = default!;
+                public long[] DepartmentIdList { get; set; } = default!;
             }
 
             public class AllowedTag
@@ -143,5 +140,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("home_url")]
         [System.Text.Json.Serialization.JsonPropertyName("home_url")]
         public string? HomeUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置代开发发布状态。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("customized_publish_status")]
+        [System.Text.Json.Serialization.JsonPropertyName("customized_publish_status")]
+        public int? CustomizedPublishStatus { get; set; }
     }
 }

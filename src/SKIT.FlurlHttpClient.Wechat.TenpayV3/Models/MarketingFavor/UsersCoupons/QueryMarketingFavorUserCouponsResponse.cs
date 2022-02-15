@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -15,11 +14,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public static class Types
                 {
                     public class CutToMessage : GetMarketingFavorUserCouponByCouponIdResponse.Types.CutToMessage
-                    { 
+                    {
                     }
 
                     public class NormalCoupon : GetMarketingFavorUserCouponByCouponIdResponse.Types.NormalCoupon
-                    { 
+                    {
                     }
 
                     public class Consumption

@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("tar_type", request.TarType)
                 .SetQueryParam("algorithm", request.Algorithm);
 
-            return await client.SendRequestWithJsonAsync<Models.GetPayScoreMerchantBillResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetPayScoreMerchantBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

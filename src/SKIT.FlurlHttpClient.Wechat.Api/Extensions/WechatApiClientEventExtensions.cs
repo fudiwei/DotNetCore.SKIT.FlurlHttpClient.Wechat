@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (safety)
             {
                 if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
-                    throw new Exceptions.WechatApiEventSerializationException ("Encrypt event failed, because there is no encoding AES key.");
+                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no encoding AES key.");
                 if (string.IsNullOrEmpty(client.Credentials.PushToken))
                     throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no token.");
 

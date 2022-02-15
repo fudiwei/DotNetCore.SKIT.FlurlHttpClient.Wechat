@@ -32,7 +32,7 @@ bool ret = client.VerifyEventSignature(
 );
 ```
 
-需要注意的是，使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请参阅本文档[《高级技巧 - 如何加密请求中的敏感数据？》](./Advanced_RequestSensitiveDataEncryption.md)的有关章节。
+需要注意的是，使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请阅读下方有关章节。
 
 ---
 
@@ -48,3 +48,9 @@ if (!ret)
     Console.WriteLine(error.InnerException);
 }
 ```
+
+---
+
+### 通过 `CertificateManager` 管理平台证书信息：
+
+请参阅本文档[《高级技巧 - 如何加密请求中的敏感数据？》](./Advanced_RequestSensitiveDataEncryption.md)下的同名章节。

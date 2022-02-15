@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxaapi/log/get_performance 接口的响应。</para>
@@ -50,72 +47,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         internal static class Converters
         {
-            internal class NewtonsoftJsonDefaultTimeDataConverter : Newtonsoft.Json.JsonConverter<Types.DefaultTimeData?>
+            internal class ResponsePropertyDefaultTimeDataNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.DefaultTimeData?>
             {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return true; }
-                }
-
-                public override Types.DefaultTimeData? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, Types.DefaultTimeData? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
-                    {
-                        string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
-                            return existingValue;
-
-                        return Newtonsoft.Json.JsonConvert.DeserializeObject<Types.DefaultTimeData>(value);
-                    }
-
-                    throw new Newtonsoft.Json.JsonReaderException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.DefaultTimeData? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (value != null)
-                        writer.WriteValue(Newtonsoft.Json.JsonConvert.SerializeObject(value, Newtonsoft.Json.Formatting.None));
-                    else
-                        writer.WriteNull();
-                }
             }
 
-            internal class SystemTextJsonDefaultTimeDataConverter : System.Text.Json.Serialization.JsonConverter<Types.DefaultTimeData?>
+            internal class ResponsePropertyDefaultTimeDataSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.DefaultTimeData?>
             {
-                public override Types.DefaultTimeData? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return null;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
-                    {
-                        string? value = reader.GetString();
-                        if (value == null)
-                            return null;
-
-                        return System.Text.Json.JsonSerializer.Deserialize<Types.DefaultTimeData>(value, options);
-                    }
-
-                    throw new System.Text.Json.JsonException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.DefaultTimeData? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (value != null)
-                        writer.WriteStringValue(System.Text.Json.JsonSerializer.Serialize(value, options));
-                    else
-                        writer.WriteNullValue();
-                }
             }
         }
 
@@ -123,9 +60,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置查询数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("default_time_data")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonDefaultTimeDataConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyDefaultTimeDataNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("default_time_data")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonDefaultTimeDataConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyDefaultTimeDataSystemTextJsonConverter))]
         public Types.DefaultTimeData? DefaultTimeData { get; set; }
 
         /// <summary>

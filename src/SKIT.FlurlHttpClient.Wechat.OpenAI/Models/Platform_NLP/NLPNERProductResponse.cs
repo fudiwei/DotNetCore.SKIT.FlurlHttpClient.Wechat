@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
 /* @codestyle-disable no-instantiated-property-in-response */
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
@@ -52,16 +51,16 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
                 /// 获取或设置结果。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product")]
-                [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonProductPropertyArrayConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyProductPropertyArrayNewtonsoftJsonConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("product")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonProductPropertyArrayConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyProductPropertyArraySystemTextJsonConverter))]
                 public Types.ProductProperty[] ProductPropertyList { get; set; } = default!;
             }
         }
 
         internal static class Converters
         {
-            internal class NewtonsoftJsonProductPropertyArrayConverter : Newtonsoft.Json.JsonConverter<Types.Result.Types.ProductProperty[]?>
+            internal class ResponsePropertyProductPropertyArrayNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<Types.Result.Types.ProductProperty[]?>
             {
                 public override bool CanRead
                 {
@@ -154,7 +153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
                 }
             }
 
-            internal class SystemTextJsonProductPropertyArrayConverter : System.Text.Json.Serialization.JsonConverter<Types.Result.Types.ProductProperty[]?>
+            internal class ResponsePropertyProductPropertyArraySystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<Types.Result.Types.ProductProperty[]?>
             {
                 public override Types.Result.Types.ProductProperty[]? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
@@ -250,9 +249,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
         /// 获取或设置抽取结果信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("entities")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonProductPropertyArrayConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyProductPropertyArrayNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("entities")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonProductPropertyArrayConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyProductPropertyArraySystemTextJsonConverter))]
         public Types.Result Result { get; set; } = default!;
     }
 }

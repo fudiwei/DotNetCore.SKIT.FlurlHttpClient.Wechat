@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/linkedcorp/department/list 接口的响应。</para>
@@ -17,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_id")]
-                public int DepartmentId { get; set; }
+                public long DepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门名称。
@@ -31,14 +28,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parentid")]
                 [System.Text.Json.Serialization.JsonPropertyName("parentid")]
-                public int ParentDepartmentId { get; set; }
+                public long ParentDepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置在上级部门中的次序值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order")]
                 [System.Text.Json.Serialization.JsonPropertyName("order")]
-                public int DepartmentOrder { get; set; }
+                public long DepartmentOrder { get; set; }
             }
         }
 

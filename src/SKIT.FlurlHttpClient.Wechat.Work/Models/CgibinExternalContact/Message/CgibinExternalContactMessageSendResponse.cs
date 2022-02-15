@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/message/send 接口的响应。</para>
@@ -34,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_party")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_party")]
-        public int[]? InvalidDepartmentIdIdList { get; set; }
+        public long[]? InvalidDepartmentIdIdList { get; set; }
     }
 }

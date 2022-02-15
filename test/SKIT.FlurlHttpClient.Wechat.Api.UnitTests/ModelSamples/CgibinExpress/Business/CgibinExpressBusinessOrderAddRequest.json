@@ -33,7 +33,19 @@
         "wxa_path": "/index/index?from=waybill&id=01234567890123456789",
         "img_url": "https://mmbiz.qpic.cn/mmbiz_png/OiaFLUqewuIDNQnTiaCInIG8ibdosYHhQHPbXJUrqYSNIcBL60vo4LIjlcoNG1QPkeH5GWWEB41Ny895CokeAah8A/640",
         "goods_name": "微信气泡狗抱枕&微信气泡狗钥匙扣",
-        "goods_count": 2
+        "goods_count": 2,
+        "detail_list": [
+            {
+                "goods_name": "微信气泡狗抱枕（小号）",
+                "goods_img_url": "https://mmbiz.qpic.cn/mmbiz_png/OiaFLUqewuIDNQnTiaCInIG8ibdosYHhQHPbXJUrqYSNIcBL60vo4LIjlcoNG1QPkeH5GWWEB41Ny895CokeAah8A/640",
+                "goods_desc": "40cm * 40cm尺寸"
+            },
+            {
+                "goods_name": "微信气泡狗抱枕（中号）",
+                "goods_img_url": "https://mmbiz.qpic.cn/mmbiz_png/OiaFLUqewuIDNQnTiaCInIG8ibdosYHhQHPbXJUrqYSNIcBL60vo4LIjlcoNG1QPkeH5GWWEB41Ny895CokeAah8A/640",
+                "goods_desc": "50cm * 50cm尺寸"
+            }
+        ]
     },
     "cargo": {
         "count": 2,
@@ -59,5 +71,6 @@
     "service": {
         "service_type": 0,
         "service_name": "标准快递"
-    }
+    },
+    "take_mode": 0
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -11,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public static class Types
         {
             public class Child : CgibinSchoolUserCreateParentRequest.Types.Child
-            { 
+            {
             }
         }
 
         /// <summary>
         /// 获取或设置家长账号。
         /// </summary>
-            [Newtonsoft.Json.JsonProperty("parent_userid")]
+        [Newtonsoft.Json.JsonProperty("parent_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("parent_userid")]
         public string ParentUserId { get; set; } = string.Empty;
 

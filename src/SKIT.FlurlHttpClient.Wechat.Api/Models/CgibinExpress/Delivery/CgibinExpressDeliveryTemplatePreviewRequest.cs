@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         internal static class Converters
         {
-            internal class NewtonsoftJsonWaybillDataListConverter : Newtonsoft.Json.JsonConverter<IList<Types.WaybillData>?>
+            internal class RequestPropertyWaybillDataListNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<IList<Types.WaybillData>?>
             {
                 public override bool CanRead
                 {
@@ -194,7 +194,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
             }
 
-            internal class SystemTextJsonWaybillDataListConverter : System.Text.Json.Serialization.JsonConverter<IList<Types.WaybillData>?>
+            internal class RequestPropertyWaybillDataListSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<IList<Types.WaybillData>?>
             {
                 public override IList<Types.WaybillData>? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
                 {
@@ -252,9 +252,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置面单数据列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("waybill_data")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.NewtonsoftJsonWaybillDataListConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyWaybillDataListNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("waybill_data")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.SystemTextJsonWaybillDataListConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyWaybillDataListSystemTextJsonConverter))]
         public IList<Types.WaybillData> WaybillDataList { get; set; } = new List<Types.WaybillData>();
 
         /// <summary>

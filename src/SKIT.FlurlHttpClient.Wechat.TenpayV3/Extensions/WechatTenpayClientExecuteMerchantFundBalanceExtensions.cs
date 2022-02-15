@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -31,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "merchant", "fund", "balance", request.AccountType);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMerchantFundBalanceResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMerchantFundBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -52,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "merchant", "fund", "dayendbalance", request.AccountType)
                 .SetQueryParam("date", request.DateString);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMerchantFundDayendBalanceResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetMerchantFundDayendBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

@@ -4,12 +4,13 @@ using System.Text.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
 {
-    class TestConfigs
+    internal class TestConfigs
     {
         static TestConfigs()
         {
-            // NOTICE: 请在项目根目录下按照 appsettings.json 的格式新建 appsettings.local.json 填入测试参数。
-            // WARN: 敏感信息请不要提交到 git！
+            // NOTICE:  请在项目根目录下按照 appsettings.json 的格式新建 appsettings.local.json 填入测试参数。
+            // WARNING: 请在 DEBUG 模式下运行测试用例。 
+            // WARNING: 敏感信息请不要提交到 git！
 
             try
             {
@@ -17,15 +18,15 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
                 using var jdoc = JsonDocument.Parse(stream);
 
                 var config = jdoc.RootElement.GetProperty("TestConfig");
-                WechatClientId = config.GetProperty("ClientId").GetString();
-                WechatClientKey = config.GetProperty("ClientKey").GetString();
-                WechatAppId = config.GetProperty("AppId").GetString();
-                WechatToken = config.GetProperty("Token").GetString();
-                WechatEncodingAESKey = config.GetProperty("EncodingAESKey").GetString();
-                WechatAccessToken = config.GetProperty("AccessToken").GetString();
+                WechatClientId = config.GetProperty("ClientId").GetString()!;
+                WechatClientKey = config.GetProperty("ClientKey").GetString()!;
+                WechatAppId = config.GetProperty("AppId").GetString()!;
+                WechatToken = config.GetProperty("Token").GetString()!;
+                WechatEncodingAESKey = config.GetProperty("EncodingAESKey").GetString()!;
+                WechatAccessToken = config.GetProperty("AccessToken").GetString()!;
 
-                ProjectSourceDirectory = jdoc.RootElement.GetProperty("ProjectSourceDirectory").GetString();
-                ProjectTestDirectory = jdoc.RootElement.GetProperty("ProjectTestDirectory").GetString();
+                ProjectSourceDirectory = jdoc.RootElement.GetProperty("ProjectSourceDirectory").GetString()!;
+                ProjectTestDirectory = jdoc.RootElement.GetProperty("ProjectTestDirectory").GetString()!;
             }
             catch (Exception ex)
             {

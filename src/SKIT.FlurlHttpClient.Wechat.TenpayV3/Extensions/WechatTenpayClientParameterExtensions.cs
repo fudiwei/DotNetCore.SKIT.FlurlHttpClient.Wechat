@@ -1,13 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Net.Http;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using System.Web;
-using Flurl;
-using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
@@ -17,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public static class WechatTenpayClientParameterExtensions
     {
         /// <summary>
-        /// <para>生成客户端 JSAPI / 小程序调起支付所需的参数。</para>
+        /// <para>生成客户端 JSAPI / 小程序调起支付所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_8.shtml </para>
@@ -43,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             string nonce = Guid.NewGuid().ToString("N");
             string package = $"prepay_id={prepayId}";
             string sign = Utilities.RSAUtility.SignWithSHA256(
-                privateKey: client.Credentials.MerchantCertPrivateKey,
+                privateKey: client.Credentials.MerchantCertificatePrivateKey,
                 plainText: $"{appId}\n{timestamp}\n{nonce}\n{package}\n"
             );
 
@@ -59,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>生成 APP 调起支付所需的参数。</para>
+        /// <para>生成 APP 调起支付所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_6.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_2_4.shtml </para>
@@ -76,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>生成 APP 调起支付所需的参数。</para>
+        /// <para>生成 APP 调起支付所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_6.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_2_4.shtml </para>
@@ -98,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string sign = Utilities.RSAUtility.SignWithSHA256(
-                privateKey: client.Credentials.MerchantCertPrivateKey,
+                privateKey: client.Credentials.MerchantCertificatePrivateKey,
                 plainText: $"{appId}\n{timestamp}\n{nonce}\n{prepayId}\n"
             );
 

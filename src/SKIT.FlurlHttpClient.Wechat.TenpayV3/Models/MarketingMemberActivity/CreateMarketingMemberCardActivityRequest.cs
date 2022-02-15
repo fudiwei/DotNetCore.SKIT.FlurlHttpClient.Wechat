@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("award_send_day_time")]
                 public Types.AwardSendDayTime[]? AwardSendDayTimeList { get; set; }
             }
-        
+
             public class Stock
             {
                 /// <summary>
@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("activate_path")]
                                 [System.Text.Json.Serialization.JsonPropertyName("activate_path")]
-                                public string Path { get; set; } = string.Empty;                            
+                                public string Path { get; set; } = string.Empty;
                             }
                         }
 
@@ -124,14 +124,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("activate_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("activate_type")]
                         public string ActivateType { get; set; } = string.Empty;
-                        
+
                         /// <summary>
                         /// 获取或设置激活跳转的 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("activate_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("activate_url")]
                         public string? ActivateUrl { get; set; }
-                        
+
                         /// <summary>
                         /// 获取或设置激活跳转的小程序信息。
                         /// </summary>
@@ -139,7 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [System.Text.Json.Serialization.JsonPropertyName("activate_miniprogram")]
                         public Types.MiniProgram? ActivateMiniProgram { get; set; }
                     }
-                
+
                     public class PaymentSetting
                     {
                         public static class Types
@@ -213,13 +213,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("payment_setting")]
                 public Types.PaymentSetting? PaymentSetting { get; set; }
             }
-        
+
             public class MiniProgramActivitySetting
             {
                 public static class Types
                 {
                     public class AwardSetting
-                    { 
+                    {
                         /// <summary>
                         /// 获取或设置跳转按钮文案。
                         /// </summary>
@@ -248,14 +248,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("outer_str")]
                 [System.Text.Json.Serialization.JsonPropertyName("outer_str")]
-                public List<string>? OuterString { get; set; }   
+                public List<string>? OuterString { get; set; }
 
                 /// <summary>
                 /// 获取或设置领奖页面跳转配置信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("award_jump_deploy")]
                 [System.Text.Json.Serialization.JsonPropertyName("award_jump_deploy")]
-                public Types.AwardSetting? AwardSetting { get; set; }   
+                public Types.AwardSetting? AwardSetting { get; set; }
             }
         }
 

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -31,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("departmentid")]
                 [System.Text.Json.Serialization.JsonPropertyName("departmentid")]
-                public int? DepartmentId { get; set; }
+                public long? DepartmentId { get; set; }
             }
         }
 

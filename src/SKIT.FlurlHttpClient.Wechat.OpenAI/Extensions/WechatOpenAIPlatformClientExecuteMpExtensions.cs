@@ -116,9 +116,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     plainText: Utilities.XmlUtility.Serialize(request),
                     encodingAESKey: client.Credentials.EncodingAESKey!,
                     appId: client.Credentials.AppId!
-                ), 
+                ),
                 Encoding.UTF8
-            );;
+            ); ;
             using var httpContent = new MultipartFormDataContent();
             httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Add(paramContent, "\"encrypt\"");

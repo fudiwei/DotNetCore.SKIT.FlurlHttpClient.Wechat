@@ -6,7 +6,6 @@ using System.Net;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
@@ -236,7 +235,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             set.Add(sTimestamp);
             set.Add(sNonce);
             set.Add(sMsgEncrypt);
-            
+
             string rawText = string.Join(string.Empty, set.ToArray());
             string signText = Utilities.SHA1Utility.Hash(rawText);
             return signText.ToLower();

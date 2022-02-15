@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/journal/get_stat_list 接口的响应。</para>
@@ -32,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("open_partyid")]
                         [System.Text.Json.Serialization.JsonPropertyName("open_partyid")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int DepartmentId { get; set; }
+                        public long DepartmentId { get; set; }
                     }
 
                     public class Tag

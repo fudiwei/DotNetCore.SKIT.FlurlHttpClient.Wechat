@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.Ads
+﻿namespace SKIT.FlurlHttpClient.Wechat.Ads
 {
     /// <summary>
     /// 微信广告平台 API 接口域名。

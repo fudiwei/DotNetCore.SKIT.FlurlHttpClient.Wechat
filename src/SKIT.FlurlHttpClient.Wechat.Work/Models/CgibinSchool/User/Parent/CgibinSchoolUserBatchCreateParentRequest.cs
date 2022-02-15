@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -15,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public static class Types
                 {
                     public class Child : CgibinSchoolUserCreateParentRequest.Types.Child
-                    { 
+                    {
                     }
                 }
 

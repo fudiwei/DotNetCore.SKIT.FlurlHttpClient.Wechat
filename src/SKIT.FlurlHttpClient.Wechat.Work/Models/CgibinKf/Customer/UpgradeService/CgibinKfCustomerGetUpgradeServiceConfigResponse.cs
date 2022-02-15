@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_id_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_id_list")]
-                public int[]? DepartmentIdList { get; set; }
+                public long[]? DepartmentIdList { get; set; }
             }
 
             public class GroupChatRange
@@ -47,6 +47,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("groupchat_range")]
         [System.Text.Json.Serialization.JsonPropertyName("groupchat_range")]
-        public Types.GroupChatRange? GroupChatRange { get; set; } 
+        public Types.GroupChatRange? GroupChatRange { get; set; }
     }
 }

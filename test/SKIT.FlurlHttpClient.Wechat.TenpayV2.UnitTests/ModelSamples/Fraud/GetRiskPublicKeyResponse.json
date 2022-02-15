@@ -1,0 +1,7 @@
+﻿{
+    "return_code": "SUCCESS",
+    "return_msg": "OK",
+    "result_code": "SUCCESS",
+    "mch_id": "123456",
+    "pub_key": "-----BEGIN RSA PUBLIC KEY-----\nBASE64 ENCODED DATA\n-----END RSA PUBLIC KEY-----\n"
+}
