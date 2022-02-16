@@ -196,7 +196,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("party")]
                 [System.Text.Json.Serialization.JsonPropertyName("party")]
-                public int[]? DepartmentIdList { get; set; }
+                public long[]? DepartmentIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否临时会话模式。

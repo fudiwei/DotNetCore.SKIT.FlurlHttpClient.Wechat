@@ -22,7 +22,10 @@ namespace SKIT.FlurlHttpClient.Wechat
             newtonsoftJsonSettings.CheckAdditionalContent = true;
             newtonsoftJsonSettings.MissingMemberHandling = Newtonsoft.Json.MissingMemberHandling.Error;
             var newtonsoftJsonSerializer = new FlurlNewtonsoftJsonSerializer(newtonsoftJsonSettings);
-            var systemTextJsonSerializer = new FlurlSystemTextJsonSerializer();
+
+            var systemTextJsonOptions = FlurlSystemTextJsonSerializer.GetDefaultSerializerOptions();
+            systemTextJsonOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles;
+            var systemTextJsonSerializer = new FlurlSystemTextJsonSerializer(systemTextJsonOptions);
 
             try
             {

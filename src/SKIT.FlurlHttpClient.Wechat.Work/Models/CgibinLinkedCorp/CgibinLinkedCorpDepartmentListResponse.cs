@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("department_id")]
-                public int DepartmentId { get; set; }
+                public long DepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置部门名称。
@@ -28,7 +28,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parentid")]
                 [System.Text.Json.Serialization.JsonPropertyName("parentid")]
-                public int ParentDepartmentId { get; set; }
+                public long ParentDepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置在上级部门中的次序值。

@@ -46,14 +46,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id")]
         [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public int DepartmentId { get; set; }
+        public long DepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置新的部门 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("new_id")]
         [System.Text.Json.Serialization.JsonPropertyName("new_id")]
-        public int? NewDepartmentId { get; set; }
+        public long? NewDepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置部门名称。
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("parentid")]
         [System.Text.Json.Serialization.JsonPropertyName("parentid")]
-        public int? ParentDepartmentId { get; set; }
+        public long? ParentDepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置标准年级。

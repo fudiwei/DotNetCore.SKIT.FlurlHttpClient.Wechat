@@ -25,7 +25,7 @@
                         /// 获取或设置提单部门 ID。
                         /// </summary>
                         [System.Xml.Serialization.XmlElement("Party")]
-                        public int DepartmentId { get; set; }
+                        public long DepartmentId { get; set; }
                     }
 
                     public class Notifier

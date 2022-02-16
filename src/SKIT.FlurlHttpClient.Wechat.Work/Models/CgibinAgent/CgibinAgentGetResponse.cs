@@ -37,7 +37,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("partyid")]
                 [System.Text.Json.Serialization.JsonPropertyName("partyid")]
-                public int[] DepartmentIdList { get; set; } = default!;
+                public long[] DepartmentIdList { get; set; } = default!;
             }
 
             public class AllowedTag

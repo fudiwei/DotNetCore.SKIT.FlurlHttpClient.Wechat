@@ -105,7 +105,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("main_department")]
         [System.Text.Json.Serialization.JsonPropertyName("main_department")]
-        public int? CreatorMainDepartmentId { get; set; }
+        public long? CreatorMainDepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置会议标题。

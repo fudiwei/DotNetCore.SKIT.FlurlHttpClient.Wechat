@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("partyids")]
                         [System.Text.Json.Serialization.JsonPropertyName("partyids")]
-                        public int[]? DepartmentIdList { get; set; }
+                        public long[]? DepartmentIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置客户群（即班级群）名称列表。

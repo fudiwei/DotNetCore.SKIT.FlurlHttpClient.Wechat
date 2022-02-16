@@ -14,14 +14,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id")]
                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public int DepartmentId { get; set; }
+                public long DepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置上级部门 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("parentid")]
                 [System.Text.Json.Serialization.JsonPropertyName("parentid")]
-                public int ParentDepartmentId { get; set; }
+                public long ParentDepartmentId { get; set; }
 
                 /// <summary>
                 /// 获取或设置在上级部门中的次序值。

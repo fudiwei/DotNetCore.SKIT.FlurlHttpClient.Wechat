@@ -88,7 +88,7 @@ else
 
 -   [如何解密经过加密处理的开放数据？](./Advanced_OpenDataDecryption.md)
 
--   [如何生成 JS-SDK 初始化时所需的参数及签名？](./Advanced_JSSDK.md)
+-   [如何生成 JS-SDK 初始化时所需的参数及签名？](./Advanced_Parameters.md)
 
 -   [如何扩展额外的 API？](./Advanced_Extensions.md)
 

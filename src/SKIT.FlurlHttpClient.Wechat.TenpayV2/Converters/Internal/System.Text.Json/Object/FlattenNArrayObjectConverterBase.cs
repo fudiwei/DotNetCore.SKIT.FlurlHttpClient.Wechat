@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 
 namespace System.Text.Json.Converters
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities;
+
     internal static class FlattenNArrayObjectConverterBase
     {
         public const string PROPERTY_WILDCARD_NARRAY_ELEMENT = Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase.PROPERTY_WILDCARD_NARRAY_ELEMENT;
@@ -17,7 +19,7 @@ namespace System.Text.Json.Converters
     internal class FlattenNArrayObjectConverterBase<T> : JsonConverter<T?>
         where T : class, new()
     {
-        private sealed class InnerTypedJsonProperty
+        private sealed class InnerTypedJsonPropertyInfo
         {
             public string PropertyName { get; }
 
@@ -29,7 +31,7 @@ namespace System.Text.Json.Converters
 
             public JsonConverter? JsonConverter { get; }
 
-            public InnerTypedJsonProperty(string propertyName, PropertyInfo propertyInfo, bool propertyIsNArray, JsonConverter? jsonConverter)
+            public InnerTypedJsonPropertyInfo(string propertyName, PropertyInfo propertyInfo, bool propertyIsNArray, JsonConverter? jsonConverter)
             {
                 PropertyName = propertyName;
                 PropertyInfo = propertyInfo;
@@ -43,6 +45,11 @@ namespace System.Text.Json.Converters
 
         private static readonly Hashtable _mappedTypeJsonProperties = new Hashtable();
 
+        public override bool CanConvert(Type typeToConvert)
+        {
+            return typeToConvert.IsClass && !typeToConvert.IsAbstract && !typeToConvert.IsInterface;
+        }
+
         public override T? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             if (reader.TokenType == JsonTokenType.Null)
@@ -51,40 +58,43 @@ namespace System.Text.Json.Converters
             }
             else if (reader.TokenType == JsonTokenType.StartObject)
             {
-                InnerTypedJsonProperty[] typedJsonProperties = GetTypedJsonProperties(typeToConvert);
+                InnerTypedJsonPropertyInfo[] typedJsonProperties = GetTypedJsonProperties(typeToConvert);
                 if (typedJsonProperties.Count(p => p.PropertyIsNArray) != 1)
                     throw new JsonException("The number of `$n` properties must be only one.");
 
                 JsonElement jElement = JsonDocument.ParseValue(ref reader).RootElement.Clone();
                 T tObject = new T();
 
-                foreach (JsonProperty jKey in jElement.EnumerateObject())
+                foreach (JsonProperty jProperty in jElement.EnumerateObject())
                 {
-                    InnerTypedJsonProperty? typedJsonProperty = typedJsonProperties.SingleOrDefault(e => e.PropertyName == jKey.Name);
-                    if (typedJsonProperty != null)
+                    InnerTypedJsonPropertyInfo? typedJsonPropertyInfo = typedJsonProperties.SingleOrDefault(e => e.PropertyName == jProperty.Name);
+                    if (typedJsonPropertyInfo != null)
                     {
-                        // 处理普通属性
-                        JsonSerializerOptions tmpOptions = options;
-                        if (typedJsonProperty.JsonConverter != null)
-                        {
-                            tmpOptions = new JsonSerializerOptions(options);
-                            tmpOptions.Converters.Add(typedJsonProperty.JsonConverter);
-                        }
-
-                        object? value = JsonSerializer.Deserialize(jKey.Value, typedJsonProperty.PropertyType, tmpOptions);
-                        typedJsonProperty.PropertyInfo.SetValue(tObject, value);
+                        JsonSerializerOptions tmpOptions = GetClonedJsonSerializerOptions(options, typedJsonPropertyInfo.JsonConverter);
+                        object? propertyValue = jProperty.Value.Deserialize(typedJsonPropertyInfo.PropertyType, tmpOptions);
+                        typedJsonPropertyInfo.PropertyInfo.SetValue(tObject, propertyValue);
                     }
-                    else if (TryMatchNArrayIndex(jKey.Name, out int index))
+                    else if (TryMatchNArrayIndex(jProperty.Name, out int index))
                     {
-                        // 处理 $n 属性
-                        InnerTypedJsonProperty narrayJsonProperty = typedJsonProperties.Single(e => e.PropertyIsNArray);
-                        object? value = narrayJsonProperty.PropertyInfo.GetValue(tObject);
+                        typedJsonPropertyInfo = typedJsonProperties.Single(e => e.PropertyIsNArray);
 
-                        JsonSerializerOptions tmpOptions = options;
+                        Array? propertyValue = typedJsonPropertyInfo.PropertyInfo.GetValue(tObject) as Array;
+                        ReflectionUtility.CreateOrExpandArray(ref propertyValue, typedJsonPropertyInfo.PropertyType.GetElementType()!, index + 1);
+                        ReflectionUtility.CreateOrExpandArrayElement(propertyValue!, index, (object element) =>
+                        {
+                            InnerTypedJsonPropertyInfo? insider = GetTypedJsonProperties(element.GetType())
+                                .SingleOrDefault(p => string.Equals(p.PropertyName.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, index.ToString()), jProperty.Name));
+                            if (insider != null)
+                            {
+                                JsonSerializerOptions tmpOptions = GetClonedJsonSerializerOptions(options, insider.JsonConverter);
+                                object? elementPropertyValue = JsonSerializer.Deserialize(jProperty.Value, insider.PropertyType, tmpOptions)!;
+                                insider.PropertyInfo.SetValue(element, elementPropertyValue);
+                            }
 
-                        Array array = CreateOrExpandNArray(value, narrayJsonProperty.PropertyType.GetElementType()!, index + 1);
-                        object? element = CreateOrUpdateNArrayElement(array, index, jKey.Name, jKey.Value, tmpOptions);
-                        narrayJsonProperty.PropertyInfo.SetValue(tObject, array);
+                            return element;
+                        });
+
+                        typedJsonPropertyInfo.PropertyInfo.SetValue(tObject, propertyValue);
                     }
                 }
                 return tObject;
@@ -103,48 +113,39 @@ namespace System.Text.Json.Converters
 
             writer.WriteStartObject();
 
-            foreach (InnerTypedJsonProperty typedJsonProperty in GetTypedJsonProperties(value.GetType()))
+            foreach (InnerTypedJsonPropertyInfo typedJsonProperty in GetTypedJsonProperties(value.GetType()))
             {
                 if (!typedJsonProperty.PropertyIsNArray)
                 {
-                    // 处理普通属性
-                    string propertyKey = typedJsonProperty.PropertyName;
+                    string propertyName = typedJsonProperty.PropertyName;
                     object? propertyValue = typedJsonProperty.PropertyInfo.GetValue(value);
                     if (propertyValue is null)
                     {
                         if (options.DefaultIgnoreCondition == JsonIgnoreCondition.Always || options.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingNull)
                             continue;
                     }
-                    else if (propertyValue == (propertyValue.GetType().IsValueType ? Activator.CreateInstance(propertyValue.GetType()) : null))
+                    if (propertyValue == (typedJsonProperty.PropertyType.IsValueType ? Activator.CreateInstance(typedJsonProperty.PropertyType) : null))
                     {
                         if (options.DefaultIgnoreCondition == JsonIgnoreCondition.Always || options.DefaultIgnoreCondition == JsonIgnoreCondition.WhenWritingDefault)
                             continue;
                     }
 
-                    JsonSerializerOptions tmpOptions = options;
-                    JsonConverter? tmpConverter = typedJsonProperty.JsonConverter;
-                    if (tmpConverter != null)
-                    {
-                        tmpOptions = new JsonSerializerOptions(options);
-                        tmpOptions.Converters.Add(tmpConverter);
-                    }
-
-                    if (tmpConverter != null && CheckTypeIsSubclassOf(tmpConverter.GetType(), typeof(TextualObjectInJsonFormatConverterBase<>)))
+                    JsonSerializerOptions tmpOptions = GetClonedJsonSerializerOptions(options, typedJsonProperty.JsonConverter);
+                    if (typedJsonProperty.JsonConverter != null && ReflectionUtility.CheckTypeIsSubclassOf(typedJsonProperty.JsonConverter.GetType(), typeof(TextualObjectInJsonFormatConverterBase<>)))
                     {
                         // TODO: 优化
-                        tmpOptions.Converters.Remove(tmpConverter);
-                        writer.WritePropertyName(propertyKey);
+                        tmpOptions.Converters.Remove(typedJsonProperty.JsonConverter);
+                        writer.WritePropertyName(tmpOptions.PropertyNamingPolicy?.ConvertName(propertyName) ?? propertyName);
                         writer.WriteStringValue(JsonSerializer.Serialize(propertyValue, tmpOptions));
                     }
                     else
                     {
-                        writer.WritePropertyName(propertyKey);
+                        writer.WritePropertyName(tmpOptions.PropertyNamingPolicy?.ConvertName(propertyName) ?? propertyName);
                         writer.WriteRawValue(JsonSerializer.Serialize(propertyValue, tmpOptions), skipInputValidation: true);
                     }
                 }
                 else
                 {
-                    // 处理 $n 属性
                     Array? array = (Array?)typedJsonProperty.PropertyInfo.GetValue(value);
                     if (array is null)
                         continue;
@@ -155,25 +156,57 @@ namespace System.Text.Json.Converters
                         if (element is null)
                             continue;
 
-                        JsonSerializerOptions tmpOptions = options;
-                        JsonConverter? tmpConverter = GetTypedJsonConverter(element.GetType());
-                        if (tmpConverter != null)
-                        {
-                            tmpOptions = new JsonSerializerOptions(options);
-                            tmpOptions.Converters.Add(tmpConverter);
-                        }
-
+                        JsonSerializerOptions tmpOptions = GetClonedJsonSerializerOptions(options, GetTypedJsonConverter(element.GetType()));
                         JsonObject jSubObject = JsonSerializer.SerializeToNode(element, tmpOptions)!.AsObject();
-                        foreach (KeyValuePair<string, JsonNode?> jSubKey in jSubObject)
+                        foreach (KeyValuePair<string, JsonNode?> jSubProperty in jSubObject)
                         {
-                            writer.WritePropertyName(jSubKey.Key.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, i.ToString()));
-                            writer.WriteRawValue(jSubKey.Value?.ToJsonString(tmpOptions)!, skipInputValidation: true);
+                            string subPropertyName = jSubProperty.Key.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, i.ToString());
+                            JsonNode? subPropertyValue = jSubProperty.Value;
+                            writer.WritePropertyName(tmpOptions.PropertyNamingPolicy?.ConvertName(subPropertyName) ?? subPropertyName);
+                            writer.WriteRawValue(subPropertyValue?.ToJsonString(tmpOptions)!, skipInputValidation: true);
                         }
                     }
                 }
             }
-
             writer.WriteEndObject();
+        }
+
+        private static InnerTypedJsonPropertyInfo[] GetTypedJsonProperties(Type type)
+        {
+            if (type == null) throw new ArgumentNullException(nameof(type));
+
+            string mappedKey = type.AssemblyQualifiedName ?? type.GetHashCode().ToString();
+            InnerTypedJsonPropertyInfo[]? mappedValue = (InnerTypedJsonPropertyInfo[]?)_mappedTypeJsonProperties[mappedKey];
+
+            if (mappedValue == null)
+            {
+                mappedValue = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                    .Where(p =>
+                    {
+                        if (p.CanWrite || p.GetCustomAttributes<JsonIncludeAttribute>(inherit: true).Any())
+                        {
+                            return !p.GetCustomAttributes<JsonIgnoreAttribute>(inherit: false).Any();
+                        }
+
+                        return false;
+                    })
+                    .Select(p =>
+                    {
+                        string name = p.GetCustomAttribute<JsonPropertyNameAttribute>(inherit: true)?.Name ?? p.Name;
+                        return new InnerTypedJsonPropertyInfo
+                        (
+                            propertyName: name,
+                            propertyInfo: p,
+                            propertyIsNArray: PROPERTY_NAME_NARRAY.Equals(name) && p.PropertyType.IsArray && p.PropertyType.GetElementType()!.IsClass,
+                            jsonConverter: GetTypedJsonConverter(p)
+                        );
+                    })
+                    .OrderBy(e => e.PropertyInfo.GetCustomAttribute<JsonPropertyOrderAttribute>(inherit: true)?.Order)
+                    .ToArray();
+                _mappedTypeJsonProperties[mappedKey] = mappedValue;
+            }
+
+            return mappedValue;
         }
 
         private static JsonConverter? GetTypedJsonConverter(MemberInfo? memberInfo)
@@ -206,67 +239,17 @@ namespace System.Text.Json.Converters
                 .FirstOrDefault(converter => converter != null);
         }
 
-        private static InnerTypedJsonProperty[] GetTypedJsonProperties(Type type)
+        private static JsonSerializerOptions GetClonedJsonSerializerOptions(JsonSerializerOptions options, JsonConverter? converter)
         {
-            if (type == null) throw new ArgumentNullException(nameof(type));
+            JsonSerializerOptions optionsCopy = options;
 
-            string mappedTypeKey = type.AssemblyQualifiedName ?? type.GetHashCode().ToString();
-            InnerTypedJsonProperty[]? typedJsonProperties = (InnerTypedJsonProperty[]?)_mappedTypeJsonProperties[mappedTypeKey];
-
-            if (typedJsonProperties == null)
+            if (converter != null)
             {
-                typedJsonProperties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
-                    .Where(p =>
-                    {
-                        if (p.CanWrite || p.GetCustomAttributes<JsonIncludeAttribute>(inherit: true).Any())
-                        {
-                            return !p.GetCustomAttributes<JsonIgnoreAttribute>(inherit: false).Any();
-                        }
-
-                        return false;
-                    })
-                    .Select(p =>
-                    {
-                        string name = p.GetCustomAttribute<JsonPropertyNameAttribute>(inherit: true)?.Name ?? p.Name;
-                        if (name.Equals("modify_time_$n"))
-                        {
-                            var cs = p.GetCustomAttributes<JsonConverterAttribute>(inherit: true);
-                        }
-
-                        return new InnerTypedJsonProperty
-                        (
-                            propertyName: name,
-                            propertyInfo: p,
-                            propertyIsNArray: PROPERTY_NAME_NARRAY.Equals(name) && p.PropertyType.IsArray && p.PropertyType.GetElementType()!.IsClass,
-                            jsonConverter: GetTypedJsonConverter(p)
-                        );
-                    })
-                    .OrderBy(e => e.PropertyInfo.GetCustomAttribute<JsonPropertyOrderAttribute>(inherit: true)?.Order)
-                    .ToArray();
-                _mappedTypeJsonProperties[mappedTypeKey] = typedJsonProperties;
+                optionsCopy = new JsonSerializerOptions(options);
+                optionsCopy.Converters.Add(converter);
             }
 
-            return typedJsonProperties;
-        }
-
-        private static bool CheckTypeIsSubclassOf(Type type, Type generic)
-        {
-            bool IsTheRawGenericType(Type test)
-                => generic == (test.IsGenericType ? test.GetGenericTypeDefinition() : test);
-
-            bool isTheRawGenericType = type.GetInterfaces().Any(IsTheRawGenericType);
-            if (isTheRawGenericType) 
-                return true;
-
-            Type? tmp = type;
-            while (tmp != null && tmp != typeof(object))
-            {
-                isTheRawGenericType = IsTheRawGenericType(tmp);
-                if (isTheRawGenericType) return true;
-                tmp = tmp.BaseType;
-            }
-
-            return false;
+            return optionsCopy;
         }
 
         private static bool TryMatchNArrayIndex(string key, out int index)
@@ -281,71 +264,6 @@ namespace System.Text.Json.Converters
 
             index = -1;
             return false;
-        }
-
-        private static Array CreateOrExpandNArray(object? array, Type elementType, int capacity)
-        {
-            if (elementType == null) throw new ArgumentNullException(nameof(elementType));
-            if (capacity <= 0) throw new ArgumentOutOfRangeException(nameof(capacity));
-
-            if (array == null)
-            {
-                return Array.CreateInstance(elementType, capacity);
-            }
-
-            Array src = (Array)array;
-            if (src.Length < capacity)
-            {
-                Array dst = Array.CreateInstance(elementType, capacity);
-                Array.Copy(src, dst, src.Length);
-                return dst;
-            }
-
-            return src;
-        }
-
-        private static object CreateOrUpdateNArrayElement(Array array, int index, string jKey, JsonElement jValue, JsonSerializerOptions serializerOptions)
-        {
-            if (array == null) throw new ArgumentNullException(nameof(array));
-            if (index < 0) throw new ArgumentOutOfRangeException(nameof(index));
-
-            object? element = array.GetValue(index);
-            Type elementType = array.GetType().GetElementType()!;
-
-            if (element == null)
-            {
-
-                if (elementType.IsAbstract || elementType.IsInterface)
-                {
-                    throw new NotSupportedException();
-                }
-                else if (elementType.IsArray)
-                {
-                    element = Array.CreateInstance(elementType, 0);
-                }
-                else
-                {
-                    element = Activator.CreateInstance(elementType);
-                }
-
-                array.SetValue(element, index);
-            }
-
-            InnerTypedJsonProperty? typedJsonProperty = GetTypedJsonProperties(elementType)
-                .SingleOrDefault(p => string.Equals(p.PropertyName.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, index.ToString()), jKey));
-            if (typedJsonProperty != null)
-            {
-                if (typedJsonProperty.JsonConverter != null)
-                {
-                    serializerOptions = new JsonSerializerOptions(serializerOptions);
-                    serializerOptions.Converters.Add(typedJsonProperty.JsonConverter);
-                }
-
-                object? obj = JsonSerializer.Deserialize(jValue, typedJsonProperty.PropertyType, serializerOptions)!;
-                typedJsonProperty.PropertyInfo.SetValue(element, obj);
-            }
-
-            return element!;
         }
     }
 }

@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidparty")]
         [System.Text.Json.Serialization.JsonPropertyName("invalidparty")]
-        public int[]? InvalidDepartmentIdList { get; set; }
+        public long[]? InvalidDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置无效的标签 ID 列表。

@@ -26,7 +26,7 @@
                         [Newtonsoft.Json.JsonProperty("partyid")]
                         [System.Text.Json.Serialization.JsonPropertyName("partyid")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int DepartmentId { get; set; }
+                        public long DepartmentId { get; set; }
                     }
 
                     public class Notifier
@@ -323,7 +323,7 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("openapi_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("openapi_id")]
-                                        public int DepartmentId { get; set; }
+                                        public long DepartmentId { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置成员名称。

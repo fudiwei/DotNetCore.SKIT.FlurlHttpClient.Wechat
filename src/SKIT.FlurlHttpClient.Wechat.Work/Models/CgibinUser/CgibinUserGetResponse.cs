@@ -282,7 +282,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("department")]
         [System.Text.Json.Serialization.JsonPropertyName("department")]
-        public int[] DepartmentIdList { get; set; } = default!;
+        public long[] DepartmentIdList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置部门次序列表。
@@ -303,7 +303,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("main_department")]
         [System.Text.Json.Serialization.JsonPropertyName("main_department")]
-        public int? MainDepartmentId { get; set; }
+        public long? MainDepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置直属上级成员账号列表。

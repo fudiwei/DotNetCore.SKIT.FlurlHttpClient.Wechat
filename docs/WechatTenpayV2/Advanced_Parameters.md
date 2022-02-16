@@ -50,6 +50,6 @@ var paramMap = client.GenerateParametersForJsapiGetBrandPayRequest(request.AppId
 
 -   生成客户端小程序唤起开通车主服务页面所需的参数字典：`GenerateParametersForMiniProgramVehiclePAPPayPartnerAuth`
 
--   生成客户端小程序唤起免密支付升级无感支付页面所需的参数字典：`GenerateParametersForAppVehiclePAPPayPartnerNoSensePayment`
+-   生成客户端 App 唤起免密支付升级无感支付页面所需的参数字典：`GenerateParametersForAppVehiclePAPPayPartnerNoSensePayment`
 
--   生成客户端 App 唤起免密支付升级无感支付页面所需的参数字典：`GenerateParametersForMiniProgramVehiclePAPPayPartnerNoSensePayment`
+-   生成客户端小程序唤起免密支付升级无感支付页面所需的参数字典：`GenerateParametersForMiniProgramVehiclePAPPayPartnerNoSensePayment`

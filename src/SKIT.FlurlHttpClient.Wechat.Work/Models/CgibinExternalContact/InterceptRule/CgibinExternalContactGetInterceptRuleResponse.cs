@@ -35,7 +35,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("department_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("department_list")]
-                        public int[]? DepartmentIdList { get; set; }
+                        public long[]? DepartmentIdList { get; set; }
                     }
                 }
 

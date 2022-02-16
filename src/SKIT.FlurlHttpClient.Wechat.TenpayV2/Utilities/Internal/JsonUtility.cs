@@ -1,7 +1,7 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+using System.Text.Json.Nodes;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 {
@@ -13,22 +13,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                 return string.Empty;
 
             StringBuilder stringBuilder = new StringBuilder();
-
-            JObject jObject = JsonConvert.DeserializeObject<JObject>(json);
-            JProperty[] jProps = jObject.Properties().OrderBy(p => p.Name).ToArray();
-            foreach (JProperty jProp in jProps)
+            JsonObject jObject = JsonNode.Parse(json)!.AsObject();
+            foreach (KeyValuePair<string, JsonNode?> jProp in jObject.OrderBy(p => p.Key))
             {
-                if (jProp.Value.Type == JTokenType.Null)
-                {
+                string key = jProp.Key;
+                string? value = jProp.Value?.ToString();
+                if (string.IsNullOrEmpty(value))
                     continue;
-                }
-                else if (jProp.Value.Type == JTokenType.String)
-                {
-                    if (string.IsNullOrEmpty((string)jProp.Value))
-                        continue;
-                }
 
-                stringBuilder.Append($"{jProp.Name}={jProp.Value}&");
+                stringBuilder.Append($"{key}={value}&");
             }
 
             return stringBuilder.ToString().TrimEnd('&');
