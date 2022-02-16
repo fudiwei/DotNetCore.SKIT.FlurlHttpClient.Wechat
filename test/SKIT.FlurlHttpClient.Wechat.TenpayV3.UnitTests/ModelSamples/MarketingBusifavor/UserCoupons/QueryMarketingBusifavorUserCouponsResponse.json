@@ -7,7 +7,7 @@
             "goods_name": "xxx商品可用",
             "stock_type": "NORMAL",
             "transferable": false,
-            "shareable": "false",
+            "shareable": false,
             "coupon_state": "SENDED",
             "display_pattern_info": {
                 "merchant_logo_url": "https://xxx",

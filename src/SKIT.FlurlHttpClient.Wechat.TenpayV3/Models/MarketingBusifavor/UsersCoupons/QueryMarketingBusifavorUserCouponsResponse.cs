@@ -73,7 +73,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transferable")]
                 [System.Text.Json.Serialization.JsonPropertyName("transferable")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableBooleanConverter))]
                 public bool? IsTransferable { get; set; }
 
                 /// <summary>
@@ -81,7 +80,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shareable")]
                 [System.Text.Json.Serialization.JsonPropertyName("shareable")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableBooleanConverter))]
                 public bool? IsShareable { get; set; }
 
                 /// <summary>
