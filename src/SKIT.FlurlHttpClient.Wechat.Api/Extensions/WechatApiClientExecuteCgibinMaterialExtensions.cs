@@ -20,6 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-02-25 下线。")]
         public static async Task<Models.CgibinMaterialAddNewsResponse> ExecuteCgibinMaterialAddNewsAsync(this WechatApiClient client, Models.CgibinMaterialAddNewsRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -40,6 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-02-25 下线。")]
         public static async Task<Models.CgibinMaterialAddMaterialResponse> ExecuteCgibinMaterialAddMaterialAsync(this WechatApiClient client, Models.CgibinMaterialAddMaterialRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -127,6 +129,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-02-25 下线。")]
         public static async Task<Models.CgibinMaterialGetMaterialAsNewsResponse> ExecuteCgibinMaterialGetMaterialAsNewsAsync(this WechatApiClient client, Models.CgibinMaterialGetMaterialAsNewsRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -187,6 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2022-02-25 下线。")]
         public static async Task<Models.CgibinMaterialUpdateNewsResponse> ExecuteCgibinMaterialUpdateNewsAsync(this WechatApiClient client, Models.CgibinMaterialUpdateNewsRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));

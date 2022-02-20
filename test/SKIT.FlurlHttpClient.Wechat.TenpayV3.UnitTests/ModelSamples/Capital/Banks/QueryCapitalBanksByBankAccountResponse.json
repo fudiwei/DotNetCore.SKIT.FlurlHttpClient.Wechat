@@ -6,7 +6,7 @@
             "bank_alias_code": "1000006247",
             "account_bank": "招商银行其他银行",
             "account_bank_code": 1001,
-            "need_bank_branch": "true"
+            "need_bank_branch": true
         }
     ]
 }

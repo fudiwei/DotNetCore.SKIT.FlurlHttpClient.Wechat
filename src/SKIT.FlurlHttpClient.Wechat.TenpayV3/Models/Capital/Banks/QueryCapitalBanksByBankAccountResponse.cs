@@ -40,9 +40,7 @@
                 /// <summary>
                 /// 获取或设置是否需要填写支行。
                 /// </summary>
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualBooleanConverter))]
                 [Newtonsoft.Json.JsonProperty("need_bank_branch")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("need_bank_branch")]
                 public bool RequireBankBranch { get; set; }
             }

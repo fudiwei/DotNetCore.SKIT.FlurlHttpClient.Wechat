@@ -30,7 +30,7 @@
         "description": "就餐的预估费用"
     },
     "total_amount": 40000,
-    "need_collection": "true",
+    "need_collection": true,
     "collection": {
         "state": "USER_PAID",
         "total_amount": 50000,
