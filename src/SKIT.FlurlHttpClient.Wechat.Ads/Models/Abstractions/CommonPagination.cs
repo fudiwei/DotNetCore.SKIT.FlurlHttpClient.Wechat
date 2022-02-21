@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models.Abstractions
+﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     public sealed class CommonPagination
     {

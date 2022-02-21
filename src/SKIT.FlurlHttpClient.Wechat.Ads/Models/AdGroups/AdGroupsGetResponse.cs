@@ -335,7 +335,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_info")]
-                public Abstractions.CommonPagination Pagination { get; set; } = default!;
+                public CommonPagination Pagination { get; set; } = default!;
             }
         }
 

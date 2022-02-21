@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<Abstractions.CommonFilter>? Filters { get; set; }
+        public IList<CommonFilter>? Filters { get; set; }
 
         /// <summary>
         /// 获取或设置页大小。

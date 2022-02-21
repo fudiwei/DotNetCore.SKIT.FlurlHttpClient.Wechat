@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public Abstractions.CommonDateRange DateRange { get; set; } = new Abstractions.CommonDateRange();
+        public CommonDateRange DateRange { get; set; } = new CommonDateRange();
 
         /// <summary>
         /// 获取或设置报表类型。
