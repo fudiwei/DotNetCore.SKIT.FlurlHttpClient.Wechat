@@ -24,8 +24,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
                 WechatMerchantCertificateBytes = config.GetProperty("MerchantCertificateBase64String").GetBytesFromBase64();
                 WechatOpenId = config.GetProperty("OpenId").GetString()!;
 
-                ProjectSourceDirectory = jdoc.RootElement.GetProperty("ProjectSourceDirectory").GetString()!;
-                ProjectTestDirectory = jdoc.RootElement.GetProperty("ProjectTestDirectory").GetString()!;
+                WorkDirectoryForSdk = jdoc.RootElement.GetProperty("WorkDirectoryForSdk").GetString()!;
+                WorkDirectoryForTest = jdoc.RootElement.GetProperty("WorkDirectoryForTest").GetString()!;
             }
             catch (Exception ex)
             {
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
         public static readonly byte[] WechatMerchantCertificateBytes;
         public static readonly string WechatOpenId;
 
-        public static readonly string ProjectSourceDirectory;
-        public static readonly string ProjectTestDirectory;
+        public static readonly string WorkDirectoryForSdk;
+        public static readonly string WorkDirectoryForTest;
     }
 }
