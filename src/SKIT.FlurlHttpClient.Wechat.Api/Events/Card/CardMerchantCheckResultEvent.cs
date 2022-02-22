@@ -17,8 +17,8 @@
         /// <summary>
         /// 获取或设置是否通过。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("MerchantId")]
-        [System.Text.Json.Serialization.JsonPropertyName("MerchantId")]
+        [Newtonsoft.Json.JsonProperty("IsPass")]
+        [System.Text.Json.Serialization.JsonPropertyName("IsPass")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsPass")]
         public bool IsPassed { get; set; }

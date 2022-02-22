@@ -87,8 +87,8 @@
         /// <summary>
         /// 获取或设置商户自定义字符串。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("OuterId")]
-        [System.Text.Json.Serialization.JsonPropertyName("OuterId")]
+        [Newtonsoft.Json.JsonProperty("OuterStr")]
+        [System.Text.Json.Serialization.JsonPropertyName("OuterStr")]
         [System.Xml.Serialization.XmlElement("OuterStr", IsNullable = true)]
         public string? OuterString { get; set; }
     }

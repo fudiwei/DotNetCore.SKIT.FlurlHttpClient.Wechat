@@ -49,7 +49,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("option_type")]
         [System.Text.Json.Serialization.JsonPropertyName("option_type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("option_type")]
         public string OptionType { get; set; } = default!;
 
@@ -60,7 +59,7 @@
         [System.Text.Json.Serialization.JsonPropertyName("complaint_order_id")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         [System.Xml.Serialization.XmlElement("complaint_order_id")]
-        public string ComplaintOrderId { get; set; } = default!;
+        public long ComplaintOrderId { get; set; }
 
         /// <summary>
         /// 获取或设置用户 OpenId。
