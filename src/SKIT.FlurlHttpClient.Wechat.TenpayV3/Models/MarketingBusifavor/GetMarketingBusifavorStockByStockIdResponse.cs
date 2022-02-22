@@ -3,7 +3,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /marketing/busifavor/stocks/{stock_id} 接口的请求。</para>
+    /// <para>表示 [GET] /marketing/busifavor/stocks/{stock_id} 接口的响应。</para>
     /// </summary>
     public class GetMarketingBusifavorStockByStockIdResponse : WechatTenpayResponse
     {
