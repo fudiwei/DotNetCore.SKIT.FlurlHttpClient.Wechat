@@ -50,8 +50,7 @@
                                         /// <summary>
                                         /// 获取或设置审批人成员账号。
                                         /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("userid")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                                        [System.Xml.Serialization.XmlElement("UserId")]
                                         public string UserId { get; set; } = default!;
                                     }
                                 }

@@ -35,7 +35,7 @@
                                         /// <summary>
                                         /// 获取或设置审批人成员账号。
                                         /// </summary>
-                                        [System.Xml.Serialization.XmlElement("ItemUserId")]
+                                        [System.Xml.Serialization.XmlElement("ItemUserid")]
                                         public string UserId { get; set; } = default!;
 
                                         /// <summary>
