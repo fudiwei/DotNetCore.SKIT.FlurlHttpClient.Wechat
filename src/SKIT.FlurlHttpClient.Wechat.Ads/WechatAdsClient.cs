@@ -86,8 +86,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             try
             {
-                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
-                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
             }
             catch (FlurlHttpException ex)
             {
@@ -115,9 +115,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                     flurlRequest.Verb == HttpMethod.Head ||
                     flurlRequest.Verb == HttpMethod.Options;
                 using IFlurlResponse flurlResponse = isSimpleRequest ?
-                    await base.SendRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false) :
-                    await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
-                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+                    await base.SendRequestAsync(flurlRequest, null, cancellationToken) :
+                    await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
             }
             catch (FlurlHttpException ex)
             {

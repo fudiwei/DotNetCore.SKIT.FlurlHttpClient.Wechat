@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                 var httpContent = formdataContent.SingleOrDefault(e => Constants.FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
                 if (httpContent != null)
                 {
-                    body = await httpContent.ReadAsStringAsync().ConfigureAwait(false);
+                    body = await httpContent.ReadAsStringAsync();
                 }
             }
             else

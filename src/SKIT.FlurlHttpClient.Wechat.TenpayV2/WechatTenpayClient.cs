@@ -139,8 +139,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                     flurlRequest.Verb == HttpMethod.Options;
                 if (isSimpleRequest)
                 {
-                    using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false);
-                    return await WrapResponseWithXmlAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+                    using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, null, cancellationToken);
+                    return await WrapResponseWithXmlAsync<T>(flurlResponse, cancellationToken);
                 }
                 else
                 {
@@ -148,8 +148,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                     string xml = Utilities.XmlUtility.ConvertFromJson(json);
 
                     using HttpContent httpContent = new StringContent(xml, Encoding.UTF8, "text/xml");
-                    using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
-                    return await WrapResponseWithXmlAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+                    using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken);
+                    return await WrapResponseWithXmlAsync<T>(flurlResponse, cancellationToken);
                 }
             }
             catch (FlurlHttpException ex)

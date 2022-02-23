@@ -76,8 +76,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
             try
             {
-                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
-                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
             }
             catch (FlurlHttpException ex)
             {
@@ -112,9 +112,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     flurlRequest.Verb == HttpMethod.Head ||
                     flurlRequest.Verb == HttpMethod.Options;
                 using IFlurlResponse flurlResponse = isSimpleRequest ?
-                    await base.SendRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false) :
-                    await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
-                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+                    await base.SendRequestAsync(flurlRequest, null, cancellationToken) :
+                    await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
             }
             catch (FlurlHttpException ex)
             {
@@ -146,9 +146,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 using IFlurlResponse flurlResponse = await flurlRequest
                     .WithClient(FlurlClient)
                     .AllowAnyHttpStatus()
-                    .SendUrlEncodedAsync(flurlRequest.Verb, data, cancellationToken)
-                    .ConfigureAwait(false);
-                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+                    .SendUrlEncodedAsync(flurlRequest.Verb, data, cancellationToken);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
             }
             catch (FlurlHttpException ex)
             {
