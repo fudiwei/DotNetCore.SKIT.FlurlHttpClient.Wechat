@@ -280,17 +280,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             }
         }
 
-        internal static class Converters
-        {
-            public class RequestPropertyMediaIdListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<string>>
-            {
-            }
-
-            public class RequestPropertyMediaIdListSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<string>>
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置业务申请编号。
         /// </summary>
@@ -379,18 +368,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// 获取或设置特殊资质图片媒体文件标识 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qualifications")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyMediaIdListNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("qualifications")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyMediaIdListSystemTextJsonConverter))]
         public IList<string>? QualificationPictureMediaIdList { get; set; }
 
         /// <summary>
         /// 获取或设置补充材料媒体文件标识 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_addition_pics")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyMediaIdListNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("business_addition_pics")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyMediaIdListSystemTextJsonConverter))]
         public IList<string>? BusinessAdditionPictureMediaIdList { get; set; }
 
         /// <summary>

@@ -42,7 +42,7 @@
     },
     "merchant_shortname": "爱烧烤",
     "out_request_no": "APPLYMENT_00000000001",
-    "qualifications": "[\"jTpGmxUX3FBWVQ5NJInE4d2I6_H7I4\"]",
-    "business_addition_pics": "[\"jTpGmg05InE4d2I6_H7I4\"]",
+    "qualifications": ["jTpGmxUX3FBWVQ5NJInE4d2I6_H7I4"],
+    "business_addition_pics": ["jTpGmg05InE4d2I6_H7I4"],
     "business_addition_desc": "特殊情况，说明原因"
 }
