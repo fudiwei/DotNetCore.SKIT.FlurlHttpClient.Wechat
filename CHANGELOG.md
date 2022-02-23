@@ -446,7 +446,13 @@
 
 <summary>[展开查看]</summary>
 
--   Release 2.6.1
+-   Release 2.6.0
+
+    -   **变更**：升级公共组件。
+
+    -   **修复**：修复自建应用审批回调通知事件模型的定义错误。
+
+-   Release 2.5.1
 
     -   **修复**：修复部门 ID 可能溢出的问题。（[Gitee PR #5](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/5)）
 
