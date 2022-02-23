@@ -32,6 +32,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.8.0
+
+    -   **变更**：随官方标记永久图文素材相关接口或字段为废弃。
+
+    -   **变更**：升级公共组件。
+
+    -   **修复**：修复小程序交易投诉处理回调通知事件模型的定义错误。
+
+    -   **修复**：修复微信卡券回调通知事件模型的定义错误。
+
 -   Release 2.7.0
 
     -   **新增**：随官方更新生成自定义交易组件上传图片相关接口模型。（[Gitee Issue #I4RONZ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4RONZ)）
