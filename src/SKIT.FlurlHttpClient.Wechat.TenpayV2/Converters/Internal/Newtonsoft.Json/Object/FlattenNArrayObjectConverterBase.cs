@@ -140,7 +140,7 @@ namespace Newtonsoft.Json.Converters
                 if (!(jsonContractProperty.ShouldSerialize == null || jsonContractProperty.ShouldSerialize(value)))
                     continue;
 
-                string propertyName = jsonContractProperty.PropertyName;
+                string propertyName = jsonContractProperty.PropertyName!;
                 object? propertyValue = jsonContractProperty.ValueProvider?.GetValue(value);
                 if (propertyValue is null)
                 {
