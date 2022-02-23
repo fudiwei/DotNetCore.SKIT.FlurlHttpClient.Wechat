@@ -63,7 +63,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("extInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("extInfo")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectConverter))]
 
                 public dynamic? Extra { get; set; }
             }
