@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bindlist")]
         [System.Text.Json.Serialization.JsonPropertyName("bindlist")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectReadOnlyConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectConverter))]
         public dynamic[] BindList { get; set; } = default!;
     }
 }

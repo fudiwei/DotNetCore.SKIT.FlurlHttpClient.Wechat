@@ -35,7 +35,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("norm")]
                 [System.Text.Json.Serialization.JsonPropertyName("norm")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectConverter))]
                 public dynamic Norm { get; set; } = default!;
             }
         }
