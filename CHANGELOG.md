@@ -32,6 +32,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.8.1
+
+    -   **修复**：升级并修复由公共组件（v2.3.0 - v2.3.1）引发的问题。（[GitHub Issue #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
+
 -   Release 2.8.0
 
     -   **变更**：随官方标记永久图文素材相关接口或字段为废弃。
