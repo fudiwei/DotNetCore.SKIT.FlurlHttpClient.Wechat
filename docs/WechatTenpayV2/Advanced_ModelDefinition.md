@@ -22,12 +22,12 @@
 
 |     |               微信 API                |             商户类型             |         备注         |
 | :-: | :-----------------------------------: | :------------------------------: | :------------------: |
-|  √  |         支付产品：付款码支付          |      普通商户 & 境内服务商       |                      |
-|  √  |         支付产品：JSAPI 支付          |      普通商户 & 境内服务商       |                      |
-|  √  |         支付产品：Native 支付         |      普通商户 & 境内服务商       |                      |
-|  √  |          支付产品：APP 支付           |      普通商户 & 境内服务商       |                      |
-|  √  |           支付产品：H5 支付           |      普通商户 & 境内服务商       |                      |
-|  √  |         支付产品：小程序支付          |      普通商户 & 境内服务商       |                      |
+|  √  |         支付产品：付款码支付          | 普通商户 & 境内服务商 & 跨境支付 |                      |
+|  √  |         支付产品：JSAPI 支付          | 普通商户 & 境内服务商 & 跨境支付 |                      |
+|  √  |         支付产品：Native 支付         | 普通商户 & 境内服务商 & 跨境支付 |                      |
+|  √  |          支付产品：APP 支付           | 普通商户 & 境内服务商 & 跨境支付 |                      |
+|  √  |           支付产品：H5 支付           | 普通商户 & 境内服务商 & 跨境支付 |                      |
+|  √  |         支付产品：小程序支付          | 普通商户 & 境内服务商 & 跨境支付 |                      |
 |  ×  |     <del>支付产品：刷脸支付</del>     | <del>普通商户 & 境内服务商</del> | 异构协议，需独立模块 |
 |  ×  | <del>支付工具：代金券或立减优惠</del> | <del>普通商户 & 境内服务商</del> |   请升级至 v3 API    |
 |  √  |          支付工具：现金红包           |      普通商户 & 境内服务商       |                      |
@@ -39,10 +39,13 @@
 |  √  |          支付工具：酒店押金           |            境内服务商            |                      |
 |  √  |          支付工具：车主服务           |            境内服务商            |                      |
 |  √  |               清关报关                |             普通商户             |                      |
-|  ×  |        <del>特约商户进件</del>        |         境内服务商</del>         |   请升级至 v3 API    |
+|  ×  |        <del>特约商户进件</del>        |      <del>境内服务商</del>       |   请升级至 v3 API    |
 |  √  |             特约商户配置              |            银行服务商            |                      |
-|  ×  |        <del>风控数据同步</del>        |         银行服务商</del>         |   请升级至 v3 API    |
-|  ×  |      <del>事中风险服务接口</del>      |         银行服务商</del>         |   请升级至 v3 API    |
+|  ×  |        <del>风控数据同步</del>        |      <del>银行服务商</del>       |   请升级至 v3 API    |
+|  ×  |      <del>事中风险服务接口</del>      |      <del>银行服务商</del>       |   请升级至 v3 API    |
+|  √  |            境外子商户进件             |             跨境支付             |                      |
+|  ×  |        <del>微信支付报关</del>        |       <del>跨境支付</del>        |   请升级至 v3 API    |
+|  ×  |          <del>融合钱包</del>          |       <del>跨境支付</del>        |   请升级至 v3 API    |
 
 </details>
 
@@ -435,5 +438,153 @@
 -   风控数据同步：
 
     -   违规记录查询：`QueryRiskViolation`
+
+</details>
+
+---
+
+### 【附】跨境支付模式 API 模型命名速查表：
+
+注：树形结构与[微信支付开发文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pages/Overview.shtml)目录结构保持一致。
+
+<details>
+
+<summary>[展开查看]</summary>
+
+-   Overseas Payment：
+
+    -   Quick Pay：
+
+        -   Submit Quick Pay：`CreatePayMicroPay`
+
+        -   Query Order：`GetPayOrder`
+
+        -   Submit Refund：`CreatePayRefund`
+
+        -   Query Refund：`GetPayRefund`
+
+        -   Revoke Order：`ReversePayOrder`
+
+        -   Download Reconciliation File：`DownloadPayBill`
+
+        -   Report Speed Testing：`SubmitPayITILReport`
+
+        -   Query Settled Funds：`GetPaySettlement`
+
+        -   Query Exchange Rate：`GetPayExchangeRate`
+
+    -   QR Code Payment：
+
+        -   Unified Order：`CreatePayUnifiedOrder`
+
+        -   Query Order：`GetPayOrder`
+
+        -   Close Order：`ClosePayOrder`
+
+        -   Submit Refund：`CreatePayRefund`
+
+        -   Query Refund：`GetPayRefund`
+
+        -   Download Reconciliation File：`DownloadPayBill`
+
+        -   Report Speed Testing：`SubmitPayITILReport`
+
+        -   Query Settled Funds：`GetPaySettlement`
+
+        -   Query Exchange Rate：`GetPayExchangeRate`
+
+    -   Mini-Program Payment：
+
+        -   Unified Order：`CreatePayUnifiedOrder`
+
+        -   Query Order：`GetPayOrder`
+
+        -   Close Order：`ClosePayOrder`
+
+        -   Submit Refund：`CreatePayRefund`
+
+        -   Query Refund：`GetPayRefund`
+
+        -   Download Reconciliation File：`DownloadPayBill`
+
+        -   Report Speed Testing：`SubmitPayITILReport`
+
+        -   Query Settled Funds：`GetPaySettlement`
+
+        -   Query Exchange Rate：`GetPayExchangeRate`
+
+    -   Official Account Payment：
+
+        -   Unified Order：`CreatePayUnifiedOrder`
+
+        -   Query Order：`GetPayOrder`
+
+        -   Close Order：`ClosePayOrder`
+
+        -   Submit Refund：`CreatePayRefund`
+
+        -   Query Refund：`GetPayRefund`
+
+        -   Download Reconciliation File：`DownloadPayBill`
+
+        -   Report Speed Testing：`SubmitPayITILReport`
+
+        -   Query Settled Funds：`GetPaySettlement`
+
+        -   Query Exchange Rate：`GetPayExchangeRate`
+
+    -   In-App Payment：
+
+        -   Unified Order：`CreatePayUnifiedOrder`
+
+        -   Query Order：`GetPayOrder`
+
+        -   Close Order：`ClosePayOrder`
+
+        -   Submit Refund：`CreatePayRefund`
+
+        -   Query Refund：`GetPayRefund`
+
+        -   Download Reconciliation File：`DownloadPayBill`
+
+        -   Report Speed Testing：`SubmitPayITILReport`
+
+        -   Query Settled Funds：`GetPaySettlement`
+
+        -   Query Exchange Rate：`GetPayExchangeRate`
+
+    -   H5 Payment：
+
+        -   Unified Order：`CreatePayUnifiedOrder`
+
+        -   Query Order：`GetPayOrder`
+
+        -   Close Order：`ClosePayOrder`
+
+        -   Submit Refund：`CreatePayRefund`
+
+        -   Query Refund：`GetPayRefund`
+
+        -   Download Reconciliation File：`DownloadPayBill`
+
+        -   Report Speed Testing：`SubmitPayITILReport`
+
+        -   Query Settled Funds：`GetPaySettlement`
+
+        -   Query Exchange Rate：`GetPayExchangeRate`
+
+-   Onboarding Sub Merchant：
+
+    -   Onboarding Sub Merchant API：
+
+        -   Sub Merchant Onboarding：`AddSubMerchantInstitution`
+
+        -   Sub Merchant Query：`GetSubMerchantInstitution`
+
+        -   Sub Merchant Modifying：`ModifySubMerchantInstitution`
+
+-   Functional APIs：
+
+    -   Uploading Image： `UploadMerchantMedia`
 
 </details>
