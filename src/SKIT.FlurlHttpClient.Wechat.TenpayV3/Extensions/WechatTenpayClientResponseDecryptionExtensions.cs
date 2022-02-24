@@ -65,12 +65,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         if (attr == null)
                             return (false, oldValue);
 
-                        if (Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB.Equals(attr.Algorithm))
+                        if (Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1.Equals(attr.Algorithm) ||
+                            Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1.Equals(attr.Algorithm))
                         {
-                            string newValue = Utilities.RSAUtility.DecryptWithECB(
-                                privateKey: client.Credentials.MerchantCertificatePrivateKey,
-                                cipherText: oldValue
-                            );
+                            string newValue = oldValue;
+                            if (Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1.Equals(attr.Algorithm))
+                            {
+                                newValue = Utilities.RSAUtility.DecryptWithECB(
+                                    privateKey: client.Credentials.MerchantCertificatePrivateKey,
+                                    cipherText: oldValue
+                                );
+                            }
+                            else if (Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1.Equals(attr.Algorithm))
+                            {
+                                newValue = Utilities.RSAUtility.DecryptWithECB(
+                                    privateKey: client.Credentials.MerchantCertificatePrivateKey,
+                                    cipherText: oldValue,
+                                    paddingAlgorithm: "PKCS1PADDING"
+                                );
+                            }
+
                             return (true, newValue);
                         }
                         else

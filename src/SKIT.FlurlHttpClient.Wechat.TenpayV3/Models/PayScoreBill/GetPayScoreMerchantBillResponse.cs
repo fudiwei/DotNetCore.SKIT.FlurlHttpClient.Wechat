@@ -43,7 +43,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("encrypt_key")]
                 [System.Text.Json.Serialization.JsonPropertyName("encrypt_key")]
-                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 public string EncryptKey { get; set; } = default!;
 
                 /// <summary>

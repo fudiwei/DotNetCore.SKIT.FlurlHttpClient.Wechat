@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("encrypted_phone_number")]
         [System.Text.Json.Serialization.JsonPropertyName("encrypted_phone_number")]
-        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB)]
+        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
         public string EncryptedPhoneNumber { get; set; } = string.Empty;
 
         /// <summary>

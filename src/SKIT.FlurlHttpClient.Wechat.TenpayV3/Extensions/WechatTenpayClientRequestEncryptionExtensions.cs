@@ -33,7 +33,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         if (attr == null)
                             return (false, oldValue);
 
-                        if (Constants.EncryptionAlgorithms.RSA_2048_PKCS8_ECB.Equals(attr.Algorithm))
+                        if (Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1.Equals(attr.Algorithm) ||
+                            Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1.Equals(attr.Algorithm))
                         {
                             if (client.PlatformCertificateManager == null)
                                 throw new Exceptions.WechatTenpayRequestEncryptionException("Encrypt request failed, because there is no platform certificate in the manager.");
@@ -65,10 +66,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                                 request.WechatpayCertificateSerialNumber = cert.SerialNumber;
                             }
 
-                            string newValue = Utilities.RSAUtility.EncryptWithECBByCertificate(
-                                certificate: certificate,
-                                plainText: oldValue
-                            );
+                            string newValue = oldValue;
+                            if (Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1.Equals(attr.Algorithm))
+                            {
+                                newValue = Utilities.RSAUtility.EncryptWithECBByCertificate(
+                                    certificate: certificate,
+                                    plainText: oldValue
+                                );
+                            }
+                            else if(Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1.Equals(attr.Algorithm))
+                            {
+                                newValue = Utilities.RSAUtility.EncryptWithECBByCertificate(
+                                    certificate: certificate,
+                                    plainText: oldValue,
+                                    paddingAlgorithm: "PKCS1PADDING"
+                                );
+                            }
+
                             return (true, newValue);
                         }
                         else
