@@ -1,0 +1,16 @@
+﻿{
+    "sub_mchid": "20000100",
+    "name": "test mcherchan_name",
+    "shortname": "mcherchan_name",
+    "office_phone": "075586010000",
+    "business_category": "644",
+    "contact": {
+        "name": "Bob Zhang",
+        "phone": "+8613633334444",
+        "email": "test@test.com"
+    },
+    "principal": {
+        "name": "Bob",
+        "number": "5555-8888"
+    }
+}

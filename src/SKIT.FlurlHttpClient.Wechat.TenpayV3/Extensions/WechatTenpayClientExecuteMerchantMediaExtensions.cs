@@ -18,6 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /merchant/media/upload 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter2_1_1.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter2_1_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/tool/chapter3_2.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

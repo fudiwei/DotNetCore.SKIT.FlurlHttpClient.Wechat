@@ -16,6 +16,16 @@
         public const string BACKUP = "https://api2.mch.weixin.qq.com/v3";
 
         /// <summary>
+        /// 香港域名。
+        /// </summary>
+        public const string REGION_HONGKONG = "https://api.mch.weixin.qq.com/hk/v3";
+
+        /// <summary>
+        /// 全球域名。
+        /// </summary>
+        public const string REGION_GLOBAL = "https://api.mch.weixin.qq.com/global/v3";
+
+        /// <summary>
         /// 沙箱域名。
         /// </summary>
         public const string SANDBOX = "https://api.mch.weixin.qq.com/sandboxnew/v3";

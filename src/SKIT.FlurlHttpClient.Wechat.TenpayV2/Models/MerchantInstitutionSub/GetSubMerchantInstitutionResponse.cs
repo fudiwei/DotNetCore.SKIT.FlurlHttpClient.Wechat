@@ -59,7 +59,8 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_category")]
         [System.Text.Json.Serialization.JsonPropertyName("business_category")]
-        public string BusinessCategoryCode { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public int BusinessCategoryCode { get; set; }
 
         /// <summary>
         /// 获取或设置商户类别编码。
@@ -97,98 +98,98 @@
         public string BusinessType { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置 App 下载链接。</para>
+        /// 获取或设置 App 下载链接。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("app_download")]
         [System.Text.Json.Serialization.JsonPropertyName("app_download")]
         public string? AppDownloadUrl { get; set; }
 
         /// <summary>
-        /// 获取或设置业务网站地址。</para>
+        /// 获取或设置业务网站地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_website")]
         [System.Text.Json.Serialization.JsonPropertyName("business_website")]
-        public string? BusinessWebsiteUrl { get; set; }
+        public string? WebsiteUrl { get; set; }
 
         /// <summary>
-        /// 获取或设置公众号 AppId。</para>
+        /// 获取或设置公众号 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("office_account")]
         [System.Text.Json.Serialization.JsonPropertyName("office_account")]
         public string? OfficeAccountAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置小程序 AppId。</para>
+        /// 获取或设置小程序 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mini_program")]
         [System.Text.Json.Serialization.JsonPropertyName("mini_program")]
         public string? MiniProgramAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置门店地址。</para>
+        /// 获取或设置门店地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_address")]
         [System.Text.Json.Serialization.JsonPropertyName("store_address")]
         public string? StoreAddress { get; set; }
 
         /// <summary>
-        /// 获取或设置董事姓名。</para>
+        /// 获取或设置董事姓名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("director_name")]
         [System.Text.Json.Serialization.JsonPropertyName("director_name")]
         public string? DirectorName { get; set; }
 
         /// <summary>
-        /// 获取或设置董事证件号码。</para>
+        /// 获取或设置董事证件号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("director_id_number")]
         [System.Text.Json.Serialization.JsonPropertyName("director_id_number")]
         public string? DirectorIdNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置负责人姓名。</para>
+        /// 获取或设置负责人姓名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("principal_name")]
         [System.Text.Json.Serialization.JsonPropertyName("principal_name")]
         public string? PrincipalName { get; set; }
 
         /// <summary>
-        /// 获取或设置负责人证件号。</para>
+        /// 获取或设置负责人证件号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("principal_id_number")]
         [System.Text.Json.Serialization.JsonPropertyName("principal_id_number")]
         public string? PrincipalIdNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置公司电话。</para>
+        /// 获取或设置公司电话。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("office_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("office_phone")]
         public string? OfficePhoneNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置联系人姓名。</para>
+        /// 获取或设置联系人姓名。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact_name")]
         [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
         public string? ContactName { get; set; }
 
         /// <summary>
-        /// 获取或设置联系人电话号码。</para>
+        /// 获取或设置联系人电话号码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("contact_phone")]
         public string? ContactPhotoNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置联系人邮箱。</para>
+        /// 获取或设置联系人邮箱。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contact_email")]
         [System.Text.Json.Serialization.JsonPropertyName("contact_email")]
         public string? ContactEmail { get; set; }
 
         /// <summary>
-        /// 获取或设置子商户结算银行账户	。</para>
+        /// 获取或设置子商户结算银行账户	。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("settlement_bank_number")]
         [System.Text.Json.Serialization.JsonPropertyName("settlement_bank_number")]

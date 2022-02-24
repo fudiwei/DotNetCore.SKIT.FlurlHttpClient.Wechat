@@ -7,7 +7,7 @@
     "merchant_shortname": "ABC",
     "merchant_country_code": "036",
     "merchant_type": "ENTERPRISE",
-    "business_category": "485",
+    "business_category": 485,
     "mcc": "4374",
     "registration_certificate_number": "5555-8888",
     "registration_certificate_date": "2020-05-27",
