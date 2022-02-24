@@ -272,6 +272,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.5.1
+
+    -   **新增**：调整 RSA 工具类使之支持多种填充方式。
+
+    -   **修复**：升级并修复由公共组件（v2.3.0 - v2.3.1）引发的问题。（[GitHub Issue #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
+
 -   Release 2.5.0
 
     -   **新增**：随官方更新根据过滤条件查询用户券相关接口模型。
