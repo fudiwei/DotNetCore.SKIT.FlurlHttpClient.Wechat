@@ -22,6 +22,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_8&index=10 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_8&index=9 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_8&index=9 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter8_8.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_8.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_8.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/OfficialPayMent/chapter8_8.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_8.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/H5Payment/chapter8_8.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

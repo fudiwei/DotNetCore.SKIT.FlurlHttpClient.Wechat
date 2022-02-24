@@ -20,6 +20,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_1&index=1 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_1&index=1 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_10.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_10.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -41,6 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_10&index=1 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_101&index=1 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter3_3.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -71,6 +77,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_2&index=4 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_2&index=2 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_2 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter8_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/OfficialPayMent/chapter8_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/H5Payment/chapter8_2.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -90,6 +102,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <summary>
         /// <para>异步调用 [POST] /secapi/pay/reverse 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_11&index=3 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter3_4.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -120,6 +133,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_3 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_6.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_17.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/OfficialPayMent/chapter8_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/H5Payment/chapter8_3.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -151,6 +169,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_3.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_13.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=9_4&index=5&p=202 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter8_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/OfficialPayMent/chapter8_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/H5Payment/chapter8_4.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -182,6 +206,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_14.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=9_5&index=6&p=202 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter8_5.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_5.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_5.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/OfficialPayMent/chapter8_5.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_5.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/H5Payment/chapter8_5.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -198,6 +228,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             return await client.SendRequestWithXmlAsync<Models.GetPayRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
+        #region Bill
         /// <summary>
         /// <para>异步调用 [POST] /pay/downloadbill 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_6 </para>
@@ -214,6 +245,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter4_1.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_11.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=9_6&index=3&p=202 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter8_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/OfficialPayMent/chapter8_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/H5Payment/chapter8_6.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -253,5 +290,58 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             return await client.SendRequestWithXmlAsync<Models.DownloadPayFundFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+        #endregion
+
+        #region Settlement
+        /// <summary>
+        /// <para>异步调用 [POST] /pay/settlementquery 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter8_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/OfficialPayMent/chapter8_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/H5Payment/chapter8_9.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPaySettlementResponse> ExecuteGetPaySettlementAsync(this WechatTenpayClient client, Models.GetPaySettlementRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "pay", "settlementquery");
+
+            return await client.SendRequestWithXmlAsync<Models.GetPaySettlementResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region ExchangeRate
+        /// <summary>
+        /// <para>异步调用 [POST] /pay/queryexchagerate 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter8_10.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_10.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_10.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/OfficialPayMent/chapter8_10.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_10.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_10.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPayExchangeRateResponse> ExecuteGetPayExchangeRateAsync(this WechatTenpayClient client, Models.GetPayExchangeRateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "pay", "queryexchagerate");
+
+            return await client.SendRequestWithXmlAsync<Models.GetPayExchangeRateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

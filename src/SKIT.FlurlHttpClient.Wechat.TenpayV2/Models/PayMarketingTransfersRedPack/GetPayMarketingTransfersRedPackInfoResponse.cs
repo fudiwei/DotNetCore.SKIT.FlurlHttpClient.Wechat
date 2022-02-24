@@ -111,7 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonProperty("total_num")]
         [System.Text.Json.Serialization.JsonPropertyName("total_num")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public int TotalCount { get; set; } = 1;
+        public int TotalCount { get; set; }
 
         /// <summary>
         /// 获取或设置红包祝福语。

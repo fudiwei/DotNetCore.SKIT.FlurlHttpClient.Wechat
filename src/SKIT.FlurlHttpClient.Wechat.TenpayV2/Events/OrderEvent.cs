@@ -3,7 +3,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 {
     /// <summary>
-    /// <para>表示退款结果通知的模型。</para>
+    /// <para>表示交易结果通知的模型。</para>
     /// </summary>
     [Newtonsoft.Json.JsonConverter(typeof(Converters.EventClassNewtonsoftJsonConverter))]
     [System.Text.Json.Serialization.JsonConverter(typeof(Converters.EventClassSystemTextJsonConverter))]
@@ -209,5 +209,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         [System.Text.Json.Serialization.JsonPropertyName("time_end")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
         public DateTimeOffset? EndTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置汇率字符串（格式：外币兑换人民币的比例乘以 10 的 8 次方）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("rate")]
+        [System.Text.Json.Serialization.JsonPropertyName("rate")]
+        public string? ExchangeRateString { get; set; }
     }
 }
