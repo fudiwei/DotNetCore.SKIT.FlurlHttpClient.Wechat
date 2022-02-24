@@ -54,7 +54,7 @@
 |  √  |       其他能力：视频上传        |      直连商户 & 服务商       |                   |
 |  √  |      境外支付：子商户进件       |            服务商            |                   |
 |  √  |       境外支付：融合钱包        |            服务商            |                   |
-|  √  |     境外支付：微信支付报关      |            服务商            |                   |
+|  √  |         境外支付：报关          |            服务商            |                   |
 
 </details>
 
@@ -1070,15 +1070,15 @@
 
 -   Customs Declaration
 
-    -       Customs Declaration：``
+    -   Customs Declaration：`CreateCustomsOrder`
 
-    -       Identity Information Verification：``
+    -   Identity Information Verification：`VerifyCustomsCertificate`
 
-    -       Query Customs Declaration：``
+    -   Query Customs Declaration：`QueryCustomsOrders`
 
-    -       Repush Customs Declaration：``
+    -   Repush Customs Declaration：`RedeclareCustomsOrder`
 
-    -       Modify Customs Declaration Info：``
+    -   Modify Customs Declaration Info：`ModifyCustomsOrder`
 
 -   Functional APIs
 

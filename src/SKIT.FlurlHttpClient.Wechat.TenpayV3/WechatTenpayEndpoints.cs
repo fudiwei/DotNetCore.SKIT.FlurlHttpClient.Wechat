@@ -23,7 +23,7 @@
         /// <summary>
         /// 全球域名。
         /// </summary>
-        public const string REGION_GLOBAL = "https://api.mch.weixin.qq.com/global/v3";
+        public const string REGION_HONGKONG_GLOBAL = "https://apihk.mch.weixin.qq.com/global/v3";
 
         /// <summary>
         /// 沙箱域名。
