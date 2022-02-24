@@ -49,9 +49,12 @@
 |  √  |     资金应用：连锁品牌分账      |            服务商            |                   |
 |  √  |   风险合规：商户开户意愿确认    |            服务商            |                   |
 |  √  |    风险合规：消费者投诉 2.0     |      直连商户 & 服务商       |                   |
-|  ×  |  <del>其他能力：清关上报</del>  |     <del>直连商户</del>      | 官方未提供 v3 API |
+|  ×  |  <del>其他能力：清关报关</del>  |     <del>直连商户</del>      | 官方未提供 v3 API |
 |  √  |       其他能力：图片上传        |      直连商户 & 服务商       |                   |
 |  √  |       其他能力：视频上传        |      直连商户 & 服务商       |                   |
+|  √  |      境外支付：子商户进件       |            服务商            |                   |
+|  √  |       境外支付：融合钱包        |            服务商            |                   |
+|  √  |     境外支付：微信支付报关      |            服务商            |                   |
 
 </details>
 
@@ -1044,3 +1047,39 @@
     -   视频上传：`UploadMerchantMediaVideo`
 
 </details>
+
+---
+
+### 【附】境外开发 API 模型命名速查表：
+
+注：树形结构与[微信支付开发者文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pages/Overview.shtml)目录结构保持一致。
+
+<details>
+
+<summary>[展开查看]</summary>
+
+-   Onboarding Sub Merchant
+
+    -   Onboarding Sub Merchant (For HK)
+
+        -   Onboarding Sub-merchant：`AddSubMerchant`
+
+        -   Query Sub-merchant：`GetSubMerchant`
+
+        -   Sub Merchant Modifying：`ModifySubMerchant`
+
+-   Customs Declaration
+
+    -       Customs Declaration：``
+
+    -       Identity Information Verification：``
+
+    -       Query Customs Declaration：``
+
+    -       Repush Customs Declaration：``
+
+    -       Modify Customs Declaration Info：``
+
+-   Functional APIs
+
+    -   Uploading Image API (For HK)：`UploadMerchantMediaImage`
