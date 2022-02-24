@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 {
     internal static class RequestSigner
     {
-        public static string Sign(IDictionary<string, string?> paramsMap, string secret, string? signType)
+        public static string Sign(IDictionary<string, string?> paramsMap, string secret, string? signType = null)
         {
             if (paramsMap == null) throw new ArgumentNullException(nameof(paramsMap));
 
@@ -15,12 +15,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             return SignFromSortedQueryString(sortedQueryString, secret, signType);
         }
 
-        public static string SignFromJson(string json, string secret, string? signType)
+        public static string SignFromJson(string json, string secret, string? signType = null)
         {
             return SignFromSortedQueryString(JsonUtility.ParseToSortedQueryString(json), secret, signType);
         }
 
-        public static string SignFromSortedQueryString(string queryString, string secret, string? signType)
+        public static string SignFromSortedQueryString(string queryString, string secret, string? signType = null)
         {
             signType = signType ?? Constants.SignTypes.MD5;
             queryString = queryString + $"&key={secret}";

@@ -123,6 +123,30 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="flurlRequest"></param>
+        /// <param name="httpContent"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<T> SendRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
+            where T : WechatTenpayResponse, new()
+        {
+            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
+
+            try
+            {
+                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken);
+                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
+            }
+            catch (FlurlHttpException ex)
+            {
+                throw new WechatTenpayException(ex.Message, ex);
+            }
+        }
+
+        /// <summary>
+        /// 异步发起请求。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="flurlRequest"></param>
         /// <param name="data"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
@@ -148,8 +172,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                     string xml = Utilities.XmlUtility.ConvertFromJson(json);
 
                     using HttpContent httpContent = new StringContent(xml, Encoding.UTF8, "text/xml");
-                    using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken);
-                    return await WrapResponseWithXmlAsync<T>(flurlResponse, cancellationToken);
+                    return await SendRequestAsync<T>(flurlRequest, httpContent: httpContent, cancellationToken);
                 }
             }
             catch (FlurlHttpException ex)

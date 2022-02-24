@@ -1,9 +1,9 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /papay/preentrustweb 接口的响应。</para>
+    /// <para>表示 [POST] /secapi/mch/queryInstitutionsub 接口的请求。</para>
     /// </summary>
-    public class CreatePAPPayPreEntrustWebResponse : WechatTenpaySignableResponse
+    public class GetSubMerchantInstitutionRequest : WechatTenpaySignableRequest
     {
         /// <summary>
         /// <inheritdoc/>
@@ -15,15 +15,15 @@
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        [Newtonsoft.Json.JsonProperty("app_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("app_id")]
         public override string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置预签约 ID。
+        /// 获取或设置子商户号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("pre_entrustweb_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("pre_entrustweb_id")]
-        public string PreEntrustWebId { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("sub_mch_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]
+        public string SubMerchantId { get; set; } = string.Empty;
     }
 }

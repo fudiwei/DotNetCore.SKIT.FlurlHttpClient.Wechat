@@ -86,14 +86,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         }
 
         /// <summary>
-        /// <inheritdoc/>
+        /// <i>（请忽略此字段）</i>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public override string? MerchantId { get; set; }
 
         /// <summary>
-        /// <inheritdoc/>
+        /// <i>（请忽略此字段）</i>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
