@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /customs/orders 接口的响应。</para>
     /// </summary>
-    public class CreateCustomsOrderResponse : WechatTenpayResponse
+    public class CreateHKCustomsOrderResponse : WechatTenpayResponse
     {
         /// <summary>
         /// 获取或设置微信商户号。

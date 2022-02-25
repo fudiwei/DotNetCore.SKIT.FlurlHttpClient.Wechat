@@ -4,7 +4,7 @@
     /// <para>表示 [POST] /customs/verify-certificate 接口的请求。</para>
     /// </summary>
     [WechatTenpaySensitive]
-    public class VerifyCustomsCertificateRequest : WechatTenpayRequest
+    public class VerifyHKCustomsCertificateRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。

@@ -4,23 +4,23 @@
     /// <para>表示 [PUT] /merchants 接口的请求。</para>
     /// </summary>
     [WechatTenpaySensitive]
-    public class ModifySubMerchantRequest : WechatTenpayRequest
+    public class ModifyHKSubMerchantRequest : WechatTenpayRequest
     {
         public static class Types
         {
-            public class Contact : AddSubMerchantRequest.Types.Contact
+            public class Contact : AddHKSubMerchantRequest.Types.Contact
             {
             }
 
-            public class Business : AddSubMerchantRequest.Types.Business
+            public class Business : AddHKSubMerchantRequest.Types.Business
             {
             }
 
-            public class Director : AddSubMerchantRequest.Types.Director
+            public class Director : AddHKSubMerchantRequest.Types.Director
             {
             }
 
-            public class Principal : AddSubMerchantRequest.Types.Principal
+            public class Principal : AddHKSubMerchantRequest.Types.Principal
             {
             }
         }

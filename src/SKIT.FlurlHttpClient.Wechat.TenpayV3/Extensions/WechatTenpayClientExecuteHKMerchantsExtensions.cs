@@ -7,9 +7,9 @@ using Flurl.Http;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供境外支付子商户进件相关的 API 扩展方法。
+    /// 为 <see cref="WechatTenpayClient"/> 提供境外支付子商户进件（For HK）相关的 API 扩展方法。
     /// </summary>
-    public static class WechatTenpayClientExecuteMerchantsExtensions
+    public static class WechatTenpayClientExecuteHKMerchantsExtensions
     {
         /// <summary>
         /// <para>异步调用 [POST] /merchants 接口。</para>
@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.AddSubMerchantResponse> ExecuteAddSubMerchantAsync(this WechatTenpayClient client, Models.AddSubMerchantRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.AddHKSubMerchantResponse> ExecuteAddHKSubMerchantAsync(this WechatTenpayClient client, Models.AddHKSubMerchantRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Post, "merchants")
                 .WithHeader("Idempotency-Key", request.IdempotencyKey);
 
-            return await client.SendRequestWithJsonAsync<Models.AddSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.AddHKSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetSubMerchantResponse> ExecuteGetSubMerchantAsync(this WechatTenpayClient client, Models.GetSubMerchantRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetHKSubMerchantResponse> ExecuteGetHKSubMerchantAsync(this WechatTenpayClient client, Models.GetHKSubMerchantRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("sp_mchid", request.MerchantId)
                 .SetQueryParam("sp_appid", request.AppId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.GetHKSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ModifySubMerchantResponse> ExecuteModifySubMerchantAsync(this WechatTenpayClient client, Models.ModifySubMerchantRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ModifyHKSubMerchantResponse> ExecuteModifyHKSubMerchantAsync(this WechatTenpayClient client, Models.ModifyHKSubMerchantRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Put, "merchants");
 
-            return await client.SendRequestWithJsonAsync<Models.ModifySubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.ModifyHKSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <para>表示 [POST] /merchants 接口的请求。</para>
     /// </summary>
     [WechatTenpaySensitive]
-    public class AddSubMerchantRequest : WechatTenpayRequest
+    public class AddHKSubMerchantRequest : WechatTenpayRequest
     {
         public static class Types
         {

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /customs/verify-certificate 接口的响应。</para>
     /// </summary>
-    public class VerifyCustomsCertificateResponse : WechatTenpayResponse
+    public class VerifyHKCustomsCertificateResponse : WechatTenpayResponse
     {
         /// <summary>
         /// 获取或设置微信商户号。

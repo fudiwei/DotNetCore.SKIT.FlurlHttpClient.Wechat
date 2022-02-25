@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /merchants/{sub_mchid} 接口的响应。</para>
     /// </summary>
-    public class GetSubMerchantResponse : WechatTenpayResponse
+    public class GetHKSubMerchantResponse : WechatTenpayResponse
     {
         public static class Types
         {

@@ -4,7 +4,7 @@
     /// <para>表示 [GET] /merchants/{sub_mchid} 接口的请求。</para>
     /// </summary>
     [WechatTenpaySensitive]
-    public class GetSubMerchantRequest : WechatTenpayRequest
+    public class GetHKSubMerchantRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置机构商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。

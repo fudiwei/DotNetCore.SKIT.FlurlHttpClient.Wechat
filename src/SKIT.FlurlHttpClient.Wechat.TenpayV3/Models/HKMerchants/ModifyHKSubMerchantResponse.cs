@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [PUT] /merchants 接口的响应。</para>
     /// </summary>
-    public class ModifySubMerchantResponse : WechatTenpayResponse
+    public class ModifyHKSubMerchantResponse : WechatTenpayResponse
     {
         /// <summary>
         /// 获取或设置子商户号。
