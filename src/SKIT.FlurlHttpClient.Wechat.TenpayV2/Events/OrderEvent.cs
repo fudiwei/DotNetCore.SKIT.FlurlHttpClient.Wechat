@@ -211,10 +211,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         public DateTimeOffset? EndTime { get; set; }
 
         /// <summary>
-        /// 获取或设置汇率字符串（格式：外币兑换人民币的比例乘以 10 的 8 次方）。
+        /// 获取或设置汇率（格式：外币兑换人民币的比例乘以 10 的 8 次方）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rate")]
         [System.Text.Json.Serialization.JsonPropertyName("rate")]
-        public string? ExchangeRateString { get; set; }
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public long? ExchangeRate { get; set; }
     }
 }

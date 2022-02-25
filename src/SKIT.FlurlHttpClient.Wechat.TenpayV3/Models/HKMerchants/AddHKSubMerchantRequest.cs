@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string BusinessType { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置商户类别编码。
+                /// 获取或设置商户行业编码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mcc")]
                 [System.Text.Json.Serialization.JsonPropertyName("mcc")]

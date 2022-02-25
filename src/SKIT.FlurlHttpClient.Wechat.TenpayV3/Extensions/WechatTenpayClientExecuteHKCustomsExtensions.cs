@@ -14,6 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [POST] /customs/orders 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_1.shtml </para>
+        /// <para><i>（请注意调用此接口需在构造 <see cref="WechatTenpayClient" /> 时指定特殊的 <see cref="WechatTenpayClientOptions.Endpoints"/>。）</i></para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -36,6 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [GET] /customs/orders 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_1.shtml </para>
+        /// <para><i>（请注意调用此接口需在构造 <see cref="WechatTenpayClient" /> 时指定特殊的 <see cref="WechatTenpayClientOptions.Endpoints"/>。）</i></para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -69,6 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [POST] /customs/redeclare 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_4.shtml </para>
+        /// <para><i>（请注意调用此接口需在构造 <see cref="WechatTenpayClient" /> 时指定特殊的 <see cref="WechatTenpayClientOptions.Endpoints"/>。）</i></para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -91,6 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [PATCH] /customs/orders 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_5.shtml </para>
+        /// <para><i>（请注意调用此接口需在构造 <see cref="WechatTenpayClient" /> 时指定特殊的 <see cref="WechatTenpayClientOptions.Endpoints"/>。）</i></para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -113,6 +117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <para>异步调用 [POST] /customs/verify-certificate 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_2.shtml </para>
+        /// <para><i>（请注意调用此接口需在构造 <see cref="WechatTenpayClient" /> 时指定特殊的 <see cref="WechatTenpayClientOptions.Endpoints"/>。）</i></para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

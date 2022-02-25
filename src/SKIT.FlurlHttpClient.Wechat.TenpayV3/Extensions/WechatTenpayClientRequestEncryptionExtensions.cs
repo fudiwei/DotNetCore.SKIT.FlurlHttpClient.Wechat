@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                                     plainText: oldValue
                                 );
                             }
-                            else if(Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1.Equals(attr.Algorithm))
+                            else if (Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1.Equals(attr.Algorithm))
                             {
                                 newValue = Utilities.RSAUtility.EncryptWithECBByCertificate(
                                     certificate: certificate,

@@ -1,0 +1,45 @@
+﻿{
+    "id": "1008450740201411110005820873",
+    "appid": "wx2421b1c4370ec43b",
+    "mchid": "10000100",
+    "out_trade_no": "20171014125314",
+    "payer": {
+        "openid": "oUpF8uN95-Ptaags6E_roPHg7AG0"
+    },
+    "amount": {
+        "total": 528800,
+        "currency": "HKD",
+        "payer_total": 518799,
+        "payer_currency": "CNY",
+        "exchange_rate": {
+            "type": "SETTLEMENT_RATE",
+            "rate": 80000000
+        }
+    },
+    "trade_type": "MICROPAY",
+    "trade_state": "SUCCESS",
+    "trade_state_desc": "Payment successful",
+    "bank_type": "CCB_DEBIT",
+    "attach": "Payment test",
+    "success_time": "2018-06-08T10:34:56+08:00",
+    "detail": {
+        "promotion_id": "109519",
+        "name": "Single-item discount-6",
+        "scope": "SINGLE",
+        "type": "DISCOUNT",
+        "amount": 1,
+        "currency": "CNY",
+        "activity_id": "931386",
+        "wechatpay_contribute_amount": 1,
+        "merchant_contribute_amount": 0,
+        "other_contribute_amount": 0,
+        "goods_detail": [
+            {
+                "goods_id": "iphone6s_16G",
+                "goods_remark": "Product remarks",
+                "quantity": 1,
+                "price": 528800
+            }
+        ]
+    }
+}

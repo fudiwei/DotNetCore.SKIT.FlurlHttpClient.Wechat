@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendRequestWithJsonAsync<Models.CreatePartnerTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-       
+
         /// <summary>
         /// <para>异步调用 [GET] /partner-transfer/batches/batch-id/{batch_id} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_2.shtml </para>

@@ -105,6 +105,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("total_count")]
         [System.Text.Json.Serialization.JsonPropertyName("total_count")]
         public int TotalCount { get; set; }
-
     }
 }

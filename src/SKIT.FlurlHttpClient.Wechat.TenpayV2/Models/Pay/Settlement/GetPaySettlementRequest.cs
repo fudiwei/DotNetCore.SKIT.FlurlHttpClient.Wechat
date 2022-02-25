@@ -31,7 +31,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("usetag")]
         [System.Text.Json.Serialization.JsonPropertyName("usetag")]
-        public int SettlementStatus { get; set; }
+        public int SettleState { get; set; }
 
         /// <summary>
         /// 获取或设置交易开始日期字符串（格式：yyyyMMdd）。

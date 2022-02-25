@@ -55,7 +55,7 @@
         public string MerchantCustomsNumber { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置关税（单位：分）。
+        /// 获取或设置关税（单位：指定货币的最小单位）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("duty")]
         [System.Text.Json.Serialization.JsonPropertyName("duty")]
@@ -69,21 +69,21 @@
         public string? FeeType { get; set; }
 
         /// <summary>
-        /// 获取或设置应付金额（单位：分）。
+        /// 获取或设置应付金额（单位：指定货币的最小单位）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("order_fee")]
         public int? OrderFee { get; set; }
 
         /// <summary>
-        /// 获取或设置物流费（单位：分）。
+        /// 获取或设置物流费（单位：指定货币的最小单位）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transport_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("transport_fee")]
         public int? TransportFee { get; set; }
 
         /// <summary>
-        /// 获取或设置商品价格（单位：分）。
+        /// 获取或设置商品价格（单位：指定货币的最小单位）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("product_fee")]

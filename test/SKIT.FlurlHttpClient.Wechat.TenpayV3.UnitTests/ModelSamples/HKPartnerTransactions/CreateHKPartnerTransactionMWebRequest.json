@@ -1,0 +1,41 @@
+﻿{
+    "sp_appid": "wx2421b1c4370ec43b",
+    "sp_mchid": "10000100",
+    "sub_mchid": "20000100",
+    "out_trade_no": "20150806125346",
+    "merchant_category_code": "1011",
+    "payer": {
+        "sp_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o"
+    },
+    "notify_url": "https://wxpay.wxutil.com/pub_v2/pay/notify.v2.php",
+    "trade_type": "APP",
+    "amount": {
+        "total": 10000,
+        "currency": "HKD"
+    },
+    "attach": "支付测试",
+    "description": "APP支付测试",
+    "goods_tag": "",
+    "detail": {
+        "cost_price": 10000,
+        "receipt_id": "1234",
+        "goods_detail": [
+            {
+                "goods_id": "iphone6s_16G",
+                "wxpay_goods_id": "1001",
+                "goods_name": "iPhone6s 16G",
+                "quantity": 1,
+                "price": 528800
+            }
+        ]
+    },
+    "scene_info": {
+        "payer_client_ip": "14.23.150.211",
+        "device_ip": "59.37.125.32",
+        "device_id": "013467007045764",
+        "operator_id": "P001",
+        "store_info": {
+            "id": "SZTX001"
+        }
+    }
+}
