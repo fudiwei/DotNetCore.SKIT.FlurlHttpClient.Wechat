@@ -42,7 +42,7 @@
     <ItemGroup>
         <PackageReference Include="System.ValueTuple" Version="4.5.0" Condition="'$(TargetFramework)' == 'net461'" />
         <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
-		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.3.2" />
+		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.3.3" />
     </ItemGroup>
 
 </Project>
