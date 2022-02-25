@@ -123,6 +123,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public int Amount { get; set; }
 
                 /// <summary>
+                /// 获取或设置优惠券退款金额（单位：指定货币的最小单位）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("refund_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("refund_amount")]
+                public int? RefundAmount { get; set; }
+
+                /// <summary>
                 /// 获取或设置活动 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activity_id")]

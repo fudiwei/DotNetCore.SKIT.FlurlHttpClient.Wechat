@@ -18,14 +18,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("settled")]
                         [System.Text.Json.Serialization.JsonPropertyName("settled")]
-                        public int SettledAmount { get; set; }
+                        public int Settled { get; set; }
 
                         /// <summary>
                         /// 获取或设置未划账金额（单位：指定货币的最小单位）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("unsettle")]
                         [System.Text.Json.Serialization.JsonPropertyName("unsettle")]
-                        public int UnsettledAmount { get; set; }
+                        public int Unsettled { get; set; }
 
                         /// <summary>
                         /// 获取或设置结算币种。
@@ -39,21 +39,21 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("pay")]
                         [System.Text.Json.Serialization.JsonPropertyName("pay")]
-                        public int PayAmount { get; set; }
+                        public int Payment { get; set; }
 
                         /// <summary>
                         /// 获取或设置该结算周期内退款总金额（单位：指定货币的最小单位）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("refund")]
                         [System.Text.Json.Serialization.JsonPropertyName("refund")]
-                        public int RefundAmount { get; set; }
+                        public int Refund { get; set; }
 
                         /// <summary>
                         /// 获取或设置该结算周期交易与退款总金额之差（单位：指定货币的最小单位）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("net")]
                         [System.Text.Json.Serialization.JsonPropertyName("net")]
-                        public int NetAmount { get; set; }
+                        public int Net { get; set; }
 
                         /// <summary>
                         /// 获取或设置手续费金额（单位：指定货币的最小单位）。

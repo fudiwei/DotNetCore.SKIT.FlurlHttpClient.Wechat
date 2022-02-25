@@ -102,7 +102,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pay_net_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("pay_net_fee")]
-        public int PaymentNetFee { get; set; }
+        public int NetFee { get; set; }
 
         /// <summary>
         /// 获取或设置手续费金额（单位：指定货币的最小单位）。

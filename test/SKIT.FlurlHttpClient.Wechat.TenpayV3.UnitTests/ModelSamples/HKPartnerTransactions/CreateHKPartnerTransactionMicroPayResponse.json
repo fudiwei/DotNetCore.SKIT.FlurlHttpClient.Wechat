@@ -25,24 +25,26 @@
     "bank_type": "CCB_DEBIT",
     "attach": "Payment test",
     "success_time": "2018-06-08T10:34:56+08:00",
-    "detail": {
-        "promotion_id": "109519",
-        "name": "Single-item discount-6",
-        "scope": "SINGLE",
-        "type": "DISCOUNT",
-        "amount": 1,
-        "currency": "CNY",
-        "activity_id": "931386",
-        "wechatpay_contribute_amount": 1,
-        "merchant_contribute_amount": 0,
-        "other_contribute_amount": 0,
-        "goods_detail": [
-            {
-                "goods_id": "iphone6s_16G",
-                "goods_remark": "Product remarks",
-                "quantity": 1,
-                "price": 528800
-            }
-        ]
-    }
+    "promotion_detail": [
+        {
+            "promotion_id": "109519",
+            "name": "Single-item discount-6",
+            "scope": "SINGLE",
+            "type": "DISCOUNT",
+            "amount": 1,
+            "currency": "CNY",
+            "activity_id": "931386",
+            "wechatpay_contribute_amount": 1,
+            "merchant_contribute_amount": 0,
+            "other_contribute_amount": 0,
+            "goods_detail": [
+                {
+                    "goods_id": "iphone6s_16G",
+                    "goods_remark": "Product remarks",
+                    "quantity": 1,
+                    "price": 528800
+                }
+            ]
+        }
+    ]
 }

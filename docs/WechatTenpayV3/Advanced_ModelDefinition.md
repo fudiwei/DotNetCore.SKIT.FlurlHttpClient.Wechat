@@ -476,7 +476,7 @@
 
 ---
 
-### 【附】服务商模式 API 模型命名速查表：
+### 【附】服务商、机构模式 API 模型命名速查表：
 
 注：树形结构与[微信支付开发者文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/index.shtml)目录结构保持一致。
 
@@ -1067,6 +1067,117 @@
         -   Query Sub-merchant：`GetSubMerchant`
 
         -   Sub Merchant Modifying：`ModifySubMerchant`
+
+-   Multi-Wallet (For HK)
+
+    -   Quick Pay
+
+        -   Quick Pay：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
+
+        -   Query Order：`GetHKTransactionByOutTradeNumber` / `GetHKTransactionById` / `GetHKPartnerTransactionByOutTradeNumber` / `GetHKPartnerTransactionById`
+
+        -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
+
+        -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+
+        -   Downloading Reconciliation：`DownloadHKStatements`
+
+        -   Revoke Order：`ReverseHKTransaction` / `ReverseHKPartnerTransaction`
+
+        -   Downloading Platform Certificate：`QueryCertificates`
+
+        -   Query Fund Settlement Details：`QueryHKSettlements`
+
+
+    -   QR Code Payment
+
+        -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
+
+        -   Query Order：`GetHKTransactionByOutTradeNumber` / `GetHKTransactionById` / `GetHKPartnerTransactionByOutTradeNumber` / `GetHKPartnerTransactionById`
+
+        -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
+
+        -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+
+        -   Downloading Reconciliation：`DownloadHKStatements`
+
+        -   Close Order：`CloseHKTransaction` / `CloseHKPartnerTransaction`
+
+        -   Downloading Platform Certificate：`QueryCertificates`
+
+        -   Query Fund Settlement Details：`QueryHKSettlements`
+
+    -   Mini-Program Payment
+
+        -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
+
+        -   Query Order：`GetHKTransactionByOutTradeNumber` / `GetHKTransactionById` / `GetHKPartnerTransactionByOutTradeNumber` / `GetHKPartnerTransactionById`
+
+        -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
+
+        -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+
+        -   Downloading Reconciliation：`DownloadHKStatements`
+
+        -   Close Order：`CloseHKTransaction` / `CloseHKPartnerTransaction`
+
+        -   Downloading Platform Certificate：`QueryCertificates`
+
+        -   Query Fund Settlement Details：`QueryHKSettlements`
+
+    -   Official Account Payment
+
+        -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
+
+        -   Query Order：`GetHKTransactionByOutTradeNumber` / `GetHKTransactionById` / `GetHKPartnerTransactionByOutTradeNumber` / `GetHKPartnerTransactionById`
+
+        -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
+
+        -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+
+        -   Downloading Reconciliation：`DownloadHKStatements`
+
+        -   Close Order：`CloseHKTransaction` / `CloseHKPartnerTransaction`
+
+        -   Downloading Platform Certificate：`QueryCertificates`
+
+        -   Query Fund Settlement Details：`QueryHKSettlements`
+
+    -   In-App Payment
+
+        -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
+
+        -   Query Order：`GetHKTransactionByOutTradeNumber` / `GetHKTransactionById` / `GetHKPartnerTransactionByOutTradeNumber` / `GetHKPartnerTransactionById`
+
+        -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
+
+        -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+
+        -   Downloading Reconciliation：`DownloadHKStatements`
+
+        -   Close Order：`CloseHKTransaction` / `CloseHKPartnerTransaction`
+
+        -   Downloading Platform Certificate：`QueryCertificates`
+
+        -   Query Fund Settlement Details：`QueryHKSettlements`
+
+    -   H5 Payment
+
+        -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
+
+        -   Query Order：`GetHKTransactionByOutTradeNumber` / `GetHKTransactionById` / `GetHKPartnerTransactionByOutTradeNumber` / `GetHKPartnerTransactionById`
+
+        -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
+
+        -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+
+        -   Downloading Reconciliation：`DownloadHKStatements`
+
+        -   Close Order：`CloseHKTransaction` / `CloseHKPartnerTransaction`
+
+        -   Downloading Platform Certificate：`QueryCertificates`
+
+        -   Query Fund Settlement Details：`QueryHKSettlements`
 
 -   Customs Declaration
 

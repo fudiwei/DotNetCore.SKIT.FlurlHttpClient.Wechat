@@ -3,9 +3,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 REFUND.SUCCESS （仅服务商）通知的数据。</para>
-    /// <para>表示 REFUND.ABNORMAL （仅服务商）通知的数据。</para>
-    /// <para>表示 REFUND.CLOSED （仅服务商）通知的数据。</para>
+    /// <para>表示 REFUND.SUCCESS （仅限服务商）通知的数据。</para>
+    /// <para>表示 REFUND.ABNORMAL （仅限服务商）通知的数据。</para>
+    /// <para>表示 REFUND.CLOSED （仅限服务商）通知的数据。</para>
     /// </summary>
     public class PartnerRefundResource : WechatTenpayEvent.Types.IDecryptedResource
     {

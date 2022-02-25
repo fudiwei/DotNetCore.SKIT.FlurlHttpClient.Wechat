@@ -3,15 +3,15 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 REFUND.SUCCESS （仅限直连商户）通知的数据。</para>
-    /// <para>表示 REFUND.ABNORMAL （仅限直连商户）通知的数据。</para>
-    /// <para>表示 REFUND.CLOSED （仅限直连商户）通知的数据。</para>
+    /// <para>表示 REFUND.SUCCESS （仅限直连商户 For HK）通知的数据。</para>
+    /// <para>表示 REFUND.ABNORMAL （仅限直连商户 For HK）通知的数据。</para>
+    /// <para>表示 REFUND.CLOSED （仅限直连商户 For HK）通知的数据。</para>
     /// </summary>
-    public class RefundResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class HKRefundResource : WechatTenpayEvent.Types.IDecryptedResource
     {
         public static class Types
         {
-            public class Amount : Models.GetRefundDomesticRefundByOutRefundNumberResponse.Types.Amount
+            public class Amount : Models.GetHKRefundByOutRefundNumberResponse.Types.Amount
             {
             }
         }
@@ -61,9 +61,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// <summary>
         /// 获取或设置退款入账账户。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("user_received_account")]
-        [System.Text.Json.Serialization.JsonPropertyName("user_received_account")]
-        public string UserReceivedAccount { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("recv_account")]
+        [System.Text.Json.Serialization.JsonPropertyName("recv_account")]
+        public string ReceiveAccount { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置退款资金来源。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("fund_source")]
+        [System.Text.Json.Serialization.JsonPropertyName("fund_source")]
+        public string? FundSource { get; set; }
 
         /// <summary>
         /// 获取或设置退款成功时间。

@@ -233,6 +233,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string UserReceivedAccount { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置退款资金来源。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("funds_account")]
+        [System.Text.Json.Serialization.JsonPropertyName("funds_account")]
+        public string FundsAccount { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置退款状态。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("status")]
+        [System.Text.Json.Serialization.JsonPropertyName("status")]
+        public string Status { get; set; } = default!;
+
+        /// <summary>
         /// 获取或设置退款成功时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("success_time")]
@@ -249,20 +263,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [System.Text.Json.Serialization.JsonPropertyName("create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
         public DateTimeOffset CreateTime { get; set; }
-
-        /// <summary>
-        /// 获取或设置退款状态。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("status")]
-        [System.Text.Json.Serialization.JsonPropertyName("status")]
-        public string Status { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置退款资金来源。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("funds_account")]
-        [System.Text.Json.Serialization.JsonPropertyName("funds_account")]
-        public string FundsAccount { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置退款金额信息。
