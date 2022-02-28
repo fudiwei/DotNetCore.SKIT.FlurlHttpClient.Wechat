@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/batchdeletefile 接口的请求。</para>
     /// </summary>
-    public class TcbBatchDeleteFileRequest : WechatApiRequest
+    public class TcbBatchDeleteFileRequest : WechatApiRequest, IMapResponse<TcbBatchDeleteFileRequest, TcbBatchDeleteFileResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

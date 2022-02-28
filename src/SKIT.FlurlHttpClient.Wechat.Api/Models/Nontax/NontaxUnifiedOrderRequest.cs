@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /nontax/unifiedorder 接口的请求。</para>
     /// </summary>
-    public class NontaxUnifiedOrderRequest : WechatApiRequest
+    public class NontaxUnifiedOrderRequest : WechatApiRequest, IMapResponse<NontaxUnifiedOrderRequest, NontaxUnifiedOrderResponse>
     {
         public static class Types
         {

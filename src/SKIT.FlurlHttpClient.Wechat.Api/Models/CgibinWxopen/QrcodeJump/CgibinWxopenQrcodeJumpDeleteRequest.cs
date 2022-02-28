@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/qrcodejumpdelete 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenQrcodeJumpDeleteRequest : WechatApiRequest
+    public class CgibinWxopenQrcodeJumpDeleteRequest : WechatApiRequest, IMapResponse<CgibinWxopenQrcodeJumpDeleteRequest, CgibinWxopenQrcodeJumpDeleteResponse>
     {
         /// <summary>
         /// 获取或设置匹配前缀。

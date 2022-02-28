@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/account/modifyheadimage 接口的请求。</para>
     /// </summary>
-    public class CgibinAccountModifyHeadImageRequest : WechatApiRequest
+    public class CgibinAccountModifyHeadImageRequest : WechatApiRequest, IMapResponse<CgibinAccountModifyHeadImageRequest, CgibinAccountModifyHeadImageResponse>
     {
         /// <summary>
         /// 获取或设置头像的 MediaId。

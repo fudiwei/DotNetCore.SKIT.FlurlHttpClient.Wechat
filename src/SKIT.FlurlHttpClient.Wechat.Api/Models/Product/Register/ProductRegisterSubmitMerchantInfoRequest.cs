@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/register/submit_merchantinfo 接口的请求。</para>
     /// </summary>
-    public class ProductRegisterSubmitMerchantInfoRequest : WechatApiRequest
+    public class ProductRegisterSubmitMerchantInfoRequest : WechatApiRequest, IMapResponse<ProductRegisterSubmitMerchantInfoRequest, ProductRegisterSubmitMerchantInfoResponse>
     {
         public static class Types
         {

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/order/close 接口的请求。</para>
     /// </summary>
-    public class MerchantOrderCloseRequest : WechatApiRequest
+    public class MerchantOrderCloseRequest : WechatApiRequest, IMapResponse<MerchantOrderCloseRequest, MerchantOrderCloseResponse>
     {
         /// <summary>
         /// 获取或设置订单号。

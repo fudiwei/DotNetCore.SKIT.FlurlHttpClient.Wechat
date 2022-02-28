@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/getsnticket 接口的请求。</para>
     /// </summary>
-    public class WxaGetSnTicketRequest : WechatApiRequest
+    public class WxaGetSnTicketRequest : WechatApiRequest, IMapResponse<WxaGetSnTicketRequest, WxaGetSnTicketResponse>
     {
         /// <summary>
         /// 获取或设置设备唯一序列号。

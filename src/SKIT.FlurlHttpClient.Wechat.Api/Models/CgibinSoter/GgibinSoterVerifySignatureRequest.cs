@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/soter/verify_signature 接口的请求。</para>
     /// </summary>
-    public class GgibinSoterVerifySignatureRequest : WechatApiRequest
+    public class GgibinSoterVerifySignatureRequest : WechatApiRequest, IMapResponse<GgibinSoterVerifySignatureRequest, GgibinSoterVerifySignatureResponse>
     {
         /// <summary>
         /// 获取或设置用户唯一标识。

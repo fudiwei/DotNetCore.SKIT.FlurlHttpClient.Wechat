@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/business/checkencryptedmsg 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessCheckEncryptedMessageRequest : WechatApiRequest
+    public class WxaBusinessCheckEncryptedMessageRequest : WechatApiRequest, IMapResponse<WxaBusinessCheckEncryptedMessageRequest, WxaBusinessCheckEncryptedMessageResponse>
     {
         /// <summary>
         /// 获取或设置加密数据哈希值。

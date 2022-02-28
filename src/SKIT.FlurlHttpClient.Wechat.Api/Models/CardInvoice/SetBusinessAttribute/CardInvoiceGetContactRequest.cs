@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/setbizattr?action=get_contact 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceGetContactRequest : WechatApiRequest
+    public class CardInvoiceGetContactRequest : WechatApiRequest, IMapResponse<CardInvoiceGetContactRequest, CardInvoiceGetContactResponse>
     {
     }
 }

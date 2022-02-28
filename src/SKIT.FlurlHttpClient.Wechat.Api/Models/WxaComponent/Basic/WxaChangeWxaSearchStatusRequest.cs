@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/changewxasearchstatus 接口的请求。</para>
     /// </summary>
-    public class WxaChangeWxaSearchStatusRequest : WechatApiRequest
+    public class WxaChangeWxaSearchStatusRequest : WechatApiRequest, IMapResponse<WxaChangeWxaSearchStatusRequest, WxaChangeWxaSearchStatusResponse>
     {
         /// <summary>
         /// 获取或设置搜索状态。

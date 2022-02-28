@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/giftcard/order/get 接口的请求。</para>
     /// </summary>
-    public class CardGiftCardOrderGetRequest : WechatApiRequest
+    public class CardGiftCardOrderGetRequest : WechatApiRequest, IMapResponse<CardGiftCardOrderGetRequest, CardGiftCardOrderGetResponse>
     {
         /// <summary>
         /// 获取或设置礼品卡订单号。

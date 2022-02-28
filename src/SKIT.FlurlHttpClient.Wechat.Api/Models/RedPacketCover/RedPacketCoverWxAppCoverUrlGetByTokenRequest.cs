@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /redpacketcover/wxapp/cover_url/get_by_token 接口的请求。</para>
     /// </summary>
-    public class RedPacketCoverWxAppCoverUrlGetByTokenRequest : WechatApiRequest
+    public class RedPacketCoverWxAppCoverUrlGetByTokenRequest : WechatApiRequest, IMapResponse<RedPacketCoverWxAppCoverUrlGetByTokenRequest, RedPacketCoverWxAppCoverUrlGetByTokenResponse>
     {
         /// <summary>
         /// 获取或设置可领取用户的 OpenId。

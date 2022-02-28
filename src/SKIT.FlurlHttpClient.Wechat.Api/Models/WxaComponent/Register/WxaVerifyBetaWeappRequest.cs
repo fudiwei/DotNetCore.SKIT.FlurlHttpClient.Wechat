@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/verifybetaweapp 接口的请求。</para>
     /// </summary>
-    public class WxaVerifyBetaWeappRequest : WechatApiRequest
+    public class WxaVerifyBetaWeappRequest : WechatApiRequest, IMapResponse<WxaVerifyBetaWeappRequest, WxaVerifyBetaWeappResponse>
     {
         public static class Types
         {

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /customservice/kfaccount/add 接口的请求。</para>
     /// </summary>
-    public class CustomServiceKfAccountAddRequest : WechatApiRequest
+    public class CustomServiceKfAccountAddRequest : WechatApiRequest, IMapResponse<CustomServiceKfAccountAddRequest, CustomServiceKfAccountAddResponse>
     {
         /// <summary>
         /// 获取或设置客服账号。

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/order/get_list_by_finder 接口的请求。</para>
     /// </summary>
-    public class ShopOrderGetListByFinderRequest : WechatApiRequest
+    public class ShopOrderGetListByFinderRequest : WechatApiRequest, IMapResponse<ShopOrderGetListByFinderRequest, ShopOrderGetListByFinderResponse>
     {
         /// <summary>
         /// 获取或设置支付时间的开始时间。

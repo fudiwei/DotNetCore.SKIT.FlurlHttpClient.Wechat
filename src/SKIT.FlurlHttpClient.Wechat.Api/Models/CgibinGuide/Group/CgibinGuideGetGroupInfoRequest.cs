@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getgroupinfo 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideGetGroupInfoRequest : WechatApiRequest
+    public class CgibinGuideGetGroupInfoRequest : WechatApiRequest, IMapResponse<CgibinGuideGetGroupInfoRequest, CgibinGuideGetGroupInfoResponse>
     {
         /// <summary>
         /// 获取或设置顾问分组 ID。

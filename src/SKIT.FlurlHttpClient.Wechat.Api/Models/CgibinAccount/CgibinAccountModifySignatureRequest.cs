@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/account/modifysignature 接口的请求。</para>
     /// </summary>
-    public class CgibinAccountModifySignatureRequest : WechatApiRequest
+    public class CgibinAccountModifySignatureRequest : WechatApiRequest, IMapResponse<CgibinAccountModifySignatureRequest, CgibinAccountModifySignatureResponse>
     {
         /// <summary>
         /// 获取或设置小程序简介。

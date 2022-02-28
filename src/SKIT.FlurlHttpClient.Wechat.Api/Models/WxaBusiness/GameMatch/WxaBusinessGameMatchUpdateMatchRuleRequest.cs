@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/business/gamematch/updatematchrule 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGameMatchUpdateMatchRuleRequest : WxaBusinessGameMatchCreateMatchRuleRequest
+    public class WxaBusinessGameMatchUpdateMatchRuleRequest : WxaBusinessGameMatchCreateMatchRuleRequest, IMapResponse<WxaBusinessGameMatchUpdateMatchRuleRequest, WxaBusinessGameMatchUpdateMatchRuleResponse>
     {
         /// <summary>
         /// 获取或设置匹配池对应的 ID。

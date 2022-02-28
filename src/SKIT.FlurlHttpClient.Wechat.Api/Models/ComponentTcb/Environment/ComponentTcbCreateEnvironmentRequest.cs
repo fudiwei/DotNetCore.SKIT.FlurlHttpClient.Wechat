@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/createenv 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbCreateEnvironmentRequest : WechatApiRequest
+    public class ComponentTcbCreateEnvironmentRequest : WechatApiRequest, IMapResponse<ComponentTcbCreateEnvironmentRequest, ComponentTcbCreateEnvironmentResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

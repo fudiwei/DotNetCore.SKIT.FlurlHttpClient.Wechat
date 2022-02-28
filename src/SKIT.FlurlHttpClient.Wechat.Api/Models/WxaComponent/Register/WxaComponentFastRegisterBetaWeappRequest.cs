@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/component/fastregisterbetaweapp 接口的请求。</para>
     /// </summary>
-    public class WxaComponentFastRegisterBetaWeappRequest : WechatApiRequest
+    public class WxaComponentFastRegisterBetaWeappRequest : WechatApiRequest, IMapResponse<WxaComponentFastRegisterBetaWeappRequest, WxaComponentFastRegisterBetaWeappResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/spu/search 接口的请求。</para>
     /// </summary>
-    public class ProductSPUSearchRequest : WechatApiRequest
+    public class ProductSPUSearchRequest : WechatApiRequest, IMapResponse<ProductSPUSearchRequest, ProductSPUSearchResponse>
     {
         /// <summary>
         /// 获取或设置搜索关键词。

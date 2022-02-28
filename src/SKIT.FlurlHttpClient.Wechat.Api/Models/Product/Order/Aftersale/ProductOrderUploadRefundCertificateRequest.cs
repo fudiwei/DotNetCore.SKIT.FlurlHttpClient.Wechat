@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/order/upload_refund_certificate 接口的请求。</para>
     /// </summary>
-    public class ProductOrderUploadRefundCertificateRequest : WechatApiRequest
+    public class ProductOrderUploadRefundCertificateRequest : WechatApiRequest, IMapResponse<ProductOrderUploadRefundCertificateRequest, ProductOrderUploadRefundCertificateResponse>
     {
         /// <summary>
         /// 获取或设置售后单号。

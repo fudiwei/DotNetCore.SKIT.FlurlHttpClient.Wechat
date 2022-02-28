@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/update_store 接口的请求。</para>
     /// </summary>
-    public class WxaUpdateStoreRequest : WechatApiRequest
+    public class WxaUpdateStoreRequest : WechatApiRequest, IMapResponse<WxaUpdateStoreRequest, WxaUpdateStoreResponse>
     {
         public static class Types
         {

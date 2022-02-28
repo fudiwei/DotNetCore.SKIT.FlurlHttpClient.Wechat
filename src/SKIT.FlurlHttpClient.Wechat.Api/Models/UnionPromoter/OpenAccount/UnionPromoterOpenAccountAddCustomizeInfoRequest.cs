@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /union/promoter/open_account/add_customize_info 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterOpenAccountAddCustomizeInfoRequest : WechatApiRequest
+    public class UnionPromoterOpenAccountAddCustomizeInfoRequest : WechatApiRequest, IMapResponse<UnionPromoterOpenAccountAddCustomizeInfoRequest, UnionPromoterOpenAccountAddCustomizeInfoResponse>
     {
         /// <summary>
         /// 获取或设置开放平台 UnionID。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/getuploadsignature 接口的请求。</para>
     /// </summary>
-    public class TcbGetUploadSignatureRequest : WechatApiRequest
+    public class TcbGetUploadSignatureRequest : WechatApiRequest, IMapResponse<TcbGetUploadSignatureRequest, TcbGetUploadSignatureResponse>
     {
         /// <summary>
         /// 获取或设置请求数据的签名。

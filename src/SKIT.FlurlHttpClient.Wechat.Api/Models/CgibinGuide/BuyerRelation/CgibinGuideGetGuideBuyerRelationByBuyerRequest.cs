@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getguidebuyerrelationbybuyer 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideGetGuideBuyerRelationByBuyerRequest : WechatApiRequest
+    public class CgibinGuideGetGuideBuyerRelationByBuyerRequest : WechatApiRequest, IMapResponse<CgibinGuideGetGuideBuyerRelationByBuyerRequest, CgibinGuideGetGuideBuyerRelationByBuyerResponse>
     {
         /// <summary>
         /// 获取或设置客户 OpenId。

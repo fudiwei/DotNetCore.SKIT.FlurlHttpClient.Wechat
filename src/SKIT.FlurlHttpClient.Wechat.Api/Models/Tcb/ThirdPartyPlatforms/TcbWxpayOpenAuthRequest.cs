@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/wxpayopenauth 接口的请求。</para>
     /// </summary>
-    public class TcbWxpayOpenAuthRequest : WechatApiRequest
+    public class TcbWxpayOpenAuthRequest : WechatApiRequest, IMapResponse<TcbWxpayOpenAuthRequest, TcbWxpayOpenAuthResponse>
     {
         /// <summary>
         /// 获取或设置操作类型。

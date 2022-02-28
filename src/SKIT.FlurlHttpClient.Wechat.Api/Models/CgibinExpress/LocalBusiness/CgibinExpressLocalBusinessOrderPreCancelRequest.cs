@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/local/business/order/precancel 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressLocalBusinessOrderPreCancelRequest : CgibinExpressLocalBusinessRequestBase
+    public class CgibinExpressLocalBusinessOrderPreCancelRequest : CgibinExpressLocalBusinessRequestBase, IMapResponse<CgibinExpressLocalBusinessOrderPreCancelRequest, CgibinExpressLocalBusinessOrderPreCancelResponse>
     {
         /// <summary>
         /// 获取或设置商家门店编号。

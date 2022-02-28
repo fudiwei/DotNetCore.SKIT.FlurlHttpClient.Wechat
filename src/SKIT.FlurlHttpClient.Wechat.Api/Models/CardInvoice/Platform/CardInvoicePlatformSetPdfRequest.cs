@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/platform/setpdf 接口的请求。</para>
     /// </summary>
-    public class CardInvoicePlatformSetPdfRequest : WechatApiRequest
+    public class CardInvoicePlatformSetPdfRequest : WechatApiRequest, IMapResponse<CardInvoicePlatformSetPdfRequest, CardInvoicePlatformSetPdfResponse>
     {
         /// <summary>
         /// 获取或设置发票文件字节数组。

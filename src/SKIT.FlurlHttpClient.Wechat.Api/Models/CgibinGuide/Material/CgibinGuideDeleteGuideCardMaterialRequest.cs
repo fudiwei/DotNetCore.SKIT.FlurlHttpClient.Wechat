@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/delguidecardmaterial 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideDeleteGuideCardMaterialRequest : WechatApiRequest
+    public class CgibinGuideDeleteGuideCardMaterialRequest : WechatApiRequest, IMapResponse<CgibinGuideDeleteGuideCardMaterialRequest, CgibinGuideDeleteGuideCardMaterialResponse>
     {
         /// <summary>
         /// 获取或设置操作类型。

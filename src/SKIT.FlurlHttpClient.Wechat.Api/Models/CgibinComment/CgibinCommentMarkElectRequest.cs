@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/comment/markelect 接口的请求。</para>
     /// </summary>
-    public class CgibinCommentMarkElectRequest : WechatApiRequest
+    public class CgibinCommentMarkElectRequest : WechatApiRequest, IMapResponse<CgibinCommentMarkElectRequest, CgibinCommentMarkElectResponse>
     {
         /// <summary>
         /// 获取或设置群发消息数据 ID。

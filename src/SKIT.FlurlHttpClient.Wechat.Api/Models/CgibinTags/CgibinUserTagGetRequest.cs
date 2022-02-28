@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/user/tag/get 接口的请求。</para>
     /// </summary>
-    public class CgibinUserTagGetRequest : WechatApiRequest
+    public class CgibinUserTagGetRequest : WechatApiRequest, IMapResponse<CgibinUserTagGetRequest, CgibinUserTagGetResponse>
     {
         /// <summary>
         /// 获取或设置标签 ID。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /customservice/kfsession/getsessionlist 接口的请求。</para>
     /// </summary>
-    public class CustomServiceKfSessionGetSessionListRequest : WechatApiRequest
+    public class CustomServiceKfSessionGetSessionListRequest : WechatApiRequest, IMapResponse<CustomServiceKfSessionGetSessionListRequest, CustomServiceKfSessionGetSessionListResponse>
     {
         /// <summary>
         /// 获取或设置客服帐号。

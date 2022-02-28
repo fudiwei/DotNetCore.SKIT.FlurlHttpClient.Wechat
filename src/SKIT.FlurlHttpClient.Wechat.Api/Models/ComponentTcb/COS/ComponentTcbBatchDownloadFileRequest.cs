@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /componenttcb/batchdownloadfile 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbBatchDownloadFileRequest : WechatApiRequest
+    public class ComponentTcbBatchDownloadFileRequest : WechatApiRequest, IMapResponse<ComponentTcbBatchDownloadFileRequest, ComponentTcbBatchDownloadFileResponse>
     {
         public static class Types
         {

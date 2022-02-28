@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cv/img/superresolution 接口的请求。</para>
     /// </summary>
-    public class CVImageSuperResolutionRequest : CVImageQrcodeRequest
+    public class CVImageSuperResolutionRequest : CVImageQrcodeRequest, IMapResponse<CVImageSuperResolutionRequest, CVImageSuperResolutionResponse>
     {
     }
 }

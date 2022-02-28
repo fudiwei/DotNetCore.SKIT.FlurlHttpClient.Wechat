@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/img/upload 接口的请求。</para>
     /// </summary>
-    public class ProductImageUploadRequest : WechatApiRequest
+    public class ProductImageUploadRequest : WechatApiRequest, IMapResponse<ProductImageUploadRequest, ProductImageUploadResponse>
     {
         /// <summary>
         /// 获取或设置返回数据类型。

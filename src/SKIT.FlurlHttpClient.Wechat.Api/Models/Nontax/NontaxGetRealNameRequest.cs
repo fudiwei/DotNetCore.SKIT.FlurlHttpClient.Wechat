@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /nontax/getrealname 接口的请求。</para>
     /// </summary>
-    public class NontaxGetRealNameRequest : WechatApiRequest
+    public class NontaxGetRealNameRequest : WechatApiRequest, IMapResponse<NontaxGetRealNameRequest, NontaxGetRealNameResponse>
     {
         /// <summary>
         /// 获取或设置微信实名信息 Token。

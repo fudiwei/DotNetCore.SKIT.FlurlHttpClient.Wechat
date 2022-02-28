@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/dbaggregate 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbDbAggregateRequest : WechatApiRequest
+    public class ComponentTcbDbAggregateRequest : WechatApiRequest, IMapResponse<ComponentTcbDbAggregateRequest, ComponentTcbDbAggregateResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

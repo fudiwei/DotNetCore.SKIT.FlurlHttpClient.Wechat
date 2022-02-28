@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /nontax/getbillauthurl 接口的请求。</para>
     /// </summary>
-    public class NontaxGetBillAuthUrlRequest : WechatApiRequest
+    public class NontaxGetBillAuthUrlRequest : WechatApiRequest, IMapResponse<NontaxGetBillAuthUrlRequest, NontaxGetBillAuthUrlResponse>
     {
         /// <summary>
         /// 获取或设置订单号。

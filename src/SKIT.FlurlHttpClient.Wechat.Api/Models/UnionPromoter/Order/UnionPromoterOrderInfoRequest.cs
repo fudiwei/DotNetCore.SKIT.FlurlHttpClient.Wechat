@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /union/promoter/order/info 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterOrderInfoRequest : WechatApiRequest
+    public class UnionPromoterOrderInfoRequest : WechatApiRequest, IMapResponse<UnionPromoterOrderInfoRequest, UnionPromoterOrderInfoResponse>
     {
         /// <summary>
         /// 获取或设置订单 ID 列表。

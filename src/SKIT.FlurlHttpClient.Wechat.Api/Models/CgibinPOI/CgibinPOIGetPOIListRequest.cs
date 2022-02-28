@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/poi/getpoilist 接口的请求。</para>
     /// </summary>
-    public class CgibinPOIGetPOIListRequest : WechatApiRequest
+    public class CgibinPOIGetPOIListRequest : WechatApiRequest, IMapResponse<CgibinPOIGetPOIListRequest, CgibinPOIGetPOIListResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

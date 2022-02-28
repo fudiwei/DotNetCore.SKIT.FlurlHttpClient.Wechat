@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/uploadappconfig 接口的请求。</para>
     /// </summary>
-    public class TcbUploadAppConfigRequest : WechatApiRequest
+    public class TcbUploadAppConfigRequest : WechatApiRequest, IMapResponse<TcbUploadAppConfigRequest, TcbUploadAppConfigResponse>
     {
         /// <summary>
         /// 获取或设置配置类型。

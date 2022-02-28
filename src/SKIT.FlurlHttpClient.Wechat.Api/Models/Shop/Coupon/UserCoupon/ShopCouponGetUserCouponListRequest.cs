@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/coupon/get_usercoupon_list 接口的请求。</para>
     /// </summary>
-    public class ShopCouponGetUserCouponListRequest : WechatApiRequest
+    public class ShopCouponGetUserCouponListRequest : WechatApiRequest, IMapResponse<ShopCouponGetUserCouponListRequest, ShopCouponGetUserCouponListResponse>
     {
         /// <summary>
         /// 获取或设置用户 OpenId。

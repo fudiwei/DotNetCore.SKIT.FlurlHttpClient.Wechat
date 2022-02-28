@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/paygiftcard/delete 接口的请求。</para>
     /// </summary>
-    public class CardPayGiftCardDeleteRequest : WechatApiRequest
+    public class CardPayGiftCardDeleteRequest : WechatApiRequest, IMapResponse<CardPayGiftCardDeleteRequest, CardPayGiftCardDeleteResponse>
     {
         /// <summary>
         /// 获取或设置规则 ID。

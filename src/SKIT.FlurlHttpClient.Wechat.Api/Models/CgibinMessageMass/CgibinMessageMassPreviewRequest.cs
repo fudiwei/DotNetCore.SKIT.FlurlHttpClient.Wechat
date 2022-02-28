@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/message/mass/preview 接口的请求。</para>
     /// </summary>
-    public class CgibinMessageMassPreviewRequest : WechatApiRequest
+    public class CgibinMessageMassPreviewRequest : WechatApiRequest, IMapResponse<CgibinMessageMassPreviewRequest, CgibinMessageMassPreviewResponse>
     {
         public static class Types
         {

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/membercard/activatetempinfo/get 接口的请求。</para>
     /// </summary>
-    public class CardMemberCardActivateTempInfoGetRequest : WechatApiRequest
+    public class CardMemberCardActivateTempInfoGetRequest : WechatApiRequest, IMapResponse<CardMemberCardActivateTempInfoGetRequest, CardMemberCardActivateTempInfoGetResponse>
     {
         /// <summary>
         /// 获取或设置跳转型开卡组件开卡后回调中的激活票据。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/local/business/order/confirm_return 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressLocalBusinessOrderConfirmReturnRequest : CgibinExpressLocalBusinessRequestBase
+    public class CgibinExpressLocalBusinessOrderConfirmReturnRequest : CgibinExpressLocalBusinessRequestBase, IMapResponse<CgibinExpressLocalBusinessOrderConfirmReturnRequest, CgibinExpressLocalBusinessOrderConfirmReturnResponse>
     {
         /// <summary>
         /// 获取或设置商家门店编号。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/coupon/push 接口的请求。</para>
     /// </summary>
-    public class ProductCouponPushRequest : WechatApiRequest
+    public class ProductCouponPushRequest : WechatApiRequest, IMapResponse<ProductCouponPushRequest, ProductCouponPushResponse>
     {
         /// <summary>
         /// 获取或设置优惠券 ID。

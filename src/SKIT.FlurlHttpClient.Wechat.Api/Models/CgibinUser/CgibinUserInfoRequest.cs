@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/user/info 接口的请求。</para>
     /// </summary>
-    public class CgibinUserInfoRequest : WechatApiRequest
+    public class CgibinUserInfoRequest : WechatApiRequest, IMapResponse<CgibinUserInfoRequest, CgibinUserInfoResponse>
     {
         /// <summary>
         /// 获取或设置用户唯一标识。

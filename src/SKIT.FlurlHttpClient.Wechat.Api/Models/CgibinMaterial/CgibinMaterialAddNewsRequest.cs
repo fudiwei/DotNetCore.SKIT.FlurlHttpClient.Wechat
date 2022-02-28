@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <para>表示 [POST] /cgi-bin/material/add_news 接口的请求。</para>
     /// </summary>
     [Obsolete("相关接口或字段于 2022-02-25 下线。")]
-    public class CgibinMaterialAddNewsRequest : WechatApiRequest
+    public class CgibinMaterialAddNewsRequest : WechatApiRequest, IMapResponse<CgibinMaterialAddNewsRequest, CgibinMaterialAddNewsResponse>
     {
         public static class Types
         {

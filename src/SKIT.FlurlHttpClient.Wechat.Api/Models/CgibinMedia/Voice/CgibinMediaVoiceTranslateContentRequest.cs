@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/media/voice/translatecontent 接口的请求。</para>
     /// </summary>
-    public class CgibinMediaVoiceTranslateContentRequest : WechatApiRequest
+    public class CgibinMediaVoiceTranslateContentRequest : WechatApiRequest, IMapResponse<CgibinMediaVoiceTranslateContentRequest, CgibinMediaVoiceTranslateContentResponse>
     {
         /// <summary>
         /// 获取或设置语音文件字节数组。

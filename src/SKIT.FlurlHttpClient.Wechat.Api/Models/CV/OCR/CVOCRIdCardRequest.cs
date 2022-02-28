@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cv/ocr/idcard 接口的请求。</para>
     /// </summary>
-    public class CVOCRIdCardRequest : CVOCRCommonRequest
+    public class CVOCRIdCardRequest : CVOCRCommonRequest, IMapResponse<CVOCRIdCardRequest, CVOCRIdCardResponse>
     {
         /// <summary>
         /// 获取或设置图片识别模式。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/offline/get_same_city_template 接口的请求。</para>
     /// </summary>
-    public class ProductOfflineGetSameCityTemplateRequest : WechatApiRequest
+    public class ProductOfflineGetSameCityTemplateRequest : WechatApiRequest, IMapResponse<ProductOfflineGetSameCityTemplateRequest, ProductOfflineGetSameCityTemplateResponse>
     {
     }
 }

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/draft/batchget 接口的请求。</para>
     /// </summary>
-    public class CgibinDraftBatchGetRequest : WechatApiRequest
+    public class CgibinDraftBatchGetRequest : WechatApiRequest, IMapResponse<CgibinDraftBatchGetRequest, CgibinDraftBatchGetResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/set_user_storage 接口的请求。</para>
     /// </summary>
-    public class WxaSetUserStorageRequest : WechatApiRequest
+    public class WxaSetUserStorageRequest : WechatApiRequest, IMapResponse<WxaSetUserStorageRequest, WxaSetUserStorageResponse>
     {
         public static class Types
         {

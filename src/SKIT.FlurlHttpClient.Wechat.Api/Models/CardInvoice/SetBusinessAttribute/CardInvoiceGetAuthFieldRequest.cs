@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/setbizattr?action=get_auth_field 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceGetAuthFieldRequest : WechatApiRequest
+    public class CardInvoiceGetAuthFieldRequest : WechatApiRequest, IMapResponse<CardInvoiceGetAuthFieldRequest, CardInvoiceGetAuthFieldResponse>
     {
     }
 }

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/quota/get 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressBusinessQuotaGetRequest : WechatApiRequest
+    public class CgibinExpressBusinessQuotaGetRequest : WechatApiRequest, IMapResponse<CgibinExpressBusinessQuotaGetRequest, CgibinExpressBusinessQuotaGetResponse>
     {
         /// <summary>
         /// 获取或设置快递公司 ID。

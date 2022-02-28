@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/reimburse/getinvoiceinfo 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceReimburseGetInvoiceInfoRequest : WechatApiRequest
+    public class CardInvoiceReimburseGetInvoiceInfoRequest : WechatApiRequest, IMapResponse<CardInvoiceReimburseGetInvoiceInfoRequest, CardInvoiceReimburseGetInvoiceInfoResponse>
     {
         /// <summary>
         /// 获取或设置发票卡券模板编号。

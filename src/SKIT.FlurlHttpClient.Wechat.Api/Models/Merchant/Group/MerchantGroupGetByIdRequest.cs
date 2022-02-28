@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/group/getbyid 接口的请求。</para>
     /// </summary>
-    public class MerchantGroupGetByIdRequest : WechatApiRequest
+    public class MerchantGroupGetByIdRequest : WechatApiRequest, IMapResponse<MerchantGroupGetByIdRequest, MerchantGroupGetByIdResponse>
     {
         /// <summary>
         /// 获取或设置分组 ID。

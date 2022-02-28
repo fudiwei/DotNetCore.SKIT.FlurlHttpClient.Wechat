@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/freepublish/submit 接口的请求。</para>
     /// </summary>
-    public class CgibinFreePublishSubmitRequest : WechatApiRequest
+    public class CgibinFreePublishSubmitRequest : WechatApiRequest, IMapResponse<CgibinFreePublishSubmitRequest, CgibinFreePublishSubmitResponse>
     {
         /// <summary>
         /// 获取或设置草稿的 MediaId。

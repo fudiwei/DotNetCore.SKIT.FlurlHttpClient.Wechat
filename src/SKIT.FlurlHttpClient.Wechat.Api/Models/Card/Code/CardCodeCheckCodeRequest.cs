@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/code/checkcode 接口的请求。</para>
     /// </summary>
-    public class CardCodeCheckCodeRequest : WechatApiRequest
+    public class CardCodeCheckCodeRequest : WechatApiRequest, IMapResponse<CardCodeCheckCodeRequest, CardCodeCheckCodeResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

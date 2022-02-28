@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/api_wxa_querynickname 接口的请求。</para>
     /// </summary>
-    public class WxaApiWxaQueryNicknameRequest : WechatApiRequest
+    public class WxaApiWxaQueryNicknameRequest : WechatApiRequest, IMapResponse<WxaApiWxaQueryNicknameRequest, WxaApiWxaQueryNicknameResponse>
     {
         /// <summary>
         /// 获取或设置审核单 ID。

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /union/promoter/product/generate 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterProductGenerateRequest : WechatApiRequest
+    public class UnionPromoterProductGenerateRequest : WechatApiRequest, IMapResponse<UnionPromoterProductGenerateRequest, UnionPromoterProductGenerateResponse>
     {
         public static class Types
         {

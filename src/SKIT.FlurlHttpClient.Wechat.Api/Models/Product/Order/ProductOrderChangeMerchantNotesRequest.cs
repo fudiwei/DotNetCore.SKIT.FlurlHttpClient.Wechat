@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/order/change_merchant_notes 接口的请求。</para>
     /// </summary>
-    public class ProductOrderChangeMerchantNotesRequest : WechatApiRequest
+    public class ProductOrderChangeMerchantNotesRequest : WechatApiRequest, IMapResponse<ProductOrderChangeMerchantNotesRequest, ProductOrderChangeMerchantNotesResponse>
     {
         /// <summary>
         /// 获取或设置订单 ID。

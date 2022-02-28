@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxaapi/newtmpl/gettemplate 接口的请求。</para>
     /// </summary>
-    public class WxaApiNewTemplateGetTemplateRequest : WechatApiRequest
+    public class WxaApiNewTemplateGetTemplateRequest : WechatApiRequest, IMapResponse<WxaApiNewTemplateGetTemplateRequest, WxaApiNewTemplateGetTemplateResponse>
     {
     }
 }

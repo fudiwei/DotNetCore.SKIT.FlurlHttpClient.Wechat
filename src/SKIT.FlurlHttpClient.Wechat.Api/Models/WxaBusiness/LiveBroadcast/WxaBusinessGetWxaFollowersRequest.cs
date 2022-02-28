@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/business/get_wxa_followers 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGetWxaFollowersRequest : WechatApiRequest
+    public class WxaBusinessGetWxaFollowersRequest : WechatApiRequest, IMapResponse<WxaBusinessGetWxaFollowersRequest, WxaBusinessGetWxaFollowersResponse>
     {
         /// <summary>
         /// 获取或设置分页每页数量。

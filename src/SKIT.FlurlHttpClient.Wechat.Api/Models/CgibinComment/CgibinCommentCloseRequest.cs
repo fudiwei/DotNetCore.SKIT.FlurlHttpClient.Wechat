@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/comment/close 接口的请求。</para>
     /// </summary>
-    public class CgibinCommentCloseRequest : CgibinCommentOpenRequest
+    public class CgibinCommentCloseRequest : CgibinCommentOpenRequest, IMapResponse<CgibinCommentCloseRequest, CgibinCommentCloseResponse>
     {
     }
 }

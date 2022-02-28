@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/createwxagameroom 接口的请求。</para>
     /// </summary>
-    public class WxaCreateWxaGameRoomRequest : WechatApiRequest
+    public class WxaCreateWxaGameRoomRequest : WechatApiRequest, IMapResponse<WxaCreateWxaGameRoomRequest, WxaCreateWxaGameRoomResponse>
     {
         /// <summary>
         /// 获取或设置后台下发游戏逻辑帧的周期（单位：毫秒）。

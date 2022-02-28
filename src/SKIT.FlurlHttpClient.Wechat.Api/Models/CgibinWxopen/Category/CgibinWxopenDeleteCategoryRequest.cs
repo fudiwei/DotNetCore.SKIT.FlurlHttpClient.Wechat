@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/deletecategory 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenDeleteCategoryRequest : WechatApiRequest
+    public class CgibinWxopenDeleteCategoryRequest : WechatApiRequest, IMapResponse<CgibinWxopenDeleteCategoryRequest, CgibinWxopenDeleteCategoryResponse>
     {
         /// <summary>
         /// 获取或设置一级类目 ID。

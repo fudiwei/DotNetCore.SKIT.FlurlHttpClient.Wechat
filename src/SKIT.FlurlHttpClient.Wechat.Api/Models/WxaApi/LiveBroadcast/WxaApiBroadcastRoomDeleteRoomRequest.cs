@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/room/deleteroom 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoomDeleteRoomRequest : WechatApiRequest
+    public class WxaApiBroadcastRoomDeleteRoomRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoomDeleteRoomRequest, WxaApiBroadcastRoomDeleteRoomResponse>
     {
         /// <summary>
         /// 获取或设置直播间 ID。

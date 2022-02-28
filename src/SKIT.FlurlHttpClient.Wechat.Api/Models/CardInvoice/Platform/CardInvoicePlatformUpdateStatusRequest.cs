@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/platform/updatestatus 接口的请求。</para>
     /// </summary>
-    public class CardInvoicePlatformUpdateStatusRequest : WechatApiRequest
+    public class CardInvoicePlatformUpdateStatusRequest : WechatApiRequest, IMapResponse<CardInvoicePlatformUpdateStatusRequest, CardInvoicePlatformUpdateStatusResponse>
     {
         /// <summary>
         /// 获取或设置发票或非税票据卡券模板编号。

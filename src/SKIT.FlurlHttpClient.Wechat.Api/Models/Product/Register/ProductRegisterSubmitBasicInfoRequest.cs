@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/register/submit_basicinfo 接口的请求。</para>
     /// </summary>
-    public class ProductRegisterSubmitBasicInfoRequest : WechatApiRequest
+    public class ProductRegisterSubmitBasicInfoRequest : WechatApiRequest, IMapResponse<ProductRegisterSubmitBasicInfoRequest, ProductRegisterSubmitBasicInfoResponse>
     {
         public static class Types
         {

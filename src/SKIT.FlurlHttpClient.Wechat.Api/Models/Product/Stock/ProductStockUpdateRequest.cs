@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/stock/update 接口的请求。</para>
     /// </summary>
-    public class ProductStockUpdateRequest : WechatApiRequest
+    public class ProductStockUpdateRequest : WechatApiRequest, IMapResponse<ProductStockUpdateRequest, ProductStockUpdateResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。与字段 <see cref="OutProductId"/> 二选一。

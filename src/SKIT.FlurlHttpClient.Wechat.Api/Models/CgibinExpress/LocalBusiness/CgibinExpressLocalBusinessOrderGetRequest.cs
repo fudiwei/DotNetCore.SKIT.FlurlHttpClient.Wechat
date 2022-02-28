@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/local/business/order/get 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressLocalBusinessOrderGetRequest : CgibinExpressLocalBusinessRequestBase
+    public class CgibinExpressLocalBusinessOrderGetRequest : CgibinExpressLocalBusinessRequestBase, IMapResponse<CgibinExpressLocalBusinessOrderGetRequest, CgibinExpressLocalBusinessOrderGetResponse>
     {
         /// <summary>
         /// 获取或设置商家门店编号。

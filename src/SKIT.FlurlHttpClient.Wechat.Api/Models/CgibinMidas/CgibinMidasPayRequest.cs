@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/midas/pay 接口的请求。</para>
     /// </summary>
-    public class CgibinMidasPayRequest : CgibinMidasRequestBase
+    public class CgibinMidasPayRequest : CgibinMidasRequestBase, IMapResponse<CgibinMidasPayRequest, CgibinMidasPayResponse>
     {
         /// <summary>
         /// 获取或设置扣除游戏币数量。

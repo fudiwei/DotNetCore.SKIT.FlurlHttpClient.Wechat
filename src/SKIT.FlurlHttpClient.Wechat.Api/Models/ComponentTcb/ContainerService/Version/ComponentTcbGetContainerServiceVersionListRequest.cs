@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/getcsversionlist 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbGetContainerServiceVersionListRequest : WechatApiRequest
+    public class ComponentTcbGetContainerServiceVersionListRequest : WechatApiRequest, IMapResponse<ComponentTcbGetContainerServiceVersionListRequest, ComponentTcbGetContainerServiceVersionListResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

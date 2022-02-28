@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/invoice/reimburse/updatestatusbatch 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceReimburseUpdateStatusBatchRequest : WechatApiRequest
+    public class CardInvoiceReimburseUpdateStatusBatchRequest : WechatApiRequest, IMapResponse<CardInvoiceReimburseUpdateStatusBatchRequest, CardInvoiceReimburseUpdateStatusBatchResponse>
     {
         public static class Types
         {

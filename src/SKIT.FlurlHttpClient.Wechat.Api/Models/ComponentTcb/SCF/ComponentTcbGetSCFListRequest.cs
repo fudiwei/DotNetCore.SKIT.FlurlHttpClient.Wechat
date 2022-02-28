@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/getscflist 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbGetSCFListRequest : WechatApiRequest
+    public class ComponentTcbGetSCFListRequest : WechatApiRequest, IMapResponse<ComponentTcbGetSCFListRequest, ComponentTcbGetSCFListResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

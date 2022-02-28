@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/delguideacct 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideDeleteGuideAccountRequest : WechatApiRequest
+    public class CgibinGuideDeleteGuideAccountRequest : WechatApiRequest, IMapResponse<CgibinGuideDeleteGuideAccountRequest, CgibinGuideDeleteGuideAccountResponse>
     {
         /// <summary>
         /// 获取或设置顾问微信号。与字段 <see cref="GuideOpenId"/> 二选一。

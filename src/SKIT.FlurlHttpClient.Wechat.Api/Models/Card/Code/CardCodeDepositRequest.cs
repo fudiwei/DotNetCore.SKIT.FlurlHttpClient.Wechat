@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/code/deposit 接口的请求。</para>
     /// </summary>
-    public class CardCodeDepositRequest : WechatApiRequest
+    public class CardCodeDepositRequest : WechatApiRequest, IMapResponse<CardCodeDepositRequest, CardCodeDepositResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

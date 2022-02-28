@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/code/getdepositcount 接口的请求。</para>
     /// </summary>
-    public class CardCodeGetDepositCountRequest : WechatApiRequest
+    public class CardCodeGetDepositCountRequest : WechatApiRequest, IMapResponse<CardCodeGetDepositCountRequest, CardCodeGetDepositCountResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

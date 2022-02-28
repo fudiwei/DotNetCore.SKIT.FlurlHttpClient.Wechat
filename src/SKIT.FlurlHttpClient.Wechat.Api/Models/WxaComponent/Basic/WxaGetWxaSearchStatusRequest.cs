@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxa/getwxasearchstatus 接口的请求。</para>
     /// </summary>
-    public class WxaGetWxaSearchStatusRequest : WechatApiRequest
+    public class WxaGetWxaSearchStatusRequest : WechatApiRequest, IMapResponse<WxaGetWxaSearchStatusRequest, WxaGetWxaSearchStatusResponse>
     {
     }
 }

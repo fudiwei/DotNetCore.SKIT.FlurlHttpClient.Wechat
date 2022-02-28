@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /union/promoter/promotion/add 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterPromotionAddRequest : WechatApiRequest
+    public class UnionPromoterPromotionAddRequest : WechatApiRequest, IMapResponse<UnionPromoterPromotionAddRequest, UnionPromoterPromotionAddResponse>
     {
         /// <summary>
         /// 获取或设置推广位名称。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /intp/marketcode/applycodedownload 接口的请求。</para>
     /// </summary>
-    public class IntpMarketCodeApplyCodeDownloadRequest : WechatApiRequest
+    public class IntpMarketCodeApplyCodeDownloadRequest : WechatApiRequest, IMapResponse<IntpMarketCodeApplyCodeDownloadRequest, IntpMarketCodeApplyCodeDownloadResponse>
     {
         /// <summary>
         /// 获取或设置申请单号。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/membercard/updateuser 接口的请求。</para>
     /// </summary>
-    public class CardMemberCardUpdateUserRequest : WechatApiRequest
+    public class CardMemberCardUpdateUserRequest : WechatApiRequest, IMapResponse<CardMemberCardUpdateUserRequest, CardMemberCardUpdateUserResponse>
     {
         public static class Types
         {

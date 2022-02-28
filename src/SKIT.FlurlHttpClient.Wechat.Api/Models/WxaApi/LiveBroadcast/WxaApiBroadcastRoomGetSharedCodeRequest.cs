@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxaapi/broadcast/room/getsharedcode 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoomGetSharedCodeRequest : WechatApiRequest
+    public class WxaApiBroadcastRoomGetSharedCodeRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoomGetSharedCodeRequest, WxaApiBroadcastRoomGetSharedCodeResponse>
     {
         /// <summary>
         /// 获取或设置直播间 ID。

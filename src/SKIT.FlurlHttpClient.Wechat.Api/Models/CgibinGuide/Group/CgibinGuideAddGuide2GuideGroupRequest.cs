@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/addguide2guidegroup 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideAddGuide2GuideGroupRequest : WechatApiRequest
+    public class CgibinGuideAddGuide2GuideGroupRequest : WechatApiRequest, IMapResponse<CgibinGuideAddGuide2GuideGroupRequest, CgibinGuideAddGuide2GuideGroupResponse>
     {
         /// <summary>
         /// 获取或设置顾问分组 ID。

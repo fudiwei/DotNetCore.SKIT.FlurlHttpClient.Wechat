@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/freepublish/batchget 接口的请求。</para>
     /// </summary>
-    public class CgibinFreePublishBatchGetRequest : WechatApiRequest
+    public class CgibinFreePublishBatchGetRequest : WechatApiRequest, IMapResponse<CgibinFreePublishBatchGetRequest, CgibinFreePublishBatchGetResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

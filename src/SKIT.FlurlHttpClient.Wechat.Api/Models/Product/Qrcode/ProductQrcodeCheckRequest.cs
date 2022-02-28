@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/qrcode/check 接口的请求。</para>
     /// </summary>
-    public class ProductQrcodeCheckRequest : WechatApiRequest
+    public class ProductQrcodeCheckRequest : WechatApiRequest, IMapResponse<ProductQrcodeCheckRequest, ProductQrcodeCheckResponse>
     {
         /// <summary>
         /// 获取或设置二维码 Ticket。

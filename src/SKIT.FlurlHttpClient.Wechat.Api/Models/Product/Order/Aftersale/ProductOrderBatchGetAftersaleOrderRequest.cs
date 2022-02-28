@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/order/batchgetaftersaleorder 接口的请求。</para>
     /// </summary>
-    public class ProductOrderBatchGetAftersaleOrderRequest : WechatApiRequest
+    public class ProductOrderBatchGetAftersaleOrderRequest : WechatApiRequest, IMapResponse<ProductOrderBatchGetAftersaleOrderRequest, ProductOrderBatchGetAftersaleOrderResponse>
     {
         /// <summary>
         /// 获取或设置售后单号列表。
