@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /union/promoter/promotion/list 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterPromotionListRequest : WechatApiRequest
+    public class UnionPromoterPromotionListRequest : WechatApiRequest, IMapResponse<UnionPromoterPromotionListRequest, UnionPromoterPromotionListResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/delivery/open_msg/query_follow_trace 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressDeliveryOpenMessageQueryFollowTraceRequest : WechatApiRequest
+    public class CgibinExpressDeliveryOpenMessageQueryFollowTraceRequest : WechatApiRequest, IMapResponse<CgibinExpressDeliveryOpenMessageQueryFollowTraceRequest, CgibinExpressDeliveryOpenMessageQueryFollowTraceResponse>
     {
         /// <summary>
         /// 获取或设置用户 OpenId。

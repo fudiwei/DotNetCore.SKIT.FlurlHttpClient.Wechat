@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/fastregisterweapp?action=search 接口的请求。</para>
     /// </summary>
-    public class CgibinComponentFastRegisterWeappSearchRequest : WechatApiRequest
+    public class CgibinComponentFastRegisterWeappSearchRequest : WechatApiRequest, IMapResponse<CgibinComponentFastRegisterWeappSearchRequest, CgibinComponentFastRegisterWeappSearchResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

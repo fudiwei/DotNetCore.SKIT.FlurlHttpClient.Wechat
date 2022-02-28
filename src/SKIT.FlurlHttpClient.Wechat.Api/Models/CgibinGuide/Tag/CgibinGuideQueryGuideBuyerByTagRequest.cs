@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/queryguidebuyerbytag 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideQueryGuideBuyerByTagRequest : WechatApiRequest
+    public class CgibinGuideQueryGuideBuyerByTagRequest : WechatApiRequest, IMapResponse<CgibinGuideQueryGuideBuyerByTagRequest, CgibinGuideQueryGuideBuyerByTagResponse>
     {
         /// <summary>
         /// 获取或设置顾问微信号。与字段 <see cref="GuideOpenId"/> 二选一。

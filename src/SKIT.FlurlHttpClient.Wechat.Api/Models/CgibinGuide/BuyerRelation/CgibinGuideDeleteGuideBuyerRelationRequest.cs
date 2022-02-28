@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/delguidebuyerrelation 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideDeleteGuideBuyerRelationRequest : WechatApiRequest
+    public class CgibinGuideDeleteGuideBuyerRelationRequest : WechatApiRequest, IMapResponse<CgibinGuideDeleteGuideBuyerRelationRequest, CgibinGuideDeleteGuideBuyerRelationResponse>
     {
         /// <summary>
         /// 获取或设置顾问微信号。与字段 <see cref="GuideOpenId"/> 二选一。

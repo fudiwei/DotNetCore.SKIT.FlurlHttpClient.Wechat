@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/spu/del 接口的请求。</para>
     /// </summary>
-    public class ShopSPUDeleteRequest : WechatApiRequest
+    public class ShopSPUDeleteRequest : WechatApiRequest, IMapResponse<ShopSPUDeleteRequest, ShopSPUDeleteResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。与字段 <see cref="OutProductId"/> 二选一。

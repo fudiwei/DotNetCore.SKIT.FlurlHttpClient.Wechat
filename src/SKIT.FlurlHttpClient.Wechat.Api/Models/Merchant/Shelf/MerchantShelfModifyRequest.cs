@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/shelf/mod 接口的请求。</para>
     /// </summary>
-    public class MerchantShelfModifyRequest : WechatApiRequest
+    public class MerchantShelfModifyRequest : WechatApiRequest, IMapResponse<MerchantShelfModifyRequest, MerchantShelfModifyResponse>
     {
         public static class Types
         {

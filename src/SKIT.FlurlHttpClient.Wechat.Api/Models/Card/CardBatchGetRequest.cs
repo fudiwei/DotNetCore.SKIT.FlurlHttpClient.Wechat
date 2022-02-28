@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/batchget 接口的请求。</para>
     /// </summary>
-    public class CardBatchGetRequest : WechatApiRequest
+    public class CardBatchGetRequest : WechatApiRequest, IMapResponse<CardBatchGetRequest, CardBatchGetResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

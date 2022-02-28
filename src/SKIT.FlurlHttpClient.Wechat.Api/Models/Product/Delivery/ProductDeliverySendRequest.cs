@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/delivery/send 接口的请求。</para>
     /// </summary>
-    public class ProductDeliverySendRequest : WechatApiRequest
+    public class ProductDeliverySendRequest : WechatApiRequest, IMapResponse<ProductDeliverySendRequest, ProductDeliverySendResponse>
     {
         public static class Types
         {

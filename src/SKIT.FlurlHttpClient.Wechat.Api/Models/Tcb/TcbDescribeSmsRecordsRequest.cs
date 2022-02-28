@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/describesmsrecords 接口的请求。</para>
     /// </summary>
-    public class TcbDescribeSmsRecordsRequest : WechatApiRequest
+    public class TcbDescribeSmsRecordsRequest : WechatApiRequest, IMapResponse<TcbDescribeSmsRecordsRequest, TcbDescribeSmsRecordsResponse>
     {
         public static class Types
         {

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/user/getcardlist 接口的请求。</para>
     /// </summary>
-    public class CardUserGetCardListRequest : WechatApiRequest
+    public class CardUserGetCardListRequest : WechatApiRequest, IMapResponse<CardUserGetCardListRequest, CardUserGetCardListResponse>
     {
         /// <summary>
         /// 获取或设置用户 OpenId。

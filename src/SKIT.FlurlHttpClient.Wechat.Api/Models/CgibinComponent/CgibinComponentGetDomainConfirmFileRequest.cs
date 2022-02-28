@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/get_domain_confirmfile 接口的请求。</para>
     /// </summary>
-    public class CgibinComponentGetDomainConfirmFileRequest : WechatApiRequest
+    public class CgibinComponentGetDomainConfirmFileRequest : WechatApiRequest, IMapResponse<CgibinComponentGetDomainConfirmFileRequest, CgibinComponentGetDomainConfirmFileResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

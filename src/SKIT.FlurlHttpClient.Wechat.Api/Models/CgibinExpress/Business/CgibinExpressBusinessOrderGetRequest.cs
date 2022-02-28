@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/order/get 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressBusinessOrderGetRequest : WechatApiRequest
+    public class CgibinExpressBusinessOrderGetRequest : WechatApiRequest, IMapResponse<CgibinExpressBusinessOrderGetRequest, CgibinExpressBusinessOrderGetResponse>
     {
         /// <summary>
         /// 获取或设置商户订单号。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/getmpadminauth 接口的请求。</para>
     /// </summary>
-    public class WxaGetMpAdminAuthRequest : WechatApiRequest
+    public class WxaGetMpAdminAuthRequest : WechatApiRequest, IMapResponse<WxaGetMpAdminAuthRequest, WxaGetMpAdminAuthResponse>
     {
         /// <summary>
         /// 获取或设置公众号的 AppId。

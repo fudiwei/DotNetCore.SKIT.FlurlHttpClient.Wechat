@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/common/upload_img 接口的请求。</para>
     /// </summary>
-    public class MerchantCommonUploadImageRequest : WechatApiRequest
+    public class MerchantCommonUploadImageRequest : WechatApiRequest, IMapResponse<MerchantCommonUploadImageRequest, MerchantCommonUploadImageResponse>
     {
         /// <summary>
         /// 获取或设置图片文件字节数组。

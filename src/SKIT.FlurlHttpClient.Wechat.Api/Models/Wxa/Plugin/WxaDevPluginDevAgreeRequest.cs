@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/devplugin?action=dev_agree 接口的请求。</para>
     /// </summary>
-    public class WxaDevPluginDevAgreeRequest : WechatApiRequest
+    public class WxaDevPluginDevAgreeRequest : WechatApiRequest, IMapResponse<WxaDevPluginDevAgreeRequest, WxaDevPluginDevAgreeResponse>
     {
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>

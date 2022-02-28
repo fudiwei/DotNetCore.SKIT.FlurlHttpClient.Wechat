@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/selfconsumecell/set 接口的请求。</para>
     /// </summary>
-    public class CardSelfConsumeCellSetRequest : WechatApiRequest
+    public class CardSelfConsumeCellSetRequest : WechatApiRequest, IMapResponse<CardSelfConsumeCellSetRequest, CardSelfConsumeCellSetResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

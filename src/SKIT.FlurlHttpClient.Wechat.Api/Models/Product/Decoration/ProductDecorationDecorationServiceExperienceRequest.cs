@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/decoration/decoration_service_experience 接口的请求。</para>
     /// </summary>
-    public class ProductDecorationDecorationServiceExperienceRequest : WechatApiRequest
+    public class ProductDecorationDecorationServiceExperienceRequest : WechatApiRequest, IMapResponse<ProductDecorationDecorationServiceExperienceRequest, ProductDecorationDecorationServiceExperienceResponse>
     {
         /// <summary>
         /// 获取或设置服务 ID。

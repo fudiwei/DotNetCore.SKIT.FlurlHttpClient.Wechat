@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /nontax/vehicle/entrancenotify 接口的请求。</para>
     /// </summary>
-    public class NontaxVehicleEntranceNotifyRequest : WechatApiRequest
+    public class NontaxVehicleEntranceNotifyRequest : WechatApiRequest, IMapResponse<NontaxVehicleEntranceNotifyRequest, NontaxVehicleEntranceNotifyResponse>
     {
         public static class Types
         {

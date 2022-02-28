@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/scene/check 接口的请求。</para>
     /// </summary>
-    public class ShopSceneCheckRequest : WechatApiRequest
+    public class ShopSceneCheckRequest : WechatApiRequest, IMapResponse<ShopSceneCheckRequest, ShopSceneCheckResponse>
     {
         /// <summary>
         /// 获取或设置场景值。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/deletescf 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbDeleteSCFConfigRequest : WechatApiRequest
+    public class ComponentTcbDeleteSCFConfigRequest : WechatApiRequest, IMapResponse<ComponentTcbDeleteSCFConfigRequest, ComponentTcbDeleteSCFConfigResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/audit/get_miniapp_certificate 接口的请求。</para>
     /// </summary>
-    public class ShopAuditGetMiniAppCertificateRequest : WechatApiRequest
+    public class ShopAuditGetMiniAppCertificateRequest : WechatApiRequest, IMapResponse<ShopAuditGetMiniAppCertificateRequest, ShopAuditGetMiniAppCertificateResponse>
     {
         /// <summary>
         /// 获取或设置请求类型。

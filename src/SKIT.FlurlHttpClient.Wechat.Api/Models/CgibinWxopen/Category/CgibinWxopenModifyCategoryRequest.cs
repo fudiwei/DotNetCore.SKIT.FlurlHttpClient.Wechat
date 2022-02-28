@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/modifycategory 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenModifyCategoryRequest : WechatApiRequest
+    public class CgibinWxopenModifyCategoryRequest : WechatApiRequest, IMapResponse<CgibinWxopenModifyCategoryRequest, CgibinWxopenModifyCategoryResponse>
     {
         public static class Types
         {

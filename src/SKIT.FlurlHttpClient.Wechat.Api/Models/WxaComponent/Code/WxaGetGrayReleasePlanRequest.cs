@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxa/getgrayreleaseplan 接口的请求。</para>
     /// </summary>
-    public class WxaGetGrayReleasePlanRequest : WechatApiRequest
+    public class WxaGetGrayReleasePlanRequest : WechatApiRequest, IMapResponse<WxaGetGrayReleasePlanRequest, WxaGetGrayReleasePlanResponse>
     {
     }
 }

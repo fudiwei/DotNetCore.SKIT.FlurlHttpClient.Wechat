@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/menu/trymatch 接口的请求。</para>
     /// </summary>
-    public class CgibinMenuTryMatchRequest : WechatApiRequest
+    public class CgibinMenuTryMatchRequest : WechatApiRequest, IMapResponse<CgibinMenuTryMatchRequest, CgibinMenuTryMatchResponse>
     {
         /// <summary>
         /// 获取或设置用户微信号或 OpenId。

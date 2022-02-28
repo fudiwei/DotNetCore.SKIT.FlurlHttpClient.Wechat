@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/fetchdatasetting 接口的请求。</para>
     /// </summary>
-    public class WxaFetchDataSettingRequest : WechatApiRequest
+    public class WxaFetchDataSettingRequest : WechatApiRequest, IMapResponse<WxaFetchDataSettingRequest, WxaFetchDataSettingResponse>
     {
         /// <summary>
         /// 获取或设置操作类型。

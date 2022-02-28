@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/speedupaudit 接口的请求。</para>
     /// </summary>
-    public class WxaSpeedupAuditRequest : WechatApiRequest
+    public class WxaSpeedupAuditRequest : WechatApiRequest, IMapResponse<WxaSpeedupAuditRequest, WxaSpeedupAuditResponse>
     {
         /// <summary>
         /// 获取或设置审核单 ID。

@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/audit/audit_brand 接口的请求。</para>
     /// </summary>
-    public class ShopAuditAuditBrandRequest : WechatApiRequest
+    public class ShopAuditAuditBrandRequest : WechatApiRequest, IMapResponse<ShopAuditAuditBrandRequest, ShopAuditAuditBrandResponse>
     {
         public static class Types
         {

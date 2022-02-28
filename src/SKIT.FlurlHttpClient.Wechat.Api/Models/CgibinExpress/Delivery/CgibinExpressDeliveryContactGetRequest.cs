@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/delivery/contact/get 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressDeliveryContactGetRequest : WechatApiRequest
+    public class CgibinExpressDeliveryContactGetRequest : WechatApiRequest, IMapResponse<CgibinExpressDeliveryContactGetRequest, CgibinExpressDeliveryContactGetResponse>
     {
         /// <summary>
         /// 获取或设置微信订单 Token。

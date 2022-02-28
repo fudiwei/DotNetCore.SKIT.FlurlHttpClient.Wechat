@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/setguidecardmaterial 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideSetGuideCardMaterialRequest : WechatApiRequest
+    public class CgibinGuideSetGuideCardMaterialRequest : WechatApiRequest, IMapResponse<CgibinGuideSetGuideCardMaterialRequest, CgibinGuideSetGuideCardMaterialResponse>
     {
         /// <summary>
         /// 获取或设置操作类型。

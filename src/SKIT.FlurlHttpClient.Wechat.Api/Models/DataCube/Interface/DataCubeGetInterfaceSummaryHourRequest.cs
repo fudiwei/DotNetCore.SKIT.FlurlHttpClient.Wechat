@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getinterfacesummaryhour 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetInterfaceSummaryHourRequest : DataCubeGetInterfaceSummaryRequest
+    public class DataCubeGetInterfaceSummaryHourRequest : DataCubeGetInterfaceSummaryRequest, IMapResponse<DataCubeGetInterfaceSummaryHourRequest, DataCubeGetInterfaceSummaryHourResponse>
     {
     }
 }

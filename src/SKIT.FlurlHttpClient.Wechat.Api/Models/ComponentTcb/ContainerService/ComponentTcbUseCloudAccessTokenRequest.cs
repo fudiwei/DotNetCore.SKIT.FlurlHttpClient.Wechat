@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/usecloudaccesstoken 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbUseCloudAccessTokenRequest : WechatApiRequest
+    public class ComponentTcbUseCloudAccessTokenRequest : WechatApiRequest, IMapResponse<ComponentTcbUseCloudAccessTokenRequest, ComponentTcbUseCloudAccessTokenResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

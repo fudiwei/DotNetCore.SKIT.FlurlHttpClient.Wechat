@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/sku/get 接口的请求。</para>
     /// </summary>
-    public class ProductSKUGetRequest : WechatApiRequest
+    public class ProductSKUGetRequest : WechatApiRequest, IMapResponse<ProductSKUGetRequest, ProductSKUGetResponse>
     {
         /// <summary>
         /// 获取或设置 SKU ID。与字段 <see cref="OutSKUId"/> 二选一。

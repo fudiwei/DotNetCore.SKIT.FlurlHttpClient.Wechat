@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/giftcard/page/batchget 接口的请求。</para>
     /// </summary>
-    public class CardGiftCardPageBatchGetRequest : WechatApiRequest
+    public class CardGiftCardPageBatchGetRequest : WechatApiRequest, IMapResponse<CardGiftCardPageBatchGetRequest, CardGiftCardPageBatchGetResponse>
     {
     }
 }

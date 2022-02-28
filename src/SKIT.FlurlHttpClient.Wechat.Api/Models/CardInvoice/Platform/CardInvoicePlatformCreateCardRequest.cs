@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/platform/createcard 接口的请求。</para>
     /// </summary>
-    public class CardInvoicePlatformCreateCardRequest : WechatApiRequest
+    public class CardInvoicePlatformCreateCardRequest : WechatApiRequest, IMapResponse<CardInvoicePlatformCreateCardRequest, CardInvoicePlatformCreateCardResponse>
     {
         public static class Types
         {

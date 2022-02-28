@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /wxaapi/newtmpl/getpubtemplatetitles 接口的请求。</para>
     /// </summary>
-    public class WxaApiNewTemplateGetPublicTemplateTitlesRequest : WechatApiRequest
+    public class WxaApiNewTemplateGetPublicTemplateTitlesRequest : WechatApiRequest, IMapResponse<WxaApiNewTemplateGetPublicTemplateTitlesRequest, WxaApiNewTemplateGetPublicTemplateTitlesResponse>
     {
         /// <summary>
         /// 获取或设置类目 ID 列表。

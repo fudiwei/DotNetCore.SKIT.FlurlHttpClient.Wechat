@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /nontax/insertbill 接口的请求。</para>
     /// </summary>
-    public class NontaxInsertBillRequest : WechatApiRequest
+    public class NontaxInsertBillRequest : WechatApiRequest, IMapResponse<NontaxInsertBillRequest, NontaxInsertBillResponse>
     {
         public static class Types
         {

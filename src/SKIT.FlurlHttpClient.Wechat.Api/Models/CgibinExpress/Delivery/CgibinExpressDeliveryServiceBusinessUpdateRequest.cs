@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/delivery/service/business/update 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressDeliveryServiceBusinessUpdateRequest : WechatApiRequest
+    public class CgibinExpressDeliveryServiceBusinessUpdateRequest : WechatApiRequest, IMapResponse<CgibinExpressDeliveryServiceBusinessUpdateRequest, CgibinExpressDeliveryServiceBusinessUpdateResponse>
     {
         /// <summary>
         /// 获取或设置商户的小程序 AppId。

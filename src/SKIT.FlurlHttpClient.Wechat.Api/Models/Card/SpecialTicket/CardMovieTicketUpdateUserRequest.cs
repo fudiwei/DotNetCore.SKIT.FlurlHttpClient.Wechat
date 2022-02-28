@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/movieticket/updateuser 接口的请求。</para>
     /// </summary>
-    public class CardMovieTicketUpdateUserRequest : WechatApiRequest
+    public class CardMovieTicketUpdateUserRequest : WechatApiRequest, IMapResponse<CardMovieTicketUpdateUserRequest, CardMovieTicketUpdateUserResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

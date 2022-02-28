@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /intp/marketcode/codeactive 接口的请求。</para>
     /// </summary>
-    public class IntpMarketCodeActiveCodeRequest : WechatApiRequest
+    public class IntpMarketCodeActiveCodeRequest : WechatApiRequest, IMapResponse<IntpMarketCodeActiveCodeRequest, IntpMarketCodeActiveCodeResponse>
     {
         /// <summary>
         /// 获取或设置申请单号。

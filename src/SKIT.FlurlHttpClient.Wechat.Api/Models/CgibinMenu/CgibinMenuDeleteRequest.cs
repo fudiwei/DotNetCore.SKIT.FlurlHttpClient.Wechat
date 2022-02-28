@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/menu/delete 接口的请求。</para>
     /// </summary>
-    public class CgibinMenuDeleteRequest : WechatApiRequest
+    public class CgibinMenuDeleteRequest : WechatApiRequest, IMapResponse<CgibinMenuDeleteRequest, CgibinMenuDeleteResponse>
     {
     }
 }

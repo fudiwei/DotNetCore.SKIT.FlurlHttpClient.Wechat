@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/media/get 接口的请求。</para>
     /// </summary>
-    public class CgibinMediaGetRequest : WechatApiRequest
+    public class CgibinMediaGetRequest : WechatApiRequest, IMapResponse<CgibinMediaGetRequest, CgibinMediaGetResponse>
     {
         /// <summary>
         /// 获取或设置媒体文件标识。

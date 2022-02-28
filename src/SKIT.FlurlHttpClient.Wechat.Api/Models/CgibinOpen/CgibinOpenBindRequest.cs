@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/open/bind 接口的请求。</para>
     /// </summary>
-    public class CgibinOpenBindRequest : CgibinOpenCreateRequest
+    public class CgibinOpenBindRequest : CgibinOpenCreateRequest, IMapResponse<CgibinOpenBindRequest, CgibinOpenBindResponse>
     {
         /// <summary>
         /// 获取或设置开放平台的 AppId。

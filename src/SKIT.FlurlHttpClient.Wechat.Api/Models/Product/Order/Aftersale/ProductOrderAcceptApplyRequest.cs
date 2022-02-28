@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/order/acceptapply 接口的请求。</para>
     /// </summary>
-    public class ProductOrderAcceptApplyRequest : WechatApiRequest
+    public class ProductOrderAcceptApplyRequest : WechatApiRequest, IMapResponse<ProductOrderAcceptApplyRequest, ProductOrderAcceptApplyResponse>
     {
         /// <summary>
         /// 获取或设置售后单号。

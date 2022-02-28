@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/goods/resetaudit 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastGoodsResetAuditRequest : WechatApiRequest
+    public class WxaApiBroadcastGoodsResetAuditRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastGoodsResetAuditRequest, WxaApiBroadcastGoodsResetAuditResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。

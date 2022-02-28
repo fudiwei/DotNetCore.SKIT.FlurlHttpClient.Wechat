@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/order/pay 接口的请求。</para>
     /// </summary>
-    public class ShopOrderPayRequest : WechatApiRequest
+    public class ShopOrderPayRequest : WechatApiRequest, IMapResponse<ShopOrderPayRequest, ShopOrderPayResponse>
     {
         /// <summary>
         /// 获取或设置订单 ID。与字段 <see cref="OutOrderId"/> 二选一。

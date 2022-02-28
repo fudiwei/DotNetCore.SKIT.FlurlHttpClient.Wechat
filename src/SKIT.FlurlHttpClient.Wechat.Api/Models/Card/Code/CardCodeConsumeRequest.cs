@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/code/consume 接口的请求。</para>
     /// </summary>
-    public class CardCodeConsumeRequest : WechatApiRequest
+    public class CardCodeConsumeRequest : WechatApiRequest, IMapResponse<CardCodeConsumeRequest, CardCodeConsumeResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

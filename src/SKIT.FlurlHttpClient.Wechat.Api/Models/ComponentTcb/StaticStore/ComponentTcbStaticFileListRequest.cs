@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/staticfilelist 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbStaticFileListRequest : WechatApiRequest
+    public class ComponentTcbStaticFileListRequest : WechatApiRequest, IMapResponse<ComponentTcbStaticFileListRequest, ComponentTcbStaticFileListResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

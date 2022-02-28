@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/devplugin?action=dev_delete 接口的请求。</para>
     /// </summary>
-    public class WxaDevPluginDevDeleteRequest : WechatApiRequest
+    public class WxaDevPluginDevDeleteRequest : WechatApiRequest, IMapResponse<WxaDevPluginDevDeleteRequest, WxaDevPluginDevDeleteResponse>
     {
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>

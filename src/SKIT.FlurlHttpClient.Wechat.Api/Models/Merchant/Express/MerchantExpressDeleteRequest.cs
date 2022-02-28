@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/express/del 接口的请求。</para>
     /// </summary>
-    public class MerchantExpressDeleteRequest : WechatApiRequest
+    public class MerchantExpressDeleteRequest : WechatApiRequest, IMapResponse<MerchantExpressDeleteRequest, MerchantExpressDeleteResponse>
     {
         /// <summary>
         /// 获取或设置邮费模板 ID。

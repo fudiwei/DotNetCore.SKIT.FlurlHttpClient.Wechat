@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/coupon/update_status 接口的请求。</para>
     /// </summary>
-    public class ShopCouponUpdateStatusRequest : WechatApiRequest
+    public class ShopCouponUpdateStatusRequest : WechatApiRequest, IMapResponse<ShopCouponUpdateStatusRequest, ShopCouponUpdateStatusResponse>
     {
         /// <summary>
         /// 获取或设置商家侧优惠券 ID。

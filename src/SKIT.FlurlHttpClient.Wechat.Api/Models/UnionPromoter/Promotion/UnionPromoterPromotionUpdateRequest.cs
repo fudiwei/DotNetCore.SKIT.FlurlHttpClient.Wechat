@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /union/promoter/promotion/upd 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterPromotionUpdateRequest : WechatApiRequest
+    public class UnionPromoterPromotionUpdateRequest : WechatApiRequest, IMapResponse<UnionPromoterPromotionUpdateRequest, UnionPromoterPromotionUpdateResponse>
     {
         public static class Types
         {

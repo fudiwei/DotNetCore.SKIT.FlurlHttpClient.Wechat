@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/delivery/update_freight_template 接口的请求。</para>
     /// </summary>
-    public class ProductDeliveryUpdateFreightTemplateRequest : WechatApiRequest
+    public class ProductDeliveryUpdateFreightTemplateRequest : WechatApiRequest, IMapResponse<ProductDeliveryUpdateFreightTemplateRequest, ProductDeliveryUpdateFreightTemplateResponse>
     {
         public static class Types
         {

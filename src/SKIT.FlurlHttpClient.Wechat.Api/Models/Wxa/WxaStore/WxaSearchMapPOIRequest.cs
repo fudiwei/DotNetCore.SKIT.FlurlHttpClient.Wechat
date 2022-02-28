@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/search_map_poi 接口的请求。</para>
     /// </summary>
-    public class WxaSearchMapPOIRequest : WechatApiRequest
+    public class WxaSearchMapPOIRequest : WechatApiRequest, IMapResponse<WxaSearchMapPOIRequest, WxaSearchMapPOIResponse>
     {
         /// <summary>
         /// 获取或设置区域 ID。

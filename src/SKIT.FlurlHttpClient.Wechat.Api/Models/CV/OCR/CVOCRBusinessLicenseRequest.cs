@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cv/ocr/bizlicense 接口的请求。</para>
     /// </summary>
-    public class CVOCRBusinessLicenseRequest : CVOCRIdCardRequest
+    public class CVOCRBusinessLicenseRequest : CVOCRIdCardRequest, IMapResponse<CVOCRBusinessLicenseRequest, CVOCRBusinessLicenseResponse>
     {
     }
 }

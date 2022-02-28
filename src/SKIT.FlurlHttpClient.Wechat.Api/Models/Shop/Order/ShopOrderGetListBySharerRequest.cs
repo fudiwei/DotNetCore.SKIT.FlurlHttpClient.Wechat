@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/order/get_list_by_sharer 接口的请求。</para>
     /// </summary>
-    public class ShopOrderGetListBySharerRequest : WechatApiRequest
+    public class ShopOrderGetListBySharerRequest : WechatApiRequest, IMapResponse<ShopOrderGetListBySharerRequest, ShopOrderGetListBySharerResponse>
     {
         /// <summary>
         /// 获取或设置支付时间的开始时间。

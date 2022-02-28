@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getupstreammsg 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetUpstreamMessageRequest : WechatApiRequest
+    public class DataCubeGetUpstreamMessageRequest : WechatApiRequest, IMapResponse<DataCubeGetUpstreamMessageRequest, DataCubeGetUpstreamMessageResponse>
     {
         /// <summary>
         /// 获取或设置获取数据的起始日期（格式：yyyy-MM-dd）。

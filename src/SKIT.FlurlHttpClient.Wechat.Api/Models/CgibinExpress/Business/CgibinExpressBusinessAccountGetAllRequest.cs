@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/express/business/account/getall 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressBusinessAccountGetAllRequest : WechatApiRequest
+    public class CgibinExpressBusinessAccountGetAllRequest : WechatApiRequest, IMapResponse<CgibinExpressBusinessAccountGetAllRequest, CgibinExpressBusinessAccountGetAllResponse>
     {
     }
 }

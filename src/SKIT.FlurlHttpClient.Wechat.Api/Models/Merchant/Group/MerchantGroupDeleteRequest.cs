@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/group/del 接口的请求。</para>
     /// </summary>
-    public class MerchantGroupDeleteRequest : WechatApiRequest
+    public class MerchantGroupDeleteRequest : WechatApiRequest, IMapResponse<MerchantGroupDeleteRequest, MerchantGroupDeleteResponse>
     {
         /// <summary>
         /// 获取或设置分组 ID。

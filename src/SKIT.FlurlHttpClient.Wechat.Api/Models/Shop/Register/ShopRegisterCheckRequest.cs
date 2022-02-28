@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/register/check 接口的请求。</para>
     /// </summary>
-    public class ShopRegisterCheckRequest : WechatApiRequest
+    public class ShopRegisterCheckRequest : WechatApiRequest, IMapResponse<ShopRegisterCheckRequest, ShopRegisterCheckResponse>
     {
     }
 }

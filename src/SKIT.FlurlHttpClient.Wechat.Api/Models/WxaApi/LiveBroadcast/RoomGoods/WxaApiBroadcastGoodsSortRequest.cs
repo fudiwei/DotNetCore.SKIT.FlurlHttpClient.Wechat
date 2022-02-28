@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/goods/sort 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastGoodsSortRequest : WechatApiRequest
+    public class WxaApiBroadcastGoodsSortRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastGoodsSortRequest, WxaApiBroadcastGoodsSortResponse>
     {
         public static class Types
         {

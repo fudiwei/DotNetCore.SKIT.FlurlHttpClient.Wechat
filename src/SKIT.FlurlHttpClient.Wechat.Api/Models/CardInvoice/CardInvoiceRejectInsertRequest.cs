@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/rejectinsert 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceRejectInsertRequest : WechatApiRequest
+    public class CardInvoiceRejectInsertRequest : WechatApiRequest, IMapResponse<CardInvoiceRejectInsertRequest, CardInvoiceRejectInsertResponse>
     {
         /// <summary>
         /// 获取或设置订单号。

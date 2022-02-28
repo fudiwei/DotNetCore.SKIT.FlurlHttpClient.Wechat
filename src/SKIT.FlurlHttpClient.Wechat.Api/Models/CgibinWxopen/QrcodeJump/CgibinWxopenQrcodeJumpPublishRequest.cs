@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/qrcodejumppublish 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenQrcodeJumpPublishRequest : WechatApiRequest
+    public class CgibinWxopenQrcodeJumpPublishRequest : WechatApiRequest, IMapResponse<CgibinWxopenQrcodeJumpPublishRequest, CgibinWxopenQrcodeJumpPublishResponse>
     {
         /// <summary>
         /// 获取或设置匹配前缀。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/clearoutinvoice 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceClearOutInvoiceRequest : WechatApiRequest
+    public class CardInvoiceClearOutInvoiceRequest : WechatApiRequest, IMapResponse<CardInvoiceClearOutInvoiceRequest, CardInvoiceClearOutInvoiceResponse>
     {
         public static class Types
         {

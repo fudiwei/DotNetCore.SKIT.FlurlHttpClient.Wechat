@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/order/rejectrefund 接口的请求。</para>
     /// </summary>
-    public class ProductOrderRejectRefundRequest : WechatApiRequest
+    public class ProductOrderRejectRefundRequest : WechatApiRequest, IMapResponse<ProductOrderRejectRefundRequest, ProductOrderRejectRefundResponse>
     {
         /// <summary>
         /// 获取或设置售后单号。

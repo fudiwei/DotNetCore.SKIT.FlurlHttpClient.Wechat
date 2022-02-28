@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/delete 接口的请求。</para>
     /// </summary>
-    public class CardDeleteRequest : WechatApiRequest
+    public class CardDeleteRequest : WechatApiRequest, IMapResponse<CardDeleteRequest, CardDeleteResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

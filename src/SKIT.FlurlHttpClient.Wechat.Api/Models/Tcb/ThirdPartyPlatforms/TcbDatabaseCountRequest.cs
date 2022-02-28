@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/databasecount 接口的请求。</para>
     /// </summary>
-    public class TcbDatabaseCountRequest : WechatApiRequest
+    public class TcbDatabaseCountRequest : WechatApiRequest, IMapResponse<TcbDatabaseCountRequest, TcbDatabaseCountResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

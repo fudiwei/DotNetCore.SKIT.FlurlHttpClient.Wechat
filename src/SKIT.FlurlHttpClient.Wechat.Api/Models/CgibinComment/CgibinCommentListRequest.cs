@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/comment/list 接口的请求。</para>
     /// </summary>
-    public class CgibinCommentListRequest : WechatApiRequest
+    public class CgibinCommentListRequest : WechatApiRequest, IMapResponse<CgibinCommentListRequest, CgibinCommentListResponse>
     {
         /// <summary>
         /// 获取或设置群发消息数据 ID。

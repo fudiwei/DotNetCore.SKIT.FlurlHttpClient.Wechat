@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/getcategoriesbytype 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenGetCategoriesByTypeRequest : WechatApiRequest
+    public class CgibinWxopenGetCategoriesByTypeRequest : WechatApiRequest, IMapResponse<CgibinWxopenGetCategoriesByTypeRequest, CgibinWxopenGetCategoriesByTypeResponse>
     {
         /// <summary>
         /// 获取或设置主体类型。

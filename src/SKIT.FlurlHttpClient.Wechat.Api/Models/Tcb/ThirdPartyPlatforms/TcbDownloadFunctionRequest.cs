@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/downloadfunction 接口的请求。</para>
     /// </summary>
-    public class TcbDownloadFunctionRequest : WechatApiRequest
+    public class TcbDownloadFunctionRequest : WechatApiRequest, IMapResponse<TcbDownloadFunctionRequest, TcbDownloadFunctionResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxaapi/minishop/bussiSupplyProof 接口的请求。</para>
     /// </summary>
-    public class WxaApiMiniShopBusinessSupplyProofRequest : WechatApiRequest
+    public class WxaApiMiniShopBusinessSupplyProofRequest : WechatApiRequest, IMapResponse<WxaApiMiniShopBusinessSupplyProofRequest, WxaApiMiniShopBusinessSupplyProofResponse>
     {
         /// <summary>
         /// 获取或设置投诉单号。

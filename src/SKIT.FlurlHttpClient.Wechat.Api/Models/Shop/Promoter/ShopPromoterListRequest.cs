@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/promoter/list 接口的请求。</para>
     /// </summary>
-    public class ShopPromoterListRequest : WechatApiRequest
+    public class ShopPromoterListRequest : WechatApiRequest, IMapResponse<ShopPromoterListRequest, ShopPromoterListResponse>
     {
         /// <summary>
         /// 获取或设置分页页数（从 1 开始）。

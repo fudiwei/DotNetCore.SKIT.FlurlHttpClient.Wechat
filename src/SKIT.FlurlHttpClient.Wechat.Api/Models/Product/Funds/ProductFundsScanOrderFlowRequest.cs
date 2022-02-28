@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/funds/scanorderflow 接口的请求。</para>
     /// </summary>
-    public class ProductFundsScanOrderFlowRequest : WechatApiRequest
+    public class ProductFundsScanOrderFlowRequest : WechatApiRequest, IMapResponse<ProductFundsScanOrderFlowRequest, ProductFundsScanOrderFlowResponse>
     {
         /// <summary>
         /// 获取或设置分页页数（从 1 开始）。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/invokecloudfunction 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbInvokeCloudFunctionRequest : WechatApiRequest
+    public class ComponentTcbInvokeCloudFunctionRequest : WechatApiRequest, IMapResponse<ComponentTcbInvokeCloudFunctionRequest, ComponentTcbInvokeCloudFunctionResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

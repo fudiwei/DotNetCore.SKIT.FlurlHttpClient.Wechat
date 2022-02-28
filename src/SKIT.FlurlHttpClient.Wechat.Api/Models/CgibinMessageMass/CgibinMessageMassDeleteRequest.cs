@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/message/mass/delete 接口的请求。</para>
     /// </summary>
-    public class CgibinMessageMassDeleteRequest : WechatApiRequest
+    public class CgibinMessageMassDeleteRequest : WechatApiRequest, IMapResponse<CgibinMessageMassDeleteRequest, CgibinMessageMassDeleteResponse>
     {
         /// <summary>
         /// 获取或设置群发消息 ID。

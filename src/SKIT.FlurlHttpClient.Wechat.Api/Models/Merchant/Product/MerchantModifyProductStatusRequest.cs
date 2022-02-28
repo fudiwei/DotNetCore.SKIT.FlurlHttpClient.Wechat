@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/modproductstatus 接口的请求。</para>
     /// </summary>
-    public class MerchantModifyProductStatusRequest : WechatApiRequest
+    public class MerchantModifyProductStatusRequest : WechatApiRequest, IMapResponse<MerchantModifyProductStatusRequest, MerchantModifyProductStatusResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。

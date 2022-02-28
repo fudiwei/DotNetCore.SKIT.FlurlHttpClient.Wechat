@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/media/uploadimg 接口的请求。</para>
     /// </summary>
-    public class CgibinMediaUploadImageRequest : WechatApiRequest
+    public class CgibinMediaUploadImageRequest : WechatApiRequest, IMapResponse<CgibinMediaUploadImageRequest, CgibinMediaUploadImageResponse>
     {
         /// <summary>
         /// 获取或设置图片文件字节数组。
