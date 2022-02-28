@@ -54,25 +54,7 @@ switch (msgType)
 
 在安全模式下，微信公众平台使用了一种特殊的 AES 算法对回调通知事件加密。
 
-开发者可利用本库提供的 `WxBizMsgCryptor` 工具类自行解密相关字段。
-
-此外，本库还封装了直接解密事件的扩展方法，下面给出一个示例代码：
-
-```csharp
-/* 在初始化客户端时需指定服务器推送的相关参数 */
-var options = new WechatApiClientOptions()
-{
-    AppId = "微信 AppId",
-    AppSecret = "微信 AppSecret",
-    PushEncodingAESKey = "服务器推送的 EncodingAESKey",
-    PushToken = "服务器推送的 Token"
-};
-var client = new WechatApiClient(options);
-
-/* 如果是 XML 格式的加密通知内容，以 text 事件为例 */
-string callbackXml = "<xml> <Encrypt>...</Encrypt> </xml>";
-var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml, safety: true);
-```
+上述提供的扩展方法，会自动判定是否处于安全模式下，无需开发者手动干预。
 
 ---
 
@@ -95,10 +77,10 @@ var replyModel = new Events.TextMessageReply()
 string replyXml = client.SerializeEventToXml(replyModel);
 ```
 
-如果是在安全模式下，那么可以：
+需要注意的是，默认会序列化为安全模式；如果需要明文模式下的数据，那么可以：
 
 ```csharp
-string replyXml = client.SerializeEventToXml(replyModel, safety: true);
+string replyXml = client.SerializeEventToXml(replyModel, safety: false);
 ```
 
 完整的被动回复模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Api/Events/MpReply_ 目录。
