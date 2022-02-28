@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 {
-    public static class WxBizMsgCryptor
+    internal static class WechatEventDataCryptor
     {
         private const int AES_KEY_SIZE = 256;
         private const int AES_BLOCK_SIZE = 128;
@@ -81,8 +81,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
 
             using var aes = Aes.Create();
-            aes.KeySize = 256;
-            aes.BlockSize = 128;
+            aes.KeySize = AES_KEY_SIZE;
+            aes.BlockSize = AES_BLOCK_SIZE;
             aes.Mode = CipherMode.CBC;
             //aes.Padding = PaddingMode.PKCS7;
             aes.Padding = PaddingMode.None;
@@ -93,8 +93,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             using (var ms = new MemoryStream())
             using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
             {
-                byte[] bMsg = new byte[cipherBytes.Length + 32 - cipherBytes.Length % 32];
-                Array.Copy(cipherBytes, bMsg, cipherBytes.Length);
+                byte[] msgBytes = new byte[cipherBytes.Length + 32 - cipherBytes.Length % 32];
+                Array.Copy(cipherBytes, msgBytes, cipherBytes.Length);
                 cs.Write(cipherBytes, 0, cipherBytes.Length);
 
                 byte[] plainBytes = Decode2(ms.ToArray());
@@ -247,7 +247,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         /// <param name="xml">企业微信推送来的 XML 数据。</param>
         /// <param name="encryptedMsg">如果解析成功，将返回解析后的 `Encrypt` 字段的值。</param>
         /// <returns>指示是否是有效的 XML 内容。</returns>
-        public static bool TryParseXml(string xml, out string? encryptedMsg)
+        public static bool TryParseXml(string xml, out string encryptedMsg)
         {
             return TryParseXml(xml, out encryptedMsg, out _, out _);
         }
@@ -261,13 +261,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         /// <param name="agentId">如果解析成功，将返回解析后的 `AgentId` 字段的值。</param>
         /// <returns>指示是否是有效的 XML 内容。</returns>
         /// <returns></returns>
-        public static bool TryParseXml(string xml, out string? encryptedMsg, out string? toUserName, out string? agentId)
+        public static bool TryParseXml(string xml, out string encryptedMsg, out string toUserName, out string agentId)
         {
             if (xml == null) throw new ArgumentNullException(nameof(xml));
 
-            encryptedMsg = null;
-            toUserName = null;
-            agentId = null;
+            encryptedMsg = string.Empty;
+            toUserName = string.Empty;
+            agentId = string.Empty;
 
             try
             {
@@ -279,9 +279,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
                 if (xmlRoot == null)
                     return false;
 
-                encryptedMsg = xmlRoot["Encrypt"]?.InnerText?.ToString();
-                toUserName = xmlRoot["ToUserName"]?.InnerText?.ToString();
-                agentId = xmlRoot["AgentID"]?.InnerText?.ToString();
+                encryptedMsg = xmlRoot["Encrypt"]?.InnerText?.ToString() ?? string.Empty;
+                toUserName = xmlRoot["ToUserName"]?.InnerText?.ToString() ?? string.Empty;
+                agentId = xmlRoot["AgentID"]?.InnerText?.ToString() ?? string.Empty;
 
                 return !string.IsNullOrEmpty(encryptedMsg);
             }

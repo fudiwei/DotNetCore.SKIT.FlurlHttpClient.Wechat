@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
-    internal static class WechatEventMessageCryptor
+    internal static class WechatEventDataCryptor
     {
         private const int AES_KEY_SIZE = 256;
         private const int AES_BLOCK_SIZE = 128;
@@ -247,7 +247,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <param name="xml">微信推送来的 XML 数据。</param>
         /// <param name="encryptedMsg">如果解析成功，将返回解析后的 `Encrypt` 字段的值。</param>
         /// <returns>指示是否是有效的 XML 内容。</returns>
-        public static bool TryParseXml(string xml, out string? encryptedMsg)
+        public static bool TryParseXml(string xml, out string encryptedMsg)
         {
             return TryParseXml(xml, out encryptedMsg, out _);
         }
@@ -259,12 +259,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <param name="toUserName">如果解析成功，将返回解析后的 `ToUserName` 字段的值。</param>
         /// <param name="encryptedMsg">如果解析成功，将返回解析后的 `Encrypt` 字段的值。</param>
         /// <returns>指示是否是有效的 XML 内容。</returns>
-        public static bool TryParseXml(string xml, out string? encryptedMsg, out string? toUserName)
+        public static bool TryParseXml(string xml, out string encryptedMsg, out string toUserName)
         {
             if (xml == null) throw new ArgumentNullException(nameof(xml));
 
-            encryptedMsg = null;
-            toUserName = null;
+            encryptedMsg = string.Empty;
+            toUserName = string.Empty;
 
             try
             {
@@ -276,8 +276,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
                 if (xmlRoot == null)
                     return false;
 
-                encryptedMsg = xmlRoot["Encrypt"]?.InnerText?.ToString();
-                toUserName = xmlRoot["ToUserName"]?.InnerText?.ToString();
+                encryptedMsg = xmlRoot["Encrypt"]?.InnerText?.ToString() ?? string.Empty;
+                toUserName = xmlRoot["ToUserName"]?.InnerText?.ToString() ?? string.Empty;
 
                 return !string.IsNullOrEmpty(encryptedMsg);
             }
