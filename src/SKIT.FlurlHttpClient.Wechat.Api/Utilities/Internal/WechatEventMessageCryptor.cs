@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
-    public static class WxBizMsgCryptor
+    internal static class WechatEventMessageCryptor
     {
         private const int AES_KEY_SIZE = 256;
         private const int AES_BLOCK_SIZE = 128;
@@ -74,15 +74,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             return res;
         }
 
-        private static byte[] AESDecrypt(byte[] keyBytes, byte[] ivBytes, byte[] ciperBytes)
+        private static byte[] AESDecrypt(byte[] keyBytes, byte[] ivBytes, byte[] cipherBytes)
         {
             if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
             if (ivBytes == null) throw new ArgumentNullException(nameof(ivBytes));
-            if (ciperBytes == null) throw new ArgumentNullException(nameof(ciperBytes));
+            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
 
             using var aes = Aes.Create();
-            aes.KeySize = 256;
-            aes.BlockSize = 128;
+            aes.KeySize = AES_KEY_SIZE;
+            aes.BlockSize = AES_BLOCK_SIZE;
             aes.Mode = CipherMode.CBC;
             //aes.Padding = PaddingMode.PKCS7;
             aes.Padding = PaddingMode.None;
@@ -93,9 +93,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             using (var ms = new MemoryStream())
             using (var cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Write))
             {
-                byte[] bMsg = new byte[ciperBytes.Length + 32 - ciperBytes.Length % 32];
-                Array.Copy(ciperBytes, bMsg, ciperBytes.Length);
-                cs.Write(ciperBytes, 0, ciperBytes.Length);
+                byte[] msgBytes = new byte[cipherBytes.Length + 32 - cipherBytes.Length % 32];
+                Array.Copy(cipherBytes, msgBytes, cipherBytes.Length);
+                cs.Write(cipherBytes, 0, cipherBytes.Length);
 
                 byte[] plainBytes = Decode2(ms.ToArray());
                 return plainBytes;
@@ -148,7 +148,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             byte[] keyBytes = Convert.FromBase64String(encodingAESKey + "=");
             byte[] ivBytes = new byte[16];
             Array.Copy(keyBytes, ivBytes, 16);
-            byte[] btmpMsg = AESDecrypt(ciperBytes: cipherBytes, ivBytes: ivBytes, keyBytes: keyBytes);
+            byte[] btmpMsg = AESDecrypt(cipherBytes: cipherBytes, ivBytes: ivBytes, keyBytes: keyBytes);
 
             int len = BitConverter.ToInt32(btmpMsg, 16);
             len = IPAddress.NetworkToHostOrder(len);
