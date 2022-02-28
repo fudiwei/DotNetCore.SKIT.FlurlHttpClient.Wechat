@@ -32,6 +32,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.9.0
+
+    -   **新增**：新增请求响应模型类型推断辅助接口 `IInferable`。（[GitHub Issue #21](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/21)）
+
+    -   **新增**：新增服务平台增值服务相关接口。
+
+    -   **变更**：修改反序列化回调通知事件的相关扩展方法 `DeserializeEventFromXml`、`DeserializeEventFromJson`，修改其指示是否启用安全模式的参数，改为自动判定。
+
+    -   **变更**：修改序列化回调通知事件的相关扩展方法 `SerializeEventToXml`、`SerializeEventToJson`,调整其指示是否启用安全模式的参数默认值，由 false 变为 true。
+
 -   Release 2.8.2
 
     -   **修复**：升级并修复由公共组件（v2.3.2）引发的问题。
