@@ -13,7 +13,7 @@
         public string Action { get; set; } = "unbind";
 
         /// <summary>
-        /// 获取或设置插件 Appid。
+        /// 获取或设置插件 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plugin_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("plugin_appid")]

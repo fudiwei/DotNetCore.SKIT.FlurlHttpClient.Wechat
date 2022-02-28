@@ -1,0 +1,34 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "buyer_list": [
+        {
+            "appid": "wxb24cc230ace685a3",
+            "service_id": 10000000005,
+            "spec_list": [
+                {
+                    "expire_time": 1619010767,
+                    "specification_id": "free"
+                },
+                {
+                    "expire_time": 1637987028,
+                    "specification_id": "pro"
+                }
+            ]
+        },
+        {
+            "appid": "wxd30af6a6a77d8a32",
+            "service_id": 10000000005,
+            "spec_list": [
+                {
+                    "expire_time": 1619010768,
+                    "specification_id": "free"
+                },
+                {
+                    "expire_time": 1637987029,
+                    "specification_id": "pro"
+                }
+            ]
+        }
+    ]
+}

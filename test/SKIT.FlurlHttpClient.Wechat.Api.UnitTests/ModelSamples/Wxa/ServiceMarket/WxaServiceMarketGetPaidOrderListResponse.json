@@ -1,0 +1,12 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "order_list": [
+        {
+            "order_id": 123,
+            "effective_time": 1640173379,
+            "expire_time": 1640259780,
+            "specification_id": "special"
+        }
+    ]
+}
