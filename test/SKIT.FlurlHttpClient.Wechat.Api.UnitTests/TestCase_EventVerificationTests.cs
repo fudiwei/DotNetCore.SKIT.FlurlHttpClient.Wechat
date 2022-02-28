@@ -4,8 +4,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
     public class TestCase_EventVerificationTests
     {
-        [Fact(DisplayName = "测试用例：验签并解密回调数据")]
-        public void TestVerifyEvent()
+        [Fact(DisplayName = "测试用例：验签并解密 XML 回调数据")]
+        public void TestVerifyXmlEvent()
         {
             string callbacMsgSig = "477715d11cdb4164915debcba66cb864d751f3e6";
             string callbacTimeStamp = "1409659813";
@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
                 PushToken = "QDG6eK"
             };
             var client = new WechatApiClient(options);
-            var eventModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml, safety: true);
+            var eventModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml);
 
             Assert.True(client.VerifyEventSignatureFromXml(callbacTimeStamp, callbacNonce, callbackXml, callbacMsgSig));
             Assert.Equal("text", eventModel.MessageType, ignoreCase: true);
