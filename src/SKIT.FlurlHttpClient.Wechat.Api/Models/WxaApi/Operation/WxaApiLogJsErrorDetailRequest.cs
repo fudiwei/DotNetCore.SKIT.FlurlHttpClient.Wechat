@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/log/jserr_detail 接口的请求。</para>
     /// </summary>
-    public class WxaApiLogJsErrorDetailRequest : WechatApiRequest, IMapResponse<WxaApiLogJsErrorDetailRequest, WxaApiLogJsErrorDetailResponse>
+    public class WxaApiLogJsErrorDetailRequest : WechatApiRequest, IInferable<WxaApiLogJsErrorDetailRequest, WxaApiLogJsErrorDetailResponse>
     {
         /// <summary>
         /// 获取或设置开始日期（格式：yyyy-MM-dd）。

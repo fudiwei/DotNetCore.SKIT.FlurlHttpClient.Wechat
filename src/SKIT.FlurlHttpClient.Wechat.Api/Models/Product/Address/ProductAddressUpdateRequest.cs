@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/address/update 接口的请求。</para>
     /// </summary>
-    public class ProductAddressUpdateRequest : WechatApiRequest, IMapResponse<ProductAddressUpdateRequest, ProductAddressUpdateResponse>
+    public class ProductAddressUpdateRequest : WechatApiRequest, IInferable<ProductAddressUpdateRequest, ProductAddressUpdateResponse>
     {
         public static class Types
         {

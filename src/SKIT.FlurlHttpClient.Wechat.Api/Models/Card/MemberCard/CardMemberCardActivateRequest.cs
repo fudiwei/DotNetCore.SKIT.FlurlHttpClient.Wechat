@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/membercard/activate 接口的请求。</para>
     /// </summary>
-    public class CardMemberCardActivateRequest : WechatApiRequest, IMapResponse<CardMemberCardActivateRequest, CardMemberCardActivateResponse>
+    public class CardMemberCardActivateRequest : WechatApiRequest, IInferable<CardMemberCardActivateRequest, CardMemberCardActivateResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

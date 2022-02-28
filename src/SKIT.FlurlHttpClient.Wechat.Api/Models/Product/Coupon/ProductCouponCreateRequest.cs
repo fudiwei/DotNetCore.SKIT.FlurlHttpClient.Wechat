@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/coupon/create 接口的请求。</para>
     /// </summary>
-    public class ProductCouponCreateRequest : WechatApiRequest, IMapResponse<ProductCouponCreateRequest, ProductCouponCreateResponse>
+    public class ProductCouponCreateRequest : WechatApiRequest, IInferable<ProductCouponCreateRequest, ProductCouponCreateResponse>
     {
         public static class Types
         {

@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/delivery/template/preview 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressDeliveryTemplatePreviewRequest : WechatApiRequest, IMapResponse<CgibinExpressDeliveryTemplatePreviewRequest, CgibinExpressDeliveryTemplatePreviewResponse>
+    public class CgibinExpressDeliveryTemplatePreviewRequest : WechatApiRequest, IInferable<CgibinExpressDeliveryTemplatePreviewRequest, CgibinExpressDeliveryTemplatePreviewResponse>
     {
         public static class Types
         {

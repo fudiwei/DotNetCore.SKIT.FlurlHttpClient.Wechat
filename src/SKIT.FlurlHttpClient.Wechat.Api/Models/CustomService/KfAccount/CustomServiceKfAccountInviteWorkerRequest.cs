@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /customservice/kfaccount/inviteworker 接口的请求。</para>
     /// </summary>
-    public class CustomServiceKfAccountInviteWorkerRequest : WechatApiRequest, IMapResponse<CustomServiceKfAccountInviteWorkerRequest, CustomServiceKfAccountInviteWorkerResponse>
+    public class CustomServiceKfAccountInviteWorkerRequest : WechatApiRequest, IInferable<CustomServiceKfAccountInviteWorkerRequest, CustomServiceKfAccountInviteWorkerResponse>
     {
         /// <summary>
         /// 获取或设置客服账号。

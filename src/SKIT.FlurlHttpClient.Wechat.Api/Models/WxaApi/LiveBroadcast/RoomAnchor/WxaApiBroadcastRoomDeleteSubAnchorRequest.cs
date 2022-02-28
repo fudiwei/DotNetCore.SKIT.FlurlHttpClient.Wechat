@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/room/deletesubanchor 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoomDeleteSubAnchorRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoomDeleteSubAnchorRequest, WxaApiBroadcastRoomDeleteSubAnchorResponse>
+    public class WxaApiBroadcastRoomDeleteSubAnchorRequest : WechatApiRequest, IInferable<WxaApiBroadcastRoomDeleteSubAnchorRequest, WxaApiBroadcastRoomDeleteSubAnchorResponse>
     {
         /// <summary>
         /// 获取或设置直播间 ID。

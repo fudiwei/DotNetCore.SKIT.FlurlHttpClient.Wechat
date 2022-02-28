@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/poi/delpoi 接口的请求。</para>
     /// </summary>
-    public class CgibinPOIDeletePOIRequest : WechatApiRequest, IMapResponse<CgibinPOIDeletePOIRequest, CgibinPOIDeletePOIResponse>
+    public class CgibinPOIDeletePOIRequest : WechatApiRequest, IInferable<CgibinPOIDeletePOIRequest, CgibinPOIDeletePOIResponse>
     {
         /// <summary>
         /// 获取或设置门店 ID。

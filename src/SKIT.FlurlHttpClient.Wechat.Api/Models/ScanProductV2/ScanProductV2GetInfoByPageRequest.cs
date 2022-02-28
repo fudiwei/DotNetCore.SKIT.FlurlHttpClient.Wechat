@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /scan/product/v2/getinfobypage 接口的请求。</para>
     /// </summary>
-    public class ScanProductV2GetInfoByPageRequest : WechatApiRequest, IMapResponse<ScanProductV2GetInfoByPageRequest, ScanProductV2GetInfoByPageResponse>
+    public class ScanProductV2GetInfoByPageRequest : WechatApiRequest, IInferable<ScanProductV2GetInfoByPageRequest, ScanProductV2GetInfoByPageResponse>
     {
         /// <summary>
         /// 获取或设置翻页标记。

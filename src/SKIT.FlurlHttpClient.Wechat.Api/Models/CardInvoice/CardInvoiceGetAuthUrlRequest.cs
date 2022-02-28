@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/getauthurl 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceGetAuthUrlRequest : WechatApiRequest, IMapResponse<CardInvoiceGetAuthUrlRequest, CardInvoiceGetAuthUrlResponse>
+    public class CardInvoiceGetAuthUrlRequest : WechatApiRequest, IInferable<CardInvoiceGetAuthUrlRequest, CardInvoiceGetAuthUrlResponse>
     {
         /// <summary>
         /// 获取或设置订单号。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /scan/product/v2/status 接口的请求。</para>
     /// </summary>
-    public class ScanProductV2StatusRequest : WechatApiRequest, IMapResponse<ScanProductV2StatusRequest, ScanProductV2StatusResponse>
+    public class ScanProductV2StatusRequest : WechatApiRequest, IInferable<ScanProductV2StatusRequest, ScanProductV2StatusResponse>
     {
         /// <summary>
         /// 获取或设置用于获取导入结果的票据。

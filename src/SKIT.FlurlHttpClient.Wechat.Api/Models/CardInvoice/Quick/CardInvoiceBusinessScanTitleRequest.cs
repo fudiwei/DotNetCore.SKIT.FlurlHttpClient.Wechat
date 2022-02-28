@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/scantitle 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceBusinessScanTitleRequest : WechatApiRequest, IMapResponse<CardInvoiceBusinessScanTitleRequest, CardInvoiceBusinessScanTitleResponse>
+    public class CardInvoiceBusinessScanTitleRequest : WechatApiRequest, IInferable<CardInvoiceBusinessScanTitleRequest, CardInvoiceBusinessScanTitleResponse>
     {
         /// <summary>
         /// 获取或设置扫码后获得的文本。

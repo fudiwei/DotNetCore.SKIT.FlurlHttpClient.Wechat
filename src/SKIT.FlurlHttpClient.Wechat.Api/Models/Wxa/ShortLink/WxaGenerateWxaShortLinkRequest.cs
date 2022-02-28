@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/genwxashortlink 接口的请求。</para>
     /// </summary>
-    public class WxaGenerateWxaShortLinkRequest : WechatApiRequest, IMapResponse<WxaGenerateWxaShortLinkRequest, WxaGenerateWxaShortLinkResponse>
+    public class WxaGenerateWxaShortLinkRequest : WechatApiRequest, IInferable<WxaGenerateWxaShortLinkRequest, WxaGenerateWxaShortLinkResponse>
     {
         /// <summary>
         /// 获取或设置小程序页面路径。

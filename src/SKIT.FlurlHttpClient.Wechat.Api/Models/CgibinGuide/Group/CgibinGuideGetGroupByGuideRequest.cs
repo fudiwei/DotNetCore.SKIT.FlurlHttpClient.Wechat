@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getgroupbyguide 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideGetGroupByGuideRequest : WechatApiRequest, IMapResponse<CgibinGuideGetGroupByGuideRequest, CgibinGuideGetGroupByGuideResponse>
+    public class CgibinGuideGetGroupByGuideRequest : WechatApiRequest, IInferable<CgibinGuideGetGroupByGuideRequest, CgibinGuideGetGroupByGuideResponse>
     {
         /// <summary>
         /// 获取或设置顾问微信号。

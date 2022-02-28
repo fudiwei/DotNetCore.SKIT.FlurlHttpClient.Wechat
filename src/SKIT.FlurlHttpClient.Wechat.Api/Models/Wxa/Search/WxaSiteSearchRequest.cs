@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/sitesearch 接口的请求。</para>
     /// </summary>
-    public class WxaSiteSearchRequest : WechatApiRequest, IMapResponse<WxaSiteSearchRequest, WxaSiteSearchResponse>
+    public class WxaSiteSearchRequest : WechatApiRequest, IInferable<WxaSiteSearchRequest, WxaSiteSearchResponse>
     {
         /// <summary>
         /// 获取或设置关键词。

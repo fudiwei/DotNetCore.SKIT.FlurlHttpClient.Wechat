@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /sns/oauth2/refresh_token 接口的请求。</para>
     /// </summary>
-    public class SnsOAuth2RefreshTokenRequest : WechatApiRequest, IMapResponse<SnsOAuth2RefreshTokenRequest, SnsOAuth2RefreshTokenResponse>
+    public class SnsOAuth2RefreshTokenRequest : WechatApiRequest, IInferable<SnsOAuth2RefreshTokenRequest, SnsOAuth2RefreshTokenResponse>
     {
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>

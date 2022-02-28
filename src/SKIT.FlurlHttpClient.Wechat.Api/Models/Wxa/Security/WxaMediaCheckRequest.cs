@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/media_check_async 接口的请求。</para>
     /// </summary>
-    public class WxaMediaCheckRequest : WechatApiRequest, IMapResponse<WxaMediaCheckRequest, WxaMediaCheckResponse>
+    public class WxaMediaCheckRequest : WechatApiRequest, IInferable<WxaMediaCheckRequest, WxaMediaCheckResponse>
     {
         /// <summary>
         /// 获取或设置多媒体 URL。

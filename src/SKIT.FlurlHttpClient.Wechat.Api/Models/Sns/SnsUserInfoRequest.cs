@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /sns/userinfo 接口的请求。</para>
     /// </summary>
-    public class SnsUserInfoRequest : WechatApiRequest, IMapResponse<SnsUserInfoRequest, SnsUserInfoResponse>
+    public class SnsUserInfoRequest : WechatApiRequest, IInferable<SnsUserInfoRequest, SnsUserInfoResponse>
     {
         /// <summary>
         /// 获取或设置网页授权接口调用凭证（注意与全局 AccessToken 相区分）。

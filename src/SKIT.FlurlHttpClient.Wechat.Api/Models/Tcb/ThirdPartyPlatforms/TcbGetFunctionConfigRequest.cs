@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/getfuncconfig 接口的请求。</para>
     /// </summary>
-    public class TcbGetFunctionConfigRequest : WechatApiRequest, IMapResponse<TcbGetFunctionConfigRequest, TcbGetFunctionConfigResponse>
+    public class TcbGetFunctionConfigRequest : WechatApiRequest, IInferable<TcbGetFunctionConfigRequest, TcbGetFunctionConfigResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

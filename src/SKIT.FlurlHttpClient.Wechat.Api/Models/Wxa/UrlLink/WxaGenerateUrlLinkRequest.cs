@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/generate_urllink 接口的请求。</para>
     /// </summary>
-    public class WxaGenerateUrlLinkRequest : WechatApiRequest, IMapResponse<WxaGenerateUrlLinkRequest, WxaGenerateUrlLinkResponse>
+    public class WxaGenerateUrlLinkRequest : WechatApiRequest, IInferable<WxaGenerateUrlLinkRequest, WxaGenerateUrlLinkResponse>
     {
         public static class Types
         {

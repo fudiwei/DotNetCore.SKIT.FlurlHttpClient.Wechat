@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/modify_domain 接口的请求。</para>
     /// </summary>
-    public class WxaModifyDomainRequest : WechatApiRequest, IMapResponse<WxaModifyDomainRequest, WxaModifyDomainResponse>
+    public class WxaModifyDomainRequest : WechatApiRequest, IInferable<WxaModifyDomainRequest, WxaModifyDomainResponse>
     {
         /// <summary>
         /// 获取或设置操作类型。

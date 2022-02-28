@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/service/get_order_list 接口的请求。</para>
     /// </summary>
-    public class ProductServiceGetOrderListRequest : WechatApiRequest, IMapResponse<ProductServiceGetOrderListRequest, ProductServiceGetOrderListResponse>
+    public class ProductServiceGetOrderListRequest : WechatApiRequest, IInferable<ProductServiceGetOrderListRequest, ProductServiceGetOrderListResponse>
     {
         /// <summary>
         /// 获取或设置指定创建时间的开始时间。

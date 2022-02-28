@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /union/promoter/target/apply_status 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterTargetApplyStatusRequest : WechatApiRequest, IMapResponse<UnionPromoterTargetApplyStatusRequest, UnionPromoterTargetApplyStatusResponse>
+    public class UnionPromoterTargetApplyStatusRequest : WechatApiRequest, IInferable<UnionPromoterTargetApplyStatusRequest, UnionPromoterTargetApplyStatusResponse>
     {
         /// <summary>
         /// 获取或设置定向计划 ID。

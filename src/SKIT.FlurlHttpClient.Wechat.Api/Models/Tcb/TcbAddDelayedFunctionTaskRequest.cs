@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/adddelayedfunctiontask 接口的请求。</para>
     /// </summary>
-    public class TcbAddDelayedFunctionTaskRequest : WechatApiRequest, IMapResponse<TcbAddDelayedFunctionTaskRequest, TcbAddDelayedFunctionTaskResponse>
+    public class TcbAddDelayedFunctionTaskRequest : WechatApiRequest, IInferable<TcbAddDelayedFunctionTaskRequest, TcbAddDelayedFunctionTaskResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

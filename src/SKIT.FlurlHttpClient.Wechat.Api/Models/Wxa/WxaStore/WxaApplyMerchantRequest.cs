@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/apply_merchant 接口的请求。</para>
     /// </summary>
-    public class WxaApplyMerchantRequest : WechatApiRequest, IMapResponse<WxaApplyMerchantRequest, WxaApplyMerchantResponse>
+    public class WxaApplyMerchantRequest : WechatApiRequest, IInferable<WxaApplyMerchantRequest, WxaApplyMerchantResponse>
     {
         /// <summary>
         /// 获取或设置一级类目 ID。

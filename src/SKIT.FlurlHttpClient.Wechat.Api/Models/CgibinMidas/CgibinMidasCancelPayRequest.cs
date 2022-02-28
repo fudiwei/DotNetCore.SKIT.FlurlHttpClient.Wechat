@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/midas/cancelpay 接口的请求。</para>
     /// </summary>
-    public class CgibinMidasCancelPayRequest : CgibinMidasRequestBase, IMapResponse<CgibinMidasCancelPayRequest, CgibinMidasCancelPayResponse>
+    public class CgibinMidasCancelPayRequest : CgibinMidasRequestBase, IInferable<CgibinMidasCancelPayRequest, CgibinMidasCancelPayResponse>
     {
         /// <summary>
         /// 获取或设置订单号。

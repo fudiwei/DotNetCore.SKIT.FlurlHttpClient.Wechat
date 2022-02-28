@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/qrcode/gen 接口的请求。</para>
     /// </summary>
-    public class ProductQrcodeGenerateRequest : WechatApiRequest, IMapResponse<ProductQrcodeGenerateRequest, ProductQrcodeGenerateResponse>
+    public class ProductQrcodeGenerateRequest : WechatApiRequest, IInferable<ProductQrcodeGenerateRequest, ProductQrcodeGenerateResponse>
     {
         /// <summary>
         /// 获取或设置需要验证的身份。

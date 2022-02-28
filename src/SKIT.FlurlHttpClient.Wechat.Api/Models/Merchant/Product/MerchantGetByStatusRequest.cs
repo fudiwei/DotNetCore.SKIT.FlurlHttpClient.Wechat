@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/getbystatus 接口的请求。</para>
     /// </summary>
-    public class MerchantGetByStatusRequest : WechatApiRequest, IMapResponse<MerchantGetByStatusRequest, MerchantGetByStatusResponse>
+    public class MerchantGetByStatusRequest : WechatApiRequest, IInferable<MerchantGetByStatusRequest, MerchantGetByStatusResponse>
     {
         /// <summary>
         /// 获取或设置指定商品状态。

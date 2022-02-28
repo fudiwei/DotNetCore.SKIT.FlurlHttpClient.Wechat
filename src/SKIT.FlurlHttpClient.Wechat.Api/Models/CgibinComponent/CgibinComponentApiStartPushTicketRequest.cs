@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/api_start_push_ticket 接口的请求。</para>
     /// </summary>
-    public class CgibinComponentApiStartPushTicketRequest : WechatApiRequest, IMapResponse<CgibinComponentApiStartPushTicketRequest, CgibinComponentApiStartPushTicketResponse>
+    public class CgibinComponentApiStartPushTicketRequest : WechatApiRequest, IInferable<CgibinComponentApiStartPushTicketRequest, CgibinComponentApiStartPushTicketResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AppId。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.AppId"/> 参数。

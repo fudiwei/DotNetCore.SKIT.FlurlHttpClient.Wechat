@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/coupon/add_user_coupon 接口的请求。</para>
     /// </summary>
-    public class ShopCouponAddUserCouponRequest : WechatApiRequest, IMapResponse<ShopCouponAddUserCouponRequest, ShopCouponAddUserCouponResponse>
+    public class ShopCouponAddUserCouponRequest : WechatApiRequest, IInferable<ShopCouponAddUserCouponRequest, ShopCouponAddUserCouponResponse>
     {
         public static class Types
         {

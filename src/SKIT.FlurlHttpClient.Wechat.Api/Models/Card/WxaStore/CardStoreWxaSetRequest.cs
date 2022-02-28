@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/storewxa/set 接口的请求。</para>
     /// </summary>
-    public class CardStoreWxaSetRequest : WechatApiRequest, IMapResponse<CardStoreWxaSetRequest, CardStoreWxaSetResponse>
+    public class CardStoreWxaSetRequest : WechatApiRequest, IInferable<CardStoreWxaSetRequest, CardStoreWxaSetResponse>
     {
         /// <summary>
         /// 获取或设置门店 ID。

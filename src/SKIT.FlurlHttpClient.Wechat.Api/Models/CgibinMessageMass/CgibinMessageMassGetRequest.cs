@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/message/mass/get 接口的请求。</para>
     /// </summary>
-    public class CgibinMessageMassGetRequest : WechatApiRequest, IMapResponse<CgibinMessageMassGetRequest, CgibinMessageMassGetResponse>
+    public class CgibinMessageMassGetRequest : WechatApiRequest, IInferable<CgibinMessageMassGetRequest, CgibinMessageMassGetResponse>
     {
         /// <summary>
         /// 获取或设置群发消息 ID。

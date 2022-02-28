@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/platform/getpdf 接口的请求。</para>
     /// </summary>
-    public class CardInvoicePlatformGetPdfRequest : WechatApiRequest, IMapResponse<CardInvoicePlatformGetPdfRequest, CardInvoicePlatformGetPdfResponse>
+    public class CardInvoicePlatformGetPdfRequest : WechatApiRequest, IInferable<CardInvoicePlatformGetPdfRequest, CardInvoicePlatformGetPdfResponse>
     {
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>

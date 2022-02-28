@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/business/getliveinfo 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGetLiveInfoRequest : WechatApiRequest, IMapResponse<WxaBusinessGetLiveInfoRequest, WxaBusinessGetLiveInfoResponse>
+    public class WxaBusinessGetLiveInfoRequest : WechatApiRequest, IInferable<WxaBusinessGetLiveInfoRequest, WxaBusinessGetLiveInfoResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

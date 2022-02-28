@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/createsendsmstask 接口的请求。</para>
     /// </summary>
-    public class TcbCreateSendSmsTaskRequest : WechatApiRequest, IMapResponse<TcbCreateSendSmsTaskRequest, TcbCreateSendSmsTaskResponse>
+    public class TcbCreateSendSmsTaskRequest : WechatApiRequest, IInferable<TcbCreateSendSmsTaskRequest, TcbCreateSendSmsTaskResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

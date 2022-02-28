@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/paycell/set 接口的请求。</para>
     /// </summary>
-    public class CardPayCellSetRequest : WechatApiRequest, IMapResponse<CardPayCellSetRequest, CardPayCellSetResponse>
+    public class CardPayCellSetRequest : WechatApiRequest, IInferable<CardPayCellSetRequest, CardPayCellSetResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/giftcard/page/get 接口的请求。</para>
     /// </summary>
-    public class CardGiftCardPageGetRequest : WechatApiRequest, IMapResponse<CardGiftCardPageGetRequest, CardGiftCardPageGetResponse>
+    public class CardGiftCardPageGetRequest : WechatApiRequest, IInferable<CardGiftCardPageGetRequest, CardGiftCardPageGetResponse>
     {
         /// <summary>
         /// 获取或设置货架 ID。

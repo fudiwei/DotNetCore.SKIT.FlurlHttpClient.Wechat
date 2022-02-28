@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/freepublish/delete 接口的请求。</para>
     /// </summary>
-    public class CgibinFreePublishDeleteRequest : WechatApiRequest, IMapResponse<CgibinFreePublishDeleteRequest, CgibinFreePublishDeleteResponse>
+    public class CgibinFreePublishDeleteRequest : WechatApiRequest, IInferable<CgibinFreePublishDeleteRequest, CgibinFreePublishDeleteResponse>
     {
         /// <summary>
         /// 获取或设置图文消息的 ArticleId。

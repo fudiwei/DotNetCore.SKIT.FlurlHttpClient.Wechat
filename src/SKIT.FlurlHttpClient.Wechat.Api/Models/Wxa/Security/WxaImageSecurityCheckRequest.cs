@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/img_sec_check 接口的请求。</para>
     /// </summary>
-    public class WxaImageSecurityCheckRequest : WechatApiRequest, IMapResponse<WxaImageSecurityCheckRequest, WxaImageSecurityCheckResponse>
+    public class WxaImageSecurityCheckRequest : WechatApiRequest, IInferable<WxaImageSecurityCheckRequest, WxaImageSecurityCheckResponse>
     {
         /// <summary>
         /// 获取或设置图片文件字节数组。

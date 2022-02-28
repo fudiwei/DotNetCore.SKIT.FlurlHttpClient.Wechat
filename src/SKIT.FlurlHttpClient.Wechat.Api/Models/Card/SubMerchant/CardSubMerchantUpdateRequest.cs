@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/submerchant/update 接口的请求。</para>
     /// </summary>
-    public class CardSubMerchantUpdateRequest : WechatApiRequest, IMapResponse<CardSubMerchantUpdateRequest, CardSubMerchantUpdateResponse>
+    public class CardSubMerchantUpdateRequest : WechatApiRequest, IInferable<CardSubMerchantUpdateRequest, CardSubMerchantUpdateResponse>
     {
         public static class Types
         {

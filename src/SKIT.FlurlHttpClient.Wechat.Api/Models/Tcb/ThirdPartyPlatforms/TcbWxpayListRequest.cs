@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/wxpaylist 接口的请求。</para>
     /// </summary>
-    public class TcbWxpayListRequest : WechatApiRequest, IMapResponse<TcbWxpayListRequest, TcbWxpayListResponse>
+    public class TcbWxpayListRequest : WechatApiRequest, IInferable<TcbWxpayListRequest, TcbWxpayListResponse>
     {
     }
 }

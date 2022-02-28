@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/updateshowwxaitem 接口的请求。</para>
     /// </summary>
-    public class WxaUpdateShowWxaItemRequest : WechatApiRequest, IMapResponse<WxaUpdateShowWxaItemRequest, WxaUpdateShowWxaItemResponse>
+    public class WxaUpdateShowWxaItemRequest : WechatApiRequest, IInferable<WxaUpdateShowWxaItemRequest, WxaUpdateShowWxaItemResponse>
     {
         /// <summary>
         /// 获取或设置是否打开扫码关注组件。

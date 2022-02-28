@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getupstreammsghour 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetUpstreamMessageHourRequest : DataCubeGetUpstreamMessageRequest, IMapResponse<DataCubeGetUpstreamMessageHourRequest, DataCubeGetUpstreamMessageHourResponse>
+    public class DataCubeGetUpstreamMessageHourRequest : DataCubeGetUpstreamMessageRequest, IInferable<DataCubeGetUpstreamMessageHourRequest, DataCubeGetUpstreamMessageHourResponse>
     {
     }
 }

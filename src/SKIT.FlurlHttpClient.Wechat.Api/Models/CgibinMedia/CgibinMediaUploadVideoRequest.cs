@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/media/uploadvideo 接口的请求。</para>
     /// </summary>
-    public class CgibinMediaUploadVideoRequest : WechatApiRequest, IMapResponse<CgibinMediaUploadVideoRequest, CgibinMediaUploadVideoResponse>
+    public class CgibinMediaUploadVideoRequest : WechatApiRequest, IInferable<CgibinMediaUploadVideoRequest, CgibinMediaUploadVideoResponse>
     {
         /// <summary>
         /// 获取或设置媒体文件标识。

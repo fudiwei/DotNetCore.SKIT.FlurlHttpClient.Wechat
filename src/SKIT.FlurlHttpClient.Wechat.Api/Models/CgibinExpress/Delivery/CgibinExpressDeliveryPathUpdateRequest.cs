@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/delivery/path/update 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressDeliveryPathUpdateRequest : WechatApiRequest, IMapResponse<CgibinExpressDeliveryPathUpdateRequest, CgibinExpressDeliveryPathUpdateResponse>
+    public class CgibinExpressDeliveryPathUpdateRequest : WechatApiRequest, IInferable<CgibinExpressDeliveryPathUpdateRequest, CgibinExpressDeliveryPathUpdateResponse>
     {
         /// <summary>
         /// 获取或设置微信订单 Token。

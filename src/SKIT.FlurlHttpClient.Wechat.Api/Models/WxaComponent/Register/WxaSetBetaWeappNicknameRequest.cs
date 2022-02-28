@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/setbetaweappnickname 接口的请求。</para>
     /// </summary>
-    public class WxaSetBetaWeappNicknameRequest : WechatApiRequest, IMapResponse<WxaSetBetaWeappNicknameRequest, WxaSetBetaWeappNicknameResponse>
+    public class WxaSetBetaWeappNicknameRequest : WechatApiRequest, IInferable<WxaSetBetaWeappNicknameRequest, WxaSetBetaWeappNicknameResponse>
     {
         /// <summary>
         /// 获取或设置小程序名称。

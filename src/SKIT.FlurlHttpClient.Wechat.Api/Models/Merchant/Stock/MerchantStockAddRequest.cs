@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/stock/add 接口的请求。</para>
     /// </summary>
-    public class MerchantStockAddRequest : WechatApiRequest, IMapResponse<MerchantStockAddRequest, MerchantStockAddResponse>
+    public class MerchantStockAddRequest : WechatApiRequest, IInferable<MerchantStockAddRequest, MerchantStockAddResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。

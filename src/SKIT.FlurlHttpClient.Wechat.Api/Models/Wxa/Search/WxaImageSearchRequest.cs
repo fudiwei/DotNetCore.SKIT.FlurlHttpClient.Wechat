@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/imagesearch 接口的请求。</para>
     /// </summary>
-    public class WxaImageSearchRequest : WechatApiRequest, IMapResponse<WxaImageSearchRequest, WxaImageSearchResponse>
+    public class WxaImageSearchRequest : WechatApiRequest, IInferable<WxaImageSearchRequest, WxaImageSearchResponse>
     {
         /// <summary>
         /// 获取或设置图片字节数组。

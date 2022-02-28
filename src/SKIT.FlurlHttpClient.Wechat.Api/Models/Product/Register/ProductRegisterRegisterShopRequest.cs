@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/register/register_shop 接口的请求。</para>
     /// </summary>
-    public class ProductRegisterRegisterShopRequest : WechatApiRequest, IMapResponse<ProductRegisterRegisterShopRequest, ProductRegisterRegisterShopResponse>
+    public class ProductRegisterRegisterShopRequest : WechatApiRequest, IInferable<ProductRegisterRegisterShopRequest, ProductRegisterRegisterShopResponse>
     {
         /// <summary>
         /// 获取或设置微信号。

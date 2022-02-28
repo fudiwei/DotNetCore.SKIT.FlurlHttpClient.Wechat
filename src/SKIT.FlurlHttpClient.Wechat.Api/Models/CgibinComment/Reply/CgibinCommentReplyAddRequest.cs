@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/comment/reply/add 接口的请求。</para>
     /// </summary>
-    public class CgibinCommentReplyAddRequest : CgibinCommentMarkElectRequest, IMapResponse<CgibinCommentReplyAddRequest, CgibinCommentReplyAddResponse>
+    public class CgibinCommentReplyAddRequest : CgibinCommentMarkElectRequest, IInferable<CgibinCommentReplyAddRequest, CgibinCommentReplyAddResponse>
     {
         /// <summary>
         /// 获取或设置回复内容。

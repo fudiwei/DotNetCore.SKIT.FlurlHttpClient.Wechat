@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/update 接口的请求。</para>
     /// </summary>
-    public class CardUpdateRequest : WechatApiRequest, IMapResponse<CardUpdateRequest, CardUpdateResponse>
+    public class CardUpdateRequest : WechatApiRequest, IInferable<CardUpdateRequest, CardUpdateResponse>
     {
         public static class Types
         {

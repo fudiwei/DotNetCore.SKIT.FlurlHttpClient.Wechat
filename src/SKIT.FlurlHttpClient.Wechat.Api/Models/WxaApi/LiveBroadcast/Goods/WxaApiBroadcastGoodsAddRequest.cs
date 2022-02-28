@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/goods/add 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastGoodsAddRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastGoodsAddRequest, WxaApiBroadcastGoodsAddResponse>
+    public class WxaApiBroadcastGoodsAddRequest : WechatApiRequest, IInferable<WxaApiBroadcastGoodsAddRequest, WxaApiBroadcastGoodsAddResponse>
     {
         public static class Types
         {

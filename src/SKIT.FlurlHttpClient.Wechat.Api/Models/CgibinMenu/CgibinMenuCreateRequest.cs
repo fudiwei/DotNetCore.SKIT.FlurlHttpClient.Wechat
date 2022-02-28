@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/menu/create 接口的请求。</para>
     /// </summary>
-    public class CgibinMenuCreateRequest : WechatApiRequest, IMapResponse<CgibinMenuCreateRequest, CgibinMenuCreateResponse>
+    public class CgibinMenuCreateRequest : WechatApiRequest, IInferable<CgibinMenuCreateRequest, CgibinMenuCreateResponse>
     {
         public static class Types
         {

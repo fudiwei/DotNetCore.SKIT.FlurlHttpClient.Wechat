@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/shipmethods/set 接口的请求。</para>
     /// </summary>
-    public class ProductShipMethodsSetRequest : WechatApiRequest, IMapResponse<ProductShipMethodsSetRequest, ProductShipMethodsSetResponse>
+    public class ProductShipMethodsSetRequest : WechatApiRequest, IInferable<ProductShipMethodsSetRequest, ProductShipMethodsSetResponse>
     {
         public static class Types
         {

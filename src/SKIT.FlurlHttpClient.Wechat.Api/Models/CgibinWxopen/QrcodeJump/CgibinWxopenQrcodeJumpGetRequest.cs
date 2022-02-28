@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/qrcodejumpget 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenQrcodeJumpGetRequest : WechatApiRequest, IMapResponse<CgibinWxopenQrcodeJumpGetRequest, CgibinWxopenQrcodeJumpGetResponse>
+    public class CgibinWxopenQrcodeJumpGetRequest : WechatApiRequest, IInferable<CgibinWxopenQrcodeJumpGetRequest, CgibinWxopenQrcodeJumpGetResponse>
     {
         /// <summary>
         /// 获取或设置小程序 AppId。

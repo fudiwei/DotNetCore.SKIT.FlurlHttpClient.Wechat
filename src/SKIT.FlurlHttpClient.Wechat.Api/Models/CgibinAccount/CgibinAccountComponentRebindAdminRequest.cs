@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/account/componentrebindadmin 接口的请求。</para>
     /// </summary>
-    public class CgibinAccountComponentRebindAdminRequest : WechatApiRequest, IMapResponse<CgibinAccountComponentRebindAdminRequest, CgibinAccountComponentRebindAdminResponse>
+    public class CgibinAccountComponentRebindAdminRequest : WechatApiRequest, IInferable<CgibinAccountComponentRebindAdminRequest, CgibinAccountComponentRebindAdminResponse>
     {
         /// <summary>
         /// 获取或设置换绑管理员任务序列号。

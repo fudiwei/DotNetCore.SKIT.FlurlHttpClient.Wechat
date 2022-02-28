@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/get_store_list 接口的请求。</para>
     /// </summary>
-    public class WxaGetStoreListRequest : WechatApiRequest, IMapResponse<WxaGetStoreListRequest, WxaGetStoreListResponse>
+    public class WxaGetStoreListRequest : WechatApiRequest, IInferable<WxaGetStoreListRequest, WxaGetStoreListResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

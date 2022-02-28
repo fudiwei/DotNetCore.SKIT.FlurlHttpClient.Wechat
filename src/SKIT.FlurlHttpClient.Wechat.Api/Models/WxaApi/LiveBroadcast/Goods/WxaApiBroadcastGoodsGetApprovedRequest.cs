@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxaapi/broadcast/goods/getapproved 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastGoodsGetApprovedRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastGoodsGetApprovedRequest, WxaApiBroadcastGoodsGetApprovedResponse>
+    public class WxaApiBroadcastGoodsGetApprovedRequest : WechatApiRequest, IInferable<WxaApiBroadcastGoodsGetApprovedRequest, WxaApiBroadcastGoodsGetApprovedResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

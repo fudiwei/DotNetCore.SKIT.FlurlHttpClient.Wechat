@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /publisher/stat?action=publisher_adpos_general 接口的请求。</para>
     /// </summary>
-    public class PublisherStatAdposGeneralRequest : PublisherStatSettlementRequest, IMapResponse<PublisherStatAdposGeneralRequest, PublisherStatAdposGeneralResponse>
+    public class PublisherStatAdposGeneralRequest : PublisherStatSettlementRequest, IInferable<PublisherStatAdposGeneralRequest, PublisherStatAdposGeneralResponse>
     {
         /// <summary>
         /// 获取或设置广告位类型名称。

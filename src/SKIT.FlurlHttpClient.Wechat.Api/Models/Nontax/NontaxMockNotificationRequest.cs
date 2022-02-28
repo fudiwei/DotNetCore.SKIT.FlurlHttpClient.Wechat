@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /nontax/mocknotification 接口的请求。</para>
     /// </summary>
-    public class NontaxMockNotificationRequest : WechatApiRequest, IMapResponse<NontaxMockNotificationRequest, NontaxMockNotificationResponse>
+    public class NontaxMockNotificationRequest : WechatApiRequest, IInferable<NontaxMockNotificationRequest, NontaxMockNotificationResponse>
     {
         /// <summary>
         /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.AppId"/> 参数。

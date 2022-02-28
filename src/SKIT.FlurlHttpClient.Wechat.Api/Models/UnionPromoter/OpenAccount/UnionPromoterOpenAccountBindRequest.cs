@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /union/promoter/open_account/bind 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterOpenAccountBindRequest : WechatApiRequest, IMapResponse<UnionPromoterOpenAccountBindRequest, UnionPromoterOpenAccountBindResponse>
+    public class UnionPromoterOpenAccountBindRequest : WechatApiRequest, IInferable<UnionPromoterOpenAccountBindRequest, UnionPromoterOpenAccountBindResponse>
     {
         /// <summary>
         /// 获取或设置开放平台账号。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/room/updatekf 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoomUpdateKfRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoomUpdateKfRequest, WxaApiBroadcastRoomUpdateKfResponse>
+    public class WxaApiBroadcastRoomUpdateKfRequest : WechatApiRequest, IInferable<WxaApiBroadcastRoomUpdateKfRequest, WxaApiBroadcastRoomUpdateKfResponse>
     {
         /// <summary>
         /// 获取或设置直播间 ID。

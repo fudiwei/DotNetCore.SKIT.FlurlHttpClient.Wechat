@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/queryinvoceinfo 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceQueryInvoiceInfoRequest : WechatApiRequest, IMapResponse<CardInvoiceQueryInvoiceInfoRequest, CardInvoiceQueryInvoiceInfoResponse>
+    public class CardInvoiceQueryInvoiceInfoRequest : WechatApiRequest, IInferable<CardInvoiceQueryInvoiceInfoRequest, CardInvoiceQueryInvoiceInfoResponse>
     {
         /// <summary>
         /// 获取或设置发票请求流水号。

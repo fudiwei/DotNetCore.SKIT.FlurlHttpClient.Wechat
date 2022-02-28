@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/openapi/rid/get 接口的请求。</para>
     /// </summary>
-    public class CgibinOpenApiRequestIdGetRequest : WechatApiRequest, IMapResponse<CgibinOpenApiRequestIdGetRequest, CgibinOpenApiRequestIdGetResponse>
+    public class CgibinOpenApiRequestIdGetRequest : WechatApiRequest, IInferable<CgibinOpenApiRequestIdGetRequest, CgibinOpenApiRequestIdGetResponse>
     {
         /// <summary>
         /// 获取或设置调用接口报错返回的 rid。

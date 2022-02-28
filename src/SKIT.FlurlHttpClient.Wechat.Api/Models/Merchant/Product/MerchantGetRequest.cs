@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /merchant/get 接口的请求。</para>
     /// </summary>
-    public class MerchantGetRequest : WechatApiRequest, IMapResponse<MerchantGetRequest, MerchantGetResponse>
+    public class MerchantGetRequest : WechatApiRequest, IInferable<MerchantGetRequest, MerchantGetResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。

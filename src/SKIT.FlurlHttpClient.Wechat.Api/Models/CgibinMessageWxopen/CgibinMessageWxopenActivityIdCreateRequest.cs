@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/message/wxopen/activityid/create 接口的请求。</para>
     /// </summary>
-    public class CgibinMessageWxopenActivityIdCreateRequest : WechatApiRequest, IMapResponse<CgibinMessageWxopenActivityIdCreateRequest, CgibinMessageWxopenActivityIdCreateResponse>
+    public class CgibinMessageWxopenActivityIdCreateRequest : WechatApiRequest, IInferable<CgibinMessageWxopenActivityIdCreateRequest, CgibinMessageWxopenActivityIdCreateResponse>
     {
         /// <summary>
         /// 获取或设置分享者用户唯一标识。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/category/get 接口的请求。</para>
     /// </summary>
-    public class ProductCategoryGetRequest : WechatApiRequest, IMapResponse<ProductCategoryGetRequest, ProductCategoryGetResponse>
+    public class ProductCategoryGetRequest : WechatApiRequest, IInferable<ProductCategoryGetRequest, ProductCategoryGetResponse>
     {
         /// <summary>
         /// 获取或设置上级类目 ID。

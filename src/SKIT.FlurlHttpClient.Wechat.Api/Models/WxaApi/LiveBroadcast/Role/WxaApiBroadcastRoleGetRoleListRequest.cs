@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxaapi/broadcast/role/getrolelist 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoleGetRoleListRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoleGetRoleListRequest, WxaApiBroadcastRoleGetRoleListResponse>
+    public class WxaApiBroadcastRoleGetRoleListRequest : WechatApiRequest, IInferable<WxaApiBroadcastRoleGetRoleListRequest, WxaApiBroadcastRoleGetRoleListResponse>
     {
         /// <summary>
         /// 获取或设置搜索的用户微信号或昵称。

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/order/change_order_price 接口的请求。</para>
     /// </summary>
-    public class ProductOrderChangeOrderPriceRequest : WechatApiRequest, IMapResponse<ProductOrderChangeOrderPriceRequest, ProductOrderChangeOrderPriceResponse>
+    public class ProductOrderChangeOrderPriceRequest : WechatApiRequest, IInferable<ProductOrderChangeOrderPriceRequest, ProductOrderChangeOrderPriceResponse>
     {
         public static class Types
         {

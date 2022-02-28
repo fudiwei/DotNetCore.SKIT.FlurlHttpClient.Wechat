@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/media/uploadnews 接口的请求。</para>
     /// </summary>
-    public class CgibinMediaUploadNewsRequest : WechatApiRequest, IMapResponse<CgibinMediaUploadNewsRequest, CgibinMediaUploadNewsResponse>
+    public class CgibinMediaUploadNewsRequest : WechatApiRequest, IInferable<CgibinMediaUploadNewsRequest, CgibinMediaUploadNewsResponse>
     {
         public static class Types
         {

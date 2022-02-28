@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/offline/update_pickup_template 接口的请求。</para>
     /// </summary>
-    public class ProductOfflineUpdatePickupTemplateRequest : WechatApiRequest, IMapResponse<ProductOfflineUpdatePickupTemplateRequest, ProductOfflineUpdatePickupTemplateResponse>
+    public class ProductOfflineUpdatePickupTemplateRequest : WechatApiRequest, IInferable<ProductOfflineUpdatePickupTemplateRequest, ProductOfflineUpdatePickupTemplateResponse>
     {
         public static class Types
         {

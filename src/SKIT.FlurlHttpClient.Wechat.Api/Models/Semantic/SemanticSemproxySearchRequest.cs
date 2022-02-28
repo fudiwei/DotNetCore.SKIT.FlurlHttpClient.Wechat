@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /semantic/semproxy/search 接口的请求。</para>
     /// </summary>
-    public class SemanticSemproxySearchRequest : WechatApiRequest, IMapResponse<SemanticSemproxySearchRequest, SemanticSemproxySearchResponse>
+    public class SemanticSemproxySearchRequest : WechatApiRequest, IInferable<SemanticSemproxySearchRequest, SemanticSemproxySearchResponse>
     {
         /// <summary>
         /// 获取或设置输入文本串。

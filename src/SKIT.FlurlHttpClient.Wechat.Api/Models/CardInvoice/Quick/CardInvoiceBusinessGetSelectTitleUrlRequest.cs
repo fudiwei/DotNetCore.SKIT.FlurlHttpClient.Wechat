@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/biz/getselecttitleurl 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceBusinessGetSelectTitleUrlRequest : WechatApiRequest, IMapResponse<CardInvoiceBusinessGetSelectTitleUrlRequest, CardInvoiceBusinessGetSelectTitleUrlResponse>
+    public class CardInvoiceBusinessGetSelectTitleUrlRequest : WechatApiRequest, IInferable<CardInvoiceBusinessGetSelectTitleUrlRequest, CardInvoiceBusinessGetSelectTitleUrlResponse>
     {
         /// <summary>
         /// 获取或设置附加信息。

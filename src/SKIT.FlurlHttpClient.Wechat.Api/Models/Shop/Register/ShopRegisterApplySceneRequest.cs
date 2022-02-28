@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/register/apply_scene 接口的请求。</para>
     /// </summary>
-    public class ShopRegisterApplySceneRequest : WechatApiRequest, IMapResponse<ShopRegisterApplySceneRequest, ShopRegisterApplySceneResponse>
+    public class ShopRegisterApplySceneRequest : WechatApiRequest, IInferable<ShopRegisterApplySceneRequest, ShopRegisterApplySceneResponse>
     {
         /// <summary>
         /// 获取或设置场景 ID。

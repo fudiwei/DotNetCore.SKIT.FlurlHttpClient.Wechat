@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/submerchant/get 接口的请求。</para>
     /// </summary>
-    public class CardSubMerchantGetRequest : WechatApiRequest, IMapResponse<CardSubMerchantGetRequest, CardSubMerchantGetResponse>
+    public class CardSubMerchantGetRequest : WechatApiRequest, IInferable<CardSubMerchantGetRequest, CardSubMerchantGetResponse>
     {
         /// <summary>
         /// 获取或设置子商户 ID。

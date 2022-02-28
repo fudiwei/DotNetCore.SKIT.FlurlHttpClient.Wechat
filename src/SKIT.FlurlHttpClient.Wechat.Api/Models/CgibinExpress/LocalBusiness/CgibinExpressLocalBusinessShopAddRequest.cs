@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/local/business/shop/add 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressLocalBusinessShopAddRequest : WechatApiRequest, IMapResponse<CgibinExpressLocalBusinessShopAddRequest, CgibinExpressLocalBusinessShopAddResponse>
+    public class CgibinExpressLocalBusinessShopAddRequest : WechatApiRequest, IInferable<CgibinExpressLocalBusinessShopAddRequest, CgibinExpressLocalBusinessShopAddResponse>
     {
         /// <summary>
         /// 获取或设置配送公司 ID。

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/newguidetagoption 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideNewGuideTagOptionRequest : WechatApiRequest, IMapResponse<CgibinGuideNewGuideTagOptionRequest, CgibinGuideNewGuideTagOptionResponse>
+    public class CgibinGuideNewGuideTagOptionRequest : WechatApiRequest, IInferable<CgibinGuideNewGuideTagOptionRequest, CgibinGuideNewGuideTagOptionResponse>
     {
         /// <summary>
         /// 获取或设置标签类型名称。

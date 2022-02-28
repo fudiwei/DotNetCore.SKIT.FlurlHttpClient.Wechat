@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/service/check_auth 接口的请求。</para>
     /// </summary>
-    public class ProductServiceCheckAuthRequest : WechatApiRequest, IMapResponse<ProductServiceCheckAuthRequest, ProductServiceCheckAuthResponse>
+    public class ProductServiceCheckAuthRequest : WechatApiRequest, IInferable<ProductServiceCheckAuthRequest, ProductServiceCheckAuthResponse>
     {
         /// <summary>
         /// 获取或设置跳转码。

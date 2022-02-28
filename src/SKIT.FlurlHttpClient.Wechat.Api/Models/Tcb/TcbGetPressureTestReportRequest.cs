@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/getpressuretestreport 接口的请求。</para>
     /// </summary>
-    public class TcbGetPressureTestReportRequest : WechatApiRequest, IMapResponse<TcbGetPressureTestReportRequest, TcbGetPressureTestReportResponse>
+    public class TcbGetPressureTestReportRequest : WechatApiRequest, IInferable<TcbGetPressureTestReportRequest, TcbGetPressureTestReportResponse>
     {
         /// <summary>
         /// 获取或设置压测 ID。

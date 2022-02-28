@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxaapi/feedback/list 接口的请求。</para>
     /// </summary>
-    public class WxaApiFeedbackListRequest : WechatApiRequest, IMapResponse<WxaApiFeedbackListRequest, WxaApiFeedbackListResponse>
+    public class WxaApiFeedbackListRequest : WechatApiRequest, IInferable<WxaApiFeedbackListRequest, WxaApiFeedbackListResponse>
     {
         /// <summary>
         /// 获取或设置反馈的类型。

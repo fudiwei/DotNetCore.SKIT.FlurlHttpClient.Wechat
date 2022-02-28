@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/media/voice/addvoicetorecofortext 接口的请求。</para>
     /// </summary>
-    public class CgibinMediaVoiceAddVoiceToRecognitionForTextRequest : WechatApiRequest, IMapResponse<CgibinMediaVoiceAddVoiceToRecognitionForTextRequest, CgibinMediaVoiceAddVoiceToRecognitionForTextResponse>
+    public class CgibinMediaVoiceAddVoiceToRecognitionForTextRequest : WechatApiRequest, IInferable<CgibinMediaVoiceAddVoiceToRecognitionForTextRequest, CgibinMediaVoiceAddVoiceToRecognitionForTextResponse>
     {
         /// <summary>
         /// 获取或设置文件格式。

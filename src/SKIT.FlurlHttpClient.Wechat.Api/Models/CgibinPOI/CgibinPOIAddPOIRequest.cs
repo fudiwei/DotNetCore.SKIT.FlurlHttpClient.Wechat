@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/poi/addpoi 接口的请求。</para>
     /// </summary>
-    public class CgibinPOIAddPOIRequest : WechatApiRequest, IMapResponse<CgibinPOIAddPOIRequest, CgibinPOIAddPOIResponse>
+    public class CgibinPOIAddPOIRequest : WechatApiRequest, IInferable<CgibinPOIAddPOIRequest, CgibinPOIAddPOIResponse>
     {
         public static class Types
         {

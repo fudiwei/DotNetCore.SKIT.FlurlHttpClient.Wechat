@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/plugin?action=unbind 接口的请求。</para>
     /// </summary>
-    public class WxaPluginUnbindRequest : WechatApiRequest, IMapResponse<WxaPluginUnbindRequest, WxaPluginUnbindResponse>
+    public class WxaPluginUnbindRequest : WechatApiRequest, IInferable<WxaPluginUnbindRequest, WxaPluginUnbindResponse>
     {
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>

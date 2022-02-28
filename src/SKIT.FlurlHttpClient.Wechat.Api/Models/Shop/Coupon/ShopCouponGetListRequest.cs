@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/coupon/get_list 接口的请求。</para>
     /// </summary>
-    public class ShopCouponGetListRequest : WechatApiRequest, IMapResponse<ShopCouponGetListRequest, ShopCouponGetListResponse>
+    public class ShopCouponGetListRequest : WechatApiRequest, IInferable<ShopCouponGetListRequest, ShopCouponGetListResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

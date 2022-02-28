@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/express/getbyid 接口的请求。</para>
     /// </summary>
-    public class MerchantExpressGetByIdRequest : WechatApiRequest, IMapResponse<MerchantExpressGetByIdRequest, MerchantExpressGetByIdResponse>
+    public class MerchantExpressGetByIdRequest : WechatApiRequest, IInferable<MerchantExpressGetByIdRequest, MerchantExpressGetByIdResponse>
     {
         /// <summary>
         /// 获取或设置邮费模板 ID。

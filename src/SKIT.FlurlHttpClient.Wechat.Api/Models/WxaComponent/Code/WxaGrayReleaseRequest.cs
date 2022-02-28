@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/grayrelease 接口的请求。</para>
     /// </summary>
-    public class WxaGrayReleaseRequest : WechatApiRequest, IMapResponse<WxaGrayReleaseRequest, WxaGrayReleaseResponse>
+    public class WxaGrayReleaseRequest : WechatApiRequest, IInferable<WxaGrayReleaseRequest, WxaGrayReleaseResponse>
     {
         /// <summary>
         /// 获取或设置灰度百分比（范围：1～100）。

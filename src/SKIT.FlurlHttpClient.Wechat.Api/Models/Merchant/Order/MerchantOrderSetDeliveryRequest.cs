@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/order/setdelivery 接口的请求。</para>
     /// </summary>
-    public class MerchantOrderSetDeliveryRequest : WechatApiRequest, IMapResponse<MerchantOrderSetDeliveryRequest, MerchantOrderSetDeliveryResponse>
+    public class MerchantOrderSetDeliveryRequest : WechatApiRequest, IInferable<MerchantOrderSetDeliveryRequest, MerchantOrderSetDeliveryResponse>
     {
         /// <summary>
         /// 获取或设置订单号。

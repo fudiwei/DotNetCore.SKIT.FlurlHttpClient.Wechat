@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/describeextensionuploadinfo 接口的请求。</para>
     /// </summary>
-    public class TcbDescribeExtensionUploadInfoRequest : WechatApiRequest, IMapResponse<TcbDescribeExtensionUploadInfoRequest, TcbDescribeExtensionUploadInfoResponse>
+    public class TcbDescribeExtensionUploadInfoRequest : WechatApiRequest, IInferable<TcbDescribeExtensionUploadInfoRequest, TcbDescribeExtensionUploadInfoResponse>
     {
         public static class Types
         {

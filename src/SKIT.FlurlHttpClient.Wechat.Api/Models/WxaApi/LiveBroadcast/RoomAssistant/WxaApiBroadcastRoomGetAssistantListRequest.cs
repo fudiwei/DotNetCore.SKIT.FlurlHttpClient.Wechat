@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxaapi/broadcast/room/getassistantlist 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoomGetAssistantListRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoomGetAssistantListRequest, WxaApiBroadcastRoomGetAssistantListResponse>
+    public class WxaApiBroadcastRoomGetAssistantListRequest : WechatApiRequest, IInferable<WxaApiBroadcastRoomGetAssistantListRequest, WxaApiBroadcastRoomGetAssistantListResponse>
     {
         /// <summary>
         /// 获取或设置直播间 ID。

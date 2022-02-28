@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/msg_sec_check 接口的请求。</para>
     /// </summary>
-    public class WxaMessageSecurityCheckRequest : WechatApiRequest, IMapResponse<WxaMessageSecurityCheckRequest, WxaMessageSecurityCheckResponse>
+    public class WxaMessageSecurityCheckRequest : WechatApiRequest, IInferable<WxaMessageSecurityCheckRequest, WxaMessageSecurityCheckResponse>
     {
         /// <summary>
         /// 获取或设置用户昵称。

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/menu/addconditional 接口的请求。</para>
     /// </summary>
-    public class CgibinMenuAddConditionalRequest : WechatApiRequest, IMapResponse<CgibinMenuAddConditionalRequest, CgibinMenuAddConditionalResponse>
+    public class CgibinMenuAddConditionalRequest : WechatApiRequest, IInferable<CgibinMenuAddConditionalRequest, CgibinMenuAddConditionalResponse>
     {
         public static class Types
         {

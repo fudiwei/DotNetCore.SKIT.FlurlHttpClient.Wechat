@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/setwebviewdomain 接口的请求。</para>
     /// </summary>
-    public class WxaSetWebviewDomainRequest : WechatApiRequest, IMapResponse<WxaSetWebviewDomainRequest, WxaSetWebviewDomainResponse>
+    public class WxaSetWebviewDomainRequest : WechatApiRequest, IInferable<WxaSetWebviewDomainRequest, WxaSetWebviewDomainResponse>
     {
         /// <summary>
         /// 获取或设置操作类型。

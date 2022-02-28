@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getweanalysisappiddailyretaininfo 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetWeAnalysisAppIdDailyRetainInfoRequest : WechatApiRequest, IMapResponse<DataCubeGetWeAnalysisAppIdDailyRetainInfoRequest, DataCubeGetWeAnalysisAppIdDailyRetainInfoResponse>
+    public class DataCubeGetWeAnalysisAppIdDailyRetainInfoRequest : WechatApiRequest, IInferable<DataCubeGetWeAnalysisAppIdDailyRetainInfoRequest, DataCubeGetWeAnalysisAppIdDailyRetainInfoResponse>
     {
         /// <summary>
         /// 获取或设置开始时间字符串（格式：yyyyMMdd）。

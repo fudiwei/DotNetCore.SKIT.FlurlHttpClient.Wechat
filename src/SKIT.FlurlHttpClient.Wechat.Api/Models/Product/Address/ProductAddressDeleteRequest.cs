@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/address/delete 接口的请求。</para>
     /// </summary>
-    public class ProductAddressDeleteRequest : WechatApiRequest, IMapResponse<ProductAddressDeleteRequest, ProductAddressDeleteResponse>
+    public class ProductAddressDeleteRequest : WechatApiRequest, IInferable<ProductAddressDeleteRequest, ProductAddressDeleteResponse>
     {
         /// <summary>
         /// 获取或设置地址 ID。

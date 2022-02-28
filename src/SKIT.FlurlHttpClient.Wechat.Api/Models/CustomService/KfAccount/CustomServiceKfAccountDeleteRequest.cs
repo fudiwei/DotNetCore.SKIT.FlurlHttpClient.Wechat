@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /customservice/kfaccount/del 接口的请求。</para>
     /// </summary>
-    public class CustomServiceKfAccountDeleteRequest : WechatApiRequest, IMapResponse<CustomServiceKfAccountDeleteRequest, CustomServiceKfAccountDeleteResponse>
+    public class CustomServiceKfAccountDeleteRequest : WechatApiRequest, IInferable<CustomServiceKfAccountDeleteRequest, CustomServiceKfAccountDeleteResponse>
     {
         /// <summary>
         /// 获取或设置客服账号。

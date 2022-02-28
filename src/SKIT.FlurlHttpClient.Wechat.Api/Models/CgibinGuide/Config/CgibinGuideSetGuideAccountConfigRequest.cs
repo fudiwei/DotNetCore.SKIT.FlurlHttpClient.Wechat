@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/setguideacctconfig 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideSetGuideAccountConfigRequest : WechatApiRequest, IMapResponse<CgibinGuideSetGuideAccountConfigRequest, CgibinGuideSetGuideAccountConfigResponse>
+    public class CgibinGuideSetGuideAccountConfigRequest : WechatApiRequest, IInferable<CgibinGuideSetGuideAccountConfigRequest, CgibinGuideSetGuideAccountConfigResponse>
     {
         public static class Types
         {

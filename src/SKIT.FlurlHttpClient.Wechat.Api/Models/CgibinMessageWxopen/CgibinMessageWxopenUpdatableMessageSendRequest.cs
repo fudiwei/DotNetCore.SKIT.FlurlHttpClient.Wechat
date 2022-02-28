@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/message/wxopen/updatablemsg/send 接口的请求。</para>
     /// </summary>
-    public class CgibinMessageWxopenUpdatableMessageSendRequest : WechatApiRequest, IMapResponse<CgibinMessageWxopenUpdatableMessageSendRequest, CgibinMessageWxopenUpdatableMessageSendResponse>
+    public class CgibinMessageWxopenUpdatableMessageSendRequest : WechatApiRequest, IInferable<CgibinMessageWxopenUpdatableMessageSendRequest, CgibinMessageWxopenUpdatableMessageSendResponse>
     {
         public static class Types
         {

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/del_store 接口的请求。</para>
     /// </summary>
-    public class WxaDeleteStoreRequest : WechatApiRequest, IMapResponse<WxaDeleteStoreRequest, WxaDeleteStoreResponse>
+    public class WxaDeleteStoreRequest : WechatApiRequest, IInferable<WxaDeleteStoreRequest, WxaDeleteStoreResponse>
     {
         /// <summary>
         /// 获取或设置门店 ID。

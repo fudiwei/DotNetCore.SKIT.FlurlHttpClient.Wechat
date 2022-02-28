@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /merchant/express/getall 接口的请求。</para>
     /// </summary>
-    public class MerchantExpressGetAllRequest : WechatApiRequest, IMapResponse<MerchantExpressGetAllRequest, MerchantExpressGetAllResponse>
+    public class MerchantExpressGetAllRequest : WechatApiRequest, IInferable<MerchantExpressGetAllRequest, MerchantExpressGetAllResponse>
     {
     }
 }

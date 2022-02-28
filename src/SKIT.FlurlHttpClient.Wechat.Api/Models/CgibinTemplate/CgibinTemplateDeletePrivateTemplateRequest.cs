@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/template/del_private_template 接口的请求。</para>
     /// </summary>
-    public class CgibinTemplateDeletePrivateTemplateRequest : WechatApiRequest, IMapResponse<CgibinTemplateDeletePrivateTemplateRequest, CgibinTemplateDeletePrivateTemplateResponse>
+    public class CgibinTemplateDeletePrivateTemplateRequest : WechatApiRequest, IInferable<CgibinTemplateDeletePrivateTemplateRequest, CgibinTemplateDeletePrivateTemplateResponse>
     {
         /// <summary>
         /// 获取或设置模板 ID。

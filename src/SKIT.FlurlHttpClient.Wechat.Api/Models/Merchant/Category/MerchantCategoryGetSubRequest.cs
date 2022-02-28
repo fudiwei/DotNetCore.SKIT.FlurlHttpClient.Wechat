@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/category/getsub 接口的请求。</para>
     /// </summary>
-    public class MerchantCategoryGetSubRequest : WechatApiRequest, IMapResponse<MerchantCategoryGetSubRequest, MerchantCategoryGetSubResponse>
+    public class MerchantCategoryGetSubRequest : WechatApiRequest, IInferable<MerchantCategoryGetSubRequest, MerchantCategoryGetSubResponse>
     {
         /// <summary>
         /// 获取或设置商品分类 ID。

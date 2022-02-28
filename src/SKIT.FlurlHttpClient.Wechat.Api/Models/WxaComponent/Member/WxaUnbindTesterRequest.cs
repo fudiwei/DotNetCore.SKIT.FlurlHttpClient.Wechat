@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/unbind_tester 接口的请求。</para>
     /// </summary>
-    public class WxaUnbindTesterRequest : WechatApiRequest, IMapResponse<WxaUnbindTesterRequest, WxaUnbindTesterResponse>
+    public class WxaUnbindTesterRequest : WechatApiRequest, IInferable<WxaUnbindTesterRequest, WxaUnbindTesterResponse>
     {
         /// <summary>
         /// 获取或设置体验者微信号。与字段 <see cref="UserString"/> 二选一。

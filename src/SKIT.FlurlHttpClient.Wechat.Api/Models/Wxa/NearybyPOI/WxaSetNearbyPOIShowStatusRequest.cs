@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/setnearbypoishowstatus 接口的请求。</para>
     /// </summary>
-    public class WxaSetNearbyPOIShowStatusRequest : WechatApiRequest, IMapResponse<WxaSetNearbyPOIShowStatusRequest, WxaSetNearbyPOIShowStatusResponse>
+    public class WxaSetNearbyPOIShowStatusRequest : WechatApiRequest, IInferable<WxaSetNearbyPOIShowStatusRequest, WxaSetNearbyPOIShowStatusResponse>
     {
         /// <summary>
         /// 获取或设置附近地点 ID。

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/modify_wxa_jump_domain 接口的请求。</para>
     /// </summary>
-    public class CgibinComponentModifyWxaJumpDomainRequest : WechatApiRequest, IMapResponse<CgibinComponentModifyWxaJumpDomainRequest, CgibinComponentModifyWxaJumpDomainResponse>
+    public class CgibinComponentModifyWxaJumpDomainRequest : WechatApiRequest, IInferable<CgibinComponentModifyWxaJumpDomainRequest, CgibinComponentModifyWxaJumpDomainResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

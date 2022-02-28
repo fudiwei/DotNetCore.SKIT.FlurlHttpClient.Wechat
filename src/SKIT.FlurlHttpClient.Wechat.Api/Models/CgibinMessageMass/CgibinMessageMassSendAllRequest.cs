@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/message/mass/sendall 接口的请求。</para>
     /// </summary>
-    public class CgibinMessageMassSendAllRequest : WechatApiRequest, IMapResponse<CgibinMessageMassSendAllRequest, CgibinMessageMassSendAllResponse>
+    public class CgibinMessageMassSendAllRequest : WechatApiRequest, IInferable<CgibinMessageMassSendAllRequest, CgibinMessageMassSendAllResponse>
     {
         public static class Types
         {

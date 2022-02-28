@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getarticletotal 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetArticleTotalRequest : DataCubeGetArticleSummaryRequest, IMapResponse<DataCubeGetArticleTotalRequest, DataCubeGetArticleTotalResponse>
+    public class DataCubeGetArticleTotalRequest : DataCubeGetArticleSummaryRequest, IInferable<DataCubeGetArticleTotalRequest, DataCubeGetArticleTotalResponse>
     {
     }
 }

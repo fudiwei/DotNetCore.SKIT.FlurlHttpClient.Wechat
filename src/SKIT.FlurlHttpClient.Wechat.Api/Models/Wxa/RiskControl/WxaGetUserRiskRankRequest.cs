@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/getuserriskrank 接口的请求。</para>
     /// </summary>
-    public class WxaGetUserRiskRankRequest : WechatApiRequest, IMapResponse<WxaGetUserRiskRankRequest, WxaGetUserRiskRankResponse>
+    public class WxaGetUserRiskRankRequest : WechatApiRequest, IInferable<WxaGetUserRiskRankRequest, WxaGetUserRiskRankResponse>
     {
         /// <summary>
         /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.AppId"/> 参数。

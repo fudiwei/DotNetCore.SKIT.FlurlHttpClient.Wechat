@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/code/decrypt 接口的请求。</para>
     /// </summary>
-    public class CardCodeDecryptRequest : WechatApiRequest, IMapResponse<CardCodeDecryptRequest, CardCodeDecryptResponse>
+    public class CardCodeDecryptRequest : WechatApiRequest, IInferable<CardCodeDecryptRequest, CardCodeDecryptResponse>
     {
         /// <summary>
         /// 获取或设置经过加密的卡券 Code。

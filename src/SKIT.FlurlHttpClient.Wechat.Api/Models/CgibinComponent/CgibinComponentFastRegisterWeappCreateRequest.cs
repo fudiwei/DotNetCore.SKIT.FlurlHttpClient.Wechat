@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/fastregisterweapp?action=create 接口的请求。</para>
     /// </summary>
-    public class CgibinComponentFastRegisterWeappCreateRequest : WechatApiRequest, IMapResponse<CgibinComponentFastRegisterWeappCreateRequest, CgibinComponentFastRegisterWeappCreateResponse>
+    public class CgibinComponentFastRegisterWeappCreateRequest : WechatApiRequest, IInferable<CgibinComponentFastRegisterWeappCreateRequest, CgibinComponentFastRegisterWeappCreateResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

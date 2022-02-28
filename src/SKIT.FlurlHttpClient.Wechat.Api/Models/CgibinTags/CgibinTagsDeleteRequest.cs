@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/tags/delete 接口的请求。</para>
     /// </summary>
-    public class CgibinTagsDeleteRequest : WechatApiRequest, IMapResponse<CgibinTagsDeleteRequest, CgibinTagsDeleteResponse>
+    public class CgibinTagsDeleteRequest : WechatApiRequest, IInferable<CgibinTagsDeleteRequest, CgibinTagsDeleteResponse>
     {
         public static class Types
         {

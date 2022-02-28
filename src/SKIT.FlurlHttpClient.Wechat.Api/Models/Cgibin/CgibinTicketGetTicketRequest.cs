@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/ticket/getticket 接口的请求。</para>
     /// </summary>
-    public class CgibinTicketGetTicketRequest : WechatApiRequest, IMapResponse<CgibinTicketGetTicketRequest, CgibinTicketGetTicketResponse>
+    public class CgibinTicketGetTicketRequest : WechatApiRequest, IInferable<CgibinTicketGetTicketRequest, CgibinTicketGetTicketResponse>
     {
         /// <summary>
         /// 获取或设置票据类型。

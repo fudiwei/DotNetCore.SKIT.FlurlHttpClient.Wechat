@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/goods/delete 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastGoodsDeleteRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastGoodsDeleteRequest, WxaApiBroadcastGoodsDeleteResponse>
+    public class WxaApiBroadcastGoodsDeleteRequest : WechatApiRequest, IInferable<WxaApiBroadcastGoodsDeleteRequest, WxaApiBroadcastGoodsDeleteResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。

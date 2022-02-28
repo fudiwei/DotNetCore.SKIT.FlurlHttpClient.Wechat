@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/room/addassistant 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoomAddAssistantRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoomAddAssistantRequest, WxaApiBroadcastRoomAddAssistantResponse>
+    public class WxaApiBroadcastRoomAddAssistantRequest : WechatApiRequest, IInferable<WxaApiBroadcastRoomAddAssistantRequest, WxaApiBroadcastRoomAddAssistantResponse>
     {
         public static class Types
         {

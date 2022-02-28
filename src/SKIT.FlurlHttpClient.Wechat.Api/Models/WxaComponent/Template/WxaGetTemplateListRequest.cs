@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxa/gettemplatelist 接口的请求。</para>
     /// </summary>
-    public class WxaGetTemplateListRequest : WechatApiRequest, IMapResponse<WxaGetTemplateListRequest, WxaGetTemplateListResponse>
+    public class WxaGetTemplateListRequest : WechatApiRequest, IInferable<WxaGetTemplateListRequest, WxaGetTemplateListResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

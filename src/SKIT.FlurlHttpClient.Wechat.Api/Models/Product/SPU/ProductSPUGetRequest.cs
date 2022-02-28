@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/spu/get 接口的请求。</para>
     /// </summary>
-    public class ProductSPUGetRequest : WechatApiRequest, IMapResponse<ProductSPUGetRequest, ProductSPUGetResponse>
+    public class ProductSPUGetRequest : WechatApiRequest, IInferable<ProductSPUGetRequest, ProductSPUGetResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。与字段 <see cref="OutProductId"/> 二选一。

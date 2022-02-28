@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [GET] /union/promoter/product/list 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterProductListRequest : WechatApiRequest, IMapResponse<UnionPromoterProductListRequest, UnionPromoterProductListResponse>
+    public class UnionPromoterProductListRequest : WechatApiRequest, IInferable<UnionPromoterProductListRequest, UnionPromoterProductListResponse>
     {
         /// <summary>
         /// 获取或设置分页起始位置。

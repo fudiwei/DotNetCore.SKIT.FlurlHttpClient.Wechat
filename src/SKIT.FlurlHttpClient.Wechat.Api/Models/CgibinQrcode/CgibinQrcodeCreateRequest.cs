@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/qrcode/create 接口的请求。</para>
     /// </summary>
-    public class CgibinQrcodeCreateRequest : WechatApiRequest, IMapResponse<CgibinQrcodeCreateRequest, CgibinQrcodeCreateResponse>
+    public class CgibinQrcodeCreateRequest : WechatApiRequest, IInferable<CgibinQrcodeCreateRequest, CgibinQrcodeCreateResponse>
     {
         public static class Types
         {

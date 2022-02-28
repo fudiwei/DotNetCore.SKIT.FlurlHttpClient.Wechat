@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/open/unbind 接口的请求。</para>
     /// </summary>
-    public class CgibinOpenUnbindRequest : CgibinOpenBindRequest, IMapResponse<CgibinOpenUnbindRequest, CgibinOpenUnbindResponse>
+    public class CgibinOpenUnbindRequest : CgibinOpenBindRequest, IInferable<CgibinOpenUnbindRequest, CgibinOpenUnbindResponse>
     {
     }
 }

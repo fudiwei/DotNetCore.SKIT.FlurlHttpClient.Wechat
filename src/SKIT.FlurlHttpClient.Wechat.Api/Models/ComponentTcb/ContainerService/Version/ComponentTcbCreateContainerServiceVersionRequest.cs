@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/createcsversion 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbCreateContainerServiceVersionRequest : WechatApiRequest, IMapResponse<ComponentTcbCreateContainerServiceVersionRequest, ComponentTcbCreateContainerServiceVersionResponse>
+    public class ComponentTcbCreateContainerServiceVersionRequest : WechatApiRequest, IInferable<ComponentTcbCreateContainerServiceVersionRequest, ComponentTcbCreateContainerServiceVersionResponse>
     {
         public static class Types
         {

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/biz/getusertitleurl 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceBusinessGetUserTitleUrlRequest : WechatApiRequest, IMapResponse<CardInvoiceBusinessGetUserTitleUrlRequest, CardInvoiceBusinessGetUserTitleUrlResponse>
+    public class CardInvoiceBusinessGetUserTitleUrlRequest : WechatApiRequest, IInferable<CardInvoiceBusinessGetUserTitleUrlRequest, CardInvoiceBusinessGetUserTitleUrlResponse>
     {
         /// <summary>
         /// 获取或设置发票抬头。

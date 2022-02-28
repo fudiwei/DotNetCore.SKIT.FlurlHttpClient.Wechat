@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getusersharehour 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetUserShareHourRequest : DataCubeGetArticleSummaryRequest, IMapResponse<DataCubeGetUserShareHourRequest, DataCubeGetUserShareHourResponse>
+    public class DataCubeGetUserShareHourRequest : DataCubeGetArticleSummaryRequest, IInferable<DataCubeGetUserShareHourRequest, DataCubeGetUserShareHourResponse>
     {
     }
 }

@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /componenttcb/dbindex 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbDbIndexRequest : WechatApiRequest, IMapResponse<ComponentTcbDbIndexRequest, ComponentTcbDbIndexResponse>
+    public class ComponentTcbDbIndexRequest : WechatApiRequest, IInferable<ComponentTcbDbIndexRequest, ComponentTcbDbIndexResponse>
     {
         public static class Types
         {

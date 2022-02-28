@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/midas/present 接口的请求。</para>
     /// </summary>
-    public class CgibinMidasPresentRequest : CgibinMidasRequestBase, IMapResponse<CgibinMidasPresentRequest, CgibinMidasPresentResponse>
+    public class CgibinMidasPresentRequest : CgibinMidasRequestBase, IInferable<CgibinMidasPresentRequest, CgibinMidasPresentResponse>
     {
         /// <summary>
         /// 获取或设置订单号。

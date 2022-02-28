@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/room/create 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoomCreateRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoomCreateRequest, WxaApiBroadcastRoomCreateResponse>
+    public class WxaApiBroadcastRoomCreateRequest : WechatApiRequest, IInferable<WxaApiBroadcastRoomCreateRequest, WxaApiBroadcastRoomCreateResponse>
     {
         /// <summary>
         /// 获取或设置直播间名字。

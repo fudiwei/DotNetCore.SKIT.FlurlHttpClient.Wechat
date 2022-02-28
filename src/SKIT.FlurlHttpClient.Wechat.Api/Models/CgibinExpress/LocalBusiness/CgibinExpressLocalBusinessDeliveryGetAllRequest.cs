@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/local/business/delivery/getall 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressLocalBusinessDeliveryGetAllRequest : WechatApiRequest, IMapResponse<CgibinExpressLocalBusinessDeliveryGetAllRequest, CgibinExpressLocalBusinessDeliveryGetAllResponse>
+    public class CgibinExpressLocalBusinessDeliveryGetAllRequest : WechatApiRequest, IInferable<CgibinExpressLocalBusinessDeliveryGetAllRequest, CgibinExpressLocalBusinessDeliveryGetAllResponse>
     {
     }
 }

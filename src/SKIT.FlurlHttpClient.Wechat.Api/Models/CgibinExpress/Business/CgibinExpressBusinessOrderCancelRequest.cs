@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/order/cancel 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressBusinessOrderCancelRequest : WechatApiRequest, IMapResponse<CgibinExpressBusinessOrderCancelRequest, CgibinExpressBusinessOrderCancelResponse>
+    public class CgibinExpressBusinessOrderCancelRequest : WechatApiRequest, IInferable<CgibinExpressBusinessOrderCancelRequest, CgibinExpressBusinessOrderCancelResponse>
     {
         /// <summary>
         /// 获取或设置商户订单号。

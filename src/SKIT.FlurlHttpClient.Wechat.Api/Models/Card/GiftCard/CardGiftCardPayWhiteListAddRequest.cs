@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/giftcard/pay/whitelist/add 接口的请求。</para>
     /// </summary>
-    public class CardGiftCardPayWhiteListAddRequest : WechatApiRequest, IMapResponse<CardGiftCardPayWhiteListAddRequest, CardGiftCardPayWhiteListAddResponse>
+    public class CardGiftCardPayWhiteListAddRequest : WechatApiRequest, IInferable<CardGiftCardPayWhiteListAddRequest, CardGiftCardPayWhiteListAddResponse>
     {
         /// <summary>
         /// 获取或设置微信支付子商户号。

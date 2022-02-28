@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/material/batchget_material 接口的请求。</para>
     /// </summary>
-    public class CgibinMaterialBatchGetMaterialRequest : WechatApiRequest, IMapResponse<CgibinMaterialBatchGetMaterialRequest, CgibinMaterialBatchGetMaterialResponse>
+    public class CgibinMaterialBatchGetMaterialRequest : WechatApiRequest, IInferable<CgibinMaterialBatchGetMaterialRequest, CgibinMaterialBatchGetMaterialResponse>
     {
         /// <summary>
         /// 获取或设置素材类型。

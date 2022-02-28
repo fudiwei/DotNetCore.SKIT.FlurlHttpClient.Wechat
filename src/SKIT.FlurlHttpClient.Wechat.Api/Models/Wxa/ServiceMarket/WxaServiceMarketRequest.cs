@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/servicemarket 接口的请求。</para>
     /// </summary>
-    public class WxaServiceMarketRequest : WechatApiRequest, IMapResponse<WxaServiceMarketRequest, WxaServiceMarketResponse>
+    public class WxaServiceMarketRequest : WechatApiRequest, IInferable<WxaServiceMarketRequest, WxaServiceMarketResponse>
     {
         /// <summary>
         /// 获取或设置服务 ID。

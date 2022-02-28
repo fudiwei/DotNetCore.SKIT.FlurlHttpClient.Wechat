@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/order/getbyfilter 接口的请求。</para>
     /// </summary>
-    public class MerchantOrderGetByFilterRequest : WechatApiRequest, IMapResponse<MerchantOrderGetByFilterRequest, MerchantOrderGetByFilterResponse>
+    public class MerchantOrderGetByFilterRequest : WechatApiRequest, IInferable<MerchantOrderGetByFilterRequest, MerchantOrderGetByFilterResponse>
     {
         /// <summary>
         /// 获取或设置指定订单状态。

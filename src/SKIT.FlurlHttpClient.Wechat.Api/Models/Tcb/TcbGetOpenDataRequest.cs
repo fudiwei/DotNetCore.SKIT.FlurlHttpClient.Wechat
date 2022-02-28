@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/getopendata 接口的请求。</para>
     /// </summary>
-    public class TcbGetOpenDataRequest : WechatApiRequest, IMapResponse<TcbGetOpenDataRequest, TcbGetOpenDataResponse>
+    public class TcbGetOpenDataRequest : WechatApiRequest, IInferable<TcbGetOpenDataRequest, TcbGetOpenDataResponse>
     {
         /// <summary>
         /// 获取或设置用户唯一标识。

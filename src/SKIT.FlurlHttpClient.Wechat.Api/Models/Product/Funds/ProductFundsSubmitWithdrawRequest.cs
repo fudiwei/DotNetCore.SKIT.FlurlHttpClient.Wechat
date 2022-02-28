@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/funds/submitwithdraw 接口的请求。</para>
     /// </summary>
-    public class ProductFundsSubmitWithdrawRequest : WechatApiRequest, IMapResponse<ProductFundsSubmitWithdrawRequest, ProductFundsSubmitWithdrawResponse>
+    public class ProductFundsSubmitWithdrawRequest : WechatApiRequest, IInferable<ProductFundsSubmitWithdrawRequest, ProductFundsSubmitWithdrawResponse>
     {
         /// <summary>
         /// 获取或设置提现金额（单位：分）。

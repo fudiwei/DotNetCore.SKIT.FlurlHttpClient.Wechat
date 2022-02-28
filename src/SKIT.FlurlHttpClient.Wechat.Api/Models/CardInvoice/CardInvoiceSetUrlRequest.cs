@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/invoice/seturl 接口的请求。</para>
     /// </summary>
-    public class CardInvoiceSetUrlRequest : WechatApiRequest, IMapResponse<CardInvoiceSetUrlRequest, CardInvoiceSetUrlResponse>
+    public class CardInvoiceSetUrlRequest : WechatApiRequest, IInferable<CardInvoiceSetUrlRequest, CardInvoiceSetUrlResponse>
     {
     }
 }

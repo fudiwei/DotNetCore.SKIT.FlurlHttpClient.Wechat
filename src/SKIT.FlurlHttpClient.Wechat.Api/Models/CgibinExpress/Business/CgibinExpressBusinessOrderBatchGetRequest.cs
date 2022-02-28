@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/order/batchget 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressBusinessOrderBatchGetRequest : WechatApiRequest, IMapResponse<CgibinExpressBusinessOrderBatchGetRequest, CgibinExpressBusinessOrderBatchGetResponse>
+    public class CgibinExpressBusinessOrderBatchGetRequest : WechatApiRequest, IInferable<CgibinExpressBusinessOrderBatchGetRequest, CgibinExpressBusinessOrderBatchGetResponse>
     {
         public static class Types
         {

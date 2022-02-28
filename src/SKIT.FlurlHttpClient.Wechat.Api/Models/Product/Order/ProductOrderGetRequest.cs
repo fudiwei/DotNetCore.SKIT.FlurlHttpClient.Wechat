@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/order/get 接口的请求。</para>
     /// </summary>
-    public class ProductOrderGetRequest : WechatApiRequest, IMapResponse<ProductOrderGetRequest, ProductOrderGetResponse>
+    public class ProductOrderGetRequest : WechatApiRequest, IInferable<ProductOrderGetRequest, ProductOrderGetResponse>
     {
         /// <summary>
         /// 获取或设置订单 ID。

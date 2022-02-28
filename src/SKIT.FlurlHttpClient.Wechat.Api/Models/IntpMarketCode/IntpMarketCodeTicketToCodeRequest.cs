@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /intp/marketcode/tickettocode 接口的请求。</para>
     /// </summary>
-    public class IntpMarketCodeTicketToCodeRequest : WechatApiRequest, IMapResponse<IntpMarketCodeTicketToCodeRequest, IntpMarketCodeTicketToCodeResponse>
+    public class IntpMarketCodeTicketToCodeRequest : WechatApiRequest, IInferable<IntpMarketCodeTicketToCodeRequest, IntpMarketCodeTicketToCodeResponse>
     {
         /// <summary>
         /// 获取或设置用户 OpenId。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /intp/realname/checkrealnameinfo 接口的请求。</para>
     /// </summary>
-    public class IntpRealNameCheckRealNameInfoRequest : WechatApiRequest, IMapResponse<IntpRealNameCheckRealNameInfoRequest, IntpRealNameCheckRealNameInfoResponse>
+    public class IntpRealNameCheckRealNameInfoRequest : WechatApiRequest, IInferable<IntpRealNameCheckRealNameInfoRequest, IntpRealNameCheckRealNameInfoResponse>
     {
         /// <summary>
         /// 获取或设置用户唯一标识。

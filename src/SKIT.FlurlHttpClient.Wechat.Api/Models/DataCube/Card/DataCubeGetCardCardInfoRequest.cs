@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getcardcardinfo 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetCardCardInfoRequest : DataCubeGetCardBusinessInfoRequest, IMapResponse<DataCubeGetCardCardInfoRequest, DataCubeGetCardCardInfoResponse>
+    public class DataCubeGetCardCardInfoRequest : DataCubeGetCardBusinessInfoRequest, IInferable<DataCubeGetCardCardInfoRequest, DataCubeGetCardCardInfoResponse>
     {
         /// <summary>
         /// 获取或设置卡券 Id。

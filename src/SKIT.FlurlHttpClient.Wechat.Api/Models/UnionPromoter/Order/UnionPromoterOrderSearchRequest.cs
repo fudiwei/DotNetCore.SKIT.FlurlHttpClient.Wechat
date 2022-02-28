@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /union/promoter/order/search 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterOrderSearchRequest : WechatApiRequest, IMapResponse<UnionPromoterOrderSearchRequest, UnionPromoterOrderSearchResponse>
+    public class UnionPromoterOrderSearchRequest : WechatApiRequest, IInferable<UnionPromoterOrderSearchRequest, UnionPromoterOrderSearchResponse>
     {
         /// <summary>
         /// 获取或设置分页页数（从 1 开始）。

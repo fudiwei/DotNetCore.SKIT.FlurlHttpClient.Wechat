@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/sku/get_list 接口的请求。</para>
     /// </summary>
-    public class ProductSKUGetListRequest : WechatApiRequest, IMapResponse<ProductSKUGetListRequest, ProductSKUGetListResponse>
+    public class ProductSKUGetListRequest : WechatApiRequest, IInferable<ProductSKUGetListRequest, ProductSKUGetListResponse>
     {
         /// <summary>
         /// 获取或设置商品 ID。

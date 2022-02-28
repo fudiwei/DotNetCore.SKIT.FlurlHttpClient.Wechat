@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxopen/wxampunlink 接口的请求。</para>
     /// </summary>
-    public class CgibinWxopenWxaMpUnlinkRequest : WechatApiRequest, IMapResponse<CgibinWxopenWxaMpUnlinkRequest, CgibinWxopenWxaMpUnlinkResponse>
+    public class CgibinWxopenWxaMpUnlinkRequest : WechatApiRequest, IInferable<CgibinWxopenWxaMpUnlinkRequest, CgibinWxopenWxaMpUnlinkResponse>
     {
         /// <summary>
         /// 获取或设置小程序 AppId。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxaapp/createwxaqrcode 接口的请求。</para>
     /// </summary>
-    public class CgibinWxaappCreateWxaQrcodeRequest : WechatApiRequest, IMapResponse<CgibinWxaappCreateWxaQrcodeRequest, CgibinWxaappCreateWxaQrcodeResponse>
+    public class CgibinWxaappCreateWxaQrcodeRequest : WechatApiRequest, IInferable<CgibinWxaappCreateWxaQrcodeRequest, CgibinWxaappCreateWxaQrcodeResponse>
     {
         /// <summary>
         /// 获取或设置扫码进入的小程序页面路径。

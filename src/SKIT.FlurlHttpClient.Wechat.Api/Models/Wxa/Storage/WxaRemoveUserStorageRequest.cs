@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/remove_user_storage 接口的请求。</para>
     /// </summary>
-    public class WxaRemoveUserStorageRequest : WechatApiRequest, IMapResponse<WxaRemoveUserStorageRequest, WxaRemoveUserStorageResponse>
+    public class WxaRemoveUserStorageRequest : WechatApiRequest, IInferable<WxaRemoveUserStorageRequest, WxaRemoveUserStorageResponse>
     {
         /// <summary>
         /// 获取或设置用户唯一标识。

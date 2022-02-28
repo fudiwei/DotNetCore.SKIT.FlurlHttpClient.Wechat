@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /shop/audit/audit_category 接口的请求。</para>
     /// </summary>
-    public class ShopAuditAuditCategoryRequest : WechatApiRequest, IMapResponse<ShopAuditAuditCategoryRequest, ShopAuditAuditCategoryResponse>
+    public class ShopAuditAuditCategoryRequest : WechatApiRequest, IInferable<ShopAuditAuditCategoryRequest, ShopAuditAuditCategoryResponse>
     {
         public static class Types
         {

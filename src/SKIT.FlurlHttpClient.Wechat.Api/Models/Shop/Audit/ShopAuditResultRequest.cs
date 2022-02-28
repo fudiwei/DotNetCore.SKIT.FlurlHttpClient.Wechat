@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/audit/result 接口的请求。</para>
     /// </summary>
-    public class ShopAuditResultRequest : WechatApiRequest, IMapResponse<ShopAuditResultRequest, ShopAuditResultResponse>
+    public class ShopAuditResultRequest : WechatApiRequest, IInferable<ShopAuditResultRequest, ShopAuditResultResponse>
     {
         /// <summary>
         /// 获取或设置审核单 ID。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/getwxacode 接口的请求。</para>
     /// </summary>
-    public class WxaGetWxaCodeRequest : WechatApiRequest, IMapResponse<WxaGetWxaCodeRequest, WxaGetWxaCodeResponse>
+    public class WxaGetWxaCodeRequest : WechatApiRequest, IInferable<WxaGetWxaCodeRequest, WxaGetWxaCodeResponse>
     {
         public static class Types
         {

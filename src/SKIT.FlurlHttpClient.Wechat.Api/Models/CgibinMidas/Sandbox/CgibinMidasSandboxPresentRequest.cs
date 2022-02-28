@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/midas/sandbox/present 接口的请求。</para>
     /// </summary>
-    public class CgibinMidasSandboxPresentRequest : CgibinMidasPresentRequest, IMapResponse<CgibinMidasSandboxPresentRequest, CgibinMidasSandboxPresentResponse>
+    public class CgibinMidasSandboxPresentRequest : CgibinMidasPresentRequest, IInferable<CgibinMidasSandboxPresentRequest, CgibinMidasSandboxPresentResponse>
     {
     }
 }

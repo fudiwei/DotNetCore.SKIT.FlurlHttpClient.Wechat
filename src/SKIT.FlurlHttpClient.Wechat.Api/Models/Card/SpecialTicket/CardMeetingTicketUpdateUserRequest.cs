@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/meetingticket/updateuser 接口的请求。</para>
     /// </summary>
-    public class CardMeetingTicketUpdateUserRequest : WechatApiRequest, IMapResponse<CardMeetingTicketUpdateUserRequest, CardMeetingTicketUpdateUserResponse>
+    public class CardMeetingTicketUpdateUserRequest : WechatApiRequest, IInferable<CardMeetingTicketUpdateUserRequest, CardMeetingTicketUpdateUserResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

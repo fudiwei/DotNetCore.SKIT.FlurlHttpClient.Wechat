@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/printer/update 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressBusinessPrinterUpdateRequest : WechatApiRequest, IMapResponse<CgibinExpressBusinessPrinterUpdateRequest, CgibinExpressBusinessPrinterUpdateResponse>
+    public class CgibinExpressBusinessPrinterUpdateRequest : WechatApiRequest, IInferable<CgibinExpressBusinessPrinterUpdateRequest, CgibinExpressBusinessPrinterUpdateResponse>
     {
         /// <summary>
         /// 获取或设置执行操作。

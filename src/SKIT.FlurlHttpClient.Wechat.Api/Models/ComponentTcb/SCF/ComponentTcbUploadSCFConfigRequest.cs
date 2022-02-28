@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /componenttcb/updatescfconfig 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbUploadSCFConfigRequest : WechatApiRequest, IMapResponse<ComponentTcbUploadSCFConfigRequest, ComponentTcbUploadSCFConfigResponse>
+    public class ComponentTcbUploadSCFConfigRequest : WechatApiRequest, IInferable<ComponentTcbUploadSCFConfigRequest, ComponentTcbUploadSCFConfigResponse>
     {
         public static class Types
         {

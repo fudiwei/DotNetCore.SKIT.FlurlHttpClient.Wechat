@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/shorturl 接口的请求。</para>
     /// </summary>
-    public class CgibinShortUrlRequest : WechatApiRequest, IMapResponse<CgibinShortUrlRequest, CgibinShortUrlResponse>
+    public class CgibinShortUrlRequest : WechatApiRequest, IInferable<CgibinShortUrlRequest, CgibinShortUrlResponse>
     {
         /// <summary>
         /// <i>使用默认值即可，无需修改。</i>

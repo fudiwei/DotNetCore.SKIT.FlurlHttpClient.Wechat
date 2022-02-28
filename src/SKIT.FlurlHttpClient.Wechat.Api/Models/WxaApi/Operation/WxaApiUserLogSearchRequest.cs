@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxaapi/userlog/userlog_search 接口的请求。</para>
     /// </summary>
-    public class WxaApiUserLogSearchRequest : WechatApiRequest, IMapResponse<WxaApiUserLogSearchRequest, WxaApiUserLogSearchResponse>
+    public class WxaApiUserLogSearchRequest : WechatApiRequest, IInferable<WxaApiUserLogSearchRequest, WxaApiUserLogSearchResponse>
     {
         /// <summary>
         /// 获取或设置查询日期（格式：yyyyMMdd）。

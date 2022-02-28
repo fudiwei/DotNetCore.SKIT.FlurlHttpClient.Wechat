@@ -51,14 +51,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgid")]
         [System.Text.Json.Serialization.JsonPropertyName("msgid")]
-        public long MessageId { get; set; } = 1;
+        public long MessageId { get; set; }
 
         /// <summary>
         /// 获取或设置每次获取条数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("number")]
         [System.Text.Json.Serialization.JsonPropertyName("number")]
-        public int Limit { get; set; } = 10;
+        public int Limit { get; set; }
 
         /// <summary>
         /// 获取或设置聊天记录列表。

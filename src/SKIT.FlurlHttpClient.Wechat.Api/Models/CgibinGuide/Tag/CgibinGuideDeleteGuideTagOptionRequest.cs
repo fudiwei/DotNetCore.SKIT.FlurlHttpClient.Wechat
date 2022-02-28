@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/delguidetagoption 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideDeleteGuideTagOptionRequest : WechatApiRequest, IMapResponse<CgibinGuideDeleteGuideTagOptionRequest, CgibinGuideDeleteGuideTagOptionResponse>
+    public class CgibinGuideDeleteGuideTagOptionRequest : WechatApiRequest, IInferable<CgibinGuideDeleteGuideTagOptionRequest, CgibinGuideDeleteGuideTagOptionResponse>
     {
         /// <summary>
         /// 获取或设置标签类型名称。

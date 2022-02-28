@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/business/gamematch/deletematchrule 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGameMatchDeleteMatchRuleRequest : WechatApiRequest, IMapResponse<WxaBusinessGameMatchDeleteMatchRuleRequest, WxaBusinessGameMatchDeleteMatchRuleResponse>
+    public class WxaBusinessGameMatchDeleteMatchRuleRequest : WechatApiRequest, IInferable<WxaBusinessGameMatchDeleteMatchRuleRequest, WxaBusinessGameMatchDeleteMatchRuleResponse>
     {
         /// <summary>
         /// 获取或设置匹配池对应的 ID。

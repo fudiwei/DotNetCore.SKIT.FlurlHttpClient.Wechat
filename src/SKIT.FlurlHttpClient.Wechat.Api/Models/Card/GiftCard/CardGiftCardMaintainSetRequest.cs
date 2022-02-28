@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/giftcard/maintain/set 接口的请求。</para>
     /// </summary>
-    public class CardGiftCardMaintainSetRequest : WechatApiRequest, IMapResponse<CardGiftCardMaintainSetRequest, CardGiftCardMaintainSetResponse>
+    public class CardGiftCardMaintainSetRequest : WechatApiRequest, IInferable<CardGiftCardMaintainSetRequest, CardGiftCardMaintainSetResponse>
     {
         /// <summary>
         /// 获取或设置货架 ID。与字段 <see cref="IsAllPage"/> 二选一。

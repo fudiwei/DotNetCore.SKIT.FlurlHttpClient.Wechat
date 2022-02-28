@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/funds/getbalance 接口的请求。</para>
     /// </summary>
-    public class ProductFundsGetBalanceRequest : WechatApiRequest, IMapResponse<ProductFundsGetBalanceRequest, ProductFundsGetBalanceResponse>
+    public class ProductFundsGetBalanceRequest : WechatApiRequest, IInferable<ProductFundsGetBalanceRequest, ProductFundsGetBalanceResponse>
     {
     }
 }

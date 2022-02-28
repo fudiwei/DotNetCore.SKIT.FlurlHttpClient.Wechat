@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/account/get_category_list 接口的请求。</para>
     /// </summary>
-    public class ShopAccountGetCategoryListRequest : WechatApiRequest, IMapResponse<ShopAccountGetCategoryListRequest, ShopAccountGetCategoryListResponse>
+    public class ShopAccountGetCategoryListRequest : WechatApiRequest, IInferable<ShopAccountGetCategoryListRequest, ShopAccountGetCategoryListResponse>
     {
     }
 }

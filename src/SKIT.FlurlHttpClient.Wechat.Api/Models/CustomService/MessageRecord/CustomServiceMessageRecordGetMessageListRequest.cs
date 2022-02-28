@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /customservice/msgrecord/getmsglist 接口的请求。</para>
     /// </summary>
-    public class CustomServiceMessageRecordGetMessageListRequest : WechatApiRequest, IMapResponse<CustomServiceMessageRecordGetMessageListRequest, CustomServiceMessageRecordGetMessageListResponse>
+    public class CustomServiceMessageRecordGetMessageListRequest : WechatApiRequest, IInferable<CustomServiceMessageRecordGetMessageListRequest, CustomServiceMessageRecordGetMessageListResponse>
     {
         /// <summary>
         /// 获取或设置指定起始时间戳。

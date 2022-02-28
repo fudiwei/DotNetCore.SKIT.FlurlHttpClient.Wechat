@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxa/getwxagameframe 接口的请求。</para>
     /// </summary>
-    public class WxaGetWxaGameFrameRequest : WechatApiRequest, IMapResponse<WxaGetWxaGameFrameRequest, WxaGetWxaGameFrameResponse>
+    public class WxaGetWxaGameFrameRequest : WechatApiRequest, IInferable<WxaGetWxaGameFrameRequest, WxaGetWxaGameFrameResponse>
     {
         /// <summary>
         /// 获取或设置房间或对局访问凭证。

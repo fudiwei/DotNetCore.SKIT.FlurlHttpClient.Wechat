@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/decoration/wxaproduct_decoration_check_status 接口的请求。</para>
     /// </summary>
-    public class ProductDecorationWxaProductDecorationCheckStatusRequest : WechatApiRequest, IMapResponse<ProductDecorationWxaProductDecorationCheckStatusRequest, ProductDecorationWxaProductDecorationCheckStatusResponse>
+    public class ProductDecorationWxaProductDecorationCheckStatusRequest : WechatApiRequest, IInferable<ProductDecorationWxaProductDecorationCheckStatusRequest, ProductDecorationWxaProductDecorationCheckStatusResponse>
     {
         /// <summary>
         /// 获取或设置服务 ID。

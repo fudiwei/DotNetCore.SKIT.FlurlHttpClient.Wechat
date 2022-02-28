@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/local/business/update_order 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressLocalBusinessUpdateOrderRequest : CgibinExpressLocalBusinessRealMockUpdateOrderRequest, IMapResponse<CgibinExpressLocalBusinessUpdateOrderRequest, CgibinExpressLocalBusinessUpdateOrderResponse>
+    public class CgibinExpressLocalBusinessUpdateOrderRequest : CgibinExpressLocalBusinessRealMockUpdateOrderRequest, IInferable<CgibinExpressLocalBusinessUpdateOrderRequest, CgibinExpressLocalBusinessUpdateOrderResponse>
     {
         public static class Types
         {

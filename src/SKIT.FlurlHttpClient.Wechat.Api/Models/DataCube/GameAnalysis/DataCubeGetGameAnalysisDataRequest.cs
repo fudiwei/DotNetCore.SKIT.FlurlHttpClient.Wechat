@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /datacube/getgameanalysisdata 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetGameAnalysisDataRequest : WechatApiRequest, IMapResponse<DataCubeGetGameAnalysisDataRequest, DataCubeGetGameAnalysisDataResponse>
+    public class DataCubeGetGameAnalysisDataRequest : WechatApiRequest, IInferable<DataCubeGetGameAnalysisDataRequest, DataCubeGetGameAnalysisDataResponse>
     {
         public static class Types
         {

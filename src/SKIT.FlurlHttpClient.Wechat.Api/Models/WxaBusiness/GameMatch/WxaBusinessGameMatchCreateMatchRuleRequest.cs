@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/business/gamematch/creatematchrule 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGameMatchCreateMatchRuleRequest : WechatApiRequest, IMapResponse<WxaBusinessGameMatchCreateMatchRuleRequest, WxaBusinessGameMatchCreateMatchRuleResponse>
+    public class WxaBusinessGameMatchCreateMatchRuleRequest : WechatApiRequest, IInferable<WxaBusinessGameMatchCreateMatchRuleRequest, WxaBusinessGameMatchCreateMatchRuleResponse>
     {
         public static class Types
         {

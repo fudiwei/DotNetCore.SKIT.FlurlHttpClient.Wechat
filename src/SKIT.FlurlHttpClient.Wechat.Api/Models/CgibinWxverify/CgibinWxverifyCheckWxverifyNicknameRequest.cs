@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wxverify/checkwxverifynickname 接口的请求。</para>
     /// </summary>
-    public class CgibinWxverifyCheckWxverifyNicknameRequest : WechatApiRequest, IMapResponse<CgibinWxverifyCheckWxverifyNicknameRequest, CgibinWxverifyCheckWxverifyNicknameResponse>
+    public class CgibinWxverifyCheckWxverifyNicknameRequest : WechatApiRequest, IInferable<CgibinWxverifyCheckWxverifyNicknameRequest, CgibinWxverifyCheckWxverifyNicknameResponse>
     {
         /// <summary>
         /// 获取或设置小程序昵称。

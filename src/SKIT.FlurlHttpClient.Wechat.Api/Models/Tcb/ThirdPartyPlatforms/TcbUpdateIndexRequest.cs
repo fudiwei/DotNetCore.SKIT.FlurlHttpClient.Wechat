@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /tcb/updateindex 接口的请求。</para>
     /// </summary>
-    public class TcbUpdateIndexRequest : WechatApiRequest, IMapResponse<TcbUpdateIndexRequest, TcbUpdateIndexResponse>
+    public class TcbUpdateIndexRequest : WechatApiRequest, IInferable<TcbUpdateIndexRequest, TcbUpdateIndexResponse>
     {
         public static class Types
         {

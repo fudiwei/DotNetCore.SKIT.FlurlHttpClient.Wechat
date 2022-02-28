@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/shareenv 接口的请求。</para>
     /// </summary>
-    public class TcbShareEnvironmentRequest : WechatApiRequest, IMapResponse<TcbShareEnvironmentRequest, TcbShareEnvironmentResponse>
+    public class TcbShareEnvironmentRequest : WechatApiRequest, IInferable<TcbShareEnvironmentRequest, TcbShareEnvironmentResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

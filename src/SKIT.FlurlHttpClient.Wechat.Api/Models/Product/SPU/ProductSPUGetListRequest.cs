@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/spu/get_list 接口的请求。</para>
     /// </summary>
-    public class ProductSPUGetListRequest : WechatApiRequest, IMapResponse<ProductSPUGetListRequest, ProductSPUGetListResponse>
+    public class ProductSPUGetListRequest : WechatApiRequest, IInferable<ProductSPUGetListRequest, ProductSPUGetListResponse>
     {
         /// <summary>
         /// 获取或设置指定商品上线状态。

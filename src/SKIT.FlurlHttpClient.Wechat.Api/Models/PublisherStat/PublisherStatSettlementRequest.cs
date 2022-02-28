@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /publisher/stat?action=publisher_settlement 接口的请求。</para>
     /// </summary>
-    public class PublisherStatSettlementRequest : WechatApiRequest, IMapResponse<PublisherStatSettlementRequest, PublisherStatSettlementResponse>
+    public class PublisherStatSettlementRequest : WechatApiRequest, IInferable<PublisherStatSettlementRequest, PublisherStatSettlementResponse>
     {
         /// <summary>
         /// 获取或设置分页页数（从 1 开始）。

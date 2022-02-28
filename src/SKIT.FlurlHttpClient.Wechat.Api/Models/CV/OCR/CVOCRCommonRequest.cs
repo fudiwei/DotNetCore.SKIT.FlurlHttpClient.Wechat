@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cv/ocr/comm 接口的请求。</para>
     /// </summary>
-    public class CVOCRCommonRequest : WechatApiRequest, IMapResponse<CVOCRCommonRequest, CVOCRCommonResponse>
+    public class CVOCRCommonRequest : WechatApiRequest, IInferable<CVOCRCommonRequest, CVOCRCommonResponse>
     {
         /// <summary>
         /// 获取或设置要识别的图片 URL。与字段 <see cref="ImageFileBytes"/> 二选一。

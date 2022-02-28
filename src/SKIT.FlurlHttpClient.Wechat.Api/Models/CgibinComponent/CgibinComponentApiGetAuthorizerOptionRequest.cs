@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/api_get_authorizer_option 接口的请求。</para>
     /// </summary>
-    public class CgibinComponentApiGetAuthorizerOptionRequest : WechatApiRequest, IMapResponse<CgibinComponentApiGetAuthorizerOptionRequest, CgibinComponentApiGetAuthorizerOptionResponse>
+    public class CgibinComponentApiGetAuthorizerOptionRequest : WechatApiRequest, IInferable<CgibinComponentApiGetAuthorizerOptionRequest, CgibinComponentApiGetAuthorizerOptionResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

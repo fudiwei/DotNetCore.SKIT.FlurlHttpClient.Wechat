@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getupstreammsgdistmonth 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetUpstreamMessageDistributionMonthRequest : DataCubeGetUpstreamMessageRequest, IMapResponse<DataCubeGetUpstreamMessageDistributionMonthRequest, DataCubeGetUpstreamMessageDistributionMonthResponse>
+    public class DataCubeGetUpstreamMessageDistributionMonthRequest : DataCubeGetUpstreamMessageRequest, IInferable<DataCubeGetUpstreamMessageDistributionMonthRequest, DataCubeGetUpstreamMessageDistributionMonthResponse>
     {
     }
 }

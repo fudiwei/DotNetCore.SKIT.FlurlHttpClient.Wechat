@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/addguidemassendjob 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideAddGuideMassSendJobRequest : WechatApiRequest, IMapResponse<CgibinGuideAddGuideMassSendJobRequest, CgibinGuideAddGuideMassSendJobResponse>
+    public class CgibinGuideAddGuideMassSendJobRequest : WechatApiRequest, IInferable<CgibinGuideAddGuideMassSendJobRequest, CgibinGuideAddGuideMassSendJobResponse>
     {
         public static class Types
         {

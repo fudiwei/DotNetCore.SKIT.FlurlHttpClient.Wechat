@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/address/get 接口的请求。</para>
     /// </summary>
-    public class ProductAddressGetRequest : WechatApiRequest, IMapResponse<ProductAddressGetRequest, ProductAddressGetResponse>
+    public class ProductAddressGetRequest : WechatApiRequest, IInferable<ProductAddressGetRequest, ProductAddressGetResponse>
     {
         /// <summary>
         /// 获取或设置地址 ID。

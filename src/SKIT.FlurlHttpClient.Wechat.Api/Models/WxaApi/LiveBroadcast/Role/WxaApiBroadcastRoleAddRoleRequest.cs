@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/role/addrole 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoleAddRoleRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastRoleAddRoleRequest, WxaApiBroadcastRoleAddRoleResponse>
+    public class WxaApiBroadcastRoleAddRoleRequest : WechatApiRequest, IInferable<WxaApiBroadcastRoleAddRoleRequest, WxaApiBroadcastRoleAddRoleResponse>
     {
         /// <summary>
         /// 获取或设置角色类型。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxa/getwxagameidentityinfo 接口的请求。</para>
     /// </summary>
-    public class WxaGetWxaGameIdentityInfoRequest : WechatApiRequest, IMapResponse<WxaGetWxaGameIdentityInfoRequest, WxaGetWxaGameIdentityInfoResponse>
+    public class WxaGetWxaGameIdentityInfoRequest : WechatApiRequest, IInferable<WxaGetWxaGameIdentityInfoRequest, WxaGetWxaGameIdentityInfoResponse>
     {
         /// <summary>
         /// 获取或设置房间或对局访问凭证。

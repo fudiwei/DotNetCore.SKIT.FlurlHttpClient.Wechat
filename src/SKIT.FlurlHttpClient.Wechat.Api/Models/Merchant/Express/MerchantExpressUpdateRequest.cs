@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /merchant/express/update 接口的请求。</para>
     /// </summary>
-    public class MerchantExpressUpdateRequest : WechatApiRequest, IMapResponse<MerchantExpressUpdateRequest, MerchantExpressUpdateResponse>
+    public class MerchantExpressUpdateRequest : WechatApiRequest, IInferable<MerchantExpressUpdateRequest, MerchantExpressUpdateResponse>
     {
         public static class Types
         {

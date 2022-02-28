@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/get 接口的请求。</para>
     /// </summary>
-    public class CardGetRequest : WechatApiRequest, IMapResponse<CardGetRequest, CardGetResponse>
+    public class CardGetRequest : WechatApiRequest, IInferable<CardGetRequest, CardGetResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

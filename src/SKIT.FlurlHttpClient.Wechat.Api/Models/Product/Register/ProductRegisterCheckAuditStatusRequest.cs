@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/register/check_audit_status 接口的请求。</para>
     /// </summary>
-    public class ProductRegisterCheckAuditStatusRequest : WechatApiRequest, IMapResponse<ProductRegisterCheckAuditStatusRequest, ProductRegisterCheckAuditStatusResponse>
+    public class ProductRegisterCheckAuditStatusRequest : WechatApiRequest, IInferable<ProductRegisterCheckAuditStatusRequest, ProductRegisterCheckAuditStatusResponse>
     {
         /// <summary>
         /// 获取或设置微信号。

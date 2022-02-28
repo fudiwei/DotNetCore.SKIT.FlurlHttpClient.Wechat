@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/local/business/order/pre_add 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressLocalBusinessOrderPreAddRequest : CgibinExpressLocalBusinessRequestBase, IMapResponse<CgibinExpressLocalBusinessOrderPreAddRequest, CgibinExpressLocalBusinessOrderPreAddResponse>
+    public class CgibinExpressLocalBusinessOrderPreAddRequest : CgibinExpressLocalBusinessRequestBase, IInferable<CgibinExpressLocalBusinessOrderPreAddRequest, CgibinExpressLocalBusinessOrderPreAddResponse>
     {
         public static class Types
         {

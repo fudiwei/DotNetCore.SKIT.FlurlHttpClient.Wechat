@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/room/editroom 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastRoomEditRoomRequest : WxaApiBroadcastRoomCreateRequest, IMapResponse<WxaApiBroadcastRoomEditRoomRequest, WxaApiBroadcastRoomEditRoomResponse>
+    public class WxaApiBroadcastRoomEditRoomRequest : WxaApiBroadcastRoomCreateRequest, IInferable<WxaApiBroadcastRoomEditRoomRequest, WxaApiBroadcastRoomEditRoomResponse>
     {
         /// <summary>
         /// 获取或设置直播间 ID。

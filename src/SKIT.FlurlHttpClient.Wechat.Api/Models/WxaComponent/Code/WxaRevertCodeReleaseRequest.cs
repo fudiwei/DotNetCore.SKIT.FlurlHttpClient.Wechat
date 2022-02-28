@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxa/revertcoderelease 接口的请求。</para>
     /// </summary>
-    public class WxaRevertCodeReleaseRequest : WechatApiRequest, IMapResponse<WxaRevertCodeReleaseRequest, WxaRevertCodeReleaseResponse>
+    public class WxaRevertCodeReleaseRequest : WechatApiRequest, IInferable<WxaRevertCodeReleaseRequest, WxaRevertCodeReleaseResponse>
     {
         /// <summary>
         /// 获取或设置操作类型。

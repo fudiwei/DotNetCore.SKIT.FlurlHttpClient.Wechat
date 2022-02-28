@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/guide/getguideacct 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideGetGuideAccountRequest : WechatApiRequest, IMapResponse<CgibinGuideGetGuideAccountRequest, CgibinGuideGetGuideAccountResponse>
+    public class CgibinGuideGetGuideAccountRequest : WechatApiRequest, IInferable<CgibinGuideGetGuideAccountRequest, CgibinGuideGetGuideAccountResponse>
     {
         /// <summary>
         /// 获取或设置顾问微信号。与字段 <see cref="GuideOpenId"/> 二选一。

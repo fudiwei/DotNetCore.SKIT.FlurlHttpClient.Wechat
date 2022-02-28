@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getcardbizuininfo 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetCardBusinessInfoRequest : WechatApiRequest, IMapResponse<DataCubeGetCardBusinessInfoRequest, DataCubeGetCardBusinessInfoResponse>
+    public class DataCubeGetCardBusinessInfoRequest : WechatApiRequest, IInferable<DataCubeGetCardBusinessInfoRequest, DataCubeGetCardBusinessInfoResponse>
     {
         /// <summary>
         /// 获取或设置获取数据的起始日期（格式：yyyy-MM-dd）。

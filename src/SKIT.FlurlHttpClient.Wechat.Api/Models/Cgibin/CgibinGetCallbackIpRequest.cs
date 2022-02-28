@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/getcallbackip 接口的请求。</para>
     /// </summary>
-    public class CgibinGetCallbackIpRequest : WechatApiRequest, IMapResponse<CgibinGetCallbackIpRequest, CgibinGetCallbackIpResponse>
+    public class CgibinGetCallbackIpRequest : WechatApiRequest, IInferable<CgibinGetCallbackIpRequest, CgibinGetCallbackIpResponse>
     {
     }
 }

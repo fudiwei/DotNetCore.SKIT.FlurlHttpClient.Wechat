@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/funds/getorderflow 接口的请求。</para>
     /// </summary>
-    public class ProductFundsGetOrderFlowRequest : WechatApiRequest, IMapResponse<ProductFundsGetOrderFlowRequest, ProductFundsGetOrderFlowResponse>
+    public class ProductFundsGetOrderFlowRequest : WechatApiRequest, IInferable<ProductFundsGetOrderFlowRequest, ProductFundsGetOrderFlowResponse>
     {
         /// <summary>
         /// 获取或设置订单 ID。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/business/getliveinfo?action=get_replay 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGetLiveReplayRequest : WechatApiRequest, IMapResponse<WxaBusinessGetLiveReplayRequest, WxaBusinessGetLiveReplayResponse>
+    public class WxaBusinessGetLiveReplayRequest : WechatApiRequest, IInferable<WxaBusinessGetLiveReplayRequest, WxaBusinessGetLiveReplayResponse>
     {
         /// <summary>
         /// <i>（使用默认值即可，无需修改）</i>

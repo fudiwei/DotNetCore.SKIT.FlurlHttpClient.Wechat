@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/giftcard/pay/submch/bind 接口的请求。</para>
     /// </summary>
-    public class CardGiftCardPaySubMerchantBindRequest : WechatApiRequest, IMapResponse<CardGiftCardPaySubMerchantBindRequest, CardGiftCardPaySubMerchantBindResponse>
+    public class CardGiftCardPaySubMerchantBindRequest : WechatApiRequest, IInferable<CardGiftCardPaySubMerchantBindRequest, CardGiftCardPaySubMerchantBindResponse>
     {
         /// <summary>
         /// 获取或设置微信支付子商户号。

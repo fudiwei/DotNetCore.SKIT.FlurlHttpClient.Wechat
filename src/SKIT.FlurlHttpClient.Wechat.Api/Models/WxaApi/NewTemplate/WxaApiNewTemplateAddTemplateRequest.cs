@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxaapi/newtmpl/addtemplate 接口的请求。</para>
     /// </summary>
-    public class WxaApiNewTemplateAddTemplateRequest : WechatApiRequest, IMapResponse<WxaApiNewTemplateAddTemplateRequest, WxaApiNewTemplateAddTemplateResponse>
+    public class WxaApiNewTemplateAddTemplateRequest : WechatApiRequest, IInferable<WxaApiNewTemplateAddTemplateRequest, WxaApiNewTemplateAddTemplateResponse>
     {
         /// <summary>
         /// 获取或设置模板标题 ID。

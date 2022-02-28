@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/material/del_material 接口的请求。</para>
     /// </summary>
-    public class CgibinMaterialDeleteMaterialRequest : WechatApiRequest, IMapResponse<CgibinMaterialDeleteMaterialRequest, CgibinMaterialDeleteMaterialResponse>
+    public class CgibinMaterialDeleteMaterialRequest : WechatApiRequest, IInferable<CgibinMaterialDeleteMaterialRequest, CgibinMaterialDeleteMaterialResponse>
     {
         /// <summary>
         /// 获取或设置媒体文件标识。

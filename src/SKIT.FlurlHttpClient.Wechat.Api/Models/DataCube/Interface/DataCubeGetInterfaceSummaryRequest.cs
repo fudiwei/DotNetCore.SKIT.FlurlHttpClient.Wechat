@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getinterfacesummary 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetInterfaceSummaryRequest : WechatApiRequest, IMapResponse<DataCubeGetInterfaceSummaryRequest, DataCubeGetInterfaceSummaryResponse>
+    public class DataCubeGetInterfaceSummaryRequest : WechatApiRequest, IInferable<DataCubeGetInterfaceSummaryRequest, DataCubeGetInterfaceSummaryResponse>
     {
         /// <summary>
         /// 获取或设置获取数据的起始日期（格式：yyyy-MM-dd）。

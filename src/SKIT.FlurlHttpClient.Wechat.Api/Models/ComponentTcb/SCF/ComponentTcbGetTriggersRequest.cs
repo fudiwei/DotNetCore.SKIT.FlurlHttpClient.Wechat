@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/gettriggers 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbGetTriggersRequest : WechatApiRequest, IMapResponse<ComponentTcbGetTriggersRequest, ComponentTcbGetTriggersResponse>
+    public class ComponentTcbGetTriggersRequest : WechatApiRequest, IInferable<ComponentTcbGetTriggersRequest, ComponentTcbGetTriggersResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

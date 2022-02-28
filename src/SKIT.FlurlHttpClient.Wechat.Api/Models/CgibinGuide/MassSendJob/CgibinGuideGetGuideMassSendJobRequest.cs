@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getguidemassendjob 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideGetGuideMassSendJobRequest : WechatApiRequest, IMapResponse<CgibinGuideGetGuideMassSendJobRequest, CgibinGuideGetGuideMassSendJobResponse>
+    public class CgibinGuideGetGuideMassSendJobRequest : WechatApiRequest, IInferable<CgibinGuideGetGuideMassSendJobRequest, CgibinGuideGetGuideMassSendJobResponse>
     {
         /// <summary>
         /// 获取或设置任务 ID。

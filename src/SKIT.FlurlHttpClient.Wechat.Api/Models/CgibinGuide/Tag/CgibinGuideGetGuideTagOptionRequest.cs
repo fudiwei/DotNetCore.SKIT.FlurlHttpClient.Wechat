@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getguidetagoption 接口的请求。</para>
     /// </summary>
-    public class CgibinGuideGetGuideTagOptionRequest : WechatApiRequest, IMapResponse<CgibinGuideGetGuideTagOptionRequest, CgibinGuideGetGuideTagOptionResponse>
+    public class CgibinGuideGetGuideTagOptionRequest : WechatApiRequest, IInferable<CgibinGuideGetGuideTagOptionRequest, CgibinGuideGetGuideTagOptionResponse>
     {
     }
 }

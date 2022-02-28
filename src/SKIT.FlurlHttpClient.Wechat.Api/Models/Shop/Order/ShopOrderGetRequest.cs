@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/order/get 接口的请求。</para>
     /// </summary>
-    public class ShopOrderGetRequest : WechatApiRequest, IMapResponse<ShopOrderGetRequest, ShopOrderGetResponse>
+    public class ShopOrderGetRequest : WechatApiRequest, IInferable<ShopOrderGetRequest, ShopOrderGetResponse>
     {
         /// <summary>
         /// 获取或设置订单 ID。与字段 <see cref="OutOrderId"/> 二选一。

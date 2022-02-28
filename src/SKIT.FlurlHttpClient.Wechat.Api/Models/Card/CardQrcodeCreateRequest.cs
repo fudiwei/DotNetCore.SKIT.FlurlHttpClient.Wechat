@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /card/qrcode/create 接口的请求。</para>
     /// </summary>
-    public class CardQrcodeCreateRequest : WechatApiRequest, IMapResponse<CardQrcodeCreateRequest, CardQrcodeCreateResponse>
+    public class CardQrcodeCreateRequest : WechatApiRequest, IInferable<CardQrcodeCreateRequest, CardQrcodeCreateResponse>
     {
         public static class Types
         {

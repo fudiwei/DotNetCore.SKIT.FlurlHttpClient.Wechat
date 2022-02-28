@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/invokecloudfunction 接口的请求。</para>
     /// </summary>
-    public class TcbInvokeCloudFunctionRequest : WechatApiRequest, IMapResponse<TcbInvokeCloudFunctionRequest, TcbInvokeCloudFunctionResponse>
+    public class TcbInvokeCloudFunctionRequest : WechatApiRequest, IInferable<TcbInvokeCloudFunctionRequest, TcbInvokeCloudFunctionResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

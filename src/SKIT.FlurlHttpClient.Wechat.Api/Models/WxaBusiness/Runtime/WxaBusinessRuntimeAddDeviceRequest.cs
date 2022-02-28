@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/business/runtime/adddevice 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessRuntimeAddDeviceRequest : WechatApiRequest, IMapResponse<WxaBusinessRuntimeAddDeviceRequest, WxaBusinessRuntimeAddDeviceResponse>
+    public class WxaBusinessRuntimeAddDeviceRequest : WechatApiRequest, IInferable<WxaBusinessRuntimeAddDeviceRequest, WxaBusinessRuntimeAddDeviceResponse>
     {
         /// <summary>
         /// 获取或设置产品 ID。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/open/create 接口的请求。</para>
     /// </summary>
-    public class CgibinOpenCreateRequest : WechatApiRequest, IMapResponse<CgibinOpenCreateRequest, CgibinOpenCreateResponse>
+    public class CgibinOpenCreateRequest : WechatApiRequest, IInferable<CgibinOpenCreateRequest, CgibinOpenCreateResponse>
     {
         /// <summary>
         /// 获取或设置授权方的 AppId。

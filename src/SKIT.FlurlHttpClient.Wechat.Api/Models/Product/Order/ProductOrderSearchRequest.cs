@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /product/order/search 接口的请求。</para>
     /// </summary>
-    public class ProductOrderSearchRequest : WechatApiRequest, IMapResponse<ProductOrderSearchRequest, ProductOrderSearchResponse>
+    public class ProductOrderSearchRequest : WechatApiRequest, IInferable<ProductOrderSearchRequest, ProductOrderSearchResponse>
     {
         /// <summary>
         /// 获取或设置指定付款时间的开始时间。

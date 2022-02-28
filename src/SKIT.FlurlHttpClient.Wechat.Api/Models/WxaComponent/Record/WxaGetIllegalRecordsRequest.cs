@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/getillegalrecords 接口的请求。</para>
     /// </summary>
-    public class WxaGetIllegalRecordsRequest : WechatApiRequest, IMapResponse<WxaGetIllegalRecordsRequest, WxaGetIllegalRecordsResponse>
+    public class WxaGetIllegalRecordsRequest : WechatApiRequest, IInferable<WxaGetIllegalRecordsRequest, WxaGetIllegalRecordsResponse>
     {
         /// <summary>
         /// 获取或设置查询时间段的开始时间戳。

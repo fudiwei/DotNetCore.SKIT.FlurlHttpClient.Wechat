@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/dbexport 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbDbExportRequest : WechatApiRequest, IMapResponse<ComponentTcbDbExportRequest, ComponentTcbDbExportResponse>
+    public class ComponentTcbDbExportRequest : WechatApiRequest, IInferable<ComponentTcbDbExportRequest, ComponentTcbDbExportResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/delnearbypoi 接口的请求。</para>
     /// </summary>
-    public class WxaDeleteNearbyPOIRequest : WechatApiRequest, IMapResponse<WxaDeleteNearbyPOIRequest, WxaDeleteNearbyPOIResponse>
+    public class WxaDeleteNearbyPOIRequest : WechatApiRequest, IInferable<WxaDeleteNearbyPOIRequest, WxaDeleteNearbyPOIResponse>
     {
         /// <summary>
         /// 获取或设置附近地点 ID。

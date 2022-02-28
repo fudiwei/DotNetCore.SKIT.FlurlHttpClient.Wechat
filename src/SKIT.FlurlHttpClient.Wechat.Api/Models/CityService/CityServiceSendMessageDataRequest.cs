@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cityservice/sendmsgdata 接口的请求。</para>
     /// </summary>
-    public class CityServiceSendMessageDataRequest : WechatApiRequest, IMapResponse<CityServiceSendMessageDataRequest, CityServiceSendMessageDataResponse>
+    public class CityServiceSendMessageDataRequest : WechatApiRequest, IInferable<CityServiceSendMessageDataRequest, CityServiceSendMessageDataResponse>
     {
         public static class Types
         {

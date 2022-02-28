@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/search/wxaapi_submitpages 接口的请求。</para>
     /// </summary>
-    public class WxaSearchWxaApiSubmitPagesRequest : WechatApiRequest, IMapResponse<WxaSearchWxaApiSubmitPagesRequest, WxaSearchWxaApiSubmitPagesResponse>
+    public class WxaSearchWxaApiSubmitPagesRequest : WechatApiRequest, IInferable<WxaSearchWxaApiSubmitPagesRequest, WxaSearchWxaApiSubmitPagesResponse>
     {
         public static class Types
         {

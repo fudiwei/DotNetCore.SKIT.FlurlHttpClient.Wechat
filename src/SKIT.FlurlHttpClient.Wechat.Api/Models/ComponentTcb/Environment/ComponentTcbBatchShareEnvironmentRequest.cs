@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /componenttcb/batchshareenv 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbBatchShareEnvironmentRequest : WechatApiRequest, IMapResponse<ComponentTcbBatchShareEnvironmentRequest, ComponentTcbBatchShareEnvironmentResponse>
+    public class ComponentTcbBatchShareEnvironmentRequest : WechatApiRequest, IInferable<ComponentTcbBatchShareEnvironmentRequest, ComponentTcbBatchShareEnvironmentResponse>
     {
         public static class Types
         {

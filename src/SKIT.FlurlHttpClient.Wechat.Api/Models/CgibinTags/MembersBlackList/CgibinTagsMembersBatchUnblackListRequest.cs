@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/tags/members/batchunblacklist 接口的请求。</para>
     /// </summary>
-    public class CgibinTagsMembersBatchUnblackListRequest : WechatApiRequest, IMapResponse<CgibinTagsMembersBatchUnblackListRequest, CgibinTagsMembersBatchUnblackListResponse>
+    public class CgibinTagsMembersBatchUnblackListRequest : WechatApiRequest, IInferable<CgibinTagsMembersBatchUnblackListRequest, CgibinTagsMembersBatchUnblackListResponse>
     {
         /// <summary>
         /// 获取或设置要取消拉黑的用户 OpenId 列表。

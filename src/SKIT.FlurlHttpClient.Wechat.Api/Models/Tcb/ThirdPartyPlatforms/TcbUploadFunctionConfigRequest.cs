@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /tcb/uploadfuncconfig 接口的请求。</para>
     /// </summary>
-    public class TcbUploadFunctionConfigRequest : WechatApiRequest, IMapResponse<TcbUploadFunctionConfigRequest, TcbUploadFunctionConfigResponse>
+    public class TcbUploadFunctionConfigRequest : WechatApiRequest, IInferable<TcbUploadFunctionConfigRequest, TcbUploadFunctionConfigResponse>
     {
         /// <summary>
         /// 获取或设置环境 ID。

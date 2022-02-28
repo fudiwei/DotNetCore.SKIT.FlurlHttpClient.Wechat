@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/tags/create 接口的请求。</para>
     /// </summary>
-    public class CgibinTagsCreateRequest : WechatApiRequest, IMapResponse<CgibinTagsCreateRequest, CgibinTagsCreateResponse>
+    public class CgibinTagsCreateRequest : WechatApiRequest, IInferable<CgibinTagsCreateRequest, CgibinTagsCreateResponse>
     {
         public static class Types
         {

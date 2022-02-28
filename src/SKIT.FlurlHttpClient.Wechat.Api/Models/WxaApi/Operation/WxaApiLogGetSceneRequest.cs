@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /wxaapi/log/get_scene 接口的请求。</para>
     /// </summary>
-    public class WxaApiLogGetSceneRequest : WechatApiRequest, IMapResponse<WxaApiLogGetSceneRequest, WxaApiLogGetSceneResponse>
+    public class WxaApiLogGetSceneRequest : WechatApiRequest, IInferable<WxaApiLogGetSceneRequest, WxaApiLogGetSceneResponse>
     {
     }
 }

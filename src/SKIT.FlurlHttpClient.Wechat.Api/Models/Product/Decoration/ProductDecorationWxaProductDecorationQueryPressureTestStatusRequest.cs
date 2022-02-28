@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /product/decoration/wxaproduct_decoration_query_pressure_test_status 接口的请求。</para>
     /// </summary>
-    public class ProductDecorationWxaProductDecorationQueryPressureTestStatusRequest : WechatApiRequest, IMapResponse<ProductDecorationWxaProductDecorationQueryPressureTestStatusRequest, ProductDecorationWxaProductDecorationQueryPressureTestStatusResponse>
+    public class ProductDecorationWxaProductDecorationQueryPressureTestStatusRequest : WechatApiRequest, IInferable<ProductDecorationWxaProductDecorationQueryPressureTestStatusRequest, ProductDecorationWxaProductDecorationQueryPressureTestStatusResponse>
     {
         /// <summary>
         /// 获取或设置压测 ID。

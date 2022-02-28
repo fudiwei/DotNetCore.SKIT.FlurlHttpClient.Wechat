@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /shop/aftersale/update 接口的请求。</para>
     /// </summary>
-    public class ShopAftersaleUpdateRequest : WechatApiRequest, IMapResponse<ShopAftersaleUpdateRequest, ShopAftersaleUpdateResponse>
+    public class ShopAftersaleUpdateRequest : WechatApiRequest, IInferable<ShopAftersaleUpdateRequest, ShopAftersaleUpdateResponse>
     {
         /// <summary>
         /// 获取或设置商家自定义订单号。

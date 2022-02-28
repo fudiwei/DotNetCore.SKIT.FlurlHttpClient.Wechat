@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /datacube/getweanalysisappidvisitpage 接口的请求。</para>
     /// </summary>
-    public class DataCubeGetWeAnalysisAppIdVisitPageRequest : DataCubeGetWeAnalysisAppIdDailyRetainInfoRequest, IMapResponse<DataCubeGetWeAnalysisAppIdVisitPageRequest, DataCubeGetWeAnalysisAppIdVisitPageResponse>
+    public class DataCubeGetWeAnalysisAppIdVisitPageRequest : DataCubeGetWeAnalysisAppIdDailyRetainInfoRequest, IInferable<DataCubeGetWeAnalysisAppIdVisitPageRequest, DataCubeGetWeAnalysisAppIdVisitPageResponse>
     {
     }
 }

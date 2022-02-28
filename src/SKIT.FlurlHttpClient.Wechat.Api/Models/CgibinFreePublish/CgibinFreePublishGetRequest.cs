@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/freepublish/get 接口的请求。</para>
     /// </summary>
-    public class CgibinFreePublishGetRequest : WechatApiRequest, IMapResponse<CgibinFreePublishGetRequest, CgibinFreePublishGetResponse>
+    public class CgibinFreePublishGetRequest : WechatApiRequest, IInferable<CgibinFreePublishGetRequest, CgibinFreePublishGetResponse>
     {
         /// <summary>
         /// 获取或设置发布任务 ID。

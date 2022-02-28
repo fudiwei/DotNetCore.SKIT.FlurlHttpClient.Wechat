@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /nontax/micropay 接口的请求。</para>
     /// </summary>
-    public class NontaxMicroPayRequest : WechatApiRequest, IMapResponse<NontaxMicroPayRequest, NontaxMicroPayResponse>
+    public class NontaxMicroPayRequest : WechatApiRequest, IInferable<NontaxMicroPayRequest, NontaxMicroPayResponse>
     {
         public static class Types
         {

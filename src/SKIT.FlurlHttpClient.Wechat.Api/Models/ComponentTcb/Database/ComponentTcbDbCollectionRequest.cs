@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /componenttcb/dbcollection 接口的请求。</para>
     /// </summary>
-    public class ComponentTcbDbCollectionRequest : WechatApiRequest, IMapResponse<ComponentTcbDbCollectionRequest, ComponentTcbDbCollectionResponse>
+    public class ComponentTcbDbCollectionRequest : WechatApiRequest, IInferable<ComponentTcbDbCollectionRequest, ComponentTcbDbCollectionResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxa/business/gamematch/setmatchopenstate 接口的请求。</para>
     /// </summary>
-    public class WxaBusinessGameMatchSetMatchOpenStateRequest : WechatApiRequest, IMapResponse<WxaBusinessGameMatchSetMatchOpenStateRequest, WxaBusinessGameMatchSetMatchOpenStateResponse>
+    public class WxaBusinessGameMatchSetMatchOpenStateRequest : WechatApiRequest, IInferable<WxaBusinessGameMatchSetMatchOpenStateRequest, WxaBusinessGameMatchSetMatchOpenStateResponse>
     {
         /// <summary>
         /// 获取或设置匹配池对应的 ID。

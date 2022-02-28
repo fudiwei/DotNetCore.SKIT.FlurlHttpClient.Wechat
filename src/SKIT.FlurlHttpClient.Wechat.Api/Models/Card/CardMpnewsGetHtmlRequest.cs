@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /card/mpnews/gethtml 接口的请求。</para>
     /// </summary>
-    public class CardMpnewsGetHtmlRequest : WechatApiRequest, IMapResponse<CardMpnewsGetHtmlRequest, CardMpnewsGetHtmlResponse>
+    public class CardMpnewsGetHtmlRequest : WechatApiRequest, IInferable<CardMpnewsGetHtmlRequest, CardMpnewsGetHtmlResponse>
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

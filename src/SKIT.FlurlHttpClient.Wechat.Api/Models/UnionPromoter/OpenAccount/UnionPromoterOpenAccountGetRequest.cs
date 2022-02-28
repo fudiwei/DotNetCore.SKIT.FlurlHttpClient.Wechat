@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [GET] /union/promoter/open_account/get 接口的请求。</para>
     /// </summary>
-    public class UnionPromoterOpenAccountGetRequest : WechatApiRequest, IMapResponse<UnionPromoterOpenAccountGetRequest, UnionPromoterOpenAccountGetResponse>
+    public class UnionPromoterOpenAccountGetRequest : WechatApiRequest, IInferable<UnionPromoterOpenAccountGetRequest, UnionPromoterOpenAccountGetResponse>
     {
     }
 }

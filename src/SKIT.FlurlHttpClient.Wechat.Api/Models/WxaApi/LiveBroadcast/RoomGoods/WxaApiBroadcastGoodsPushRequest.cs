@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /wxaapi/broadcast/goods/push 接口的请求。</para>
     /// </summary>
-    public class WxaApiBroadcastGoodsPushRequest : WechatApiRequest, IMapResponse<WxaApiBroadcastGoodsPushRequest, WxaApiBroadcastGoodsPushResponse>
+    public class WxaApiBroadcastGoodsPushRequest : WechatApiRequest, IInferable<WxaApiBroadcastGoodsPushRequest, WxaApiBroadcastGoodsPushResponse>
     {
         /// <summary>
         /// 获取或设置直播间 ID。

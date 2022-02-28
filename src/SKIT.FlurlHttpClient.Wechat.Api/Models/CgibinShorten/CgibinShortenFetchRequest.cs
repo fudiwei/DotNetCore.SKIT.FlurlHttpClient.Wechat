@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/shorten/fetch 接口的请求。</para>
     /// </summary>
-    public class CgibinShortenFetchRequest : WechatApiRequest, IMapResponse<CgibinShortenFetchRequest, CgibinShortenFetchResponse>
+    public class CgibinShortenFetchRequest : WechatApiRequest, IInferable<CgibinShortenFetchRequest, CgibinShortenFetchResponse>
     {
         /// <summary>
         /// 获取或设置短 Key。
