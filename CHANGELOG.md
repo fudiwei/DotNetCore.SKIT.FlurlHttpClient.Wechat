@@ -42,6 +42,8 @@
 
     -   **变更**：修改序列化回调通知事件的相关扩展方法 `SerializeEventToXml`、`SerializeEventToJson`,调整其指示是否启用安全模式的参数默认值，由 false 变为 true。
 
+    -   **变更**：移除原 `WxBizMsgCryptor` 工具类。
+
 -   Release 2.8.2
 
     -   **修复**：升级并修复由公共组件（v2.3.2）引发的问题。
