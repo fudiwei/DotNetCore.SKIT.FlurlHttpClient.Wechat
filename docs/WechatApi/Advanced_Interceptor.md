@@ -2,40 +2,12 @@
 
 ---
 
-拦截器是一种可以监视或重写请求调用的强大机制。下面给出一个用于记录传出请求和传入响应的拦截器简单示例：
+本功能来自于公共组件，请参阅公共组件下的相关文档：
 
-```csharp
-public class LoggingInterceptor : FlurlHttpCallInterceptor
-{
-    private readonly ILogger _logger;
+> [《SKIT.FlurlHttpClient FAQ：如何使用拦截器？》](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/blob/main/docs/FAQ_Interceptor.md)
 
-    public LoggingInterceptor(ILogger logger)
-    {
-        _logger = logger;
-    }
+---
 
-    public override Task BeforeCallAsync(FlurlCall flurlCall)
-    {
-        logger.LogInformation($"Sending request to {flurlCall.Request.Url} on {DateTimeOffset.Now}.");
-        return Task.CompletedTask;
-    }
+### 镜像站点
 
-    public override Task AfterCallAsync(FlurlCall flurlCall)
-    {
-        logger.LogInformation($"Received response in {flurlCall.Duration.Value.TotalMilliseconds}ms.");
-        return Task.CompletedTask;
-    }
-}
-```
-
-示例代码中的 `FlurlCall` 对象，是 `Flurl.Http` 的内置类型，有关该类型的更进一步的说明，请自行阅读相关文档。
-
-你可以在构造得到 `WechatApiClient` 对象后，将拦截器注入到该客户端中：
-
-```csharp
-client.Interceptors.Add(new LoggingInterceptor(loggerFactory.CreateLogger()));
-```
-
-拦截器的工作方式类似于洋葱模型。对于请求拦截器而言，将按照添加时的顺序依次执行；对于响应拦截器而言，将按照添加时的顺序逆序依次执行。
-
-拦截器在某些场景下非常有用。例如，你可以自行实现一个请求拦截器，自动在请求时注入 `AccessToken`。
+国内用户如访问 GitHub 网络状况不佳，可在打开上述链接后，手动将域名部分的 **github.com** 替换为 **gitee.com**、剩余路径部分保持不变，即可访问。
