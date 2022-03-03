@@ -190,7 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("category_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("category_id")]
-                        public string CategoryId { get; set; } = string.Empty;
+                        public int CategoryId { get; set; }
 
                         /// <summary>
                         /// 获取或设置行业经营许可证资质照片媒体文件标识 ID 列表。
@@ -198,6 +198,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("operation_copy_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("operation_copy_list")]
                         public IList<string> OperationCopyMediaIdList { get; set; } = new List<string>();
+                    }
+
+                    public class FinanceInstitutionLicense
+                    {
+                        /// <summary>
+                        /// 获取或设置金融机构类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finance_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finance_type")]
+                        public string FinanceType { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置金融机构许可证图片媒体文件标识 ID 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finance_license_pics")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finance_license_pics")]
+                        public IList<string> FinanceLicensePictureMediaIdList { get; set; } = new List<string>();
                     }
                 }
 
@@ -214,6 +231,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("company_prove_copy")]
                 [System.Text.Json.Serialization.JsonPropertyName("company_prove_copy")]
                 public string? CompanyProveCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否是金融机构。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_finance_institution")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_finance_institution")]
+                public bool? IsFinanceInstitution { get; set; }
 
                 /// <summary>
                 /// 获取或设置营业执照信息。
@@ -242,10 +266,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("special_operation_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("special_operation_list")]
                 public IList<Types.SpecialOperation>? SpecialOperationList { get; set; }
+
+                /// <summary>
+                /// 获取或设置金融机构许可证信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("finance_institution_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("finance_institution_info")]
+                public Types.FinanceInstitutionLicense? FinanceInstitutionLicense { get; set; }
             }
 
             public class Identification
             {
+                /// <summary>
+                /// 获取或设置证件持有人类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("id_holder_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("id_holder_type")]
+                public string? IdHolderType { get; set; }
+
                 /// <summary>
                 /// 获取或设置证件类型。
                 /// </summary>
@@ -289,6 +327,74 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("identification_back_copy")]
                 [System.Text.Json.Serialization.JsonPropertyName("identification_back_copy")]
                 public string? IdentificationBackCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置法人代表授权函媒体文件标识。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("authorize_letter_copy")]
+                [System.Text.Json.Serialization.JsonPropertyName("authorize_letter_copy")]
+                public string? AuthorizeLetterCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置法人是否为受益人。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("owner")]
+                [System.Text.Json.Serialization.JsonPropertyName("owner")]
+                public bool? IsOwner { get; set; }
+            }
+
+            public class UBO
+            {
+                /// <summary>
+                /// 获取或设置证件类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_type")]
+                public string IdentityType { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置身份证人像面照片媒体文件标识 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_card_copy")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_card_copy")]
+                public string? IdCardFrontCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置身份证国徽面照片媒体文件标识 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_card_national")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_card_national")]
+                public string? IdCardBackCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置证件照片媒体文件标识 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_doc_copy")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_copy")]
+                public string? IdDocumentCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置受益人姓名（需使用平台公钥/证书加密）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_name")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                public string Name { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置证件号码（需使用平台公钥/证书加密）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_number")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_number")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                public string IdNumber { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置证书有效日期（格式：["yyyy-MM-dd", "yyyy-MM-dd"]，长期用 "forever" 表示）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_card_valid_date")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_card_valid_date")]
+                public string IdPeriodValidDate { get; set; } = string.Empty;
             }
 
             public class Addition
@@ -336,6 +442,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("identification_info")]
         [System.Text.Json.Serialization.JsonPropertyName("identification_info")]
         public Types.Identification Identification { get; set; } = new Types.Identification();
+
+        /// <summary>
+        /// 获取或设置最终受益人信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ubo_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("ubo_info")]
+        public Types.UBO? UBO { get; set; }
 
         /// <summary>
         /// 获取或设置补充材料信息。

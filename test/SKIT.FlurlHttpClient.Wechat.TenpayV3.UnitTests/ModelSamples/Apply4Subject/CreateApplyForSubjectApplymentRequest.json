@@ -1,51 +1,78 @@
 ﻿{
-    "business_code": "1111111111",
+    "channel_id": "20001111",
+    "business_code": "1900013511_10000",
     "contact_info": {
-        "name": "wRNIsXOvVuTYIhVxZJCD8uJIGmNPGozCe44Ph8rD+QAJEPxw==",
-        "mobile": "w+zPKEVNm7IDxPvK55P0OfNd5E5VXoWbRwyyGk37HiB6C/F2lUog==",
-        "id_card_number": "rjbq82xBwMixDGA5A4x6/hqZRAYmaeM+yyjn9BU8qUBZga+mKqQ=="
+        "name": "X/8KWvNPULFmbdM1oU/w58gd1Jv75z+qStfT018ms25FGlVGMR2An5yGhVEHTp509zscN9PKjhi+Q+VBGpy2ei6HY5DbXU3m74Q96IpHw7w==",
+        "mobile": "Oiw4DS+QVyZKC3eTd7CGvGQ1/sidmLm8mdsohkuR9jSiwXyHyVQD1OA1t+6Pb+Xn0q2HAJYLsNjh8O4S1iQgMrFohyaNms4IlDxJzujb9VA==",
+        "id_card_number": "rjbq82xBwMixDGAviRajNvdDah00E7jIA/jtnj+Wk5jjM+yyjn9BU8qUBZga+mKqQ=="
     },
     "subject_info": {
         "subject_type": "SUBJECT_TYPE_ENTERPRISE",
+        "is_finance_institution": false,
         "business_licence_info": {
             "licence_number": "914201123033363296",
-            "licence_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+            "licence_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
             "merchant_name": "李四网络有限公司",
             "legal_person": "李四",
             "company_address": "广东省深圳市南山区xx路xx号",
-            "licence_valid_date": "[\"1970-01-01\",\"forever\"]"
+            "licence_valid_date": "[\"2017-10-28\",\"2037-10-28\"]"
         },
         "certificate_info": {
             "cert_type": "CERTIFICATE_TYPE_2388",
             "cert_number": "111111111111",
-            "cert_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+            "cert_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
             "merchant_name": "xx公益团体",
             "legal_person": "李四",
             "company_address": "广东省深圳市南山区xx路xx号",
-            "cert_valid_date": "[\"1970-01-01\",\"forever\"]"
+            "cert_valid_date": "[\"2017-10-28\",\"2037-10-28\"]"
         },
-        "company_prove_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+        "company_prove_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
         "assist_prove_info": {
             "micro_biz_type": "MICRO_TYPE_STORE",
             "store_name": "大郎烧饼",
             "store_address_code": "440305",
             "store_address": "广东省深圳市南山区xx大厦x层xxxx室",
             "store_header_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
-            "store_indoor_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo"
+            "store_indoor_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo"
+        },
+        "special_operation_list": [
+            {
+                "category_id": 100,
+                "operation_copy_list": [
+                    "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo"
+                ]
+            }
+        ],
+        "finance_institution_info": {
+            "finance_type": "BANK_AGENT",
+            "finance_license_pics": [
+                "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo"
+            ]
         }
     },
     "identification_info": {
+        "id_holder_type": "LEGAL",
         "identification_type": "IDENTIFICATION_TYPE_IDCARD",
-        "identification_name": "MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiFRL8Aii3L4U74RPCPztcJOScaXsaGs82HJNU3K+46ndk7prENiPDw==",
-        "identification_number": "ZTnn5dKGCvP4csw4XTLug/+VLB+4R6nxSPQwqSpmPVZtXmye+/3s9O+y32w==",
-        "identification_valid_date": "[\"1970-01-01\",\"forever\"]",
+        "identification_name": "X/8KWvNPULFmbdM1oU/w58gd1Jv75z+qStfT018ms25FGlVGMR2An5yGhVEHTp509zscN9PKjhi+Q+VBGpy2ei6HY5DbXU3m74Q96IpHw7w==",
+        "identification_number": "rjbq82xBwMixDGAviRajNvdDah00E7jIA/jtnj+Wk5jjM+yyjn9BU8qUBZga+mKqQ==",
+        "identification_valid_date": "[\"2017-10-28\",\"2037-10-28\"]",
         "identification_front_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
-        "identification_back_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo"
+        "identification_back_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+        "authorize_letter_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
+        "owner": false
+    },
+    "ubo_info": {
+        "ubo_id_type": "IDENTIFICATION_TYPE_IDCARD",
+        "ubo_id_card_copy": "jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ",
+        "ubo_id_card_national": "jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ",
+        "ubo_id_doc_copy": "jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ",
+        "ubo_name": "AOZdYGISxo4y44/Ug4P4TG5xzchG/5IL9DBd+Z0zZXkw==",
+        "ubo_id_number": "AOZdYGISxo4y44/Ug4P4TG5xzchG/5IL9DBd+Z0zZXkw==",
+        "ubo_id_card_valid_date": "[\"2017-10-28\",\"2037-10-28\"]"
     },
     "addition_info": {
         "confirm_mchid_list": [
-            "20001113",
-            "20001112"
+            "20001113"
         ]
     }
 }

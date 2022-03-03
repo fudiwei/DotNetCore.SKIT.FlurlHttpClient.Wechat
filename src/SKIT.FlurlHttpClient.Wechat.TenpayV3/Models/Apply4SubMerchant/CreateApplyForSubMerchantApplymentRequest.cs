@@ -147,35 +147,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string PeriodEndDate { get; set; } = string.Empty;
                     }
 
-                    public class OrganizationCertificate
+                    public class FinanceInstitutionLicense
                     {
                         /// <summary>
-                        /// 获取或设置组织机构代码。
+                        /// 获取或设置金融机构类型。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("organization_code")]
-                        [System.Text.Json.Serialization.JsonPropertyName("organization_code")]
-                        public string OrganizationCode { get; set; } = string.Empty;
+                        [Newtonsoft.Json.JsonProperty("finance_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finance_type")]
+                        public string FinanceType { get; set; } = string.Empty;
 
                         /// <summary>
-                        /// 获取或设置组织机构代码证照片媒体文件标识 ID。
+                        /// 获取或设置金融机构许可证图片媒体文件标识 ID 列表。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("organization_copy")]
-                        [System.Text.Json.Serialization.JsonPropertyName("organization_copy")]
-                        public string OrganizationCopyMediaId { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置组织机构代码证有效期开始日期（格式：yyyy-MM-dd）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("org_period_begin")]
-                        [System.Text.Json.Serialization.JsonPropertyName("org_period_begin")]
-                        public string PeriodBeginDate { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置组织机构代码证有效期结束日期（格式：yyyy-MM-dd）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("org_period_end")]
-                        [System.Text.Json.Serialization.JsonPropertyName("org_period_end")]
-                        public string PeriodEndDate { get; set; } = string.Empty;
+                        [Newtonsoft.Json.JsonProperty("finance_license_pics")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finance_license_pics")]
+                        public IList<string> FinanceLicensePictureMediaIdList { get; set; } = new List<string>();
                     }
 
                     public class Identity
@@ -271,11 +257,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         }
 
                         /// <summary>
+                        /// 获取或设置证件持有人类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("id_holder_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("id_holder_type")]
+                        public string? IdHolderType { get; set; }
+
+                        /// <summary>
                         /// 获取或设置证件类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_doc_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_doc_type")]
                         public string IdentityType { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置法人代表授权函媒体文件标识。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("authorize_letter_copy")]
+                        [System.Text.Json.Serialization.JsonPropertyName("authorize_letter_copy")]
+                        public string? AuthorizeLetterCopyMediaId { get; set; }
 
                         /// <summary>
                         /// 获取或设置身份证信息。
@@ -376,6 +376,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? CertificateLetterCopyMediaId { get; set; }
 
                 /// <summary>
+                /// 获取或设置是否是金融机构。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("finance_institution")]
+                [System.Text.Json.Serialization.JsonPropertyName("finance_institution")]
+                public bool? IsFinanceInstitution { get; set; }
+
+                /// <summary>
                 /// 获取或设置营业执照信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_license_info")]
@@ -390,11 +397,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public Types.InstitutionalCertificate? InstitutionalCertificate { get; set; }
 
                 /// <summary>
-                /// 获取或设置组织机构代码证信息。
+                /// 获取或设置金融机构许可证信息。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("organization_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("organization_info")]
-                public Types.OrganizationCertificate? OrganizationCertificate { get; set; }
+                [Newtonsoft.Json.JsonProperty("finance_institution_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("finance_institution_info")]
+                public Types.FinanceInstitutionLicense? FinanceInstitutionLicense { get; set; }
 
                 /// <summary>
                 /// 获取或设置法人身份证件信息。
@@ -661,14 +668,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Settlement
             {
                 /// <summary>
-                /// 获取或设置入驻结算规则 ID。
+                /// 获取或设置结算规则 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settlement_id")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualIntegerConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("settlement_id")]
-                public string SettlementId { get; set; } = string.Empty;
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
+                public int SettlementId { get; set; } 
 
                 /// <summary>
-                /// 获取或设置所属行业。
+                /// 获取或设置所属行业类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("qualification_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("qualification_type")]
@@ -689,13 +698,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? ActivityId { get; set; }
 
                 /// <summary>
-                /// 获取或设置优惠费率活动值。
+                /// 获取或设置优惠费率活动值字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("activities_rate")]
-                [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyActivityRateNewtonsoftJsonConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("activities_rate")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyActivityRateSystemTextJsonConverter))]
-                public double? ActivityRate { get; set; }
+                public string? ActivityRateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠费率活动补充材料媒体文件标识 ID 列表。
@@ -707,6 +714,33 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
             public class BankAccount
             {
+                public static class Types
+                {
+                    public class AccountCertificate
+                    {
+                        /// <summary>
+                        /// 获取或设置结算证明函图片媒体文件标识。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("settlement_cert_pic")]
+                        [System.Text.Json.Serialization.JsonPropertyName("settlement_cert_pic")]
+                        public string SettlementCertificatePictureMediaId { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置结算证明函图片媒体文件标识。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("relation_cert_pic")]
+                        [System.Text.Json.Serialization.JsonPropertyName("relation_cert_pic")]
+                        public string RelationCertificatePictureMediaId { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置其他补充证明图片媒体文件标识。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("other_cert_pics")]
+                        [System.Text.Json.Serialization.JsonPropertyName("other_cert_pics")]
+                        public IList<string> OtherCertificatePictureMediaIdList { get; set; } = new List<string>();
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置账户类型。
                 /// </summary>
@@ -757,6 +791,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("bank_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
                 public string? BankBranchName { get; set; }
+
+                /// <summary>
+                /// 获取或设置账号证明材料信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("account_cert_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("account_cert_info")]
+                public Types.AccountCertificate? AccountCertificate { get; set; }
             }
 
             public class Addition
@@ -788,86 +829,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("business_addition_msg")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_addition_msg")]
                 public string? BusinessAdditionMessage { get; set; }
-            }
-        }
-
-        internal static class Converters
-        {
-            internal class RequestPropertyActivityRateNewtonsoftJsonConverter : Newtonsoft.Json.JsonConverter<double?>
-            {
-                public override bool CanRead
-                {
-                    get { return true; }
-                }
-
-                public override bool CanWrite
-                {
-                    get { return true; }
-                }
-
-                public override double? ReadJson(Newtonsoft.Json.JsonReader reader, Type objectType, double? existingValue, bool hasExistingValue, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (reader.TokenType == Newtonsoft.Json.JsonToken.Null)
-                    {
-                        return existingValue;
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.Integer ||
-                             reader.TokenType == Newtonsoft.Json.JsonToken.Float)
-                    {
-                        return serializer.Deserialize<double>(reader);
-                    }
-                    else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
-                    {
-                        string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
-                            return existingValue;
-
-                        return Convert.ToDouble(value);
-                    }
-
-                    throw new Newtonsoft.Json.JsonReaderException();
-                }
-
-                public override void WriteJson(Newtonsoft.Json.JsonWriter writer, double? value, Newtonsoft.Json.JsonSerializer serializer)
-                {
-                    if (value.HasValue)
-                        writer.WriteValue(value.Value.ToString("0.00"));
-                    else
-                        writer.WriteNull();
-                }
-            }
-
-            internal class RequestPropertyActivityRateSystemTextJsonConverter : System.Text.Json.Serialization.JsonConverter<double?>
-            {
-                public override double? Read(ref System.Text.Json.Utf8JsonReader reader, Type typeToConvert, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (reader.TokenType == System.Text.Json.JsonTokenType.Null)
-                    {
-                        return null;
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.Number)
-                    {
-                        return reader.GetDouble();
-                    }
-                    else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
-                    {
-                        string? value = reader.GetString();
-                        if (value == null)
-                            return null;
-
-                        return Convert.ToDouble(value);
-                    }
-
-                    throw new System.Text.Json.JsonException();
-                }
-
-                public override void Write(System.Text.Json.Utf8JsonWriter writer, double? value, System.Text.Json.JsonSerializerOptions options)
-                {
-                    if (value.HasValue)
-                        writer.WriteStringValue(value.Value.ToString("0.00"));
-                    else
-                        writer.WriteNullValue();
-                }
             }
         }
 
