@@ -94,7 +94,7 @@ else
 
 -   [如何使用拦截器？](./Advanced_Interceptor.md)
 
--   [如何解密回调通知事件中的敏感数据？](./Advanced_EventResourceDecryption.md)
+-   [如何解密回调通知事件中的敏感数据？](./Advanced_EventInfoDecryption.md)
 
 -   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
 

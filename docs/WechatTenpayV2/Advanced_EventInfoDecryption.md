@@ -14,12 +14,11 @@
 /* 微信商户平台发来的通知内容 */
 string callbackXml = "<xml> ... </xml>";
 /* 将 XML 反序列化得到通知对象 */
-var callbackModel = client.DeserializeEvent(callbackJson);
+var callbackModel = client.DeserializeEvent(callbackXml);
 /* 解密得到支付通知敏感数据（以退款结果通知为例） */
-var callbackResource = client.DecryptEventRequestInfo<Events.RefundEventRequestInfo>(callbackModel);
+var callbackEventInfo = client.DecryptEventRequestInfo<Events.RefundEventRequestInfo>(callbackModel);
 string outRefundNumber = callbackResource.OutRefundNumber;
 string refundId = callbackResource.RefundId;
-}
 ```
 
 完整的回调通知模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.TenpayV2/Events_ 目录。
