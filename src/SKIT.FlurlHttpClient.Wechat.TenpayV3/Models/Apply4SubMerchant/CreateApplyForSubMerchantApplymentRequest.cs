@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -162,6 +161,162 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("finance_license_pics")]
                         [System.Text.Json.Serialization.JsonPropertyName("finance_license_pics")]
                         public IList<string> FinanceLicensePictureMediaIdList { get; set; } = new List<string>();
+                    }
+
+                    public class MicroBusinessProof
+                    {
+                        public static class Types
+                        {
+                            public class MicroStoreInfo
+                            {
+                                /// <summary>
+                                /// 获取或设置门店名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_name")]
+                                public string Name { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置门店省市编码。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_address_code")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_address_code")]
+                                public string CityCode { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置门店地址。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_address")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_address")]
+                                public string Address { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置门店门头照片媒体文件标识。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("store_entrance_pic")]
+                                [System.Text.Json.Serialization.JsonPropertyName("store_entrance_pic")]
+                                public string StoreEntrancePictureMediaId { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置店内环境照片媒体文件标识。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_indoor_copy")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_indoor_copy")]
+                                public string StoreIndoorPictureMediaId { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置门店经度。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("store_longitude")]
+                                [System.Text.Json.Serialization.JsonPropertyName("store_longitude")]
+                                public string? Longitude { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置门店纬度。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("store_latitude")]
+                                [System.Text.Json.Serialization.JsonPropertyName("store_latitude")]
+                                public string? Latitude { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置门店证明文件媒体文件标识。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("address_certification")]
+                                [System.Text.Json.Serialization.JsonPropertyName("address_certification")]
+                                public string? CertificateMediaId { get; set; }
+                            }
+
+                            public class MicroMobileInfo
+                            {
+                                /// <summary>
+                                /// 获取或设置经营服务名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_mobile_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_mobile_name")]
+                                public string Name { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置经营服务所在地省市编码。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_mobile_city")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_mobile_city")]
+                                public string CityCode { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置经营服务地址。
+                                /// <para>默认值：无</para>
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_mobile_address")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_mobile_address")]
+                                public string Address { get; set; } = "无";
+
+                                /// <summary>
+                                /// 获取或设置经营服务现场照片媒体文件标识列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_mobile_pics")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_mobile_pics")]
+                                public IList<string> PictureMediaIdList { get; set; } = new List<string>();
+                            }
+
+                            public class MicroOnlineInfo
+                            {
+                                /// <summary>
+                                /// 获取或设置线上店铺名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_online_store")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_online_store")]
+                                public string StoreName { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置电商平台名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_ec_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_ec_name")]
+                                public string ECName { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置店铺二维码媒体文件标识。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_qrcode")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_qrcode")]
+                                public string? StoreQrcodeMediaId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置店铺链接。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("micro_link")]
+                                [System.Text.Json.Serialization.JsonPropertyName("micro_link")]
+                                public string? StoreLink { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置小微经营类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("micro_biz_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("micro_biz_type")]
+                        public string MicroBusinessType { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置门店场所信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("micro_store_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("micro_store_info")]
+                        public Types.MicroStoreInfo? MicroStoreInfo { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置流动经营便民服务信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("micro_mobile_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("micro_mobile_info")]
+                        public Types.MicroMobileInfo? MicroMobileInfo { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置线上商品服务交易信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("micro_online_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("micro_online_info")]
+                        public Types.MicroOnlineInfo? MicroOnlineInfo { get; set; }
                     }
 
                     public class Identity
@@ -402,6 +557,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("finance_institution_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("finance_institution_info")]
                 public Types.FinanceInstitutionLicense? FinanceInstitutionLicense { get; set; }
+
+                /// <summary>
+                /// 获取或设置小微商户证明材料信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("micro_biz_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("micro_biz_info")]
+                public Types.MicroBusinessProof? MicroBusinessProof { get; set; }
 
                 /// <summary>
                 /// 获取或设置法人身份证件信息。
@@ -674,7 +836,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualIntegerConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("settlement_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
-                public int SettlementId { get; set; } 
+                public int SettlementId { get; set; }
 
                 /// <summary>
                 /// 获取或设置所属行业类型。

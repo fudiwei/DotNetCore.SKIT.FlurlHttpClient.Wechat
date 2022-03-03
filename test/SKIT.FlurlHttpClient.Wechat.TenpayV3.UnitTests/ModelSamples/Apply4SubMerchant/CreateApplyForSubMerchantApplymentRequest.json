@@ -33,6 +33,33 @@
 				"0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo"
 			]
 		},
+		"micro_biz_info": {
+			"micro_biz_type": "MICRO_TYPE_STORE",
+			"micro_store_info": {
+				"micro_name": "大郎烧饼",
+				"micro_address_code": "440305",
+				"micro_address": "南山区xx大厦x层xxxx室",
+				"store_entrance_pic": "0P3ng6KTIW4-Q_l2FjKLZuhHFwczhJehHhAZN6BKXQPcs-VvdSo",
+				"micro_indoor_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMwczhJehHhAZN6BKXQPcs-VvdSo",
+				"store_longitude": "113.941355",
+				"store_latitude": "22.546245",
+				"address_certification": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAzhJehHhAZN6BKXQPcs-VvdSo"
+			},
+			"micro_mobile_info": {
+				"micro_mobile_name": "早餐车",
+				"micro_mobile_city": "440305",
+				"micro_mobile_address": "无",
+				"micro_mobile_pics": [
+					"0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo"
+				]
+			},
+			"micro_online_info": {
+				"micro_online_store": "李三服装店",
+				"micro_ec_name": "XX购物平台",
+				"micro_qrcode": "https://www.qq.com",
+				"micro_link": "https://www.qq.com"
+			}
+		},
 		"identity_info": {
 			"id_holder_type": "LEGAL",
 			"id_doc_type": "IDENTIFICATION_TYPE_IDCARD",

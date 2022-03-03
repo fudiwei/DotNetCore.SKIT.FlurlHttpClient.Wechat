@@ -72,11 +72,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// 获取或设置是否自动加密请求中的敏感字段数据。
+        /// <para>注意：启用该功能需配合 <see cref="PlatformCertificateManager"/> 使用。</para>
         /// </summary>
         public bool AutoEncryptRequestSensitiveProperty { get; set; }
 
         /// <summary>
-        /// 获取或设置是否自动解密请求中的敏感字段数据。
+        /// 获取或设置是否自动解密响应中的敏感字段数据。
+        /// <para>注意：启用该功能需配合 <see cref="PlatformCertificateManager"/> 使用。</para>
         /// </summary>
         public bool AutoDecryptResponseSensitiveProperty { get; set; }
 
