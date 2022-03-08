@@ -1,5 +1,4 @@
-﻿/* @codestyle-disable no-jsonable-property-in-request-get */
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
     /// <para>表示 [GET] /papay/partner/h5entrustweb 接口的请求。</para>

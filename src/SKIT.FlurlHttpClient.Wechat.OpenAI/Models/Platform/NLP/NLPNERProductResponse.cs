@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-/* @codestyle-disable no-instantiated-property-in-response */
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
     /// <summary>
@@ -249,9 +248,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
         /// 获取或设置抽取结果信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("entities")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyProductPropertyArrayNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("entities")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyProductPropertyArraySystemTextJsonConverter))]
         public Types.Result Result { get; set; } = default!;
     }
 }

@@ -1,24 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 
-/* @codestyle-disable no-instantiated-property-in-response */
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
     /// <summary>
-    /// <para>表示 [POST] /nlp/sensitive/{TOKEN} 接口的响应。</para>
+    /// <para>表示 [POST] /nlp/sentiment/{TOKEN} 接口的响应。</para>
     /// </summary>
-    public class NLPSensitiveResponse : WechatOpenAIPlatformResponse
+    public class NLPSentimentResponse : WechatOpenAIPlatformResponse
     {
         public static class Types
         {
             public class Result
             {
                 /// <summary>
-                /// 获取或设置敏感信息项。
+                /// 获取或设置情感信息项。
                 /// </summary>
                 [Newtonsoft.Json.JsonIgnore]
                 [System.Text.Json.Serialization.JsonIgnore]
-                public string Sensitive { get; set; } = default!;
+                public string Sentiment { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置分值（范围：0～1）。
@@ -68,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
                                 {
                                     if (offset == 0)
                                     {
-                                        tmpItem.Sensitive = serializer.Deserialize<string>(reader)!;
+                                        tmpItem.Sentiment = serializer.Deserialize<string>(reader)!;
                                     }
                                     else if (offset == 1)
                                     {
@@ -100,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
                         foreach (var item in value)
                         {
                             writer.WriteStartArray();
-                            writer.WriteValue(item.Sensitive);
+                            writer.WriteValue(item.Sentiment);
                             writer.WriteValue(item.Score);
                             writer.WriteEndArray();
                         }
@@ -142,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
                                 {
                                     if (offset == 0)
                                     {
-                                        tmpItem.Sensitive = System.Text.Json.JsonSerializer.Deserialize<string>(ref reader, tmpOptions)!;
+                                        tmpItem.Sentiment = System.Text.Json.JsonSerializer.Deserialize<string>(ref reader, tmpOptions)!;
                                     }
                                     else if (offset == 1)
                                     {
@@ -174,7 +173,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
                         foreach (var item in value)
                         {
                             writer.WriteStartArray();
-                            writer.WriteStringValue(item.Sensitive);
+                            writer.WriteStringValue(item.Sentiment);
                             writer.WriteNumberValue(item.Score);
                             writer.WriteEndArray();
                         }
