@@ -20,6 +20,8 @@ var response = await client.ExecuteCgibinTicketGetTicketAsync(request);
 var paramMap = client.GenerateParametersForJSSDKConfig(response.Ticket, "https://example.com");
 ```
 
+注意上述示例代码中的 JsapiTicket 与微信 AccessToken 类似，有每日获取频率限制和过期时间限制，开发者应自行实现相关持久化和更新机制。
+
 ---
 
 ### 【附】生成参数相关扩展方法速查表：
