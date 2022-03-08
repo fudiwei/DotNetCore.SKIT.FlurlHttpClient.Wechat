@@ -54,7 +54,7 @@ bool ret = RSAUtility.VerifyWithSHA256(publicKey, data, sign);
 bool ret = client.VerifyResponseSignature(response);
 ```
 
-需要注意的是，使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请阅读下方有关章节。
+> ⚠️ 【重要说明】使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请阅读下方《通过 `CertificateManager` 管理平台证书信息》这一小节。
 
 ---
 
