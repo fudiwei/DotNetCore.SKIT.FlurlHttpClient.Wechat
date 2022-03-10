@@ -31,7 +31,7 @@ var request = new Models.CreatePayTransactionJsapiRequest()
         OpenId = "用户 OpenId"
     }
 };
-var response = await client.ExecuteQueryCertificatesAsync(request);
+var response = await client.ExecuteCreatePayTransactionJsapiAsync(request);
 var paramMap = client.GenerateParametersForJsapiPayRequest(request.AppId, response.PrepayId);
 ```
 
