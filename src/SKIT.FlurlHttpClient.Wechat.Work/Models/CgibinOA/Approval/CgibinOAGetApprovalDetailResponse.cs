@@ -77,6 +77,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("sptime")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sptime")]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
                                 public long? ApproveTimestamp { get; set; }
 
                                 /// <summary>
@@ -258,8 +259,8 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("s_timestamp")]
                                         [System.Text.Json.Serialization.JsonPropertyName("s_timestamp")]
-                                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                                        public long Timestamp { get; set; }
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))] 
+                                        public long? Timestamp { get; set; }
                                     }
 
                                     public class SelectorControlValue
@@ -498,7 +499,8 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("time")]
                                         [System.Text.Json.Serialization.JsonPropertyName("time")]
-                                        public long Timestamp { get; set; }
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
+                                        public long? Timestamp { get; set; }
                                     }
 
                                     public class RelatedApprovalControlValue
@@ -594,7 +596,8 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("time")]
                                         [System.Text.Json.Serialization.JsonPropertyName("time")]
-                                        public long Timestamp { get; set; }
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
+                                        public long? Timestamp { get; set; }
                                     }
                                 }
 
