@@ -356,7 +356,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var httpContent = new MultipartFormDataContent(boundary);
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             httpContent.Add(fileContent, "\"pdf\"", "\"invoice.pdf\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/pdf");

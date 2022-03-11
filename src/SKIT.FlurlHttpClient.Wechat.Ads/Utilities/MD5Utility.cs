@@ -13,14 +13,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Utilities
         /// 获取 MD5 信息摘要。
         /// </summary>
         /// <param name="bytes">信息字节数组。</param>
-        /// <returns>信息摘要。</returns>
-        public static string Hash(byte[] bytes)
+        /// <returns>信息摘要字节数组。</returns>
+        public static byte[] Hash(byte[] bytes)
         {
             if (bytes == null) throw new ArgumentNullException(nameof(bytes));
 
             using MD5 md5 = MD5.Create();
-            byte[] hashBytes = md5.ComputeHash(bytes);
-            return BitConverter.ToString(hashBytes).Replace("-", "");
+            return md5.ComputeHash(bytes);
         }
 
         /// <summary>
@@ -32,8 +31,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Utilities
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
 
-            byte[] bytes = Encoding.UTF8.GetBytes(message);
-            return Hash(bytes);
+            byte[] msgBytes = Encoding.UTF8.GetBytes(message);
+            byte[] hashBytes = Hash(msgBytes);
+            return BitConverter.ToString(hashBytes).Replace("-", "");
         }
     }
 }

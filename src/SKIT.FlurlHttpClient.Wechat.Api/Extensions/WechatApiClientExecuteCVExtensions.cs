@@ -18,10 +18,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             if (fileBytes != null && fileBytes.Any())
             {
-                var fileContent = new ByteArrayContent(fileBytes);
+                var fileContent = new ByteArrayContent(fileBytes ?? Array.Empty<byte>());
                 httpContent.Add(fileContent, "\"img\"", "\"image.png\"");
                 fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
-                fileContent.Headers.ContentLength = fileBytes.Length;
+                fileContent.Headers.ContentLength = fileBytes?.Length;
             }
 
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVImageQrcodeResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVImageSuperResolutionResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVImageAICropResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
         #endregion
@@ -129,7 +129,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVOCRIdCardResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
@@ -155,7 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVOCRBankCardResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
@@ -181,7 +181,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVOCRDrivingResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
@@ -207,7 +207,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVOCRDrivingLicenseResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
@@ -233,7 +233,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVOCRBusinessLicenseResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
@@ -258,7 +258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVOCRCommonResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
@@ -282,7 +282,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.ImageUrl != null)
                 flurlReq.SetQueryParam("img_url", request.ImageUrl);
 
-            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? new byte[0]);
+            using var httpContent = CreateRequestHttpContent(request.ImageFileBytes ?? Array.Empty<byte>());
             return await client.SendRequestAsync<Models.CVOCRPlateNumberResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
         #endregion

@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
+﻿using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
     /// <para>表示 [POST] /secapi/mch/uploadmedia 接口的请求。</para>
@@ -24,7 +26,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] FileBytes { get; set; } = new byte[0];
+        public byte[] FileBytes { get; set; } = Array.Empty<byte>();
 
         /// <summary>
         /// 获取或设置任务上传文件名。如果不指定将由系统自动生成。

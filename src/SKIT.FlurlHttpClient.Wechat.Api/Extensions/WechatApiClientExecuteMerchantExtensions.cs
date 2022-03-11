@@ -663,7 +663,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateRequest(request, HttpMethod.Post, "merchant", "common", "upload_img")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var httpContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
 
             return await client.SendRequestAsync<Models.MerchantCommonUploadImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);

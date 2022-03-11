@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                 }
             }
 
-            element = updateFactory(element);
+            element = updateFactory(element!);
             array.SetValue(element, index);
         }
 

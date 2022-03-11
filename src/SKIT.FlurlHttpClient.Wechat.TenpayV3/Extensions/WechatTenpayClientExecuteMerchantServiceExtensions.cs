@@ -236,7 +236,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
             if (request.FileHash == null)
-                request.FileHash = Utilities.SHA256Utility.Hash(request.FileBytes).ToLower();
+                request.FileHash = BitConverter.ToString(Utilities.SHA256Utility.Hash(request.FileBytes)).Replace("-", "").ToLower();
 
             if (request.FileContentType == null)
                 request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
@@ -245,7 +245,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Post, "merchant-service", "images", "upload");
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.FileBytes);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var metaContent = new ByteArrayContent(Encoding.UTF8.GetBytes(client.JsonSerializer.Serialize(request)));
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(metaContent, $"\"{Constants.FormDataFields.FORMDATA_META}\"");
@@ -253,6 +253,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
             metaContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
+            fileContent.Headers.ContentLength = request.FileBytes?.Length;
 
             return await client.SendRequestAsync<Models.UploadMerchantServiceImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }

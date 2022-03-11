@@ -35,11 +35,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             if (request.FileHash == null)
             {
-                request.FileHash = Utilities.MD5Utility.Hash(request.FileBytes ?? new byte[0]);
+                request.FileHash = BitConverter.ToString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", "");
             }
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(fileContent, "\"file\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);

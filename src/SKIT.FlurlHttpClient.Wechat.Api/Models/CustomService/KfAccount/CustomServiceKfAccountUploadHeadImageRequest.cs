@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /customservice/kfaccount/uploadheadimg 接口的请求。</para>
@@ -17,6 +19,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] HeadImageFileBytes { get; set; } = new byte[0];
+        public byte[] HeadImageFileBytes { get; set; } = Array.Empty<byte>();
     }
 }

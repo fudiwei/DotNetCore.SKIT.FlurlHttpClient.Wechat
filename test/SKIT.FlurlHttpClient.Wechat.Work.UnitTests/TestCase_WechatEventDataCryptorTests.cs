@@ -2,7 +2,7 @@
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
-    public class TestCase_WechatEventDataCryptorUtilityTests
+    public class TestCase_WechatEventDataCryptorTests
     {
         [Fact(DisplayName = "测试用例：回调信息解析")]
         public void TestWxBizMsgCryptorParsing()

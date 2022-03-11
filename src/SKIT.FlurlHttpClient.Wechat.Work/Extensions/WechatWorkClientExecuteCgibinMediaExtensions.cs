@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("type", request.Type);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
@@ -157,7 +157,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("attachment_type", request.AttachmentType);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);

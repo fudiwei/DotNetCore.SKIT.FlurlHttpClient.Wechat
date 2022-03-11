@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
     public class TestCase_WechatEventDataCryptorTests
     {
-        [Fact(DisplayName = "试用例：验签并解密回调数据")]
+        [Fact(DisplayName = "测试用例：验签并解密回调数据")]
         public void TestVerifyAndDecryptEvent()
         {
             string token = "QDG6eK";
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             Assert.True(Utilities.WechatEventDataCryptor.VerifySignature(token, reqTimeStamp, reqNonce, reqCipherText, reqMsgSig));
         }
 
-        [Fact(DisplayName = "试用例：验签回调数据")]
+        [Fact(DisplayName = "测试用例：验签回调数据")]
         public void TestVerifyEvent()
         {
             string token = "ovAkP0Tb";

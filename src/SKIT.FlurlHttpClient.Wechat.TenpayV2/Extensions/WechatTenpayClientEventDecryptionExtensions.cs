@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             {
                 string plainXml = Utilities.AESUtility.DecryptWithECB(
                     encodingKey: Convert.ToBase64String(Encoding.UTF8.GetBytes(key)),
-                    encodingCipherText: callback.EncryptedRequestInfo
+                    encodingCipherText: callback.EncryptedRequestInfo!
                 );
                 plainJson = Utilities.XmlUtility.ConvertToJson(plainXml);
             }

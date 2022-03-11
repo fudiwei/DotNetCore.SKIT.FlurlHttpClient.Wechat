@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             string filename = "file.zip";
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(new StringContent(request.CustomAudienceId.ToString()), "audience_id");
             httpContent.Add(new StringContent(request.UserIdType), "user_id_type");

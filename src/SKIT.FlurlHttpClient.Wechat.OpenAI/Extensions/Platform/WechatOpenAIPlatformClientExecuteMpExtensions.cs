@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "assetsupload", client.Credentials.Token!);
 
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var paramContent = new StringContent(
                 Utilities.WxBizMsgCryptor.AESEncrypt(
                     plainText: Utilities.XmlUtility.Serialize(request),

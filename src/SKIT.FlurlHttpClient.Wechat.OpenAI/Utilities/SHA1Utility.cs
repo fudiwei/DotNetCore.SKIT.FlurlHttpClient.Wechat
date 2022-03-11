@@ -13,14 +13,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Utilities
         /// 获取 SHA-1 信息摘要。
         /// </summary>
         /// <param name="bytes">信息字节数组。</param>
-        /// <returns>信息摘要。</returns>
-        public static string Hash(byte[] bytes)
+        /// <returns>信息摘要字节数组。</returns>
+        public static byte[] Hash(byte[] bytes)
         {
             if (bytes == null) throw new ArgumentNullException(nameof(bytes));
 
             using SHA1 sha = SHA1.Create();
-            byte[] hashBytes = sha.ComputeHash(bytes);
-            return BitConverter.ToString(hashBytes).Replace("-", "");
+            return sha.ComputeHash(bytes);
         }
 
         /// <summary>
@@ -32,8 +31,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Utilities
         {
             if (message == null) throw new ArgumentNullException(nameof(message));
 
-            byte[] bytes = Encoding.UTF8.GetBytes(message);
-            return Hash(bytes);
+            byte[] msgBytes = Encoding.UTF8.GetBytes(message);
+            byte[] hashBytes = Hash(msgBytes);
+            return BitConverter.ToString(hashBytes).Replace("-", "");
         }
     }
 }

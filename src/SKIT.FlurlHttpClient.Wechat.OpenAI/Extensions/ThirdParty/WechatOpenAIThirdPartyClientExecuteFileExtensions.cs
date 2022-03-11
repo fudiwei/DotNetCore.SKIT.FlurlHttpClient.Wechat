@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "v1", "file", "upload");
 
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var httpContent = new MultipartFormDataContent();
             httpContent.Add(fileContent, "\"file\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);

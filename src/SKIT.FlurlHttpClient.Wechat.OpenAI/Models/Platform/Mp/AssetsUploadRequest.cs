@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System;
+using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
@@ -18,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
         /// 获取或设置文件字节数组。
         /// </summary>
         [XmlIgnore]
-        public byte[] FileBytes { get; set; } = new byte[0];
+        public byte[] FileBytes { get; set; } = Array.Empty<byte>();
 
         /// <summary>
         /// 获取或设置文件名。如果不指定将由系统自动生成。

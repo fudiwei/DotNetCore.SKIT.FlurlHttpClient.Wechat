@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
     {
         public static string ConvertFromJson(string json)
         {
-            XmlDocument xmlDocument = JsonConvert.DeserializeXmlNode(json, "xml");
+            XmlDocument xmlDocument = JsonConvert.DeserializeXmlNode(json, "xml")!;
             string xml = xmlDocument.InnerXml;
             return xml;
         }
@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                 xCData.Remove();
             }
 
-            JObject jObject = JsonConvert.DeserializeObject<JObject>(JsonConvert.SerializeXNode(xElement));
+            JObject jObject = JsonConvert.DeserializeObject<JObject>(JsonConvert.SerializeXNode(xElement))!;
             string json = (jObject.First as JProperty)?.Value?.ToString(Newtonsoft.Json.Formatting.None) ?? "{}";
             return json;
         }

@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("type", request.Type);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
@@ -122,7 +122,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? new byte[0]);
+            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var httpContent = new MultipartFormDataContent(boundary);
             httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
@@ -193,7 +193,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("voice_id", request.VoiceId)
                 .SetQueryParam("lang", request.Language);
 
-            using var httpContent = new ByteArrayContent(request.VoiceBytes);
+            using var httpContent = new ByteArrayContent(request.VoiceBytes ?? Array.Empty<byte>());
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("audio/mp3");
 
             return await client.SendRequestAsync<Models.CgibinMediaVoiceAddVoiceToRecognitionForTextResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
@@ -240,7 +240,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("lfrom", request.FromLanguage)
                 .SetQueryParam("lto", request.ToLanguage);
 
-            using var httpContent = new ByteArrayContent(request.VoiceBytes);
+            using var httpContent = new ByteArrayContent(request.VoiceBytes ?? Array.Empty<byte>());
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("audio/mp3");
 
             return await client.SendRequestAsync<Models.CgibinMediaVoiceTranslateContentResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
