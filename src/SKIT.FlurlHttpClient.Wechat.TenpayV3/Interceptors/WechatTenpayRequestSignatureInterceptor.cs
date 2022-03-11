@@ -69,8 +69,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
             }
 
             string auth = $"mchid=\"{_mchId}\",nonce_str=\"{nonce}\",signature=\"{signText}\",timestamp=\"{timestamp}\",serial_no=\"{_mchCertSn}\"";
-            flurlCall.Request.Headers.Remove(Contants.HttpHeaders.Authorization);
-            flurlCall.Request.WithHeader(Contants.HttpHeaders.Authorization, $"{_scheme} {auth}");
+            flurlCall.Request.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.Authorization);
+            flurlCall.Request.WithHeader(FlurlHttpClient.Constants.HttpHeaders.Authorization, $"{_scheme} {auth}");
         }
     }
 }

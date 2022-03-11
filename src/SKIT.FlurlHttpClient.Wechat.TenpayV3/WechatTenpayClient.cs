@@ -47,12 +47,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
-            FlurlClient.Headers.Remove(Contants.HttpHeaders.Accept);
-            FlurlClient.Headers.Remove(Contants.HttpHeaders.AcceptLanguage);
-            FlurlClient.Headers.Remove(Contants.HttpHeaders.UserAgent);
-            FlurlClient.WithHeader(Contants.HttpHeaders.Accept, "application/json");
-            FlurlClient.WithHeader(Contants.HttpHeaders.AcceptLanguage, options.AcceptLanguage);
-            FlurlClient.WithHeader(Contants.HttpHeaders.UserAgent, options.UserAgent);
+            FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.Accept);
+            FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.AcceptLanguage);
+            FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.UserAgent);
+            FlurlClient.WithHeader(FlurlHttpClient.Constants.HttpHeaders.Accept, "application/json");
+            FlurlClient.WithHeader(FlurlHttpClient.Constants.HttpHeaders.AcceptLanguage, options.AcceptLanguage);
+            FlurlClient.WithHeader(FlurlHttpClient.Constants.HttpHeaders.UserAgent, options.UserAgent);
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
 
             Interceptors.Add(new Interceptors.WechatTenpayRequestSignatureInterceptor(
