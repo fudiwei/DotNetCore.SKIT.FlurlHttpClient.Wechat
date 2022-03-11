@@ -6,12 +6,12 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Interceptors
 {
-    internal class WechatAdsAgencyTokenInterceptor : FlurlHttpCallInterceptor
+    internal class WechatAdsRequestAgencyTokenInterceptor : FlurlHttpCallInterceptor
     {
         private readonly string _agencyId;
         private readonly string _agencyApiKey;
 
-        public WechatAdsAgencyTokenInterceptor(string agencyId, string agencyApiKey)
+        public WechatAdsRequestAgencyTokenInterceptor(string agencyId, string agencyApiKey)
         {
             _agencyId = agencyId;
             _agencyApiKey = agencyApiKey;
@@ -20,6 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Interceptors
         public override async Task BeforeCallAsync(FlurlCall flurlCall)
         {
             if (flurlCall == null) throw new ArgumentNullException(nameof(flurlCall));
+            if (flurlCall.Completed) throw new Exceptions.WechatAdsRequestAgencyTokenException("This interceptor must be called before request completed.");
 
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");

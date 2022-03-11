@@ -6,14 +6,14 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
 {
-    internal class WechatTenpaySignInterceptor : FlurlHttpCallInterceptor
+    internal class WechatTenpayRequestSignatureInterceptor : FlurlHttpCallInterceptor
     {
         private readonly string _scheme;
         private readonly string _mchId;
         private readonly string _mchCertSn;
         private readonly string _mchCertPk;
 
-        public WechatTenpaySignInterceptor(string scheme, string mchId, string mchCertSn, string mchCertPk)
+        public WechatTenpayRequestSignatureInterceptor(string scheme, string mchId, string mchCertSn, string mchCertPk)
         {
             _scheme = scheme;
             _mchId = mchId;
@@ -24,6 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
         public override async Task BeforeCallAsync(FlurlCall flurlCall)
         {
             if (flurlCall == null) throw new ArgumentNullException(nameof(flurlCall));
+            if (flurlCall.Completed) throw new Exceptions.WechatTenpayRequestSignatureException("This interceptor must be called before request completed.");
 
             string method = flurlCall.HttpRequestMessage.Method.ToString().ToUpper();
             string url = flurlCall.HttpRequestMessage.RequestUri?.PathAndQuery ?? string.Empty;
@@ -68,8 +69,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
             }
 
             string auth = $"mchid=\"{_mchId}\",nonce_str=\"{nonce}\",signature=\"{signText}\",timestamp=\"{timestamp}\",serial_no=\"{_mchCertSn}\"";
-            flurlCall.Request.Headers.Remove("Authorization");
-            flurlCall.Request.WithHeader("Authorization", $"{_scheme} {auth}");
+            flurlCall.Request.Headers.Remove(Contants.HttpHeaders.Authorization);
+            flurlCall.Request.WithHeader(Contants.HttpHeaders.Authorization, $"{_scheme} {auth}");
         }
     }
 }
