@@ -5,7 +5,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class TestCase_ApiExecuteExecuteMerchantServiceTests
+    public class TestCase_ApiExecuteMerchantServiceTests
     {
         [Fact(DisplayName = "测试用例：调用 API [GET] /merchant-service/complaints-v2")]
         public async Task TestExecuteQueryMerchantServiceComplaints()

@@ -4,7 +4,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class TestCase_ApiExecuteExecuteMarketingMediaTests
+    public class TestCase_ApiExecuteMarketingMediaTests
     {
         [Fact(DisplayName = "测试用例：调用 API [POST] /marketing/favor/media/image-upload")]
         public async Task TestExecuteUploadMarketingMediaImage()

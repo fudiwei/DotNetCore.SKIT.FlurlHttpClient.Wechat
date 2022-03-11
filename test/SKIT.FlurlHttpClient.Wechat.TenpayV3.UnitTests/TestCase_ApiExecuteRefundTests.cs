@@ -4,7 +4,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class TestCase_ApiExecuteExecuteRefundTests
+    public class TestCase_ApiExecuteRefundTests
     {
         [Fact(DisplayName = "测试用例：调用 API [POST] /refund/domestic/refunds")]
         public async Task TestExecuteCreateRefundDomesticRefund()
