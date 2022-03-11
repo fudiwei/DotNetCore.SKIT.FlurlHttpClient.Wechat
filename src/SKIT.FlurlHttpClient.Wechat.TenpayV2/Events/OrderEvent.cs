@@ -216,6 +216,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         [Newtonsoft.Json.JsonProperty("rate")]
         [System.Text.Json.Serialization.JsonPropertyName("rate")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public long? ExchangeRate { get; set; }
+        public double? ExchangeRate { get; set; }
     }
 }

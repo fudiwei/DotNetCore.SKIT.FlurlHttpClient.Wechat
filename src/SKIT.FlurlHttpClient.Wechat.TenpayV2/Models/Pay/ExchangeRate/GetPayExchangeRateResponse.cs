@@ -46,6 +46,6 @@
         [Newtonsoft.Json.JsonProperty("rate")]
         [System.Text.Json.Serialization.JsonPropertyName("rate")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public long? ExchangeRate { get; set; } = default!;
+        public double? ExchangeRate { get; set; } = default!;
     }
 }
