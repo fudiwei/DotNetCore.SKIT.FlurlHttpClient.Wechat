@@ -114,9 +114,9 @@ var client = new WechatTenpayClient(options);
 你应在后台周期性地调用 `QueryCertificatesAsync()` 方法，并在解密得到证书内容后，记录到证书管理器中：
 
 ```csharp
-/* 注意：QueryCertificatesAsync() 接口返回值需解密后再存入 */
-/* 　　　存入的证书式请参考上一小节给出的 CRT/CER 证书文件示例 */
-/* 　　　示例项目中也包含一段关于此的演示程序 */
+/* 注意：QueryCertificatesAsync() 接口返回值需解密后再存入     */
+/* 　　　存入的证书格式请参考上一小节给出的 CRT/CER 证书文件示例 */
+/* 　　　示例项目中也包含一段关于此的演示程序                   */
 manager.SetEntry(new CertificateEntry("CRT/CER 证书序列号", "CRT/CER 证书内容", "证书生效时间", "证书过期时间"));
 ```
 
