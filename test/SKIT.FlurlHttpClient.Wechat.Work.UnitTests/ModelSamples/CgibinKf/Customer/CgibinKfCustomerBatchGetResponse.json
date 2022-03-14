@@ -7,10 +7,15 @@
             "nickname": "张三",
             "avatar": "http://xxxxx",
             "gender": 1,
-            "unionid": "oxasdaosaosdasdasdasd"
+            "unionid": "oxasdaosaosdasdasdasd",
+            "enter_session_context": {
+                "scene": "123",
+                "scene_param": "abc",
+                "wechat_channels": {
+                    "nickname": "进入会话的视频号名称"
+                }
+            }
         }
     ],
-    "invalid_external_userid": [
-        "zhangsan"
-    ]
+    "invalid_external_userid": ["zhangsan"]
 }

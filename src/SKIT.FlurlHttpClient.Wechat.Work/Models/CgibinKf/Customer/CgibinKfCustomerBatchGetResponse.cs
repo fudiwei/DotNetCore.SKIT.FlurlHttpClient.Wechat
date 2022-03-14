@@ -9,6 +9,40 @@
         {
             public class Customer
             {
+                public static class Types
+                {
+                    public class EnterSessionContext
+                    {
+                        public static class Types
+                        {
+                            public class WechatChannels : CgibinKfSyncMessageResponse.Types.Message.Types.EventMessage.Types.WechatChannels
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置场景值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("scene")]
+                        [System.Text.Json.Serialization.JsonPropertyName("scene")]
+                        public string? Scene { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置场景参数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("scene_param")]
+                        [System.Text.Json.Serialization.JsonPropertyName("scene_param")]
+                        public string? SceneParameter { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频号信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wechat_channels")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wechat_channels")]
+                        public Types.WechatChannels? WechatChannels { get; set; }
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置外部联系人账号。
                 /// </summary>
@@ -43,6 +77,13 @@
                 [Newtonsoft.Json.JsonProperty("unionid")]
                 [System.Text.Json.Serialization.JsonPropertyName("unionid")]
                 public string? UnionId { get; set; }
+
+                /// <summary>
+                /// 获取或设置客户最后一次进入会话的上下文信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("enter_session_context")]
+                [System.Text.Json.Serialization.JsonPropertyName("enter_session_context")]
+                public Types.EnterSessionContext? EnterSessionContext { get; set; }
             }
         }
 
