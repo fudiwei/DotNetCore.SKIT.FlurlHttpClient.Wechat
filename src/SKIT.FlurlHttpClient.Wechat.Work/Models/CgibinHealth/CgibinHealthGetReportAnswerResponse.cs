@@ -47,6 +47,20 @@
                         [Newtonsoft.Json.JsonProperty("fileid")]
                         [System.Text.Json.Serialization.JsonPropertyName("fileid")]
                         public string[]? FileIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置行程卡类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("itinerary_card_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("itinerary_card_type")]
+                        public int? ItineraryCardType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置高风险行程信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("high_risk_area")]
+                        [System.Text.Json.Serialization.JsonPropertyName("high_risk_area")]
+                        public string? HighRiskArea { get; set; }
                     }
                 }
 
@@ -84,6 +98,13 @@
                 [Newtonsoft.Json.JsonProperty("report_values")]
                 [System.Text.Json.Serialization.JsonPropertyName("report_values")]
                 public Types.ReportValue[] ReportValueList { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置报告时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("report_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("report_time")]
+                public long ReportTimestamp { get; set; }
             }
         }
 

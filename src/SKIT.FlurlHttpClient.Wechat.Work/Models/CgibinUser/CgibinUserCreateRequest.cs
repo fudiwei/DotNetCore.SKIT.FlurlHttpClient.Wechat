@@ -157,7 +157,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     public class WechatChannels
                     {
                         /// <summary>
-                        /// 获取或设置视频号名称。
+                        /// 获取或设置视频号昵称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("nickname")]
                         [System.Text.Json.Serialization.JsonPropertyName("nickname")]

@@ -5,6 +5,7 @@
         {
             "id_type": 1,
             "userid": "userid2",
+            "report_time": 123456789,
             "report_values": [
                 {
                     "question_id": 1,
@@ -16,16 +17,11 @@
                 },
                 {
                     "question_id": 3,
-                    "multi_choice": [
-                        1,
-                        3
-                    ]
+                    "multi_choice": [1, 3]
                 },
                 {
                     "question_id": 4,
-                    "fileid": [
-                        "XXXXXXX"
-                    ]
+                    "fileid": ["XXXXXXX"]
                 }
             ]
         },
@@ -33,6 +29,7 @@
             "id_type": 2,
             "student_userid": "student_userid1",
             "parent_userid": "parent_userid1",
+            "report_time": 123456789,
             "report_values": [
                 {
                     "question_id": 1,
@@ -44,17 +41,11 @@
                 },
                 {
                     "question_id": 3,
-                    "multi_choice": [
-                        1,
-                        2,
-                        3
-                    ]
+                    "multi_choice": [1, 2, 3]
                 },
                 {
                     "question_id": 4,
-                    "fileid": [
-                        "XXXXXXX"
-                    ]
+                    "fileid": ["XXXXXXX"]
                 }
             ]
         }

@@ -155,7 +155,7 @@
                     public class WechatChannels
                     {
                         /// <summary>
-                        /// 获取或设置对外展示视频号状态。
+                        /// 获取或设置对外展示视频号昵称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("nickname")]
                         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
