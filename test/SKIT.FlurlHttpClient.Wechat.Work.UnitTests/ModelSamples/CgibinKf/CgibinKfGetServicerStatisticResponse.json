@@ -1,0 +1,26 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "statistic_list": [
+        {
+            "stat_date": 1645545600,
+            "statistic": {
+                "session_cnt": 1,
+                "customer_cnt": 1,
+                "customer_msg_cnt": 1,
+                "reply_rate": 1,
+                "first_reply_average_sec": 17,
+                "satisfaction_investgate_cnt": 1,
+                "satisfaction_participation_rate": 1,
+                "satisfied_rate": 1,
+                "middling_rate": 0,
+                "dissatisfied_rate": 0,
+                "upgrade_service_customer_cnt": 0,
+                "upgrade_service_member_invite_cnt": 0,
+                "upgrade_service_member_customer_cnt": 0,
+                "upgrade_service_groupchat_invite_cnt": 0,
+                "upgrade_service_groupchat_customer_cnt": 0
+            }
+        }
+    ]
+}
