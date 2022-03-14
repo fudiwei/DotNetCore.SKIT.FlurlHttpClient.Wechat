@@ -168,6 +168,16 @@
                         [System.Text.Json.Serialization.JsonPropertyName("group_name")]
                         public string? TagGroupName { get; set; }
                     }
+
+                    public class WechatChannels
+                    {
+                        /// <summary>
+                        /// 获取或设置视频号昵称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("nickname")]
+                        [System.Text.Json.Serialization.JsonPropertyName("nickname")]
+                        public string? Nickname { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -210,7 +220,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tags")]
                 [System.Text.Json.Serialization.JsonPropertyName("tags")]
-                public Types.Tag[]? Tags { get; set; }
+                public Types.Tag[]? TagList { get; set; }
+
+                /// <summary>
+                /// 获取或设置该成员添加外部联系人所打企业标签 ID 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("tag_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
+                public string[]? TagIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置该成员添加外部联系人的来源。
@@ -239,6 +256,13 @@
                 [Newtonsoft.Json.JsonProperty("oper_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("oper_userid")]
                 public string? OperateUserId { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频号信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("wechat_channels")]
+                [System.Text.Json.Serialization.JsonPropertyName("wechat_channels")]
+                public Types.WechatChannels? WechatChannels { get; set; }
             }
         }
 

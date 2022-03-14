@@ -14,14 +14,8 @@
         "unionid": "ozynqsulJFCZ2z1aYeS8h-nuasdAAA",
         "is_subscribe": 1,
         "subscriber_info": {
-            "tag_id": [
-                "TAG_ID1",
-                "TAG_ID2"
-            ],
-            "remark_mobiles": [
-                "10000000000",
-                "10000000001"
-            ],
+            "tag_id": ["TAG_ID1", "TAG_ID2"],
+            "remark_mobiles": ["10000000000", "10000000001"],
             "remark": "李小明-爸爸"
         },
         "external_profile": {
@@ -68,12 +62,12 @@
                 }
             ],
             "remark_corp_name": "腾讯科技",
-            "remark_mobiles": [
-                "13800000001",
-                "13000000002"
-            ],
+            "remark_mobiles": ["13800000001", "13000000002"],
             "oper_userid": "rocky",
-            "add_way": 1
+            "add_way": 10,
+            "wechat_channels": {
+                "nickname": "视频号名称"
+            }
         },
         {
             "userid": "tommy",

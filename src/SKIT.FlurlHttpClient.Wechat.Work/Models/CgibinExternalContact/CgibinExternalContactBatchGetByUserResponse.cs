@@ -15,70 +15,8 @@
                     {
                     }
 
-                    public class FollowUser
+                    public class FollowUser : CgibinExternalContactGetResponse.Types.FollowUser
                     {
-                        /// <summary>
-                        /// 获取或设置该成员对外部联系人的备注。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("remark")]
-                        [System.Text.Json.Serialization.JsonPropertyName("remark")]
-                        public string Remark { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置该成员对外部联系人的备注企业名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("remark_corp_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("remark_corp_name")]
-                        public string? RemarkCompany { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置该成员对外部联系人的备注手机号码列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("remark_mobiles")]
-                        [System.Text.Json.Serialization.JsonPropertyName("remark_mobiles")]
-                        public string[]? RemarkMobileNumberList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置该成员对外部联系人的描述。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("description")]
-                        [System.Text.Json.Serialization.JsonPropertyName("description")]
-                        public string Description { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置该成员添加外部联系人所打企业标签 ID 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("tag_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
-                        public string[] TagIdList { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置该成员添加外部联系人的来源。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("add_way")]
-                        [System.Text.Json.Serialization.JsonPropertyName("add_way")]
-                        public int AddWay { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置该成员添加外部联系人的时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("createtime")]
-                        [System.Text.Json.Serialization.JsonPropertyName("createtime")]
-                        public long CreateTimestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置企业自定义渠道参数。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("state")]
-                        [System.Text.Json.Serialization.JsonPropertyName("state")]
-                        public string? State { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置发起添加的成员账号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("oper_userid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("oper_userid")]
-                        public string? OperateUserId { get; set; }
                     }
                 }
 
