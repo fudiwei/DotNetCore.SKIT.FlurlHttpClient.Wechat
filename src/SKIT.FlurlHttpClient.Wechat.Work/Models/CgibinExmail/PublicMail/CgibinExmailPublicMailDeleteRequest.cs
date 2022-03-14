@@ -6,7 +6,7 @@
     public class CgibinExmailPublicMailDeleteRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置业务邮箱 ID
+        /// 获取或设置业务邮箱 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("id")]
         [System.Text.Json.Serialization.JsonPropertyName("id")]

@@ -221,5 +221,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+        
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/account/act_email 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95512 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailAccountActiveEmailResponse> ExecuteCgibinExmailAccountActiveEmailAsync(this WechatWorkClient client, Models.CgibinExmailAccountActiveEmailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "account", "act_email")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailAccountActiveEmailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }
