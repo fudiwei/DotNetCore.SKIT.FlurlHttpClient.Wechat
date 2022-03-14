@@ -175,10 +175,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     else if (entryValueType.IsClass)
                     {
                         InnerReplacePropertyStringValue(ref entryValue, replacement);
-                        if (!dict.IsReadOnly)
-                        {
-                            dict[entry.Key] = entryValue;
-                        }
+                        //if (!dict.IsReadOnly)
+                        //{
+                        //    dict[entry.Key] = entryValue;
+                        //}
                     }
                     else
                     {
