@@ -71,6 +71,19 @@
 
                     public class EventMessage
                     {
+                        public static class Types
+                        {
+                            public class WechatChannels
+                            {
+                                /// <summary>
+                                /// 获取或设置视频号昵称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("nickname")]
+                                [System.Text.Json.Serialization.JsonPropertyName("nickname")]
+                                public string? Nickname { get; set; }
+                            }
+                        }
+
                         /// <summary>
                         /// 获取或设置事件类型。
                         /// </summary>
@@ -168,6 +181,13 @@
                         [Newtonsoft.Json.JsonProperty("msg_code")]
                         [System.Text.Json.Serialization.JsonPropertyName("msg_code")]
                         public string? MessageCode { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频号信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wechat_channels")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wechat_channels")]
+                        public Types.WechatChannels? WechatChannels { get; set; }
                     }
                 }
 
@@ -184,6 +204,34 @@
                 [Newtonsoft.Json.JsonProperty("msgtype")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
                 public string MessageType { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置消息来源。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("origin")]
+                [System.Text.Json.Serialization.JsonPropertyName("origin")]
+                public int MessageOrigin { get; set; }
+
+                /// <summary>
+                /// 获取或设置客服帐号 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("open_kfid")]
+                [System.Text.Json.Serialization.JsonPropertyName("open_kfid")]
+                public string? OpenKfId { get; set; }
+
+                /// <summary>
+                /// 获取或设置接待人员的 UserId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("servicer_userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("servicer_userid")]
+                public string? ServicerUserId { get; set; }
+
+                /// <summary>
+                /// 获取或设置外部联系人账号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("external_userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
+                public string? ExternalUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置文本消息信息。
@@ -261,8 +309,22 @@
                 [Newtonsoft.Json.JsonProperty("event")]
                 [System.Text.Json.Serialization.JsonPropertyName("event")]
                 public Types.EventMessage? MessageContentForEvent { get; set; }
+
+                /// <summary>
+                /// 获取或设置发送时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("send_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("send_time")]
+                public long SendTimestamp { get; set; }
             }
         }
+
+        /// <summary>
+        /// 获取或设置消息列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("msg_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("msg_list")]
+        public Types.Message[] MessageList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置是否还有更多数据。
@@ -276,8 +338,8 @@
         /// <summary>
         /// 获取或设置翻页标记。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("cursor")]
-        [System.Text.Json.Serialization.JsonPropertyName("cursor")]
+        [Newtonsoft.Json.JsonProperty("next_cursor")]
+        [System.Text.Json.Serialization.JsonPropertyName("next_cursor")]
         public string? NextCursor { get; set; }
     }
 }

@@ -1,0 +1,17 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "next_cursor": "4gw7MepFLfgF2VC5npN",
+    "has_more": 1,
+    "msg_list": [
+        {
+            "msgid": "from_msgid_4622416642169452483",
+            "open_kfid": "wkAJ2GCAAASSm4_FhToWMFea0xAFfd3Q",
+            "external_userid": "wmAJ2GCAAAme1XQRC-NI-q0_ZM9ukoAw",
+            "send_time": 1615478585,
+            "origin": 3,
+            "servicer_userid": "Zhangsan",
+            "msgtype": "MSG_TYPE"
+        }
+    ]
+}

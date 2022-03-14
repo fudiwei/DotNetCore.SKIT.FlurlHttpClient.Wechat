@@ -25,5 +25,12 @@
         [Newtonsoft.Json.JsonProperty("limit")]
         [System.Text.Json.Serialization.JsonPropertyName("limit")]
         public int? Limit { get; set; }
+
+        /// <summary>
+        /// 获取或设置语音消息类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("voice_format")]
+        [System.Text.Json.Serialization.JsonPropertyName("voice_format")]
+        public int? VoiceFormat { get; set; }
     }
 }
