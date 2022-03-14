@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cursor")]
         [System.Text.Json.Serialization.JsonPropertyName("cursor")]
-        public int NextCursor { get; set; }
+        public int Cursor { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

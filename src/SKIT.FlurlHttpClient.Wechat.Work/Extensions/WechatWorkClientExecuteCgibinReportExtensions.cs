@@ -436,5 +436,67 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinReportResidentGetOrderInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+    
+        #region SiteCode
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/report/sitecode/list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93514 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinReportSiteCodeListResponse> ExecuteCgibinReportSiteCodeListAsync(this WechatWorkClient client, Models.CgibinReportSiteCodeListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "report", "sitecode", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinReportSiteCodeListResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+        
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/report/sitecode/get_site_report_info 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95461 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinReportSiteCodeGetSiteReportInfoResponse> ExecuteCgibinReportSiteCodeGetSiteReportInfoAsync(this WechatWorkClient client, Models.CgibinReportSiteCodeGetSiteReportInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "report", "sitecode", "get_site_report_info")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinReportSiteCodeGetSiteReportInfoResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+        
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/report/sitecode/get_report_answer 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95464 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinReportSiteCodeGetReportAnswerResponse> ExecuteCgibinReportSiteCodeGetReportAnswerAsync(this WechatWorkClient client, Models.CgibinReportSiteCodeGetReportAnswerRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "report", "sitecode", "get_report_answer")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinReportSiteCodeGetReportAnswerResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

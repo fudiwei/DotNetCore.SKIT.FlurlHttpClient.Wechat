@@ -1,23 +1,23 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/externalcontact/get_moment_customer_list 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/report/sitecode/get_report_answer 接口的请求。</para>
     /// </summary>
-    public class CgibinExternalContactGetMomentCustomerListRequest : WechatWorkRequest
+    public class CgibinReportSiteCodeGetReportAnswerRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置朋友圈 ID。
+        /// 获取或设置场所码 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("moment_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("moment_id")]
-        public string MomentId { get; set; } = string.Empty;
+        [Newtonsoft.Json.JsonProperty("siteid")]
+        [System.Text.Json.Serialization.JsonPropertyName("siteid")]
+        public string SiteCodeId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置指定发布者成员账号。
+        /// 获取或设置日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("userid")]
-        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string? UserId { get; set; }
+        [Newtonsoft.Json.JsonProperty("date")]
+        [System.Text.Json.Serialization.JsonPropertyName("date")]
+        public string DateString { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置分页每页数量。

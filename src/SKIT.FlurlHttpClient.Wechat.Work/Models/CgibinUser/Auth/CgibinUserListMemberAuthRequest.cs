@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string? NextCursor { get; set; }
+        public string? Cursor { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

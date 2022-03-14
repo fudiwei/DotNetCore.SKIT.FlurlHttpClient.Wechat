@@ -46,6 +46,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cursor")]
         [System.Text.Json.Serialization.JsonPropertyName("cursor")]
-        public string? NextCursor { get; set; }
+        public string? Cursor { get; set; }
     }
 }

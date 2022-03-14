@@ -327,7 +327,7 @@
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("has_more")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
-        public bool HasMore { get; set; } = default!;
+        public bool HasMore { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

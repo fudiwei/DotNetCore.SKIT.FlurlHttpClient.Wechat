@@ -322,8 +322,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "user", "list_member_auth")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.NextCursor != null)
-                flurlReq.SetQueryParam("cursor", request.NextCursor);
+            if (request.Cursor != null)
+                flurlReq.SetQueryParam("cursor", request.Cursor);
 
             if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit);

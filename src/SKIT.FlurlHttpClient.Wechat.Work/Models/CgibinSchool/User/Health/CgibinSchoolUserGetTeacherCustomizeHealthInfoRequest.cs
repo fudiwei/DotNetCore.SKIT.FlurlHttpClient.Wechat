@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_key")]
         [System.Text.Json.Serialization.JsonPropertyName("next_key")]
-        public string? NextCursor { get; set; }
+        public string? Cursor { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。
