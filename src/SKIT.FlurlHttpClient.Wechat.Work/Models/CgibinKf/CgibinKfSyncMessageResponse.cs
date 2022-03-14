@@ -37,16 +37,6 @@
                     {
                     }
 
-                    public class BusinessCardMessage
-                    {
-                        /// <summary>
-                        /// 获取或设置名片的 UserId。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("userid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                        public string UserId { get; set; } = default!;
-                    }
-
                     public class LinkMessage : CgibinKfSendMessageRequest.Types.LinkMessage
                     {
                         /// <summary>
@@ -66,6 +56,10 @@
                     }
 
                     public class LocationMessage : CgibinKfSendMessageRequest.Types.LocationMessage
+                    {
+                    }
+
+                    public class BusinessCardMessage : CgibinKfSendMessageRequest.Types.BusinessCardMessage
                     {
                     }
 
@@ -269,13 +263,6 @@
                 public Types.FileMessage? MessageContentForFile { get; set; }
 
                 /// <summary>
-                /// 获取或设置名片消息信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("business_card")]
-                [System.Text.Json.Serialization.JsonPropertyName("business_card")]
-                public Types.BusinessCardMessage? MessageContentForBusinessCard { get; set; }
-
-                /// <summary>
                 /// 获取或设置图文消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("link")]
@@ -302,6 +289,13 @@
                 [Newtonsoft.Json.JsonProperty("location")]
                 [System.Text.Json.Serialization.JsonPropertyName("location")]
                 public Types.LocationMessage? MessageContentForLocation { get; set; }
+
+                /// <summary>
+                /// 获取或设置名片消息信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("business_card")]
+                [System.Text.Json.Serialization.JsonPropertyName("business_card")]
+                public Types.BusinessCardMessage? MessageContentForBusinessCard { get; set; }
 
                 /// <summary>
                 /// 获取或设置事件消息信息。

@@ -240,6 +240,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("address")]
                 public string? Address { get; set; }
             }
+
+            public class BusinessCardMessage
+            {
+                /// <summary>
+                /// 获取或设置成员账号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                public string UserId { get; set; } = string.Empty;
+            }
         }
 
         /// <summary>
@@ -332,5 +342,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("location")]
         [System.Text.Json.Serialization.JsonPropertyName("location")]
         public Types.LocationMessage? MessageContentForLocation { get; set; }
+
+        /// <summary>
+        /// 获取或设置名片消息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("business_card")]
+        [System.Text.Json.Serialization.JsonPropertyName("business_card")]
+        public Types.BusinessCardMessage? MessageContentForBusinessCard { get; set; }
     }
 }
