@@ -115,5 +115,111 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailGroupGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region PublicMail
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/create 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95511 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailPublicMailCreateResponse> ExecuteCgibinExmailPublicMailCreateAsync(this WechatWorkClient client, Models.CgibinExmailPublicMailCreateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "publicmail", "create")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/update 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95511 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailPublicMailUpdateResponse> ExecuteCgibinExmailPublicMailUpdateAsync(this WechatWorkClient client, Models.CgibinExmailPublicMailUpdateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "publicmail", "update")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/delete 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95511 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailPublicMailDeleteResponse> ExecuteCgibinExmailPublicMailDeleteAsync(this WechatWorkClient client, Models.CgibinExmailPublicMailDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "publicmail", "delete")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/exmail/publicmail/search 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailPublicMailSearchResponse> ExecuteCgibinExmailPublicMailSearchAsync(this WechatWorkClient client, Models.CgibinExmailPublicMailSearchRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "exmail", "publicmail", "search")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("fuzzy", request.IsFuzzy ? 1 : 0);
+
+            if (request.EmailOrName != null)
+                flurlReq.SetQueryParam("email", request.EmailOrName);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/get 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailPublicMailGetResponse> ExecuteCgibinExmailPublicMailGetAsync(this WechatWorkClient client, Models.CgibinExmailPublicMailGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "publicmail", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

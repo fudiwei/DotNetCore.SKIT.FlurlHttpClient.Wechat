@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/exmail/group/update 接口的请求。</para>
@@ -76,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public int? AllowType { get; set; }
 
         /// <summary>
-        /// 获取或设置使用权限。
+        /// 获取或设置使用的邮箱列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_emaillist")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_emaillist")]

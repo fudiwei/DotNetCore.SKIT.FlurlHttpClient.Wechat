@@ -98,7 +98,7 @@
         public int AllowType { get; set; }
 
         /// <summary>
-        /// 获取或设置使用权限。
+        /// 获取或设置使用的邮箱列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("allow_emaillist")]
         [System.Text.Json.Serialization.JsonPropertyName("allow_emaillist")]

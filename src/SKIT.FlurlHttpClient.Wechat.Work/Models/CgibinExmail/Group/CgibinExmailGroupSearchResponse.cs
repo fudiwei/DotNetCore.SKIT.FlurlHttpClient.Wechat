@@ -10,7 +10,7 @@
             public class EmailGroup
             {
                 /// <summary>
-                /// 获取或设置邮件群组ID。
+                /// 获取或设置邮件群组 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("groupid")]
                 [System.Text.Json.Serialization.JsonPropertyName("groupid")]
@@ -31,12 +31,5 @@
         [Newtonsoft.Json.JsonProperty("groups")]
         [System.Text.Json.Serialization.JsonPropertyName("groups")]
         public Types.EmailGroup[] EmailGroupList { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置返回条数。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("count")]
-        [System.Text.Json.Serialization.JsonPropertyName("count")]
-        public int Count { get; set; }
     }
 }

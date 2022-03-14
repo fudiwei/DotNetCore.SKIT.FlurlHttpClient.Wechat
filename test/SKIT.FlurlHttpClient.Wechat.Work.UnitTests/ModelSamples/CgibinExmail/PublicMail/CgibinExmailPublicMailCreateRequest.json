@@ -1,0 +1,13 @@
+﻿{
+    "email": "apitest@gzdev.com",
+    "name": "apitest",
+    "userid_list": {
+        "list": ["apitest1", "apitest2"]
+    },
+    "department_list": {
+        "list": [1, 2]
+    },
+    "tag_list": {
+        "list": [1, 2]
+    }
+}
