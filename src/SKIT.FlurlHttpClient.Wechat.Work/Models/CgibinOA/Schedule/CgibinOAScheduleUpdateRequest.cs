@@ -84,6 +84,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("attendees")]
                 [System.Text.Json.Serialization.JsonPropertyName("attendees")]
                 public IList<Types.Attendee>? AttendeeList { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否忽略参与者字段。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("skip_attendees")]
+                [System.Text.Json.Serialization.JsonPropertyName("skip_attendees")]
+                public bool? RequireSkipAttendees { get; set; }
             }
         }
 

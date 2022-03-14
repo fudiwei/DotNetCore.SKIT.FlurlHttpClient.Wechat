@@ -47,6 +47,13 @@
                         [Newtonsoft.Json.JsonProperty("booker")]
                         [System.Text.Json.Serialization.JsonPropertyName("booker")]
                         public string? BookerUserId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置预定状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("status")]
+                        public int Status { get; set; }
                     }
                 }
 

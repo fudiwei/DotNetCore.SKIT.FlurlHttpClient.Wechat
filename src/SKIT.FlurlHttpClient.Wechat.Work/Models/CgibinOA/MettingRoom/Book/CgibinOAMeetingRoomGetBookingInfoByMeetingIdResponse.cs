@@ -20,10 +20,10 @@
         public int MeetingRoomId { get; set; }
 
         /// <summary>
-        /// 获取或设置排期列表。
+        /// 获取或设置排期信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("schedule")]
         [System.Text.Json.Serialization.JsonPropertyName("schedule")]
-        public Types.Schedule[] ScheduleList { get; set; } = default!;
+        public Types.Schedule Schedule { get; set; } = default!;
     }
 }
