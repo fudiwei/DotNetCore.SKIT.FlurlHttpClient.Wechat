@@ -240,6 +240,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public string? PromoterOpenId { get; set; }
 
                                 /// <summary>
+                                /// 获取或设置推广员用户名。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("finder_username")]
+                                [System.Text.Json.Serialization.JsonPropertyName("finder_username")]
+                                public string? FinderUsername { get; set; }
+
+                                /// <summary>
                                 /// 获取或设置推广员昵称。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("finder_nickname")]
