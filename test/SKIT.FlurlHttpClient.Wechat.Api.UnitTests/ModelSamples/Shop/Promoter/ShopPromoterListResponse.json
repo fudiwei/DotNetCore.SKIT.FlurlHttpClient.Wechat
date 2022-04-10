@@ -4,15 +4,18 @@
     "promoters": [
         {
             "finder_nickname": "XXXX",
-            "promoter_id": "a-***************************************po"
+            "promoter_id": "a-***************************************po",
+            "promoter_openid": "openid"
         },
         {
             "finder_nickname": "XXXX",
-            "promoter_id": "N1***************************************BE"
+            "promoter_id": "N1***************************************BE",
+            "promoter_openid": "openid"
         },
         {
             "finder_nickname": "XXXX",
-            "promoter_id": "9Z***************************************Vk"
+            "promoter_id": "9Z***************************************Vk",
+            "promoter_openid": "openid"
         }
     ]
 }

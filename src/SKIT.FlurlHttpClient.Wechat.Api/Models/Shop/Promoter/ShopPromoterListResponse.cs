@@ -17,11 +17,18 @@
                 public string PromoterId { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置推广员 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("promoter_openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("promoter_openid")]
+                public string? PromoterOpenId { get; set; }
+
+                /// <summary>
                 /// 获取或设置推广员视频号昵称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("finder_nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("finder_nickname")]
-                public string FinderNickname { get; set; } = default!;
+                public string? FinderNickname { get; set; }
             }
         }
 
