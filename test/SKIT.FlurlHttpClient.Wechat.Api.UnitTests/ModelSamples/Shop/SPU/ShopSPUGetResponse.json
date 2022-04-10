@@ -6,19 +6,18 @@
         "title": "任天堂 Nintendo Switch 国行续航增强版 NS家用体感游戏机掌机 便携掌上游戏机 红蓝主机",
         "path": "plugin-private://wx34345ae5855f892d/pages/productDetail/productDetail?productId=2176180",
         "head_img": [
-            "http://img10.360buyimg.com/n1/s450x450_jfs/t1/85865/39/13611/488083/5e590a40E4bdf69c0/55c9bf645ea2b727.jpg"
+            "https://mmecimage.cn/p/wx77e672d6d34a4bed/HNTiaPWTllJ5R2pq9Jv9jRD5bZOWmq2svUUzJcZbcg"
         ],
         "desc_info": {
             "desc": "xxxx",
             "imgs": [
-                "http://img10.360buyimg.com/n1/s450x450_jfs/t1/85865/39/13611/488083/5e590a40E4bdf69c0/55c9bf645ea2b727.jpg"
+                "https://mmecimage.cn/p/wx77e672d6d34a4bed/HNTiaPWTllJ5R2pq9Jv9jRD5bZOWmq2svUUzJcZbcg"
             ]
         },
         "audit_info": {
             "submit_time": "2021-03-09 15:14:08",
             "audit_time": "2021-03-09 15:16:08",
-            "reject_reason": "不通过",
-            "audit_id": "1212121"
+            "reject_reason": "不通过"
         },
         "third_cat_id": 6666,
         "brand_id": 2100000000,
@@ -27,9 +26,9 @@
         "update_time": "2020-12-26 00:00:00",
         "skus": [
             {
-                "sku_id": 1024,
-                "out_sku_id": "1234566",
-                "thumb_img": "http://img10.360buyimg.com/n1/s450x450_jfs/t1/100778/17/13648/424215/5e590a40E2d68e774/e171d222a0c9b763.jpg",
+                "out_product_id": "1234566",
+                "out_sku_id": "1024",
+                "thumb_img": "https://mmecimage.cn/p/wx77e672d6d34a4bed/HNTiaPWTllJ5R2pq9Jv9jRD5bZOWmq2svUUzJcZbcg",
                 "sale_price": 1300,
                 "market_price": 1500,
                 "stock_num": 100,

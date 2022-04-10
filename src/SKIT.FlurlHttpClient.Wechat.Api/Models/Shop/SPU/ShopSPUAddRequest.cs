@@ -112,6 +112,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string PagePath { get; set; } = string.Empty;
 
         /// <summary>
+        /// 获取或设置小程序商品立即购买页面路径。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("direct_path")]
+        [System.Text.Json.Serialization.JsonPropertyName("direct_path")]
+        public string? DirectPagePath { get; set; }
+
+        /// <summary>
         /// 获取或设置主图 Url 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("head_img")]
@@ -159,5 +166,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("skus")]
         [System.Text.Json.Serialization.JsonPropertyName("skus")]
         public IList<Types.SKU> SKUList { get; set; } = new List<Types.SKU>();
+
+        /// <summary>
+        /// 获取或设置商品使用场景 ID 列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("scene_group_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("scene_group_list")]
+        public IList<int>? SceneGroupIdList { get; set; }
     }
 }

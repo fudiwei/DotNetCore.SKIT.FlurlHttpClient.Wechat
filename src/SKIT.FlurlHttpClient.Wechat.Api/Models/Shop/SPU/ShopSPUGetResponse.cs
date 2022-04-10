@@ -85,11 +85,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     public class SKU
                     {
                         /// <summary>
-                        /// 获取或设置 SKU ID。
+                        /// 获取或设置商家自定义商品 ID。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("sku_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
-                        public long SKUId { get; set; }
+                        [Newtonsoft.Json.JsonProperty("out_product_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("out_product_id")]
+                        public string OutProductId { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置商家自定义 SKU ID。
