@@ -268,14 +268,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_doc_period_begin")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_doc_period_begin")]
-                        public string IdCardPeriodStartDateString { get; set; } = string.Empty;
+                        public string IdDocumentPeriodStartDateString { get; set; } = string.Empty;
 
                         /// <summary>
                         /// 获取或设置证件有效期结束时间字符串（格式：yyyy-MM-dd / "长期"）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("id_doc_period_end")]
                         [System.Text.Json.Serialization.JsonPropertyName("id_doc_period_end")]
-                        public string IdCardPeriodEndDateString { get; set; } = string.Empty;
+                        public string IdDocumentPeriodEndDateString { get; set; } = string.Empty;
                     }
                 }
 

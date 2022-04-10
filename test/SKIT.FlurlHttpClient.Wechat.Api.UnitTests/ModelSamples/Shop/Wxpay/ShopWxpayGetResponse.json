@@ -1,0 +1,60 @@
+﻿{
+    "errcode": 0,
+    "pay_req": {
+        "business_license_info": {
+            "business_license_copy": "jZe4zIHlHd4W-2hdRc9YJHOWaXLu-jeT_HPQ2pkR7CwW9swozIN_RtibXPsmLtNaiUH0fhrujTjVL4Noiw9PCYq0aSg32p-OwvbzSnK-k-Q",
+            "business_license_number": "83274MA5CN4WK0D",
+            "legal_person": "于先生",
+            "merchant_name": "魅力广州"
+        },
+        "contact_info": {
+            "contact_email": "wechat@tencent.com",
+            "contact_id_card_number": "43112119951119003",
+            "contact_name": "于先生",
+            "contact_type": "65",
+            "mobile_phone": "187xxxxxxxx"
+        },
+        "id_card_info": {
+            "id_card_copy": "aZe4zIHlHd4W-2hdRc9YJO90E_1rLUJioHWZC0vHhO-FjK3zAnTiUnG61cpiYMx9dbzI7NdFIg55nmherZnCrZn3GkEPfCJUpg59A-dW1Ts",
+            "id_card_name": "于先生",
+            "id_card_national": "aZe4zIHlHd4W-2hdRc9YJM4gvRIV8V5a4iEc8Oem02ywFfV6Rb4RJhbNvSEYevRaYnkFp0QEoEKA4cMoDvGfBzsM5WDjocZv96ZzFeb0arc",
+            "id_card_number": "43112119951119003",
+            "id_card_valid_time": "2022-09-21"
+        },
+        "merchant_shortname": "魅力广州",
+        "need_account_info": false,
+        "organization_type": "2",
+        "out_request_no": "wx50808a0fa3b8abca",
+        "sales_scene_info": {
+            "mini_program_sub_appid": "wx50808a0fa3b8abca",
+            "store_name": "魅力广州",
+            "store_url": "http://www.wechat.qq.com/"
+        }
+    },
+    "pay_resp": {
+        "applyment_state": "FINISH",
+        "applyment_state_desc": "完成",
+        "sign_url": "http://pay.weixin.qq.com/public/apply4ec_sign/s?applymentId=2000002126198476&sign=b207b673049a32c858f3aabd7d27c7ec",
+        "sub_mchid": "1542488631",
+        "account_validation": {
+            "account_name": "account_name",
+            "account_no": "account_no",
+            "pay_amount": 124,
+            "destination_account_number": "7222223333322332",
+            "destination_account_name": "财付通支付科技有限公司",
+            "destination_account_bank": "招商银行威盛大厦支行",
+            "city": "深圳",
+            "remark": "入驻账户验证",
+            "deadline": "2018-12-10 17:09:01"
+        },
+        "audit_detail": [
+            {
+                "param_name": "id_card_copy",
+                "reject_reason": "身份证背面识别失败，请上传更清晰的身份证图片。"
+            }
+        ],
+        "legal_validation_url": "http://pay.weixin.qq.com/public/apply4ec_sign/s?applymentId=20000032422126198476&sign=b207b673049a32c858f3aabd7d27c7ec",
+        "out_request_no": "APPLYMENT_00000000001",
+        "applyment_id": 2000002124775691
+    }
+}
