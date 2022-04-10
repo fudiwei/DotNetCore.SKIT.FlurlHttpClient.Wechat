@@ -45,6 +45,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int SalePrice { get; set; }
 
                         /// <summary>
+                        /// 获取或设置 SKU 总实付价（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sku_real_price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("sku_real_price")]
+                        public int SKURealPrice { get; set; }
+
+                        /// <summary>
                         /// 获取或设置小程序商品页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("path")]
@@ -171,7 +178,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receiver_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("receiver_name")]
-                public string Name { get; set; } = string.Empty;
+                public string ReceiverName { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置国家。
@@ -241,9 +248,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置订单类型。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("type")]
-        [System.Text.Json.Serialization.JsonPropertyName("type")]
-        public int Type { get; set; }
+        [Newtonsoft.Json.JsonProperty("fund_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("fund_type")]
+        public int FundType { get; set; }
 
         /// <summary>
         /// 获取或设置场景值。
@@ -288,5 +295,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [System.Text.Json.Serialization.JsonPropertyName("create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
         public DateTimeOffset CreateTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置超时时间。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("expire_time")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.UnixTimestampNullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("expire_time")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.UnixTimestampNullableDateTimeOffsetConverter))]
+        public DateTimeOffset? ExpireTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置确认收货之后多久禁止发起售后（单位：天）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("aftersale_duration")]
+        [System.Text.Json.Serialization.JsonPropertyName("aftersale_duration")]
+        public int? AftersaleDuration { get; set; }
     }
 }

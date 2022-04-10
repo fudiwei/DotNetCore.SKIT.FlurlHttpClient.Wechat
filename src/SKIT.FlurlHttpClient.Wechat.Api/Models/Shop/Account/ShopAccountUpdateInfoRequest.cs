@@ -9,10 +9,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class ReceivingAddress
+            public class Address
             {
                 /// <summary>
-                /// 获取或设置收货人姓名。
+                /// 获取或设置收件人姓名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("receiver_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("receiver_name")]
@@ -54,11 +54,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string Detail { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置电话号码。
+                /// 获取或设置联系电话。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tel_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                public string PhoneNumber { get; set; } = string.Empty;
+                public string TeleNumber { get; set; } = string.Empty;
             }
         }
 
@@ -88,6 +88,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("default_receiving_address")]
         [System.Text.Json.Serialization.JsonPropertyName("default_receiving_address")]
-        public Types.ReceivingAddress? DefaultReceivingAddress { get; set; }
+        public Types.Address? DefaultReceivingAddress { get; set; }
     }
 }

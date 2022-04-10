@@ -3,41 +3,35 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /shop/order/get_list_by_finder 接口的请求。</para>
+    /// <para>表示 [POST] /shop/order/get_list 接口的请求。</para>
     /// </summary>
-    public class ShopOrderGetListByFinderRequest : WechatApiRequest, IInferable<ShopOrderGetListByFinderRequest, ShopOrderGetListByFinderResponse>
+    public class ShopOrderGetListRequest : WechatApiRequest, IInferable<ShopOrderGetListRequest, ShopOrderGetListResponse>
     {
         /// <summary>
-        /// 获取或设置支付时间的开始时间。
+        /// 获取或设置创建时间的开始时间。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("start_pay_time")]
+        [Newtonsoft.Json.JsonProperty("start_create_time")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
-        [System.Text.Json.Serialization.JsonPropertyName("start_pay_time")]
+        [System.Text.Json.Serialization.JsonPropertyName("start_create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
-        public DateTimeOffset? StartPayTime { get; set; }
+        public DateTimeOffset? StartCreateTime { get; set; }
 
         /// <summary>
-        /// 获取或设置支付时间的结束时间。
+        /// 获取或设置创建时间的结束时间。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("end_pay_time")]
+        [Newtonsoft.Json.JsonProperty("end_create_time")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
-        [System.Text.Json.Serialization.JsonPropertyName("end_pay_time")]
+        [System.Text.Json.Serialization.JsonPropertyName("end_create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
-        public DateTimeOffset? EndPayTime { get; set; }
+        public DateTimeOffset? EndCreateTime { get; set; }
 
         /// <summary>
-        /// 获取或设置推广员 ID。
+        /// 获取或设置排序方式。
+        /// <para>默认值：1</para>
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("promoter_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("promoter_id")]
-        public string? PromoterId { get; set; }
-
-        /// <summary>
-        /// 获取或设置推广员 OpenId。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("promoter_openid")]
-        [System.Text.Json.Serialization.JsonPropertyName("promoter_openid")]
-        public string? PromoterOpenId { get; set; }
+        [Newtonsoft.Json.JsonProperty("sort_order")]
+        [System.Text.Json.Serialization.JsonPropertyName("sort_order")]
+        public int SortType { get; set; } = 1;
 
         /// <summary>
         /// 获取或设置分页页数（从 1 开始）。

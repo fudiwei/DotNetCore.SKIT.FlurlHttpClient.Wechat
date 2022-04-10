@@ -1,8 +1,8 @@
 ﻿{
     "start_pay_time": "2020-03-25 12:05:25",
     "end_pay_time": "2020-04-25 12:05:25",
-    "finder_username": "FINDER_USERNAME",
-    "finder_remark": "REMARK",
+    "promoter_id": "PROMOTER_ID",
+    "promoter_openid": "OPENID",
     "page": 1,
     "page_size": 10
 }

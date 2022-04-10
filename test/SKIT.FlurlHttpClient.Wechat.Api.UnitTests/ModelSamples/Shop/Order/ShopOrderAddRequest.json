@@ -1,10 +1,8 @@
 ﻿{
     "create_time": "2020-03-25 13:05:25",
-    "type": 0, 
     "out_order_id": "xxxxx",
     "openid": "oTVP50O53a7jgmawAmxKukNlq3XI",
     "path": "/pages/order.html?out_order_id=xxxxx",
-    "scene": 1177,
     "out_user_id": "323232323",
     "order_detail": {
         "product_infos": [
@@ -12,16 +10,16 @@
                 "out_product_id": "12345",
                 "out_sku_id": "23456",
                 "product_cnt": 10,
-                "sale_price": 100, 
+                "sale_price": 100,
+                "sku_real_price": 1000,
                 "path": "pages/productDetail/productDetail?productId=2176180",
                 "title": "洗洁精",
                 "head_img": "http://img10.360buyimg.com/n1/s450x450_jfs/t1/85865/39/13611/488083/5e590a40E4bdf69c0/55c9bf645ea2b727.jpg"
+
             }
         ],
         "pay_info": {
-            "pay_method_type": 0,
-            "prepay_id": "42526234625",
-            "prepay_time": "2020-03-25 14:04:25"
+            "pay_method_type": 0
         },
         "price_info": {
             "order_price": 1600,
@@ -42,5 +40,7 @@
         "province": "省份，选填",
         "city": "城市，选填",
         "town": "乡镇，选填"
-    }
+    },
+    "fund_type": 1,
+    "expire_time": 1642076428 
 }

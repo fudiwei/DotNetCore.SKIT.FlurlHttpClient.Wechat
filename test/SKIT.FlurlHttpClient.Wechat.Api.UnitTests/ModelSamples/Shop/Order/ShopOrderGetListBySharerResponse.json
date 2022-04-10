@@ -9,7 +9,6 @@
             "path": "/pages/order.html?out_order_id=xxxxx",
             "order_detail": {
                 "promotion_info": {
-                    "finder_username": "FINDER_USERNAME",
                     "finder_nickname": "FINDER_NICKNAME",
                     "sharer_openid": "OPENID",
                     "live_start_time": "2020-04-25 12:05:25"
@@ -22,7 +21,7 @@
                         "sale_price": 200,
                         "path": "pages/productDetail/productDetail?productId=2176180",
                         "title": "标题",
-                        "head_image": "http://img10.360buyimg.com/n1/s450x450_jfs/t1/85865/39/13611/488083/5e590a40E4bdf69c0/55c9bf645ea2b727.jpg",
+                        "head_img": "http://img10.360buyimg.com/n1/s450x450_jfs/t1/85865/39/13611/488083/5e590a40E4bdf69c0/55c9bf645ea2b727.jpg",
                         "real_price": 200
                     }
                 ],

@@ -85,8 +85,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// <summary>
                                 /// 获取或设置商品头图 URL。
                                 /// </summary>
-                                [Newtonsoft.Json.JsonProperty("head_image")]
-                                [System.Text.Json.Serialization.JsonPropertyName("head_image")]
+                                [Newtonsoft.Json.JsonProperty("head_img")]
+                                [System.Text.Json.Serialization.JsonPropertyName("head_img")]
                                 public string HeadImageUrl { get; set; } = default!;
                             }
 
@@ -226,11 +226,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             public class Promotion
                             {
                                 /// <summary>
-                                /// 获取或设置推广员用户名。
+                                /// 获取或设置推广员 ID。
                                 /// </summary>
-                                [Newtonsoft.Json.JsonProperty("finder_username")]
-                                [System.Text.Json.Serialization.JsonPropertyName("finder_username")]
-                                public string? FinderUsername { get; set; }
+                                [Newtonsoft.Json.JsonProperty("promoter_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("promoter_id")]
+                                public string? PromoterId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置推广员 OpenId。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("promoter_openid")]
+                                [System.Text.Json.Serialization.JsonPropertyName("promoter_openid")]
+                                public string? PromoterOpenId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置推广员昵称。
@@ -238,13 +245,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("finder_nickname")]
                                 [System.Text.Json.Serialization.JsonPropertyName("finder_nickname")]
                                 public string? FinderNickname { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置推广员备注。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("finder_remark")]
-                                [System.Text.Json.Serialization.JsonPropertyName("finder_remark")]
-                                public string? FinderRemark { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置分享者的 OpenId。
@@ -277,13 +277,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("pay_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("pay_info")]
                         public Types.Payment? Payment { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置多支付信息。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("multi_pay_info")]
-                        [System.Text.Json.Serialization.JsonPropertyName("multi_pay_info")]
-                        public Types.Payment[]? PaymentList { get; set; }
 
                         /// <summary>
                         /// 获取或设置金额信息。
@@ -328,6 +321,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
                 public int Status { get; set; }
+
+                /// <summary>
+                /// 获取或设置订单类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("fund_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("fund_type")]
+                public int FundType { get; set; }
+
+                /// <summary>
+                /// 获取或设置场景值。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("scene")]
+                [System.Text.Json.Serialization.JsonPropertyName("scene")]
+                public int Scene { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序订单页面路径。
