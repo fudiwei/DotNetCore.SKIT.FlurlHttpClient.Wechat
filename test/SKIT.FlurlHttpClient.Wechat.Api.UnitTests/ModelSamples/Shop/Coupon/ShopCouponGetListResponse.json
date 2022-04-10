@@ -15,11 +15,15 @@
                     },
                     "receive_info": {
                         "total_num": 100
+                    },
+                    "ext_info": {
+                        "valid_time": 1625226181
                     }
                 },
                 "status": 0,
                 "create_time": 1625218450,
-                "update_time": 1625238573
+                "update_time": 1625238573,
+                "appid": "wx9e20708660a0991b"
             },
             "coupon_stock": {
                 "out_coupon_id": "out_coupon_id_3",
@@ -48,7 +52,8 @@
                 },
                 "status": 1,
                 "create_time": 1625239595,
-                "update_time": 1625239595
+                "update_time": 1625239595,
+                "appid": "wx9e20708660a0991b"
             }
         },
         {
@@ -92,13 +97,18 @@
                     "valid_info": {
                         "valid_type": 1,
                         "valid_day_num": 10,
+                        "valid_second": 3600,
                         "start_time": 1625451250,
                         "end_time": 1625464250
+                    },
+                    "ext_info": {
+                        "valid_time": 1625473652
                     }
                 },
                 "status": 2,
                 "create_time": 1625454641,
-                "update_time": 1625473652
+                "update_time": 1625473652,
+                "appid": "wx9e20708660a0991b"
             },
             "coupon_stock": {
                 "out_coupon_id": "coupon_id_1",

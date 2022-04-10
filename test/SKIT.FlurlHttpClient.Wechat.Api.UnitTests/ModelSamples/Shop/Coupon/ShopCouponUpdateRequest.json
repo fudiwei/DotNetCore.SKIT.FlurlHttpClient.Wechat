@@ -39,6 +39,7 @@
             "valid_info": {
                 "valid_type": 1,
                 "valid_day_num": 10,
+                "valid_second": 3600,
                 "start_time": 1625451250,
                 "end_time": 1625464250
             }

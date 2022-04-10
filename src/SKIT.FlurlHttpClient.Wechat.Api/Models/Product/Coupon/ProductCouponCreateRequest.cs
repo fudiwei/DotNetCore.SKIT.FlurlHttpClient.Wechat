@@ -156,6 +156,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int? ValidDays { get; set; }
 
                 /// <summary>
+                /// 获取或设置相对生效秒数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("valid_second")]
+                [System.Text.Json.Serialization.JsonPropertyName("valid_second")]
+                public int? ValidSeconds { get; set; }
+
+                /// <summary>
                 /// 获取或设置绝对生效开始时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("start_time")]

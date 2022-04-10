@@ -26,7 +26,7 @@
                             "buy_out_product_id": "product_id_1",
                             "buy_product_cnt": 3,
                             "get_out_product_id": "product_id_2",
-                            "get_product_cnt": 2131241242
+                            "get_product_cnt": 5
                         }
                     },
                     "discount_num": 9800,
@@ -41,13 +41,15 @@
                 "valid_info": {
                     "valid_type": 1,
                     "valid_day_num": 10,
+                    "valid_second": 3600,
                     "start_time": 1625451250,
                     "end_time": 1625464250
                 }
             },
             "status": 1,
             "create_time": 1625454641,
-            "update_time": 1625454641
+            "update_time": 1625454641,
+            "appid": "wx9e20708660a0991b"
         }
     }
 }

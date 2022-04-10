@@ -213,6 +213,13 @@
                                         public int? ValidDays { get; set; }
 
                                         /// <summary>
+                                        /// 获取或设置相对生效秒数。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("valid_second")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("valid_second")]
+                                        public int? ValidSeconds { get; set; }
+
+                                        /// <summary>
                                         /// 获取或设置绝对生效开始时间戳。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("start_time")]
@@ -225,6 +232,16 @@
                                         [Newtonsoft.Json.JsonProperty("end_time")]
                                         [System.Text.Json.Serialization.JsonPropertyName("end_time")]
                                         public long? EndTimestamp { get; set; }
+                                    }
+
+                                    public class Extra
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置有效期时间戳。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("valid_time")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("valid_time")]
+                                        public long? ValidTimestamp { get; set; }
                                     }
                                 }
 
@@ -261,7 +278,14 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("valid_info")]
                                 [System.Text.Json.Serialization.JsonPropertyName("valid_info")]
-                                public Types.Validity Validity { get; set; } = default!;
+                                public Types.Validity? Validity { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置优惠券扩展信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("ext_info")]
+                                [System.Text.Json.Serialization.JsonPropertyName("ext_info")]
+                                public Types.Extra? Extra { get; set; }
                             }
                         }
 
@@ -271,6 +295,13 @@
                         [Newtonsoft.Json.JsonProperty("out_coupon_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("out_coupon_id")]
                         public string OutCouponId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置小程序 AppId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("appid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                        public string? AppId { get; set; }
 
                         /// <summary>
                         /// 获取或设置优惠券类型。
