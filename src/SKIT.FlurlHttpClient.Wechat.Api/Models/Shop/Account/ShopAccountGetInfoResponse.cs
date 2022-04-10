@@ -22,6 +22,13 @@
                 [Newtonsoft.Json.JsonProperty("service_agent_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_agent_phone")]
                 public string? ServiceAgentPhoneNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置客服类型列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("service_agent_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("service_agent_type")]
+                public int[]? ServiceAgentTypeList { get; set; }
             }
         }
 

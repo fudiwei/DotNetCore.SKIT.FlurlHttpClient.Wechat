@@ -61,8 +61,8 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
-                [System.Xml.Serialization.XmlElement("reason")]
-                public string Reason { get; set; } = default!;
+                [System.Xml.Serialization.XmlElement("reason", IsNullable = true)]
+                public string? Reason { get; set; }
 
                 /// <summary>
                 /// 获取或设置场景审核结果列表。
