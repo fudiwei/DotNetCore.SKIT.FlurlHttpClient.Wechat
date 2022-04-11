@@ -45,7 +45,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_num")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_num")]
-        public string BankAccount { get; set; } = default!;
+        public string BankAccountNumber { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置银行名称。
