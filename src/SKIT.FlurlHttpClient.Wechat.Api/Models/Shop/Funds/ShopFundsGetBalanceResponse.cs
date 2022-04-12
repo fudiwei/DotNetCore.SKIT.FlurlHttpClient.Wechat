@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/funds/getbalance 接口的响应。</para>
@@ -24,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("pending_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("pending_amount")]
                 public int PendingAmount { get; set; }
-            }            
+            }
         }
 
         /// <summary>

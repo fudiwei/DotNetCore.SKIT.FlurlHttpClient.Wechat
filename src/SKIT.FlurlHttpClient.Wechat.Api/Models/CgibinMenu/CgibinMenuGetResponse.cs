@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
             public class ConditionalMenu : Menu
             {
-                public new static class Types
+                public static new class Types
                 {
                     public class MatchRule
                     {

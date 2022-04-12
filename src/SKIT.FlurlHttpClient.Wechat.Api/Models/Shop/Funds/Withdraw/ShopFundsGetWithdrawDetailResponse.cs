@@ -15,7 +15,7 @@
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
                 public int Amount { get; set; }
-                
+
                 /// <summary>
                 /// 获取或设置提现备注。
                 /// </summary>

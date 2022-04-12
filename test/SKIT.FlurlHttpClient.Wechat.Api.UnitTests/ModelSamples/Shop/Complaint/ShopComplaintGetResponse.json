@@ -1,0 +1,36 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "flow_info": {
+        "list": [
+            {
+                "user_record": {
+                    "event": 240001,
+                    "event_describe": "用户发起投诉",
+                    "material_info": {
+                        "content": "测试",
+                        "media_url_list": [
+                            "url"
+                        ]
+                    },
+                    "state": 230000,
+                    "state_describe": "商家售后处理中",
+                    "time": "1647431667908"
+                }
+            }
+        ]
+    },
+    "order": {
+        "after_sale_order_id": 123,
+        "complaint_order_id": 123,
+        "create_time": 1647431667,
+        "expired_time": 0,
+        "judge_result": 8,
+        "openid": "abcef",
+        "order_id": "123",
+        "phone_number": "12345678912",
+        "state": 230001,
+        "type": 7,
+        "update_time": 1647431879
+    }
+}

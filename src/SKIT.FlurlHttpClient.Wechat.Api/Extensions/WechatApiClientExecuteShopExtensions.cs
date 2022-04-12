@@ -1231,7 +1231,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.ShopWxpayGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
-    
+
         #region Funds
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/scanorderflow 接口。</para>
@@ -1352,7 +1352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ShopFundsGetWithdrawDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/setbankaccount 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/setbankaccount.html </para>
@@ -1392,7 +1392,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ShopFundsGetBankAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/qrcode/gen 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/qrcode/gen.html </para>
@@ -1412,7 +1412,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ShopFundsQrcodeGenerateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/qrcode/get 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/qrcode/get.html </para>
@@ -1432,7 +1432,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ShopFundsQrcodeGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/qrcode/check 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/qrcode/check.html </para>
@@ -1451,6 +1451,68 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.ShopFundsQrcodeCheckResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Complaint
+        /// <summary>
+        /// <para>异步调用 [POST] /shop/complaint/get_list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/complaint/complaint_get_list.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ShopComplaintGetListResponse> ExecuteShopComplaintGetListAsync(this WechatApiClient client, Models.ShopComplaintGetListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "shop", "complaint", "get_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ShopComplaintGetListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /shop/complaint/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/complaint/complaint_get.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ShopComplaintGetResponse> ExecuteShopComplaintGetAsync(this WechatApiClient client, Models.ShopComplaintGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "shop", "complaint", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ShopComplaintGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /shop/complaint/upload_material 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/complaint/upload_material.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ShopComplaintUploadMaterialResponse> ExecuteShopComplaintUploadMaterialAsync(this WechatApiClient client, Models.ShopComplaintUploadMaterialRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "shop", "complaint", "upload_material")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ShopComplaintUploadMaterialResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

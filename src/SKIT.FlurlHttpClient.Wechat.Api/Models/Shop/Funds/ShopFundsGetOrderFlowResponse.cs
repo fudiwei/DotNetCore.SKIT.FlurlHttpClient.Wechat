@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("bookkeeping_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
                 public DateTimeOffset BookKeepingTIme { get; set; }
-            }            
+            }
         }
 
         /// <summary>

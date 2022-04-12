@@ -743,7 +743,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 {
                     public class Base : GrouponCard.Types.Base
                     {
-                        public new static class Types
+                        public static new class Types
                         {
                             public class GiftCard
                             {
@@ -885,7 +885,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 {
                     public class Base : GrouponCard.Types.Base
                     {
-                        public new static class Types
+                        public static new class Types
                         {
                             public class Payment
                             {
