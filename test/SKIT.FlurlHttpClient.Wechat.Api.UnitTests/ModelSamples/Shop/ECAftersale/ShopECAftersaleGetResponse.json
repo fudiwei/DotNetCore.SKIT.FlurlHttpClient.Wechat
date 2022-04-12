@@ -1,0 +1,28 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "after_sales_order": {
+        "out_aftersale_id": "aso_123124341",
+        "aftersale_id": 123,
+        "out_order_id": "order_312312",
+        "order_id": 456,
+        "product_info": {
+            "out_product_id": "123",
+            "out_sku_id": "12345",
+            "product_cnt": 1
+        },
+        "type": 1,
+        "return_info": {
+            "order_return_time": "1628480465",
+            "delivery_id": "sf",
+            "waybill_id": "sf12314789",
+            "delivery_name": "顺丰"
+        },
+        "orderamt": 100,
+        "refund_reason_type": 1,
+        "refund_reason": "买错码数",
+        "status": 1,
+        "create_time": "1628480465",
+        "update_time": "1628480465"
+    }
+}

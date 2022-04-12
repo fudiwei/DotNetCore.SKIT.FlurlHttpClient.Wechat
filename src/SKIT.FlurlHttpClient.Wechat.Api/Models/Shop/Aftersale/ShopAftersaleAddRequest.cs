@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_sku_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_sku_id")]
-                public string OutSKUId { get; set; } = string.Empty;
+                public string? OutSKUId { get; set; }
 
                 /// <summary>
                 /// 获取或设置参与售后的商品数量。

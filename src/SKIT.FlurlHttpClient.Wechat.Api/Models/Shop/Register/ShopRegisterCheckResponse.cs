@@ -52,6 +52,42 @@
                         /// <summary>
                         /// 获取或设置发起一笔订单并支付是否完成。
                         /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pay_order_success")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("pay_order_success")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        public bool IsPayOrderFinished { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置发起一笔订单并支付是否成功。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pay_order_finished")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("pay_order_finished")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        public bool IsPayOrderSuccessful { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置售后接口调用是否完成。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("add_aftersale_success")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("add_aftersale_success")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        public bool IsAddAftersaleFinished { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置售后接口调用是否成功。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("add_aftersale_finished")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("add_aftersale_finished")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        public bool IsAddAftersaleSuccessful { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置发起一笔订单并支付是否完成。
+                        /// </summary>
                         [Newtonsoft.Json.JsonProperty("ec_order_finished")]
                         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("ec_order_finished")]
@@ -125,6 +161,13 @@
                                 [Newtonsoft.Json.JsonProperty("ext_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("ext_id")]
                                 public int ExtraId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置审核项目名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("name")]
+                                public string Name { get; set; } = default!;
 
                                 /// <summary>
                                 /// 获取或设置审核项目状态。
