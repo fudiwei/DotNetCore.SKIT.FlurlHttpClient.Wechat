@@ -32,6 +32,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.10.0
+
+    -   **新增**：新增自定义交易组件进件、资金、分享员、售后、纠纷相关接口及回调通知事件模型。
+
+    -   **新增**：随官方更新自定义交易组件商家入驻、商品、订单、推广员、优惠券相关接口模型。
+
 -   Release 2.9.0
 
     -   **新增**：新增请求响应模型类型推断辅助接口 `IInferable`。（[GitHub Issue #21](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/21)）
