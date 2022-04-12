@@ -1,0 +1,12 @@
+﻿<xml>
+    <ToUserName>gh_abcdefg</ToUserName>
+    <FromUserName>oABCD</FromUserName>
+    <CreateTime>12344555555</CreateTime>
+    <MsgType>event</MsgType>
+    <Event>complaint_notify</Event>
+    <complaint_info>
+        <complaint_order_id>12345678</complaint_order_id>
+        <state>1</state>
+        <event>2</event>
+    </complaint_info>
+</xml>

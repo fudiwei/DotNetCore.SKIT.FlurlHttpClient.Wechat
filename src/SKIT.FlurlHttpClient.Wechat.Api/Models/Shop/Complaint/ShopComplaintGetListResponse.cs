@@ -10,6 +10,13 @@
             public class ComplaintOrder
             {
                 /// <summary>
+                /// 获取或设置纠纷单 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("complaint_order_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("complaint_order_id")]
+                public long ComplaintOrderId { get; set; }
+
+                /// <summary>
                 /// 获取或设置关联订单 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
@@ -22,13 +29,6 @@
                 [Newtonsoft.Json.JsonProperty("after_sale_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("after_sale_order_id")]
                 public long AftersaleOrderId { get; set; }
-
-                /// <summary>
-                /// 获取或设置纠纷单 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("complaint_order_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("complaint_order_id")]
-                public long ComplaintOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户 OpenId。
