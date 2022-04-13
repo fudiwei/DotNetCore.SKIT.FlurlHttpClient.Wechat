@@ -60,6 +60,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? SubMerchantId { get; set; }
 
                 /// <summary>
+                /// 获取或设置子单子商户 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
+                public string? SubAppId { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户在子商户下的唯一标识。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
+                public string? SubOpenId { get; set; }
+
+                /// <summary>
                 /// 获取或设置子单商户订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_trade_no")]
@@ -125,7 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
+                public string? OpenId { get; set; }
             }
             public class Scene
             {
