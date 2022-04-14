@@ -81,7 +81,7 @@
                 /// <summary>
                 /// 获取或设置自定义字段列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlArrayItem("Item", Type = typeof(Types.Attribute))]
+                [System.Xml.Serialization.XmlElement("Item", Type = typeof(Types.Attribute))]
                 public Types.Attribute[] AttributeList { get; set; } = default!;
             }
         }

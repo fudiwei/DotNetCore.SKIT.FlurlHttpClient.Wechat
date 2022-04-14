@@ -18,7 +18,7 @@
                         /// <summary>
                         /// 获取或设置选项列表。
                         /// </summary>
-                        [System.Xml.Serialization.XmlArrayItem("OpitonId", Type = typeof(string))]
+                        [System.Xml.Serialization.XmlElement("OpitonId", Type = typeof(string))]
                         public string[] Items { get; set; } = default!;
                     }
                 }
@@ -41,7 +41,7 @@
                 /// <summary>
                 /// 获取或设置下拉框列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlArrayItem("SelectedItem", Type = typeof(SelectItem))]
+                [System.Xml.Serialization.XmlElement("SelectedItem", Type = typeof(SelectItem))]
                 public SelectItem[]? Items { get; set; } = default!;
             }
         }
