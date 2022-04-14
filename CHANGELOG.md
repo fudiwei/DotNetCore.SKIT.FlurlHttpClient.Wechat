@@ -38,17 +38,21 @@
 
     -   **新增**：随官方更新自定义交易组件商家入驻、商品、订单、推广员、优惠券相关接口模型。
 
+    -   **变更**：调整 `SHA1Utility`、`HMACUtility` 工具类的计算字节数组哈希值方法的返回值类型。
+
 -   Release 2.9.0
 
-    -   **新增**：新增请求响应模型类型推断辅助接口 `IInferable`。（[GitHub Issue #21](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/21)）
+    -   **新增**：新增请求响应模型类型推断辅助接口 `IInferable`。（[GitHub PR #21](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/21)）
 
     -   **新增**：新增服务平台增值服务相关接口。
 
-    -   **变更**：修改反序列化回调通知事件的相关扩展方法 `DeserializeEventFromXml`、`DeserializeEventFromJson`，修改其指示是否启用安全模式的参数，改为自动判定。
+    -   **变更**：修改反序列化回调通知事件的相关扩展方法 `DeserializeEventFromXml`、`DeserializeEventFromJson`，废弃其指示是否启用安全模式的参数，改为自动判定。
 
-    -   **变更**：修改序列化回调通知事件的相关扩展方法 `SerializeEventToXml`、`SerializeEventToJson`,调整其指示是否启用安全模式的参数默认值，由 false 变为 true。
+    -   **变更**：修改序列化回调通知事件的相关扩展方法 `SerializeEventToXml`、`SerializeEventToJson`，调整其指示是否启用安全模式的参数默认值，由 *false* 变为 *true*。
 
     -   **变更**：移除原 `WxBizMsgCryptor` 工具类。
+
+    -   **变更**：调整 `SHA1Utility` 工具类的计算字节数组哈希值方法的返回值类型。
 
 -   Release 2.8.2
 
@@ -504,6 +508,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.7.1
+
+    -   **修复**：修复部分事件通知模型中数组类型字段反序列化错误的问题。（[Gitee Issue #I52P9I](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I52P9I)）
+
 -   Release 2.7.0
 
     -   **新增**：新增企业邮箱相关接口。
@@ -519,6 +527,8 @@
     -   **新增**：随官方更新微信客服相关接口模型。
 
     -   **变更**：升级公共组件。
+
+    -   **变更**：调整 `SHA1Utility` 工具类的计算字节数组哈希值方法的返回值类型。
 
 -   Release 2.6.3
 
