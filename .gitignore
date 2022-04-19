@@ -191,3 +191,4 @@ ModelManifest.xml
 # Visual Studio temporary files
 .vs
 *.nupkg
+.idea
