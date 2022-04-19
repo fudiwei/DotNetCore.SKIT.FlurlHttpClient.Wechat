@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.open_product_order_pay 事件的数据。</para>
@@ -11,7 +11,7 @@
             public class EventData
             {
                 /// <summary>
-                /// 商家自定义订单号。
+                /// 获取或设置商家自定义订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
@@ -19,7 +19,7 @@
                 public string OutOrderId { get; set; } = default!;
 
                 /// <summary>
-                /// 内部订单号。
+                /// 获取或设置订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
@@ -27,7 +27,7 @@
                 public long OrderId { get; set; }
 
                 /// <summary>
-                /// 支付单号。
+                /// 获取或设置微信支付交易单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("transaction_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
@@ -35,7 +35,7 @@
                 public string TransactionId { get; set; } = default!;
 
                 /// <summary>
-                /// 支付时间。
+                /// 获取或设置支付时间字符串（格式：yyyy-MM-dd HH:mm:ss）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("pay_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("pay_time")]
