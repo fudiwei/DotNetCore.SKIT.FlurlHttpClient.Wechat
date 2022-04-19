@@ -11,7 +11,7 @@
             public class EventData
             {
                 /// <summary>
-                /// 商家自定义订单号。
+                /// 获取或设置商家自定义订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
@@ -19,7 +19,7 @@
                 public string OutOrderId { get; set; } = default!;
 
                 /// <summary>
-                /// 内部订单号。
+                /// 获取或设置订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
