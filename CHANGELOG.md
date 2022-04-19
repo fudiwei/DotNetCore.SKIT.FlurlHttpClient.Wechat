@@ -32,6 +32,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.11.0
+
+    -   **新增**：新增自定义交易组件订单回调通知事件模型。
+
+    -   **修复**：修复自定义交易组件订单发货接口请求模型定义问题。（[GitHub PR #39](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/39)）
+
+    -   **修复**：修复自定义交易组件售后列表接口响应模型定义问题。（[GitHub PR #39](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/39)）
+
 -   Release 2.10.0
 
     -   **新增**：新增自定义交易组件进件、资金、分享员、售后、纠纷相关接口及回调通知事件模型。
