@@ -1,4 +1,4 @@
-﻿{
+{
     "order_id": 123456,
     "out_order_id": "xxxxx",
     "openid": "oTVP50O53a7jgmawAmxKukNlq3XI",
@@ -6,7 +6,15 @@
     "delivery_list": [
         {
             "delivery_id": "SF",
-            "waybill_id": "23424324253"
+            "waybill_id": "23424324253",
+            "product_info_list": [
+                {
+                    "out_product_id": "1",
+                    "out_sku_id": "2",
+                    "product_cnt": 1
+                }
+            ]
         }
-    ]
+    ],
+    "ship_done_time": "2022-01-01 10:24:00"
 }
