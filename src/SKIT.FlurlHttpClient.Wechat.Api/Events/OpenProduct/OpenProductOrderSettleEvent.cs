@@ -11,7 +11,7 @@
             public class EventData
             {
                 /// <summary>
-                /// 商家自定义订单号。
+                /// 获取或设置商家自定义订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_order_id")]
@@ -19,7 +19,7 @@
                 public string OutOrderId { get; set; } = default!;
 
                 /// <summary>
-                /// 内部订单号。
+                /// 获取或设置订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
@@ -27,16 +27,15 @@
                 public long OrderId { get; set; }
 
                 /// <summary>
-                /// 结算单号。
+                /// 获取或设置结算单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settle_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("settle_no")]
                 [System.Xml.Serialization.XmlElement("settle_no")]
-                public string SettleNo { get; set; } = default!;
-
+                public string SettleNumber { get; set; } = default!;
 
                 /// <summary>
-                /// 结算金额（分）。
+                /// 获取或设置结算金额（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
@@ -44,7 +43,7 @@
                 public int Amount { get; set; }
 
                 /// <summary>
-                /// 支付时间。
+                /// 获取或设置结算时间字符串（格式：yyyy-MM-dd HH:mm:ss）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settle_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("settle_time")]
