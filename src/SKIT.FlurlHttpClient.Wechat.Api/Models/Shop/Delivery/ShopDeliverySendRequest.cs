@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -11,6 +12,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         {
             public class Delivery
             {
+                public static class Types
+                {
+                    public class Product
+                    {
+                        /// <summary>
+                        /// 获取或设置商家自定义商品 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("out_product_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("out_product_id")]
+                        public string? OutProductId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商家自定义 SKU ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("out_sku_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("out_sku_id")]
+                        public string? OutSKUId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置参与售后的商品数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_cnt")]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_cnt")]
+                        public int Count { get; set; }
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置快递公司 ID。
                 /// </summary>
@@ -24,6 +52,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("waybill_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
                 public string? WaybillId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("product_info_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("product_info_list")]
+                public IList<Types.Product> ProductList { get; set; } = new List<Types.Product>();
             }
         }
 
@@ -63,5 +98,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("delivery_list")]
         [System.Text.Json.Serialization.JsonPropertyName("delivery_list")]
         public IList<Types.Delivery> DeliveryList { get; set; } = new List<Types.Delivery>();
+
+        /// <summary>
+        /// 获取或设置完成发货时间
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ship_done_time")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("ship_done_time")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
+        public DateTimeOffset? ShipDoneTime { get; set; }
     }
 }
