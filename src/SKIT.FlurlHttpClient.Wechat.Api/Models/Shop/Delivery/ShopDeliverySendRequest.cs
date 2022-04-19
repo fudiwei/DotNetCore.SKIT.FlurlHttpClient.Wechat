@@ -84,6 +84,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string OpenId { get; set; } = string.Empty;
 
         /// <summary>
+        /// 获取或设置快递列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("delivery_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("delivery_list")]
+        public IList<Types.Delivery> DeliveryList { get; set; } = new List<Types.Delivery>();
+
+        /// <summary>
         /// 获取或设置是否发货完成。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finish_all_delivery")]
@@ -93,14 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public bool IsFinishAll { get; set; }
 
         /// <summary>
-        /// 获取或设置快递列表。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("delivery_list")]
-        [System.Text.Json.Serialization.JsonPropertyName("delivery_list")]
-        public IList<Types.Delivery> DeliveryList { get; set; } = new List<Types.Delivery>();
-
-        /// <summary>
-        /// 获取或设置完成发货时间
+        /// 获取或设置完成发货时间.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ship_done_time")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularDateTimeOffsetConverter))]
