@@ -6,11 +6,12 @@
     public class ShopECAftersaleGetListResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置售后单列表。
+        /// 获取或设置售后单号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("after_sales_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sales_orders")]
-        public string[] AftersaleOrderList { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualLongArrayConverter))]
+        public long[] AftersaleOrderIdList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置是否还有更多。
