@@ -516,6 +516,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.7.2
+
+    -   **修复**：修复上传素材接口不支持 Unicode 文件名问题。（[GitHub Issue #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/40)）
+
 -   Release 2.7.1
 
     -   **修复**：修复部分事件通知模型中数组类型字段反序列化错误的问题。（[Gitee Issue #I52P9I](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I52P9I)）
