@@ -21,6 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                 WechatCorpId = config.GetProperty("CorpId").GetString()!;
                 WechatAgentId = int.Parse(config.GetProperty("AgentId").GetString())!;
                 WechatAgentSecret = config.GetProperty("AgentSecret").GetString()!;
+                WechatAccessToken = config.GetProperty("AccessToken").GetString()!;
 
                 WorkDirectoryForSdk = jdoc.RootElement.GetProperty("WorkDirectoryForSdk").GetString()!;
                 WorkDirectoryForTest = jdoc.RootElement.GetProperty("WorkDirectoryForTest").GetString()!;
@@ -34,6 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
         public static readonly string WechatCorpId;
         public static readonly int WechatAgentId;
         public static readonly string WechatAgentSecret;
+        public static readonly string WechatAccessToken;
 
         public static readonly string WorkDirectoryForSdk;
         public static readonly string WorkDirectoryForTest;
