@@ -95,17 +95,17 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("url")]
                         [System.Text.Json.Serialization.JsonPropertyName("url")]
-                        public string Url { get; set; } = string.Empty;
+                        public string Url { get; set; } = default!;
 
                         /// <summary>
-                        /// 获取或设置 URL。
+                        /// 获取或设置缩略图 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("thumb_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("thumb_url")]
-                        public string ThumbnailUrl { get; set; } = string.Empty;
+                        public string? ThumbnailUrl { get; set; }
                     }
 
-                    public class RefundPayDetail
+                    public class Refund
                     {
                         /// <summary>
                         /// 获取或设置退款单号。
@@ -159,6 +159,13 @@
                 public int Status { get; set; }
 
                 /// <summary>
+                /// 获取或设置用户 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("openid")]
+                public string OpenId { get; set; } = default!;
+
+                /// <summary>
                 /// 获取或设置退款金额（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("orderamt")]
@@ -180,6 +187,13 @@
                 public string RefundReason { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置退货单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("return_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("return_id")]
+                public string? ReturnId { get; set; }
+
+                /// <summary>
                 /// 获取或设置创建时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
@@ -194,27 +208,6 @@
                 [System.Text.Json.Serialization.JsonPropertyName("update_time")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public long UpdateTimeTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置用户 OpenId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置 ReturnId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("return_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("return_id")]
-                public string ReturnId { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置附件列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("media_list")]
-                [System.Text.Json.Serialization.JsonPropertyName("media_list")]
-                public Types.Media[] MediaList { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置商品信息。
@@ -235,7 +228,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_pay_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_pay_detail")]
-                public Types.RefundPayDetail? RefundPayDetail { get; set; }
+                public Types.Refund? Refund { get; set; }
+
+                /// <summary>
+                /// 获取或设置附件列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("media_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("media_list")]
+                public Types.Media[]? MediaList { get; set; }
             }
         }
 
