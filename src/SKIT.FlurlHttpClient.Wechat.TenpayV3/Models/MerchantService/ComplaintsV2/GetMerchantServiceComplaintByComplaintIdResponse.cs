@@ -119,11 +119,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public Types.ComplaintMedia[] ComplaintMediaList { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置问题类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("problem_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("problem_type")]
+        public string? ProblemType { get; set; }
+
+        /// <summary>
         /// 获取或设置问题描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("problem_description")]
         [System.Text.Json.Serialization.JsonPropertyName("problem_description")]
         public string ProblemDescription { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置申请退款金额（单位：分）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("apply_refund_amount")]
+        [System.Text.Json.Serialization.JsonPropertyName("apply_refund_amount")]
+        public int? ApplyRefundAmount { get; set; }
 
         /// <summary>
         /// 获取或设置投诉单是否已全额退款。
@@ -145,5 +159,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("user_complaint_times")]
         [System.Text.Json.Serialization.JsonPropertyName("user_complaint_times")]
         public int UserComplaintTimes { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户标签列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("user_tag_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("user_tag_list")]
+        public string[]? UserTagList { get; set; }
     }
 }
