@@ -84,20 +84,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.Type);
 
-            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
-            using var descContent = new ByteArrayContent(Encoding.UTF8.GetBytes(client.JsonSerializer.Serialize(request)));
-            using var httpContent = new MultipartFormDataContent(boundary);
-            httpContent.Add(fileContent, "\"media\"", $"\"{HttpUtility.UrlEncode(request.FileName)}\"");
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
-            fileContent.Headers.ContentLength = request.FileBytes?.Length;
-
+            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
             if (TYPE_VIDEO.Equals(request.Type))
             {
-                httpContent.Add(descContent, "\"description\"");
+                httpContent.Add(new ByteArrayContent(Encoding.UTF8.GetBytes(client.JsonSerializer.Serialize(request))), "\"description\"");
             }
-
             return await client.SendRequestAsync<Models.CgibinMaterialAddMaterialResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
