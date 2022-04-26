@@ -1,40 +1,38 @@
-﻿{
-  "errcode": 0,
-  "errmsg": "ok",
-  "after_sales_order": {
-    "out_aftersale_id": "",
-    "aftersale_id": 4000000001596225,
-    "out_order_id": "220425-16372977194524",
-    "order_id": 3302853640130003968,
-    "product_info": {
-      "out_product_id": "410",
-      "product_id": 0,
-      "out_sku_id": "730",
-      "sku_id": 0,
-      "product_cnt": 1
-    },
-    "type": 1,
-    "return_info": {
-      "order_return_time": 0,
-      "waybill_id": ""
-    },
-    "orderamt": 2,
-    "refund_reason_type": 3,
-    "refund_reason": "不想要了",
-    "media_list": [
-      {
-        "type": 1,
-        "url": "****",
-        "thumb_url": "****"
-      }
-    ],
-    "status": 2,
-    "create_time": "1650876295006",
-    "update_time": "1650876295006",
-    "openid": "oOYv50JOfwNY56q8hTNSLSFvYUDg",
-    "refund_pay_detail": {
-      "refund_id": ""
-    },
-    "return_id": ""
-  }
+{
+	"errcode": 0,
+	"errmsg": "ok",
+	"after_sales_order": {
+		"out_aftersale_id": "",
+		"aftersale_id": 4000000001596225,
+		"out_order_id": "220425-16372977194524",
+		"order_id": 3302853640130003968,
+		"product_info": {
+			"out_product_id": "410",
+			"product_id": 0,
+			"out_sku_id": "730",
+			"sku_id": 0,
+			"product_cnt": 1
+		},
+		"type": 1,
+		"return_info": {
+			"order_return_time": 0,
+			"waybill_id": ""
+		},
+		"orderamt": 2,
+		"refund_reason_type": 3,
+		"refund_reason": "不想要了",
+		"media_list": [{
+			"type": 1,
+			"url": "****",
+			"thumb_url": "****"
+		}],
+		"status": 2,
+		"create_time": "1650876295006",
+		"update_time": "1650876295006",
+		"openid": "oOYv50JOfwNY56q8hTNSLSFvYUDg",
+		"refund_pay_detail": {
+			"refund_id": ""
+		},
+		"return_id": ""
+	}
 }
