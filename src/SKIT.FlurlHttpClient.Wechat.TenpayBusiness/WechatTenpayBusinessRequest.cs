@@ -23,32 +23,31 @@
     public sealed class WechatTenpayBusinessRequestTBEPEncryption
     {
         /// <summary>
-        /// 获取或设置加密后的秘钥值。
+        /// 获取或设置加密后的密钥值。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string? EncryptedKey { get; set; }
+        public string EncryptedKey { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置 CBC IV。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string? IV { get; set; }
+        public string IV { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置微企付证书序列号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string? CertificateSerialNumber { get; set; }
+        public string CertificateSerialNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置加密算法。
-        /// <para>默认值：<see cref="Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC"/></para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string? Algorithm { get; set; }
+        public string Algorithm { get; set; } = Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC;
     }
 }

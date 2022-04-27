@@ -14,9 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.UnitTests
                 {
                     AssemblyName = "SKIT.FlurlHttpClient.Wechat.TenpayBusiness",
                     WorkDirectoryForSourceCode = TestConfigs.WorkDirectoryForSdk,
-                    WorkDirectoryForTestSample = TestConfigs.WorkDirectoryForTest,
-                    AllowNotFoundEventTypes = true,
-                    AllowNotFoundEventSamples = true
+                    WorkDirectoryForTestSample = TestConfigs.WorkDirectoryForTest
                 };
                 CodeAnalyzer analyzer = new CodeAnalyzer(options);
                 analyzer.Start();

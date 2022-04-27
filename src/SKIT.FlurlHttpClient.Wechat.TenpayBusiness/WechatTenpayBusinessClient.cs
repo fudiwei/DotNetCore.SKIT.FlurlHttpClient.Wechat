@@ -61,9 +61,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
             if (request.TBEPEncryption != null)
             {
-                if (request.TBEPEncryption.Algorithm == null)
-                    request.TBEPEncryption.Algorithm = Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC;
-
                 flurlRequest.Headers.Remove("TBEP-Encrypt");
                 flurlRequest.WithHeader("TBEP-Encrypt", $"enc_key=\"{request.TBEPEncryption.EncryptedKey}\",iv=\"{request.TBEPEncryption.IV}\",tbep_serial_number=\"{request.TBEPEncryption.CertificateSerialNumber}\",algorithm=\"{request.TBEPEncryption.Algorithm}\"");
             }

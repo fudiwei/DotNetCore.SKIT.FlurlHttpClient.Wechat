@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         public string? PlatformId { get; set; }
 
         /// <summary>
-        /// 获取或设置加密后的秘钥值。
+        /// 获取或设置加密后的密钥值。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

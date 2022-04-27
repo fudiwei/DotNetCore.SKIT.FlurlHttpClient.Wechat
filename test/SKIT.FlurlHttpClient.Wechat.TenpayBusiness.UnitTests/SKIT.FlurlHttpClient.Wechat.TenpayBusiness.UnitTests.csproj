@@ -20,6 +20,7 @@
 			<CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
 		</Content>
 		<Content Include="ModelSamples/**/*.json" />
+		<Content Include="EventSamples/**/*.json" />
 	</ItemGroup>
 
 	<ItemGroup>
