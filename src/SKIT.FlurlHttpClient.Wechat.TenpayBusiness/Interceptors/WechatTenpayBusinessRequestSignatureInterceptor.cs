@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Interceptors
                     break;
 
                 default:
-                    throw new Exceptions.WechatTenpayBusinessRequestSignatureException("Unsupported authorization scheme.");
+                    throw new Exceptions.WechatTenpayBusinessRequestSignatureException("Unsupported authorization sign algorithm.");
             }
 
             string auth = $"platform_id=\"{_platformId}\",platform_serial_number=\"{_platformCertSn}\",nonce=\"{nonce}\",timestamp=\"{timestamp}\",signature=\"{signText}\",signature_algorithm=\"{_signAlg}\"";
