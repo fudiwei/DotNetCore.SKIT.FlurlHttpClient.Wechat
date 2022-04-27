@@ -4,27 +4,27 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Flurl.Http;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
+namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Interceptors
 {
-    internal class WechatTenpayRequestSignatureInterceptor : FlurlHttpCallInterceptor
+    internal class WechatTenpayBusinessRequestSignatureInterceptor : FlurlHttpCallInterceptor
     {
-        private readonly string _scheme;
-        private readonly string _mchId;
-        private readonly string _mchCertSn;
-        private readonly string _mchCertPk;
+        private readonly string _signAlg;
+        private readonly string _platformId;
+        private readonly string _platformCertSn;
+        private readonly string _platformCertPk;
 
-        public WechatTenpayRequestSignatureInterceptor(string scheme, string mchId, string mchCertSn, string mchCertPk)
+        public WechatTenpayBusinessRequestSignatureInterceptor(string signAlg, string platformId, string platformCertSn, string platformCertPk)
         {
-            _scheme = scheme;
-            _mchId = mchId;
-            _mchCertSn = mchCertSn;
-            _mchCertPk = mchCertPk;
+            _signAlg = signAlg;
+            _platformId = platformId;
+            _platformCertSn = platformCertSn;
+            _platformCertPk = platformCertPk;
         }
 
         public override async Task BeforeCallAsync(FlurlCall flurlCall)
         {
             if (flurlCall == null) throw new ArgumentNullException(nameof(flurlCall));
-            if (flurlCall.Completed) throw new Exceptions.WechatTenpayRequestSignatureException("This interceptor must be called before request completed.");
+            if (flurlCall.Completed) throw new Exceptions.WechatTenpayBusinessRequestSignatureException("This interceptor must be called before request completed.");
 
             string method = flurlCall.HttpRequestMessage.Method.ToString().ToUpper();
             string url = flurlCall.HttpRequestMessage.RequestUri?.PathAndQuery ?? string.Empty;
@@ -49,28 +49,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
             string plainText = $"{method}\n{url}\n{timestamp}\n{nonce}\n{body}\n";
             string signText;
 
-            switch (_scheme)
+            switch (_signAlg)
             {
-                case Constants.SignSchemes.WECHATPAY2_SHA256_RSA2048:
+                case Constants.SignAlgorithms.SHA245_WITH_RSA:
                     {
                         try
                         {
-                            signText = Utilities.RSAUtility.SignWithSHA256(_mchCertPk, plainText);
+                            signText = Utilities.RSAUtility.SignWithSHA256(_platformCertPk, plainText);
                         }
                         catch (Exception ex)
                         {
-                            throw new Exceptions.WechatTenpayRequestSignatureException("Generate signature of request failed. Please see the `InnerException` for more details.", ex);
+                            throw new Exceptions.WechatTenpayBusinessRequestSignatureException("Generate signature of request failed. Please see the `InnerException` for more details.", ex);
                         }
                     }
                     break;
 
                 default:
-                    throw new Exceptions.WechatTenpayRequestSignatureException("Unsupported authorization scheme.");
+                    throw new Exceptions.WechatTenpayBusinessRequestSignatureException("Unsupported authorization scheme.");
             }
 
-            string auth = $"mchid=\"{_mchId}\",nonce_str=\"{nonce}\",signature=\"{signText}\",timestamp=\"{timestamp}\",serial_no=\"{_mchCertSn}\"";
+            string auth = $"platform_id=\"{_platformId}\",platform_serial_number=\"{_platformCertSn}\",nonce=\"{nonce}\",timestamp=\"{timestamp}\",signature=\"{signText}\",signature_algorithm=\"{_signAlg}\"";
             flurlCall.Request.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.Authorization);
-            flurlCall.Request.WithHeader(FlurlHttpClient.Constants.HttpHeaders.Authorization, $"{_scheme} {auth}");
+            flurlCall.Request.WithHeader(FlurlHttpClient.Constants.HttpHeaders.Authorization, $"{_signAlg} {auth}");
         }
     }
 }

@@ -34,9 +34,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// 获取或设置微信支付 API 签名认证方式。
-        /// <para>默认值：<see cref="Constants.SignAlgorithms.WECHATPAY2_SHA256_RSA2048"/></para>
+        /// <para>默认值：<see cref="Constants.SignSchemes.WECHATPAY2_SHA256_RSA2048"/></para>
         /// </summary>
-        public string SignAlgorithm { get; set; } = Constants.SignAlgorithms.WECHATPAY2_SHA256_RSA2048;
+        public string SignScheme { get; set; } = Constants.SignSchemes.WECHATPAY2_SHA256_RSA2048;
 
         /// <summary>
         /// 获取或设置微信支付商户号。

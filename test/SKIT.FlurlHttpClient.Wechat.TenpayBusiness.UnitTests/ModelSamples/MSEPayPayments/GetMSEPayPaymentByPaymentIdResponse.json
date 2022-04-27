@@ -1,0 +1,20 @@
+﻿{
+    "payment_id": "",
+    "out_payment_id": "",
+    "user_openid": "",
+    "amount": 0,
+    "currency": "",
+    "payee": {
+        "ent_id": "",
+        "ent_name": "",
+        "ent_acct_id": "",
+        "bank_account_number_last4": ""
+    },
+    "pay_status": "",
+    "memo": "",
+    "failed_reason": {
+        "failed_type": "",
+        "failed_detail": ""
+    },
+    "attachment": ""
+}
