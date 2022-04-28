@@ -5,6 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
     /// <summary>
     /// <para>表示 [POST] /mse-pay/product-applications 接口的请求。</para>
     /// </summary>
+    [WechatTenpayBusinessSensitive]
     public class CreateMSEPayProductApplicationRequest : WechatTenpayBusinessRequest
     {
         public static class Types
@@ -44,6 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("legal_person_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("legal_person_name")]
+                [WechatTenpayBusinessSensitiveProperty]
                 public string LegalPersonName { get; set; } = string.Empty;
 
                 /// <summary>
@@ -68,6 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
+                [WechatTenpayBusinessSensitiveProperty]
                 public string Name { get; set; } = string.Empty;
 
                 /// <summary>
@@ -75,6 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("number")]
                 [System.Text.Json.Serialization.JsonPropertyName("number")]
+                [WechatTenpayBusinessSensitiveProperty]
                 public string IdNumber { get; set; } = string.Empty;
 
                 /// <summary>
@@ -106,6 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile_number")]
+                [WechatTenpayBusinessSensitiveProperty]
                 public string MobileNumber { get; set; } = string.Empty;
             }
 
@@ -123,6 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_account_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_account_name")]
+                [WechatTenpayBusinessSensitiveProperty]
                 public string BankAccountName { get; set; } = string.Empty;
 
                 /// <summary>
@@ -130,6 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("bank_account_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_account_number")]
+                [WechatTenpayBusinessSensitiveProperty]
                 public string BankAccountNumber { get; set; } = string.Empty;
 
                 /// <summary>

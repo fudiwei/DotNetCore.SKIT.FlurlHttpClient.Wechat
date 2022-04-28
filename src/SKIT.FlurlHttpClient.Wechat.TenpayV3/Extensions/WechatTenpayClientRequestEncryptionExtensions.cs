@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                                 newValue = Utilities.RSAUtility.EncryptWithECBByCertificate(
                                     certificate: certificate,
                                     plainText: oldValue,
-                                    paddingAlgorithm: "PKCS1PADDING"
+                                    paddingMode: "PKCS1PADDING"
                                 );
                             }
 

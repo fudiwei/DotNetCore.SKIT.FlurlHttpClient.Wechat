@@ -1,10 +1,9 @@
-﻿using System;
-
-namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
+﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
 {
     /// <summary>
     /// <para>表示 [GET] /mse-pay/payments/{payment_id} 接口的响应。</para>
     /// </summary>
+    [WechatTenpayBusinessSensitive]
     public class GetMSEPayPaymentByPaymentIdResponse : WechatTenpayBusinessResponse
     {
         public static class Types
@@ -23,6 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ent_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ent_name")]
+                [WechatTenpayBusinessSensitiveProperty]
                 public string EnterpriseName { get; set; } = default!;
 
                 /// <summary>

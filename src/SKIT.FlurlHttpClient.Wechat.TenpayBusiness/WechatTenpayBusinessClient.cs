@@ -20,6 +20,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         public Settings.Credentials Credentials { get; }
 
         /// <summary>
+        /// 获取是否自动加密请求中的敏感信息字段。
+        /// </summary>
+        protected bool AutoEncryptRequestSensitiveProperty { get; }
+
+        /// <summary>
+        /// 获取是否自动解密请求中的敏感信息字段。
+        /// </summary>
+        protected bool AutoDecryptResponseSensitiveProperty { get; }
+
+        /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatTenpayBusinessClient"/> 类的新实例。
         /// </summary>
         /// <param name="options">配置项。</param>
@@ -28,6 +38,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (options == null) throw new ArgumentNullException(nameof(options));
 
             Credentials = new Settings.Credentials(options);
+            AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty;
+            AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
             FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayBusinessEndpoints.DEFAULT;
             FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.Accept);
@@ -53,6 +65,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         public IFlurlRequest CreateRequest(WechatTenpayBusinessRequest request, HttpMethod method, params object[] urlSegments)
         {
             IFlurlRequest flurlRequest = FlurlClient.Request(urlSegments).WithVerb(method);
+
+            if (AutoEncryptRequestSensitiveProperty)
+            {
+                this.EncryptRequestSensitiveProperty(request);
+            }
 
             if (request.Timeout != null)
             {
@@ -149,6 +166,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 result.TBEPEncryption.IV = dictTBEPEncryption["iv"];
                 result.TBEPEncryption.CertificateSerialNumber = dictTBEPEncryption["platform_serial_number"];
                 result.TBEPEncryption.Algorithm = dictTBEPEncryption["algorithm"];
+
+                if (AutoDecryptResponseSensitiveProperty && result.IsSuccessful())
+                {
+                    this.DecryptResponseSensitiveProperty(result);
+                }
             }
 
             return result;

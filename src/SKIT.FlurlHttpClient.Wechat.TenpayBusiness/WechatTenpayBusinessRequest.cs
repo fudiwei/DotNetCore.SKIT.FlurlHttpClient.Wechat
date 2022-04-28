@@ -14,6 +14,7 @@
 
         /// <summary>
         /// 获取或设置请求使用的腾讯微企付敏感字段加密参数。
+        /// <para>如果启用了 <see cref="WechatTenpayBusinessClientOptions.AutoEncryptRequestSensitiveProperty"/> 参数，将由系统自动生成。</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -48,6 +49,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string Algorithm { get; set; } = Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC;
+        public string Algorithm { get; set; } = string.Empty;
     }
 }

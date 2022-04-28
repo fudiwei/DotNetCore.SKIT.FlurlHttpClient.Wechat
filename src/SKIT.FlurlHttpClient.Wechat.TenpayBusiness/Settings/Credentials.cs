@@ -29,6 +29,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Settings
         /// </summary>
         public string TBEPCertificatePublicKey { get; }
 
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.AutoEncryptRequestSensitivePropertyAlgorithm"/> 的副本。
+        /// </summary>
+        public string SensitivePropertyEncryptionAlgorithm { get; set; }
+
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.SensitivePropertyEncryptionSM4Key"/> 的副本。
+        /// </summary>
+        public string? SensitivePropertyEncryptionSM4Key { get; set; }
+
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.SensitivePropertyEncryptionSM4IV"/> 的副本。
+        /// </summary>
+        public string? SensitivePropertyEncryptionSM4IV { get; set; }
+
         internal Credentials(WechatTenpayBusinessClientOptions options)
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
@@ -38,6 +53,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Settings
             PlatformCertificatePrivateKey = options.PlatformCertificatePrivateKey;
             TBEPCertificateSerialNumber = options.TBEPCertificateSerialNumber;
             TBEPCertificatePublicKey = options.TBEPCertificatePublicKey;
+            SensitivePropertyEncryptionAlgorithm = options.SensitivePropertyEncryptionAlgorithm;
+            SensitivePropertyEncryptionSM4Key = options.SensitivePropertyEncryptionSM4Key;
+            SensitivePropertyEncryptionSM4IV = options.SensitivePropertyEncryptionSM4IV;
         }
     }
 }

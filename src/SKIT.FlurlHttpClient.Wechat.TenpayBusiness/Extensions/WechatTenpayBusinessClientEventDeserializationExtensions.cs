@@ -2,7 +2,7 @@
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
-    public static class WechatTenpayBusinessClientEventDecryptionExtensions
+    public static class WechatTenpayBusinessClientEventDeserializationExtensions
     {
         /// <summary>
         /// <para>反序列化得到 <see cref="WechatTenpayBusinessEvent"/> 对象。</para>
@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <returns></returns>
         public static WechatTenpayBusinessEvent DeserializeEvent(this WechatTenpayBusinessClient client, string callbackJson)
         {
-            return DecryptEventResource<WechatTenpayBusinessEvent>(client, callbackJson);
+            return DeserializeEvent<WechatTenpayBusinessEvent>(client, callbackJson);
         }
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <param name="client"></param>
         /// <param name="callbackJson"></param>
         /// <returns></returns>
-        public static TEvent DecryptEventResource<TEvent>(this WechatTenpayBusinessClient client, string callbackJson)
+        public static TEvent DeserializeEvent<TEvent>(this WechatTenpayBusinessClient client, string callbackJson)
             where TEvent : WechatTenpayBusinessEvent
         {
             if (client == null) throw new ArgumentNullException(nameof(client));

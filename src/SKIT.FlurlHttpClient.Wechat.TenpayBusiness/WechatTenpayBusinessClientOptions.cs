@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
+﻿using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     /// <summary>
     /// 一个用于构造 <see cref="WechatTenpayBusinessClient"/> 时使用的配置项。
@@ -47,5 +49,32 @@
         /// 获取或设置腾讯微企付证书公钥。
         /// </summary>
         public string TBEPCertificatePublicKey { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置是否自动加密请求中的敏感字段数据。
+        /// <para>注意：启用该功能需配合 <see cref="SensitivePropertyEncryptionSM4Key"/> 和 <see cref="SensitivePropertyEncryptionSM4IV"/> 使用。</para>
+        /// </summary>
+        public bool AutoEncryptRequestSensitiveProperty { get; set; }
+
+        /// <summary>
+        /// 获取或设置自动加密请求重敏感字段数据时使用的算法。
+        /// <para>默认值：<see cref="Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC"/></para>
+        /// </summary>
+        public string SensitivePropertyEncryptionAlgorithm { get; set; } = Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC;
+
+        /// <summary>
+        /// 获取或设置自动加密请求中的敏感字段数据时 SM4 算法所需密钥。
+        /// </summary>
+        public string? SensitivePropertyEncryptionSM4Key { get; set; }
+
+        /// <summary>
+        /// 获取或设置自动加密请求中的敏感字段数据时 SM4 算法所需偏移量。
+        /// </summary>
+        public string? SensitivePropertyEncryptionSM4IV { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否自动解密响应中的敏感字段数据。
+        /// </summary>
+        public bool AutoDecryptResponseSensitiveProperty { get; set; }
     }
 }

@@ -6,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
     /// <summary>
     /// <para>表示 [POST] /mse-pay/payments/h5-pay 接口的请求。</para>
     /// </summary>
+    [WechatTenpayBusinessSensitive]
     public class CreateMSEPayPaymentH5PayRequest : WechatTenpayBusinessRequest
     {
         public static class Types
@@ -24,6 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ent_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ent_name")]
+                [WechatTenpayBusinessSensitiveProperty]
                 public string EnterpriseName { get; set; } = string.Empty;
 
                 /// <summary>
