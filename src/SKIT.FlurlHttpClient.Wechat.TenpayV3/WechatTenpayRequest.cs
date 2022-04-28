@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <i>（本参数已废弃，请使用 <see cref="WechatpayCertificateSerialNumber"/> 参数）</i>
         /// </summary>
-        [Obsolete("本参数已废弃，请使用 `WechatpayCertificateSerialNumber` 参数")]
+        [Obsolete("本参数已废弃，请使用 `WechatpayCertificateSerialNumber` 参数", error: true)]
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string? WechatpayCertSerialNumber { get { return WechatpayCertificateSerialNumber; } set { WechatpayCertificateSerialNumber = value; } }
