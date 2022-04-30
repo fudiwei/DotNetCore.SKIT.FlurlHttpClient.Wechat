@@ -1,4 +1,4 @@
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
+ï»¿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 {
     public class WebApiApplication : HttpApplication
     {
@@ -6,22 +6,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 
         protected void Application_Start()
         {
-            // ×¢²á WebAPI ÇøÓò
+            // æ³¨å†Œ WebAPI åŒºåŸŸ
             AreaRegistration.RegisterAllAreas();
 
-            // ×¢²á WebAPI ÅäÖÃ
+            // æ³¨å†Œ WebAPI é…ç½®
             GlobalConfiguration.Configure(WebApiConfiguration.Register);
 
-            // ×¢²áÈ«¾Ö¹ıÂËÆ÷
+            // æ³¨å†Œå…¨å±€è¿‡æ»¤å™¨
             FilterRegistration.RegisterGlobalFilters(GlobalFilters.Filters);
 
-            // ×¢²áÂ·ÓÉ±í
+            // æ³¨å†Œè·¯ç”±è¡¨
             RouteRegistration.RegisterRoutes(RouteTable.Routes);
 
-            // ³õÊ¼»¯ Autofac ÒÀÀµ×¢ÈëÈİÆ÷
+            // åˆå§‹åŒ– Autofac ä¾èµ–æ³¨å…¥å®¹å™¨
             AutofacInitializer.Init();
 
-            // ³õÊ¼»¯ Hangfire ¶¨Ê±ÈÎÎñ
+            // åˆå§‹åŒ– Hangfire å®šæ—¶ä»»åŠ¡
             _backgroundJobServer = HangfireInitializer.Init();
         }
 

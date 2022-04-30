@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+ï»¿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -17,21 +17,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample
         {
             services.AddControllers();
 
-            // ×¢ÈëÅäÖÃÏî£¨ÄÚÈİ¼û `appsettings.json` ÎÄ¼ş£©
+            // æ³¨å…¥é…ç½®é¡¹ï¼ˆå†…å®¹è§ `appsettings.json` æ–‡ä»¶ï¼‰
             services.AddOptions();
             services.Configure<Options.WechatOptions>(Configuration.GetSection(nameof(Options.WechatOptions)));
 
-            // ×¢Èë·Ö²¼Ê½Ëø
+            // æ³¨å…¥åˆ†å¸ƒå¼é”
             services.AddSingleton<Services.DistributedLock.IDistributedLockFactory, Services.DistributedLock.Implements.DistributedLockFactory>();
 
-            // ×¢Èë²Ö´¢Àà
+            // æ³¨å…¥ä»“å‚¨ç±»
             services.AddSingleton<Services.Repositories.IWechatAccessTokenEntityRepository, Services.Repositories.Implements.WechatAccessTokenEntityRepository>();
 
-            // ×¢Èë¹¤³§ HTTP ¿Í»§¶Ë
+            // æ³¨å…¥å·¥å‚ HTTP å®¢æˆ·ç«¯
             services.AddHttpClient();
             services.AddSingleton<Services.HttpClients.IWechatApiHttpClientFactory, Services.HttpClients.Implements.WechatApiHttpClientFactory>();
 
-            // ×¢ÈëºóÌ¨ÈÎÎñ
+            // æ³¨å…¥åå°ä»»åŠ¡
             services.AddHostedService<Services.BackgroundServices.WechatAccessTokenRefreshingBackgroundService>();
         }
 
