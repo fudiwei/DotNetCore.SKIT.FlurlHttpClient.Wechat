@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/corpgroup/corp/get_chain_corpinfo_list 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/corp/get_chain_corpinfo_list 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95315 </para>
         /// </summary>
         /// <param name="client"></param>
@@ -107,15 +107,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "corpgroup", "corp", "get_chain_corpinfo_list")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("chain_id", request.ChainId);
-
-            if (request.GroupId != null)
-                flurlReq.SetQueryParam("groupid", request.GroupId.Value);
-
-            if (request.RequireFetchChild != null)
-                flurlReq.SetQueryParam("fetch_child", request.RequireFetchChild.Value ? 1 : 0);
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "corp", "get_chain_corpinfo_list")
+                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCropGetChainCorpInfoListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -139,5 +132,107 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupUnionidToExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region Rule
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/rule/list_ids 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95631 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupRuleListIdsResponse> ExecuteCgibinCorpGroupRuleListIdsAsync(this WechatWorkClient client, Models.CgibinCorpGroupRuleListIdsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "rule", "list_ids")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupRuleListIdsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/rule/delete_rule 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95632 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupRuleDeleteRuleResponse> ExecuteCgibinCorpGroupRuleDeleteRuleAsync(this WechatWorkClient client, Models.CgibinCorpGroupRuleDeleteRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "rule", "delete_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupRuleDeleteRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/rule/get_rule_info 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95634 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupRuleGetRuleInfoResponse> ExecuteCgibinCorpGroupRuleGetRuleInfoAsync(this WechatWorkClient client, Models.CgibinCorpGroupRuleGetRuleInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "rule", "get_rule_info")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupRuleGetRuleInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/rule/add_rule 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95634 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupRuleAddRuleResponse> ExecuteCgibinCorpGroupRuleAddRuleAsync(this WechatWorkClient client, Models.CgibinCorpGroupRuleAddRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "rule", "add_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupRuleAddRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/rule/modify_rule 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95635 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupRuleModifyRuleResponse> ExecuteCgibinCorpGroupRuleModifyRuleAsync(this WechatWorkClient client, Models.CgibinCorpGroupRuleModifyRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "rule", "modify_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupRuleModifyRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
