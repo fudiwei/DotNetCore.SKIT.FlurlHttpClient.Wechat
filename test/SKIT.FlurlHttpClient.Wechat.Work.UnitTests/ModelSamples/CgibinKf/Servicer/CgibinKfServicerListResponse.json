@@ -9,6 +9,12 @@
         {
             "userid": "lisi",
             "status": 1
+        },
+        {
+            "department_id": 2
+        },
+        {
+            "department_id": 3
         }
     ]
 }

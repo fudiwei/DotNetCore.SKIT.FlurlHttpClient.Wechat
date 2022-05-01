@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/kf/account/list 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/kf/account/list 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/94661 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/94691 </para>
         /// </summary>
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "kf", "account", "list")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "account", "list")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfAccountListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
