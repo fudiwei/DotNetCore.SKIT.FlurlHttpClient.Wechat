@@ -532,6 +532,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.8.0
+
+    -   **新增**：新增上下游规则相关接口。
+
+    -   **新增**：随官方更新获取客户详情、微信客服接待人员管理相关接口模型。
+
 -   Release 2.7.2
 
     -   **修复**：修复上传素材接口不支持 Unicode 文件名问题。（[GitHub Issue #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/40)）
