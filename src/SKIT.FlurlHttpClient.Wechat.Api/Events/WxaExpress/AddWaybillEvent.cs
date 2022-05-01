@@ -164,7 +164,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("DetailList")]
                 [System.Text.Json.Serialization.JsonPropertyName("DetailList")]
-                [System.Xml.Serialization.XmlArrayItem("DetailList", Type = typeof(Types.GoodsDetail))]
+                [System.Xml.Serialization.XmlElement("DetailList", Type = typeof(Types.GoodsDetail))]
                 public Types.GoodsDetail[]? GoodsDetailList { get; set; }
             }
 

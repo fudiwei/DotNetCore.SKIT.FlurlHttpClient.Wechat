@@ -69,7 +69,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scene_group_ext_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene_group_ext_list")]
-                [System.Xml.Serialization.XmlArrayItem("scene_group_ext_list", Type = typeof(Types.SceneGroupExtra))]
+                [System.Xml.Serialization.XmlElement("scene_group_ext_list", Type = typeof(Types.SceneGroupExtra))]
                 public Types.SceneGroupExtra[] SceneGroupExtraList { get; set; } = default!;
             }
         }
