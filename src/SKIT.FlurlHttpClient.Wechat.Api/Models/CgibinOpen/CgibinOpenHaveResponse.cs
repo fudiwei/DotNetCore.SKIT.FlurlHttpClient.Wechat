@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("have_open")]
         [System.Text.Json.Serialization.JsonPropertyName("have_open")]
-        public bool IsHaveOpen { get; set; }
+        public bool HasOpenAccount { get; set; }
     }
 }
