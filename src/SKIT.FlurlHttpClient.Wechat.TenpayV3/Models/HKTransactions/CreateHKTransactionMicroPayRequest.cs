@@ -23,7 +23,7 @@
 
             public class Detail : CreateHKTransactionAppRequest.Types.Detail
             {
-                public new static class Types
+                public static new class Types
                 {
                     public class GoodsDetail : CreateHKTransactionAppRequest.Types.Detail.Types.GoodsDetail
                     {
@@ -33,7 +33,7 @@
 
             public class Scene : CreateHKTransactionAppRequest.Types.Scene
             {
-                public new static class Types
+                public static new class Types
                 {
                     public class Store : CreateHKTransactionAppRequest.Types.Scene.Types.Store
                     {

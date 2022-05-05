@@ -52,7 +52,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("second_category_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("second_category_id")]
-                public int SecondCategroyId { get; set; }
+                public int SecondCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类目名称。

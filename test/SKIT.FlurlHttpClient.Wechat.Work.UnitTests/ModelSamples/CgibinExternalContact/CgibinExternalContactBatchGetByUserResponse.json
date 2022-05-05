@@ -53,7 +53,8 @@
                 "oper_userid": "rocky",
                 "add_way": 10,
                 "wechat_channels": {
-                    "nickname": "视频号名称"
+                    "nickname": "视频号名称",
+                    "source": 1
                 }
             }
         },

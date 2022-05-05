@@ -1,0 +1,22 @@
+﻿{
+    "errmsg": "ok",
+    "errcode": 0,
+    "wxa_embedded_list": [
+        {
+            "appid": "wxf074afxxxxxxxx",
+            "create_time": 1648177830,
+            "headimg": "http://wx.qlogo.cn/mmhead/Q3axxxxxxxdRLA",
+            "nickname": "tesxxx",
+            "reason": "我是理由",
+            "status": 1
+        },
+        {
+            "appid": "wx355c73xxxxxxx",
+            "create_time": 1647250557,
+            "headimg": "http://wx.qlogo.cn/mmhead/QxxxxxxA",
+            "nickname": "美味助手xx",
+            "reason": "特殊",
+            "status": 2
+        }
+    ]
+}

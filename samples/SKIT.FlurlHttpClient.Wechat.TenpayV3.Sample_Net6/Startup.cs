@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Builder;
+ï»¿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -18,16 +18,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
         {
             services.AddControllers();
 
-            // ×¢ÈëÅäÖÃÏî£¨ÄÚÈİ¼û `appsettings.json` ÎÄ¼ş£©
+            // æ³¨å…¥é…ç½®é¡¹ï¼ˆå†…å®¹è§ `appsettings.json` æ–‡ä»¶ï¼‰
             services.AddOptions();
             services.Configure<Options.TenpayOptions>(Configuration.GetSection(nameof(Options.TenpayOptions)));
 
-            // ×¢Èë¹¤³§ HTTP ¿Í»§¶Ë
+            // æ³¨å…¥å·¥å‚ HTTP å®¢æˆ·ç«¯
             services.AddHttpClient();
             services.AddSingleton<Services.HttpClients.IWechatTenpayCertificateManagerFactory, Services.HttpClients.Implements.WechatTenpayCertificateManagerFactory>();
             services.AddSingleton<Services.HttpClients.IWechatTenpayHttpClientFactory, Services.HttpClients.Implements.WechatTenpayHttpClientFactory>();
 
-            // ×¢ÈëºóÌ¨ÈÎÎñ
+            // æ³¨å…¥åå°ä»»åŠ¡
             services.AddHostedService<Services.BackgroundServices.TenpayCertificateRefreshingBackgroundService>();
         }
 

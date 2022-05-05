@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -39,14 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             {
                 flurlReq.SetQueryParam("upload_type", 0);
 
-                string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-                using var httpContent = new MultipartFormDataContent(boundary);
-                using var fileContent = new ByteArrayContent(request.ImageFileBytes ?? Array.Empty<byte>());
-                httpContent.Add(fileContent, "\"media\"", "\"image.png\"");
-                httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-                fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
-                fileContent.Headers.ContentLength = request.ImageFileBytes?.Length;
-
+                using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.ImageFileBytes!, fileContentType: "image/png", formDataName: "media");
                 return await client.SendRequestAsync<Models.ShopImageUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
             }
         }

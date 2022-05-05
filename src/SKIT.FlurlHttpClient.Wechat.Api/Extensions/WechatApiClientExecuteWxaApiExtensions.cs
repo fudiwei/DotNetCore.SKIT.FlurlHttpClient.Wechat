@@ -1088,5 +1088,139 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.WxaApiMiniShopBusinessSupplyRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region WxaEmbedded
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/wxaembedded/get_list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/get_list.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiWxaEmbeddedGetListResponse> ExecuteWxaApiWxaEmbeddedGetListAsync(this WechatApiClient client, Models.WxaApiWxaEmbeddedGetListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxaapi", "wxaembedded", "get_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            if (request.Offset != null)
+                flurlReq.SetQueryParam("start", request.Offset);
+
+            if (request.Limit != null)
+                flurlReq.SetQueryParam("num", request.Limit);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiWxaEmbeddedGetListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/wxaembedded/get_own_list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/get_own_list.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiWxaEmbeddedGetOwnListResponse> ExecuteWxaApiWxaEmbeddedGetOwnListAsync(this WechatApiClient client, Models.WxaApiWxaEmbeddedGetOwnListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxaapi", "wxaembedded", "get_own_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            if (request.Offset != null)
+                flurlReq.SetQueryParam("start", request.Offset);
+
+            if (request.Limit != null)
+                flurlReq.SetQueryParam("num", request.Limit);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiWxaEmbeddedGetOwnListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/wxaembedded/add_embedded 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/add_embedded.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiWxaEmbeddedAddEmbeddedResponse> ExecuteWxaApiWxaEmbeddedAddEmbeddedAsync(this WechatApiClient client, Models.WxaApiWxaEmbeddedAddEmbeddedRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxaapi", "wxaembedded", "add_embedded")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiWxaEmbeddedAddEmbeddedResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/wxaembedded/del_embedded 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/del_embedded.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiWxaEmbeddedDeleteEmbeddedResponse> ExecuteWxaApiWxaEmbeddedDeleteEmbeddedAsync(this WechatApiClient client, Models.WxaApiWxaEmbeddedDeleteEmbeddedRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxaapi", "wxaembedded", "del_embedded")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiWxaEmbeddedDeleteEmbeddedResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/wxaembedded/del_authorize 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/del_authorize.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiWxaEmbeddedDeleteAuthorizeResponse> ExecuteWxaApiWxaEmbeddedDeleteAuthorizeAsync(this WechatApiClient client, Models.WxaApiWxaEmbeddedDeleteAuthorizeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxaapi", "wxaembedded", "del_authorize")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiWxaEmbeddedDeleteAuthorizeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/wxaembedded/set_authorize 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/set_authorize.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiWxaEmbeddedSetAuthorizeResponse> ExecuteWxaApiWxaEmbeddedSetAuthorizeAsync(this WechatApiClient client, Models.WxaApiWxaEmbeddedSetAuthorizeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxaapi", "wxaembedded", "set_authorize")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiWxaEmbeddedSetAuthorizeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

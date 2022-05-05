@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Net.Http;
-using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl;
@@ -390,14 +389,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateRequest(request, HttpMethod.Post, "wxa", "img_sec_check")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
-            using var httpContent = new MultipartFormDataContent(boundary);
-            httpContent.Add(fileContent, "\"media\"", "\"image.png\"");
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
-            fileContent.Headers.ContentLength = request.FileBytes?.Length;
-
+            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.FileBytes, fileContentType: "image/png", formDataName: "media");
             return await client.SendRequestAsync<Models.WxaImageSecurityCheckResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
@@ -781,15 +773,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateRequest(request, HttpMethod.Post, "wxa", "imagesearch")
                 .SetQueryParam("access_token", request.AccessToken);
 
-
-            string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-            using var httpContent = new MultipartFormDataContent(boundary);
-            using var fileContent = new ByteArrayContent(request.ImageFileBytes ?? Array.Empty<byte>());
-            httpContent.Add(fileContent, "\"img\"", "\"image.png\"");
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-            fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
-            fileContent.Headers.ContentLength = request.ImageFileBytes?.Length;
-
+            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
             return await client.SendRequestAsync<Models.WxaImageSearchResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 

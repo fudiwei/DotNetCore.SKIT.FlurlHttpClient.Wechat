@@ -8,7 +8,7 @@
         public static class Types
         {
             public class Address : ShopAccountUpdateInfoRequest.Types.Address
-            { 
+            {
             }
         }
 

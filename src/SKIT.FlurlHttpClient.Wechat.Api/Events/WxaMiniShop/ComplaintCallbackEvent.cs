@@ -171,7 +171,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("history")]
         [System.Text.Json.Serialization.JsonPropertyName("history")]
-        [System.Xml.Serialization.XmlArrayItem("history", Type = typeof(Types.ComplaintHistory))]
+        [System.Xml.Serialization.XmlElement("history", Type = typeof(Types.ComplaintHistory))]
         public Types.ComplaintHistory[] ComplaintHistoryList { get; set; } = default!;
     }
 }

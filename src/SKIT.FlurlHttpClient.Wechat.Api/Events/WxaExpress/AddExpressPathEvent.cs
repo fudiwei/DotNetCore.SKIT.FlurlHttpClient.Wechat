@@ -81,7 +81,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("Actions")]
         [System.Text.Json.Serialization.JsonPropertyName("Actions")]
-        [System.Xml.Serialization.XmlArrayItem("Actions", Type = typeof(Types.Action))]
+        [System.Xml.Serialization.XmlElement("Actions", Type = typeof(Types.Action))]
         public Types.Action[] ActionList { get; set; } = default!;
     }
 }

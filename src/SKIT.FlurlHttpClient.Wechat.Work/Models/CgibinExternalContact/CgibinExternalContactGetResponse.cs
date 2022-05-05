@@ -177,6 +177,13 @@
                         [Newtonsoft.Json.JsonProperty("nickname")]
                         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
                         public string? Nickname { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频号添加场景。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("source")]
+                        [System.Text.Json.Serialization.JsonPropertyName("source")]
+                        public int? Source { get; set; }
                     }
                 }
 

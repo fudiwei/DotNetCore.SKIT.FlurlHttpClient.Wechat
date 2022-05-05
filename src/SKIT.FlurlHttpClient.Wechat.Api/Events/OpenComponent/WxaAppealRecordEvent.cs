@@ -49,7 +49,7 @@
                 /// <summary>
                 /// 获取或设置证明材料 MediaId 列表。
                 /// </summary>
-                [System.Xml.Serialization.XmlArrayItem("proof_material_id", Type = typeof(string))]
+                [System.Xml.Serialization.XmlElement("proof_material_id", Type = typeof(string))]
                 public string[] ProofMediaIdList { get; set; } = default!;
             }
         }
@@ -87,7 +87,7 @@
         /// <summary>
         /// 获取或设置申诉材料列表。
         /// </summary>
-        [System.Xml.Serialization.XmlArrayItem("material", Type = typeof(Types.Material), IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("material", Type = typeof(Types.Material), IsNullable = true)]
         public Types.Material[]? MaterialList { get; set; }
 
         /// <summary>

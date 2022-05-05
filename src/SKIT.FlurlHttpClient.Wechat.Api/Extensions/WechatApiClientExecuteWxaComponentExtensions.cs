@@ -11,6 +11,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         #region Register
         /// <summary>
+        /// <para>异步调用 [POST] /wxa/component/reusemchidfastnormalizebetaweapp 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/beta_Mini_Programs/fastverifyV2.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaComponentReuseMerchantIdFastMormalizeBetaWeappResponse> ExecuteWxaComponentReuseMerchantIdFastMormalizeBetaWeappAsync(this WechatApiClient client, Models.WxaComponentReuseMerchantIdFastMormalizeBetaWeappRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "component", "reusemchidfastnormalizebetaweapp")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", request.Action);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaComponentReuseMerchantIdFastMormalizeBetaWeappResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /wxa/component/fastregisterbetaweapp 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/beta_Mini_Programs/fastregister.html </para>
         /// </summary>

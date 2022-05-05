@@ -6,7 +6,8 @@
             "groupid": 2,
             "corpid": "wwxxxx",
             "corp_name": "美馨粮油公司",
-            "custom_id": "wof3du51quo5sl1is"
+            "custom_id": "custom_id",
+            "invite_userid": "zhangsan"
         }
     ]
 }

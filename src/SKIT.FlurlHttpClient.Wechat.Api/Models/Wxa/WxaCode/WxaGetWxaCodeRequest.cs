@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/getwxacode 接口的请求。</para>
@@ -66,5 +66,12 @@
         [Newtonsoft.Json.JsonProperty("is_hyaline")]
         [System.Text.Json.Serialization.JsonPropertyName("is_hyaline")]
         public bool? IsHyaline { get; set; }
+
+        /// <summary>
+        /// 获取或设置要打开的小程序版本。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("env_version")]
+        [System.Text.Json.Serialization.JsonPropertyName("env_version")]
+        public string? EnvironmentVersion { get; set; }
     }
 }

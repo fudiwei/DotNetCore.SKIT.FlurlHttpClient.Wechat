@@ -1,7 +1,7 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /cgi-bin/corpgroup/corp/get_chain_corpinfo_list 接口的响应。</para>
+    /// <para>表示 [POST] /cgi-bin/corpgroup/corp/get_chain_corpinfo_list 接口的响应。</para>
     /// </summary>
     public class CgibinCorpGroupCropGetChainCorpInfoListResponse : WechatWorkResponse
     {
@@ -36,6 +36,13 @@
                 [Newtonsoft.Json.JsonProperty("custom_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("custom_id")]
                 public string? CustomId { get; set; }
+
+                /// <summary>
+                /// 获取或设置该上下游的邀请人的 UserId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("invite_userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("invite_userid")]
+                public string? InviteUserId { get; set; }
             }
         }
 

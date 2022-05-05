@@ -89,7 +89,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("item")]
                         [System.Text.Json.Serialization.JsonPropertyName("item")]
-                        [System.Xml.Serialization.XmlArrayItem("item", Type = typeof(CopyrightCheckResultItem))]
+                        [System.Xml.Serialization.XmlElement("item", Type = typeof(CopyrightCheckResultItem))]
                         public CopyrightCheckResultItem[] Items { get; set; } = default!;
                     }
                 }
@@ -149,7 +149,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("item")]
                         [System.Text.Json.Serialization.JsonPropertyName("item")]
-                        [System.Xml.Serialization.XmlArrayItem("item", Type = typeof(ArticleUrlResultItem))]
+                        [System.Xml.Serialization.XmlElement("item", Type = typeof(ArticleUrlResultItem))]
                         public ArticleUrlResultItem[] Items { get; set; } = default!;
                     }
                 }

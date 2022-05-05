@@ -32,6 +32,22 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.13.0
+
+    -   **新增**：新增第三方平台复用商户号资质快速转正、查询公众号或小程序是否绑定开放平台帐号、申请开通物流退货组件、半屏小程序管理接口。
+
+    -   **新增**：新增云开发查询是否绑定手机号的接口。
+
+    -   **修复**：修复部分事件通知模型中数组类型字段反序列化错误的问题。
+
+-   Release 2.12.0
+
+    -   **新增**：随官方更新自定义交易组件获取售后详情接口响应模型。（[GitHub PR #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/40)）
+
+    -   **新增**：随官方更新生成小程序码接口请求模型。（[Gitee PR #6]https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/6)）
+
+    -   **修复**：修复上传素材接口不支持 Unicode 文件名问题。（[GitHub Issue #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/40)）
+
 -   Release 2.11.0
 
     -   **新增**：新增自定义交易组件订单回调通知事件模型。
@@ -515,6 +531,12 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 2.8.0
+
+    -   **新增**：新增上下游规则相关接口。
+
+    -   **新增**：随官方更新获取客户详情、微信客服接待人员管理相关接口模型。
 
 -   Release 2.7.2
 

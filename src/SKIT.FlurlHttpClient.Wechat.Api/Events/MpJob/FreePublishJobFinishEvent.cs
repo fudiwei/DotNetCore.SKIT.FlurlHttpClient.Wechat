@@ -49,7 +49,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("item")]
                         [System.Text.Json.Serialization.JsonPropertyName("item")]
-                        [System.Xml.Serialization.XmlArrayItem("item", Type = typeof(Types.Item))]
+                        [System.Xml.Serialization.XmlElement("item", Type = typeof(Types.Item))]
                         public Types.Item[] List { get; set; } = default!;
                     }
                 }
@@ -91,7 +91,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fail_idx")]
                 [System.Text.Json.Serialization.JsonPropertyName("fail_idx")]
-                [System.Xml.Serialization.XmlArrayItem("fail_idx", Type = typeof(int))]
+                [System.Xml.Serialization.XmlElement("fail_idx", Type = typeof(int))]
                 public int[]? FailedIndexList { get; set; }
             }
         }

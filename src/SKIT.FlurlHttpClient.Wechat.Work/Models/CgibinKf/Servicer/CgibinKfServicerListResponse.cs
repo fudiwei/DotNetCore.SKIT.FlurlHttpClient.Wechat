@@ -14,14 +14,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                public string UserId { get; set; } = default!;
+                public string? UserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置接待状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public int Status { get; set; }
+                public int? Status { get; set; }
+
+                /// <summary>
+                /// 获取或设置接待人员的部门 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("department_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("department_id")]
+                public long? DepartmentId { get; set; }
             }
         }
 
