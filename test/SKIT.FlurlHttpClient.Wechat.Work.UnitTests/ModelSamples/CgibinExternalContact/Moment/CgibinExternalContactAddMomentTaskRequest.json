@@ -26,20 +26,11 @@
     ],
     "visible_range": {
         "sender_list": {
-            "user_list": [
-                "zhangshan",
-                "lisi"
-            ],
-            "department_list": [
-                2,
-                3
-            ]
+            "user_list": ["zhangshan", "lisi"],
+            "department_list": [2, 3]
         },
         "external_contact_list": {
-            "tag_list": [
-                1,
-                2
-            ]
+            "tag_list": [1, 2]
         }
     }
 }

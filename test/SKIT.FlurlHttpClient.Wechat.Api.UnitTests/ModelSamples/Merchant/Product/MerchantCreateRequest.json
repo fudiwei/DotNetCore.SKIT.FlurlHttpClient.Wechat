@@ -1,8 +1,6 @@
 ﻿{
     "product_base": {
-        "category_id": [
-            "537074298"
-        ],
+        "category_id": ["537074298"],
         "property": [
             {
                 "id": "1075741879",
@@ -21,10 +19,7 @@
         "sku_info": [
             {
                 "id": "1075741873",
-                "vid": [
-                    "1079742386",
-                    "1079742363"
-                ]
+                "vid": ["1079742386", "1079742363"]
             }
         ],
         "main_img": "http://mmbiz.qpic.cn/mmbiz/4whpV1VZl2iccsvYbHvnphkyGtnvjD3ulEKogfsiaua49pvLfUS8Ym0GSYjViaLic0FD3vN0V8PILcibEGb2fPfEOmw/0",

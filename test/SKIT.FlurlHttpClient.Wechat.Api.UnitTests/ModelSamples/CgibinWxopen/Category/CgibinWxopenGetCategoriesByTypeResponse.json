@@ -5,7 +5,7 @@
         "categories": [
             {
                 "id": 0,
-                "children": [ 1, 402 ],
+                "children": [1, 402],
                 "qualify": {
                     "exter_list": [],
                     "remark": ""
@@ -16,7 +16,7 @@
                 "name": "快递业与邮政",
                 "level": 1,
                 "father": 0,
-                "children": [ 2, 5, 556, 558, 1033 ],
+                "children": [2, 5, 556, 558, 1033],
                 "sensitive_type": 0,
                 "qualify": {
                     "exter_list": [],

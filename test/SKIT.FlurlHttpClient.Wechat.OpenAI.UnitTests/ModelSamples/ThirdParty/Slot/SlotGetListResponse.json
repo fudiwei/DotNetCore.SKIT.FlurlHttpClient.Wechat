@@ -4,14 +4,8 @@
         "count": 1,
         "list": [
             {
-                "ask_content": [
-                    "你好",
-                    "又是愉快第一天"
-                ],
-                "dicts": [
-                    "test1",
-                    "test2"
-                ],
+                "ask_content": ["你好", "又是愉快第一天"],
+                "dicts": ["test1", "test2"],
                 "name": "test",
                 "id": 1,
                 "type": 1

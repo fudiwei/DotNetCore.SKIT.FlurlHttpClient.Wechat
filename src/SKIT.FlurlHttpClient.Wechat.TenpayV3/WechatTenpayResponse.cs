@@ -9,17 +9,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     public abstract class WechatTenpayResponse : ICommonResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         int ICommonResponse.RawStatus { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IDictionary<string, string> ICommonResponse.RawHeaders { get; set; } = default!;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         byte[] ICommonResponse.RawBytes { get; set; } = default!;
 

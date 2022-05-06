@@ -71,8 +71,6 @@
         "ubo_id_card_valid_date": "[\"2017-10-28\",\"2037-10-28\"]"
     },
     "addition_info": {
-        "confirm_mchid_list": [
-            "20001113"
-        ]
+        "confirm_mchid_list": ["20001113"]
     }
 }

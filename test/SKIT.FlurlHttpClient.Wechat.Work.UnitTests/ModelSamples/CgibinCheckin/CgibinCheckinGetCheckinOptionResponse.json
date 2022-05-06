@@ -9,13 +9,7 @@
                 "groupid": 69,
                 "checkindate": [
                     {
-                        "workdays": [
-                            1,
-                            2,
-                            3,
-                            4,
-                            5
-                        ],
+                        "workdays": [1, 2, 3, 4, 5],
                         "checkintime": [
                             {
                                 "work_sec": 36000,

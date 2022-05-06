@@ -72,7 +72,7 @@
 
     -   **变更**：修改反序列化回调通知事件的相关扩展方法 `DeserializeEventFromXml`、`DeserializeEventFromJson`，废弃其指示是否启用安全模式的参数，改为自动判定。
 
-    -   **变更**：修改序列化回调通知事件的相关扩展方法 `SerializeEventToXml`、`SerializeEventToJson`，调整其指示是否启用安全模式的参数默认值，由 *false* 变为 *true*。
+    -   **变更**：修改序列化回调通知事件的相关扩展方法 `SerializeEventToXml`、`SerializeEventToJson`，调整其指示是否启用安全模式的参数默认值，由 _false_ 变为 _true_。
 
     -   **变更**：移除原 `WxBizMsgCryptor` 工具类。
 

@@ -1,11 +1,11 @@
-﻿using Xunit;
+using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
 {
     public class TestCase_JwtUtilityTests
     {
         [Fact(DisplayName = "测试用例：JWT HS256 编码")]
-        public void TestJWTEncodeWithHS256()
+        public void TestJwtEncodeWithHS256()
         {
             object payload = new
             {

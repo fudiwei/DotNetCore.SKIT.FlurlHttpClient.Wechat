@@ -259,7 +259,7 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("s_timestamp")]
                                         [System.Text.Json.Serialization.JsonPropertyName("s_timestamp")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))] 
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
                                         public long? Timestamp { get; set; }
                                     }
 

@@ -4,10 +4,7 @@
     "user_info": {
         "userid": "zhangsan",
         "name": "张三",
-        "department": [
-            "LINKEDID/1",
-            "LINKEDID/2"
-        ],
+        "department": ["LINKEDID/1", "LINKEDID/2"],
         "mobile": "+86 12345678901",
         "telephone": "10086",
         "email": "zhangsan@tencent.com",

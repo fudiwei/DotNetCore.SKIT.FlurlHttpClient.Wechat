@@ -38,24 +38,24 @@
     ],
     "out_request_no": "100002322019090134234sfdf",
     "pay_activity_setting": {
-		"logo_url": "https://wxpaylogo.qpic.cn/wxpaylogo/PiajxSqBRaEIPAeia7Imvtsn7sYGNcEj33YzVvJF88ECQ19LXId8ZL2Q/0",
-		"activity_second_title": "湖南麻辣美食券",
-		"mchid_list": ["10000022", "10000023"],
-		"activate_setting": {
-			"activate_type": "AUTO_ACTIVATE",
-			"activate_url": "https://w.url.cn/s/Ahz3p2C",
-			"activate_miniprogram": {
-				"activate_appid": "wxea9c30a90fs8d3fe",
-				"activate_path": "pages/activate/activate"
-			}
-		},
-		"payment_setting": {
-			"payment_mode": {
-				"payment_scene_list": ["APP"]
-			},
-			"limit_bank": "CFT",
-			"goods_tags": ["xxx", "yyy"]
-		}
+        "logo_url": "https://wxpaylogo.qpic.cn/wxpaylogo/PiajxSqBRaEIPAeia7Imvtsn7sYGNcEj33YzVvJF88ECQ19LXId8ZL2Q/0",
+        "activity_second_title": "湖南麻辣美食券",
+        "mchid_list": ["10000022", "10000023"],
+        "activate_setting": {
+            "activate_type": "AUTO_ACTIVATE",
+            "activate_url": "https://w.url.cn/s/Ahz3p2C",
+            "activate_miniprogram": {
+                "activate_appid": "wxea9c30a90fs8d3fe",
+                "activate_path": "pages/activate/activate"
+            }
+        },
+        "payment_setting": {
+            "payment_mode": {
+                "payment_scene_list": ["APP"]
+            },
+            "limit_bank": "CFT",
+            "goods_tags": ["xxx", "yyy"]
+        }
     },
     "miniprogram_activity_setting": {
         "outer_str": ["领取渠道1", "领取渠道2"],

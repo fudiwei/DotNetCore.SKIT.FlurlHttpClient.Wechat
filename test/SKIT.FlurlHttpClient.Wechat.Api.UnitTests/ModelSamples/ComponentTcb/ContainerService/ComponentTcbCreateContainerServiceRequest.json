@@ -4,7 +4,7 @@
     "remark": "test",
     "vpc": {
         "vpcid": "123",
-        "subnetids": [ "123" ],
+        "subnetids": ["123"],
         "create_type": 3
     }
 }

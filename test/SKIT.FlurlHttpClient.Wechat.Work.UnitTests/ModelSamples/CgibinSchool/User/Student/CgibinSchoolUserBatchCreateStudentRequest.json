@@ -3,12 +3,12 @@
         {
             "student_userid": "zhangsan",
             "name": "张三",
-            "department": [ 1, 2 ]
+            "department": [1, 2]
         },
         {
             "student_userid": "lisi",
             "name": "李四",
-            "department": [ 3, 4 ]
+            "department": [3, 4]
         }
     ]
 }

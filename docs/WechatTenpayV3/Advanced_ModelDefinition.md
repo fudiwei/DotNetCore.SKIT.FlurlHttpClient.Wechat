@@ -1088,7 +1088,6 @@
 
         -   Query Fund Settlement Details：`QueryHKSettlements`
 
-
     -   QR Code Payment
 
         -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`

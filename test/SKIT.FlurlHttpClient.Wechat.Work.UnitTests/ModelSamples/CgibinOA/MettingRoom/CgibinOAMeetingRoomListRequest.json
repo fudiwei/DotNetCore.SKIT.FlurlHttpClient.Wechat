@@ -2,5 +2,5 @@
     "city": "深圳",
     "building": "腾讯大厦",
     "floor": "18F",
-    "equipment": [ 1, 2, 3 ]
+    "equipment": [1, 2, 3]
 }

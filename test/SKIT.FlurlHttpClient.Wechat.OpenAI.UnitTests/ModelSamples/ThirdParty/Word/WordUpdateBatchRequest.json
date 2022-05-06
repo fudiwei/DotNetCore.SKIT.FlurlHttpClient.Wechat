@@ -6,7 +6,7 @@
             "name": "test",
             "weight": 0.8,
             "switch": true,
-            "synonyms": [ "你好", "又是愉快第一天" ]
+            "synonyms": ["你好", "又是愉快第一天"]
         }
     ]
 }

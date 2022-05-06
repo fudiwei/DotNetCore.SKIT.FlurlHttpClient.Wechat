@@ -1,8 +1,8 @@
 ﻿{
     "errcode": 0,
     "errmsg": "ok",
-    "requestdomain": [ "https://www.qq.com", "https://www.qq.com" ],
-    "wsrequestdomain": [ "wss://www.qq.com", "wss://www.qq.com" ],
-    "uploaddomain": [ "https://www.qq.com", "https://www.qq.com" ],
-    "downloaddomain": [ "https://www.qq.com", "https://www.qq.com" ]
+    "requestdomain": ["https://www.qq.com", "https://www.qq.com"],
+    "wsrequestdomain": ["wss://www.qq.com", "wss://www.qq.com"],
+    "uploaddomain": ["https://www.qq.com", "https://www.qq.com"],
+    "downloaddomain": ["https://www.qq.com", "https://www.qq.com"]
 }

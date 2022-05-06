@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -112,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
             using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var paramContent = new StringContent(
-                Utilities.WxBizMsgCryptor.AESEncrypt(
+                Utilities.WechatEventDataCryptor.AESEncrypt(
                     plainText: Utilities.XmlUtility.Serialize(request),
                     encodingAESKey: client.Credentials.EncodingAESKey!,
                     appId: client.Credentials.AppId!

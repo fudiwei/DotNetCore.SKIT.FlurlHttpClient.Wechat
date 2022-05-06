@@ -6,14 +6,14 @@
     "approver": [
         {
             "attr": 2,
-            "userid": [ "WuJunJie", "WangXiaoMing" ]
+            "userid": ["WuJunJie", "WangXiaoMing"]
         },
         {
             "attr": 1,
-            "userid": [ "LiuXiaoGang" ]
+            "userid": ["LiuXiaoGang"]
         }
     ],
-    "notifyer": [ "WuJunJie", "WangXiaoMing" ],
+    "notifyer": ["WuJunJie", "WangXiaoMing"],
     "notify_type": 1,
     "apply_data": {
         "contents": [

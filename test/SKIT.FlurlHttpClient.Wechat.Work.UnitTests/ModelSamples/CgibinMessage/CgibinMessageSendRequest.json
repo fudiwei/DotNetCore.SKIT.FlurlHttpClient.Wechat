@@ -97,10 +97,7 @@
             }
         ]
     },
-    "selected_ticket_list": [
-        "xxx",
-        "yyy"
-    ],
+    "selected_ticket_list": ["xxx", "yyy"],
     "template_card": {
         "card_type": "text_notice",
         "source": {

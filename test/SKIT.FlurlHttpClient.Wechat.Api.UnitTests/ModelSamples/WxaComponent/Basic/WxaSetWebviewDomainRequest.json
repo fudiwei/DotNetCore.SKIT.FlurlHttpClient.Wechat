@@ -1,4 +1,4 @@
 ﻿{
     "action": "add",
-    "webviewdomain": [ "https://www.qq.com", "https://m.qq.com" ]
+    "webviewdomain": ["https://www.qq.com", "https://m.qq.com"]
 }

@@ -4,5 +4,5 @@
     "start_time": 1593532800,
     "end_time": 1593619200,
     "booker": "zhangsan",
-    "attendees": [ "lisi", "wangwu" ]
+    "attendees": ["lisi", "wangwu"]
 }

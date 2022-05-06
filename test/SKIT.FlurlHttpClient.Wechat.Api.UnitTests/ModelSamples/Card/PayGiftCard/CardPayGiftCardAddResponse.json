@@ -11,8 +11,5 @@
             "occupy_appid": "appid"
         }
     ],
-    "succ_mchid_list": [
-        "123",
-        "456"
-    ]
+    "succ_mchid_list": ["123", "456"]
 }

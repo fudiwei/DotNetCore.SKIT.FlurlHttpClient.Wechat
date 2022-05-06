@@ -1,7 +1,12 @@
 ﻿{
-    "touser": [ "userid1", "userid2", "CorpId1/userid1", "CorpId2/userid2" ],
-    "toparty": [ "partyid1", "partyid2", "LinkedId1/partyid1", "LinkedId2/partyid2" ],
-    "totag": [ 3, 4 ],
+    "touser": ["userid1", "userid2", "CorpId1/userid1", "CorpId2/userid2"],
+    "toparty": [
+        "partyid1",
+        "partyid2",
+        "LinkedId1/partyid1",
+        "LinkedId2/partyid2"
+    ],
+    "totag": [3, 4],
     "toall": 0,
     "msgtype": "text",
     "agentid": 1,

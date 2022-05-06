@@ -2,8 +2,6 @@
     "errcode": 0,
     "errmsg": "ok",
     "open": true,
-    "api_whitelist": [
-        "/*"
-    ],
+    "api_whitelist": ["/*"],
     "version": 2
-} 
+}

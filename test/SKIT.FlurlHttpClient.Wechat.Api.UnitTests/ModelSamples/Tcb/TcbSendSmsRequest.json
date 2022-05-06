@@ -1,11 +1,9 @@
 ﻿{
     "env": "online-12345678910",
-    "phone_number_list": [
-        "+8612345678910"
-    ],
+    "phone_number_list": ["+8612345678910"],
     "sms_type": "Marketing",
     "content": "发布了新的能力",
     "path": "/index.html",
     "template_id": "923584",
-    "template_param_list": [ "商品", "/index.html" ]
+    "template_param_list": ["商品", "/index.html"]
 }

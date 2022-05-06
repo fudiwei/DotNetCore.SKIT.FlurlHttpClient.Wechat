@@ -14,33 +14,20 @@
             {
                 "type": "FORM_FIELD_RADIO",
                 "name": "兴趣",
-                "values": [
-                    "钢琴",
-                    "舞蹈",
-                    "足球"
-                ]
+                "values": ["钢琴", "舞蹈", "足球"]
             },
             {
                 "type": "FORM_FIELD_SELECT",
                 "name": "喜好",
-                "values": [
-                    "郭敬明",
-                    "韩寒",
-                    "南派三叔"
-                ]
+                "values": ["郭敬明", "韩寒", "南派三叔"]
             },
             {
                 "type": "FORM_FIELD_CHECK_BOX",
                 "name": "职业",
-                "values": [
-                    "赛车手",
-                    "旅行家"
-                ]
+                "values": ["赛车手", "旅行家"]
             }
         ],
-        "common_field_id_list": [
-            "USER_FORM_INFO_FLAG_MOBILE"
-        ]
+        "common_field_id_list": ["USER_FORM_INFO_FLAG_MOBILE"]
     },
     "optional_form": {
         "can_modify": false,
@@ -48,8 +35,6 @@
             "USER_FORM_INFO_FLAG_LOCATION",
             "USER_FORM_INFO_FLAG_BIRTHDAY"
         ],
-        "custom_field_list": [
-            "喜欢的电影"
-        ]
+        "custom_field_list": ["喜欢的电影"]
     }
 }

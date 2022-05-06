@@ -9,7 +9,7 @@
                 "pkg_list": [
                     {
                         "open_id": "OPENID",
-                        "action_list": [ "xxx", "xxx" ],
+                        "action_list": ["xxx", "xxx"],
                         "b": false
                     }
                 ]

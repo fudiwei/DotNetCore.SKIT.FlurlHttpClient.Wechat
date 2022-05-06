@@ -1,9 +1,5 @@
 ﻿{
     "errcode": 0,
     "errmsg": "ok",
-    "ids": [
-        "userid_111",
-        "userid_222",
-        "userid_333"
-    ]
+    "ids": ["userid_111", "userid_222", "userid_333"]
 }

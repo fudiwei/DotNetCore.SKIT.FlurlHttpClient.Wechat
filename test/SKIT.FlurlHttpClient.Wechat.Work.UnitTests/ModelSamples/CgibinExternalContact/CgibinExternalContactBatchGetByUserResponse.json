@@ -75,7 +75,10 @@
                 "remark": "王助理",
                 "description": "采购问题咨询",
                 "createtime": 1525881637,
-                "tag_id": ["etAJ2GCAAAXtWyujaWJHDDGi0mACHAAA", "stJHDDGi0mAGi0mACHBBByujaW"],
+                "tag_id": [
+                    "etAJ2GCAAAXtWyujaWJHDDGi0mACHAAA",
+                    "stJHDDGi0mAGi0mACHBBByujaW"
+                ],
                 "state": "外联二维码1",
                 "oper_userid": "woAJ2GCAAAd1asdasdjO4wKmE8AabjBBB",
                 "add_way": 3

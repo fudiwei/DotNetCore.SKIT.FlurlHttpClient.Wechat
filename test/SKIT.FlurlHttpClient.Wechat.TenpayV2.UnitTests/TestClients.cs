@@ -5,7 +5,7 @@
         static TestClients()
         {
             Instance = new WechatTenpayClient(new WechatTenpayClientOptions()
-            { 
+            {
                 MerchantId = TestConfigs.WechatMerchantId,
                 MerchantSecret = TestConfigs.WechatMerchantSecret,
                 MerchantCertificateBytes = TestConfigs.WechatMerchantCertificateBytes,

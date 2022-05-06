@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     {
                         InnerReplacePropertyStringValue(ref element, replacement);
                         //if (!array.IsReadOnly)
-                        //{ 
+                        //{
                         //    array.SetValue(element, i);
                         //}
                     }

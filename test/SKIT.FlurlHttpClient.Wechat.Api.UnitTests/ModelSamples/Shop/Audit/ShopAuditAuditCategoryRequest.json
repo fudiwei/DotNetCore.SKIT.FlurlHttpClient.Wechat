@@ -3,9 +3,9 @@
         "license": "www.xxxxx.com",
         "category_info": {
             "level1": 7419,
-            "level2": 7439, 
+            "level2": 7439,
             "level3": 7448,
-            "certificate": [ "www.xxx.com" ]
+            "certificate": ["www.xxx.com"]
         }
     }
 }

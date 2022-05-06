@@ -4,26 +4,14 @@
     "rule": {
         "rule_id": 1,
         "rule_name": "rulename",
-        "word_list": [
-            "敏感词1",
-            "敏感词2"
-        ],
+        "word_list": ["敏感词1", "敏感词2"],
         "extra_rule": {
-            "semantics_list": [
-                1,
-                2,
-                3
-            ]
+            "semantics_list": [1, 2, 3]
         },
         "intercept_type": 1,
         "applicable_range": {
-            "user_list": [
-                "zhangshan"
-            ],
-            "department_list": [
-                2,
-                3
-            ]
+            "user_list": ["zhangshan"],
+            "department_list": [2, 3]
         }
     }
 }

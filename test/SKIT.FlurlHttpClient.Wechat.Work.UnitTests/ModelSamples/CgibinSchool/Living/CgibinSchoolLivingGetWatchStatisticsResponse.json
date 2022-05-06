@@ -8,10 +8,7 @@
             {
                 "student_userid": "zhansan_child",
                 "parent_userid": "zhangsan",
-                "partyids": [
-                    10,
-                    11
-                ],
+                "partyids": [10, 11],
                 "watch_time": 30,
                 "enter_time": 1586433904,
                 "leave_time": 1586434000,
@@ -20,10 +17,7 @@
             {
                 "student_userid": "lisi_child",
                 "parent_userid": "lisi",
-                "partyids": [
-                    10,
-                    11
-                ],
+                "partyids": [10, 11],
                 "watch_time": 30,
                 "enter_time": 1586433904,
                 "leave_time": 1586434000,

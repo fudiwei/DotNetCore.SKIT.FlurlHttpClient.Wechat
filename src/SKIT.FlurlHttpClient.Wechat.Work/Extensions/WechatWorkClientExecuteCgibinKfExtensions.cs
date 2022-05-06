@@ -374,7 +374,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfSyncMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/kf/get_corp_qualification 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95153 </para>
@@ -394,7 +394,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfGetCorpQualificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/kf/get_corp_statistic 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95489 </para>
@@ -414,7 +414,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfGetCorpStatisticResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/kf/get_servicer_statistic 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95490 </para>

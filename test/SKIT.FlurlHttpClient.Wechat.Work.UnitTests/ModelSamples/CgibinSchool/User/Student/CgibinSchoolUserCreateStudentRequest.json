@@ -1,5 +1,5 @@
 ﻿{
     "student_userid": "zhangsan",
     "name": "张三",
-    "department": [ 1, 2 ]
+    "department": [1, 2]
 }

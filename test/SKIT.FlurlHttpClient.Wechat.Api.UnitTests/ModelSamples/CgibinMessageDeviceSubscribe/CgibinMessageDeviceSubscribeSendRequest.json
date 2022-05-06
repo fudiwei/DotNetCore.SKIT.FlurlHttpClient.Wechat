@@ -1,5 +1,5 @@
 ﻿{
-    "to_openid_list": [ "OPENID_1", "OPENID_2" ],
+    "to_openid_list": ["OPENID_1", "OPENID_2"],
     "sn": "XXXXXXX",
     "template_id": "TEMPLATE_ID",
     "page": "index",

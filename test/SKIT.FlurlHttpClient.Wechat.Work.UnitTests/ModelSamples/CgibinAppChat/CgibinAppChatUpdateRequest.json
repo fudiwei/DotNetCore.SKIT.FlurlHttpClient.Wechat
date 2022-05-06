@@ -2,6 +2,6 @@
     "chatid": "CHATID",
     "name": "NAME",
     "owner": "userid2",
-    "add_user_list": [ "userid1", "userid2", "userid3" ],
-    "del_user_list": [ "userid3", "userid4" ]
+    "add_user_list": ["userid1", "userid2", "userid3"],
+    "del_user_list": ["userid3", "userid4"]
 }

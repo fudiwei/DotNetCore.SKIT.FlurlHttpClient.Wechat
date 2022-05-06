@@ -10,7 +10,7 @@
             "county_name": "东城区"
         },
         "delivery_type": 1,
-        "delivery_id": [ "" ],
+        "delivery_id": [""],
         "shipping_method": 2,
         "all_condition_free_detail": {
             "condition_free_detail_list": [
@@ -52,7 +52,6 @@
                     "second_val_amount": 1,
                     "second_price": 400
                 }
-
             ]
         },
         "is_default": 0,

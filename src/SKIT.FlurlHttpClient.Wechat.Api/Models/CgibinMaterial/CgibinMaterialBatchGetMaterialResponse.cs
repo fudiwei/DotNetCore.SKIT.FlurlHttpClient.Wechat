@@ -15,6 +15,7 @@
                     {
                         public static class Types
                         {
+                            [System.Obsolete]
                             public class Article : CgibinMaterialGetMaterialAsNewsResponse.Types.Article
                             {
                             }

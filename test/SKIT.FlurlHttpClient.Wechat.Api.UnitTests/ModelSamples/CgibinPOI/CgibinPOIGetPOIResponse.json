@@ -10,7 +10,7 @@
             "city": "广州市",
             "address": "海珠区艺苑路11 号",
             "telephone": "020-12345678",
-            "categories": [ "美食,小吃快餐" ],
+            "categories": ["美食,小吃快餐"],
             "offset_type": 1,
             "longitude": 115.32375,
             "latitude": 25.097486,

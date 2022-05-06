@@ -2,7 +2,7 @@
     "errcode": 0,
     "errmsg": "ok",
     "black_keyword": {
-        "values": [ "敏感词1", "敏感词2" ],
+        "values": ["敏感词1", "敏感词2"],
         "updatetime": 11111
     },
     "guide_auto_reply": {

@@ -7,11 +7,8 @@
         "living_duration": 1800,
         "anchor_userid": "zhangsan",
         "living_range": {
-            "partyids": [ 1, 4, 9 ],
-            "group_names": [
-                "group_name1",
-                "group_name2"
-            ]
+            "partyids": [1, 4, 9],
+            "group_names": ["group_name1", "group_name2"]
         },
         "viewer_num": 100,
         "comment_num": 110,

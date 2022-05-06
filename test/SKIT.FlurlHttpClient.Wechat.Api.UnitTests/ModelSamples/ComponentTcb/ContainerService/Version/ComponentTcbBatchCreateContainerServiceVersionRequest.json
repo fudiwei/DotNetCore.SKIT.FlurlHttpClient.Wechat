@@ -1,5 +1,5 @@
 ﻿{
-    "envs": [ "myttest2-9g1m6omv9fa12048", "myttest-8gu57so0bd9f9e8a" ],
+    "envs": ["myttest2-9g1m6omv9fa12048", "myttest-8gu57so0bd9f9e8a"],
     "service_name": "echo",
     "upload_type": "repository",
     "repository_type": "github",

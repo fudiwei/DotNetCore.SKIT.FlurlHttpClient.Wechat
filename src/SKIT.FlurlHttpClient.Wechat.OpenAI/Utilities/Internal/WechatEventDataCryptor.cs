@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -10,7 +10,7 @@ using System.Xml;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Utilities
 {
-    public static class WxBizMsgCryptor
+    internal static class WechatEventDataCryptor
     {
         private const int AES_KEY_SIZE = 256;
         private const int AES_BLOCK_SIZE = 128;

@@ -1,4 +1,4 @@
-﻿using Xunit;
+using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
             };
             var client = new WechatWorkClient(options);
 
-            Assert.True(client.VerifyEventSignatureForEcho(callbacTimeStamp, callbacNonce, callbackEcho, callbacMsgSig, out string replyEcho));
+            Assert.True(client.VerifyEventSignatureForEcho(callbacTimeStamp, callbacNonce, callbackEcho, callbacMsgSig, out string? replyEcho));
             Assert.Equal("1616140317555161061", replyEcho);
         }
     }

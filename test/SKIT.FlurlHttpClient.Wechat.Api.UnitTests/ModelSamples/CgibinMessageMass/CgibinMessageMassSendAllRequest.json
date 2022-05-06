@@ -8,11 +8,7 @@
         "content": "CONTENT"
     },
     "images": {
-        "media_ids": [
-            "aaa",
-            "bbb",
-            "ccc"
-        ],
+        "media_ids": ["aaa", "bbb", "ccc"],
         "recommend": "xxx",
         "need_open_comment": 1,
         "only_fans_can_comment": 0

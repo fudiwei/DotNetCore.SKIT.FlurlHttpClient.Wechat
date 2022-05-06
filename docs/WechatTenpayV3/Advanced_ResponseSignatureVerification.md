@@ -64,7 +64,7 @@ bool ret = client.VerifyResponseSignature(response);
 
 ```csharp
 bool ret = client.VerifyResponseSignature(response, out Exception error);
-if (!ret) 
+if (!ret)
 {
     Console.WriteLine(error);
     Console.WriteLine(error.InnerException);

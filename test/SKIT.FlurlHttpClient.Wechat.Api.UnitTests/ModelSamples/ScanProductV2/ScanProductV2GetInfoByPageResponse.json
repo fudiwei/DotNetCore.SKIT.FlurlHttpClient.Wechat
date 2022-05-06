@@ -1,132 +1,134 @@
 ﻿{
-    "product": [{
-        "pid": "pid001",
-        "image_info": {
-            "main_image_list": [
-                {
-                    "url": "http://www.google.com/a.jpg"
-                },
-                {
-                    "url": "http://www.google.com/b.jpg"
-                }
-            ]
-        },
-        "category_info": {
-            "category_item": [
-                {
-                    "category_name": "图书"
-                },
-                {
-                    "category_name": "少儿图书"
-                }
-            ]
-        },
-        "official_category_info": {
-            "category_item": [
-                {
-                    "category_name": "图书"
-                }
-            ]
-        },
-        "link_info": {
-            "url": "pages/index/index",
-            "wxa_appid": "wxa0x01adx3423566",
-            "link_type": "wxa"
-        },
-        "title": "test title",
-        "sub_title": "test sub_title",
-        "brand": "test brand",
-        "shop_info": {
-            "source": 2
-        },
-        "desc": "test desc",
-        "price_info": {
-            "min_price": 250,
-            "max_price": 250.22,
-            "min_ori_price": 300.1,
-            "max_ori_price": 320.15
-        },
-        "sale_info": {
-            "sale_status": "on",
-            "stock": 1000
-        },
-        "custom_info": {
-            "custom_list": [
-                {
-                    "key": "book_desc",
-                    "value": "“熊猫先生”通过4个富有节律性、带有因果关系、幽默风趣，又有正反对比的故事，让小朋友明白礼仪的重要性。"
-                },
-                {
-                    "key": "author",
-                    "value": "史蒂夫•安东尼"
-                },
-                {
-                    "key": "publisher",
-                    "value": "中信出版社"
-                }
-            ]
-        },
-        "sku_info": {
-            "sku_item": [
-                {
-                    "sku_id": "sku001",
-                    "barcode_type": "ean13",
-                    "barcode": "2018032105140",
-                    "image_info": {
-                        "main_image_list": [
-                            {
-                                "url": "http://www.google.com/c.jpg"
-                            },
-                            {
-                                "url": "http://www.google.com/d.jpg"
-                            }
-                        ]
+    "product": [
+        {
+            "pid": "pid001",
+            "image_info": {
+                "main_image_list": [
+                    {
+                        "url": "http://www.google.com/a.jpg"
                     },
-                    "link_url": "pages/index/index?a=b",
-                    "price_info": {
-                        "min_price": 250,
-                        "max_price": 250.22,
-                        "min_ori_price": 300.1,
-                        "max_ori_price": 320.15
-                    },
-                    "sale_info": {
-                        "sale_status": "on",
-                        "stock": 500
-                    },
-                    "shop_info": {
-                        "source": 2
+                    {
+                        "url": "http://www.google.com/b.jpg"
                     }
-                },
-                {
-                    "sku_id": "sku002",
-                    "barcode_type": "ean13",
-                    "barcode": "2018032105140",
-                    "image_info": {
-                        "main_image_list": [
-                            {
-                                "url": "http://www.google.com/c.jpg"
-                            },
-                            {
-                                "url": "http://www.google.com/d.jpg"
-                            }
-                        ]
+                ]
+            },
+            "category_info": {
+                "category_item": [
+                    {
+                        "category_name": "图书"
                     },
-                    "link_url": "pages/index/index?a=b",
-                    "price_info": {
-                        "min_price": 250,
-                        "max_price": 250.22,
-                        "min_ori_price": 300.1,
-                        "max_ori_price": 320.15
-                    },
-                    "sale_info": {
-                        "sale_status": "on",
-                        "stock": 500
-                    },
-                    "shop_info": {
-                        "source": 2
+                    {
+                        "category_name": "少儿图书"
                     }
-                }
-            ]
+                ]
+            },
+            "official_category_info": {
+                "category_item": [
+                    {
+                        "category_name": "图书"
+                    }
+                ]
+            },
+            "link_info": {
+                "url": "pages/index/index",
+                "wxa_appid": "wxa0x01adx3423566",
+                "link_type": "wxa"
+            },
+            "title": "test title",
+            "sub_title": "test sub_title",
+            "brand": "test brand",
+            "shop_info": {
+                "source": 2
+            },
+            "desc": "test desc",
+            "price_info": {
+                "min_price": 250,
+                "max_price": 250.22,
+                "min_ori_price": 300.1,
+                "max_ori_price": 320.15
+            },
+            "sale_info": {
+                "sale_status": "on",
+                "stock": 1000
+            },
+            "custom_info": {
+                "custom_list": [
+                    {
+                        "key": "book_desc",
+                        "value": "“熊猫先生”通过4个富有节律性、带有因果关系、幽默风趣，又有正反对比的故事，让小朋友明白礼仪的重要性。"
+                    },
+                    {
+                        "key": "author",
+                        "value": "史蒂夫•安东尼"
+                    },
+                    {
+                        "key": "publisher",
+                        "value": "中信出版社"
+                    }
+                ]
+            },
+            "sku_info": {
+                "sku_item": [
+                    {
+                        "sku_id": "sku001",
+                        "barcode_type": "ean13",
+                        "barcode": "2018032105140",
+                        "image_info": {
+                            "main_image_list": [
+                                {
+                                    "url": "http://www.google.com/c.jpg"
+                                },
+                                {
+                                    "url": "http://www.google.com/d.jpg"
+                                }
+                            ]
+                        },
+                        "link_url": "pages/index/index?a=b",
+                        "price_info": {
+                            "min_price": 250,
+                            "max_price": 250.22,
+                            "min_ori_price": 300.1,
+                            "max_ori_price": 320.15
+                        },
+                        "sale_info": {
+                            "sale_status": "on",
+                            "stock": 500
+                        },
+                        "shop_info": {
+                            "source": 2
+                        }
+                    },
+                    {
+                        "sku_id": "sku002",
+                        "barcode_type": "ean13",
+                        "barcode": "2018032105140",
+                        "image_info": {
+                            "main_image_list": [
+                                {
+                                    "url": "http://www.google.com/c.jpg"
+                                },
+                                {
+                                    "url": "http://www.google.com/d.jpg"
+                                }
+                            ]
+                        },
+                        "link_url": "pages/index/index?a=b",
+                        "price_info": {
+                            "min_price": 250,
+                            "max_price": 250.22,
+                            "min_ori_price": 300.1,
+                            "max_ori_price": 320.15
+                        },
+                        "sale_info": {
+                            "sale_status": "on",
+                            "stock": 500
+                        },
+                        "shop_info": {
+                            "source": 2
+                        }
+                    }
+                ]
+            }
         }
-    }]
+    ]
 }

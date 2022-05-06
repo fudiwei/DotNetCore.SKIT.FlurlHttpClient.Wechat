@@ -22,7 +22,7 @@
         "signature": "欢迎小伙伴一起参与盲盒游戏，集齐9款鞋卡，可以兑换大奖！",
         "MiniProgramInfo": {
             "network": {
-                "RequestDomain": [ "https:xxx", "https:xxxx", "https:xxx" ],
+                "RequestDomain": ["https:xxx", "https:xxxx", "https:xxx"],
                 "WsRequestDomain": [],
                 "UploadDomain": [],
                 "DownloadDomain": [],

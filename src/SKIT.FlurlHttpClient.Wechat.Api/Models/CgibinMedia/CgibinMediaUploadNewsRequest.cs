@@ -9,6 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
+            [System.Obsolete]
             public class Article : CgibinMaterialAddNewsRequest.Types.Article
             {
             }

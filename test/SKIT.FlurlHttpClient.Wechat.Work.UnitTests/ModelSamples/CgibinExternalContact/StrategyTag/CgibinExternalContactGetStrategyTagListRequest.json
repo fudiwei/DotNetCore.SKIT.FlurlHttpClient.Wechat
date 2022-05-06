@@ -1,11 +1,5 @@
 ﻿{
     "strategy_id": 1,
-    "tag_id": [
-        "etXXXXXXXXXX",
-        "etYYYYYYYYYY"
-    ],
-    "group_id": [
-        "etZZZZZZZZZZZZZ",
-        "etYYYYYYYYYYYYY"
-    ]
+    "tag_id": ["etXXXXXXXXXX", "etYYYYYYYYYY"],
+    "group_id": ["etZZZZZZZZZZZZZ", "etYYYYYYYYYYYYY"]
 }

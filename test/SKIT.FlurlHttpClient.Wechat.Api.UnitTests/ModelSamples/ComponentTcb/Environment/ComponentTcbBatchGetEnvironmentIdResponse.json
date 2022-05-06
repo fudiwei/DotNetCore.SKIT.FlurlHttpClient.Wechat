@@ -11,9 +11,7 @@
         },
         {
             "appid": "wx5fe6bb43205e9e70",
-            "env_list": [
-                "test-env-6gni9ity244a6ea3"
-            ]
+            "env_list": ["test-env-6gni9ity244a6ea3"]
         }
     ],
     "err_list": []

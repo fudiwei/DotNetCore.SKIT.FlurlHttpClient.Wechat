@@ -1,5 +1,5 @@
 ﻿{
-    "openid_list": [ "xxx1", "xxx2" ],
+    "openid_list": ["xxx1", "xxx2"],
     "errcode": 0,
     "errmsg": "ok"
 }

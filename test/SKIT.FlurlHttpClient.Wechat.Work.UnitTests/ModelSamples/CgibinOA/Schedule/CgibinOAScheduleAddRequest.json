@@ -18,8 +18,8 @@
             "repeat_until": 1606976813,
             "is_custom_repeat": 1,
             "repeat_interval": 1,
-            "repeat_day_of_week": [ 3, 7 ],
-            "repeat_day_of_month": [ 10, 21 ],
+            "repeat_day_of_week": [3, 7],
+            "repeat_day_of_month": [10, 21],
             "timezone": 8
         },
         "location": "广州国际媒体港10楼1005会议室",

@@ -1,8 +1,5 @@
 ﻿{
     "errcode": 0,
     "errmsg": "ok",
-    "follow_user": [
-        "zhangsan",
-        "lissi"
-    ]
+    "follow_user": ["zhangsan", "lissi"]
 }

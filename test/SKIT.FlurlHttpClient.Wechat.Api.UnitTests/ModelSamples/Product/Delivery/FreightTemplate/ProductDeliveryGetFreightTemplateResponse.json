@@ -13,7 +13,7 @@
                 "county_name": "东城区"
             },
             "delivery_type": 1,
-            "delivery_id": [ "" ],
+            "delivery_id": [""],
             "shipping_method": 2,
             "all_condition_free_detail": {
                 "condition_free_detail_list": [

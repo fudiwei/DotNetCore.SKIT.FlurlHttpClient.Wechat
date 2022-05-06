@@ -55,7 +55,7 @@ bool ret = client.VerifyEventSignature(
 
 ```csharp
 bool ret = client.VerifyEventSignature(timestamp, nonce, body, signature, serialNumber, out Exception error);
-if (!ret) 
+if (!ret)
 {
     Console.WriteLine(error);
     Console.WriteLine(error.InnerException);

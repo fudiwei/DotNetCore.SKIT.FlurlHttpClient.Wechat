@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailGroupCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/group/update 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailGroupUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/group/delete 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailGroupDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/exmail/group/search 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailGroupSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/exmail/group/get 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
@@ -136,7 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/update 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95511 </para>
@@ -156,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/delete 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95511 </para>
@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/exmail/publicmail/search 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
@@ -200,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/get 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
@@ -221,7 +221,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailPublicMailGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
-        
+
         #region Account
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/account/act_email 接口。</para>
@@ -243,7 +243,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailAccountActiveEmailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
-        
+
         #region UserOption
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/useroption/get 接口。</para>
@@ -264,7 +264,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailUserOptionGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/useroption/update 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95513 </para>

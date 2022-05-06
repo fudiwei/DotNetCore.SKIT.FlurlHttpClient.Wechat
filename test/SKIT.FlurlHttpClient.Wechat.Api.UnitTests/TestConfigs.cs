@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         static TestConfigs()
         {
             // NOTICE:  请在项目根目录下按照 appsettings.json 的格式新建 appsettings.local.json 填入测试参数。
-            // WARNING: 请在 DEBUG 模式下运行测试用例。 
+            // WARNING: 请在 DEBUG 模式下运行测试用例。
             // WARNING: 敏感信息请不要提交到 git！
 
             try

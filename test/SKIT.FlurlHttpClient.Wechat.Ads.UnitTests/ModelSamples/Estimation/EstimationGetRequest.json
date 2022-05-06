@@ -2,10 +2,10 @@
     "campaign_type": "AMPAIGN_TYPE_WECHAT_MOMENTS",
     "targeting": {
         "geo_location": {
-            "regions": [ 310000 ],
-            "location_types": [ "LIVE_IN" ]
+            "regions": [310000],
+            "location_types": ["LIVE_IN"]
         },
-        "age": [ "20~25" ],
-        "gender": [ "FEMALE" ]
+        "age": ["20~25"],
+        "gender": ["FEMALE"]
     }
 }

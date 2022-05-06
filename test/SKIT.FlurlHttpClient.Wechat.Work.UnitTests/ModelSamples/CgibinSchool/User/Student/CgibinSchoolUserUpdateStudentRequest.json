@@ -2,5 +2,5 @@
     "student_userid": "zhangsan",
     "new_student_userid": "NEW_ID",
     "name": "张三",
-    "department": [ 1, 2 ]
+    "department": [1, 2]
 }

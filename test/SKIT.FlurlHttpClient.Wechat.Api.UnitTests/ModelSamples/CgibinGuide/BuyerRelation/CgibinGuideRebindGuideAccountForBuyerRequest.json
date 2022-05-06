@@ -2,8 +2,5 @@
     "old_guide_account": "wx_account",
     "new_guide_account": "wx_account",
     "openid": "xxxxxxx",
-    "openid_list": [
-        "xxxxxxx",
-        "yyyyyyyy"
-    ]
+    "openid_list": ["xxxxxxx", "yyyyyyyy"]
 }

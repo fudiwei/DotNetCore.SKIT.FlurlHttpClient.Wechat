@@ -8,17 +8,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
     public abstract class WechatAdsResponse : ICommonResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         int ICommonResponse.RawStatus { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IDictionary<string, string> ICommonResponse.RawHeaders { get; set; } = default!;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         byte[] ICommonResponse.RawBytes { get; set; } = default!;
 

@@ -1,12 +1,6 @@
 ﻿{
-    "userid": [
-        "zhangsan",
-        "lisi"
-    ],
-    "partyid": [
-        1001,
-        1002
-    ],
+    "userid": ["zhangsan", "lisi"],
+    "partyid": [1001, 1002],
     "start_time": 1536508800,
     "end_time": 1536595200
 }

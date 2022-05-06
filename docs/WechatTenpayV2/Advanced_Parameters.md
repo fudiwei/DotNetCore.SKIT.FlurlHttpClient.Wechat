@@ -42,7 +42,7 @@ var paramMap = client.GenerateParametersForJsapiGetBrandPayRequest(request.AppId
 
 -   生成客户端小程序调起领取红包所需的参数字典：`GenerateParametersForJsapiSendBusinessRedPack`
 
--   生成客户端公众号唤起微信委托代扣的 URL：`GenerateParameterizedUrlForMediaPlatformPAPPayEntrustWeb` /  `GenerateParameterizedUrlForMediaPlatformPAPPayPartnerEntrustWeb`
+-   生成客户端公众号唤起微信委托代扣的 URL：`GenerateParameterizedUrlForMediaPlatformPAPPayEntrustWeb` / `GenerateParameterizedUrlForMediaPlatformPAPPayPartnerEntrustWeb`
 
 -   生成客户端小程序唤起微信委托代扣页面所需的参数字典：`GenerateParametersForMiniProgramPAPPayEntrust` / `GenerateParametersForMiniProgramPAPPayPartnerEntrust`
 

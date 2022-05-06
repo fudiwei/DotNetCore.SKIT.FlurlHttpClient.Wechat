@@ -1,6 +1,6 @@
 ﻿{
     "game_tick": 30,
-    "open_id_list": [ "OPENID" ],
+    "open_id_list": ["OPENID"],
     "udp_reliability_strategy": 3,
     "start_percent": 100,
     "need_user_info": true,

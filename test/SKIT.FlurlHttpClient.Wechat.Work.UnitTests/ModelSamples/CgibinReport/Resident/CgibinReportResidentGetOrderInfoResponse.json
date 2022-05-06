@@ -11,14 +11,8 @@
         "reporter_name": "上报人名称",
         "reporter_mobile": "上报人手机",
         "unionid": "上报人unionid",
-        "image_urls": [
-            "https://image1.qq.com",
-            "https://image2.qq.com"
-        ],
-        "video_media_ids": [
-            "mediaid1",
-            "mediaid2"
-        ],
+        "image_urls": ["https://image1.qq.com", "https://image2.qq.com"],
+        "video_media_ids": ["mediaid1", "mediaid2"],
         "create_time": 12345678,
         "location": {
             "name": "测试小区",
@@ -26,10 +20,7 @@
             "latitude": 0,
             "longitude": 0
         },
-        "processor_userids": [
-            "zhangsan",
-            "lisi"
-        ],
+        "processor_userids": ["zhangsan", "lisi"],
         "process_list": [
             {
                 "process_type": 1,
@@ -41,10 +32,7 @@
                     "https://image1.qq.com",
                     "https://image2.qq.com"
                 ],
-                "video_media_ids": [
-                    "mediaid1",
-                    "mediaid2"
-                ]
+                "video_media_ids": ["mediaid1", "mediaid2"]
             }
         ]
     }

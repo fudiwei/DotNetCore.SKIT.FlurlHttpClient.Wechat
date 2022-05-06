@@ -1,5 +1,5 @@
 ﻿{
     "open_kfid": "kfxxxxxxxxxxxxxx",
-    "userid_list": [ "zhangsan", "lisi" ],
-    "department_id_list": [ 2, 4 ]
+    "userid_list": ["zhangsan", "lisi"],
+    "department_id_list": [2, 4]
 }

@@ -8,17 +8,12 @@
             {
                 "student_userid": "zhansan_child",
                 "parent_userid": "zhangsan",
-                "partyids": [
-                    10,
-                    11
-                ]
+                "partyids": [10, 11]
             },
             {
                 "student_userid": "lisi_child",
                 "parent_userid": "lisi",
-                "partyids": [
-                    5
-                ]
+                "partyids": [5]
             }
         ]
     }

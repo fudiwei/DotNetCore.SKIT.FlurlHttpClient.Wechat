@@ -41,9 +41,9 @@ string temp = response.CertificateList.First().EncryptCertificate.CipherText; //
 如果你希望本库在响应后能自动完成这项操作，你可以在构造得到 `WechatApiClient` 对象时指定自动化参数：
 
 ```csharp
-var options = new WechatTenpayClientOptions() 
-{ 
-    AutoDecryptResponseSensitiveProperty = true 
+var options = new WechatTenpayClientOptions()
+{
+    AutoDecryptResponseSensitiveProperty = true
 };
 var client = new WechatTenpayClient(options);
 ```

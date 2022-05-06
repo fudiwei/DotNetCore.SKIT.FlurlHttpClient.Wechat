@@ -6,18 +6,12 @@
                 "id": "440000",
                 "name": "广东",
                 "fullname": "广东省",
-                "pinyin": [
-                    "guang",
-                    "dong"
-                ],
+                "pinyin": ["guang", "dong"],
                 "location": {
                     "lat": 23.13171,
                     "lng": 113.26627
                 },
-                "cidx": [
-                    246,
-                    266
-                ]
+                "cidx": [246, 266]
             }
         ],
         [
@@ -25,18 +19,12 @@
                 "id": "440100",
                 "name": "广州",
                 "fullname": "广州市",
-                "pinyin": [
-                    "guang",
-                    "zhou"
-                ],
+                "pinyin": ["guang", "zhou"],
                 "location": {
                     "lat": 23.12908,
                     "lng": 113.26436
                 },
-                "cidx": [
-                    1667,
-                    1677
-                ]
+                "cidx": [1667, 1677]
             }
         ],
         [

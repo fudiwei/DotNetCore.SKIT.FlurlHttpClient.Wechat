@@ -35,7 +35,12 @@
     },
     "user_information_form": {
         "can_modify_after_activate": false,
-        "common_field_list": ["USER_FORM_FLAG_MOBILE", "USER_FORM_FLAG_SEX", "USER_FORM_FLAG_NAME", "USER_FORM_FLAG_BIRTHDAY"],
+        "common_field_list": [
+            "USER_FORM_FLAG_MOBILE",
+            "USER_FORM_FLAG_SEX",
+            "USER_FORM_FLAG_NAME",
+            "USER_FORM_FLAG_BIRTHDAY"
+        ],
         "custom_field_list": [
             {
                 "type": "TEXT",

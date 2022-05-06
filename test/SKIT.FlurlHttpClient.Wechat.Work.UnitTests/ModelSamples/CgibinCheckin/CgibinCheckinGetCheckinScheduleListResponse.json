@@ -44,8 +44,7 @@
                         "schedule_info": {
                             "schedule_id": 0,
                             "schedule_name": "休息",
-                            "time_section": [
-                            ]
+                            "time_section": []
                         }
                     }
                 ]
