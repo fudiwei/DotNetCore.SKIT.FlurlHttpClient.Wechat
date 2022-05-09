@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 {
                     IDictionary<string, string?> dictTBEPAuthorization = strAuthorization
                         .Split(',')
-                        .Select(s => s.Trim().Split('='))
+                        .Select(s => s.Trim().Split(new char[] { '=' }, 2, StringSplitOptions.RemoveEmptyEntries))
                         .ToDictionary(
                             k => k[0],
                             v => v.Length > 1 ? v[1].TrimStart('\"').TrimEnd('\"') : null

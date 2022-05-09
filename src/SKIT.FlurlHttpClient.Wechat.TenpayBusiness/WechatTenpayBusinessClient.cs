@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
@@ -79,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request.TBEPEncryption != null)
             {
                 flurlRequest.Headers.Remove("TBEP-Encrypt");
-                flurlRequest.WithHeader("TBEP-Encrypt", $"enc_key=\"{request.TBEPEncryption.EncryptedKey}\",iv=\"{request.TBEPEncryption.IV}\",tbep_serial_number=\"{request.TBEPEncryption.CertificateSerialNumber}\",algorithm=\"{request.TBEPEncryption.Algorithm}\"");
+                flurlRequest.WithHeader("TBEP-Encrypt", $"enc_key=\"{request.TBEPEncryption.EncryptedKey}\",iv=\"{Convert.ToBase64String(Encoding.UTF8.GetBytes(request.TBEPEncryption.IV))}\",tbep_serial_number=\"{request.TBEPEncryption.CertificateSerialNumber}\",algorithm=\"{request.TBEPEncryption.Algorithm}\"");
             }
 
             return flurlRequest;
@@ -155,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             {
                 IDictionary<string, string?> dictTBEPEncryption = strTBEPEncryption
                     .Split(',')
-                    .Select(s => s.Trim().Split('='))
+                    .Select(s => s.Trim().Split(new char[] { '=' }, 2, StringSplitOptions.RemoveEmptyEntries))
                     .ToDictionary(
                         k => k[0],
                         v => v.Length > 1 ? v[1].TrimStart('\"').TrimEnd('\"') : null
