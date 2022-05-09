@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
 
             switch (_scheme)
             {
-                case Constants.SignAlgorithms.WECHATPAY2_SHA256_RSA2048:
+                case Constants.SignSchemes.WECHATPAY2_SHA256_RSA2048:
                     {
                         try
                         {

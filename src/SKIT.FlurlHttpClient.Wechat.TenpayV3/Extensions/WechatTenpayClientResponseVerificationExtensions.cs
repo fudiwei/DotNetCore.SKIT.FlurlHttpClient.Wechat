@@ -84,38 +84,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (responseSignature == null) throw new ArgumentNullException(nameof(responseSignature));
             if (responseSerialNumber == null) throw new ArgumentNullException(nameof(responseSerialNumber));
 
-            if (client.PlatformCertificateManager != null)
-            {
-                try
-                {
-                    var cert = client.PlatformCertificateManager.GetEntry(responseSerialNumber)!;
-                    if (!cert.HasValue)
-                    {
-                        error = new Exceptions.WechatTenpayResponseVerificationException("Verify signature of response failed, because there is no platform certificate matched the serial number.");
-                        return false;
-                    }
-
-                    error = null;
-                    return Utilities.RSAUtility.VerifyWithSHA256ByCertificate(
-                        certificate: cert.Value.Certificate,
-                        plainText: GetPlainTextForSignature(timestamp: responseTimestamp, nonce: responseNonce, body: responseBody),
-                        signature: responseSignature
-                    );
-                }
-                catch (Exception ex)
-                {
-                    error = new Exceptions.WechatTenpayResponseVerificationException("Verify signature of response failed. Please see the `InnerException` for more details.", ex);
-                    return false;
-                }
-            }
-
-            error = new Exceptions.WechatTenpayResponseVerificationException("Verify signature of response failed, because there is no platform certificate in the manager.");
-            return false;
-        }
-
-        private static string GetPlainTextForSignature(string timestamp, string nonce, string body)
-        {
-            return $"{timestamp}\n{nonce}\n{body}\n";
+            bool ret = WechatTenpayClientSignExtensions.VerifySignature(client, responseTimestamp, responseNonce, responseBody, responseSignature, responseSerialNumber, out error);
+            if (error != null)
+                error = new Exceptions.WechatTenpayEventVerificationException("Verify signature of response failed. Please see the `InnerException` for more details.", error);
+            return ret;
         }
     }
 }

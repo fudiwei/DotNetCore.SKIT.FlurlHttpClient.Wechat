@@ -34,9 +34,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// 获取或设置微信支付 API 签名认证方式。
-        /// <para>默认值：<see cref="Constants.SignAlgorithms.WECHATPAY2_SHA256_RSA2048"/></para>
+        /// <para>默认值：<see cref="Constants.SignSchemes.WECHATPAY2_SHA256_RSA2048"/></para>
         /// </summary>
-        public string SignAlgorithm { get; set; } = Constants.SignAlgorithms.WECHATPAY2_SHA256_RSA2048;
+        public string SignScheme { get; set; } = Constants.SignSchemes.WECHATPAY2_SHA256_RSA2048;
 
         /// <summary>
         /// 获取或设置微信支付商户号。
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <i>（本参数已废弃，请使用 <see cref="MerchantCertificateSerialNumber"/> 参数）</i>
         /// </summary>
-        [Obsolete("本参数已废弃，请使用 `MerchantCertificateSerialNumber` 参数")]
+        [Obsolete("本参数已废弃，请使用 `MerchantCertificateSerialNumber` 参数", error: true)]
         public string MerchantCertSerialNumber { get { return MerchantCertificateSerialNumber; } set { MerchantCertificateSerialNumber = value; } }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <i>（本参数已废弃，请使用 <see cref="MerchantCertificatePrivateKey"/> 参数）</i>
         /// </summary>
-        [Obsolete("本参数已废弃，请使用 `MerchantCertificatePrivateKey` 参数")]
+        [Obsolete("本参数已废弃，请使用 `MerchantCertificatePrivateKey` 参数", error: true)]
         public string MerchantCertPrivateKey { get { return MerchantCertificatePrivateKey; } set { MerchantCertificatePrivateKey = value; } }
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// <i>（本参数已废弃，请使用 <see cref="PlatformCertificateManager"/> 参数）</i>
         /// </summary>
-        [Obsolete("本参数已废弃，请使用 `PlatformCertificateManager` 参数")]
+        [Obsolete("本参数已废弃，请使用 `PlatformCertificateManager` 参数", error: true)]
         public Settings.CertificateManager CertificateManager { get { return PlatformCertificateManager; } set { PlatformCertificateManager = value; } }
 
         /// <summary>

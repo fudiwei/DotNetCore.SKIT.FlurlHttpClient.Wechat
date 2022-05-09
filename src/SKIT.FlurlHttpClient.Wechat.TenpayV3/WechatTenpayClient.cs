@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
 
             Interceptors.Add(new Interceptors.WechatTenpayRequestSignatureInterceptor(
-                scheme: options.SignAlgorithm,
+                scheme: options.SignScheme,
                 mchId: options.MerchantId,
                 mchCertSn: options.MerchantCertificateSerialNumber,
                 mchCertPk: options.MerchantCertificatePrivateKey

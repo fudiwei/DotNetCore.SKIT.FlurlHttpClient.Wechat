@@ -113,15 +113,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="privateKeyBytes">PKCS#8 私钥字节数据。</param>
         /// <param name="cipherBytes">待解密的数据字节数据。</param>
-        /// <param name="paddingAlgorithm">填充算法。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
         /// <returns>解密后的数据字节数组。</returns>
-        public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingAlgorithm = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
             if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
             if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
 
             RsaKeyParameters rsaKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
-            return DecryptWithECB(rsaKeyParams, cipherBytes, paddingAlgorithm);
+            return DecryptWithECB(rsaKeyParams, cipherBytes, paddingMode);
         }
 
         /// <summary>
@@ -129,16 +129,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="privateKey">PKCS#8 私钥（PEM 格式）。</param>
         /// <param name="cipherText">经 Base64 编码的待解密数据。</param>
-        /// <param name="paddingAlgorithm">填充算法。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
         /// <returns>解密后的文本数据。</returns>
-        public static string DecryptWithECB(string privateKey, string cipherText, string paddingAlgorithm = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        public static string DecryptWithECB(string privateKey, string cipherText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
             if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
             if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
 
             byte[] privateKeyBytes = ConvertPkcs8PrivateKeyToByteArray(privateKey);
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
-            byte[] plainBytes = DecryptWithECB(privateKeyBytes, cipherBytes, paddingAlgorithm);
+            byte[] plainBytes = DecryptWithECB(privateKeyBytes, cipherBytes, paddingMode);
             return Encoding.UTF8.GetString(plainBytes);
         }
 
@@ -147,15 +147,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="publicKeyBytes">PKCS#8 公钥字节数据。</param>
         /// <param name="plainBytes">待加密的数据字节数据。</param>
-        /// <param name="paddingAlgorithm">填充算法。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
         /// <returns>加密后的数据字节数组。</returns>
-        public static byte[] EncryptWithECB(byte[] publicKeyBytes, byte[] plainBytes, string paddingAlgorithm = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        public static byte[] EncryptWithECB(byte[] publicKeyBytes, byte[] plainBytes, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
             if (publicKeyBytes == null) throw new ArgumentNullException(nameof(publicKeyBytes));
             if (plainBytes == null) throw new ArgumentNullException(nameof(plainBytes));
 
             RsaKeyParameters rsaKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
-            return EncryptWithECB(rsaKeyParams, plainBytes, paddingAlgorithm);
+            return EncryptWithECB(rsaKeyParams, plainBytes, paddingMode);
         }
 
         /// <summary>
@@ -163,16 +163,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="publicKey">PKCS#8 公钥（PEM 格式）。</param>
         /// <param name="plainText">待加密的文本数据。</param>
-        /// <param name="paddingAlgorithm">填充算法。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
         /// <returns>经 Base64 编码的加密数据。</returns>
-        public static string EncryptWithECB(string publicKey, string plainText, string paddingAlgorithm = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        public static string EncryptWithECB(string publicKey, string plainText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
             if (publicKey == null) throw new ArgumentNullException(nameof(publicKey));
             if (plainText == null) throw new ArgumentNullException(nameof(plainText));
 
             byte[] publicKeyBytes = ConvertPkcs8PublicKeyToByteArray(publicKey);
             byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
-            byte[] cipherBytes = EncryptWithECB(publicKeyBytes, plainBytes, paddingAlgorithm);
+            byte[] cipherBytes = EncryptWithECB(publicKeyBytes, plainBytes, paddingMode);
             return Convert.ToBase64String(cipherBytes);
         }
 
@@ -181,16 +181,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="certificate">证书（PEM 格式）。</param>
         /// <param name="plainText">待加密的文本数据。</param>
-        /// <param name="paddingAlgorithm">填充算法。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
         /// <returns>经 Base64 编码的加密数据。</returns>
-        public static string EncryptWithECBByCertificate(string certificate, string plainText, string paddingAlgorithm = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        public static string EncryptWithECBByCertificate(string certificate, string plainText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
             if (certificate == null) throw new ArgumentNullException(nameof(certificate));
             if (plainText == null) throw new ArgumentNullException(nameof(plainText));
 
             RsaKeyParameters rsaKeyParams = ConvertCertificateToPublicKeyParams(certificate);
             byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
-            byte[] cipherBytes = EncryptWithECB(rsaKeyParams, plainBytes, paddingAlgorithm);
+            byte[] cipherBytes = EncryptWithECB(rsaKeyParams, plainBytes, paddingMode);
             return Convert.ToBase64String(cipherBytes);
         }
 
@@ -305,16 +305,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             return signer.VerifySignature(signBytes);
         }
 
-        private static byte[] EncryptWithECB(RsaKeyParameters rsaKeyParams, byte[] plainBytes, string paddingAlgorithm)
+        private static byte[] EncryptWithECB(RsaKeyParameters rsaKeyParams, byte[] plainBytes, string paddingMode)
         {
-            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingAlgorithm}");
+            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingMode}");
             cipher.Init(true, rsaKeyParams);
             return cipher.DoFinal(plainBytes);
         }
 
-        private static byte[] DecryptWithECB(RsaKeyParameters rsaKeyParams, byte[] cipherBytes, string paddingAlgorithm)
+        private static byte[] DecryptWithECB(RsaKeyParameters rsaKeyParams, byte[] cipherBytes, string paddingMode)
         {
-            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingAlgorithm}");
+            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingMode}");
             cipher.Init(false, rsaKeyParams);
             return cipher.DoFinal(cipherBytes);
         }

@@ -1,0 +1,17 @@
+﻿{
+    "request_no": "",
+    "out_request_no": "",
+    "ent_id": "",
+    "status": "",
+    "product_details": [
+        {
+            "product_name": "",
+            "status": "",
+            "accounts": [
+                {
+                    "ent_acct_id": ""
+                }
+            ]
+        }
+    ]
+}
