@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -75,7 +74,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <summary>
         /// <para>验证响应签名。</para>
         /// </summary>
-        /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="responseTimestamp"></param>
         /// <param name="responseNonce">。</param>
@@ -92,7 +90,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <summary>
         /// <para>验证响应签名。</para>
         /// </summary>
-        /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="responseTimestamp"></param>
         /// <param name="responseNonce">。</param>

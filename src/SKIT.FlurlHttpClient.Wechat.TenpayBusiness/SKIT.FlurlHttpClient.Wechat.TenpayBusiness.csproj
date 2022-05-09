@@ -32,7 +32,7 @@
 
 	<ItemGroup>
 		<None Include="../../LOGO.png" Pack="true" PackagePath="/" />
-		<None Include="README.md" />
+		<None Include="README.md" Pack="true" PackagePath="/" />
 	</ItemGroup>
 
     <ItemGroup>

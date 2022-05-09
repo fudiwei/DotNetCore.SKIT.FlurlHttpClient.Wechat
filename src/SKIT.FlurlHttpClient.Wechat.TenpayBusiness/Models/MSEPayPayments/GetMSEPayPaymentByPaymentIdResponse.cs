@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 [System.Text.Json.Serialization.JsonPropertyName("bank_account_number_last4")]
                 public string? BankAccountNumberLast4String { get; set; }
             }
-        
+
             public class FailedReason
             {
                 /// <summary>

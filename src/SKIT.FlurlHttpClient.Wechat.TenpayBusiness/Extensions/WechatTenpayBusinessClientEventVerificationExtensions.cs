@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
@@ -9,7 +7,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
         /// </summary>
-        /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="callbackAuthorization"></param>
         /// <param name="callbackBody"></param>
@@ -73,7 +70,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
         /// </summary>
-        /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="callbackTimestamp"></param>
         /// <param name="callbackNonce">。</param>
@@ -91,7 +87,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
         /// </summary>
-        /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="callbackTimestamp"></param>
         /// <param name="callbackNonce">。</param>
