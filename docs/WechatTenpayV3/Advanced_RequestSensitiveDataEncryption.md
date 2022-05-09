@@ -67,14 +67,14 @@ var request = new Models.AddProfitSharingReceiverRequest()
     RelationType = "PARTNER"
 };
 
-string temp = request.Name; // 此时仍是明文
+Console.WriteLine("before: {0}", request.Name); // 此时仍是明文
 client.EncryptRequestSensitiveProperty(request);
-string temp = request.Name; // 此时已是密文
+Console.WriteLine("after: {0}", request.Name); // 此时已是密文
 
 var response = await client.ExecuteAddProfitSharingReceiverAsync(request);
 ```
 
-如果你希望本库在请求前能自动完成这项操作，你可以在构造得到 `WechatApiClient` 对象时指定自动化参数：
+如果你希望本库在请求前能自动完成这项操作，你可以在构造得到 `WechatTenpayClient` 对象时指定自动化参数：
 
 ```csharp
 var options = new WechatTenpayClientOptions()
@@ -97,7 +97,7 @@ var client = new WechatTenpayClient(options);
 
 微信商户平台证书需要通过 API 的方式获取、且可能同时存在多个有效证书，本库提供了一个 `CertificateManager` 类型可用于管理证书信息。
 
-你可以在构造得到 `WechatApiClient` 对象时指定证书管理器：
+你可以在构造得到 `WechatTenpayClient` 对象时指定证书管理器：
 
 ```csharp
 var manager = new InMemoryCertificateManager(); // 为便于后续使用，该对象可使用同一商户号下全局单例的方式声明

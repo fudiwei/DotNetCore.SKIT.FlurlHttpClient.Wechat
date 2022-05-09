@@ -8,14 +8,14 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <PackageId>SKIT.FlurlHttpClient.Wechat.TenpayBusinessV3</PackageId>
+        <PackageId>SKIT.FlurlHttpClient.Wechat.TenpayBusiness</PackageId>
 		<PackageIcon>LOGO.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Tencent Tenpay 腾讯 微企付</PackageTags>
-        <Version>0.0.1-alpha.1</Version>
-        <Description>基于 Flurl.Http 的腾讯微企付 API v3 版客户端。</Description>
+        <Version>2.0.0-rc.1</Version>
+        <Description>基于 Flurl.Http 的腾讯微企付 API 客户端。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git</RepositoryUrl>

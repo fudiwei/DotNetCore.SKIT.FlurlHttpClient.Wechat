@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Settings
 {
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Settings
         public string TBEPCertificatePublicKey { get; }
 
         /// <summary>
-        /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.AutoEncryptRequestSensitivePropertyAlgorithm"/> 的副本。
+        /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.SensitivePropertyEncryptionAlgorithm"/> 的副本。
         /// </summary>
         public string SensitivePropertyEncryptionAlgorithm { get; set; }
 

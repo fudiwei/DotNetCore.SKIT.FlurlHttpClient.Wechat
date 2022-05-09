@@ -127,6 +127,7 @@
         - _wxapi_：关于 `SKIT.FlurlHttpClient.Wechat.Api` 项目的变化；
         - _tenpayv2_：关于 `SKIT.FlurlHttpClient.Wechat.TenpayV2` 项目的变化；
         - _tenpayv3_：关于 `SKIT.FlurlHttpClient.Wechat.TenpayV3` 项目的变化；
+        - _tenpaybusiness_：关于 `SKIT.FlurlHttpClient.Wechat.TenpayBusiness` 项目的变化；
         - _work_：关于 `SKIT.FlurlHttpClient.Wechat.Work` 项目的变化；
         - _wxads_：关于 `SKIT.FlurlHttpClient.Wechat.Ads` 项目的变化；
         - _openai_：关于 `SKIT.FlurlHttpClient.Wechat.OpenAI` 项目的变化；
