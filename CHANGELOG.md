@@ -32,6 +32,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.14.0
+
+    -   **新增**：新增云开通物流服务相关接口。（[GitHub PR #41](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/41)）
+
+    -   **新增**：新增城市服务开放互联能力相关接口。
+
 -   Release 2.13.0
 
     -   **新增**：新增第三方平台复用商户号资质快速转正、查询公众号或小程序是否绑定开放平台帐号、申请开通物流退货组件、半屏小程序管理接口。
