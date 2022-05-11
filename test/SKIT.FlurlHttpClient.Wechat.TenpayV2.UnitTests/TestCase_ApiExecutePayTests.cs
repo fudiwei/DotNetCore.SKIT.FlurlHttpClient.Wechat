@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -6,8 +6,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {
     public class TestCase_ApiExecutePayTests
     {
+        [Fact(DisplayName = "测试用例：调用 API [POST] /pay/unifiedorder")]
+        public async Task TestCase_ApiExecuteCreatePayUnifiedOrderTests()
+        {
+            var request = new Models.CreatePayUnifiedOrderRequest()
+            {
+                OutTradeNumber = "TEST_OTN_" + DateTimeOffset.Now.ToString("yyyyMMddHHmmssfff"),
+                Body = "TEST_BODY",
+                TotalFee = 1,
+                ClientIp = "127.0.0.7",
+                AppId = TestConfigs.WechatAppId,
+                OpenId = TestConfigs.WechatOpenId,
+                TradeType = "JSAPI",
+                NotifyUrl = "https://example.com"
+            };
+            var response = await TestClients.Instance.ExecuteCreatePayUnifiedOrderAsync(request);
+
+            Assert.NotNull(response.PrepayId);
+        }
+
         [Fact(DisplayName = "测试用例：调用 API [POST] /pay/micropay")]
-        public async Task TestCase_ApiExecuteExecuteCreatePayMicroPayTests()
+        public async Task TestCase_ApiExecuteCreatePayMicroPayTests()
         {
             var request = new Models.CreatePayMicroPayRequest()
             {
