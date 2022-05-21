@@ -13,6 +13,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class BusinessLicense
             {
                 /// <summary>
+                /// 获取或设置证件类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("cert_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("cert_type")]
+                public string? CertificateType { get; set; }
+
+                /// <summary>
+                /// 获取或设置营业执照类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("business_license_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("business_license_type")]
+                public string? LicenseType { get; set; }
+
+                /// <summary>
                 /// 获取或设置营业执照注册号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_license_number")]
@@ -48,11 +62,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? CompanyAddress { get; set; }
 
                 /// <summary>
-                /// 获取或设置营业执照有效日期（格式：["yyyy-MM-dd", "yyyy-MM-dd"]，长期用 "长期" 表示）。
+                /// 获取或设置营业执照有效日期范围字符串（格式：["yyyy-MM-dd", "yyyy-MM-dd"]，长期用 "长期" 表示）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_time")]
-                public string? LicenseValidDate { get; set; }
+                public string? LicenseValidPeriodString { get; set; }
             }
 
             public class FinanceInstitutionLicense
@@ -105,21 +119,43 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string IdCardNumber { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置身份证有效期结束时间字符串（格式：yyyy-MM-dd / "长期"）。
+                /// 获取或设置身份证地址（需使用平台公钥/证书加密）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("id_card_address")]
+                [System.Text.Json.Serialization.JsonPropertyName("id_card_address")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                public string? IdCardAddress { get; set; }
+
+                /// <summary>
+                /// 获取或设置身份证有效期开始日期字符串（格式：yyyy-MM-dd）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("id_card_valid_time_begin")]
+                [System.Text.Json.Serialization.JsonPropertyName("id_card_valid_time_begin")]
+                public string? IdCardPeriodBeginDateString { get; set; }
+
+                /// <summary>
+                /// 获取或设置身份证有效期结束日期字符串（格式：yyyy-MM-dd / "长期"）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_card_valid_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_card_valid_time")]
-                public string IdCardPeriodEndDateString { get; set; } = string.Empty;
+                public string? IdCardPeriodEndDateString { get; set; }
             }
 
             public class IdDocument
             {
                 /// <summary>
-                /// 获取或设置证件照片媒体文件标识 ID。
+                /// 获取或设置证件正面照片媒体文件标识 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id_doc_copy")]
                 [System.Text.Json.Serialization.JsonPropertyName("id_doc_copy")]
-                public string IdDocumentCopyMediaId { get; set; } = string.Empty;
+                public string IdDocumentFrontCopyMediaId { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置证件背面照片媒体文件标识 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("id_doc_copy_back")]
+                [System.Text.Json.Serialization.JsonPropertyName("id_doc_copy_back")]
+                public string? IdDocumentBackCopyMediaId { get; set; }
 
                 /// <summary>
                 /// 获取或设置证件姓名（需使用平台公钥/证书加密）。
@@ -138,11 +174,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string IdDocumentNumber { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置证件有效期结束时间字符串（格式：yyyy-MM-dd / "长期"）。
+                /// 获取或设置证件地址（需使用平台公钥/证书加密）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("id_doc_address")]
+                [System.Text.Json.Serialization.JsonPropertyName("id_doc_address")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                public string? IdDocumentAddress { get; set; }
+
+                /// <summary>
+                /// 获取或设置证件有效期开始日期字符串（格式：yyyy-MM-dd）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("doc_period_begin")]
+                [System.Text.Json.Serialization.JsonPropertyName("doc_period_begin")]
+                public string? IdDocumentPeriodBeginDateString { get; set; }
+
+                /// <summary>
+                /// 获取或设置证件有效期结束日期字符串（格式：yyyy-MM-dd / "长期"）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("doc_period_end")]
                 [System.Text.Json.Serialization.JsonPropertyName("doc_period_end")]
-                public string IdDocumentPeriodEndDateString { get; set; } = string.Empty;
+                public string? IdDocumentPeriodEndDateString { get; set; }
             }
 
             public class Contact
@@ -163,20 +214,62 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string ContactName { get; set; } = string.Empty;
 
                 /// <summary>
+                /// 获取或设置超级管理员证件类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("contact_id_doc_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("contact_id_doc_type")]
+                public string? IdentityType { get; set; }
+
+                /// <summary>
+                /// 获取或设置超级管理员证件号码（需使用平台公钥/证书加密）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("contact_id_card_number")]
+                [System.Text.Json.Serialization.JsonPropertyName("contact_id_card_number")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                public string? IdNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置超级管理员证件正面照片媒体文件标识 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("contact_id_doc_copy")]
+                [System.Text.Json.Serialization.JsonPropertyName("contact_id_doc_copy")]
+                public string? IdFrontCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置超级管理员证件背面照片媒体文件标识 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("contact_id_doc_copy_back")]
+                [System.Text.Json.Serialization.JsonPropertyName("contact_id_doc_copy_back")]
+                public string? IdBackCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置超级管理员证件有效期开始日期字符串（格式：yyyy-MM-dd）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("contact_id_doc_period_begin")]
+                [System.Text.Json.Serialization.JsonPropertyName("contact_id_doc_period_begin")]
+                public string? IdPeriodBeginDateString { get; set; }
+
+                /// <summary>
+                /// 获取或设置超级管理员证件有效期结束日期字符串（格式：yyyy-MM-dd / "长期"）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("contact_id_doc_period_end")]
+                [System.Text.Json.Serialization.JsonPropertyName("contact_id_doc_period_end")]
+                public string? IdPeriodEndDateString { get; set; }
+
+                /// <summary>
+                /// 获取或设置业务办理授权函媒体文件标识 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("business_authorization_letter")]
+                [System.Text.Json.Serialization.JsonPropertyName("business_authorization_letter")]
+                public string? BusinessAuthorizeLetterCopyMediaId { get; set; }
+
+                /// <summary>
                 /// 获取或设置联系人手机号（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile_phone")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile_phone")]
                 [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
-                public string ContactMobile { get; set; } = string.Empty;
-
-                /// <summary>
-                /// 获取或设置超级管理员身份证号码（需使用平台公钥/证书加密）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("contact_id_card_number")]
-                [System.Text.Json.Serialization.JsonPropertyName("contact_id_card_number")]
-                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
-                public string ContactIdCardNumber { get; set; } = string.Empty;
+                public string MobileNumber { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置联系邮箱（需使用平台公钥/证书加密）。
@@ -184,121 +277,69 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("contact_email")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_email")]
                 [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
-                public string ContactEmail { get; set; } = string.Empty;
+                public string Email { get; set; } = string.Empty;
             }
 
             public class UBO
             {
-                public static class Types
-                {
-                    public class IdCard
-                    {
-                        /// <summary>
-                        /// 获取或设置身份证人像面照片媒体文件标识 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_card_copy")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_card_copy")]
-                        public string IdCardFrontCopyMediaId { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置身份证国徽面照片媒体文件标识 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_card_national")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_card_national")]
-                        public string IdCardBackCopyMediaId { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置身份证姓名（需使用平台公钥/证书加密）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_card_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_card_name")]
-                        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
-                        public string IdCardName { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置身份证号码（需使用平台公钥/证书加密）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_card_number")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_card_number")]
-                        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
-                        public string IdCardNumber { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置身份证有效期开始时间字符串（格式：yyyy-MM-dd）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_card_period_begin")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_card_period_begin")]
-                        public string IdCardPeriodStartDateString { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置身份证有效期结束时间字符串（格式：yyyy-MM-dd / "长期"）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_card_period_end")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_card_period_end")]
-                        public string IdCardPeriodEndDateString { get; set; } = string.Empty;
-                    }
-
-                    public class IdDocument
-                    {
-                        /// <summary>
-                        /// 获取或设置证件照片媒体文件标识 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_doc_copy")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_doc_copy")]
-                        public string IdDocumentCopyMediaId { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置证件姓名（需使用平台公钥/证书加密）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_doc_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_doc_name")]
-                        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
-                        public string IdDocumentName { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置证件号码（需使用平台公钥/证书加密）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_doc_number")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_doc_number")]
-                        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
-                        public string IdDocumentNumber { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置证件有效期开始时间字符串（格式：yyyy-MM-dd）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_doc_period_begin")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_doc_period_begin")]
-                        public string IdDocumentPeriodStartDateString { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置证件有效期结束时间字符串（格式：yyyy-MM-dd / "长期"）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("id_doc_period_end")]
-                        [System.Text.Json.Serialization.JsonPropertyName("id_doc_period_end")]
-                        public string IdDocumentPeriodEndDateString { get; set; } = string.Empty;
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置证件类型。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("id_doc_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("id_doc_type")]
+                [Newtonsoft.Json.JsonProperty("ubo_id_doc_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_type")]
                 public string IdentityType { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置身份证信息。
+                /// 获取或设置受益人姓名（需使用平台公钥/证书加密）。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("id_card_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("id_card_info")]
-                public Types.IdCard? IdCard { get; set; }
+                [Newtonsoft.Json.JsonProperty("ubo_id_doc_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_name")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                public string IdName { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置其他类型证件信息。
+                /// 获取或设置证件人像面照片媒体文件标识 ID。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("id_doc_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("id_doc_info")]
-                public Types.IdDocument? IdDocument { get; set; }
+                [Newtonsoft.Json.JsonProperty("ubo_id_doc_copy")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_copy")]
+                public string? IdFrontCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置证件国徽面照片媒体文件标识 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_doc_copy_back")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_copy_back")]
+                public string? IdBackCopyMediaId { get; set; }
+
+                /// <summary>
+                /// 获取或设置证件号码（需使用平台公钥/证书加密）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_doc_number")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_number")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                public string? IdNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置证件地址（需使用平台公钥/证书加密）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_doc_address")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_address")]
+                [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                public string? IdAddress { get; set; }
+
+                /// <summary>
+                /// 获取或设置证件有效期开始日期字符串（格式：yyyy-MM-dd）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_doc_period_begin")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_period_begin")]
+                public string? IdPeriodBeginDateString { get; set; }
+
+                /// <summary>
+                /// 获取或设置证件有效期结束日期字符串（格式：yyyy-MM-dd / "长期"）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ubo_id_doc_period_end")]
+                [System.Text.Json.Serialization.JsonPropertyName("ubo_id_doc_period_end")]
+                public string? IdPeriodEndDateString { get; set; }
             }
 
             public class BankAccount
@@ -516,11 +557,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? AuthorizeLetterCopyMediaId { get; set; }
 
         /// <summary>
-        /// 获取或设置最终受益人信息。
+        /// 获取或设置最终受益人列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("ubo_info")]
-        [System.Text.Json.Serialization.JsonPropertyName("ubo_info")]
-        public Types.UBO? UBO { get; set; }
+        [Newtonsoft.Json.JsonProperty("ubo_info_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("ubo_info_list")]
+        public IList<Types.UBO>? UBOList { get; set; }
 
         /// <summary>
         /// 获取或设置法人是否为受益人。

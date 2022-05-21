@@ -6,14 +6,14 @@
     public class QueryMerchantServiceComplaintsRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置开始日期（格式：yyyy-MM-dd）。
+        /// 获取或设置开始日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string BeginDateString { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置结束日期（格式：yyyy-MM-dd）。
+        /// 获取或设置结束日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

@@ -42,14 +42,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                             public class AvailableDayTime
                             {
                                 /// <summary>
-                                /// 获取或设置每日可用开始时间（格式：HHmmss）。
+                                /// 获取或设置每日可用开始时间字符串（格式：HHmmss）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("begin_day_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("begin_day_time")]
                                 public string BeginDayTimeString { get; set; } = string.Empty;
 
                                 /// <summary>
-                                /// 获取或设置每日可用结束时间（格式：HHmmss）。
+                                /// 获取或设置每日可用结束时间字符串（格式：HHmmss）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("end_day_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("end_day_time")]

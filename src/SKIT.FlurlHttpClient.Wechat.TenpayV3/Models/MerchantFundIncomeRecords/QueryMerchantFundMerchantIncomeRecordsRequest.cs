@@ -13,7 +13,7 @@
         public string AccountType { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置日期（格式：yyyy-MM-dd）。
+        /// 获取或设置日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
