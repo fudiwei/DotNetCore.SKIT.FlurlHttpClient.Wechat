@@ -91,9 +91,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "profitsharing", "return-orders")
-                .SetQueryParam("out_order_no", request.OutOrderNumber)
-                .SetQueryParam("out_return_no", request.OutReturnNumber);
+                .CreateRequest(request, HttpMethod.Get, "profitsharing", "return-orders", request.OutReturnNumber)
+                .SetQueryParam("out_order_no", request.OutOrderNumber);
 
             if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
