@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -50,6 +50,30 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("media_url")]
                 public string[] MediaUrl { get; set; } = default!;
             }
+
+            public class ServiceOrder
+            {
+                /// <summary>
+                /// 获取或设置微信支付服务订单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_id")]
+                public string? OrderId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商户服务订单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_order_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
+                public string? OutOrderNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置支付分服务单状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("state")]
+                [System.Text.Json.Serialization.JsonPropertyName("state")]
+                public string? State { get; set; }
+            }
         }
 
         /// <summary>
@@ -58,13 +82,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("complaint_id")]
         [System.Text.Json.Serialization.JsonPropertyName("complaint_id")]
         public string ComplaintId { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置被诉商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("complainted_mchid")]
-        [System.Text.Json.Serialization.JsonPropertyName("complainted_mchid")]
-        public string ComplaintedMerchantId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置投诉详情。
@@ -88,6 +105,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [System.Text.Json.Serialization.JsonPropertyName("complaint_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
         public DateTimeOffset ComplaintTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置被诉商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("complainted_mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("complainted_mchid")]
+        public string? ComplaintedMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置投诉人联系方式（需使用商户私钥解密）。
@@ -166,5 +190,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("user_tag_list")]
         [System.Text.Json.Serialization.JsonPropertyName("user_tag_list")]
         public string[]? UserTagList { get; set; }
+
+        /// <summary>
+        /// 获取或设置关联服务单列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("service_order_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("service_order_info")]
+        public Types.ServiceOrder[]? ServiceOrderList { get; set; }
     }
 }
