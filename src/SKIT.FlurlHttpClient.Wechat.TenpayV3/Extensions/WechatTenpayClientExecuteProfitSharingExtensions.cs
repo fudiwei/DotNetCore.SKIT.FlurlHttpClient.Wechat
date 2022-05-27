@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /profitsharing/return-orders 接口。</para>
+        /// <para>异步调用 [GET] /profitsharing/return-orders/{out_order_no} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_4.shtml </para>
         /// </summary>

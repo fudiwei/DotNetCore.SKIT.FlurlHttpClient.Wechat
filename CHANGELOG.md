@@ -50,7 +50,7 @@
 
     -   **新增**：随官方更新自定义交易组件获取售后详情接口响应模型。（[GitHub PR #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/40)）
 
-    -   **新增**：随官方更新生成小程序码接口请求模型。（[Gitee PR #6]https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/6)）
+    -   **新增**：随官方更新生成小程序码接口请求模型。（[Gitee PR #6](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/6)）
 
     -   **修复**：修复上传素材接口不支持 Unicode 文件名问题。（[GitHub Issue #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/40)）
 
@@ -327,6 +327,10 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 2.9.1
+
+    -   **修复**：修复查询分账回退结果接口 URL 错误。（[GitHub Issue #46](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/46)）
 
 -   Release 2.9.0
 
