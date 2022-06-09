@@ -328,6 +328,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.10.0
+
+    -   **新增**：新增电商收付通跨境付款相关接口。
+
+    -   **新增**：随官方更新消费者投诉单相关接口模型。
+
 -   Release 2.9.1
 
     -   **修复**：修复查询分账回退结果接口 URL 错误。（[GitHub Issue #46](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/46)）
