@@ -1,0 +1,17 @@
+﻿{
+    "amount": 21,
+    "charge_account_type": "BASIC",
+    "charge_mchid": "1231231",
+    "departure_amount": 20,
+    "estimate_exchange_rate_time": "2015-05-20T13:29:35+08:00",
+    "exchange_rate_time": "2015-05-20T13:29:35+08:00",
+    "fail_reason": "DEPARTURE_AMOUNT_NO_ENOUGH",
+    "fee": 1,
+    "foreign_amount": 20,
+    "foreign_currency": "USD",
+    "order_id": "42000000000_123123",
+    "out_order_id": "merchant123123",
+    "rate": 650000000,
+    "result": "ACCEPT",
+    "sub_mchid": "1231231"
+}

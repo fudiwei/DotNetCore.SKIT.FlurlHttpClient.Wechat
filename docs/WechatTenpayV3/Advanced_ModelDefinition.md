@@ -792,6 +792,16 @@
 
         -   按日下载提现异常文件：`GetMerchantFundWithdrawBill`
 
+    -   电商收付通（跨境支付）
+
+        -   查询订单剩余可出境余额：`GetFundsToOverseaTransactionAvailableAbroadAmountByTransactionId`
+
+        -   申请资金出境：`CreateFundsToOverseaOrder`
+
+        -   查询出境结果：`GetFundsToOverseaOrderByOutOrderId`
+
+        -   获取购付汇账单文件下载链接：`GetFundsToOverseaBillDownloadUrl`
+
     -   电商收付通（下载账单）
 
         -   申请交易账单：`GetBillTradeBill`
