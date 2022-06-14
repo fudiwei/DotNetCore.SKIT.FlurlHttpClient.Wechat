@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             try
             {
-                bool requireEncrypt = request.GetType().GetCustomAttributes<WechatTenpaySensitiveAttribute>(inherit: true).Any();
+                bool requireEncrypt = Attribute.IsDefined(request.GetType(), typeof(WechatTenpaySensitiveAttribute));
                 if (requireEncrypt)
                 {
                     // 遍历并加密被标记为敏感数据的字段

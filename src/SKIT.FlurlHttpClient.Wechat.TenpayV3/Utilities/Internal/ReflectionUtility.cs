@@ -4,9 +4,24 @@ using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 {
-    internal static class ReflectionUtility
+    internal static partial class ReflectionUtility
     {
-        public delegate (bool Modified, string NewValue) ReplacePropertyStringValueReplacementHandler(object target, PropertyInfo currentProp, string oldValue);
+        private static readonly Hashtable _typeProperties = new Hashtable();
+
+        private static PropertyInfo[] GetTypedProperties(Type type)
+        {
+            if (type == null) throw new ArgumentNullException(nameof(type));
+
+            string skey = type.AssemblyQualifiedName ?? type.GetHashCode().ToString();
+            PropertyInfo[]? properties = (PropertyInfo[]?)_typeProperties[skey];
+            if (properties == null)
+            {
+                properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+                _typeProperties[skey] = properties;
+            }
+
+            return properties;
+        }
 
         public static void ReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacementHandler replacement)
         {
@@ -28,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             }
             else
             {
-                foreach (var childProp in objType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
+                foreach (var childProp in GetTypedProperties(objType))
                 {
                     if (!childProp.CanWrite)
                         continue;
@@ -187,5 +202,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                 }
             }
         }
+    }
+
+    partial class ReflectionUtility
+    {
+        public delegate (bool Modified, string NewValue) ReplacePropertyStringValueReplacementHandler(object target, PropertyInfo currentProp, string oldValue);
     }
 }

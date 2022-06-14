@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     return response;
                 }
 
-                bool requireDecrypt = response.GetType().GetCustomAttributes<WechatTenpaySensitiveAttribute>(inherit: true).Any();
+                bool requireDecrypt = Attribute.IsDefined(response.GetType(), typeof(WechatTenpaySensitiveAttribute));
                 if (requireDecrypt)
                 {
                     // 遍历并解密被标记为敏感数据的字段
