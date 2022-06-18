@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     {
         public static class Types
         {
-            public class EventData
+            public class Order
             {
                 /// <summary>
                 /// 获取或设置商家自定义订单号。
@@ -45,11 +45,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         }
 
         /// <summary>
-        /// 获取或设置事件数据。
+        /// 获取或设置订单信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("order_info")]
         [System.Xml.Serialization.XmlElement("order_info")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.Order Order { get; set; } = default!;
     }
 }
