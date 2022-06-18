@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 TEXT 事件的数据。</para>
@@ -21,5 +21,21 @@
         [System.Text.Json.Serialization.JsonPropertyName("Content")]
         [System.Xml.Serialization.XmlElement("Content")]
         public string Content { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置消息数据 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MsgDataId")]
+        [System.Text.Json.Serialization.JsonPropertyName("MsgDataId")]
+        [System.Xml.Serialization.XmlElement("MsgDataId", IsNullable = true)]
+        public string? MessageDataId { get; set; }
+
+        /// <summary>
+        /// 获取或设置图文顺序索引（从 1 开始）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("Idx")]
+        [System.Text.Json.Serialization.JsonPropertyName("Idx")]
+        [System.Xml.Serialization.XmlElement("Idx", IsNullable = true)]
+        public int? Index { get; set; }
     }
 }
