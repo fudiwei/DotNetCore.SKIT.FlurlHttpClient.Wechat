@@ -1,9 +1,9 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /union/promoter/product/generate 接口的响应。</para>
+    /// <para>表示 [POST] /union/promoter/open_product/generate 接口的响应。</para>
     /// </summary>
-    public class UnionPromoterProductGenerateResponse : WechatApiResponse
+    public class UnionPromoterOpenProductGenerateResponse : WechatApiResponse
     {
         public static class Types
         {
@@ -59,25 +59,16 @@
                         /// <summary>
                         /// 获取或设置小商店名称。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("shopAppid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("shopAppid")]
-                        public string? ShopAppId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置小商店名称。
-                        /// </summary>
                         [Newtonsoft.Json.JsonProperty("shopName")]
                         [System.Text.Json.Serialization.JsonPropertyName("shopName")]
                         public string? ShopName { get; set; }
 
                         /// <summary>
-                        /// 获取或设置是否引用小商店组件。
+                        /// 获取或设置店铺状态。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("pluginResult")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("pluginResult")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
-                        public bool? UsePlugin { get; set; }
+                        [Newtonsoft.Json.JsonProperty("shopStatus")]
+                        [System.Text.Json.Serialization.JsonPropertyName("shopStatus")]
+                        public int? ShopStatus { get; set; }
                     }
 
                     public class Share
@@ -90,18 +81,18 @@
                         public string AppId { get; set; } = default!;
 
                         /// <summary>
+                        /// 获取或设置小程序原始 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("username")]
+                        [System.Text.Json.Serialization.JsonPropertyName("username")]
+                        public string Username { get; set; } = default!;
+
+                        /// <summary>
                         /// 获取或设置小程序页面路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("path")]
                         [System.Text.Json.Serialization.JsonPropertyName("path")]
                         public string PagePath { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置经过 Base64 编码的小程序码图片。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("wxaCode")]
-                        [System.Text.Json.Serialization.JsonPropertyName("wxaCode")]
-                        public string EncodingWxaCode { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置推广商品文案。
@@ -118,18 +109,18 @@
                         public string? PromotionUrl { get; set; }
 
                         /// <summary>
-                        /// 获取或设置推广商品带券文案。
+                        /// 获取或设置推广商品 Tag。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("couponPromotionWording")]
-                        [System.Text.Json.Serialization.JsonPropertyName("couponPromotionWording")]
-                        public string? PromotionWithCouponText { get; set; }
+                        [Newtonsoft.Json.JsonProperty("promotionTag")]
+                        [System.Text.Json.Serialization.JsonPropertyName("promotionTag")]
+                        public string? PromotionTag { get; set; }
 
                         /// <summary>
-                        /// 获取或设置推广商品带券链接。
+                        /// 获取或设置获取素材状态码。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("couponPromotionUrl")]
-                        [System.Text.Json.Serialization.JsonPropertyName("couponPromotionUrl")]
-                        public string? PromotionWithCouponUrl { get; set; }
+                        [Newtonsoft.Json.JsonProperty("code")]
+                        [System.Text.Json.Serialization.JsonPropertyName("code")]
+                        public int Code { get; set; }
                     }
                 }
 
