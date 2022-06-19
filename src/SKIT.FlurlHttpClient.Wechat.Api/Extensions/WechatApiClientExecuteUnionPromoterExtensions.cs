@@ -260,6 +260,66 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region OpenProduct
+        /// <summary>
+        /// <para>异步调用 [GET] /union/promoter/open_product/list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/custom_component/api/promoter/openproduct.html</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnionPromoterOpenProductListResponse> ExecuteUnionPromoterOpenProductListAsync(this WechatApiClient client, Models.UnionPromoterOpenProductListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "open_product", "list")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("from", request.Offset)
+                .SetQueryParam("limit", request.Limit);
+
+            if (request.QueryType != null)
+                flurlReq.SetQueryParam("queryType", request.QueryType.Value);
+
+            if (request.Query != null)
+                flurlReq.SetQueryParam("query", request.Query);
+
+            if (request.MaxPrice != null)
+                flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
+
+            if (request.MinPrice != null)
+                flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
+
+            if (request.MinCommissionValue != null)
+                flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
+
+            if (request.MinCommissionRatio != null)
+                flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
+
+            if (request.SortType != null)
+                flurlReq.SetQueryParam("sortType", request.SortType.Value);
+
+            if (request.ShopAppIdList != null)
+                flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
+
+            if (request.CategoryId != null)
+                flurlReq.SetQueryParam("categoryId", request.CategoryId);
+
+            if (request.CategoryIdList != null)
+                flurlReq.SetQueryParam("category", string.Join(",", request.CategoryIdList));
+
+            if (request.CategoryIdBlackList != null)
+                flurlReq.SetQueryParam("noCategory", string.Join(",", request.CategoryIdBlackList));
+
+            if (request.ProductIdList != null)
+                flurlReq.SetQueryParam("productId", string.Join(",", request.ProductIdList));
+
+            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenProductListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Order
         /// <summary>
         /// <para>异步调用 [POST] /union/promoter/order/info 接口。</para>
