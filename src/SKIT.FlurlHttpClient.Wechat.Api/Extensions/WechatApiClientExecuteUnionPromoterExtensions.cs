@@ -258,6 +258,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.UnionPromoterProductGenerateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /union/promoter/product/parse_tag 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/parse_tag.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnionPromoterProductParseTagResponse> ExecuteUnionPromoterProductParseTagAsync(this WechatApiClient client, Models.UnionPromoterProductParseTagRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "product", "parse_tag")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.UnionPromoterProductParseTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region OpenProduct
