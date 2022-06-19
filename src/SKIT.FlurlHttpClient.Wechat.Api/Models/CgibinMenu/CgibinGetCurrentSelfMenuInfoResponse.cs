@@ -15,7 +15,7 @@
                     {
                         public static class Types
                         {
-                            public class News
+                            public class NewsList
                             {
                                 /// <summary>
                                 /// 获取或设置图文消息列表。
@@ -130,7 +130,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("news_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("news_info")]
-                        public Types.News? News { get; set; }
+                        public Types.NewsList? News { get; set; }
 
                         /// <summary>
                         /// 获取或设置子菜单信息。

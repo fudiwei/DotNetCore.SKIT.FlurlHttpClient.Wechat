@@ -135,5 +135,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.CgibinChangeOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/get_current_autoreply_info 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Getting_Rules_for_Auto_Replies.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinGetCurrentAutoReplyInfoResponse> ExecuteCgibinGetCurrentAutoReplyInfoAsync(this WechatApiClient client, Models.CgibinGetCurrentAutoReplyInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "get_current_autoreply_info")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinGetCurrentAutoReplyInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }
