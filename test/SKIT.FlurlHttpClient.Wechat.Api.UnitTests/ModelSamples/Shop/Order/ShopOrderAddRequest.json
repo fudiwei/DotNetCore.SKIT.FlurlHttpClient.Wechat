@@ -40,6 +40,15 @@
         "city": "城市，选填",
         "town": "乡镇，选填"
     },
+    "default_receiving_address": {
+        "city": "广州市",
+        "country": "中国",
+        "detailed_address": "龙洞250号",
+        "province": "广东省",
+        "receiver_name": "我爱我家",
+        "tel_number": "18712345678",
+        "town": "温柔乡"
+    },
     "fund_type": 1,
     "expire_time": 1642076428
 }

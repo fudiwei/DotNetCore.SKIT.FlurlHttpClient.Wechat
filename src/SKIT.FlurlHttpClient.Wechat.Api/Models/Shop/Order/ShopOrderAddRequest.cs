@@ -240,6 +240,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public Types.Address? Address { get; set; }
 
         /// <summary>
+        /// 获取或设置默认退货地址。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("default_receiving_address")]
+        [System.Text.Json.Serialization.JsonPropertyName("default_receiving_address")]
+        public Types.Address? DefaultReceivingAddress { get; set; }
+
+        /// <summary>
         /// 获取或设置创建时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("create_time")]

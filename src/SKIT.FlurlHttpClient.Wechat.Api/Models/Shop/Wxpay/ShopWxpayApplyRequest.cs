@@ -209,6 +209,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public Types.Contact Contact { get; set; } = new Types.Contact();
 
         /// <summary>
+        /// 获取或设置商户简称。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("merchant_shortname")]
+        [System.Text.Json.Serialization.JsonPropertyName("merchant_shortname")]
+        public string? MerchantShortName { get; set; }
+
+        /// <summary>
         /// 获取或设置特殊资质信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qualifications")]

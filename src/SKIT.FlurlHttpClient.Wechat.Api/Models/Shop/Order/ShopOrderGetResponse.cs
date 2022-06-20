@@ -235,6 +235,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// <summary>
                                 /// 获取或设置推广员 OpenId。
                                 /// </summary>
+                                [Obsolete("相关接口或字段于 2022-06-08 下线。")]
                                 [Newtonsoft.Json.JsonProperty("promoter_openid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("promoter_openid")]
                                 public string? PromoterOpenId { get; set; }
@@ -306,6 +307,58 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("promotion_info")]
                         public Types.Promotion? Promotion { get; set; }
                     }
+
+                    public class Address
+                    {
+                        /// <summary>
+                        /// 获取或设置收件人姓名。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("receiver_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("receiver_name")]
+                        public string ReceiverName { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置国家。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("country")]
+                        [System.Text.Json.Serialization.JsonPropertyName("country")]
+                        public string? Country { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置省份。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("province")]
+                        [System.Text.Json.Serialization.JsonPropertyName("province")]
+                        public string? Province { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置城市。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("city")]
+                        [System.Text.Json.Serialization.JsonPropertyName("city")]
+                        public string? City { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置区县。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("town")]
+                        [System.Text.Json.Serialization.JsonPropertyName("town")]
+                        public string? District { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置详细地址。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("detailed_address")]
+                        [System.Text.Json.Serialization.JsonPropertyName("detailed_address")]
+                        public string Detail { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置联系电话。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("tel_number")]
+                        [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
+                        public string TeleNumber { get; set; } = default!;
+                    }
                 }
 
                 /// <summary>
@@ -374,6 +427,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
                 public DateTimeOffset CreateTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置默认退货地址。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("default_receiving_address")]
+                [System.Text.Json.Serialization.JsonPropertyName("default_receiving_address")]
+                public Types.Address? DefaultReceivingAddress { get; set; }
             }
         }
 
