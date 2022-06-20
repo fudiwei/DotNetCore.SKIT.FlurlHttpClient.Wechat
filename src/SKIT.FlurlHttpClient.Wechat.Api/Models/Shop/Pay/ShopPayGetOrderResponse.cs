@@ -49,11 +49,11 @@
                         public long? FinishTimestamp { get; set; }
 
                         /// <summary>
-                        /// 获取或设置退款结果。
+                        /// 获取或设置退款状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("result")]
                         [System.Text.Json.Serialization.JsonPropertyName("result")]
-                        public string Result { get; set; } = default!;
+                        public string Status { get; set; } = default!;
                     }
 
                     public class ProfitSharing
@@ -101,11 +101,11 @@
                         public long? FinishTimestamp { get; set; }
 
                         /// <summary>
-                        /// 获取或设置分账结果。
+                        /// 获取或设置分账状态。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("result")]
                         [System.Text.Json.Serialization.JsonPropertyName("result")]
-                        public string Result { get; set; } = default!;
+                        public string Status { get; set; } = default!;
                     }
                 }
 
