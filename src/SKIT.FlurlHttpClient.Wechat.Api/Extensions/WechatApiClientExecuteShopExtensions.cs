@@ -814,6 +814,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ShopAftersaleGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /shop/aftersale/update_deadline 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/aftersale/update_deadline.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ShopAftersaleUpdateDeadlineResponse> ExecuteShopAftersaleUpdateDeadlineAsync(this WechatApiClient client, Models.ShopAftersaleUpdateDeadlineRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "shop", "aftersale", "update_deadline")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ShopAftersaleUpdateDeadlineResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region ECAftersale
