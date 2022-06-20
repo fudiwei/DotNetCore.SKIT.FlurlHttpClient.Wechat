@@ -1510,6 +1510,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/submitwithdraw 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/submitwithdraw.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/wxafunds/API/funds/submitwithdraw.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1530,6 +1531,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/scanwithdraw 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/scanwithdraw.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/wxafunds/API/funds/scanwithdraw.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1550,6 +1552,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/getwithdrawdetail 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/getwithdrawdetail.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/wxafunds/API/funds/getwithdrawdetail.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1929,6 +1932,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.ShopPayProfitSharingOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /shop/pay/refundorder 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/wxafunds/API/order/refunds_order.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ShopPayRefundOrderResponse> ExecuteShopPayRefundOrderAsync(this WechatApiClient client, Models.ShopPayRefundOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "shop", "pay", "refundorder")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ShopPayRefundOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
