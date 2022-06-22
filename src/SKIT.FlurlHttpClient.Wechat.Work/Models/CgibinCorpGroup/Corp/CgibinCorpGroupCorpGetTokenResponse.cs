@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/corpgroup/corp/gettoken 接口的响应。</para>
     /// </summary>
-    public class CgibinCorpGroupCropGetTokenResponse : WechatWorkResponse
+    public class CgibinCorpGroupCorpGetTokenResponse : WechatWorkResponse
     {
         /// <summary>
         /// 获取或设置下级企业 AccessToken。

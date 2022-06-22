@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/corpgroup/corp/gettoken 接口的请求。</para>
     /// </summary>
-    public class CgibinCorpGroupCropGetTokenRequest : WechatWorkRequest
+    public class CgibinCorpGroupCorpGetTokenRequest : WechatWorkRequest
     {
         /// <summary>
         /// 获取或设置下级企业 CorpId。

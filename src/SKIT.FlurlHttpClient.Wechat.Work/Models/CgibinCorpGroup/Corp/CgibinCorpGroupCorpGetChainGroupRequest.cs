@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/corpgroup/corp/get_chain_group 接口的请求。</para>
     /// </summary>
-    public class CgibinCorpGroupCropGetChainGroupRequest : WechatWorkRequest
+    public class CgibinCorpGroupCorpGetChainGroupRequest : WechatWorkRequest
     {
         /// <summary>
         /// 获取或设置上下游 ID。

@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/corpgroup/corp/get_chain_corpinfo_list 接口的响应。</para>
     /// </summary>
-    public class CgibinCorpGroupCropGetChainCorpInfoListResponse : WechatWorkResponse
+    public class CgibinCorpGroupCorpGetChainCorpInfoListResponse : WechatWorkResponse
     {
         public static class Types
         {
