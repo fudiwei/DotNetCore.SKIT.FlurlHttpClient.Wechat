@@ -97,6 +97,27 @@
                 [Newtonsoft.Json.JsonProperty("pagepath")]
                 [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
                 public string? MiniProgramPagePath { get; set; }
+
+                /// <summary>
+                /// 获取或设置高度类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("height")]
+                [System.Text.Json.Serialization.JsonPropertyName("height")]
+                public string? HeightType { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否隐藏标题。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("hide_title")]
+                [System.Text.Json.Serialization.JsonPropertyName("hide_title")]
+                public bool? RequireHideTitle { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否开启 WebView 内的链接跳转能力。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("enable_webview_click")]
+                [System.Text.Json.Serialization.JsonPropertyName("enable_webview_click")]
+                public bool? EnableWebviewClick { get; set; }
             }
 
             public class ListTemplate
