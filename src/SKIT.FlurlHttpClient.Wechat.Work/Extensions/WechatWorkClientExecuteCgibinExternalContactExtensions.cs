@@ -584,6 +584,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/groupchat/onjob_transfer 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95703 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGroupChatOnJobTransferResponse> ExecuteCgibinExternalContactGroupChatOnJobTransferAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatOnJobTransferRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "groupchat", "onjob_transfer")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatOnJobTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/groupchat/list 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/92120 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93414 </para>

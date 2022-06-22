@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "failed_chat_list": [
+        {
+            "chat_id": "wrOgQhDgAAcwMTB7YmDkbeBsgT_KAAAA",
+            "errcode": 90501,
+            "errmsg": "chat is not external group chat"
+        }
+    ]
+}
