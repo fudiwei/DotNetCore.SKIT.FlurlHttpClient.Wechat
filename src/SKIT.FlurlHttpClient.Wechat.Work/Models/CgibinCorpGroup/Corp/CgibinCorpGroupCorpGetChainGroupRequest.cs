@@ -11,5 +11,12 @@
         [Newtonsoft.Json.JsonProperty("chain_id")]
         [System.Text.Json.Serialization.JsonPropertyName("chain_id")]
         public string ChainId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置分组 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("groupid")]
+        [System.Text.Json.Serialization.JsonPropertyName("groupid")]
+        public int? GroupId { get; set; }
     }
 }
