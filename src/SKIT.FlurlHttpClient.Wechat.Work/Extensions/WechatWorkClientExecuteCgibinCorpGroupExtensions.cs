@@ -174,6 +174,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCorpGetChainCorpInfoListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/corp/remove_corp 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95822 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupCorpRemoveCorpResponse> ExecuteCgibinCorpGroupCorpRemoveCorpAsync(this WechatWorkClient client, Models.CgibinCorpGroupCorpRemoveCorpRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "corp", "remove_corp")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCorpRemoveCorpResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region Rule
