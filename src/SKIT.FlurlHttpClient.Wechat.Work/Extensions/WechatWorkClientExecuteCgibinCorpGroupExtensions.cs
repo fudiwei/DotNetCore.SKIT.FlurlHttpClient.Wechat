@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,7 +9,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     public static class WechatWorkClientExecuteCgibinCorpGroupExtensions
     {
-
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/corpgroup/unionid_to_external_userid 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95342 </para>
@@ -29,7 +28,48 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupUnionidToExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/import_chain_contact 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95821 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupImportChainContactResponse> ExecuteCgibinCorpGroupImportChainContactAsync(this WechatWorkClient client, Models.CgibinCorpGroupImportChainContactRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "import_chain_contact")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupImportChainContactResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/corpgroup/getresult 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95823 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupGetResultResponse> ExecuteCgibinCorpGroupGetResultAsync(this WechatWorkClient client, Models.CgibinCorpGroupGetResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "corpgroup", "getresult")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("jobid", request.JobId);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupGetResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
         #region Corp
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/corpgroup/corp/list_app_share_info 接口。</para>
