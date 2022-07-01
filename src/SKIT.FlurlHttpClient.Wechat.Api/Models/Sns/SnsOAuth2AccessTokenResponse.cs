@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /sns/oauth2/access_token 接口的响应。</para>
@@ -32,6 +32,13 @@
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
         public string OpenId { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置用户全局标识。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("unionid")]
+        [System.Text.Json.Serialization.JsonPropertyName("unionid")]
+        public string? UnionId { get; set; }
 
         /// <summary>
         /// 获取或设置用户授权的作用域，使用逗号分隔。

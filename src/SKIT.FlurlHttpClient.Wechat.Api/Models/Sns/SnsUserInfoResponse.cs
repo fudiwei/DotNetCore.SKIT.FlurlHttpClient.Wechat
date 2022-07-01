@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string OpenId { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置用户全局标识。只有在用户将公众号绑定到微信开放平台帐号后，才会出现该字段。
+        /// 获取或设置用户全局标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("unionid")]
         [System.Text.Json.Serialization.JsonPropertyName("unionid")]
