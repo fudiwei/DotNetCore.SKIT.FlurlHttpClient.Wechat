@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -270,5 +270,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("aftersale_duration")]
         [System.Text.Json.Serialization.JsonPropertyName("aftersale_duration")]
         public int? AftersaleDuration { get; set; }
+
+        /// <summary>
+        /// 获取或设置跟踪 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("trace_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("trace_id")]
+        public string? TraceId { get; set; }
     }
 }
