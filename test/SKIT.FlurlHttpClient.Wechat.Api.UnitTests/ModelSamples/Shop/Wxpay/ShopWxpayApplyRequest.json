@@ -1,4 +1,5 @@
-﻿{
+{
+    "organization_type": 2,
     "business_license_info": {
         "legal_person": "于先生",
         "wxa_business_license_copy": {
@@ -27,5 +28,14 @@
         "contact_type": "65",
         "contact_email": "wxg@tencent.com",
         "mobile_phone": "15521050856"
+    },
+    "merchant_shortname": "交易组件",
+    "account_info": {
+        "account_bank": "工商银行",
+        "account_name": "AOZdYGISxo4y44/UgZ69bdu9X+tfMUJ9dl+LetjM45/zMbrYu+wWZ8gn4CTdo+D/m9MrPg+V4sm73oxqdQu/hj7aWyDl45IL9DBd+Z0zZXkw==",
+        "account_number": "d+xT+MQCvrLHUVDWv/8MR/dB7TkXM2YYZlokmXzFsWs35NXUot7C0NcxIrUF5FnxqCJHkNgKtxa6RxEYyba1+VBRLnqKGYQE8ZRGYoeorwC+w==",
+        "bank_account_type": "75",
+        "bank_address_code": "110000",
+        "bank_branch_id": "402713354941"
     }
 }
