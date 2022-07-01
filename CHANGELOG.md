@@ -32,6 +32,20 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.16.0
+
+    -   **新增**：新增客服子商户能力相关接口。（[Gitee Issue #I5F24Z](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5F24Z)）
+    
+    -   **新增**：新增小程序自定义交易组件售后开发测试接口。
+
+    -   **新增**：随官方更新客服管理相关接口模型。
+
+    -   **新增**：随官方更新开放平台应用通过 Code 获取 AccessToken 的接口模型。（[GitHub Issue #49](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/49)）
+
+    -   **新增**：随官方更新小程序自定义交易组件生成订单的接口模型。（[Gitee Issue #I5ESTO](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5ESTO)）
+
+    -   **新增**：随随官方更新小程序自定义交易组件提交支付资质接口模型。
+
 -   Release 2.15.0
 
     -   **新增**：新增获取公众号的自动回复规则接口。
