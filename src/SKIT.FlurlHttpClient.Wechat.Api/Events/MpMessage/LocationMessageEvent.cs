@@ -61,5 +61,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Text.Json.Serialization.JsonPropertyName("Idx")]
         [System.Xml.Serialization.XmlElement("Idx", IsNullable = true)]
         public int? Index { get; set; }
+
+        /// <summary>
+        /// 获取或设置客服子商户 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("BusinessId")]
+        [System.Text.Json.Serialization.JsonPropertyName("BusinessId")]
+        [System.Xml.Serialization.XmlElement("BusinessId", IsNullable = true)]
+        public long? BusinessId { get; set; }
     }
 }
