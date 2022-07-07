@@ -115,5 +115,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetFragment("wechat_redirect")
                 .ToString();
         }
+
+        /// <summary>
+        /// <para>生成公众号管理员向第三方平台授权 URL。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Authorization_Process_Technical_Description.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="preAuthCode"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="authType"></param>
+        /// <param name="bizAppid"></param>
+        /// <param name="categoryIdList"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForBindComponent(this WechatApiClient client, string preAuthCode, string redirectUrl, string authType = "3", string? bizAppid = null, params string[] categoryIdList)
+        {
+            return new Url(BASE_URL)
+                .AppendPathSegments("wxaopen", "safe", "bindcomponent")
+                .SetQueryParam("action", "bindcomponent")
+                .SetQueryParam("no_scan", "1")
+                .SetQueryParam("component_appid", client.Credentials.AppId)
+                .SetQueryParam("pre_auth_code", preAuthCode)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("auth_type", authType)
+                .SetQueryParam("biz_appid", bizAppid)
+                .SetQueryParam("category_id_list", categoryIdList.Length == 0 ? null : string.Join('|', categoryIdList))
+                .SetFragment("wechat_redirect")
+                .ToString();
+        }
     }
 }
