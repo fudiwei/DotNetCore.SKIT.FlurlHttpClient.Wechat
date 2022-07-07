@@ -41,6 +41,7 @@
 |  √  |       营销工具：委托营销        |      直连商户 & 服务商       |                   |
 |  √  |        营销工具：消费卡         |      直连商户 & 服务商       |                   |
 |  √  |       营销工具：支付有礼        |      直连商户 & 服务商       |                   |
+|  √  |   营销工具：代扣服务切卡组件    |      直连商户 & 服务商       |                   |
 |  √  | 营销工具：图片上传（营销专用）  |      直连商户 & 服务商       |                   |
 |  ×  |  <del>营销工具：现金红包</del>  | <del>直连商户 & 服务商</del> | 官方未提供 v3 API |
 |  √  |     营销工具：银行定向促活      |      直连商户 & 服务商       |                   |
@@ -365,6 +366,10 @@
         -   获取支付有礼活动列表：`QueryMarketingPayGiftActivities`
 
         -   删除活动发券商户号：`DeleteMarketingPayGiftActivityMerchant`
+
+    -   代扣服务切卡组件
+
+        -   出行券切卡组件预下单：`CreateIndustryCouponToken`
 
     -   图片上传（营销专用）：`UploadMarketingMediaImage`
 
@@ -921,6 +926,10 @@
         -   获取支付有礼活动列表：`QueryMarketingPayGiftActivities`
 
         -   删除活动发券商户号：`DeleteMarketingPayGiftActivityMerchant`
+
+    -   代扣服务切卡组件
+
+        -   出行券切卡组件预下单：`CreateIndustryCouponToken`
 
     -   图片上传（营销专用）：`UploadMarketingMediaImage`
 
