@@ -138,7 +138,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("redirect_uri", redirectUrl)
                 .SetQueryParam("auth_type", authType)
                 .SetQueryParam("biz_appid", bizAppid)
-                .SetQueryParam("category_id_list", categoryIdList.Length == 0 ? null : string.Join('|', categoryIdList))
+                .SetQueryParam("category_id_list", categoryIdList.Length == 0 ? null : string.Join("|", categoryIdList))
                 .SetFragment("wechat_redirect")
                 .ToString();
         }
