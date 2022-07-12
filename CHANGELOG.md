@@ -360,6 +360,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.11.0
+
+    -   **新增**：新增出行券切卡组件预下单接口。
+
+    -   **修复**：修复特约商户进件接口模型定义问题。（[Gitee Issue #I5FCR5](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5FCR5)）
+
 -   Release 2.10.0
 
     -   **新增**：新增电商收付通跨境付款相关接口。

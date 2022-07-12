@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -544,7 +544,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("owner")]
                         [System.Text.Json.Serialization.JsonPropertyName("owner")]
-                        public bool IsOwner { get; set; }
+                        public bool? IsOwner { get; set; }
                     }
 
                     public class UBO
