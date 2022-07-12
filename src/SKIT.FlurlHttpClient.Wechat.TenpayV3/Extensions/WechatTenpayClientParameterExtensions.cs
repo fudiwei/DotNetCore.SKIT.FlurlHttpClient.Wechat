@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {
                 { "appId", appId },
-                { "timeStamp", timestamp },
+                { "timestamp", timestamp },
                 { "nonceStr", nonce },
                 { "package", package },
                 { "signType", Constants.SignTypes.RSA },
