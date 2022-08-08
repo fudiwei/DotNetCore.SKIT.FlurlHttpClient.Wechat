@@ -116,6 +116,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
             }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatOpenAIRequestTimeoutException(ex.Message, ex);
+            }
             catch (FlurlHttpException ex)
             {
                 throw new WechatOpenAIException(ex.Message, ex);
@@ -148,6 +152,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     .AllowAnyHttpStatus()
                     .SendUrlEncodedAsync(flurlRequest.Verb, data, cancellationToken);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
+            }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatOpenAIRequestTimeoutException(ex.Message, ex);
             }
             catch (FlurlHttpException ex)
             {
