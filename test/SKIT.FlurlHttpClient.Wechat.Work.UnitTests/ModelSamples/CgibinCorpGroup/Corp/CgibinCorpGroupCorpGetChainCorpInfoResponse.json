@@ -1,6 +1,9 @@
 ﻿{
     "errcode": 0,
     "errmsg": "ok",
+    "corp_name": "美馨粮油公司",
+    "corp_verified": false,
+    "corp_certified": false,
     "custom_id": "xxxxx",
     "groupid": 1
 }
