@@ -182,6 +182,13 @@
                         [Newtonsoft.Json.JsonProperty("wechat_channels")]
                         [System.Text.Json.Serialization.JsonPropertyName("wechat_channels")]
                         public Types.WechatChannels? WechatChannels { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置撤回的消息 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("recall_msgid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("recall_msgid")]
+                        public string? RecalledMessageId { get; set; }
                     }
                 }
 

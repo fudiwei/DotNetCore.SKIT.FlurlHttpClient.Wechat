@@ -12,6 +12,25 @@
             "origin": 3,
             "servicer_userid": "Zhangsan",
             "msgtype": "MSG_TYPE"
+        },
+        {
+            "msgtype": "event",
+            "event": {
+                "event_type": "user_recall_msg",
+                "open_kfid": "wkAJ2GCAAASSm4_FhToWMFea0xAFfd3Q",
+                "external_userid": "wmAJ2GCAAAme1XQRC-NI-q0_ZM9ukoAw",
+                "recall_msgid": "RECALL_MSGID"
+            }
+        },
+        {
+            "msgtype": "event",
+            "event": {
+                "event_type": "servicer_recall_msg",
+                "open_kfid": "wkAJ2GCAAASSm4_FhToWMFea0xAFfd3Q",
+                "external_userid": "wmAJ2GCAAAme1XQRC-NI-q0_ZM9ukoAw",
+                "recall_msgid": "RECALL_MSGID",
+                "servicer_userid": "SERVICER_USERID"
+            }
         }
     ]
 }

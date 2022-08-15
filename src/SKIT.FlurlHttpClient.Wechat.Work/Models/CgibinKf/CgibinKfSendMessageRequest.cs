@@ -99,6 +99,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                         public static class Types
                         {
+                            public class Text
+                            {
+                                /// <summary>
+                                /// 获取或设置菜单项内容。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("content")]
+                                [System.Text.Json.Serialization.JsonPropertyName("content")]
+                                public string Content { get; set; } = string.Empty;
+                            }
+
                             public class Click
                             {
                                 /// <summary>
@@ -164,6 +174,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
                         public string Type { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置文本信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("text")]
+                        public Types.Text? Text { get; set; }
 
                         /// <summary>
                         /// 获取或设置点击项信息。
