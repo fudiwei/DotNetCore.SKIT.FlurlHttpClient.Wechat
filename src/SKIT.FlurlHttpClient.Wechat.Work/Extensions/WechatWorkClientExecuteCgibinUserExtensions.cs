@@ -375,7 +375,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/user/list_id 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/user/list_id 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/40856 </para>
         /// </summary>
         /// <param name="client"></param>
