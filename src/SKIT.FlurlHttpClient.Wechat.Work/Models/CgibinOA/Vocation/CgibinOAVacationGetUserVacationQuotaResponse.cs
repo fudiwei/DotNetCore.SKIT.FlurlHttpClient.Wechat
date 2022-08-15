@@ -43,6 +43,13 @@
                 [Newtonsoft.Json.JsonProperty("leftduration")]
                 [System.Text.Json.Serialization.JsonPropertyName("leftduration")]
                 public int LeftDuration { get; set; }
+
+                /// <summary>
+                /// 获取或设置假期的实际发放时长（单位：秒）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("real_assignduration")]
+                [System.Text.Json.Serialization.JsonPropertyName("real_assignduration")]
+                public int RealAssignDuration { get; set; }
             }
         }
 
