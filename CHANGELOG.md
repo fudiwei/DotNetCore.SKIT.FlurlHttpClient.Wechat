@@ -354,6 +354,20 @@
 
 ---
 
+### 模块 `SKIT.FlurlHttpClient.Wechat.TenpayV2` 更新日志
+
+<details>
+
+<summary>[展开查看]</summary>
+
+-   Release 2.0.0
+
+    -   首次发布。
+
+</details>
+
+---
+
 ### 模块 `SKIT.FlurlHttpClient.Wechat.TenpayV3` 更新日志
 
 <details>
