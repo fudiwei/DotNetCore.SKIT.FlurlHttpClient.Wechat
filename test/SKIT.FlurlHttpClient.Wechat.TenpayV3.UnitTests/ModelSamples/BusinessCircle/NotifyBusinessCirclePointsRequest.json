@@ -1,4 +1,4 @@
-﻿{
+{
     "sub_mchid": "1234567890",
     "transaction_id": "4200000533202000000000000000",
     "appid": "wx8828b70xxxxxxx8",
@@ -6,5 +6,6 @@
     "earn_points": true,
     "increased_points": 100,
     "points_update_time": "2020-05-20T13:29:35.120+08:00",
+    "no_points_remarks": "促销商品不参与积分活动",
     "total_points": 888888
 }
