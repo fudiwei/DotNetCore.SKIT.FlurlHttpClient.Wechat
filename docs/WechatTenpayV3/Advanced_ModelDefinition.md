@@ -36,6 +36,7 @@
 |  √  |       经营能力：点金计划        |            服务商            |                   |
 |  √  |      行业方案：电商收付通       |            服务商            |                   |
 |  √  |       行业方案：智慧商圈        |      直连商户 & 服务商       |                   |
+|  √  |  行业方案：微信支付分停车服务   |      直连商户 & 服务商       |                   |
 |  √  |        营销工具：代金券         |      直连商户 & 服务商       |                   |
 |  √  |        营销工具：商家券         |      直连商户 & 服务商       |                   |
 |  √  |       营销工具：委托营销        |      直连商户 & 服务商       |                   |
@@ -258,6 +259,10 @@
         -   商圈积分同步：`NotifyBusinessCirclePoints`
 
         -   商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
+
+        -   商圈会员待积分状态查询：`GetBusinessCircleUserPointsCommitStatusByOpenId`
+
+        -   商圈会员停车状态同步：`NotifyBusinessCircleParkings`
 
     -   微信支付分停车服务
 
@@ -822,6 +827,10 @@
         -   商圈积分同步：`NotifyBusinessCirclePoints`
 
         -   商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
+
+        -   商圈会员待积分状态查询：`GetBusinessCircleUserPointsCommitStatusByOpenId`
+
+        -   商圈会员停车状态同步：`NotifyBusinessCircleParkings`
 
     -   微信支付分停车服务
 
