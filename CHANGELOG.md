@@ -32,6 +32,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.17.0
+
+    -   **新增**：新增小程序交易保障相关接口。
+
+    -   **新增**：新增获取 NFC 的小程序 scheme 接口。
+
+    -   **新增**：随官方更新获取订阅消息个人模板列表的接口模型。（[GitHub Issue #56](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/56)）
+
 -   Release 2.16.0
 
     -   **新增**：新增客服子商户能力相关接口。（[Gitee Issue #I5F24Z](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5F24Z)）
