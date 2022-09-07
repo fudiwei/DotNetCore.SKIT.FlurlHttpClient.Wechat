@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -1220,6 +1220,50 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaApiWxaEmbeddedSetAuthorizeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region WxaMpTrade
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/wxamptrade/get_guarantee_status 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/transaction-guarantee/GetGuaranteeStatus.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiWxaMpTradeGetGuaranteeStatusResponse> ExecuteWxaApiWxaMpTradeGetGuaranteeStatusAsync(this WechatApiClient client, Models.WxaApiWxaMpTradeGetGuaranteeStatusRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxaapi", "wxamptrade", "get_guarantee_status")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiWxaMpTradeGetGuaranteeStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/wxamptrade/get_penalty_list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/transaction-guarantee/GetPenaltyList.html</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiWxaMpTradeGetPenaltyListResponse> ExecuteWxaApiWxaMpTradeGetPenaltyListAsync(this WechatApiClient client, Models.WxaApiWxaMpTradeGetPenaltyListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxaapi", "wxamptrade", "get_penalty_list")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaApiWxaMpTradeGetPenaltyListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
