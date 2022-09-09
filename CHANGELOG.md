@@ -382,6 +382,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.13.0
+
+    -   **新增**：随官方更新退款相关接口模型。
+    
+    -   **新增**：随官方更新 JSAPI 下单接口模型。
+
+    -   **修复**：修复根据过滤条件查询用户券接口查询参数定义错误。（[Gitee Issue #I5QFB3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5QFB3)）
+
 -   Release 2.12.0
 
     -   **新增**：新增智慧商圈会员待积分状态查询、会员停车状态同步接口。
