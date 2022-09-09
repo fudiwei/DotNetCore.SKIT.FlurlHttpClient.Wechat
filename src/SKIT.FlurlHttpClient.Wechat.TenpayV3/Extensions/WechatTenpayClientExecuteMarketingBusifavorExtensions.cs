@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -160,10 +160,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 flurlReq.SetQueryParam("coupon_state", request.CouponState);
 
             if (request.CreatorMerchantId != null)
-                flurlReq.SetQueryParam("creator_mchid", request.CreatorMerchantId);
+                flurlReq.SetQueryParam("creator_merchant", request.CreatorMerchantId);
 
             if (request.SenderMerchantId != null)
-                flurlReq.SetQueryParam("sender_mchid", request.SenderMerchantId);
+                flurlReq.SetQueryParam("sender_merchant", request.SenderMerchantId);
 
             if (request.BelongMerchantId != null)
                 flurlReq.SetQueryParam("belong_merchant", request.BelongMerchantId);
