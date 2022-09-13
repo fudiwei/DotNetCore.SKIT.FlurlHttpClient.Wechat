@@ -571,13 +571,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public bool? IsOwner { get; set; }
 
         /// <summary>
-        /// 获取或设置是否填写结算银行账户。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("need_account_info")]
-        [System.Text.Json.Serialization.JsonPropertyName("need_account_info")]
-        public bool RequireBankAccount { get; set; }
-
-        /// <summary>
         /// 获取或设置结算银行账户信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_info")]
