@@ -382,6 +382,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.13.1
+
+    -   **修复**：修复电商收付通二级商户进件申请接口请求模型定义错误。（[Gitee Issue #I5QM1P](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5QM1P)）
+
 -   Release 2.13.0
 
     -   **新增**：随官方更新退款相关接口模型。
