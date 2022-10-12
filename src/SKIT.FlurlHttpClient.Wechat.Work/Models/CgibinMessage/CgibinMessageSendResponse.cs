@@ -33,6 +33,15 @@
         public int[]? InvalidTagIdList { get; set; }
 
         /// <summary>
+        /// 获取或设置没有基础接口许可的成员账号列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("unlicenseduser")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringArrayWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("unlicenseduser")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringArrayWithPipeSplitConverter))]
+        public string[]? UnlicensedUserIdList { get; set; }
+
+        /// <summary>
         /// 获取或设置消息 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgid")]

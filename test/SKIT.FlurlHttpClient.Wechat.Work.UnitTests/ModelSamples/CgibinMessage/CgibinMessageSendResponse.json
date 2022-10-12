@@ -4,6 +4,7 @@
     "invaliduser": "userid1|userid2",
     "invalidparty": "1|2",
     "invalidtag": "3|4",
+    "unlicenseduser": "userid3|userid4",
     "msgid": "xxxx",
     "response_code": "xyzxyz"
 }
