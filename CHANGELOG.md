@@ -32,6 +32,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.18.0
+
+    -   **新增**：新增小程序购物订单相关接口。
+
+    -   **修复**：修复上传图片素材时根据文件后缀名识别默认类型的错误。（[GitHub PR #57](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/57)）
+
+    -   **修复**：修复订阅消息事件通知模型在 JSON 模式下反序列化的错误。（[GitHub Issue #58](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/58)）
+
 -   Release 2.17.0
 
     -   **新增**：新增小程序交易保障相关接口。
