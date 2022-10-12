@@ -31,6 +31,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
                         public bool? IsReadonly { get; set; }
                     }
+
+                    public class PublicRange
+                    {
+                        /// <summary>
+                        /// 获取或设置成员账号列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("userids")]
+                        [System.Text.Json.Serialization.JsonPropertyName("userids")]
+                        public IList<string>? UserIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置部门 ID 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("partyids")]
+                        [System.Text.Json.Serialization.JsonPropertyName("partyids")]
+                        public IList<long>? DepartmentIdList { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -78,6 +95,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
                 public string? Description { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否是公共日历。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_public")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_public")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                public bool? IsPublicCalendar { get; set; }
+
+                /// <summary>
+                /// 获取或设置公开范围。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("public_range")]
+                [System.Text.Json.Serialization.JsonPropertyName("public_range")]
+                public Types.PublicRange? PublicRange { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否是全员日历。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_corp_calendar")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_corp_calendar")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                public bool? IsCorpCalendar { get; set; }
 
                 /// <summary>
                 /// 获取或设置日历共享者列表。
