@@ -425,6 +425,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceContactSortResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/contact/search 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91844 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceContactSearchResponse> ExecuteCgibinServiceContactSearchAsync(this WechatWorkClient client, Models.CgibinServiceContactSearchRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "contact", "search")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceContactSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/contact/batchsearch 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91844 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceContactBatchSearchResponse> ExecuteCgibinServiceContactBatchSearchAsync(this WechatWorkClient client, Models.CgibinServiceContactBatchSearchRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "contact", "batchsearch")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceContactBatchSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region Batch

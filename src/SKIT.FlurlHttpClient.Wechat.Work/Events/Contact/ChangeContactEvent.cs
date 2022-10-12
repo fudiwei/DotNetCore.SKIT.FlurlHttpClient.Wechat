@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         /// </summary>
         [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("MainDepartment", IsNullable = true)]
-        public int? UserMainDepartmentId { get; set; }
+        public long? UserMainDepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置用户邮箱。
