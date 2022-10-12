@@ -189,5 +189,45 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMediaGetJssdkResponse>(flurlReq, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/media/upload_by_url 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96219 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMediaUploadByUrlResponse> ExecuteCgibinMediaUploadByUrlAsync(this WechatWorkClient client, Models.CgibinMediaUploadByUrlRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "media", "upload_by_url")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMediaUploadByUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/media/get_upload_by_url_result 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96219 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMediaGetUploadByUrlResultResponse> ExecuteCgibinMediaGetUploadByUrlResultAsync(this WechatWorkClient client, Models.CgibinMediaGetUploadByUrlResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "media", "get_upload_by_url_result")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMediaGetUploadByUrlResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }
