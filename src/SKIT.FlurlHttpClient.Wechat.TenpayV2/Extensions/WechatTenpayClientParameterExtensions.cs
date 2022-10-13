@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Web;
@@ -19,9 +19,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_3&index=4 </para>
         /// </summary>
         /// <param name="client"></param>
+        /// <param name="appId"></param>
         /// <param name="packageString"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForJsapiSendBusinessRedPack(this WechatTenpayClient client, string packageString)
+        public static IDictionary<string, string> GenerateParametersForJsapiSendBusinessRedPack(this WechatTenpayClient client, string appId, string packageString)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (packageString is null) throw new ArgumentNullException(nameof(packageString));
@@ -29,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string signType = Constants.SignTypes.MD5;
-            string signData = $"timeStamp={timestamp}&nonceStr={nonce}&package={packageString}&signType={signType}";
+            string signData = $"appId={appId}&nonceStr={nonce}&package={packageString}&timeStamp={timestamp}";
             string sign = Utilities.RequestSigner.SignFromSortedQueryString(signData, client.Credentials.MerchantSecret, signType);
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
@@ -63,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string package = $"prepay_id={prepayId}";
-            string signData = $"appId={appId}&timeStamp={timestamp}&nonceStr={nonce}&package={package}&signType={signType}";
+            string signData = $"appId={appId}&nonceStr={nonce}&package={package}&signType={signType}&timeStamp={timestamp}";
             string sign = Utilities.RequestSigner.SignFromSortedQueryString(signData, client.Credentials.MerchantSecret, signType);
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
@@ -99,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             string nonce = Guid.NewGuid().ToString("N");
             string partnerId = merchantId;
             string package = "Sign=WXPay";
-            string signData = $"appid={appId}&timestamp={timestamp}&noncestr={nonce}&package={package}&partnerid={partnerId}&prepayid={prepayId}&signType={signType}";
+            string signData = $"appid={appId}&noncestr={nonce}&package={package}&partnerid={partnerId}&prepayid={prepayId}&timestamp={timestamp}";
             string sign = Utilities.RequestSigner.SignFromSortedQueryString(signData, client.Credentials.MerchantSecret, signType);
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
@@ -150,7 +151,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string package = $"prepay_id={prepayId}";
-            string signData = $"appId={appId}&timeStamp={timestamp}&nonceStr={nonce}&package={package}&signType={signType}";
+            string signData = $"appId={appId}&nonceStr={nonce}&package={package}&signType={signType}&timeStamp={timestamp}";
             string sign = Utilities.RequestSigner.SignFromSortedQueryString(signData, client.Credentials.MerchantSecret, signType);
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
