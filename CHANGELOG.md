@@ -376,6 +376,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.0.2
+
+    -   **修复**：修复付款码支付接口响应模型参数缺失问题。（[GitHub Issue #61](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/61)）
+
 -   Release 2.0.1
 
     -   **修复**：修复生成客户端调起支付二次签名时的参数排序错误。
