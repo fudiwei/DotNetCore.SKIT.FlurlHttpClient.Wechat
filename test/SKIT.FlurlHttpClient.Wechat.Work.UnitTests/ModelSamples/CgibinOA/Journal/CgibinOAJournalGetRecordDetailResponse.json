@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "info": {
@@ -35,7 +35,33 @@
                         "departments": [],
                         "files": [],
                         "children": [],
-                        "related_approval": []
+                        "related_approval": [],
+                        "students": [
+                            {
+                                "name": "Jackie"
+                            },
+                            {
+                                "name": "Tom"
+                            }
+                        ],
+                        "classes": [
+                            {
+                                "name": "1班"
+                            },
+                            {
+                                "name": "2班"
+                            }
+                        ],
+                        "docs": [
+                            {
+                                "docid": "xxx_j"
+                            }
+                        ],
+                        "wedrive_files": [
+                            {
+                                "fileid": "xxxx"
+                            }
+                        ]
                     }
                 }
             ]
