@@ -134,7 +134,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region QrcodeJump
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wxopen/qrcodejumpget 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/qrcode/qrcodejumpget.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/qrcode/qrcodejumpget.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/jumpqrcode-config/getJumpQRCode.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -154,7 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wxopen/qrcodejumpdownload 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/qrcode/qrcodejumpdownload.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/jumpqrcode-config/downloadQRCodeText.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -175,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wxopen/qrcodejumpadd 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/qrcode/qrcodejumpadd.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/qrcode/qrcodejumpadd.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/jumpqrcode-config/addJumpQRCode.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -195,7 +196,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wxopen/qrcodejumppublish 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/qrcode/qrcodejumppublish.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/qrcode/qrcodejumppublish.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/jumpqrcode-config/publishJumpQRCode.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -215,7 +217,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wxopen/qrcodejumpdelete 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/qrcode/qrcodejumppublish.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/qrcode/qrcodejumpdelete.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/jumpqrcode-config/deleteJumpQRCode.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -237,7 +240,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region WeappSupportVersion
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/wxopen/getweappsupportversion 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/code/getweappsupportversion.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/code-management/getSupportVersion.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -257,7 +260,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wxopen/setweappsupportversion 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/code/setweappsupportversion.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/code-management/setSupportVersion.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -179,7 +179,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region LiveBroadcast
         /// <summary>
         /// <para>异步调用 [POST] /wxa/business/applyliveinfo 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Business/live_player/applyliveinfo.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/live-player/applyLivelnfo.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -1092,7 +1092,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region WxaEmbedded
         /// <summary>
         /// <para>异步调用 [GET] /wxaapi/wxaembedded/get_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/get_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/getEmbeddedList.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1118,7 +1118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [GET] /wxaapi/wxaembedded/get_own_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/get_own_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/getOwnList.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1144,7 +1144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxaapi/wxaembedded/add_embedded 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/add_embedded.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/addEmbedded.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1164,7 +1164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxaapi/wxaembedded/del_embedded 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/del_embedded.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/deleteEmbedded.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1184,7 +1184,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxaapi/wxaembedded/del_authorize 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/del_authorize.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/deleteAuthorizedEmbedded.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1204,7 +1204,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxaapi/wxaembedded/set_authorize 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/EmbeddedMiniProgram/set_authorize.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/embedded-management/setAuthorizedEmbedded.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
