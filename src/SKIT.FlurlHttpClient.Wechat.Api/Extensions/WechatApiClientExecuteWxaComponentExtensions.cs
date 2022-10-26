@@ -995,6 +995,40 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.WxaGetVersionInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/uploadmedia 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/code-management/uploadMediaToCodeAudit.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaUploadMediaResponse> ExecuteWxaUploadMediaAsync(this WechatApiClient client, Models.WxaUploadMediaRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.FileName == null)
+            {
+                request.FileName = Guid.NewGuid().ToString("N").ToLower();
+            }
+
+            if (request.FileContentType == null)
+            {
+                request.FileContentType =
+                    Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ??
+                    Utilities.FileNameToContentTypeMapper.GetContentTypeForVideo(request.FileName!) ??
+                    "application/octet-stream";
+            }
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "uploadmedia")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
+            return await client.SendRequestAsync<Models.WxaUploadMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region Record
