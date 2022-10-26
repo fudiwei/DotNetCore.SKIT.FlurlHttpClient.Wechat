@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.create_map_poi_audit_info 事件的数据。</para>
@@ -12,7 +12,7 @@
         [Newtonsoft.Json.JsonProperty("audit_id")]
         [System.Text.Json.Serialization.JsonPropertyName("audit_id")]
         [System.Xml.Serialization.XmlElement("audit_id")]
-        public int AuditId { get; set; }
+        public long AuditId { get; set; }
 
         /// <summary>
         /// 获取或设置审核状态。

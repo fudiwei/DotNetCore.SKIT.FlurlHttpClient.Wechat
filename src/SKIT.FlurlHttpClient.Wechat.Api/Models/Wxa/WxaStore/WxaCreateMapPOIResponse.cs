@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/create_map_poi 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("base_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("base_id")]
-                public int AuditId { get; set; }
+                public long AuditId { get; set; }
             }
         }
 

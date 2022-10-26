@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/update_store 接口的响应。</para>
@@ -23,7 +23,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("audit_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_id")]
-                public int? AuditId { get; set; }
+                public long? AuditId { get; set; }
             }
         }
 
