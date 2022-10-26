@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/coupon/push 接口的请求。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenID { get; set; } = string.Empty;
+        public string OpenId { get; set; } = string.Empty;
     }
 }

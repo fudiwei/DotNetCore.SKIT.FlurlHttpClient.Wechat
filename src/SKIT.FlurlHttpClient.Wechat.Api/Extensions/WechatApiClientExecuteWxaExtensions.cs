@@ -940,6 +940,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.WxaServiceMarketGetPaidOrderListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/servicemarket/service/login_auth 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/service_market/interface/value_added/servicemarket_login_auth.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaServiceMarketServiceLoginAuthResponse> ExecuteWxaServiceMarketServiceLoginAuthAsync(this WechatApiClient client, Models.WxaServiceMarketServiceLoginAuthRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "servicemarket", "service", "login_auth")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaServiceMarketServiceLoginAuthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region ShortLink
