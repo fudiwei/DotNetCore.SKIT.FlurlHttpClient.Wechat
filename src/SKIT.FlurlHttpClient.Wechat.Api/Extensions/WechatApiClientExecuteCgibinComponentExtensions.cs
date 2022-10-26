@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -387,6 +387,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "file");
             return await client.SendRequestAsync<Models.CgibinComponentUploadPrivacyExtraFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/component/clear_quota/v2 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/openapi/clearComponentQuotaByAppSecret.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinComponentClearQuotaV2Response> ExecuteCgibinComponentClearQuotaV2Async(this WechatApiClient client, Models.CgibinComponentClearQuotaV2Request request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.ComponentAppId == null)
+                request.ComponentAppId = client.Credentials.AppId;
+
+            if (request.ComponentAppSecret == null)
+                request.ComponentAppSecret = client.Credentials.AppSecret;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "component", "clear_quota", "v2");
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinComponentClearQuotaV2Response>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
