@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /componenttcb/batchshareenv 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/batchshareenv.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/cloudenv-mgnt/shareCloudbaseEnv.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /componenttcb/batchgetenvid 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/cloudbase/batch/batchgetenvid.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/cloudenv-mgnt/getShareCloudbaseEnv.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
