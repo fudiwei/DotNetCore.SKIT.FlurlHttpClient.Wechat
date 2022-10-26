@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -49,5 +49,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("udpdomain")]
         [System.Text.Json.Serialization.JsonPropertyName("udpdomain")]
         public IList<string>? UdpDomainList { get; set; }
+
+        /// <summary>
+        /// 获取或设置 TCP 合法域名列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("tcpdomain")]
+        [System.Text.Json.Serialization.JsonPropertyName("tcpdomain")]
+        public IList<string>? TcpDomainList { get; set; }
     }
 }
