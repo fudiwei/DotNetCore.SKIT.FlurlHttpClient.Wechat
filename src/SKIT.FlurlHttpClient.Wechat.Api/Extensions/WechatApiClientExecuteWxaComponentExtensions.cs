@@ -501,7 +501,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Category
         /// <summary>
         /// <para>异步调用 [GET] /wxa/get_category 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/category/get_category.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/category-management/getAllCategoryName.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -523,7 +523,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Member
         /// <summary>
         /// <para>异步调用 [POST] /wxa/bind_tester 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Mini_Program_AdminManagement/Admin.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/member-management/bindTester.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -543,7 +543,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxa/unbind_tester 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Mini_Program_AdminManagement/unbind_tester.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/member-management/unbindTester.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -563,7 +563,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxa/memberauth?action=get_experiencer 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Mini_Program_AdminManagement/memberauth.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/member-management/getTester.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
