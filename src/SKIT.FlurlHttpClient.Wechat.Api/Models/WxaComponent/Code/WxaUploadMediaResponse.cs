@@ -15,8 +15,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置媒体文件标识。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("media_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("media_id")]
+        [Newtonsoft.Json.JsonProperty("mediaid")]
+        [System.Text.Json.Serialization.JsonPropertyName("mediaid")]
         public string MediaId { get; set; } = default!;
     }
 }
