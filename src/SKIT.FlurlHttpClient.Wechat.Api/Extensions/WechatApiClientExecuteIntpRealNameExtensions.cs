@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /intp/realname/checkrealnameinfo 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/cityservice/cityservice-checkrealnameinfo.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/cityservice/cityservice-checkrealnameinfo.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
