@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,8 +12,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/token 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Get_access_token.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/access-token/auth.getAccessToken.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/mp-access-token/getAccessToken.html </para>
         /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/access-token/auth.getAccessToken.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/basics/getaccesstoken.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
