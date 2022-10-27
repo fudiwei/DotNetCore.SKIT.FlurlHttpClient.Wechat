@@ -112,6 +112,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region CloudBaseEnvironment
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/describecloudbaserunenvs 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/cloudenv-mgnt/getWxCloudBaseRunEnvs.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTcbDescribeCloudBaseRunEnvironmentsResponse> ExecuteComponentTcbDescribeCloudBaseRunEnvironmentsAsync(this WechatApiClient client, Models.ComponentTcbDescribeCloudBaseRunEnvironmentsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "describecloudbaserunenvs")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTcbDescribeCloudBaseRunEnvironmentsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        #endregion
+
         #region SCF
         /// <summary>
         /// <para>异步调用 [POST] /componenttcb/batchuploadscf 接口。</para>
