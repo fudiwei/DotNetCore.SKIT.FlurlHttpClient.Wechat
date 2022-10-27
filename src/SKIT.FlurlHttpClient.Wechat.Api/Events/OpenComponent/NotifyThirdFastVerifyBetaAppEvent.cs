@@ -1,8 +1,8 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 INFO.notify_third_fastverifybetaapp 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/beta_Mini_Programs/fastverify.html </para>
+    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/register-management/fast-regist-beta/verfifyBetaMiniprogram.html </para>
     /// </summary>
     public class NotifyThirdFastVerifyBetaAppEvent : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {

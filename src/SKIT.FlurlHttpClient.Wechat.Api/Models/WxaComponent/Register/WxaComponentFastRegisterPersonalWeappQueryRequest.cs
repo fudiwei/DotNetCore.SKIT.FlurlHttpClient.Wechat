@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/component/fastregisterpersonalweapp?action=query 接口的请求。</para>
+    /// <para>表示 [POST] /wx/component/fastregisterpersonalweapp?action=query 接口的请求。</para>
     /// </summary>
-    public class CgibinComponentFastRegisterPersonalWeappQueryRequest : WechatApiRequest, IInferable<CgibinComponentFastRegisterPersonalWeappQueryRequest, CgibinComponentFastRegisterPersonalWeappCreateResponse>
+    public class WxaComponentFastRegisterPersonalWeappQueryRequest : WechatApiRequest, IInferable<WxaComponentFastRegisterPersonalWeappQueryRequest, WxaComponentFastRegisterPersonalWeappCreateResponse>
     {
         /// <summary>
         /// 获取或设置第三方平台 AccessToken。

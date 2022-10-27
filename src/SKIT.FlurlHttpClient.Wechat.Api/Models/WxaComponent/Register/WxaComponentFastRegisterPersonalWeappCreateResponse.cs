@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/component/fastregisterpersonalweapp?action=create 接口的响应。</para>
+    /// <para>表示 [POST] /wxa/component/fastregisterpersonalweapp?action=create 接口的响应。</para>
     /// </summary>
-    public class CgibinComponentFastRegisterPersonalWeappCreateResponse : WechatApiResponse
+    public class WxaComponentFastRegisterPersonalWeappCreateResponse : WechatApiResponse
     {
         /// <summary>
         /// 获取或设置任务 ID。
