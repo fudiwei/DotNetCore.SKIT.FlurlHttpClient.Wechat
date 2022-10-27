@@ -47,6 +47,18 @@ switch (msgType)
 
 上文提到的扩展方法，已自动做解密处理，无需开发者手动干预。
 
+为此，你需要在构造得到 `WechatWorkClient` 对象时指定推送参数：
+
+```csharp
+var options = new WechatWorkClientOptions()
+{
+    // 其他配置项略
+    PushToken = "Token",
+    PushEncodingAESKey = "EncodingAESKey"
+};
+var client = new WechatWorkClient(options);
+```
+
 ---
 
 ### 被动回复：
