@@ -75,5 +75,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetAutoActiveStatusResponse>(flurlReq, cancellationToken: cancellationToken);
         }
         #endregion
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/support_policy_query 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96515 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseSupportPolicyQueryResponse> ExecuteCgibinLicenseSupportPolicyQueryAsync(this WechatWorkClient client, Models.CgibinLicenseSupportPolicyQueryRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "support_policy_query")
+                .SetQueryParam("access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseSupportPolicyQueryResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
     }
 }
