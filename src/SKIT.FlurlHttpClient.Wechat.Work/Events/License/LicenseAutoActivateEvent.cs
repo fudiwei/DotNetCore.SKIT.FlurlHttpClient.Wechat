@@ -57,8 +57,8 @@
         /// <summary>
         /// 获取或设置授权方的 CorpId。
         /// </summary>
-        [System.Xml.Serialization.XmlElement("AuthCorpId", IsNullable = true)]
-        public string? AuthorizerCorpId { get; set; }
+        [System.Xml.Serialization.XmlElement("AuthCorpId")]
+        public string AuthorizerCorpId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置许可自动激活场景值。

@@ -1,0 +1,13 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "jobid": "xxxx",
+    "invalid_account_list": [
+        {
+            "errcode": 1,
+            "errmsg": "xxx",
+            "userid": "userid1",
+            "type": 1
+        }
+    ]
+}

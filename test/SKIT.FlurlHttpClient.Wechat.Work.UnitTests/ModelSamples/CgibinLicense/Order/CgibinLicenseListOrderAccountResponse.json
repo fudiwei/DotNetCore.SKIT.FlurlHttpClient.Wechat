@@ -1,0 +1,18 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "next_cursor": "xxxx",
+    "has_more": 1,
+    "account_list": [
+        {
+            "active_code": "code1",
+            "userid": "XXX",
+            "type": 1
+        },
+        {
+            "active_code": "code2",
+            "userid": "XXX",
+            "type": 2
+        }
+    ]
+}

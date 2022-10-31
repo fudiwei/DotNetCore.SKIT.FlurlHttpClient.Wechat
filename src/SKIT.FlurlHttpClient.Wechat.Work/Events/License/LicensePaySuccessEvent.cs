@@ -15,8 +15,8 @@
         /// <summary>
         /// 获取或设置授权方的 CorpId。
         /// </summary>
-        [System.Xml.Serialization.XmlElement("AuthCorpId", IsNullable = true)]
-        public string? AuthorizerCorpId { get; set; }
+        [System.Xml.Serialization.XmlElement("AuthCorpId")]
+        public string AuthorizerCorpId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置订单号。
@@ -27,7 +27,7 @@
         /// <summary>
         /// 获取或设置服务商内下单用户 UserId。
         /// </summary>
-        [System.Xml.Serialization.XmlElement("BuyerUserId", IsNullable = true)]
-        public string? BuyerUserId { get; set; }
+        [System.Xml.Serialization.XmlElement("BuyerUserId")]
+        public string BuyerUserId { get; set; } = default!;
     }
 }
