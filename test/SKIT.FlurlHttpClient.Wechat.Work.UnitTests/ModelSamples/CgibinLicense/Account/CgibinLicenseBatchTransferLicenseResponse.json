@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "transfer_result": [
+        {
+            "handover_userid": "USERID",
+            "takeover_userid": "USERID",
+            "errcode": 0
+        }
+    ]
+}

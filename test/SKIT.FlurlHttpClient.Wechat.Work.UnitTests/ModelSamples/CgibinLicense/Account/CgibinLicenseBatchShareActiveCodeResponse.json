@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "share_result": [
+        {
+            "active_code": "ACTIVE_CODE",
+            "errcode": 0,
+            "errmsg": "ok"
+        }
+    ]
+}

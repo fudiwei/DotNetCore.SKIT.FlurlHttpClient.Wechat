@@ -14,14 +14,14 @@
                     public class AccountCount
                     {
                         /// <summary>
-                        /// 获取或设置基础帐号个数。
+                        /// 获取或设置基础账号个数。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("base_count")]
                         [System.Text.Json.Serialization.JsonPropertyName("base_count")]
                         public int BaseCount { get; set; }
 
                         /// <summary>
-                        /// 获取或设置互通帐号个数。
+                        /// 获取或设置互通账号个数。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("external_contact_count")]
                         [System.Text.Json.Serialization.JsonPropertyName("external_contact_count")]

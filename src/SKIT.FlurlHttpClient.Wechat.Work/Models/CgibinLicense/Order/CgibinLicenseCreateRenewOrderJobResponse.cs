@@ -31,7 +31,7 @@
                 public string UserId { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置续期帐号类型。
+                /// 获取或设置续期账号类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -47,7 +47,7 @@
         public string JobId { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置无效的帐号列表。
+        /// 获取或设置无效的账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_account_list")]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_account_list")]

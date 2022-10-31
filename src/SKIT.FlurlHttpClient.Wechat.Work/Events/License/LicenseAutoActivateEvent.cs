@@ -67,7 +67,7 @@
         public int Scene { get; set; }
 
         /// <summary>
-        /// 获取或设置激活的许可帐号列表。
+        /// 获取或设置激活的许可账号列表。
         /// </summary>
         [System.Xml.Serialization.XmlElement("AccountList", Type = typeof(Types.Account))]
         public Types.Account[] AccountList { get; set; } = default!;

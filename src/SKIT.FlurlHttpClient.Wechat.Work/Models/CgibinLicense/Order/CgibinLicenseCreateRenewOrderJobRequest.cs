@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string UserId { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置续期帐号类型。
+                /// 获取或设置续期账号类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string? JobId { get; set; }
 
         /// <summary>
-        /// 获取或设置续期的帐号列表。
+        /// 获取或设置续期的账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_list")]
         [System.Text.Json.Serialization.JsonPropertyName("account_list")]
