@@ -34,10 +34,17 @@
         public string? SubAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置商户订单号。
+        /// 获取或设置商户订单号。与字段 <see cref="TransactionId"/> 二选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
-        public string OutTradeNumber { get; set; } = string.Empty;
+        public string? OutTradeNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信订单号。与字段 <see cref="OutTradeNumber"/> 二选一。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("transaction_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
+        public string? TransactionId { get; set; }
     }
 }
