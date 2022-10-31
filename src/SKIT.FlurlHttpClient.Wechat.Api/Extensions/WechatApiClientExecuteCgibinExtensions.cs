@@ -15,6 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/mp-access-token/getAccessToken.html </para>
         /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/access-token/auth.getAccessToken.html </para>
         /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/basics/getaccesstoken.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/windowproduct/getaccesstoken.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
