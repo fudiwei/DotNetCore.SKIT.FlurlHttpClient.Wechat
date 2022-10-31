@@ -1,26 +1,32 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /merchant/update 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2020-10-01 下线。")]
     public class MerchantUpdateRequest : WechatApiRequest, IInferable<MerchantUpdateRequest, MerchantUpdateResponse>
     {
         public static class Types
         {
+            [System.Obsolete]
             public class Base : MerchantCreateRequest.Types.Base
             {
             }
 
+            [System.Obsolete]
             public class SKU : MerchantCreateRequest.Types.SKU
             {
             }
 
+            [System.Obsolete]
             public class AttributeExtra : MerchantCreateRequest.Types.AttributeExtra
             {
             }
 
+            [System.Obsolete]
             public class Delivery : MerchantCreateRequest.Types.Delivery
             {
             }

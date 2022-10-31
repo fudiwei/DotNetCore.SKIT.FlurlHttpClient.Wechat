@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /merchant/shelf/add 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2020-10-01 下线。")]
     public class MerchantShelfAddRequest : WechatApiRequest, IInferable<MerchantShelfAddRequest, MerchantShelfAddResponse>
     {
         public static class Types
