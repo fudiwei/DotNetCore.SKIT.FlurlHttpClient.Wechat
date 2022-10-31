@@ -1,8 +1,10 @@
-﻿using System;
+using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
+using SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
@@ -89,5 +91,60 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             return await client.SendRequestWithXmlAsync<Models.GetPayMarketingTransfersRedPackInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region WeWork
+        /// <summary>
+        /// <para>异步调用 [POST] /mmpaymkttransfers/sendworkwxredpack 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96697 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.SendPayMarketingTransfersWeWorkRedPackResponse> ExecuteSendPayMarketingTransfersWeWorkRedPackAsync(this WechatTenpayClient client, Models.SendPayMarketingTransfersWeWorkRedPackRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.WeWorkSign == null)
+            {
+                if (request.MerchantId == null)
+                {
+                    request.MerchantId = client.Credentials.MerchantId;
+                }
+
+                if (request.AppId == null)
+                {
+                    request.AppId = client.Credentials.AppId;
+                }
+
+                if (request.NonceString == null)
+                {
+                    request.NonceString = Guid.NewGuid().ToString("N");
+                }
+
+                request.WeWorkSign = Utilities.RequestSigner.Sign(
+                    paramsMap: new Dictionary<string, string?>()
+                    {
+                        { "act_name", request.ActivityName },
+                        { "mch_billno", request.MerchantBillNumber },
+                        { "mch_id", request.MerchantId },
+                        { "nonce_str", request.NonceString },
+                        { "re_openid", request.OpenId },
+                        { "total_amount", request.TotalAmount.ToString() },
+                        { "wxappid", request.AppId }
+                    },
+                    secretKey: "secret",
+                    secretValue: client.Credentials.WeWorkPaymentSecret!,
+                    signType: Constants.SignTypes.MD5
+                );
+            }
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendworkwxredpack");
+
+            return await client.SendRequestWithXmlAsync<Models.SendPayMarketingTransfersWeWorkRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

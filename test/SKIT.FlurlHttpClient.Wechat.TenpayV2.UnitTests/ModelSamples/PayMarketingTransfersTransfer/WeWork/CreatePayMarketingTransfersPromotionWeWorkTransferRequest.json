@@ -1,0 +1,17 @@
+﻿{
+    "appid": "wxe062425f740c8888",
+    "mch_id": "1900000109",
+    "device_info": "013467007045764",
+    "nonce_str": "3PG2J4ILTKCH16CQ2502SI8ZNMTM67VS",
+    "sign": "C97BDBACF37622775366F38B629F45E3",
+    "partner_trade_no": "100000982017072019616",
+    "openid": "ohO4Gt7wVPxIT1A9GjFaMYMiZY1s",
+    "check_name": "NO_CHECK",
+    "re_user_name": "张三",
+    "amount": "100",
+    "desc": "六月出差报销费用",
+    "spbill_create_ip": "10.2.3.10",
+    "workwx_sign": "99BCDAFF065A4B95628E3DB468A874A8",
+    "ww_msg_type": "NORMAL_MSG",
+    "act_name": "示例项目"
+}
