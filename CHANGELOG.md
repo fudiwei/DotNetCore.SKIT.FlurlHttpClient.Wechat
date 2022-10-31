@@ -386,6 +386,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.1.0
+
+    -   **新增**：新增企业微信企业支付相关接口。
+
+    -   **新增**：付款码支付撤掉订单接口支持微信订单号字段。（[GitHub Issue #64](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/64)）
+
 -   Release 2.0.2
 
     -   **修复**：修复付款码支付接口响应模型参数缺失问题。（[GitHub Issue #61](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/61)）
