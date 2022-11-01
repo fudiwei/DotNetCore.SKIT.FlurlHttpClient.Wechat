@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reject_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reject_reason")]
-                [System.Xml.Serialization.XmlElement("reject_reason")]
+                [System.Xml.Serialization.XmlElement("reject_reason", IsNullable = true)]
                 public string? RejectReason { get; set; }
             }
         }

@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("certificate")]
                         [System.Text.Json.Serialization.JsonPropertyName("certificate")]
-                        public IList<string>? QualificationUrlList { get; set; }
+                        public IList<string>? CertificateUrlList { get; set; }
                     }
                 }
 
@@ -58,6 +58,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("category_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_info")]
                 public Types.Category Category { get; set; } = new Types.Category();
+
+                /// <summary>
+                /// 获取或设置商品使用场景 ID 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("scene_group_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("scene_group_list")]
+                public IList<int>? SceneGroupIdList { get; set; }
             }
         }
 
