@@ -1,9 +1,9 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /product/address/get 接口的响应。</para>
+    /// <para>表示 [POST] /channels/ec/merchant/address/get 接口的响应。</para>
     /// </summary>
-    public class ProductAddressGetResponse : WechatApiResponse
+    public class ChannelsECMerchantAddressGetResponse : WechatApiResponse
     {
         public static class Types
         {
@@ -11,64 +11,8 @@
             {
                 public static class Types
                 {
-                    public class Address
+                    public class Address : ChannelsECMerchantGetFreightTemplateDetailResponse.Types.FreightTemplate.Types.Address
                     {
-                        /// <summary>
-                        /// 获取或设置联系人姓名。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("user_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                        public string UserName { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置省份。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("province_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("province_name")]
-                        public string ProvinceName { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置城市。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("city_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("city_name")]
-                        public string CityName { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置区县。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("county_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("county_name")]
-                        public string DistrictName { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置详细地址。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("detail_info")]
-                        [System.Text.Json.Serialization.JsonPropertyName("detail_info")]
-                        public string Detail { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置国家码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("national_code")]
-                        [System.Text.Json.Serialization.JsonPropertyName("national_code")]
-                        public int? NationalCode { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置电话号码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("tel_number")]
-                        [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                        public string? TeleNumber { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置邮政编码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("postal_code")]
-                        [System.Text.Json.Serialization.JsonPropertyName("postal_code")]
-                        public string? PostalCode { get; set; }
-
                         /// <summary>
                         /// 获取或设置门牌号。
                         /// </summary>
@@ -118,7 +62,8 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_id")]
-                public int AddressId { get; set; }
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public long AddressId { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址信息。
@@ -201,10 +146,10 @@
         }
 
         /// <summary>
-        /// 获取或设置地址列表。
+        /// 获取或设置地址详细信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("address_list")]
-        [System.Text.Json.Serialization.JsonPropertyName("address_list")]
-        public Types.AddressDetail[] AddressDetailList { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("address_detail")]
+        [System.Text.Json.Serialization.JsonPropertyName("address_detail")]
+        public Types.AddressDetail AddressDetail { get; set; } = default!;
     }
 }

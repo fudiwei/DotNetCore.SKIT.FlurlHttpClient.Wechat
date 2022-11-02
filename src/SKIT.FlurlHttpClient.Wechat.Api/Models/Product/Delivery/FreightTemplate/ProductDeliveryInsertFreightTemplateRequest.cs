@@ -20,21 +20,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("province_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("province_name")]
-                        public string? Province { get; set; }
+                        public string? ProvinceName { get; set; }
 
                         /// <summary>
                         /// 获取或设置城市。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("city_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("city_name")]
-                        public string? City { get; set; }
+                        public string? CityName { get; set; }
 
                         /// <summary>
                         /// 获取或设置区县。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("county_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("county_name")]
-                        public string? District { get; set; }
+                        public string? DistrictName { get; set; }
                     }
 
                     public class Area

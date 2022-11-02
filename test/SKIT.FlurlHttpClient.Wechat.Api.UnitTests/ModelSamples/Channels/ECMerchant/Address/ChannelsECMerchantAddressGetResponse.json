@@ -1,0 +1,31 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "address_detail": {
+        "address_id": 12345,
+        "address_info": {
+            "user_name": "xasdss",
+            "postal_code": "510983",
+            "province_name": "广东省",
+            "city_name": "广州市",
+            "county_name": "天河区",
+            "detail_info": "广州市天河区****",
+            "tel_number": "18666666666",
+            "lat": 23.12463,
+            "lng": 113.36199,
+            "house_number": "111222"
+        },
+        "landline": "",
+        "remark": "",
+        "send_addr": 0,
+        "default_send": 1,
+        "recv_addr": 0,
+        "default_recv": 1,
+        "create_time": 1662480000,
+        "update_time": 1662480000,
+        "address_type": {
+            "same_city": 0,
+            "pickup": 0
+        }
+    }
+}

@@ -191,7 +191,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public string WaybillId { get; set; } = default!;
                                     }
 
-                                    public class Address : ProductAddressGetResponse.Types.Address.Types.AddressDetail
+                                    public class Address : ProductAddressGetResponse.Types.AddressDetail.Types.Address
                                     {
                                     }
 

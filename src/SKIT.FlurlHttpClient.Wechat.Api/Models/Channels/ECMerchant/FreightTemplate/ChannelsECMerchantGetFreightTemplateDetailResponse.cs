@@ -14,25 +14,32 @@
                     public class Address
                     {
                         /// <summary>
+                        /// 获取或设置收件人姓名。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_name")]
+                        public string UserName { get; set; } = default!;
+
+                        /// <summary>
                         /// 获取或设置省份。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("province_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("province_name")]
-                        public string? Province { get; set; }
+                        public string? ProvinceName { get; set; }
 
                         /// <summary>
                         /// 获取或设置城市。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("city_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("city_name")]
-                        public string? City { get; set; }
+                        public string? CityName { get; set; }
 
                         /// <summary>
                         /// 获取或设置区县。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("county_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("county_name")]
-                        public string? District { get; set; }
+                        public string? DistrictName { get; set; }
 
                         /// <summary>
                         /// 获取或设置详细地址。
@@ -42,25 +49,18 @@
                         public string? Detail { get; set; }
 
                         /// <summary>
-                        /// 获取或设置收件人姓名。
+                        /// 获取或设置国家码。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("user_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                        public string? Name { get; set; }
+                        [Newtonsoft.Json.JsonProperty("national_code")]
+                        [System.Text.Json.Serialization.JsonPropertyName("national_code")]
+                        public string? NationalCode { get; set; }
 
                         /// <summary>
                         /// 获取或设置收件人电话。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tel_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                        public string? TeleNumber { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置国家码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("national_code")]
-                        [System.Text.Json.Serialization.JsonPropertyName("national_code")]
-                        public string? NationalCode { get; set; }
+                        public string TeleNumber { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置邮政编码。
