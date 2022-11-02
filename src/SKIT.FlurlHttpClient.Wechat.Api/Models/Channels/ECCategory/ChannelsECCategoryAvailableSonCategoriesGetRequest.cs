@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("f_cat_id")]
         [System.Text.Json.Serialization.JsonPropertyName("f_cat_id")]
-        public int ParentCategoryId { get; set; }
+        public long ParentCategoryId { get; set; }
     }
 }

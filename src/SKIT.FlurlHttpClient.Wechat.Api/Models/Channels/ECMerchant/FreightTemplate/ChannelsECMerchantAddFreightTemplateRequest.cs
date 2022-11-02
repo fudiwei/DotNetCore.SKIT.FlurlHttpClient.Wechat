@@ -3,9 +3,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /product/delivery/insert_freight_template 接口的请求。</para>
+    /// <para>表示 [POST] /channels/ec/merchant/addfreighttemplate 接口的请求。</para>
     /// </summary>
-    public class ProductDeliveryInsertFreightTemplateRequest : WechatApiRequest, IInferable<ProductDeliveryInsertFreightTemplateRequest, ProductDeliveryInsertFreightTemplateResponse>
+    public class ChannelsECMerchantAddFreightTemplateRequest : WechatApiRequest, IInferable<ChannelsECMerchantAddFreightTemplateRequest, ChannelsECMerchantAddFreightTemplateResponse>
     {
         public static class Types
         {
@@ -35,6 +35,41 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("county_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("county_name")]
                         public string? District { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置详细地址。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("detail_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("detail_info")]
+                        public string? Detail { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置收件人姓名。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置收件人电话。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("tel_number")]
+                        [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
+                        public string? TeleNumber { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置国家码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("national_code")]
+                        [System.Text.Json.Serialization.JsonPropertyName("national_code")]
+                        public string? NationalCode { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置邮政编码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("postal_code")]
+                        [System.Text.Json.Serialization.JsonPropertyName("postal_code")]
+                        public string? PostalCode { get; set; }
                     }
 
                     public class Area
@@ -183,21 +218,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("valuation_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("valuation_type")]
-                public int ValuationType { get; set; }
+                public string ValuationType { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置发货时间类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("send_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("send_time")]
-                public int SendTimeType { get; set; }
+                public string SendTimeType { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置快递方式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("delivery_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("delivery_type")]
-                public int DeliveryType { get; set; }
+                public string DeliveryType { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置快递公司 ID 列表。
@@ -211,7 +246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shipping_method")]
                 [System.Text.Json.Serialization.JsonPropertyName("shipping_method")]
-                public int ShippingMethod { get; set; }
+                public string ShippingMethod { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置发货地址信息。

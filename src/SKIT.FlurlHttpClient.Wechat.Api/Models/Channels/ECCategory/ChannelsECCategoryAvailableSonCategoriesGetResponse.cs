@@ -14,7 +14,8 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("cat_id")]
-                public int CategoryId { get; set; }
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public long CategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置类目名称。
@@ -28,7 +29,8 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("f_cat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("f_cat_id")]
-                public int ParentCategoryId { get; set; }
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public long ParentCategoryId { get; set; }
             }
         }
 

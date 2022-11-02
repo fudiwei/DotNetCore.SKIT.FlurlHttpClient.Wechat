@@ -1,20 +1,20 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /product/delivery/update_freight_template 接口的请求。</para>
+    /// <para>表示 [POST] /channels/ec/merchant/updatefreighttemplate 接口的请求。</para>
     /// </summary>
-    public class ProductDeliveryUpdateFreightTemplateRequest : WechatApiRequest, IInferable<ProductDeliveryUpdateFreightTemplateRequest, ProductDeliveryUpdateFreightTemplateResponse>
+    public class ChannelsECMerchantUpdateFreightTemplateRequest : WechatApiRequest, IInferable<ChannelsECMerchantUpdateFreightTemplateRequest, ProductDeliveryUpdateFreightTemplateResponse>
     {
         public static class Types
         {
             public class FreightTemplate : ProductDeliveryInsertFreightTemplateRequest.Types.FreightTemplate
             {
                 /// <summary>
-                /// 获取或设置模板 ID。
+                /// 获取或设置运费模板 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public int TemplateId { get; set; }
+                public long TemplateId { get; set; }
             }
         }
 

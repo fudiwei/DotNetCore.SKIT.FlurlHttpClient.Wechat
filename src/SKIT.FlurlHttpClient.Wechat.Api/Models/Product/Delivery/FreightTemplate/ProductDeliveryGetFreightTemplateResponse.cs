@@ -7,7 +7,7 @@
     {
         public static class Types
         {
-            public class Template
+            public class FreightTemplate
             {
                 public static class Types
                 {
@@ -276,6 +276,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_list")]
         [System.Text.Json.Serialization.JsonPropertyName("template_list")]
-        public Types.Template[] TemplateList { get; set; } = default!;
+        public Types.FreightTemplate[] FreightTemplateList { get; set; } = default!;
     }
 }
