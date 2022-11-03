@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("shelf_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("shelf_id")]
-                public int ShelfId { get; set; }
+                public long ShelfId { get; set; }
 
                 /// <summary>
                 /// 获取或设置货架数据。

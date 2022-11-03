@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("Id")]
                 [System.Text.Json.Serialization.JsonPropertyName("Id")]
-                public int TemplateId { get; set; }
+                public long TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板名称。

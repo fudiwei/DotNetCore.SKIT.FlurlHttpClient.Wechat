@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("draft_id")]
         [System.Text.Json.Serialization.JsonPropertyName("draft_id")]
-        public int DraftId { get; set; }
+        public long DraftId { get; set; }
 
         /// <summary>
         /// 获取或设置模板类型。

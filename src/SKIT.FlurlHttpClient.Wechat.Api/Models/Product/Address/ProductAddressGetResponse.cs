@@ -118,7 +118,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_id")]
-                public int AddressId { get; set; }
+                public long AddressId { get; set; }
 
                 /// <summary>
                 /// 获取或设置地址信息。

@@ -7,7 +7,7 @@
     {
         public static class Types
         {
-            public class Aftersale
+            public class AftersaleOrder
             {
                 public static class Types
                 {
@@ -254,6 +254,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("after_sale_order_list")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sale_order_list")]
-        public Types.Aftersale[] AftersaleOrderList { get; set; } = default!;
+        public Types.AftersaleOrder[] AftersaleOrderList { get; set; } = default!;
     }
 }

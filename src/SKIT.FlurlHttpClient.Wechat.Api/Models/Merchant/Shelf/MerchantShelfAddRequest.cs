@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("group_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-                                public int GroupId { get; set; }
+                                public long GroupId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置分组图片 URL。
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("eid")]
                         [System.Text.Json.Serialization.JsonPropertyName("eid")]
-                        public int EId { get; set; }
+                        public long ElementId { get; set; }
 
                         /// <summary>
                         /// 获取或设置单个分组信息。

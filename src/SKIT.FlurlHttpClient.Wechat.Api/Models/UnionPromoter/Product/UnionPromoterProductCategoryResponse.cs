@@ -15,7 +15,7 @@
                 [Newtonsoft.Json.JsonProperty("catId")]
                 [System.Text.Json.Serialization.JsonPropertyName("catId")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int CategoryId { get; set; } = default!;
+                public int CategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置类目名称。

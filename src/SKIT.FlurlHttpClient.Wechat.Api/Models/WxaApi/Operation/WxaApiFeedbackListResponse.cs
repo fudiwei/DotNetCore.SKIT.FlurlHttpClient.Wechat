@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("record_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("record_id")]
-                public int RecordId { get; set; }
+                public long RecordId { get; set; }
 
                 /// <summary>
                 /// 获取或设置反馈用户唯一标识。
