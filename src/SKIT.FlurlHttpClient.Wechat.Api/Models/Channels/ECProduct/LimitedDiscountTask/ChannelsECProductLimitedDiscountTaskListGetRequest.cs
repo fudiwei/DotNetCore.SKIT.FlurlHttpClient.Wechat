@@ -6,7 +6,7 @@
     public class ChannelsECProductLimitedDiscountTaskListGetRequest : WechatApiRequest, IInferable<ChannelsECProductLimitedDiscountTaskListGetRequest, ChannelsECProductLimitedDiscountTaskListGetResponse>
     {
         /// <summary>
-        /// 获取或设置指定抢购任务状态。
+        /// 获取或设置抢购任务状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]

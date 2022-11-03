@@ -9,7 +9,6 @@
         {
             public class Product
             {
-
                 public static class Types
                 {
                     public class Detail

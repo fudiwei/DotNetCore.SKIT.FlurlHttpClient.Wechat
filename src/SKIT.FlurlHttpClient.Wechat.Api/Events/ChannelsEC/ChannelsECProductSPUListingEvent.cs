@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     {
         public static class Types
         {
-            public class EventData
+            public class Product
             {
                 /// <summary>
                 /// 获取或设置商品 ID。
@@ -24,6 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 [System.Xml.Serialization.XmlElement("status")]
                 public int Status { get; set; }
 
@@ -38,11 +39,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         }
 
         /// <summary>
-        /// 获取或设置事件数据。
+        /// 获取或设置商品信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ProductSpuListing")]
         [System.Text.Json.Serialization.JsonPropertyName("ProductSpuListing")]
         [System.Xml.Serialization.XmlElement("ProductSpuListing")]
-        public Types.EventData EventData { get; set; } = default!;
+        public Types.Product Product { get; set; } = default!;
     }
 }
