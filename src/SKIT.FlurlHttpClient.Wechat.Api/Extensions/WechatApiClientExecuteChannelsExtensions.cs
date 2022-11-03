@@ -117,8 +117,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
-        #region Merchant
-        #region Merchant/FreightTemplate
+        #region ECMerchant
+        #region ECMerchant/FreightTemplate
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/merchant/getfreighttemplatelist 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/order/deliverycompanylist_get.html </para>
@@ -200,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
-        #region Merchant/Address
+        #region ECMerchant/Address
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/merchant/address/list 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/merchant/address/list.html </para>
@@ -303,7 +303,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
         #endregion
 
-        #region Product
+        #region ECProduct
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/product/add 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/product/add.html </para>
@@ -483,10 +483,92 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ChannelsECProductStockUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region ECProduct/LimitedDiscountTask
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/product/limiteddiscounttask/add 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/product/limiteddiscounttask/add.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECProductLimitedDiscountTaskAddResponse> ExecuteChannelsECProductLimitedDiscountTaskAddAsync(this WechatApiClient client, Models.ChannelsECProductLimitedDiscountTaskAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "product", "limiteddiscounttask", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECProductLimitedDiscountTaskAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/product/limiteddiscounttask/list/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/product/limiteddiscounttask/list_get.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECProductLimitedDiscountTaskListGetResponse> ExecuteChannelsECProductLimitedDiscountTaskListGetAsync(this WechatApiClient client, Models.ChannelsECProductLimitedDiscountTaskListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "product", "limiteddiscounttask", "list", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECProductLimitedDiscountTaskListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/product/limiteddiscounttask/stop 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/product/limiteddiscounttask/stop.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECProductLimitedDiscountTaskStopResponse> ExecuteChannelsECProductLimitedDiscountTaskStopAsync(this WechatApiClient client, Models.ChannelsECProductLimitedDiscountTaskStopRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "product", "limiteddiscounttask", "stop")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECProductLimitedDiscountTaskStopResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/product/limiteddiscounttask/delete 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/product/limiteddiscounttask/delete.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECProductLimitedDiscountTaskDeleteResponse> ExecuteChannelsECProductLimitedDiscountTaskDeleteAsync(this WechatApiClient client, Models.ChannelsECProductLimitedDiscountTaskDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "product", "limiteddiscounttask", "delete")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECProductLimitedDiscountTaskDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
         #endregion
 
-        #region Order
-        #region Order/Delivery
+        #region ECOrder
+        #region ECOrder/Delivery
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/order/deliverycompanylist/get 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/order/deliverycompanylist_get.html </para>

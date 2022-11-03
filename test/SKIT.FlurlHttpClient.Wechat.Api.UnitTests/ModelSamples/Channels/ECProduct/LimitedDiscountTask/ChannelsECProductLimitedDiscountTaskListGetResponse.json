@@ -1,0 +1,43 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "limited_discount_tasks": [
+        {
+            "task_id": "12345677",
+            "product_id": "12345678001",
+            "status": 0,
+            "create_time": 1660047026,
+            "start_time": 1660046940,
+            "end_time": 1662293399,
+            "limited_discount_skus": [
+                {
+                    "sku_id": "1234567890001",
+                    "sale_price": 200,
+                    "sale_stock": 10
+                },
+                {
+                    "sku_id": "1234567890002",
+                    "sale_price": 300,
+                    "sale_stock": 10
+                }
+            ]
+        },
+        {
+            "task_id": "12345688",
+            "product_id": "12345678002",
+            "status": 0,
+            "create_time": 1659516539,
+            "start_time": 1659516420,
+            "end_time": 1662022079,
+            "limited_discount_skus": [
+                {
+                    "sku_id": "12345678900013",
+                    "sale_price": 20,
+                    "sale_stock": 6
+                }
+            ]
+        }
+    ],
+    "next_key": "THE_NEXT_KEY_NEW",
+    "total_num": 2
+}
