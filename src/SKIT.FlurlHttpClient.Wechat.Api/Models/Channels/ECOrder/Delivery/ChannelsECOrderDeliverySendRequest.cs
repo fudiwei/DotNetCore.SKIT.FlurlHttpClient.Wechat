@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("deliver_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("deliver_type")]
-                public int DeliverType { get; set; }
+                public int DeliverMethod { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品列表。

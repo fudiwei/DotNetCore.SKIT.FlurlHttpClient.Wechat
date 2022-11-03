@@ -1,0 +1,74 @@
+﻿{
+    "product_id": "10000000089215",
+    "title": "任天堂 Nintendo Switch 国行续航增强版 NS家用体感游戏机掌机 便携掌上游戏机 红蓝主机",
+    "sub_title": "随时随地，一起趣玩。【更新】",
+    "head_imgs": [
+        "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ"
+    ],
+    "desc_info": {
+        "imgs": [
+            "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ"
+        ]
+    },
+    "cats": [
+        {
+            "cat_id": "6033"
+        },
+        {
+            "cat_id": "6057"
+        },
+        {
+            "cat_id": "6091"
+        }
+    ],
+    "attrs": [
+        {
+            "attr_key": "商品毛重",
+            "attr_value": "380g"
+        },
+        {
+            "attr_key": "商品产地",
+            "attr_value": "中国大陆"
+        }
+    ],
+    "express_info": {
+        "template_id": "47428464001"
+    },
+    "skus": [
+        {
+            "sku_id": "462966903",
+            "thumb_img": "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+            "sale_price": 1300,
+            "market_price": 1500,
+            "stock_num": 100,
+            "sku_code": "A24525252",
+            "sku_attrs": [
+                {
+                    "attr_key": "选择颜色",
+                    "attr_value": "红蓝主机"
+                },
+                {
+                    "attr_key": "选择套装",
+                    "attr_value": "主机+保护套"
+                }
+            ]
+        },
+        {
+            "thumb_img": "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+            "sale_price": 1000,
+            "market_price": 1200,
+            "stock_num": 100,
+            "sku_code": "A24525252",
+            "sku_attrs": [
+                {
+                    "attr_key": "选择颜色",
+                    "attr_value": "红蓝主机"
+                },
+                {
+                    "attr_key": "选择套装",
+                    "attr_value": "标配"
+                }
+            ]
+        }
+    ]
+}

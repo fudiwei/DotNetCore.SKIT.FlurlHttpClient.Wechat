@@ -1,23 +1,23 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.product_category_audit 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/category/callback/ProductCategoryAudit.html </para>
+    /// <para>表示 EVENT.product_spu_audit 事件的数据。</para>
+    /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/product/callback/ProductSpuAudit.html </para>
     /// </summary>
-    public class ChannelsECCategoryAuditEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECProductSPUAuditEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
     {
         public static class Types
         {
             public class EventData
             {
                 /// <summary>
-                /// 获取或设置审核单 ID。
+                /// 获取或设置商品 ID。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("audit_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("audit_id")]
+                [Newtonsoft.Json.JsonProperty("product_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("product_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                [System.Xml.Serialization.XmlElement("audit_id")]
-                public long AuditId { get; set; }
+                [System.Xml.Serialization.XmlElement("product_id")]
+                public long ProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核状态。
@@ -28,21 +28,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 public int Status { get; set; }
 
                 /// <summary>
-                /// 获取或设置拒绝原因。
+                /// 获取或设置审核原因。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
                 [System.Xml.Serialization.XmlElement("reason", IsNullable = true)]
-                public string? RejectReason { get; set; }
+                public string? Reason { get; set; }
             }
         }
 
         /// <summary>
         /// 获取或设置事件数据。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("ProductCategoryAudit")]
-        [System.Text.Json.Serialization.JsonPropertyName("ProductCategoryAudit")]
-        [System.Xml.Serialization.XmlElement("ProductCategoryAudit")]
+        [Newtonsoft.Json.JsonProperty("ProductSpuAudit")]
+        [System.Text.Json.Serialization.JsonPropertyName("ProductSpuAudit")]
+        [System.Xml.Serialization.XmlElement("ProductSpuAudit")]
         public Types.EventData EventData { get; set; } = default!;
     }
 }
