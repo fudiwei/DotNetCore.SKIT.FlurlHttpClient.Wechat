@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /scan/product/v2/add 接口的响应。</para>
     /// </summary>
-    public class ScanProductV2AddResponse : WechatApiResponse
+    public class ScanProductAddV2Response : WechatApiResponse
     {
         /// <summary>
         /// 获取或设置用于获取导入结果的票据。

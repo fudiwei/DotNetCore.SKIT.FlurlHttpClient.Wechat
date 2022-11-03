@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /scan/product/v2/add 接口的请求。</para>
     /// </summary>
-    public class ScanProductV2AddRequest : WechatApiRequest, IInferable<ScanProductV2AddRequest, ScanProductV2AddResponse>
+    public class ScanProductAddV2Request : WechatApiRequest, IInferable<ScanProductAddV2Request, ScanProductAddV2Response>
     {
         public static class Types
         {

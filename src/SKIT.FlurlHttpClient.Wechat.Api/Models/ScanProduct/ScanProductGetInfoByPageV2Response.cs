@@ -3,11 +3,11 @@
     /// <summary>
     /// <para>表示 [POST] /scan/product/v2/getinfobypage 接口的响应。</para>
     /// </summary>
-    public class ScanProductV2GetInfoByPageResponse : WechatApiResponse
+    public class ScanProductGetInfoByPageV2Response : WechatApiResponse
     {
         public static class Types
         {
-            public class Product : ScanProductV2GetInfoResponse.Types.Product
+            public class Product : ScanProductGetInfoV2Response.Types.Product
             {
             }
         }

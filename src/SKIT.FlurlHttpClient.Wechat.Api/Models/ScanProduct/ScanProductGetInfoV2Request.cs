@@ -3,7 +3,7 @@
     /// <summary>
     /// <para>表示 [POST] /scan/product/v2/getinfo 接口的请求。</para>
     /// </summary>
-    public class ScanProductV2GetInfoRequest : WechatApiRequest, IInferable<ScanProductV2GetInfoRequest, ScanProductV2GetInfoResponse>
+    public class ScanProductGetInfoV2Request : WechatApiRequest, IInferable<ScanProductGetInfoV2Request, ScanProductGetInfoV2Response>
     {
         public static class Types
         {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -11,22 +11,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            [System.Obsolete]
             public class Base : MerchantCreateRequest.Types.Base
             {
             }
 
-            [System.Obsolete]
             public class SKU : MerchantCreateRequest.Types.SKU
             {
             }
 
-            [System.Obsolete]
             public class AttributeExtra : MerchantCreateRequest.Types.AttributeExtra
             {
             }
 
-            [System.Obsolete]
             public class Delivery : MerchantCreateRequest.Types.Delivery
             {
             }

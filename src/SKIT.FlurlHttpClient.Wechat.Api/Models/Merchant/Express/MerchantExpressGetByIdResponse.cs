@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -38,12 +38,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public CustomCharging[] CustomList { get; set; } = default!;
                     }
 
-                    [System.Obsolete]
                     public class NormalCharging : MerchantExpressAddRequest.Types.Template.Types.NormalCharging
                     {
                     }
 
-                    [System.Obsolete]
                     public class CustomCharging : MerchantExpressAddRequest.Types.Template.Types.CustomCharging
                     {
                     }
