@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("coupon_id")]
         [System.Text.Json.Serialization.JsonPropertyName("coupon_id")]
-        public int CouponId { get; set; }
+        public long CouponId { get; set; }
 
         /// <summary>
         /// 获取或设置优惠券状态。

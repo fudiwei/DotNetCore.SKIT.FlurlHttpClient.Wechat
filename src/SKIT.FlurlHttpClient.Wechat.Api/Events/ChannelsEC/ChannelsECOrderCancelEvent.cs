@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
             public class Order
             {
                 /// <summary>
-                /// 获取或设置订单号。
+                /// 获取或设置订单 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]

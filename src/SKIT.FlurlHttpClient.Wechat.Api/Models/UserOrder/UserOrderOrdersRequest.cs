@@ -154,7 +154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class Payer
             {
                 /// <summary>
-                /// 获取或设置用户的 OpenId。
+                /// 获取或设置用户 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]

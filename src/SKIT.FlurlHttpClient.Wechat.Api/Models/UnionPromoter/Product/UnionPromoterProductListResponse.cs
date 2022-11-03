@@ -512,7 +512,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("couponId")]
                         [System.Text.Json.Serialization.JsonPropertyName("couponId")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int? CouponId { get; set; }
+                        public long? CouponId { get; set; }
 
                         /// <summary>
                         /// 获取或设置优惠券详细信息。

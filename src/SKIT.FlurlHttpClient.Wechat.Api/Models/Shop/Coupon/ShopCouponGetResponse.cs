@@ -179,7 +179,7 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("total_num")]
                                         [System.Text.Json.Serialization.JsonPropertyName("total_num")]
-                                        public int TotalNumber { get; set; }
+                                        public int TotalCount { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置领取开始时间戳。
