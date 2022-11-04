@@ -188,7 +188,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("image_pulls_secret")]
         [System.Text.Json.Serialization.JsonPropertyName("image_pulls_secret")]
-        public string? ImagePullsSecret { get; set; }
+        public string? ImagePullSecret { get; set; }
 
         /// <summary>
         /// 获取或设置自定义采集日志路径。
@@ -205,10 +205,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public bool? IsMountWechatToken { get; set; }
 
         /// <summary>
-        /// 获取或设置备注。
+        /// 获取或设置版本备注。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("version_remark")]
-        public string? Remark { get; set; }
+        public string? VersionRemark { get; set; }
     }
 }

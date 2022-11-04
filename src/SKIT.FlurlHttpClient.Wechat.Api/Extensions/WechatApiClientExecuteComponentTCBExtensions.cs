@@ -112,48 +112,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
-        #region CloudBaseEnvironment
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/describecloudbaserunenvs 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/cloudenv-mgnt/getWxCloudBaseRunEnvs.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBDescribeCloudBaseRunEnvironmentsResponse> ExecuteComponentTCBDescribeCloudBaseRunEnvironmentsAsync(this WechatApiClient client, Models.ComponentTCBDescribeCloudBaseRunEnvironmentsRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "componenttcb", "describecloudbaserunenvs")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.ComponentTCBDescribeCloudBaseRunEnvironmentsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /componenttcb/createcloudbaserunenv 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/cloudenv-mgnt/createCloudbaseEnv.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ComponentTCBCreateCloudBaseRunEnvironmentResponse> ExecuteComponentTCBCreateCloudBaseRunEnvironmentAsync(this WechatApiClient client, Models.ComponentTCBCreateCloudBaseRunEnvironmentRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "componenttcb", "createcloudbaserunenv")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.ComponentTCBCreateCloudBaseRunEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
         #region SCF
         /// <summary>
         /// <para>异步调用 [POST] /componenttcb/batchuploadscf 接口。</para>
@@ -950,6 +908,170 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.ComponentTCBDbModifyACLResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region CloudBaseEnvironment
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/describecloudbaserunenvs 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/cloudenv-mgnt/getWxCloudBaseRunEnvs.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBDescribeCloudBaseRunEnvironmentsResponse> ExecuteComponentTCBDescribeCloudBaseRunEnvironmentsAsync(this WechatApiClient client, Models.ComponentTCBDescribeCloudBaseRunEnvironmentsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "describecloudbaserunenvs")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTCBDescribeCloudBaseRunEnvironmentsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/createcloudbaserunenv 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/cloudenv-mgnt/createCloudbaseEnv.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBCreateCloudBaseRunEnvironmentResponse> ExecuteComponentTCBCreateCloudBaseRunEnvironmentAsync(this WechatApiClient client, Models.ComponentTCBCreateCloudBaseRunEnvironmentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "createcloudbaserunenv")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTCBCreateCloudBaseRunEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region CloudBaseServer
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/establishcloudbaserunserver 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/service-mgnt/createCloudbaseService.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBEstablishCloudBaseRunServerResponse> ExecuteComponentTCBEstablishCloudBaseRunServerAsync(this WechatApiClient client, Models.ComponentTCBEstablishCloudBaseRunServerRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "establishcloudbaserunserver")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTCBEstablishCloudBaseRunServerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/createcloudbaserunserverversion 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/service-mgnt/createCloudbaseServiceVersion.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBCreateCloudBaseRunServerVersionResponse> ExecuteComponentTCBCreateCloudBaseRunServerVersionAsync(this WechatApiClient client, Models.ComponentTCBCreateCloudBaseRunServerVersionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "createcloudbaserunserverversion")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTCBCreateCloudBaseRunServerVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/rollupdatecloudbaserunserverversion 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/service-mgnt/updateCloudbaseServiceVersion.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBRollUpdateCloudBaseRunServerVersionResponse> ExecuteComponentTCBRollUpdateCloudBaseRunServerVersionAsync(this WechatApiClient client, Models.ComponentTCBRollUpdateCloudBaseRunServerVersionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "rollupdatecloudbaserunserverversion")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTCBRollUpdateCloudBaseRunServerVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/deletecloudbaserunserverversion 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/service-mgnt/deleteCloudbaseServiceVersion.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBDeleteCloudBaseRunServerVersionResponse> ExecuteComponentTCBDeleteCloudBaseRunServerVersionAsync(this WechatApiClient client, Models.ComponentTCBDeleteCloudBaseRunServerVersionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "deletecloudbaserunserverversion")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTCBDeleteCloudBaseRunServerVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/releasecloudbaserunversion 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/service-mgnt/releaseCloudbaseServiceVersion.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBReleaseCloudBaseRunVersionResponse> ExecuteComponentTCBReleaseCloudBaseRunVersionAsync(this WechatApiClient client, Models.ComponentTCBReleaseCloudBaseRunVersionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "releasecloudbaserunversion")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTCBReleaseCloudBaseRunVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /componenttcb/createcloudbaserunresauth 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/cloudrun-batch/service-mgnt/createCloudbaseMicrservice.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ComponentTCBCreateCloudBaseRunResauthResponse> ExecuteComponentTCBCreateCloudBaseRunResauthAsync(this WechatApiClient client, Models.ComponentTCBCreateCloudBaseRunResauthRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "componenttcb", "createcloudbaserunresauth")
+                .SetQueryParam("access_token", request.ComponentAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ComponentTCBCreateCloudBaseRunResauthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

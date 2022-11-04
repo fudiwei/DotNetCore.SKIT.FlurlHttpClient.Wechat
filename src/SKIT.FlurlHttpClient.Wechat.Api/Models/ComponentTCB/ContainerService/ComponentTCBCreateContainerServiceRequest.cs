@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("subnetids")]
                 [System.Text.Json.Serialization.JsonPropertyName("subnetids")]
-                public IList<string> SubnetIdList { get; set; } = new List<string>();
+                public IList<string>? SubnetIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建类型。
