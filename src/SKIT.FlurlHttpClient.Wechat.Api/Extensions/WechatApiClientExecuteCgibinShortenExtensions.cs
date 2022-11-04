@@ -12,7 +12,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/shorturl 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Account_Management/URL_Shortener.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/qrcode/shorturl.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
