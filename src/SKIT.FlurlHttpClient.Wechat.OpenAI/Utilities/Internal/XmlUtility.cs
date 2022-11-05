@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.IO;
 using System.Text;
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Utilities
             serializer.Serialize(writer, obj, ns);
             writer.Flush();
             xml = Encoding.UTF8.GetString(stream.ToArray());
-            xml = Regex.Replace(xml, "\\s*<\\w+ (xsi|d2p1):nil=\"true\"[^>]*/>", string.Empty, RegexOptions.IgnoreCase);
+            xml = Regex.Replace(xml, "\\s*<\\w+ ([a-zA-Z0-9]+):nil=\"true\"[^>]*/>", string.Empty, RegexOptions.IgnoreCase);
             xml = Regex.Replace(xml, "<\\?xml[^>]*\\?>", string.Empty, RegexOptions.IgnoreCase);
 
             return xml;
