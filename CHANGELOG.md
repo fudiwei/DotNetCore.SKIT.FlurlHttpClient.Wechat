@@ -32,6 +32,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.20.1
+
+    -   **修复**：修复快速注册个人小程序回调通知事件模型字段定义错误。（[GitHub PR #67](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/67)）
+
 -   Release 2.20.0
 
     -   **新增**：新增视频号小店相关接口。
