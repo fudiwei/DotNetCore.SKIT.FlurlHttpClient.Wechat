@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// <summary>
                 /// 获取或设置用户姓名。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("legal_persona_wechat", IsNullable = true)]
+                [System.Xml.Serialization.XmlElement("idname", IsNullable = true)]
                 public string? IdName { get; set; }
 
                 /// <summary>
