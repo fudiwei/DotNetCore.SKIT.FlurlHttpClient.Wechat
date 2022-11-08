@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
@@ -83,14 +83,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string WechatpaySignature { get; internal set; } = default!;
-
-        /// <summary>
-        /// <i>（本参数已废弃，请使用 <see cref="WechatpayCertificateSerialNumber"/> 参数）</i>
-        /// </summary>
-        [Obsolete("本参数已废弃，请使用 `WechatpayCertificateSerialNumber` 参数", error: true)]
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public string WechatpayCertSerialNumber { get { return WechatpayCertificateSerialNumber; } set { WechatpayCertificateSerialNumber = value; } }
 
         /// <summary>
         /// 获取微信应答签名使用的微信支付平台证书序列号。
