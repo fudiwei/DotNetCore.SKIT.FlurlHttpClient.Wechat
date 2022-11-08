@@ -402,6 +402,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.2.0
+
+    -   **新增**：支持新版仿真测试系统沙箱。
+    
+    -   **变更**：重命名查询退款接口响应模型中的部分字段。（[GitHub Issue #66](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/66)）
+
 -   Release 2.1.0
 
     -   **新增**：新增企业微信企业支付相关接口。
