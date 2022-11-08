@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -33,6 +33,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "certificates");
+
+            if (request.AlgorithmType != null)
+                flurlReq.SetQueryParam("algorithm_type", request.AlgorithmType);
 
             return await client.SendRequestWithJsonAsync<Models.QueryCertificatesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
