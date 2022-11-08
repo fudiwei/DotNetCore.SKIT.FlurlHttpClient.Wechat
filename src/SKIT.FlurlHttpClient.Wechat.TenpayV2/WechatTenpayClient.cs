@@ -175,7 +175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                     string json = JsonSerializer.Serialize(data);
                     string xml = Utilities.XmlUtility.ConvertFromJson(json);
 
-                    using HttpContent httpContent = new StringContent(xml, Encoding.UTF8, "text/xml");
+                    using HttpContent httpContent = new StringContent(xml, Encoding.UTF8, "application/xml");
                     using IFlurlResponse flurlResponse = await SendRequestAsync(flurlRequest, httpContent: httpContent, cancellationToken);
                     return await WrapResponseWithXmlAsync<T>(flurlResponse, cancellationToken);
                 }
