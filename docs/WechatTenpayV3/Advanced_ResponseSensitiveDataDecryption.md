@@ -16,7 +16,7 @@
 
 -   使用商户私钥基于 RSA 算法解密。
 
--   使用商户 API v3 密钥基于 AEAD-AES-GCM 算法解密。
+-   使用商户 API v3 密钥基于 AES-GCM 算法解密。
 
 开发者利用本库提供的 `RSAUtility`、`AESUtility` 工具类自行解密相关字段。下面给出一个使用 `RSAUtility` 工具类解密数据的示例代码：
 
