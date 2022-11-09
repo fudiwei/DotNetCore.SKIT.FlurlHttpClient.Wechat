@@ -58,7 +58,7 @@ bool ret = client.VerifyEventSignature(timestamp, nonce, body, signature, serial
 if (!ret)
 {
     Console.WriteLine(error);
-    Console.WriteLine(error.InnerException);
+    Console.WriteLine(error?.InnerException);
 }
 ```
 

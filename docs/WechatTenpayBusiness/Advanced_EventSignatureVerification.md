@@ -22,10 +22,10 @@ bool ret = client.VerifyEventSignature(
 由于 `VerifyEventSignature()` 方法内部会 `try-catch` 掉所有异常情况，并直接返回 `false`。为方便开发者在调试阶段排查验签的错误信息，你可以在验证回调通知事件签名时指定接收最后一个 `out` 返回参数，该参数中包含了一些异常的原因和相关堆栈信息。
 
 ```csharp
-bool ret = client.VerifyEventSignature(timestamp, nonce, body, signature, serialNumber, out Exception error);
+bool ret = client.VerifyEventSignature(authorization, signature, out Exception error);
 if (!ret)
 {
     Console.WriteLine(error);
-    Console.WriteLine(error.InnerException);
+    Console.WriteLine(error?.InnerException);
 }
 ```

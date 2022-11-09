@@ -32,6 +32,6 @@ bool ret = client.VerifyResponseSignature(response, out Exception error);
 if (!ret)
 {
     Console.WriteLine(error);
-    Console.WriteLine(error.InnerException);
+    Console.WriteLine(error?.InnerException);
 }
 ```

@@ -6,12 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     internal static class WechatTenpayBusinessClientSignExtensions
     {
-        public static bool VerifySignature(this WechatTenpayBusinessClient client, string strAuthorization, string strBody)
-        {
-            return VerifySignature(client, strAuthorization, strBody, out _);
-        }
-
-        public static bool VerifySignature(this WechatTenpayBusinessClient client, string strAuthorization, string strBody, out Exception? error)
+        public static bool VerifySignature(this WechatTenpayBusinessClient client, string strAuthorization, string strContent, out Exception? error)
         {
             if (!string.IsNullOrEmpty(strAuthorization))
             {
@@ -27,10 +22,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                     string strTimestamp = dictTBEPAuthorization["timestamp"]!;
                     string strNonce = dictTBEPAuthorization["nonce"]!;
                     string strSignature = dictTBEPAuthorization["signature"]!;
-                    string strSerialNumber = dictTBEPAuthorization["tbep_serial_number"]!;
                     string strSignAlgorithm = dictTBEPAuthorization["signature_algorithm"]!;
+                    string strSerialNumber = dictTBEPAuthorization["tbep_serial_number"]!;
 
-                    return VerifySignature(client, strTimestamp, strNonce, strBody, strSignature, strSerialNumber, strSignAlgorithm, out error);
+                    return VerifySignature(
+                        client,
+                        strTimestamp: strTimestamp,
+                        strNonce: strNonce,
+                        strContent: strContent,
+                        strSignature: strSignature,
+                        strSignatureAlgorithm: strSignAlgorithm,
+                        strSerialNumber: strSerialNumber, out error);
                 }
                 catch (Exception ex)
                 {
@@ -43,26 +45,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             return false;
         }
 
-        public static bool VerifySignature(this WechatTenpayBusinessClient client, string strTimestamp, string strNonce, string strBody, string strSignature, string strSerialNumber)
-        {
-            return VerifySignature(client, strTimestamp, strNonce, strBody, strSignature, strSerialNumber, Constants.SignAlgorithms.SHA245_WITH_RSA, out _);
-        }
-
-        public static bool VerifySignature(this WechatTenpayBusinessClient client, string strTimestamp, string strNonce, string strBody, string strSignature, string strSerialNumber, string strSignAlgorithm)
-        {
-            return VerifySignature(client, strTimestamp, strNonce, strBody, strSignature, strSerialNumber, strSignAlgorithm, out _);
-        }
-
-        public static bool VerifySignature(this WechatTenpayBusinessClient client, string strTimestamp, string strNonce, string strBody, string strSignature, string strSerialNumber, out Exception? error)
-        {
-            return VerifySignature(client, strTimestamp, strNonce, strBody, strSignature, strSerialNumber, Constants.SignAlgorithms.SHA245_WITH_RSA, out error);
-        }
-
-        public static bool VerifySignature(this WechatTenpayBusinessClient client, string strTimestamp, string strNonce, string strBody, string strSignature, string strSerialNumber, string strSignAlgorithm, out Exception? error)
+        public static bool VerifySignature(this WechatTenpayBusinessClient client, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignatureAlgorithm, string strSerialNumber, out Exception? error)
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
 
-            switch (strSignAlgorithm)
+            switch (strSignatureAlgorithm)
             {
                 case Constants.SignAlgorithms.SHA245_WITH_RSA:
                     {
@@ -80,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                                 error = null;
                                 return Utilities.RSAUtility.VerifyWithSHA256(
                                     publicKey: client.Credentials.TBEPCertificatePublicKey,
-                                    plainText: GetPlainTextForSignature(timestamp: strTimestamp, nonce: strNonce, body: strBody),
+                                    message: GetPlainTextForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
                                     signature: strSignature
                                 );
                             }

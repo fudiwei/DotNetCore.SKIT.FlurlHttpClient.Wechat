@@ -30,9 +30,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (callbackAuthorization == null) throw new ArgumentNullException(nameof(callbackAuthorization));
             if (callbackBody == null) throw new ArgumentNullException(nameof(callbackBody));
 
-            bool ret = WechatTenpayBusinessClientSignExtensions.VerifySignature(client, callbackAuthorization, callbackBody, out error);
+            bool ret = WechatTenpayBusinessClientSignExtensions.VerifySignature(
+                client,
+                strAuthorization: callbackAuthorization,
+                strContent: callbackBody,
+                out error
+            );
+
             if (error != null)
+            {
                 error = new Exceptions.WechatTenpayBusinessEventVerificationException("Verify signature of event failed. Please see the `InnerException` for more details.", error);
+            }
+
             return ret;
         }
 
@@ -48,7 +57,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <returns></returns>
         public static bool VerifyEventSignature(this WechatTenpayBusinessClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSerialNumber)
         {
-            return VerifyEventSignature(client, callbackTimestamp, callbackNonce, callbackBody, callbackSignature, callbackSerialNumber, Constants.SignAlgorithms.SHA245_WITH_RSA, out _);
+            return VerifyEventSignature(
+                client,
+                callbackTimestamp: callbackTimestamp,
+                callbackNonce: callbackNonce,
+                callbackBody: callbackBody,
+                callbackSignature: callbackSignature,
+                callbackSignatureAlgorithm: Constants.SignAlgorithms.SHA245_WITH_RSA,
+                callbackSerialNumber: callbackSerialNumber,
+                out _
+            );
         }
 
         /// <summary>
@@ -59,12 +77,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <param name="callbackNonce">。</param>
         /// <param name="callbackBody"></param>
         /// <param name="callbackSignature"></param>
+        /// <param name="callbackSignatureAlgorithm"></param>
         /// <param name="callbackSerialNumber"></param>
-        /// <param name="callbackSignAlgorithm"></param>
         /// <returns></returns>
-        public static bool VerifyEventSignature(this WechatTenpayBusinessClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSerialNumber, string callbackSignAlgorithm)
+        public static bool VerifyEventSignature(this WechatTenpayBusinessClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSignatureAlgorithm, string callbackSerialNumber)
         {
-            return VerifyEventSignature(client, callbackTimestamp, callbackNonce, callbackBody, callbackSignature, callbackSerialNumber, callbackSignAlgorithm, out _);
+            return VerifyEventSignature(
+                client,
+                callbackTimestamp: callbackTimestamp,
+                callbackNonce: callbackNonce,
+                callbackBody: callbackBody,
+                callbackSignature: callbackSignature,
+                callbackSignatureAlgorithm: callbackSignatureAlgorithm,
+                callbackSerialNumber: callbackSerialNumber,
+                out _
+            );
         }
 
         /// <summary>
@@ -81,7 +108,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <exception cref="ArgumentNullException"></exception>
         public static bool VerifyEventSignature(this WechatTenpayBusinessClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSerialNumber, out Exception? error)
         {
-            return VerifyEventSignature(client, callbackTimestamp, callbackNonce, callbackBody, callbackSignature, callbackSerialNumber, Constants.SignAlgorithms.SHA245_WITH_RSA, out error);
+            return VerifyEventSignature(
+                client,
+                callbackTimestamp: callbackTimestamp,
+                callbackNonce: callbackNonce,
+                callbackBody: callbackBody,
+                callbackSignature: callbackSignature,
+                callbackSignatureAlgorithm: Constants.SignAlgorithms.SHA245_WITH_RSA,
+                callbackSerialNumber: callbackSerialNumber,
+                out error
+            );
         }
 
         /// <summary>
@@ -92,18 +128,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <param name="callbackNonce">。</param>
         /// <param name="callbackBody"></param>
         /// <param name="callbackSignature"></param>
+        /// <param name="callbackSignatureAlgorithm"></param>
         /// <param name="callbackSerialNumber"></param>
-        /// <param name="callbackSignAlgorithm"></param>
         /// <param name="error"></param>
         /// <returns></returns>
         /// <exception cref="ArgumentNullException"></exception>
-        public static bool VerifyEventSignature(this WechatTenpayBusinessClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSerialNumber, string callbackSignAlgorithm, out Exception? error)
+        public static bool VerifyEventSignature(this WechatTenpayBusinessClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSignatureAlgorithm, string callbackSerialNumber, out Exception? error)
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
 
-            bool ret = WechatTenpayBusinessClientSignExtensions.VerifySignature(client, callbackTimestamp, callbackNonce, callbackBody, callbackSignature, callbackSerialNumber, callbackSignAlgorithm, out error);
+            bool ret = WechatTenpayBusinessClientSignExtensions.VerifySignature(
+                client,
+                strTimestamp: callbackTimestamp,
+                strNonce: callbackNonce,
+                strContent: callbackBody,
+                strSignature: callbackSignature,
+                strSignatureAlgorithm: callbackSignatureAlgorithm,
+                strSerialNumber: callbackSerialNumber,
+                out error
+            );
+
             if (error != null)
+            {
                 error = new Exceptions.WechatTenpayBusinessEventVerificationException("Verify signature of event failed. Please see the `InnerException` for more details.", error);
+            }
+
             return ret;
         }
     }
