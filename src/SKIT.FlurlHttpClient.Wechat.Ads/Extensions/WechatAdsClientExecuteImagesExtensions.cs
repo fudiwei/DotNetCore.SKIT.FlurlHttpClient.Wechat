@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             if (request.FileHash == null)
             {
-                request.FileHash = BitConverter.ToString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", "");
+                request.FileHash = BitConverter.ToString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", string.Empty);
             }
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             if (request.FileName == null)
             {
-                string ext = "";
+                string ext = string.Empty;
                 if (TYPE_IMAGE.Equals(request.Type))
                     ext = ".png";
                 else if (TYPE_VOICE.Equals(request.Type))
@@ -111,7 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             if (request.FileName == null)
             {
-                string ext = "";
+                string ext = string.Empty;
                 if (TYPE_IMAGE.Equals(request.Type))
                     ext = ".png";
                 else if (TYPE_VIDEO.Equals(request.Type))

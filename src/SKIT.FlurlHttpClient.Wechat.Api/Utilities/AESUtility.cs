@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -35,6 +35,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         }
 
         /// <summary>
+        /// 基于 CBC 模式解密数据。
+        /// </summary>
+        /// <param name="encodingKey">经 Base64 编码后的 AES 密钥。</param>
+        /// <param name="encodingIV">经 Base64 编码后的 AES 初始化向量。</param>
+        /// <param name="encodingCipherText">经 Base64 编码后的待解密数据。</param>
+        /// <returns>解密后的文本数据。</returns>
+        public static string DecryptWithCBC(string encodingKey, string encodingIV, string encodingCipherText)
+        {
+            if (encodingKey == null) throw new ArgumentNullException(nameof(encodingKey));
+            if (encodingCipherText == null) throw new ArgumentNullException(nameof(encodingCipherText));
+
+            byte[] plainBytes = DecryptWithCBC(
+                keyBytes: Convert.FromBase64String(encodingKey),
+                ivBytes: Convert.FromBase64String(encodingIV),
+                cipherBytes: Convert.FromBase64String(encodingCipherText)
+            );
+            return Encoding.UTF8.GetString(plainBytes);
+        }
+
+        /// <summary>
         /// 基于 CBC 模式加密数据。
         /// </summary>
         /// <param name="keyBytes">AES 密钥字节数组。</param>
@@ -57,26 +77,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
                 using ICryptoTransform transform = aes.CreateEncryptor();
                 return transform.TransformFinalBlock(plainBytes, 0, plainBytes.Length);
             }
-        }
-
-        /// <summary>
-        /// 基于 CBC 模式解密数据。
-        /// </summary>
-        /// <param name="encodingKey">经 Base64 编码后的 AES 密钥。</param>
-        /// <param name="encodingIV">经 Base64 编码后的 AES 初始化向量。</param>
-        /// <param name="encodingCipherText">经 Base64 编码后的待解密数据。</param>
-        /// <returns>解密后的文本数据。</returns>
-        public static string DecryptWithCBC(string encodingKey, string encodingIV, string encodingCipherText)
-        {
-            if (encodingKey == null) throw new ArgumentNullException(nameof(encodingKey));
-            if (encodingCipherText == null) throw new ArgumentNullException(nameof(encodingCipherText));
-
-            byte[] plainBytes = DecryptWithCBC(
-                keyBytes: Convert.FromBase64String(encodingKey),
-                ivBytes: Convert.FromBase64String(encodingIV),
-                cipherBytes: Convert.FromBase64String(encodingCipherText)
-            );
-            return Encoding.UTF8.GetString(plainBytes);
         }
 
         /// <summary>

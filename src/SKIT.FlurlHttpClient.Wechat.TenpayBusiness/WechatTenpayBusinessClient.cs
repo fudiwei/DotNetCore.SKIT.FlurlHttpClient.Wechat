@@ -159,7 +159,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         {
             TResponse result = await base.WrapResponseWithJsonAsync<TResponse>(flurlResponse, cancellationToken);
 
-            string? strTBEPEncryption = flurlResponse.Headers.GetAll("TBEP-Encrypt").FirstOrDefault();
+            string? strTBEPEncryption = flurlResponse.Headers.FirstOrDefault("TBEP-Encrypt");
             if (!string.IsNullOrEmpty(strTBEPEncryption))
             {
                 IDictionary<string, string?> dictTBEPEncryption = strTBEPEncryption

@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".txt";
 
             if (request.FileHash == null)
-                request.FileHash = BitConverter.ToString(Utilities.SHA256Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", "").ToLower();
+                request.FileHash = BitConverter.ToString(Utilities.SHA256Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", string.Empty).ToLower();
 
             if (request.FileContentType == null)
                 request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "text/plain";

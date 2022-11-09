@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 using System.Text.RegularExpressions;
 using Org.BouncyCastle.Crypto;
@@ -155,18 +155,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         private static byte[] ConvertPkcs8PrivateKeyToByteArray(string privateKey)
         {
             privateKey = privateKey
-                .Replace("-----BEGIN PRIVATE KEY-----", "")
-                .Replace("-----END PRIVATE KEY-----", "");
-            privateKey = Regex.Replace(privateKey, "\\s+", "");
+                .Replace("-----BEGIN PRIVATE KEY-----", string.Empty)
+                .Replace("-----END PRIVATE KEY-----", string.Empty);
+            privateKey = Regex.Replace(privateKey, "\\s+", string.Empty);
             return Convert.FromBase64String(privateKey);
         }
 
         private static byte[] ConvertPkcs8PublicKeyToByteArray(string publicKey)
         {
             publicKey = publicKey
-                .Replace("-----BEGIN PUBLIC KEY-----", "")
-                .Replace("-----END PUBLIC KEY-----", "");
-            publicKey = Regex.Replace(publicKey, "\\s+", "");
+                .Replace("-----BEGIN PUBLIC KEY-----", string.Empty)
+                .Replace("-----END PUBLIC KEY-----", string.Empty);
+            publicKey = Regex.Replace(publicKey, "\\s+", string.Empty);
             return Convert.FromBase64String(publicKey);
         }
 

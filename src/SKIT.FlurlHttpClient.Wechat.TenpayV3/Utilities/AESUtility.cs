@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
@@ -11,8 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
     /// </summary>
     public static class AESUtility
     {
-        private const int AES_BLOCK_SIZE = 128;
-        private const string AES_GCM_CIPHER_ALG = "AES/GCM/NoPadding";
+        private const string AES_CIPHER_ALGORITHM_GCM = "AES/GCM";
+        private const string AES_CIPHER_PADDING_NOPADDING = "NoPadding";
 
         /// <summary>
         /// 基于 GCM 模式解密数据。
@@ -29,10 +29,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             if (aadBytes == null) throw new ArgumentNullException(nameof(aadBytes));
             if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
 
-            IBufferedCipher cipher = CipherUtilities.GetCipher(AES_GCM_CIPHER_ALG);
+            const int TAG_LENGTH_BIT = 128;
+            IBufferedCipher cipher = CipherUtilities.GetCipher(string.Format("{0}/{1}", AES_CIPHER_ALGORITHM_GCM, AES_CIPHER_PADDING_NOPADDING));
             ICipherParameters aeadParams = new AeadParameters(
                 new KeyParameter(keyBytes),
-                AES_BLOCK_SIZE,
+                TAG_LENGTH_BIT,
                 ivBytes,
                 aadBytes
             );

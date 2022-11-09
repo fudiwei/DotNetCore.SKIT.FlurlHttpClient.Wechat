@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -20,6 +20,69 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         private const string RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1 = "OAEPWITHSHA1ANDMGF1PADDING";
         // REF: https://github.com/bcgit/bc-csharp/blob/master/crypto/src/security/SignerUtilities.cs
         private const string RSA_SIGNER_ALGORITHM_SHA256 = "SHA-256withRSA";
+
+        private static byte[] ConvertPkcs8PrivateKeyToByteArray(string privateKey)
+        {
+            privateKey = privateKey
+                .Replace("-----BEGIN PRIVATE KEY-----", string.Empty)
+                .Replace("-----END PRIVATE KEY-----", string.Empty);
+            privateKey = Regex.Replace(privateKey, "\\s+", string.Empty);
+            return Convert.FromBase64String(privateKey);
+        }
+
+        private static byte[] ConvertPkcs8PublicKeyToByteArray(string publicKey)
+        {
+            publicKey = publicKey
+                .Replace("-----BEGIN PUBLIC KEY-----", string.Empty)
+                .Replace("-----END PUBLIC KEY-----", string.Empty);
+            publicKey = Regex.Replace(publicKey, "\\s+", string.Empty);
+            return Convert.FromBase64String(publicKey);
+        }
+
+        private static X509Certificate ParseX509Certificate(string certificate)
+        {
+            using (TextReader sreader = new StringReader(certificate))
+            {
+                PemReader pemReader = new PemReader(sreader);
+                return (X509Certificate)pemReader.ReadObject();
+            }
+        }
+
+        private static RsaKeyParameters ConvertCertificateToPublicKeyParams(string certificate)
+        {
+            X509Certificate cert = ParseX509Certificate(certificate);
+            return (RsaKeyParameters)cert.GetPublicKey();
+        }
+
+        private static byte[] SignWithSHA256(RsaKeyParameters rsaPrivateKeyParams, byte[] plainBytes)
+        {
+            ISigner signer = SignerUtilities.GetSigner(RSA_SIGNER_ALGORITHM_SHA256);
+            signer.Init(true, rsaPrivateKeyParams);
+            signer.BlockUpdate(plainBytes, 0, plainBytes.Length);
+            return signer.GenerateSignature();
+        }
+
+        private static bool VerifyWithSHA256(RsaKeyParameters rsaPublicKeyParams, byte[] plainBytes, byte[] signBytes)
+        {
+            ISigner signer = SignerUtilities.GetSigner(RSA_SIGNER_ALGORITHM_SHA256);
+            signer.Init(false, rsaPublicKeyParams);
+            signer.BlockUpdate(plainBytes, 0, plainBytes.Length);
+            return signer.VerifySignature(signBytes);
+        }
+
+        private static byte[] DecryptWithECB(RsaKeyParameters rsaPrivateKeyParams, byte[] cipherBytes, string paddingMode)
+        {
+            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingMode}");
+            cipher.Init(false, rsaPrivateKeyParams);
+            return cipher.DoFinal(cipherBytes);
+        }
+
+        private static byte[] EncryptWithECB(RsaKeyParameters rsaPublicKeyParams, byte[] plainBytes, string paddingMode)
+        {
+            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingMode}");
+            cipher.Init(true, rsaPublicKeyParams);
+            return cipher.DoFinal(plainBytes);
+        }
 
         /// <summary>
         /// 使用私钥基于 SHA-256 算法生成签名。
@@ -109,40 +172,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         }
 
         /// <summary>
-        /// 使用私钥基于 ECB 模式解密数据。
-        /// </summary>
-        /// <param name="privateKeyBytes">PKCS#8 私钥字节数据。</param>
-        /// <param name="cipherBytes">待解密的数据字节数据。</param>
-        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
-        /// <returns>解密后的数据字节数组。</returns>
-        public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
-        {
-            if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
-            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
-
-            RsaKeyParameters rsaKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
-            return DecryptWithECB(rsaKeyParams, cipherBytes, paddingMode);
-        }
-
-        /// <summary>
-        /// 使用私钥基于 ECB 模式解密数据。
-        /// </summary>
-        /// <param name="privateKey">PKCS#8 私钥（PEM 格式）。</param>
-        /// <param name="cipherText">经 Base64 编码的待解密数据。</param>
-        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
-        /// <returns>解密后的文本数据。</returns>
-        public static string DecryptWithECB(string privateKey, string cipherText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
-        {
-            if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
-            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
-
-            byte[] privateKeyBytes = ConvertPkcs8PrivateKeyToByteArray(privateKey);
-            byte[] cipherBytes = Convert.FromBase64String(cipherText);
-            byte[] plainBytes = DecryptWithECB(privateKeyBytes, cipherBytes, paddingMode);
-            return Encoding.UTF8.GetString(plainBytes);
-        }
-
-        /// <summary>
         /// 使用公钥基于 ECB 模式加密数据。
         /// </summary>
         /// <param name="publicKeyBytes">PKCS#8 公钥字节数据。</param>
@@ -192,6 +221,40 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
             byte[] cipherBytes = EncryptWithECB(rsaKeyParams, plainBytes, paddingMode);
             return Convert.ToBase64String(cipherBytes);
+        }
+
+        /// <summary>
+        /// 使用私钥基于 ECB 模式解密数据。
+        /// </summary>
+        /// <param name="privateKeyBytes">PKCS#8 私钥字节数据。</param>
+        /// <param name="cipherBytes">待解密的数据字节数据。</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
+        /// <returns>解密后的数据字节数组。</returns>
+        public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        {
+            if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
+            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
+
+            RsaKeyParameters rsaKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
+            return DecryptWithECB(rsaKeyParams, cipherBytes, paddingMode);
+        }
+
+        /// <summary>
+        /// 使用私钥基于 ECB 模式解密数据。
+        /// </summary>
+        /// <param name="privateKey">PKCS#8 私钥（PEM 格式）。</param>
+        /// <param name="cipherText">经 Base64 编码的待解密数据。</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
+        /// <returns>解密后的文本数据。</returns>
+        public static string DecryptWithECB(string privateKey, string cipherText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        {
+            if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
+            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
+
+            byte[] privateKeyBytes = ConvertPkcs8PrivateKeyToByteArray(privateKey);
+            byte[] cipherBytes = Convert.FromBase64String(cipherText);
+            byte[] plainBytes = DecryptWithECB(privateKeyBytes, cipherBytes, paddingMode);
+            return Encoding.UTF8.GetString(plainBytes);
         }
 
         /// <summary>
@@ -254,69 +317,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
             X509Certificate cert = ParseX509Certificate(certificate);
             return new DateTimeOffset(cert.NotAfter);
-        }
-
-        private static byte[] ConvertPkcs8PrivateKeyToByteArray(string privateKey)
-        {
-            privateKey = privateKey
-                .Replace("-----BEGIN PRIVATE KEY-----", "")
-                .Replace("-----END PRIVATE KEY-----", "");
-            privateKey = Regex.Replace(privateKey, "\\s+", "");
-            return Convert.FromBase64String(privateKey);
-        }
-
-        private static byte[] ConvertPkcs8PublicKeyToByteArray(string publicKey)
-        {
-            publicKey = publicKey
-                .Replace("-----BEGIN PUBLIC KEY-----", "")
-                .Replace("-----END PUBLIC KEY-----", "");
-            publicKey = Regex.Replace(publicKey, "\\s+", "");
-            return Convert.FromBase64String(publicKey);
-        }
-
-        private static X509Certificate ParseX509Certificate(string certificate)
-        {
-            using (TextReader sreader = new StringReader(certificate))
-            {
-                PemReader pemReader = new PemReader(sreader);
-                return (X509Certificate)pemReader.ReadObject();
-            }
-        }
-
-        private static RsaKeyParameters ConvertCertificateToPublicKeyParams(string certificate)
-        {
-            X509Certificate cert = ParseX509Certificate(certificate);
-            return (RsaKeyParameters)cert.GetPublicKey();
-        }
-
-        private static byte[] SignWithSHA256(RsaKeyParameters rsaKeyParams, byte[] plainBytes)
-        {
-            ISigner signer = SignerUtilities.GetSigner(RSA_SIGNER_ALGORITHM_SHA256);
-            signer.Init(true, rsaKeyParams);
-            signer.BlockUpdate(plainBytes, 0, plainBytes.Length);
-            return signer.GenerateSignature();
-        }
-
-        private static bool VerifyWithSHA256(RsaKeyParameters rsaKeyParams, byte[] plainBytes, byte[] signBytes)
-        {
-            ISigner signer = SignerUtilities.GetSigner(RSA_SIGNER_ALGORITHM_SHA256);
-            signer.Init(false, rsaKeyParams);
-            signer.BlockUpdate(plainBytes, 0, plainBytes.Length);
-            return signer.VerifySignature(signBytes);
-        }
-
-        private static byte[] EncryptWithECB(RsaKeyParameters rsaKeyParams, byte[] plainBytes, string paddingMode)
-        {
-            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingMode}");
-            cipher.Init(true, rsaKeyParams);
-            return cipher.DoFinal(plainBytes);
-        }
-
-        private static byte[] DecryptWithECB(RsaKeyParameters rsaKeyParams, byte[] cipherBytes, string paddingMode)
-        {
-            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingMode}");
-            cipher.Init(false, rsaKeyParams);
-            return cipher.DoFinal(cipherBytes);
         }
     }
 }

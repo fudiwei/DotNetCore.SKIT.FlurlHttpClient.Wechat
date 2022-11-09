@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
 
             fileBytes = fileBytes ?? Array.Empty<byte>();
             fileContentType = string.IsNullOrEmpty(fileContentType) ? "application/octet-stream" : fileContentType;
-            formDataName = formDataName.Replace("\"", "");
+            formDataName = formDataName.Replace("\"", string.Empty);
 
             ByteArrayContent metaContent = new ByteArrayContent(Encoding.UTF8.GetBytes(fileMetaJson));
             metaContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json");

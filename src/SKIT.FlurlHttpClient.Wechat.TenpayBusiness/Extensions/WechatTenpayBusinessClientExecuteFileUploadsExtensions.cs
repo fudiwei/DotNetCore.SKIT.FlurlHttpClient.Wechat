@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
             if (request.FileHash == null)
-                request.FileHash = BitConverter.ToString(Utilities.SM3Utility.Hash(request.FileBytes)).Replace("-", "").ToLower();
+                request.FileHash = BitConverter.ToString(Utilities.SM3Utility.Hash(request.FileBytes)).Replace("-", string.Empty).ToLower();
 
             if (request.FileContentType == null)
                 request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";

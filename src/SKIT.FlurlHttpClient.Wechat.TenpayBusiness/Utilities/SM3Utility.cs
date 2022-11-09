@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 using Org.BouncyCastle.Crypto;
 
@@ -364,7 +364,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
 
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
             byte[] hashBytes = Hash(msgBytes);
-            return BitConverter.ToString(hashBytes).Replace("-", "");
+            return BitConverter.ToString(hashBytes).Replace("-", string.Empty);
         }
     }
 }
