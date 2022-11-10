@@ -100,7 +100,7 @@ else
 
 -   [如何使用拦截器？](./Advanced_Interceptor.md)
 
--   [如何查看商户证书序列号？](./Advanced_MerchantCertificateSerialNumber.md)
+-   [如何查看商户证书序列号？](./Advanced_CertificateSerialNumber.md)
 
 -   [如何加密请求中的敏感数据？](./Advanced_RequestSensitiveDataEncryption.md)
 

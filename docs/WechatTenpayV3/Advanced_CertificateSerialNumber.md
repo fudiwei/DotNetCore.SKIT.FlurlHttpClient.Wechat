@@ -13,6 +13,6 @@
 如果你已有 CER/CRT 格式的证书文件，你也可以利用本库提供的提供的 `RSAUtility` 工具类导出证书序列号：
 
 ```csharp
-string certificate = "CRT/CER 证书内容";
-string serialNumber = RSAUtility.ExportSerialNumber(certificate);
+string certificate = "-----BEGIN CERTIFICATE-----微信商户证书，即 `apiclient_cert.pem` 文件内容-----END CERTIFICATE-----";
+string serialNumber = RSAUtility.ExportSerialNumberFromCertificate(certificate);
 ```

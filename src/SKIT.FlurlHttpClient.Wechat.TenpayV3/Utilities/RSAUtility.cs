@@ -266,7 +266,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="certificate">证书（PEM 格式）。</param>
         /// <returns>PKCS#8 公钥（PEM 格式）。</returns>
-        public static string ExportPublicKey(string certificate)
+        public static string ExportPublicKeyFromCertificate(string certificate)
         {
             if (certificate == null) throw new ArgumentNullException(nameof(certificate));
 
@@ -285,7 +285,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="certificate">证书（PEM 格式）。</param>
         /// <returns>证书序列号。</returns>
-        public static string ExportSerialNumber(string certificate)
+        public static string ExportSerialNumberFromCertificate(string certificate)
         {
             if (certificate == null) throw new ArgumentNullException(nameof(certificate));
 
@@ -298,7 +298,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="certificate">证书（PEM 格式）。</param>
         /// <returns>证书颁发时间。</returns>
-        public static DateTimeOffset ExportEffectiveTime(string certificate)
+        public static DateTimeOffset ExportEffectiveTimeFromCertificate(string certificate)
         {
             if (certificate == null) throw new ArgumentNullException(nameof(certificate));
 
@@ -311,7 +311,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="certificate">证书（PEM 格式）。</param>
         /// <returns>证书过期时间。</returns>
-        public static DateTimeOffset ExportExpireTime(string certificate)
+        public static DateTimeOffset ExportExpireTimeFromCertificate(string certificate)
         {
             if (certificate == null) throw new ArgumentNullException(nameof(certificate));
 

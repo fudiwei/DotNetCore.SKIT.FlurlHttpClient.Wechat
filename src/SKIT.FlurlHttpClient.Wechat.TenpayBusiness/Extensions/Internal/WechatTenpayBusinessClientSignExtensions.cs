@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                                 error = null;
                                 return Utilities.RSAUtility.VerifyWithSHA256(
                                     publicKey: client.Credentials.TBEPCertificatePublicKey,
-                                    message: GetPlainTextForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
+                                    message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
                                     signature: strSignature
                                 );
                             }
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             }
         }
 
-        private static string GetPlainTextForSignature(string timestamp, string nonce, string body)
+        private static string GenerateMessageForSignature(string timestamp, string nonce, string body)
         {
             return $"{timestamp}\n{nonce}\n{body}\n";
         }

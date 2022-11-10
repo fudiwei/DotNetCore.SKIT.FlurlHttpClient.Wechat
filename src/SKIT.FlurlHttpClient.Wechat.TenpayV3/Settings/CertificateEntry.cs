@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 {
@@ -52,10 +52,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
             if (!certificate.Trim().StartsWith("-----BEGIN CERTIFICATE-----") || !certificate.Trim().EndsWith("-----END CERTIFICATE-----"))
                 throw new ArgumentException("The value of `certificate` is an invalid certificate file content.", nameof(certificate));
 
-            SerialNumber = Utilities.RSAUtility.ExportSerialNumber(certificate);
+            SerialNumber = Utilities.RSAUtility.ExportSerialNumberFromCertificate(certificate);
             Certificate = certificate;
-            EffectiveTime = Utilities.RSAUtility.ExportEffectiveTime(certificate);
-            ExpireTime = Utilities.RSAUtility.ExportExpireTime(certificate);
+            EffectiveTime = Utilities.RSAUtility.ExportEffectiveTimeFromCertificate(certificate);
+            ExpireTime = Utilities.RSAUtility.ExportExpireTimeFromCertificate(certificate);
         }
 
         public CertificateEntry(Models.QueryCertificatesResponse.Types.Certificate cert)
