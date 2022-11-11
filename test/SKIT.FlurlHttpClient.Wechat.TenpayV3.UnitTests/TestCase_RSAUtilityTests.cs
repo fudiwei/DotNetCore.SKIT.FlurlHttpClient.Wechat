@@ -57,6 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             string expectedSign = "EzeVEIoBhzOhXpwbXdJjIuGIGRc6ArKO7sVo2fuAdzYTDgorAEufEnw7lPPXV1GTfFcHOnsAJH9kGJmg7Orwlkh7x7TyOGrkMEhWGulA9SIdmou4iBsHpIZ/TERSgGt/VTmqmfpkzJqrvbQWIQENwo7Lr6uJSJBND0YT3nIBP8TzbO3cHnQb6chHIBHrDF5vOO7HHu+Cga2MZnAtRizhO8BhK0jOmyro32CgIML3EVX8yuPy0kOk6aN1R8xFblZUD4NU2M6zzQpydmxaHr9B1WNFoMwmpoAS5BuKJMYOHO5cc6DhB+0fAGxaWtKp6759KhKCf8M65zh3WKS4l262SGuWq4qG1+AKf2DOgCon769+A4z8flOmvl0iIwoH9FThGJoP156rpAJW7v/bWputSeC6WToUTBRmGWdwWySVwW5AZ26OAFFWs1CmrGp3jF5E2oUy1mQwgfM0QN6DW+wD769ggIYH9HLHqDHbF5UyF7eNh3s8Qy23xXEKZWNMAJ0IdtdMQ7FRRgLFSCai7HELLlBJSCz7P5WTeYZGQpbvnUShkRvzujjO6XlGiKKI0EwKb121z8N6KRpvs4SnRztWBGoXbzHZgnXKXU/BWWADemqB2cvaT3Bj0k3/N3sea0dAEtlNEklRWoyyNUUlscK9zg4LBlHrhbbFo66uuub8ySo=";
 
             Assert.Equal(expectedSign, actualSign);
+            Assert.True(Utilities.RSAUtility.VerifyWithSHA256(RSA_PEM_PUBLIC_KEY, msgText, actualSign));
         }
 
         [Fact(DisplayName = "测试用例：SHA256WithRSA 签名验证")]
@@ -66,7 +67,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             string signText = "aHX+MrmZHDEraMKBEPV2Vnps1B9b25lGbv/rdppx/S7+oaXtjKJprzCq5H7RCpvrKS3xYIeTEPwQGC3Vots7dCdLi8v8ew1vvtXf8qNAnd7CTMHqu3wSohXzgyASTmNbXE2ml9LbWYPPYMvPJXROQbGVjoOrsErWBPPJYXuO3lIckIfwI05OTdl4H3+BvpD/ZoljRp8Qgo9+paGvarBc++TaAh0FXnQf0TGNFUIeHHiAKBee5oCBTuZZM9J5RPw0oIq/g7Wun+e/zWiwVBPHltOgZrV46uagSAE6nBDHk+hlNxDivCxkJdBVCSIYFFmBXIcnGZ/u4ZfBui/k1jGoKibyvPK4z2+6GSlj41Yo81kuSBfzLiSsx33EPR1eIJJkwDTsvap0ymL9pfIqMiLuiteH5kGmL/dyONy9oAJywLEeITfoVyElM/CY6Dc+xDhRnjN7Hu54meYyXRZrnCtQ3YhzEr1immNBn6npgA/qi9aHsuWFOw8b8aSwOHDHTDmjmvV+axI8CVMrR0MjB9QNCWrKLq2B9iQX9MtLgcUyDsQvzAsxUJm/OEfzUjs9SHvmgmyAvzNAuTdO7wLQ+ZmKg0yZne6nvcrJVvfh3lD5ZPt7NY57Y6OIJluqKUT5H+a3H6W9Q1Z+cBMnHGYaaK7Tv8IcDdEYqTIG8hc5BqjFOzE=";
 
             Assert.True(Utilities.RSAUtility.VerifyWithSHA256(RSA_PEM_PUBLIC_KEY, msgText, signText));
+            Assert.False(Utilities.RSAUtility.VerifyWithSHA256(RSA_PEM_PUBLIC_KEY, msgText, "FAKE SIGN"));
             Assert.True(Utilities.RSAUtility.VerifyWithSHA256ByCertificate(RSA_PEM_CERTIFICATE, msgText, signText));
+            Assert.False(Utilities.RSAUtility.VerifyWithSHA256ByCertificate(RSA_PEM_CERTIFICATE, msgText, "FAKE SIGN"));
         }
 
         [Fact(DisplayName = "测试用例：使用 RSA 公钥加密")]
@@ -78,7 +81,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
             Assert.NotNull(actualCipherByPublicKey);
             Assert.NotNull(actualCipherByCertificate);
-            Assert.NotEqual(actualCipherByPublicKey, actualCipherByCertificate);
+            Assert.Equal(plainText, Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, actualCipherByPublicKey));
+            Assert.Equal(plainText, Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, actualCipherByCertificate));
         }
 
         [Fact(DisplayName = "测试用例：使用 RSA 私钥解密")]

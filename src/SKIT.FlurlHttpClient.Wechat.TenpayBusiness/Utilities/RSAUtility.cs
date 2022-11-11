@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         private const string RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1 = "OAEPWITHSHA1ANDMGF1PADDING";
         private const string RSA_SIGNER_ALGORITHM_SHA256 = "SHA-256withRSA";
 
-        private static byte[] ConvertPkcs8PrivateKeyToByteArray(string privateKey)
+        private static byte[] ConvertPrivateKeyPkcs8PemToByteArray(string privateKey)
         {
             privateKey = privateKey
                 .Replace("-----BEGIN PRIVATE KEY-----", string.Empty)
@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             return Convert.FromBase64String(privateKey);
         }
 
-        private static byte[] ConvertPkcs8PublicKeyToByteArray(string publicKey)
+        private static byte[] ConvertPublicKeyPkcs8PemToByteArray(string publicKey)
         {
             publicKey = publicKey
                 .Replace("-----BEGIN PUBLIC KEY-----", string.Empty)
@@ -75,8 +75,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
             if (msgBytes == null) throw new ArgumentNullException(nameof(msgBytes));
 
-            RsaKeyParameters rsaKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
-            return SignWithSHA256(rsaKeyParams, msgBytes);
+            RsaKeyParameters rsaPrivateKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
+            return SignWithSHA256(rsaPrivateKeyParams, msgBytes);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
             if (message == null) throw new ArgumentNullException(nameof(message));
 
-            byte[] privateKeyBytes = ConvertPkcs8PrivateKeyToByteArray(privateKey);
+            byte[] privateKeyBytes = ConvertPrivateKeyPkcs8PemToByteArray(privateKey);
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
             byte[] signBytes = SignWithSHA256(privateKeyBytes, msgBytes);
             return Convert.ToBase64String(signBytes);
@@ -109,8 +109,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             if (msgBytes == null) throw new ArgumentNullException(nameof(msgBytes));
             if (signBytes == null) throw new ArgumentNullException(nameof(signBytes));
 
-            RsaKeyParameters rsaKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
-            return VerifyWithSHA256(rsaKeyParams, msgBytes, signBytes);
+            RsaKeyParameters rsaPublicKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
+            return VerifyWithSHA256(rsaPublicKeyParams, msgBytes, signBytes);
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             if (message == null) throw new ArgumentNullException(nameof(message));
             if (signature == null) throw new ArgumentNullException(nameof(signature));
 
-            byte[] publicKeyBytes = ConvertPkcs8PublicKeyToByteArray(publicKey);
+            byte[] publicKeyBytes = ConvertPublicKeyPkcs8PemToByteArray(publicKey);
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
             byte[] signBytes = Convert.FromBase64String(signature);
             return VerifyWithSHA256(publicKeyBytes, msgBytes, signBytes);
@@ -144,8 +144,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
             if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
 
-            RsaKeyParameters rsaKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
-            return DecryptWithECB(rsaKeyParams, cipherBytes, paddingAlgorithm);
+            RsaKeyParameters rsaPrivateKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
+            return DecryptWithECB(rsaPrivateKeyParams, cipherBytes, paddingAlgorithm);
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
             if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
 
-            byte[] privateKeyBytes = ConvertPkcs8PrivateKeyToByteArray(privateKey);
+            byte[] privateKeyBytes = ConvertPrivateKeyPkcs8PemToByteArray(privateKey);
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
             byte[] plainBytes = DecryptWithECB(privateKeyBytes, cipherBytes, paddingAlgorithm);
             return Encoding.UTF8.GetString(plainBytes);
@@ -178,8 +178,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             if (publicKeyBytes == null) throw new ArgumentNullException(nameof(publicKeyBytes));
             if (plainBytes == null) throw new ArgumentNullException(nameof(plainBytes));
 
-            RsaKeyParameters rsaKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
-            return EncryptWithECB(rsaKeyParams, plainBytes, paddingAlgorithm);
+            RsaKeyParameters rsaPublicKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
+            return EncryptWithECB(rsaPublicKeyParams, plainBytes, paddingAlgorithm);
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             if (publicKey == null) throw new ArgumentNullException(nameof(publicKey));
             if (plainText == null) throw new ArgumentNullException(nameof(plainText));
 
-            byte[] publicKeyBytes = ConvertPkcs8PublicKeyToByteArray(publicKey);
+            byte[] publicKeyBytes = ConvertPublicKeyPkcs8PemToByteArray(publicKey);
             byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
             byte[] cipherBytes = EncryptWithECB(publicKeyBytes, plainBytes, paddingAlgorithm);
             return Convert.ToBase64String(cipherBytes);
