@@ -26,25 +26,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
     /// </summary>
     public static class SM2Utility
     {
-        private static readonly X9ECParameters _ecX9Parameters = GMNamedCurves.GetByName("SM2P256v1");
-        private static readonly ECDomainParameters _ecDomainParameters = new ECDomainParameters(_ecX9Parameters.Curve, _ecX9Parameters.G, _ecX9Parameters.N);
+        private static readonly X9ECParameters SM2_ECX9_PARAMS = GMNamedCurves.GetByName("SM2P256v1");
+        private static readonly ECDomainParameters SM2_DOMAIN_PARAMS = new ECDomainParameters(SM2_ECX9_PARAMS.Curve, SM2_ECX9_PARAMS.G, SM2_ECX9_PARAMS.N);
         private static readonly byte[] SM2_DEFAULT_UID = new byte[] { 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38, 0x31, 0x32, 0x33, 0x34, 0x35, 0x36, 0x37, 0x38 };
-        private static readonly int SM2_C1_LENGTH;
-        private static readonly int SM2_C3_LENGTH;
-        private static readonly int SM2_RS_LENGTH;
-
-        static SM2Utility()
-        {
-            SM2_C1_LENGTH = (_ecX9Parameters.Curve.FieldSize + 7) / 8 * 2 + 1;
-            SM2_C3_LENGTH = new SM3Digest().GetDigestSize();
-            SM2_RS_LENGTH = 32;
-
-            if (SM2_C1_LENGTH != 65)
-                throw new PlatformNotSupportedException($"Expected c1 length: {65}, actual: {SM2_C1_LENGTH}.");
-
-            if (SM2_C3_LENGTH != 32)
-                throw new PlatformNotSupportedException($"Expected c3 length: {32}, actual: {SM2_C3_LENGTH}.");
-        }
+        private const int SM2_C1_LENGTH = 65;
+        private const int SM2_C3_LENGTH = 32;
+        private const int SM2_RS_LENGTH = 32;
 
         private static byte[] ConvertPrivateKeyPkcs8PemToByteArray(string privateKey)
         {
@@ -87,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         private static ECPrivateKeyParameters ParseECPrivateKeyToPrivateKeyParameters(string ecPrivateKeyHex)
         {
             BigInteger ecPrivateKeyParamsD = new BigInteger(ecPrivateKeyHex, 16);
-            return new ECPrivateKeyParameters(ecPrivateKeyParamsD, _ecDomainParameters);
+            return new ECPrivateKeyParameters(ecPrivateKeyParamsD, SM2_DOMAIN_PARAMS);
         }
 
         private static ECPublicKeyParameters ParsePublicKeyPemToPublicKeyParameters(byte[] publicKeyBytes)
@@ -114,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
             BigInteger ecPublicKeyParamsX = new BigInteger(Hex.ToHexString(ecPublicKeyXBytes), 16);
             BigInteger ecPublicKeyParamsY = new BigInteger(Hex.ToHexString(ecPublicKeyYBytes), 16);
-            return new ECPublicKeyParameters(_ecX9Parameters.Curve.CreatePoint(ecPublicKeyParamsX, ecPublicKeyParamsY), _ecDomainParameters);
+            return new ECPublicKeyParameters(SM2_ECX9_PARAMS.Curve.CreatePoint(ecPublicKeyParamsX, ecPublicKeyParamsY), SM2_DOMAIN_PARAMS);
         }
 
         private static byte[] ConvertC1C3C2ToC1C2C3(byte[] c1c3c2)
@@ -170,7 +157,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
             byte[] c3 = Asn1OctetString.GetInstance(sequence[2]).GetOctets();
             byte[] c2 = Asn1OctetString.GetInstance(sequence[3]).GetOctets();
-            ECPoint c1Point = _ecX9Parameters.Curve.CreatePoint(x, y);
+            ECPoint c1Point = SM2_ECX9_PARAMS.Curve.CreatePoint(x, y);
             byte[] c1 = c1Point.GetEncoded(false);
 
             return Arrays.ConcatenateAll(c1, c3, c2);
@@ -790,8 +777,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (certificate == null) throw new ArgumentNullException(nameof(certificate));
 
-            X509Certificate cert = ConvertCertificatePemToX509(certificate);
-            return cert.SerialNumber.ToString(16);
+            X509Certificate x509cert = ConvertCertificatePemToX509(certificate);
+            return x509cert.SerialNumber.ToString(16);
         }
 
         /// <summary>
@@ -803,8 +790,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (certificate == null) throw new ArgumentNullException(nameof(certificate));
 
-            X509Certificate cert = ConvertCertificatePemToX509(certificate);
-            return new DateTimeOffset(cert.NotBefore);
+            X509Certificate x509cert = ConvertCertificatePemToX509(certificate);
+            return new DateTimeOffset(x509cert.NotBefore);
         }
 
         /// <summary>
@@ -816,8 +803,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (certificate == null) throw new ArgumentNullException(nameof(certificate));
 
-            X509Certificate cert = ConvertCertificatePemToX509(certificate);
-            return new DateTimeOffset(cert.NotAfter);
+            X509Certificate x509cert = ConvertCertificatePemToX509(certificate);
+            return new DateTimeOffset(x509cert.NotAfter);
         }
 
         /// <summary>

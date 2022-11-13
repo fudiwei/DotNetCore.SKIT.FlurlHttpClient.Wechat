@@ -62,7 +62,7 @@ public class MyFakeRequest : WechatTenpayRequest
 {
     [Newtonsoft.Json.JsonProperty("my_fake_props")]
     [System.Text.Json.Serialization.JsonPropertyName("my_fake_props")]
-    [WechatTenpaySensitiveProperty("my_alg")]
+    [WechatTenpaySensitiveProperty("my_scheme", "my_alg")]
     public string MyFakeProps { get; set; }
 }
 
@@ -71,7 +71,7 @@ public class MyFakeResponse : WechatTenpayResponse
 {
     [Newtonsoft.Json.JsonProperty("my_fake_props")]
     [System.Text.Json.Serialization.JsonPropertyName("my_fake_props")]
-    [WechatTenpaySensitiveProperty("my_alg")]
+    [WechatTenpaySensitiveProperty("my_scheme", "my_alg")]
     public string MyFakeProps { get; set; }
 }
 ```

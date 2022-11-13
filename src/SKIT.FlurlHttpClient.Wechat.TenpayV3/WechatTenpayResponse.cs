@@ -78,6 +78,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public string WechatpayNonce { get; internal set; } = default!;
 
         /// <summary>
+        /// 获取微信应答签名类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string WechatpaySignatureType { get; internal set; } = default!;
+
+        /// <summary>
         /// 获取微信应答签名。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
 {
     internal class TenpayCertificateRefreshingBackgroundJob
     {
@@ -16,18 +16,19 @@
             {
                 try
                 {
+                    const string ALGORITHM_TYPE = "RSA";
                     var client = _tenpayHttpClientFactory.Create(tenpayMerchantOptions.MerchantId);
-                    var request = new QueryCertificatesRequest();
+                    var request = new QueryCertificatesRequest() { AlgorithmType = ALGORITHM_TYPE };
                     var response = await client.ExecuteQueryCertificatesAsync(request);
                     if (response.IsSuccessful())
                     {
                         // NOTICE:
-                        //   如果启用了 `AutoDecryptResponseSensitiveProperty` 配置项，则无需再手动执行下面被注释的解密方法：
+                        //   如果构造 Client 时启用了 `AutoDecryptResponseSensitiveProperty` 配置项，则无需再手动执行下面被注释的解密方法：
                         //   response = client.DecryptResponseSensitiveProperty(response);
 
-                        foreach (var certificateModel in response.CertificateList)
+                        foreach (var certificate in response.CertificateList)
                         {
-                            client.CertificateManager.AddEntry(new CertificateEntry(certificateModel));
+                            client.CertificateManager.AddEntry(new CertificateEntry(ALGORITHM_TYPE, certificate));
                         }
 
                         Debug.WriteLine("刷新微信商户平台证书成功。");

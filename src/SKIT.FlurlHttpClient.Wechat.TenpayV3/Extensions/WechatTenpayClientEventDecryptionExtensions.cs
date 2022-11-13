@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
@@ -51,26 +52,55 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (resource == null) throw new ArgumentNullException(nameof(resource));
 
             string plainJson;
+            switch (resource.Algorithm)
+            {
+                case Constants.EncryptionAlgorithms.AEAD_AES_256_GCM:
+                    {
+                        try
+                        {
+                            plainJson = Utilities.AESUtility.DecryptWithGCM(
+                                key: client.Credentials.MerchantV3Secret,
+                                nonce: resource.Nonce,
+                                aad: resource.AssociatedData,
+                                cipherText: resource.CipherText
+                            );
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exceptions.WechatTenpayEventDecryptionException("Decrypt event resource failed. Please see the `InnerException` for more details.", ex);
+                        }
+                    }
+                    break;
 
-            if (Constants.EncryptionAlgorithms.AEAD_AES_256_GCM.Equals(resource.Algorithm))
-            {
-                try
-                {
-                    plainJson = Utilities.AESUtility.DecryptWithGCM(
-                        key: client.Credentials.MerchantV3Secret,
-                        iv: resource.Nonce,
-                        aad: resource.AssociatedData,
-                        cipherText: resource.CipherText
-                    );
-                }
-                catch (Exception ex)
-                {
-                    throw new Exceptions.WechatTenpayEventDecryptionException("Decrypt event resource failed. Please see the `InnerException` for more details.", ex);
-                }
-            }
-            else
-            {
-                throw new Exceptions.WechatTenpayEventDecryptionException("Unsupported encrypt algorithm of the resource.");
+                case Constants.EncryptionAlgorithms.AEAD_SM4_128_GCM:
+                    {
+                        try
+                        {
+                            // REF: https://pay.weixin.qq.com/docs/merchant/development/shangmi/guide.html
+                            // 由于 SM4 密钥长度的限制，密钥由 APIv3 密钥通过国密 SM3 Hash 计算生成。SM4 密钥取其摘要（256bit）的前 128bit。
+                            byte[] secretBytes = Utilities.SM3Utility.Hash(Encoding.UTF8.GetBytes(client.Credentials.MerchantV3Secret));
+                            byte[] keyBytes = new byte[16];
+                            Array.Copy(secretBytes, keyBytes, keyBytes.Length);
+
+                            byte[] plainBytes = Utilities.SM4Utility.DecryptWithGCM(
+                                keyBytes: keyBytes,
+                                nonceBytes: Encoding.UTF8.GetBytes(resource.Nonce),
+                                aadBytes: Encoding.UTF8.GetBytes(resource.AssociatedData),
+                                cipherBytes: Convert.FromBase64String(resource.CipherText)
+                            );
+                            plainJson = Encoding.UTF8.GetString(plainBytes);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exceptions.WechatTenpayEventDecryptionException("Decrypt event resource failed. Please see the `InnerException` for more details.", ex);
+                        }
+                    }
+                    break;
+
+                default:
+                    {
+                        throw new Exceptions.WechatTenpayEventDecryptionException($"Unsupported encryption algorithm: \"{resource.Algorithm}\".");
+                    }
             }
 
             return client.JsonSerializer.Deserialize<T>(plainJson);

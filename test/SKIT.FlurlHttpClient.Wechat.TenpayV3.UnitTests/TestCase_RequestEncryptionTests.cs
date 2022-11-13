@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Xunit;
 
@@ -12,8 +12,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         private const string MockText = "mock_text";
         private readonly Lazy<WechatTenpayClient> MockClientInstance = new Lazy<WechatTenpayClient>(() =>
         {
-            var certManager = new Settings.InMemoryCertificateManager();
-            certManager.AddEntry(new Settings.CertificateEntry(
+            var manager = new Settings.InMemoryCertificateManager();
+            manager.AddEntry(new Settings.CertificateEntry(
+                algorithmType: "RSA",
                 serialNumber: RSA_CERTSN,
                 certificate: RSA_CERTIFICATE,
                 effectiveTime: DateTimeOffset.MinValue,
@@ -21,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             ));
             return new WechatTenpayClient(new WechatTenpayClientOptions()
             {
-                PlatformCertificateManager = certManager
+                PlatformCertificateManager = manager
             });
         }, isThreadSafe: false);
 
@@ -35,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             };
             var data = MockClientInstance.Value.EncryptRequestSensitiveProperty(mock);
 
-            Assert.Equal(RSA_CERTSN, data.WechatpayCertificateSerialNumber);
+            Assert.Equal(RSA_CERTSN, data.WechatpayCertificateSerialNumber, ignoreCase: true);
             Assert.Equal(MockText, data.Account);
             Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.Name!));
         }
@@ -56,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             };
             var data = MockClientInstance.Value.EncryptRequestSensitiveProperty(mock);
 
-            Assert.Equal(RSA_CERTSN, data.WechatpayCertificateSerialNumber);
+            Assert.Equal(RSA_CERTSN, data.WechatpayCertificateSerialNumber, ignoreCase: true);
             Assert.Equal(MockText, data.ReceiverList[0].Account);
             Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.ReceiverList[0].Name!));
         }
