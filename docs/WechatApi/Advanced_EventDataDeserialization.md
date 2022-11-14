@@ -44,7 +44,7 @@ switch (msgType)
             var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml);
         }
         break;
-    // 省略其他情况
+    // 其他情况略
 }
 ```
 
