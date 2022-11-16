@@ -164,6 +164,7 @@ public class RedisCertificateManager : CertificateManager
 
         IDictionary<string, string> map = values.ToDictionary(k => k.Name.ToString(), v => v.Value.ToString());
         return new CertificateEntry(
+            algorithmType: map[nameof(CertificateEntry.AlgorithmType)],
             serialNumber: map[nameof(CertificateEntry.SerialNumber)],
             certificate: map[nameof(CertificateEntry.Certificate)],
             effectiveTime: DateTimeOffset.Parse(map[nameof(CertificateEntry.EffectiveTime)]),
@@ -175,6 +176,7 @@ public class RedisCertificateManager : CertificateManager
     {
         return new HashEntry[]
         {
+            new HashEntry(nameof(CertificateEntry.AlgorithmType), entry.AlgorithmType),
             new HashEntry(nameof(CertificateEntry.SerialNumber), entry.SerialNumber),
             new HashEntry(nameof(CertificateEntry.Certificate), entry.Certificate),
             new HashEntry(nameof(CertificateEntry.EffectiveTime), entry.EffectiveTime.ToString()),
