@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     {
         /// <summary>
         /// <para>异步调用 [POST] /sign/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/INTERFACEDOCUMENT.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/INTERFACEDOCUMENT.html#_1-%E8%8E%B7%E5%8F%96signature%E6%8E%A5%E5%8F%A3 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
         /// <summary>
         /// <para>异步调用 [POST] /aibot/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/INTERFACEDOCUMENT.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/INTERFACEDOCUMENT.html#_2-%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E6%8E%A5%E5%8F%A3 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
