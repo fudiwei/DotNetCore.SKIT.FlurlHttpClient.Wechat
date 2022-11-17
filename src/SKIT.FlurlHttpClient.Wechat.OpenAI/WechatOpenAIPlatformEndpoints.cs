@@ -8,6 +8,6 @@
         /// <summary>
         /// 主域名（默认）。
         /// </summary>
-        public const string DEFAULT = "https://openai.weixin.qq.com/openai/";
+        public const string DEFAULT = "https://openai.weixin.qq.com/openapi/";
     }
 }
