@@ -1,4 +1,5 @@
-﻿using System.Xml.Serialization;
+﻿using System.Text.Json.Serialization;
+using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
@@ -6,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
     /// <para>表示 [POST] /aibot/{TOKEN} 接口的请求。</para>
     /// </summary>
     [XmlRoot("xml")]
-    public class AIBotRequest : WechatOpenAIPlatformRequest, WechatOpenAIPlatformRequest.Serialization.IEncryptedXmlable
+    public class AIBotRequest : WechatOpenAIPlatformRequest
     {
         /// <summary>
         /// 获取或设置请求签名。
