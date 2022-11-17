@@ -1,0 +1,24 @@
+{
+    "env_id": "test-6gxk23no5605e14f",
+    "version_name": "ss-003",
+    "upload_type": "image",
+    "flow_ratio": 100,
+    "dockerfile_path": "Dockerfile",
+    "cpu": "0.25",
+    "mem": "0.5",
+    "min_num": "0",
+    "max_num": "1",
+    "policy_type": "cpu",
+    "policy_threshold": "50",
+    "env_params": "{}",
+    "container_port": 80,
+    "server_name": "ss",
+    "image_info": {
+        "repository_name": "tcb-100001320084-hvbz/web-container-6gnyxqnl696f40ce_pressure-python",
+        "is_public": true,
+        "tag_name": "pressure-python-006-20211219230528",
+        "server_addr": "ccr.ccs.tencentyun.com",
+        "image_url": "ccr.ccs.tencentyun.com/tcb-100001320084-hvbz/web-container-6gnyxqnl696f40ce_pressure-python:pressure-python-006-20211219230528"
+    },
+    "custom_logs": "stdout"
+}

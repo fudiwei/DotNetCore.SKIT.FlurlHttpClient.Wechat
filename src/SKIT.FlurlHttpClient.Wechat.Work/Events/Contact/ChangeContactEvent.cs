@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+﻿using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.change_contact 或 INFO.change_contact 事件的数据。</para>
@@ -125,6 +127,7 @@
         /// <summary>
         /// 获取或设置用户成员别名。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Alias", IsNullable = true)]
         public string? UserAlias { get; set; }
 
@@ -137,72 +140,84 @@
         /// <summary>
         /// 获取或设置用户的部门领导状态（以逗号分割）。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("IsLeaderInDept", IsNullable = true)]
         public string? UserDepartmentLeaderStatus { get; set; }
 
         /// <summary>
         /// 获取或设置用户的主部门 ID。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("MainDepartment", IsNullable = true)]
-        public int? UserMainDepartmentId { get; set; }
+        public long? UserMainDepartmentId { get; set; }
 
         /// <summary>
         /// 获取或设置用户邮箱。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Email", IsNullable = true)]
         public string? UserEmail { get; set; }
 
         /// <summary>
         /// 获取或设置用户企业邮箱。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("BizMail", IsNullable = true)]
         public string? UserBusinessEmail { get; set; }
 
         /// <summary>
         /// 获取或设置用户手机号码。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Mobile", IsNullable = true)]
         public string? UserMobileNumber { get; set; }
 
         /// <summary>
         /// 获取或设置用户座机号码。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Telephone", IsNullable = true)]
         public string? UserTeleNumber { get; set; }
 
         /// <summary>
         /// 获取或设置用户性别。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Gender", IsNullable = true)]
         public int? UserGender { get; set; }
 
         /// <summary>
         /// 获取或设置用户地址。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Address", IsNullable = true)]
         public string? UserAddress { get; set; }
 
         /// <summary>
         /// 获取或设置用户职务。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Position", IsNullable = true)]
         public string? UserPosition { get; set; }
 
         /// <summary>
         /// 获取或设置用户头像 URL。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Avatar", IsNullable = true)]
         public string? UserAvatarUrl { get; set; }
 
         /// <summary>
         /// 获取或设置用户激活状态。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Status", IsNullable = true)]
         public int? UserStatus { get; set; }
 
         /// <summary>
         /// 获取或设置用户自定义字段信息。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("ExtAttr", IsNullable = true)]
         public Types.ExtendedAttribute? UserExtendedAttribute { get; set; }
 
@@ -221,6 +236,7 @@
         /// <summary>
         /// 获取或设置部门次序值。
         /// </summary>
+        [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [System.Xml.Serialization.XmlElement("Order", IsNullable = true)]
         public long? DepartmentOrder { get; set; }
 

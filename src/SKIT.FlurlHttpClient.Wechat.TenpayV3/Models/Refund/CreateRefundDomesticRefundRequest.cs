@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -59,6 +59,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("from")]
                 [System.Text.Json.Serialization.JsonPropertyName("from")]
                 public IList<Types.From>? FromList { get; set; }
+
+                /// <summary>
+                /// 获取或设置手续费退款金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("refund_fee")]
+                [System.Text.Json.Serialization.JsonPropertyName("refund_fee")]
+                public int? RefundFee { get; set; }
             }
 
             public class GoodsDetail

@@ -1,0 +1,11 @@
+﻿{
+    "order_key": {
+        "order_number_type": "WXPAY_TRADE_NUMBER",
+        "transaction_id": "g2frh",
+        "mchid": "2qf8n",
+        "out_trade_no": "t6htn"
+    },
+    "payer": {
+        "openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o"
+    }
+}

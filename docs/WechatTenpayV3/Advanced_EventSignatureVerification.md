@@ -37,11 +37,11 @@
 
 ```csharp
 bool ret = client.VerifyEventSignature(
-    callbackTimestamp: "微信回调通知中的 Wechatpay-Timestamp 字段",
-    callbackNonce: "微信回调通知中的 Wechatpay-Nonce 字段",
+    callbackTimestamp: "微信回调通知中的 Wechatpay-Timestamp 标头",
+    callbackNonce: "微信回调通知中的 Wechatpay-Nonce 标头",
     callbackBody: "微信回调通知中请求正文",
-    callbackSignature: "微信回调通知中的 Wechatpay-Signature 字段",
-    callbackSerialNumber: "微信回调通知中的 Wechatpay-Serial 字段"
+    callbackSignature: "微信回调通知中的 Wechatpay-Signature 标头",
+    callbackSerialNumber: "微信回调通知中的 Wechatpay-Serial 标头"
 );
 ```
 
@@ -55,10 +55,10 @@ bool ret = client.VerifyEventSignature(
 
 ```csharp
 bool ret = client.VerifyEventSignature(timestamp, nonce, body, signature, serialNumber, out Exception error);
-if (!ret) 
+if (!ret)
 {
     Console.WriteLine(error);
-    Console.WriteLine(error.InnerException);
+    Console.WriteLine(error?.InnerException);
 }
 ```
 

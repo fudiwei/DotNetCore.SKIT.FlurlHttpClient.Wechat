@@ -1,8 +1,8 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.wxa_category_audit 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/category/wxa_category_audit.html </para>
+    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/category-management/addCategory.html </para>
     /// </summary>
     public class WxaCategoryAuditEvent : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {

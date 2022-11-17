@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [GET] /union/promoter/product/category 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/ministore/union/access-guidelines/promoter/api/product/category.html#_1-%E8%8E%B7%E5%8F%96%E8%81%94%E7%9B%9F%E5%95%86%E5%93%81%E7%B1%BB%E7%9B%AE%E5%88%97%E8%A1%A8%E5%8F%8A%E7%B1%BB%E7%9B%AEID </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/product/category.html</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/product/category.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -118,7 +118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [GET] /union/promoter/product/list 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/ministore/union/access-guidelines/promoter/api/product/category.html#_2-%E6%9F%A5%E8%AF%A2%E5%95%86%E5%93%81%E8%AF%A6%E6%83%85%E4%BF%A1%E6%81%AF </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/product/category.html</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/product/category.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -241,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /union/promoter/product/generate 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/ministore/union/access-guidelines/promoter/api/product/category.html#_3-%E8%8E%B7%E5%8F%96%E5%95%86%E5%93%81%E6%8E%A8%E5%B9%BF%E7%B4%A0%E6%9D%90 </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/product/category.html</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/product/category.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -257,6 +257,106 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.UnionPromoterProductGenerateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /union/promoter/product/parse_tag 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/access-guidelines/promoter/api/parse_tag.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnionPromoterProductParseTagResponse> ExecuteUnionPromoterProductParseTagAsync(this WechatApiClient client, Models.UnionPromoterProductParseTagRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "product", "parse_tag")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.UnionPromoterProductParseTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region OpenProduct
+        /// <summary>
+        /// <para>异步调用 [GET] /union/promoter/open_product/list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/custom_component/api/promoter/openproduct.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnionPromoterOpenProductListResponse> ExecuteUnionPromoterOpenProductListAsync(this WechatApiClient client, Models.UnionPromoterOpenProductListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "open_product", "list")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("from", request.Offset)
+                .SetQueryParam("limit", request.Limit);
+
+            if (request.QueryType != null)
+                flurlReq.SetQueryParam("queryType", request.QueryType.Value);
+
+            if (request.Query != null)
+                flurlReq.SetQueryParam("query", request.Query);
+
+            if (request.MaxPrice != null)
+                flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
+
+            if (request.MinPrice != null)
+                flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
+
+            if (request.MinCommissionValue != null)
+                flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
+
+            if (request.MinCommissionRatio != null)
+                flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
+
+            if (request.SortType != null)
+                flurlReq.SetQueryParam("sortType", request.SortType.Value);
+
+            if (request.ShopAppIdList != null)
+                flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
+
+            if (request.CategoryId != null)
+                flurlReq.SetQueryParam("categoryId", request.CategoryId);
+
+            if (request.CategoryIdList != null)
+                flurlReq.SetQueryParam("category", string.Join(",", request.CategoryIdList));
+
+            if (request.CategoryIdBlackList != null)
+                flurlReq.SetQueryParam("noCategory", string.Join(",", request.CategoryIdBlackList));
+
+            if (request.ProductIdList != null)
+                flurlReq.SetQueryParam("productId", string.Join(",", request.ProductIdList));
+
+            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenProductListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /union/promoter/open_product/generate 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/custom_component/api/promoter/openpromotion.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnionPromoterOpenProductGenerateResponse> ExecuteUnionPromoterOpenProductGenerateAsync(this WechatApiClient client, Models.UnionPromoterOpenProductGenerateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "open_product", "generate")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenProductGenerateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -309,6 +409,67 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 flurlReq.SetQueryParam("commissionStatus", request.CommissionStatus);
 
             return await client.SendRequestWithJsonAsync<Models.UnionPromoterOrderSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /union/promoter/order/search_normal_order 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/union/custom_component/api/promoter/order-info.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnionPromoterOrderSearchNormalOrderResponse> ExecuteUnionPromoterOrderSearchNormalOrderAsync(this WechatApiClient client, Models.UnionPromoterOrderSearchNormalOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "order", "search_normal_order")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit);
+
+            if (request.Query != null)
+                flurlReq.SetQueryParam("query", request.Query);
+
+            if (request.OrderId != null)
+                flurlReq.SetQueryParam("orderId", request.OrderId.Value);
+
+            if (request.OutOrderId != null)
+                flurlReq.SetQueryParam("outOrderId", request.OutOrderId);
+
+            if (request.OutOrderIdList != null)
+                flurlReq.SetQueryParam("outOrderIdList", string.Join(",", request.OutOrderId));
+
+            if (request.TransactionId != null)
+                flurlReq.SetQueryParam("tradeNo", request.TransactionId);
+
+            if (request.TransactionIdList != null)
+                flurlReq.SetQueryParam("transactionIdList", string.Join(",", request.TransactionIdList));
+
+            if (request.StartPayTimestamp != null)
+                flurlReq.SetQueryParam("startPayTime", request.StartPayTimestamp.Value);
+
+            if (request.EndPayTimestamp != null)
+                flurlReq.SetQueryParam("endPayTime", request.EndPayTimestamp.Value);
+
+            if (request.CommissionStatus != null)
+                flurlReq.SetQueryParam("commissionStatus", request.CommissionStatus);
+
+            if (request.StartStatusUpdateTimestamp != null)
+                flurlReq.SetQueryParam("startStatusUpdateTime", request.StartStatusUpdateTimestamp.Value);
+
+            if (request.EndStatusUpdateTimestamp != null)
+                flurlReq.SetQueryParam("endStatusUpdateTime", request.EndStatusUpdateTimestamp.Value);
+
+            if (request.SortBy != null)
+                flurlReq.SetQueryParam("sortBy", request.SortBy);
+
+            if (request.SortOrder != null)
+                flurlReq.SetQueryParam("sortOrder", request.SortOrder);
+
+            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOrderSearchNormalOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 

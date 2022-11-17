@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /profitsharing/return-orders 接口。</para>
+        /// <para>异步调用 [GET] /profitsharing/return-orders/{out_order_no} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_4.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_4.shtml </para>
         /// </summary>
@@ -91,9 +91,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "profitsharing", "return-orders")
-                .SetQueryParam("out_order_no", request.OutOrderNumber)
-                .SetQueryParam("out_return_no", request.OutReturnNumber);
+                .CreateRequest(request, HttpMethod.Get, "profitsharing", "return-orders", request.OutReturnNumber)
+                .SetQueryParam("out_order_no", request.OutOrderNumber);
 
             if (request.SubMerchantId != null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);

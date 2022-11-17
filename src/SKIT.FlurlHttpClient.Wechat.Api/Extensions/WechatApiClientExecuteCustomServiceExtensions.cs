@@ -14,6 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /customservice/kfaccount/add 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#1 </para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#2 </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E6%B7%BB%E5%8A%A0%E5%AE%A2%E6%9C%8D%E8%B4%A6%E5%8F%B7 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -68,10 +69,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "customservice", "kfaccount", "del")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("kf_account", request.KfAccount);
+                .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CustomServiceKfAccountDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /customservice/kfaccount/del 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%88%A0%E9%99%A4%E5%AE%A2%E6%9C%8D%E8%B4%A6%E5%8F%B7 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CustomServiceKfAccountDeleteByOpenIdResponse> ExecuteCustomServiceKfAccountDeleteByOpenIdAsync(this WechatApiClient client, Models.CustomServiceKfAccountDeleteByOpenIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "customservice", "kfaccount", "del")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("kf_openid", request.OpenId);
+
+            return await client.SendRequestWithJsonAsync<Models.CustomServiceKfAccountDeleteByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -114,6 +135,48 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CustomServiceKfAccountInviteWorkerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /customservice/kfaccount/setadmin 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E8%AE%BE%E7%BD%AE%E5%AE%A2%E6%9C%8D%E7%AE%A1%E7%90%86%E5%91%98 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CustomServiceKfAccountSetAdminByOpenIdResponse> ExecuteCustomServiceKfAccountSetAdminByOpenIdAsync(this WechatApiClient client, Models.CustomServiceKfAccountSetAdminByOpenIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "customservice", "kfaccount", "setadmin")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("kf_openid", request.OpenId);
+
+            return await client.SendRequestWithJsonAsync<Models.CustomServiceKfAccountSetAdminByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /customservice/kfaccount/canceladmin 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%8F%96%E6%B6%88%E5%AE%A2%E6%9C%8D%E7%AE%A1%E7%90%86%E5%91%98 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CustomServiceKfAccountCancelAdminByOpenIdResponse> ExecuteCustomServiceKfAccountCancelAdminByOpenIdAsync(this WechatApiClient client, Models.CustomServiceKfAccountCancelAdminByOpenIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "customservice", "kfaccount", "canceladmin")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("kf_openid", request.OpenId);
+
+            return await client.SendRequestWithJsonAsync<Models.CustomServiceKfAccountCancelAdminByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 

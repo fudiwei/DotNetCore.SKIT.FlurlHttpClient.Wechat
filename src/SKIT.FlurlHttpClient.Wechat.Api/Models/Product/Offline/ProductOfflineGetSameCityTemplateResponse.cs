@@ -216,7 +216,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public int TemplateId { get; set; }
+                public long TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置配送方。

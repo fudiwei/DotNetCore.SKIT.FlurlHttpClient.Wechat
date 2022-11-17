@@ -1,0 +1,8 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "status": 9,
+        "reject_reason": "请重新提交审核"
+    }
+}

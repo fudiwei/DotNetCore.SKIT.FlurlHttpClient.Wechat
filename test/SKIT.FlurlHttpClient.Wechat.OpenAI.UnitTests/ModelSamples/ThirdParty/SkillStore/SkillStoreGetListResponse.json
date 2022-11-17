@@ -16,10 +16,7 @@
                 "skill_id": "buarvgld1evpg4faxacg",
                 "skill_name": "小微欢乐多",
                 "state": 0,
-                "statement_case_list": [
-                    "讲笑话",
-                    "讲情话"
-                ],
+                "statement_case_list": ["讲笑话", "讲情话"],
                 "switch": true,
                 "update_time": "2020-07-29 11:38:39"
             }

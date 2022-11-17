@@ -1,0 +1,15 @@
+﻿{
+    "ToUserName": "gh_123456789abc",
+    "FromUserName": "o7esq5PHRGBQYmeNyfG064wEFVpQ",
+    "CreateTime": "1620963428",
+    "MsgType": "event",
+    "Event": "subscribe_msg_sent_event",
+    "List": [
+        {
+            "TemplateId": "BEwX0BO-T3MqK3Uc5oTU3CGBqzjpndk2jzUf7VfExd8",
+            "MsgID": "1864323726461255680",
+            "ErrorCode": "0",
+            "ErrorStatus": "success"
+        }
+    ]
+}

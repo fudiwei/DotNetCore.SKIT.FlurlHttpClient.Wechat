@@ -7,14 +7,14 @@
     {
         public static class Types
         {
-            public class Template : ProductDeliveryInsertFreightTemplateRequest.Types.Template
+            public class FreightTemplate : ProductDeliveryInsertFreightTemplateRequest.Types.FreightTemplate
             {
                 /// <summary>
                 /// 获取或设置模板 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public int TemplateId { get; set; }
+                public long TemplateId { get; set; }
             }
         }
 
@@ -23,6 +23,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("freight_template")]
         [System.Text.Json.Serialization.JsonPropertyName("freight_template")]
-        public Types.Template Template { get; set; } = new Types.Template();
+        public Types.FreightTemplate FreightTemplate { get; set; } = new Types.FreightTemplate();
     }
 }

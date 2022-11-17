@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_refund_no_$n")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_refund_no_$n")]
-                public string OutRefundId { get; set; } = default!;
+                public string OutRefundNumber { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置微信退款单号。

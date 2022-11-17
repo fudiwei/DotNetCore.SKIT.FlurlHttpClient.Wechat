@@ -6,8 +6,8 @@
             "grid_id": "grid_id",
             "grid_name": "1",
             "grid_parent_id": "grid_id",
-            "grid_admin": [ "zhangsan" ],
-            "grid_member": [ "lisi", "11111" ]
+            "grid_admin": ["zhangsan"],
+            "grid_member": ["lisi", "11111"]
         }
     ]
 }

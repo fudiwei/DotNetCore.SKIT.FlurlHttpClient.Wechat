@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -136,6 +136,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
             }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatTenpayRequestTimeoutException(ex.Message, ex);
+            }
             catch (FlurlHttpException ex)
             {
                 throw new WechatTenpayException(ex.Message, ex);
@@ -171,9 +175,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                     string json = JsonSerializer.Serialize(data);
                     string xml = Utilities.XmlUtility.ConvertFromJson(json);
 
-                    using HttpContent httpContent = new StringContent(xml, Encoding.UTF8, "text/xml");
-                    return await SendRequestAsync<T>(flurlRequest, httpContent: httpContent, cancellationToken);
+                    using HttpContent httpContent = new StringContent(xml, Encoding.UTF8, "application/xml");
+                    using IFlurlResponse flurlResponse = await SendRequestAsync(flurlRequest, httpContent: httpContent, cancellationToken);
+                    return await WrapResponseWithXmlAsync<T>(flurlResponse, cancellationToken);
                 }
+            }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatTenpayRequestTimeoutException(ex.Message, ex);
             }
             catch (FlurlHttpException ex)
             {

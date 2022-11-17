@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
     /// <summary>
     /// 表示微信支付 API 请求的基类。
@@ -21,6 +21,7 @@
 
         /// <summary>
         /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.AppId"/> 参数。
+        /// <para>注意：部分接口不支持指定，请直接忽略此字段。</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -40,7 +41,8 @@
         public virtual string? NonceString { get; set; }
 
         /// <summary>
-        /// 获取或设置签名方式。需注意部分接口不支持指定签名方式。
+        /// 获取或设置签名方式。
+        /// <para>注意：部分接口不支持指定签名方式，请直接忽略此字段。</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sign_type")]
         [System.Text.Json.Serialization.JsonPropertyName("sign_type")]

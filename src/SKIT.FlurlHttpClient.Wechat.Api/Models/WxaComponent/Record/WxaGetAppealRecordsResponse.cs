@@ -68,7 +68,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appeal_record_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("appeal_record_id")]
-                public int AppealRecordId { get; set; } = default!;
+                public long AppealRecordId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置申诉次数。

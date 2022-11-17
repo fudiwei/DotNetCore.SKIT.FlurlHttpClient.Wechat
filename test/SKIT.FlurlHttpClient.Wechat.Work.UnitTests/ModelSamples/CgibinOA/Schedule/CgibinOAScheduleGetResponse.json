@@ -17,15 +17,13 @@
                 "is_remind": 1,
                 "is_repeat": 1,
                 "remind_before_event_secs": 3600,
-                "remind_time_diffs": [
-                    -3600
-                ],
+                "remind_time_diffs": [-3600],
                 "repeat_type": 7,
                 "repeat_until": 1606976813,
                 "is_custom_repeat": 1,
                 "repeat_interval": 1,
-                "repeat_day_of_week": [ 3, 7 ],
-                "repeat_day_of_month": [ 10, 21 ],
+                "repeat_day_of_week": [3, 7],
+                "repeat_day_of_month": [10, 21],
                 "timezone": 8,
                 "exclude_time_list": [
                     {

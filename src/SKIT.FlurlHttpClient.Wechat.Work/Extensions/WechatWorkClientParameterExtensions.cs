@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Flurl;
+using static SKIT.FlurlHttpClient.Wechat.Work.Models.CgibinSchoolAgentGetAllowScopeResponse.Types;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
@@ -78,6 +79,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <returns></returns>
         public static string GenerateParameterizedUrlForConnectOAuth2Authorize(this WechatWorkClient client, string redirectUrl, string scope, string? state = null)
         {
+            return GenerateParameterizedUrlForConnectOAuth2Authorize(client, agentId: client.Credentials.AgentId.GetValueOrDefault(), redirectUrl: redirectUrl, scope: scope, state: state);
+        }
+
+        /// <summary>
+        /// <para>生成企业号网页授权 URL。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91022 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91120 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="agentId"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="scope"></param>
+        /// <param name="state"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForConnectOAuth2Authorize(this WechatWorkClient client, int agentId, string redirectUrl, string scope, string? state = null)
+        {
             return new Url("https://open.weixin.qq.com")
                 .AppendPathSegments("connect", "oauth2", "authorize")
                 .SetQueryParam("appid", string.IsNullOrEmpty(client.Credentials.SuiteId) ? client.Credentials.CorpId : client.Credentials.SuiteId)
@@ -85,6 +102,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("response_type", "code")
                 .SetQueryParam("scope", scope)
                 .SetQueryParam("state", state)
+                .SetQueryParam("agentid", agentId)
                 .SetFragment("wechat_redirect")
                 .ToString();
         }
@@ -102,10 +120,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <returns></returns>
         public static string GenerateParameterizedUrlForSSOQrcodeConnectAuthorize(this WechatWorkClient client, string redirectUrl, string? state = null, string? language = null, string? userType = null)
         {
+            return GenerateParameterizedUrlForSSOQrcodeConnectAuthorize(client, agentId: client.Credentials.AgentId.GetValueOrDefault(), redirectUrl: redirectUrl, state: state, language: language, userType: userType);
+        }
+
+        /// <summary>
+        /// <para>生成企业号扫码授权 URL。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91019 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91124 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="agentId"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="state"></param>
+        /// <param name="language"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForSSOQrcodeConnectAuthorize(this WechatWorkClient client, int agentId, string redirectUrl, string? state = null, string? language = null, string? userType = null)
+        {
             return new Url("https://open.work.weixin.qq.com")
                 .AppendPathSegments("wwopen", "sso", "qrConnect")
                 .SetQueryParam("appid", client.Credentials.CorpId)
-                .SetQueryParam("agentid", client.Credentials.AgentId)
+                .SetQueryParam("agentid", agentId)
                 .SetQueryParam("redirect_uri", redirectUrl)
                 .SetQueryParam("state", state)
                 .SetQueryParam("lang", language)

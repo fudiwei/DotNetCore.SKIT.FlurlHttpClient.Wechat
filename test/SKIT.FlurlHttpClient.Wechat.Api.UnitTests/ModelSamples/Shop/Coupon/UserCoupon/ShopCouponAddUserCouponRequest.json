@@ -1,9 +1,9 @@
 ﻿{
-	"openid": "oIJ9d5Ad4JMhbybqJ3_J73LkR_Io",
-	"user_coupon": {
+    "openid": "oIJ9d5Ad4JMhbybqJ3_J73LkR_Io",
+    "user_coupon": {
         "out_user_coupon_id": "user_coupon_id_1",
         "out_coupon_id": "coupon_id_1",
         "status": 100
-	},
-	"recv_time": 1628147893
+    },
+    "recv_time": 1628147893
 }

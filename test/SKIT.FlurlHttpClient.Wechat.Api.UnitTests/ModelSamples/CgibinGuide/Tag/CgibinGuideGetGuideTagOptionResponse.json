@@ -2,19 +2,19 @@
     "options": [
         {
             "tag_name": "tag4",
-            "tag_values": [ "标签4" ]
+            "tag_values": ["标签4"]
         },
         {
             "tag_name": "tag3",
-            "tag_values": [ "标签33", "标签22" ]
+            "tag_values": ["标签33", "标签22"]
         },
         {
             "tag_name": "tag2",
-            "tag_values": [ "标签1", "标签2" ]
+            "tag_values": ["标签1", "标签2"]
         },
         {
             "tag_name": "tag1",
-            "tag_values": [ "标签66" ]
+            "tag_values": ["标签66"]
         }
     ],
     "errcode": 0,

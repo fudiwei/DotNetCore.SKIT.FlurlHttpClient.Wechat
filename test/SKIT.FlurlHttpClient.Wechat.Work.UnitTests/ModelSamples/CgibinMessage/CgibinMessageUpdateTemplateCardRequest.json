@@ -1,7 +1,7 @@
 ﻿{
-    "userids": [ "userid1", "userid2" ],
-    "partyids": [ 2, 3 ],
-    "tagids": [ 44, 55 ],
+    "userids": ["userid1", "userid2"],
+    "partyids": [2, 3],
+    "tagids": [44, 55],
     "atall": 0,
     "agentid": 1,
     "response_code": "response_code",

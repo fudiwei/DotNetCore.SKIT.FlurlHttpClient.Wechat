@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -286,7 +286,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             if (request.FileName == null)
             {
-                string ext = "";
+                string ext = string.Empty;
                 if (TYPE_IMAGE.Equals(request.Type))
                     ext = ".png";
                 else if (TYPE_VOICE.Equals(request.Type))
@@ -424,6 +424,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceContactSortResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/contact/search 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91844 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceContactSearchResponse> ExecuteCgibinServiceContactSearchAsync(this WechatWorkClient client, Models.CgibinServiceContactSearchRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "contact", "search")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceContactSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/contact/batchsearch 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91844 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceContactBatchSearchResponse> ExecuteCgibinServiceContactBatchSearchAsync(this WechatWorkClient client, Models.CgibinServiceContactBatchSearchRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "contact", "batchsearch")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceContactBatchSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -617,27 +657,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
-        #region ExternalContactMigration
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_new_external_userid 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95327 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetNewExternalUserIdResponse> ExecuteCgibinExternalContactGetNewExternalUserIdAsync(this WechatWorkClient client, Models.CgibinExternalContactGetNewExternalUserIdRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_new_external_userid")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetNewExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
+        #region Migration
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/service/externalcontact/finish_external_userid_migration 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95327 </para>
@@ -676,6 +696,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("suite_access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceExternalContactUnionIdToExternalUserId3rdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/corpid_to_opencorpid 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95435 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceCorpIdToOpenCorpIdResponse> ExecuteCgibinServiceCorpIdToOpenCorpIdAsync(this WechatWorkClient client, Models.CgibinServiceCorpIdToOpenCorpIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "corpid_to_opencorpid")
+                .SetQueryParam("access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceCorpIdToOpenCorpIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

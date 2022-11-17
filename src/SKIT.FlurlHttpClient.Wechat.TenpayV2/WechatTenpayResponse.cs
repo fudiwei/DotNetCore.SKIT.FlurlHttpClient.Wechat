@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
@@ -8,17 +8,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     public abstract class WechatTenpayResponse : ICommonResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         int ICommonResponse.RawStatus { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         IDictionary<string, string> ICommonResponse.RawHeaders { get; set; } = default!;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         byte[] ICommonResponse.RawBytes { get; set; } = default!;
 
@@ -106,6 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// 获取或设置微信 AppId。
+        /// <para>注意：部分接口不支持获取，请直接忽略此字段。</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

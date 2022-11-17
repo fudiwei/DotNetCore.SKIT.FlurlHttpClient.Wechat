@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
 
             if (request.FileHash == null)
-                request.FileHash = BitConverter.ToString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", "").ToLower();
+                request.FileHash = BitConverter.ToString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", string.Empty).ToLower();
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "secapi", "mch", "uploadmedia");

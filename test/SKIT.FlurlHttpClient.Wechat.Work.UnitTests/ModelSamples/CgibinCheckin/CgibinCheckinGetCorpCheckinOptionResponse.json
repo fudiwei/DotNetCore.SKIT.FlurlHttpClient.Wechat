@@ -7,13 +7,7 @@
             "groupid": 69,
             "checkindate": [
                 {
-                    "workdays": [
-                        1,
-                        2,
-                        3,
-                        4,
-                        5
-                    ],
+                    "workdays": [1, 2, 3, 4, 5],
                     "checkintime": [
                         {
                             "work_sec": 36000,
@@ -89,11 +83,11 @@
             ],
             "range": {
                 "partyid": [],
-                "userid": [ "icef", "LiJingZhong" ],
-                "tagid": [ 2 ]
+                "userid": ["icef", "LiJingZhong"],
+                "tagid": [2]
             },
             "create_time": 1606204343,
-            "white_users": [ "canno" ],
+            "white_users": ["canno"],
             "type": 0,
             "reporterinfo": {
                 "reporters": [

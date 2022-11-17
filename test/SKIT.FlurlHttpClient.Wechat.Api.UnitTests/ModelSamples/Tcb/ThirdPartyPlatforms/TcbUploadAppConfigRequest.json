@@ -1,4 +1,0 @@
-﻿{
-    "type": 1,
-    "config": "{\"enable\":true,\"callbacks\":[{\"msgType\":\"msg\",\"event\":\"event\",\"env\":\"env\",\"functionName\":\"func\"}]}"
-}

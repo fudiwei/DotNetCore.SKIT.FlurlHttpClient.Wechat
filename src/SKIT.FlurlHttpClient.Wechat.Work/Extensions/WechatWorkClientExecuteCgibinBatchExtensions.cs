@@ -119,5 +119,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinBatchGetResultResponse>(flurlReq, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/batch/userid_to_openuserid 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95435 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinBatchUserIdToOpenUserIdResponse> ExecuteCgibinBatchUserIdToOpenUserIdAsync(this WechatWorkClient client, Models.CgibinBatchUserIdToOpenUserIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "batch", "userid_to_openuserid")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinBatchUserIdToOpenUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }

@@ -1,8 +1,7 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.open_product_category_audit 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent2/callback/category_audit.html </para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/category_audit.html </para>
     /// </summary>
     public class OpenProductCategoryAuditEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
@@ -40,7 +39,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reject_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reject_reason")]
-                [System.Xml.Serialization.XmlElement("reject_reason")]
+                [System.Xml.Serialization.XmlElement("reject_reason", IsNullable = true)]
                 public string? RejectReason { get; set; }
             }
         }

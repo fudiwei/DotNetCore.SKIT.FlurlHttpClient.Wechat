@@ -18,9 +18,7 @@
             "activity_type": "FULL_SEND_ACT_TYPE",
             "advanced_setting": {
                 "delivery_user_category": "DELIVERY_ALL_PERSON",
-                "goods_tags": [
-                    "0602-1047-99"
-                ]
+                "goods_tags": ["0602-1047-99"]
             },
             "award_send_rule": {
                 "full_send_rule": {
@@ -61,9 +59,7 @@
             "activity_type": "FULL_SEND_ACT_TYPE",
             "advanced_setting": {
                 "delivery_user_category": "DELIVERY_ALL_PERSON",
-                "goods_tags": [
-                    "0601-1147-99"
-                ]
+                "goods_tags": ["0601-1147-99"]
             },
             "award_send_rule": {
                 "full_send_rule": {

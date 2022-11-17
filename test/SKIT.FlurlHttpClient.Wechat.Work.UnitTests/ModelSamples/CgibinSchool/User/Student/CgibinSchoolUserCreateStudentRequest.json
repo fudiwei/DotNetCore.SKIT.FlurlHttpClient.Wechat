@@ -1,5 +1,7 @@
 ﻿{
     "student_userid": "zhangsan",
+    "mobile": "10000000000",
+    "to_invite": false,
     "name": "张三",
-    "department": [ 1, 2 ]
+    "department": [1, 2]
 }

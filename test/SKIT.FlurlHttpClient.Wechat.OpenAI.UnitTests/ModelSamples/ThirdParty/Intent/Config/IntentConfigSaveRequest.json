@@ -4,15 +4,9 @@
     "slots": [
         {
             "name": "城市",
-            "dicts": [
-                "建筑",
-                "公路"
-            ],
+            "dicts": ["建筑", "公路"],
             "keep_ask": true,
-            "ask_content": [
-                "建筑1",
-                "公路1"
-            ]
+            "ask_content": ["建筑1", "公路1"]
         }
     ],
     "pre": [
@@ -54,10 +48,7 @@
                                     {
                                         "name": "",
                                         "slot": "Slot",
-                                        "ask_content": [
-                                            "111",
-                                            "222"
-                                        ]
+                                        "ask_content": ["111", "222"]
                                     }
                                 ],
                                 "result": [
@@ -80,9 +71,7 @@
                                                         "desc": "Input desc",
                                                         "slot": "Input Slot",
                                                         "default_value": "defa",
-                                                        "ask_content": [
-                                                            "ask"
-                                                        ]
+                                                        "ask_content": ["ask"]
                                                     }
                                                 ],
                                                 "output": [
@@ -108,7 +97,6 @@
                                                                 "content": "我在哪"
                                                             }
                                                         ]
-
                                                     }
                                                 }
                                             ]

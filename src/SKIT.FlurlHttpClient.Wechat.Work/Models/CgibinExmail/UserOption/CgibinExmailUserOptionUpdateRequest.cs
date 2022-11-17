@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
         public string? UserId { get; set; }
-        
+
         /// <summary>
         /// 获取或设置功能设置列表。
         /// </summary>

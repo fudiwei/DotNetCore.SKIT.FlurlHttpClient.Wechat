@@ -1,0 +1,55 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "report": {
+        "blankpage_pencent": 0,
+        "aver_time_cost": 3450,
+        "max_time_cost": 5773,
+        "total_launch_cnt": 36,
+        "total_request_cnt": 72,
+        "network_list": [
+            {
+                "path": "http://wx.cloud.callContainer",
+                "aver_time_cost": 89,
+                "max_time_cost": 141,
+                "total_request_cnt": 36,
+                "succ_percent": 100,
+                "top_time_cost_list": [
+                    {
+                        "time_cost": 141
+                    },
+                    {
+                        "time_cost": 133
+                    },
+                    {
+                        "time_cost": 131
+                    }
+                ],
+                "over_count": 0
+            },
+            {
+                "path": "http://wx.cloud.callFunction.echo",
+                "aver_time_cost": 67,
+                "max_time_cost": 102,
+                "total_request_cnt": 36,
+                "succ_percent": 100,
+                "top_time_cost_list": [
+                    {
+                        "time_cost": 102
+                    },
+                    {
+                        "time_cost": 94
+                    },
+                    {
+                        "time_cost": 91
+                    }
+                ],
+                "over_count": 0
+            }
+        ],
+        "appid": "wx5a3f90aefe6d7eaf",
+        "task_url": "pages/index/index",
+        "run_time": 10,
+        "pressure_id": 1066
+    }
+}

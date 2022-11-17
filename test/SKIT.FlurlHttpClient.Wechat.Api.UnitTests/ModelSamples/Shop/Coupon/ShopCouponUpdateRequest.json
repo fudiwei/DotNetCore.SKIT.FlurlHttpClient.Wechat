@@ -15,7 +15,7 @@
                 "discount_condition": {
                     "product_cnt": 2,
                     "product_price": 5000,
-                    "out_product_ids": [ "product_id_3", "product_id_4" ],
+                    "out_product_ids": ["product_id_3", "product_id_4"],
                     "tradein_info": {
                         "out_product_id": "product_id_5",
                         "price": 10000

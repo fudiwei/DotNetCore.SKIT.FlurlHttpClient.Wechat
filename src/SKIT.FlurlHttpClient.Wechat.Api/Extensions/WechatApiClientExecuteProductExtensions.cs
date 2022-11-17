@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         /// <summary>
         /// <para>异步调用 [POST] /product/img/upload 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/register/uploadimg.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/register/uploadimg.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Register
         /// <summary>
         /// <para>异步调用 [POST] /product/register/check_audit_status 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/register/check_audit_status.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/register/check_audit_status.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/register/register_shop 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/register/register_shop.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/register/register_shop.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/register/submit_merchantinfo 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/register/register_shop.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/register/submit_merchantinfo.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/register/submit_basicinfo 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/register/register_shop.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/register/submit_basicinfo.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Service
         /// <summary>
         /// <para>异步调用 [POST] /product/service/check_auth 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/service/check_auth.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/service/check_auth.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -164,7 +164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/service/get_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/service/get_service_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/service/get_service_list.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -184,7 +184,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/service/get_order_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/service/get_service_order_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/service/get_service_order_list.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -206,7 +206,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Decoration
         /// <summary>
         /// <para>异步调用 [POST] /product/decoration/decoration_service 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/service/decoration/decoration_service.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/service/decoration/decoration_service.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -226,7 +226,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/decoration/decoration_service_experience 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/service/decoration/decoration_service_experience.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/service/decoration/decoration_service_experience.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -246,7 +246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/decoration/wxaproduct_decoration_check_status 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/service/decoration/decoration_check_status.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/service/decoration/decoration_check_status.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -266,7 +266,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/decoration/wxaproduct_decoration_pressure_test 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/service/decoration/decoration_pressure_test.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/service/decoration/decoration_pressure_test.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -286,7 +286,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/decoration/wxaproduct_decoration_query_pressure_test_status 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/service/decoration/decoration_query_pressure_test_status.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/service/decoration/decoration_query_pressure_test_status.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -306,7 +306,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/decoration/wxaproduct_decoration_get_pressure_test_report 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/service/decoration/decoration_get_pressure_test_report.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/service/decoration/decoration_get_pressure_test_report.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -328,7 +328,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Category
         /// <summary>
         /// <para>异步调用 [POST] /product/category/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/cat/get_cat_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/cat/get_cat_list.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -350,7 +350,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Brand
         /// <summary>
         /// <para>异步调用 [POST] /product/brand/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/cat/get_brand.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/cat/get_brand.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -369,10 +369,52 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region Store
+        /// <summary>
+        /// <para>异步调用 [POST] /product/store/get_shopcat 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/store/get_shopcat.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ProductStoreGetShopCategoryResponse> ExecuteProductStoreGetShopCategoryAsync(this WechatApiClient client, Models.ProductStoreGetShopCategoryRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "product", "store", "get_shopcat")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ProductStoreGetShopCategoryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /product/store/get_info 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/store/get_store_info.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ProductStoreGetInfoResponse> ExecuteProductStoreGetInfoAsync(this WechatApiClient client, Models.ProductStoreGetInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "product", "store", "get_info")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ProductStoreGetInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Delivery
         /// <summary>
         /// <para>异步调用 [POST] /product/delivery/get_company_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/delivery/get_delivery_company_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/delivery/get_delivery_company_list.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -392,7 +434,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/delivery/send 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/delivery/send_delivery.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/delivery/send_delivery.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -413,8 +455,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region DeliveryFreightTemplate
         /// <summary>
         /// <para>异步调用 [POST] /product/delivery/get_freight_template 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/cat/get_freight_template.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/freight/get_freight_template.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/freight/get_freight_template.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -434,7 +475,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/delivery/insert_freight_template 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/freight/insert_freight_template.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/freight/insert_freight_template.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -454,7 +495,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/delivery/update_freight_template 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/freight/update_freight_template.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/freight/update_freight_template.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -477,7 +518,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region ShipMethods
         /// <summary>
         /// <para>异步调用 [POST] /product/shipmethods/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/ship/get_shipping_methods.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/ship/get_shipping_methods.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -497,7 +538,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/shipmethods/set 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/ship/set_shipping_methods.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/ship/set_shipping_methods.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -519,7 +560,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Offline
         /// <summary>
         /// <para>异步调用 [POST] /product/offline/get_pickup_template 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/offline/get_pickup_template.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/offline/get_pickup_template.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -539,7 +580,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/offline/update_pickup_template 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/offline/update_pickup_template.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/offline/update_pickup_template.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -559,7 +600,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/offline/get_same_city_template 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/offline/get_same_city_template.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/offline/get_same_city_template.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -579,7 +620,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/offline/update_same_city_template 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/offline/update_same_city_template.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/offline/update_same_city_template.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -601,7 +642,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region SPU
         /// <summary>
         /// <para>异步调用 [POST] /product/spu/add 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/add_spu.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/add_spu.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -621,7 +662,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/spu/del 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/del_spu.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/del_spu.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -641,7 +682,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/spu/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/get_spu.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/get_spu.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -661,7 +702,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/spu/get_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/get_spu_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/get_spu_list.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -681,7 +722,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/spu/search 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/search_spu.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/search_spu.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -701,7 +742,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/spu/update 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/up_spu.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/up_spu.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -721,7 +762,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/spu/listing 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/up_spu_listing.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/up_spu_listing.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -741,7 +782,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/spu/delisting 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/up_spu_delisting.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/up_spu_delisting.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -763,7 +804,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region SKU
         /// <summary>
         /// <para>异步调用 [POST] /product/sku/add 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/sku/add_sku.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/sku/add_sku.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -783,7 +824,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/sku/batch_add 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/sku/batch_add_sku.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/sku/batch_add_sku.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -803,7 +844,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/sku/del 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/sku/del_sku.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/sku/del_sku.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -823,7 +864,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/sku/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/sku/get_sku.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/sku/get_sku.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -843,7 +884,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/sku/get_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/sku/get_sku_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/sku/get_sku_list.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -863,7 +904,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/sku/update 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/sku/up_sku.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/sku/up_sku.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -883,7 +924,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/sku/update_price 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/sku/up_sku_price.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/sku/up_sku_price.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -905,7 +946,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region LimitedDiscount
         /// <summary>
         /// <para>异步调用 [POST] /product/limiteddiscount/add 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/add_limiteddiscount.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/add_limiteddiscount.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -925,7 +966,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/limiteddiscount/get_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/get_limiteddiscount_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/get_limiteddiscount_list.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -945,7 +986,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/limiteddiscount/update_status 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/spu/update_limiteddiscount_status.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/spu/update_limiteddiscount_status.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -967,7 +1008,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Stock
         /// <summary>
         /// <para>异步调用 [POST] /product/stock/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/sku/get_stock.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/sku/up_stock.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -987,7 +1028,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/stock/update 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/sku/up_stock.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/sku/get_stock.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1006,52 +1047,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
-        #region Store
-        /// <summary>
-        /// <para>异步调用 [POST] /product/store/get_shopcat 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/store/get_shopcat.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ProductStoreGetShopCategoryResponse> ExecuteProductStoreGetShopCategoryAsync(this WechatApiClient client, Models.ProductStoreGetShopCategoryRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "product", "store", "get_shopcat")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.ProductStoreGetShopCategoryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /product/store/get_info 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/store/get_store_info.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ProductStoreGetInfoResponse> ExecuteProductStoreGetInfoAsync(this WechatApiClient client, Models.ProductStoreGetInfoRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "product", "store", "get_info")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.ProductStoreGetInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
         #region Address
         /// <summary>
         /// <para>异步调用 [POST] /product/address/add 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/address/add_address.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/address/add_address.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1071,7 +1070,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/address/delete 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/address/delete_address.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/address/delete_address.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1091,7 +1090,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/address/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/address/get_address.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/address/get_address.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1111,7 +1110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/address/update 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/address/update_address.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/address/update_address.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1133,7 +1132,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Order
         /// <summary>
         /// <para>异步调用 [POST] /product/order/get_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/order/get_order_list.html </para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/order/get_order_list.html </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1154,7 +1152,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/order/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/order/get_order_detail.html </para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/order/get_order_detail.html </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1175,7 +1172,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/order/search 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/order/search_order.html </para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/order/search_order.html </para>
         /// </summary>
         /// <param name="client"></param>
@@ -1234,10 +1230,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.ProductOrderChangeMerchantNotesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
-        #region Aftersale
+        #region OrderAftersale
         /// <summary>
         /// <para>异步调用 [POST] /product/order/batchgetaftersaleorder 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/order/batchgetaftersaleorder.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/order/getaftersaleorder.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1257,7 +1253,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/order/getaftersaleorder 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/order/getaftersaleorder.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/order/batchgetaftersaleorder.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1314,13 +1310,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ProductOrderRejectRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /product/order/upload_refund_certificate 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/order/upload_refund_certificate.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ProductOrderUploadRefundCertificateResponse> ExecuteProductOrderUploadRefundCertificateAsync(this WechatApiClient client, Models.ProductOrderUploadRefundCertificateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "product", "order", "upload_refund_certificate")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ProductOrderUploadRefundCertificateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
         #endregion
 
         #region Coupon
         /// <summary>
         /// <para>异步调用 [POST] /product/coupon/create 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/coupon/create_coupon.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/coupon/create_coupon.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1340,7 +1356,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/coupon/update 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/coupon/update_coupon.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/coupon/update_coupon.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1360,7 +1376,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/coupon/update_status 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/coupon/update_coupon_status.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/coupon/update_coupon_status.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1380,7 +1396,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/coupon/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/coupon/get.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/coupon/get.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1400,7 +1416,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/coupon/get_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/coupon/get_coupon.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/coupon/get_coupon.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1420,7 +1436,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/coupon/push 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/coupon/push_coupon.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/coupon/push_coupon.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1440,7 +1456,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /product/coupon/get_user 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/ministore/minishopopencomponent/API/coupon/get_user_coupon.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent/API/coupon/get_user_coupon.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

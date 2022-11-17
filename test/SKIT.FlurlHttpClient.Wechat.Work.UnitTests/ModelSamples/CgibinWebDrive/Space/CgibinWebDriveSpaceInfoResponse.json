@@ -22,7 +22,7 @@
                     "auth": 1
                 }
             ],
-            "quit_userid": [ "USERID3", "USERID4" ]
+            "quit_userid": ["USERID3", "USERID4"]
         }
     }
 }

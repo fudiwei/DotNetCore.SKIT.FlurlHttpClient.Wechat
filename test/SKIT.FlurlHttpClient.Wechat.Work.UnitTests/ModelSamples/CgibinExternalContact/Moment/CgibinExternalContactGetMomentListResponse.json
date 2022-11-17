@@ -12,9 +12,7 @@
             "text": {
                 "content": "test"
             },
-            "image": [
-                { "media_id": "WWCISP_xxxxx" }
-            ],
+            "image": [{ "media_id": "WWCISP_xxxxx" }],
             "video": {
                 "media_id": "WWCISP_xxxxx",
                 "thumb_media_id": "WWCISP_xxxxx"

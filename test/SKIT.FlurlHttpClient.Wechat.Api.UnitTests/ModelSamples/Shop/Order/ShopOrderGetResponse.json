@@ -2,15 +2,23 @@
     "errcode": 0,
     "errmsg": "ok",
     "order": {
-        "order_id": 123455,
-        "out_order_id": "xxxxx",
+        "order_id": 3302968738502279424,
+        "out_order_id": "***************",
         "status": 20,
         "path": "/pages/order.html?out_order_id=xxxxx",
+        "default_receiving_address": {
+            "city": "广州市",
+            "country": "中国",
+            "detailed_address": "龙洞250号",
+            "province": "广东省",
+            "receiver_name": "我爱我家",
+            "tel_number": "18712345678",
+            "town": "温柔乡"
+        },
         "order_detail": {
             "promotion_info": {
                 "promoter_id": "PROMOTER_ID",
                 "finder_nickname": "FINDER_NICKNAME",
-                "promoter_openid": "PROMOTER_OPENID",
                 "sharer_openid": "SHARER_OPENID"
             },
             "product_infos": [

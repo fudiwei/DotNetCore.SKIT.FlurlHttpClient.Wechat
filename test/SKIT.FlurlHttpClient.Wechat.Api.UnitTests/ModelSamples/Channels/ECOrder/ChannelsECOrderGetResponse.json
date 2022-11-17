@@ -1,0 +1,84 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "order": {
+        "order_id": "37423523451235145",
+        "status": 20,
+        "create_time": 1658505600,
+        "update_time": 1658505600,
+        "order_detail": {
+            "product_infos": [
+                {
+                    "product_id": 234245,
+                    "sku_id": 23424,
+                    "sku_cnt": 10,
+                    "on_aftersale_sku_cnt": 10,
+                    "finish_aftersale_sku_cnt": 0,
+                    "title": "健身环",
+                    "thumb_img": "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+                    "sale_price": 2000,
+                    "market_price": 2000
+                }
+            ],
+            "pay_info": {
+                "prepay_id": "42526234625",
+                "transaction_id": "131456479687",
+                "prepay_time": 1658509200,
+                "pay_time": 1658509200
+            },
+            "price_info": {
+                "product_price": 20000,
+                "order_price": 10500,
+                "freight": 500,
+                "discounted_price": 10000,
+                "is_discounted": true
+            },
+            "delivery_info": {
+                "address_info": {
+                    "user_name": "陈先生",
+                    "postal_code": "2435245",
+                    "province_name": "广东",
+                    "city_name": "广州",
+                    "county_name": "海珠区",
+                    "detail_info": "大塘",
+                    "national_code": "234234",
+                    "tel_number": "24534252"
+                },
+                "delivery_product_info": [
+                    {
+                        "waybill_id": "134654612313",
+                        "delivery_id": "STO",
+                        "delivery_time": 1620738080,
+                        "deliver_type": 1,
+                        "product_infos": [
+                            {
+                                "product_id": "234245",
+                                "sku_id": "23424",
+                                "product_cnt": 1
+                            }
+                        ]
+                    }
+                ],
+                "ship_done_time": 1620738080,
+                "deliver_method": 0
+            },
+            "coupon_info": {
+                "user_coupon_id": "301234567890"
+            },
+            "ext_info": {
+                "customer_notes": "发顺丰",
+                "merchant_notes": "库存不足，取消"
+            }
+        },
+        "aftersale_detail": {
+            "aftersale_order_list": [
+                {
+                    "aftersale_order_id": "1234",
+                    "status": 13
+                }
+            ],
+            "on_aftersale_order_cnt": 1
+        },
+        "openid": "OPENID"
+    }
+}

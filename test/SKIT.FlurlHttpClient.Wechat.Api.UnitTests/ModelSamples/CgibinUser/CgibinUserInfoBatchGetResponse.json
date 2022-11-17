@@ -17,11 +17,10 @@
             "remark": "",
 
             "groupid": 0,
-            "tagid_list": [ 128, 2 ],
+            "tagid_list": [128, 2],
             "subscribe_scene": "ADD_SCENE_QR_CODE",
             "qr_scene": 98765,
             "qr_scene_str": ""
-
         },
         {
             "subscribe": 0,

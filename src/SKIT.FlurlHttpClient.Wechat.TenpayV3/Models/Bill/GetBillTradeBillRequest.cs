@@ -13,7 +13,7 @@
         public string? SubMerchantId { get; set; }
 
         /// <summary>
-        /// 获取或设置账单日期（格式：yyyy-MM-dd）。
+        /// 获取或设置账单日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

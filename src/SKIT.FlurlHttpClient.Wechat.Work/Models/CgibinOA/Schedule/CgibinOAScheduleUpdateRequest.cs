@@ -86,13 +86,45 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public IList<Types.Attendee>? AttendeeList { get; set; }
 
                 /// <summary>
-                /// 获取或设置是否忽略参与者字段。
+                /// 获取或设置是否允许非参与人主动加入日程。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("skip_attendees")]
-                [System.Text.Json.Serialization.JsonPropertyName("skip_attendees")]
-                public bool? RequireSkipAttendees { get; set; }
+                [Newtonsoft.Json.JsonProperty("allow_active_join")]
+                [System.Text.Json.Serialization.JsonPropertyName("allow_active_join")]
+                public bool? IsAllowActiveJoin { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否只允许组织者发起群聊。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("only_organizer_create_chat")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("only_organizer_create_chat")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                public bool? IsOnlyOrganizerCreateChat { get; set; }
             }
         }
+
+        /// <summary>
+        /// 获取或设置是否忽略参与者字段。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("skip_attendees")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("skip_attendees")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        public bool? IsSkipAttendees { get; set; }
+
+        /// <summary>
+        /// 获取或设置操作模式。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("op_mode")]
+        [System.Text.Json.Serialization.JsonPropertyName("op_mode")]
+        public int? OperateMode { get; set; }
+
+        /// <summary>
+        /// 获取或设置操作起始时间戳。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("op_start_time")]
+        [System.Text.Json.Serialization.JsonPropertyName("op_start_time")]
+        public long? OperateStartTimestamp { get; set; }
 
         /// <summary>
         /// 获取或设置日程信息。

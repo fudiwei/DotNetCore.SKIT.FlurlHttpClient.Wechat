@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
     /// <summary>
     /// 微信支付 API 接口域名。
@@ -18,6 +20,7 @@
         /// <summary>
         /// 沙箱域名。
         /// </summary>
-        public const string SANDBOX = "https://api.mch.weixin.qq.com/sandboxnew";
+        [Obsolete("")]
+        public const string SANDBOX = "https://api.mch.weixin.qq.com/xdc/apiv2sandbox";
     }
 }

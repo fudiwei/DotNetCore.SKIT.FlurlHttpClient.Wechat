@@ -7,46 +7,39 @@
     {
         public static class Types
         {
-            public class Address
+            public class AddressDetail
             {
                 public static class Types
                 {
-                    public class AddressDetail
+                    public class Address
                     {
                         /// <summary>
                         /// 获取或设置联系人姓名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_name")]
-                        public string Name { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置邮政编码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("postal_code")]
-                        [System.Text.Json.Serialization.JsonPropertyName("postal_code")]
-                        public string? PostalCode { get; set; }
+                        public string UserName { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置省份。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("province_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("province_name")]
-                        public string Province { get; set; } = default!;
+                        public string ProvinceName { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置城市。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("city_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("city_name")]
-                        public string City { get; set; } = default!;
+                        public string CityName { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置区县。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("county_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("county_name")]
-                        public string District { get; set; } = default!;
+                        public string DistrictName { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置详细地址。
@@ -70,6 +63,20 @@
                         public string? TeleNumber { get; set; }
 
                         /// <summary>
+                        /// 获取或设置邮政编码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("postal_code")]
+                        [System.Text.Json.Serialization.JsonPropertyName("postal_code")]
+                        public string? PostalCode { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置门牌号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("house_number")]
+                        [System.Text.Json.Serialization.JsonPropertyName("house_number")]
+                        public string? HouseNumber { get; set; }
+
+                        /// <summary>
                         /// 获取或设置经度。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("lng")]
@@ -82,13 +89,6 @@
                         [Newtonsoft.Json.JsonProperty("lat")]
                         [System.Text.Json.Serialization.JsonPropertyName("lat")]
                         public double? Latitude { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置门牌号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("house_number")]
-                        [System.Text.Json.Serialization.JsonPropertyName("house_number")]
-                        public string? HouseNumber { get; set; }
                     }
 
                     public class AddressType
@@ -118,14 +118,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_id")]
-                public int AddressId { get; set; }
+                public long AddressId { get; set; }
 
                 /// <summary>
-                /// 获取或设置地址详细信息。
+                /// 获取或设置地址信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("address_info")]
-                public Types.AddressDetail AddressDetail { get; set; } = default!;
+                public Types.Address Address { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置地址类型信息。
@@ -205,6 +205,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("address_list")]
         [System.Text.Json.Serialization.JsonPropertyName("address_list")]
-        public Types.Address[] AddressList { get; set; } = default!;
+        public Types.AddressDetail[] AddressDetailList { get; set; } = default!;
     }
 }

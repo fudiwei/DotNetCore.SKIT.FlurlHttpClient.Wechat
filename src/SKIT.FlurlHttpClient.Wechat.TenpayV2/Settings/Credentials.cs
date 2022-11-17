@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
 {
@@ -29,6 +29,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
         /// </summary>
         public string? AppId { get; }
 
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatTenpayClientOptions.WeWorkPaymentSecret"/> 的副本。
+        /// </summary>
+        public string? WeWorkPaymentSecret { get; }
+
         internal Credentials(WechatTenpayClientOptions options)
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
@@ -38,6 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
             MerchantCertificateBytes = options.MerchantCertificateBytes;
             MerchantCertificatePassword = options.MerchantCertificatePassword;
             AppId = options.AppId;
+            WeWorkPaymentSecret = options.WeWorkPaymentSecret;
         }
     }
 }

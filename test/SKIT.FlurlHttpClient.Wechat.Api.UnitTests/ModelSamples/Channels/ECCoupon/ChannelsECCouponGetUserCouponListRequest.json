@@ -1,0 +1,7 @@
+﻿{
+    "openid": "OPENID",
+    "status": 100,
+    "page": 1,
+    "page_size": 20,
+    "page_ctx": "THE_PAGE_CTX"
+}

@@ -1,0 +1,19 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "next_cursor": "aaaaaaaaa",
+    "dept_user": [
+        {
+            "userid": "zhangsan",
+            "department": 1
+        },
+        {
+            "userid": "zhangsan",
+            "department": 2
+        },
+        {
+            "userid": "lisi",
+            "department": 2
+        }
+    ]
+}

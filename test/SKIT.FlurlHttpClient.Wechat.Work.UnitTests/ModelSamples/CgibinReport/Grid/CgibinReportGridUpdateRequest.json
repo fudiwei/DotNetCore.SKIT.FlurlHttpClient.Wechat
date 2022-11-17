@@ -2,6 +2,6 @@
     "grid_id": "grid_id",
     "grid_name": "grid_name",
     "grid_parent_id": "grid_id",
-    "grid_admin": [ "zhangsan" ],
-    "grid_member": [ "lisi", "invaliduser" ]
+    "grid_admin": ["zhangsan"],
+    "grid_member": ["lisi", "invaliduser"]
 }

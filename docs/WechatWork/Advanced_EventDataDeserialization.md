@@ -35,7 +35,7 @@ switch (msgType)
             var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml);
         }
         break;
-    // 省略其他情况
+    // 其他情况略
 }
 ```
 
@@ -45,9 +45,19 @@ switch (msgType)
 
 与微信公众号不同的是，企业微信默认启用了安全模式，且不支持切换至明文模式。
 
-开发者可利用本库提供的 `WxBizMsgCryptor` 工具类自行解密相关字段。
+上文提到的扩展方法，已自动做解密处理，无需开发者手动干预。
 
-上文提到的扩展方法，已自动做解密处理。
+为此，你需要在构造得到 `WechatWorkClient` 对象时指定推送参数：
+
+```csharp
+var options = new WechatWorkClientOptions()
+{
+    // 其他配置项略
+    PushToken = "Token",
+    PushEncodingAESKey = "EncodingAESKey"
+};
+var client = new WechatWorkClient(options);
+```
 
 ---
 

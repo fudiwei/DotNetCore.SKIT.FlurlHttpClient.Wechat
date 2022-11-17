@@ -312,6 +312,170 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
+        #region KnowledgeGroup
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/knowledge/add_group 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95971 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfKnowledgeAddGroupResponse> ExecuteCgibinKfKnowledgeAddGroupAsync(this WechatWorkClient client, Models.CgibinKfKnowledgeAddGroupRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "knowledge", "add_group")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfKnowledgeAddGroupResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/knowledge/mod_group 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95971 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfKnowledgeModifyGroupResponse> ExecuteCgibinKfKnowledgeModifyGroupAsync(this WechatWorkClient client, Models.CgibinKfKnowledgeModifyGroupRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "knowledge", "mod_group")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfKnowledgeModifyGroupResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/knowledge/del_group 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95971 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfKnowledgeDeleteGroupResponse> ExecuteCgibinKfKnowledgeDeleteGroupAsync(this WechatWorkClient client, Models.CgibinKfKnowledgeDeleteGroupRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "knowledge", "del_group")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfKnowledgeDeleteGroupResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/knowledge/list_group 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95971 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfKnowledgeListGroupResponse> ExecuteCgibinKfKnowledgeListGroupAsync(this WechatWorkClient client, Models.CgibinKfKnowledgeListGroupRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "knowledge", "list_group")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfKnowledgeListGroupResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region KnowledgeIntent
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/knowledge/add_intent 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95972 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfKnowledgeAddIntentResponse> ExecuteCgibinKfKnowledgeAddIntentAsync(this WechatWorkClient client, Models.CgibinKfKnowledgeAddIntentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "knowledge", "add_intent")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfKnowledgeAddIntentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/knowledge/mod_intent 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95972 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfKnowledgeModifyIntentResponse> ExecuteCgibinKfKnowledgeModifyIntentAsync(this WechatWorkClient client, Models.CgibinKfKnowledgeModifyIntentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "knowledge", "mod_intent")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfKnowledgeModifyIntentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/knowledge/del_intent 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95972 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfKnowledgeDeleteIntentResponse> ExecuteCgibinKfKnowledgeDeleteIntentAsync(this WechatWorkClient client, Models.CgibinKfKnowledgeDeleteIntentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "knowledge", "del_intent")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfKnowledgeDeleteIntentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/kf/knowledge/list_intent 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95972 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinKfKnowledgeListIntentResponse> ExecuteCgibinKfKnowledgeListIntentAsync(this WechatWorkClient client, Models.CgibinKfKnowledgeListIntentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "kf", "knowledge", "list_intent")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfKnowledgeListIntentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/kf/send_msg 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/94677 </para>
@@ -374,7 +538,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfSyncMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/kf/get_corp_qualification 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95153 </para>
@@ -394,7 +558,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfGetCorpQualificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/kf/get_corp_statistic 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95489 </para>
@@ -414,7 +578,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinKfGetCorpStatisticResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/kf/get_servicer_statistic 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95490 </para>

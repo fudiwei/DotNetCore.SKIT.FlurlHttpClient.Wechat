@@ -1,6 +1,0 @@
-﻿{
-    "errcode": 0,
-    "errmsg": "ok",
-    "acl_tag": "CUSTOM",
-    "rule": "{\n  \"read\": true,\n  \"write\": \"doc._openid == auth.openid\"\n}"
-}

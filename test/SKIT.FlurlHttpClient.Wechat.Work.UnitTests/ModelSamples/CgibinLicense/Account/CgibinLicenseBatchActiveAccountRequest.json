@@ -1,0 +1,13 @@
+﻿{
+    "corpid": "CORPID",
+    "active_list": [
+        {
+            "active_code": "XXXXXXXX",
+            "userid": "USERID"
+        },
+        {
+            "active_code": "XXXXXXXX",
+            "userid": "USERID"
+        }
+    ]
+}

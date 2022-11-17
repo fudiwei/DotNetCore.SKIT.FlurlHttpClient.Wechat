@@ -1,0 +1,8 @@
+﻿<xml>
+	<ToUserName><![CDATA[wx28dbb14e3720FAKE]]></ToUserName>
+	<FromUserName><![CDATA[sys]]></FromUserName>
+	<CreateTime>1425284517</CreateTime>
+	<MsgType><![CDATA[event]]></MsgType>
+	<Event><![CDATA[upload_media_job_finish]]></Event>
+	<JobId><![CDATA[jobid_S0MrnndvRG5fadSlLwiBqiDDbM143UqTmKP3152FZk4]]></JobId>
+</xml>

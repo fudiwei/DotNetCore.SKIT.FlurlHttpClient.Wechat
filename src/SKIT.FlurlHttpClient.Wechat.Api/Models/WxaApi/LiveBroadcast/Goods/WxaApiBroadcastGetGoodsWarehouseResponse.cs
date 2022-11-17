@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_id")]
-                public int GoodsId { get; set; }
+                public long GoodsId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品名称。

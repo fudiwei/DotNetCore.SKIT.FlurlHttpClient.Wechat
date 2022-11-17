@@ -1,7 +1,7 @@
 ﻿{
     "errcode": 0,
     "errmsg": "ok",
-    "success_list": [ "openid1", "openid2", "openid3" ],
+    "success_list": ["openid1", "openid2", "openid3"],
     "fail_list": [],
     "refuse_list": [],
     "result_list": [

@@ -1,0 +1,25 @@
+{
+    "env_id": "test-6gxk23no5605e14f",
+    "upload_type": "repository",
+    "flow_ratio": 0,
+    "cpu": 0.25,
+    "mem": 0.5,
+    "min_num": 0,
+    "max_num": 1,
+    "policy_type": "cpu",
+    "policy_threshold": 60,
+    "container_port": 80,
+    "server_name": "test",
+    "repository_type": "github",
+    "dockerfile_path": "Dockerfile",
+    "repository": "test/wx-container-demo",
+    "branch": "main",
+    "code_detail": {
+        "name": {
+            "name": "wx-container-demo",
+            "full_name": "test/wx-container-demo"
+        }
+    },
+    "has_dockerfile": 1,
+    "env_params": "{}"
+}

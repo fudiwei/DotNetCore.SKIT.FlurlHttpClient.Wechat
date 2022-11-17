@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /merchant/shelf/getbyid 接口的响应。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2020-10-01 下线。")]
     public class MerchantShelfGetByIdResponse : WechatApiResponse
     {
         public static class Types
@@ -35,7 +38,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("group_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-                                public int GroupId { get; set; }
+                                public long GroupId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置分组图片 URL。
@@ -75,7 +78,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("eid")]
                         [System.Text.Json.Serialization.JsonPropertyName("eid")]
-                        public int EId { get; set; }
+                        public long ElementId { get; set; }
 
                         /// <summary>
                         /// 获取或设置单个分组信息。
@@ -107,7 +110,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shelf_id")]
         [System.Text.Json.Serialization.JsonPropertyName("shelf_id")]
-        public int ShelfId { get; set; }
+        public long ShelfId { get; set; }
 
         /// <summary>
         /// 获取或设置货架数据。

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -79,6 +79,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
             }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatWorkRequestTimeoutException(ex.Message, ex);
+            }
             catch (FlurlHttpException ex)
             {
                 throw new WechatWorkException(ex.Message, ex);
@@ -108,6 +112,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                     await base.SendRequestAsync(flurlRequest, null, cancellationToken) :
                     await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
+            }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatWorkRequestTimeoutException(ex.Message, ex);
             }
             catch (FlurlHttpException ex)
             {

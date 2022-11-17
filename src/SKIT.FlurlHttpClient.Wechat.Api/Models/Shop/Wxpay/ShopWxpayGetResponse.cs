@@ -128,7 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("contact_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("contact_name")]
-                        public string Name { get; set; } = default!;
+                        public string UserName { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置联系人身份证号。
@@ -159,7 +159,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("store_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("store_name")]
-                        public string StoreName { get; set; } = default!;
+                        public string? StoreName { get; set; }
 
                         /// <summary>
                         /// 获取或设置店铺链接。

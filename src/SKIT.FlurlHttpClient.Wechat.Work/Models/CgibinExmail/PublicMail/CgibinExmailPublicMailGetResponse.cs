@@ -73,7 +73,7 @@
                 public Types.DepartmentIdList? AllowDepartmentIdList { get; set; }
             }
         }
-        
+
         /// <summary>
         /// 获取或设置业务邮箱列表。
         /// </summary>

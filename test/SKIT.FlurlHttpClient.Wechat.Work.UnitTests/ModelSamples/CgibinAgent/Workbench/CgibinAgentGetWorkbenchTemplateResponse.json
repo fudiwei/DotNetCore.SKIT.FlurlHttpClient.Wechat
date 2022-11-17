@@ -55,7 +55,10 @@
     "webview": {
         "url": "http://www.qq.com",
         "jump_url": "http://www.qq.com",
-        "pagepath": "pages/index"
+        "pagepath": "pages/index",
+        "height":"single_row",
+        "hide_title":true,
+        "enable_webview_click":true
     },
     "replace_user_data": true
 }

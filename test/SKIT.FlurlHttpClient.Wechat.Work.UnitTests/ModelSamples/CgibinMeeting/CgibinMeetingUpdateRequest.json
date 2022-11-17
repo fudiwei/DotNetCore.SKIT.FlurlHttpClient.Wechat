@@ -7,17 +7,8 @@
     "type": 1,
     "remind_time": 60,
     "attendees": {
-        "userid": [
-            "lisi",
-            "wangwu"
-        ],
-        "external_userid": [
-            "woabc",
-            "woced"
-        ],
-        "device_sn": [
-            "devsn1",
-            "devsn2"
-        ]
+        "userid": ["lisi", "wangwu"],
+        "external_userid": ["woabc", "woced"],
+        "device_sn": ["devsn1", "devsn2"]
     }
 }

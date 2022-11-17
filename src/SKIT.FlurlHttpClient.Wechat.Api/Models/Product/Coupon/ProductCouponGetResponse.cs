@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("notes")]
                                 [System.Text.Json.Serialization.JsonPropertyName("notes")]
-                                public string? Remark { get; set; }
+                                public string? Notes { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置有效时间戳。
@@ -133,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("total_num")]
                                 [System.Text.Json.Serialization.JsonPropertyName("total_num")]
-                                public int? TotalNumber { get; set; }
+                                public int? TotalCount { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置领取开始时间戳。
@@ -263,7 +263,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_id")]
-                public int CouponId { get; set; }
+                public long CouponId { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠券类型。

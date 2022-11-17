@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -45,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
         public InMemoryCertificateManager()
         {
-            _dict = new ConcurrentDictionary<string, CertificateEntry>();
+            _dict = new ConcurrentDictionary<string, CertificateEntry>(StringComparer.OrdinalIgnoreCase);
         }
 
         public override IEnumerable<CertificateEntry> AllEntries()

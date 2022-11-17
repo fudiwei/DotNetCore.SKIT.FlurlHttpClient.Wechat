@@ -6,20 +6,11 @@
         "creator": "creator_userid",
         "type": 1,
         "apply_range": {
-            "userids": [
-                "userid1",
-                "userid2"
-            ],
-            "partyids": [
-                1,
-                2
-            ]
+            "userids": ["userid1", "userid2"],
+            "partyids": [1, 2]
         },
         "report_to": {
-            "userids": [
-                "userid1",
-                "userid2"
-            ]
+            "userids": ["userid1", "userid2"]
         },
         "report_type": 1,
         "skip_weekend": 0,

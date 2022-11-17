@@ -10,6 +10,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("goodsId")]
         [System.Text.Json.Serialization.JsonPropertyName("goodsId")]
-        public int GoodsId { get; set; }
+        public long GoodsId { get; set; }
     }
 }

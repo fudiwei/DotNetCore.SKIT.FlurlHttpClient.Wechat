@@ -1,4 +1,4 @@
-﻿{
+{
     "create_time": "2020-03-25 13:05:25",
     "out_order_id": "xxxxx",
     "openid": "oTVP50O53a7jgmawAmxKukNlq3XI",
@@ -15,7 +15,6 @@
                 "path": "pages/productDetail/productDetail?productId=2176180",
                 "title": "洗洁精",
                 "head_img": "http://img10.360buyimg.com/n1/s450x450_jfs/t1/85865/39/13611/488083/5e590a40E4bdf69c0/55c9bf645ea2b727.jpg"
-
             }
         ],
         "pay_info": {
@@ -42,5 +41,16 @@
         "town": "乡镇，选填"
     },
     "fund_type": 1,
-    "expire_time": 1642076428 
+    "expire_time": 1642076428,
+    "trace_id": "1_lkbvxXM-MpYZMC5hoIa8c1rqdFyUjMLoKNYsaKBFRoE",
+    "aftersale_duration": 7,
+    "default_receiving_address": {
+        "city": "广州市",
+        "country": "中国",
+        "detailed_address": "龙洞250号",
+        "province": "广东省",
+        "receiver_name": "我爱我家",
+        "tel_number": "18712345678",
+        "town": "温柔乡"
+    }
 }

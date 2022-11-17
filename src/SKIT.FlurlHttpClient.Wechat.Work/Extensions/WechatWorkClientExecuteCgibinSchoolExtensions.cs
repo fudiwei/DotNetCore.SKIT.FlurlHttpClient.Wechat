@@ -91,6 +91,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinSchoolSetUpgradeInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/school/getuserinfo 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95791 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSchoolGetUserInfoResponse> ExecuteCgibinSchoolGetUserInfoAsync(this WechatWorkClient client, Models.CgibinSchoolGetUserInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "school", "getuserinfo")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("code", request.Code);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolGetUserInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
         #region User
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/school/user/get 接口。</para>
@@ -634,6 +655,48 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinSchoolLivingGetUnwatchStatisticsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/school/living/get_watch_stat_v2 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95793 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95799 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSchoolLivingGetWatchStatisticsV2Response> ExecuteCgibinSchoolLivingGetWatchStatisticsV2Async(this WechatWorkClient client, Models.CgibinSchoolLivingGetWatchStatisticsV2Request request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "school", "living", "get_watch_stat_v2")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolLivingGetWatchStatisticsV2Response>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/school/living/get_unwatch_stat_v2 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95795 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95799 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSchoolLivingGetUnwatchStatisticsV2Response> ExecuteCgibinSchoolLivingGetUnwatchStatisticsV2Async(this WechatWorkClient client, Models.CgibinSchoolLivingGetUnwatchStatisticsV2Request request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "school", "living", "get_unwatch_stat_v2")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolLivingGetUnwatchStatisticsV2Response>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 

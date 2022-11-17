@@ -5,18 +5,10 @@
     "max_round": 10,
     "wake_open": true,
     "awaken_word": "你好",
-    "awaken_answer": [
-        "有什么可以帮忙的吗"
-    ],
+    "awaken_answer": ["有什么可以帮忙的吗"],
     "exist_word": "再见",
-    "exist_answer": [
-        "祝您好运"
-    ],
+    "exist_answer": ["祝您好运"],
     "cancel_intent_operation": true,
-    "cancel_answer": [
-        "已取消"
-    ],
-    "no_cancel_answer": [
-        "没有可以取消的内容"
-    ]
+    "cancel_answer": ["已取消"],
+    "no_cancel_answer": ["没有可以取消的内容"]
 }

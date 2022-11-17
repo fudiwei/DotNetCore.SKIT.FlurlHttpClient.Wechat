@@ -1,5 +1,0 @@
-﻿{
-    "errcode": 0,
-    "errmsg": "ok",
-    "headers": "Authorization:TC3-HMAC-SHA256 Credential=AKIDNS5S-8S5Y7dxxv8lOPYPqu7XqNM3XUTG6QUxv2B-zkIcRG0XziWdsvpzzzzzzz/2019-05-28/scf/tc3_request, SignedHeaders=content-type;host, Signature=096dad0a5a5563381458224f38c1b8f35c8e2d5a8451950e33e36fa856fe9cd2\r\nHost:scf.tencentcloudapi.com\r\nContent-Type:application/json\r\nX-TC-Action:UpdateFunctionCode\r\nX-TC-Timestamp:1559046811\r\nX-TC-Version:2018-04-16\r\nX-TC-Region:ap-shanghai\r\nX-TC-Token:TOKEN"
-}

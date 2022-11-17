@@ -24,20 +24,11 @@
             "coupon_amount": 50,
             "transaction_minimum": 100
         },
-        "goods_tag": [
-            "123321",
-            "123322"
-        ],
-        "trade_type": [ "OTHER", "APPPAY" ],
+        "goods_tag": ["123321", "123322"],
+        "trade_type": ["OTHER", "APPPAY"],
         "combine_use": false,
-        "available_items": [
-            "123321",
-            "123322"
-        ],
-        "available_merchants": [
-            "9856000",
-            "9856001"
-        ]
+        "available_items": ["123321", "123322"],
+        "available_merchants": ["9856000", "9856001"]
     },
     "no_cash": false,
     "stock_type": "NORMAL",

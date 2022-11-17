@@ -5,7 +5,7 @@
     "hit_rate": 0.94,
     "q_a_count": 985,
     "user_count": 280,
-    "hot_query_list": [ "我想看新闻", "好听的歌", "我想知道今天天气" ],
+    "hot_query_list": ["我想看新闻", "好听的歌", "我想知道今天天气"],
     "miss_rate": 0.06000000000000005,
     "new_news_count": 2021,
     "new_news_user_count": 605,

@@ -9,24 +9,15 @@
         "grid_name": "测试网格",
         "grid_id": "grid_id",
         "create_time": 12345678,
-        "image_urls": [
-            "https://image1.qq.com",
-            "https://image2.qq.com"
-        ],
-        "video_media_ids": [
-            "mediaid1",
-            "mediaid2"
-        ],
+        "image_urls": ["https://image1.qq.com", "https://image2.qq.com"],
+        "video_media_ids": ["mediaid1", "mediaid2"],
         "location": {
             "name": "测试小区",
             "address": "实例小区，不真实存在，经纬度无意义",
             "latitude": 0,
             "longitude": 0
         },
-        "processor_userids": [
-            "zhangsan",
-            "lisi"
-        ],
+        "processor_userids": ["zhangsan", "lisi"],
         "process_list": [
             {
                 "process_type": 1,
@@ -38,10 +29,7 @@
                     "https://image1.qq.com",
                     "https://image2.qq.com"
                 ],
-                "video_media_ids": [
-                    "mediaid1",
-                    "mediaid2"
-                ]
+                "video_media_ids": ["mediaid1", "mediaid2"]
             }
         ]
     }

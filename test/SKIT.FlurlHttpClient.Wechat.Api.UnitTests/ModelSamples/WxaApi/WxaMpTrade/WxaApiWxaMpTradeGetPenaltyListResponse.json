@@ -1,0 +1,27 @@
+{
+    "appealList": [
+        {
+            "illegalOrderId": "12345",
+            "complaintOrderId": "54321",
+            "illegalWording": "质量缺陷",
+            "status": 6,
+            "illegalTime": 1656658706,
+            "orderId": "payorder@567897862897364928374",
+            "minusScore": 2,
+            "updateTime": 1656907435
+        },
+        {
+            "illegalOrderId": "61577",
+            "complaintOrderId": "1360130",
+            "illegalWording": "骚扰/辱骂他人",
+            "status": 5,
+            "illegalTime": 1656658601,
+            "orderId": "payorder@_4200001450202207012836130249",
+            "minusScore": 20,
+            "updateTime": 1656659715
+        }
+    ],
+    "currentScore": 55,
+    "totalNum": 2,
+    "errcode": 0
+}

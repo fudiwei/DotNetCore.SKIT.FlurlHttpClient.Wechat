@@ -28,11 +28,7 @@
                 "bind_openid": false,
                 "can_share": true,
                 "can_give_friend": true,
-                "location_id_list": [
-                    123,
-                    12321,
-                    345345
-                ],
+                "location_id_list": [123, 12321, 345345],
                 "center_title": "顶部居中按钮",
                 "center_sub_title": "按钮下方的wording",
                 "center_url": "www.qq.com",
@@ -86,32 +82,24 @@
             "deal_detail": "以下锅底2选1（有菌王锅、麻辣锅、大骨锅、番茄锅、清补 凉锅、酸菜鱼锅可选）：\n大锅1份 12元\n小锅2份 16元 "
         },
         "cash": {
-            "base_info": {
-            },
-            "advanced_info": {
-            },
+            "base_info": {},
+            "advanced_info": {},
             "least_cost": 1000,
             "reduce_cost": 100
         },
         "discount": {
-            "base_info": {
-            },
-            "advanced_info": {
-            },
+            "base_info": {},
+            "advanced_info": {},
             "discount": 30
         },
         "gift": {
-            "base_info": {
-            },
-            "advanced_info": {
-            },
+            "base_info": {},
+            "advanced_info": {},
             "gift": "可兑换音乐木盒一个"
         },
         "general_coupon": {
-            "base_info": {
-            },
-            "advanced_info": {
-            },
+            "base_info": {},
+            "advanced_info": {},
             "default_detail": "优惠券专用，填写优惠详情"
         },
         "general_card": {
@@ -141,9 +129,7 @@
                 "get_limit": 0,
                 "use_custom_code": false,
                 "can_give_friend": true,
-                "location_id_list": [
-                    213059884
-                ],
+                "location_id_list": [213059884],
                 "center_title": "顶部居中按钮",
                 "center_sub_title": "按钮下方的wording",
                 "center_url": "www.qq.com",
@@ -200,10 +186,7 @@
                 "get_limit": 3,
                 "use_custom_code": false,
                 "can_give_friend": true,
-                "location_id_list": [
-                    123,
-                    12321
-                ],
+                "location_id_list": [123, 12321],
                 "custom_url_name": "立即使用",
                 "custom_url": "http://weixin.qq.com",
                 "custom_url_sub_title": "6个汉字tips",
@@ -306,7 +289,7 @@
                 "bind_openid": false,
                 "can_share": true,
                 "can_give_friend": true,
-                "location_id_list": [ 123, 12321, 345345 ],
+                "location_id_list": [123, 12321, 345345],
                 "custom_url_name": "查看更多",
                 "custom_url": "http://www.qq.com",
                 "custom_url_sub_title": "6个汉字tips"
@@ -314,18 +297,15 @@
             "meeting_detail": "会议时间：xxx;地点：xxx "
         },
         "scenic_ticket": {
-            "base_info": {
-            },
+            "base_info": {},
             "ticket_class": "全日票"
         },
         "movie_ticket": {
-            "base_info": {
-            },
+            "base_info": {},
             "detail": "电影名：xxx，电影简介：xxx"
         },
         "boarding_pass": {
-            "base_info": {
-            },
+            "base_info": {},
             "from": "成都",
             "to": "广州",
             "flight": "CE123",

@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Address : ProductAddressAddRequest.Types.Address.Types.AddressInformation
+                    public class Address : ProductAddressAddRequest.Types.AddressDetail.Types.Address
                     {
                     }
                 }

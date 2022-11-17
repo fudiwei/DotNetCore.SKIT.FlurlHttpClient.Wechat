@@ -14,6 +14,14 @@
 
 ---
 
+### 找不到所需要的接口或字段？
+
+本库会定期随微信官方更新接口或模型，但也会偶有疏漏。如果你在使用中遇到了因接口或模型定义而产生的问题，欢迎提出 Issue。
+
+如果你的项目来不及等待 Issue 被处理，你可以自行扩展相关 API。详细方式请参阅本文档[《高级技巧 - 如何扩展额外的 API？》](./Advanced_Extensions.md)。
+
+---
+
 ### 微信支付 API 支持情况：
 
 <details>
@@ -36,11 +44,13 @@
 |  √  |       经营能力：点金计划        |            服务商            |                   |
 |  √  |      行业方案：电商收付通       |            服务商            |                   |
 |  √  |       行业方案：智慧商圈        |      直连商户 & 服务商       |                   |
+|  √  |  行业方案：微信支付分停车服务   |      直连商户 & 服务商       |                   |
 |  √  |        营销工具：代金券         |      直连商户 & 服务商       |                   |
 |  √  |        营销工具：商家券         |      直连商户 & 服务商       |                   |
 |  √  |       营销工具：委托营销        |      直连商户 & 服务商       |                   |
 |  √  |        营销工具：消费卡         |      直连商户 & 服务商       |                   |
 |  √  |       营销工具：支付有礼        |      直连商户 & 服务商       |                   |
+|  √  |   营销工具：代扣服务切卡组件    |      直连商户 & 服务商       |                   |
 |  √  | 营销工具：图片上传（营销专用）  |      直连商户 & 服务商       |                   |
 |  ×  |  <del>营销工具：现金红包</del>  | <del>直连商户 & 服务商</del> | 官方未提供 v3 API |
 |  √  |     营销工具：银行定向促活      |      直连商户 & 服务商       |                   |
@@ -258,6 +268,10 @@
 
         -   商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
 
+        -   商圈会员待积分状态查询：`GetBusinessCircleUserPointsCommitStatusByOpenId`
+
+        -   商圈会员停车状态同步：`NotifyBusinessCircleParkings`
+
     -   微信支付分停车服务
 
         -   查询车牌服务开通信息：`GetVehicleParkingService`
@@ -365,6 +379,10 @@
         -   获取支付有礼活动列表：`QueryMarketingPayGiftActivities`
 
         -   删除活动发券商户号：`DeleteMarketingPayGiftActivityMerchant`
+
+    -   代扣服务切卡组件
+
+        -   出行券切卡组件预下单：`CreateIndustryCouponToken`
 
     -   图片上传（营销专用）：`UploadMarketingMediaImage`
 
@@ -792,6 +810,16 @@
 
         -   按日下载提现异常文件：`GetMerchantFundWithdrawBill`
 
+    -   电商收付通（跨境支付）
+
+        -   查询订单剩余可出境余额：`GetFundsToOverseaTransactionAvailableAbroadAmountByTransactionId`
+
+        -   申请资金出境：`CreateFundsToOverseaOrder`
+
+        -   查询出境结果：`GetFundsToOverseaOrderByOutOrderId`
+
+        -   获取购付汇账单文件下载链接：`GetFundsToOverseaBillDownloadUrl`
+
     -   电商收付通（下载账单）
 
         -   申请交易账单：`GetBillTradeBill`
@@ -807,6 +835,10 @@
         -   商圈积分同步：`NotifyBusinessCirclePoints`
 
         -   商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
+
+        -   商圈会员待积分状态查询：`GetBusinessCircleUserPointsCommitStatusByOpenId`
+
+        -   商圈会员停车状态同步：`NotifyBusinessCircleParkings`
 
     -   微信支付分停车服务
 
@@ -911,6 +943,10 @@
         -   获取支付有礼活动列表：`QueryMarketingPayGiftActivities`
 
         -   删除活动发券商户号：`DeleteMarketingPayGiftActivityMerchant`
+
+    -   代扣服务切卡组件
+
+        -   出行券切卡组件预下单：`CreateIndustryCouponToken`
 
     -   图片上传（营销专用）：`UploadMarketingMediaImage`
 
@@ -1087,7 +1123,6 @@
         -   Downloading Platform Certificate：`QueryCertificates`
 
         -   Query Fund Settlement Details：`QueryHKSettlements`
-
 
     -   QR Code Payment
 

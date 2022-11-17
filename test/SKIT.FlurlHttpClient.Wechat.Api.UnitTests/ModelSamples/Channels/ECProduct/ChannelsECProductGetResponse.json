@@ -1,0 +1,58 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "product": {
+        "product_id": "123456789",
+        "out_product_id": "OUT_PRODUCT_ID_TEST",
+        "title": "任天堂 Nintendo Switch 国行续航增强版",
+        "sub_title": "【国行Switch，更安心的保修服务，更快的国行服务器】一台主机三种模式，游戏掌机，随时随地，一起趣玩",
+        "head_imgs": [
+            "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ"
+        ],
+        "desc_info": {
+            "imgs": [
+                "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ"
+            ]
+        },
+        "cats": [
+            {
+                "cat_id": "1"
+            },
+            {
+                "cat_id": "2"
+            },
+            {
+                "cat_id": "3"
+            }
+        ],
+        "attrs": [
+            {
+                "attr_key": "商品毛重",
+                "attr_value": "380g"
+            },
+            {
+                "attr_key": "商品产地",
+                "attr_value": "中国大陆"
+            }
+        ],
+        "express_info": {
+            "template_id": "123456"
+        },
+        "status": 5,
+        "edit_status": 2,
+        "skus": [
+            {
+                "sku_id": "123456001",
+                "out_sku_id": "OUT_SKU_ID_TEST",
+                "thumb_img": "",
+                "sale_price": 1,
+                "market_price": 2,
+                "stock_num": 5,
+                "sku_code": "SKU_CODE_TEST",
+                "sku_attrs": [],
+                "status": 0
+            }
+        ],
+        "min_price": 1
+    }
+}

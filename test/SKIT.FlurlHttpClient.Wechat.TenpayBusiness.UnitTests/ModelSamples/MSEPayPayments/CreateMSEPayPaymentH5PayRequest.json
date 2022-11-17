@@ -1,0 +1,33 @@
+﻿{
+    "purchaser_type": "",
+    "out_payment_id": "",
+    "amount": 0,
+    "currency": "",
+    "expire_time": "2021-06-08T10:34:56+08:00",
+    "payee": {
+        "ent_id": "",
+        "ent_name": "",
+        "ent_acct_id": "",
+        "bank_account_number_last4": ""
+    },
+    "memo": "",
+    "goods": [
+        {
+            "good_name": "",
+            "good_number": "0",
+            "good_amount": "0"
+        }
+    ],
+    "attachment": "",
+    "risk_control": {
+        "device_id": "",
+        "payer_client_ip": "",
+        "payer_ua": "",
+        "create_time": "2021-06-08T10:34:56+08:00",
+        "pick_type": "",
+        "pick_description": ""
+    },
+    "notify_url": {
+        "server_notify_url": ""
+    }
+}

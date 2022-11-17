@@ -37,17 +37,11 @@
             }
         ],
         "merchant_option": "MANUAL_INPUT_MERCHANT",
-        "merchant_id_list": [
-            "10000022",
-            "10000023"
-        ]
+        "merchant_id_list": ["10000022", "10000023"]
     },
     "advanced_setting": {
         "delivery_user_category": "DELIVERY_MEMBER_PERSON",
         "merchant_member_appid": "34567890",
-        "goods_tags": [
-            "xxx",
-            "yyy"
-        ]
+        "goods_tags": ["xxx", "yyy"]
     }
 }

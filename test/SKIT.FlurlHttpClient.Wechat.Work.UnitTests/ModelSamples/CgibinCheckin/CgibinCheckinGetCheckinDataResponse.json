@@ -13,7 +13,9 @@
             "wifiname": "办公一区",
             "notes": "路上堵车，迟到了5分钟",
             "wifimac": "3c:46:d8:0c:7a:70",
-            "mediaids": [ "WWCISP_G8PYgRaOVHjXWUWFqchpBqqqUpGj0OyR9z6WTwhnMZGCPHxyviVstiv_2fTG8YOJq8L8zJT2T2OvTebANV-2MQ" ],
+            "mediaids": [
+                "WWCISP_G8PYgRaOVHjXWUWFqchpBqqqUpGj0OyR9z6WTwhnMZGCPHxyviVstiv_2fTG8YOJq8L8zJT2T2OvTebANV-2MQ"
+            ],
             "sch_checkin_time": 1492617610,
             "groupid": 1,
             "schedule_id": 0,
@@ -30,7 +32,9 @@
             "wifiname": "办公室二区",
             "notes": "",
             "wifimac": "3c:46:d8:0c:7a:71",
-            "mediaids": [ "WWCISP_G8PYgRaOVHjXWUWFqchpBqqqUpGj0OyR9z6WTwhnMZGCPHxyviVstiv_2fTG8YOJq8L8zJT2T2OvTebANV-2MQ" ],
+            "mediaids": [
+                "WWCISP_G8PYgRaOVHjXWUWFqchpBqqqUpGj0OyR9z6WTwhnMZGCPHxyviVstiv_2fTG8YOJq8L8zJT2T2OvTebANV-2MQ"
+            ],
             "lat": 30547645,
             "lng": 104063236,
             "deviceid": "E5FA89F6-3926-4972-BE4F-4A7ACF4701E2",

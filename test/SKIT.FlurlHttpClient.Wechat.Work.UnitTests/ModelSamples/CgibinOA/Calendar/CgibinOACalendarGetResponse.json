@@ -17,7 +17,13 @@
                     "userid": "userid1",
                     "readonly": 1
                 }
-            ]
+            ],
+            "is_public": 1,
+            "public_range": {
+                "userids": ["abel", "jack"],
+                "partyids": [1232, 34353]
+            },
+            "is_corp_calendar": 1
         }
     ]
 }

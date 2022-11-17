@@ -6,7 +6,7 @@
     public class CgibinKfGetCorpStatisticRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置客服帐号 ID。
+        /// 获取或设置客服账号 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_kfid")]
         [System.Text.Json.Serialization.JsonPropertyName("open_kfid")]

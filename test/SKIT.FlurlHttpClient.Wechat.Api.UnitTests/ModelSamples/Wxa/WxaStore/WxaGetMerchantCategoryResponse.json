@@ -8,20 +8,14 @@
                     "id": 0,
                     "name": "root",
                     "level": 0,
-                    "children": [
-                        269,
-                        278
-                    ]
+                    "children": [269, 278]
                 },
                 {
                     "id": 278,
                     "name": "购物",
                     "level": 1,
                     "father": 0,
-                    "children": [
-                        279,
-                        280
-                    ]
+                    "children": [279, 280]
                 },
                 {
                     "id": 280,

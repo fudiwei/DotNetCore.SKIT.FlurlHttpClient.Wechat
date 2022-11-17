@@ -9,9 +9,7 @@
                     "event_describe": "用户发起投诉",
                     "material_info": {
                         "content": "测试",
-                        "media_url_list": [
-                            "url"
-                        ]
+                        "media_url_list": ["url"]
                     },
                     "state": 230000,
                     "state_describe": "商家售后处理中",

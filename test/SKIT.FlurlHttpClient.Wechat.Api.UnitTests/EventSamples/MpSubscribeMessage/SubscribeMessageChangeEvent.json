@@ -1,0 +1,13 @@
+﻿{
+    "ToUserName": "gh_123456789abc",
+    "FromUserName": "o7esq5OI1Uej6Xixw1lA2H7XDVbc",
+    "CreateTime": "1610968440",
+    "MsgType": "event",
+    "Event": "subscribe_msg_change_event",
+    "List": [
+        {
+            "TemplateId": "BEwX0BOT3MqK3Uc5oTU3CGBqzjpndk2jzUf7VfExd8",
+            "SubscribeStatusString": "reject"
+        }
+    ]
+}

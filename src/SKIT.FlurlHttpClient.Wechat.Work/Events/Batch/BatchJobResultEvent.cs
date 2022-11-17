@@ -9,6 +9,7 @@
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/90376 </para>
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/91167 </para>
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/90858 </para>
+    /// <para>REF: https://developer.work.weixin.qq.com/document/path/95797 </para>
     /// </summary>
     public class BatchJobResultEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {

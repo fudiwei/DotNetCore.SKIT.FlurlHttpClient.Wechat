@@ -1,0 +1,19 @@
+﻿{
+    "errcode": 0,
+    "openid": "OPENID",
+    "unionid": "UNIONID",
+    "user_coupon": {
+        "user_coupon_id": "109694341",
+        "coupon_id": "12639900",
+        "status": 100,
+        "create_time": 1590768000,
+        "update_time": 1590811200,
+        "start_time": 1590832800,
+        "end_time": 1590840000,
+        "ext_info": {
+            "use_time": 1590836400
+        },
+        "order_id": "123",
+        "discount_fee": 123
+    }
+}

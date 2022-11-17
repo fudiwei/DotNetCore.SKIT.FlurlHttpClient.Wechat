@@ -1,4 +1,4 @@
-﻿# CHANGELOG
+# CHANGELOG
 
 ### 名词解释
 
@@ -32,6 +32,86 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.20.1
+
+    -   **修复**：修复快速注册个人小程序回调通知事件模型字段定义错误。（[GitHub PR #67](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/67)）
+
+-   Release 2.20.0
+
+    -   **新增**：新增视频号小店相关接口。
+
+    -   **新增**：新增微信云托管服务管理相关接口。
+
+    -   **变更**：随官方标记微信小店相关接口或字段为废弃。
+
+    -   **变更**：调整部分微信商品库相关接口模型的命名方式。
+
+    -   **变更**：调整部分腾讯云服务 TCB 相关接口模型的命名方式。
+
+-   Release 2.19.0
+
+    -   **新增**：新增使用 AppSecret 重置第三方平台 API 调用次数接口。
+
+    -   **新增**：新增若干第三方平台平台代商家注册小程序接口。
+
+    -   **新增**：新增若干第三方平台代商家管理小程序接口。
+
+    -   **新增**：新增若干第三方平台微信云托管接口。
+
+-   Release 2.18.0
+
+    -   **新增**：新增小程序购物订单相关接口。
+
+    -   **修复**：修复上传图片素材时根据文件后缀名识别默认类型的错误。（[GitHub PR #57](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/57)）
+
+    -   **修复**：修复订阅消息事件通知模型在 JSON 模式下反序列化的错误。（[GitHub Issue #58](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/58)）
+
+-   Release 2.17.0
+
+    -   **新增**：新增小程序交易保障相关接口。
+
+    -   **新增**：新增获取 NFC 的小程序 scheme 接口。
+
+    -   **新增**：随官方更新获取订阅消息个人模板列表的接口模型。（[GitHub Issue #56](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/56)）
+
+-   Release 2.16.0
+
+    -   **新增**：新增客服子商户能力相关接口。（[Gitee Issue #I5F24Z](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5F24Z)）
+
+    -   **新增**：新增小程序自定义交易组件售后开发测试接口。
+
+    -   **新增**：随官方更新客服管理相关接口模型。
+
+    -   **新增**：随官方更新开放平台应用通过 Code 获取 AccessToken 的接口模型。（[GitHub Issue #49](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/49)）
+
+    -   **新增**：随官方更新小程序自定义交易组件生成订单的接口模型。（[Gitee Issue #I5ESTO](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5ESTO)）
+
+    -   **新增**：随随官方更新小程序自定义交易组件提交支付资质接口模型。
+
+-   Release 2.15.0
+
+    -   **新增**：新增获取公众号的自动回复规则接口。
+
+    -   **新增**：新增小程序联盟相关接口。
+
+    -   **新增**：新增小程序自定义交易组件银行信息相关接口。
+
+    -   **新增**：新增小程序自定义交易组件更新订单售后期接口。
+
+    -   **新增**：新增小程序自定义交易组件拉取小程序信息接口。
+
+    -   **新增**：新增部分小程序支付管理服务回调通知事件模型。
+
+    -   **新增**：随官方更新发布能力相关接口模型。
+
+    -   **新增**：随官方更新小程序自定义交易组件订单相关接口模型。
+
+-   Release 2.14.0
+
+    -   **新增**：新增云开通物流服务相关接口。（[GitHub PR #41](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/41)）
+
+    -   **新增**：新增城市服务开放互联能力相关接口。
+
 -   Release 2.13.0
 
     -   **新增**：新增第三方平台复用商户号资质快速转正、查询公众号或小程序是否绑定开放平台帐号、申请开通物流退货组件、半屏小程序管理接口。
@@ -44,7 +124,7 @@
 
     -   **新增**：随官方更新自定义交易组件获取售后详情接口响应模型。（[GitHub PR #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/40)）
 
-    -   **新增**：随官方更新生成小程序码接口请求模型。（[Gitee PR #6]https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/6)）
+    -   **新增**：随官方更新生成小程序码接口请求模型。（[Gitee PR #6](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/6)）
 
     -   **修复**：修复上传素材接口不支持 Unicode 文件名问题。（[GitHub Issue #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/40)）
 
@@ -72,7 +152,7 @@
 
     -   **变更**：修改反序列化回调通知事件的相关扩展方法 `DeserializeEventFromXml`、`DeserializeEventFromJson`，废弃其指示是否启用安全模式的参数，改为自动判定。
 
-    -   **变更**：修改序列化回调通知事件的相关扩展方法 `SerializeEventToXml`、`SerializeEventToJson`，调整其指示是否启用安全模式的参数默认值，由 *false* 变为 *true*。
+    -   **变更**：修改序列化回调通知事件的相关扩展方法 `SerializeEventToXml`、`SerializeEventToJson`，调整其指示是否启用安全模式的参数默认值，由 _false_ 变为 _true_。
 
     -   **变更**：移除原 `WxBizMsgCryptor` 工具类。
 
@@ -316,11 +396,89 @@
 
 ---
 
+### 模块 `SKIT.FlurlHttpClient.Wechat.TenpayV2` 更新日志
+
+<details>
+
+<summary>[展开查看]</summary>
+
+-   Release 2.2.0
+
+    -   **新增**：支持新版仿真测试系统沙箱。
+    
+    -   **变更**：重命名查询退款接口响应模型中的部分字段。（[GitHub Issue #66](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/66)）
+
+-   Release 2.1.0
+
+    -   **新增**：新增企业微信企业支付相关接口。
+
+    -   **新增**：付款码支付撤掉订单接口支持微信订单号字段。（[GitHub Issue #64](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/64)）
+
+-   Release 2.0.2
+
+    -   **修复**：修复付款码支付接口响应模型参数缺失问题。（[GitHub Issue #61](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/61)）
+
+-   Release 2.0.1
+
+    -   **修复**：修复生成客户端调起支付二次签名时的参数排序错误。
+
+-   Release 2.0.0
+
+    -   首次发布。
+
+</details>
+
+---
+
 ### 模块 `SKIT.FlurlHttpClient.Wechat.TenpayV3` 更新日志
 
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 2.13.1
+
+    -   **修复**：修复电商收付通二级商户进件申请接口请求模型定义错误。（[Gitee Issue #I5QM1P](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5QM1P)）
+
+-   Release 2.13.0
+
+    -   **新增**：随官方更新退款相关接口模型。
+
+    -   **新增**：随官方更新 JSAPI 下单接口模型。
+
+    -   **修复**：修复根据过滤条件查询用户券接口查询参数定义错误。（[Gitee Issue #I5QFB3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5QFB3)）
+
+-   Release 2.12.0
+
+    -   **新增**：新增智慧商圈会员待积分状态查询、会员停车状态同步接口。
+
+    -   **新增**：随官方更新智慧商圈相关回调通知事件模型。
+
+-   Release 2.11.0
+
+    -   **新增**：新增出行券切卡组件预下单接口。
+
+    -   **修复**：修复特约商户进件接口模型定义问题。（[Gitee Issue #I5FCR5](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5FCR5)）
+
+-   Release 2.10.0
+
+    -   **新增**：新增电商收付通跨境付款相关接口。
+
+    -   **新增**：随官方更新消费者投诉单相关接口模型。
+
+-   Release 2.9.1
+
+    -   **修复**：修复查询分账回退结果接口 URL 错误。（[GitHub Issue #46](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/46)）
+
+-   Release 2.9.0
+
+    -   **新增**：随官方更新特约商户进件、电商收付通二级商户进件相关接口模型。
+
+-   Release 2.8.0
+
+    -   **新增**：随官方更新合单支付相关接口模型。
+
+    -   **新增**：随官方更新消费者投诉相关接口模型。
 
 -   Release 2.7.0
 
@@ -531,6 +689,68 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 2.13.0
+
+    -   **新增**：新增接口调用许可相关接口。
+
+    -   **新增**：新增自建应用代开发相关接口。
+
+    -   **新增**：新增获取访问用户身份或敏感信息接口。
+
+-   Release 2.12.0
+
+    -   **新增**：新增 OA 导出汇报文档接口。
+
+    -   **新增**：随官方更新 OA 汇报相关接口模型。
+
+-   Release 2.11.0
+
+    -   **新增**：新增素材管理上传临时素材接口相关接口。
+
+    -   **新增**：新增通讯录搜索相关接口。
+
+    -   **新增**：新增智慧硬件相关接口。
+
+    -   **新增**：随官方更新日历相关接口模型。
+
+    -   **新增**：随官方更新日程相关接口模型。
+
+    -   **新增**：随官方更新通讯录 UserId 排序接口请求模型。
+
+    -   **新增**：随官方更新发送应用消息接口响应模型。
+
+-   Release 2.10.0
+
+    -   **新增**：新增获取收款项目的商户单号相关接口。
+
+    -   **新增**：新增为打卡人员补卡相关接口。
+
+    -   **新增**：新增微信客服知识库相关接口。
+
+    -   **新增**：随官方更新获取企业上下游通讯录下的企业信息的接口模型。
+
+    -   **新增**：随官方更新获取企业假期管理配置、获取成员假期余额的接口模型。
+
+    -   **新增**：随官方更新读取微信客服消息的接口模型。
+
+    -   **变更**：随官方标记通讯录同步相关接口或字段为废弃。
+
+-   Release 2.9.0
+
+    -   **新增**：新增分配在职成员的客户群接口。
+
+    -   **新增**：新增批量导入上下游联系人、获取企业上下游通讯录下的企业信息等接口。
+
+    -   **新增**：新增获取家校访问用户身份、获取观看/未观看直播统计 V2 版等接口。
+
+    -   **新增**：随官方更新设置工作台自定义展示相关接口模型。
+
+    -   **新增**：随官方更新获取上下游通讯录分组接口模型。
+
+    -   **新增**：新增上下游相关回调通知事件模型。
+
+    -   **修复**：修复部分接口模型命名拼写错误。
 
 -   Release 2.8.0
 

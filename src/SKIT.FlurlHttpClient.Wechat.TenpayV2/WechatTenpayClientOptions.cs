@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
     /// <summary>
     /// 一个用于构造 <see cref="WechatTenpayClient"/> 时使用的配置项。
@@ -42,5 +42,10 @@
         /// 获取或设置微信 AppId。若一个商户号下关联多个 AppId 的，该参数可以置空，改为在请求时传入。
         /// </summary>
         public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业微信企业支付密钥。
+        /// </summary>
+        public string? WeWorkPaymentSecret { get; set; }
     }
 }

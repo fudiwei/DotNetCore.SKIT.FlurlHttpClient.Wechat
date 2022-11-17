@@ -1,9 +1,12 @@
-﻿using System;
+using System;
 
 namespace Newtonsoft.Json.Converters
 {
     internal class YesOrNoNullableBooleanConverter : JsonConverter<bool?>
     {
+        private const string CHAR_YES = "Y";
+        private const string CHAR_NO = "N";
+
         public override bool CanRead
         {
             get { return true; }
@@ -30,9 +33,9 @@ namespace Newtonsoft.Json.Converters
                 if (value == null)
                     return existingValue;
 
-                if ("Y".Equals(value))
+                if (CHAR_YES.Equals(value))
                     return true;
-                else if ("N".Equals(value))
+                else if (CHAR_NO.Equals(value))
                     return false;
             }
 
@@ -42,7 +45,7 @@ namespace Newtonsoft.Json.Converters
         public override void WriteJson(JsonWriter writer, bool? value, JsonSerializer serializer)
         {
             if (value.HasValue)
-                writer.WriteValue(value.Value ? "Y" : "N");
+                writer.WriteValue(value.Value ? CHAR_YES : CHAR_NO);
             else
                 writer.WriteNull();
         }

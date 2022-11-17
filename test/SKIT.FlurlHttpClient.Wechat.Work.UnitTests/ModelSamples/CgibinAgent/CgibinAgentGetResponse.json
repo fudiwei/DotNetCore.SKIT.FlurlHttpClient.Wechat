@@ -6,16 +6,13 @@
     "square_logo_url": "https://p.qlogo.cn/bizmail/FicwmI50icF8GH9ib7rUAYR5kicLTgP265naVFQKnleqSlRhiaBx7QA9u7Q/0",
     "description": "HR服务与员工自助平台",
     "allow_userinfos": {
-        "user": [
-            { "userid": "zhangshan" },
-            { "userid": "lisi" }
-        ]
+        "user": [{ "userid": "zhangshan" }, { "userid": "lisi" }]
     },
     "allow_partys": {
-        "partyid": [ 1 ]
+        "partyid": [1]
     },
     "allow_tags": {
-        "tagid": [ 1, 2, 3 ]
+        "tagid": [1, 2, 3]
     },
     "close": 0,
     "redirect_domain": "open.work.weixin.qq.com",

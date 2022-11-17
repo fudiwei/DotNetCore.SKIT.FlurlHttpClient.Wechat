@@ -19,6 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantCreateResponse> ExecuteMerchantCreateAsync(this WechatApiClient client, Models.MerchantCreateRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -39,6 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantDeleteResponse> ExecuteMerchantDeleteAsync(this WechatApiClient client, Models.MerchantDeleteRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -59,6 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantUpdateResponse> ExecuteMerchantUpdateAsync(this WechatApiClient client, Models.MerchantUpdateRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -79,6 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantGetResponse> ExecuteMerchantGetAsync(this WechatApiClient client, Models.MerchantGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -100,6 +104,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantGetByStatusResponse> ExecuteMerchantGetByStatusAsync(this WechatApiClient client, Models.MerchantGetByStatusRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -120,6 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantModifyProductStatusResponse> ExecuteMerchantModifyProductStatusAsync(this WechatApiClient client, Models.MerchantModifyProductStatusRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -142,6 +148,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantCategoryGetSubResponse> ExecuteMerchantCategoryGetSubAsync(this WechatApiClient client, Models.MerchantCategoryGetSubRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -162,6 +169,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantCategoryGetSKUResponse> ExecuteMerchantCategoryGetSKUAsync(this WechatApiClient client, Models.MerchantCategoryGetSKURequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -182,6 +190,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantCategoryGetPropertyResponse> ExecuteMerchantCategoryGetPropertyAsync(this WechatApiClient client, Models.MerchantCategoryGetPropertyRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -204,6 +213,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantStockAddResponse> ExecuteMerchantStockAddAsync(this WechatApiClient client, Models.MerchantStockAddRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -224,6 +234,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantStockReduceResponse> ExecuteMerchantStockReduceAsync(this WechatApiClient client, Models.MerchantStockReduceRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -246,6 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantExpressAddResponse> ExecuteMerchantExpressAddAsync(this WechatApiClient client, Models.MerchantExpressAddRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -266,6 +278,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantExpressDeleteResponse> ExecuteMerchantExpressDeleteAsync(this WechatApiClient client, Models.MerchantExpressDeleteRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -286,6 +299,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantExpressUpdateResponse> ExecuteMerchantExpressUpdateAsync(this WechatApiClient client, Models.MerchantExpressUpdateRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -306,6 +320,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantExpressGetByIdResponse> ExecuteMerchantExpressGetByIdAsync(this WechatApiClient client, Models.MerchantExpressGetByIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -326,6 +341,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantExpressGetAllResponse> ExecuteMerchantExpressGetAllAsync(this WechatApiClient client, Models.MerchantExpressGetAllRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -348,6 +364,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantGroupAddResponse> ExecuteMerchantGroupAddAsync(this WechatApiClient client, Models.MerchantGroupAddRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -368,6 +385,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantGroupDeleteResponse> ExecuteMerchantGroupDeleteAsync(this WechatApiClient client, Models.MerchantGroupDeleteRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -388,6 +406,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantGroupPropertyModifyResponse> ExecuteMerchantGroupPropertyModifyAsync(this WechatApiClient client, Models.MerchantGroupPropertyModifyRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -408,6 +427,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantGroupProductModifyResponse> ExecuteMerchantGroupProductModifyAsync(this WechatApiClient client, Models.MerchantGroupProductModifyRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -428,6 +448,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantGroupGetByIdResponse> ExecuteMerchantGroupGetByIdAsync(this WechatApiClient client, Models.MerchantGroupGetByIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -448,6 +469,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantGroupGetAllResponse> ExecuteMerchantGroupGetAllAsync(this WechatApiClient client, Models.MerchantGroupGetAllRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -470,6 +492,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantShelfAddResponse> ExecuteMerchantShelfAddAsync(this WechatApiClient client, Models.MerchantShelfAddRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -490,6 +513,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantShelfDeleteResponse> ExecuteMerchantShelfDeleteAsync(this WechatApiClient client, Models.MerchantShelfDeleteRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -510,6 +534,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantShelfModifyResponse> ExecuteMerchantShelfModifyAsync(this WechatApiClient client, Models.MerchantShelfModifyRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -530,6 +555,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantShelfGetByIdResponse> ExecuteMerchantShelfGetByIdAsync(this WechatApiClient client, Models.MerchantShelfGetByIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -550,6 +576,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantShelfGetAllResponse> ExecuteMerchantShelfGetAllAsync(this WechatApiClient client, Models.MerchantShelfGetAllRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -572,6 +599,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantOrderGetByIdResponse> ExecuteMerchantOrderGetByIdAsync(this WechatApiClient client, Models.MerchantOrderGetByIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -592,6 +620,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantOrderGetByFilterResponse> ExecuteMerchantOrderGetByFilterAsync(this WechatApiClient client, Models.MerchantOrderGetByFilterRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -612,6 +641,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantOrderSetDeliveryResponse> ExecuteMerchantOrderSetDeliveryAsync(this WechatApiClient client, Models.MerchantOrderSetDeliveryRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -632,6 +662,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantOrderCloseResponse> ExecuteMerchantOrderCloseAsync(this WechatApiClient client, Models.MerchantOrderCloseRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -654,6 +685,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2020-10-01 下线。")]
         public static async Task<Models.MerchantCommonUploadImageResponse> ExecuteMerchantCommonUploadImageAsync(this WechatApiClient client, Models.MerchantCommonUploadImageRequest request, CancellationToken cancellationToken = default)
         {
             if (request.FileName == null)

@@ -51,19 +51,48 @@
                 /// <summary>
                 /// 获取或设置发送订阅通知数据列表。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("List")]
-                [System.Text.Json.Serialization.JsonPropertyName("List")]
+                [Newtonsoft.Json.JsonIgnore]
+                [System.Text.Json.Serialization.JsonIgnore]
                 [System.Xml.Serialization.XmlElement("List", typeof(Types.EventItem))]
                 public Types.EventItem[] EventList { get; set; } = default!;
             }
         }
 
+        private readonly object _lockObj = new object();
+
         /// <summary>
         /// 获取或设置事件数据。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("SubscribeMsgSentEvent")]
-        [System.Text.Json.Serialization.JsonPropertyName("SubscribeMsgSentEvent")]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         [System.Xml.Serialization.XmlElement("SubscribeMsgSentEvent")]
         public Types.EventData EventData { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置发送订阅通知数据列表。
+        /// <para>等效于 <see cref="EventData.List"/> </para>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("List")]
+        [System.Text.Json.Serialization.JsonPropertyName("List")]
+        [System.Xml.Serialization.XmlIgnore]
+        public Types.EventData.Types.EventItem[]? EventDataList
+        {
+            get { return this.EventData?.EventList; }
+            set
+            {
+                if (this.EventData == null)
+                {
+                    lock (_lockObj)
+                    {
+                        if (this.EventData == null)
+                        {
+                            this.EventData = new Types.EventData();
+                        }
+                    }
+                }
+
+                this.EventData.EventList = value!;
+            }
+        }
     }
 }

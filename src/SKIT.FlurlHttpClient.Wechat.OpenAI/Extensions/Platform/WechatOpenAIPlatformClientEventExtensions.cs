@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 {
@@ -35,10 +35,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
             try
             {
-                if (!Utilities.WxBizMsgCryptor.TryParseXml(callbackXml, out string? encryptedXml))
+                if (!Utilities.WechatEventDataCryptor.TryParseXml(callbackXml, out string? encryptedXml))
                     throw new Exceptions.WechatOpenAIEventSerializationException("Encrypt event failed, because of empty encrypted data.");
 
-                callbackXml = Utilities.WxBizMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.EncodingAESKey!, out _);
+                callbackXml = Utilities.WechatEventDataCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.EncodingAESKey!, out _);
                 return Utilities.XmlUtility.Deserialize<TEvent>(callbackXml);
             }
             catch (WechatOpenAIException)
@@ -104,13 +104,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
             try
             {
-                string cipher = Utilities.WxBizMsgCryptor.AESEncrypt(
+                string cipher = Utilities.WechatEventDataCryptor.AESEncrypt(
                     plainText: xml,
                     encodingAESKey: client.Credentials.EncodingAESKey!,
                     appId: client.Credentials.AppId!
                 );
 
-                xml = Utilities.WxBizMsgCryptor.WrapXml(sToken: client.Credentials.Token!, sMsgEncrypt: cipher);
+                xml = Utilities.WechatEventDataCryptor.WrapXml(sToken: client.Credentials.Token!, sMsgEncrypt: cipher);
             }
             catch (Exception ex)
             {

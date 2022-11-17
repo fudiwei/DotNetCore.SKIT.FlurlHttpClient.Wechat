@@ -5,6 +5,6 @@
         "chatid": "CHATID",
         "name": "NAME",
         "owner": "userid2",
-        "userlist": [ "userid1", "userid2", "userid3" ]
+        "userlist": ["userid1", "userid2", "userid3"]
     }
 }

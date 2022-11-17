@@ -44,7 +44,7 @@ switch (msgType)
             var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml);
         }
         break;
-    // 省略其他情况
+    // 其他情况略
 }
 ```
 
@@ -55,6 +55,18 @@ switch (msgType)
 在安全模式下，微信公众平台使用了一种特殊的 AES 算法对回调通知事件加密。
 
 上述提供的扩展方法，会自动判定是否处于安全模式下，无需开发者手动干预。
+
+为此，你需要在构造得到 `WechatApiClient` 对象时指定推送参数：
+
+```csharp
+var options = new WechatApiClientOptions()
+{
+    // 其他配置项略
+    PushToken = "Token",
+    PushEncodingAESKey = "EncodingAESKey"
+};
+var client = new WechatApiClient(options);
+```
 
 ---
 

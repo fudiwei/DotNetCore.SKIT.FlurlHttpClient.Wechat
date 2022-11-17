@@ -1,4 +1,5 @@
 ﻿{
+    "skip_public_range": 0,
     "calendar": {
         "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
         "readonly": 1,
@@ -13,6 +14,10 @@
                 "userid": "userid2",
                 "readonly": 1
             }
-        ]
+        ],
+        "public_range": {
+            "userids": ["abel", "jack"],
+            "partyids": [1232, 34353]
+        }
     }
 }

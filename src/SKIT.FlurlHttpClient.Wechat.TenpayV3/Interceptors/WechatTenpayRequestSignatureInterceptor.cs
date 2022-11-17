@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -46,16 +46,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                 body = flurlCall.RequestBody ?? string.Empty;
             }
 
-            string plainText = $"{method}\n{url}\n{timestamp}\n{nonce}\n{body}\n";
+            string msgText = $"{method}\n{url}\n{timestamp}\n{nonce}\n{body}\n";
             string signText;
 
             switch (_scheme)
             {
-                case Constants.SignAlgorithms.WECHATPAY2_SHA256_RSA2048:
+                case Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256:
                     {
                         try
                         {
-                            signText = Utilities.RSAUtility.SignWithSHA256(_mchCertPk, plainText);
+                            signText = Utilities.RSAUtility.SignWithSHA256(_mchCertPk, msgText);
+                        }
+                        catch (Exception ex)
+                        {
+                            throw new Exceptions.WechatTenpayRequestSignatureException("Generate signature of request failed. Please see the `InnerException` for more details.", ex);
+                        }
+                    }
+                    break;
+
+                case Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3:
+                    {
+                        try
+                        {
+                            signText = Utilities.SM2Utility.SignWithSM3(_mchCertPk, msgText);
                         }
                         catch (Exception ex)
                         {
@@ -65,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                     break;
 
                 default:
-                    throw new Exceptions.WechatTenpayRequestSignatureException("Unsupported authorization scheme.");
+                    throw new Exceptions.WechatTenpayRequestSignatureException($"Unsupported signature scheme: \"{_scheme}\".");
             }
 
             string auth = $"mchid=\"{_mchId}\",nonce_str=\"{nonce}\",signature=\"{signText}\",timestamp=\"{timestamp}\",serial_no=\"{_mchCertSn}\"";

@@ -6,15 +6,15 @@
         {
             "name": "直播房间名",
             "roomid": 1,
-            "cover_img": "http://http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/Rl1RuuhdstSfZa8EEljedAYcbtX3Ejpdl2et1tPAQ37bdicnxoVialDLCKKDcPBy8Iic0kCiaiaalXg3EbpNKoicrweQ\/0?wx_fmt=jpeg",
-            "share_img": "http://http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/Rl1RuuhdstSfZa8EEljedAYcbtX3Ejpdl2et1tPAQ37bdicnxoVialDLCKKDcPBy8Iic0kCiaiaalXg3EbpNKoicrweQ\/0?wx_fmt=jpeg",
+            "cover_img": "http://http://mmbiz.qpic.cn/mmbiz_jpg/Rl1RuuhdstSfZa8EEljedAYcbtX3Ejpdl2et1tPAQ37bdicnxoVialDLCKKDcPBy8Iic0kCiaiaalXg3EbpNKoicrweQ/0?wx_fmt=jpeg",
+            "share_img": "http://http://mmbiz.qpic.cn/mmbiz_jpg/Rl1RuuhdstSfZa8EEljedAYcbtX3Ejpdl2et1tPAQ37bdicnxoVialDLCKKDcPBy8Iic0kCiaiaalXg3EbpNKoicrweQ/0?wx_fmt=jpeg",
             "live_status": 101,
             "start_time": 1568128900,
             "end_time": 1568131200,
             "anchor_name": "里斯",
             "goods": [
                 {
-                    "cover_img": "http://http:\/\/mmbiz.qpic.cn\/mmbiz_jpg\/Rl1RuuhdstSfZa8EEljedAYcbtX3Ejpdl2et1tPAQ37bdicnxoVialDLCKKDcPBy8Iic0kCiaiaalXg3EbpNKoicrweQ\/0?wx_fmt=jpeg",
+                    "cover_img": "http://http://mmbiz.qpic.cn/mmbiz_jpg/Rl1RuuhdstSfZa8EEljedAYcbtX3Ejpdl2et1tPAQ37bdicnxoVialDLCKKDcPBy8Iic0kCiaiaalXg3EbpNKoicrweQ/0?wx_fmt=jpeg",
                     "url": "pages/index/index.html",
                     "name": "茶杯",
                     "price": 1889,

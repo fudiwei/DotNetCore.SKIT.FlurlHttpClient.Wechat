@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
                 case ".bmp":
                     return "image/bmp";
                 case ".png":
-                    return "image/bmp";
+                    return "image/png";
             }
 
             return null;

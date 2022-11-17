@@ -5,13 +5,13 @@
         {
             "userid": "zhangsan",
             "name": "张三",
-            "department": [ "LINKEDID/1", "LINKEDID/2" ],
+            "department": ["LINKEDID/1", "LINKEDID/2"],
             "corpid": "xxxxxx"
         },
         {
             "userid": "lisi",
             "name": "李四",
-            "department": [ "LINKEDID/1" ],
+            "department": ["LINKEDID/1"],
             "corpid": "xxxxxx"
         }
     ]

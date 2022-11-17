@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -192,6 +192,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [System.Text.Json.Serialization.JsonPropertyName("is_subscribe")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.YesOrNoBooleanConverter))]
         public bool IsSubscribed { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户在子商户下的 OpenId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_openid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
+        public string? SubOpenId { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户是否订阅子商户公众号标识。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_is_subscribe")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.YesOrNoNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_is_subscribe")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.YesOrNoNullableBooleanConverter))]
+        public bool? IsSubSubscribed { get; set; }
 
         /// <summary>
         /// 获取或设置交易类型。

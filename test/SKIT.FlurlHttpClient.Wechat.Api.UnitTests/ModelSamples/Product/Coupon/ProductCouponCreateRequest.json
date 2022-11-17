@@ -4,10 +4,7 @@
     "discount_info": {
         "discount_condition": {
             "product_cnt": 10,
-            "product_ids": [
-                1673110742,
-                1673110743
-            ],
+            "product_ids": [1673110742, 1673110743],
             "product_price": 100
         },
         "discount_fee": 50,

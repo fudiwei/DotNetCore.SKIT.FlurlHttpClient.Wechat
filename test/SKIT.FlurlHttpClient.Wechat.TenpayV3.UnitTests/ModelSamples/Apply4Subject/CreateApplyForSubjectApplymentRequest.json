@@ -61,18 +61,19 @@
         "authorize_letter_copy": "0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo",
         "owner": false
     },
-    "ubo_info": {
-        "ubo_id_type": "IDENTIFICATION_TYPE_IDCARD",
-        "ubo_id_card_copy": "jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ",
-        "ubo_id_card_national": "jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ",
-        "ubo_id_doc_copy": "jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ",
-        "ubo_name": "AOZdYGISxo4y44/Ug4P4TG5xzchG/5IL9DBd+Z0zZXkw==",
-        "ubo_id_number": "AOZdYGISxo4y44/Ug4P4TG5xzchG/5IL9DBd+Z0zZXkw==",
-        "ubo_id_card_valid_date": "[\"2017-10-28\",\"2037-10-28\"]"
-    },
+    "ubo_info_list": [
+        {
+            "ubo_id_doc_address": "pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiR/cJiCrZxnAqi+pjeKIEdkwzXRAI7FUhrfPK3SNjaBTEu9GmsugMIA9r3x887Q+ODuC8HH2nzAn7NGpE/e3yiHgWhk0ps5k5DP/2qIdGdONoDzZelrxCl/NWWNUyB93K9F+jC1JX2IMttdY+aQ6zBlw0xnOiNW6Hzy7UtC+xriudjD5APomty7/mYNxLMpRSvWKIjOv/69bDnuC4EL5Kz4jBHLiCyOb+tI0m2qhZ9evAM+Jv1z0NVa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==",
+            "ubo_id_doc_copy": "jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ",
+            "ubo_id_doc_copy_back": "jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ",
+            "ubo_id_doc_name": "AOZdYGISxo4y44/Ug4P4TG5xzchG/5IL9DBd+Z0zZXkw==",
+            "ubo_id_doc_number": "AOZdYGISxo4y44/Ug4P4TG5xzchG/5IL9DBd+Z0zZXkw==",
+            "ubo_id_doc_type": "IDENTIFICATION_TYPE_IDCARD",
+            "ubo_period_begin": "2019-06-06",
+            "ubo_period_end": "2026-06-06"
+        }
+    ],
     "addition_info": {
-        "confirm_mchid_list": [
-            "20001113"
-        ]
+        "confirm_mchid_list": ["20001113"]
     }
 }

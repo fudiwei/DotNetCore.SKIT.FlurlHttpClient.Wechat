@@ -1,13 +1,15 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Flurl;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static class WechatApiClientParameterExtensions
     {
-        private const string BASE_URL = "https://open.weixin.qq.com/";
+        private const string BASE_URL_OPEN = "https://open.weixin.qq.com/";
+        private const string BASE_URL_MP = "https://mp.weixin.qq.com/";
 
         /// <summary>
         /// <para>生成公众号 JS-SDK `wx.config` 所需的参数字典。</para>
@@ -81,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <returns></returns>
         public static string GenerateParameterizedUrlForConnectOAuth2Authorize(this WechatApiClient client, string redirectUrl, string scope, string? state = null)
         {
-            return new Url(BASE_URL)
+            return new Url(BASE_URL_OPEN)
                 .AppendPathSegments("connect", "oauth2", "authorize")
                 .SetQueryParam("appid", client.Credentials.AppId)
                 .SetQueryParam("redirect_uri", redirectUrl)
@@ -104,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <returns></returns>
         public static string GenerateParameterizedUrlForComponentConnectOAuth2Authorize(this WechatApiClient client, string appId, string redirectUrl, string scope, string? state = null)
         {
-            return new Url(BASE_URL)
+            return new Url(BASE_URL_OPEN)
                 .AppendPathSegments("connect", "oauth2", "authorize")
                 .SetQueryParam("appid", appId)
                 .SetQueryParam("component_appid", client.Credentials.AppId)
@@ -113,6 +115,57 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("scope", scope)
                 .SetQueryParam("state", state)
                 .SetFragment("wechat_redirect")
+                .ToString();
+        }
+
+        /// <summary>
+        /// <para>生成公众号管理员向第三方平台授权 URL（H5 版）。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Authorization_Process_Technical_Description.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="preAuthCode"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="authType"></param>
+        /// <param name="businessAppId"></param>
+        /// <param name="categoryIdList"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForComponentSafeBindComponent(this WechatApiClient client, string preAuthCode, string redirectUrl, int authType = 3, string? businessAppId = null, params string[] categoryIdList)
+        {
+            return new Url(BASE_URL_OPEN)
+                .AppendPathSegments("wxaopen", "safe", "bindcomponent")
+                .SetQueryParam("action", "bindcomponent")
+                .SetQueryParam("no_scan", 1)
+                .SetQueryParam("component_appid", client.Credentials.AppId)
+                .SetQueryParam("pre_auth_code", preAuthCode)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("auth_type", authType)
+                .SetQueryParam("biz_appid", businessAppId)
+                .SetQueryParam("category_id_list", categoryIdList.Any() ? string.Join("|", categoryIdList) : null)
+                .SetFragment("wechat_redirect")
+                .ToString();
+        }
+
+        /// <summary>
+        /// <para>生成公众号管理员向第三方平台授权 URL（PC 版）。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Before_Develop/Authorization_Process_Technical_Description.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="preAuthCode"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="authType"></param>
+        /// <param name="businessAppId"></param>
+        /// <param name="categoryIdList"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForComponentLoginPage(this WechatApiClient client, string preAuthCode, string redirectUrl, int authType = 3, string? businessAppId = null, params string[] categoryIdList)
+        {
+            return new Url(BASE_URL_MP)
+                .AppendPathSegments("cgi-bin", "componentloginpage")
+                .SetQueryParam("component_appid", client.Credentials.AppId)
+                .SetQueryParam("pre_auth_code", preAuthCode)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("auth_type", authType)
+                .SetQueryParam("biz_appid", businessAppId)
+                .SetQueryParam("category_id_list", categoryIdList.Any() ? string.Join("|", categoryIdList) : null)
                 .ToString();
         }
     }

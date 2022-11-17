@@ -1,0 +1,14 @@
+﻿{
+    "account_bank": "其他银行",
+    "account_bank_code": 1099,
+    "bank_alias": "浙江网商银行",
+    "bank_alias_code": "1000009501",
+    "count": 1,
+    "data": [
+        {
+            "branch_id": "323331000001",
+            "branch_name": "浙江网商银行股份有限公司"
+        }
+    ],
+    "total_count": 1
+}

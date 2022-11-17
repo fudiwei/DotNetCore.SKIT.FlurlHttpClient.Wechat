@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -95,6 +95,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
             }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatOpenAIRequestTimeoutException(ex.Message, ex);
+            }
             catch (FlurlHttpException ex)
             {
                 throw new WechatOpenAIException(ex.Message, ex);
@@ -124,6 +128,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     await base.SendRequestAsync(flurlRequest, null, cancellationToken) :
                     await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
+            }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatOpenAIRequestTimeoutException(ex.Message, ex);
             }
             catch (FlurlHttpException ex)
             {

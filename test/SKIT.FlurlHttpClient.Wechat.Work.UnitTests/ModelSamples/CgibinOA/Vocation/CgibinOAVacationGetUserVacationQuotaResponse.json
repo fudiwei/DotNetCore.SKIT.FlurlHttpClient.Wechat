@@ -7,21 +7,24 @@
             "assignduration": 0,
             "usedduration": 0,
             "leftduration": 604800,
-            "vacationname": "年假"
+            "vacationname": "年假",
+            "real_assignduration": 0
         },
         {
             "id": 2,
-            "assignduration": 0,
+            "assignduration": 1296000,
             "usedduration": 0,
             "leftduration": 1296000,
-            "vacationname": "事假"
+            "vacationname": "事假",
+            "real_assignduration": 1296000
         },
         {
             "id": 3,
-            "assignduration": 0,
+            "assignduration": 1296000,
             "usedduration": 0,
-            "leftduration": 0,
-            "vacationname": "病假"
+            "leftduration": 1296000,
+            "vacationname": "病假",
+            "real_assignduration": 86400
         }
     ]
 }

@@ -436,7 +436,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinReportResidentGetOrderInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
-    
+
         #region SiteCode
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/report/sitecode/list 接口。</para>
@@ -457,7 +457,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinReportSiteCodeListResponse>(flurlReq, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/report/sitecode/get_site_report_info 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95461 </para>
@@ -477,7 +477,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinReportSiteCodeGetSiteReportInfoResponse>(flurlReq, cancellationToken: cancellationToken);
         }
-        
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/report/sitecode/get_report_answer 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95464 </para>

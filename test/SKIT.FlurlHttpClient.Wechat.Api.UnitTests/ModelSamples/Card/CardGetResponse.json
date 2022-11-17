@@ -18,11 +18,7 @@
                 "color": "#10AD61",
                 "notice": "到店使用",
                 "description": "",
-                "location_id_list": [
-                    218384742,
-                    402521653,
-                    402521608
-                ],
+                "location_id_list": [218384742, 402521653, 402521608],
                 "get_limit": 3,
                 "can_share": true,
                 "can_give_friend": true,

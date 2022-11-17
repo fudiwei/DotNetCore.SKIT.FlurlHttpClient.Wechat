@@ -4,9 +4,6 @@
     "remark": "备注信息",
     "description": "描述信息",
     "remark_company": "腾讯科技",
-    "remark_mobiles": [
-        "13800000001",
-        "13800000002"
-    ],
+    "remark_mobiles": ["13800000001", "13800000002"],
     "remark_pic_mediaid": "MEDIAID"
 }

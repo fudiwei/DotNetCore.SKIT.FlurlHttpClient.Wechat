@@ -67,20 +67,20 @@ var request = new Models.AddProfitSharingReceiverRequest()
     RelationType = "PARTNER"
 };
 
-string temp = request.Name; // 此时仍是明文
+Console.WriteLine("before: {0}", request.Name); // 此时仍是明文
 client.EncryptRequestSensitiveProperty(request);
-string temp = request.Name; // 此时已是密文
+Console.WriteLine("after: {0}", request.Name); // 此时已是密文
 
 var response = await client.ExecuteAddProfitSharingReceiverAsync(request);
 ```
 
-如果你希望本库在请求前能自动完成这项操作，你可以在构造得到 `WechatApiClient` 对象时指定自动化参数：
+如果你希望本库在请求前能自动完成这项操作，你可以在构造得到 `WechatTenpayClient` 对象时指定自动化参数：
 
 ```csharp
-var options = new WechatTenpayClientOptions() 
-{ 
+var options = new WechatTenpayClientOptions()
+{
     // 其他配置项略
-    AutoEncryptRequestSensitiveProperty = true 
+    AutoEncryptRequestSensitiveProperty = true
 };
 var client = new WechatTenpayClient(options);
 ```
@@ -97,14 +97,14 @@ var client = new WechatTenpayClient(options);
 
 微信商户平台证书需要通过 API 的方式获取、且可能同时存在多个有效证书，本库提供了一个 `CertificateManager` 类型可用于管理证书信息。
 
-你可以在构造得到 `WechatApiClient` 对象时指定证书管理器：
+你可以在构造得到 `WechatTenpayClient` 对象时指定证书管理器：
 
 ```csharp
 var manager = new InMemoryCertificateManager(); // 为便于后续使用，该对象可使用同一商户号下全局单例的方式声明
-var options = new WechatTenpayClientOptions() 
-{ 
+var options = new WechatTenpayClientOptions()
+{
     // 其他配置项略
-    PlatformCertificateManager = manager 
+    PlatformCertificateManager = manager
 };
 var client = new WechatTenpayClient(options);
 ```
@@ -117,7 +117,7 @@ var client = new WechatTenpayClient(options);
 /* 注意：QueryCertificatesAsync() 接口返回值需解密后再存入     */
 /* 　　　存入的证书格式请参考上一小节给出的 CRT/CER 证书文件示例 */
 /* 　　　示例项目中也包含一段关于此的演示程序                   */
-manager.SetEntry(new CertificateEntry("CRT/CER 证书序列号", "CRT/CER 证书内容", "证书生效时间", "证书过期时间"));
+manager.AddEntry(new CertificateEntry("证书算法，支持 RSA/SM2 两种类型", "CRT/CER 证书序列号", "CRT/CER 证书内容", "证书生效时间", "证书过期时间"));
 ```
 
 当然，现在的平台证书离过期还有很久，你也可以选择“偷懒”：提前下载好平台证书，在程序启动时记录一次即可。
@@ -164,6 +164,7 @@ public class RedisCertificateManager : CertificateManager
 
         IDictionary<string, string> map = values.ToDictionary(k => k.Name.ToString(), v => v.Value.ToString());
         return new CertificateEntry(
+            algorithmType: map[nameof(CertificateEntry.AlgorithmType)],
             serialNumber: map[nameof(CertificateEntry.SerialNumber)],
             certificate: map[nameof(CertificateEntry.Certificate)],
             effectiveTime: DateTimeOffset.Parse(map[nameof(CertificateEntry.EffectiveTime)]),
@@ -175,6 +176,7 @@ public class RedisCertificateManager : CertificateManager
     {
         return new HashEntry[]
         {
+            new HashEntry(nameof(CertificateEntry.AlgorithmType), entry.AlgorithmType),
             new HashEntry(nameof(CertificateEntry.SerialNumber), entry.SerialNumber),
             new HashEntry(nameof(CertificateEntry.Certificate), entry.Certificate),
             new HashEntry(nameof(CertificateEntry.EffectiveTime), entry.EffectiveTime.ToString()),

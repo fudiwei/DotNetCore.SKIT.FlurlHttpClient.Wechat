@@ -33,6 +33,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string? Name { get; set; }
 
                 /// <summary>
+                /// 获取或设置手机号码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mobile")]
+                [System.Text.Json.Serialization.JsonPropertyName("mobile")]
+                public string? MobileNumber { get; set; }
+
+                /// <summary>
                 /// 获取或设置学生所在的部门 ID（即班级）列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("department")]

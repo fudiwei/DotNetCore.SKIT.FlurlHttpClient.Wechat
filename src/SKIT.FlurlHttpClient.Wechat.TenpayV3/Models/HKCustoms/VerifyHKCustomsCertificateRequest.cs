@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /customs/verify-certificate 接口的请求。</para>
@@ -67,7 +67,8 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("certificate_id")]
         [System.Text.Json.Serialization.JsonPropertyName("certificate_id")]
-        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
+        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
+        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
         public string CertificateId { get; set; } = string.Empty;
 
         /// <summary>
@@ -75,7 +76,8 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("certificate_name")]
         [System.Text.Json.Serialization.JsonPropertyName("certificate_name")]
-        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
+        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1)]
+        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
         public string CertificateName { get; set; } = string.Empty;
     }
 }

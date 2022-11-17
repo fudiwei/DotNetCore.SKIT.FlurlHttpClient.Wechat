@@ -1,10 +1,7 @@
 ﻿{
     "strategy_id": 1,
     "strategy_name": "NAME",
-    "admin_list": [
-        "zhangsan",
-        "lisi"
-    ],
+    "admin_list": ["zhangsan", "lisi"],
     "privilege": {
         "view_customer_list": true,
         "view_customer_data": true,

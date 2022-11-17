@@ -1,0 +1,35 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "freight_template": {
+        "template_id": "38983386001",
+        "name": "运费险",
+        "valuation_type": "PIECE",
+        "send_time": "SendTime_FOUR_HOUR",
+        "address_info": {
+            "user_name": "",
+            "postal_code": "",
+            "province_name": "广东省",
+            "city_name": "广州市",
+            "county_name": "海珠区",
+            "detail_info": "",
+            "national_code": "",
+            "tel_number": ""
+        },
+        "delivery_type": "EXPRESS",
+        "delivery_id": [],
+        "shipping_method": "FREE",
+        "all_condition_free_detail": {
+            "condition_free_detail_list": []
+        },
+        "all_freight_calc_method": {
+            "freight_calc_method_list": []
+        },
+        "create_time": 1653892643,
+        "update_time": 1653892643,
+        "is_default": 0,
+        "not_send_area": {
+            "address_info": []
+        }
+    }
+}

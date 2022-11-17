@@ -1,12 +1,12 @@
 ﻿{
-	"scene": 2,
-	"remark": "aa_remark",
-	"auto_create_room": 1,
-	"room_base_name": "销售客服群",
-	"room_base_id": 10,
-	"chat_id_list": [
-		"wrOgQhDgAAH2Yy-CTZ6POca8mlBEdaaa",
-		"wrOgQhDgAALPUthpRAKvl7mgiQRwAAA"
-	],
-	"state": "klsdup3kj3s1"
+    "scene": 2,
+    "remark": "aa_remark",
+    "auto_create_room": 1,
+    "room_base_name": "销售客服群",
+    "room_base_id": 10,
+    "chat_id_list": [
+        "wrOgQhDgAAH2Yy-CTZ6POca8mlBEdaaa",
+        "wrOgQhDgAALPUthpRAKvl7mgiQRwAAA"
+    ],
+    "state": "klsdup3kj3s1"
 }

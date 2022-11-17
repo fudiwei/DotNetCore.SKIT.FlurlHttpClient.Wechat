@@ -3,12 +3,12 @@
     "errmsg": "ok",
     "rule_info": {
         "owner_corp_range": {
-            "departmentids": [ 123 ],
-            "userids": [ "userid1", "userid2" ]
+            "departmentids": [123],
+            "userids": ["userid1", "userid2"]
         },
         "member_corp_range": {
-            "groupids": [ 123 ],
-            "corpids": [ "corpid1", "corpid2" ]
+            "groupids": [123],
+            "corpids": ["corpid1", "corpid2"]
         }
     }
 }

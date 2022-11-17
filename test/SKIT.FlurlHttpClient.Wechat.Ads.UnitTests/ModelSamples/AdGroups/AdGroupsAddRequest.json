@@ -1,7 +1,7 @@
 ﻿{
     "campaign_id": 12345,
     "adgroup_name": "朋友圈广告组测试",
-    "site_set": [ "SITE_SET_WECHAT" ],
+    "site_set": ["SITE_SET_WECHAT"],
     "product_type": "PRODUCT_TYPE_LINK_WECHAT",
     "begin_date": "2017-06-25",
     "end_date": "2017-07-01",
@@ -10,11 +10,11 @@
     "billing_event": "BILLINGEVENT_IMPRESSION",
     "daily_budget": 1000000,
     "targeting": {
-        "gender": [ "MALE" ],
-        "age": [ "18~30" ],
+        "gender": ["MALE"],
+        "age": ["18~30"],
         "geo_location": {
-            "regions": [ 110000, 310000 ],
-            "location_types": [ "LIVE_IN" ]
+            "regions": [110000, 310000],
+            "location_types": ["LIVE_IN"]
         }
     },
     "time_series": "010100100110100010101010010101010101010100101010101010010101010101001010101010100101010101010111110010101001010110110100110001011001010100101010101010110011001010101010100101100101101110101010101010100110100110010100110101110111101110110110110110110110101101101101110110011101011101101011101101101101001010110111010111011010110110111011",

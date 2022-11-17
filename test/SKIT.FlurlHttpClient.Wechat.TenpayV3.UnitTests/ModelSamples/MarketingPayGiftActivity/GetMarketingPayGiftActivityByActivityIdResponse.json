@@ -45,10 +45,7 @@
     "advanced_setting": {
         "delivery_user_category": "DELIVERY_MEMBER_PERSON",
         "merchant_member_appid": "34567890",
-        "goods_tags": [
-            "xxx",
-            "yyy"
-        ]
+        "goods_tags": ["xxx", "yyy"]
     },
     "activity_status": "CREATE_ACT_STATUS",
     "creator_merchant_id": "10000022",

@@ -1,0 +1,10 @@
+{
+    "prefetch_dns_domain": [
+        {
+            "url": "d1.com"
+        },
+        {
+            "url": "d2.com"
+        }
+    ]
+}

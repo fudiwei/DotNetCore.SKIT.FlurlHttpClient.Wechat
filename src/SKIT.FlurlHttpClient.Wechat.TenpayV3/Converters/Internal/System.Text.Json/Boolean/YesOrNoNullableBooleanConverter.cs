@@ -1,9 +1,12 @@
-﻿using System.Text.Json.Serialization;
+using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
 {
     internal class YesOrNoNullableBooleanConverter : JsonConverter<bool?>
     {
+        private const string CHAR_YES = "Y";
+        private const string CHAR_NO = "N";
+
         public override bool? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             if (reader.TokenType == JsonTokenType.Null)
@@ -24,9 +27,9 @@ namespace System.Text.Json.Converters
                 if (value == null)
                     return null;
 
-                if ("Y".Equals(value))
+                if (CHAR_YES.Equals(value))
                     return true;
-                else if ("N".Equals(value))
+                else if (CHAR_NO.Equals(value))
                     return false;
             }
 
@@ -36,7 +39,7 @@ namespace System.Text.Json.Converters
         public override void Write(Utf8JsonWriter writer, bool? value, JsonSerializerOptions options)
         {
             if (value.HasValue)
-                writer.WriteStringValue(value.Value ? "Y" : "N");
+                writer.WriteStringValue(value.Value ? CHAR_YES : CHAR_NO);
             else
                 writer.WriteNullValue();
         }

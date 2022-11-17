@@ -1,0 +1,62 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": 1,
+    "next_cursor": "NEXT_CURSOR",
+    "stat_info": {
+        "students": [
+            {
+                "student_userid": "zhansan_child",
+                "partyids": [10, 11],
+                "watch_time": 30,
+                "enter_time": 1586433904,
+                "leave_time": 1586434000,
+                "is_comment": 1
+            },
+            {
+                "student_userid": "lisi_child",
+                "partyids": [10, 11],
+                "watch_time": 30,
+                "enter_time": 1586433904,
+                "leave_time": 1586434000,
+                "is_comment": 0
+            }
+        ],
+        "parents": [
+            {
+                "parent_userid": "zhangsan",
+                "student_userid": "zhansan_child",
+                "partyids": [10, 11],
+                "watch_time": 30,
+                "enter_time": 1586433904,
+                "leave_time": 1586434000,
+                "is_comment": 1
+            },
+            {
+                "parent_userid": "lisi",
+                "student_userid": "lisi_child",
+                "partyids": [10, 11],
+                "watch_time": 30,
+                "enter_time": 1586433904,
+                "leave_time": 1586434000,
+                "is_comment": 0
+            }
+        ],
+        "visitors": [
+            {
+                "nickname": "wx_nickname1",
+                "watch_time": 30,
+                "enter_time": 1586433904,
+                "leave_time": 1586434000,
+                "is_comment": 1
+            },
+            {
+                "nickname": "wx_nickname2",
+                "watch_time": 30,
+                "enter_time": 1586433904,
+                "leave_time": 1586434000,
+                "is_comment": 0
+            }
+        ]
+    }
+}

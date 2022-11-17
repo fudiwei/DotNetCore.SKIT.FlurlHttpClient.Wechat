@@ -2,22 +2,22 @@
     "errcode": 0,
     "errmsg": "ok",
     "complaintOrder": {
-        "complaintOrderId": 1212, 
-        "openId": "dfasefasefase", 
-        "createTime": 123124124, 
-        "phoneNumber": 156222222, 
-        "type": 12, 
-        "status": 1, 
+        "complaintOrderId": 1212,
+        "openId": "dfasefasefase",
+        "createTime": 123124124,
+        "phoneNumber": 156222222,
+        "type": 12,
+        "status": 1,
         "customerMaterial": {
-            "content": "", 
-            "mediaIdList": [ "fsadfasdfsaf" ] 
+            "content": "",
+            "mediaIdList": ["fsadfasdfsaf"]
         },
-        "orderId": "2342", 
-        "outTradeNo": "sdfsfd", 
-        "productName": "sdf", 
+        "orderId": "2342",
+        "outTradeNo": "sdfsfd",
+        "productName": "sdf",
         "payTime": 123123,
-        "totalCost": 1213, 
-        "expireTime": 1231231 
+        "totalCost": 1213,
+        "expireTime": 1231231
     },
     "item": [
         {
@@ -25,12 +25,12 @@
             "time": 1233234234,
             "phoneNumber": "156222222",
             "content": "",
-            "mediaIdList": [ "asdfasdf" ]
+            "mediaIdList": ["asdfasdf"]
         }
     ],
     "returnBill": {
         "returnId": "23234234234",
-        "waybillId": "adfasdf", 
-        "orderStatus": 4 
+        "waybillId": "adfasdf",
+        "orderStatus": 4
     }
 }

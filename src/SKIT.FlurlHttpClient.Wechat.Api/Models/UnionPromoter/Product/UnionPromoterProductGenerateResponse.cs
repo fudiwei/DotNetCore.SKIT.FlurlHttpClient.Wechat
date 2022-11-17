@@ -161,7 +161,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-
         public Types.ProductPromotion[] ProductPromotionList { get; set; } = default!;
     }
 }

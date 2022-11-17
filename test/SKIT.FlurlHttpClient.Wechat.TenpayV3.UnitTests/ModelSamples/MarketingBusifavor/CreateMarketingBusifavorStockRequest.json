@@ -11,10 +11,7 @@
             "available_day_after_receive": 3,
             "wait_days_after_receive": 7,
             "available_week": {
-                "week_day": [
-                    1,
-                    2
-                ],
+                "week_day": [1, 2],
                 "available_day_time": [
                     {
                         "begin_time": 3600,

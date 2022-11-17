@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "checkindata": {
+        "items": [
+            {
+                "open_userid": "x1",
+                "checkin_time": 12345,
+                "device_sn": "SN"
+            }
+        ]
+    },
+    "next_cursor": "NEXT_CURSOR"
+}

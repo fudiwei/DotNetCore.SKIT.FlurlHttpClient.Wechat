@@ -8,19 +8,11 @@
         "errmsg": "ok",
         "moment_id": "xxxx",
         "invalid_sender_list": {
-            "user_list": [
-                "zhangshan",
-                "lisi"
-            ],
-            "department_list": [
-                2,
-                3
-            ]
+            "user_list": ["zhangshan", "lisi"],
+            "department_list": [2, 3]
         },
         "invalid_external_contact_list": {
-            "tag_list": [
-                1
-            ]
+            "tag_list": [1]
         }
     }
 }

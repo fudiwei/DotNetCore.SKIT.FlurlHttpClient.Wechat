@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+﻿using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /merchant/group/getbyid 接口的响应。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2020-10-01 下线。")]
     public class MerchantGroupGetByIdResponse : WechatApiResponse
     {
         public static class Types
@@ -14,7 +17,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-                public int GroupId { get; set; }
+                public long GroupId { get; set; }
 
                 /// <summary>
                 /// 获取或设置分组名称。

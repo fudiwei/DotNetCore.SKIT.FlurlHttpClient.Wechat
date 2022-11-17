@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /merchant/shelf/add 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2020-10-01 下线。")]
     public class MerchantShelfAddRequest : WechatApiRequest, IInferable<MerchantShelfAddRequest, MerchantShelfAddResponse>
     {
         public static class Types
@@ -37,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("group_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("group_id")]
-                                public int GroupId { get; set; }
+                                public long GroupId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置分组图片 URL。
@@ -77,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("eid")]
                         [System.Text.Json.Serialization.JsonPropertyName("eid")]
-                        public int EId { get; set; }
+                        public long ElementId { get; set; }
 
                         /// <summary>
                         /// 获取或设置单个分组信息。

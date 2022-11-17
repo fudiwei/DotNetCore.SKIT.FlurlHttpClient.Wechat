@@ -4,7 +4,7 @@
         "nickname": "昵称",
         "abbr": "简称",
         "introduction": "简介",
-        "naming_other_stuff": [ "补充材料" ]
+        "naming_other_stuff": ["补充材料"]
     },
     "return_info": {
         "address_info": {
@@ -29,5 +29,4 @@
             "tel_number": "24534252"
         }
     }
-
 }

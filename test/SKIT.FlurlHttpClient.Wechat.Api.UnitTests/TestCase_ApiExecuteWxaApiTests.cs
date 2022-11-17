@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.DefaultTimeData);
-            Assert.NotEmpty(response.DefaultTimeData.DataList);
+            Assert.NotEmpty(response.DefaultTimeData!.DataList);
         }
 
         [Fact(DisplayName = "测试用例：调用 API [GET] /wxaapi/log/get_scene")]

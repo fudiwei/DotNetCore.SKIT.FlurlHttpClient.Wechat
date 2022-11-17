@@ -1,8 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 INFO.notify_third_fasteregister 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/Register_Mini_Programs/Fast_Registration_Interface_document.html </para>
+    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/register-management/fast-registration-ent/registerMiniprogram.html </para>
+    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/register-management/fast-registration-ind/fastRegisterPersonalMp.html </para>
     /// </summary>
     public class NotifyThirdFastRegisterEvent : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {
@@ -13,32 +14,44 @@
                 /// <summary>
                 /// 获取或设置企业名称。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("name")]
-                public string EnterpriseName { get; set; } = default!;
+                [System.Xml.Serialization.XmlElement("name", IsNullable = true)]
+                public string? EnterpriseName { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业代码类型。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("code_type")]
-                public int LicenseType { get; set; }
+                [System.Xml.Serialization.XmlElement("code_type", IsNullable = true)]
+                public int? LicenseType { get; set; }
 
                 /// <summary>
                 /// 获取或设置企业代码。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("code")]
-                public string LicenseNumber { get; set; } = default!;
+                [System.Xml.Serialization.XmlElement("code", IsNullable = true)]
+                public string? LicenseNumber { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置法人姓名。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("legal_persona_name")]
-                public string LegalPersonName { get; set; } = default!;
+                [System.Xml.Serialization.XmlElement("legal_persona_name", IsNullable = true)]
+                public string? LegalPersonName { get; set; }
 
                 /// <summary>
                 /// 获取或设置法人微信号。
                 /// </summary>
-                [System.Xml.Serialization.XmlElement("legal_persona_wechat")]
-                public string LegalPersonWxname { get; set; } = default!;
+                [System.Xml.Serialization.XmlElement("legal_persona_wechat", IsNullable = true)]
+                public string? LegalPersonWxname { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户姓名。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("idname", IsNullable = true)]
+                public string? IdName { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户微信号。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("wxuser", IsNullable = true)]
+                public string? Wxname { get; set; }
 
                 /// <summary>
                 /// 获取或设置第三方联系电话。

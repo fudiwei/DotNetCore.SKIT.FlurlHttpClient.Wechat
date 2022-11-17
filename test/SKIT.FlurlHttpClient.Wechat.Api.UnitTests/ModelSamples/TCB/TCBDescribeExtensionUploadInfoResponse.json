@@ -1,0 +1,13 @@
+﻿{
+    "Response": {
+        "FilesData": [
+            {
+                "CodeUri": "extension://xxx.zip",
+                "UploadUrl": "https://xxx",
+                "CustomKey": "",
+                "MaxSize": 30
+            }
+        ],
+        "RequestId": "83793d78-b90b-4b1e-9454-d7b4f5317f01"
+    }
+}

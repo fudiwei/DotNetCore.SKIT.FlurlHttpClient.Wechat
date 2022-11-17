@@ -1,0 +1,12 @@
+﻿{
+    "data": [
+        {
+            "bank_code": "1000009561",
+            "bank_id": "1001",
+            "bank_name": "招商银行",
+            "need_branch": false,
+            "account_bank": "招商银行"
+        }
+    ],
+    "total_count": 1
+}

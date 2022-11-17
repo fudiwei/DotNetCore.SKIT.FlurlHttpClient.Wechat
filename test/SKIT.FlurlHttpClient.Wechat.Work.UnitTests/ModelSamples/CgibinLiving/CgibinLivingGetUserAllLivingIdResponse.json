@@ -2,8 +2,5 @@
     "errcode": 0,
     "errmsg": "ok",
     "next_cursor": "next_cursor",
-    "livingid_list": [
-        "livingid1",
-        "livingid2"
-    ]
+    "livingid_list": ["livingid1", "livingid2"]
 }

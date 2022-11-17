@@ -1,0 +1,13 @@
+﻿{
+    "openid": "oTVP50O53a7jgmawAmxKukNlq3XI",
+    "combine_trade_no": "P20150806125346",
+    "expire_time": 1647360558,
+    "sub_orders": [
+        {
+            "mchid": "1230000109",
+            "amount": 100,
+            "trade_no": "20150806125346",
+            "description": "Image形象店 - 深圳腾大 -QQ 公仔"
+        }
+    ]
+}

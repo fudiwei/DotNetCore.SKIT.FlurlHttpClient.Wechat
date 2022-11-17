@@ -198,7 +198,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("express_info")]
         [System.Text.Json.Serialization.JsonPropertyName("express_info")]
-        public Types.Express Express { get; set; } = new Types.Express();
+        public Types.Express? Express { get; set; }
 
         /// <summary>
         /// 获取或设置 SKU 列表。

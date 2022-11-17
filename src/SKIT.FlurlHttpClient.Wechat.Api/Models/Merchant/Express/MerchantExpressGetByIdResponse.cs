@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /merchant/express/getbyid 接口的响应。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2020-10-01 下线。")]
     public class MerchantExpressGetByIdResponse : WechatApiResponse
     {
         public static class Types
@@ -49,7 +52,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("Id")]
                 [System.Text.Json.Serialization.JsonPropertyName("Id")]
-                public int TemplateId { get; set; }
+                public long TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板名称。

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
@@ -18,10 +18,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             if (formDataName == null) throw new ArgumentNullException(nameof(formDataName));
             if (configureFileHttpContent == null) throw new ArgumentNullException(nameof(configureFileHttpContent));
 
-            fileName = fileName.Replace("\"", "");
+            fileName = fileName.Replace("\"", string.Empty);
             fileBytes = fileBytes ?? Array.Empty<byte>();
             fileContentType = string.IsNullOrEmpty(fileContentType) ? "application/octet-stream" : fileContentType;
-            formDataName = formDataName.Replace("\"", "");
+            formDataName = formDataName.Replace("\"", string.Empty);
 
             // HACKED: 默认不支持 Unicode 文件名 https://github.com/dotnet/runtime/issues/22996
             byte[] bytesFileName = Encoding.UTF8.GetBytes(fileName);

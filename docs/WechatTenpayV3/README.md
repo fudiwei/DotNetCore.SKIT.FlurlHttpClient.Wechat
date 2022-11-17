@@ -12,9 +12,9 @@
 
 -   支持直连商户、服务商两种模式。
 
--   请求时自动生成签名，无需开发者手动干预。
+-   请求时自动生成签名（同时支持国际 RSA 算法或国密 SM 算法），无需开发者手动干预。
 
--   提供了微信支付所需的 RSA、AES、SHA-256 等算法工具类。
+-   提供了微信支付所需的 RSA、AES、SM2/SM3/SM4、SHA-256 等算法工具类。
 
 -   提供了生成调起支付签名、加密请求中敏感数据、解密响应中敏感数据、解析回调通知事件敏感数据等扩展方法。
 
@@ -100,7 +100,7 @@ else
 
 -   [如何使用拦截器？](./Advanced_Interceptor.md)
 
--   [如何查看商户证书序列号？](./Advanced_MerchantCertificateSerialNumber.md)
+-   [如何查看商户证书序列号？](./Advanced_CertificateSerialNumber.md)
 
 -   [如何加密请求中的敏感数据？](./Advanced_RequestSensitiveDataEncryption.md)
 
@@ -113,6 +113,8 @@ else
 -   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
 
 -   [如何生成客户端调起支付时所需的参数及签名？](./Advanced_Parameters.md)
+
+-   [如何接入国密算法？](./Advanced_SMAlgorithm.md)
 
 -   [如何扩展额外的 API？](./Advanced_Extensions.md)
 

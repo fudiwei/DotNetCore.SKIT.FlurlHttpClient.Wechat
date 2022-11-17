@@ -2,7 +2,5 @@
     "errcode": 0,
     "errmsg": "ok",
     "grid_id": "grid_id",
-    "invalid_userids": [
-        "invaliduser"
-    ]
+    "invalid_userids": ["invaliduser"]
 }

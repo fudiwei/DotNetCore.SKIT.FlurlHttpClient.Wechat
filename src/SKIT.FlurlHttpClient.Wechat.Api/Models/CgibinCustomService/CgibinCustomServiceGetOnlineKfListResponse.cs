@@ -31,6 +31,13 @@
                 public int Status { get; set; }
 
                 /// <summary>
+                /// 获取或设置客服 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("kf_openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("kf_openid")]
+                public string? OpenId { get; set; }
+
+                /// <summary>
                 /// 获取或设置客服当前正在接待的会话数。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("accepted_case")]

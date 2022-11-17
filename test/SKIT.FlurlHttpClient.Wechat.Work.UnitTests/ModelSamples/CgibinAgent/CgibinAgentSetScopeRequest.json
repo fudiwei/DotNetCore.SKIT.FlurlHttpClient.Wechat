@@ -1,6 +1,6 @@
 ﻿{
     "agentid": 1,
-    "allow_user": [ "zhansan", "lisi" ],
-    "allow_party": [ 1, 2, 3 ],
-    "allow_tag": [ 1, 2, 3 ]
+    "allow_user": ["zhansan", "lisi"],
+    "allow_party": [1, 2, 3],
+    "allow_tag": [1, 2, 3]
 }

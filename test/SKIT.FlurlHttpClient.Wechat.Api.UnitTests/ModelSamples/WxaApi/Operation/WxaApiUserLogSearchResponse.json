@@ -13,12 +13,12 @@
                 "msg": [
                     {
                         "time": 1570852795,
-                        "msg": [ "hello world" ],
+                        "msg": ["hello world"],
                         "level": 2
                     },
                     {
                         "time": 1570852795,
-                        "msg": [ "get msg list mig 10006" ],
+                        "msg": ["get msg list mig 10006"],
                         "level": 4
                     }
                 ],

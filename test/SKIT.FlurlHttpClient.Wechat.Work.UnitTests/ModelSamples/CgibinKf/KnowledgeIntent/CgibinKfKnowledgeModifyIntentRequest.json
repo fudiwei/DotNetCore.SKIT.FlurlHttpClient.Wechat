@@ -1,0 +1,61 @@
+﻿{
+    "intent_id": "INTENT_ID",
+    "question": {
+        "text": {
+            "content": "主问题"
+        }
+    },
+    "similar_questions": {
+        "items": [
+            {
+                "text": {
+                    "content": "相似问题1"
+                }
+            },
+            {
+                "text": {
+                    "content": "相似问题2"
+                }
+            }
+        ]
+    },
+    "answers": [
+        {
+            "text": {
+                "content": "问题的回复"
+            },
+            "attachments": [
+                {
+                    "msgtype": "image",
+                    "image": {
+                        "media_id": "MEDIA_ID"
+                    }
+                },
+                {
+                    "msgtype": "video",
+                    "video": {
+                        "media_id": "MEDIA_ID"
+                    }
+                },
+                {
+                    "msgtype": "link",
+                    "link": {
+                        "title": "消息标题",
+                        "pic_url": "https://example.pic.com/path",
+                        "desc": "消息描述",
+                        "url": "https://example.link.com/path"
+                    }
+                },
+                {
+                    "msgtype": "miniprogram",
+                    "miniprogram": {
+                        "title": "欢迎报名夏令营",
+                        "thumb_media_id": "THUMB_MEDIA_ID",
+                        "appid": "wx8bd80126147dfAAA",
+                        "pagepath": "/path/index.html"
+                    }
+                }
+            ]
+        }
+    ]
+}

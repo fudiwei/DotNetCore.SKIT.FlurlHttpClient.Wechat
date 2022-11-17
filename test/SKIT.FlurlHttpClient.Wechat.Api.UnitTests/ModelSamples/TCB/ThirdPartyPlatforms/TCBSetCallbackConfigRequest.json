@@ -1,0 +1,27 @@
+﻿{
+    "function_config": {
+        "enable": false,
+        "callbacks": [
+            {
+                "msgType": "event",
+                "event": "user_enter_tempsession",
+                "env": "test-env-6gni9ity244a6ea3",
+                "functionName": "callback",
+                "enable": false
+            },
+            {
+                "msgType": "image",
+                "event": "",
+                "env": "test-env-6gni9ity244a6ea3",
+                "functionName": "callback",
+                "enable": true
+            }
+        ]
+    },
+    "container_config": {
+        "enable": true,
+        "qbase_env": "test-env-6gni9ity244a6ea3",
+        "qbase_container_path": "/container-echo",
+        "text_mode": 1
+    }
+}

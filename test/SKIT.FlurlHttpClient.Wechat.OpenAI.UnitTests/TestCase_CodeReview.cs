@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
         {
             Assert.Null(Record.Exception(() =>
             {
-                CodeAnalyzerOptions options = new CodeAnalyzerOptions() 
+                CodeAnalyzerOptions options = new CodeAnalyzerOptions()
                 {
                     AssemblyName = "SKIT.FlurlHttpClient.Wechat.OpenAI",
                     WorkDirectoryForSourceCode = TestConfigs.WorkDirectoryForSdk,

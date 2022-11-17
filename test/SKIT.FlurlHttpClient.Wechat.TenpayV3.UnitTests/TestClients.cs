@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
@@ -21,11 +21,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             var request = new Models.QueryCertificatesRequest();
             var response = await Instance.ExecuteQueryCertificatesAsync(request);
-
-            response = Instance.DecryptResponseSensitiveProperty(response);
-            foreach (var certificateModel in response.CertificateList)
+            foreach (var certificate in Instance.DecryptResponseSensitiveProperty(response).CertificateList)
             {
-                Instance.PlatformCertificateManager.AddEntry(new Settings.CertificateEntry(certificateModel));
+                Instance.PlatformCertificateManager.AddEntry(new Settings.CertificateEntry(certificate));
             }
         }
 

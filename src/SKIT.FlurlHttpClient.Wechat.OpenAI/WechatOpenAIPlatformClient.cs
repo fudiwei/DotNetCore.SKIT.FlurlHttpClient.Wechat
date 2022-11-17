@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -103,7 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 if (data is WechatOpenAIPlatformRequest.Serialization.IEncryptedXmlable)
                 {
                     string plainXml = Utilities.XmlUtility.Serialize(data);
-                    string encryptedXml = Utilities.WxBizMsgCryptor.AESEncrypt(plainText: plainXml, encodingAESKey: Credentials.EncodingAESKey!, appId: Credentials.AppId!);
+                    string encryptedXml = Utilities.WechatEventDataCryptor.AESEncrypt(plainText: plainXml, encodingAESKey: Credentials.EncodingAESKey!, appId: Credentials.AppId!);
                     data = new { encrypt = encryptedXml };
                 }
 
@@ -115,6 +115,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     await base.SendRequestAsync(flurlRequest, null, cancellationToken) :
                     await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
+            }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatOpenAIRequestTimeoutException(ex.Message, ex);
             }
             catch (FlurlHttpException ex)
             {
@@ -148,6 +152,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                     .AllowAnyHttpStatus()
                     .SendUrlEncodedAsync(flurlRequest.Verb, data, cancellationToken);
                 return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
+            }
+            catch (FlurlHttpTimeoutException ex)
+            {
+                throw new Exceptions.WechatOpenAIRequestTimeoutException(ex.Message, ex);
             }
             catch (FlurlHttpException ex)
             {

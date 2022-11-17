@@ -2,10 +2,7 @@
     "errcode": 0,
     "errmsg": "ok",
     "allow_scope": {
-        "students": [
-            { "userid": "student1" },
-            { "userid": "student2" }
-        ],
-        "departments": [ 1, 2 ]
+        "students": [{ "userid": "student1" }, { "userid": "student2" }],
+        "departments": [1, 2]
     }
 }

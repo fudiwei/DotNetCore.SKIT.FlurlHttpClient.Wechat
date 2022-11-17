@@ -44,7 +44,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_last")]
         [System.Text.Json.Serialization.JsonPropertyName("is_last")]
-        public bool IsEnding { get; set; }
+        public bool IsLast { get; set; }
 
         /// <summary>
         /// 获取或设置翻页标记。

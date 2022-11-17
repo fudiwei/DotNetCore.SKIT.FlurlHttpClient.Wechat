@@ -7,7 +7,7 @@
     {
         public static class Types
         {
-            public class Template
+            public class FreightTemplate
             {
                 public static class Types
                 {
@@ -18,21 +18,21 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("province_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("province_name")]
-                        public string? Province { get; set; }
+                        public string? ProvinceName { get; set; }
 
                         /// <summary>
                         /// 获取或设置城市。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("city_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("city_name")]
-                        public string? City { get; set; }
+                        public string? CityName { get; set; }
 
                         /// <summary>
                         /// 获取或设置区县。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("county_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("county_name")]
-                        public string? District { get; set; }
+                        public string? DistrictName { get; set; }
                     }
 
                     public class Area
@@ -174,7 +174,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public int TemplateId { get; set; }
+                public long TemplateId { get; set; }
 
                 /// <summary>
                 /// 获取或设置模板名称。
@@ -276,6 +276,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_list")]
         [System.Text.Json.Serialization.JsonPropertyName("template_list")]
-        public Types.Template[] TemplateList { get; set; } = default!;
+        public Types.FreightTemplate[] FreightTemplateList { get; set; } = default!;
     }
 }

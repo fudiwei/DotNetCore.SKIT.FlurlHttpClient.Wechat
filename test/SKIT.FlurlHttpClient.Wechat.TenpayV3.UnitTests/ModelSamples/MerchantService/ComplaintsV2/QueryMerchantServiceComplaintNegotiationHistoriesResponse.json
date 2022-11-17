@@ -14,9 +14,7 @@
             "operate_time": "2015-05-20T13:29:35.120+08:00",
             "operate_type": "USER_CREATE_COMPLAINT",
             "operate_details": "已与用户电话沟通解决",
-            "image_list": [
-                "https://qpic.cn/xxx"
-            ]
+            "image_list": ["https://qpic.cn/xxx"]
         }
     ],
     "limit": 10,

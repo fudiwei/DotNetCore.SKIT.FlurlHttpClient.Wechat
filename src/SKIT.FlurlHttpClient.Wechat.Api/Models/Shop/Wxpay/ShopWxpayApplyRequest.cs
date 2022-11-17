@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -151,6 +151,93 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string MobileNumber { get; set; } = string.Empty;
             }
 
+            public class BankAccount
+            {
+                public static class Types
+                {
+                    public class AccountCertificate
+                    {
+                        /// <summary>
+                        /// 获取或设置结算证明函图片信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wxa_settlement_cert_pic")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wxa_settlement_cert_pic")]
+                        public Image SettlementCertificatePicture { get; set; } = new Image();
+
+                        /// <summary>
+                        /// 获取或设置结算证明函图片信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wxa_relation_cert_pic")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wxa_relation_cert_pic")]
+                        public Image RelationCertificatePicture { get; set; } = new Image();
+
+                        /// <summary>
+                        /// 获取或设置其他补充证明图片信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wxa_other_cert_pics")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wxa_other_cert_pics")]
+                        public IList<Image> OtherCertificatePictureList { get; set; } = new List<Image>();
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置账户类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("bank_account_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("bank_account_type")]
+                public string AccountType { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置开户名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("account_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("account_name")]
+                public string AccountName { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置银行账号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("account_number")]
+                [System.Text.Json.Serialization.JsonPropertyName("account_number")]
+                public string AccountNumber { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置开户银行。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("account_bank")]
+                [System.Text.Json.Serialization.JsonPropertyName("account_bank")]
+                public string AccountBank { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置开户银行省市编码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("bank_address_code")]
+                [System.Text.Json.Serialization.JsonPropertyName("bank_address_code")]
+                public string BankAddressCode { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置开户银行联行号。与字段 <see cref="BankBranchName"/> 二选一。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("bank_branch_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("bank_branch_id")]
+                public string? BankBranchId { get; set; }
+
+                /// <summary>
+                /// 获取或设置开户银行全称（含支行）。与字段 <see cref="BankBranchId"/> 二选一。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("bank_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
+                public string? BankBranchName { get; set; }
+
+                /// <summary>
+                /// 获取或设置账号证明材料信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("account_cert_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("account_cert_info")]
+                public Types.AccountCertificate? AccountCertificate { get; set; }
+            }
+
+
             public class Qualification
             {
                 /// <summary>
@@ -207,6 +294,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("contact_info")]
         [System.Text.Json.Serialization.JsonPropertyName("contact_info")]
         public Types.Contact Contact { get; set; } = new Types.Contact();
+
+        /// <summary>
+        /// 获取或设置结算银行账户信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("account_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("account_info")]
+        public Types.BankAccount BankAccount { get; set; } = new Types.BankAccount();
+
+        /// <summary>
+        /// 获取或设置商户简称。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("merchant_shortname")]
+        [System.Text.Json.Serialization.JsonPropertyName("merchant_shortname")]
+        public string? MerchantShortName { get; set; }
 
         /// <summary>
         /// 获取或设置特殊资质信息。

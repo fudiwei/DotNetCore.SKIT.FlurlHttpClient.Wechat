@@ -1,8 +1,8 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.weapp_audit_success 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/code/audit_event.html </para>
+    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/code-management/submitAudit.html </para>
     /// </summary>
     public class WeappAuditSuccessEvent : WechatApiEvent, WechatApiEvent.Serialization.IXmlSerializable
     {

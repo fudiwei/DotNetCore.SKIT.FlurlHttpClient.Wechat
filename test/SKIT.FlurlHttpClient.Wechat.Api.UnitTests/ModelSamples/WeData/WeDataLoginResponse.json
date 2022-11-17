@@ -1,0 +1,8 @@
+{
+    "base_resp": {
+        "ret": 0,
+        "err_msg": "OK"
+    },
+    "redirect_url": "https://wedata.weixin.qq.com/mp2/supplier/login?open_login=1&open_sid=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    "expire_at": 1663818592
+}

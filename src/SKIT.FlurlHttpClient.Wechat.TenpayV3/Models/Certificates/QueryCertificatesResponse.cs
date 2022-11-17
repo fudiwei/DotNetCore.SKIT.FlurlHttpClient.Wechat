@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -42,7 +42,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ciphertext")]
                         [System.Text.Json.Serialization.JsonPropertyName("ciphertext")]
-                        [WechatTenpaySensitiveProperty(algorithm: Constants.EncryptionAlgorithms.AEAD_AES_256_GCM)]
+                        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.AEAD_AES_256_GCM)]
+                        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.AEAD_SM4_128_GCM)]
                         public string CipherText { get; set; } = default!;
                     }
                 }

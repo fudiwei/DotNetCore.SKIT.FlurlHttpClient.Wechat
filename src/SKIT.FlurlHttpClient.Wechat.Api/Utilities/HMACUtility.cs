@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             byte[] secretBytes = Encoding.UTF8.GetBytes(secret);
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
             byte[] hashBytes = HashWithSHA256(secretBytes, msgBytes);
-            return BitConverter.ToString(hashBytes).Replace("-", "");
+            return BitConverter.ToString(hashBytes).Replace("-", string.Empty);
         }
     }
 }

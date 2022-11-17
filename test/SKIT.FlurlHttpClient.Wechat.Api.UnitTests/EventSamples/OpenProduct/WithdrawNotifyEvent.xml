@@ -1,0 +1,11 @@
+<xml>
+     <ToUserName>gh_abcdefg</ToUserName>
+     <FromUserName>oABCD</FromUserName>
+     <CreateTime>12344555555</CreateTime>
+     <MsgType>event</MsgType>
+     <Event>withdraw_notify</Event>
+     <withdraw_info>
+          <out_request_no>123456</out_request_no>
+          <event>1234567</event>
+     </withdraw_info>
+</xml>

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/business/order/cancel 接口的请求。</para>
@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string? OpenID { get; set; }
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置快递公司 ID。

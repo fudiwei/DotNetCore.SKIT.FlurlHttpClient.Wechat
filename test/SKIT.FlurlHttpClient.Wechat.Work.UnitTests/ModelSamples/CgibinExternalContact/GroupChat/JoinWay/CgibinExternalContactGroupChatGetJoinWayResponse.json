@@ -8,7 +8,10 @@
         "auto_create_room": 1,
         "room_base_name": "销售客服群",
         "room_base_id": 10,
-        "chat_id_list": [ "wrOgQhDgAAH2Yy-CTZ6POca8mlBEdaaa", "wrOgQhDgAALPUthpRAKvl7mgiQRw_aaa" ],
+        "chat_id_list": [
+            "wrOgQhDgAAH2Yy-CTZ6POca8mlBEdaaa",
+            "wrOgQhDgAALPUthpRAKvl7mgiQRw_aaa"
+        ],
         "qr_code": "http://p.qpic.cn/wwhead/nMl9ssowtibVGyrmvBiaibzDtp703nXuzpibnKtbSDBRJTLwS3ic4ECrf3ibLVtIFb0N6wWwy5LVuyvMQ22/0",
         "state": "klsdup3kj3s1"
     }

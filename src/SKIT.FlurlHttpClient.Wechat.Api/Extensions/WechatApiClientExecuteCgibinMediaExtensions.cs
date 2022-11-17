@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             if (request.FileName == null)
             {
-                string ext = "";
+                string ext = string.Empty;
                 if (TYPE_IMAGE.Equals(request.Type))
                     ext = ".png";
                 else if (TYPE_THUMB.Equals(request.Type))

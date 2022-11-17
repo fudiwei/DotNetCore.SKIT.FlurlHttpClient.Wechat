@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/order/getaftersaleorder 接口的响应。</para>
@@ -7,7 +7,7 @@
     {
         public static class Types
         {
-            public class Aftersale : ProductOrderBatchGetAftersaleOrderResponse.Types.Aftersale
+            public class AftersaleOrder : ProductOrderBatchGetAftersaleOrderResponse.Types.AftersaleOrder
             {
             }
         }
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("after_sale_order")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sale_order")]
-        public Types.Aftersale AftersaleOrder { get; set; } = default!;
+        public Types.AftersaleOrder AftersaleOrder { get; set; } = default!;
     }
 }

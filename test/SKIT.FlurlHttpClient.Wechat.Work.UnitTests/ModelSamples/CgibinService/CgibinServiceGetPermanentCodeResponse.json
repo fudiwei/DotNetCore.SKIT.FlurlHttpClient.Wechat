@@ -36,12 +36,12 @@
                 "auth_mode": 1,
                 "privilege": {
                     "level": 1,
-                    "allow_party": [ 1, 2, 3 ],
-                    "allow_user": [ "zhansan", "lisi" ],
-                    "allow_tag": [ 1, 2, 3 ],
-                    "extra_party": [ 4, 5, 6 ],
-                    "extra_user": [ "wangwu" ],
-                    "extra_tag": [ 4, 5, 6 ]
+                    "allow_party": [1, 2, 3],
+                    "allow_user": ["zhansan", "lisi"],
+                    "allow_tag": [1, 2, 3],
+                    "extra_party": [4, 5, 6],
+                    "extra_user": ["wangwu"],
+                    "extra_tag": [4, 5, 6]
                 },
                 "shared_from": {
                     "corpid": "wwyyyyy"

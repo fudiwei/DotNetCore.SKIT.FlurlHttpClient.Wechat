@@ -16,10 +16,7 @@
                     },
                     "appeal_material": {
                         "reason": "内容是正常的",
-                        "proof_material_ids": [
-                            "xxxx",
-                            "xxxx"
-                        ]
+                        "proof_material_ids": ["xxxx", "xxxx"]
                     }
                 },
                 {
@@ -29,9 +26,7 @@
                     },
                     "appeal_material": {
                         "reason": "内容是正常的",
-                        "proof_material_ids": [
-                            "zzzz"
-                        ]
+                        "proof_material_ids": ["zzzz"]
                     }
                 }
             ]
