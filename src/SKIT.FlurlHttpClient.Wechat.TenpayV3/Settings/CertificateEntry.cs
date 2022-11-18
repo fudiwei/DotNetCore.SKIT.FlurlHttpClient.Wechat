@@ -142,11 +142,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
         public bool Equals(CertificateEntry other)
         {
-            if (ReferenceEquals(null, other))
-                return false;
-            if (ReferenceEquals(this, other))
-                return true;
-
             return string.Equals(AlgorithmType, other.AlgorithmType) &&
                    string.Equals(Certificate, other.Certificate) &&
                    string.Equals(SerialNumber, other.SerialNumber);
@@ -156,8 +151,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         {
             if (ReferenceEquals(null, obj))
                 return false;
-            if (ReferenceEquals(this, obj))
-                return true;
             if (GetType() != obj.GetType())
                 return false;
 

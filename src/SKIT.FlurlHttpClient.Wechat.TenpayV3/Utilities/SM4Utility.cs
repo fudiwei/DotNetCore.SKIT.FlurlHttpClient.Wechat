@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             byte[] plainBytes = DecryptWithGCM(
                 keyBytes: Encoding.UTF8.GetBytes(key),
                 nonceBytes: Encoding.UTF8.GetBytes(nonce),
-                aadBytes: Encoding.UTF8.GetBytes(aad ?? string.Empty),
+                aadBytes: aad is null ? null : Encoding.UTF8.GetBytes(aad),
                 cipherBytes: Convert.FromBase64String(cipherText),
                 paddingMode: paddingMode
             );

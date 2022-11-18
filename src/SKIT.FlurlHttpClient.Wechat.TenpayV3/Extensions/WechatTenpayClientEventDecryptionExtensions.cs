@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                             byte[] plainBytes = Utilities.SM4Utility.DecryptWithGCM(
                                 keyBytes: keyBytes,
                                 nonceBytes: Encoding.UTF8.GetBytes(resource.Nonce),
-                                aadBytes: Encoding.UTF8.GetBytes(resource.AssociatedData),
+                                aadBytes: resource.AssociatedData is null ? null : Encoding.UTF8.GetBytes(resource.AssociatedData),
                                 cipherBytes: Convert.FromBase64String(resource.CipherText)
                             );
                             plainJson = Encoding.UTF8.GetString(plainBytes);
