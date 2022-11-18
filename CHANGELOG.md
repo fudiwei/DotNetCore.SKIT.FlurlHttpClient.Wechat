@@ -32,6 +32,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.20.2
+
+    -   **修复**：修复获取小程序模板库列表不正确的问题。（[GitHub PR #71](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/71)）
+
 -   Release 2.20.1
 
     -   **修复**：修复快速注册个人小程序回调通知事件模型字段定义错误。（[GitHub PR #67](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/67)）
