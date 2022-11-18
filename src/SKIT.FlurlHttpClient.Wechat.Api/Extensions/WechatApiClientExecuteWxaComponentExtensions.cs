@@ -495,6 +495,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateRequest(request, HttpMethod.Get, "wxa", "gettemplatelist")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
+            if (request.TemplateType != null)
+                flurlReq.SetQueryParam("template_type", request.TemplateType.Value);
+
             return await client.SendRequestWithJsonAsync<Models.WxaGetTemplateListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
