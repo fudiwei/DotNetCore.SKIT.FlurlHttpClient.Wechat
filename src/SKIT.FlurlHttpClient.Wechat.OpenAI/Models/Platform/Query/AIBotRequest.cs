@@ -5,7 +5,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
     /// <summary>
     /// <para>表示 [POST] /aibot/{TOKEN} 接口的请求。</para>
     /// </summary>
-    [XmlRoot("xml")]
     public class AIBotRequest : WechatOpenAIPlatformRequest
     {
         /// <summary>
