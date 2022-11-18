@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string Tag { get; set; } = default!;
 
                         /// <summary>
-                        /// 获取或设置小程序页面的标题。
+                        /// 获取或设置小程序的页面标题。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
@@ -94,6 +94,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int TemplateType { get; set; }
 
                 /// <summary>
+                /// 获取或设置草稿 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("draft_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("draft_id")]
+                public long DraftId { get; set; }
+
+                /// <summary>
                 /// 获取或设置用户自定义版本号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("user_version")]
@@ -108,32 +115,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string UserDescription { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置添加为模板的时间戳。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_time")]
-                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                public long CreateTimestamp { get; set; }
-
-                /// <summary>
-                /// 获取或设置添模板 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("draft_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("draft_id")]
-                public long DraftId { get; set; }
-
-                /// <summary>
                 /// 获取或设置开发小程序的 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("source_miniprogram_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("source_miniprogram_appid")]
-                public string SourceMiniprogramAppId { get; set; } = default!;
+                public string SourceMiniProgramAppId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置开发小程序的名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("source_miniprogram")]
                 [System.Text.Json.Serialization.JsonPropertyName("source_miniprogram")]
-                public string SourceMiniprogram { get; set; } = default!;
+                public string SourceMiniProgramName { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置标准模板的场景标签。
@@ -154,7 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
-                public string? Reason { get; set; }
+                public string? RejectReason { get; set; }
 
                 /// <summary>
                 /// 获取或设置类目列表。
@@ -162,6 +155,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("category_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("category_list")]
                 public Types.Category[] CategoryList { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置添加时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("create_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                public long CreateTimestamp { get; set; }
             }
         }
 
