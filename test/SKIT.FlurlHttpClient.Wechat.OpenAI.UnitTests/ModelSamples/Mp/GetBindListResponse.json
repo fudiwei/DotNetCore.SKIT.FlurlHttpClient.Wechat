@@ -1,0 +1,34 @@
+{
+    "bindlist": [
+        {
+            "info": {
+                "authorizer_info": {
+                    "nick_name": "公众号名称",
+                    "head_img": "公众号头像",
+                    "service_type_info": {
+                        "id": 1
+                    },
+                    "verify_type_info": {
+                        "id": -1
+                    },
+                    "user_name": "未知, gh_xxxxxxx",
+                    "alias": "公众号基础信息-微信号",
+                    "qrcode_url": "公众号二维码URL",
+                    "business_info": {
+                        "open_pay": 0,
+                        "open_shake": 0,
+                        "open_scan": 0,
+                        "open_card": 0,
+                        "open_store": 0
+                    },
+                    "principal_name": "公众号基础信息-账号主体，如：个人",
+                    "signature": "公众号简介",
+                    "account_status": 1
+                },
+                "authorization_info": null,
+                "binded": true,
+                "authorizer_appid": "授权方的appid"
+            }
+        }
+    ]
+}
