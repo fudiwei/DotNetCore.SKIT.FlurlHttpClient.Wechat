@@ -8,12 +8,6 @@
 
 -   基于微信对话开放平台 API 封装。
 
--   支持平台接入、第三方接入两种模式。
-
--   对于第三方接入，请求时自动生成加密参数，无需开发者手动干预。
-
--   对于平台接入，请求时自动生成请求唯一标识，无需开发者手动干预。
-
 -   提供了解析回调通知事件等扩展方法。
 
 ---
@@ -38,32 +32,22 @@
 using SKIT.FlurlHttpClient.Wechat;
 using SKIT.FlurlHttpClient.Wechat.OpenAI;
 
-/* 如果是平台接入 */
-var options = new WechatOpenAIPlatformClientOptions()
+var options = new WechatOpenAIClientOptions()
 {
     AppId = "微信智能对话 AppId",
     Token = "微信智能对话 Token",
     EncodingAESKey = "微信智能对话 EncodingAESKey"
 };
-var client = new WechatOpenAIPlatformClient(options);
-
-/* 如果是第三方接入 */
-var options = new WechatOpenAIThirdPartyClientOptions()
-{
-    ClientId = "微信智能对话 ClientId",
-    ClientKey = "微信智能对话 ClientKey"
-};
-var client = new WechatOpenAIThirdPartyClient(options);
+var client = new WechatOpenAIClient(options);
 ```
 
 ### 请求 & 响应：
 
 ```csharp
 using SKIT.FlurlHttpClient.Wechat.OpenAI;
-using SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform;
-using SKIT.FlurlHttpClient.Wechat.OpenAI.Models.ThirdParty;
+using SKIT.FlurlHttpClient.Wechat.OpenAI.Models;
 
-/* 以平台接入：发送客服消息接口为例 */
+/* 以发送客服消息接口为例 */
 var request = new SendMessageRequest()
 {
     AppId = "公众号或小程序的 AppId",
@@ -74,33 +58,13 @@ var request = new SendMessageRequest()
 var response = await client.ExecuteSendMessageAsync(request);
 if (response.IsSuccessful())
 {
-    Console.WriteLine("返回消息：" + response.ErrorMessage);
-}
-else
-{
-    Console.WriteLine("返回代码：" + response.ReturnCode);
-    Console.WriteLine("返回错误：" + response.ReturnError);
-}
-
-/* 以第三方接入：创建机器人接口为例 */
-var request = new BotSaveRequest()
-{
-    AccessToken = "微信智能对话 X-OPENAI-TOKEN",
-    ChineseName = "机器人中文名",
-    EnglishName = "机器人英文名",
-    Nickname = "机器人昵称",
-    BotType = 0,
-    IndustryId = 0
-};
-var response = await client.ExecuteBotSaveAsync(request);
-if (response.IsSuccessful())
-{
-    Console.WriteLine("机器人 ID：" + response.Data.BotId);
+    Console.WriteLine("错误代码：" + response.ErrorCode);
 }
 else
 {
     Console.WriteLine("错误代码：" + response.ErrorCode);
-    Console.WriteLine("错误描述：" + response.ErrorMessage);
+    Console.WriteLine("返回代码：" + response.ReturnCode);
+    Console.WriteLine("返回错误：" + response.ReturnError);
 }
 ```
 
