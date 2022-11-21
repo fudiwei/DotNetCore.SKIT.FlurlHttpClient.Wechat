@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/api_query_auth 接口的响应。</para>
@@ -18,16 +18,37 @@
                             public class ScopeCategory
                             {
                                 /// <summary>
-                                /// 获取或设置权限分类 ID。
+                                /// 获取或设置权限集 ID。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id")]
                                 public int Id { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置权限集类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                                public int Type { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置权限集名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("name")]
+                                public string Name { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置权限集描述。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("desc")]
+                                [System.Text.Json.Serialization.JsonPropertyName("desc")]
+                                public string Description { get; set; } = default!;
                             }
                         }
 
                         /// <summary>
-                        /// 获取或设置权限分类分类信息。
+                        /// 获取或设置权限集信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("funcscope_category")]
                         [System.Text.Json.Serialization.JsonPropertyName("funcscope_category")]

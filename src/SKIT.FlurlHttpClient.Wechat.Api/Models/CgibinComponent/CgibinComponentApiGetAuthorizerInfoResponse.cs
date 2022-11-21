@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/component/api_get_authorizer_info 接口的响应。</para>
@@ -19,6 +19,13 @@
                         [Newtonsoft.Json.JsonProperty("id")]
                         [System.Text.Json.Serialization.JsonPropertyName("id")]
                         public int Id { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置类型名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
                     }
 
                     public class VerifyType : ServiceType
@@ -161,6 +168,23 @@
                         [System.Text.Json.Serialization.JsonPropertyName("visit_status")]
                         public int VisitStatus { get; set; }
                     }
+
+                    public class BasicConfiguration
+                    {
+                        /// <summary>
+                        /// 获取或设置是否已经绑定手机号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_phone_configured")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_phone_configured")]
+                        public bool IsPhoneConfigured { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否已经绑定邮箱。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_email_configured")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_email_configured")]
+                        public bool IsEmailConfigured { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -220,6 +244,13 @@
                 public string? Signature { get; set; }
 
                 /// <summary>
+                /// 获取或设置二维码图片 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("qrcode_url")]
+                [System.Text.Json.Serialization.JsonPropertyName("qrcode_url")]
+                public string? QrcodeUrl { get; set; }
+
+                /// <summary>
                 /// 获取或设置功能信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_info")]
@@ -227,18 +258,32 @@
                 public Types.Business Business { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置二维码图片 URL。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("qrcode_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("qrcode_url")]
-                public string QrcodeUrl { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置小程序配置信息。
+                /// 获取或设置小程序信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("MiniProgramInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("MiniProgramInfo")]
                 public Types.MiniProgram? MiniProgram { get; set; }
+
+                /// <summary>
+                /// 获取或设置账号状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("account_status")]
+                [System.Text.Json.Serialization.JsonPropertyName("account_status")]
+                public int AccountStatus { get; set; }
+
+                /// <summary>
+                /// 获取或设置注册方式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("register_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("register_type")]
+                public int? RegisterType { get; set; }
+
+                /// <summary>
+                /// 获取或设置基础配置信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("basic_config")]
+                [System.Text.Json.Serialization.JsonPropertyName("basic_config")]
+                public Types.BasicConfiguration? BasicConfiguration { get; set; }
             }
 
             public class Authorization
@@ -256,6 +301,27 @@
                 [Newtonsoft.Json.JsonProperty("authorizer_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("authorizer_appid")]
                 public string AuthorizerAppId { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置授权方 AccessToken。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("authorizer_access_token")]
+                [System.Text.Json.Serialization.JsonPropertyName("authorizer_access_token")]
+                public string? AuthorizerAccessToken { get; set; }
+
+                /// <summary>
+                /// 获取或设置授权方 RefreshToken。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("authorizer_refresh_token")]
+                [System.Text.Json.Serialization.JsonPropertyName("authorizer_refresh_token")]
+                public string? AuthorizerRefreshToken { get; set; }
+
+                /// <summary>
+                /// 获取或设置授权方 AccessToken 有效期（单位：秒）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("expires_in")]
+                [System.Text.Json.Serialization.JsonPropertyName("expires_in")]
+                public int? ExpiresIn { get; set; }
 
                 /// <summary>
                 /// 获取或设置授权给开发者的权限集列表。
