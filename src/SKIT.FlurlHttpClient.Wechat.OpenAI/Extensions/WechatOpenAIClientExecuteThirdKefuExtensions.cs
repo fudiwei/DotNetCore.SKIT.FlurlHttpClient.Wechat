@@ -10,8 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     {
         /// <summary>
         /// <para>异步调用 [POST] /sendmsg/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/thirdkefu/sendmsg.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/sendmsg.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/thirdkefu/sendmsg.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -33,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
         /// <summary>
         /// <para>异步调用 [POST] /kefustate/get/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/thirdkefu/getstate.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/thirdkefu/getstate.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -55,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
         /// <summary>
         /// <para>异步调用 [POST] /kefustate/change/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/thirdkefu/getstate.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/thirdkefu/changestate.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

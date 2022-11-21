@@ -47,6 +47,25 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /feedback/{TOKEN} 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/dialog/feedback.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.FeedbackResponse> ExecuteFeedbackAsync(this WechatOpenAIClient client, Models.FeedbackRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "feedback", client.Credentials.Token!);
+
+            return await client.SendRequestWithJsonAsync<Models.FeedbackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /gethotquerylist/{TOKEN} 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/dialog/gethotquerylist.html </para>
         /// </summary>
@@ -63,6 +82,25 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 .CreateRequest(request, HttpMethod.Post, "gethotquerylist", client.Credentials.Token!);
 
             return await client.SendRequestWithJsonAsync<Models.GetHotQueryListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /gethotquerydetail/{TOKEN} 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/dialog/gethotquerydetail.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetHotQueryDetailResponse> ExecuteGetHotQueryDetailAsync(this WechatOpenAIClient client, Models.GetHotQueryDetailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "gethotquerydetail", client.Credentials.Token!);
+
+            return await client.SendRequestWithJsonAsync<Models.GetHotQueryDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
