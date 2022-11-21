@@ -125,42 +125,5 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
                 throw new WechatOpenAIException(ex.Message, ex);
             }
         }
-
-        /// <summary>
-        /// 异步发起请求。
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="flurlRequest"></param>
-        /// <param name="data"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public async Task<T> SendRequestWithUrlEncodedAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
-            where T : WechatOpenAIResponse, new()
-        {
-            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
-
-            try
-            {
-                if (data is WechatOpenAIRequest.Serialization.IEncryptedUrlEncoded)
-                {
-                    string jwt = Utilities.JwtUtility.EncodeWithHS256(payload: data, secret: Credentials.EncodingAESKey!);
-                    data = new { query = jwt };
-                }
-
-                using IFlurlResponse flurlResponse = await flurlRequest
-                    .WithClient(FlurlClient)
-                    .AllowAnyHttpStatus()
-                    .SendUrlEncodedAsync(flurlRequest.Verb, data, cancellationToken);
-                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
-            }
-            catch (FlurlHttpTimeoutException ex)
-            {
-                throw new Exceptions.WechatOpenAIRequestTimeoutException(ex.Message, ex);
-            }
-            catch (FlurlHttpException ex)
-            {
-                throw new WechatOpenAIException(ex.Message, ex);
-            }
-        }
     }
 }

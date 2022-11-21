@@ -10,10 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             public interface IEncryptedXmlable
             {
             }
-
-            public interface IEncryptedUrlEncoded
-            {
-            }
         }
 
         /// <summary>
