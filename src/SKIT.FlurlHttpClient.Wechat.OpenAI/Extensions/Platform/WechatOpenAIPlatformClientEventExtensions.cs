@@ -7,26 +7,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     /// </summary>
     public static class WechatOpenAIPlatformClientEventExtensions
     {
-        private class EncryptedWechatOpenAIEvent
-        {
-            [Newtonsoft.Json.JsonProperty("Encrypt")]
-            [System.Text.Json.Serialization.JsonPropertyName("Encrypt")]
-            public string EncryptedData { get; set; } = default!;
-
-            [Newtonsoft.Json.JsonProperty("TimeStamp")]
-            [System.Text.Json.Serialization.JsonPropertyName("TimeStamp")]
-            [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
-            public string Timestamp { get; set; } = default!;
-
-            [Newtonsoft.Json.JsonProperty("Nonce")]
-            [System.Text.Json.Serialization.JsonPropertyName("Nonce")]
-            public string Nonce { get; set; } = default!;
-
-            [Newtonsoft.Json.JsonProperty("MsgSignature")]
-            [System.Text.Json.Serialization.JsonPropertyName("MsgSignature")]
-            public string Signature { get; set; } = default!;
-        }
-
         private static TEvent InnerDeserializeEventFromXml<TEvent>(this WechatOpenAIPlatformClient client, string callbackXml)
             where TEvent : WechatOpenAIPlatformEvent
         {
@@ -95,7 +75,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             {
                 throw new Exceptions.WechatOpenAIEventSerializationException("Serialize event failed. Please see the `InnerException` for more details.", ex);
             }
-
 
             if (string.IsNullOrEmpty(client.Credentials.EncodingAESKey))
                 throw new Exceptions.WechatOpenAIEventSerializationException("Encrypt event failed, because there is no encoding AES key.");

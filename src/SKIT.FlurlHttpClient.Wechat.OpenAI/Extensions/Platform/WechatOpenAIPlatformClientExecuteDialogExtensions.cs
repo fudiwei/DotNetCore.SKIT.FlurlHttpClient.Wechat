@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -6,7 +6,7 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 {
-    public static class WechatOpenAIPlatformClientExecuteQueryExtensions
+    public static class WechatOpenAIPlatformClientExecuteDialogExtensions
     {
         /// <summary>
         /// <para>异步调用 [POST] /sign/{TOKEN} 接口。</para>
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
         /// <summary>
         /// <para>异步调用 [POST] /gethotquerylist/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/api/gethotquerylist.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/dialog/gethotquerylist.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

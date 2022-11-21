@@ -1,4 +1,4 @@
-﻿using System.Xml.Serialization;
+using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
@@ -28,9 +28,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 
         /// <summary>
         /// 获取或设置有效期（单位：秒）。
-        /// <para>默认值：1800</para>
         /// </summary>
-        [XmlElement("expires")]
-        public int ExpiresIn { get; set; } = 1800;
+        [XmlElement("expires", IsNullable = true)]
+        public int? ExpiresIn { get; set; }
     }
 }

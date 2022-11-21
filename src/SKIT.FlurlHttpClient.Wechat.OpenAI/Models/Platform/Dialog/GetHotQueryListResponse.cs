@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
+namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
     /// <summary>
     /// <para>表示 [POST] /gethotquerylist/{TOKEN} 接口的响应。</para>
@@ -25,11 +25,11 @@
                                 public string Question { get; set; } = default!;
 
                                 /// <summary>
-                                /// 获取或设置分数
+                                /// 获取或设置问题得分。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("score")]
                                 [System.Text.Json.Serialization.JsonPropertyName("score")]
-                                public int Score { get; set; }
+                                public double Score { get; set; }
                             }
                         }
 
@@ -50,8 +50,8 @@
                         /// <summary>
                         /// 获取或设置问法总数。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("askUserCount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("askUserCount")]
+                        [Newtonsoft.Json.JsonProperty("quesCount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("quesCount")]
                         public int QuestionCount { get; set; }
 
                         /// <summary>
@@ -60,6 +60,20 @@
                         [Newtonsoft.Json.JsonProperty("cluesType")]
                         [System.Text.Json.Serialization.JsonPropertyName("cluesType")]
                         public int ClueType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置聚类结果类别 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("clusterId")]
+                        [System.Text.Json.Serialization.JsonPropertyName("clusterId")]
+                        public string ClusterId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置聚类结果。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("hotQuesCluster")]
+                        [System.Text.Json.Serialization.JsonPropertyName("hotQuesCluster")]
+                        public string? HotQuestionCluster { get; set; }
 
                         /// <summary>
                         /// 获取或设置示例列表
@@ -99,5 +113,19 @@
                 public Types.HotQuery[] HotQueryList { get; set; } = default!;
             }
         }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("code")]
+        [System.Text.Json.Serialization.JsonPropertyName("code")]
+        public override int? ErrorCode { get; set; }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("msg")]
+        [System.Text.Json.Serialization.JsonPropertyName("msg")]
+        public override string? ErrorMessage { get; set; }
     }
 }

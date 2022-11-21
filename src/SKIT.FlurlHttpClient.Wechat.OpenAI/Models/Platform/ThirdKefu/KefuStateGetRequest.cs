@@ -1,4 +1,4 @@
-﻿using System.Xml.Serialization;
+using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
@@ -19,5 +19,11 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
         /// </summary>
         [XmlElement("openid")]
         public string OpenId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置获取类型。
+        /// </summary>
+        [XmlElement("type", IsNullable = true)]
+        public int? Type { get; set; }
     }
 }

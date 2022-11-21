@@ -1,4 +1,4 @@
-﻿using System.Xml.Serialization;
+using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
@@ -49,5 +49,11 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
         /// </summary>
         [XmlElement("kefuavatar", IsNullable = true)]
         public string? KfAvatarUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置分类或技能名称。
+        /// </summary>
+        [XmlElement("ans_node_name", IsNullable = true)]
+        public string? AnswerNodeName { get; set; }
     }
 }

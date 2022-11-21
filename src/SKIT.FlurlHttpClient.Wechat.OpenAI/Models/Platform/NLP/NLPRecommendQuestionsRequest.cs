@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
+namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models.Platform
 {
     /// <summary>
     /// <para>表示 [POST] /nlp/recommend_questions/{TOKEN} 接口的请求。</para>
