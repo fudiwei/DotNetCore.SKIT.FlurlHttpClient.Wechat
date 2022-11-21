@@ -2,7 +2,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Events
 {
     /// <summary>
     /// <para>表示 userEnter 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/platform/thirdkefu/recivemsg.html </para>
+    /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/thirdkefu/recivemsg.html </para>
     /// </summary>
     public class UserEnterEvent : WechatOpenAIEvent, WechatOpenAIEvent.Serialization.IXmlSerializable
     {
@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Events
         /// <summary>
         /// 获取或设置客服接入状态。
         /// </summary>
-        [System.Xml.Serialization.XmlElement("status")]
-        public int Status { get; set; }
+        [System.Xml.Serialization.XmlElement("kfstate")]
+        public int KfState { get; set; }
 
         /// <summary>
         /// 获取或设置渠道。
         /// </summary>
-        [System.Xml.Serialization.XmlElement("channel", IsNullable = true)]
-        public string? Channel { get; set; }
+        [System.Xml.Serialization.XmlElement("channel")]
+        public int Channel { get; set; }
 
         /// <summary>
         /// 获取或设置用户评价。

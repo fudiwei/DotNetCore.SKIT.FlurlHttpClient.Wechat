@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
@@ -38,6 +38,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [XmlArray("list")]
         [XmlArrayItem("question", Type = typeof(string))]
-        public List<string> QuestionList { get; set; } = new List<string>();
+        public IList<string> QuestionList { get; set; } = new List<string>();
     }
 }

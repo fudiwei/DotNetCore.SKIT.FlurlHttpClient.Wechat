@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// 获取或设置客服接入状态。
         /// </summary>
         [XmlElement("kefustate")]
-        public string State { get; set; } = string.Empty;
+        public string KfState { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置有效期（单位：秒）。

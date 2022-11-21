@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Xml.Serialization;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
@@ -28,14 +28,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// <summary>
                 /// 获取或设置相似问题列表。
                 /// </summary>
-                [XmlElement("question")]
-                public List<string> QuestionList { get; set; } = new List<string>();
+                [XmlElement("question", Type = typeof(string))]
+                public IList<string> QuestionList { get; set; } = new List<string>();
 
                 /// <summary>
                 /// 获取或设置机器人回答列表。
                 /// </summary>
-                [XmlElement("answer")]
-                public List<string> AnswerList { get; set; } = new List<string>();
+                [XmlElement("answer", Type = typeof(string))]
+                public IList<string> AnswerList { get; set; } = new List<string>();
             }
         }
 
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// <summary>
         /// 获取或设置技能列表。
         /// </summary>
-        [XmlElement("skill")]
-        public List<Types.Skill> SkillList { get; set; } = new List<Types.Skill>();
+        [XmlElement("skill", Type = typeof(Types.Skill))]
+        public IList<Types.Skill> SkillList { get; set; } = new List<Types.Skill>();
     }
 }
