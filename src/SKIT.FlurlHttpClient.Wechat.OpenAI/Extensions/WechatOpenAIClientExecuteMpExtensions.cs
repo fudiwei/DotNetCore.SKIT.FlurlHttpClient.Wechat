@@ -112,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());
             using var paramContent = new StringContent(
                 Utilities.WxMsgCryptor.AESEncrypt(
-                    plainText: Utilities.XmlUtility.Serialize(request),
+                    plainText: Utilities.XmlUtility.ConvertFromJson(client.JsonSerializer.Serialize(request)),
                     encodingAESKey: client.Credentials.EncodingAESKey!,
                     appId: client.Credentials.AppId!
                 ),

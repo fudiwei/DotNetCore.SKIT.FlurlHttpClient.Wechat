@@ -102,7 +102,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             {
                 if (data is WechatOpenAIRequest.Serialization.IEncryptedXmlable)
                 {
-                    string plainXml = Utilities.XmlUtility.Serialize(data);
+                    string plainXml = Utilities.XmlUtility.ConvertFromJson(JsonSerializer.Serialize(data));
                     string encryptedXml = Utilities.WxMsgCryptor.AESEncrypt(plainText: plainXml, encodingAESKey: Credentials.EncodingAESKey!, appId: Credentials.AppId!);
                     data = new { encrypt = encryptedXml };
                 }

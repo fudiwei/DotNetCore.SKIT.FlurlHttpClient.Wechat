@@ -1,0 +1,12 @@
+{
+    "managerid": "平台管理员ID",
+    "skillname": "技能名称",
+    "title": "标准问题",
+    "content": "自动回答的内容",
+    "list": {
+        "question": [
+            "相似问题1",
+            "相似问题2"
+        ]
+    }
+}
