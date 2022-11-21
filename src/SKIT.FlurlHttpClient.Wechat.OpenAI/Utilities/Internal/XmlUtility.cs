@@ -60,6 +60,11 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Utilities
             return Serialize(typeof(T), obj);
         }
 
+        public static string Serialize(object obj)
+        {
+            return Serialize(obj.GetType(), obj);
+        }
+
         public static object Deserialize(Type type, string xml)
         {
             using var reader = new StringReader(xml);
