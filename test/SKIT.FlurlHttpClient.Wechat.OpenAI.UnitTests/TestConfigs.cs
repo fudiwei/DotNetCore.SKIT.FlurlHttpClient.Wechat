@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text.Json;
 
@@ -18,8 +18,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
                 using var jdoc = JsonDocument.Parse(stream);
 
                 var config = jdoc.RootElement.GetProperty("TestConfig");
-                WechatClientId = config.GetProperty("ClientId").GetString()!;
-                WechatClientKey = config.GetProperty("ClientKey").GetString()!;
                 WechatAppId = config.GetProperty("AppId").GetString()!;
                 WechatToken = config.GetProperty("Token").GetString()!;
                 WechatEncodingAESKey = config.GetProperty("EncodingAESKey").GetString()!;
@@ -34,8 +32,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
             }
         }
 
-        public static readonly string WechatClientId;
-        public static readonly string WechatClientKey;
         public static readonly string WechatAppId;
         public static readonly string WechatToken;
         public static readonly string WechatEncodingAESKey;

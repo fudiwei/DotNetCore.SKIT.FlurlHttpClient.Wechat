@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                     throw new Exceptions.WechatWorkEventSerializationException("Decrypt event failed, because there is no encoding AES key.");
 
                 InnerEncryptedEvent encryptedEvent = client.JsonSerializer.Deserialize<InnerEncryptedEvent>(callbackJson);
-                callbackJson = Utilities.WechatEventDataCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
+                callbackJson = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
 
                 return client.JsonSerializer.Deserialize<TEvent>(callbackJson);
             }
@@ -62,10 +62,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             try
             {
-                if (!Utilities.WechatEventDataCryptor.TryParseXml(callbackXml, out string? encryptedXml))
+                if (!Utilities.WxMsgCryptor.TryParseXml(callbackXml, out string? encryptedXml))
                     throw new Exceptions.WechatWorkEventSerializationException("Decrypt event failed, because of empty encrypted data.");
 
-                callbackXml = Utilities.WechatEventDataCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
+                callbackXml = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
                 return Utilities.XmlUtility.Deserialize<TEvent>(callbackXml);
             }
             catch (WechatWorkException)
@@ -156,12 +156,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             {
                 string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
                 string nonce = DateTimeOffset.Now.Ticks.ToString("x");
-                string cipher = Utilities.WechatEventDataCryptor.AESEncrypt(
+                string cipher = Utilities.WxMsgCryptor.AESEncrypt(
                     plainText: json,
                     encodingAESKey: client.Credentials.PushEncodingAESKey!,
                     corpOrSuiteId: string.IsNullOrEmpty(client.Credentials.SuiteId) ? client.Credentials.CorpId : client.Credentials.SuiteId!
                 );
-                string sign = Utilities.WechatEventDataCryptor.GenerateSignature(
+                string sign = Utilities.WxMsgCryptor.GenerateSignature(
                     sToken: client.Credentials.PushToken!,
                     sTimestamp: timestamp,
                     sNonce: nonce,
@@ -212,13 +212,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             try
             {
-                string cipher = Utilities.WechatEventDataCryptor.AESEncrypt(
+                string cipher = Utilities.WxMsgCryptor.AESEncrypt(
                     plainText: xml,
                     encodingAESKey: client.Credentials.PushEncodingAESKey!,
                     corpOrSuiteId: string.IsNullOrEmpty(client.Credentials.SuiteId) ? client.Credentials.CorpId : client.Credentials.SuiteId!
                 );
 
-                xml = Utilities.WechatEventDataCryptor.WrapXml(sToken: client.Credentials.PushToken!, sMsgEncrypt: cipher);
+                xml = Utilities.WxMsgCryptor.WrapXml(sToken: client.Credentials.PushToken!, sMsgEncrypt: cipher);
             }
             catch (Exception ex)
             {
@@ -251,7 +251,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             try
             {
-                bool ret = Utilities.WechatEventDataCryptor.VerifySignature(
+                bool ret = Utilities.WxMsgCryptor.VerifySignature(
                     sToken: client.Credentials.PushToken!,
                     sTimestamp: callbackTimestamp,
                     sNonce: callbackNonce,
@@ -261,7 +261,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
                 if (ret)
                 {
-                    replyEcho = Utilities.WechatEventDataCryptor.AESDecrypt(cipherText: callbackEcho, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
+                    replyEcho = Utilities.WxMsgCryptor.AESDecrypt(cipherText: callbackEcho, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
                     return true;
                 }
             }
@@ -291,7 +291,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             try
             {
                 var encryptedEvent = client.JsonSerializer.Deserialize<InnerEncryptedEvent>(callbackJson);
-                return Utilities.WechatEventDataCryptor.VerifySignature(
+                return Utilities.WxMsgCryptor.VerifySignature(
                     sToken: client.Credentials.PushToken!,
                     sTimestamp: callbackTimestamp,
                     sNonce: callbackNonce,
@@ -327,7 +327,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 XDocument xDoc = XDocument.Parse(callbackXml);
                 string? msgEncrypt = xDoc.Root?.Element("Encrypt")?.Value;
 
-                return Utilities.WechatEventDataCryptor.VerifySignature(
+                return Utilities.WxMsgCryptor.VerifySignature(
                     sToken: client.Credentials.PushToken!,
                     sTimestamp: callbackTimestamp,
                     sNonce: callbackNonce,
