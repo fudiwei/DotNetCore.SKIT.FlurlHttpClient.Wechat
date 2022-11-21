@@ -951,3 +951,17 @@
     -   首次发布。
 
 </details>
+
+---
+
+### 模块 `SKIT.FlurlHttpClient.Wechat.OpenAI` 更新日志
+
+<details>
+
+<summary>[展开查看]</summary>
+
+-   Release 2.0.0
+
+    -   首次发布。
+
+</details>
