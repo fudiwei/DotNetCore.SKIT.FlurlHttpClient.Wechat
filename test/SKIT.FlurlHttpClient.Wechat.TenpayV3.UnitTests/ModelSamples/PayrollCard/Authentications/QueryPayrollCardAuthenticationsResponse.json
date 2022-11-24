@@ -1,0 +1,20 @@
+{
+    "data": [
+        {
+            "mchid": "1111111",
+            "sub_mchid": "111111",
+            "openid": "onqOjjmo8wmTOOtSKwXtGjg9Gb58",
+            "authenticate_scene": "FROM_MINI_APP",
+            "authenticate_source": "wdiooewl7587443649000",
+            "authenticate_type": "SIGN_IN",
+            "project_name": "某项目",
+            "employer_name": "某单位名称",
+            "authenticate_state": "FROM_MINI_APP",
+            "authenticate_time": "2015-05-20T13:29:35+08:00",
+            "authenticate_number": "mcdhehfgisdhfjghed39384564i83"
+        }
+    ],
+    "total_count": 9,
+    "offset": 0,
+    "limit": 10
+}

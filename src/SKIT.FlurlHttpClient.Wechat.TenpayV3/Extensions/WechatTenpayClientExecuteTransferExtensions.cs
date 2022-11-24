@@ -217,5 +217,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendRequestWithJsonAsync<Models.GetTransferDetailElectronicReceiptByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region Transfer
+        #endregion
     }
 }

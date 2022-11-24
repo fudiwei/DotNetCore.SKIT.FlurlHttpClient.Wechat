@@ -209,7 +209,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public int UsageCount { get; set; }
 
                         /// <summary>
-                        /// 获取或设置优惠金额（单位：秒）。
+                        /// 获取或设置优惠金额（单位：元）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("amount")]
                         [System.Text.Json.Serialization.JsonPropertyName("amount")]
