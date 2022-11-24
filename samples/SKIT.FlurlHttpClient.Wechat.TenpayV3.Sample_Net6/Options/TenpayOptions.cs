@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
 
                 public string SecretV3 { get; set; } = string.Empty;
 
-                public string CertSerialNumber { get; set; } = string.Empty;
+                public string CertificateSerialNumber { get; set; } = string.Empty;
 
-                public string CertPrivateKey { get; set; } = string.Empty;
+                public string CertificatePrivateKey { get; set; } = string.Empty;
             }
         }
     }

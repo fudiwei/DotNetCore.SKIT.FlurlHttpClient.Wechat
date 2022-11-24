@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text.Json;
 
@@ -19,8 +19,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 var config = jdoc.RootElement.GetProperty("TestConfig");
                 WechatMerchantId = config.GetProperty("MerchantId").GetString()!;
                 WechatMerchantSecret = config.GetProperty("MerchantSecret").GetString()!;
-                WechatMerchantCertSerialNumber = config.GetProperty("MerchantCertSerialNumber").GetString()!;
-                WechatMerchantCertPrivateKey = config.GetProperty("MerchantCertPrivateKey").GetString()!;
+                WechatMerchantCertificateSerialNumber = config.GetProperty("MerchantCertificateSerialNumber").GetString()!;
+                WechatMerchantCertificatePrivateKey = config.GetProperty("MerchantCertificatePrivateKey").GetString()!;
                 WechatAppId = config.GetProperty("AppId").GetString()!;
                 WechatOpenId = config.GetProperty("OpenId").GetString()!;
 
@@ -35,8 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
         public static readonly string WechatMerchantId;
         public static readonly string WechatMerchantSecret;
-        public static readonly string WechatMerchantCertSerialNumber;
-        public static readonly string WechatMerchantCertPrivateKey;
+        public static readonly string WechatMerchantCertificateSerialNumber;
+        public static readonly string WechatMerchantCertificatePrivateKey;
         public static readonly string WechatAppId;
         public static readonly string WechatOpenId;
 

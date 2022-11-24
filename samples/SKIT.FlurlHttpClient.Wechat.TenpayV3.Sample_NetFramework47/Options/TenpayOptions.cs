@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
 {
     public partial class TenpayOptions
     {
@@ -17,8 +17,8 @@
                     {
                         MerchantId = WebConfigurationManager.AppSettings[$"TenpayOptions_Merchant_{i}_MerchantId"],
                         SecretV3 = WebConfigurationManager.AppSettings[$"TenpayOptions_Merchant_{i}_SecretV3"],
-                        CertSerialNumber = WebConfigurationManager.AppSettings[$"TenpayOptions_Merchant_{i}_CertSerialNumber"],
-                        CertPrivateKey = WebConfigurationManager.AppSettings[$"TenpayOptions_Merchant_{i}_CertPrivateKey"],
+                        CertificateSerialNumber = WebConfigurationManager.AppSettings[$"TenpayOptions_Merchant_{i}_CertificateSerialNumber"],
+                        CertificatePrivateKey = WebConfigurationManager.AppSettings[$"TenpayOptions_Merchant_{i}_CertificatePrivateKey"],
                     })
                     .ToArray(),
                 NotifyUrl = WebConfigurationManager.AppSettings[$"TenpayOptions_NotifyUrl"]
@@ -43,9 +43,9 @@
 
                 public string SecretV3 { get; set; } = string.Empty;
 
-                public string CertSerialNumber { get; set; } = string.Empty;
+                public string CertificateSerialNumber { get; set; } = string.Empty;
 
-                public string CertPrivateKey { get; set; } = string.Empty;
+                public string CertificatePrivateKey { get; set; } = string.Empty;
             }
         }
     }

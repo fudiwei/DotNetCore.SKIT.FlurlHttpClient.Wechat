@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
@@ -11,8 +12,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 MerchantId = TestConfigs.WechatMerchantId,
                 MerchantV3Secret = TestConfigs.WechatMerchantSecret,
-                MerchantCertificateSerialNumber = TestConfigs.WechatMerchantCertSerialNumber,
-                MerchantCertificatePrivateKey = TestConfigs.WechatMerchantCertPrivateKey,
+                MerchantCertificateSerialNumber = TestConfigs.WechatMerchantCertificateSerialNumber,
+                MerchantCertificatePrivateKey = TestConfigs.WechatMerchantCertificatePrivateKey,
                 PlatformCertificateManager = certificateManager
             });
         }
@@ -21,6 +22,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             var request = new Models.QueryCertificatesRequest();
             var response = await Instance.ExecuteQueryCertificatesAsync(request);
+
+            if (!response.IsSuccessful())
+                throw new Exception();
+
             foreach (var certificate in Instance.DecryptResponseSensitiveProperty(response).CertificateList)
             {
                 Instance.PlatformCertificateManager.AddEntry(new Settings.CertificateEntry(certificate));
