@@ -409,7 +409,7 @@
 -   Release 2.2.0
 
     -   **新增**：支持新版仿真测试系统沙箱。
-    
+
     -   **变更**：重命名查询退款接口响应模型中的部分字段。（[GitHub Issue #66](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/66)）
 
 -   Release 2.1.0
@@ -439,6 +439,20 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 2.14.0
+
+    -   **新增**：支持国密算法接入。
+
+    -   **新增**：新增微工卡相关接口。
+
+    -   **变更**：重命名 RSA 工具类中与导出证书相关的部分方法名。
+
+    -   **变更**：重命名部分扩展方法的参数名。
+
+    -   **变更**：调整 `CertificateEntry` 的构造函数，增加指示证书算法类型参数，以适配国密算法。
+
+    -   **变更**：移除部分已被标记为废弃的配置项参数。
 
 -   Release 2.13.1
 
