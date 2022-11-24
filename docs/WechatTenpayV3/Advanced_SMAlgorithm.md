@@ -25,7 +25,17 @@ var options = new WechatTenpayClientOptions()
 var client = new WechatTenpayClient(options);
 ```
 
-此外，获取平台证书并存入平台证书管理器 `PlatformCertificateManager` 时，需指定证书的算法类型：
+接着，在获取平台证书时，需指定证书的算法类型：
+
+```csharp
+var request = new Models.QueryCertificatesRequest()
+{
+    AlgorithmType = "SM2"
+};
+var response = await client.ExecuteQueryCertificatesAsync(request);
+```
+
+与此同时，在存入平台证书管理器 `PlatformCertificateManager` 时，同样需指定证书的算法类型：
 
 ```csharp
 // 如果是 RSA 证书
