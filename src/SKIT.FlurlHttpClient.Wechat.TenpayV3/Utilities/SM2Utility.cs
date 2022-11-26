@@ -848,7 +848,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         ///     转为 64 位的十六进制字符串。
         /// </para>
         /// </summary>
-        /// <param name="publicKey">PKCS#8 私钥（PEM 格式）。</param>
+        /// <param name="privateKey">PKCS#8 私钥（PEM 格式）。</param>
         /// <returns>EC 私钥（十六进制格式）。</returns>
         public static string ExportECPrivateKeyFromPrivateKey(string privateKey)
         {
