@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -133,6 +133,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("fail_num")]
                 [System.Text.Json.Serialization.JsonPropertyName("fail_num")]
                 public int FailNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置转账场景 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("transfer_scene_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("transfer_scene_id")]
+                public string? TransferSceneId { get; set; }
             }
 
             public class TransferDetail

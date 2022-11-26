@@ -1,4 +1,4 @@
-﻿{
+{
     "transfer_batch": {
         "mchid": "1900001109",
         "out_batch_no": "plfk2020042013",
@@ -16,7 +16,8 @@
         "success_amount": 3900000,
         "success_num": 199,
         "fail_amount": 100000,
-        "fail_num": 1
+        "fail_num": 1,
+        "transfer_scene_id": "1000"
     },
     "transfer_detail_list": [
         {

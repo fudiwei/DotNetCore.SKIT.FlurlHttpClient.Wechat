@@ -48,6 +48,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
                 [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
                 public string? UserName { get; set; }
+
+                /// <summary>
+                /// 获取或设置收款用户身份证号（需使用平台公钥/证书加密）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("user_id_card")]
+                [System.Text.Json.Serialization.JsonPropertyName("user_id_card")]
+                [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+                [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
+                public string? UserIdCardNumber { get; set; }
             }
         }
 
@@ -99,5 +108,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("transfer_detail_list")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_detail_list")]
         public IList<Types.TransferDetail> TransferDetailList { get; set; } = new List<Types.TransferDetail>();
+
+        /// <summary>
+        /// 获取或设置转账场景 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("transfer_scene_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("transfer_scene_id")]
+        public string? TransferSceneId { get; set; }
     }
 }
