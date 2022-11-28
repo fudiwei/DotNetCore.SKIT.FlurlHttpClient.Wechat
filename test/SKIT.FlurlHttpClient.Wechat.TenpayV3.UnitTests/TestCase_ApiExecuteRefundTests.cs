@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 },
                 Reason = "FAKE_REASON"
             };
-            var response = await TestClients.Instance.ExecuteCreateRefundDomesticRefundAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreateRefundDomesticRefundAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.OutRefundNumber);
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 OutRefundNumber = "FAKE_OUTREFUNDNO"
             };
-            var response = await TestClients.Instance.ExecuteGetRefundDomesticRefundByOutRefundNumberAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteGetRefundDomesticRefundByOutRefundNumberAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.RefundId);

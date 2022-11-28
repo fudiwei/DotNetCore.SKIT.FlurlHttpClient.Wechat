@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     Total = 1
                 }
             };
-            var response = await TestClients.Instance.ExecuteCreatePayTransactionAppAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreatePayTransactionAppAsync(request);
 
             Assert.NotNull(response.PrepayId);
         }
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     OpenId = TestConfigs.WechatOpenId
                 }
             };
-            var response = await TestClients.Instance.ExecuteCreatePayTransactionJsapiAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreatePayTransactionJsapiAsync(request);
 
             Assert.NotNull(response.PrepayId);
         }
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     Total = 1
                 }
             };
-            var response = await TestClients.Instance.ExecuteCreatePayTransactionH5Async(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreatePayTransactionH5Async(request);
 
             Assert.NotNull(response.H5Url);
         }
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     Total = 1
                 }
             };
-            var response = await TestClients.Instance.ExecuteCreatePayTransactionNativeAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreatePayTransactionNativeAsync(request);
 
             Assert.NotNull(response.QrcodeUrl);
         }
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 TransactionId = "FAKE_TRANSACTIONID"
             };
-            var response = await TestClients.Instance.ExecuteGetPayTransactionByIdAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteGetPayTransactionByIdAsync(request);
 
             Assert.NotNull(response.AppId);
             Assert.NotNull(response.MerchantId);
@@ -112,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 OutTradeNumber = "FAKE_OUTTRADENO"
             };
-            var response = await TestClients.Instance.ExecuteGetPayTransactionByOutTradeNumberAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteGetPayTransactionByOutTradeNumberAsync(request);
 
             Assert.NotNull(response.AppId);
             Assert.NotNull(response.MerchantId);
@@ -129,7 +129,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 OutTradeNumber = "TEST20210419193742518"
             };
-            var response = await TestClients.Instance.ExecuteClosePayTransactionAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteClosePayTransactionAsync(request);
 
             Assert.True(response.IsSuccessful());
         }

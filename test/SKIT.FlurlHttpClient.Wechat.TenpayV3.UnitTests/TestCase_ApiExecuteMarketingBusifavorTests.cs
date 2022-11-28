@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 GoodsName = "FAKE_GOODS",
                 CouponCodeMode = "WECHATPAY_MODE"
             };
-            var response = await TestClients.Instance.ExecuteCreateMarketingBusifavorStockAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreateMarketingBusifavorStockAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 StockId = "FAKE_STOCKID"
             };
-            var response = await TestClients.Instance.ExecuteGetMarketingBusifavorStockByStockIdAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteGetMarketingBusifavorStockByStockIdAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 OpenId = TestConfigs.WechatOpenId,
                 BelongMerchantId = TestConfigs.WechatMerchantId
             };
-            var response = await TestClients.Instance.ExecuteQueryMarketingBusifavorUserCouponsAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteQueryMarketingBusifavorUserCouponsAsync(request);
 
             Assert.True(response.IsSuccessful());
         }
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 NotifyUrl = "https://FAKE_URL"
             };
-            var response = await TestClients.Instance.ExecuteUpdateMarketingBusifavorCallbackAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteUpdateMarketingBusifavorCallbackAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.NotifyUrl);
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         public async Task TestExecuteGetMarketingBusifavorCallback()
         {
             var request = new Models.GetMarketingBusifavorCallbackRequest();
-            var response = await TestClients.Instance.ExecuteGetMarketingBusifavorCallbackAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteGetMarketingBusifavorCallbackAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.NotifyUrl);

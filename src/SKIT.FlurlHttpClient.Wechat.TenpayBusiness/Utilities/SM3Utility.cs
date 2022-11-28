@@ -109,7 +109,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
 
             public void BlockUpdate(byte[] input, int inOff, int length)
             {
-                //更新当前消息摘要
                 while ((XBufOff != 0) && (length > 0))
                 {
                     Update(input[inOff]);
@@ -117,7 +116,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
                     length--;
                 }
 
-                //处理完整的消息摘要
                 while (length > XBuf.Length)
                 {
                     ProcessWord(input, inOff);
@@ -127,7 +125,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
                     ByteCount += XBuf.Length;
                 }
 
-                //填充剩余的消息摘要
                 while (length > 0)
                 {
                     Update(input[inOff]);
@@ -141,7 +138,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             {
                 long bitLength = (ByteCount << 3);
 
-                //添加字节
                 Update(unchecked((byte)128));
 
                 while (XBufOff != 0) Update(unchecked((byte)0));

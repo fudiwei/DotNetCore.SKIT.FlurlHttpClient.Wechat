@@ -473,6 +473,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <param name="publicKey">PKCS#8 公钥（PEM 格式）。</param>
         /// <param name="message">待验证的文本数据。</param>
         /// <param name="signature">经 Base64 编码的待验证的签名。</param>
+        /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>验证结果。</returns>
         public static bool VerifyWithSM3(string publicKey, string message, string signature, bool asn1Encoding = true)
         {

@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         public async Task TestExecuteQueryMarketingPayGiftActivities()
         {
             var request = new Models.QueryMarketingPayGiftActivitiesRequest();
-            var response = await TestClients.Instance.ExecuteQueryMarketingPayGiftActivitiesAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteQueryMarketingPayGiftActivitiesAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.ActivityList);

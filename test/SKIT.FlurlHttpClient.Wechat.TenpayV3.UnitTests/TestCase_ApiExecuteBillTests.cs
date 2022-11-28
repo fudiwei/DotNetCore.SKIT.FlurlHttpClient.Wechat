@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 BillDateString = "2021-04-05"
             };
-            var response = await TestClients.Instance.ExecuteGetBillTradeBillAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteGetBillTradeBillAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.HashType);
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 BillDateString = DateTimeOffset.Now.AddDays(-1).ToString("yyyy-MM-dd")
             };
-            var response = await TestClients.Instance.ExecuteGetBillFundflowBillAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteGetBillFundflowBillAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.HashType);
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 DownloadUrl = "https://api.mch.weixin.qq.com/v3/billdownload/file?token=FAKE_TOKEN"
             };
-            var response = await TestClients.Instance.ExecuteDownloadBillFileAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteDownloadBillFileAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotEmpty(response.RawBytes);

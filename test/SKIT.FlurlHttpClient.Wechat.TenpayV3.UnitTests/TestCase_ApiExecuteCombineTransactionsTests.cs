@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 },
                 NotifyUrl = "http://127.0.0.1"
             };
-            var response = await TestClients.Instance.ExecuteCreateCombineTransactionAppAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreateCombineTransactionAppAsync(request);
 
             Assert.NotNull(response.PrepayId);
         }
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 },
                 NotifyUrl = "http://127.0.0.1"
             };
-            var response = await TestClients.Instance.ExecuteCreateCombineTransactionJsapiAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreateCombineTransactionJsapiAsync(request);
 
             Assert.NotNull(response.PrepayId);
         }
@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 },
                 NotifyUrl = "http://127.0.0.1"
             };
-            var response = await TestClients.Instance.ExecuteCreateCombineTransactionH5Async(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreateCombineTransactionH5Async(request);
 
             Assert.NotNull(response.H5Url);
         }
@@ -118,7 +118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 },
                 NotifyUrl = "http://127.0.0.1"
             };
-            var response = await TestClients.Instance.ExecuteCreateCombineTransactionNativeAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreateCombineTransactionNativeAsync(request);
 
             Assert.NotNull(response.QrcodeUrl);
         }
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 CombineOutTradeNumber = "FAKE_OUTTRADENO"
             };
-            var response = await TestClients.Instance.ExecuteGetCombineTransactionByCombineOutTradeNumberAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteGetCombineTransactionByCombineOutTradeNumberAsync(request);
 
             Assert.NotNull(response.CombineAppId);
             Assert.NotNull(response.CombineMerchantId);
@@ -153,7 +153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     }
                 }
             };
-            var response = await TestClients.Instance.ExecuteCloseCombineTransactionAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCloseCombineTransactionAsync(request);
 
             Assert.True(response.IsSuccessful());
         }

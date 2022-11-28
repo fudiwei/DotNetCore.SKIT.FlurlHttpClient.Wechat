@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 },
                 IsNoCash = false
             };
-            var response = await TestClients.Instance.ExecuteCreateMarketingFavorStockAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteCreateMarketingFavorStockAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 StockId = "FAKE_STOCKID"
             };
-            var response = await TestClients.Instance.ExecuteStartMarketingFavorStockAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteStartMarketingFavorStockAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 StockId = "FAKE_STOCKID"
             };
-            var response = await TestClients.Instance.ExecutePauseMarketingFavorStockAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecutePauseMarketingFavorStockAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 StockId = "FAKE_STOCKID"
             };
-            var response = await TestClients.Instance.ExecuteRestartMarketingFavorStockAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteRestartMarketingFavorStockAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 StockId = "FAKE_STOCKID"
             };
-            var response = await TestClients.Instance.ExecuteGetMarketingFavorStockByStockIdAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteGetMarketingFavorStockByStockIdAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         public async Task TestExecuteQueryMarketingFavorStocks()
         {
             var request = new Models.QueryMarketingFavorStocksRequest();
-            var response = await TestClients.Instance.ExecuteQueryMarketingFavorStocksAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteQueryMarketingFavorStocksAsync(request);
 
             Assert.True(response.IsSuccessful());
 
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 StockId = "FAKE_STOCKID"
             };
-            var response = await TestClients.Instance.ExecuteQueryMarketingFavorStockMerchantsAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteQueryMarketingFavorStockMerchantsAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
@@ -133,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 StockId = "FAKE_STOCKID"
             };
-            var response = await TestClients.Instance.ExecuteQueryMarketingFavorStockItemsAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteQueryMarketingFavorStockItemsAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.StockId);
@@ -148,7 +148,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 NotifyUrl = "https://FAKE_URL",
                 Switch = false
             };
-            var response = await TestClients.Instance.ExecuteUpdateMarketingFavorCallbackAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteUpdateMarketingFavorCallbackAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.NotifyUrl);

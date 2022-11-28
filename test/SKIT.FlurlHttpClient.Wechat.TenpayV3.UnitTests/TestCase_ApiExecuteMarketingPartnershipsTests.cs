@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     BusinessType = "FAVOR_STOCK"
                 }
             };
-            var response = await TestClients.Instance.ExecuteBuildMarketingPartnershipAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteBuildMarketingPartnershipAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.State);
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     BusinessType = "FAVOR_STOCK"
                 }
             };
-            var response = await TestClients.Instance.ExecuteQueryMarketingPartnershipsAsync(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteQueryMarketingPartnershipsAsync(request);
 
             Assert.True(response.IsSuccessful());
             Assert.NotNull(response.PartnershipList);

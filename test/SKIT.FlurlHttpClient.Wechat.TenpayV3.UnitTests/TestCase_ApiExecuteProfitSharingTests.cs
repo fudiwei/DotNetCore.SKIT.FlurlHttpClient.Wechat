@@ -18,8 +18,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Name = "NAME",
                 Type = "PERSONAL_OPENID"
             };
-            TestClients.Instance.EncryptRequestSensitiveProperty(request);
-            var response = await TestClients.Instance.ExecuteAddProfitSharingReceiverAsync(request);
+            TestClients.InstanceUseRSA.EncryptRequestSensitiveProperty(request);
+            var response = await TestClients.InstanceUseRSA.ExecuteAddProfitSharingReceiverAsync(request);
 
             Assert.True(response.IsSuccessful());
         }
