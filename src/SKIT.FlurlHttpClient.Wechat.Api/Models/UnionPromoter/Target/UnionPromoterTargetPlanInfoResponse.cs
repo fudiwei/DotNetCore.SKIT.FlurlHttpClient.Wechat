@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /union/promoter/target/plan_info 接口的响应。</para>
@@ -254,7 +254,6 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("commissionRatio")]
                 [System.Text.Json.Serialization.JsonPropertyName("commissionRatio")]
-
                 public int CommissionRatio { get; set; }
 
                 /// <summary>
