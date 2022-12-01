@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/component/api_start_push_ticket 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/token/component_verify_ticket_service.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ticket-token/startPushTicket.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/component/api_component_token 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/token/component_access_token.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ticket-token/getComponentAccessToken.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/component/api_create_preauthcode 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/token/pre_auth_code.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ticket-token/getPreAuthCode.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/component/api_query_auth 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/token/authorization_info.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ticket-token/getAuthorizerRefreshToken.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/component/api_authorizer_token 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/token/api_authorizer_token.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ticket-token/getAuthorizerAccessToken.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/component/api_get_authorizer_info 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/token/api_get_authorizer_info.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/authorization-management/getAuthorizerInfo.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -153,7 +153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/component/api_get_authorizer_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/Account_Authorization/api_get_authorizer_list.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/authorization-management/getAuthorizerList.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/component/api_get_authorizer_option 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/Account_Authorization/api_get_authorizer_option.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/authorization-management/getAuthorizerOption.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -199,7 +199,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/component/api_set_authorizer_option 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Third-party_Platforms/2.0/api/ThirdParty/Account_Authorization/api_set_authorizer_option.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/authorization-management/setAuthorizerOption.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
