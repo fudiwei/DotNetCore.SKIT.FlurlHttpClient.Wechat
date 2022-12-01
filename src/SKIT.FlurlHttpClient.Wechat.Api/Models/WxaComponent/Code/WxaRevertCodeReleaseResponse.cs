@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxa/revertcoderelease 接口的响应。</para>
@@ -42,8 +42,8 @@
         /// <summary>
         /// 获取或设置发布版本列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("template_list")]
-        [System.Text.Json.Serialization.JsonPropertyName("template_list")]
+        [Newtonsoft.Json.JsonProperty("version_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("version_list")]
         public Types.Release[]? ReleaseList { get; set; }
     }
 }
