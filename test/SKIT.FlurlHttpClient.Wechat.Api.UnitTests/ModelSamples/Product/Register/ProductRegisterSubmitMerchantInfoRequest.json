@@ -1,4 +1,4 @@
-﻿{
+{
     "appid": "xxx",
     "subject_type": 4,
     "busi_license": {
@@ -42,7 +42,22 @@
         "name": "姓名",
         "id_card_number": "身份证件号码",
         "phone": "手机号",
-        "mail": "邮箱"
+        "mail": "邮箱",
+        "contact_id_doc_type": "IDENTIFICATION_TYPE_MAINLAND_IDCARD",
+        "contact_id_doc_copy": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        },
+        "contact_id_doc_copy_back": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        },
+        "contact_id_doc_period_begin": "证件开始时间",
+        "contact_id_doc_period_end": "证件结束时间",
+        "business_authorization_letter": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        }
     },
     "merchant_shortname": "商户简称",
     "special_qualification": {
@@ -61,5 +76,14 @@
             }
         ]
     },
-    "supplementary_desc": "补充描述"
+    "supplementary_desc": "补充描述",
+    "settle_acct_info": {
+        "acct_type": 74,
+        "bank": "",
+        "name": "",
+        "province_city_code": "",
+        "full_name": "",
+        "bank_account_no": ""
+    },
+    "applyment_version": 1
 }
