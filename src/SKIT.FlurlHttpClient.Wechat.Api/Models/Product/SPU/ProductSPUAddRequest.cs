@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -128,7 +128,38 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("sku_attrs")]
                 public IList<Attribute> AttributeList { get; set; } = new List<Attribute>();
             }
+
+            public class CouponCode
+            {
+                public static class Types
+                {
+                    public class Validity : ProductCouponCreateRequest.Types.Validity
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置核销类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("verify_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("verify_type")]
+                public int VerifyType { get; set; }
+
+                /// <summary>
+                /// 获取或设置有效期信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("valid_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("valid_info")]
+                public Types.Validity Validity { get; set; } = new Types.Validity();
+            }
         }
+
+        /// <summary>
+        /// 获取或设置商品类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("product_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("product_type")]
+        public int? ProductType { get; set; }
 
         /// <summary>
         /// 获取或设置商家自定义商品 ID。
@@ -206,5 +237,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("skus")]
         [System.Text.Json.Serialization.JsonPropertyName("skus")]
         public IList<Types.SKU>? SKUList { get; set; }
+
+        /// <summary>
+        /// 获取或设置券码信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("couponcode_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("couponcode_info")]
+        public Types.CouponCode? CouponCode { get; set; }
     }
 }

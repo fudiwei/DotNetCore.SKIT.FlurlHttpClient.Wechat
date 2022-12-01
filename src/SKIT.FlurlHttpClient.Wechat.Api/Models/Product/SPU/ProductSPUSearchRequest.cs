@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/spu/search 接口的请求。</para>
@@ -11,6 +11,13 @@
         [Newtonsoft.Json.JsonProperty("keyword")]
         [System.Text.Json.Serialization.JsonPropertyName("keyword")]
         public string Keyword { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置指定商品上线状态。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("status")]
+        [System.Text.Json.Serialization.JsonPropertyName("status")]
+        public int? ListingStatus { get; set; }
 
         /// <summary>
         /// 获取或设置指定商品来源。

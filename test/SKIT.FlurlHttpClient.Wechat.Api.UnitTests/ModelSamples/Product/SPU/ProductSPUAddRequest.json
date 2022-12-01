@@ -1,4 +1,4 @@
-﻿{
+{
     "out_product_id": "1234566",
     "title": "任天堂 Nintendo Switch 国行续航增强版 NS家用体感游戏机掌机 便携掌上游戏机 红蓝主机",
     "sub_title": "JD自营更放心】【国行Switch，更安心的保修服务，更快的国行服务器】一台主机三种模式，游戏掌机，随时随地，一起趣玩。",
@@ -60,5 +60,15 @@
                 }
             ]
         }
-    ]
+    ],
+    "product_type": 1,
+    "couponcode_info": {
+        "verify_type": 0,
+        "valid_info": {
+            "valid_type": 1,
+            "valid_day_num": 1,
+            "start_time": 0,
+            "end_time": 0
+        }
+    }
 }
