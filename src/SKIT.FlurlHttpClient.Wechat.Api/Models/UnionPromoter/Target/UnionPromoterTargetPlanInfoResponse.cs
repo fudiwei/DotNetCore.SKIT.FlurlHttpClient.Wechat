@@ -14,7 +14,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planId")]
                 [System.Text.Json.Serialization.JsonPropertyName("planId")]
-
                 public string PlanId { get; set; } = default!;
 
                 /// <summary>
@@ -22,7 +21,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planName")]
                 [System.Text.Json.Serialization.JsonPropertyName("planName")]
-
                 public string PlanName { get; set; } = default!;
 
                 /// <summary>
@@ -30,7 +28,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planDesc")]
                 [System.Text.Json.Serialization.JsonPropertyName("planDesc")]
-
                 public string Description { get; set; } = default!;
 
                 /// <summary>
@@ -39,7 +36,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("planStatus")]
                 [System.Text.Json.Serialization.JsonPropertyName("planStatus")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-
                 public int Status { get; set; }
 
                 /// <summary>
@@ -47,7 +43,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planStartTime")]
                 [System.Text.Json.Serialization.JsonPropertyName("planStartTime")]
-
                 public long StartTimestamp { get; set; }
 
                 /// <summary>
@@ -55,7 +50,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planEndTime")]
                 [System.Text.Json.Serialization.JsonPropertyName("planEndTime")]
-
                 public long EndTimestamp { get; set; }
 
                 /// <summary>
@@ -64,7 +58,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("extInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("extInfo")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectConverter))]
-
                 public dynamic? Extra { get; set; }
             }
 
@@ -98,7 +91,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
                         [System.Text.Json.Serialization.JsonPropertyName("title")]
-
                         public string Title { get; set; } = default!;
 
                         /// <summary>
@@ -106,7 +98,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("subTitle")]
                         [System.Text.Json.Serialization.JsonPropertyName("subTitle")]
-
                         public string SubTitle { get; set; } = default!;
 
                         /// <summary>
@@ -114,7 +105,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("headImg")]
                         [System.Text.Json.Serialization.JsonPropertyName("headImg")]
-
                         public string[] HeadImageUrlList { get; set; } = default!;
 
                         /// <summary>
@@ -122,7 +112,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("category")]
                         [System.Text.Json.Serialization.JsonPropertyName("category")]
-
                         public Types.Category[] CategoryList { get; set; } = default!;
 
                         /// <summary>
@@ -230,7 +219,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("planId")]
                 [System.Text.Json.Serialization.JsonPropertyName("planId")]
-
                 public string PlanId { get; set; } = default!;
 
                 /// <summary>
@@ -238,15 +226,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("productId")]
                 [System.Text.Json.Serialization.JsonPropertyName("productId")]
-
-                public string ProductId { get; set; } = default!;
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public long ProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("productStatus")]
                 [System.Text.Json.Serialization.JsonPropertyName("productStatus")]
-
                 public int ProductStatus { get; set; }
 
                 /// <summary>
@@ -261,7 +248,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("productDetailInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("productDetailInfo")]
-
                 public Types.ProductDetail ProductDetail { get; set; } = default!;
 
                 /// <summary>
@@ -269,7 +255,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("leagueExInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("leagueExInfo")]
-
                 public Types.League League { get; set; } = default!;
 
                 /// <summary>
@@ -277,7 +262,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("couponInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("couponInfo")]
-
                 public Types.Coupon Coupon { get; set; } = default!;
             }
         }
@@ -287,7 +271,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("targetPlanInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("targetPlanInfo")]
-
         public Types.TargetPlan TargetPlan { get; set; } = default!;
 
         /// <summary>
@@ -295,7 +278,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("productListInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("productListInfo")]
-
         public Types.Product[] ProductList { get; set; } = default!;
     }
 }
