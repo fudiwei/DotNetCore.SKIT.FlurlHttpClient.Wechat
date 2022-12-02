@@ -104,24 +104,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             return new ECPublicKeyParameters(SM2_ECX9_PARAMS.Curve.CreatePoint(ecPublicKeyParamsX, ecPublicKeyParamsY), SM2_DOMAIN_PARAMS);
         }
 
-        private static byte[] ConvertC1C3C2ToC1C2C3(byte[] c1c3c2)
-        {
-            byte[] tmp = new byte[c1c3c2.Length];
-            Buffer.BlockCopy(c1c3c2, 0, tmp, 0, SM2_C1_LENGTH);
-            Buffer.BlockCopy(c1c3c2, SM2_C1_LENGTH + SM2_C3_LENGTH, tmp, SM2_C1_LENGTH, c1c3c2.Length - SM2_C1_LENGTH - SM2_C3_LENGTH);
-            Buffer.BlockCopy(c1c3c2, SM2_C1_LENGTH, tmp, c1c3c2.Length - SM2_C3_LENGTH, SM2_C3_LENGTH);
-            return tmp;
-        }
-
-        private static byte[] ConvertC1C2C3ToC1C3C2(byte[] c1c2c3)
-        {
-            byte[] tmp = new byte[c1c2c3.Length];
-            Buffer.BlockCopy(c1c2c3, 0, tmp, 0, SM2_C1_LENGTH); //c1
-            Buffer.BlockCopy(c1c2c3, c1c2c3.Length - SM2_C3_LENGTH, tmp, SM2_C1_LENGTH, SM2_C3_LENGTH);
-            Buffer.BlockCopy(c1c2c3, SM2_C1_LENGTH, tmp, SM2_C1_LENGTH + SM2_C3_LENGTH, c1c2c3.Length - SM2_C1_LENGTH - SM2_C3_LENGTH);
-            return tmp;
-        }
-
         private static byte[] ConvertC1C3C2ToAsn1(byte[] c1c3c2)
         {
             byte[] c1 = Arrays.CopyOfRange(c1c3c2, 0, SM2_C1_LENGTH);
@@ -263,24 +245,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                 cipherBytes = tmp;
             }
 
-            // BouncyCastle 库对 SM2 的加密结果为 C1|C2|C3，但国标要求为 C1|C3|C2
-            // 此工具类仅支持国标（也是微信支付所要求的），所以先转换一次入参的密文数据
-            cipherBytes = ConvertC1C3C2ToC1C2C3(cipherBytes);
-
-            SM2Engine sm2Engine = new SM2Engine();
+            SM2Engine sm2Engine = new SM2Engine(SM2Engine.Mode.C1C3C2);
             sm2Engine.Init(false, sm2PrivateKeyParams);
             return sm2Engine.ProcessBlock(cipherBytes, 0, cipherBytes.Length);
         }
 
         private static byte[] Encrypt(ECPublicKeyParameters sm2PublicKeyParams, byte[] plainBytes, bool asn1Encoding)
         {
-            SM2Engine sm2Engine = new SM2Engine();
+            SM2Engine sm2Engine = new SM2Engine(SM2Engine.Mode.C1C3C2);
             sm2Engine.Init(true, new ParametersWithRandom(sm2PublicKeyParams, new SecureRandom()));
             byte[] cipherBytes = sm2Engine.ProcessBlock(plainBytes, 0, plainBytes.Length);
-
-            // BouncyCastle 库对 SM2 的加密结果为 C1|C2|C3，但国标 GM/T 0009-2012 要求为 C1|C3|C2
-            // 此工具类仅支持国标（也是微信支付所要求的），所以先转换一次出参的密文数据
-            cipherBytes = ConvertC1C2C3ToC1C3C2(cipherBytes);
 
             // BouncyCastle 库的加密结果默认非 ASN.1 编码，如有需要需要手动转换
             if (asn1Encoding)
