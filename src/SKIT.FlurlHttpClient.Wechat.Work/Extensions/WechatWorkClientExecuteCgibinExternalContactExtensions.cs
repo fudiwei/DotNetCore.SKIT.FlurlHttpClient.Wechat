@@ -1050,6 +1050,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/remind_groupmsg_send 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97610 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactRemindGroupMessageSendResponse> ExecuteCgibinExternalContactRemindGroupMessageSendAsync(this WechatWorkClient client, Models.CgibinExternalContactRemindGroupMessageSendRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "remind_groupmsg_send")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactRemindGroupMessageSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/group_welcome_template/add 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/92366 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93438 </para>
