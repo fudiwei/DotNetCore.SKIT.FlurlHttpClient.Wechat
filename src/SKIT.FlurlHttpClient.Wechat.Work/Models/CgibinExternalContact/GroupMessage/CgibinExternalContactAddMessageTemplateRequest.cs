@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -187,6 +187,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("sender")]
         [System.Text.Json.Serialization.JsonPropertyName("sender")]
         public string? SenderUserId { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否允许成员在待发送客户列表中重新进行选择。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("allow_select")]
+        [System.Text.Json.Serialization.JsonPropertyName("allow_select")]
+        public bool? AllowSelect { get; set; }
 
         /// <summary>
         /// 获取或设置文本消息信息。
