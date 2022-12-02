@@ -17,6 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-        public string CorpId { get; set; } = string.Empty;
+        public string? CorpId { get; set; }
+
+        /// <summary>
+        /// 获取或设置未加入的企业 CorpId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("pending_corpid")]
+        [System.Text.Json.Serialization.JsonPropertyName("pending_corpid")]
+        public string? PendingCorpId { get; set; }
     }
 }
