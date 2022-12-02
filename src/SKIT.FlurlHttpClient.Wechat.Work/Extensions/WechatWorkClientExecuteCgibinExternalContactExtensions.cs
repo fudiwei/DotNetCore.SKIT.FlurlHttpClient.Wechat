@@ -1070,6 +1070,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/cancel_groupmsg_send 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97611 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCancelGroupMessageSendResponse> ExecuteCgibinExternalContactCancelGroupMessageSendAsync(this WechatWorkClient client, Models.CgibinExternalContactCancelGroupMessageSendRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "cancel_groupmsg_send")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCancelGroupMessageSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/group_welcome_template/add 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/92366 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93438 </para>
