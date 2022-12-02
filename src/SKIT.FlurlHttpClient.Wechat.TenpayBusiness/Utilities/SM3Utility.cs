@@ -73,99 +73,112 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
 
         internal abstract class GeneralDigest : IDigest
         {
-            private const int ByteLength = 64;
-            private readonly byte[] XBuf;
-            private int XBufOff;
-            private long ByteCount;
+            private const int BYTE_LENGTH = 64;
+
+            private readonly byte[] _xBuffer;
+            private int _xBufferOff;
+            private long _byteCount;
 
             public abstract string AlgorithmName { get; }
 
             protected GeneralDigest()
             {
-                XBuf = new byte[4];
+                _xBuffer = new byte[4];
             }
 
             protected GeneralDigest(GeneralDigest t)
             {
-                XBuf = new byte[t.XBuf.Length];
-                Array.Copy(t.XBuf, 0, XBuf, 0, t.XBuf.Length);
+                _xBuffer = new byte[t._xBuffer.Length];
+                Array.Copy(t._xBuffer, 0, _xBuffer, 0, t._xBuffer.Length);
 
-                XBufOff = t.XBufOff;
-                ByteCount = t.ByteCount;
+                _xBufferOff = t._xBufferOff;
+                _byteCount = t._byteCount;
+            }
+
+            public abstract int GetDigestSize();
+
+            public int GetByteLength()
+            {
+                return BYTE_LENGTH;
             }
 
             public void Update(byte input)
             {
-                XBuf[XBufOff++] = input;
+                _xBuffer[_xBufferOff++] = input;
 
-                if (XBufOff == XBuf.Length)
+                if (_xBufferOff == _xBuffer.Length)
                 {
-                    ProcessWord(XBuf, 0);
-                    XBufOff = 0;
+                    ProcessWord(_xBuffer, 0);
+                    _xBufferOff = 0;
                 }
 
-                ByteCount++;
+                _byteCount++;
             }
 
-            public void BlockUpdate(byte[] input, int inOff, int length)
+            public void BlockUpdate(byte[] input, int inOff, int inLen)
             {
-                while ((XBufOff != 0) && (length > 0))
+                while ((_xBufferOff != 0) && (inLen > 0))
                 {
                     Update(input[inOff]);
                     inOff++;
-                    length--;
+                    inLen--;
                 }
 
-                while (length > XBuf.Length)
+                while (inLen > _xBuffer.Length)
                 {
                     ProcessWord(input, inOff);
 
-                    inOff += XBuf.Length;
-                    length -= XBuf.Length;
-                    ByteCount += XBuf.Length;
+                    inOff += _xBuffer.Length;
+                    inLen -= _xBuffer.Length;
+                    _byteCount += _xBuffer.Length;
                 }
 
-                while (length > 0)
+                while (inLen > 0)
                 {
                     Update(input[inOff]);
 
                     inOff++;
-                    length--;
+                    inLen--;
                 }
             }
 
-            public void Finish()
+            public void BlockUpdate(ReadOnlySpan<byte> input)
             {
-                long bitLength = (ByteCount << 3);
+                BlockUpdate(input.ToArray(), 0, input.Length);
+            }
 
-                Update(unchecked((byte)128));
+            public abstract int DoFinal(byte[] output, int outOff);
 
-                while (XBufOff != 0) Update(unchecked((byte)0));
-                ProcessLength(bitLength);
-                ProcessBlock();
+            public virtual int DoFinal(Span<byte> output)
+            {
+                return DoFinal(output.ToArray(), 0);
             }
 
             public virtual void Reset()
             {
-                ByteCount = 0;
-                XBufOff = 0;
-                Array.Clear(XBuf, 0, XBuf.Length);
+                _byteCount = 0;
+                _xBufferOff = 0;
+                Array.Clear(_xBuffer, 0, _xBuffer.Length);
             }
 
-            public int GetByteLength()
+            public void Finish()
             {
-                return ByteLength;
+                long bitLength = (_byteCount << 3);
+
+                Update(unchecked((byte)128));
+
+                while (_xBufferOff != 0)
+                    Update(unchecked((byte)0));
+
+                ProcessLength(bitLength);
+                ProcessBlock();
             }
 
-            internal abstract void ProcessWord(byte[] input, int inOff);
+            protected abstract void ProcessWord(byte[] input, int inOff);
 
-            internal abstract void ProcessLength(long bitLength);
+            protected abstract void ProcessLength(long bitLen);
 
-            internal abstract void ProcessBlock();
-
-            public abstract int GetDigestSize();
-
-            public abstract int DoFinal(byte[] output, int outOff);
+            protected abstract void ProcessBlock();
         }
 
         internal sealed class SM3Digest : GeneralDigest
@@ -241,6 +254,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
                 return ((x & y) | (~x & z));
             }
 
+            public override int GetDigestSize()
+            {
+                return DIGEST_LENGTH;
+            }
+
+            public override int DoFinal(byte[] output, int outOff)
+            {
+                Finish();
+                for (int i = 0; i < 8; i++)
+                {
+                    ConvertIntegerToBigEndian(_v1[i], output, outOff + i * 4);
+                }
+                Reset();
+                return DIGEST_LENGTH;
+            }
+
             public override void Reset()
             {
                 base.Reset();
@@ -251,7 +280,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
                 Array.Copy(X0, 0, _x, 0, X0.Length);
             }
 
-            internal override void ProcessWord(byte[] input, int inOff)
+            protected override void ProcessWord(byte[] input, int inOff)
             {
                 int n = input[inOff] << 24;
                 n |= (input[++inOff] & 0xff) << 16;
@@ -265,18 +294,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
                 }
             }
 
-            internal override void ProcessLength(long bitLength)
+            protected override void ProcessLength(long bitLen)
             {
                 if (_xOff > 14)
                 {
                     ProcessBlock();
                 }
 
-                _x[14] = (int)(BitOperator.URShift(bitLength, 32));
-                _x[15] = (int)(bitLength & unchecked((int)0xffffffff));
+                _x[14] = (int)(BitOperator.URShift(bitLen, 32));
+                _x[15] = (int)(bitLen & unchecked((int)0xffffffff));
             }
 
-            internal override void ProcessBlock()
+            protected override void ProcessBlock()
             {
                 int j;
 
@@ -347,22 +376,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
 
                 _xOff = 0;
                 Array.Copy(X0, 0, _x, 0, X0.Length);
-            }
-
-            public override int GetDigestSize()
-            {
-                return DIGEST_LENGTH;
-            }
-
-            public override int DoFinal(byte[] output, int outOff)
-            {
-                Finish();
-                for (int i = 0; i < 8; i++)
-                {
-                    ConvertIntegerToBigEndian(_v1[i], output, outOff + i * 4);
-                }
-                Reset();
-                return DIGEST_LENGTH;
             }
         }
     }
