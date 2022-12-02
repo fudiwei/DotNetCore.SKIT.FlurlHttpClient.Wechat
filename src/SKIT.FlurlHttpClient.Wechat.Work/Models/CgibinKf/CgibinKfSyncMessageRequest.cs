@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/kf/sync_msg 接口的请求。</para>
@@ -32,5 +32,12 @@
         [Newtonsoft.Json.JsonProperty("voice_format")]
         [System.Text.Json.Serialization.JsonPropertyName("voice_format")]
         public int? VoiceFormat { get; set; }
+
+        /// <summary>
+        /// 获取或设置客服账号 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("open_kfid")]
+        [System.Text.Json.Serialization.JsonPropertyName("open_kfid")]
+        public string? OpenKfId { get; set; }
     }
 }
