@@ -22,10 +22,10 @@
         public string? AuthorizerCorpId { get; set; }
 
         /// <summary>
-        /// 获取或设置操作类型。
+        /// 获取或设置变更类型。
         /// </summary>
         [System.Xml.Serialization.XmlElement("ChangeType")]
-        public string ActionType { get; set; } = default!;
+        public string ChangeType { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置学生/家长账号或部门 ID（即班级）。

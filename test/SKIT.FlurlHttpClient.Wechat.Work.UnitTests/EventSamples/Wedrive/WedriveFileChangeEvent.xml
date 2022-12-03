@@ -1,0 +1,9 @@
+<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[sys]]></FromUserName>
+    <CreateTime>1348831860</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[wedrive_file_change]]></Event>
+    <ChangeType><![CDATA[xxx_file]]></ChangeType>
+    <FileId><![CDATA[spxxxxxxxxxxxxx]]></FileId>
+</xml>
