@@ -255,6 +255,66 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedrive/file_upload_init 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98004 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedriveFileUploadInitializeResponse> ExecuteCgibinWedriveFileUploadInitializeAsync(this WechatWorkClient client, Models.CgibinWedriveFileUploadInitializeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedrive", "file_upload_init")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedriveFileUploadInitializeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedrive/file_upload_part 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98004 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedriveFileUploadPartResponse> ExecuteCgibinWedriveFileUploadPartAsync(this WechatWorkClient client, Models.CgibinWedriveFileUploadPartRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedrive", "file_upload_part")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedriveFileUploadPartResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedrive/file_upload_finish 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98004 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedriveFileUploadFinishResponse> ExecuteCgibinWedriveFileUploadFinishAsync(this WechatWorkClient client, Models.CgibinWedriveFileUploadFinishRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedrive", "file_upload_finish")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedriveFileUploadFinishResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wedrive/file_create 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/97882 </para>
         /// </summary>

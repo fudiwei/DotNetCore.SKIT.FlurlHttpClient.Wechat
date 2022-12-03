@@ -1,0 +1,9 @@
+﻿{
+    "spaceid": "SPACEID",
+    "fatherid": "FATHERID",
+    "selected_ticket": "SELECTED_TICKET",
+    "file_name": "FILE_NAME",
+    "size": 123,
+    "block_sha": ["STATE1", "STATE2"],
+    "skip_push_card": false
+}
