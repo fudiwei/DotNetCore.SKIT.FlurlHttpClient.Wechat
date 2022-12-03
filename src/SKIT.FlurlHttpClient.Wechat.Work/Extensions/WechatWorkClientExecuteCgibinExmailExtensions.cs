@@ -9,6 +9,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     public static class WechatWorkClientExecuteCgibinExmailExtensions
     {
+        #region App
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/app/compose_send 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97445 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97854 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97855 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailAppComposeSendResponse> ExecuteCgibinExmailAppComposeSendAsync(this WechatWorkClient client, Models.CgibinExmailAppComposeSendRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "app", "compose_send")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailAppComposeSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Group
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/group/create 接口。</para>
