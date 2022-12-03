@@ -1,0 +1,41 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "share_range": {
+        "enable_corp_internal": true,
+        "corp_internal_auth": 1,
+        "enable_corp_external": false,
+        "corp_external_auth": 2
+    },
+    "secure_setting": {
+        "enable_readonly_copy": true,
+        "modify_only_by_admin": true,
+        "enable_readonly_comment": false,
+        "ban_share_external": true
+    },
+    "inherit_father_auth": {
+        "auth_list": [
+            {
+                "type": 1,
+                "userid": "USERID",
+                "auth": 1
+            }
+        ],
+        "inherit": true
+    },
+    "file_member_list": [
+        {
+            "type": 1,
+            "userid": "USERID",
+            "auth": 1
+        }
+    ],
+    "watermark": {
+        "text": "WATERMARK_TEXT",
+        "margin_type": 1,
+        "show_visitor_name": false,
+        "force_by_admin": false,
+        "show_text": false,
+        "force_by_space_admin": false
+    }
+}
