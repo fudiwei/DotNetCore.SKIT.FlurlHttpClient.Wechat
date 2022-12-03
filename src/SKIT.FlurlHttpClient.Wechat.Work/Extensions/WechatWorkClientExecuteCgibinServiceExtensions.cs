@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/service/get_permanent_code 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/90603 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90788 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91911 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -121,8 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/service/get_auth_info 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90604 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90789 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91912 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
