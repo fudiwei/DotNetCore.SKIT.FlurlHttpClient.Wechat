@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -474,6 +474,48 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinWebDriveFileACLDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Manage
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedrive/mng_pro_info 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95861 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWebDriveManageProfessionalInfoResponse> ExecuteCgibinWebDriveManageProfessionalInfoAsync(this WechatWorkClient client, Models.CgibinWebDriveManageProfessionalInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedrive", "mng_pro_info")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWebDriveManageProfessionalInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedrive/mng_capacity 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95861 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWebDriveManageCapacityResponse> ExecuteCgibinWebDriveManageCapacityAsync(this WechatWorkClient client, Models.CgibinWebDriveManageCapacityRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedrive", "mng_capacity")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWebDriveManageCapacityResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
