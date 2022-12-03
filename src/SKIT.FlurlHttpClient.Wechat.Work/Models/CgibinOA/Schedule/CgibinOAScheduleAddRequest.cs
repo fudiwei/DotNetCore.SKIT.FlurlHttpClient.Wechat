@@ -111,11 +111,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 }
 
                 /// <summary>
-                /// 获取或设置组织者成员账号。
+                /// 获取或设置管理员成员账号。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("organizer")]
-                [System.Text.Json.Serialization.JsonPropertyName("organizer")]
-                public string OrganizerUserId { get; set; } = string.Empty;
+                [Newtonsoft.Json.JsonProperty("admins")]
+                [System.Text.Json.Serialization.JsonPropertyName("admins")]
+                public IList<string>? AdminUserIdList { get; set; }
 
                 /// <summary>
                 /// 获取或设置日程开始时间戳。

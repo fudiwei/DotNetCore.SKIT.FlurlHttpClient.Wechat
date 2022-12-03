@@ -4,7 +4,7 @@
     "schedule_list": [
         {
             "schedule_id": "17c7d2bd9f20d652840f72f59e796AAA",
-            "organizer": "userid1",
+            "admins": ["admin1", "admin2"],
             "attendees": [
                 {
                     "userid": "userid2",

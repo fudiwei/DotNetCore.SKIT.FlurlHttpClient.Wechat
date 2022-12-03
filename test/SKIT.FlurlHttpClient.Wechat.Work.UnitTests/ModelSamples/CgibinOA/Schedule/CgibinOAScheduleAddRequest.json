@@ -1,6 +1,6 @@
 ﻿{
     "schedule": {
-        "organizer": "userid1",
+        "admins": ["admin1", "admin2"],
         "start_time": 1571274600,
         "end_time": 1571320210,
         "attendees": [
