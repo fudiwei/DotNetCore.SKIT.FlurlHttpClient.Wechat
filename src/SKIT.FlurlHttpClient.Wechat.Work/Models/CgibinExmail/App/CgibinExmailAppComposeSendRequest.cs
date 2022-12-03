@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
             {
                 public static class Types
                 {
-                    public class Option
+                    public class Settings
                     {
                         /// <summary>
                         /// 获取或设置入会密码。
@@ -150,13 +150,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public bool? AllowEnterBeforeHost { get; set; }
 
                         /// <summary>
-                        /// 获取或设置限制成员入会模式。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("enter_restraint")]
-                        [System.Text.Json.Serialization.JsonPropertyName("enter_restraint")]
-                        public int? EnterRestraintMode { get; set; }
-
-                        /// <summary>
                         /// 获取或设置是否开启屏幕水印。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("enable_screen_watermark")]
@@ -164,13 +157,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public bool? EnableScreenWatermark { get; set; }
 
                         /// <summary>
-                        /// 获取或设置成员入会时是否静音。
+                        /// 获取或设置限制成员入会模式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("enter_restraint")]
+                        [System.Text.Json.Serialization.JsonPropertyName("enter_restraint")]
+                        public int? EnterRestraintMode { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置成员入会时静音模式。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("enable_enter_mute")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("enable_enter_mute")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
-                        public bool? EnableEnterMute { get; set; }
+                        public int? EnterMuteMode { get; set; }
 
                         /// <summary>
                         /// 获取或设置会议开始提醒范围。
@@ -213,7 +211,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("option")]
                 [System.Text.Json.Serialization.JsonPropertyName("option")]
-                public Types.Option? Option { get; set; }
+                public Types.Settings? Settings { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议主持人信息。

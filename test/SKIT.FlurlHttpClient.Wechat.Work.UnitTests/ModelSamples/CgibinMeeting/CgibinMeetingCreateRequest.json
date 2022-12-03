@@ -1,15 +1,35 @@
 ﻿{
-    "creator_userid": "zhangsan",
+    "admin_userid": "zhangsan",
     "title": "新建会议",
     "meeting_start": 1600000000,
     "meeting_duration": 3600,
     "description": "新建会议描述",
-    "type": 1,
-    "remind_time": 60,
+    "location": "广州媒体港",
     "agentid": 1000014,
     "attendees": {
-        "userid": ["lisi", "wangwu"],
-        "external_userid": ["woabc", "woced"],
-        "device_sn": ["devsn1", "devsn2"]
+        "userid": ["lisi", "wangwu"]
+    },
+    "settings": {
+        "remind_scope": 1,
+        "password": "1234",
+        "enable_waiting_room": false,
+        "allow_enter_before_host": true,
+        "enable_enter_mute": 1,
+        "allow_external_user": false,
+        "enable_screen_watermark": false,
+        "hosts": {
+            "userid": ["lisi", "wangwu"]
+        },
+        "ring_users": {
+            "userid": ["zhangsan", "lis"]
+        }
+    },
+    "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
+    "reminders": {
+        "is_repeat": 1,
+        "repeat_type": 0,
+        "repeat_until": 1606976813,
+        "repeat_interval": 1,
+        "remind_before": [0, 900]
     }
 }
