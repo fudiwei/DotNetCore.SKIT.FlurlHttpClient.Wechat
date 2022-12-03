@@ -179,7 +179,7 @@
         public Types.Authority[]? FileMemberAuthorityList { get; set; }
 
         /// <summary>
-        /// 获取或设置文件协作者授权信息列表。
+        /// 获取或设置文件查看者授权信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("co_auth_list")]
         [System.Text.Json.Serialization.JsonPropertyName("co_auth_list")]

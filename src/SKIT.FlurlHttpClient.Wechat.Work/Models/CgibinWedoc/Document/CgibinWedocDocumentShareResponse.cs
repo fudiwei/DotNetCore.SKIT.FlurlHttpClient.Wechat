@@ -1,0 +1,15 @@
+﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+{
+    /// <summary>
+    /// <para>表示 [POST] /cgi-bin/wedoc/doc_share 接口的响应。</para>
+    /// </summary>
+    public class CgibinWedocDocumentShareResponse : WechatWorkResponse
+    {
+        /// <summary>
+        /// 获取或设置分享链接。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("share_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("share_url")]
+        public string ShareUrl { get; set; } = default!;
+    }
+}
