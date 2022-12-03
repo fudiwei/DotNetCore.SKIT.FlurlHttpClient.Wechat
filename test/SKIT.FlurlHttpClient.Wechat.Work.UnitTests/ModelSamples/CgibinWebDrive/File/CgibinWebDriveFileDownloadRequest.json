@@ -1,4 +1,4 @@
 ﻿{
-    "userid": "USERID",
-    "fileid": "FILEID"
+    "fileid": "FILEID",
+    "selected_ticket": "SELECTED_TICKET"
 }

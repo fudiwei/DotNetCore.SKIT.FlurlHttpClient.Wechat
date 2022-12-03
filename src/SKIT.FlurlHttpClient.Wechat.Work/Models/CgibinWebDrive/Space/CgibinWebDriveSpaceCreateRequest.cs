@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
-            public class AuthorizedUser
+            public class Authority
             {
                 /// <summary>
                 /// 获取或设置类型。
@@ -33,20 +33,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public long? DepartmentId { get; set; }
 
                 /// <summary>
-                /// 获取或设置权限。
+                /// 获取或设置权限类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("auth")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth")]
-                public int Authority { get; set; }
+                public int AuthType { get; set; }
             }
         }
-
-        /// <summary>
-        /// 获取或设置操作者成员账号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("userid")]
-        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置空间标题。
@@ -56,10 +49,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string SpaceName { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置空间授权成员列表。
+        /// 获取或设置空间授权信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth_info")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_info")]
-        public IList<Types.AuthorizedUser>? AuthorizedUserList { get; set; }
+        public IList<Types.Authority>? AuthorityList { get; set; }
+
+        /// <summary>
+        /// 获取或设置空间类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("space_sub_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("space_sub_type")]
+        public int? SpaceSubType { get; set; }
     }
 }

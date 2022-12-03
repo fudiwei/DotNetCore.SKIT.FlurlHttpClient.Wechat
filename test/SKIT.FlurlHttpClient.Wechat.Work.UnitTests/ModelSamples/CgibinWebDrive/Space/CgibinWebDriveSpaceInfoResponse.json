@@ -23,6 +23,7 @@
                 }
             ],
             "quit_userid": ["USERID3", "USERID4"]
-        }
+        },
+        "space_sub_type":0
     }
 }

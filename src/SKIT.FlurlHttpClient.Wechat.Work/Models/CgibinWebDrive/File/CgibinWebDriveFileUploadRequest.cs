@@ -6,25 +6,25 @@
     public class CgibinWebDriveFileUploadRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置操作者成员账号。
+        /// 获取或设置 JSAPI 返回的 SelectedTicket。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("userid")]
-        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        [Newtonsoft.Json.JsonProperty("selected_ticket")]
+        [System.Text.Json.Serialization.JsonPropertyName("selected_ticket")]
+        public string? SelectedTicket { get; set; }
 
         /// <summary>
         /// 获取或设置空间 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spaceid")]
         [System.Text.Json.Serialization.JsonPropertyName("spaceid")]
-        public string SpaceId { get; set; } = string.Empty;
+        public string? SpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置上级文件 ID 或空间 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fatherid")]
         [System.Text.Json.Serialization.JsonPropertyName("fatherid")]
-        public string ParentFileOrSpaceId { get; set; } = string.Empty;
+        public string? ParentFileOrSpaceId { get; set; }
 
         /// <summary>
         /// 获取或设置文件名称。
@@ -38,6 +38,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_base64_content")]
         [System.Text.Json.Serialization.JsonPropertyName("file_base64_content")]
-        public string FileData { get; set; } = string.Empty;
+        public string EncodingFileContent { get; set; } = string.Empty;
     }
 }

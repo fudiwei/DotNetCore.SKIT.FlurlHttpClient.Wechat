@@ -14,11 +14,11 @@
                     public class ACL
                     {
                         /// <summary>
-                        /// 获取或设置空间授权成员列表。
+                        /// 获取或设置空间授权信息列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("auth_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("auth_info")]
-                        public AuthorizedUser[] AuthorizedUserList { get; set; } = default!;
+                        public Authority[] AuthorityList { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置空间无权限成员列表。
@@ -28,7 +28,7 @@
                         public string[] QuitUserIdList { get; set; } = default!;
                     }
 
-                    public class AuthorizedUser : CgibinWebDriveSpaceCreateRequest.Types.AuthorizedUser
+                    public class Authority : CgibinWebDriveSpaceCreateRequest.Types.Authority
                     {
                     }
                 }
@@ -53,6 +53,13 @@
                 [Newtonsoft.Json.JsonProperty("auth_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_list")]
                 public Types.ACL ACL { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置空间类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("space_sub_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("space_sub_type")]
+                public int SpaceSubType { get; set; }
             }
         }
 

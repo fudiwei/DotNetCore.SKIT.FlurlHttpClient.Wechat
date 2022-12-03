@@ -6,17 +6,17 @@
     public class CgibinWebDriveFileDownloadRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置操作者成员账号。
+        /// 获取或设置 JSAPI 返回的 SelectedTicket。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("userid")]
-        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
+        [Newtonsoft.Json.JsonProperty("selected_ticket")]
+        [System.Text.Json.Serialization.JsonPropertyName("selected_ticket")]
+        public string? SelectedTicket { get; set; }
 
         /// <summary>
         /// 获取或设置文件 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fileid")]
         [System.Text.Json.Serialization.JsonPropertyName("fileid")]
-        public string FileId { get; set; } = string.Empty;
+        public string? FileId { get; set; }
     }
 }

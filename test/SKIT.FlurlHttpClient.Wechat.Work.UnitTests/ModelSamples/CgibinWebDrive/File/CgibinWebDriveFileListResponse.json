@@ -15,8 +15,6 @@
                 "mtime": 123456789,
                 "file_type": 1,
                 "file_status": 1,
-                "create_userid": "CREATE_USERID",
-                "update_userid": "UPDATE_USERID",
                 "sha": "SHA",
                 "md5": "MD5",
                 "url": "URL"

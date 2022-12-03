@@ -83,20 +83,6 @@
                 public long? ModifyTimestamp { get; set; }
 
                 /// <summary>
-                /// 获取或设置创建者成员账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("create_userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("create_userid")]
-                public string? CreatorUserId { get; set; }
-
-                /// <summary>
-                /// 获取或设置最后更新者成员账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("update_userid")]
-                [System.Text.Json.Serialization.JsonPropertyName("update_userid")]
-                public string? UpdaterUserId { get; set; }
-
-                /// <summary>
                 /// 获取或设置文件 SHA 哈希值。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sha")]

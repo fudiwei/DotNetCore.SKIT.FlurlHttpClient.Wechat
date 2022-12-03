@@ -6,13 +6,6 @@
     public class CgibinWebDriveFileSettingRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置操作者成员账号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("userid")]
-        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
-
-        /// <summary>
         /// 获取或设置文件 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fileid")]
@@ -27,10 +20,10 @@
         public int AuthScope { get; set; }
 
         /// <summary>
-        /// 获取或设置权限。
+        /// 获取或设置权限类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("auth")]
         [System.Text.Json.Serialization.JsonPropertyName("auth")]
-        public int? Authority { get; set; }
+        public int? AuthType { get; set; }
     }
 }

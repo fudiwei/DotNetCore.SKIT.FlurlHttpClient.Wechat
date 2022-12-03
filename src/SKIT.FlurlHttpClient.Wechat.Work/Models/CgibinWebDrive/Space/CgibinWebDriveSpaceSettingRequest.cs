@@ -6,13 +6,6 @@
     public class CgibinWebDriveSpaceSettingRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置操作者成员账号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("userid")]
-        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
-
-        /// <summary>
         /// 获取或设置空间 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spaceid")]
@@ -27,18 +20,11 @@
         public bool? EnableWatermark { get; set; }
 
         /// <summary>
-        /// 获取或设置启用成员邀请链接。
+        /// 获取或设置是否启用保密模式。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("enable_share_url")]
-        [System.Text.Json.Serialization.JsonPropertyName("enable_share_url")]
-        public bool? EnableShareUrl { get; set; }
-
-        /// <summary>
-        /// 获取或设置是否仅管理员可增减空间成员和修改文件分享设置。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("add_member_only_admin")]
-        [System.Text.Json.Serialization.JsonPropertyName("add_member_only_admin")]
-        public bool? IsOnlyAdminCanAddMember { get; set; }
+        [Newtonsoft.Json.JsonProperty("enable_confidential_mode")]
+        [System.Text.Json.Serialization.JsonPropertyName("enable_confidential_mode")]
+        public bool? EnableConfidentialMode { get; set; }
 
         /// <summary>
         /// 获取或设置是否通过链接加入空间无需审批。
@@ -48,10 +34,24 @@
         public bool? IsShareUrlNoApprove { get; set; }
 
         /// <summary>
-        /// 获取或设置邀请链接默认权限。
+        /// 获取或设置邀请链接默认权限类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("share_url_no_approve_default_auth")]
         [System.Text.Json.Serialization.JsonPropertyName("share_url_no_approve_default_auth")]
-        public int? ShareUrlNoApproveDefaultAuthority { get; set; }
+        public int? ShareUrlNoApproveDefaultAuthType { get; set; }
+
+        /// <summary>
+        /// 获取或设置文件默认可查看范围。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("default_file_scope")]
+        [System.Text.Json.Serialization.JsonPropertyName("default_file_scope")]
+        public int? DefaultFileScope { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否禁止文件分享到企业外。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ban_share_external")]
+        [System.Text.Json.Serialization.JsonPropertyName("ban_share_external")]
+        public bool? IsBanShareExternal { get; set; }
     }
 }

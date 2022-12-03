@@ -8,13 +8,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     public class CgibinWebDriveFileMoveRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置操作者成员账号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("userid")]
-        [System.Text.Json.Serialization.JsonPropertyName("userid")]
-        public string UserId { get; set; } = string.Empty;
-
-        /// <summary>
         /// 获取或设置上级文件 ID 或空间 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fatherid")]
