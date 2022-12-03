@@ -6,7 +6,7 @@
     public class CgibinServiceCorpIdToOpenCorpIdResponse : WechatWorkResponse
     {
         /// <summary>
-        /// 获取或设置服务商第主体下的密文 CorpId。
+        /// 获取或设置服务商主体下的密文 CorpId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("open_corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("open_corpid")]

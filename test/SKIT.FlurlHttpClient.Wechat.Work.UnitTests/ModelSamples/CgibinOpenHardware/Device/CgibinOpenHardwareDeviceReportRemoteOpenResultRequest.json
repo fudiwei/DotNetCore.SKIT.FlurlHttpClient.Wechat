@@ -1,0 +1,6 @@
+﻿{
+    "oper_id": "OPER_ID",
+    "type": "remote_open_door",
+    "errcode": 2,
+    "errmsg": "设备离线"
+}

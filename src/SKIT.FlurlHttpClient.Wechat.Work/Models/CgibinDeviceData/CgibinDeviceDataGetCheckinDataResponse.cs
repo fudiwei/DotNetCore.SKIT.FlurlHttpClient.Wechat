@@ -34,11 +34,11 @@
                 public string DeviceSerialNumber { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置打卡时间戳。
+                /// 获取或设置上报时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("checkin_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("checkin_time")]
-                public long CheckinTimestamp { get; set; }
+                public long Timestamp { get; set; }
             }
         }
 

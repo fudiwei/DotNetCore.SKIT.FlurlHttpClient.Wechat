@@ -23,11 +23,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            if (request.CorpId == null)
+                request.CorpId = client.Credentials.CorpId;
+
+            if (request.ProviderSecret == null)
+                request.ProviderSecret = client.Credentials.ProviderSecret;
+
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "get_provider_token");
 
-            var requestData = new { corpid = client.Credentials.CorpId, provider_secret = client.Credentials.ProviderSecret };
-            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetProviderTokenResponse>(flurlReq, data: requestData, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetProviderTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

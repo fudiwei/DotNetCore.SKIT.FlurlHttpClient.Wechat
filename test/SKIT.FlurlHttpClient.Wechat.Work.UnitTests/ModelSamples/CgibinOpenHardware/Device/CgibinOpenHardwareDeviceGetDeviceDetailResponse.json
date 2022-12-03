@@ -1,0 +1,15 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "device_detail": {
+        "model_name": "device_model",
+        "default_name": "默认名",
+        "qr_code": "https://open.work.weixin.qq.com/connect/hardware?hw_code=lS5***********",
+        "bind_status": 1,
+        "bind_corpinfo": {
+            "open_corpid": "wpTD_dsdfsdfsdfsdfs1w",
+            "corp_name": "测试企业"
+        },
+        "remark_name": "小区大门"
+    }
+}
