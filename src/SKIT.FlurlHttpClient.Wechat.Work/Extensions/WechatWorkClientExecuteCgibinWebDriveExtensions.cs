@@ -375,6 +375,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedrive/file_secure_setting 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97965 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWebDriveFileSecureSettingResponse> ExecuteCgibinWebDriveFileSecureSettingAsync(this WechatWorkClient client, Models.CgibinWebDriveFileSecureSettingRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedrive", "file_secure_setting")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWebDriveFileSecureSettingResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wedrive/file_share 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/97890 </para>
         /// </summary>
