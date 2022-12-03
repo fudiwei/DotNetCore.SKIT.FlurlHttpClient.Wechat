@@ -173,7 +173,7 @@
                     {
                         public static class Types
                         {
-                            public class MultiLangText : CgibinOAGetTemplateDetailResponse.Types.MultiLangText
+                            public class MultiLangText : CgibinOAApplyEventRequest.Types.MultiLangText
                             {
                             }
 

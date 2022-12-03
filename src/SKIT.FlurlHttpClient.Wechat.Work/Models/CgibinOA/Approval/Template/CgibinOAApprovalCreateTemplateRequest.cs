@@ -1,27 +1,16 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿using System.Collections.Generic;
+
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/oa/gettemplatedetail 接口的响应。</para>
+    /// <para>表示 [POST] /cgi-bin/oa/approval/create_template 接口的请求。</para>
     /// </summary>
-    public class CgibinOAGetTemplateDetailResponse : WechatWorkResponse
+    public class CgibinOAApprovalCreateTemplateRequest : WechatWorkRequest
     {
         public static class Types
         {
-            public class MultiLangText
+            public class MultiLangText : CgibinOAApplyEventRequest.Types.MultiLangText
             {
-                /// <summary>
-                /// 获取或设置语言类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("lang")]
-                [System.Text.Json.Serialization.JsonPropertyName("lang")]
-                public string Language { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置文本信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("text")]
-                [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public string Text { get; set; } = default!;
             }
 
             public class TemplateContent
@@ -39,46 +28,46 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("control")]
                                 [System.Text.Json.Serialization.JsonPropertyName("control")]
-                                public string Control { get; set; } = default!;
+                                public string Control { get; set; } = string.Empty;
 
                                 /// <summary>
                                 /// 获取或设置控件 ID。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                                public string ControlId { get; set; } = default!;
+                                public string ControlId { get; set; } = string.Empty;
 
                                 /// <summary>
                                 /// 获取或设置控件名称。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("title")]
                                 [System.Text.Json.Serialization.JsonPropertyName("title")]
-                                public MultiLangText[]? Title { get; set; }
+                                public IList<MultiLangText>? Title { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置控件说明。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("placeholder")]
                                 [System.Text.Json.Serialization.JsonPropertyName("placeholder")]
-                                public MultiLangText[]? Placeholder { get; set; }
+                                public IList<MultiLangText>? Placeholder { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置是否为必填项。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("require")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("require")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
-                                public bool IsRequired { get; set; }
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                                public bool? IsRequired { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置是否参与打印。
+                                /// 获取或设置是否不可打印。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("un_print")]
                                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("un_print")]
                                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
-                                public bool IsPrintable { get; set; }
+                                public bool IsUnprintable { get; set; }
                             }
 
                             public class Config
@@ -133,7 +122,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = default!;
+                                public string Type { get; set; } = string.Empty;
                             }
 
                             public class SelectorControlConfig
@@ -147,14 +136,14 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("key")]
                                         [System.Text.Json.Serialization.JsonPropertyName("key")]
-                                        public string Key { get; set; } = default!;
+                                        public string Key { get; set; } = string.Empty;
 
                                         /// <summary>
                                         /// 获取或设置选项值。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("value")]
                                         [System.Text.Json.Serialization.JsonPropertyName("value")]
-                                        public MultiLangText[] Value { get; set; } = default!;
+                                        public IList<MultiLangText> Value { get; set; } = new List<MultiLangText>();
                                     }
                                 }
 
@@ -163,14 +152,14 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = default!;
+                                public string Type { get; set; } = string.Empty;
 
                                 /// <summary>
                                 /// 获取或设置选择列表。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("options")]
                                 [System.Text.Json.Serialization.JsonPropertyName("options")]
-                                public Types.Option[] OptionList { get; set; } = default!;
+                                public IList<Types.Option> OptionList { get; set; } = new List<Types.Option>();
                             }
 
                             public class ContactControlConfig
@@ -180,14 +169,14 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string Type { get; set; } = default!;
+                                public string Type { get; set; } = string.Empty;
 
                                 /// <summary>
                                 /// 获取或设置选择对象。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("mode")]
                                 [System.Text.Json.Serialization.JsonPropertyName("mode")]
-                                public string Mode { get; set; } = default!;
+                                public string Mode { get; set; } = string.Empty;
                             }
 
                             public class TableControlConfig
@@ -197,7 +186,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("children")]
                                 [System.Text.Json.Serialization.JsonPropertyName("children")]
-                                public Control[] Children { get; set; } = default!;
+                                public IList<Control> Children { get; set; } = new List<Control>();
                             }
 
                             public class AttendanceControlConfig
@@ -211,7 +200,7 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("type")]
                                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                        public string Type { get; set; } = default!;
+                                        public string Type { get; set; } = string.Empty;
                                     }
                                 }
 
@@ -227,7 +216,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("date_range")]
                                 [System.Text.Json.Serialization.JsonPropertyName("date_range")]
-                                public Types.DateRange DateRange { get; set; } = default!;
+                                public Types.DateRange DateRange { get; set; } = new Types.DateRange();
                             }
 
                             public class VacationControlConfig
@@ -248,7 +237,7 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("name")]
                                         [System.Text.Json.Serialization.JsonPropertyName("name")]
-                                        public MultiLangText[] Name { get; set; } = default!;
+                                        public IList<MultiLangText> Name { get; set; } = new List<MultiLangText>();
                                     }
                                 }
 
@@ -257,7 +246,7 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("item")]
                                 [System.Text.Json.Serialization.JsonPropertyName("item")]
-                                public Types.Vacation[] VacationList { get; set; } = default!;
+                                public IList<Types.Vacation> VacationList { get; set; } = new List<Types.Vacation>();
                             }
                         }
 
@@ -266,14 +255,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("property")]
                         [System.Text.Json.Serialization.JsonPropertyName("property")]
-                        public Types.Property Property { get; set; } = default!;
+                        public Types.Property Property { get; set; } = new Types.Property();
 
                         /// <summary>
                         /// 获取或设置模板控件配置。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("config")]
                         [System.Text.Json.Serialization.JsonPropertyName("config")]
-                        public Types.Config Config { get; set; } = default!;
+                        public Types.Config? Config { get; set; }
                     }
                 }
 
@@ -282,22 +271,22 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("controls")]
                 [System.Text.Json.Serialization.JsonPropertyName("controls")]
-                public Types.Control[] ControlList { get; set; } = default!;
+                public IList<Types.Control> ControlList { get; set; } = new List<Types.Control>();
             }
         }
 
         /// <summary>
-        /// 获取或设置模板名称。
+        /// 获取或设置模板名称列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("template_names")]
-        [System.Text.Json.Serialization.JsonPropertyName("template_names")]
-        public Types.MultiLangText[] TemplateName { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("template_name")]
+        [System.Text.Json.Serialization.JsonPropertyName("template_name")]
+        public IList<Types.MultiLangText> TemplateName { get; set; } = new List<Types.MultiLangText>();
 
         /// <summary>
-        /// 获取或设置模板内容。
+        /// 获取或设置模板内容信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("template_content")]
         [System.Text.Json.Serialization.JsonPropertyName("template_content")]
-        public Types.TemplateContent TemplateContent { get; set; } = default!;
+        public Types.TemplateContent TemplateContent { get; set; } = new Types.TemplateContent();
     }
 }

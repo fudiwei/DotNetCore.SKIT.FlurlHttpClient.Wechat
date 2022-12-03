@@ -11,47 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         #region Approval
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/oa/approval/copytemplate 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92630 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinOAApprovalCopyTemplateResponse> ExecuteCgibinOAApprovalCopyTemplateAsync(this WechatWorkClient client, Models.CgibinOAApprovalCopyTemplateRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "approval", "copytemplate")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinOAApprovalCopyTemplateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/oa/gettemplatedetail 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91982 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92631 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinOAGetTemplateDetailResponse> ExecuteCgibinOAGetTemplateDetailAsync(this WechatWorkClient client, Models.CgibinOAGetTemplateDetailRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "gettemplatedetail")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinOAGetTemplateDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/oa/applyevent 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91853 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/92632 </para>
@@ -112,6 +71,87 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAGetApprovalDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/oa/approval/copytemplate 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92630 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinOAApprovalCopyTemplateResponse> ExecuteCgibinOAApprovalCopyTemplateAsync(this WechatWorkClient client, Models.CgibinOAApprovalCopyTemplateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "approval", "copytemplate")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAApprovalCopyTemplateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/oa/gettemplatedetail 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91982 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92631 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinOAGetTemplateDetailResponse> ExecuteCgibinOAGetTemplateDetailAsync(this WechatWorkClient client, Models.CgibinOAGetTemplateDetailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "gettemplatedetail")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAGetTemplateDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/oa/approval/create_template 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97437 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinOAApprovalCreateTemplateResponse> ExecuteCgibinOAApprovalCreateTemplateAsync(this WechatWorkClient client, Models.CgibinOAApprovalCreateTemplateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "approval", "create_template")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAApprovalCreateTemplateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/oa/approval/update_template 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97438 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinOAApprovalUpdateTemplateResponse> ExecuteCgibinOAApprovalUpdateTemplateAsync(this WechatWorkClient client, Models.CgibinOAApprovalUpdateTemplateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "approval", "update_template")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAApprovalUpdateTemplateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
