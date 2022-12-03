@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "result": [
+        {
+            "external_userid": "oAAAAAAA",
+            "pending_id": "pAAAAA"
+        },
+        {
+            "external_userid": "oBBBBB",
+            "pending_id": "pBBBBB"
+        }
+    ]
+}
