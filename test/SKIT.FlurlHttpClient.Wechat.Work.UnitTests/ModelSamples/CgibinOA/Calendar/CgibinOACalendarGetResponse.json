@@ -4,8 +4,7 @@
     "calendar_list": [
         {
             "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
-            "organizer": "userid1",
-            "readonly": 1,
+            "admins": ["admin1", "admin2"],
             "summary": "test_summary",
             "color": "#FF3030",
             "description": "test_describe_1",
