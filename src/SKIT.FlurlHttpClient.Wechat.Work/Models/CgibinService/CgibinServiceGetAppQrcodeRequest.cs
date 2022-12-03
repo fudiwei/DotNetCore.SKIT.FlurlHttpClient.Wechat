@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/service/get_app_qrcode 接口的请求。</para>
@@ -6,8 +8,9 @@
     public class CgibinServiceGetAppQrcodeRequest : WechatWorkRequest
     {
         /// <summary>
-        /// 获取或设置第三方应用 ID。
+        /// 获取或设置第三方套件应用 ID。
         /// </summary>
+        [Obsolete("相关接口或字段于 2020-01-13 下线。")]
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         public int? AppId { get; set; }

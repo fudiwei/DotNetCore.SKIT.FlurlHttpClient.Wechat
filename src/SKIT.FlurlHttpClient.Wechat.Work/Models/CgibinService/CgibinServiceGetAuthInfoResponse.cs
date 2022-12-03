@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+﻿using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/service/get_auth_info 接口的响应。</para>
@@ -211,8 +213,9 @@
                         public string RoundLogoUrl { get; set; } = default!;
 
                         /// <summary>
-                        /// 获取或设置 AppId。
+                        /// 获取或设置第三方套件应用 AppId。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2020-01-13 下线。")]
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]
                         public int? AppId { get; set; }
