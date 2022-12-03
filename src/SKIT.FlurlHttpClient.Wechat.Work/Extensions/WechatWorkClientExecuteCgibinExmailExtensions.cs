@@ -31,6 +31,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinExmailAppComposeSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/app/get_mail_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97505 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailAppGetMailListResponse> ExecuteCgibinExmailAppGetMailListAsync(this WechatWorkClient client, Models.CgibinExmailAppGetMailListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "app", "get_mail_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailAppGetMailListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/app/read_mail 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97982 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailAppReadMailResponse> ExecuteCgibinExmailAppReadMailAsync(this WechatWorkClient client, Models.CgibinExmailAppReadMailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "app", "read_mail")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailAppReadMailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region Group
