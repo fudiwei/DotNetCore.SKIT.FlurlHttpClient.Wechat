@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -70,17 +70,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string AuthorizerCorpId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置应用 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("agentid")]
-        [System.Text.Json.Serialization.JsonPropertyName("agentid")]
-        public int? AgentId { get; set; }
-
-        /// <summary>
         /// 获取或设置搜索请求列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("query_request_list")]
         [System.Text.Json.Serialization.JsonPropertyName("query_request_list")]
         public IList<Types.QueryRequest>? QueryRequestList { get; set; }
+
+        /// <summary>
+        /// 获取或设置授权方安装的应用 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("agentid")]
+        [System.Text.Json.Serialization.JsonPropertyName("agentid")]
+        public int? AgentId { get; set; }
     }
 }
