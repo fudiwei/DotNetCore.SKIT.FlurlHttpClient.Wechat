@@ -1,0 +1,9 @@
+<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[sys]]></FromUserName>
+    <CreateTime>1668831860</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[app_email_change]]></Event>
+    <ChangeType><![CDATA[receive_email]]></ChangeType>
+    <Amount><![CDATA[2]]></Amount>
+</xml>

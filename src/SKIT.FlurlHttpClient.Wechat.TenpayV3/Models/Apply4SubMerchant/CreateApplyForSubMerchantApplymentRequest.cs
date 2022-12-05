@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? BusinessAuthorizeLetterCopyMediaId { get; set; }
 
                 /// <summary>
-                /// 获取或设置超级管理员微信 OpenId。与字段 <see cref="IdCardNumber"/> 二选一。
+                /// 获取或设置超级管理员微信 OpenId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]

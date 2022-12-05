@@ -72,7 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="callbackSerialNumber">微信回调通知中的 Wechatpay-Serial 字段。</param>
         /// <param name="error"></param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
         public static bool VerifyEventSignature(this WechatTenpayClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSerialNumber, out Exception? error)
         {
             return VerifyEventSignature(
@@ -101,7 +100,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="callbackSerialNumber">微信回调通知中的 Wechatpay-Serial 字段。</param>
         /// <param name="error"></param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
         public static bool VerifyEventSignature(this WechatTenpayClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSignatureType, string callbackSerialNumber, out Exception? error)
         {
             if (client == null) throw new ArgumentNullException(nameof(client));

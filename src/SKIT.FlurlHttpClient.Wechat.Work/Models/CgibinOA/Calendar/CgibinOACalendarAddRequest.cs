@@ -51,23 +51,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 }
 
                 /// <summary>
-                /// 获取或设置组织者成员账号。
+                /// 获取或设置管理员成员账号。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("organizer")]
-                [System.Text.Json.Serialization.JsonPropertyName("organizer")]
-                public string OrganizerUserId { get; set; } = string.Empty;
+                [Newtonsoft.Json.JsonProperty("admins")]
+                [System.Text.Json.Serialization.JsonPropertyName("admins")]
+                public IList<string>? AdminUserIdList { get; set; }
 
                 /// <summary>
-                /// 获取或设置组织者对日历是否只读权限。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("readonly")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
-                public bool? IsReadonly { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否将该日历设置为组织者的默认日历。
+                /// 获取或设置是否将该日历设置为默认日历。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("set_as_default")]
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]

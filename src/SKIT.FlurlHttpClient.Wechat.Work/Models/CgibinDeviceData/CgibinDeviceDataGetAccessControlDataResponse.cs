@@ -41,7 +41,7 @@
                 public string DeviceSerialNumber { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置通行时间戳。
+                /// 获取或设置上报时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("timestamp")]
                 [System.Text.Json.Serialization.JsonPropertyName("timestamp")]

@@ -1,11 +1,12 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "account_list": [
         {
             "open_kfid": "wkAJ2GCAAASSm4_FhToWMFea0xAFfd3Q",
             "name": "咨询客服",
-            "avatar": "https://wework.qpic.cn/wwhead/duc2TvpEgSSjibPZlNR6chpx9W3dtd9Ogp8XEmSNKGa6uufMWn2239HUPuwIFoYYZ7Ph580FPvo8/0"
+            "avatar": "https://wework.qpic.cn/wwhead/duc2TvpEgSSjibPZlNR6chpx9W3dtd9Ogp8XEmSNKGa6uufMWn2239HUPuwIFoYYZ7Ph580FPvo8/0",
+            "manage_privilege": false
         }
     ]
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/register/register_shop 接口的请求。</para>
@@ -39,5 +39,12 @@
         [Newtonsoft.Json.JsonProperty("api_openstore_type")]
         [System.Text.Json.Serialization.JsonPropertyName("api_openstore_type")]
         public int OpenStoreType { get; set; }
+
+        /// <summary>
+        /// 获取或设置授权页 URL。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("auth_page_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("auth_page_url")]
+        public string? AuthPageUrl { get; set; }
     }
 }

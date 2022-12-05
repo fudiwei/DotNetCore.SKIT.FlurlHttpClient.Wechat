@@ -1,5 +1,7 @@
-﻿{
+{
     "chain_id": "Chxxxxxx",
     "groupid": 1,
-    "fetch_child": 0
+    "need_pending": false,
+    "cursor": "",
+    "limit": 0
 }

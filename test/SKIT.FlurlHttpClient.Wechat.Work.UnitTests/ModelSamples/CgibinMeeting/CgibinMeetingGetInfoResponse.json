@@ -1,17 +1,14 @@
 ﻿{
     "errcode": 0,
     "errmsg": "ok",
-    "creator_userid": "zhangsan",
+    "admin_userid": "zhangsan",
     "title": "title",
-    "reserve_meeting_start": 1600000000,
-    "reserve_meeting_duration": 1600003600,
     "meeting_start": 1600000007,
     "meeting_duration": 1800,
     "description": "test meeting description",
+    "location": "广州媒体港",
     "main_department": 1,
-    "type": 1,
     "status": 1,
-    "remind_time": 60,
     "attendees": {
         "member": [
             {
@@ -23,25 +20,38 @@
                 "status": 2
             }
         ],
-        "external_user": [
+        "tmp_external_user": [
             {
-                "external_userid": "woabc",
+                "tmp_external_userid": "woabc",
                 "status": 3
             },
             {
-                "external_userid": "woefd",
+                "tmp_external_userid": "woefd",
                 "status": 4
             }
-        ],
-        "device": [
-            {
-                "device_sn": "devicesn1",
-                "status": 5
-            },
-            {
-                "device_sn": "devicesn1",
-                "status": 5
-            }
         ]
+    },
+    "settings": {
+        "remind_scope": 4,
+        "password": "1234",
+        "enable_waiting_room": false,
+        "allow_enter_before_host": true,
+        "enable_enter_mute": 1,
+        "allow_external_user": false,
+        "enable_screen_watermark": false,
+        "hosts": {
+            "userid": ["lisi", "wangwu"]
+        },
+        "ring_users": {
+            "userid": ["zhangsan", "lis"]
+        }
+    },
+    "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
+    "reminders": {
+        "is_repeat": 1,
+        "repeat_type": 0,
+        "repeat_until": 1606976813,
+        "repeat_interval": 1,
+        "remind_before": [5, 10]
     }
 }

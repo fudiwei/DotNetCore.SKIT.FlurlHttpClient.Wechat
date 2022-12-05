@@ -1,0 +1,33 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "order_list": [
+        {
+            "orderid": "2018091822ks1sd3s",
+            "order_status": 1,
+            "order_type": 1,
+            "paid_corpid": "wwfedd7e5292d63aaa",
+            "operator_id": "zhangsan",
+            "suiteid": "wx67cce113441cc7a6",
+            "appid": 1,
+            "edition_id": "RLS65535",
+            "edition_name": "协同版",
+            "price": 100,
+            "user_count": 1000,
+            "order_period": 365,
+            "order_time": 1533702999,
+            "paid_time": 1533702910,
+            "begin_time": 1533702910,
+            "end_time": 1553515904,
+            "order_from": 1,
+            "operator_corpid": "wwfedd7e5292d63aaa",
+            "service_share_amount": 60,
+            "platform_share_amount": 10,
+            "dealer_share_amount": 30,
+            "dealer_corp_info": {
+                "corpid": "xxxx",
+                "corp_name": "name"
+            }
+        }
+    ]
+}

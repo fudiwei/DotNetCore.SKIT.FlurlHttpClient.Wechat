@@ -1,0 +1,34 @@
+﻿{
+    "template_id": "C4RbNKm731MCFVgk6XLq1Rs9W4aNXPJV2mmXT4qGy",
+    "template_name": [
+        {
+            "text": "我的api测试模版",
+            "lang": "zh_CN"
+        }
+    ],
+    "template_content": {
+        "controls": [
+            {
+                "property": {
+                    "control": "Text",
+                    "id": "Text-01",
+                    "title": [
+                        {
+                            "text": "控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {}
+            }
+        ]
+    }
+}

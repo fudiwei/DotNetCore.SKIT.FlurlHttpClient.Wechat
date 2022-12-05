@@ -101,10 +101,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         public string? AuthorizerCorpId { get; set; }
 
         /// <summary>
-        /// 获取或设置操作类型。
+        /// 获取或设置变更类型。
         /// </summary>
         [System.Xml.Serialization.XmlElement("ChangeType")]
-        public string ActionType { get; set; } = default!;
+        public string ChangeType { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置成员、部门或标签名称。

@@ -1,0 +1,14 @@
+<xml>
+    <ToUserName>gh_abcdefg</ToUserName>
+    <FromUserName>1asdaf2141noejgeroig_0</FromUserName>
+    <CreateTime>12344555555</CreateTime>
+    <MsgType>event</MsgType>
+    <Event>miniprogram_sharer_action</Event>
+    <type>1</type>
+    <openid>ogewrgsragasrg</openid>
+    <promoter>
+        <finder_nickname>XXXXXXXXXXXXXX</finder_nickname>
+        <promoter_id>a-**************po</promoter_id>
+        <promoter_openid>osagsadfasdfas</promoter_openid>
+    </promoter>
+</xml>

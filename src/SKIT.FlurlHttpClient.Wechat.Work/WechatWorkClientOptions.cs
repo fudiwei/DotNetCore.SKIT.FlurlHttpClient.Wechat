@@ -33,19 +33,29 @@
         public string? AgentSecret { get; set; }
 
         /// <summary>
-        /// 获取或设置企业微信服务商 Secret。仅限第三方应用开发时使用。
+        /// 获取或设置企业微信服务商 Secret。仅限第三方应用开发或服务商代开发时使用。
         /// </summary>
         public string? ProviderSecret { get; set; }
 
         /// <summary>
-        /// 获取或设置企业微信第三方应用的 SuiteId。仅限第三方应用开发时使用。
+        /// 获取或设置企业微信第三方应用的 SuiteId。仅限第三方应用开发或服务商代开发时使用。
         /// </summary>
         public string? SuiteId { get; set; }
 
         /// <summary>
-        /// 获取或设置企业微信第三方应用的 SuiteSecret。仅限第三方应用开发时使用。
+        /// 获取或设置企业微信第三方应用的 SuiteSecret。仅限第三方应用开发或服务商代开发时使用。
         /// </summary>
         public string? SuiteSecret { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业微信硬件型号的 ModelId。仅限智慧硬件开发时使用。
+        /// </summary>
+        public string? ModelId { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业微信硬件型号的 ModelSecret。仅限智慧硬件开发时使用。
+        /// </summary>
+        public string? ModelSecret { get; set; }
 
         /// <summary>
         /// 获取或设置企业微信服务器推送的 EncodingAESKey。

@@ -1,0 +1,5 @@
+﻿{
+    "fatherid": "FATHERID",
+    "replace": true,
+    "fileid": ["FILEID1", "FILEID2"]
+}

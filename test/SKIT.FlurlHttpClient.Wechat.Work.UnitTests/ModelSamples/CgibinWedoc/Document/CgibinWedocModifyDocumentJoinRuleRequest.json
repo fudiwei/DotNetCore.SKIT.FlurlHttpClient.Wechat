@@ -1,0 +1,18 @@
+﻿{
+    "docid": "DOCID",
+    "enable_corp_internal": true,
+    "corp_internal_auth": 1,
+    "enable_corp_external": true,
+    "corp_external_auth": 1,
+    "corp_internal_approve_only_by_admin": true,
+    "corp_external_approve_only_by_admin": true,
+    "ban_share_external": false,
+    "update_co_auth_list": true,
+    "co_auth_list": [
+        {
+            "departmentid": 1,
+            "auth": 1,
+            "type": 2
+        }
+    ]
+}

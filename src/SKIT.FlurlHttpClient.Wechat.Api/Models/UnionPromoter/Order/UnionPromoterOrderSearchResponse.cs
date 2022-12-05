@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /union/promoter/order/search 接口的响应。</para>
@@ -17,7 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("orderList")]
         [System.Text.Json.Serialization.JsonPropertyName("orderList")]
-
         public Types.Order[] OrderList { get; set; } = default!;
 
         /// <summary>

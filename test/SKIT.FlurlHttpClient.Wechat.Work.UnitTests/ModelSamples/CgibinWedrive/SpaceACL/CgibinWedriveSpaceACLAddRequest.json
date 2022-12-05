@@ -1,0 +1,15 @@
+﻿{
+    "spaceid": "SPACEID",
+    "auth_info": [
+        {
+            "type": 1,
+            "userid": "USERID1",
+            "auth": 2
+        },
+        {
+            "type": 2,
+            "departmentid": 1,
+            "auth": 2
+        }
+    ]
+}

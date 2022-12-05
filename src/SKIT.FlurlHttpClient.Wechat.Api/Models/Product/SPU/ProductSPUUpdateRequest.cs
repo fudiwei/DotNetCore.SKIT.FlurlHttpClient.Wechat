@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -24,7 +24,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class Express : ProductSPUAddRequest.Types.Express
             {
             }
+
+            public class CouponCode : ProductSPUAddRequest.Types.CouponCode
+            {
+                public static new class Types
+                {
+                    public class Validity : ProductSPUAddRequest.Types.CouponCode.Types.Validity
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置有效期信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("valid_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("valid_info")]
+                public new Types.Validity Validity { get; set; } = new Types.Validity();
+            }
         }
+
+        /// <summary>
+        /// 获取或设置商品类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("product_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("product_type")]
+        public int? ProductType { get; set; }
 
         /// <summary>
         /// 获取或设置商品 ID。与字段 <see cref="OutProductId"/> 二选一。
@@ -102,5 +126,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("express_info")]
         [System.Text.Json.Serialization.JsonPropertyName("express_info")]
         public Types.Express Express { get; set; } = new Types.Express();
+
+        /// <summary>
+        /// 获取或设置券码信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("couponcode_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("couponcode_info")]
+        public Types.CouponCode? CouponCode { get; set; }
     }
 }

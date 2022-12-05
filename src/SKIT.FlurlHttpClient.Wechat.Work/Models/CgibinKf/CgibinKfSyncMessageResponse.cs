@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/kf/sync_msg 接口的响应。</para>
@@ -75,6 +75,13 @@
                                 [Newtonsoft.Json.JsonProperty("nickname")]
                                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
                                 public string? Nickname { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置场景值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("scene")]
+                                [System.Text.Json.Serialization.JsonPropertyName("scene")]
+                                public int Scene { get; set; }
                             }
                         }
 
@@ -189,6 +196,97 @@
                         [Newtonsoft.Json.JsonProperty("recall_msgid")]
                         [System.Text.Json.Serialization.JsonPropertyName("recall_msgid")]
                         public string? RecalledMessageId { get; set; }
+                    }
+
+                    public class ChannelsShopProductMessage
+                    {
+                        /// <summary>
+                        /// 获取或设置商品 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_id")]
+                        public string ProductId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置商品头图 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("head_img")]
+                        [System.Text.Json.Serialization.JsonPropertyName("head_img")]
+                        public string HeadImageUrl { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置商品标题。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                        public string Title { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置商品价格（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sales_price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("sales_price")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public int SalesPrice { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置店铺名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("shop_nickname")]
+                        [System.Text.Json.Serialization.JsonPropertyName("shop_nickname")]
+                        public string ShopNickname { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置店铺头像 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("shop_head_img")]
+                        [System.Text.Json.Serialization.JsonPropertyName("shop_head_img")]
+                        public string ShopHeadImageUrl { get; set; } = default!;
+                    }
+
+                    public class ChannelsShopOrderMessage
+                    {
+                        /// <summary>
+                        /// 获取或设置订单 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("order_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("order_id")]
+                        public string OrderId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置商品标题。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_titles")]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_titles")]
+                        public string ProductTitle { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置商品价格描述。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("price_wording")]
+                        [System.Text.Json.Serialization.JsonPropertyName("price_wording")]
+                        public string PriceWording { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置订单状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("state")]
+                        [System.Text.Json.Serialization.JsonPropertyName("state")]
+                        public string State { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置订单缩略图 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("image_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("image_url")]
+                        public string ImageUrl { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置店铺名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("shop_nickname")]
+                        [System.Text.Json.Serialization.JsonPropertyName("shop_nickname")]
+                        public string ShopNickname { get; set; } = default!;
                     }
                 }
 
@@ -310,6 +408,20 @@
                 [Newtonsoft.Json.JsonProperty("event")]
                 [System.Text.Json.Serialization.JsonPropertyName("event")]
                 public Types.EventMessage? MessageContentForEvent { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频号商品消息信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("channels_shop_product")]
+                [System.Text.Json.Serialization.JsonPropertyName("channels_shop_product")]
+                public Types.ChannelsShopProductMessage? MessageContentForChannelsShopProduct { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频号订单消息信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("channels_shop_order")]
+                [System.Text.Json.Serialization.JsonPropertyName("channels_shop_order")]
+                public Types.ChannelsShopOrderMessage? MessageContentForChannelsShopOrder { get; set; }
 
                 /// <summary>
                 /// 获取或设置发送时间戳。

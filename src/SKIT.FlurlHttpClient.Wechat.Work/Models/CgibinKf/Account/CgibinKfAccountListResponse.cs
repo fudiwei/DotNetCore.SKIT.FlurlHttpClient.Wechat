@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/kf/account/list 接口的响应。</para>
@@ -29,6 +29,13 @@
                 [Newtonsoft.Json.JsonProperty("avatar")]
                 [System.Text.Json.Serialization.JsonPropertyName("avatar")]
                 public string AvatarUrl { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置是否有该管理权限。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("manage_privilege")]
+                [System.Text.Json.Serialization.JsonPropertyName("manage_privilege")]
+                public bool HasManagePivilege { get; set; }
             }
         }
 

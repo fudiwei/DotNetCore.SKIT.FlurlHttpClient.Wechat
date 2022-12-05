@@ -1,4 +1,4 @@
-﻿{
+{
     "item_list": [
         {
             "address": "index",
@@ -24,14 +24,15 @@
     "feedback_info": "blablabla",
     "feedback_stuff": "xx|yy|zz",
     "preview_info": {
-        "video_id_list": ["xxxx"],
-        "pic_id_list": ["xxxx", "yyyy", "zzzz"]
+        "video_id_list": [ "xxxx" ],
+        "pic_id_list": [ "xxxx", "yyyy", "zzzz" ]
     },
     "version_desc": "blablabla",
     "ugc_declare": {
-        "scene": [1, 2],
-        "method": [1],
+        "scene": [ 1, 2 ],
+        "method": [ 1 ],
         "has_audit_team": 1,
         "audit_desc": "blablabla"
-    }
+    },
+    "privacy_api_not_use": true
 }

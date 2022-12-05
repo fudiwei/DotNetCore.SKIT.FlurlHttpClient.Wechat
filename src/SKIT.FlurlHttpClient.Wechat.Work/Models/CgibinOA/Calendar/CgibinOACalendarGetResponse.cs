@@ -56,20 +56,11 @@
                 public string CalendarId { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置组织者成员账号。
+                /// 获取或设置管理员成员账号。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("organizer")]
-                [System.Text.Json.Serialization.JsonPropertyName("organizer")]
-                public string OrganizerUserId { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置组织者对日历是否只读权限。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("readonly")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
-                public bool IsReadonly { get; set; }
+                [Newtonsoft.Json.JsonProperty("admins")]
+                [System.Text.Json.Serialization.JsonPropertyName("admins")]
+                public string[] AdminUserId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置日历标题。

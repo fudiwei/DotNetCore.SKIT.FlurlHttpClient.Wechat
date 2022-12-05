@@ -41,21 +41,21 @@
                 public string DeviceSerialNumber { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置测温时间戳。
+                /// 获取或设置上报时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("timestamp")]
                 [System.Text.Json.Serialization.JsonPropertyName("timestamp")]
                 public long Timestamp { get; set; }
 
                 /// <summary>
-                /// 获取或设置测温温度。
+                /// 获取或设置温度字符串。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("temperature")]
                 [System.Text.Json.Serialization.JsonPropertyName("temperature")]
-                public string Temperature { get; set; } = default!;
+                public string TemperatureString { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置状态。
+                /// 获取或设置温度状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]

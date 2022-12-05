@@ -1,6 +1,7 @@
-﻿{
+{
     "cursor": "4gw7MepFLfgF2VC5npN",
     "token": "ENCApHxnGDNAVNY4AaSJKj4Tb5mwsEMzxhFmHVGcra996NR",
     "limit": 1000,
-    "voice_format": 0
+    "voice_format": 0,
+    "open_kfid": "wkxxxxxx"
 }

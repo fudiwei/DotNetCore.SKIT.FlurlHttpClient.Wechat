@@ -1,4 +1,5 @@
-﻿{
+{
     "chain_id": "Chxxxxxx",
-    "corpid": "xxxxx"
+    "corpid": "xxxxx",
+    "pending_corpid": "xxxxx"
 }

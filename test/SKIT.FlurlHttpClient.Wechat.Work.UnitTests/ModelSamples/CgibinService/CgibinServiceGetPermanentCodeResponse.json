@@ -69,5 +69,19 @@
         "register_code": "1111",
         "template_id": "tpl111",
         "state": "state001"
+    },
+    "edition_info": {
+        "agent": [
+            {
+                "agentid": 1,
+                "edition_id": "RLS65535",
+                "edition_name": "协同版",
+                "app_status": 3,
+                "user_limit": 200,
+                "expired_time": 1541990791,
+                "is_virtual_version": false,
+                "is_shared_from_other_corp": true
+            }
+        ]
     }
 }

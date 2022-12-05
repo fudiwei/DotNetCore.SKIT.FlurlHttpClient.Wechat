@@ -9,6 +9,110 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     public static class WechatWorkClientExecuteCgibinExmailExtensions
     {
+        #region App
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/app/compose_send 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97445 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97854 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97855 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailAppComposeSendResponse> ExecuteCgibinExmailAppComposeSendAsync(this WechatWorkClient client, Models.CgibinExmailAppComposeSendRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "app", "compose_send")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailAppComposeSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/app/get_mail_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97505 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailAppGetMailListResponse> ExecuteCgibinExmailAppGetMailListAsync(this WechatWorkClient client, Models.CgibinExmailAppGetMailListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "app", "get_mail_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailAppGetMailListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/app/read_mail 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97982 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailAppReadMailResponse> ExecuteCgibinExmailAppReadMailAsync(this WechatWorkClient client, Models.CgibinExmailAppReadMailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "app", "read_mail")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailAppReadMailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/app/update_email_alias 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97503 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailAppUpdateEmailAliasResponse> ExecuteCgibinExmailAppUpdateEmailAliasAsync(this WechatWorkClient client, Models.CgibinExmailAppUpdateEmailAliasRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "app", "update_email_alias")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailAppUpdateEmailAliasResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/exmail/app/get_email_alias 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97992 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExmailAppGetEmailAliasResponse> ExecuteCgibinExmailAppGetEmailAliasAsync(this WechatWorkClient client, Models.CgibinExmailAppGetEmailAliasRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "exmail", "app", "get_email_alias")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExmailAppGetEmailAliasResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Group
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/group/create 接口。</para>
@@ -32,7 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/group/update 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97995 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -52,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/group/delete 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97996 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -72,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/exmail/group/search 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97998 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -96,7 +200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/exmail/group/get 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97997 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -139,7 +243,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/update 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95511 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98000 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -159,7 +263,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/delete 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95511 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98001 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -179,7 +283,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/exmail/publicmail/search 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98003 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -203,7 +307,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/get 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98002 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -267,7 +371,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/useroption/update 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95513 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98008 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

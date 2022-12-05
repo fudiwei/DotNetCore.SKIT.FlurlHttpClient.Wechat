@@ -23,11 +23,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
+            if (request.CorpId == null)
+                request.CorpId = client.Credentials.CorpId;
+
+            if (request.ProviderSecret == null)
+                request.ProviderSecret = client.Credentials.ProviderSecret;
+
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "get_provider_token");
 
-            var requestData = new { corpid = client.Credentials.CorpId, provider_secret = client.Credentials.ProviderSecret };
-            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetProviderTokenResponse>(flurlReq, data: requestData, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetProviderTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -101,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/service/get_permanent_code 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/90603 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90788 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91911 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -121,8 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/service/get_auth_info 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90604 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90789 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91912 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -716,6 +720,68 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinServiceCorpIdToOpenCorpIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Order
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/prolong_try 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91913 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceProlongTryResponse> ExecuteCgibinServiceProlongTryAsync(this WechatWorkClient client, Models.CgibinServiceProlongTryRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "prolong_try")
+                .SetQueryParam("suite_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceProlongTryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/get_order_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91910 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceGetOrderListResponse> ExecuteCgibinServiceGetOrderListAsync(this WechatWorkClient client, Models.CgibinServiceGetOrderListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "get_order_list")
+                .SetQueryParam("suite_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetOrderListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/service/get_order 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91909 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceGetOrderResponse> ExecuteCgibinServiceGetOrderAsync(this WechatWorkClient client, Models.CgibinServiceGetOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "service", "get_order")
+                .SetQueryParam("suite_access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

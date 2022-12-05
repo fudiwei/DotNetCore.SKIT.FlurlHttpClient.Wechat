@@ -1,0 +1,14 @@
+{
+    "productList": [
+        {
+            "productId": "411664954",
+            "rate": 1500
+        }
+    ],
+    "planItem": {
+        "planName": "新计划",
+        "planDesc": "新计划",
+        "planStartTime": 1631203200,
+        "planEndTime": 1631894400
+    }
+}

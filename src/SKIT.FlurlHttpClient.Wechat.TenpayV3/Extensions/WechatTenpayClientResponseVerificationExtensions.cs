@@ -33,7 +33,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="response"></param>
         /// <param name="error"></param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
         public static bool VerifyResponseSignature<TResponse>(this WechatTenpayClient client, TResponse response, out Exception? error)
             where TResponse : WechatTenpayResponse
         {
@@ -109,7 +108,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_1.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_1.shtml </para>
         /// </summary>
-        /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="responseTimestamp"></param>
         /// <param name="responseNonce">。</param>
@@ -118,7 +116,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="responseSerialNumber"></param>
         /// <param name="error"></param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
         public static bool VerifyResponseSignature(this WechatTenpayClient client, string responseTimestamp, string responseNonce, string responseBody, string responseSignature, string responseSerialNumber, out Exception? error)
         {
             return VerifyResponseSignature(
@@ -138,7 +135,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_1.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_1.shtml </para>
         /// </summary>
-        /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="responseTimestamp"></param>
         /// <param name="responseNonce">。</param>
@@ -148,7 +144,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="responseSerialNumber"></param>
         /// <param name="error"></param>
         /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
         public static bool VerifyResponseSignature(this WechatTenpayClient client, string responseTimestamp, string responseNonce, string responseBody, string responseSignature, string responseSignatureType, string responseSerialNumber, out Exception? error)
         {
             if (client == null) throw new ArgumentNullException(nameof(client));

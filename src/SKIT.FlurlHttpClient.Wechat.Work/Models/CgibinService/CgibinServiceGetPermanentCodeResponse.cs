@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/service/get_permanent_code 接口的响应。</para>
@@ -56,14 +56,14 @@
                 public string? OpenUserId { get; set; }
             }
 
-            public class Register
+            public class RegisterCode
             {
                 /// <summary>
                 /// 获取或设置注册码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("register_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("register_code")]
-                public string RegisterCode { get; set; } = default!;
+                public string Code { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置推广包 ID。
@@ -78,6 +78,78 @@
                 [Newtonsoft.Json.JsonProperty("state")]
                 [System.Text.Json.Serialization.JsonPropertyName("state")]
                 public string? State { get; set; }
+            }
+
+            public class Edition
+            {
+                public static class Types
+                {
+                    public class Agent
+                    {
+                        /// <summary>
+                        /// 获取或设置应用 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("agentid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("agentid")]
+                        public int AgentId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置版本 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("edition_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("edition_id")]
+                        public string EditionId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置版本名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("edition_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("edition_name")]
+                        public string EditionName { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置应用状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("app_status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("app_status")]
+                        public int AppStatus { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置用户上限。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user_limit")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_limit")]
+                        public int UserLimit { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置过期时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("expired_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("expired_time")]
+                        public long ExpireTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否是虚拟版本。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_virtual_version")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_virtual_version")]
+                        public bool IsVirtualVersion { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否由企业互联或上下游分享安装。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_shared_from_other_corp")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_shared_from_other_corp")]
+                        public bool IsSharedFromOtherCorp { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置授权的应用信息列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("agent")]
+                [System.Text.Json.Serialization.JsonPropertyName("agent")]
+                public Types.Agent[] AgentList { get; set; } = default!;
             }
         }
 
@@ -135,7 +207,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("register_code_info")]
         [System.Text.Json.Serialization.JsonPropertyName("register_code_info")]
-        public Types.Register? Register { get; set; }
+        public Types.RegisterCode? RegisterCode { get; set; }
 
         /// <summary>
         /// 获取或设置扫码或者授权链接中的自定义参数。
@@ -143,5 +215,12 @@
         [Newtonsoft.Json.JsonProperty("state")]
         [System.Text.Json.Serialization.JsonPropertyName("state")]
         public string? State { get; set; }
+
+        /// <summary>
+        /// 获取或设置当前生效的版本信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("edition_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("edition_info")]
+        public Types.Edition? Edition { get; set; }
     }
 }

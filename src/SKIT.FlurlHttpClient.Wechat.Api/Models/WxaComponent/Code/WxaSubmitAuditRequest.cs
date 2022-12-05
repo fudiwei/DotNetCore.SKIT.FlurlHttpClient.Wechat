@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address")]
                 [System.Text.Json.Serialization.JsonPropertyName("address")]
-                public string PagePath { get; set; } = string.Empty;
+                public string? PagePath { get; set; }
 
                 /// <summary>
                 /// 获取或设置页面标题。
@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("scene")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene")]
-                public IList<int>? SceneLsit { get; set; }
+                public IList<int>? SceneList { get; set; }
 
                 /// <summary>
                 /// 获取或设置其他场景说明。
@@ -130,7 +130,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("audit_desc")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_desc")]
                 public string? AuditDescription { get; set; }
-
             }
         }
 
@@ -177,5 +176,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("ugc_declare")]
         [System.Text.Json.Serialization.JsonPropertyName("ugc_declare")]
         public Types.UGCDeclaration? UGCDeclaration { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否声明不使用代码中检测出但是未配置的隐私相关接口。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("privacy_api_not_use")]
+        [System.Text.Json.Serialization.JsonPropertyName("privacy_api_not_use")]
+        public bool IsPrivacyApiNotUsed { get; set; }
     }
 }

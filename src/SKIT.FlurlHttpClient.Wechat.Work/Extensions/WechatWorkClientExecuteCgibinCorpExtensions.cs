@@ -53,5 +53,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGetOpenApprovalDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corp/apply_mass_call_ticket 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96250 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpApplyMassCallTicketResponse> ExecuteCgibinCorpApplyMassCallTicketAsync(this WechatWorkClient client, Models.CgibinCorpApplyMassCallTicketRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corp", "apply_mass_call_ticket")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpApplyMassCallTicketResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }
