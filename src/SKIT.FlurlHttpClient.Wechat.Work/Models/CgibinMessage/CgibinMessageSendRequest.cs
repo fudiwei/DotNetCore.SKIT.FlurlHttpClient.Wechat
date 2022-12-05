@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -619,11 +619,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     public class Button
                     {
                         /// <summary>
+                        /// 获取或设置按钮点击类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public int? Type { get; set; }
+
+                        /// <summary>
                         /// 获取或设置按钮 Key 值。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("key")]
                         [System.Text.Json.Serialization.JsonPropertyName("key")]
-                        public string Key { get; set; } = string.Empty;
+                        public string? Key { get; set; }
 
                         /// <summary>
                         /// 获取或设置按钮文案。
@@ -638,6 +645,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("style")]
                         [System.Text.Json.Serialization.JsonPropertyName("style")]
                         public int? Style { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置按钮点击跳转 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("url")]
+                        public string? Url { get; set; }
                     }
 
                     public class Checkbox
