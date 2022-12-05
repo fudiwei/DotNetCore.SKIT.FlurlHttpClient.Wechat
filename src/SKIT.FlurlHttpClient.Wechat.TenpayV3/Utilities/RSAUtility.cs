@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             }
         }
 
-        private static RsaKeyParameters ParsePrivateKeyPemToPublicKeyParameters(byte[] privateKeyBytes)
+        private static RsaKeyParameters ParsePrivateKeyPemToPrivateKeyParameters(byte[] privateKeyBytes)
         {
             return (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
         }
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
             if (msgBytes == null) throw new ArgumentNullException(nameof(msgBytes));
 
-            RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyPemToPublicKeyParameters(privateKeyBytes);
+            RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyPemToPrivateKeyParameters(privateKeyBytes);
             return SignWithSHA256(rsaPrivateKeyParams, msgBytes);
         }
 
@@ -181,7 +181,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
             if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
 
-            RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyPemToPublicKeyParameters(privateKeyBytes);
+            RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyPemToPrivateKeyParameters(privateKeyBytes);
             return DecryptWithECB(rsaPrivateKeyParams, cipherBytes, paddingMode);
         }
 
