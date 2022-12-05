@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("support_debuger_first")]
                 [System.Text.Json.Serialization.JsonPropertyName("support_debuger_first")]
-                public bool? IsSupportDebugerFirst { get; set; }
+                public bool? IsSupportDebuggerFirst { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否支持按体验成员灰度。
