@@ -1,3 +1,5 @@
-﻿{
-    "gray_percentage": 1
+{
+    "gray_percentage": 1,
+    "support_debuger_first": true,
+    "support_experiencer_first": true
 }
