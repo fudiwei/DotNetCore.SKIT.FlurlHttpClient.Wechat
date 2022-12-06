@@ -749,6 +749,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.14.2
+
+    -   **变更**：升级公共组件至 v2.6.0。
+
+    -   **修复**：修复发送应用消息接口模型参数缺失问题。（_via_ [Gitee #I64NYJ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I64NYJ)）
+
 -   Release 2.14.1
 
     -   **修复**：修复更新模版卡片消息接口模型参数缺失问题。（_via_ [Gitee #I64O6T](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I64O6T)）
