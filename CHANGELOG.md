@@ -165,6 +165,8 @@
 
     -   **变更**：调整 `SHA1Utility`、`HMACUtility` 工具类的计算字节数组哈希值方法的返回值类型。
 
+    -   **变更**：升级公共组件至 v2.5.0。
+
 -   Release 2.9.0
 
     -   **新增**：新增请求响应模型类型推断辅助接口 `IInferable`。（_via_ [GitHub #21](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/21)）
@@ -181,17 +183,17 @@
 
 -   Release 2.8.2
 
-    -   **修复**：升级并修复由公共组件（v2.3.2）引发的问题。
+    -   **变更**：升级公共组件至 v2.3.3。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
 
 -   Release 2.8.1
 
-    -   **修复**：升级并修复由公共组件（v2.3.0 - v2.3.1）引发的问题。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
+    -   **变更**：升级公共组件至 v2.3.2。
 
 -   Release 2.8.0
 
     -   **变更**：随官方标记永久图文素材相关接口或字段为废弃。
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.3.1。
 
     -   **修复**：修复小程序交易投诉处理回调通知事件模型的定义错误。
 
@@ -201,7 +203,7 @@
 
     -   **新增**：随官方更新生成自定义交易组件上传图片相关接口模型。（_via_ [Gitee #I4RONZ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4RONZ)）
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.2.0。
 
 -   Release 2.6.1
 
@@ -227,7 +229,7 @@
 
     -   **新增**：新增生成参数化 URL 的扩展方法。
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.1.1。
 
 -   Release 2.3.0
 
@@ -261,7 +263,7 @@
 
     -   **新增**：适配 .NET 6.0。
 
-    -   **变更**：升级核心库。
+    -   **变更**：移除核心库依赖，引入公共组件。
 
 -   Release 1.12.0
 
@@ -457,6 +459,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.15.1
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography`（即原 `Portable.BouncyCastle`）至 v2.0.0。
+
+    -   **变更**：升级公共组件至 v2.6.0。
+
 -   Release 2.15.0
 
     -   **新增**：随官方更新商家转账到零钱相关接口模型。
@@ -519,6 +527,8 @@
 
     -   **新增**：随官方更新消费者投诉相关接口模型。
 
+    -   **变更**：升级公共组件至 v2.5.0。
+
 -   Release 2.7.0
 
     -   **新增**：新增小微商户进件相关接口。
@@ -531,13 +541,13 @@
 
 -   Release 2.5.2
 
-    -   **修复**：升级并修复由公共组件（v2.3.2）引发的问题。
+    -   **变更**：升级公共组件至 v2.3.3。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
 
 -   Release 2.5.1
 
     -   **新增**：调整 RSA 工具类使之支持多种填充方式。
 
-    -   **修复**：升级并修复由公共组件（v2.3.0 - v2.3.1）引发的问题。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
+    -   **变更**：升级公共组件至 v2.3.2。
 
 -   Release 2.5.0
 
@@ -547,13 +557,13 @@
 
     -   **新增**：随官方更新联行号查询相关接口模型。
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.3.1。
 
     -   **修复**：修复电商收付通二级商户进件接口的请求模型定义错误。
 
 -   Release 2.4.0
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.2.0。
 
     -   **变更**：重命名部分与证书有关的参数名，涉及到变化的类有 `WechatTenpayClientOptions`、`WechatTenpayClient`、`WechatTenpayRequest`、`WechatTenpayResponse`。
 
@@ -567,7 +577,7 @@
 
     -   **新增**：新增银行组件相关接口。
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.1.1。
 
 -   Release 2.2.2
 
@@ -617,7 +627,7 @@
 
 -   Release 2.0.1
 
-    -   **变更**：升级外部依赖库 `Portable.BouncyCastle`。
+    -   **变更**：升级依赖 `Portable.BouncyCastle` 至 v1.9.0。
 
     -   **修复**：修复查询代金券相关接口的响应模型定义错误。（_via_ [Gitee #I4HRYL](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4HRYL)）
 
@@ -627,7 +637,7 @@
 
     -   **新增**：适配 .NET 6.0。
 
-    -   **变更**：升级核心库。
+    -   **变更**：移除核心库依赖，引入公共组件。
 
 -   Release 1.8.2
 
@@ -855,7 +865,7 @@
 
     -   **新增**：随官方更新微信客服相关接口模型。
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.5.0。
 
     -   **变更**：调整 `SHA1Utility` 工具类的计算字节数组哈希值方法的返回值类型。
 
@@ -865,15 +875,15 @@
 
 -   Release 2.6.2
 
-    -   **修复**：升级并修复由公共组件（v2.3.2）引发的问题。
+    -   **变更**：升级公共组件至 v2.3.3。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
 
 -   Release 2.6.1
 
-    -   **修复**：升级并修复由公共组件（v2.3.0 - v2.3.1）引发的问题。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
+    -   **变更**：升级公共组件至 v2.3.2。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
 
 -   Release 2.6.0
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.3.1。
 
     -   **修复**：修复自建应用审批回调通知事件模型的定义错误。
 
@@ -883,7 +893,7 @@
 
 -   Release 2.5.0
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.2.0。
 
 -   Release 2.4.0
 
@@ -907,7 +917,7 @@
 
     -   **新增**：新增生成参数化 URL 的扩展方法。
 
-    -   **变更**：升级公共组件。
+    -   **变更**：升级公共组件至 v2.1.1。
 
     -   **变更**：重命名生成 JS-SDK 客户端签名参数的扩展方法。
 
@@ -935,7 +945,7 @@
 
     -   **新增**：适配 .NET 6.0。
 
-    -   **变更**：升级核心库。
+    -   **变更**：移除核心库依赖，引入公共组件。
 
 -   Release 1.4.0
 
