@@ -33,6 +33,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.21.1
+
+    -   **修复**：修复第三方平台小程序分阶段发布接口模型参数缺失问题。（_via_ [GitHub #73](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/74)）
+
+    -   **变更**：升级公共组件至 v2.6.0。
+
 -   Release 2.21.0
 
     -   **新增**：新增第三方平台申请设置订单页信息、获取订单页信息接口。
