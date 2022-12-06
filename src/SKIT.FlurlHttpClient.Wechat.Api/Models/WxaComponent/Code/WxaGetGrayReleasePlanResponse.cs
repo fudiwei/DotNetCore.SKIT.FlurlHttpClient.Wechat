@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxa/getgrayreleaseplan 接口的响应。</para>
@@ -29,6 +29,20 @@
                 [Newtonsoft.Json.JsonProperty("create_timestamp")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_timestamp")]
                 public long CreateTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否支持按项目成员灰度。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("support_debuger_first")]
+                [System.Text.Json.Serialization.JsonPropertyName("support_debuger_first")]
+                public bool? IsSupportDebuggerFirst { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否支持按体验成员灰度。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("support_experiencer_first")]
+                [System.Text.Json.Serialization.JsonPropertyName("support_experiencer_first")]
+                public bool? IsSupportExperiencerFirst { get; set; }
             }
         }
 
