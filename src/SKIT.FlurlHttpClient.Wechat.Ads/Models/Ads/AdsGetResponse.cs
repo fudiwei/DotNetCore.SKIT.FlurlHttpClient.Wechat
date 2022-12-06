@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [GET] /ads/get 接口的响应。</para>
@@ -90,6 +90,10 @@
                         [System.Text.Json.Serialization.JsonPropertyName("created_time")]
                         public long CreateTimestamp { get; set; }
                     }
+
+                    public class Pagination : Abstractions.CommonPagination
+                    {
+                    }
                 }
 
                 /// <summary>
@@ -104,7 +108,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_info")]
-                public CommonPagination Pagination { get; set; } = default!;
+                public Types.Pagination Pagination { get; set; } = default!;
             }
         }
 

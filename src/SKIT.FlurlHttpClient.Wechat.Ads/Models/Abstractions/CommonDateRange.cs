@@ -1,6 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models.Abstractions
 {
-    public sealed class CommonDateRange
+    public abstract class CommonDateRange
     {
         /// <summary>
         /// 获取或设置开始日期字符串（格式：yyyy-MM-dd）。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads
+namespace SKIT.FlurlHttpClient.Wechat.Ads
 {
     /// <summary>
     /// 微信广告平台 API 请求的基类。
@@ -21,7 +21,7 @@
 
         /// <summary>
         /// 获取或设置微信广告平台的版本号。
-        /// <para>默认值：v1.0</para>
+        /// <para>默认值："v1.0"</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

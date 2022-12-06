@@ -1,16 +1,23 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [GET] /daily_reports/get 接口的请求。</para>
     /// </summary>
     public class DailyReportsGetRequest : WechatAdsRequest
     {
+        public static class Types
+        {
+            public class DateRange : Abstractions.CommonDateRange
+            {
+            }
+        }
+
         /// <summary>
         /// 获取或设置时间范围。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public CommonDateRange DateRange { get; set; } = new CommonDateRange();
+        public Types.DateRange DateRange { get; set; } = new Types.DateRange();
 
         /// <summary>
         /// 获取或设置报表类型。

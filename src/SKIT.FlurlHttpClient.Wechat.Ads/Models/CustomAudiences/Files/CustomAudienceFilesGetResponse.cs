@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
@@ -101,6 +101,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
                         public DateTimeOffset CreateTime { get; set; }
                     }
+
+                    public class Pagination : Abstractions.CommonPagination
+                    {
+                    }
                 }
 
                 /// <summary>
@@ -115,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_info")]
-                public CommonPagination Pagination { get; set; } = default!;
+                public Types.Pagination Pagination { get; set; } = default!;
             }
         }
 

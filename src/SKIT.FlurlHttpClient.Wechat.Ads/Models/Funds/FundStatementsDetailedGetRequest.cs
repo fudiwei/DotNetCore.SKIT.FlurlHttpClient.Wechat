@@ -1,16 +1,23 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
     /// <summary>
     /// <para>表示 [GET] /fund_statements_detailed/get 接口的请求。</para>
     /// </summary>
     public class FundStatementsDetailedGetRequest : WechatAdsRequest
     {
+        public static class Types
+        {
+            public class DateRange : Abstractions.CommonDateRange
+            {
+            }
+        }
+
         /// <summary>
         /// 获取或设置时间范围。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public CommonDateRange DateRange { get; set; } = new CommonDateRange();
+        public Types.DateRange DateRange { get; set; } = new Types.DateRange();
 
         /// <summary>
         /// 获取或设置交易类型。
@@ -35,7 +42,7 @@
 
         /// <summary>
         /// 获取或设置微信广告平台的版本号。
-        /// <para>默认值：v1.1</para>
+        /// <para>默认值："v1.1"</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

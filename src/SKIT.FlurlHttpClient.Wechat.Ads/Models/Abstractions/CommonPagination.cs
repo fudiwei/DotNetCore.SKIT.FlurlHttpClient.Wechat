@@ -1,6 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models.Abstractions
 {
-    public sealed class CommonPagination
+    public abstract class CommonPagination
     {
         /// <summary>
         /// 获取或设置总数量。

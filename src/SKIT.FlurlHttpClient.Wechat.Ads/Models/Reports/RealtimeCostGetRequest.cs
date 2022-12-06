@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
@@ -7,6 +7,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
     /// </summary>
     public class RealtimeCostGetRequest : WechatAdsRequest
     {
+        public static class Types
+        {
+            public class Filter : Abstractions.CommonFilter
+            {
+            }
+        }
+
         /// <summary>
         /// 获取或设置查询日期字符串（格式：yyyy-MM-dd）。
         /// </summary>
@@ -16,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 
         /// <summary>
         /// 获取或设置类型级别。
-        /// <para>默认值：ADGROUP</para>
+        /// <para>默认值："ADGROUP"</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
@@ -27,6 +34,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<CommonFilter>? Filters { get; set; }
+        public IList<Types.Filter>? Filters { get; set; }
     }
 }

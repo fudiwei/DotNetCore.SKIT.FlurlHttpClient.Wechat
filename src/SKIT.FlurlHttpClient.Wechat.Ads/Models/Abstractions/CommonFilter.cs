@@ -1,6 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
+namespace SKIT.FlurlHttpClient.Wechat.Ads.Models.Abstractions
 {
-    public sealed class CommonFilter
+    public abstract class CommonFilter
     {
         public const string OPERATOR_EQUALS = "EQUALS";
         public const string OPERATOR_CONTAINS = "CONTAINS";
@@ -18,7 +18,7 @@
 
         /// <summary>
         /// 获取或设置操作符。
-        /// <para>默认值：EQUALS</para>
+        /// <para>默认值："EQUALS"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("operator")]
         [System.Text.Json.Serialization.JsonPropertyName("operator")]

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
 {
@@ -7,6 +7,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
     /// </summary>
     public class AdGroupsGetRequest : WechatAdsRequest
     {
+        public static class Types
+        {
+            public class Filter : Abstractions.CommonFilter
+            {
+            }
+        }
+
         /// <summary>
         /// 获取或设置广告组 ID。
         /// </summary>
@@ -19,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public IList<CommonFilter>? Filters { get; set; }
+        public IList<Types.Filter>? Filters { get; set; }
 
         /// <summary>
         /// 获取或设置页大小。
