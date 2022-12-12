@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /payroll-card/transfer-batches 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class CreatePayrollCardTransferBatchRequest : WechatTenpayRequest
     {
         public static class Types

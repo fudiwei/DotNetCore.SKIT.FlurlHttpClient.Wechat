@@ -3,6 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /payroll-card/tokens 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class CreatePayrollCardTokenRequest : WechatTenpayRequest
     {
         /// <summary>
