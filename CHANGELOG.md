@@ -469,6 +469,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.15.2
+
+    -   **修复**：修复部分包含敏感信息字段的接口模型不能正确触发自动加解密的问题。（_via_ [GitHub #76](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/76)）
+
 -   Release 2.15.1
 
     -   **变更**：升级依赖 `BouncyCastle.Cryptography`（即原 `Portable.BouncyCastle`）至 v2.0.0。
