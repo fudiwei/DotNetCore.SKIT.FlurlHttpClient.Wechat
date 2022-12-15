@@ -76,14 +76,14 @@ else
 
 -   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Advanced_ModelDefinition.md)
 
+-   [如何解析回调通知事件？](./Advanced_EventDataDeserialization.md)
+
+-   [如何生成 JS-SDK 所需的参数及签名？](./Advanced_Parameters.md)
+
+-   [如何扩展额外的 API？](./Advanced_Extensions.md)
+
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 
 -   [如何指定 JSON 序列化器？](./Advanced_JsonSerializer.md)
 
 -   [如何使用拦截器？](./Advanced_Interceptor.md)
-
--   [如何解析回调通知事件？](./Advanced_EventDataDeserialization.md)
-
--   [如何生成 JS-SDK 初始化时所需的参数及签名？](./Advanced_Parameters.md)
-
--   [如何扩展额外的 API？](./Advanced_Extensions.md)
