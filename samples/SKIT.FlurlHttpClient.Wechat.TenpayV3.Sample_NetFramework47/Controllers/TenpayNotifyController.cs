@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 {
     [RoutePrefix("api/notify")]
     public class TenpayNotifyController : ApiController
@@ -42,6 +42,25 @@
                     //   后续如何解密并反序列化，请参阅《开发文档 / 高级技巧 / 如何解密回调通知事件中的敏感数据？》。
 
                     return Json(new { code = "FAIL", message = "验签失败" });
+                }
+
+                var callbackModel = client.DeserializeEvent(content);
+                var eventType = callbackModel.EventType?.ToUpper();
+                switch (eventType)
+                {
+                    case "TRANSACTION.SUCCESS":
+                        {
+                            var callbackResource = client.DecryptEventResource<Events.TransactionResource>(callbackModel);
+                            Debug.WriteLine("接收到微信支付推送的订单支付成功通知，商户订单号：{0}", callbackResource.OutTradeNumber);
+                            // 后续处理略
+                        }
+                        break;
+
+                    default:
+                        {
+                            // 其他情况略
+                        }
+                        break;
                 }
 
                 return Json(new { code = "SUCCESS", message = "成功" });

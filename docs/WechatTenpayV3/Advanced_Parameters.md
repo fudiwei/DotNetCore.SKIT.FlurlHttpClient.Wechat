@@ -1,4 +1,4 @@
-﻿## 如何生成客户端（JSAPI、小程序、App 等）所需的参数及二次签名？
+﻿## 如何生成客户端（JSAPI、App、小程序等）所需的参数及二次签名？
 
 ---
 
@@ -32,6 +32,7 @@ var request = new Models.CreatePayTransactionJsapiRequest()
     }
 };
 var response = await client.ExecuteCreatePayTransactionJsapiAsync(request);
+/* 下面的参数字典可直接以 JSON 格式返回给客户端，客户端反序列化后再原样传递给 WeixinJSBridge.invoke('getBrandWCPayRequest') 方法即可 */
 var paramMap = client.GenerateParametersForJsapiPayRequest(request.AppId, response.PrepayId);
 ```
 

@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -58,20 +58,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Controllers
             _logger.LogInformation("接收到微信推送的数据：{0}", content);
 
             var client = _wechatApiHttpClientFactory.Create(appId);
-            var msgType = client.DeserializeEventFromXml(content).MessageType;
+            var msgType = client.DeserializeEventFromXml(content).MessageType?.ToUpper();
             switch (msgType)
             {
-                case "text":
+                case "TEXT":
                     {
                         var eventModel = client.DeserializeEventFromXml<TextMessageEvent>(content);
-                        // Do Something
+                        _logger.LogInformation("接收到微信推送的文本消息，消息内容：{0}", eventModel.Content);
+                        // 后续处理略
                     }
                     break;
 
-                case "image":
+                case "IMAGE":
                     {
                         var eventModel = client.DeserializeEventFromXml<ImageMessageEvent>(content);
-                        // Do Something
+                        _logger.LogInformation("接收到微信推送的图片消息，图片链接：{0}", eventModel.PictureUrl);
+                        // 后续处理略
+                    }
+                    break;
+
+                default:
+                    {
+                        // 其他情况略
                     }
                     break;
             }

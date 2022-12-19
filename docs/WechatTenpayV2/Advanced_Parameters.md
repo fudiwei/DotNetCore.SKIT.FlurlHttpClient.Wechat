@@ -1,4 +1,4 @@
-﻿## 如何生成客户端（JS-SDK、小程序、App 等）所需的参数及签名？
+﻿## 如何生成客户端（JS-SDK、App、小程序等）所需的参数及签名？
 
 ---
 
@@ -27,6 +27,7 @@ var request = new Models.CreatePayUnifiedOrderRequest()
     SignType = "HMAC-SHA256"
 };
 var response = await client.ExecuteCreatePayUnifiedOrderAsync(request);
+/* 下面的参数字典可直接以 JSON 格式返回给客户端，客户端反序列化后再原样传递给 wx.chooseWXPay() 方法即可 */
 var paramMap = client.GenerateParametersForJsapiGetBrandPayRequest(request.AppId, response.PrepayId, request.SignType);
 ```
 

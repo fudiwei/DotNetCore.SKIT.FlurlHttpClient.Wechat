@@ -106,7 +106,7 @@ else
 
 -   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
 
--   [如何生成客户端（JSAPI、小程序、App 等）所需的参数及二次签名？](./Advanced_Parameters.md)
+-   [如何生成客户端（JSAPI、App、小程序等）所需的参数及二次签名？](./Advanced_Parameters.md)
 
 -   [如何接入国密算法？](./Advanced_SMAlgorithm.md)
 

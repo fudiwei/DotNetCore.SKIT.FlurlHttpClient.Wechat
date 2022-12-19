@@ -94,7 +94,7 @@ else
 
 -   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
 
--   [如何生成客户端（JSAPI、小程序、App 等）所需的参数及签名？](./Advanced_Parameters.md)
+-   [如何生成客户端（JSAPI、App、小程序等）所需的参数及签名？](./Advanced_Parameters.md)
 
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 

@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -46,11 +46,30 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
             if (!valid)
             {
                 // NOTICE:
-                //   需提前注入 CertificateManager、并添加平台证书，才可以使用扩展方法执行验签操作。
+                //   需提前注入 CertificateManager、并下载平台证书，才可以使用扩展方法执行验签操作。
                 //   有关 CertificateManager 的用法请参阅《开发文档 / 高级技巧 / 如何验证回调通知事件签名？》。
                 //   后续如何解密并反序列化，请参阅《开发文档 / 高级技巧 / 如何解密回调通知事件中的敏感数据？》。
 
                 return new JsonResult(new { code = "FAIL", message = "验签失败" });
+            }
+
+            var callbackModel = client.DeserializeEvent(content);
+            var eventType = callbackModel.EventType?.ToUpper();
+            switch (eventType)
+            {
+                case "TRANSACTION.SUCCESS":
+                    {
+                        var callbackResource = client.DecryptEventResource<Events.TransactionResource>(callbackModel);
+                        _logger.LogInformation("接收到微信支付推送的订单支付成功通知，商户订单号：{0}", callbackResource.OutTradeNumber);
+                        // 后续处理略
+                    }
+                    break;
+
+                default:
+                    {
+                        // 其他情况略
+                    }
+                    break;
             }
 
             return new JsonResult(new { code = "SUCCESS", message = "成功" });
