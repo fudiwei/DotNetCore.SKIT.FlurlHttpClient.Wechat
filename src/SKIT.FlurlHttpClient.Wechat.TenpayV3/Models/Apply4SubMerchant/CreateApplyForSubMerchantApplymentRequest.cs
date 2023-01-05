@@ -983,33 +983,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
             public class BankAccount
             {
-                public static class Types
-                {
-                    public class AccountCertificate
-                    {
-                        /// <summary>
-                        /// 获取或设置结算证明函图片媒体文件标识。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("settlement_cert_pic")]
-                        [System.Text.Json.Serialization.JsonPropertyName("settlement_cert_pic")]
-                        public string SettlementCertificatePictureMediaId { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置结算证明函图片媒体文件标识。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("relation_cert_pic")]
-                        [System.Text.Json.Serialization.JsonPropertyName("relation_cert_pic")]
-                        public string RelationCertificatePictureMediaId { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置其他补充证明图片媒体文件标识。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("other_cert_pics")]
-                        [System.Text.Json.Serialization.JsonPropertyName("other_cert_pics")]
-                        public IList<string> OtherCertificatePictureMediaIdList { get; set; } = new List<string>();
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置账户类型。
                 /// </summary>
@@ -1062,13 +1035,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("bank_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
                 public string? BankBranchName { get; set; }
-
-                /// <summary>
-                /// 获取或设置账号证明材料信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("account_cert_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("account_cert_info")]
-                public Types.AccountCertificate? AccountCertificate { get; set; }
             }
 
             public class Addition

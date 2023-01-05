@@ -1,11 +1,6 @@
-﻿{
+{
     "account_info": {
         "account_bank": "工商银行",
-        "account_cert_info": {
-            "other_cert_pics": [],
-            "relation_cert_pic": "47ZC6GC-vnrbEny_Ie_An5-tCpqxucuxi-vByf3Gjm7KEIUv0OF4wFNIO4kqg05InE4d2I6_H7I4",
-            "settlement_cert_pic": "47ZC6GC-vnrbEny_Ie_An5-tCpqxucuxi-vByf3Gjm7KEIUv0OF4wFNIO4kqg05InE4d2I6_H7I4"
-        },
         "account_name": "AOZdYGISxo4y44/UgZ69bdu9X+tfMUJ9dl+LetjM45/zMbrYu+wWZ8gn4CTdo+D/m9MrPg+V4sm73oxqdQu/hj7aWyDl45IL9DBd+Z0zZXkw==",
         "account_number": "d+xT+MQCvrLHUVDWv/8MR/dB7TkXM2YYZlokmXzFsWs35NXUot7C0NcxIrUF5FnxqCJHkNgKtxa6RxEYyba1+VBRLnqKGYQE8ZRGYoeorwC+w==",
         "bank_account_type": "75",
