@@ -40,7 +40,7 @@ var options = new WechatWorkClientOptions()
 {
     CorpId = "企业微信 CorpId",
     AgentId = "企业微信应用的 AgentId",
-    AgentSecret = "企业微信应用的 AgentId"
+    AgentSecret = "企业微信应用的 Secret"
 };
 var client = new WechatWorkClient(options);
 ```
