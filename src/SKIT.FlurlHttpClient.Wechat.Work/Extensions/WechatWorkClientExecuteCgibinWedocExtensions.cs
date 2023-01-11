@@ -189,6 +189,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinWedocModifyDocumentSafeSettingResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/document/batch_update 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97626 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocDocumentBatchUpdateResponse> ExecuteCgibinWedocDocumentBatchUpdateAsync(this WechatWorkClient client, Models.CgibinWedocDocumentBatchUpdateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "document", "batch_update")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedocDocumentBatchUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region Form
@@ -290,6 +310,68 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinWedocGetFormAnswerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region SpreadSheet
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/spreadsheet/batch_update 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97628 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSpreadSheetBatchUpdateResponse> ExecuteCgibinWedocSpreadSheetBatchUpdateAsync(this WechatWorkClient client, Models.CgibinWedocSpreadSheetBatchUpdateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "spreadsheet", "batch_update")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedocSpreadSheetBatchUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/spreadsheet/get_sheet_properties 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97711 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSpreadSheetGetSheetPropertiesResponse> ExecuteCgibinWedocSpreadSheetGetSheetPropertiesAsync(this WechatWorkClient client, Models.CgibinWedocSpreadSheetGetSheetPropertiesRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "spreadsheet", "get_sheet_properties")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedocSpreadSheetGetSheetPropertiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/spreadsheet/get_sheet_range_data 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97661 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSpreadSheetGetSheetRangeDataResponse> ExecuteCgibinWedocSpreadSheetGetSheetRangeDataAsync(this WechatWorkClient client, Models.CgibinWedocSpreadSheetGetSheetRangeDataRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "spreadsheet", "get_sheet_range_data")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedocSpreadSheetGetSheetRangeDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
