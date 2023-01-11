@@ -1,4 +1,4 @@
-﻿{
+{
     "spaceid": "SPACEID",
     "fatherid": "FATHERID",
     "form_info": {
@@ -29,11 +29,11 @@
         "form_setting": {
             "fill_out_auth": 0,
             "fill_in_range": {
-                "userids": ["USER_1", "USER_2", "USER_3"],
-                "departmentids": [10001, 10002, 10003]
+                "userids": [ "USER_1", "USER_2", "USER_3" ],
+                "departmentids": [ 10001, 10002, 10003 ]
             },
             "setting_manager_range": {
-                "userids": ["USER_4", "USER_5", "USER_6"]
+                "userids": [ "USER_4", "USER_5", "USER_6" ]
             },
             "timed_repeat_info": {
                 "enable": true,

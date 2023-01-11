@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/wedoc/create_collect 接口的响应。</para>
+    /// <para>表示 [POST] /cgi-bin/wedoc/create_form 接口的响应。</para>
     /// </summary>
-    public class CgibinWedocCreateCollectResponse : WechatWorkResponse
+    public class CgibinWedocCreateFormResponse : WechatWorkResponse
     {
         /// <summary>
         /// 获取或设置收集表 ID。

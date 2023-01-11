@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/wedoc/create_collect 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/wedoc/create_form 接口的请求。</para>
     /// </summary>
-    public class CgibinWedocCreateCollectRequest : WechatWorkRequest
+    public class CgibinWedocCreateFormRequest : WechatWorkRequest
     {
         public static class Types
         {

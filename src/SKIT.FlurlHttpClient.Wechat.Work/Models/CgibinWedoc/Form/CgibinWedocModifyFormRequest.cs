@@ -1,20 +1,19 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/wedoc/modify_collect 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/wedoc/modify_form 接口的请求。</para>
     /// </summary>
-    public class CgibinWedocModifyCollectRequest : WechatWorkRequest
+    public class CgibinWedocModifyFormRequest : WechatWorkRequest
     {
         public static class Types
         {
             public class Form
             {
-
                 public static class Types
                 {
-                    public class QuestionList : CgibinWedocCreateCollectRequest.Types.Form.Types.QuestionList
+                    public class QuestionList : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionList
                     {
                         /// <summary>
                         /// 获取或设置问题列表。
@@ -24,11 +23,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public new IList<QuestionItem> Items { get; set; } = new List<QuestionItem>();
                     }
 
-                    public class QuestionItem : CgibinWedocCreateCollectRequest.Types.Form.Types.QuestionItem
+                    public class QuestionItem : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem
                     {
                         public static new class Types
                         {
-                            public class Option : CgibinWedocCreateCollectRequest.Types.Form.Types.QuestionItem.Types.Option
+                            public class Option : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.Option
                             {
                             }
                         }
@@ -41,19 +40,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public new IList<Types.Option>? OptionList { get; set; }
                     }
 
-                    public class Settings : CgibinWedocCreateCollectRequest.Types.Form.Types.Settings
+                    public class Settings : CgibinWedocCreateFormRequest.Types.Form.Types.Settings
                     {
                         public static new class Types
                         {
-                            public class FillInRange : CgibinWedocCreateCollectRequest.Types.Form.Types.Settings.Types.FillInRange
+                            public class FillInRange : CgibinWedocCreateFormRequest.Types.Form.Types.Settings.Types.FillInRange
                             {
                             }
 
-                            public class ManagerRange : CgibinWedocCreateCollectRequest.Types.Form.Types.Settings.Types.ManagerRange
+                            public class ManagerRange : CgibinWedocCreateFormRequest.Types.Form.Types.Settings.Types.ManagerRange
                             {
                             }
 
-                            public class Repetition : CgibinWedocCreateCollectRequest.Types.Form.Types.Settings.Types.Repetition
+                            public class Repetition : CgibinWedocCreateFormRequest.Types.Form.Types.Settings.Types.Repetition
                             {
                             }
                         }

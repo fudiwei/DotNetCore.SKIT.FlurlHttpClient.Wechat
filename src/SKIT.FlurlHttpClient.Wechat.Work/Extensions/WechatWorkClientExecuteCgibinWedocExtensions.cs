@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -191,45 +191,45 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
-        #region Collect
+        #region Form
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/wedoc/create_collect 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/create_form 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/97462 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinWedocCreateCollectResponse> ExecuteCgibinWedocCreateCollectAsync(this WechatWorkClient client, Models.CgibinWedocCreateCollectRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinWedocCreateFormResponse> ExecuteCgibinWedocCreateFormAsync(this WechatWorkClient client, Models.CgibinWedocCreateFormRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "create_collect")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "create_form")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinWedocCreateCollectResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedocCreateFormResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/wedoc/modify_collect 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/modify_form 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/97462 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinWedocModifyCollectResponse> ExecuteCgibinWedocModifyCollectAsync(this WechatWorkClient client, Models.CgibinWedocModifyCollectRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinWedocModifyFormResponse> ExecuteCgibinWedocModifyFormAsync(this WechatWorkClient client, Models.CgibinWedocModifyFormRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "modify_collect")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "modify_form")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinWedocModifyCollectResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedocModifyFormResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
