@@ -72,6 +72,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         #region Corp
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/corp/gettoken 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93359 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupCorpGetTokenResponse> ExecuteCgibinCorpGroupCorpGetTokenAsync(this WechatWorkClient client, Models.CgibinCorpGroupCorpGetTokenRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "corp", "gettoken")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCorpGetTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/corpgroup/corp/list_app_share_info 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93403 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93405 </para>
@@ -93,26 +113,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCorpListAppShareInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/corpgroup/corp/gettoken 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93359 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinCorpGroupCorpGetTokenResponse> ExecuteCgibinCorpGroupCorpGetTokenAsync(this WechatWorkClient client, Models.CgibinCorpGroupCorpGetTokenRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "corp", "gettoken")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCorpGetTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -213,6 +213,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCorpRemoveCorpResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/corpgroup/corp/get_chain_user_custom_id 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97441 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCorpGroupCorpGetChainUserCustomIdResponse> ExecuteCgibinCorpGroupCorpGetChainUserCustomIdAsync(this WechatWorkClient client, Models.CgibinCorpGroupCorpGetChainUserCustomIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corpgroup", "corp", "get_chain_user_custom_id")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGroupCorpGetChainUserCustomIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 

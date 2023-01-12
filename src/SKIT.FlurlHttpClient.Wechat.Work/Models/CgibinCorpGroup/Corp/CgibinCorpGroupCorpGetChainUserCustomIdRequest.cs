@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/corpgroup/corp/remove_corp 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/corpgroup/corp/get_chain_user_custom_id 接口的请求。</para>
     /// </summary>
-    public class CgibinCorpGroupCorpRemoveCorpRequest : WechatWorkRequest
+    public class CgibinCorpGroupCorpGetChainUserCustomIdRequest : WechatWorkRequest
     {
         /// <summary>
         /// 获取或设置上下游 ID。
@@ -17,13 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
-        public string? CorpId { get; set; }
+        public string CorpId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置未加入的企业 CorpId。
+        /// 获取或设置下级企业成员 UserId
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("pending_corpid")]
-        [System.Text.Json.Serialization.JsonPropertyName("pending_corpid")]
-        public string? PendingCorpId { get; set; }
+        [Newtonsoft.Json.JsonProperty("userid")]
+        [System.Text.Json.Serialization.JsonPropertyName("userid")]
+        public string UserId { get; set; } = string.Empty;
     }
 }

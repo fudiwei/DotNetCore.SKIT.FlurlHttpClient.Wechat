@@ -1,4 +1,4 @@
-﻿{
+{
     "chain_id": "xxxxxx",
     "contact_list": [
         {
@@ -9,7 +9,8 @@
                 {
                     "name": "张三",
                     "identity_type": 1,
-                    "mobile": "13000000001"
+                    "mobile": "13000000001",
+                    "user_custom_id": "100"
                 },
                 {
                     "name": "李四",

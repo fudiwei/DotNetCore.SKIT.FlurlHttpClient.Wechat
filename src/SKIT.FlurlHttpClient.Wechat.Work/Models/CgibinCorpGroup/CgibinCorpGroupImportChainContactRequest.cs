@@ -35,6 +35,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("mobile")]
                         [System.Text.Json.Serialization.JsonPropertyName("mobile")]
                         public string? MobileNumber { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置上下游用户自定义 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user_custom_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_custom_id")]
+                        public string? UserCustomId { get; set; }
                     }
                 }
 
