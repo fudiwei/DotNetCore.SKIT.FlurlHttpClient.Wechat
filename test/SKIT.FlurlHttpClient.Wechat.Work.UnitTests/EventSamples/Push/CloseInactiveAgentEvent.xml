@@ -1,0 +1,8 @@
+<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[FromUser]]></FromUserName>
+    <CreateTime>123456789</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[close_inactive_agent]]></Event>
+    <AgentID>1</AgentID>
+</xml>
