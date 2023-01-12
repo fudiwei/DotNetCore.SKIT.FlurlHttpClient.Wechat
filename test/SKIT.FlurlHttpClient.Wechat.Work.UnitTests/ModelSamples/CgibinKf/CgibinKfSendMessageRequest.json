@@ -1,4 +1,4 @@
-﻿{
+{
     "touser": "EXTERNAL_USERID",
     "open_kfid": "OPEN_KFID",
     "msgid": "MSGID",
@@ -65,7 +65,8 @@
             {
                 "type": "text",
                 "text": {
-                    "content": "纯文本，支持\n换行"
+                    "content": "纯文本，支持\n换行",
+                    "no_newline": 0
                 }
             }
         ],

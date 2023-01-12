@@ -1,4 +1,4 @@
-﻿{
+{
     "code": "CODE",
     "msgid": "MSG_ID",
     "msgtype": "MSG_TYPE",
@@ -35,6 +35,13 @@
                     "appid": "wx123123123123123",
                     "pagepath": "pages/index?userid=zhangsan&orderid=123123123",
                     "content": "点击打开小程序查询更多"
+                }
+            },
+            {
+                "type": "text",
+                "text": {
+                    "content": "纯文本，支持\n换行",
+                    "no_newline": 0
                 }
             }
         ],

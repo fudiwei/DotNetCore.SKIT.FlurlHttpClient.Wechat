@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "statistic_list": [
@@ -19,7 +19,8 @@
                 "upgrade_service_member_invite_cnt": 0,
                 "upgrade_service_member_customer_cnt": 0,
                 "upgrade_service_groupchat_invite_cnt": 0,
-                "upgrade_service_groupchat_customer_cnt": 0
+                "upgrade_service_groupchat_customer_cnt": 0,
+                "msg_rejected_customer_cnt": 1
             }
         }
     ]

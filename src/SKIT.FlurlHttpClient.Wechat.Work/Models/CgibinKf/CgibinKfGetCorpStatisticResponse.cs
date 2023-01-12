@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/kf/get_corp_statistic 接口的响应。</para>
@@ -40,6 +40,13 @@
                         [Newtonsoft.Json.JsonProperty("upgrade_service_customer_cnt")]
                         [System.Text.Json.Serialization.JsonPropertyName("upgrade_service_customer_cnt")]
                         public int UpgradeServiceCustomerCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置被拒收消息的客户数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("msg_rejected_customer_cnt")]
+                        [System.Text.Json.Serialization.JsonPropertyName("msg_rejected_customer_cnt")]
+                        public int MessageRejectedCustomerCount { get; set; }
 
                         /// <summary>
                         /// 获取或设置智能回复会话数。

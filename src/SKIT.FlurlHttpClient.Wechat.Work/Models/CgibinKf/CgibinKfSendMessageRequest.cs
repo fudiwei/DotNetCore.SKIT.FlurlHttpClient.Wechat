@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -107,6 +107,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [Newtonsoft.Json.JsonProperty("content")]
                                 [System.Text.Json.Serialization.JsonPropertyName("content")]
                                 public string Content { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置内容后面是否不换行。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("no_newline")]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonPropertyName("no_newline")]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                                public bool? IsNoNewline { get; set; }
                             }
 
                             public class Click

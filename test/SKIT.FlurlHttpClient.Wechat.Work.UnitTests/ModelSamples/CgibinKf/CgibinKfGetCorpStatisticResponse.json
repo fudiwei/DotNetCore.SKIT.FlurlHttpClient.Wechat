@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "statistic_list": [
@@ -11,7 +11,8 @@
                 "upgrade_service_customer_cnt": 0,
                 "ai_session_reply_cnt": 1,
                 "ai_transfer_rate": 1,
-                "ai_knowledge_hit_rate": 0
+                "ai_knowledge_hit_rate": 0,
+                "msg_rejected_customer_cnt": 1
             }
         },
         {
@@ -23,7 +24,8 @@
                 "upgrade_service_customer_cnt": 0,
                 "ai_session_reply_cnt": 1,
                 "ai_transfer_rate": 1,
-                "ai_knowledge_hit_rate": 0
+                "ai_knowledge_hit_rate": 0,
+                "msg_rejected_customer_cnt": 1
             }
         }
     ]
