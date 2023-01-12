@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/meeting/get_info 接口的响应。</para>
@@ -26,6 +26,34 @@
                         [Newtonsoft.Json.JsonProperty("status")]
                         [System.Text.Json.Serialization.JsonPropertyName("status")]
                         public int Status { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置首次加入会议时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("first_join_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("first_join_time")]
+                        public long? FirstJoinTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置最后一次离开会议时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("last_quit_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("last_quit_time")]
+                        public long? LastQuitTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置入会次数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("total_join_count")]
+                        [System.Text.Json.Serialization.JsonPropertyName("total_join_count")]
+                        public int TotalJoinCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置累计参会时长（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("cumulative_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("cumulative_time")]
+                        public int CumulativeTime { get; set; }
                     }
 
                     public class ExternalUser
@@ -43,6 +71,34 @@
                         [Newtonsoft.Json.JsonProperty("status")]
                         [System.Text.Json.Serialization.JsonPropertyName("status")]
                         public int Status { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置首次加入会议时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("first_join_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("first_join_time")]
+                        public long? FirstJoinTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置最后一次离开会议时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("last_quit_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("last_quit_time")]
+                        public long? LastQuitTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置入会次数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("total_join_count")]
+                        [System.Text.Json.Serialization.JsonPropertyName("total_join_count")]
+                        public int TotalJoinCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置累计参会时长（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("cumulative_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("cumulative_time")]
+                        public int CumulativeTime { get; set; }
                     }
 
                     public class Device
@@ -305,5 +361,19 @@
         [Newtonsoft.Json.JsonProperty("reminders")]
         [System.Text.Json.Serialization.JsonPropertyName("reminders")]
         public Types.Reminder? Reminder { get; set; }
+
+        /// <summary>
+        /// 获取或设置会议号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("meeting_code")]
+        [System.Text.Json.Serialization.JsonPropertyName("meeting_code")]
+        public string MeetingCode { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置会议链接。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("meeting_link")]
+        [System.Text.Json.Serialization.JsonPropertyName("meeting_link")]
+        public string MeetingLink { get; set; } = default!;
     }
 }

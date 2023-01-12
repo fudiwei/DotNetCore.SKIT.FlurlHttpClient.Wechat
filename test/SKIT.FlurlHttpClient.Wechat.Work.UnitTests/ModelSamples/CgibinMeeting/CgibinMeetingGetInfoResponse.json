@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "admin_userid": "zhangsan",
@@ -13,21 +13,37 @@
         "member": [
             {
                 "userid": "lisi",
-                "status": 1
+                "status": 1,
+                "first_join_time": 166666666,
+                "last_quit_time": 166666666,
+                "total_join_count": 5,
+                "cumulative_time": 300
             },
             {
                 "userid": "zhangsan",
-                "status": 2
+                "status": 2,
+                "first_join_time": 166666666,
+                "last_quit_time": 166666666,
+                "total_join_count": 5,
+                "cumulative_time": 300
             }
         ],
         "tmp_external_user": [
             {
                 "tmp_external_userid": "woabc",
-                "status": 3
+                "status": 3,
+                "first_join_time": 166666666,
+                "last_quit_time": 166666666,
+                "total_join_count": 5,
+                "cumulative_time": 300
             },
             {
                 "tmp_external_userid": "woefd",
-                "status": 4
+                "status": 4,
+                "first_join_time": 166666666,
+                "last_quit_time": 166666666,
+                "total_join_count": 5,
+                "cumulative_time": 300
             }
         ]
     },
@@ -40,10 +56,10 @@
         "allow_external_user": false,
         "enable_screen_watermark": false,
         "hosts": {
-            "userid": ["lisi", "wangwu"]
+            "userid": [ "lisi", "wangwu" ]
         },
         "ring_users": {
-            "userid": ["zhangsan", "lis"]
+            "userid": [ "zhangsan", "lis" ]
         }
     },
     "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
@@ -52,6 +68,8 @@
         "repeat_type": 0,
         "repeat_until": 1606976813,
         "repeat_interval": 1,
-        "remind_before": [5, 10]
-    }
+        "remind_before": [ 5, 10 ]
+    },
+    "meeting_code": "123456789",
+    "meeting_link": "https://wecomm.com/znigeot"
 }
