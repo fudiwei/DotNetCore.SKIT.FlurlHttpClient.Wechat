@@ -1,0 +1,29 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": true,
+    "next_cursor": "gejMjgLjgeigoejg",
+    "record_list": [
+        {
+            "time": 16666666666,
+            "userid": "zhangsan",
+            "operation": {
+                "type": 101,
+                "source": 401
+            },
+            "file_info": "1234567890.jpg"
+        },
+        {
+            "time": 16666666666,
+            "external_user": {
+                "type": 2,
+                "name": "xxx",
+                "corp_name": "十分科技"
+            },
+            "operation": {
+                "type": 113
+            },
+            "file_info": "通过zhangsan的链接下载了1234567890.jpg"
+        }
+    ]
+}
