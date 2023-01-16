@@ -1201,5 +1201,489 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.WxaUpdateShowWxaItemResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region AMS
+        #region AMS/Percentage
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/setdefaultamsinfo 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/percentage/SetShareRatio.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/percentage/SetCustomShareRatio.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSetDefaultAMSInfoResponse> ExecuteWxaSetDefaultAMSInfoAsync(this WechatApiClient client, Models.WxaSetDefaultAMSInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.AppId == null)
+                request.AppId = client.Credentials.AppId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "setdefaultamsinfo")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", request.Action);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaSetDefaultAMSInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/getdefaultamsinfo 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/percentage/GetShareRatio.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/percentage/GetCustomShareRatio.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetDefaultAMSInfoResponse> ExecuteWxaGetDefaultAMSInfoAsync(this WechatApiClient client, Models.WxaGetDefaultAMSInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.AppId == null)
+                request.AppId = client.Credentials.AppId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "getdefaultamsinfo")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", request.Action);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGetDefaultAMSInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region AMS/Open
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_check_can_open_publisher 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/open/AgencyCheckCanOpenPublisher.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyCheckCanOpenPublisherResponse> ExecuteWxaOperationAMSAgencyCheckCanOpenPublisherAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyCheckCanOpenPublisherRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_check_can_open_publisher");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyCheckCanOpenPublisherResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_create_publisher 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/open/AgencyCreatePublisher.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyCreatePublisherResponse> ExecuteWxaOperationAMSAgencyCreatePublisherAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyCreatePublisherRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_create_publisher");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyCreatePublisherResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region AMS/AdManagement
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_create_adunit 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/AgencyCreateAdunit.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyCreateAdUnitResponse> ExecuteWxaOperationAMSAgencyCreateAdUnitAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyCreateAdUnitRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_create_adunit");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyCreateAdUnitResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_update_adunit 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/AgencyUpdateAdunit.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyUpdateAdUnitResponse> ExecuteWxaOperationAMSAgencyUpdateAdUnitAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyUpdateAdUnitRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_update_adunit");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyUpdateAdUnitResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_tmpl_type 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/AgencyGetTmplType.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetTemplateTypeResponse> ExecuteWxaOperationAMSAgencyGetTemplateTypeAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetTemplateTypeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_tmpl_type");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetTemplateTypeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=get_agency_ad_unit_list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/GetAgencyTmplIdList.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSGetAgencyAdUnitListResponse> ExecuteWxaOperationAMSGetAgencyAdUnitListAsync(this WechatApiClient client, Models.WxaOperationAMSGetAgencyAdUnitListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "get_agency_ad_unit_list");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSGetAgencyAdUnitListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_set_cover_adpos_status 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/SetCoverAdposStatus.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencySetCoverAdPositionStatusResponse> ExecuteWxaOperationAMSAgencySetCoverAdPositionStatusAsync(this WechatApiClient client, Models.WxaOperationAMSAgencySetCoverAdPositionStatusRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_set_cover_adpos_status");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencySetCoverAdPositionStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_set_cover_adpos_scene 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/SetCoverAdposScene.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencySetCoverAdPositionSceneResponse> ExecuteWxaOperationAMSAgencySetCoverAdPositionSceneAsync(this WechatApiClient client, Models.WxaOperationAMSAgencySetCoverAdPositionSceneRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_set_cover_adpos_scene");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencySetCoverAdPositionSceneResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_cover_adpos_status 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/GetCoverAdposStatus.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetCoverAdPositionStatusResponse> ExecuteWxaOperationAMSAgencyGetCoverAdPositionStatusAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetCoverAdPositionStatusRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_cover_adpos_status");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetCoverAdPositionStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_cover_adpos_scene 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/GetCoverAdposScene.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetCoverAdPositionSceneResponse> ExecuteWxaOperationAMSAgencyGetCoverAdPositionSceneAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetCoverAdPositionSceneRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_cover_adpos_scene");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetCoverAdPositionSceneResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_adunit_list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/GetAdunitList.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetAdUnitListResponse> ExecuteWxaOperationAMSAgencyGetAdUnitListAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetAdUnitListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_adunit_list");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetAdUnitListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_adunit_code 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-mgnt/GetAdunitCode.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetAdUnitCodeResponse> ExecuteWxaOperationAMSAgencyGetAdUnitCodeAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetAdUnitCodeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_adunit_code");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetAdUnitCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region AMS/AdBlack
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_black_list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-black/GetBlackList.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetBlackListResponse> ExecuteWxaOperationAMSAgencyGetBlackListAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetBlackListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_black_list");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetBlackListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_set_black_list 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-black/SetBlackList.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencySetBlackListResponse> ExecuteWxaOperationAMSAgencySetBlackListAsync(this WechatApiClient client, Models.WxaOperationAMSAgencySetBlackListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_set_black_list");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencySetBlackListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_mp_amscategory_blacklist 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-black/GetAmsCategoryBlackList.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetMpAMSCategoryBlackListResponse> ExecuteWxaOperationAMSAgencyGetMpAMSCategoryBlackListAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetMpAMSCategoryBlackListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_mp_amscategory_blacklist");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetMpAMSCategoryBlackListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_set_mp_amscategory_blacklist 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-black/SetAmsCategoryBlackList.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencySetMpAMSCategoryBlackListResponse> ExecuteWxaOperationAMSAgencySetMpAMSCategoryBlackListAsync(this WechatApiClient client, Models.WxaOperationAMSAgencySetMpAMSCategoryBlackListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_set_mp_amscategory_blacklist");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencySetMpAMSCategoryBlackListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region AMS/AdData
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_adpos_genenral 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-data/GetAdposGenenral.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetAdPositionGenenralResponse> ExecuteWxaOperationAMSAgencyGetAdPositionGenenralAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetAdPositionGenenralRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_adpos_genenral");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetAdPositionGenenralResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_adunit_general 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/ad-data/GetAdposDetail.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetAdUnitGenenralResponse> ExecuteWxaOperationAMSAgencyGetAdUnitGenenralAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetAdUnitGenenralRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_adunit_general");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetAdUnitGenenralResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region AMS/Settlement
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=agency_get_settlement 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/settlement/GetSettlement.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSAgencyGetSettlementResponse> ExecuteWxaOperationAMSAgencyGetSettlementAsync(this WechatApiClient client, Models.WxaOperationAMSAgencyGetSettlementRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "agency_get_settlement");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSAgencyGetSettlementResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/operationams?action=get_agency_settled_revenue 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/ams/settlement/GetAgencySettlement.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaOperationAMSGetAgencySettledRevenueResponse> ExecuteWxaOperationAMSGetAgencySettledRevenueAsync(this WechatApiClient client, Models.WxaOperationAMSGetAgencySettledRevenueRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "operationams")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", "get_agency_settled_revenue");
+
+            return await client.SendRequestWithJsonAsync<Models.WxaOperationAMSGetAgencySettledRevenueResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+        #endregion
     }
 }
