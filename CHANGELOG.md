@@ -33,6 +33,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.22.0
+
+    -   **新增**：新增第三方平台小程序流量主代运营相关接口。
+
 -   Release 2.21.1
 
     -   **修复**：修复第三方平台小程序分阶段发布接口模型参数缺失问题。（_via_ [GitHub #73](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/74)）
