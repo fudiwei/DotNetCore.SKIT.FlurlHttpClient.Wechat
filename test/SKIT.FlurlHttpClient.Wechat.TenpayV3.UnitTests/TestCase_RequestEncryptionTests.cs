@@ -1,65 +1,1006 @@
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
+using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
+using Flurl.Http.Configuration;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class TestCase_RequestEncryptionTests
+    public partial class TestCase_RequestEncryptionTests
     {
-        private const string RSA_CERTSN = "mock_sn";
-        private const string RSA_CERTIFICATE = "-----BEGIN CERTIFICATE-----MIID9jCCAt6gAwIBAgIUFGJAVFxIU/1hoxpZC8Tc2xKFJHowDQYJKoZIhvcNAQELBQAwXjELMAkGA1UEBhMCQ04xEzARBgNVBAoTClRlbnBheS5jb20xHTAbBgNVBAsTFFRlbnBheS5jb20gQ0EgQ2VudGVyMRswGQYDVQQDExJUZW5wYXkuY29tIFJvb3QgQ0EwHhcNMjAwODAxMDczNTE5WhcNMjUwNzMxMDczNTE5WjCBhzETMBEGA1UEAwwKMTYwMTEwMzMxNDEbMBkGA1UECgwS5b6u5L+h5ZWG5oi357O757ufMTMwMQYDVQQLDCroo5XkurrvvIjkuIrmtbfvvInmlZnogrLnp5HmioDmnInpmZDlhazlj7gxCzAJBgNVBAYMAkNOMREwDwYDVQQHDAhTaGVuWmhlbjCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKq4IUw5Rq6iTUahjkr+aYvmn3Hg2tHNDyIru7ZdthXw27BCwnwwDyufq6SBwXypuf3wXKpcFggZo5dwjDR6XxlGXzNDKdW7JQkTxQXqABZZVCq4yMMkVns3xbmDfAI57bW0O0F40+NOqmU9gjqRwGNvE9bE8N3y2VyxYcz53rU4FCrlCOfsFeF1Z3usbWOK5IOYXjmdzr96xVWasO0URJ60GwDZyGxRdkzd5kJy6HnVVqOUbn3t7mKbGkzQq/j+D+pyMlhjtRV475ks5uex4gVWZgEqT1b9sx1pUQvVPr6/ZXtqTJwSg/YvSCx5RBiYCskAyA/5XH9t1p/WV1zFhXUCAwEAAaOBgTB/MAkGA1UdEwQCMAAwCwYDVR0PBAQDAgTwMGUGA1UdHwReMFwwWqBYoFaGVGh0dHA6Ly9ldmNhLml0cnVzLmNvbS5jbi9wdWJsaWMvaXRydXNjcmw/Q0E9MUJENDIyMEU1MERCQzA0QjA2QUQzOTc1NDk4NDZDMDFDM0U4RUJEMjANBgkqhkiG9w0BAQsFAAOCAQEAU44msdPGFg/r5JcWgUDEXWOqqCDiFNjWbhM/rO0A3TCV0yP5o7Se/yLsDizHGTUzZ2qg3bC02nn4RysEyMVQ+9tXsOtXQBHrmoZ5vS8ndqbE1YO33N6zxIUb0IN3yGZh3oVmQgTYYe1is4i5Sfiy7JdR6/uUrwQN13fzPaDCnNx6iVzrPSJJf1xiFdtpFFtK021prjMYG7csHiFQeelgyE8XtlQuLk0tsHBrJ2FHSdV4HISqONz0hMPL0xsZkBD/L/bvR3L0lqe8bsHOBCJOMyjxucI21mBRd7tc4AGiJlQt5jrUrbos5hul4/QUq7hFfZNDrEBMINbMyIpYWRbIqQ==-----END CERTIFICATE-----";
-        private const string RSA_PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCquCFMOUauok1GoY5K/mmL5p9x4NrRzQ8iK7u2XbYV8NuwQsJ8MA8rn6ukgcF8qbn98FyqXBYIGaOXcIw0el8ZRl8zQynVuyUJE8UF6gAWWVQquMjDJFZ7N8W5g3wCOe21tDtBeNPjTqplPYI6kcBjbxPWxPDd8tlcsWHM+d61OBQq5Qjn7BXhdWd7rG1jiuSDmF45nc6/esVVmrDtFESetBsA2chsUXZM3eZCcuh51VajlG597e5imxpM0Kv4/g/qcjJYY7UVeO+ZLObnseIFVmYBKk9W/bMdaVEL1T6+v2V7akycEoP2L0gseUQYmArJAMgP+Vx/bdaf1ldcxYV1AgMBAAECggEBAIwkgTkYX5ymIXeU0cFgXfZ5iHQsWJUXl4++hOaswPf78+wasZrOvPVbqsRtvA8BKWx7byZuV6uomHGN85p0xjJyYV4siWAps7pi3z7+m7m89OnpLO18m/2kiAzFEfyl3yxlWqtha9dSUXCwcIJx+ZPmsEuC+hPI8oQ0HQvuJtNtcDmaFBp57kxjlO4Xm0xnvq2waSmAF4cO6Dk62gksu8G7//IyIHXqmRWSpI2b/Yqf84XtwLN8Zvq/3otYuWc3pFOaKHg2sJ/JwSU+yGdeIOtEXXFIDSD6p3KvIvjrD47Da4optYReXP1k6e721z+XPBFP31i58iu1K8KOyjjJfsECgYEA41D6V1TrON31OOsM4jAtqyY/LVNdzT+I/S6lQruO9siRRJDYlAOdbM9VZnW/3rduPMBu4undbMkL5i8olnwmLeWSupClA2WmUc8DWHlBO2s0lE+ZDZgOtpZ9qOBfm7L6jbjvzbGoyJgV6SeIavH5SMQbFku5rlIi12hAb0Kv4uUCgYEAwELkPOKDH06SFOiuOzJcI4VyjK0V5LcWjceTPkaT9d1evkrNgrHiG8CjYQ3V0lqSKhckFg2PwmPk72rC4n3aFCXurimv96rG5sBFFLgPbyoKZ3Z9JoDoe/6u6YIAV/GzxJ5QJaWQQ59MxToILYyq6aA6SrNOqRUPsKuvN8jBH1ECgYEA3dJ6yNgcRj0KfIWa5+qd1iMXiZKNuamjc3WeXTWL+DSW1bMHNcElUTYuHzMOjjavw2cBjjsrEWpLS09/qwHxe95IRfi6nksGd1Ss7hw9VM9z2rqmH4bf7LuEWlTB171bFQuAL1iL3VvUHdavH7WLTr/XsvUod/y89TlNj4UjACUCgYBBR3UPZyl2O8tF5isiVlsKhIj8UtiYK8IwqY7JGlWqqVs96VAWDCflnGbc0UHEhpQSToEmK7ygGCLnV6yMEoc1SBvebrEcupOGTcom2sgCypd1wbmElUhasYLaLhXHxn1vSQGVhr2Q+EmsvaOBM73kTU79hhwzNL97ERARNMy9wQKBgHCogsDPxSh8hEJR/PBom6v/3R+Ou86K8nzulbyHGkDM7I2R//zGx4en1VxWFhsqywsGedugv1BMkgEcCFkTjIXfYh9Uwn5iGUAZCczR5ZoETYAAzK2a/uaWf92iZEU0bHJaBA4egNxk1bFe+ECFTteN8Ag+UVtx0HU6ZNlyfetH-----END PRIVATE KEY-----";
-        private const string MockText = "mock_text";
-        private readonly Lazy<WechatTenpayClient> MockClientInstance = new Lazy<WechatTenpayClient>(() =>
-        {
-            var manager = new Settings.InMemoryCertificateManager();
-            manager.AddEntry(new Settings.CertificateEntry(
-                algorithmType: "RSA",
-                serialNumber: RSA_CERTSN,
-                certificate: RSA_CERTIFICATE,
-                effectiveTime: DateTimeOffset.MinValue,
-                expireTime: DateTimeOffset.MaxValue
-            ));
-            return new WechatTenpayClient(new WechatTenpayClientOptions()
-            {
-                PlatformCertificateManager = manager
-            });
-        }, isThreadSafe: false);
+        // 此处测试的 RSA/SM2 证书/公钥/私钥是自签名生成的，仅供执行 RSA/SM2 相关的单元测试，不能用于调用微信支付 API。
+        private const string RSA_PEM_CERTIFICATE = "-----BEGIN CERTIFICATE-----\nMIIFRzCCAy8CFDBQ9y4tzgPn7+SVV90jHRdmSa+9MA0GCSqGSIb3DQEBCwUAMGAx\nCzAJBgNVBAYTAkNOMREwDwYDVQQIDAhTaGFuZ2hhaTERMA8GA1UEBwwIU2hhbmdo\nYWkxDTALBgNVBAoMBFNLSVQxDTALBgNVBAsMBFNLSVQxDTALBgNVBAMMBFNLSVQw\nHhcNMjExMTI1MTgzNzQ4WhcNMjExMjI1MTgzNzQ4WjBgMQswCQYDVQQGEwJDTjER\nMA8GA1UECAwIU2hhbmdoYWkxETAPBgNVBAcMCFNoYW5naGFpMQ0wCwYDVQQKDART\nS0lUMQ0wCwYDVQQLDARTS0lUMQ0wCwYDVQQDDARTS0lUMIICIjANBgkqhkiG9w0B\nAQEFAAOCAg8AMIICCgKCAgEA52DszUZzPKPo1d9Hi5Hjlu7OINwADaeXifA4rvmJ\nJaA+jm4DCMwrAMzyS12EiW31xCAF8LZ/xkrFHO5CZgvK87Y+kY9DmhvNX6FVYsn4\nay7KER0zo87zqQjC+njUu1rYuKnio7MYb354PitwQ3SWNv2qTCbCNCXTN9pJXNhl\nCudWCEWrNrYc4/hKz3bqu1DjpY0oHuuKPk/iRr2TTUIAwahNkNQheQNB2a8hL7L2\nOG1Sn1vaDWe+5RJYlMRZ3NgYDTqoy8GMs+6q091MQMDlQ90jtW/JEoM5DUyI8zfQ\nfDLGnU7FuY0rrZ/+6OQT/o7ISf0OR5TISS0lqnDN3vVaph0ftDGRdGqJk2SJAHIo\nxp5gt410rfWS9kpSDFJs3Pvt4rtNZBYvkGD8obSm91brAkoX4+u1Y4p1qZpWJ4LI\nKw8oyeieqlLZtF/VGKOtKxe/IKn8GwoQJLx4dUGFOqM7HPwR9cyjMaC1o3V1NQG+\n1wD9TLtGh3WXUFJRYDmePaSp39GFPupTMlPRbD0RK80B6xv2rYTyYyd8s2LN6P6H\nh/nFIkc1rekIf9JhPy0WKzrXdmnfjSHKPxmz0WSYN8FxKasqcJhncOdhLTzzVEhj\n9xHSI8ejP2fJ4v+ARoD3GURPD9H7KMa7xmzRSAZ8A8LM3uvdJNhbKBwWqvo45ncz\n+7cCAwEAATANBgkqhkiG9w0BAQsFAAOCAgEAVTS6oMfDA3XTwEel0BvaXMCdo7yM\ns5ueM87151eywnPlConYDXeqhfF0OCSBnY2g7Fpmn+YAUoa/L+FNOx/gMC9QV/lP\nHhhAcWpiCRy52RX/IyTDxFD6OqtH0BaBtDTb+QBXZuFypMUkPy6EUYs5Cl9qYepy\nHcgGVomx7tcwWcvI4o/KZtj8hXC5wu/k4Y0GGUriTt8xmnJ+RTRedZ6hzAFVHtXm\n/YIT9Lc1IIYZuHVyCbX/HXwa0E4r8lghwZRg94HUvpbfabNA3obt5auwtJUfW1tK\n2ERgFrtBRBWf9EGb8TstXqksqYZ04U4OjLm/3ZJhSSYKNbriRLlSEzAlHikNVW+t\n6cTh+sasrGt/qNIRMs5PiipwmV/T3z1LbyoiU7fXZ4GqiWBnZARFC9KiPPTzLszh\nBKJGYHaC8wkGb3WfNWFBqVRfFL8kdME+shLB8/ETQ31gIFeudnW1QlujJ7ZSZtwz\nxT3HxzZIIbNEqLFP+d37kmuKjRmI4KWc+pKOUw9BOl4g/TJH6ySljSNs8LSDWwQY\n76Dsnr+ovz8ZVLNUCmedZCyumeJo2tLkJmsPo5GuMnXpL94mhqpCoUS4l4JbJl44\nT2lmqp1Ueoz+Qlkqyt2lj3heTv9bvB7NO9KHTsDy1hhWHOG1QyXzajyWETU+1XdW\nx1hGvYxtpQPLUE8=\n-----END CERTIFICATE-----";
+        private const string RSA_PEM_PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----\n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\nhpUq0eKgdGHc2R4r57soRvGoGy2DtA==\n-----END PRIVATE KEY-----";
+        private const string SM2_PEM_CERTIFICATE = "-----BEGIN CERTIFICATE-----\nMIICNzCCAdygAwIBAgIJAOWoGwJCnY0IMAoGCCqBHM9VAYN1MGcxCzAJBgNVBAYT\nAkNOMRAwDgYDVQQIDAdCZWlqaW5nMRAwDgYDVQQHDAdIYWlEaWFuMRMwEQYDVQQK\nDApHTUNlcnQub3JnMR8wHQYDVQQDDBZHTUNlcnQgR00gUm9vdCBDQSAtIDAxMB4X\nDTIyMTEwOTEzMTIyMFoXDTIzMTEwOTEzMTIyMFowSzEtMCsGA1UEAwwkU0tJVC5G\nbHVybEh0dHBDbGllbnQuV2VjaGF0LlRlbnBheVYzMQ0wCwYDVQQKDARTS0lUMQsw\nCQYDVQQGEwJDTjBZMBMGByqGSM49AgEGCCqBHM9VAYItA0IABMXP1hZc2zBzreRN\nZgOR9hklE01tw10RDUfj176EXcVoVOvITMENJ3HREQtDPlOfz8i1SXCQEwclYyxI\n2KcTdKqjgYwwgYkwDAYDVR0TAQH/BAIwADALBgNVHQ8EBAMCA/gwLAYJYIZIAYb4\nQgENBB8WHUdNQ2VydC5vcmcgU2lnbmVkIENlcnRpZmljYXRlMB0GA1UdDgQWBBRj\nIhoxmSgP84XT/scjkQNSWylMFTAfBgNVHSMEGDAWgBR/Wl47AIRZKg+YvqEObzmV\nQxBNBzAKBggqgRzPVQGDdQNJADBGAiEAnXykM0qDOWay2EMB6+c6YJ7h4n7Wbju7\nXuT5RkuM/3ICIQDAA3sLba/dQMhmKkCoJl31iZwYKz7NP+0aq6NhWDommQ==\n-----END CERTIFICATE-----";
+        private const string SM2_PEM_PRIVATE_KEY = "-----BEGIN PRIVATE KEY-----\nMIGTAgEAMBMGByqGSM49AgEGCCqBHM9VAYItBHkwdwIBAQQg3WePog9R4UV/EVlk\nCw8YHu+rXC/imiB89jFmaAPeXz6gCgYIKoEcz1UBgi2hRANCAATFz9YWXNswc63k\nTWYDkfYZJRNNbcNdEQ1H49e+hF3FaFTryEzBDSdx0RELQz5Tn8/ItUlwkBMHJWMs\nSNinE3Sq\n-----END PRIVATE KEY-----";
 
-        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /profitsharing/receivers/add）")]
-        public void TestEncryptResponseSensitiveProperty_AddProfitSharingReceiverRequest()
-        {
-            var mock = new Models.AddProfitSharingReceiverRequest()
-            {
-                Account = MockText,
-                Name = MockText
-            };
-            var data = MockClientInstance.Value.EncryptRequestSensitiveProperty(mock);
+        private const string MOCK_CERT_SN = "f2122a10319b84c2adbf83330411d7b3";
+        private const string MOCK_PLAIN_STR = "U0tJVC5GbHVybEh0dHBDbGllbnQuV2VjaGF0LlRlbnBheVYz";
 
-            Assert.Equal(RSA_CERTSN, data.WechatpayCertificateSerialNumber, ignoreCase: true);
-            Assert.Equal(MockText, data.Account);
-            Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.Name!));
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /apply4sub/sub_merchants/{sub_mchid}/modify-settlement）")]
+        public async Task TestEncryptRequestSensitiveProperty_ModifyApplyForSubMerchantSettlementRequest()
+        {
+            static Models.ModifyApplyForSubMerchantSettlementRequest GenerateMockRequestModel()
+            {
+                return new Models.ModifyApplyForSubMerchantSettlementRequest()
+                {
+                    AccountNumber = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.ModifyApplyForSubMerchantSettlementRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.AccountNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.AccountNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteModifyApplyForSubMerchantSettlementAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteModifyApplyForSubMerchantSettlementAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /apply4subject/applyment）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateApplyForSubjectApplymentRequest()
+        {
+            static Models.CreateApplyForSubjectApplymentRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateApplyForSubjectApplymentRequest()
+                {
+                    Contact = new Models.CreateApplyForSubjectApplymentRequest.Types.Contact()
+                    {
+                        ContactName = MOCK_PLAIN_STR,
+                        IdNumber = MOCK_PLAIN_STR,
+                        MobileNumber = MOCK_PLAIN_STR
+                    },
+                    Identification = new Models.CreateApplyForSubjectApplymentRequest.Types.Identification()
+                    {
+                        IdName = MOCK_PLAIN_STR,
+                        IdNumber = MOCK_PLAIN_STR,
+                        IdAddress = MOCK_PLAIN_STR
+                    },
+                    UBOList = new List<Models.CreateApplyForSubjectApplymentRequest.Types.UBO>()
+                    {
+                        new Models.CreateApplyForSubjectApplymentRequest.Types.UBO()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR,
+                            IdAddress = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateApplyForSubjectApplymentRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.ContactName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.IdNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.MobileNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Identification!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Identification!.IdNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Identification!.IdAddress!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UBOList![0].IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UBOList![0].IdNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UBOList![0].IdAddress!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.ContactName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.IdNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.MobileNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Identification!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Identification!.IdNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Identification!.IdAddress!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdAddress!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateApplyForSubjectApplymentAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateApplyForSubjectApplymentAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /applyment4sub/applyment）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateApplyForSubMerchantApplymentRequest()
+        {
+            static Models.CreateApplyForSubMerchantApplymentRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateApplyForSubMerchantApplymentRequest()
+                {
+                    Contact = new Models.CreateApplyForSubMerchantApplymentRequest.Types.Contact()
+                    {
+                        ContactName = MOCK_PLAIN_STR,
+                        IdNumber = MOCK_PLAIN_STR,
+                        MobileNumber = MOCK_PLAIN_STR,
+                        Email = MOCK_PLAIN_STR
+                    },
+                    Subject = new Models.CreateApplyForSubMerchantApplymentRequest.Types.Subject()
+                    {
+                        Identity = new Models.CreateApplyForSubMerchantApplymentRequest.Types.Subject.Types.Identity()
+                        {
+                            IdCard = new Models.CreateApplyForSubMerchantApplymentRequest.Types.Subject.Types.Identity.Types.IdCard()
+                            {
+                                IdCardName = MOCK_PLAIN_STR,
+                                IdCardNumber = MOCK_PLAIN_STR,
+                                IdCardAddress = MOCK_PLAIN_STR
+                            },
+                            IdDocument = new Models.CreateApplyForSubMerchantApplymentRequest.Types.Subject.Types.Identity.Types.IdDocument()
+                            {
+                                IdDocumentName = MOCK_PLAIN_STR,
+                                IdDocumentNumber = MOCK_PLAIN_STR,
+                                IdDocumentAddress = MOCK_PLAIN_STR
+                            }
+                        },
+                        UBOList = new List<Models.CreateApplyForSubMerchantApplymentRequest.Types.Subject.Types.UBO>()
+                        {
+                            new Models.CreateApplyForSubMerchantApplymentRequest.Types.Subject.Types.UBO()
+                            {
+                                IdName = MOCK_PLAIN_STR,
+                                IdNumber = MOCK_PLAIN_STR,
+                                IdAddress = MOCK_PLAIN_STR
+                            }
+                        }
+                    },
+                    BankAccount = new Models.CreateApplyForSubMerchantApplymentRequest.Types.BankAccount()
+                    {
+                        AccountName = MOCK_PLAIN_STR,
+                        AccountNumber = MOCK_PLAIN_STR
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateApplyForSubMerchantApplymentRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.ContactName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.IdNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.MobileNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.Email!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Subject!.Identity!.IdCard!.IdCardName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Subject!.Identity!.IdCard!.IdCardNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Subject!.Identity!.IdCard!.IdCardAddress!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Subject!.Identity!.IdDocument!.IdDocumentName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Subject!.Identity!.IdDocument!.IdDocumentNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Subject!.Identity!.IdDocument!.IdDocumentAddress!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Subject!.UBOList![0].IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Subject!.UBOList![0].IdNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Subject!.UBOList![0].IdAddress!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.BankAccount!.AccountName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.BankAccount!.AccountNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.ContactName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.IdNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.MobileNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.Email!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.Identity!.IdCard!.IdCardName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.Identity!.IdCard!.IdCardNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.Identity!.IdCard!.IdCardAddress!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.Identity!.IdDocument!.IdDocumentName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.Identity!.IdDocument!.IdDocumentNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.Identity!.IdDocument!.IdDocumentAddress!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.UBOList![0].IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.UBOList![0].IdNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.UBOList![0].IdAddress!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccount!.AccountName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccount!.AccountNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateApplyForSubMerchantApplymentAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateApplyForSubMerchantApplymentAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /brand/profitsharing/orders）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateBrandProfitSharingOrderRequest()
+        {
+            static Models.CreateBrandProfitSharingOrderRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateBrandProfitSharingOrderRequest()
+                {
+                    ReceiverList = new List<Models.CreateBrandProfitSharingOrderRequest.Types.Receiver>()
+                    {
+                        new Models.CreateBrandProfitSharingOrderRequest.Types.Receiver()
+                        {
+                            Name = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateBrandProfitSharingOrderRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.ReceiverList![0].Name!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.ReceiverList![0].Name!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateBrandProfitSharingOrderAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateBrandProfitSharingOrderAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[GET] /capital/capitallhh/banks/search-banks-by-bank-account）")]
+        public async Task TestEncryptRequestSensitiveProperty_QueryCapitalBanksByBankAccountRequest()
+        {
+            static Models.QueryCapitalBanksByBankAccountRequest GenerateMockRequestModel()
+            {
+                return new Models.QueryCapitalBanksByBankAccountRequest()
+                {
+                    AccountNumber = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.QueryCapitalBanksByBankAccountRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.AccountNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.AccountNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteQueryCapitalBanksByBankAccountAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteQueryCapitalBanksByBankAccountAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /customs/verify-certificate）")]
+        public async Task TestEncryptRequestSensitiveProperty_VerifyHKCustomsCertificateRequest()
+        {
+            static Models.VerifyHKCustomsCertificateRequest GenerateMockRequestModel()
+            {
+                return new Models.VerifyHKCustomsCertificateRequest()
+                {
+                    CertificateId = MOCK_PLAIN_STR,
+                    CertificateName = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.VerifyHKCustomsCertificateRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CertificateId!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.CertificateName!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CertificateId!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CertificateName!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher, "Pkcs1Padding"));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteVerifyHKCustomsCertificateAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher, "Pkcs1Padding"));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteVerifyHKCustomsCertificateAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /ecommerce/applyments）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateEcommerceApplymentRequest()
+        {
+            static Models.CreateEcommerceApplymentRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateEcommerceApplymentRequest()
+                {
+                    Contact = new Models.CreateEcommerceApplymentRequest.Types.Contact()
+                    {
+                        ContactName = MOCK_PLAIN_STR,
+                        IdNumber = MOCK_PLAIN_STR,
+                        MobileNumber = MOCK_PLAIN_STR,
+                        Email = MOCK_PLAIN_STR
+                    },
+                    IdCard = new Models.CreateEcommerceApplymentRequest.Types.IdCard()
+                    {
+                        IdCardName = MOCK_PLAIN_STR,
+                        IdCardNumber = MOCK_PLAIN_STR,
+                        IdCardAddress = MOCK_PLAIN_STR
+                    },
+                    IdDocument = new Models.CreateEcommerceApplymentRequest.Types.IdDocument()
+                    {
+                        IdDocumentName = MOCK_PLAIN_STR,
+                        IdDocumentNumber = MOCK_PLAIN_STR,
+                        IdDocumentAddress = MOCK_PLAIN_STR
+                    },
+                    UBOList = new List<Models.CreateEcommerceApplymentRequest.Types.UBO>()
+                    {
+                        new Models.CreateEcommerceApplymentRequest.Types.UBO()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR,
+                            IdAddress = MOCK_PLAIN_STR
+                        }
+                    },
+                    BankAccount = new Models.CreateEcommerceApplymentRequest.Types.BankAccount()
+                    {
+                        AccountName = MOCK_PLAIN_STR,
+                        AccountNumber = MOCK_PLAIN_STR
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateEcommerceApplymentRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.ContactName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.IdNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.MobileNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.Email!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdCard!.IdCardName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdCard!.IdCardNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdCard!.IdCardAddress!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdDocument!.IdDocumentName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdDocument!.IdDocumentNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdDocument!.IdDocumentAddress!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UBOList![0].IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UBOList![0].IdNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UBOList![0].IdAddress!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.BankAccount!.AccountName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.BankAccount!.AccountNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.ContactName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.IdNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.MobileNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.Email!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCard!.IdCardName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCard!.IdCardNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCard!.IdCardAddress!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdDocument!.IdDocumentName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdDocument!.IdDocumentNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdDocument!.IdDocumentAddress!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdAddress!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccount!.AccountName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccount!.AccountNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateEcommerceApplymentAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateEcommerceApplymentAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /ecommerce/profitsharing/orders）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateEcommerceProfitSharingOrderRequest()
+        {
+            static Models.CreateEcommerceProfitSharingOrderRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateEcommerceProfitSharingOrderRequest()
+                {
+                    ReceiverList = new List<Models.CreateEcommerceProfitSharingOrderRequest.Types.Receiver>()
+                    {
+                        new Models.CreateEcommerceProfitSharingOrderRequest.Types.Receiver()
+                        {
+                            Name = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateEcommerceProfitSharingOrderRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.ReceiverList![0].Name!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.ReceiverList![0].Name!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateEcommerceProfitSharingOrderAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateEcommerceProfitSharingOrderAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /ecommerce/profitsharing/receivers/add）")]
+        public async Task TestEncryptRequestSensitiveProperty_AddEcommerceProfitSharingReceiverRequest()
+        {
+            static Models.AddEcommerceProfitSharingReceiverRequest GenerateMockRequestModel()
+            {
+                return new Models.AddEcommerceProfitSharingReceiverRequest()
+                {
+                    EncryptedName = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.AddEcommerceProfitSharingReceiverRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.EncryptedName!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.EncryptedName!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteAddEcommerceProfitSharingReceiverAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteAddEcommerceProfitSharingReceiverAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /marketing/membercard-open/cards/{card_id}/phone-membercard/import）")]
+        public async Task TestEncryptRequestSensitiveProperty_ImportMarketingMemberCardOpenCardPhoneRequest()
+        {
+            static Models.ImportMarketingMemberCardOpenCardPhoneRequest GenerateMockRequestModel()
+            {
+                return new Models.ImportMarketingMemberCardOpenCardPhoneRequest()
+                {
+                    EncryptedPhoneNumber = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.ImportMarketingMemberCardOpenCardPhoneRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.EncryptedPhoneNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.EncryptedPhoneNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteImportMarketingMemberCardOpenCardPhoneAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteImportMarketingMemberCardOpenCardPhoneAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /merchants）")]
+        public async Task TestEncryptRequestSensitiveProperty_AddHKSubMerchantRequest()
+        {
+            static Models.AddHKSubMerchantRequest GenerateMockRequestModel()
+            {
+                return new Models.AddHKSubMerchantRequest()
+                {
+                    Contact = new Models.AddHKSubMerchantRequest.Types.Contact()
+                    {
+                        ContactName = MOCK_PLAIN_STR,
+                        MobileNumber = MOCK_PLAIN_STR,
+                        Email = MOCK_PLAIN_STR
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.AddHKSubMerchantRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.ContactName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.MobileNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Contact!.Email!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.ContactName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.MobileNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.Email!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher, "Pkcs1Padding"));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteAddHKSubMerchantAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher, "Pkcs1Padding"));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteAddHKSubMerchantAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /payroll-card/authentications/pre-order-with-auth）")]
+        public async Task TestEncryptRequestSensitiveProperty_PreOrderWithAuthPayrollCardAuthenticationRequest()
+        {
+            static Models.PreOrderWithAuthPayrollCardAuthenticationRequest GenerateMockRequestModel()
+            {
+                return new Models.PreOrderWithAuthPayrollCardAuthenticationRequest()
+                {
+                    UserName = MOCK_PLAIN_STR,
+                    IdCardNumber = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.PreOrderWithAuthPayrollCardAuthenticationRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCardNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecutePreOrderWithAuthPayrollCardAuthenticationAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecutePreOrderWithAuthPayrollCardAuthenticationAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /payroll-card/tokens）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreatePayrollCardTokenRequest()
+        {
+            static Models.CreatePayrollCardTokenRequest GenerateMockRequestModel()
+            {
+                return new Models.CreatePayrollCardTokenRequest()
+                {
+                    UserName = MOCK_PLAIN_STR,
+                    IdCardNumber = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreatePayrollCardTokenRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCardNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreatePayrollCardTokenAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreatePayrollCardTokenAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
         }
 
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /profitsharing/orders）")]
-        public void TestEncryptResponseSensitiveProperty_CreateProfitSharingOrderRequest()
+        public async Task TestEncryptRequestSensitiveProperty_CreateProfitSharingOrderRequest()
         {
-            var mock = new Models.CreateProfitSharingOrderRequest()
+            static Models.CreateProfitSharingOrderRequest GenerateMockRequestModel()
             {
-                ReceiverList = new List<Models.CreateProfitSharingOrderRequest.Types.Receiver>()
+                return new Models.CreateProfitSharingOrderRequest()
                 {
-                    new Models.CreateProfitSharingOrderRequest.Types.Receiver()
+                    ReceiverList = new List<Models.CreateProfitSharingOrderRequest.Types.Receiver>()
                     {
-                        Account = MockText,
-                        Name = MockText
+                        new Models.CreateProfitSharingOrderRequest.Types.Receiver()
+                        {
+                            Name = MOCK_PLAIN_STR
+                        }
                     }
-                }
-            };
-            var data = MockClientInstance.Value.EncryptRequestSensitiveProperty(mock);
+                };
+            }
 
-            Assert.Equal(RSA_CERTSN, data.WechatpayCertificateSerialNumber, ignoreCase: true);
-            Assert.Equal(MockText, data.ReceiverList[0].Account);
-            Assert.Equal(MockText, Utilities.RSAUtility.DecryptWithECB(RSA_PRIVATE_KEY, data.ReceiverList[0].Name!));
+            static void AssertMockRequestModel(Models.CreateProfitSharingOrderRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.ReceiverList![0].Name!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.ReceiverList![0].Name!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateProfitSharingOrderAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateProfitSharingOrderAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /profitsharing/receivers/add）")]
+        public async Task TestEncryptRequestSensitiveProperty_AddProfitSharingReceiverRequest()
+        {
+            static Models.AddProfitSharingReceiverRequest GenerateMockRequestModel()
+            {
+                return new Models.AddProfitSharingReceiverRequest()
+                {
+                    Name = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.AddProfitSharingReceiverRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Name!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Name!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteAddProfitSharingReceiverAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteAddProfitSharingReceiverAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /smartguide/guides）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateSmartGuideRequest()
+        {
+            static Models.CreateSmartGuideRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateSmartGuideRequest()
+                {
+                    UserName = MOCK_PLAIN_STR,
+                    UserMobile = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateSmartGuideRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobile!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobile!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateSmartGuideAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateSmartGuideAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[GET] /smartguide/guides）")]
+        public async Task TestEncryptRequestSensitiveProperty_QuerySmartGuidesRequest()
+        {
+            static Models.QuerySmartGuidesRequest GenerateMockRequestModel()
+            {
+                return new Models.QuerySmartGuidesRequest()
+                {
+                    UserMobile = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.QuerySmartGuidesRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobile!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobile!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteQuerySmartGuidesAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteQuerySmartGuidesAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[PATCH] /smartguide/guides/{guide_id}）")]
+        public async Task TestEncryptRequestSensitiveProperty_UpdateSmartGuideRequest()
+        {
+            static Models.UpdateSmartGuideRequest GenerateMockRequestModel()
+            {
+                return new Models.UpdateSmartGuideRequest()
+                {
+                    UserName = MOCK_PLAIN_STR,
+                    UserMobile = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.UpdateSmartGuideRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobile!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobile!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteUpdateSmartGuideAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteUpdateSmartGuideAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /transfer/batches）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateTransferBatchRequest()
+        {
+            static Models.CreateTransferBatchRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateTransferBatchRequest()
+                {
+                    TransferDetailList = new List<Models.CreateTransferBatchRequest.Types.TransferDetail>()
+                    {
+                        new Models.CreateTransferBatchRequest.Types.TransferDetail()
+                        {
+                            UserName = MOCK_PLAIN_STR,
+                            UserIdCardNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateTransferBatchRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.TransferDetailList![0].UserName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.TransferDetailList![0].UserIdCardNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.TransferDetailList![0].UserName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.TransferDetailList![0].UserIdCardNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateTransferBatchAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateTransferBatchAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+    }
+
+    partial class TestCase_RequestEncryptionTests
+    {
+        public class MockHttpClientFactory : DefaultHttpClientFactory
+        {
+            public override HttpMessageHandler CreateMessageHandler()
+            {
+                return new MockHttpMessageHandler(base.CreateMessageHandler());
+            }
+        }
+
+        public class MockHttpMessageHandler : DelegatingHandler
+        {
+            public MockHttpMessageHandler(HttpMessageHandler innerHandler)
+                : base(innerHandler)
+            {
+            }
+
+            protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+            {
+                var resp = new HttpResponseMessage
+                {
+                    StatusCode = HttpStatusCode.NoContent
+                };
+                return Task.FromResult(resp);
+            }
+        }
+
+        private static WechatTenpayClient CreateMockClientUseRSA(bool autoEncrypt)
+        {
+            var manager = new Settings.InMemoryCertificateManager();
+            manager.AddEntry(new Settings.CertificateEntry(
+                algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_RSA,
+                serialNumber: "OBSOLETED1",
+                certificate: "-----BEGIN CERTIFICATE----------END CERTIFICATE-----",
+                effectiveTime: DateTimeOffset.Now.AddSeconds(-1),
+                expireTime: DateTimeOffset.Now.AddSeconds(-1)
+            ));
+            manager.AddEntry(new Settings.CertificateEntry(
+                algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_RSA,
+                serialNumber: MOCK_CERT_SN,
+                certificate: RSA_PEM_CERTIFICATE,
+                effectiveTime: DateTimeOffset.MinValue, // 为便于测试，直接使用最小值、而非实际证书的生效时间
+                expireTime: DateTimeOffset.MaxValue     // 为便于测试，直接使用最大值、而非实际证书的过期时间
+            ));
+            manager.AddEntry(new Settings.CertificateEntry(
+                algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_RSA,
+                serialNumber: "OBSOLETED2",
+                certificate: "-----BEGIN CERTIFICATE----------END CERTIFICATE-----",
+                effectiveTime: DateTimeOffset.Now.AddSeconds(-1),
+                expireTime: DateTimeOffset.Now.AddSeconds(-1)
+            ));
+
+            var client = new WechatTenpayClient(new WechatTenpayClientOptions()
+            {
+                MerchantId = DateTimeOffset.Now.ToUnixTimeSeconds().ToString(),
+                MerchantCertificateSerialNumber = Guid.NewGuid().ToString("N"),
+                MerchantCertificatePrivateKey = RSA_PEM_PRIVATE_KEY,
+                MerchantV3Secret = Guid.NewGuid().ToString("N"),
+                PlatformCertificateManager = manager,
+                AutoEncryptRequestSensitiveProperty = autoEncrypt
+            });
+            client.Configure(settings => settings.FlurlHttpClientFactory = new MockHttpClientFactory());
+            return client;
+        }
+
+        private static WechatTenpayClient CreateMockClientUseSM2(bool autoEncrypt)
+        {
+            var manager = new Settings.InMemoryCertificateManager();
+            manager.AddEntry(new Settings.CertificateEntry(
+                algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_SM2,
+                serialNumber: "OBSOLETED1",
+                certificate: "-----BEGIN CERTIFICATE----------END CERTIFICATE-----",
+                effectiveTime: DateTimeOffset.Now.AddSeconds(-1),
+                expireTime: DateTimeOffset.Now.AddSeconds(-1)
+            ));
+            manager.AddEntry(new Settings.CertificateEntry(
+                algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_SM2,
+                serialNumber: MOCK_CERT_SN,
+                certificate: SM2_PEM_CERTIFICATE,
+                effectiveTime: DateTimeOffset.MinValue, // 为便于测试，直接使用最小值、而非实际证书的生效时间
+                expireTime: DateTimeOffset.MaxValue     // 为便于测试，直接使用最大值、而非实际证书的过期时间
+            ));
+            manager.AddEntry(new Settings.CertificateEntry(
+                algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_SM2,
+                serialNumber: "OBSOLETED2",
+                certificate: "-----BEGIN CERTIFICATE----------END CERTIFICATE-----",
+                effectiveTime: DateTimeOffset.Now.AddSeconds(-1),
+                expireTime: DateTimeOffset.Now.AddSeconds(-1)
+            ));
+
+            var client = new WechatTenpayClient(new WechatTenpayClientOptions()
+            {
+                MerchantId = DateTimeOffset.Now.ToUnixTimeSeconds().ToString(),
+                MerchantCertificateSerialNumber = Guid.NewGuid().ToString("N"),
+                MerchantCertificatePrivateKey = SM2_PEM_PRIVATE_KEY,
+                MerchantV3Secret = Guid.NewGuid().ToString("N"),
+                SignScheme = Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3,
+                PlatformCertificateManager = manager,
+                AutoEncryptRequestSensitiveProperty = autoEncrypt
+            });
+            client.Configure(settings => settings.FlurlHttpClientFactory = new MockHttpClientFactory());
+            return client;
         }
     }
 }
