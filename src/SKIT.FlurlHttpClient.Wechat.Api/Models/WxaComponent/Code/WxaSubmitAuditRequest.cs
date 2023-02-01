@@ -182,6 +182,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("privacy_api_not_use")]
         [System.Text.Json.Serialization.JsonPropertyName("privacy_api_not_use")]
-        public bool IsPrivacyApiNotUsed { get; set; }
+        public bool? IsPrivacyApiNotUsed { get; set; }
+
+        /// <summary>
+        /// 获取或设置订单中心页面路径。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("order_path")]
+        [System.Text.Json.Serialization.JsonPropertyName("order_path")]
+        public string? OrderPagePath { get; set; }
     }
 }
