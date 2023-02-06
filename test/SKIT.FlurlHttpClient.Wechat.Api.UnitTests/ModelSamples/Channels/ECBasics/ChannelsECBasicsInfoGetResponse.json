@@ -1,0 +1,9 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "info": {
+        "nickname": "NICKNAME",
+        "headimg_url": "HEADIMG_URL",
+        "subject_type": "企业"
+    }
+}

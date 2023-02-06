@@ -1653,6 +1653,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/qrcode/get 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/qrcode/get.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/funds/qrcode/get.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1673,6 +1674,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/qrcode/check 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/qrcode/check.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/funds/qrcode/check.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1693,6 +1695,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/getbanklist 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/bank/getbanklist.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/funds/bank/getbanklist.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1713,6 +1716,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/getbankbynum 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/bank/getbankbynum.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/funds/bank/getbankbynum.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1733,6 +1737,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/getprovince 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/bank/getprovince.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/funds/bank/getprovince.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1753,6 +1758,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/getcity 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/bank/getcity.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/funds/bank/getcity.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -1773,6 +1779,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// <para>异步调用 [POST] /shop/funds/getsubbranch 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/API/funds/bank/getsubbranch.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/funds/bank/getsubbranch.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

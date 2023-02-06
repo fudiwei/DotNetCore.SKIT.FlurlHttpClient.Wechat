@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("brandId")]
                         [System.Text.Json.Serialization.JsonPropertyName("brandId")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int BrandId { get; set; }
+                        public long BrandId { get; set; }
 
                         /// <summary>
                         /// 获取或设置品牌名称。

@@ -41,14 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                         .SetQueryParam("height", request.Height)
                         .SetQueryParam("width", request.Width);
 
-                string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
-                using var httpContent = new MultipartFormDataContent(boundary);
-                using var fileContent = new ByteArrayContent(request.ImageFileBytes ?? Array.Empty<byte>());
-                httpContent.Add(fileContent, "\"media\"", "\"image.png\"");
-                httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse("multipart/form-data; boundary=" + boundary);
-                fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/png");
-                fileContent.Headers.ContentLength = request.ImageFileBytes?.Length;
-
+                using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.ImageFileBytes!, fileContentType: "image/png", formDataName: "media");
                 return await client.SendRequestAsync<Models.ProductImageUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
             }
         }

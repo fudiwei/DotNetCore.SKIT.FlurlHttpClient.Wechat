@@ -1,0 +1,9 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "pic_file": {
+        "media_id": "THE_MEDIA_ID",
+        "pay_media_id": "THE_PAY_MEDIA_ID",
+        "img_url": "xxxxx"
+    }
+}

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/brand/get 接口的响应。</para>
@@ -18,7 +18,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("brand_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-                        public int BrandId { get; set; }
+                        public long BrandId { get; set; }
 
                         /// <summary>
                         /// 获取或设置品牌名称。

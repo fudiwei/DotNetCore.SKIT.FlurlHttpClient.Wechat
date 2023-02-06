@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/category/availablesoncategories/get 接口的响应。</para>
@@ -15,7 +15,7 @@
                 [Newtonsoft.Json.JsonProperty("cat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("cat_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long CategoryId { get; set; }
+                public int CategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置类目名称。

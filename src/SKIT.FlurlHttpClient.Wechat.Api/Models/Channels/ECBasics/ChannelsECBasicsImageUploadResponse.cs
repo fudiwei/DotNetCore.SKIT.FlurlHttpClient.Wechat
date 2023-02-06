@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/basics/img/upload 接口的响应。</para>
@@ -26,8 +26,8 @@
                 /// <summary>
                 /// 获取或设置图片临时 URL。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("temp_img_url")]
-                [System.Text.Json.Serialization.JsonPropertyName("temp_img_url")]
+                [Newtonsoft.Json.JsonProperty("img_url")]
+                [System.Text.Json.Serialization.JsonPropertyName("img_url")]
                 public string? TempImageUrl { get; set; }
             }
         }

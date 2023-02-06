@@ -1,0 +1,7 @@
+{
+    "address_id1": 440000000,
+    "address_id2": 440100000,
+    "address_id3": 440111000,
+    "address_id4": 0,
+    "priority_sort": [ "test3", "test2" ]
+}

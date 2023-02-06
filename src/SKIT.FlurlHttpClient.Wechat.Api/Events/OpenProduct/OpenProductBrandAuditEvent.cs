@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("brand_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
                 [System.Xml.Serialization.XmlElement("brand_id")]
-                public int BrandId { get; set; }
+                public long BrandId { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核单类型。

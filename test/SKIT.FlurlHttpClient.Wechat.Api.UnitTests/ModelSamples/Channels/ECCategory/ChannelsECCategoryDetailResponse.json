@@ -1,0 +1,47 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "info": {
+        "cat_id": "6194",
+        "name": "安全座椅"
+    },
+    "attr": {
+        "shop_no_shipment": false,
+        "access_permit_required": false,
+        "pre_sale": false,
+        "brand_list": [
+            {
+                "brand_id": "10000031"
+            },
+            {
+                "brand_id": "10003026"
+            }
+        ],
+        "deposit": "500000",
+        "product_attr_list": [
+            {
+                "name": "颜色",
+                "type": "string",
+                "value": "",
+                "is_required": false
+            },
+            {
+                "name": "检测标准",
+                "type": "select_one",
+                "value": "3C;美标;欧盟 ECE ;ADAC;C-NCAP",
+                "is_required": false
+            },
+            {
+                "name": "材质",
+                "type": "select_one",
+                "value": "不锈钢;碳钢;金属;塑料;玻璃;硅胶;其他",
+                "is_required": true
+            }
+        ],
+        "transactionfee_info": {
+            "basis_point": 250,
+            "original_basis_point": 250,
+            "incentive_type": 0
+        }
+    }
+}

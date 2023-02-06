@@ -1,0 +1,46 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "cats": [
+        {
+            "cat_and_qua": [
+                {
+                    "cat": {
+                        "cat_id": "1003",
+                        "name": "假牙清洁",
+                        "f_cat_id": "1002",
+                        "level": 3
+                    },
+                    "qua": {
+                        "qua_id": "1003",
+                        "need_to_apply": true,
+                        "tips": "",
+                        "mandatory": true
+                    },
+                    "product_qua": {
+                        "qua_id": "1003",
+                        "need_to_apply": true,
+                        "tips": "",
+                        "mandatory": true
+                    }
+                },
+                {
+                    "cat": {
+                        "cat_id": "1002",
+                        "name": "口腔护理",
+                        "f_cat_id": "1001",
+                        "level": 2
+                    }
+                },
+                {
+                    "cat": {
+                        "cat_id": "1001",
+                        "name": "个人护理",
+                        "f_cat_id": "0",
+                        "level": 1
+                    }
+                }
+            ]
+        }
+    ]
+}

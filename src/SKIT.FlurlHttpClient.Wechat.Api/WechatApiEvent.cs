@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
@@ -54,6 +54,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public string? Event { get; set; }
 
         /// <summary>
+        /// 获取或设置消息创建时间戳。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("CreateTime")]
+        [System.Text.Json.Serialization.JsonPropertyName("CreateTime")]
+        [System.Xml.Serialization.XmlElement("CreateTime")]
+        public long CreateTimestamp { get; set; }
+
+        /// <summary>
         /// 获取或设置第三方平台 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
@@ -68,13 +76,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         [System.Text.Json.Serialization.JsonIgnore]
         [System.Xml.Serialization.XmlElement("InfoType", IsNullable = true)]
         public string? InfoType { get; set; }
-
-        /// <summary>
-        /// 获取或设置消息创建时间戳。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("CreateTime")]
-        [System.Text.Json.Serialization.JsonPropertyName("CreateTime")]
-        [System.Xml.Serialization.XmlElement("CreateTime")]
-        public long CreateTimestamp { get; set; }
     }
 }

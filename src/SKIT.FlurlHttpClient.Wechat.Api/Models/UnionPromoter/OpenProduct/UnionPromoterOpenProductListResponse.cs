@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /union/promoter/open_product/list 接口的响应。</para>
@@ -57,7 +57,7 @@
                                 [Newtonsoft.Json.JsonProperty("brandId")]
                                 [System.Text.Json.Serialization.JsonPropertyName("brandId")]
                                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                                public int BrandId { get; set; }
+                                public long BrandId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置 SKU 最低价格（单位：分）。

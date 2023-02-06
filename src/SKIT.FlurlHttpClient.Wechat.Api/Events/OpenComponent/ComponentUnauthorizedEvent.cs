@@ -9,6 +9,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// <summary>
         /// 获取或设置授权方 AppId。
         /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         [System.Xml.Serialization.XmlElement("AuthorizerAppid")]
         public string AuthorizerAppId { get; set; } = default!;
     }

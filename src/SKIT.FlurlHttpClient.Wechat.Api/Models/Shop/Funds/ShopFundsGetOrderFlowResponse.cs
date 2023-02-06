@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string Type { get; set; } = default!;
+                public string FundsType { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置流水类型。
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularDateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("bookkeeping_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
-                public DateTimeOffset BookKeepingTIme { get; set; }
+                public DateTimeOffset BookkeepingTIme { get; set; }
             }
         }
 

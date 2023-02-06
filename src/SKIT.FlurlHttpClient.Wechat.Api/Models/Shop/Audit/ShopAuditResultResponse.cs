@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/audit/result 接口的响应。</para>
@@ -21,7 +21,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-                public int? BrandId { get; set; }
+                public long? BrandId { get; set; }
 
                 /// <summary>
                 /// 获取或设置拒绝原因。

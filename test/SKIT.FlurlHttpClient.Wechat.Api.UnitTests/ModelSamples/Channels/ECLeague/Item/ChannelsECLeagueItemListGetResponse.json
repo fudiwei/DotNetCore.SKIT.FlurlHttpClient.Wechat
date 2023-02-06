@@ -1,0 +1,10 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "items": [
+        {
+            "product_id": 123456
+        }
+    ],
+    "total_num": 10
+}

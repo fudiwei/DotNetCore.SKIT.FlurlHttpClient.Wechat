@@ -9,6 +9,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// <summary>
         /// 获取或设置验证票据。
         /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
         [System.Xml.Serialization.XmlElement("ComponentVerifyTicket")]
         public string ComponentVerifyTicket { get; set; } = default!;
     }

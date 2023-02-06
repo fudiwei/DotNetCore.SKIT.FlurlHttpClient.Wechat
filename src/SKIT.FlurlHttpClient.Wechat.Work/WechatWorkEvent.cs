@@ -1,5 +1,4 @@
-﻿using System;
-using System.Xml.Serialization;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
@@ -27,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ToUserName")]
         [System.Text.Json.Serialization.JsonPropertyName("ToUserName")]
-        [XmlElement("ToUserName", IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("ToUserName", IsNullable = true)]
         public string? ToUserName { get; set; }
 
         /// <summary>
@@ -35,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </summary>
         [Newtonsoft.Json.JsonProperty("FromUserName")]
         [System.Text.Json.Serialization.JsonPropertyName("FromUserName")]
-        [XmlElement("FromUserName", IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("FromUserName", IsNullable = true)]
         public string? FromUserName { get; set; }
 
         /// <summary>
@@ -43,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </summary>
         [Newtonsoft.Json.JsonProperty("MsgType")]
         [System.Text.Json.Serialization.JsonPropertyName("MsgType")]
-        [XmlElement("MsgType", IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("MsgType", IsNullable = true)]
         public string? MessageType { get; set; }
 
         /// <summary>
@@ -51,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </summary>
         [Newtonsoft.Json.JsonProperty("Event")]
         [System.Text.Json.Serialization.JsonPropertyName("Event")]
-        [XmlElement("Event", IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("Event", IsNullable = true)]
         public string? Event { get; set; }
 
         /// <summary>
@@ -59,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </summary>
         [Newtonsoft.Json.JsonProperty("CreateTime")]
         [System.Text.Json.Serialization.JsonPropertyName("CreateTime")]
-        [XmlElement("CreateTime", IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("CreateTime", IsNullable = true)]
         public long? CreateTimestamp { get; set; }
 
         /// <summary>
@@ -67,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </summary>
         [Newtonsoft.Json.JsonProperty("InfoType")]
         [System.Text.Json.Serialization.JsonPropertyName("InfoType")]
-        [XmlElement("InfoType", IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("InfoType", IsNullable = true)]
         public string? InfoType { get; set; }
 
         /// <summary>
@@ -75,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// </summary>
         [Newtonsoft.Json.JsonProperty("TimeStamp")]
         [System.Text.Json.Serialization.JsonPropertyName("TimeStamp")]
-        [XmlElement("TimeStamp", IsNullable = true)]
+        [System.Xml.Serialization.XmlElement("TimeStamp", IsNullable = true)]
         public long? InfoTimestamp { get; set; }
     }
 }

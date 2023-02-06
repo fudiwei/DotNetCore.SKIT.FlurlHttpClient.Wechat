@@ -1,0 +1,12 @@
+{
+    "errcode": "0",
+    "errmsg": "ok",
+    "sharer_info_list": [
+        {
+            "openid": "OPENID",
+            "nickname": "NICKNAME",
+            "bind_time": 1624082155,
+            "sharer_type": 0
+        }
+    ]
+}

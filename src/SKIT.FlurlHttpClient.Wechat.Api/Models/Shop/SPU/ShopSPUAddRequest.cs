@@ -151,7 +151,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_id")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
-        public int BrandId { get; set; }
+        public long BrandId { get; set; }
 
         /// <summary>
         /// 获取或设置版本控制。
