@@ -2124,5 +2124,67 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.ChannelsECWindowProductListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region Leads
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/leads/get_leads_info_by_component_id 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/leads/get_leads_info_by_component_id.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsLeadsGetLeadsInfoByComponentIdResponse> ExecuteChannelsLeadsGetLeadsInfoByComponentIdAsync(this WechatApiClient client, Models.ChannelsLeadsGetLeadsInfoByComponentIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "leads", "get_leads_info_by_component_id")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsLeadsGetLeadsInfoByComponentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/leads/get_leads_info_by_request_id 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/leads/get_leads_info_by_request_id.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsLeadsGetLeadsInfoByRequestIdResponse> ExecuteChannelsLeadsGetLeadsInfoByRequestIdAsync(this WechatApiClient client, Models.ChannelsLeadsGetLeadsInfoByRequestIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "leads", "get_leads_info_by_request_id")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsLeadsGetLeadsInfoByRequestIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/leads/get_leads_request_id 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/leads/get_leads_request_id.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsLeadsGetLeadsRequestIdResponse> ExecuteChannelsLeadsGetLeadsRequestIdAsync(this WechatApiClient client, Models.ChannelsLeadsGetLeadsRequestIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "leads", "get_leads_request_id")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsLeadsGetLeadsRequestIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
