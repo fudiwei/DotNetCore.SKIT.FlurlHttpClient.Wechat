@@ -38,9 +38,12 @@ var options = new WechatApiClientOptions()
 {
     AppId = "微信 AppId",
     AppSecret = "微信 AppSecret",
-    MidasAppKey = "米大师相关服务 AppKey，不用则不填",
     ImmeDeliveryAppKey = "即时配送相关服务 AppKey，不用则不填",
-    ImmeDeliveryAppSecret = "即时配送相关服务 AppSecret，不用则不填"
+    ImmeDeliveryAppSecret = "即时配送相关服务 AppSecret，不用则不填",
+    MidasOfferId = "米大师（虚拟支付 1.0）相关服务 OfferId，不用则不填",
+    MidasOfferIdV2 = "米大师（虚拟支付 2.0）相关服务 OfferId，不用则不填",
+    MidasAppKey = "米大师（虚拟支付 1.0）相关服务 AppKey，不用则不填",
+    MidasAppKeyV2 = "米大师（虚拟支付 2.0）相关服务 AppKey，不用则不填"
 };
 var client = new WechatApiClient(options);
 ```

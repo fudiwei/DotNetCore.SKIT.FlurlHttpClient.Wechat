@@ -33,6 +33,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.24.0
+
+    -   **新增**：新增小游戏虚拟支付 2.0 相关接口。（_via_ [Gitee #I6F3OX](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I6F3OX)）
+
 -   Release 2.23.0
 
     -   **新增**：新增视频号小店资质图片、商品类目、品牌资质、区域仓库、纠纷、分享员、资金、优选联盟等相关接口。
