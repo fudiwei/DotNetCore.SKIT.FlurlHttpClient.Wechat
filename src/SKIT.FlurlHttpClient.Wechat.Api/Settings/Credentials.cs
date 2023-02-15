@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
 {
@@ -39,6 +39,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
         /// </summary>
         public string? MidasAppKey { get; }
 
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatApiClientOptions.MidasOfferId"/> 的副本。
+        /// </summary>
+        public string? MidasOfferId { get; }
+
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatApiClientOptions.MidasAppKeyV2"/> 的副本。
+        /// </summary>
+        public string? MidasAppKeyV2 { get; }
+
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatApiClientOptions.MidasOfferIdV2"/> 的副本。
+        /// </summary>
+        public string? MidasOfferIdV2 { get; }
+
         internal Credentials(WechatApiClientOptions options)
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
@@ -50,6 +65,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
             ImmeDeliveryAppKey = options.ImmeDeliveryAppKey;
             ImmeDeliveryAppSecret = options.ImmeDeliveryAppSecret;
             MidasAppKey = options.MidasAppKey;
+            MidasOfferId = options.MidasOfferId;
+            MidasAppKeyV2 = options.MidasAppKeyV2;
+            MidasOfferIdV2 = options.MidasOfferIdV2;
         }
     }
 }

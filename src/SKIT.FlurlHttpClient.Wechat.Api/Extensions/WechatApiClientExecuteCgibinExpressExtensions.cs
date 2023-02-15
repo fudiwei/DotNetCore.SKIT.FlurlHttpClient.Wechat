@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static class WechatApiClientExecuteCgibinExpressExtensions
     {
-        private static T InitRequest<T>(WechatApiClient client, ref T request)
+        private static T PreprocessRequest<T>(WechatApiClient client, ref T request)
             where T : Models.CgibinExpressLocalBusinessRequestBase, new()
         {
             if (client == null) throw new ArgumentNullException(nameof(request));
@@ -22,8 +22,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             if (request.DeliverySignature == null)
             {
-                string plainText = $"{request.ShopId}{request.ShopOrderId}{client.Credentials.ImmeDeliveryAppSecret}";
-                request.DeliverySignature = Utilities.SHA1Utility.Hash(plainText).ToLower();
+                string msgText = $"{request.ShopId}{request.ShopOrderId}{client.Credentials.ImmeDeliveryAppSecret}";
+                request.DeliverySignature = Utilities.SHA1Utility.Hash(msgText).ToLower();
             }
 
             return request;
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "order", "pre_add")
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "order", "add")
@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "order", "readd")
@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "order", "addtips")
@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "order", "get")
@@ -153,7 +153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "order", "precancel")
@@ -175,7 +175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "order", "cancel")
@@ -197,7 +197,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "order", "confirm_return")
@@ -279,7 +279,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "test_update_order")
@@ -301,7 +301,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "realmock_update_order")
@@ -343,7 +343,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            InitRequest(client, ref request);
+            PreprocessRequest(client, ref request);
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "local", "business", "update_order")

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/business/getpayfororder 接口的请求。</para>
@@ -11,6 +11,13 @@
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]
         public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置米大师环境。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("env")]
+        [System.Text.Json.Serialization.JsonPropertyName("env")]
+        public int MidasEnvironment { get; set; }
 
         /// <summary>
         /// 获取或设置微信索要单号。

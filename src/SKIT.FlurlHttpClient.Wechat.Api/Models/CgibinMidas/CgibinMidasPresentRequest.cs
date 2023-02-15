@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/midas/present 接口的请求。</para>
@@ -18,5 +18,15 @@
         [Newtonsoft.Json.JsonProperty("present_counts")]
         [System.Text.Json.Serialization.JsonPropertyName("present_counts")]
         public int PresentAmount { get; set; }
+
+        protected internal override string GetRequestMethod()
+        {
+            return "POST";
+        }
+
+        protected internal override string GetRequestPath()
+        {
+            return "/cgi-bin/midas/present";
+        }
     }
 }

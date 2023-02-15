@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api
+namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     /// <summary>
     /// 一个用于构造 <see cref="WechatApiClient"/> 时使用的配置项。
@@ -38,18 +38,33 @@
         public string? PushToken { get; set; }
 
         /// <summary>
-        /// 获取或设置即时配送公司帐号 AppKey。
+        /// 获取或设置即时配送公司帐号 AppKey（用于小程序即使配送相关接口）。
         /// </summary>
         public string? ImmeDeliveryAppKey { get; set; }
 
         /// <summary>
-        /// 获取或设置即时配送公司帐号 AppSecret。
+        /// 获取或设置即时配送公司帐号 AppSecret（用于小程序即使配送相关接口）。
         /// </summary>
         public string? ImmeDeliveryAppSecret { get; set; }
 
         /// <summary>
-        /// 获取或设置米大师平台 AppKey。
+        /// 获取或设置米大师平台 OfferId（用于小游戏虚拟支付 1.0 相关接口）。
+        /// </summary>
+        public string? MidasOfferId { get; set; }
+
+        /// <summary>
+        /// 获取或设置米大师平台 AppKey（用于小游戏虚拟支付 1.0 相关接口）。
         /// </summary>
         public string? MidasAppKey { get; set; }
+
+        /// <summary>
+        /// 获取或设置米大师平台 OfferId（用于小游戏虚拟支付 2.0 相关接口）。
+        /// </summary>
+        public string? MidasOfferIdV2 { get; set; }
+
+        /// <summary>
+        /// 获取或设置米大师平台 AppKey（用于小游戏虚拟支付 2.0 相关接口）。
+        /// </summary>
+        public string? MidasAppKeyV2 { get; set; }
     }
 }
