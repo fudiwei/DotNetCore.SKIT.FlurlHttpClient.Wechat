@@ -4,5 +4,6 @@
     "refresh_token": "REFRESH_TOKEN",
     "openid": "OPENID",
     "scope": "SCOPE",
-    "unionid": "o6_bmasdasdsad6_2sgVt7hMZOPfL"
+    "is_snapshotuser": 1,
+    "unionid": "UNIONID"
 }
