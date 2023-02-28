@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             where TEvent : WechatApiEvent
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
-            if (string.IsNullOrEmpty(callbackJson)) throw new ArgumentNullException(callbackJson);
+            if (callbackJson == null) throw new ArgumentNullException(callbackJson);
 
             try
             {
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             where TEvent : WechatApiEvent
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
-            if (string.IsNullOrEmpty(callbackXml)) throw new ArgumentNullException(callbackXml);
+            if (callbackXml == null) throw new ArgumentNullException(callbackXml);
 
             try
             {
@@ -249,9 +249,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
-        /// <param name="callbackSignature">微信回调通知中的 signature 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "nonce" 查询参数。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "signature" 查询参数。</param>
         /// <returns></returns>
         public static bool VerifyEventSignatureForEcho(this WechatApiClient client, string callbackTimestamp, string callbackNonce, string callbackSignature)
         {
@@ -266,14 +266,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>验证回调通知事件签名。</para>
+        /// <para>验证回调通知事件签名（仅安全模式）。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "nonce" 查询参数。</param>
         /// <param name="callbackJson">微信回调通知中请求正文（JSON 格式）。</param>
-        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "msg_signature" 查询参数。</param>
         /// <returns></returns>
         public static bool VerifyEventSignatureFromJson(this WechatApiClient client, string callbackTimestamp, string callbackNonce, string callbackJson, string callbackSignature)
         {
@@ -298,14 +298,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>验证回调通知事件签名。</para>
+        /// <para>验证回调通知事件签名（仅安全模式）。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "nonce" 查询参数。</param>
         /// <param name="callbackXml">微信回调通知中请求正文（XML 格式）。</param>
-        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "msg_signature" 查询参数。</param>
         /// <returns></returns>
         public static bool VerifyEventSignatureFromXml(this WechatApiClient client, string callbackTimestamp, string callbackNonce, string callbackXml, string callbackSignature)
         {

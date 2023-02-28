@@ -235,10 +235,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91148 </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
-        /// <param name="callbackEcho">微信回调通知中的 echostr 字段。</param>
-        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "nonce" 查询参数。</param>
+        /// <param name="callbackEcho">微信回调通知中的 "echostr" 查询参数。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "msg_signature" 查询参数。</param>
         /// <param name="replyEcho"></param>
         /// <returns></returns>
         public static bool VerifyEventSignatureForEcho(this WechatWorkClient client, string callbackTimestamp, string callbackNonce, string callbackEcho, string callbackSignature, out string? replyEcho)
@@ -278,10 +278,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91148 </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "nonce" 查询参数。</param>
         /// <param name="callbackJson">微信回调通知中请求正文（JSON 格式）。</param>
-        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "msg_signature" 查询参数。</param>
         /// <returns></returns>
         public static bool VerifyEventSignatureFromJson(this WechatWorkClient client, string callbackTimestamp, string callbackNonce, string callbackJson, string callbackSignature)
         {
@@ -312,10 +312,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91148 </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 nonce 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "timestamp" 查询参数。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "nonce" 查询参数。</param>
         /// <param name="callbackXml">微信回调通知中请求正文（XML 格式）。</param>
-        /// <param name="callbackSignature">微信回调通知中的 msg_signature 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "msg_signature" 查询参数。</param>
         /// <returns></returns>
         public static bool VerifyEventSignatureFromXml(this WechatWorkClient client, string callbackTimestamp, string callbackNonce, string callbackXml, string callbackSignature)
         {

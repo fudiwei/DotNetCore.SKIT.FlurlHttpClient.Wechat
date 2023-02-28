@@ -13,11 +13,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_1.shtml </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 Wechatpay-Timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 Wechatpay-Nonce 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
         /// <param name="callbackBody">微信回调通知中请求正文。</param>
-        /// <param name="callbackSignature">微信回调通知中的 Wechatpay-Signature 字段。</param>
-        /// <param name="callbackSerialNumber">微信回调通知中的 Wechatpay-Serial 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "Wechatpay-Signature" 请求标头。</param>
+        /// <param name="callbackSerialNumber">微信回调通知中的 "Wechatpay-Serial" 请求标头。</param>
         /// <returns></returns>
         public static bool VerifyEventSignature(this WechatTenpayClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSerialNumber)
         {
@@ -38,12 +38,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_1.shtml </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 Wechatpay-Timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 Wechatpay-Nonce 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
         /// <param name="callbackBody">微信回调通知中请求正文。</param>
-        /// <param name="callbackSignature">微信回调通知中的 Wechatpay-Signature 字段。</param>
-        /// <param name="callbackSignatureType">微信回调通知中的 Wechatpay-Signature-Type 字段。</param>
-        /// <param name="callbackSerialNumber">微信回调通知中的 Wechatpay-Serial 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "Wechatpay-Signature" 请求标头。</param>
+        /// <param name="callbackSignatureType">微信回调通知中的 "Wechatpay-Signature-Type" 请求标头。</param>
+        /// <param name="callbackSerialNumber">微信回调通知中的 "Wechatpay-Serial" 请求标头。</param>
         /// <returns></returns>
         public static bool VerifyEventSignature(this WechatTenpayClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSignatureType, string callbackSerialNumber)
         {
@@ -65,11 +65,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_1.shtml </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 Wechatpay-Timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 Wechatpay-Nonce 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
         /// <param name="callbackBody">微信回调通知中请求正文。</param>
-        /// <param name="callbackSignature">微信回调通知中的 Wechatpay-Signature 字段。</param>
-        /// <param name="callbackSerialNumber">微信回调通知中的 Wechatpay-Serial 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "Wechatpay-Signature" 请求标头。</param>
+        /// <param name="callbackSerialNumber">微信回调通知中的 "Wechatpay-Serial" 请求标头。</param>
         /// <param name="error"></param>
         /// <returns></returns>
         public static bool VerifyEventSignature(this WechatTenpayClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSerialNumber, out Exception? error)
@@ -92,12 +92,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_1.shtml </para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackTimestamp">微信回调通知中的 Wechatpay-Timestamp 字段。</param>
-        /// <param name="callbackNonce">微信回调通知中的 Wechatpay-Nonce 字段。</param>
+        /// <param name="callbackTimestamp">微信回调通知中的 "Wechatpay-Timestamp" 请求标头。</param>
+        /// <param name="callbackNonce">微信回调通知中的 "Wechatpay-Nonce" 请求标头。</param>
         /// <param name="callbackBody">微信回调通知中请求正文。</param>
-        /// <param name="callbackSignature">微信回调通知中的 Wechatpay-Signature 字段。</param>
-        /// <param name="callbackSignatureType">微信回调通知中的 Wechatpay-Signature-Type 字段。</param>
-        /// <param name="callbackSerialNumber">微信回调通知中的 Wechatpay-Serial 字段。</param>
+        /// <param name="callbackSignature">微信回调通知中的 "Wechatpay-Signature" 请求标头。</param>
+        /// <param name="callbackSignatureType">微信回调通知中的 "Wechatpay-Signature-Type" 请求标头。</param>
+        /// <param name="callbackSerialNumber">微信回调通知中的 "Wechatpay-Serial" 请求标头。</param>
         /// <param name="error"></param>
         /// <returns></returns>
         public static bool VerifyEventSignature(this WechatTenpayClient client, string callbackTimestamp, string callbackNonce, string callbackBody, string callbackSignature, string callbackSignatureType, string callbackSerialNumber, out Exception? error)
