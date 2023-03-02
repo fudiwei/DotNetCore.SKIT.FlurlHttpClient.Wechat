@@ -2,7 +2,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 MINIPROGRAMPAGE 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Receiving_standard_messages.html#%E6%96%87%E6%9C%AC%E6%B6%88%E6%81%AF </para>
+    /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/customer-message/receive.html </para>
     /// </summary>
     public class MiniProgramPageMessageEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
     {
