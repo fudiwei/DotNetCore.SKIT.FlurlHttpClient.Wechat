@@ -33,6 +33,15 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.25.0
+
+    -   **新增**：随官方更新网页授权相关接口模型。
+
+    -   **新增**：新增授权用户信息变更回调通知事件模型。
+
+    -   **新增**：新增用户在小程序“客服会话按钮”进入客服会话时产生的回调通知事件模型。（_via_ [Gitee #I6IU5T](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I6IU5T)）
+
+
 -   Release 2.24.0
 
     -   **新增**：新增小游戏虚拟支付 2.0 相关接口。（_via_ [Gitee #I6F3OX](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I6F3OX)）
