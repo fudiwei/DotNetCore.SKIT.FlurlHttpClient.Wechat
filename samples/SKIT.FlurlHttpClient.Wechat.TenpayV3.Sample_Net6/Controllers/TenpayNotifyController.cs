@@ -47,8 +47,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
             {
                 // NOTICE:
                 //   需提前注入 CertificateManager、并下载平台证书，才可以使用扩展方法执行验签操作。
-                //   有关 CertificateManager 的用法请参阅《开发文档 / 高级技巧 / 如何验证回调通知事件签名？》。
-                //   后续如何解密并反序列化，请参阅《开发文档 / 高级技巧 / 如何解密回调通知事件中的敏感数据？》。
+                //   有关 CertificateManager 的用法请参阅《开发文档 / 基础用法 / 如何验证回调通知事件签名？》。
+                //   后续如何解密并反序列化，请参阅《开发文档 / 基础用法 / 如何解密回调通知事件中的敏感数据？》。
 
                 return new JsonResult(new { code = "FAIL", message = "验签失败" });
             }

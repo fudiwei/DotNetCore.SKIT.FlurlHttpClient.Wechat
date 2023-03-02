@@ -1,28 +1,22 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.TenpayV2
 
-基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/) API v2 版客户端。
+基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/) HTTP API SDK。
 
-如需微信支付 v3 版 API 客户端，请移步 [`SKIT.FlurlHttpClient.WechantTenpayV3`](../WechatTenpayV3/README.md) 模块。
+本模块仅支持微信支付 v2 版 API，如需接入微信支付 v3 版 API，请移步 [`SKIT.FlurlHttpClient.WechantTenpayV3`](../WechatTenpayV3/README.md) 模块。
 
 ---
 
 ## 功能
 
 -   基于微信支付 v2 版 API 封装。
-
--   支持普通商户、境内服务商、银行服务商、跨境支付三种模式。
-
+-   支持普通商户、境内服务商、银行服务商、跨境支付四种模式，同时支持企业微信的企业支付相关功能。
 -   请求时自动生成签名，无需开发者手动干预。
-
 -   提供了微信支付所需的 AES、MD5、HMAC-SHA-256 等算法工具类。
-
--   提供了生成调起支付签名、解析回调通知事件等扩展方法。
-
-> **注意**：本库仅仅包含微信支付未提供 v3 版 API 的部分功能，如需微信支付 v3 版 API 客户端，欢迎使用 [`SKIT.FlurlHttpClient.WechantTenpayV3`](../WechatTenpayV3/README.md) 模块。
+-   提供了调起支付签名、解析回调通知事件敏感数据等扩展方法。
 
 ---
 
-## 基础用法
+## 快速入门
 
 ### 安装：
 
@@ -86,15 +80,19 @@ else
 
 ---
 
+## 基础用法
+
+-   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Basic_ModelDefinition.md)
+
+-   [如何解密回调通知事件中的敏感数据？](./Basic_EventInfoDecryption.md)
+
+-   [如何验证回调通知事件签名？](./Basic_EventSignatureVerification.md)
+
+-   [如何生成客户端（JSAPI、App、小程序等）所需的参数及签名？](./Basic_Parameters.md)
+
+---
+
 ## 高级技巧
-
--   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Advanced_ModelDefinition.md)
-
--   [如何解密回调通知事件中的敏感数据？](./Advanced_EventInfoDecryption.md)
-
--   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
-
--   [如何生成客户端（JSAPI、App、小程序等）所需的参数及签名？](./Advanced_Parameters.md)
 
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 

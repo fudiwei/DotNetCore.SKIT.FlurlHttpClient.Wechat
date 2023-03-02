@@ -1,22 +1,19 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.Work
 
-基于 `Flurl.Http` 的[企业微信](https://work.weixin.qq.com/) API 客户端。
+基于 `Flurl.Http` 的[企业微信](https://work.weixin.qq.com/) HTTP API SDK。
 
 ---
 
 ## 功能
 
 -   基于企业微信 API 封装。
-
 -   支持企业内部开发、第三方应用开发、服务商代开发、智慧硬件开发四种模式。
-
--   提供了企业微信 API 所需的 SHA-1、AES 等算法工具类。
-
+-   提供了企业微信 API 所需的 AES、SHA-1 等算法工具类。
 -   提供了 JS-SDK 签名、解析回调通知事件等扩展方法。
 
 ---
 
-## 基础用法
+## 快速入门
 
 ### 安装：
 
@@ -72,15 +69,19 @@ else
 
 ---
 
+## 基础用法
+
+-   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Basic_ModelDefinition.md)
+
+-   [如何解析回调通知事件？](./Basic_EventDeserialization.md)
+
+-   [如何生成 JS-SDK 所需的参数及签名？](./Basic_Parameters.md)
+
+-   [如何自定义额外的 API 接口？](./Basic_Extensions.md)
+
+---
+
 ## 高级技巧
-
--   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Advanced_ModelDefinition.md)
-
--   [如何解析回调通知事件？](./Advanced_EventDataDeserialization.md)
-
--   [如何生成 JS-SDK 所需的参数及签名？](./Advanced_Parameters.md)
-
--   [如何扩展额外的 API？](./Advanced_Extensions.md)
 
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 

@@ -2,7 +2,7 @@
 
 [![GitHub Stars](https://img.shields.io/github/stars/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat?logo=github&label=Stars)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat) [![GitHub Forks](https://img.shields.io/github/forks/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat?logo=github&label=Forks)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat) [![NuGet Download](https://img.shields.io/nuget/dt/SKIT.FlurlHttpClient.Wechat.TenpayV2.svg?sanitize=true&label=Downloads)](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV2) [![License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat?label=License)](https://mit-license.org/)
 
-基于 `Flurl.Http` 的微信商户平台 API v2 版客户端。
+基于 `Flurl.Http` 的微信商户平台 HTTP API SDK。
 
 **注意**：本库仅仅包含微信支付未提供 v3 版 API 的部分功能，如需微信支付 v3 版 API 客户端，欢迎使用 [`SKIT.FlurlHttpClient.Wechat.TenpayV3`](https://www.nuget.org/packages/SKIT.FlurlHttpClient.Wechat.TenpayV3)。
 

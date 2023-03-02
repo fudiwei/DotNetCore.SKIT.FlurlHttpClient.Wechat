@@ -12,7 +12,7 @@
 
 需要注意的是，平台为商户提供的是 PEM 格式的密钥文件，需区分文件格式之间的不同。
 
-有关密钥文件格式的更多介绍，请参阅本文档[《高级技巧 - 如何加密请求中的敏感数据？》](./Advanced_RequestSensitiveDataEncryption.md)的有关章节。
+有关密钥文件格式的更多介绍，请参阅本文档[《基础用法 - 如何加密请求中的敏感数据？》](./Basic_RequestSensitiveDataEncryption.md)的有关章节。
 
 ---
 

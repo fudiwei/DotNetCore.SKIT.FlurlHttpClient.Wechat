@@ -1,26 +1,22 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.TenpayV3
 
-基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/) API v3 版客户端。
+基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/) HTTP API SDK。
 
-如需微信支付 v2 版 API 客户端，请移步 [`SKIT.FlurlHttpClient.WechantTenpayV2`](../WechatTenpayV2/README.md) 模块。
+本模块仅支持微信支付 v3 版 API，如需接入微信支付 v2 版 API，请移步 [`SKIT.FlurlHttpClient.WechantTenpayV2`](../WechatTenpayV2/README.md) 模块。
 
 ---
 
 ## 功能
 
 -   基于微信支付 v3 版 API 封装。
-
 -   支持直连商户、服务商两种模式。
-
--   请求时自动生成签名（同时支持国际 RSA 算法或国密 SM 算法），无需开发者手动干预。
-
--   提供了微信支付所需的 RSA、AES、SM2/SM3/SM4、SHA-256 等算法工具类。
-
--   提供了生成调起支付签名、加密请求中敏感数据、解密响应中敏感数据、解析回调通知事件敏感数据等扩展方法。
+-   请求时自动生成签名（支持国际 RSA 算法或国密 SM 算法），无需开发者手动干预。
+-   提供了微信支付所需的 AES、RSA、SM2/SM3/SM4、SHA-256 等算法工具类。
+-   提供了调起支付签名、解析响应敏感数据、解析回调通知事件敏感数据等扩展方法。
 
 ---
 
-## 基础用法
+## 快速入门
 
 ### 安装：
 
@@ -90,27 +86,31 @@ else
 
 ---
 
+## 基础用法
+
+-   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Basic_ModelDefinition.md)
+
+-   [如何查看商户证书序列号？](./Basic_CertificateSerialNumber.md)
+
+-   [如何加密请求中的敏感数据？](./Basic_RequestSensitiveDataEncryption.md)
+
+-   [如何解密响应中的敏感数据？](./Basic_ResponseSensitiveDataDecryption.md)
+
+-   [如何验证响应签名？](./Basic_ResponseSignatureVerification.md)
+
+-   [如何解密回调通知事件中的敏感数据？](./Basic_EventResourceDecryption.md)
+
+-   [如何验证回调通知事件签名？](./Basic_EventSignatureVerification.md)
+
+-   [如何生成客户端（JSAPI、App、小程序等）所需的参数及二次签名？](./Basic_Parameters.md)
+
+-   [如何自定义额外的 API 接口？](./Basic_Extensions.md)
+
+-   [如何接入国密算法？](./Basic_SMAlgorithm.md)
+
+---
+
 ## 高级技巧
-
--   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Advanced_ModelDefinition.md)
-
--   [如何查看商户证书序列号？](./Advanced_CertificateSerialNumber.md)
-
--   [如何加密请求中的敏感数据？](./Advanced_RequestSensitiveDataEncryption.md)
-
--   [如何解密响应中的敏感数据？](./Advanced_ResponseSensitiveDataDecryption.md)
-
--   [如何验证响应签名？](./Advanced_ResponseSignatureVerification.md)
-
--   [如何解密回调通知事件中的敏感数据？](./Advanced_EventResourceDecryption.md)
-
--   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
-
--   [如何生成客户端（JSAPI、App、小程序等）所需的参数及二次签名？](./Advanced_Parameters.md)
-
--   [如何接入国密算法？](./Advanced_SMAlgorithm.md)
-
--   [如何扩展额外的 API？](./Advanced_Extensions.md)
 
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 

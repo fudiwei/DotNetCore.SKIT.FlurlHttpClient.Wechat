@@ -7,7 +7,7 @@
 [![Visitors](https://visitor-badge.laobi.icu/badge?page_id=fudiwei.DotNetCore.SKIT.FlurlHttpClient.Wechat&title=Visitors)](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat)
 [![License](https://img.shields.io/github/license/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat?label=License)](https://mit-license.org/)
 
-基于 `Flurl.Http` 的微信 API HTTP 客户端，支持公众平台、开放平台、商户平台、企业微信、广告平台、对话开放平台等模块。
+基于 `Flurl.Http` 的微信 HTTP API SDK，目前已包含公众平台、开放平台、商户平台、企业微信、广告平台、对话开放平台等模块。
 
 > 更多 SKIT.FlurlHttpClient 系列开发工具包请[点此查看](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient)。
 
@@ -16,22 +16,13 @@
 ## 特性
 
 -   基于 `Flurl.Http`，可与 `IHttpClientFactory` 集成。
-
--   支持 .NET Framework 4.6.1+、.NET Standard 2.0+、.NET Core 2.0+、.NET 5、.NET 6。
-
+-   支持 .NET Framework 4.6.1+、.NET Standard 2.0+、.NET Core 2.0+、.NET 5+。
 -   支持 Windows / Linux / macOS 多平台部署。
-
 -   支持 `System.Text.Json`（默认）和 `Newtonsoft.Json` 两种序列化方式。
-
--   异步式编程。
-
 -   强类型接口模型。
-
--   提供拦截器功能。
-
--   包含 SourceLink 符号文件，可在项目中无源代码调试。
-
--   完整、完善、完全的微信 API 封装。
+-   全异步式编程。
+-   提供 SourceLink 调试符号文件。
+-   完整、完善、完全的微信 HTTP API 封装。
 
 ---
 
@@ -119,7 +110,6 @@
 ## 参与贡献
 
 -   GitHub Repo：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git
-
 -   Gitee Repo：https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat.git
 
 以上仓库地址同步更新，均可接受 Issue 或 Pull Request。

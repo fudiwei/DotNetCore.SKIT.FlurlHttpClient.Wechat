@@ -1,20 +1,18 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.Api
 
-基于 `Flurl.Http` 的[微信公众平台](<(https://mp.weixin.qq.com/)>) & [微信开放平台](<(https://open.weixin.qq.com/)>) API 客户端。
+基于 `Flurl.Http` 的[微信公众平台](<(https://mp.weixin.qq.com/)>) & [微信开放平台](<(https://open.weixin.qq.com/)>) HTTP API SDK。
 
 ---
 
 ## 功能
 
 -   基于微信公众平台 & 微信开放平台 API 封装。
-
--   提供了微信公众平台 & 微信开放平台 API 所需的 SHA-1、HMAC-SHA-256、AES 等算法工具类。
-
+-   提供了微信公众平台 & 微信开放平台 API 所需的 AES、SHA-1、HMAC-SHA-256 等算法工具类。
 -   提供了 JS-SDK 签名、解析回调通知事件等扩展方法。
 
 ---
 
-## 基础用法
+## 快速入门
 
 ### 安装：
 
@@ -75,19 +73,23 @@ else
 
 ---
 
+## 基础用法
+
+-   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Basic_ModelDefinition.md)
+
+-   [如何解析回调通知事件？](./Basic_EventDeserialization.md)
+
+-   [如何验证回调通知事件签名？](./Basic_EventSignatureVerification.md)
+
+-   [如何解密经过加密处理的开放数据？](./Basic_OpenDataDecryption.md)
+
+-   [如何生成 JS-SDK 初始化时所需的参数及签名？](./Basic_Parameters.md)
+
+-   [如何自定义额外的 API 接口？](./Basic_Extensions.md)
+
+---
+
 ## 高级技巧
-
--   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Advanced_ModelDefinition.md)
-
--   [如何解析回调通知事件？](./Advanced_EventDataDeserialization.md)
-
--   [如何验证回调通知事件签名？](./Advanced_EventDataSignatureVerification.md)
-
--   [如何解密经过加密处理的开放数据？](./Advanced_OpenDataDecryption.md)
-
--   [如何生成 JS-SDK 初始化时所需的参数及签名？](./Advanced_Parameters.md)
-
--   [如何扩展额外的 API？](./Advanced_Extensions.md)
 
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 

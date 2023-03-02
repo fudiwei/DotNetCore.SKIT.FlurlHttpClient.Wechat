@@ -1,22 +1,19 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
-基于 `Flurl.Http` 的[腾讯微企付](https://business.tenpay.com/p/gateway-pay/) API 客户端。
+基于 `Flurl.Http` 的[腾讯微企付](https://business.tenpay.com/p/gateway-pay/) HTTP API SDK。
 
 ---
 
 ## 功能
 
 -   基于腾讯微企付 API 封装。
-
 -   请求时自动生成签名，无需开发者手动干预。
-
--   提供了腾讯微企付所需的 RSA、SHA-256、SM3、SM4 等算法工具类。
-
+-   提供了腾讯微企付所需的 RSA、SM3、SM4、SHA-256 等算法工具类。
 -   提供了解析回调通知事件等扩展方法。
 
 ---
 
-## 基础用法
+## 快速入门
 
 ### 安装：
 
@@ -72,17 +69,21 @@ else
 
 ---
 
+## 基础用法
+
+-   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Basic_ModelDefinition.md)
+
+-   [如何加密请求中的敏感数据？](./Basic_RequestSensitiveDataEncryption.md)
+
+-   [如何解密响应中的敏感数据？](./Basic_ResponseSensitiveDataDecryption.md)
+
+-   [如何验证响应签名？](./Basic_ResponseSignatureVerification.md)
+
+-   [如何验证回调通知事件签名？](./Basic_EventSignatureVerification.md)
+
+---
+
 ## 高级技巧
-
--   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Advanced_ModelDefinition.md)
-
--   [如何加密请求中的敏感数据？](./Advanced_RequestSensitiveDataEncryption.md)
-
--   [如何解密响应中的敏感数据？](./Advanced_ResponseSensitiveDataDecryption.md)
-
--   [如何验证响应签名？](./Advanced_ResponseSignatureVerification.md)
-
--   [如何验证回调通知事件签名？](./Advanced_EventSignatureVerification.md)
 
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 

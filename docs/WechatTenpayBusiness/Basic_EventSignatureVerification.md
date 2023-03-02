@@ -4,7 +4,7 @@
 
 ### 验签流程
 
-验证回调通知事件签名的方法与验证响应签名的类似，请参阅本文档[《高级技巧 - 如何验证响应签名？》](./Advanced_ResponseSignatureVerification.md)的有关章节。
+验证回调通知事件签名的方法与验证响应签名的类似，请参阅本文档[《基础用法 - 如何验证响应签名？》](./Basic_ResponseSignatureVerification.md)的有关章节。
 
 同样地，你既可以利用本库提供的 `RSAUtility` 工具类自行进行签名验证，也可以通过封装好的扩展方法完成签名验证：
 

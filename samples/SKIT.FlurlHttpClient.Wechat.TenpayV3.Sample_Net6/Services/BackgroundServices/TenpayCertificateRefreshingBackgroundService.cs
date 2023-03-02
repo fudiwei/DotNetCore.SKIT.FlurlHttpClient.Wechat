@@ -41,8 +41,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundService
                         if (response.IsSuccessful())
                         {
                             // NOTICE:
-                            //   如果构造 Client 时启用了 `AutoDecryptResponseSensitiveProperty` 配置项，则无需再手动执行下面被注释的解密方法：
-                            //   response = client.DecryptResponseSensitiveProperty(response);
+                            //   如果构造 Client 时启用了 `AutoDecryptResponseSensitiveProperty` 配置项，则无需再执行下面一行的手动解密方法：
+                            response = client.DecryptResponseSensitiveProperty(response);
 
                             foreach (var certificate in response.CertificateList)
                             {

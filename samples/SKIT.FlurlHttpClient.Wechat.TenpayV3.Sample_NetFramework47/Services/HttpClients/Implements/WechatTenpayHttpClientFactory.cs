@@ -27,8 +27,8 @@
                 MerchantCertSerialNumber = tenpayMerchantOptions.CertSerialNumber,
                 MerchantCertPrivateKey = tenpayMerchantOptions.CertPrivateKey,
                 CertificateManager = _tenpayCertificateManagerFactory.Create(tenpayMerchantOptions.MerchantId),
-                AutoEncryptRequestSensitiveProperty = true,
-                AutoDecryptResponseSensitiveProperty = true
+                AutoEncryptRequestSensitiveProperty = false,
+                AutoDecryptResponseSensitiveProperty = false
             });
         }
     }

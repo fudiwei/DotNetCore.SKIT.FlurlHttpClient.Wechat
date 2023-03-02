@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
             if (TYPE_VIDEO.Equals(request.Type))
             {
-                httpContent.Add(new ByteArrayContent(Encoding.UTF8.GetBytes(client.JsonSerializer.Serialize(request))), "\"description\"");
+                httpContent.Add(new StringContent(client.JsonSerializer.Serialize(request), Encoding.UTF8), "\"description\"");
             }
             return await client.SendRequestAsync<Models.CgibinMaterialAddMaterialResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }

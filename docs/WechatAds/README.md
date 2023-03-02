@@ -1,6 +1,6 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.Ads
 
-基于 `Flurl.Http` 的[微信广告平台](https://ad.weixin.qq.com/) API 客户端。
+基于 `Flurl.Http` 的[微信广告平台](https://ad.weixin.qq.com/) HTTP API SDK。
 
 需要注意的是，微信广告平台是腾讯广点通的独立业务，请开发者阅读相关文档时注意与广点通本身的 API 区分。
 
@@ -9,14 +9,12 @@
 ## 功能
 
 -   基于微信广告平台 API 封装。
-
 -   请求时自动生成服务商身份令牌，无需开发者手动干预。
-
 -   提供了微信广告平台 API 所需的 MD5 等算法工具类。
 
 ---
 
-## 基础用法
+## 快速入门
 
 ### 安装：
 
@@ -63,11 +61,15 @@ var response = await client.ExecuteCampaignsAddAsync(request);
 
 ---
 
+## 基础用法
+
+-   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Basic_ModelDefinition.md)
+
+-   [如何获取接口调用凭据（即 AccessToken）？](./Basic_AccessToken.md)
+
+---
+
 ## 高级技巧
-
--   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Advanced_ModelDefinition.md)
-
--   [如何获取接口调用凭据（即 AccessToken）？](./Advanced_AccessToken.md)
 
 -   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 
