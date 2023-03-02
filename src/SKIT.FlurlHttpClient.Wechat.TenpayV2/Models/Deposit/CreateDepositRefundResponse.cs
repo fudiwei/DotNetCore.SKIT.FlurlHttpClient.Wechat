@@ -48,6 +48,13 @@
         public string TransactionId { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置商户退款单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("out_refund_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_refund_no")]
+        public string OutRefundNumber { get; set; } = default!;
+
+        /// <summary>
         /// 获取或设置微信退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("refund_id")]
