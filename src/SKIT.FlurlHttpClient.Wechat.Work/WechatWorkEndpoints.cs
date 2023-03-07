@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work
+namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     /// <summary>
     /// <para>企业微信 API 接口域名。</para>

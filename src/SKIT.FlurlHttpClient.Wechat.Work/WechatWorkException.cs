@@ -1,4 +1,5 @@
-﻿using System;
+using System;
+using Newtonsoft.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net461; netstandard2.0; net6.0</TargetFrameworks>
+        <TargetFrameworks>net461; net471; netstandard2.0; net6.0</TargetFrameworks>
         <LangVersion>8.0</LangVersion>
         <Nullable>enable</Nullable>
         <NullableReferenceTypes>true</NullableReferenceTypes>
@@ -33,10 +33,22 @@
 	<ItemGroup>
 		<None Include="../../LOGO.png" Pack="true" PackagePath="/" />
 		<None Include="README.md" Pack="true" PackagePath="/" />
-	</ItemGroup>
+        <None Remove="SDK\Finance\Libs\*.*" />
+    </ItemGroup>
 
     <ItemGroup>
-        <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461'" />
+        <Content Include="SDK\Finance\Libs\*.*" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ContentWithTargetPath Include="SDK\Finance\Libs\*.*">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+            <TargetPath>%(Filename)%(Extension)</TargetPath>
+        </ContentWithTargetPath>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461' Or '$(TargetFramework)' == 'net471'" />
     </ItemGroup>
 
     <ItemGroup>
