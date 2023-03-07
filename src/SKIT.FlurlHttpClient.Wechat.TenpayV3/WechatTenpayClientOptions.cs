@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public string Endpoints { get; set; } = WechatTenpayEndpoints.DEFAULT;
 
         /// <summary>
-        /// 获取或设置声明应答中的错误描述使用的自然语言语种。
+        /// 获取或设置客户端用户代理。
         /// <para>默认值：<i>根据操作系统自动生成</i></para>
         /// </summary>
         public string UserAgent { get; set; } = $"OS/{Environment.OSVersion.Platform} SKIT.FlurlHttpClient.Wechat.Tenpay/{Assembly.GetExecutingAssembly().GetName().Version}";
