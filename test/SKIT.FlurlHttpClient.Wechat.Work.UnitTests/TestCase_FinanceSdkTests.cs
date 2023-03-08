@@ -4,6 +4,7 @@ using Xunit;
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
     using SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance;
+    using SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models;
 
     public class TestCase_FinanceSdkTests
     {
@@ -12,12 +13,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
         {
             using var client = new WechatWorkFinanceClient(new WechatWorkFinanceClientOptions()
             {
-                CorpId = "",
-                SecretKey = ""
+                CorpId = TestConfigs.WechatCorpId,
+                SecretKey = TestConfigs.WechatFinanceSecretKey,
+                RsaPrivateKey = TestConfigs.WechatFinanceRsaPrivateKey
             });
 
-            client.Dispose();
-            Assert.NotNull(client);
+            var reqGetChatData = new GetChatDataRequest();
+            var resGetChatData = await client.ExecuteGetChatDataAsync(reqGetChatData);
+
+            Assert.True(resGetChatData.IsSuccessful());
         }
     }
 }

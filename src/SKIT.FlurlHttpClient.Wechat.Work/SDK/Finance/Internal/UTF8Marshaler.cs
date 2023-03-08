@@ -6,6 +6,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 {
     internal class UTF8Marshaler : ICustomMarshaler
     {
+        private static readonly Lazy<UTF8Marshaler> _instance = new Lazy<UTF8Marshaler>(() => new UTF8Marshaler());
+
+        public static ICustomMarshaler GetInstance(string pstrCookie)
+        {
+            return _instance.Value;
+        }
+
+        public static string? PtrToStringUTF8(IntPtr pNativeData)
+        {
+            return _instance.Value.MarshalNativeToManaged(pNativeData) as string;
+        }
+
         public IntPtr MarshalManagedToNative(object managedObj)
         {
             if (ReferenceEquals(managedObj, null))
@@ -20,13 +32,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
             return pNativeData;
         }
 
-        public object? MarshalNativeToManaged(IntPtr pNativeData)
+        public object MarshalNativeToManaged(IntPtr pNativeData)
         {
             if (pNativeData == IntPtr.Zero)
-                return null;
+                return default!;
 
 #if NETCOREAPP || NET5_0_OR_GREATER
-            return Marshal.PtrToStringUTF8(pNativeData);
+            return Marshal.PtrToStringUTF8(pNativeData)!;
 #else
             byte b;
             int offset = 0;
