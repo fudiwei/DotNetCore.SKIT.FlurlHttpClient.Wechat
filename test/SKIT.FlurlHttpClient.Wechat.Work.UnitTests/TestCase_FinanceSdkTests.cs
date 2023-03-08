@@ -15,13 +15,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
             {
                 CorpId = TestConfigs.WechatCorpId,
                 SecretKey = TestConfigs.WechatFinanceSecretKey,
-                RsaPrivateKey = TestConfigs.WechatFinanceRsaPrivateKey
+                EncryptionPrivateKey = TestConfigs.WechatFinanceEncryptionPrivateKey
             });
 
-            var reqGetChatData = new GetChatDataRequest();
-            var resGetChatData = await client.ExecuteGetChatDataAsync(reqGetChatData);
+            var reqGetChatRecords = new GetChatRecordsRequest();
+            var resGetChatRecords = await client.ExecuteGetChatRecordsAsync(reqGetChatRecords);
 
-            Assert.True(resGetChatData.IsSuccessful());
+            Assert.True(resGetChatRecords.IsSuccessful());
         }
     }
 }

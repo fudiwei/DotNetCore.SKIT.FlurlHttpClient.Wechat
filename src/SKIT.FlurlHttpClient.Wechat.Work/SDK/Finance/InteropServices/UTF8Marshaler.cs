@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
+namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
 {
     internal class UTF8Marshaler : ICustomMarshaler
     {
@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 
         public IntPtr MarshalManagedToNative(object managedObj)
         {
-            if (ReferenceEquals(managedObj, null))
+            if (managedObj is null)
                 return IntPtr.Zero;
             if (!(managedObj is string))
                 throw new InvalidOperationException();
@@ -62,7 +62,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 
         public void CleanUpNativeData(IntPtr pNativeData)
         {
-            Marshal.FreeHGlobal(pNativeData);
+            if (pNativeData == IntPtr.Zero)
+            {
+                return;
+            }
+
+            /**
+             * NOTICE:
+             *   这里释放内存会导致外部 P/Invoke 调用 FreeSlice() 方法时抛出异常
+             *   因此请注释下面的代码
+             */
+            // Marshal.FreeHGlobal(pNativeData);
         }
 
         public int GetNativeDataSize()

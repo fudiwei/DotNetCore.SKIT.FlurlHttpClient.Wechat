@@ -32,8 +32,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         public string SecretKey { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置企业微信会话内容存档消息加解密 RSA 私钥。
+        /// 获取或设置企业微信会话内容存档消息加解密私钥。
         /// </summary>
-        public string RsaPrivateKey { get; set; } = default!;
+        public string EncryptionPrivateKey { get; set; } = default!;
     }
 }

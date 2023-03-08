@@ -50,26 +50,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         public int ReturnCode { get; internal set; }
 
         /// <summary>
-        /// 获取企业微信会话内容存档 API 返回的错误码。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("errcode")]
-        [System.Text.Json.Serialization.JsonPropertyName("errcode")]
-        public int ErrorCode { get; set; }
-
-        /// <summary>
-        /// 获取企业微信会话内容存档 API 返回的错误描述。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("errmsg")]
-        [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
-        public string? ErrorMessage { get; set; }
-
-        /// <summary>
-        /// 获取一个值，该值指示调用企业微信会话内容存档 API 是否成功（即 "ret" 值为 0、且 "errcode" 值为 0）。
+        /// 获取一个值，该值指示调用企业微信会话内容存档 API 是否成功（即 "ret" 值为 0）。
         /// </summary>
         /// <returns></returns>
         public virtual bool IsSuccessful()
         {
-            return ReturnCode == 0 && ErrorCode == 0;
+            return ReturnCode == 0;
         }
     }
 }

@@ -33,15 +33,15 @@
 	<ItemGroup>
 		<None Include="../../LOGO.png" Pack="true" PackagePath="/" />
 		<None Include="README.md" Pack="true" PackagePath="/" />
-        <None Remove="SDK\Finance\Libs\*.*" />
+        <None Remove="SDK\Finance\_Libs\*.*" />
     </ItemGroup>
 
     <ItemGroup>
-        <Content Include="SDK\Finance\Libs\*.*" />
+        <Content Include="SDK\Finance\_Libs\*.*" />
     </ItemGroup>
 
     <ItemGroup>
-        <ContentWithTargetPath Include="SDK\Finance\Libs\*.*">
+        <ContentWithTargetPath Include="SDK\Finance\_Libs\*.*">
             <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
             <TargetPath>%(Filename)%(Extension)</TargetPath>
         </ContentWithTargetPath>
@@ -52,6 +52,7 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.1.1" />
         <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.6.0" />
     </ItemGroup>
 

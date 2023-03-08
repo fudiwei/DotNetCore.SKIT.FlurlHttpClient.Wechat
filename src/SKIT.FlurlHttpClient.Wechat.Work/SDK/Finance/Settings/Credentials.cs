@@ -15,9 +15,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Settings
         public string SecretKey { get; }
 
         /// <summary>
-        /// 初始化客户端时 <see cref="WechatWorkFinanceClientOptions.RsaPrivateKey"/> 的副本。
+        /// 初始化客户端时 <see cref="WechatWorkFinanceClientOptions.EncryptionPrivateKey"/> 的副本。
         /// </summary>
-        public string RsaPrivateKey { get; }
+        public string EncryptionPrivateKey { get; }
 
         internal Credentials(WechatWorkFinanceClientOptions options)
         {
@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Settings
 
             CorpId = options.CorpId;
             SecretKey = options.SecretKey;
-            RsaPrivateKey = options.RsaPrivateKey;
+            EncryptionPrivateKey = options.EncryptionPrivateKey;
         }
     }
 }

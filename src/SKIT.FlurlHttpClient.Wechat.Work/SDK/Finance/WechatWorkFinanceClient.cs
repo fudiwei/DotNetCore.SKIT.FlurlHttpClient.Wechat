@@ -1,7 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -9,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 {
+    using SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices;
+
     /// <summary>
     /// 一个企业微信会话内容存档 API HTTP 客户端。
     /// </summary>
@@ -77,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 #endif
         }
 
-        public Task<Models.GetChatDataResponse> ExecuteGetChatDataAsync(Models.GetChatDataRequest request, CancellationToken cancellationToken = default)
+        public Task<Models.GetChatRecordsResponse> ExecuteGetChatRecordsAsync(Models.GetChatRecordsRequest request, CancellationToken cancellationToken = default)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
@@ -90,12 +89,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                     IsRunOnLinux() ? FinanceDllLinuxPInvoker.NewSlice() :
                     throw new PlatformNotSupportedException();
 
-                Models.GetChatDataResponse response = new Models.GetChatDataResponse();
+                Models.GetChatRecordsResponse response = new Models.GetChatRecordsResponse();
                 try
                 {
                     int ret = /* 获取聊天记录数据 */
-                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetChatData(_sdk, request.Cursor, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slice) :
-                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetChatData(_sdk, request.Cursor, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slice) :
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetChatData(_sdk, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slice) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetChatData(_sdk, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slice) :
                         throw new PlatformNotSupportedException();
                     if (ret == 0)
                     {
@@ -108,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                             IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(slice) :
                             throw new PlatformNotSupportedException();
 
-                        response = JsonSerializer.Deserialize<Models.GetChatDataResponse>(sliceContent);
+                        response = JsonSerializer.Deserialize<Models.GetChatRecordsResponse>(sliceContent);
                         response.RawBytes = Encoding.UTF8.GetBytes(sliceContent);
                     }
 
@@ -121,7 +120,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 }
                 finally
                 {
-                    // TODO: bug to fix
                     if (IsRunOnWindows())
                         FinanceDllWindowsPInvoker.FreeSlice(slice);
                     else if (IsRunOnLinux())

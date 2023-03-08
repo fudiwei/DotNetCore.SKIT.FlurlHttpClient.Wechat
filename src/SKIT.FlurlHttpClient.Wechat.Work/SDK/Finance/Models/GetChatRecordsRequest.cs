@@ -1,13 +1,13 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
 {
-    public class GetChatDataRequest : WechatWorkFinanceRequest
+    public class GetChatRecordsRequest : WechatWorkFinanceRequest
     {
         /// <summary>
-        /// 获取或设置分页游标。
+        /// 获取或设置起始序号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public long Cursor { get; set; }
+        public long LastSequence { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

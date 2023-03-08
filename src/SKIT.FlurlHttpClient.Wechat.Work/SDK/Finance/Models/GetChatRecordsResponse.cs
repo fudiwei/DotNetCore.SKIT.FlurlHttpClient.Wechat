@@ -1,17 +1,17 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
 {
-    public class GetChatDataResponse : WechatWorkFinanceResponse
+    public class GetChatRecordsResponse : WechatWorkFinanceResponse
     {
         public static class Types
         {
             public class ChatData
             {
                 /// <summary>
-                /// 获取或设置分页游标。
+                /// 获取或设置序号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("seq")]
                 [System.Text.Json.Serialization.JsonPropertyName("seq")]
-                public long NextCursor { get; set; }
+                public long Sequence { get; set; }
 
                 /// <summary>
                 /// 获取或设置消息 ID。
@@ -44,10 +44,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
         }
 
         /// <summary>
+        /// 获取或设置错误码。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("errcode")]
+        [System.Text.Json.Serialization.JsonPropertyName("errcode")]
+        public int ErrorCode { get; set; }
+
+        /// <summary>
+        /// 获取或设置错误描述。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("errmsg")]
+        [System.Text.Json.Serialization.JsonPropertyName("errmsg")]
+        public string? ErrorMessage { get; set; }
+
+        /// <summary>
         /// 获取或设置聊天记录列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chatdata")]
         [System.Text.Json.Serialization.JsonPropertyName("chatdata")]
         public Types.ChatData[] ChatDataList { get; set; } = default!;
+
+        public override bool IsSuccessful()
+        {
+            return base.IsSuccessful() && ErrorCode == 0;
+        }
     }
 }
