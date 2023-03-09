@@ -500,6 +500,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.16.0
+
+    -   **新增**：随官方更新特约商户进件、二级商户进件申请接口模型。
+
+    -   **新增**：随官方更新消费者投诉单相关接口模型。
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.1.1。
+
 -   Release 2.15.2
 
     -   **修复**：修复部分包含敏感信息字段的接口模型不能正确触发自动加解密的问题。（_via_ [GitHub #76](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/76)）
