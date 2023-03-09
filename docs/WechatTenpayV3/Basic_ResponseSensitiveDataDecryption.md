@@ -30,7 +30,7 @@ string plainText = RSAUtility.DecryptWithECB(privateKey, cipherText);
 此外，本库还封装了直接解密响应中敏感信息字段的扩展方法，下面给出一个示例代码：
 
 ```csharp
-var request = new Models.QueryCertificatesRequest();
+var request = new QueryCertificatesRequest();
 var response = await client.ExecuteQueryCertificatesAsync(request);
 
 Console.WriteLine("before: {0}", response.CertificateList.First().EncryptCertificate.CipherText); // 此时仍是密文

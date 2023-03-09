@@ -6,7 +6,7 @@
 >
 > [《微信支付开发者文档 - 国密接入指引》](https://pay.weixin.qq.com/docs/merchant/development/shangmi/introduction.html)
 
-从 v2.14.0 版本起，本库支持接入微信支付平台基于国密证书和使用 SM2/SM3/SM4 算法的 API v3 接口。
+自 v2.14.0 版本起，本库支持接入微信支付平台基于国密证书和使用 SM2/SM3/SM4 算法的 API v3 接口。
 
 ---
 
@@ -28,7 +28,7 @@ var client = new WechatTenpayClient(options);
 接着，在获取平台证书时，需指定证书的算法类型：
 
 ```csharp
-var request = new Models.QueryCertificatesRequest()
+var request = new QueryCertificatesRequest()
 {
     AlgorithmType = "SM2"
 };

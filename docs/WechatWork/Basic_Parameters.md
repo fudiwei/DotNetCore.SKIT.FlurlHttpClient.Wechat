@@ -4,7 +4,7 @@
 
 > 请先自行阅读：
 >
-> [企业微信 API - 客户端 API：JS-SDK 使用权限签名算法》](https://open.work.weixin.qq.com/api/doc/90000/90136/90506)
+> [《企业微信开发者中心 - 客户端 API - JS-SDK：JS-SDK 使用权限签名算法》](https://open.work.weixin.qq.com/api/doc/90000/90136/90506)
 
 你可根据官方文档的规则利用本库提供的 `SHA1Utility` 工具类自行进行签名生成。
 
@@ -12,7 +12,7 @@
 
 ```csharp
 /* 以生成 wx.config() 所需参数为例 */
-var request = new Models.CgibinGetJsapiTicketRequest()
+var request = new CgibinGetJsapiTicketRequest()
 {
     AccessToken = "企业微信应用的 AccessToken"
 };

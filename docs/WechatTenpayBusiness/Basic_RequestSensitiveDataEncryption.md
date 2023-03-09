@@ -31,9 +31,9 @@ request.TBEPEncryption = new WechatTenpayBusinessRequestTBEPEncryption()
 此外，本库还封装了直接加密请求中敏感信息字段的扩展方法。下面给出一个手动调用的示例：
 
 ```csharp
-var request = new Models.CreateMSEPayProductApplicationRequest()
+var request = new CreateMSEPayProductApplicationRequest()
 {
-    BusinessLicense = new Models.CreateMSEPayProductApplicationRequest.Types.BusinessLicense()
+    BusinessLicense = new CreateMSEPayProductApplicationRequest.Types.BusinessLicense()
     {
         BusinessRegisterType = "TYPE",
         MerchantName = "商户",

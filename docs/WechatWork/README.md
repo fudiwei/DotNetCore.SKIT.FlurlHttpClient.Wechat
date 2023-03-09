@@ -8,7 +8,8 @@
 
 -   基于企业微信 API 封装。
 -   支持企业内部开发、第三方应用开发、服务商代开发、智慧硬件开发四种模式。
--   提供了企业微信 API 所需的 AES、SHA-1 等算法工具类。
+-   提供了企业微信 API 所需的 AES、RSA、SHA-1 等算法工具类。
+-   提供了企业微信会话内容存档 C SDK 的相关功能封装。
 -   提供了 JS-SDK 签名、解析回调通知事件等扩展方法。
 
 ---
@@ -76,6 +77,8 @@ else
 -   [如何解析回调通知事件？](./Basic_EventDeserialization.md)
 
 -   [如何生成 JS-SDK 所需的参数及签名？](./Basic_Parameters.md)
+
+-   [如何接入会话内容存档 C SDK？](./Basic_FinanceSDK.md)
 
 -   [如何自定义额外的 API 接口？](./Basic_Extensions.md)
 

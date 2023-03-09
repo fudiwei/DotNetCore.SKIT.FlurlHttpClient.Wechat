@@ -63,11 +63,11 @@ var request = new CreatePayTransactionJsapiRequest()
     Description = "订单描述",
     ExpireTime = DateTimeOffset.Now.AddMinutes(15),
     NotifyUrl = "https://example.com",
-    Amount = new Models.CreatePayTransactionJsapiRequest.Types.Amount()
+    Amount = new CreatePayTransactionJsapiRequest.Types.Amount()
     {
         Total = 1
     },
-    Payer = new Models.CreatePayTransactionJsapiRequest.Types.Payer()
+    Payer = new CreatePayTransactionJsapiRequest.Types.Payer()
     {
         OpenId = "微信 OpenId"
     }

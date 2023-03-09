@@ -23,7 +23,7 @@ string plainText = SM4Utility.DecryptWithCBC(sm4Key, sm4IV, cipherText);
 此外，本库还封装了直接解密响应中敏感信息字段的扩展方法，下面给出一个示例代码：
 
 ```csharp
-var request = new Models.GetMSEPayPaymentByPaymentIdRequest();
+var request = new GetMSEPayPaymentByPaymentIdRequest();
 var response = await client.ExecuteGetMSEPayPaymentByPaymentIdAsync(request);
 
 Console.WriteLine("before: {0}", response.Payee.EnterpriseName); // 此时仍是密文

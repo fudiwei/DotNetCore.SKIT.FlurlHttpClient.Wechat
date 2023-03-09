@@ -16,7 +16,7 @@
 
 ```csharp
 /* 以生成 JSAPI 调起支付所需参数为例 */
-var request = new Models.CreatePayUnifiedOrderRequest()
+var request = new CreatePayUnifiedOrderRequest()
 {
     OutTradeNumber = "商户订单号",
     AppId = "公众号 AppId",

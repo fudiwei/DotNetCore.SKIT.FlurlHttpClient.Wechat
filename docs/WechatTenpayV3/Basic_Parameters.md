@@ -16,17 +16,17 @@
 
 ```csharp
 /* 以生成 JSAPI 调起支付所需参数为例 */
-var request = new Models.CreatePayTransactionJsapiRequest()
+var request = new CreatePayTransactionJsapiRequest()
 {
     OutTradeNumber = "商户订单号",
     AppId = "公众号 AppId",
     Description = "描述",
     NotifyUrl = "回调地址",
-    Amount = new Models.CreatePayTransactionJsapiRequest.Types.Amount()
+    Amount = new CreatePayTransactionJsapiRequest.Types.Amount()
     {
         Total = 0
     },
-    Payer = new Models.CreatePayTransactionJsapiRequest.Types.Payer()
+    Payer = new CreatePayTransactionJsapiRequest.Types.Payer()
     {
         OpenId = "用户 OpenId"
     }

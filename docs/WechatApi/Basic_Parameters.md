@@ -12,7 +12,7 @@
 
 ```csharp
 /* 以生成 wx.config() 所需参数为例 */
-var request = new Models.CgibinTicketGetTicketRequest()
+var request = new CgibinTicketGetTicketRequest()
 {
     AccessToken = "微信 AccessToken"
 };
