@@ -24,6 +24,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         /// <returns></returns>
         Task<Models.DecryptChatRecordResponse> ExecuteDecryptChatRecordAsync(Models.DecryptChatRecordRequest request, CancellationToken cancellationToken = default);
 
-        // TODO: 接入会话内容存档
+        /// <summary>
+        /// <para>异步调用会话内容存档之获取媒体文件分片接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91774 </para>
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<Models.GetMediaFileBufferResponse> ExecuteGetMediaFileBufferAsync(Models.GetMediaFileBufferRequest request, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// <para>异步调用会话内容存档之获取媒体文件接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91774 </para>
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<Models.GetMediaFileResponse> ExecuteGetMediaFileAsync(Models.GetMediaFileRequest request, CancellationToken cancellationToken = default);
     }
 }

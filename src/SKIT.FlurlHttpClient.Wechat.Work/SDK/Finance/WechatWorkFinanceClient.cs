@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
@@ -96,21 +97,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 
             return Task.Run(() =>
             {
-                IntPtr slicePtr = IntPtr.Zero;
-                Action freeSlicePtr = () =>
+                IntPtr dataPtr = IntPtr.Zero;
+                Action freeDataPtr = () =>
                 {
-                    if (slicePtr != IntPtr.Zero)
+                    if (dataPtr != IntPtr.Zero)
                     {
-                        if (IsRunOnWindows()) FinanceDllWindowsPInvoker.FreeSlice(slicePtr);
-                        else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.FreeSlice(slicePtr);
-                        else Marshal.FreeHGlobal(slicePtr);
+                        if (IsRunOnWindows()) FinanceDllWindowsPInvoker.FreeSlice(dataPtr);
+                        else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.FreeSlice(dataPtr);
+                        else Marshal.FreeHGlobal(dataPtr);
 
-                        slicePtr = IntPtr.Zero;
+                        dataPtr = IntPtr.Zero;
                     }
                 };
-                cancellationToken.Register(freeSlicePtr);
+                cancellationToken.Register(freeDataPtr);
 
-                slicePtr = /* 申请用于存储聊天记录数据的内存空间 */
+                dataPtr = /* 申请用于存储聊天记录数据的内存空间 */
                     IsRunOnWindows() ? FinanceDllWindowsPInvoker.NewSlice() :
                     IsRunOnLinux() ? FinanceDllLinuxPInvoker.NewSlice() :
                     throw new PlatformNotSupportedException();
@@ -119,22 +120,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 try
                 {
                     int ret = /* 获取聊天记录数据 */
-                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slicePtr) :
-                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slicePtr) :
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, dataPtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, dataPtr) :
                         throw new PlatformNotSupportedException();
                     if (ret == 0)
                     {
-                        //int sliceLength = /* 获取聊天记录数据内容长度 */
-                        //    IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetSliceLen(slice) :
-                        //    IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetSliceLen(slice) :
+                        //int dataSize = /* 获取聊天记录数据内容长度 */
+                        //    IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetSliceLen(dataPtr) :
+                        //    IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetSliceLen(dataPtr) :
                         //    throw new PlatformNotSupportedException();
-                        string sliceContent = /* 获取聊天记录数据内容 */
-                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(slicePtr) :
-                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(slicePtr) :
+                        string dataContent = /* 获取聊天记录数据内容 */
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(dataPtr) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(dataPtr) :
                             throw new PlatformNotSupportedException();
 
-                        response = JsonSerializer.Deserialize<Models.GetChatRecordsResponse>(sliceContent);
-                        response.RawBytes = Encoding.UTF8.GetBytes(sliceContent);
+                        response = JsonSerializer.Deserialize<Models.GetChatRecordsResponse>(dataContent);
+                        response.RawBytes = Encoding.UTF8.GetBytes(dataContent);
                     }
 
                     response.ReturnCode = ret;
@@ -146,7 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 }
                 finally
                 {
-                    freeSlicePtr();
+                    freeDataPtr();
                 }
             }, cancellationToken);
         }
@@ -187,21 +188,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                     throw new WechatWorkFinanceException("Failed to decrypt random key of the encrypted chat data. Please see the inner exception for more details.", ex);
                 }
 
-                IntPtr slicePtr = IntPtr.Zero;
-                Action freeSlicePtr = () =>
+                IntPtr dataPtr = IntPtr.Zero;
+                Action freeDataPtr = () =>
                 {
-                    if (slicePtr != IntPtr.Zero)
+                    if (dataPtr != IntPtr.Zero)
                     {
-                        if (IsRunOnWindows()) FinanceDllWindowsPInvoker.FreeSlice(slicePtr);
-                        else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.FreeSlice(slicePtr);
-                        else Marshal.FreeHGlobal(slicePtr);
+                        if (IsRunOnWindows()) FinanceDllWindowsPInvoker.FreeSlice(dataPtr);
+                        else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.FreeSlice(dataPtr);
+                        else Marshal.FreeHGlobal(dataPtr);
 
-                        slicePtr = IntPtr.Zero;
+                        dataPtr = IntPtr.Zero;
                     }
                 };
-                cancellationToken.Register(freeSlicePtr);
+                cancellationToken.Register(freeDataPtr);
 
-                slicePtr = /* 申请用于存储聊天记录数据的内存空间 */
+                dataPtr = /* 申请用于存储聊天记录数据的内存空间 */
                     IsRunOnWindows() ? FinanceDllWindowsPInvoker.NewSlice() :
                     IsRunOnLinux() ? FinanceDllLinuxPInvoker.NewSlice() :
                     throw new PlatformNotSupportedException();
@@ -210,22 +211,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 try
                 {
                     int ret = /* 解密聊天记录数据 */
-                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.DecryptData(_sdkPtr, encryptKey, request.EncryptedChatMessage, slicePtr) :
-                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.DecryptData(_sdkPtr, encryptKey, request.EncryptedChatMessage, slicePtr) :
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.DecryptData(_sdkPtr, encryptKey, request.EncryptedChatMessage, dataPtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.DecryptData(_sdkPtr, encryptKey, request.EncryptedChatMessage, dataPtr) :
                         throw new PlatformNotSupportedException();
                     if (ret == 0)
                     {
-                        //int sliceLength = /* 获取聊天记录数据内容长度 */
-                        //    IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetSliceLen(slice) :
-                        //    IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetSliceLen(slice) :
+                        //int dataSize = /* 获取聊天记录数据内容长度 */
+                        //    IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetSliceLen(dataPtr) :
+                        //    IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetSliceLen(dataPtr) :
                         //    throw new PlatformNotSupportedException();
-                        string sliceContent = /* 获取聊天记录数据内容 */
-                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(slicePtr) :
-                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(slicePtr) :
+                        string dataContent = /* 获取聊天记录数据内容 */
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(dataPtr) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(dataPtr) :
                             throw new PlatformNotSupportedException();
 
-                        response = JsonSerializer.Deserialize<Models.DecryptChatRecordResponse>(sliceContent);
-                        response.RawBytes = Encoding.UTF8.GetBytes(sliceContent);
+                        response = JsonSerializer.Deserialize<Models.DecryptChatRecordResponse>(dataContent);
+                        response.RawBytes = Encoding.UTF8.GetBytes(dataContent);
                     }
 
                     response.ReturnCode = ret;
@@ -237,9 +238,159 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 }
                 finally
                 {
-                    freeSlicePtr();
+                    freeDataPtr();
                 }
             }, cancellationToken);
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public Task<Models.GetMediaFileBufferResponse> ExecuteGetMediaFileBufferAsync(Models.GetMediaFileBufferRequest request, CancellationToken cancellationToken = default)
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            EnsureInitialized();
+
+            return Task.Run(() =>
+            {
+                IntPtr dataPtr = IntPtr.Zero;
+                Action freeDataPtr = () =>
+                {
+                    if (dataPtr != IntPtr.Zero)
+                    {
+                        if (IsRunOnWindows()) FinanceDllWindowsPInvoker.FreeMediaData(dataPtr);
+                        else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.FreeMediaData(dataPtr);
+                        else Marshal.FreeHGlobal(dataPtr);
+
+                        dataPtr = IntPtr.Zero;
+                    }
+                };
+                cancellationToken.Register(freeDataPtr);
+
+                dataPtr = /* 申请用于存储媒体文件数据的内存空间 */
+                    IsRunOnWindows() ? FinanceDllWindowsPInvoker.NewMediaData() :
+                    IsRunOnLinux() ? FinanceDllLinuxPInvoker.NewMediaData() :
+                    throw new PlatformNotSupportedException();
+
+                Models.GetMediaFileBufferResponse response = new Models.GetMediaFileBufferResponse();
+                try
+                {
+                    int ret = /* 获取媒体文件数据 */
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, dataPtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, dataPtr) :
+                        throw new PlatformNotSupportedException();
+                    if (ret == 0)
+                    {
+                        int dataSize = /* 获取媒体文件数据内容长度 */
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetDataLen(dataPtr) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetDataLen(dataPtr) :
+                            throw new PlatformNotSupportedException();
+                        IntPtr dataContentPtr = /* 获取媒体文件数据内容 */
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetData(dataPtr) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetData(dataPtr) :
+                            throw new PlatformNotSupportedException();
+                        string dataNextBufferIndex = /* 获取媒体文件数据内容缓冲标识 */
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetOutIndexBuf(dataPtr) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetOutIndexBuf(dataPtr) :
+                            throw new PlatformNotSupportedException();
+                        int dataIsFinishFlag = /* 获取媒体文件数据内容完结标识 */
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.IsMediaDataFinish(dataPtr) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.IsMediaDataFinish(dataPtr) :
+                            throw new PlatformNotSupportedException();
+
+                        byte[] bytes = new byte[dataSize];
+                        Marshal.Copy(dataContentPtr, bytes, 0, bytes.Length);
+                        Marshal.FreeHGlobal(dataContentPtr);
+
+                        response.FileBufferBytes = bytes;
+                        response.NextBufferIndex = dataNextBufferIndex;
+                        response.IsFinished = dataIsFinishFlag != 0;
+                    }
+
+                    response.ReturnCode = ret;
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    throw new WechatWorkFinanceException("Failed to get media data. Please see the inner exception for more details.", ex);
+                }
+                finally
+                {
+                    freeDataPtr();
+                }
+            }, cancellationToken);
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public async Task<Models.GetMediaFileResponse> ExecuteGetMediaFileAsync(Models.GetMediaFileRequest request, CancellationToken cancellationToken = default)
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            EnsureInitialized();
+
+            const int ATTAMPT_MAX = 3;        // 错误最大重试次数
+            const int ATTAMPT_INTERVAL = 500; // 错误等待间隔（单位：毫秒）
+            int retryCount = 0;               // 当前已重试次数，获取每个分片前都重置为 0
+
+            string fileId = request.FileId;
+            string? nextBufferIndex = null;
+
+            Models.GetMediaFileResponse response = new Models.GetMediaFileResponse();
+
+            using (MemoryStream stream = new MemoryStream())
+            {
+                while (true)
+                {
+                    if (retryCount >= ATTAMPT_MAX)
+                        break;
+                    cancellationToken.ThrowIfCancellationRequested();
+
+                    var reqBuffer = new Models.GetMediaFileBufferRequest()
+                    {
+                        FileId = fileId,
+                        BufferIndex = nextBufferIndex,
+                        Timeout = request.Timeout
+                    };
+                    var resBuffer = await ExecuteGetMediaFileBufferAsync(reqBuffer, cancellationToken);
+                    response.ReturnCode = resBuffer.ReturnCode;
+
+                    if (resBuffer.IsSuccessful())
+                    {
+                        retryCount = 0;
+                        nextBufferIndex = resBuffer.NextBufferIndex;
+                        await stream.WriteAsync(resBuffer.FileBufferBytes, 0, resBuffer.FileBufferBytes.Length, cancellationToken);
+
+                        if (resBuffer.IsFinished)
+                            break;
+                    }
+                    else
+                    {
+                        if (10001 == resBuffer.ReturnCode ||
+                            10002 == resBuffer.ReturnCode ||
+                            10003 == resBuffer.ReturnCode)
+                        {
+                            // 根据官方建议，这三种错误代码需要重试
+                            await Task.Delay(ATTAMPT_INTERVAL);
+                            retryCount++;
+                            continue;
+                        }
+
+                        break;
+                    }
+                }
+
+                response.RawBytes = stream.ToArray();
+                return response;
+            }
         }
 
         private void EnsureInitialized()

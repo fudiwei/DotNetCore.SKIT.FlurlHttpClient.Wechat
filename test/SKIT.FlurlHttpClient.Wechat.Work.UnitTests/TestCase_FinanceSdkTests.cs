@@ -42,6 +42,61 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                 Assert.NotNull(resDecryptChatRecord.Action);
                 Assert.NotNull(resDecryptChatRecord.FromUserId);
                 Assert.NotNull(resDecryptChatRecord.MessageType);
+
+                switch (resDecryptChatRecord.MessageType)
+                {
+                    case "image":
+                        {
+                            var reqGetMediaFile = new GetMediaFileRequest()
+                            {
+                                FileId = resDecryptChatRecord.MessageContentForImage!.FileId
+                            };
+                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile);
+
+                            Assert.True(resGetMediaFile.IsSuccessful());
+                            Assert.Equal(resDecryptChatRecord.MessageContentForImage!.FileSize, resGetMediaFile.FileBytes.Length);
+                        }
+                        break;
+
+                    case "voice":
+                        {
+                            var reqGetMediaFile = new GetMediaFileRequest()
+                            {
+                                FileId = resDecryptChatRecord.MessageContentForVoice!.FileId
+                            };
+                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile);
+
+                            Assert.True(resGetMediaFile.IsSuccessful());
+                            Assert.Equal(resDecryptChatRecord.MessageContentForVoice!.FileSize, resGetMediaFile.FileBytes.Length);
+                        }
+                        break;
+
+                    case "video":
+                        {
+                            var reqGetMediaFile = new GetMediaFileRequest()
+                            {
+                                FileId = resDecryptChatRecord.MessageContentForVideo!.FileId
+                            };
+                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile);
+
+                            Assert.True(resGetMediaFile.IsSuccessful());
+                            Assert.Equal(resDecryptChatRecord.MessageContentForVideo!.FileSize, resGetMediaFile.FileBytes.Length);
+                        }
+                        break;
+
+                    case "file":
+                        {
+                            var reqGetMediaFile = new GetMediaFileRequest()
+                            {
+                                FileId = resDecryptChatRecord.MessageContentForFile!.FileId
+                            };
+                            var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile);
+
+                            Assert.True(resGetMediaFile.IsSuccessful());
+                            Assert.Equal(resDecryptChatRecord.MessageContentForFile!.FileSize, resGetMediaFile.FileBytes.Length);
+                        }
+                        break;
+                }
             }
         }
 
