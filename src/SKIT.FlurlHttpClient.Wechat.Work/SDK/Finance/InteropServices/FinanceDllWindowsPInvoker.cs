@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         [SuppressUnmanagedCodeSecurity]
-        public static extern int DecryptData(IntPtr sdk, string encryptKey, string encryptMsg, IntPtr msgData);
+        public static extern int DecryptData(string encryptKey, string encryptMsg, IntPtr msgData);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         [SuppressUnmanagedCodeSecurity]

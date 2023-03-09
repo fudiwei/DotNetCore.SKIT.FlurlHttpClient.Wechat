@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
         public string? NextBufferIndex { get; set; }
 
         /// <summary>
-        /// 获取或设置是否完成。
+        /// 获取或设置是否已是最后一个分片。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

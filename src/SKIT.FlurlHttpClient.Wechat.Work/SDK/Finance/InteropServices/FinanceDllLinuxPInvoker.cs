@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
         public static extern int GetMediaData(IntPtr sdk, string indexBuf, string fileId, string proxy, string passwd, long timeout, IntPtr mediaData);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int DecryptData(IntPtr sdk, string encryptKey, string encryptMsg, IntPtr msgData);
+        public static extern int DecryptData(string encryptKey, string encryptMsg, IntPtr msgData);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         public static extern void DestroySdk(IntPtr sdk);

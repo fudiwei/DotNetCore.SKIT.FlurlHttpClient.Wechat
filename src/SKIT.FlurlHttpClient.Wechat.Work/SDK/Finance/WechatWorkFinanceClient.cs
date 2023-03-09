@@ -211,8 +211,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 try
                 {
                     int ret = /* 解密聊天记录数据 */
-                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.DecryptData(_sdkPtr, encryptKey, request.EncryptedChatMessage, dataPtr) :
-                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.DecryptData(_sdkPtr, encryptKey, request.EncryptedChatMessage, dataPtr) :
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.DecryptData(encryptKey, request.EncryptedChatMessage, dataPtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.DecryptData(encryptKey, request.EncryptedChatMessage, dataPtr) :
                         throw new PlatformNotSupportedException();
                     if (ret == 0)
                     {
