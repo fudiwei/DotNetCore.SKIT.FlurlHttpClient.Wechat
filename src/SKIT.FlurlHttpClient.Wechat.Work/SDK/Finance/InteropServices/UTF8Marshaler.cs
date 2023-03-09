@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
 {
-    internal class UTF8Marshaler : ICustomMarshaler
+    internal sealed class UTF8Marshaler : ICustomMarshaler
     {
         private static readonly Lazy<UTF8Marshaler> _instance = new Lazy<UTF8Marshaler>(() => new UTF8Marshaler());
 

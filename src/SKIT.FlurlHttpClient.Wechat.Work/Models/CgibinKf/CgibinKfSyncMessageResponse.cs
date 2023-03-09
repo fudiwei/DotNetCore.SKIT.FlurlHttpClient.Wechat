@@ -368,7 +368,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public Types.FileMessage? MessageContentForFile { get; set; }
 
                 /// <summary>
-                /// 获取或设置图文消息信息。
+                /// 获取或设置图文链接消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("link")]
                 [System.Text.Json.Serialization.JsonPropertyName("link")]

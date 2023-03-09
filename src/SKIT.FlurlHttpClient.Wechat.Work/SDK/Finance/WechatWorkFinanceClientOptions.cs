@@ -32,8 +32,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         public string SecretKey { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置企业微信会话内容存档消息加解密私钥。
+        /// 获取或设置企业微信会话内容存档消息加解密密钥管理器。
+        /// <para>默认值：<see cref="Settings.InMemoryEncryptionKeyManager"/></para>
         /// </summary>
-        public string EncryptionPrivateKey { get; set; } = default!;
+        public Settings.EncryptionKeyManager EncryptionKeyManager { get; set; } = new Settings.InMemoryEncryptionKeyManager();
     }
 }

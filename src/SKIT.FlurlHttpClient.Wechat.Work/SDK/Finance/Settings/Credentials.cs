@@ -14,18 +14,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Settings
         /// </summary>
         public string SecretKey { get; }
 
-        /// <summary>
-        /// 初始化客户端时 <see cref="WechatWorkFinanceClientOptions.EncryptionPrivateKey"/> 的副本。
-        /// </summary>
-        public string EncryptionPrivateKey { get; }
-
         internal Credentials(WechatWorkFinanceClientOptions options)
         {
             if (options == null) throw new ArgumentNullException(nameof(options));
 
             CorpId = options.CorpId;
             SecretKey = options.SecretKey;
-            EncryptionPrivateKey = options.EncryptionPrivateKey;
         }
     }
 }

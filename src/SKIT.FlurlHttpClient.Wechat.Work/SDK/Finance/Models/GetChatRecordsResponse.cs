@@ -1,10 +1,13 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
 {
+    /// <summary>
+    /// <para>表示会话内容存档之获取会话记录数据接口的响应。</para>
+    /// </summary>
     public class GetChatRecordsResponse : WechatWorkFinanceResponse
     {
         public static class Types
         {
-            public class ChatData
+            public class Record
             {
                 /// <summary>
                 /// 获取或设置序号。
@@ -21,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
                 public string MessageId { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置消息加解密公钥版本。
+                /// 获取或设置消息加解密公钥版本号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("publickey_ver")]
                 [System.Text.Json.Serialization.JsonPropertyName("publickey_ver")]
@@ -62,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chatdata")]
         [System.Text.Json.Serialization.JsonPropertyName("chatdata")]
-        public Types.ChatData[] ChatDataList { get; set; } = default!;
+        public Types.Record[] RecordList { get; set; } = default!;
 
         public override bool IsSuccessful()
         {

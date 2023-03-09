@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
     public abstract class CertificateManager
     {
         /// <summary>
-        /// 获取存储的全部证书。
+        /// 获取存储的全部证书实体。
         /// </summary>
         /// <returns></returns>
         public abstract IEnumerable<CertificateEntry> AllEntries();
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         public abstract CertificateEntry? GetEntry(string serialNumber);
 
         /// <summary>
-        /// 移除指定的证书实体。
+        /// 根据证书序列号移除证书实体。
         /// </summary>
         /// <param name="serialNumber"></param>
         /// <returns></returns>

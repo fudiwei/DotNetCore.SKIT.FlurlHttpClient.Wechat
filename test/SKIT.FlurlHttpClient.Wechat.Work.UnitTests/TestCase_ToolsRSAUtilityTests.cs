@@ -2,7 +2,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
-    public class TestCase_RSAUtilityTests
+    public class TestCase_ToolsRSAUtilityTests
     {
         // 此处测试的 RSA 公钥/私钥是自签名生成的，仅供执行 RSA 相关的单元测试，不能用于调用企业微信 API
         private const string RSA_PEM_PUBLIC_KEY = "-----BEGIN RSA PUBLIC KEY-----MIIBCgKCAQEAuwQaAJGSMda9ESGhyY2PPuVds8OjoqyRi29IEQgXJ03Bu/o6KjZVbPQT4n3WncrT0c92zA6lazJDbaXQkHlvdDpOo3FqBvczDDT0jveCfg7azeOmRxHE8P/iWOkQm+Dhk5hnmfxqtX7pzu2quzuGt9JH4FxPhNEOkn4/uRn+1qo/KrrU2Db09gm3aPjOWTT5XEVD9tPNTsZr/vaKYGCQKTqeRWhDGL3JAgyyLgGyGTAOTt0gl0MPG/O6omwELTVQdzXqyRrKgx0tEhIKoeYBVPKbWOTJyXsRO9dcfXKu56jry9QyqjFHcVtfCuphOaFIhGUEDYuAIJsqBKJqrSZoVQIDAQAB-----END RSA PUBLIC KEY-----";

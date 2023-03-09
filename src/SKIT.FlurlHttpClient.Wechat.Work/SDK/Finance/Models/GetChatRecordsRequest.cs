@@ -1,5 +1,8 @@
 namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
 {
+    /// <summary>
+    /// <para>表示会话内容存档之获取会话记录数据接口的请求。</para>
+    /// </summary>
     public class GetChatRecordsRequest : WechatWorkFinanceRequest
     {
         /// <summary>

@@ -19,14 +19,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         private readonly string? _proxyAddress;
         private readonly string? _proxyAuthentication;
 
-        private IntPtr _sdk;
+        private IntPtr _sdkPtr;
         private bool _initialized;
         private bool _disposed;
 
         /// <summary>
-        /// 获取当前客户端使用的企业微信凭证。
+        /// 获取当前客户端使用的企业微信会话内容存档凭证。
         /// </summary>
         public Settings.Credentials Credentials { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的企业微信会话内容存档消息加解密密钥管理器。
+        /// </summary>
+        public Settings.EncryptionKeyManager EncryptionKeyManager { get; }
 
         /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatWorkFinanceClient"/> 类的新实例。
@@ -38,12 +43,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
             if (options == null) throw new ArgumentNullException(nameof(options));
 
             Credentials = new Settings.Credentials(options);
+            EncryptionKeyManager = options.EncryptionKeyManager;
 
             _timeout = options.Timeout;
             _proxyAddress = options.ProxyAddress;
             _proxyAuthentication = options.ProxyAuthentication;
 
-            _sdk = /* 申请用于构造 SDK 的内存空间 */
+            _sdkPtr = /* 申请用于构造 SDK 的内存空间 */
                 IsRunOnWindows() ? FinanceDllWindowsPInvoker.NewSdk() :
                 IsRunOnLinux() ? FinanceDllLinuxPInvoker.NewSdk() :
                 throw new PlatformNotSupportedException();
@@ -76,6 +82,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 #endif
         }
 
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public Task<Models.GetChatRecordsResponse> ExecuteGetChatRecordsAsync(Models.GetChatRecordsRequest request, CancellationToken cancellationToken = default)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
@@ -84,7 +96,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 
             return Task.Run(() =>
             {
-                IntPtr slice = /* 申请用于存储聊天记录数据的内存空间 */
+                IntPtr slicePtr = IntPtr.Zero;
+                Action freeSlicePtr = () =>
+                {
+                    if (slicePtr != IntPtr.Zero)
+                    {
+                        if (IsRunOnWindows()) FinanceDllWindowsPInvoker.FreeSlice(slicePtr);
+                        else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.FreeSlice(slicePtr);
+                        else Marshal.FreeHGlobal(slicePtr);
+
+                        slicePtr = IntPtr.Zero;
+                    }
+                };
+                cancellationToken.Register(freeSlicePtr);
+
+                slicePtr = /* 申请用于存储聊天记录数据的内存空间 */
                     IsRunOnWindows() ? FinanceDllWindowsPInvoker.NewSlice() :
                     IsRunOnLinux() ? FinanceDllLinuxPInvoker.NewSlice() :
                     throw new PlatformNotSupportedException();
@@ -93,8 +119,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 try
                 {
                     int ret = /* 获取聊天记录数据 */
-                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetChatData(_sdk, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slice) :
-                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetChatData(_sdk, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slice) :
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slicePtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, slicePtr) :
                         throw new PlatformNotSupportedException();
                     if (ret == 0)
                     {
@@ -103,8 +129,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                         //    IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetSliceLen(slice) :
                         //    throw new PlatformNotSupportedException();
                         string sliceContent = /* 获取聊天记录数据内容 */
-                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(slice) :
-                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(slice) :
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(slicePtr) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(slicePtr) :
                             throw new PlatformNotSupportedException();
 
                         response = JsonSerializer.Deserialize<Models.GetChatRecordsResponse>(sliceContent);
@@ -116,14 +142,102 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 }
                 catch (Exception ex)
                 {
-                    throw new WechatWorkFinanceException("Failed to fetch chat data.", ex);
+                    throw new WechatWorkFinanceException("Failed to fetch chat data. Please see the inner exception for more details.", ex);
                 }
                 finally
                 {
-                    if (IsRunOnWindows())
-                        FinanceDllWindowsPInvoker.FreeSlice(slice);
-                    else if (IsRunOnLinux())
-                        FinanceDllLinuxPInvoker.FreeSlice(slice);
+                    freeSlicePtr();
+                }
+            }, cancellationToken);
+        }
+
+        /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public Task<Models.DecryptChatRecordResponse> ExecuteDecryptChatRecordAsync(Models.DecryptChatRecordRequest request, CancellationToken cancellationToken = default)
+        {
+            if (request == null) throw new ArgumentNullException(nameof(request));
+
+            EnsureInitialized();
+
+            return Task.Run(() =>
+            {
+                string encryptKey;
+
+                try
+                {
+                    Settings.EncryptionKeyEntry? encryptionKeyEntry = EncryptionKeyManager.GetEntry(request.PublicKeyVersion);
+                    if (!encryptionKeyEntry.HasValue)
+                        throw new WechatWorkFinanceException($"Failed to decrypt random key of the encrypted chat data, because there is no private key matched the verion: \"{request.PublicKeyVersion}\".");
+
+                    encryptKey = Utilities.RSAUtility.DecryptWithECB(
+                        privateKey: encryptionKeyEntry.Value.PrivateKey,
+                        cipherText: request.EncryptedRandomKey
+                    );
+                }
+                catch (WechatWorkFinanceException)
+                {
+                    throw;
+                }
+                catch (Exception ex)
+                {
+                    throw new WechatWorkFinanceException("Failed to decrypt random key of the encrypted chat data. Please see the inner exception for more details.", ex);
+                }
+
+                IntPtr slicePtr = IntPtr.Zero;
+                Action freeSlicePtr = () =>
+                {
+                    if (slicePtr != IntPtr.Zero)
+                    {
+                        if (IsRunOnWindows()) FinanceDllWindowsPInvoker.FreeSlice(slicePtr);
+                        else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.FreeSlice(slicePtr);
+                        else Marshal.FreeHGlobal(slicePtr);
+
+                        slicePtr = IntPtr.Zero;
+                    }
+                };
+                cancellationToken.Register(freeSlicePtr);
+
+                slicePtr = /* 申请用于存储聊天记录数据的内存空间 */
+                    IsRunOnWindows() ? FinanceDllWindowsPInvoker.NewSlice() :
+                    IsRunOnLinux() ? FinanceDllLinuxPInvoker.NewSlice() :
+                    throw new PlatformNotSupportedException();
+
+                Models.DecryptChatRecordResponse response = new Models.DecryptChatRecordResponse();
+                try
+                {
+                    int ret = /* 解密聊天记录数据 */
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.DecryptData(_sdkPtr, encryptKey, request.EncryptedChatMessage, slicePtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.DecryptData(_sdkPtr, encryptKey, request.EncryptedChatMessage, slicePtr) :
+                        throw new PlatformNotSupportedException();
+                    if (ret == 0)
+                    {
+                        //int sliceLength = /* 获取聊天记录数据内容长度 */
+                        //    IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetSliceLen(slice) :
+                        //    IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetSliceLen(slice) :
+                        //    throw new PlatformNotSupportedException();
+                        string sliceContent = /* 获取聊天记录数据内容 */
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(slicePtr) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(slicePtr) :
+                            throw new PlatformNotSupportedException();
+
+                        response = JsonSerializer.Deserialize<Models.DecryptChatRecordResponse>(sliceContent);
+                        response.RawBytes = Encoding.UTF8.GetBytes(sliceContent);
+                    }
+
+                    response.ReturnCode = ret;
+                    return response;
+                }
+                catch (Exception ex)
+                {
+                    throw new WechatWorkFinanceException("Failed to decrypt chat data. Please see the inner exception for more details.", ex);
+                }
+                finally
+                {
+                    freeSlicePtr();
                 }
             }, cancellationToken);
         }
@@ -140,8 +254,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                     if (!_initialized)
                     {
                         int ret = /* 初始化 SDK */
-                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.Init(_sdk, Credentials.CorpId, Credentials.SecretKey) :
-                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.Init(_sdk, Credentials.CorpId, Credentials.SecretKey) :
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.Init(_sdkPtr, Credentials.CorpId, Credentials.SecretKey) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.Init(_sdkPtr, Credentials.CorpId, Credentials.SecretKey) :
                             throw new PlatformNotSupportedException();
                         if (ret != 0)
                             throw new WechatWorkFinanceException($"Failed to initialize Wechat Work Finance SDK (ret: {ret}).");
@@ -162,15 +276,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 }
 
                 // 释放非托管资源
-                IntPtr tmpptr = _sdk;
+                IntPtr tmpptr = _sdkPtr;
                 if (tmpptr != IntPtr.Zero)
                 {
-                    if (IsRunOnWindows())
-                        FinanceDllWindowsPInvoker.DestroySdk(tmpptr);
-                    else if (IsRunOnLinux())
-                        FinanceDllLinuxPInvoker.DestroySdk(tmpptr);
+                    if (IsRunOnWindows()) FinanceDllWindowsPInvoker.DestroySdk(tmpptr);
+                    else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.DestroySdk(tmpptr);
+                    else Marshal.FreeHGlobal(tmpptr);
 
-                    _sdk = IntPtr.Zero;
+                    _sdkPtr = IntPtr.Zero;
                 }
 
                 _disposed = true;
