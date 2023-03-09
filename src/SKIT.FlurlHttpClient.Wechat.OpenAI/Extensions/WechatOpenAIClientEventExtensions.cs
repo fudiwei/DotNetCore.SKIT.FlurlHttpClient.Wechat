@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             try
             {
                 if (!Utilities.WxMsgCryptor.TryParseXml(callbackXml, out string? encryptedXml))
-                    throw new Exceptions.WechatOpenAIEventSerializationException("Encrypt event failed, because of empty encrypted data.");
+                    throw new Exceptions.WechatOpenAIEventSerializationException("Failed to encrypt event data, because of empty encrypted data.");
 
                 callbackXml = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.EncodingAESKey!, out _);
                 return Utilities.XmlUtility.Deserialize<TEvent>(callbackXml);
@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatOpenAIEventSerializationException("Deserialize event failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatOpenAIEventSerializationException("Failed to deserialize event data. Please see the inner exception for more details.", ex);
             }
         }
 
@@ -73,13 +73,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatOpenAIEventSerializationException("Serialize event failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatOpenAIEventSerializationException("Failed to serialize event data. Please see the inner exception for more details.", ex);
             }
 
             if (string.IsNullOrEmpty(client.Credentials.EncodingAESKey))
-                throw new Exceptions.WechatOpenAIEventSerializationException("Encrypt event failed, because there is no encoding AES key.");
+                throw new Exceptions.WechatOpenAIEventSerializationException("Failed to encrypt event data, because there is no encoding AES key.");
             if (string.IsNullOrEmpty(client.Credentials.Token))
-                throw new Exceptions.WechatOpenAIEventSerializationException("Encrypt event failed, because there is no token.");
+                throw new Exceptions.WechatOpenAIEventSerializationException("Failed to encrypt event data, because there is no token.");
 
             try
             {
@@ -93,7 +93,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatOpenAIEventSerializationException("Encrypt event failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatOpenAIEventSerializationException("Failed to encrypt event data. Please see the inner exception for more details.", ex);
             }
 
             return xml;

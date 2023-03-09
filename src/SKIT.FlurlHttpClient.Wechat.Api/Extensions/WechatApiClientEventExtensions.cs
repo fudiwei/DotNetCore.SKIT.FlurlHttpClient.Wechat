@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 if (callbackJson.Contains("\"Encrypt\""))
                 {
                     if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
-                        throw new Exceptions.WechatApiEventSerializationException("Decrypt event failed, because there is no encoding AES key.");
+                        throw new Exceptions.WechatApiEventSerializationException("Failed to decrypt event data, because there is no encoding AES key.");
 
                     InnerEncryptedEvent encryptedEvent = client.JsonSerializer.Deserialize<InnerEncryptedEvent>(callbackJson);
                     callbackJson = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatApiEventSerializationException("Deserialize event failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatApiEventSerializationException("Failed to deserialize event data. Please see the inner exception for more details.", ex);
             }
         }
 
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 if (callbackXml.Contains("<Encrypt>") && callbackXml.Contains("</Encrypt>"))
                 {
                     if (!Utilities.WxMsgCryptor.TryParseXml(callbackXml, out string encryptedXml))
-                        throw new Exceptions.WechatApiEventSerializationException("Decrypt event failed, because of empty encrypted data.");
+                        throw new Exceptions.WechatApiEventSerializationException("Failed to decrypt event data, because of empty encrypted data.");
 
                     callbackXml = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedXml, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
                 }
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatApiEventSerializationException("Deserialize event failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatApiEventSerializationException("Failed to deserialize event data. Please see the inner exception for more details.", ex);
             }
         }
 
@@ -153,15 +153,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatApiEventSerializationException("Serialize event failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatApiEventSerializationException("Failed to serialize event data. Please see the inner exception for more details.", ex);
             }
 
             if (safety)
             {
                 if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
-                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no encoding AES key.");
+                    throw new Exceptions.WechatApiEventSerializationException("Failed to encrypt event data, because there is no encoding AES key.");
                 if (string.IsNullOrEmpty(client.Credentials.PushToken))
-                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no token.");
+                    throw new Exceptions.WechatApiEventSerializationException("Failed to encrypt event data, because there is no token.");
 
                 try
                 {
@@ -189,7 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 }
                 catch (Exception ex)
                 {
-                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed. Please see the `InnerException` for more details.", ex);
+                    throw new Exceptions.WechatApiEventSerializationException("Failed to encrypt event data. Please see the inner exception for more details.", ex);
                 }
             }
 
@@ -215,15 +215,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatApiEventSerializationException("Serialize event failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatApiEventSerializationException("Failed to serialize event data. Please see the inner exception for more details.", ex);
             }
 
             if (safety)
             {
                 if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
-                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no encoding AES key.");
+                    throw new Exceptions.WechatApiEventSerializationException("Failed to encrypt event data, because there is no encoding AES key.");
                 if (string.IsNullOrEmpty(client.Credentials.PushToken))
-                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed, because there is no token.");
+                    throw new Exceptions.WechatApiEventSerializationException("Failed to encrypt event data, because there is no token.");
 
                 try
                 {
@@ -237,7 +237,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 }
                 catch (Exception ex)
                 {
-                    throw new Exceptions.WechatApiEventSerializationException("Encrypt event failed. Please see the `InnerException` for more details.", ex);
+                    throw new Exceptions.WechatApiEventSerializationException("Failed to encrypt event data. Please see the inner exception for more details.", ex);
                 }
             }
 

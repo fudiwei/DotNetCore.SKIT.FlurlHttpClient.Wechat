@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Reflection;
 
@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (response == null) throw new ArgumentNullException(nameof(response));
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Decrypt response failed, because the response is not successful.");
+                throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Failed to decrypt response, because the response is not successful.");
 
             try
             {
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                     if (response.TBEPEncryption is null)
                         throw new InvalidOperationException("Could not read value of `TBEP-Encrypt`.");
                     if (response.TBEPEncryption.CertificateSerialNumber != client.Credentials.PlatformCertificateSerialNumber)
-                        throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Decrypt response failed, because there is no platform certificate matched the serial number.");
+                        throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Failed to decrypt response, because there is no platform certificate matched the serial number.");
 
                     if (Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC.Equals(response.TBEPEncryption.Algorithm))
                     {
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             }
             catch (Exception ex) when (!(ex is Exceptions.WechatTenpayBusinessResponseDecryptionException))
             {
-                throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Decrypt response failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Failed to decrypt response. Please see the inner exception for more details.", ex);
             }
 
             return response;

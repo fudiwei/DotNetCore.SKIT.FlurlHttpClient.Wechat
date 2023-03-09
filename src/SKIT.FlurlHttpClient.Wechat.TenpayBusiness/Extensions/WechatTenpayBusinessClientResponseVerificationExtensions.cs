@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
             if (error != null)
             {
-                error = new Exceptions.WechatTenpayBusinessResponseVerificationException("Verify signature of response failed. Please see the `InnerException` for more details.", error);
+                error = new Exceptions.WechatTenpayBusinessResponseVerificationException("Verify signature of response failed. Please see the inner exception for more details.", error);
             }
 
             return ret;
@@ -150,7 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
             if (error != null)
             {
-                error = new Exceptions.WechatTenpayBusinessResponseVerificationException("Verify signature of response failed. Please see the `InnerException` for more details.", error);
+                error = new Exceptions.WechatTenpayBusinessResponseVerificationException("Verify signature of response failed. Please see the inner exception for more details.", error);
             }
 
             return ret;

@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             }
             catch (Exception ex) when (!(ex is Exceptions.WechatTenpayBusinessRequestEncryptionException))
             {
-                throw new Exceptions.WechatTenpayBusinessRequestEncryptionException("Encrypt request failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatTenpayBusinessRequestEncryptionException("Failed to encrypt request. Please see the inner exception for more details.", ex);
             }
 
             return request;

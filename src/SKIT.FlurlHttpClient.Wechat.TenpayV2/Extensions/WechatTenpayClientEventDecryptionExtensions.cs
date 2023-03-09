@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatTenpayEventDecryptionException("Decrypt event resource failed. Please see the `InnerException` for more details.", ex);
+                throw new Exceptions.WechatTenpayEventDecryptionException("Failed to decrypt event resource data. Please see the inner exception for more details.", ex);
             }
 
             return client.JsonSerializer.Deserialize<T>(plainJson);
