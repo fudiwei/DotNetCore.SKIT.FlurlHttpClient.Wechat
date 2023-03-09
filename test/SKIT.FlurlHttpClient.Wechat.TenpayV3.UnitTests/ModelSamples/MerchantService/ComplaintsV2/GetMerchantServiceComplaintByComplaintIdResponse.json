@@ -1,9 +1,9 @@
-﻿{
+{
     "complaint_id": "200201820200101080076610000",
     "complaint_time": "2015-05-20T13:29:35.120+08:00",
     "complaint_detail": "反馈一个重复扣费的问题",
-    "complaint_state": "PENDING",
     "complainted_mchid": "1900012181",
+    "complaint_state": "PENDING",
     "payer_phone": "sGdNeTHMQGlxCWiUyHu6XNO9GCYln2Luv4HhwJzZBfcL12sB",
     "payer_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
     "complaint_media_list": [
@@ -21,15 +21,21 @@
             "amount": 3
         }
     ],
-    "complaint_full_refunded": true,
-    "incoming_user_response": true,
-    "problem_description": "不满意商家服务",
-    "user_complaint_times": 1,
     "service_order_info": [
         {
             "order_id": "15646546545165651651",
             "out_order_no": "1234323JKHDFE1243252",
-            "state": "CREATED"
+            "state": "DOING"
         }
-    ]
+    ],
+    "complaint_full_refunded": true,
+    "incoming_user_response": true,
+    "problem_description": "不满意商家服务",
+    "user_complaint_times": 1,
+    "additional_info": {
+        "share_power_info": {
+            "return_time": "2023-02-10T14:44:00+08:00"
+        },
+        "type": "SHARE_POWER_TYPE"
+    }
 }
