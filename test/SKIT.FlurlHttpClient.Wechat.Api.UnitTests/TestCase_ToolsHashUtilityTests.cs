@@ -1,8 +1,8 @@
-﻿using Xunit;
+using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
-    public class TestCase_HashUtilityTests
+    public class TestCase_ToolsHashUtilityTests
     {
         [Fact(DisplayName = "测试用例：SHA-1 信息摘要")]
         public void TestSHA1Hash()

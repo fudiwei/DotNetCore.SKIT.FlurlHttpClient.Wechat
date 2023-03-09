@@ -1,8 +1,8 @@
-﻿using Xunit;
+using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads.UnitTests
 {
-    public class TestCase_HashUtilityTests
+    public class TestCase_ToolsHashUtilityTests
     {
         [Fact(DisplayName = "测试用例：MD5 信息摘要")]
         public void TestMD5Hash()

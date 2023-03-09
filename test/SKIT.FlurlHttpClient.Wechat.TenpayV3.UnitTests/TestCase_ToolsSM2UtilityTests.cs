@@ -4,7 +4,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class TestCase_SM2UtilityTests
+    public class TestCase_ToolsSM2UtilityTests
     {
         // 此处测试的 SM2 证书/公钥/私钥是自签名生成的，仅供执行 SM2 相关的单元测试，不能用于调用微信支付 API。
         private const string SM2_CERT_SN = "e5a81b02429d8d08";

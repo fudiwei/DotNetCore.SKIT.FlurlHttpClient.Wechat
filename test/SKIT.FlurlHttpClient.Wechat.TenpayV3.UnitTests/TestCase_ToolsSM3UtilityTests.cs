@@ -3,7 +3,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class TestCase_SM3UtilityTests
+    public class TestCase_ToolsSM3UtilityTests
     {
         [Fact(DisplayName = "测试用例：计算 SM3 哈希值")]
         public void TestSM3Hash()

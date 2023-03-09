@@ -2,7 +2,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
-    public class TestCase_WxMsgCryptorTests
+    public class TestCase_ToolsWxMsgCryptorTests
     {
         [Fact(DisplayName = "测试用例：验签并解密回调数据")]
         public void TestVerifyAndDecryptEvent()

@@ -1,8 +1,8 @@
-﻿using Xunit;
+using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.UnitTests
 {
-    public class TestCase_SM4UtilityTests
+    public class TestCase_ToolsSM4UtilityTests
     {
         [Fact(DisplayName = "测试用例：SM4 加密")]
         public void TestSM4Encrypt()

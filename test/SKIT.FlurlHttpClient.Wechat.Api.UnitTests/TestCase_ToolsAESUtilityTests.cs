@@ -1,8 +1,8 @@
-﻿using Xunit;
+using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
-    public class TestCase_AESUtilityTests
+    public class TestCase_ToolsAESUtilityTests
     {
         [Fact(DisplayName = "测试用例：AES-CBC 解密")]
         public void TestAESCBCDecryption()

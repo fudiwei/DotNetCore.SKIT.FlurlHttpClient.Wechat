@@ -3,7 +3,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
-    public class TestCase_SM4UtilityTests
+    public class TestCase_ToolsSM4UtilityTests
     {
         [Fact(DisplayName = "测试用例：SM4-GCM 解密")]
         public void TestSM4GCMDecrypt()

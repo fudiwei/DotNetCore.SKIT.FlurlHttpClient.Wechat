@@ -3,7 +3,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {
-    public class TestCase_XmlUtilityTests
+    public class TestCase_ToolsXmlUtilityTests
     {
         [Fact(DisplayName = "测试用例：XML2JSON")]
         public void TestXmlConvertToJson()

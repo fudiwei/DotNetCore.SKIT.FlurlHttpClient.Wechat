@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Text;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {
-    public class TestCase_AESUtilityTests
+    public class TestCase_ToolsAESUtilityTests
     {
         [Fact(DisplayName = "测试用例：AES-ECB 解密")]
         public void TestAESGCMDecrypt()
