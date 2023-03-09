@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/group_welcome_template/get 接口的响应。</para>
@@ -47,7 +47,7 @@
         public Types.ImageMessage? Image { get; set; }
 
         /// <summary>
-        /// 获取或设置图文消息信息。
+        /// 获取或设置图文链接消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("link")]
         [System.Text.Json.Serialization.JsonPropertyName("link")]

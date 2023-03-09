@@ -260,7 +260,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string Name { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置详情地址。
+                /// 获取或设置详细地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("address")]
                 [System.Text.Json.Serialization.JsonPropertyName("address")]
@@ -342,7 +342,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public Types.FileMessage? MessageContentForFile { get; set; }
 
         /// <summary>
-        /// 获取或设置图文消息信息。
+        /// 获取或设置图文链接消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("link")]
         [System.Text.Json.Serialization.JsonPropertyName("link")]
