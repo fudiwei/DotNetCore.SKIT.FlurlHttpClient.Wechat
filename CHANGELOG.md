@@ -1152,6 +1152,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.0.1
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.1.1。
+
 -   Release 2.0.0
 
     -   首次发布。
