@@ -26,7 +26,7 @@
 
     1. `libWeWorkFinanceSdk_C.so`
 
--   对于 Windows 环境，你需要[下载 v1.1 版本的 C SDK for Windows](https://developer.work.weixin.qq.com/document/path/91774)，解压缩并拷贝以下几个文件到你的项目根路径下，或添加至系统环境变量 _%SYSTEMROOT%\System32\\_（通常为 _C:\Windows\System32\\_） 中：
+-   对于 Windows 环境，你需要[下载 v1.1 版本的 C SDK for Windows](https://developer.work.weixin.qq.com/document/path/91774)，解压缩并拷贝以下几个文件到你的项目根路径下，或添加至系统环境变量 _%SYSTEMROOT%\System32\\_（通常为 _C:\Windows\System32\\_）中：
 
     1. `libcrypto-1_1-x64.dll`
     2. `libcurl-x64.dll`
@@ -132,7 +132,7 @@ var request = new GetMediaFileBufferRequest()
     FileId = "SDK_FILE_ID",
     BufferIndex = "INDEX_BUF"
 };
-var response = await client.ExecuteGetMediaFileAsync(request);
+var response = await client.ExecuteGetMediaFileBufferAsync(request);
 if (response.IsSuccessful())
 {
     Console.WriteLine("分片的字节数组：" + response.FileBufferBytes);
@@ -165,6 +165,8 @@ else
 
 因此，在加解密会话记录数据的过程中，可能需要多对儿 RSA 公私钥共同参与。
 
+> ⚠️ 【重要说明】请尽量避免频繁重置消息加解密密钥。如果真的有需要，请千万不要忘记在重置前备份上一个版本的私钥，否则已经产生的会话记录数据将永远无法解密。
+
 本库提供了 `EncryptionKeyManager` 这一对象，以简化解密流程。你只需在初始化时将各个版本的 RSA 私钥都存入密钥管理器中，后续调用解密会话记录数据时，本库将根据传入的公钥版本号自动选择对应的私钥：
 
 ```csharp
@@ -173,7 +175,7 @@ manager.AddEntry(new EncryptionKeyEntry(2, "-----BEGIN RSA PRIVATE KEY----- 私�
 manager.AddEntry(new EncryptionKeyEntry(3, "-----BEGIN RSA PRIVATE KEY----- 私钥版本 3 -----END RSA PRIVATE KEY-----"));
 ```
 
-> ⚠️ 【重要说明】请尽量避免频繁重置消息加解密密钥。如果真的有需要，重置前千万不要忘记备份上一个版本的私钥，否则已经产生的会话记录数据将永远无法解密。
+> 注：`InMemoryEncryptionKeyManager` 是本库内置的基于内存实现的密钥管理器；你也可自行继承并实现一个 `EncryptionKeyManager`，例如利用数据库或 Redis 等方式存取密钥信息。
 
 #### **Q3：官方示例中提供了诸如 `FreeSlice`、`FreeMediaData`、`DestroySdk` 等接口，该如何调用？**
 
