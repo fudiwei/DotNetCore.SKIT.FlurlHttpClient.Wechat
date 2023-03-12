@@ -1,11 +1,10 @@
-﻿{
+{
     "$schema": "http://json.schemastore.org/launchsettings.json",
     "profiles": {
-        "SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net5": {
+        "SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net6": {
             "commandName": "Project",
-            "dotnetRunMessages": "true",
-            "launchBrowser": true,
-            "launchUrl": "weatherforecast",
+            "dotnetRunMessages": true,
+            "launchBrowser": false,
             "applicationUrl": "https://localhost:5001;http://localhost:5000",
             "environmentVariables": {
                 "ASPNETCORE_ENVIRONMENT": "Development"
