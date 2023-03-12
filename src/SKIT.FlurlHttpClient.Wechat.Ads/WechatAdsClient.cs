@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             Credentials = new Settings.Credentials(options);
 
-            FlurlClient.BaseUrl = options.Endpoints ?? WechatAdsEndpoints.DEFAULT;
+            FlurlClient.BaseUrl = options.Endpoint ?? WechatAdsEndpoints.DEFAULT;
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
 
             Interceptors.Add(new Interceptors.WechatAdsRequestAgencyTokenInterceptor(

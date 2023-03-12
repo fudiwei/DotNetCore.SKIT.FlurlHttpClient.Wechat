@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -28,6 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
         /// <summary>
         /// <para>异步调用 [GET] /{download_url} 接口。</para>
+        /// <para><i>（请注意此接口不受构造 <see cref="WechatTenpayBusinessClient" /> 时指定的 <see cref="WechatTenpayBusinessClientOptions.Endpoint"/> 参数控制。）</i></para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

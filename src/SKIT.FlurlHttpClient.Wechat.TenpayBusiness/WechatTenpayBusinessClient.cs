@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty;
             AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
-            FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayBusinessEndpoints.DEFAULT;
+            FlurlClient.BaseUrl = options.Endpoint ?? WechatTenpayBusinessEndpoints.DEFAULT;
             FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.Accept);
             FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.AcceptLanguage);
             FlurlClient.WithHeader(FlurlHttpClient.Constants.HttpHeaders.Accept, "application/json");

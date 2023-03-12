@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             Credentials = new Settings.Credentials(options);
 
-            FlurlClient.BaseUrl = options.Endpoints ?? WechatWorkEndpoints.DEFAULT;
+            FlurlClient.BaseUrl = options.Endpoint ?? WechatWorkEndpoints.DEFAULT;
             FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
         }
 

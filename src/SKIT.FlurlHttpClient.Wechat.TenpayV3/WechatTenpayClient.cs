@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty;
             AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
-            FlurlClient.BaseUrl = options.Endpoints ?? WechatTenpayEndpoints.DEFAULT;
+            FlurlClient.BaseUrl = options.Endpoint ?? WechatTenpayEndpoints.DEFAULT;
             FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.Accept);
             FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.AcceptLanguage);
             FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.UserAgent);

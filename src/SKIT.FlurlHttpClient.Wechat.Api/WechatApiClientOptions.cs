@@ -12,10 +12,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public int Timeout { get; set; } = 30 * 1000;
 
         /// <summary>
-        /// 获取或设置微信 API 域名。
+        /// 获取或设置微信 API 入口点。
         /// <para>默认值：<see cref="WechatApiEndpoints.DEFAULT"/></para>
         /// </summary>
-        public string Endpoints { get; set; } = WechatApiEndpoints.DEFAULT;
+        public string Endpoint { get; set; } = WechatApiEndpoints.DEFAULT;
 
         /// <summary>
         /// 获取或设置微信 AppId。

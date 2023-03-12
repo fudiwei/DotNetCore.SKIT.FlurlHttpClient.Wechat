@@ -12,10 +12,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         public int Timeout { get; set; } = 30 * 1000;
 
         /// <summary>
-        /// 获取或设置腾讯微企付 API 域名。
+        /// 获取或设置腾讯微企付 API 入口点。
         /// <para>默认值：<see cref="WechatTenpayBusinessEndpoints.DEFAULT"/></para>
         /// </summary>
-        public string Endpoints { get; set; } = WechatTenpayBusinessEndpoints.DEFAULT;
+        public string Endpoint { get; set; } = WechatTenpayBusinessEndpoints.DEFAULT;
 
         /// <summary>
         /// 获取或设置腾讯微企付 API 签名认证方式。
