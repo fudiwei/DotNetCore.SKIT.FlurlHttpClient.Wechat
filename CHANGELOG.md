@@ -458,6 +458,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.2.3
+
+    -   **修复**：修复部分场景下付款码支付接口响应模型反序列化错误的问题。
+
 -   Release 2.2.2
 
     -   **修复**：修复酒店押金查询退款接口响应反序列化不正确的问题。（_via_ [GitHub #82](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/82)）
