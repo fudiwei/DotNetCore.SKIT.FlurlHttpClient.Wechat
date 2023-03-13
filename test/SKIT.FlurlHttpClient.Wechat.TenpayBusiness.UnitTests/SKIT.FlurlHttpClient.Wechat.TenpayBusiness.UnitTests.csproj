@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
 		<TargetFrameworks>net472; net6.0</TargetFrameworks>
@@ -10,7 +10,6 @@
 
 	<ItemGroup>
 		<None Remove=".gitignore" />
-		<None Remove="appsettings.local.json" />
 		<Content Include="appsettings.json">
 			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
 			<CopyToPublishDirectory>Never</CopyToPublishDirectory>

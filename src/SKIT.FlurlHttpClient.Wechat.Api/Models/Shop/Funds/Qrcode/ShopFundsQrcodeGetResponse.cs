@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/funds/qrcode/get 接口的响应。</para>
@@ -6,10 +6,10 @@
     public class ShopFundsQrcodeGetResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置二维码数据（经 Base64 编码）。
+        /// 获取或设置经 Base64 编码的二维码数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcode_buf")]
         [System.Text.Json.Serialization.JsonPropertyName("qrcode_buf")]
-        public string QrcodeData { get; set; } = default!;
+        public string EncodingQrcodeData { get; set; } = default!;
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public IList<string> EnvironmentIdList { get; set; } = new List<string>();
 
         /// <summary>
-        /// 获取或设置包含函数代码文件的 zip 格式文件（需经过 Base64 编码）。
+        /// 获取或设置经 Base64 编码的包含函数代码文件的 zip 格式文件内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("zipfile")]
         [System.Text.Json.Serialization.JsonPropertyName("zipfile")]

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /intp/marketcode/applycodedownload 接口的响应。</para>
@@ -6,10 +6,10 @@
     public class IntpMarketCodeApplyCodeDownloadResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置文件 Buffer（已经 Base64 编码）。
+        /// 获取或设置经 Base64 编码的文件内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("buffer")]
         [System.Text.Json.Serialization.JsonPropertyName("buffer")]
-        public string FileBuffer { get; set; } = default!;
+        public string EncodingFileData { get; set; } = default!;
     }
 }

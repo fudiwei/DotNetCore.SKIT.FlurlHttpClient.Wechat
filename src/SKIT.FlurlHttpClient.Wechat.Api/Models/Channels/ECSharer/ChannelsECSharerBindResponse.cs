@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcode_img_base64")]
         [System.Text.Json.Serialization.JsonPropertyName("qrcode_img_base64")]
-        public string EncodingQrcodeImage { get; set; } = default!;
+        public string EncodingQrcodeImageData { get; set; } = default!;
     }
 }
