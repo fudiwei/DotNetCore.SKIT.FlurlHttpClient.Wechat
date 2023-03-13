@@ -9,135 +9,148 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     {
         public static class Types
         {
-            public class Promotion
+            public class PromotionDetail
             {
                 public static class Types
                 {
-                    public class GoodsDetail
+                    public class Promotion
                     {
-                        /// <summary>
-                        /// 获取或设置商品编码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_id")]
-                        public string GoodsId { get; set; } = default!;
+                        public static class Types
+                        {
+                            public class GoodsDetail
+                            {
+                                /// <summary>
+                                /// 获取或设置商品编码。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("goods_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("goods_id")]
+                                public string GoodsId { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置商品数量。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("quantity")]
+                                [System.Text.Json.Serialization.JsonPropertyName("quantity")]
+                                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                                public int Quantity { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商品单价（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("price")]
+                                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                                public int Price { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商品优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("discount_amount")]
+                                [System.Text.Json.Serialization.JsonPropertyName("discount_amount")]
+                                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                                public int DiscountAmount { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商品备注。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("goods_remark")]
+                                [System.Text.Json.Serialization.JsonPropertyName("goods_remark")]
+                                public string? GoodsRemark { get; set; }
+                            }
+                        }
 
                         /// <summary>
-                        /// 获取或设置商品数量。
+                        /// 获取或设置券或者立减优惠 ID。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("quantity")]
-                        [System.Text.Json.Serialization.JsonPropertyName("quantity")]
+                        [Newtonsoft.Json.JsonProperty("promotion_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("promotion_id")]
+                        public string PromotionId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置优惠名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string? Name { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置优惠范围。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("scope")]
+                        [System.Text.Json.Serialization.JsonPropertyName("scope")]
+                        public string? Scope { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置优惠类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public string? Type { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置优惠券面额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("amount")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int Quantity { get; set; }
+                        public int Amount { get; set; }
 
                         /// <summary>
-                        /// 获取或设置商品单价（单位：分）。
+                        /// 获取或设置活动 ID。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("price")]
-                        [System.Text.Json.Serialization.JsonPropertyName("price")]
+                        [Newtonsoft.Json.JsonProperty("activity_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
+                        public string? ActivityId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置微信出资（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wxpay_contribute")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wxpay_contribute")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int Price { get; set; }
+                        public int? WechatpayContribute { get; set; }
 
                         /// <summary>
-                        /// 获取或设置商品优惠金额（单位：分）。
+                        /// 获取或设置商户出资（单位：分）。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("discount_amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("discount_amount")]
+                        [Newtonsoft.Json.JsonProperty("merchant_contribute")]
+                        [System.Text.Json.Serialization.JsonPropertyName("merchant_contribute")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int DiscountAmount { get; set; }
+                        public int? MerchantContribute { get; set; }
 
                         /// <summary>
-                        /// 获取或设置商品备注。
+                        /// 获取或设置其他出资（单位：分）。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_remark")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_remark")]
-                        public string? GoodsRemark { get; set; }
+                        [Newtonsoft.Json.JsonProperty("other_contribute")]
+                        [System.Text.Json.Serialization.JsonPropertyName("other_contribute")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public int? OtherContribute { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置单品列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_detail")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                        public Types.GoodsDetail[]? GoodsList { get; set; }
                     }
                 }
 
                 /// <summary>
-                /// 获取或设置券或者立减优惠 ID。
+                /// 获取或设置优惠信息列表。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("promotion_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("promotion_id")]
-                public string PromotionId { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置优惠名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("name")]
-                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string? Name { get; set; }
-
-                /// <summary>
-                /// 获取或设置优惠范围。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("scope")]
-                [System.Text.Json.Serialization.JsonPropertyName("scope")]
-                public string? Scope { get; set; }
-
-                /// <summary>
-                /// 获取或设置优惠类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("type")]
-                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                public string? Type { get; set; }
-
-                /// <summary>
-                /// 获取或设置优惠券面额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("amount")]
-                [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int Amount { get; set; }
-
-                /// <summary>
-                /// 获取或设置活动 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("activity_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("activity_id")]
-                public string? ActivityId { get; set; }
-
-                /// <summary>
-                /// 获取或设置微信出资（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("wxpay_contribute")]
-                [System.Text.Json.Serialization.JsonPropertyName("wxpay_contribute")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int? WechatpayContribute { get; set; }
-
-                /// <summary>
-                /// 获取或设置商户出资（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("merchant_contribute")]
-                [System.Text.Json.Serialization.JsonPropertyName("merchant_contribute")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int? MerchantContribute { get; set; }
-
-                /// <summary>
-                /// 获取或设置其他出资（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("other_contribute")]
-                [System.Text.Json.Serialization.JsonPropertyName("other_contribute")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int? OtherContribute { get; set; }
-
-                /// <summary>
-                /// 获取或设置单品列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_detail")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
-                public Types.GoodsDetail[]? GoodsList { get; set; }
+                [Newtonsoft.Json.JsonProperty("promotion_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
+                public Types.Promotion[]? PromotionList { get; set; }
             }
         }
 
         internal static class Converters
         {
-            internal class ResponsePropertyPromotionListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Promotion[]>
+            internal class ResponsePropertyPromotionDetailNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.PromotionDetail>
             {
             }
 
-            internal class ResponsePropertyPromotionListSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Promotion[]>
+            internal class ResponsePropertyPromotionDetailSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.PromotionDetail>
             {
             }
         }
@@ -303,9 +316,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置优惠信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promotion_detail")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyPromotionListNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyPromotionDetailNewtonsoftJsonConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyPromotionListSystemTextJsonConverter))]
-        public Types.Promotion[]? PromotionList { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyPromotionDetailSystemTextJsonConverter))]
+        public Types.PromotionDetail? PromotionDetail { get; set; }
     }
 }
