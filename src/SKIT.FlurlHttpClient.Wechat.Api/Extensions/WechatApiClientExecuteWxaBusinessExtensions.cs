@@ -263,7 +263,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Runtime
         /// <summary>
         /// <para>异步调用 [POST] /wxa/business/runtime/adddevice 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Miniprogram_Frame/deviceId.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Miniprogram_Frame/api/backend/addDevice.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -279,6 +279,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessRuntimeAddDeviceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/runtime/pushappmsg 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Miniprogram_Frame/api/backend/pushAppMsg.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessRuntimePushAppMessageResponse> ExecuteWxaBusinessRuntimePushAppMessageAsync(this WechatApiClient client, Models.WxaBusinessRuntimePushAppMessageRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "runtime", "pushappmsg")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessRuntimePushAppMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
