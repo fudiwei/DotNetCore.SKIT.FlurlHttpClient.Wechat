@@ -30,7 +30,7 @@ namespace Newtonsoft.Json.Converters
             else if (reader.TokenType == JsonToken.String)
             {
                 string? value = serializer.Deserialize<string>(reader);
-                if (value == null)
+                if (string.IsNullOrEmpty(value))
                     return existingValue;
 
                 if (CHAR_YES.Equals(value))

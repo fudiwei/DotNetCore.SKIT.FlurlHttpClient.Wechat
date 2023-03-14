@@ -24,7 +24,7 @@ namespace System.Text.Json.Converters
             else if (reader.TokenType == JsonTokenType.String)
             {
                 string? value = reader.GetString();
-                if (value == null)
+                if (string.IsNullOrEmpty(value))
                     return null;
 
                 if (CHAR_YES.Equals(value))

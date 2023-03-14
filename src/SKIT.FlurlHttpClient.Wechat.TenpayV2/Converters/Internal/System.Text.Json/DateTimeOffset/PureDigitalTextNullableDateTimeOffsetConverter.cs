@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using System.Text.Json.Serialization;
 
 namespace System.Text.Json.Converters
@@ -16,7 +16,7 @@ namespace System.Text.Json.Converters
             else if (reader.TokenType == JsonTokenType.String)
             {
                 string? value = reader.GetString();
-                if (value == null)
+                if (string.IsNullOrEmpty(value))
                     return null;
 
                 if (DateTimeOffset.TryParseExact(value, DATETIME_FORMAT, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None, out DateTimeOffset result))
