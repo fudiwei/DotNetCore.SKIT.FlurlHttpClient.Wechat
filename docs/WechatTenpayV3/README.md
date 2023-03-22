@@ -44,7 +44,7 @@ var options = new WechatTenpayClientOptions()
     MerchantV3Secret = "微信商户 v3 API 密钥",
     MerchantCertificateSerialNumber = "微信商户证书序列号",
     MerchantCertificatePrivateKey = "-----BEGIN PRIVATE KEY-----微信商户证书私钥，即 `apiclient_key.pem` 文件内容-----END PRIVATE KEY-----",
-    PlatformCertificateManager = manager // 证书管理器的具体用法请参阅下文的高级技巧与加密、验签有关的章节
+    PlatformCertificateManager = manager // 平台证书管理器的具体用法请参阅下文的基础用法与加密、验签有关的章节
 };
 var client = new WechatTenpayClient(options);
 ```

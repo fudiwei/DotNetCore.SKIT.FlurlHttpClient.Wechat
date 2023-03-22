@@ -8,8 +8,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     public static class WechatWorkClientParameterExtensions
     {
+        private const string BASE_URL_OPEN = "https://open.weixin.qq.com/";
+        private const string BASE_URL_OPENWORK = "https://open.work.weixin.qq.com/";
+
         /// <summary>
-        /// <para>生成企业号 JS-SDK `wx.config` 所需的参数字典。</para>
+        /// <para>生成企业微信 JS-SDK `wx.config` 所需的参数字典。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/90506 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/90539 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/90777 </para>
@@ -38,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>生成企业号 JS-SDK `wx.agentConfig` 所需的参数字典。</para>
+        /// <para>生成企业微信 JS-SDK `wx.agentConfig` 所需的参数字典。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/90506 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/90539 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/90777 </para>
@@ -68,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>生成企业号网页授权 URL。</para>
+        /// <para>生成企业微信网页授权 URL。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91022 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91120 </para>
         /// </summary>
@@ -83,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>生成企业号网页授权 URL。</para>
+        /// <para>生成企业微信网页授权 URL。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91022 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91120 </para>
         /// </summary>
@@ -95,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <returns></returns>
         public static string GenerateParameterizedUrlForConnectOAuth2Authorize(this WechatWorkClient client, int agentId, string redirectUrl, string scope, string? state = null)
         {
-            return new Url("https://open.weixin.qq.com")
+            return new Url(BASE_URL_OPEN)
                 .AppendPathSegments("connect", "oauth2", "authorize")
                 .SetQueryParam("appid", string.IsNullOrEmpty(client.Credentials.SuiteId) ? client.Credentials.CorpId : client.Credentials.SuiteId)
                 .SetQueryParam("redirect_uri", redirectUrl)
@@ -108,7 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>生成企业号扫码授权 URL。</para>
+        /// <para>生成企业微信扫码授权 URL。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91019 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91124 </para>
         /// </summary>
@@ -124,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>生成企业号扫码授权 URL。</para>
+        /// <para>生成企业微信扫码授权 URL。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91019 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/91124 </para>
         /// </summary>
@@ -137,13 +140,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <returns></returns>
         public static string GenerateParameterizedUrlForSSOQrcodeConnectAuthorize(this WechatWorkClient client, int agentId, string redirectUrl, string? state = null, string? language = null, string? userType = null)
         {
-            return new Url("https://open.work.weixin.qq.com")
+            return new Url(BASE_URL_OPENWORK)
                 .AppendPathSegments("wwopen", "sso", "qrConnect")
                 .SetQueryParam("appid", client.Credentials.CorpId)
                 .SetQueryParam("agentid", agentId)
                 .SetQueryParam("redirect_uri", redirectUrl)
                 .SetQueryParam("state", state)
                 .SetQueryParam("lang", language)
+                .SetQueryParam("usertype", userType)
+                .ToString();
+        }
+
+        /// <summary>
+        /// <para>生成企业微信第三方单点登录扫码授权 URL。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/10991 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="state"></param>
+        /// <param name="userType"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForSSO3rdQrcodeConnectAuthorize(this WechatWorkClient client, string redirectUrl, string? state = null, string? userType = null)
+        {
+            return new Url(BASE_URL_OPENWORK)
+                .AppendPathSegments("wwopen", "sso", "3rd_qrConnect")
+                .SetQueryParam("appid", client.Credentials.CorpId)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("state", state)
                 .SetQueryParam("usertype", userType)
                 .ToString();
         }

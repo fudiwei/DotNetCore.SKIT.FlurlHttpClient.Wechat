@@ -26,10 +26,12 @@ var paramMap = client.GenerateParametersForJssdkConfigRequest(response.Ticket, "
 
 ### 【附】生成参数相关扩展方法速查表：
 
--   生成企业号 JS-SDK `wx.config` 所需的参数字典：`GenerateParametersForJSSDKConfig`
+-   生成 JS-SDK `wx.config` 所需的参数字典：`GenerateParametersForJSSDKConfig`
 
--   生成企业号 JS-SDK `wx.agentConfig` 所需的参数字典：`GenerateParametersForJSSDKAgentConfig`
+-   生成 JS-SDK `wx.agentConfig` 所需的参数字典：`GenerateParametersForJSSDKAgentConfig`
 
--   生成企业号网页授权 URL：`GenerateParameterizedUrlForConnectOAuth2Authorize`
+-   生成网页授权 URL：`GenerateParameterizedUrlForConnectOAuth2Authorize`
 
--   生成企业号扫码授权 URL：`GenerateParameterizedUrlForSSOQrcodeConnectAuthorize`
+-   生成扫码授权 URL：`GenerateParameterizedUrlForSSOQrcodeConnectAuthorize`
+
+-   生成第三方单点登录扫码授权 URL：`GenerateParameterizedUrlForSSO3rdQrcodeConnectAuthorize`

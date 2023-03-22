@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("conflict_date")]
         [System.Text.Json.Serialization.JsonPropertyName("conflict_date")]
-        public string[]? ConflictDateTimestampList { get; set; }
+        public long[]? ConflictDateTimestampList { get; set; }
     }
 }
