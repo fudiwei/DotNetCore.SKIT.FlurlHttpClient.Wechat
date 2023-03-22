@@ -403,7 +403,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
-        #region MeetingRoomBook
+        #region MeetingRoom/Book
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/oa/meetingroom/get_booking_info 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93620 </para>
@@ -462,6 +462,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomBookResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/oa/meetingroom/book_by_schedule 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93620 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinOAMeetingRoomBookByScheduleResponse> ExecuteCgibinOAMeetingRoomBookByScheduleAsync(this WechatWorkClient client, Models.CgibinOAMeetingRoomBookByScheduleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "book_by_schedule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomBookByScheduleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/oa/meetingroom/book_by_meeting 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93620 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinOAMeetingRoomBookByMeetingResponse> ExecuteCgibinOAMeetingRoomBookByMeetingAsync(this WechatWorkClient client, Models.CgibinOAMeetingRoomBookByMeetingRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "oa", "meetingroom", "book_by_meeting")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAMeetingRoomBookByMeetingResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

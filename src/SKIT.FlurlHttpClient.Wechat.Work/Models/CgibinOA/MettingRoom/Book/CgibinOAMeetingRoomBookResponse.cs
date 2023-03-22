@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/meetingroom/book 接口的响应。</para>
@@ -6,11 +6,11 @@
     public class CgibinOAMeetingRoomBookResponse : WechatWorkResponse
     {
         /// <summary>
-        /// 获取或设置会议 ID。
+        /// 获取或设置预定 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("meeting_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("meeting_id")]
-        public string MeetingId { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("booking_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("booking_id")]
+        public string BookingId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置关联日程 ID。
