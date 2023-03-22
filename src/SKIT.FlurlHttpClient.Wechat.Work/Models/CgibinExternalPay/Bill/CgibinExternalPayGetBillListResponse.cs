@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalpay/get_bill_list 接口的响应。</para>
@@ -73,7 +73,7 @@
                         public int RefundFee { get; set; }
                     }
 
-                    public class Contact
+                    public class Payer
                     {
                         /// <summary>
                         /// 获取或设置姓名。
@@ -96,6 +96,23 @@
                         [System.Text.Json.Serialization.JsonPropertyName("address")]
                         public string? Address { get; set; }
                     }
+
+                    public class MiniProgram
+                    {
+                        /// <summary>
+                        /// 获取或设置小程序 AppId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("appid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                        public string AppId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置小程序名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string Name { get; set; } = default!;
+                    }
                 }
 
                 /// <summary>
@@ -106,11 +123,25 @@
                 public string MerchantId { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置交易类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("bill_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("bill_type")]
+                public int BillType { get; set; }
+
+                /// <summary>
                 /// 获取或设置商户单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("out_trade_no")]
                 [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
                 public string OutTradeNumber { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置商户退款单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_refund_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_refund_no")]
+                public string? OutRefundNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置交易单号。
@@ -131,14 +162,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("external_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
-                public string PayerExternalUserId { get; set; } = default!;
+                public string? PayerExternalUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置收款人成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payee_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("payee_userid")]
-                public string PayeeUserId { get; set; } = default!;
+                public string? PayeeUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置总金额（单位：分）。
@@ -180,7 +211,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payer_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("payer_info")]
-                public Types.Contact? Contact { get; set; }
+                public Types.Payer? Payer { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品列表。
@@ -195,6 +226,13 @@
                 [Newtonsoft.Json.JsonProperty("refund_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_list")]
                 public Types.Refund[]? RefundList { get; set; }
+
+                /// <summary>
+                /// 获取或设置小程序信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("miniprogram_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("miniprogram_info")]
+                public Types.MiniProgram? MiniProgram { get; set; }
             }
         }
 
