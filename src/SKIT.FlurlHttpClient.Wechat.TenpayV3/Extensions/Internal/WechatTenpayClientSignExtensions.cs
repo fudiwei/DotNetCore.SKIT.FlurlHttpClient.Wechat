@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         var entry = client.PlatformCertificateManager.GetEntry(strSerialNumber);
                         if (!entry.HasValue)
                         {
-                            error = new Exception($"There is no platform certificate matched the serial number: \"{strSerialNumber}\", please make sure you have downloaded platform certificates first.");
+                            error = new Exception($"There is no platform certificate matched the serial number: \"{strSerialNumber}\". Please make sure you have downloaded platform certificates first.");
                             return false;
                         }
 
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         var entry = client.PlatformCertificateManager.GetEntry(strSerialNumber);
                         if (!entry.HasValue)
                         {
-                            error = new Exception($"There is no platform certificate matched the serial number: \"{strSerialNumber}\", please make sure you have downloaded platform certificates first.");
+                            error = new Exception($"There is no platform certificate matched the serial number: \"{strSerialNumber}\". Please make sure you have downloaded platform certificates first.");
                             return false;
                         }
 

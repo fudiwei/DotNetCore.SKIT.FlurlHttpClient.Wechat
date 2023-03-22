@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -90,6 +90,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinIdConvertOpenKfIdResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/idconvert/convert_tmp_external_userid 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98729 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinIdConvertConvertTempExternalUserIdResponse> ExecuteCgibinIdConvertConvertTempExternalUserIdAsync(this WechatWorkClient client, Models.CgibinIdConvertConvertTempExternalUserIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "idconvert", "convert_tmp_external_userid")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinIdConvertConvertTempExternalUserIdResponse>(flurlReq, cancellationToken: cancellationToken);
         }
     }
 }

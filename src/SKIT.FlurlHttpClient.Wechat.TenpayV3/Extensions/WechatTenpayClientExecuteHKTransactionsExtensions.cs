@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -184,8 +184,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.MerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "transactions", "out-trade-no", request.OutTradeNumber, "close")
-                .SetQueryParam("mchid", request.MerchantId);
+                .CreateRequest(request, HttpMethod.Post, "transactions", "out-trade-no", request.OutTradeNumber, "close");
 
             return await client.SendRequestWithJsonAsync<Models.CloseHKTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

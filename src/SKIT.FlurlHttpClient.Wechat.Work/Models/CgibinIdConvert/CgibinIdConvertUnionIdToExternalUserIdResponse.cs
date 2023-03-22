@@ -13,7 +13,7 @@
         public string? ExternalUserId { get; set; }
 
         /// <summary>
-        /// 获取或设置临时部联系人账号 ID。
+        /// 获取或设置临时外部联系人账号 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pending_id")]
         [System.Text.Json.Serialization.JsonPropertyName("pending_id")]

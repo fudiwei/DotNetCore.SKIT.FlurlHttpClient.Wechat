@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
             if (AlgorithmType == null)
             {
-                throw new ArgumentException("Unrecognized certificate algorithm type, please make sure you have decrypted the certificate content first.");
+                throw new ArgumentException("Unrecognized certificate algorithm type. Please make sure you have decrypted the certificate content first.");
             }
         }
 

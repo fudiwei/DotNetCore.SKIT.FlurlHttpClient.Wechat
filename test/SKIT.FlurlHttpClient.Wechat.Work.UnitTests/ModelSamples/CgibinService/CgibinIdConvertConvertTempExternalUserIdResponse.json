@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "results": [
+        {
+            "tmp_external_userid": "ouXXX1",
+            "external_userid": "EXTERNAL_USER_ID"
+        },
+        {
+            "tmp_external_userid": "ouXXX2",
+            "corpid": "CORPID",
+            "userid": "USERID"
+        }
+    ],
+    "invalid_tmp_external_userid_list": [
+        "ouXXX3"
+    ]
+}
