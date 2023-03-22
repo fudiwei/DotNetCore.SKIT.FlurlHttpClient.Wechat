@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,47 +9,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     public static class WechatWorkClientExecuteCgibinCheckinExtensions
     {
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/checkin/getcorpcheckinoption 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93384 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinCheckinGetCorpCheckinOptionResponse> ExecuteCgibinCheckinGetCorpCheckinOptionAsync(this WechatWorkClient client, Models.CgibinCheckinGetCorpCheckinOptionRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "checkin", "getcorpcheckinoption")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinCheckinGetCorpCheckinOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/checkin/getcheckinoption 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90263 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94204 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinCheckinGetCheckinOptionResponse> ExecuteCgibinCheckinGetCheckinOptionAsync(this WechatWorkClient client, Models.CgibinCheckinGetCheckinOptionRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "checkin", "getcheckinoption")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinCheckinGetCheckinOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/checkin/getcheckindata 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/90262 </para>
@@ -194,5 +153,128 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinCheckinPunchCorrectionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region Option
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/checkin/getcorpcheckinoption 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93384 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCheckinGetCorpCheckinOptionResponse> ExecuteCgibinCheckinGetCorpCheckinOptionAsync(this WechatWorkClient client, Models.CgibinCheckinGetCorpCheckinOptionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "checkin", "getcorpcheckinoption")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCheckinGetCorpCheckinOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/checkin/getcheckinoption 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90263 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94204 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCheckinGetCheckinOptionResponse> ExecuteCgibinCheckinGetCheckinOptionAsync(this WechatWorkClient client, Models.CgibinCheckinGetCheckinOptionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "checkin", "getcheckinoption")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCheckinGetCheckinOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/checkin/add_checkin_option 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98041 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCheckinAddCheckinOptionResponse> ExecuteCgibinCheckinAddCheckinOptionAsync(this WechatWorkClient client, Models.CgibinCheckinAddCheckinOptionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "checkin", "add_checkin_option")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCheckinAddCheckinOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/checkin/update_checkin_option 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98041 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCheckinUpdateCheckinOptionResponse> ExecuteCgibinCheckinUpdateCheckinOptionAsync(this WechatWorkClient client, Models.CgibinCheckinUpdateCheckinOptionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "checkin", "update_checkin_option")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCheckinUpdateCheckinOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/checkin/clear_checkin_option_array_field 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98041 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCheckinClearCheckinOptionArrayFieldResponse> ExecuteCgibinCheckinClearCheckinOptionArrayFieldAsync(this WechatWorkClient client, Models.CgibinCheckinClearCheckinOptionArrayFieldRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "checkin", "clear_checkin_option_array_field")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCheckinClearCheckinOptionArrayFieldResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/checkin/del_checkin_option 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98041 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCheckinDeleteCheckinOptionResponse> ExecuteCgibinCheckinDeleteCheckinOptionAsync(this WechatWorkClient client, Models.CgibinCheckinDeleteCheckinOptionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "checkin", "del_checkin_option")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinCheckinDeleteCheckinOptionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

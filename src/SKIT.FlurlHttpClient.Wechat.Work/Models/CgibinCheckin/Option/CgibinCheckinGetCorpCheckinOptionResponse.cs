@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/checkin/getcorpcheckinoption 接口的响应。</para>
@@ -46,7 +46,14 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("userid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                                public string UserId { get; set; } = default!;
+                                public string? UserId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置标签 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("tagid")]
+                                [System.Text.Json.Serialization.JsonPropertyName("tagid")]
+                                public int? TagId { get; set; }
                             }
                         }
 
@@ -202,14 +209,14 @@
                             public class OvertimeApply
                             {
                                 /// <summary>
-                                /// 获取或设置允许工作日加班。
+                                /// 获取或设置是否允许工作日加班。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("allow_ot_workingday")]
                                 [System.Text.Json.Serialization.JsonPropertyName("allow_ot_workingday")]
                                 public bool AllowOvertimeWorkday { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置允许非工作日加班。
+                                /// 获取或设置是否允许非工作日加班。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("allow_ot_nonworkingday")]
                                 [System.Text.Json.Serialization.JsonPropertyName("allow_ot_nonworkingday")]
@@ -304,11 +311,11 @@
                 public Types.Range Range { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置打卡人员白名单。
+                /// 获取或设置白名单成员账号列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("white_users")]
                 [System.Text.Json.Serialization.JsonPropertyName("white_users")]
-                public string[] UserIdWhiteList { get; set; } = default!;
+                public string[]? UserIdWhiteList { get; set; }
 
                 /// <summary>
                 /// 获取或设置汇报对象信息。
@@ -329,14 +336,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("allow_apply_bk_cnt")]
                 [System.Text.Json.Serialization.JsonPropertyName("allow_apply_bk_cnt")]
-                public int LimitApplyCount { get; set; }
+                public int LimitApplyRecheckinCount { get; set; }
 
                 /// <summary>
                 /// 获取或设置补卡时限（单位：天）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("allow_apply_bk_day_limit")]
                 [System.Text.Json.Serialization.JsonPropertyName("allow_apply_bk_day_limit")]
-                public int LimitApplyDay { get; set; }
+                public int LimitApplyRecheckinDay { get; set; }
+
+                /// <summary>
+                /// 获取或设置补卡时限（单位：天）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("buka_limit_next_month")]
+                [System.Text.Json.Serialization.JsonPropertyName("buka_limit_next_month")]
+                public int LimitApplyRecheckinNextMonth { get; set; }
 
                 /// <summary>
                 /// 获取或设置范围外打卡处理方式。
@@ -350,7 +364,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("use_face_detect")]
                 [System.Text.Json.Serialization.JsonPropertyName("use_face_detect")]
-                public bool UseFaceDetect { get; set; }
+                public bool IsUseFaceDetect { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否开启人脸活体识别。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("open_face_live_detect")]
+                [System.Text.Json.Serialization.JsonPropertyName("open_face_live_detect")]
+                public bool IsOpenFaceLiveDetect { get; set; }
 
                 /// <summary>
                 /// 获取或设置自由签到时间（单位：秒）。

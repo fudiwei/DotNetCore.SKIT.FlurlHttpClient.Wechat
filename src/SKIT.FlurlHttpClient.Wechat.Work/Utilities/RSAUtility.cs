@@ -4,17 +4,8 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Math;
 using Org.BouncyCastle.OpenSsl;
-using Org.BouncyCastle.Pkcs;
 using Org.BouncyCastle.Security;
-using Org.BouncyCastle.Crypto;
-using Org.BouncyCastle.Crypto.Parameters;
-using Org.BouncyCastle.Security;
-using Org.BouncyCastle.Utilities.IO;
-using Org.BouncyCastle.Utilities;
-using System.Security.Cryptography.X509Certificates;
-using System.Xml.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 {
@@ -39,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
                     pemWriter.WriteObject(pkcs8);
                     pemWriter.Writer.Close();
 
-                    privateKey = textWriter.ToString();
+                    privateKey = textWriter.ToString()!;
                     privateKey = privateKey
                         .Replace("-----BEGIN PRIVATE KEY-----", string.Empty)
                         .Replace("-----END PRIVATE KEY-----", string.Empty);

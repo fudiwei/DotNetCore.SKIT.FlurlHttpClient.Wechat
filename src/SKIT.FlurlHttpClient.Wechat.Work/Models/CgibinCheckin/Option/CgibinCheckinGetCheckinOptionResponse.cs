@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/checkin/getcheckinoption 接口的响应。</para>
@@ -43,59 +43,129 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("flex_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("flex_time")]
-                                public int FlexTime { get; set; }
+                                public int? FlexTime { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置允许迟到时间（单位：毫秒）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("flex_on_duty_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("flex_on_duty_time")]
-                                public int FlexOnDutyTime { get; set; }
+                                public int? FlexOnDutyTime { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置允许早退时间（单位：毫秒）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("flex_off_duty_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("flex_off_duty_time")]
-                                public int FlexOffDutyTime { get; set; }
+                                public int? FlexOffDutyTime { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置提前打卡时间限制（单位：毫秒）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("limit_aheadtime")]
                                 [System.Text.Json.Serialization.JsonPropertyName("limit_aheadtime")]
-                                public int LimitAheadTime { get; set; }
+                                public int? LimitAheadTime { get; set; }
                             }
 
                             public class CheckinTime
                             {
                                 /// <summary>
+                                /// 获取或设置时段 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("time_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("time_id")]
+                                public int? TimeId { get; set; }
+
+                                /// <summary>
                                 /// 获取或设置上班时间距当天零点的秒数。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("work_sec")]
                                 [System.Text.Json.Serialization.JsonPropertyName("work_sec")]
-                                public int OnWorkTime { get; set; }
+                                public int? OnWorkTime { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置下班时间距当天零点的秒数。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("off_work_sec")]
                                 [System.Text.Json.Serialization.JsonPropertyName("off_work_sec")]
-                                public int OffWorkTime { get; set; }
+                                public int? OffWorkTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置最早上班时间距当天零点的秒数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("earliest_work_sec")]
+                                [System.Text.Json.Serialization.JsonPropertyName("earliest_work_sec")]
+                                public int? EarliestOnWorkTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置最晚下班时间距当天零点的秒数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("latest_work_sec")]
+                                [System.Text.Json.Serialization.JsonPropertyName("latest_work_sec")]
+                                public int? LatestOnWorkTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置最早下班时间距当天零点的秒数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("earliest_off_work_sec")]
+                                [System.Text.Json.Serialization.JsonPropertyName("earliest_off_work_sec")]
+                                public int? EarliestOffWorkTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置最晚下班时间距当天零点的秒数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("latest_off_work_sec")]
+                                [System.Text.Json.Serialization.JsonPropertyName("latest_off_work_sec")]
+                                public int? LatestOffWorkTime { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置提醒上班时间距当天零点的秒数。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("remind_work_sec")]
                                 [System.Text.Json.Serialization.JsonPropertyName("remind_work_sec")]
-                                public int RemindOnWorkTime { get; set; }
+                                public int? RemindOnWorkTime { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置提醒下班时间距当天零点的秒数。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("remind_off_work_sec")]
                                 [System.Text.Json.Serialization.JsonPropertyName("remind_off_work_sec")]
-                                public int RemindOffWorkTime { get; set; }
+                                public int? RemindOffWorkTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置是否允许休息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("allow_rest")]
+                                [System.Text.Json.Serialization.JsonPropertyName("allow_rest")]
+                                public bool AllowRest { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置休息开始时间距当天零点的秒数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("rest_begin_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("rest_begin_time")]
+                                public int? RestBeginTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置休息结束时间距当天零点的秒数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("rest_end_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("rest_end_time")]
+                                public int? RestEndTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置是否不需要上班打卡。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("no_need_checkon")]
+                                [System.Text.Json.Serialization.JsonPropertyName("no_need_checkon")]
+                                public bool? IsNoNeedCheckOn { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置是否不需要下班打卡。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("no_need_checkoff")]
+                                [System.Text.Json.Serialization.JsonPropertyName("no_need_checkoff")]
+                                public bool? IsNoNeedCheckOff { get; set; }
                             }
 
                             public class SpecialCheckinDate
@@ -183,33 +253,6 @@
                                 {
                                     public class TimeSection : CheckinTime
                                     {
-                                        /// <summary>
-                                        /// 获取或设置时段 ID。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("time_id")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("time_id")]
-                                        public int TimeSectionId { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置是否允许休息。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("allow_rest")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("allow_rest")]
-                                        public bool AllowRest { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置休息开始时间距当天零点的秒数。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("rest_begin_time")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("rest_begin_time")]
-                                        public int RestBeginTime { get; set; }
-
-                                        /// <summary>
-                                        /// 获取或设置休息结束时间距当天零点的秒数。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("rest_end_time")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("rest_end_time")]
-                                        public int RestEndTime { get; set; }
                                     }
 
                                     public class LateRule
@@ -301,28 +344,28 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("flex_on_duty_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("flex_on_duty_time")]
-                                public int FlexOnDutyTime { get; set; }
+                                public int? FlexOnDutyTime { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置允许早退时间（单位：毫秒）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("flex_off_duty_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("flex_off_duty_time")]
-                                public int FlexOffDutyTime { get; set; }
+                                public int? FlexOffDutyTime { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置最早可打卡时间限制（单位：毫秒）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("max_allow_arrive_early")]
                                 [System.Text.Json.Serialization.JsonPropertyName("max_allow_arrive_early")]
-                                public int MaxAllowArriveEarly { get; set; }
+                                public int? MaxAllowArriveEarly { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置最晚可打卡时间限制（单位：毫秒）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("max_allow_arrive_late")]
                                 [System.Text.Json.Serialization.JsonPropertyName("max_allow_arrive_late")]
-                                public int MaxAllowArriveLate { get; set; }
+                                public int? MaxAllowArriveLate { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置晚走晚到时间规则信息。
@@ -388,6 +431,27 @@
                         [Newtonsoft.Json.JsonProperty("allow_apply_offworkday")]
                         [System.Text.Json.Serialization.JsonPropertyName("allow_apply_offworkday")]
                         public bool AllowApplyOffWorkday { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置每月最多补卡次数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("allow_apply_bk_cnt")]
+                        [System.Text.Json.Serialization.JsonPropertyName("allow_apply_bk_cnt")]
+                        public int? LimitApplyRecheckinCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置补卡时限（单位：天）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("allow_apply_bk_day_limit")]
+                        [System.Text.Json.Serialization.JsonPropertyName("allow_apply_bk_day_limit")]
+                        public int? LimitApplyRecheckinDay { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置补卡时限（单位：天）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("buka_limit_next_month")]
+                        [System.Text.Json.Serialization.JsonPropertyName("buka_limit_next_month")]
+                        public int? LimitApplyRecheckinNextMonth { get; set; }
 
                         /// <summary>
                         /// 获取或设置打卡时间配置列表。
