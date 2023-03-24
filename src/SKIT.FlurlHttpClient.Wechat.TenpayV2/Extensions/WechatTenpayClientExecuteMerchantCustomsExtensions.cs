@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/mch/customs/customdeclareredeclare 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_4&index=3 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_4&amp;index=3 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -10,8 +10,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     {
         /// <summary>
         /// <para>异步调用 [POST] /secapi/mch/addsubdevconfig 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_2&index=1&p=901 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_3&index=2&p=901 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_2&amp;index=1&amp;p=901 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_3&amp;index=2&amp;p=901 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /secapi/mch/querysubdevconfig 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_25&index=3&p=901 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_25&amp;index=3&amp;p=901 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

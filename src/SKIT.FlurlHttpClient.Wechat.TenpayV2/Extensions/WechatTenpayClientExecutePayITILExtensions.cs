@@ -10,18 +10,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     {
         /// <summary>
         /// <para>异步调用 [POST] /payitil/report 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_14&index=8 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_8&index=9 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_8&index=9 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_8&index=10 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_8&index=9 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_8&index=9 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_14&index=7 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_14&amp;index=8 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_8&amp;index=9 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_8&amp;index=9 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_8&amp;index=10 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_8&amp;index=9 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_8&amp;index=9 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_14&amp;index=7 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_8 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_8 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_8&index=10 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_8&index=9 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_8&index=9 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_8&amp;index=10 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_8&amp;index=9 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_8&amp;index=9 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter8_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_8.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_8.shtml </para>
