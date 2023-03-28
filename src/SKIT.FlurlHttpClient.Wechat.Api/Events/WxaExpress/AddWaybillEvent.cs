@@ -1,8 +1,8 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.add_waybill 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/express/by-provider/logistics.onAddOrder.html </para>
+    /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/express/express-by-provider/onAddOrder.html </para>
     /// </summary>
     public class AddWaybillEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
     {
@@ -177,7 +177,7 @@
                 [System.Text.Json.Serialization.JsonPropertyName("UseInsured")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                 [System.Xml.Serialization.XmlElement("UseInsured")]
-                public bool UseInsured { get; set; }
+                public bool IsUseInsured { get; set; }
 
                 /// <summary>
                 /// 获取或设置保价金额（单位：分）。

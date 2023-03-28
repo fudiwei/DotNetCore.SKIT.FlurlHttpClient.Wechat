@@ -225,7 +225,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("use_insured")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
-                public bool UseInsured { get; set; }
+                public bool IsUseInsured { get; set; }
 
                 /// <summary>
                 /// 获取或设置保价金额（单位：分）。

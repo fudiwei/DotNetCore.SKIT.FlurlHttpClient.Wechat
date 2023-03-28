@@ -15,6 +15,24 @@
             "image_list": [
                 "https://qpic.cn/xxx"
             ]
+        },
+        {
+            "complaint_media_list": [
+                {
+                    "media_type": "USER_COMPLAINT_IMAGE",
+                    "media_url": [
+                        "https://api.mch.weixin.qq.com/v3/merchant-service/images/xxxxx"
+                    ]
+                }
+            ],
+            "log_id": "300285320210322170000071077",
+            "operator": "投诉人",
+            "operate_time": "2015-05-20T13:29:35.120+08:00",
+            "operate_type": "USER_CREATE_COMPLAINT",
+            "operate_details": "已与用户电话沟通解决",
+            "image_list": [
+                "https://qpic.cn/xxx"
+            ]
         }
     ],
     "limit": 50,
