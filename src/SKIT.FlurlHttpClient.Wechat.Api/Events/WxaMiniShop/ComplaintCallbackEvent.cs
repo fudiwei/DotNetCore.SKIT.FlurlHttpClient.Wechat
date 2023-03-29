@@ -32,12 +32,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         public string? Content { get; set; }
 
                         /// <summary>
-                        /// 获取或设置图片 MediaId 列表字符串（以逗号分隔）。
+                        /// 获取或设置图片 MediaId 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("media_id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
-                        [System.Xml.Serialization.XmlElement("media_id_list", IsNullable = true)]
-                        public string? MediaIdListString { get; set; }
+                        [System.Xml.Serialization.XmlElement("media_id_list", Type = typeof(string), IsNullable = true)]
+                        public string[] MediaIdListString { get; set; }
                     }
                 }
 
