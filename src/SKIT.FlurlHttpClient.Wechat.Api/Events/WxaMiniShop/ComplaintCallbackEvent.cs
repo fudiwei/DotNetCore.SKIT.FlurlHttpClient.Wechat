@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     {
         public static class Types
         {
-            public class BussiCallBackInfo
+            public class EventData
             {
                 public static class Types
                 {
@@ -184,11 +184,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         }
 
         /// <summary>
-        /// 获取或设置投诉信息。
+        /// 获取或设置事件数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("BussiCallBackInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("BussiCallBackInfo")]
-        [System.Xml.Serialization.XmlElement("BussiCallBackInfo", Type = typeof(Types.BussiCallBackInfo))]
-        public Types.BussiCallBackInfo BussiCallBackInfo { get; set; }
+        [System.Xml.Serialization.XmlElement("BussiCallBackInfo")]
+        public Types.EventData EventData { get; set; } = default!;
     }
 }
