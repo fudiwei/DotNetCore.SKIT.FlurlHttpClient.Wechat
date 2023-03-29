@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long ProductId { get; set; }
 
         /// <summary>
-        /// 获取或设置团长的 AppId。
+        /// 获取或设置小店 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]

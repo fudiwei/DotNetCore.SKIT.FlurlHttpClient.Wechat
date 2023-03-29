@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/league/headsupplier/window/getdetail 接口的响应。</para>
+    /// <para>表示 [POST] /channels/ec/league/headsupplier/item/get 接口的响应。</para>
     /// </summary>
-    public class ChannelsECLeagueHeadSupplierWindowGetDetailResponse : WechatApiResponse
+    public class ChannelsECLeagueHeadSupplierItemGetResponse : WechatApiResponse
     {
         public static class Types
         {
@@ -11,53 +11,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class ProductInfo
+                    public class ProductInfo : ChannelsECLeagueHeadSupplierWindowGetDetailResponse.Types.Product.Types.ProductInfo
                     {
-                        public static class Types
+                        public static new class Types
                         {
-                            public class Detail : ChannelsECProductGetResponse.Types.Product.Types.Detail
+                            public class Detail : ChannelsECLeagueHeadSupplierWindowGetDetailResponse.Types.Product.Types.ProductInfo.Types.Detail
                             {
                             }
 
-                            public class Category : ChannelsECProductGetResponse.Types.Product.Types.Category
+                            public class Category : ChannelsECLeagueHeadSupplierWindowGetDetailResponse.Types.Product.Types.ProductInfo.Types.Category
                             {
                             }
                         }
-
-                        /// <summary>
-                        /// 获取或设置商品标题。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("title")]
-                        public string Title { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置商品副标题。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("sub_title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("sub_title")]
-                        public string? SubTitle { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置主图 URL 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("head_imgs")]
-                        [System.Text.Json.Serialization.JsonPropertyName("head_imgs")]
-                        public string[] HeadImageUrlList { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置商品详情信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("desc_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("desc_info")]
-                        public Types.Detail Detail { get; set; } = default!;
+                        public new Types.Detail Detail { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置商品类目列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("cats")]
                         [System.Text.Json.Serialization.JsonPropertyName("cats")]
-                        public Types.Category[] CategoryList { get; set; } = default!;
+                        public new Types.Category[] CategoryList { get; set; } = default!;
                     }
                 }
 
@@ -88,8 +67,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置商品信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("product_detail")]
-        [System.Text.Json.Serialization.JsonPropertyName("product_detail")]
+        [Newtonsoft.Json.JsonProperty("item")]
+        [System.Text.Json.Serialization.JsonPropertyName("item")]
         public Types.Product Product { get; set; } = default!;
     }
 }
