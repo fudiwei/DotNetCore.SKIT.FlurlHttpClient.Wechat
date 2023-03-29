@@ -33,6 +33,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.26.0
+
+    -   **新增**：新增微信物流服务散单寄件相关接口。
+
+    -   **新增**：新增小程序硬件框架推送消息接口。
+
+    -   **新增**：新增视频号小店团长合作达人、团长数据等相关接口。
+
+    -   **修复**：修复投诉信息回调通知事件模型定义错误。（_via_ [GitHub #88](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/88)）
+
 -   Release 2.25.0
 
     -   **新增**：随官方更新网页授权相关接口模型。
@@ -40,7 +50,6 @@
     -   **新增**：新增授权用户信息变更回调通知事件模型。
 
     -   **新增**：新增用户在小程序“客服会话按钮”进入客服会话时产生的回调通知事件模型。（_via_ [Gitee #I6IU5T](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I6IU5T)）
-
 
 -   Release 2.24.0
 
