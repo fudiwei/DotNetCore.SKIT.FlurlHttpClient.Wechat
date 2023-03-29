@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示被动回复音乐消息的数据。</para>
@@ -14,7 +14,7 @@
                 /// 获取或设置音乐链接。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("MusicUrl")]
-                public string MusicUrl { get; set; } = string.Empty;
+                public string MusicUrl { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置高质量音乐链接。
@@ -26,19 +26,19 @@
                 /// 获取或设置音乐封面图片 MediaId。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("ThumbMediaId")]
-                public string ThumbMediaId { get; set; } = string.Empty;
+                public string ThumbMediaId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置音乐标题。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("Title")]
-                public string Title { get; set; } = string.Empty;
+                public string Title { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置音乐描述。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("Description")]
-                public string Description { get; set; } = string.Empty;
+                public string Description { get; set; } = default!;
             }
         }
 
@@ -46,12 +46,12 @@
         /// 获取或设置音乐信息。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Music")]
-        public Types.Music Music { get; set; } = new Types.Music();
+        public Types.Music Music { get; set; } = default!;
 
         public MusicMessageReply()
         {
-            Event = null;
             MessageType = "music";
+            Event = null;
         }
     }
 }

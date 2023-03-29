@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("additionalRemarks")]
                         [System.Text.Json.Serialization.JsonPropertyName("additionalRemarks")]
-                        public string? additionalRemarks { get; set; }
+                        public string? AdditionalRemarks { get; set; }
 
                         /// <summary>
                         /// 获取或设置订单状态。

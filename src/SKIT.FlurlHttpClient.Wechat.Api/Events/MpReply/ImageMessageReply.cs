@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示被动回复图片消息的数据。</para>
@@ -14,7 +14,7 @@
                 /// 获取或设置图片 MediaId。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("MediaId")]
-                public string MediaId { get; set; } = string.Empty;
+                public string MediaId { get; set; } = default!;
             }
         }
 
@@ -22,12 +22,12 @@
         /// 获取或设置图片信息。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Image")]
-        public Types.Image Image { get; set; } = new Types.Image();
+        public Types.Image Image { get; set; } = default!;
 
         public ImageMessageReply()
         {
-            Event = null;
             MessageType = "image";
+            Event = null;
         }
     }
 }

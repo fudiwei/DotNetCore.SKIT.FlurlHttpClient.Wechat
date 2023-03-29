@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示被动回复文本消息的数据。</para>
@@ -10,12 +10,12 @@
         /// 获取或设置消息内容。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Content")]
-        public string Content { get; set; } = string.Empty;
+        public string Content { get; set; } = default!;
 
         public TextMessageReply()
         {
-            Event = null;
             MessageType = "text";
+            Event = null;
         }
     }
 }

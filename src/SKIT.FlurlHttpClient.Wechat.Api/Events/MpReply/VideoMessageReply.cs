@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示被动回复视频消息的数据。</para>
@@ -14,19 +14,19 @@
                 /// 获取或设置视频 MediaId。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("MediaId")]
-                public string MediaId { get; set; } = string.Empty;
+                public string MediaId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置视频标题。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("Title")]
-                public string Title { get; set; } = string.Empty;
+                public string Title { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置视频描述。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("Description")]
-                public string Description { get; set; } = string.Empty;
+                public string Description { get; set; } = default!;
             }
         }
 
@@ -34,12 +34,12 @@
         /// 获取或设置视频信息。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Video")]
-        public Types.Video Video { get; set; } = new Types.Video();
+        public Types.Video Video { get; set; } = default!;
 
         public VideoMessageReply()
         {
-            Event = null;
             MessageType = "video";
+            Event = null;
         }
     }
 }

@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         [Newtonsoft.Json.JsonProperty("media_id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
                         [System.Xml.Serialization.XmlElement("media_id_list", Type = typeof(string), IsNullable = true)]
-                        public string[] MediaIdListString { get; set; }
+                        public string[]? MediaIdListString { get; set; }
                     }
                 }
 

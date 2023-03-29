@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示被动回复转发消息的数据。</para>
@@ -15,7 +15,7 @@
                 /// 获取或设置客服账号。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("KfAccount")]
-                public string KfAccount { get; set; } = string.Empty;
+                public string KfAccount { get; set; } = default!;
             }
         }
 
@@ -27,8 +27,8 @@
 
         public TransferCustomerServiceReply()
         {
-            Event = null;
             MessageType = "transfer_customer_service";
+            Event = null;
         }
     }
 }

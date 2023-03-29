@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示被动回复图文消息的数据。</para>
@@ -14,25 +14,25 @@
                 /// 获取或设置图文链接。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("Url")]
-                public string Url { get; set; } = string.Empty;
+                public string Url { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置图文封面图片链接。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("PicUrl")]
-                public string PictureUrl { get; set; } = string.Empty;
+                public string PictureUrl { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置图文标题。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("Title")]
-                public string Title { get; set; } = string.Empty;
+                public string Title { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置图文描述。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("Description")]
-                public string Description { get; set; } = string.Empty;
+                public string Description { get; set; } = default!;
             }
 
             public class ArticleList
@@ -41,7 +41,7 @@
                 /// 获取或设置图文列表。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("item", Type = typeof(ArticleItem))]
-                public ArticleItem[] Items { get; set; } = new ArticleItem[0];
+                public ArticleItem[] Items { get; set; } = default!;
             }
         }
 
@@ -55,12 +55,12 @@
         /// 获取或设置图文列表。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Articles")]
-        public Types.ArticleList ArticleList { get; set; } = new Types.ArticleList();
+        public Types.ArticleList ArticleList { get; set; } = default!;
 
         public NewsMessageReply()
         {
-            Event = null;
             MessageType = "news";
+            Event = null;
         }
     }
 }

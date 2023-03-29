@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.subscribe_msg_change_event 事件的数据。</para>
@@ -54,7 +54,7 @@
 
         /// <summary>
         /// 获取或设置用户管理订阅通知数据列表。
-        /// <para>等效于 <see cref="EventData.List"/> </para>
+        /// <para>等效于 <see cref="Types.EventData.EventList"/> </para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("List")]
         [System.Text.Json.Serialization.JsonPropertyName("List")]

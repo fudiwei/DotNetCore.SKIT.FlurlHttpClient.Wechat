@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示被动回复语音消息的数据。</para>
@@ -14,7 +14,7 @@
                 /// 获取或设置语音 MediaId。
                 /// </summary>
                 [System.Xml.Serialization.XmlElement("MediaId")]
-                public string MediaId { get; set; } = string.Empty;
+                public string MediaId { get; set; } = default!;
             }
         }
 
@@ -22,12 +22,12 @@
         /// 获取或设置语音信息。
         /// </summary>
         [System.Xml.Serialization.XmlElement("Voice")]
-        public Types.Voice Voice { get; set; } = new Types.Voice();
+        public Types.Voice Voice { get; set; } = default!;
 
         public VoiceMessageReply()
         {
-            Event = null;
             MessageType = "voice";
+            Event = null;
         }
     }
 }

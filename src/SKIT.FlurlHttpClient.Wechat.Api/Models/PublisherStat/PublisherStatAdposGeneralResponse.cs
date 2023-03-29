@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /publisher/stat?action=publisher_adpos_general 接口的响应。</para>
@@ -60,7 +60,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ecpm")]
                 [System.Text.Json.Serialization.JsonPropertyName("ecpm")]
-                public double eCPM { get; set; }
+                public double ECPM { get; set; }
             }
 
             public class Data : Summary
