@@ -1,0 +1,11 @@
+{
+    "order_id": "1234323JKHDFE1243252",
+    "out_order_no": "6e8369071cd942c0476613f9d1ce9ca3",
+    "openid": "2323dfsdf342342",
+    "max_claim_count": 3,
+    "claimed_count": 1,
+    "order_receive_time": "2015-05-20T13:29:35.120+08:00",
+    "order_begin_time": "2015-05-20T13:29:35.120+08:00",
+    "order_end_time": "2015-05-20T13:29:35.120+08:00",
+    "order_receive_state": "RECEIVING"
+}
