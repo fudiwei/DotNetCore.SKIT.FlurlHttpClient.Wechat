@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             Utilities.ReflectionUtility.ReplacePropertyStringValue(ref response, (target, currentProp, oldValue) =>
             {
-                var attribute = currentProp
+                WechatTenpaySensitivePropertyAttribute? attribute = currentProp
                     .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
                     .FirstOrDefault(attr => Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256.Equals(attr.Scheme));
                 if (attribute == null)
@@ -117,7 +117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             Utilities.ReflectionUtility.ReplacePropertyStringValue(ref response, (target, currentProp, oldValue) =>
             {
-                var attribute = currentProp
+                WechatTenpaySensitivePropertyAttribute? attribute = currentProp
                     .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
                     .FirstOrDefault(attr => Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3.Equals(attr.Scheme));
                 if (attribute == null)

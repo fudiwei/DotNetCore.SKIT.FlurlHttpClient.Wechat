@@ -520,6 +520,8 @@
 
         -   查询结算账户：`GetApplyForSubMerchantSettlement`
 
+        -   查询结算账户修改申请状态：`GetApplyForSubMerchantSettlementByApplicationNumber`
+
 -   基础支付
 
     -   JSAPI 支付
@@ -721,6 +723,8 @@
         -   修改结算帐号：`ModifyApplyForSubMerchantSettlement`
 
         -   查询结算账户：`GetApplyForSubMerchantSettlement`
+
+        -   查询结算账户修改申请状态：`GetApplyForSubMerchantSettlementByApplicationNumber`
 
     -   电商收付通（普通支付）
 

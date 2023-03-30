@@ -2,6 +2,8 @@ using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
+
     internal static class WechatTenpayClientSignExtensions
     {
         public static bool VerifySignature(this WechatTenpayClient client, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignatureScheme, string strSerialNumber, out Exception? error)
@@ -18,14 +20,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                             return false;
                         }
 
-                        var entry = client.PlatformCertificateManager.GetEntry(strSerialNumber);
+                        CertificateEntry? entry = client.PlatformCertificateManager.GetEntry(strSerialNumber);
                         if (!entry.HasValue)
                         {
                             error = new Exception($"There is no platform certificate matched the serial number: \"{strSerialNumber}\". Please make sure you have downloaded platform certificates first.");
                             return false;
                         }
 
-                        if (!Settings.CertificateEntry.ALGORITHM_TYPE_RSA.Equals(entry.Value.AlgorithmType))
+                        if (!CertificateEntry.ALGORITHM_TYPE_RSA.Equals(entry.Value.AlgorithmType))
                         {
                             error = new Exception($"The platform certificate with serial number: \"{strSerialNumber}\" is not for RSA.");
                             return false;
@@ -55,14 +57,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                             return false;
                         }
 
-                        var entry = client.PlatformCertificateManager.GetEntry(strSerialNumber);
+                        CertificateEntry? entry = client.PlatformCertificateManager.GetEntry(strSerialNumber);
                         if (!entry.HasValue)
                         {
                             error = new Exception($"There is no platform certificate matched the serial number: \"{strSerialNumber}\". Please make sure you have downloaded platform certificates first.");
                             return false;
                         }
 
-                        if (!Settings.CertificateEntry.ALGORITHM_TYPE_SM2.Equals(entry.Value.AlgorithmType))
+                        if (!CertificateEntry.ALGORITHM_TYPE_SM2.Equals(entry.Value.AlgorithmType))
                         {
                             error = new Exception($"The platform certificate with serial number: \"{strSerialNumber}\" is not for SM2.");
                             return false;

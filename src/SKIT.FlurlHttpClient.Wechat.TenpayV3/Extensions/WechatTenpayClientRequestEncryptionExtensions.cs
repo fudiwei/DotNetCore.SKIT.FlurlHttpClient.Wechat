@@ -1,9 +1,12 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
+
     /// <summary>
     /// 为 <see cref="WechatTenpayClient"/> 提供请求模型敏感数据加密的扩展方法。
     /// </summary>
@@ -14,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             Utilities.ReflectionUtility.ReplacePropertyStringValue(ref request, (target, currentProp, oldValue) =>
             {
-                var attribute = currentProp
+                WechatTenpaySensitivePropertyAttribute? attribute = currentProp
                     .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
                     .FirstOrDefault(attr => Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256.Equals(attr.Scheme));
                 if (attribute == null)
@@ -27,22 +30,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 if (string.IsNullOrEmpty(request.WechatpayCertificateSerialNumber))
                 {
                     // 如果未在请求中指定特定的平台证书序列号，从管理器中取过期时间最远的
-                    var entries = client.PlatformCertificateManager.AllEntries()
-                        .Where(e => Settings.CertificateEntry.ALGORITHM_TYPE_RSA.Equals(e.AlgorithmType))
+                    IEnumerable<CertificateEntry> entries = client.PlatformCertificateManager.AllEntries()
+                        .Where(e => CertificateEntry.ALGORITHM_TYPE_RSA.Equals(e.AlgorithmType))
                         .OrderByDescending(e => e.ExpireTime);
                     if (!entries.Any())
                     {
                         throw new Exceptions.WechatTenpayEventVerificationException("Failed to encrypt request, because there is no platform certificate in the manager. Please make sure you have downloaded platform certificates first.");
                     }
 
-                    var entry = entries.First();
+                    CertificateEntry entry = entries.First();
                     certificate = entry.Certificate;
                     request.WechatpayCertificateSerialNumber = entry.SerialNumber;
                 }
                 else
                 {
                     // 如果已在请求中指定特定的平台证书序列号，直接从管理器中取值
-                    var entry = client.PlatformCertificateManager.GetEntry(request.WechatpayCertificateSerialNumber!);
+                    CertificateEntry? entry = client.PlatformCertificateManager.GetEntry(request.WechatpayCertificateSerialNumber!);
                     if (!entry.HasValue)
                     {
                         throw new Exceptions.WechatTenpayEventVerificationException($"Failed to encrypt request, because there is no platform certificate matched the serial number: \"{request.WechatpayCertificateSerialNumber}\". Please make sure you have downloaded platform certificates first.");
@@ -89,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             Utilities.ReflectionUtility.ReplacePropertyStringValue(ref request, (target, currentProp, oldValue) =>
             {
-                var attribute = currentProp
+                WechatTenpaySensitivePropertyAttribute? attribute = currentProp
                     .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
                     .FirstOrDefault(attr => Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3.Equals(attr.Scheme));
                 if (attribute == null)
@@ -102,22 +105,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 if (string.IsNullOrEmpty(request.WechatpayCertificateSerialNumber))
                 {
                     // 如果未在请求中指定特定的平台证书序列号，从管理器中取过期时间最远的
-                    var entries = client.PlatformCertificateManager.AllEntries()
-                        .Where(e => Settings.CertificateEntry.ALGORITHM_TYPE_SM2.Equals(e.AlgorithmType))
+                    IEnumerable<CertificateEntry> entries = client.PlatformCertificateManager.AllEntries()
+                        .Where(e => CertificateEntry.ALGORITHM_TYPE_SM2.Equals(e.AlgorithmType))
                         .OrderByDescending(e => e.ExpireTime);
                     if (!entries.Any())
                     {
                         throw new Exceptions.WechatTenpayEventVerificationException("Failed to encrypt request, because there is no platform certificate in the manager. Please make sure you have downloaded platform certificates first.");
                     }
 
-                    var entry = entries.First();
+                    CertificateEntry entry = entries.First();
                     certificate = entry.Certificate;
                     request.WechatpayCertificateSerialNumber = entry.SerialNumber;
                 }
                 else
                 {
                     // 如果已在请求中指定特定的平台证书序列号，直接从管理器中取值
-                    var entry = client.PlatformCertificateManager.GetEntry(request.WechatpayCertificateSerialNumber!);
+                    CertificateEntry? entry = client.PlatformCertificateManager.GetEntry(request.WechatpayCertificateSerialNumber!);
                     if (!entry.HasValue)
                     {
                         throw new Exceptions.WechatTenpayEventVerificationException($"Failed to encrypt request, because there is no platform certificate matched the serial number: \"{request.WechatpayCertificateSerialNumber}\". Please make sure you have downloaded platform certificates first.");

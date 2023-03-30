@@ -14,11 +14,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string SubMerchantId { get; set; } = string.Empty;
 
         /// <summary>
+        /// 获取或设置修改模式。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("modify_mode")]
+        [System.Text.Json.Serialization.JsonPropertyName("modify_mode")]
+        public string? ModifyMode { get; set; }
+
+        /// <summary>
         /// 获取或设置账户类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_type")]
         [System.Text.Json.Serialization.JsonPropertyName("account_type")]
         public string AccountType { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置开户名称（需使用平台公钥/证书加密）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("account_name")]
+        [System.Text.Json.Serialization.JsonPropertyName("account_name")]
+        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
+        [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
+        public string? AccountName { get; set; }
 
         /// <summary>
         /// 获取或设置银行账号（需使用平台公钥/证书加密）。
