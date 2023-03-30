@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? State { get; set; }
             }
 
-            public class AdditionalInfo
+            public class AdditionalInfomation
             {
                 public static class Types
                 {
@@ -237,6 +237,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("additional_info")]
         [System.Text.Json.Serialization.JsonPropertyName("additional_info")]
-        public Types.AdditionalInfo? AdditionalInfo { get; set; }
+        public Types.AdditionalInfomation? AdditionalInfomation { get; set; }
     }
 }
