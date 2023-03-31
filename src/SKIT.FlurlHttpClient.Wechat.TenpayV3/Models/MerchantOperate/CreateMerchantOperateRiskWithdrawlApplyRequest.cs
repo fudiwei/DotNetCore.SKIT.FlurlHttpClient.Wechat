@@ -150,7 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置从业机构特约商户号	。
+        /// 获取或设置从业机构特约商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]

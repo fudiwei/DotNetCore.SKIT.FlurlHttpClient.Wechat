@@ -910,6 +910,44 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /taxi-invoice/driver/update-driver）")]
+        public async Task TestEncryptRequestSensitiveProperty_UpdateTaxiInvoiceDriverRequest()
+        {
+            static Models.UpdateTaxiInvoiceDriverRequest GenerateMockRequestModel()
+            {
+                return new Models.UpdateTaxiInvoiceDriverRequest()
+                {
+                    DriverName = MOCK_PLAIN_STR,
+                    DriverIdCardNumber = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.UpdateTaxiInvoiceDriverRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.DriverName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.DriverIdCardNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.DriverName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.DriverIdCardNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteUpdateTaxiInvoiceDriverAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteUpdateTaxiInvoiceDriverAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /transfer/batches）")]
         public async Task TestEncryptRequestSensitiveProperty_CreateTransferBatchRequest()
         {

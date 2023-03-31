@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置品牌主商户号	。
+        /// 获取或设置品牌主商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("brand_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("brand_mchid")]
