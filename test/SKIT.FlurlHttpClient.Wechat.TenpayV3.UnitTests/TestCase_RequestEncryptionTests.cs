@@ -27,13 +27,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 return new Models.ModifyApplyForSubMerchantSettlementRequest()
                 {
+                    AccountName = MOCK_PLAIN_STR,
                     AccountNumber = MOCK_PLAIN_STR
                 };
             }
 
             static void AssertMockRequestModel(Models.ModifyApplyForSubMerchantSettlementRequest request, Func<string, string> decryptor)
             {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.AccountName!);
                 Assert.NotEqual(MOCK_PLAIN_STR, request.AccountNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.AccountName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.AccountNumber!));
                 Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
             }
@@ -544,6 +547,59 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
             var reqB2 = GenerateMockRequestModel();
             await CreateMockClientUseSM2(autoEncrypt: true).ExecuteImportMarketingMemberCardOpenCardPhoneAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /mch_operate/risk/withdrawl-apply）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateMerchantOperateRiskWithdrawlApplyRequest()
+        {
+            static Models.CreateMerchantOperateRiskWithdrawlApplyRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateMerchantOperateRiskWithdrawlApplyRequest()
+                {
+                    PayeeInfo = new Models.CreateMerchantOperateRiskWithdrawlApplyRequest.Types.PayeeInfo()
+                    {
+                        BankAccount = new Models.CreateMerchantOperateRiskWithdrawlApplyRequest.Types.PayeeInfo.Types.BankAccount()
+                        {
+                            AccountName = MOCK_PLAIN_STR,
+                            AccountNumber = MOCK_PLAIN_STR
+                        },
+                        Identity = new Models.CreateMerchantOperateRiskWithdrawlApplyRequest.Types.PayeeInfo.Types.Identity()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR,
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateMerchantOperateRiskWithdrawlApplyRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.PayeeInfo!.BankAccount!.AccountName);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.PayeeInfo!.BankAccount!.AccountNumber);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.PayeeInfo!.Identity!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.PayeeInfo!.Identity!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.BankAccount!.AccountName));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.BankAccount!.AccountNumber));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.Identity!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.Identity!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateMerchantOperateRiskWithdrawlApplyAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateMerchantOperateRiskWithdrawlApplyAsync(reqB2);
             AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
         }
 
