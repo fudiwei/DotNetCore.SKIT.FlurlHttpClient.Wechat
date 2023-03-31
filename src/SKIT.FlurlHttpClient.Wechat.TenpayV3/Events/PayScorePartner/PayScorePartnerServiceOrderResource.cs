@@ -1,8 +1,8 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 PAYSCORE.USER_CONFIRM 通知的数据。</para>
-    /// <para>表示 PAYSCORE.USER_PAID 通知的数据。</para>
+    /// <para>表示 PAYSCORE.USER_CONFIRM（针对服务商）通知的数据。</para>
+    /// <para>表示 PAYSCORE.USER_PAID（针对服务商）通知的数据。</para>
     /// </summary>
     public class PayScorePartnerServiceOrderResource : WechatTenpayEvent.Types.IDecryptedResource
     {

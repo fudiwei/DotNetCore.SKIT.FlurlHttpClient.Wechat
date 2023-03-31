@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         public static WechatTenpayEvent DeserializeEvent(this WechatTenpayClient client, string callbackXml)
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
-            if (string.IsNullOrEmpty(callbackXml)) throw new ArgumentNullException(callbackXml);
+            if (callbackXml == null) throw new ArgumentNullException(callbackXml);
 
             string callbackJson = Utilities.XmlUtility.ConvertToJson(callbackXml);
             return client.JsonSerializer.Deserialize<WechatTenpayEvent>(callbackJson);

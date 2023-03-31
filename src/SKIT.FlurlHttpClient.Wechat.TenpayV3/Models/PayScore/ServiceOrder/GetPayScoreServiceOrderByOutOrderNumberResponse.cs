@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -149,6 +149,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 {
                     public class CollectionDetail
                     {
+                        public static class Types
+                        {
+                            public class Promotion : GetPayTransactionByOutTradeNumberResponse.Types.Promotion
+                            {
+                            }
+                        }
+
                         /// <summary>
                         /// 获取或设置收款序号。
                         /// </summary>
@@ -185,6 +192,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("transaction_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
                         public string? TransactionId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置优惠信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("promotion_detail")]
+                        [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
+                        public Types.Promotion[]? PromotionList { get; set; }
                     }
                 }
 
