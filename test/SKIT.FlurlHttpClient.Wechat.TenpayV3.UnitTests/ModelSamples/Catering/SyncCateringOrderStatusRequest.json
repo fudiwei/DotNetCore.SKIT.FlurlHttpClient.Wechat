@@ -1,0 +1,40 @@
+{
+    "sp_mchid": "1900009231",
+    "sub_mchid": "1900000100",
+    "sp_appid": "wxab8acb865bb1637e",
+    "order_entry": "/index/order",
+    "sub_appid": "wx8888888888888888",
+    "out_shop_no": "32432",
+    "openid": "oHkLxt8uweSK05Xb8zGY3KzmUBn8",
+    "sub_openid": "oHkLxt8uweSK05Xb8zGY3KzmUBn8",
+    "login_token": "071oYFSN19sCH31AyNSN15QDSN1oYFSA",
+    "total_amount": 1000,
+    "discount_amount": 100,
+    "user_amount": 900,
+    "status": "CREATE_DEAL",
+    "action_time": "2018-06-08T10:34:56+08:00",
+    "pay_time": "2018-06-08T10:34:56+08:00",
+    "transaction_id": "1009660380201506130728806387",
+    "out_trade_no": "20150806125346",
+    "out_order_no": "20150806125346",
+    "dish_list": [
+        {
+            "out_dish_no": "1",
+            "name": "小鸡炖蘑菇",
+            "price": 6000,
+            "unit": "BY_SHARE",
+            "count": 1,
+            "discount": 100,
+            "type": "FAST_FOOD",
+            "priority": 1,
+            "properties": {
+                "taste": "辣",
+                "cuisine": "炒",
+                "main_material": "猪肝",
+                "ingredients": "青椒 | 辣椒 | 葱 | 八角 ",
+                "others": "有机 | 农家"
+            }
+        }
+    ],
+    "people_count": 1
+}
