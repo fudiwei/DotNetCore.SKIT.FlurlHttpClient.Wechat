@@ -380,6 +380,103 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             AssertMockResponseModel(resB2);
         }
 
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetNewTaxControlFapiaoApplicationByFapiaoApplyId()
+        {
+            static Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse()
+                {
+                    RawStatus = (int)HttpStatusCode.OK,
+                    FapiaoList = new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse.Types.Fapiao[]
+                    {
+                        new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse.Types.Fapiao()
+                        {
+                            Buyer = new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse.Types.Fapiao.Types.Buyer()
+                            {
+                                UserMobileNumber = encryptor.Invoke(MOCK_PLAIN_STR),
+                                UserEmail = encryptor.Invoke(MOCK_PLAIN_STR)
+                            }
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockResponseModel(Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.FapiaoList[0]!.Buyer!.UserMobileNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, response.FapiaoList[0]!.Buyer!.UserEmail!);
+            }
+
+            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
+            AssertMockResponseModel(resA1);
+
+            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
+            AssertMockResponseModel(resA2);
+
+            var resB1 = await CreateMockClientUseRSA(
+                autoDecrypt: true,
+                mockResponseContent: new FlurlSystemTextJsonSerializer().Serialize(
+                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                )
+            ).ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdRequest());
+            AssertMockResponseModel(resB1);
+
+            var resB2 = await CreateMockClientUseSM2(
+                autoDecrypt: true,
+                mockResponseContent: new FlurlSystemTextJsonSerializer().Serialize(
+                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                )
+            ).ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdRequest());
+            AssertMockResponseModel(resB2);
+        }
+
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /new-tax-control-fapiao/user-title）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetNewTaxControlFapiaoUserTitle()
+        {
+            static Models.GetNewTaxControlFapiaoUserTitleResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return new Models.GetNewTaxControlFapiaoUserTitleResponse()
+                {
+                    RawStatus = (int)HttpStatusCode.OK,
+                    UserMobileNumber = encryptor.Invoke(MOCK_PLAIN_STR),
+                    UserEmail = encryptor.Invoke(MOCK_PLAIN_STR)
+                };
+            }
+
+            static void AssertMockResponseModel(Models.GetNewTaxControlFapiaoUserTitleResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.UserMobileNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, response.UserEmail!);
+            }
+
+            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
+            AssertMockResponseModel(resA1);
+
+            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
+            AssertMockResponseModel(resA2);
+
+            var resB1 = await CreateMockClientUseRSA(
+                autoDecrypt: true,
+                mockResponseContent: new FlurlSystemTextJsonSerializer().Serialize(
+                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                )
+            ).ExecuteGetNewTaxControlFapiaoUserTitleAsync(new Models.GetNewTaxControlFapiaoUserTitleRequest());
+            AssertMockResponseModel(resB1);
+
+            var resB2 = await CreateMockClientUseSM2(
+                autoDecrypt: true,
+                mockResponseContent: new FlurlSystemTextJsonSerializer().Serialize(
+                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                )
+            ).ExecuteGetNewTaxControlFapiaoUserTitleAsync(new Models.GetNewTaxControlFapiaoUserTitleRequest());
+            AssertMockResponseModel(resB2);
+        }
+
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /partner-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}）")]
         public async Task TestDecryptResponseSensitiveProperty_GetPartnerTransferBatchDetailByDetailIdResponse()
         {

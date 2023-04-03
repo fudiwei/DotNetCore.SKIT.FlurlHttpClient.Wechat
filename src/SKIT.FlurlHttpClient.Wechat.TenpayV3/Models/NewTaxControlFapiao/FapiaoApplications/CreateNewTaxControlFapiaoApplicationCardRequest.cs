@@ -4,68 +4,21 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /taxi-invoice/cards 接口的请求。</para>
+    /// <para>表示 [POST] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/insert-cards 接口的请求。</para>
     /// </summary>
-    public class CreateTaxiInvoiceCardRequest : WechatTenpayRequest
+    [WechatTenpaySensitive]
+    public class CreateNewTaxControlFapiaoApplicationCardRequest : WechatTenpayRequest
     {
         public static class Types
         {
-            public class InvoiceCard
+            public class Buyer : CreateNewTaxControlFapiaoApplicationRequest.Types.Buyer
+            {
+            }
+
+            public class FapiaoCard
             {
                 public static class Types
                 {
-                    public class Buyer
-                    {
-                        /// <summary>
-                        /// 获取或设置购买方类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置购买方名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("name")]
-                        public string Name { get; set; } = string.Empty;
-
-                        /// <summary>
-                        /// 获取或设置纳税人识别号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("taxpayer_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("taxpayer_id")]
-                        public string? TaxpayerId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置地址。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("address")]
-                        [System.Text.Json.Serialization.JsonPropertyName("address")]
-                        public string? Address { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置电话。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("telephone")]
-                        [System.Text.Json.Serialization.JsonPropertyName("telephone")]
-                        public string? PhoneNumber { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置开户银行。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("bank_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
-                        public string? BankName { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置银行账号。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("bank_account")]
-                        [System.Text.Json.Serialization.JsonPropertyName("bank_account")]
-                        public string? BankAccountNumber { get; set; }
-                    }
-
                     public class Seller
                     {
                         /// <summary>
@@ -229,21 +182,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fapiao_media_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_media_id")]
-                public string InvoiceMediaId { get; set; } = string.Empty;
+                public string FapiaoMediaId { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置发票号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fapiao_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_number")]
-                public string InvoiceNumber { get; set; } = string.Empty;
+                public string FapiaoNumber { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置发票代码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fapiao_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_code")]
-                public string InvoiceCode { get; set; } = string.Empty;
+                public string FapiaoCode { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置开票时间。
@@ -252,7 +205,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("fapiao_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
-                public DateTimeOffset InvoiceTime { get; set; }
+                public DateTimeOffset FapiaoTime { get; set; }
 
                 /// <summary>
                 /// 获取或设置校验码。
@@ -290,13 +243,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public int Amount { get; set; }
 
                 /// <summary>
-                /// 获取或设置购买方信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("buyer_information")]
-                [System.Text.Json.Serialization.JsonPropertyName("buyer_information")]
-                public Types.Buyer Buyer { get; set; } = new Types.Buyer();
-
-                /// <summary>
                 /// 获取或设置销售方信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("seller_information")]
@@ -327,45 +273,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置获取乘客行程单详情的凭证。
+        /// 获取或设置发票申请单号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("token")]
-        [System.Text.Json.Serialization.JsonPropertyName("token")]
-        public string Token { get; set; } = string.Empty;
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string FapiaoApplyId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置公司商户号。
+        /// 获取或设置开票场景。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("company_mchid")]
-        [System.Text.Json.Serialization.JsonPropertyName("company_mchid")]
-        public string CompanyMerchantId { get; set; } = string.Empty;
+        [Newtonsoft.Json.JsonProperty("scene")]
+        [System.Text.Json.Serialization.JsonPropertyName("scene")]
+        public string Scene { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置微信 AppId。
+        /// 获取或设置购买方信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("appid")]
-        public string AppId { get; set; } = string.Empty;
+        [Newtonsoft.Json.JsonProperty("buyer_information")]
+        [System.Text.Json.Serialization.JsonPropertyName("buyer_information")]
+        public Types.Buyer Buyer { get; set; } = new Types.Buyer();
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("openid")]
-        [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
-
-        /// <summary>
-        /// 获取或设置行政区划代码。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("region_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("region_id")]
-        public int RegionId { get; set; }
-
-        /// <summary>
-        /// 获取或设置发票卡券信息。
+        /// 获取或设置电子发票卡券信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fapiao_card_information")]
         [System.Text.Json.Serialization.JsonPropertyName("fapiao_card_information")]
-        public Types.InvoiceCard InvoiceCard { get; set; } = new Types.InvoiceCard();
+        public IList<Types.FapiaoCard> FapiaoCardList { get; set; } = new List<Types.FapiaoCard>();
     }
 }

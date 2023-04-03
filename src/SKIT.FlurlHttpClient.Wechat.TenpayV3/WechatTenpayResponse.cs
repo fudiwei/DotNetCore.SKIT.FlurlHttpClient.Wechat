@@ -120,12 +120,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public virtual Dictionary<string, object>? ErrorDetail { get; set; }
 
         /// <summary>
-        /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200 或 204、且 code 值为空）。
+        /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200/202/204、且 code 值为空）。
         /// </summary>
         /// <returns></returns>
         public virtual bool IsSuccessful()
         {
-            return (RawStatus == 200 || RawStatus == 204) && string.IsNullOrEmpty(ErrorCode);
+            return (RawStatus >= 200 && RawStatus <= 204) && string.IsNullOrEmpty(ErrorCode);
         }
     }
 }
