@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -54,7 +54,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("total_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int TotalFee { get; set; }
 
         /// <summary>
@@ -157,7 +156,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_id")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_id")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int PlanId { get; set; }
 
         /// <summary>
@@ -172,7 +170,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("request_serial")]
         [System.Text.Json.Serialization.JsonPropertyName("request_serial")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public long RequestSerialNumber { get; set; }
 
         /// <summary>

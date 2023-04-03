@@ -1,0 +1,13 @@
+{
+    "appid": "wx2421b1c4370ec43b",
+    "mch_id": "10000100",
+    "nonce_str": "6cefdb308e1e2e8aabd48cf79e546a02",
+    "notify_url": "https://weixin.qq.com/",
+    "out_refund_no": "1415701182",
+    "out_trade_no": "1415757673",
+    "refund_fee": "1",
+    "total_fee": "1",
+    "sign": "FE56DD4AA85C0EECA82C35595A69E153",
+    "cash_refund_fee": "90",
+    "detail": "{\"goods_detail\":[{\"goods_id\":\"商品编码\",\"wxpay_goods_id\":\"1001\",\"goods_name\":\"iPhone6s 16G\",\"refund_amount\":528800,\"refund_quantity\":1,\"price\":528800},{\"goods_id\":\"商品编码\",\"wxpay_goods_id\":\"1001\",\"goods_name\":\"iPhone6s 16G\",\"refund_amount\":528800,\"refund_quantity\":1,\"price\":608800}]}"
+}

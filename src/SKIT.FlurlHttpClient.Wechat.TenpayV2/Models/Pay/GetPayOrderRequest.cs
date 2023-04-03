@@ -1,10 +1,17 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
     /// <para>表示 [POST] /pay/orderquery 接口的请求。</para>
     /// </summary>
     public class GetPayOrderRequest : WechatTenpaySignableRequest
     {
+        /// <summary>
+        /// 获取或设置接口版本号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("version")]
+        [System.Text.Json.Serialization.JsonPropertyName("version")]
+        public string? Version { get; set; }
+
         /// <summary>
         /// <inheritdoc/>
         /// </summary>

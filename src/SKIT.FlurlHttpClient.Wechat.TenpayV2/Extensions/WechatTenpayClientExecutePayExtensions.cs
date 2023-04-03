@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -226,6 +226,44 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 .CreateRequest(request, HttpMethod.Post, "pay", "refundquery");
 
             return await client.SendRequestWithXmlAsync<Models.GetPayRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /secapi/pay/refundv2 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_103 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayRefundV2Response> ExecuteCreatePayRefundV2Async(this WechatTenpayClient client, Models.CreatePayRefundV2Request request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "secapi", "pay", "refundv2");
+
+            return await client.SendRequestWithXmlAsync<Models.CreatePayRefundV2Response>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /pay/refundqueryv2 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_104 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPayRefundV2Response> ExecuteGetPayRefundV2Async(this WechatTenpayClient client, Models.GetPayRefundV2Request request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "pay", "refundqueryv2");
+
+            return await client.SendRequestWithXmlAsync<Models.GetPayRefundV2Response>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region Bill

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
     /// <para>表示 [POST] /mmpaymkttransfers/sendgroupredpack 接口的请求。</para>
@@ -59,7 +59,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("total_amount")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int TotalAmount { get; set; }
 
         /// <summary>
@@ -68,7 +67,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_num")]
         [System.Text.Json.Serialization.JsonPropertyName("total_num")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int TotalCount { get; set; } = 1;
 
         /// <summary>

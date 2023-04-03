@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
     /// <para>表示 [POST] /pay/queryexchagerate 接口的响应。</para>
@@ -45,7 +45,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rate")]
         [System.Text.Json.Serialization.JsonPropertyName("rate")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public double? ExchangeRate { get; set; } = default!;
     }
 }

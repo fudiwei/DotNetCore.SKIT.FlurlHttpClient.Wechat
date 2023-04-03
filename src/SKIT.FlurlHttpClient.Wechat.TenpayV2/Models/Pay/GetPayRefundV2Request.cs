@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /deposit/consume 接口的请求。</para>
+    /// <para>表示 [POST] /pay/refundqueryv2 接口的请求。</para>
     /// </summary>
-    public class ConsumeDepositRequest : WechatTenpaySignableRequest
+    public class GetPayRefundV2Request : WechatTenpaySignableRequest
     {
         /// <summary>
         /// <inheritdoc/>
@@ -34,48 +34,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public string? SubAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置商户订单号。与字段 <see cref="TransactionId"/> 二选一。
+        /// 获取或设置商户订单号。与字段 <see cref="TransactionId"/>、<see cref="OutRefundNumber"/>、<see cref="RefundId"/> 四选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
         public string? OutTradeNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置微信支付订单号。与字段 <see cref="OutTradeNumber"/> 二选一。
+        /// 获取或设置微信支付订单号。与字段 <see cref="OutTradeNumber"/>、<see cref="OutRefundNumber"/>、<see cref="RefundId"/> 四选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
         public string? TransactionId { get; set; }
 
         /// <summary>
-        /// 获取或设置订单金额（单位：分）。
+        /// 获取或设置商户退款单号。与字段 <see cref="OutTradeNumber"/>、<see cref="TransactionId"/>、<see cref="RefundId"/> 四选一。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("total_fee")]
-        [System.Text.Json.Serialization.JsonPropertyName("total_fee")]
-        public int TotalFee { get; set; }
+        [Newtonsoft.Json.JsonProperty("out_refund_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_refund_no")]
+        public string? OutRefundNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置货币类型。
+        /// 获取或设置微信退款单号。与字段 <see cref="OutTradeNumber"/>、<see cref="TransactionId"/>、<see cref="OutRefundNumber"/> 四选一。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("fee_type")]
-        [System.Text.Json.Serialization.JsonPropertyName("fee_type")]
-        public string? FeeType { get; set; }
-
-        /// <summary>
-        /// 获取或设置押金消费金额（单位：分）。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("consume_fee")]
-        [System.Text.Json.Serialization.JsonPropertyName("consume_fee")]
-        public int ConsumeFee { get; set; }
-
-        /// <summary>
-        /// <inheritdoc/>
-        /// <para>默认值：<see cref="Constants.SignTypes.HMAC_SHA256"/></para>
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sign_type")]
-        [System.Text.Json.Serialization.JsonPropertyName("sign_type")]
-#pragma warning disable CS8765
-        public override string SignType { get; set; } = Constants.SignTypes.HMAC_SHA256;
-#pragma warning restore CS8765
+        [Newtonsoft.Json.JsonProperty("refund_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("refund_id")]
+        public string? RefundId { get; set; }
     }
 }

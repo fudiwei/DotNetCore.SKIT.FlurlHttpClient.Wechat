@@ -1,46 +1,50 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /secapi/pay/refund 接口的响应。</para>
+    /// <para>表示 [POST] /secapi/pay/refundv2 接口的响应。</para>
     /// </summary>
-    [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponseClassNewtonsoftJsonConverter))]
-    [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponseClassSystemTextJsonConverter))]
-    public class CreatePayRefundResponse : WechatTenpaySignableResponse
+    public class CreatePayRefundV2Response : WechatTenpaySignableResponse
     {
         public static class Types
         {
-            public class Coupon
+            public class PromotionDetail : GetPayRefundV2Response.Types.PromotionDetail
             {
-                /// <summary>
-                /// 获取或设置代金券 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_refund_id_$n")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_refund_id_$n")]
-                public string CouponId { get; set; } = default!;
+                public static new class Types
+                {
+                    public class Promotion : GetPayRefundV2Response.Types.PromotionDetail.Types.Promotion
+                    {
+                        public static new class Types
+                        {
+                            public class GoodsDetail : GetPayRefundV2Response.Types.PromotionDetail.Types.Promotion.Types.GoodsDetail
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置单品列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_detail")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                        public new Types.GoodsDetail[]? GoodsList { get; set; }
+                    }
+                }
 
                 /// <summary>
-                /// 获取或设置代金券类型。
+                /// 获取或设置优惠信息列表。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_type_$n")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_type_$n")]
-                public string CouponType { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置代金券金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("coupon_refund_fee_$n")]
-                [System.Text.Json.Serialization.JsonPropertyName("coupon_refund_fee_$n")]
-                public int CouponFee { get; set; }
+                [Newtonsoft.Json.JsonProperty("promotion_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
+                public new Types.Promotion[]? PromotionList { get; set; }
             }
         }
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<CreatePayRefundResponse>
+            internal class ResponsePropertyPromotionDetailNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.PromotionDetail>
             {
             }
 
-            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<CreatePayRefundResponse>
+            internal class ResponsePropertyPromotionDetailSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.PromotionDetail>
             {
             }
         }
@@ -125,45 +129,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public int RefundFee { get; set; }
 
         /// <summary>
-        /// 获取或设置应结订单金额（单位：分）。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("settlement_total_fee")]
-        [System.Text.Json.Serialization.JsonPropertyName("settlement_total_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public int? SettlementTotalFee { get; set; }
-
-        /// <summary>
-        /// 获取或设置应结退款金额（单位：分）。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("settlement_refund_fee")]
-        [System.Text.Json.Serialization.JsonPropertyName("settlement_refund_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public int? SettlementRefundFee { get; set; }
-
-        /// <summary>
-        /// 获取或设置代金券退款金额。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("coupon_refund_fee")]
-        [System.Text.Json.Serialization.JsonPropertyName("coupon_refund_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public int? CouponRefundFee { get; set; }
-
-        /// <summary>
-        /// 获取或设置代金券退款数量。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("coupon_refund_count")]
-        [System.Text.Json.Serialization.JsonPropertyName("coupon_refund_count")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public int? CouponRefundCount { get; set; }
-
-        /// <summary>
-        /// 获取或设置代金券退款列表。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty(Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase.PROPERTY_NAME_NARRAY)]
-        [System.Text.Json.Serialization.JsonPropertyName(System.Text.Json.Converters.FlattenNArrayObjectConverterBase.PROPERTY_NAME_NARRAY)]
-        public Types.Coupon[]? CouponRefundList { get; set; }
-
-        /// <summary>
         /// 获取或设置现金支付金额（单位：分）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cash_fee")]
@@ -178,5 +143,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [System.Text.Json.Serialization.JsonPropertyName("cash_refund_fee")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int? CashRefundFee { get; set; }
+
+        /// <summary>
+        /// 获取或设置优惠信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("promotion_detail")]
+        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyPromotionDetailNewtonsoftJsonConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyPromotionDetailSystemTextJsonConverter))]
+        public Types.PromotionDetail? PromotionDetail { get; set; }
     }
 }

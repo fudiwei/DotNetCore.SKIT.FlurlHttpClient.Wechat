@@ -1,4 +1,4 @@
-﻿{
+{
     "mch_id": "10000098",
     "sub_mch_id": "10000100",
     "appid": "wxcbda96de0b165486",
@@ -12,5 +12,5 @@
     "notify_url": "http://yoursite.com/wxpay.html",
     "version": "3.0",
     "trade_scene": " PARKING",
-    "scene_info": "{\"scene_info\":{\"start_time\":\"20170926114339\",\"end_time\":\"20170826114339\",\"charging_time\":\"3600\",\"free_time\":\"1200\",\"plate_number\":\"CB1000sdfasd\",\"car_type\":\"大型车\",\"parking_name\":\"欢乐海岸停车场\"}}"
+    "scene_info": "{\"scene_info\":{\"start_time\":\"20170926114339\",\"end_time\":\"20170826114339\",\"charging_time\":3600,\"free_time\":1200,\"plate_number\":\"CB1000sdfasd\",\"car_type\":\"大型车\",\"parking_name\":\"欢乐海岸停车场\"}}"
 }

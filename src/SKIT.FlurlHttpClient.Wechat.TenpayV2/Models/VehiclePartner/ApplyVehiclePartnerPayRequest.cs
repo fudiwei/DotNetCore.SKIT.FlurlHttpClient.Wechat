@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -43,8 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("charging_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("charging_time")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int? ChargingTime { get; set; }
+                        public int? ChargingDuration { get; set; }
 
                         /// <summary>
                         /// 获取或设置加油站名称。
@@ -79,7 +78,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("gas_amount")]
                         [System.Text.Json.Serialization.JsonPropertyName("gas_amount")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public int? GasAmount { get; set; }
 
                         /// <summary>
@@ -87,7 +85,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("gas_gun_no")]
                         [System.Text.Json.Serialization.JsonPropertyName("gas_gun_no")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public int? GasGunNumber { get; set; }
 
                         /// <summary>
@@ -109,11 +106,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("carrying_capacity")]
                         [System.Text.Json.Serialization.JsonPropertyName("carrying_capacity")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public int? CarryingCapacity { get; set; }
 
                         /// <summary>
-                        /// 获取或设置核载区间。
+                        /// 获取或设置核载区间字符串。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("carrying_range")]
                         [System.Text.Json.Serialization.JsonPropertyName("carrying_range")]
@@ -203,7 +199,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("total_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int TotalFee { get; set; }
 
         /// <summary>

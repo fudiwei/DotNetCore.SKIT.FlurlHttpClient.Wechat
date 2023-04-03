@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/mch/customs/customdeclareorder 接口的请求。</para>
@@ -59,7 +59,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("duty")]
         [System.Text.Json.Serialization.JsonPropertyName("duty")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int? Duty { get; set; }
 
         /// <summary>
@@ -81,7 +80,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("order_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int? OrderFee { get; set; }
 
         /// <summary>
@@ -89,7 +87,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transport_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("transport_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int? TransportFee { get; set; }
 
         /// <summary>
@@ -97,7 +94,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("product_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int? ProductFee { get; set; }
 
         /// <summary>

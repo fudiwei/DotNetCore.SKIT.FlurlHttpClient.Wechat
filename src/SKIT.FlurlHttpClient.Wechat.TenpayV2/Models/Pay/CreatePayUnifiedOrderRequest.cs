@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
@@ -49,7 +49,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("quantity")]
                         [System.Text.Json.Serialization.JsonPropertyName("quantity")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public int Quantity { get; set; }
 
                         /// <summary>
@@ -57,7 +56,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("price")]
                         [System.Text.Json.Serialization.JsonPropertyName("price")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public int Price { get; set; }
 
                         /// <summary>
@@ -74,7 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cost_price")]
                 [System.Text.Json.Serialization.JsonPropertyName("cost_price")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public int? CostPrice { get; set; }
 
                 /// <summary>
@@ -157,6 +154,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         }
 
         /// <summary>
+        /// 获取或设置接口版本号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("version")]
+        [System.Text.Json.Serialization.JsonPropertyName("version")]
+        public string? Version { get; set; }
+
+        /// <summary>
         /// <inheritdoc/>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mch_id")]
@@ -203,7 +207,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("total_fee")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int TotalFee { get; set; }
 
         /// <summary>

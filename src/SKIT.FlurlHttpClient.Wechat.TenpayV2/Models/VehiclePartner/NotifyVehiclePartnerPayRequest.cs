@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -57,7 +57,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("free_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("free_time")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public int? FreeDuration { get; set; }
 
                         /// <summary>
