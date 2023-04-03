@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -64,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int? SuccessUserCount { get; set; }
 
         /// <summary>
-        /// 获取或设置银行类型。
+        /// 获取或设置创建类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("create_time")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public DateTimeOffset CreateTime { get; set; }
 
         /// <summary>
-        /// 获取或设置银行类型。
+        /// 获取或设置最后更新类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("update_time")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]

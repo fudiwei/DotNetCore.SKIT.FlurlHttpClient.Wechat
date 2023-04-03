@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /apply4subject/applyment 接口的响应。</para>
@@ -13,11 +13,11 @@
         public string ApplymentState { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置小程序码图片数据（经 Base64 编码）。
+        /// 获取或设置经 Base64 编码的小程序码图片数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcode_data")]
         [System.Text.Json.Serialization.JsonPropertyName("qrcode_data")]
-        public string? QrcodeData { get; set; }
+        public string? EncodingQrcodeData { get; set; }
 
         /// <summary>
         /// 获取或设置驳回参数。
