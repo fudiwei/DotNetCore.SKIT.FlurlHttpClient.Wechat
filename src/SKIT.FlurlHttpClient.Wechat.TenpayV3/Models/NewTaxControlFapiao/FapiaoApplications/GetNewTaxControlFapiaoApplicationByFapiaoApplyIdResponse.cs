@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? BankAccountNumber { get; set; }
 
                         /// <summary>
-                        /// 获取或设置用户手机号码。
+                        /// 获取或设置用户手机号码（需使用商户私钥解密）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("phone")]
                         [System.Text.Json.Serialization.JsonPropertyName("phone")]
@@ -153,7 +153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? UserMobileNumber { get; set; }
 
                         /// <summary>
-                        /// 获取或设置用户邮箱地址。
+                        /// 获取或设置用户邮箱地址（需使用商户私钥解密）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("email")]
                         [System.Text.Json.Serialization.JsonPropertyName("email")]
