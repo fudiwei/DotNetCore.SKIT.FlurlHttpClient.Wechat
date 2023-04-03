@@ -24,6 +24,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         }
 
         /// <summary>
+        /// <para>反序列化得到微信支付回调通知事件模型对象。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="callbackXml"></param>
+        /// <returns></returns>
+        public static TEvent DeserializeEvent<TEvent>(this WechatTenpayClient client, string callbackXml)
+            where TEvent : WechatTenpayEvent, new()
+        {
+            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (callbackXml == null) throw new ArgumentNullException(callbackXml);
+
+            string callbackJson = Utilities.XmlUtility.ConvertToJson(callbackXml);
+            return client.JsonSerializer.Deserialize<TEvent>(callbackJson);
+        }
+
+        /// <summary>
         /// 返回序列化并解密事件数据中被加密的信息。
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -36,11 +52,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (client == null) throw new ArgumentNullException(nameof(client));
             if (callback == null) throw new ArgumentNullException(nameof(callback));
 
-            string key = Utilities.MD5Utility.Hash(client.Credentials.MerchantSecret).ToLower();
             string plainJson;
 
             try
             {
+                string key = Utilities.MD5Utility.Hash(client.Credentials.MerchantSecret).ToLower();
                 string plainXml = Utilities.AESUtility.DecryptWithECB(
                     encodingKey: Convert.ToBase64String(Encoding.UTF8.GetBytes(key)),
                     encodingCipherText: callback.EncryptedRequestInfo!
