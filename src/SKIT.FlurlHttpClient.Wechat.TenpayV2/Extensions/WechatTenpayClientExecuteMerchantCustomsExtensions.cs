@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/mch/customs/customdeclareredeclare 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/mch/newcustoms/customdeclareredeclare 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_4&index=3 </para>
         /// </summary>
         /// <param name="client"></param>
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "mch", "customs", "customdeclareredeclare");
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "mch", "newcustoms", "customdeclareredeclare");
 
             return await client.SendRequestWithXmlAsync<Models.RedeclareMerchantCustomsCustomDeclarationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }

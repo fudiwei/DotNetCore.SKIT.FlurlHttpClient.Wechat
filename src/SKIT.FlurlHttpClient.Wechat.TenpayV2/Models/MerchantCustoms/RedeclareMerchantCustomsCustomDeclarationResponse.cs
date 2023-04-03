@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/mch/customs/customdeclareredeclare 接口的响应。</para>
+    /// <para>表示 [POST] /cgi-bin/mch/newcustoms/customdeclareredeclare 接口的响应。</para>
     /// </summary>
     public class RedeclareMerchantCustomsCustomDeclarationResponse : WechatTenpaySignableResponse
     {
