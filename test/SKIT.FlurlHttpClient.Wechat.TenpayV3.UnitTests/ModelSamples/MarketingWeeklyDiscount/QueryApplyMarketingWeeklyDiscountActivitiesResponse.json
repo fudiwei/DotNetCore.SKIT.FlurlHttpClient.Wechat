@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "activity_area_code": [
+                "110000"
+            ],
+            "activity_available_begin_time": "2018-06-08T10:34:56+08:00",
+            "activity_available_end_time": "2018-08-08T10:34:56+08:00",
+            "activity_available_week": [
+                "1"
+            ],
+            "activity_coupon_amount": 10,
+            "activity_id": "111111",
+            "activity_limit_pay": "CCB_DEBIT",
+            "activity_logo": "https://xxx.xxx.xxx.jpg",
+            "activity_max_amount": 100000,
+            "activity_max_amount_per_day": 100000,
+            "activity_name": "xxx周周惠活动",
+            "activity_remark": "周周惠，每周日，周一独享",
+            "activity_scene": "SCAN_CODE_TO_ORDER",
+            "activity_state": "APPLYING",
+            "activity_transaction_minimum_amount": 100
+        }
+    ],
+    "limit": 5,
+    "offset": 10,
+    "total_count": 1234
+}
