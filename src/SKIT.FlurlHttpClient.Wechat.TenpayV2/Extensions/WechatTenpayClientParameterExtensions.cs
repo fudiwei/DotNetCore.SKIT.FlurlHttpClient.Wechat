@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>生成客户端 JSAPI 调起支付所需的参数字典。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=7_7 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=7_7&p=27 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=7_7 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>

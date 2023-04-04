@@ -33,6 +33,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.26.1
+
+    -   **修复**：修复视频号小店订单、售后单 ID 字段类型定义错误。（_via_ [GitHub #90](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/90)）
+
 -   Release 2.26.0
 
     -   **新增**：新增微信物流服务散单寄件相关接口。
