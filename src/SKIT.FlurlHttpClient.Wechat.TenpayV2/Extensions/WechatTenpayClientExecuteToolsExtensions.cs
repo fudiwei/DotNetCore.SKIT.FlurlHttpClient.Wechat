@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,8 +10,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     {
         /// <summary>
         /// <para>异步调用 [POST] /tools/authcodetoopenid 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_13&index=9 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_12&index=8 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_13 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_12 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /tools/shorturl 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_9&index=10 </para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_9 </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_9 </para>
         /// </summary>
         /// <param name="client"></param>
