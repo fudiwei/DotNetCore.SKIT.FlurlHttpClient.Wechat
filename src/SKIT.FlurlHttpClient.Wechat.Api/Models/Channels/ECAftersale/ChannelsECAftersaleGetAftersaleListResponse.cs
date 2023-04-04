@@ -10,8 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("after_sale_order_id_list")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sale_order_id_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualLongArrayConverter))]
-        public long[] AftersaleOrderIdList { get; set; } = default!;
+        public string[] AftersaleOrderIdList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置翻页标记。

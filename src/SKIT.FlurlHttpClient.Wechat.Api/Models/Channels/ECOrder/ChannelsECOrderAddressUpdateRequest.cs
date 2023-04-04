@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public long OrderId { get; set; }
+        public string OrderId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置新地址信息。

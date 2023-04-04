@@ -10,7 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("after_sale_order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sale_order_id")]
-        public long AftersaleOrderId { get; set; }
+        public string AftersaleOrderId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置拒绝原因。

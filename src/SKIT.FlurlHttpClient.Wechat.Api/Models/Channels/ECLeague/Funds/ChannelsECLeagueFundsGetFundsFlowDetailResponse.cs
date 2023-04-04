@@ -27,16 +27,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("order_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public long? OrderId { get; set; }
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringReadOnlyConverter))]
+                        public string? OrderId { get; set; }
 
                         /// <summary>
                         /// 获取或设置售后单 ID。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("aftersale_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("aftersale_id")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public long? AftersaleOrderId { get; set; }
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringReadOnlyConverter))]
+                        public string? AftersaleOrderId { get; set; }
 
                         /// <summary>
                         /// 获取或设置支付单号。
