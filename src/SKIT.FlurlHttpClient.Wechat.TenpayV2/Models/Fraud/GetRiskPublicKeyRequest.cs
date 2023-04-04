@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
     /// <para>表示 [POST] /risk/getpublickey 接口的请求。</para>
@@ -13,7 +13,7 @@
         public override string? MerchantId { get; set; }
 
         /// <summary>
-        /// <i>（请忽略此字段）</i>
+        /// <i>（冗余字段，请忽略）</i>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

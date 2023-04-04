@@ -67,7 +67,7 @@
 
 <summary>[展开查看]</summary>
 
--   支付工具
+-   支付产品
 
     -   付款码支付：
 
@@ -89,6 +89,8 @@
 
         -   付款码查询 OpenID：`ToolsAuthCodeToOpenId`
 
+        -   拉取订单评价数据：`BatchQueryBillComment`
+
     -   JSAPI 支付：
 
         -   统一下单：`CreatePayUnifiedOrder`
@@ -106,6 +108,8 @@
         -   下载资金账单：`DownloadPayFundFlow`
 
         -   交易保障：`SubmitPayITILReport`
+
+        -   拉取订单评价数据：`BatchQueryBillComment`
 
     -   Native 支付：
 
@@ -127,6 +131,8 @@
 
         -   转换短链接：`ToolsShortUrl`
 
+        -   拉取订单评价数据：`BatchQueryBillComment`
+
     -   APP 支付：
 
         -   统一下单：`CreatePayUnifiedOrder`
@@ -144,6 +150,8 @@
         -   下载资金账单：`DownloadPayFundFlow`
 
         -   交易保障：`SubmitPayITILReport`
+
+        -   拉取订单评价数据：`BatchQueryBillComment`
 
     -   H5 支付：
 
@@ -163,6 +171,8 @@
 
         -   交易保障：`SubmitPayITILReport`
 
+        -   拉取订单评价数据：`BatchQueryBillComment`
+
     -   小程序支付：
 
         -   统一下单：`CreatePayUnifiedOrder`
@@ -180,6 +190,8 @@
         -   下载资金账单：`DownloadPayFundFlow`
 
         -   交易保障：`SubmitPayITILReport`
+
+        -   拉取订单评价数据：`BatchQueryBillComment`
 
 -   支付工具：
 
@@ -247,7 +259,7 @@
 
 <summary>[展开查看]</summary>
 
--   支付工具
+-   支付产品
 
     -   付款码支付：
 
@@ -422,6 +434,22 @@
         -   发放红包：`SendPayMarketingTransfersMiniProgramRedPack`
 
         -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
+
+-   小微商户：
+
+    -   查询提现状态：`GetFundAutoWithdrawByDate`
+
+    -   修改结算银行卡：`ModifyMicroMerchantArchives`
+
+    -   修改联系信息：`ModifyMicroMerchantContactInfo`
+
+    -   关注配置：`AddMarketingRecommendConfig`
+
+    -   支付目录配置：`AddSubMerchantDevelopConfig`
+
+    -   绑定 AppID 配置：`AddSubMerchantDevelopConfig`
+
+    -   配置查询：`GetSubMerchantDevelopConfig`
 
 </details>
 

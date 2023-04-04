@@ -13,7 +13,7 @@
         public override string? MerchantId { get; set; }
 
         /// <summary>
-        /// <i>（请忽略此字段）</i>
+        /// <i>（冗余字段，请忽略）</i>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

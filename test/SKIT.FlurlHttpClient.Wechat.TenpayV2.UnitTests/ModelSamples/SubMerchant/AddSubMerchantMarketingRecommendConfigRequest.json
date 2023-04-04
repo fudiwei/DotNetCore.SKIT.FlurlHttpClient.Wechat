@@ -1,0 +1,10 @@
+{
+    "mch_id": "1451234567",
+    "sub_mch_id": "10000101",
+    "sub_appid": "wx931386123456789e",
+    "subscribe_appid": "wx931386123456789e",
+    "receipt_appid": "wx931386123456789e",
+    "nonce_str": "5K8264ILTKCH16CQ2502SI8ZNMTM67VS",
+    "sign": "C380BEC2BFD727A4B6845133519F3AD6C380BEC2BFD727A4B6845133519F3AD6",
+    "sign_type": "HMAC-SHA256"
+}

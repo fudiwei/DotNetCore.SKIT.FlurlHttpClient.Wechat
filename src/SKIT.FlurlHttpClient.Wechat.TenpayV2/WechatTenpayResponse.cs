@@ -77,11 +77,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         public virtual string? ErrorCode { get; set; }
 
         /// <summary>
-        /// 获取微信支付 API 返回的状态描述。
+        /// 获取微信支付 API 返回的错误描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("err_code_des")]
         [System.Text.Json.Serialization.JsonPropertyName("err_code_des")]
         public virtual string? ErrorCodeDescription { get; set; }
+
+        /// <summary>
+        /// 获取微信支付 API 返回的错误信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("err_msg")]
+        [System.Text.Json.Serialization.JsonPropertyName("err_msg")]
+        public virtual string? ErrorMessage { get; set; }
 
         /// <summary>
         /// 获取或设置业务结果。

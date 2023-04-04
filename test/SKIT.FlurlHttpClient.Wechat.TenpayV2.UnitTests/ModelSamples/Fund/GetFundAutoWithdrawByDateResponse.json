@@ -1,0 +1,17 @@
+{
+    "return_code": "SUCCESS",
+    "return_msg": "OK",
+    "result_code": "SUCCESS",
+    "err_code": "SUCCESS",
+    "err_msg": "success",
+    "date": "20180602",
+    "mch_id": "2480029942",
+    "sub_mch_id": "2480029752",
+    "withdraw_id": "10900999991802018060200326172006",
+    "amount": "445",
+    "create_time": "2018-06-04 11:44:59",
+    "nonce_str": "ibuaiVcKdpRxkhJA",
+    "sign_type": "HMAC-SHA256",
+    "sign": "8ADACE9EE2A39C20F56D115794AD8D1D91B636A12346766713D741E847B77BF5",
+    "withdraw_status": "PROCESSING"
+}
