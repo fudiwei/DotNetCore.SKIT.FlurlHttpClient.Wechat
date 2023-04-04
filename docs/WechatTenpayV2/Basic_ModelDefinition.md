@@ -239,6 +239,22 @@
 
         -   查询签约关系：`GetPAPPayContract`
 
+    -   车主平台：
+
+        -   用户入场通知：`NotifyVehiclePay`
+
+        -   申请扣款：`ApplyVehiclePay`
+
+        -   下载交易账单：`DownloadPayBill`
+
+        -   申请退款：`CreatePayRefund`
+
+        -   查询退款：`GetPayRefund`
+
+        -   查询订单：`GetTransitOrder`
+
+        -   用户状态查询：`GetVehiclePayState`
+
 -   清关报关：
 
     -   订单附加信息提交接口：`CreateMerchantCustomsCustomDeclaration`
@@ -373,6 +389,22 @@
 
         -   交易保障：`SubmitPayITILReport`
 
+-   支付工具：
+
+    -   现金红包：
+
+        -   发放红包：`SendPayMarketingTransfersRedPack`
+
+        -   发放裂变红包：`SendPayMarketingTransfersGroupRedPack`
+
+        -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
+
+    -   小程序红包：
+
+        -   发放红包：`SendPayMarketingTransfersMiniProgramRedPack`
+
+        -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
+
     -   扣款服务：
 
         -   APP 纯签约：`CreatePAPPayPartnerPreEntrustWeb`
@@ -417,23 +449,9 @@
 
         -   查询退款：`GetPayRefund`
 
+        -   查询订单：`GetTransitPartnerOrder`
+
         -   用户状态查询：`GetVehiclePartnerPayState`
-
--   支付工具：
-
-    -   现金红包：
-
-        -   发放红包：`SendPayMarketingTransfersRedPack`
-
-        -   发放裂变红包：`SendPayMarketingTransfersGroupRedPack`
-
-        -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
-
-    -   小程序红包：
-
-        -   发放红包：`SendPayMarketingTransfersMiniProgramRedPack`
-
-        -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
 
 -   小微商户：
 

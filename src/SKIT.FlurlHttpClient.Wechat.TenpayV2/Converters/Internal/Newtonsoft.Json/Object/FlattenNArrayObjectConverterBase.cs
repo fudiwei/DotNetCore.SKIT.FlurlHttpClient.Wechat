@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,8 +73,8 @@ namespace Newtonsoft.Json.Converters
             else if (reader.TokenType == JsonToken.StartObject)
             {
                 InnerTypedJsonPropertyInfo[] typedJsonProperties = GetTypedJsonProperties(objectType);
-                if (typedJsonProperties.Count(p => p.PropertyIsNArray) != 1)
-                    throw new JsonSerializationException("The number of `$n` properties must be only one.");
+                //if (typedJsonProperties.Count(p => p.PropertyIsNArray) != 1)
+                //    throw new JsonSerializationException("The count of `$n` properties must be only one.");
 
                 JObject jObject = JObject.Load(reader);
                 T tObject = new T();
@@ -90,25 +90,28 @@ namespace Newtonsoft.Json.Converters
                     }
                     else if (TryMatchNArrayIndex(jProperty.Name, out int index))
                     {
-                        typedJsonPropertyInfo = typedJsonProperties.Single(e => e.PropertyIsNArray);
-
-                        Array? propertyValue = typedJsonPropertyInfo.PropertyInfo.GetValue(tObject) as Array;
-                        ReflectionUtility.CreateOrExpandArray(ref propertyValue, typedJsonPropertyInfo.PropertyType.GetElementType()!, index + 1);
-                        ReflectionUtility.CreateOrExpandArrayElement(propertyValue!, index, (object element) =>
+                        foreach (var _ in typedJsonProperties.Where(e => e.PropertyIsNArray))
                         {
-                            InnerTypedJsonPropertyInfo? insider = GetTypedJsonProperties(element.GetType())
-                                .SingleOrDefault(p => string.Equals(p.PropertyName.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, index.ToString()), jProperty.Name));
-                            if (insider != null)
+                            typedJsonPropertyInfo = _;
+
+                            Array? propertyValue = typedJsonPropertyInfo.PropertyInfo.GetValue(tObject) as Array;
+                            ReflectionUtility.CreateOrExpandArray(ref propertyValue, typedJsonPropertyInfo.PropertyType.GetElementType()!, index + 1);
+                            ReflectionUtility.CreateOrExpandArrayElement(propertyValue!, index, (object element) =>
                             {
-                                JsonSerializer tmpSerializer = GetClonedJsonSerializer(serializer, insider.JsonConverterOnRead);
-                                object? elementPropertyValue = jProperty.Value?.ToObject(insider.PropertyType, tmpSerializer);
-                                insider.PropertyInfo.SetValue(element, elementPropertyValue);
-                            }
+                                InnerTypedJsonPropertyInfo? insider = GetTypedJsonProperties(element.GetType())
+                                    .SingleOrDefault(p => string.Equals(p.PropertyName.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, index.ToString()), jProperty.Name));
+                                if (insider != null)
+                                {
+                                    JsonSerializer tmpSerializer = GetClonedJsonSerializer(serializer, insider.JsonConverterOnRead);
+                                    object? elementPropertyValue = jProperty.Value?.ToObject(insider.PropertyType, tmpSerializer);
+                                    insider.PropertyInfo.SetValue(element, elementPropertyValue);
+                                }
 
-                            return element;
-                        });
+                                return element;
+                            });
 
-                        typedJsonPropertyInfo.PropertyInfo.SetValue(tObject, propertyValue);
+                            typedJsonPropertyInfo.PropertyInfo.SetValue(tObject, propertyValue);
+                        }
                     }
                     else if (serializer.MissingMemberHandling == MissingMemberHandling.Error)
                     {

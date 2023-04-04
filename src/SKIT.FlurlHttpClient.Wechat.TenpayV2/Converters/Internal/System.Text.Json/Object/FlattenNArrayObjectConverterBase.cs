@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -59,8 +59,8 @@ namespace System.Text.Json.Converters
             else if (reader.TokenType == JsonTokenType.StartObject)
             {
                 InnerTypedJsonPropertyInfo[] typedJsonProperties = GetTypedJsonProperties(typeToConvert);
-                if (typedJsonProperties.Count(p => p.PropertyIsNArray) != 1)
-                    throw new JsonException("The number of `$n` properties must be only one.");
+                //if (typedJsonProperties.Count(p => p.PropertyIsNArray) != 1)
+                //    throw new JsonException("The count of `$n` properties must be only one.");
 
                 JsonElement jElement = JsonDocument.ParseValue(ref reader).RootElement.Clone();
                 T tObject = new T();
@@ -76,25 +76,28 @@ namespace System.Text.Json.Converters
                     }
                     else if (TryMatchNArrayIndex(jProperty.Name, out int index))
                     {
-                        typedJsonPropertyInfo = typedJsonProperties.Single(e => e.PropertyIsNArray);
-
-                        Array? propertyValue = typedJsonPropertyInfo.PropertyInfo.GetValue(tObject) as Array;
-                        ReflectionUtility.CreateOrExpandArray(ref propertyValue, typedJsonPropertyInfo.PropertyType.GetElementType()!, index + 1);
-                        ReflectionUtility.CreateOrExpandArrayElement(propertyValue!, index, (object element) =>
+                        foreach (var _ in typedJsonProperties.Where(e => e.PropertyIsNArray))
                         {
-                            InnerTypedJsonPropertyInfo? insider = GetTypedJsonProperties(element.GetType())
-                                .SingleOrDefault(p => string.Equals(p.PropertyName.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, index.ToString()), jProperty.Name));
-                            if (insider != null)
+                            typedJsonPropertyInfo = _;
+
+                            Array? propertyValue = typedJsonPropertyInfo.PropertyInfo.GetValue(tObject) as Array;
+                            ReflectionUtility.CreateOrExpandArray(ref propertyValue, typedJsonPropertyInfo.PropertyType.GetElementType()!, index + 1);
+                            ReflectionUtility.CreateOrExpandArrayElement(propertyValue!, index, (object element) =>
                             {
-                                JsonSerializerOptions tmpOptions = GetClonedJsonSerializerOptions(options, insider.JsonConverter);
-                                object? elementPropertyValue = JsonSerializer.Deserialize(jProperty.Value, insider.PropertyType, tmpOptions)!;
-                                insider.PropertyInfo.SetValue(element, elementPropertyValue);
-                            }
+                                InnerTypedJsonPropertyInfo? insider = GetTypedJsonProperties(element.GetType())
+                                    .SingleOrDefault(p => string.Equals(p.PropertyName.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, index.ToString()), jProperty.Name));
+                                if (insider != null)
+                                {
+                                    JsonSerializerOptions tmpOptions = GetClonedJsonSerializerOptions(options, insider.JsonConverter);
+                                    object? elementPropertyValue = JsonSerializer.Deserialize(jProperty.Value, insider.PropertyType, tmpOptions)!;
+                                    insider.PropertyInfo.SetValue(element, elementPropertyValue);
+                                }
 
-                            return element;
-                        });
+                                return element;
+                            });
 
-                        typedJsonPropertyInfo.PropertyInfo.SetValue(tObject, propertyValue);
+                            typedJsonPropertyInfo.PropertyInfo.SetValue(tObject, propertyValue);
+                        }
                     }
                 }
                 return tObject;

@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /vehicle/partnerpay/querystate 接口的请求。</para>
+    /// <para>表示 [POST] /transit/partnerpay/queryorder 接口的请求。</para>
     /// </summary>
-    public class GetVehiclePartnerPayStateRequest : GetVehiclePayStateRequest
+    public class GetTransitPartnerOrderRequest : GetTransitOrderRequest
     {
         /// <summary>
         /// 获取或设置子商户号。
@@ -18,12 +18,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
         public string? SubAppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置用户在子商户下的 OpenId。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sub_openid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
-        public string? SubOpenId { get; set; }
     }
 }

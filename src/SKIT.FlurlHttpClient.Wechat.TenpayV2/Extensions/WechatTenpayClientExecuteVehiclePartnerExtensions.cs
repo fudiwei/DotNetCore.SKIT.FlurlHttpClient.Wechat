@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -63,6 +63,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 .CreateRequest(request, HttpMethod.Post, "vehicle", "partnerpay", "querystate");
 
             return await client.SendRequestWithXmlAsync<Models.GetVehiclePartnerPayStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /transit/partnerpay/queryorder 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_96 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetTransitPartnerOrderResponse> ExecuteGetTransitPartnerOrderAsync(this WechatTenpayClient client, Models.GetTransitPartnerOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "transit", "partnerpay", "queryorder");
+
+            return await client.SendRequestWithXmlAsync<Models.GetTransitPartnerOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
