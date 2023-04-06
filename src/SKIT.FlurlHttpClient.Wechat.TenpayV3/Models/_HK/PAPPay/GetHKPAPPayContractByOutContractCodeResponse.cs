@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_display_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_display_name")]
-        public string UserDiaplayName { get; set; } = default!;
+        public string DisplayName { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置用户唯一标识。
@@ -93,6 +93,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("termination_note")]
         [System.Text.Json.Serialization.JsonPropertyName("termination_note")]
-        public string? TerminationNotes { get; set; }
+        public string? TerminationRemark { get; set; }
     }
 }

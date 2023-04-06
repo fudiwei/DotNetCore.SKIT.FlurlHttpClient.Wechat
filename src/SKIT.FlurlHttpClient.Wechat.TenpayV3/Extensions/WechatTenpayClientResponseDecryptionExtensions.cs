@@ -5,9 +5,6 @@ using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
-    /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供响应模型敏感数据解密的扩展方法。
-    /// </summary>
     public static class WechatTenpayClientResponseDecryptionExtensions
     {
         private static TResponse InnerDecryptResponseSensitiveProperty<TResponse>(WechatTenpayClient client, TResponse response)

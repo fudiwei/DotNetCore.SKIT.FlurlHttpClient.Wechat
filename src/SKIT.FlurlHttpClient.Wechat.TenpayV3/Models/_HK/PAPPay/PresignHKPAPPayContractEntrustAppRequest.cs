@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_display_name")]
         [System.Text.Json.Serialization.JsonPropertyName("user_display_name")]
-        public string UserDiaplayName { get; set; } = string.Empty;
+        public string DisplayName { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置回调通知地址。

@@ -6,9 +6,6 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
-    /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供境外支付委托代扣（直连商户）相关的 API 扩展方法。
-    /// </summary>
     public static class WechatTenpayClientExecuteHKPAPPayExtensions
     {
         /// <summary>

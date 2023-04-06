@@ -2,9 +2,6 @@ using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
-    /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供回调通知事件签名验证的扩展方法。
-    /// </summary>
     public static class WechatTenpayClientEventVerificationExtensions
     {
         /// <summary>

@@ -4,9 +4,6 @@ using System.Collections.ObjectModel;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
-    /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供调起支付签名的扩展方法。
-    /// </summary>
     public static class WechatTenpayClientParameterExtensions
     {
         /// <summary>

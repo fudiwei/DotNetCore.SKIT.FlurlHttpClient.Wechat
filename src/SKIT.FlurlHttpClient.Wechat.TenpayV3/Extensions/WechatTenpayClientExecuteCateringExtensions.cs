@@ -2,14 +2,10 @@ using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using Flurl;
 using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
-    /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供微信点餐订单相关的 API 扩展方法。
-    /// </summary>
     public static class WechatTenpayClientExecuteCateringExtensions
     {
         /// <summary>

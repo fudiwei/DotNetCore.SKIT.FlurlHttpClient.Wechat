@@ -7,9 +7,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
-    /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供请求模型敏感数据加密的扩展方法。
-    /// </summary>
     public static class WechatTenpayClientRequestEncryptionExtensions
     {
         private static TRequest InnerEncryptRequestSensitivePropertyByRSA<TRequest>(WechatTenpayClient client, TRequest request)

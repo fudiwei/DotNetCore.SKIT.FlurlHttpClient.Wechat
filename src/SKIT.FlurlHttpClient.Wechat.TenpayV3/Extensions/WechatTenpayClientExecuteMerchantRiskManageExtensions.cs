@@ -6,9 +6,6 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
-    /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供商户平台处置通知相关的 API 扩展方法。
-    /// </summary>
     public static class WechatTenpayClientExecuteMerchantRiskManageExtensions
     {
         /// <summary>

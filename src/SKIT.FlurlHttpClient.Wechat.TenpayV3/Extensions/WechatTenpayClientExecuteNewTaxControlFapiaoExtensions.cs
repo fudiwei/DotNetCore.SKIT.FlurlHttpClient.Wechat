@@ -6,9 +6,6 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
-    /// <summary>
-    /// 为 <see cref="WechatTenpayClient"/> 提供电子发票相关的 API 扩展方法。
-    /// </summary>
     public static class WechatTenpayClientExecuteNewTaxControlFapiaoExtensions
     {
         #region CardTemplate

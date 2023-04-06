@@ -24,6 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("termination_note")]
         [System.Text.Json.Serialization.JsonPropertyName("termination_note")]
-        public string? TerminationNotes { get; set; }
+        public string? TerminationRemark { get; set; }
     }
 }
