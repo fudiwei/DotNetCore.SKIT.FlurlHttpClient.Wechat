@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -24,6 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("sub_mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
                 public string? SubMerchantId { get; set; }
+
+                /// <summary>
+                /// 获取或设置子单子商户 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
+                public string? SubAppId { get; set; }
 
                 /// <summary>
                 /// 获取或设置子单商户订单号。

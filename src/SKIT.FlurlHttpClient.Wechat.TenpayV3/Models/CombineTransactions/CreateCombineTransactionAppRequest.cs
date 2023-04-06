@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("attach")]
                 [System.Text.Json.Serialization.JsonPropertyName("attach")]
-                public string Attachment { get; set; } = string.Empty;
+                public string? Attachment { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品描述。

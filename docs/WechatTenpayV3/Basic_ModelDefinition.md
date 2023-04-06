@@ -770,6 +770,20 @@
 
         -   合单关闭订单：`CloseCombineTransaction`
 
+    -   电商收付通（合单代扣）
+
+        -   APP 方式预签约：`PresignEcommerceCombinePAPayContractEntrustApp`
+
+        -   查询协议：`GetEcommerceCombinePAPPayContractByOutContractCode`
+
+        -   解约协议：`TerminatEcommerceCombinePAPPayContract`
+
+        -   支付：`CreateEcommerceCombinePAPPayTransaction`
+
+        -   撤销订单：`ReverseEcommerceCombinePAPPayTransaction`
+
+        -   查询订单：`GetEcommerceCombinePAPPayTransactionByCombineOutTradeNumber`
+
     -   电商收付通（分账）
 
         -   请求分账：`CreateEcommerceProfitSharingOrder`

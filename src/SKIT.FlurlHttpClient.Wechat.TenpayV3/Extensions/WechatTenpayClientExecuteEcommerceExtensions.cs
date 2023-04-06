@@ -554,5 +554,142 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendRequestWithJsonAsync<Models.CancelEcommerceSubsidyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region CombinePAPPay
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/combine-papay/contracts/pre-entrust-sign 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_1.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.PresignEcommerceCombinePAPayContractEntrustAppResponse> ExecutePresignEcommerceCombinePAPayContractEntrustAppAsync(this WechatTenpayClient client, Models.PresignEcommerceCombinePAPayContractEntrustAppRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "combine-papay", "contracts", "pre-entrust-sign");
+
+            return await client.SendRequestWithJsonAsync<Models.PresignEcommerceCombinePAPayContractEntrustAppResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /ecommerce/combine-papay/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code} 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_2.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetEcommerceCombinePAPPayContractByOutContractCodeResponse> ExecuteGetEcommerceCombinePAPPayContractByOutContractCodeAsync(this WechatTenpayClient client, Models.GetEcommerceCombinePAPPayContractByOutContractCodeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "combine-papay", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode);
+
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceCombinePAPPayContractByOutContractCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/combine-papay/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_3.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TerminatEcommerceCombinePAPPayContractResponse> ExecuteTerminatEcommerceCombinePAPPayContractAsync(this WechatTenpayClient client, Models.TerminatEcommerceCombinePAPPayContractRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "combine-papay", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode, "terminate");
+
+            return await client.SendRequestWithJsonAsync<Models.TerminatEcommerceCombinePAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/combine-papay/transactions 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_4.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateEcommerceCombinePAPPayTransactionResponse> ExecuteCreateEcommerceCombinePAPPayTransactionAsync(this WechatTenpayClient client, Models.CreateEcommerceCombinePAPPayTransactionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.CombineMerchantId != null)
+                request.CombineMerchantId = client.Credentials.MerchantId;
+
+            if (request.SubOrderList != null)
+            {
+                foreach (var subOrder in request.SubOrderList)
+                {
+                    if (subOrder.MerchantId == null)
+                        subOrder.MerchantId = request.CombineMerchantId;
+                }
+            }
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "combine-papay", "transactions");
+
+            return await client.SendRequestWithJsonAsync<Models.CreateEcommerceCombinePAPPayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/combine-papay/transactions/{combine_out_trade_no}/reverse 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_5.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ReverseEcommerceCombinePAPPayTransactionResponse> ExecuteReverseEcommerceCombinePAPPayTransactionAsync(this WechatTenpayClient client, Models.ReverseEcommerceCombinePAPPayTransactionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.SubOrderList != null)
+            {
+                foreach (var subOrder in request.SubOrderList)
+                {
+                    if (subOrder.MerchantId == null)
+                        subOrder.MerchantId = client.Credentials.MerchantId;
+                }
+            }
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "combine-papay", "transactions", request.CombineOutTradeNumber, "reverse");
+
+            return await client.SendRequestWithJsonAsync<Models.ReverseEcommerceCombinePAPPayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /ecommerce/combine-papay/transactions/{combine_out_trade_no} 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_6.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetEcommerceCombinePAPPayTransactionByCombineOutTradeNumberResponse> ExecuteGetEcommerceCombinePAPPayTransactionByCombineOutTradeNumberAsync(this WechatTenpayClient client, Models.GetEcommerceCombinePAPPayTransactionByCombineOutTradeNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "combine-papay", "transactions", request.CombineOutTradeNumber);
+
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceCombinePAPPayTransactionByCombineOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

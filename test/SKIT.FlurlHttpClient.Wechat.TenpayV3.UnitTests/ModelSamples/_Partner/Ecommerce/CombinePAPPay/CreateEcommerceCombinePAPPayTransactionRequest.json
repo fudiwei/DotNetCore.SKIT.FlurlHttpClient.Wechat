@@ -1,0 +1,24 @@
+{
+    "combine_appid": "wxd678efh567hg6787",
+    "combine_mchid": "1900000109",
+    "combine_out_trade_no": "P20150806125346",
+    "contract_id": "123124412412423431",
+    "sub_orders": [
+        {
+            "mchid": "1900000109",
+            "attach": "深圳分店",
+            "amount": {
+                "total_amount": 100,
+                "currency": "CNY"
+            },
+            "out_trade_no": "20150806125346",
+            "sub_mchid": "1900000109",
+            "sub_appid": "wxd678efh567hg6787",
+            "description": "腾讯充值中心-QQ会员充值",
+            "settle_info": {
+                "profit_sharing": true,
+                "subsidy_amount": 10
+            }
+        }
+    ]
+}
