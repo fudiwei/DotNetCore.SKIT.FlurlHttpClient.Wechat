@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.NotifyPartnerPAPPayContractsResponse> ExecuteNotifyPartnerPAPPayContractsAsync(this WechatTenpayClient client, Models.NotifyPartnerPAPPayContractsRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.NotifyPartnerPAPPayContractResponse> ExecuteNotifyPartnerPAPPayContractAsync(this WechatTenpayClient client, Models.NotifyPartnerPAPPayContractRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "partner-papay", "contracts", request.ContractId, "notify");
 
-            return await client.SendRequestWithJsonAsync<Models.NotifyPartnerPAPPayContractsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.NotifyPartnerPAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

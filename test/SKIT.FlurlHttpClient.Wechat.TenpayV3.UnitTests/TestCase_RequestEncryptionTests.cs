@@ -730,18 +730,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         }
 
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /payroll-card/authentications/pre-order-with-auth）")]
-        public async Task TestEncryptRequestSensitiveProperty_PreOrderWithAuthPayrollCardAuthenticationRequest()
+        public async Task TestEncryptRequestSensitiveProperty_PreorderPayrollCardAuthenticationRequest()
         {
-            static Models.PreOrderWithAuthPayrollCardAuthenticationRequest GenerateMockRequestModel()
+            static Models.PreorderPayrollCardAuthenticationRequest GenerateMockRequestModel()
             {
-                return new Models.PreOrderWithAuthPayrollCardAuthenticationRequest()
+                return new Models.PreorderPayrollCardAuthenticationRequest()
                 {
                     UserName = MOCK_PLAIN_STR,
                     IdCardNumber = MOCK_PLAIN_STR
                 };
             }
 
-            static void AssertMockRequestModel(Models.PreOrderWithAuthPayrollCardAuthenticationRequest request, Func<string, string> decryptor)
+            static void AssertMockRequestModel(Models.PreorderPayrollCardAuthenticationRequest request, Func<string, string> decryptor)
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
                 Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
@@ -759,11 +759,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
 
             var reqB1 = GenerateMockRequestModel();
-            await CreateMockClientUseRSA(autoEncrypt: true).ExecutePreOrderWithAuthPayrollCardAuthenticationAsync(reqB1);
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecutePreorderPayrollCardAuthenticationAsync(reqB1);
             AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
 
             var reqB2 = GenerateMockRequestModel();
-            await CreateMockClientUseSM2(autoEncrypt: true).ExecutePreOrderWithAuthPayrollCardAuthenticationAsync(reqB2);
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecutePreorderPayrollCardAuthenticationAsync(reqB2);
             AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
         }
 

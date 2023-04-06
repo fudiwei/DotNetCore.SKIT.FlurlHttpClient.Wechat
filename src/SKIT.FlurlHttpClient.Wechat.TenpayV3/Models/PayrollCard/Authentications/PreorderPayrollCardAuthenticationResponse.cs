@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /payroll-card/authentications/pre-order-with-auth 接口的响应。</para>
     /// </summary>
-    public class PreOrderWithAuthPayrollCardAuthenticationResponse : WechatTenpayResponse
+    public class PreorderPayrollCardAuthenticationResponse : WechatTenpayResponse
     {
         /// <summary>
         /// 获取或设置微信商户号。

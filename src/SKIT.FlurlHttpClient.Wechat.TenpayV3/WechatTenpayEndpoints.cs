@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     /// <summary>
     /// 微信支付 API 接口域名。
@@ -21,9 +21,9 @@
         public const string REGION_HONGKONG = "https://api.mch.weixin.qq.com/hk/v3";
 
         /// <summary>
-        /// 全球域名。
+        /// 香港全球域名。
         /// </summary>
-        public const string REGION_HONGKONG_GLOBAL = "https://apihk.mch.weixin.qq.com/global/v3";
+        public const string REGION_HONGKONG_GLOBAL = "https://apihk.mch.weixin.qq.com/v3/global";
 
         /// <summary>
         /// 沙箱域名。

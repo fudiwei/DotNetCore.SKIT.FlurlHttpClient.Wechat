@@ -75,6 +75,7 @@
 |  √  |      其他能力：优惠费率活动       |      服务商       |                   |
 |  √  |       境外支付：子商户进件        |      服务商       |                   |
 |  √  |        境外支付：融合钱包         |      服务商       |                   |
+|  √  |        境外支付：委托代扣         | 直连商户 & 服务商 |                   |
 |  √  |          境外支付：报关           |      服务商       |                   |
 
 </details>
@@ -269,7 +270,7 @@
 
     -   扣款服务
 
-        -   预扣费通知：`NotifyPAPPayContracts`
+        -   预扣费通知：`NotifyPAPPayContract`
 
 -   行业方案
 
@@ -717,7 +718,7 @@
 
     -   扣款服务
 
-        -   预扣费通知：`NotifyPartnerPAPPayContracts`
+        -   预扣费通知：`NotifyPartnerPAPPayContract`
 
 -   行业方案
 
@@ -1055,7 +1056,7 @@
 
         -   微工卡用户核身份：
 
-            -   微工卡核身预下单：`PreOrderWithAuthPayrollCardAuthentication`
+            -   微工卡核身预下单：`PreorderWithAuthPayrollCardAuthentication`
 
             -   获取核身结果：`GetPayrollCardAuthenticationByAuthenticateNumber`
 
@@ -1175,17 +1176,7 @@
 
 <summary>[展开查看]</summary>
 
--   Onboarding Sub Merchant
-
-    -   Onboarding Sub Merchant (For HK)
-
-        -   Onboarding Sub-merchant：`AddSubMerchant`
-
-        -   Query Sub-merchant：`GetSubMerchant`
-
-        -   Sub Merchant Modifying：`ModifySubMerchant`
-
--   Multi-Wallet (For HK)
+-   Payments
 
     -   Quick Pay
 
@@ -1197,6 +1188,8 @@
 
         -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
 
+        -   Query All Refunds: `QueryHKRefunds` / `QueryHKPartnerRefunds`
+
         -   Downloading Reconciliation：`DownloadHKStatements`
 
         -   Revoke Order：`ReverseHKTransaction` / `ReverseHKPartnerTransaction`
@@ -1205,7 +1198,7 @@
 
         -   Query Fund Settlement Details：`QueryHKSettlements`
 
-    -   QR Code Payment
+    -   Native Payment
 
         -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
 
@@ -1214,6 +1207,8 @@
         -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
 
         -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+
+        -   Query All Refunds: `QueryHKRefunds` / `QueryHKPartnerRefunds`
 
         -   Downloading Reconciliation：`DownloadHKStatements`
 
@@ -1223,7 +1218,7 @@
 
         -   Query Fund Settlement Details：`QueryHKSettlements`
 
-    -   Mini-Program Payment
+    -   JSAPI Payment
 
         -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
 
@@ -1233,23 +1228,7 @@
 
         -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
 
-        -   Downloading Reconciliation：`DownloadHKStatements`
-
-        -   Close Order：`CloseHKTransaction` / `CloseHKPartnerTransaction`
-
-        -   Downloading Platform Certificate：`QueryCertificates`
-
-        -   Query Fund Settlement Details：`QueryHKSettlements`
-
-    -   Official Account Payment
-
-        -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
-
-        -   Query Order：`GetHKTransactionByOutTradeNumber` / `GetHKTransactionById` / `GetHKPartnerTransactionByOutTradeNumber` / `GetHKPartnerTransactionById`
-
-        -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
-
-        -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+        -   Query All Refunds: `QueryHKRefunds` / `QueryHKPartnerRefunds`
 
         -   Downloading Reconciliation：`DownloadHKStatements`
 
@@ -1269,6 +1248,28 @@
 
         -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
 
+        -   Query All Refunds: `QueryHKRefunds` / `QueryHKPartnerRefunds`
+
+        -   Downloading Reconciliation：`DownloadHKStatements`
+
+        -   Close Order：`CloseHKTransaction` / `CloseHKPartnerTransaction`
+
+        -   Downloading Platform Certificate：`QueryCertificates`
+
+        -   Query Fund Settlement Details：`QueryHKSettlements`
+
+    -   Mini-Program Payment
+
+        -   Order Placement：`CreateHKTransactionMicroPay` / `CreateHKPartnerTransactionMicroPay`
+
+        -   Query Order：`GetHKTransactionByOutTradeNumber` / `GetHKTransactionById` / `GetHKPartnerTransactionByOutTradeNumber` / `GetHKPartnerTransactionById`
+
+        -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
+
+        -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+
+        -   Query All Refunds: `QueryHKRefunds` / `QueryHKPartnerRefunds`
+
         -   Downloading Reconciliation：`DownloadHKStatements`
 
         -   Close Order：`CloseHKTransaction` / `CloseHKPartnerTransaction`
@@ -1283,6 +1284,8 @@
 
         -   Query Order：`GetHKTransactionByOutTradeNumber` / `GetHKTransactionById` / `GetHKPartnerTransactionByOutTradeNumber` / `GetHKPartnerTransactionById`
 
+        -   Query All Refunds: `QueryHKRefunds` / `QueryHKPartnerRefunds`
+
         -   Refund Application：`CreateHKRefund` / `CreateHKPartnerRefund`
 
         -   Query Single Refund：`GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
@@ -1295,18 +1298,54 @@
 
         -   Query Fund Settlement Details：`QueryHKSettlements`
 
--   Customs Declaration
+    -   Auto-Debit Payment
 
-    -   Customs Declaration：`CreateCustomsOrder`
+        -   Mini Program Signing: `PresignHKPAPPayContractEntrustMiniProgram` / `PresignHKPartnerPAPPayContractEntrustMiniProgram`
 
-    -   Identity Information Verification：`VerifyCustomsCertificate`
+        -   H5 Signing: `PresignHKPAPPayContractEntrustH5` / `PresignHKPartnerPAPPayContractEntrustH5`
 
-    -   Query Customs Declaration：`QueryCustomsOrders`
+        -   JSAPI Signing: `PresignHKPAPPayContractEntrustJsapi` / `PresignHKPartnerPAPPayContractEntrustJsapi`
 
-    -   Repush Customs Declaration：`RedeclareCustomsOrder`
+        -   PC WEB Signing: `PresignHKPAPPayContractEntrustJsapi` / `PresignHKPartnerPAPPayContractEntrustJsapi`
 
-    -   Modify Customs Declaration Info：`ModifyCustomsOrder`
+        -   APP Signing: `PresignHKPAPPayContractEntrustApp` / `PresignHKPartnerPAPPayContractEntrustApp`
 
--   Functional APIs
+        -   Querying Signing Status: `GetHKPAPPayContractByOutContractCode` / `GetHKPAPPayContractByContractId` / `GetHKPartnerPAPPayContractByOutContractCode` / `GetHKPartnerPAPPayContractByContractId`
 
-    -   Uploading Image API (For HK)：`UploadMerchantMediaImage`
+        -   Applying for Termination: `TerminateHKPAPPayContract` / `TerminateHKPartnerPAPPayContract`
+
+        -   Deduction: `CreateHKPAPPayTransaction` / `CreateHKPartnerPAPPayTransaction`
+
+        -   Order Query: `GetHKPAPPayTransactionByOutTradeNumber` / `GetHKPAPPayTransactionById` / `GetHKPartnerPAPPayTransactionByOutTradeNumber` / `GetHKPartnerPAPPayTransactionById`
+
+        -   Order Reversing: `ReverseHKPAPPayTransaction` / `ReverseHKPartnerPAPPayTransaction`
+
+        -   Submit Refund: `CreateHKRefund` / `CreateHKPartnerRefund`
+
+        -   Query Single Refund: `GetHKRefundByOutRefundNumber` / `GetHKRefundById` / `GetHKPartnerRefundByOutRefundNumber` / `GetHKPartnerRefundById`
+
+        -   Query All Refunds: `QueryHKRefunds` / `QueryHKPartnerRefunds`
+
+-   Other
+
+    -   Merchant Onboarding
+
+        -   Onboarding Sub-merchant：`AddSubMerchant`
+
+        -   Query Sub-merchant：`GetSubMerchant`
+
+        -   Sub Merchant Modifying：`ModifySubMerchant`
+
+        -   Upload Image：`UploadMerchantMediaImage`
+
+    -   Customs Declaration
+
+        -   Customs Declaration：`CreateCustomsOrder`
+
+        -   Identity Information Verification：`VerifyCustomsCertificate`
+
+        -   Query Customs Declaration：`QueryCustomsOrders`
+
+        -   Repush Customs Declaration：`RedeclareCustomsOrder`
+
+        -   Modify Customs Declaration Info：`ModifyCustomsOrder`

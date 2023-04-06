@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -28,10 +28,36 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
             public class Amount : GetHKTransactionByOutTradeNumberResponse.Types.Amount
             {
+                public static new class Types
+                {
+                    public class ExchangeRate : GetHKTransactionByOutTradeNumberResponse.Types.Amount.Types.ExchangeRate
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置汇率信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_rate")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_rate")]
+                public new Types.ExchangeRate? ExchangeRate { get; set; }
             }
 
             public class Promotion : GetHKTransactionByOutTradeNumberResponse.Types.Promotion
             {
+                public static new class Types
+                {
+                    public class GoodsDetail : GetHKTransactionByOutTradeNumberResponse.Types.Promotion.Types.GoodsDetail
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置单品列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("goods_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
+                public new Types.GoodsDetail[]? GoodsList { get; set; }
             }
         }
 

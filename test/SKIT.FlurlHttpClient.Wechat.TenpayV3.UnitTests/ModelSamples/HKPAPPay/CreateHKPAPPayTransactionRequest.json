@@ -1,0 +1,18 @@
+{
+    "appid": "wxcbda96de0b165486",
+    "description": "PAPAuto-debit支付测试",
+    "attach": "支付测试",
+    "notify_url": "https://wxpay.wxutil.com/pub_v2/pay/notify.v2.php",
+    "out_trade_no": "1217752501201407033233368018",
+    "goods_tag": "WXG",
+    "merchant_category_code": "1011",
+    "contract_id": "Wx15463511252015071056489715",
+    "amount": {
+        "total": 10000,
+        "currency": "HKD"
+    },
+    "scene_info": {
+        "device_ip": "59.37.125.32",
+        "device_id": "013467007045764"
+    }
+}
