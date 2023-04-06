@@ -105,6 +105,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /micropay/transactions/pay 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter3_1_1.shtml </para>
+        /// <para><i>（请注意此接口专为境外支付设计，调用时需在构造 <see cref="WechatTenpayClient" /> 时指定单独的 <see cref="WechatTenpayClientOptions.Endpoint"/>。）</i></para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateHKTransactionMicroPayResponse> ExecuteCreateHKTransactionMicroPayAsync(this WechatTenpayClient client, Models.CreateHKTransactionMicroPayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.MerchantId == null)
+                request.MerchantId = client.Credentials.MerchantId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "micropay", "transactions", "pay");
+
+            return await client.SendRequestWithJsonAsync<Models.CreateHKTransactionMicroPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [GET] /transactions/out-trade-no/{out_trade_no} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/fusion_wallet/In-AppPay/chapter8_1.shtml </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/fusion_wallet/H5Payment/chapter8_1.shtml </para>

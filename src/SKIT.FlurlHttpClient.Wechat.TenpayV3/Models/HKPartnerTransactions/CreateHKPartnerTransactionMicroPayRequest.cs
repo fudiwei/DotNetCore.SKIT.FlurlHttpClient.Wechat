@@ -1,7 +1,7 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /transactions/micropay 接口的请求。</para>
+    /// <para>表示 [POST] /micropay/transactions/pay 接口的请求。</para>
     /// </summary>
     public class CreateHKPartnerTransactionMicroPayRequest : WechatTenpayRequest
     {

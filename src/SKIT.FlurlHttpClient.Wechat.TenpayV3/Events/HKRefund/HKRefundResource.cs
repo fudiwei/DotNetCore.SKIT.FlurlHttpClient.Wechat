@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]
-        public string MerchantId { get; set; } = default!;
+        public virtual string MerchantId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置商户订单号。
