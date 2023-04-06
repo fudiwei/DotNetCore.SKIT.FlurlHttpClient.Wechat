@@ -42,7 +42,7 @@
         public int Offset { get; set; } = 0;
 
         /// <summary>
-        /// 获取或设置分页每页数量。
+        /// 获取或设置分页大小。
         /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limit")]

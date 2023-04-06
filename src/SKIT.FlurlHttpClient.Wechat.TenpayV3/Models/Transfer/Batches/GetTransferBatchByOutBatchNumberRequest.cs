@@ -27,7 +27,7 @@
         public int? Offset { get; set; }
 
         /// <summary>
-        /// 获取或设置分页每页数量。
+        /// 获取或设置分页大小。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

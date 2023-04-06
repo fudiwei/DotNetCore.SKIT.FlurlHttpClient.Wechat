@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public int Offset { get; set; }
 
         /// <summary>
-        /// 获取或设置分页每页数量。
+        /// 获取或设置分页大小。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("limit")]
         [System.Text.Json.Serialization.JsonPropertyName("limit")]
