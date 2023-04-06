@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// </summary>
     public class GetHKPartnerPAPPayTransactionByOutTradeNumberResponse : GetHKPAPPayTransactionByOutTradeNumberResponse
     {
-        public static class Types
+        public static new class Types
         {
             public class Payer : GetHKPartnerTransactionByOutTradeNumberResponse.Types.Payer
             {
