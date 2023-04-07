@@ -40,7 +40,7 @@ var options = new WechatTenpayClientOptions()
 {
     MerchantId = "微信商户号",
     MerchantSecret = "微信商户 API 密钥",
-    MerchantCertificateBytes = Convert.FromBase64String("微信商户证书内容，即 `apiclient_cert.p12` 文件内容的 Base64 编码结果"),
+    MerchantCertificateBytes = File.ReadAllBytes("/微信商户证书文件路径/apiclient_cert.p12"),
     MerchantCertificatePassword = "微信商户证书密码，通常是商户号"
 };
 var client = new WechatTenpayClient(options);
