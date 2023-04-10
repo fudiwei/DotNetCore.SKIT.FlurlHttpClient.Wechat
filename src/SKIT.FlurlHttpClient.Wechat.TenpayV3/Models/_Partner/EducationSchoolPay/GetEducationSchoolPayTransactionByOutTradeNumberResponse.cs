@@ -3,21 +3,14 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /pay/partner/transactions/out-trade-no/{out_trade_no} 接口的响应。</para>
+    /// <para>表示 [GET] /eduschoolpay/transactions/out-trade-no/{out_trade_no} 接口的响应。</para>
     /// </summary>
-    public class GetPayPartnerTransactionByOutTradeNumberResponse : WechatTenpayResponse
+    public class GetEducationSchoolPayTransactionByOutTradeNumberResponse : WechatTenpayResponse
     {
         public static class Types
         {
-            public class Payer
+            public class Payer : GetEducationPAPPayTransactionByOutTradeNumberResponse.Types.Payer
             {
-                /// <summary>
-                /// 获取或设置用户在服务商下唯一标识。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sp_openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("sp_openid")]
-                public string? OpenId { get; set; }
-
                 /// <summary>
                 /// 获取或设置用户在子商户下唯一标识。
                 /// </summary>
@@ -26,46 +19,46 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? SubOpenId { get; set; }
             }
 
-            public class Amount : GetPayTransactionByOutTradeNumberResponse.Types.Amount
+            public class Amount : GetEducationPAPPayTransactionByOutTradeNumberResponse.Types.Amount
             {
             }
 
-            public class Scene : GetPayTransactionByOutTradeNumberResponse.Types.Scene
+            public class Device : GetEducationPAPPayTransactionByOutTradeNumberResponse.Types.Device
             {
             }
 
-            public class Promotion : GetPayTransactionByOutTradeNumberResponse.Types.Promotion
+            public class Promotion : GetEducationPAPPayTransactionByOutTradeNumberResponse.Types.Promotion
             {
             }
         }
 
         /// <summary>
-        /// 获取或设置服务商商户号。
+        /// 获取或设置微信商户号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("sp_mchid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
+        [Newtonsoft.Json.JsonProperty("mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("mchid")]
         public string MerchantId { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string AppId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置服务商 AppId。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sp_appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
-        public string AppId { get; set; } = default!;
+        public string? SubMerchantId { get; set; }
 
         /// <summary>
         /// 获取或设置子商户 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
-        public string SubAppId { get; set; } = default!;
+        public string? SubAppId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置商户订单号。
@@ -79,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-        public string? TransactionId { get; set; }
+        public string? TransactionId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置交易类型。
@@ -140,11 +133,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public Types.Amount Amount { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置场景信息。
+        /// 获取或设置设备信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("scene_info")]
-        [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-        public Types.Scene? Scene { get; set; }
+        [Newtonsoft.Json.JsonProperty("device_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("device_info")]
+        public Types.Device? Device { get; set; }
 
         /// <summary>
         /// 获取或设置优惠信息。

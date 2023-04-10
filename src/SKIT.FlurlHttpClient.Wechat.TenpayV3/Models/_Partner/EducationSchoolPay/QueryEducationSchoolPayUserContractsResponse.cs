@@ -1,20 +1,22 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /edu-papay/user/{openid}/contracts 接口的响应。</para>
+    /// <para>表示 [GET] /eduschoolpay/users/{openid}/contracts 接口的响应。</para>
     /// </summary>
-    public class QueryEducationPAPPayUserContractsResponse : WechatTenpayResponse
+    public class QueryEducationSchoolPayUserContractsResponse : WechatTenpayResponse
     {
         public static class Types
         {
             public class UserContract
             {
-                public static class Types
-                {
-                    public class Contract : GetEducationPAPPayContractByContractIdResponse.Types.Contract
-                    {
-                    }
-                }
+                /// <summary>
+                /// 获取或设置微信商户号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mchid")]
+                [System.Text.Json.Serialization.JsonPropertyName("mchid")]
+                public string MerchantId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置微信 AppId。
@@ -31,6 +33,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string PlanId { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置商户签约号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_contract_code")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_contract_code")]
+                public string OutContractCode { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置签约协议号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("contract_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("contract_id")]
+                public string ContractId { get; set; } = default!;
+
+                /// <summary>
                 /// 获取或设置用户唯一标识。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("openid")]
@@ -38,11 +54,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string OpenId { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置签约信息。
+                /// 获取或设置签约状态。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("contract_information")]
-                [System.Text.Json.Serialization.JsonPropertyName("contract_information")]
-                public Types.Contract Contract { get; set; } = default!;
+                [Newtonsoft.Json.JsonProperty("contract_status")]
+                [System.Text.Json.Serialization.JsonPropertyName("contract_status")]
+                public string Status { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置签约时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("create_time")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+                public DateTimeOffset CreateTime { get; set; }
             }
         }
 

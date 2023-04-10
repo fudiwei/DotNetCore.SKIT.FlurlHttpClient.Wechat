@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_id")]
         [System.Text.Json.Serialization.JsonPropertyName("user_id")]
-        public string UserDisplayName { get; set; } = string.Empty;
+        public string UserDisplayId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置首次扣款日期字符串（格式：yyyy-MM-dd）。

@@ -46,13 +46,15 @@
 |  √  |        经营能力：点金计划         |      服务商       |                   |
 |  √  |     经营能力：区块链电子发票      |     直连商户      |                   |
 |  √  |     经营能力：出租车电子发票      |      服务商       |                   |
+|  √  |   经营能力：微信支付分停车服务    | 直连商户 & 服务商 |                   |
+|  √  |   经营能力：租用充电宝隔夜归还    |     直连商户      |                   |
+|  √  |        经营能力：ETC 扣费         |      服务商       |                   |
+|  √  |       经营能力：教育续费通        |     直连商户      |                   |
+|  √  |       经营能力：校园轻松付        |      服务商       |                   |
 |  √  |       行业方案：电商收付通        |      服务商       |                   |
 |  √  |        行业方案：智慧商圈         | 直连商户 & 服务商 |                   |
-|  √  |   行业方案：微信支付分停车服务    | 直连商户 & 服务商 |                   |
-|  √  |   行业方案：租用充电宝隔夜归还    |     直连商户      |                   |
 |  √  |      行业方案：微信点餐订单       |      服务商       |                   |
 |  √  |       行业方案：微信寄快递        |      服务商       |                   |
-|  √  |        行业方案：ETC 扣费         |      服务商       |                   |
 |  √  |         营销工具：代金券          | 直连商户 & 服务商 |                   |
 |  √  |         营销工具：商家券          | 直连商户 & 服务商 |                   |
 |  √  |        营销工具：委托营销         | 直连商户 & 服务商 |                   |
@@ -75,7 +77,6 @@
 |  √  |        其他能力：图片上传         | 直连商户 & 服务商 |                   |
 |  √  |        其他能力：视频上传         | 直连商户 & 服务商 |                   |
 |  √  |      其他能力：优惠费率活动       |      服务商       |                   |
-|  √  |       其他能力：校园续费通        |     直连商户      |                   |
 |  √  |       境外支付：子商户进件        |      服务商       |                   |
 |  √  |        境外支付：融合钱包         |      服务商       |                   |
 |  √  |        境外支付：委托代扣         | 直连商户 & 服务商 |                   |
@@ -275,6 +276,34 @@
 
         -   预扣费通知：`NotifyPAPPayContract`
 
+    -   微信支付分停车服务
+
+        -   查询车牌服务开通信息：`GetVehicleParkingService`
+
+        -   创建停车入场：`CreateVehicleParking`
+
+        -   扣费受理：`CreateVehicleTransactionParking`
+
+        -   查询订单：`GetVehicleTransactionByOutTradeNumber`
+
+    -   教育续费通：
+
+        -   预签约：`PresignEducationPAPPayContract`
+
+        -   通过协议号查询签约：`GetEducationPAPPayContractByContractId`
+
+        -   通过用户标识查询签约：`QueryEducationPAPPayUserContracts`
+
+        -   解约：`TerminateEducationPAPPayContract`
+
+        -   发送扣款预通知：`SendEducationPAPPayContractNotification`
+
+        -   教育通扣款受理：`CreateEducationPAPPayTransaction`
+
+        -   微信订单号查单：`GetEducationPAPPayTransactionById`
+
+        -   商户订单号查单：`GetEducationPAPPayTransactionByOutTradeNumber`
+
 -   行业方案
 
     -   智慧商圈
@@ -286,16 +315,6 @@
         -   商圈会员待积分状态查询：`GetBusinessCircleUserPointsCommitStatusByOpenId`
 
         -   商圈会员停车状态同步：`NotifyBusinessCircleParkings`
-
-    -   微信支付分停车服务
-
-        -   查询车牌服务开通信息：`GetVehicleParkingService`
-
-        -   创建停车入场：`CreateVehicleParking`
-
-        -   扣费受理：`CreateVehicleTransactionParking`
-
-        -   查询订单：`GetVehicleTransactionByOutTradeNumber`
 
 -   营销工具
 
@@ -504,24 +523,6 @@
         -   查询城市列表：`QueryCapitalAreasCities`
 
         -   查询支行列表：`QueryCapitalBanksBranches`
-
-    -   校园续费通：
-
-        -   预签约：`PresignEducationPAPPayContract`
-
-        -   通过协议号查询签约：`GetEducationPAPPayContractByContractId`
-
-        -   通过用户标识查询签约：`QueryEducationPAPPayUserContracts`
-
-        -   解约：`TerminateEducationPAPPayContract`
-
-        -   发送扣款预通知：`SendEducationPAPPayContractNotification`
-
-        -   教育通扣款受理：`CreateEducationPAPPayTransaction`
-
-        -   微信订单号查单：`GetEducationPAPPayTransactionById`
-
-        -   商户订单号查单：`GetEducationPAPPayTransactionByOutTradeNumber`
 
 </details>
 
@@ -741,6 +742,34 @@
 
         -   预扣费通知：`NotifyPartnerPAPPayContract`
 
+    -   微信支付分停车服务
+
+        -   查询车牌服务开通信息：`GetVehicleParkingService`
+
+        -   创建停车入场：`CreateVehicleParking`
+
+        -   扣费受理：`CreateVehicleTransactionParking`
+
+        -   查询订单：`GetVehicleTransactionByOutTradeNumber`
+
+    -   校园轻松付：
+
+        -   预签约：`PresignEducationSchoolPayContract`
+
+        -   通过协议号查询签约：`GetEducationSchoolPayContractByContractId`
+
+        -   商户主动解约：`TerminateEducationSchoolPayContract`
+
+        -   查询用户签约列表：`QueryEducationSchoolPayUserContracts`
+
+        -   扣款：`CreateEducationSchoolPayTransaction`
+
+        -   微信支付订单号查单：`GetEducationSchoolPayTransactionById`
+
+        -   商户订单号查单：`GetEducationSchoolPayTransactionByOutTradeNumber`
+
+        -   商户查询用户欠款状态：`GetEducationSchoolPayUserDebtState`
+
 -   行业方案
 
     -   电商收付通（商户进件）
@@ -890,16 +919,6 @@
         -   商圈会员待积分状态查询：`GetBusinessCircleUserPointsCommitStatusByOpenId`
 
         -   商圈会员停车状态同步：`NotifyBusinessCircleParkings`
-
-    -   微信支付分停车服务
-
-        -   查询车牌服务开通信息：`GetVehicleParkingService`
-
-        -   创建停车入场：`CreateVehicleParking`
-
-        -   扣费受理：`CreateVehicleTransactionParking`
-
-        -   查询订单：`GetVehicleTransactionByOutTradeNumber`
 
 -   营销工具
 
