@@ -1,0 +1,20 @@
+{
+    "static_qrcode": {
+        "static_qrcode": "string"
+    },
+    "mini_program": {
+        "mp_appid": "string",
+        "mp_path": "string",
+        "mp_username": "string",
+        "mp_version": "string"
+    },
+    "wx_h5": {
+        "wx_h5": "string"
+    },
+    "app_h5": {
+        "app_h5": "string"
+    },
+    "wecom_h5": {
+        "url": "string"
+    }
+}

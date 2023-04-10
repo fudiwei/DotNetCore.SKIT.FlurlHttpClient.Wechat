@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /file-uploads 接口的请求。</para>
+    /// <para>表示 [POST] /mse-pay/file-uploads 接口的请求。</para>
     /// </summary>
     public class UploadFileRequest : WechatTenpayBusinessRequest
     {

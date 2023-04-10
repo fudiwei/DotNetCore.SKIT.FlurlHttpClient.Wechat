@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Events
+namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Events
 {
     /// <summary>
     /// <para>表示 product.application.finish 通知的数据。</para>
@@ -13,19 +13,6 @@
                 {
                     public class Product
                     {
-                        public static class Types
-                        {
-                            public class Account
-                            {
-                                /// <summary>
-                                /// 获取或设置企业账户 ID。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("ent_acct_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("ent_acct_id")]
-                                public string EnterpriseAccountId { get; set; } = default!;
-                            }
-                        }
-
                         /// <summary>
                         /// 获取或设置产品名称。
                         /// </summary>
@@ -39,13 +26,6 @@
                         [Newtonsoft.Json.JsonProperty("status")]
                         [System.Text.Json.Serialization.JsonPropertyName("status")]
                         public string Status { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置账户列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("accounts")]
-                        [System.Text.Json.Serialization.JsonPropertyName("accounts")]
-                        public Types.Account[]? AccountList { get; set; }
                     }
                 }
 

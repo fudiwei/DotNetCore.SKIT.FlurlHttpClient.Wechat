@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public WechatTenpayBusinessResponseTBEPEncryption? TBEPEncryption { get; internal set; }
+        public WechatTenpayBusinessResponseEncryption? Encryption { get; internal set; }
 
         /// <summary>
         /// 获取微企付请求链路 ID。
@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         public IDictionary<string, string>? Details { get; set; }
     }
 
-    public sealed class WechatTenpayBusinessResponseTBEPEncryption
+    public sealed class WechatTenpayBusinessResponseEncryption
     {
         /// <summary>
         /// 获取或设置平台账号。
@@ -118,6 +118,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string? PlatformId { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? EnterpriseId { get; set; }
 
         /// <summary>
         /// 获取或设置加密后的密钥值。
@@ -138,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string? CertificateSerialNumber { get; set; }
+        public string? SerialNumber { get; set; }
 
         /// <summary>
         /// 获取或设置加密算法。

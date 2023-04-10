@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 bool requireEncrypt = request.GetType().GetCustomAttributes<WechatTenpayBusinessSensitiveAttribute>(inherit: true).Any();
                 if (requireEncrypt)
                 {
-                    if (request.TBEPEncryption is null)
-                        request.TBEPEncryption = new WechatTenpayBusinessRequestTBEPEncryption() { Algorithm = client.Credentials.SensitivePropertyEncryptionAlgorithm };
+                    if (request.Encryption is null)
+                        request.Encryption = new WechatTenpayBusinessRequestEncryption() { Algorithm = client.Credentials.SensitivePropertyEncryptionAlgorithm };
 
-                    if (Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC.Equals(request.TBEPEncryption.Algorithm))
+                    if (Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC.Equals(request.Encryption.Algorithm))
                     {
                         Utilities.ReflectionUtility.ReplacePropertyStringValue(ref request, (target, currentProp, oldValue) =>
                         {
@@ -38,9 +38,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                             string sm4Key = client.Credentials.SensitivePropertyEncryptionSM4Key!;
                             string sm4EncryptedKey = Utilities.RSAUtility.EncryptWithECB(publicKey: client.Credentials.TBEPCertificatePublicKey, plainText: sm4Key);
 
-                            request.TBEPEncryption.CertificateSerialNumber = client.Credentials.TBEPCertificateSerialNumber;
-                            request.TBEPEncryption.EncryptedKey = sm4EncryptedKey;
-                            request.TBEPEncryption.IV = sm4IV;
+                            request.Encryption.SerialNumber = client.Credentials.TBEPCertificateSerialNumber;
+                            request.Encryption.EncryptedKey = sm4EncryptedKey;
+                            request.Encryption.IV = sm4IV;
 
                             string newValue = Utilities.SM4Utility.EncryptWithCBC(key: sm4Key, iv: sm4IV, plainText: oldValue);
                             return (true, newValue);

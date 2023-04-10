@@ -39,12 +39,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         public string PlatformCertificatePrivateKey { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置微企付证书序列号。
+        /// 获取或设置微企付企业商户 ID。
         /// </summary>
-        public string TBEPCertificateSerialNumber { get; set; } = default!;
+        public string EnterpriseId { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置微企付证书公钥。
+        /// 获取或设置微企付企业商户 API 证书序列号。
+        /// </summary>
+        public string? EnterpriseCertificateSerialNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置微企付企业商户 API 证书私钥。
+        /// </summary>
+        public string? EnterpriseCertificatePrivateKey { get; set; }
+
+        /// <summary>
+        /// 获取或设置微企付 TBEP 证书序列号。
+        /// </summary>
+        public string? TBEPCertificateSerialNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置微企付 TBEP 证书公钥。
         /// </summary>
         public string TBEPCertificatePublicKey { get; set; } = default!;
 

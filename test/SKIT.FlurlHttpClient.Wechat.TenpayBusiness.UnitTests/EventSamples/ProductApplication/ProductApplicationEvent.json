@@ -1,4 +1,4 @@
-﻿{
+{
     "api_version": "",
     "event_id": "",
     "event_type": "product.application.finish",
@@ -13,12 +13,7 @@
         "product_details": [
             {
                 "product_name": "",
-                "status": "",
-                "accounts": [
-                    {
-                        "ent_acct_id": ""
-                    }
-                ]
+                "status": ""
             }
         ]
     }

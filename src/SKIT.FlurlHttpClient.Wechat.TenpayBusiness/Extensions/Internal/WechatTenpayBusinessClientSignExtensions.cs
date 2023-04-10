@@ -12,18 +12,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             {
                 try
                 {
-                    IDictionary<string, string?> dictTBEPAuthorization = strAuthorization
+                    IDictionary<string, string?> dictAuthorization = strAuthorization
                         .Split(',')
                         .Select(s => s.Trim().Split(new char[] { '=' }, 2, StringSplitOptions.RemoveEmptyEntries))
                         .ToDictionary(
                             k => k[0],
                             v => v.Length > 1 ? v[1].TrimStart('\"').TrimEnd('\"') : null
                         );
-                    string strTimestamp = dictTBEPAuthorization["timestamp"]!;
-                    string strNonce = dictTBEPAuthorization["nonce"]!;
-                    string strSignature = dictTBEPAuthorization["signature"]!;
-                    string strSignAlgorithm = dictTBEPAuthorization["signature_algorithm"]!;
-                    string strSerialNumber = dictTBEPAuthorization["tbep_serial_number"]!;
+                    string strTimestamp = dictAuthorization.GetValueOrDefault("timestamp")!;
+                    string strNonce = dictAuthorization.GetValueOrDefault("nonce")!;
+                    string strSignature = dictAuthorization.GetValueOrDefault("signature")!;
+                    string strSignAlgorithm = dictAuthorization.GetValueOrDefault("signature_algorithm")!;
+                    string strSerialNumber = dictAuthorization.GetValueOrDefault("tbep_serial_number")!;
 
                     return VerifySignature(
                         client,
@@ -32,7 +32,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                         strContent: strContent,
                         strSignature: strSignature,
                         strSignatureAlgorithm: strSignAlgorithm,
-                        strSerialNumber: strSerialNumber, out error);
+                        strSerialNumber: strSerialNumber,
+                        out error
+                    );
                 }
                 catch (Exception ex)
                 {
@@ -41,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 }
             }
 
-            error = new Exception("Could not read value of `TBEP-Authorization`.");
+            error = new Exception("Could not read value of 'TBEP-Authorization'.");
             return false;
         }
 

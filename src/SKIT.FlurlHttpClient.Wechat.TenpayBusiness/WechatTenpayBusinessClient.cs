@@ -52,7 +52,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 signAlg: options.SignAlgorithm,
                 platformId: options.PlatformId,
                 platformCertSn: options.PlatformCertificateSerialNumber,
-                platformCertPk: options.PlatformCertificatePrivateKey
+                platformCertPk: options.PlatformCertificatePrivateKey,
+                enterpriseId: options.EnterpriseId,
+                enterpriseCertSn: options.EnterpriseCertificateSerialNumber,
+                enterpriseCertPk: options.EnterpriseCertificatePrivateKey
             ));
         }
 
@@ -77,10 +80,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
             }
 
-            if (request.TBEPEncryption != null)
+            if (request.Encryption != null)
             {
                 flurlRequest.Headers.Remove("TBEP-Encrypt");
-                flurlRequest.WithHeader("TBEP-Encrypt", $"enc_key=\"{request.TBEPEncryption.EncryptedKey}\",iv=\"{Convert.ToBase64String(Encoding.UTF8.GetBytes(request.TBEPEncryption.IV))}\",tbep_serial_number=\"{request.TBEPEncryption.CertificateSerialNumber}\",algorithm=\"{request.TBEPEncryption.Algorithm}\"");
+                flurlRequest.WithHeader("TBEP-Encrypt", $"enc_key=\"{request.Encryption.EncryptedKey}\",iv=\"{Convert.ToBase64String(Encoding.UTF8.GetBytes(request.Encryption.IV))}\",tbep_serial_number=\"{request.Encryption.SerialNumber}\",algorithm=\"{request.Encryption.Algorithm}\"");
             }
 
             return flurlRequest;
@@ -159,22 +162,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         {
             TResponse result = await base.WrapResponseWithJsonAsync<TResponse>(flurlResponse, cancellationToken);
 
-            string? strTBEPEncryption = flurlResponse.Headers.FirstOrDefault("TBEP-Encrypt");
-            if (!string.IsNullOrEmpty(strTBEPEncryption))
+            string? strEncryption = flurlResponse.Headers.FirstOrDefault("TBEP-Encrypt");
+            if (!string.IsNullOrEmpty(strEncryption))
             {
-                IDictionary<string, string?> dictTBEPEncryption = strTBEPEncryption
+                IDictionary<string, string?> dictEncryption = strEncryption
                     .Split(',')
                     .Select(s => s.Trim().Split(new char[] { '=' }, 2, StringSplitOptions.RemoveEmptyEntries))
                     .ToDictionary(
                         k => k[0],
                         v => v.Length > 1 ? v[1].TrimStart('\"').TrimEnd('\"') : null
                     );
-                result.TBEPEncryption = new WechatTenpayBusinessResponseTBEPEncryption();
-                result.TBEPEncryption.PlatformId = dictTBEPEncryption["platform_id"];
-                result.TBEPEncryption.EncryptedKey = dictTBEPEncryption["enc_key"];
-                result.TBEPEncryption.IV = dictTBEPEncryption["iv"];
-                result.TBEPEncryption.CertificateSerialNumber = dictTBEPEncryption["platform_serial_number"];
-                result.TBEPEncryption.Algorithm = dictTBEPEncryption["algorithm"];
+                result.Encryption = new WechatTenpayBusinessResponseEncryption();
+                result.Encryption.PlatformId = dictEncryption.GetValueOrDefault("platform_id");
+                result.Encryption.EnterpriseId = dictEncryption.GetValueOrDefault("ent_id");
+                result.Encryption.EncryptedKey = dictEncryption.GetValueOrDefault("enc_key");
+                result.Encryption.IV = dictEncryption.GetValueOrDefault("iv");
+                result.Encryption.SerialNumber = dictEncryption.GetValueOrDefault("platform_serial_number") ?? dictEncryption.GetValueOrDefault("enterprise_serial_number");
+                result.Encryption.Algorithm = dictEncryption.GetValueOrDefault("algorithm");
 
                 if (AutoDecryptResponseSensitiveProperty && result.IsSuccessful())
                 {

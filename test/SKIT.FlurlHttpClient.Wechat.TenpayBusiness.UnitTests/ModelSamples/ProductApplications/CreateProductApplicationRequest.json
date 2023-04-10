@@ -1,0 +1,40 @@
+{
+    "out_request_no": "string",
+    "products": [
+        {
+            "product_name": "MSE_PAY"
+        }
+    ],
+    "business_license": {
+        "business_register_type": "ENTERPRISE",
+        "unified_social_credit_code": "string",
+        "merchant_name": "string",
+        "merchant_short_name": "string",
+        "legal_person_name": "string",
+        "validity_period": [ "string", "string" ],
+        "photocopy_file_id": "string"
+    },
+    "legal_person_id_card": {
+        "name": "string",
+        "number": "string",
+        "validity_period": [ "string", "string" ],
+        "front_photocopy_file_id": "string",
+        "back_photocopy_file_id": "string"
+    },
+    "notify_url": {
+        "server_notify_url": "string",
+        "web_success_url": "string",
+        "web_refresh_url": "string"
+    },
+    "contact_info": { "mobile_number": "string" },
+    "payee_accounts": [
+        {
+            "account_type": "ENTERPRISE_ACCOUNT",
+            "bank_account_name": "string",
+            "bank_account_number": "string",
+            "bank_branch_id": "string",
+            "bank_branch_name": "string",
+            "bank_name": "string"
+        }
+    ]
+}

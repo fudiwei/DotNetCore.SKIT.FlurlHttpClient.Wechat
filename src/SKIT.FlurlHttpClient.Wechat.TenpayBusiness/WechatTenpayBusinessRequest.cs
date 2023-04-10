@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
+namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     /// <summary>
     /// 表示微企付 API 请求的基类。
@@ -18,10 +18,10 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public virtual WechatTenpayBusinessRequestTBEPEncryption? TBEPEncryption { get; set; }
+        public virtual WechatTenpayBusinessRequestEncryption? Encryption { get; set; }
     }
 
-    public sealed class WechatTenpayBusinessRequestTBEPEncryption
+    public sealed class WechatTenpayBusinessRequestEncryption
     {
         /// <summary>
         /// 获取或设置加密后的密钥值。
@@ -42,7 +42,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string CertificateSerialNumber { get; set; } = string.Empty;
+        public string SerialNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置加密算法。
