@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Options
@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Options
 
         public Types.WechatAccount[] Accounts { get; set; } = Array.Empty<Types.WechatAccount>();
 
-        public string CallbackState { get; set; } = string.Empty;
+        public string CallbackEncodingAESKey { get; set; } = string.Empty;
 
         public string CallbackToken { get; set; } = string.Empty;
     }

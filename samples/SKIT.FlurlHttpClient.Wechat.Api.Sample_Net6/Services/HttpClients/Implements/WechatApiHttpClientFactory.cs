@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Net.Http;
 using Microsoft.Extensions.Options;
@@ -32,6 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.HttpClients.Implements
             {
                 AppId = wechatAccountOptions.AppId,
                 AppSecret = wechatAccountOptions.AppSecret,
+                PushEncodingAESKey = _wechatOptions.CallbackEncodingAESKey,
                 PushToken = _wechatOptions.CallbackToken
             };
             var wechatApiClient = new WechatApiClient(wechatApiClientOptions);
