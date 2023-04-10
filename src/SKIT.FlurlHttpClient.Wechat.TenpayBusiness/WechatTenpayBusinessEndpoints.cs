@@ -1,18 +1,18 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
+namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     /// <summary>
-    /// 腾讯微企付 API 接口域名。
+    /// 微企付 API 接口域名。
     /// </summary>
     public static class WechatTenpayBusinessEndpoints
     {
         /// <summary>
         /// 主域名（默认）。
         /// </summary>
-        public const string DEFAULT = "https://api-business.tenpay.com/v3";
+        public const string DEFAULT = "https://api.businesspay.qq.com/v3";
 
         /// <summary>
-        /// 测试域名。
+        /// 沙箱域名。
         /// </summary>
-        public const string DEVELOPMENT = "https://dev-api-business.tenpay.com/v3";
+        public const string SANDBOX = "https://sandbox-api.businesspay.qq.com/v3";
     }
 }

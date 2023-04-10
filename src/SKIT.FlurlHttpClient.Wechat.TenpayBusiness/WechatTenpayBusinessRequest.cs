@@ -1,7 +1,7 @@
 ﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     /// <summary>
-    /// 表示腾讯微企付 API 请求的基类。
+    /// 表示微企付 API 请求的基类。
     /// </summary>
     public abstract class WechatTenpayBusinessRequest : ICommonRequest
     {
@@ -13,7 +13,7 @@
         public virtual int? Timeout { get; set; }
 
         /// <summary>
-        /// 获取或设置请求使用的腾讯微企付敏感字段加密参数。
+        /// 获取或设置请求使用的微企付敏感字段加密参数。
         /// <para>如果启用了 <see cref="WechatTenpayBusinessClientOptions.AutoEncryptRequestSensitiveProperty"/> 参数，将由系统自动生成。</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]

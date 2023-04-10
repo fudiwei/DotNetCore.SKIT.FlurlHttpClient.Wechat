@@ -3,7 +3,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     /// <summary>
-    /// 表示腾讯微企付 API 回调通知事件的基类。
+    /// 表示微企付 API 回调通知事件的基类。
     /// </summary>
     [Serializable]
     public class WechatTenpayBusinessEvent
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
     }
 
     /// <summary>
-    /// 表示腾讯微企付 API 回调通知事件的基类。
+    /// 表示微企付 API 回调通知事件的基类。
     /// </summary>
     [Serializable]
     public class WechatTenpayBusinessEvent<TEventContent> : WechatTenpayBusinessEvent

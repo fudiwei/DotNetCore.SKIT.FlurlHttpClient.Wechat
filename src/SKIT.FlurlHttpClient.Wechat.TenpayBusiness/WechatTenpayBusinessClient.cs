@@ -11,12 +11,12 @@ using Flurl.Http;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     /// <summary>
-    /// 一个腾讯微企付 API HTTP 客户端。
+    /// 一个微企付 API HTTP 客户端。
     /// </summary>
     public class WechatTenpayBusinessClient : CommonClientBase, ICommonClient
     {
         /// <summary>
-        /// 获取当前客户端使用的腾讯微企付平台凭证。
+        /// 获取当前客户端使用的微企付平台凭证。
         /// </summary>
         public Settings.Credentials Credentials { get; }
 
