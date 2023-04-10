@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /ecommerce/combine-papay/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate 接口的请求。</para>
     /// </summary>
-    public class TerminatEcommerceCombinePAPPayContractRequest : WechatTenpayRequest
+    public class TerminateEcommerceCombinePAPPayContractRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置模板 ID。

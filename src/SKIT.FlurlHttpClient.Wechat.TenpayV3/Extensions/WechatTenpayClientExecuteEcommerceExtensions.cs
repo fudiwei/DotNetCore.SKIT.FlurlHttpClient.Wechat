@@ -602,7 +602,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.TerminatEcommerceCombinePAPPayContractResponse> ExecuteTerminatEcommerceCombinePAPPayContractAsync(this WechatTenpayClient client, Models.TerminatEcommerceCombinePAPPayContractRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.TerminateEcommerceCombinePAPPayContractResponse> ExecuteTerminateEcommerceCombinePAPPayContractAsync(this WechatTenpayClient client, Models.TerminateEcommerceCombinePAPPayContractRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -610,7 +610,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "ecommerce", "combine-papay", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode, "terminate");
 
-            return await client.SendRequestWithJsonAsync<Models.TerminatEcommerceCombinePAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.TerminateEcommerceCombinePAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

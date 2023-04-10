@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_display_account")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_display_account")]
-        public string DisplayName { get; set; } = string.Empty;
+        public string UserDisplayName { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置回调通知地址。

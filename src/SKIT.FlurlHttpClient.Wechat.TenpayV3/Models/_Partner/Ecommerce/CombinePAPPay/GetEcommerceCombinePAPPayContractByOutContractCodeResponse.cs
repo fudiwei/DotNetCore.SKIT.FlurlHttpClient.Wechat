@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_display_account")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_display_account")]
-        public string DisplayName { get; set; } = default!;
+        public string UserDisplayName { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置协议状态。
