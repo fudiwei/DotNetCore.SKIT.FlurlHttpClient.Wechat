@@ -1,0 +1,18 @@
+{
+    "appid": "wx8888888888888888",
+    "body": "新东方-语文课程",
+    "attach": "自定义数据",
+    "out_trade_no": "121775250124070332",
+    "goods_tag": "test",
+    "notify_url": "https://www.weixin.qq.com/wxpay/pay",
+    "contract_id": "wx998877665544wx",
+    "trade_scene": "EDUCATION_PERIOD",
+    "amount": {
+        "total": 888,
+        "currency": "CNY"
+    },
+    "device_information": {
+        "device_id": "12343232",
+        "device_ip": "123.12.12.123"
+    }
+}

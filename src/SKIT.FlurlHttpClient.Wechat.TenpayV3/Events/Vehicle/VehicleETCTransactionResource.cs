@@ -1,7 +1,7 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示 TRANSACTION.SUCCESS（仅限 ETC 扣费）通知的数据。</para>
+    /// <para>表示 ETC 扣费 TRANSACTION.SUCCESS 通知的数据。</para>
     /// </summary>
     public class VehicleETCTransactionResource : WechatTenpayEvent.Types.IDecryptedResource
     {

@@ -75,6 +75,7 @@
 |  √  |        其他能力：图片上传         | 直连商户 & 服务商 |                   |
 |  √  |        其他能力：视频上传         | 直连商户 & 服务商 |                   |
 |  √  |      其他能力：优惠费率活动       |      服务商       |                   |
+|  √  |       其他能力：校园续费通        |     直连商户      |                   |
 |  √  |       境外支付：子商户进件        |      服务商       |                   |
 |  √  |        境外支付：融合钱包         |      服务商       |                   |
 |  √  |        境外支付：委托代扣         | 直连商户 & 服务商 |                   |
@@ -503,6 +504,24 @@
         -   查询城市列表：`QueryCapitalAreasCities`
 
         -   查询支行列表：`QueryCapitalBanksBranches`
+
+    -   校园续费通：
+
+        -   预签约：`PresignEducationPAPPayContract`
+
+        -   通过协议号查询签约：`GetEducationPAPPayContractByContractId`
+
+        -   通过用户标识查询签约：`QueryEducationPAPPayUserContracts`
+
+        -   解约：`TerminateEducationPAPPayContract`
+
+        -   发送扣款预通知：`SendEducationPAPPayContractNotification`
+
+        -   教育通扣款受理：`CreateEducationPAPPayTransaction`
+
+        -   微信订单号查单：`GetEducationPAPPayTransactionById`
+
+        -   商户订单号查单：`GetEducationPAPPayTransactionByOutTradeNumber`
 
 </details>
 
