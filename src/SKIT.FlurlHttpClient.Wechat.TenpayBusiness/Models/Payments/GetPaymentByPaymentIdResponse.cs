@@ -9,30 +9,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
     {
         public static class Types
         {
-            public class Payer
-            {
-                /// <summary>
-                /// 获取或设置微企付 OpenId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("payer_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("payer_id")]
-                public string? PayerId { get; set; }
-
-                /// <summary>
-                /// 获取或设置平台付款方 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("out_payer_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("out_payer_id")]
-                public string? OutPayerId { get; set; }
-
-                /// <summary>
-                /// 获取或设置银行卡号后 4 位。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("payer_acct_last4")]
-                [System.Text.Json.Serialization.JsonPropertyName("payer_acct_last4")]
-                public string? BankAccountNumberLast4String { get; set; }
-            }
-
             public class Payee
             {
                 /// <summary>
@@ -48,6 +24,37 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                 [Newtonsoft.Json.JsonProperty("ent_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("ent_name")]
                 public string EnterpriseName { get; set; } = default!;
+            }
+
+            public class Payer
+            {
+                /// <summary>
+                /// 获取或设置付款方 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("payer_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("payer_id")]
+                public string? PayerId { get; set; }
+
+                /// <summary>
+                /// 获取或设置付款方名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("payer_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("payer_name")]
+                public string? PayerName { get; set; }
+
+                /// <summary>
+                /// 获取或设置平台付款方 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_payer_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_payer_id")]
+                public string? OutPayerId { get; set; }
+
+                /// <summary>
+                /// 获取或设置银行卡号后 4 位。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("payer_acct_last4")]
+                [System.Text.Json.Serialization.JsonPropertyName("payer_acct_last4")]
+                public string? BankAccountNumberLast4String { get; set; }
             }
         }
 

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /mse-pay/payments/h5-pay 接口的请求。</para>
+    /// <para>表示 [POST] /mse-pay/payments/app-registering-pay 接口的请求。</para>
     /// </summary>
     [WechatTenpayBusinessSensitive]
-    public class CreatePaymentH5PayRequest : CreatePaymentAppPayRequest
+    public class CreatePaymentAppRegisteringPayRequest : CreatePaymentAppPayRequest
     {
         public static new class Types
         {
@@ -26,14 +26,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
             {
                 public static new class Types
                 {
-                    public class FrontendCallback
+                    public class FrontendCallback : CreatePaymentAppPayRequest.Types.NotifyConfig.Types.FrontendCallback
                     {
-                        /// <summary>
-                        /// 获取或设置 H5 回跳地址。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("h5_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("h5_url")]
-                        public string H5Url { get; set; } = string.Empty;
                     }
                 }
 

@@ -9,6 +9,64 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
     public static class WechatTenpayBusinessClientExecutePaymentsExtensions
     {
         /// <summary>
+        /// <para>异步调用 [POST] /mse-pay/payments/app-pay 接口。</para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%94%AF%E4%BB%98%E9%A2%84%E4%B8%8B%E5%8D%95 </para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%94%AF%E4%BB%98%E9%A2%84%E4%B8%8B%E5%8D%95-2 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePaymentAppPayResponse> ExecuteCreatePaymentAppPayAsync(this WechatTenpayBusinessClient client, Models.CreatePaymentAppPayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "mse-pay", "payments", "app-pay");
+
+            return await client.SendRequestWithJsonAsync<Models.CreatePaymentAppPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /mse-pay/payments/app-registering-pay 接口。</para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E5%BC%80%E9%80%9A%E5%B9%B6%E6%94%AF%E4%BB%98%E9%A2%84%E4%B8%8B%E5%8D%95 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePaymentAppRegisteringPayResponse> ExecuteCreatePaymentAppRegisteringPayAsync(this WechatTenpayBusinessClient client, Models.CreatePaymentAppRegisteringPayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "mse-pay", "payments", "app-registering-pay");
+
+            return await client.SendRequestWithJsonAsync<Models.CreatePaymentAppRegisteringPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /mse-pay/payments/qrcode-pay 接口。</para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E4%BA%8C%E7%BB%B4%E7%A0%81%E6%94%AF%E4%BB%98%E9%A2%84%E4%B8%8B%E5%8D%95 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePaymentQrcodePayResponse> ExecuteCreatePaymentQrcodePayAsync(this WechatTenpayBusinessClient client, Models.CreatePaymentQrcodePayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "mse-pay", "payments", "qrcode-pay");
+
+            return await client.SendRequestWithJsonAsync<Models.CreatePaymentQrcodePayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /mse-pay/payments/h5-pay 接口。</para>
         /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#h5%E6%94%AF%E4%BB%98 </para>
         /// </summary>
@@ -25,6 +83,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 .CreateRequest(request, HttpMethod.Post, "mse-pay", "payments", "h5-pay");
 
             return await client.SendRequestWithJsonAsync<Models.CreatePaymentH5PayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /mse-pay/payments/mp-pay 接口。</para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#mp%E6%94%AF%E4%BB%98%E9%A2%84%E4%B8%8B%E5%8D%95 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePaymentMiniProgramPayResponse> ExecuteCreatePaymentMiniProgramPayAsync(this WechatTenpayBusinessClient client, Models.CreatePaymentMiniProgramPayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "mse-pay", "payments", "mp-pay");
+
+            return await client.SendRequestWithJsonAsync<Models.CreatePaymentMiniProgramPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

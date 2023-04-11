@@ -1,0 +1,44 @@
+{
+    "purchaser_type": "string",
+    "out_payment_id": "string",
+    "amount": 0,
+    "currency": "CNY",
+    "expire_time": "2021-06-08T10:34:56+08:00",
+    "payer": {
+        "payer_id": "string",
+        "payer_name": "string",
+        "out_payer_id": "string",
+        "bank_account_numbers": [ "string" ]
+    },
+    "payee": {
+        "ent_id": "stringstri",
+        "ent_name": "string"
+    },
+    "memo": "string",
+    "goods": [
+        {
+            "good_name": "string",
+            "good_number": 0,
+            "good_amount": 0
+        }
+    ],
+    "attachment": "string",
+    "risk_control": {
+        "device_id": "string",
+        "payer_client_ip": "string",
+        "payer_ua": "string",
+        "create_time": "2022-11-15T13:25:18.000+00:00",
+        "pick_type": "SELF_PICK",
+        "pick_description": "string"
+    },
+    "notify_url": {
+        "server_notify_url": "string"
+    },
+    "scene_info": {
+        "store_info": {
+            "id": "string",
+            "name": "string",
+            "area_code": "string"
+        }
+    }
+}

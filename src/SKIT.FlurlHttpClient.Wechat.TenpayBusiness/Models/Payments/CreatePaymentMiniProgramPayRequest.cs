@@ -3,10 +3,10 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /mse-pay/payments/h5-pay 接口的请求。</para>
+    /// <para>表示 [POST] /mse-pay/payments/mp-pay 接口的请求。</para>
     /// </summary>
     [WechatTenpayBusinessSensitive]
-    public class CreatePaymentH5PayRequest : CreatePaymentAppPayRequest
+    public class CreatePaymentMiniProgramPayRequest : CreatePaymentAppPayRequest
     {
         public static new class Types
         {
@@ -29,11 +29,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models
                     public class FrontendCallback
                     {
                         /// <summary>
-                        /// 获取或设置 H5 回跳地址。
+                        /// 获取或设置小程序 AppId。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("h5_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("h5_url")]
-                        public string H5Url { get; set; } = string.Empty;
+                        [Newtonsoft.Json.JsonProperty("mp_appid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("mp_appid")]
+                        public string AppId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置小程序页面路径。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("mp_path")]
+                        [System.Text.Json.Serialization.JsonPropertyName("mp_path")]
+                        public string PagePath { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置小程序原始 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("mp_username")]
+                        [System.Text.Json.Serialization.JsonPropertyName("mp_username")]
+                        public string Username { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置小程序 URL Scheme。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("mp_urlscheme")]
+                        [System.Text.Json.Serialization.JsonPropertyName("mp_urlscheme")]
+                        public string? UrlScheme { get; set; }
                     }
                 }
 
