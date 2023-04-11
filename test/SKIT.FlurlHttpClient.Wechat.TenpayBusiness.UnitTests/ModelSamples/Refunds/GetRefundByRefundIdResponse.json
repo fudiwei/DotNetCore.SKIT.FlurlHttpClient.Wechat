@@ -1,0 +1,12 @@
+{
+    "refund_id": "string",
+    "out_refund_id": "string",
+    "payment_id": "string",
+    "out_payment_id": "string",
+    "total_amount": 0,
+    "refund_amount": 0,
+    "status": "INIT",
+    "refund_reason": "string",
+    "succeeded_time": "2019-08-24T14:15:22Z",
+    "created_time": "2019-08-24T14:15:22Z"
+}
