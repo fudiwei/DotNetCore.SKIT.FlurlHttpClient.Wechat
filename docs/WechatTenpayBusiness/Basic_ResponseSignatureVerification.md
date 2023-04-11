@@ -11,7 +11,7 @@
 ```csharp
 string data = "拼接好的验签数据";
 string sign = "待验证的签名";
-string tbepPublicKey = "腾讯微企付公钥";
+string tbepPublicKey = "微企付公钥";
 bool ret = RSAUtility.VerifyWithSHA256(tbepPublicKey, data, sign);
 ```
 

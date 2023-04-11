@@ -4,14 +4,14 @@
 
 ### 加密流程
 
-对于部分接口请求传递的敏感信息，腾讯微企付可能会需要使用以下方式进行加密：
+对于部分接口请求传递的敏感信息，微企付可能会需要使用以下方式进行加密：
 
--   使用腾讯微企付公钥基于 RSAES-OAEP + SM4 算法加密。
+-   使用微企付公钥基于 RSAES-OAEP + SM4 算法加密。
 
 开发者利用本库提供的 `RSAUtility`、`SM4Utility` 工具类自行加密相关字段。下面给出一个使用 `RSAUtility`、`SM4Utility` 工具类加密数据的示例代码：
 
 ```csharp
-// 先通过腾讯微企付公钥基于 RSAES-OAEP 得到加密后的 SM4 密钥
+// 先通过微企付公钥基于 RSAES-OAEP 得到加密后的 SM4 密钥
 string sm4IV = "SM4 偏移量";
 string sm4Key = "SM4 密钥";
 string sm4EncryptedKey = RSAUtility.EncryptWithECB(tbepPublicKey, sm4Key);
@@ -31,9 +31,9 @@ request.TBEPEncryption = new WechatTenpayBusinessRequestTBEPEncryption()
 此外，本库还封装了直接加密请求中敏感信息字段的扩展方法。下面给出一个手动调用的示例：
 
 ```csharp
-var request = new CreateMSEPayProductApplicationRequest()
+var request = new CreateProductApplicationRequest()
 {
-    BusinessLicense = new CreateMSEPayProductApplicationRequest.Types.BusinessLicense()
+    BusinessLicense = new CreateProductApplicationRequest.Types.BusinessLicense()
     {
         BusinessRegisterType = "TYPE",
         MerchantName = "商户",
@@ -45,7 +45,7 @@ Console.WriteLine("before: {0}", request.BusinessLicense.Name); // 此时仍是�
 client.EncryptRequestSensitiveProperty(request);
 Console.WriteLine("after: {0}", request.BusinessLicense.Name); // 此时已是密文
 
-var response = await client.ExecuteCreateMSEPayProductApplicationAsync(request);
+var response = await client.ExecuteCreateProductApplicationAsync(request);
 ```
 
 如果你希望本库在请求前能自动完成这项操作，你可以在构造得到 `WechatTenpayBusinessClient` 对象时指定自动化参数：

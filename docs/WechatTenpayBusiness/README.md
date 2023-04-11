@@ -1,14 +1,14 @@
 ﻿# SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
-基于 `Flurl.Http` 的[腾讯微企付](https://business.tenpay.com/p/gateway-pay/) HTTP API SDK。
+基于 `Flurl.Http` 的[微企付](https://businesspay.qq.com/p/mse-pay/) HTTP API SDK。
 
 ---
 
 ## 功能
 
--   基于腾讯微企付 API 封装。
+-   基于微企付 API 封装。
 -   请求时自动生成签名，无需开发者手动干预。
--   提供了腾讯微企付所需的 RSA、SM3、SM4、SHA-256 等算法工具类。
+-   提供了微企付所需的 RSA、SM3、SM4、SHA-256 等算法工具类。
 -   提供了解析回调通知事件等扩展方法。
 
 ---
@@ -35,11 +35,14 @@ using SKIT.FlurlHttpClient.Wechat.TenpayBusiness;
 
 var options = new WechatTenpayBusinessClientOptions()
 {
-    PlatformId = "腾讯微企付平台账号",
-    PlatformCertificateSerialNumber = "腾讯微企付平台 API 证书序列号",
-    PlatformCertificatePrivateKey = "-----BEGIN PRIVATE KEY-----腾讯微企付平台 API 证书私钥-----END PRIVATE KEY-----",
-    TBEPCertificateSerialNumber = "腾讯微企付证书序列号",
-    TBEPCertificatePublicKey = "-----BEGIN PUBLIC KEY-----腾讯微企付证书公钥-----END PUBLIC KEY-----"
+    PlatformId = "微企付平台账号",
+    PlatformCertificateSerialNumber = "微企付平台 API 证书序列号",
+    PlatformCertificatePrivateKey = "-----BEGIN PRIVATE KEY-----微企付平台 API 证书私钥-----END PRIVATE KEY-----",
+    EnterpriseId = "微企付企业商户 ID（非必填）",
+    EnterpriseCertificateSerialNumber = "微企付企业商户 API 证书序列号（非必填）",
+    EnterpriseCertificatePrivateKey = "-----BEGIN PRIVATE KEY-----微企付企业商户 API 证书私钥（非必填）-----END PRIVATE KEY-----",
+    TBEPCertificateSerialNumber = "微企付证书序列号",
+    TBEPCertificatePublicKey = "-----BEGIN PUBLIC KEY-----微企付证书公钥-----END PUBLIC KEY-----"
 };
 var client = new WechatTenpayBusinessClient(options);
 ```
@@ -51,11 +54,11 @@ using SKIT.FlurlHttpClient.Wechat.TenpayBusiness;
 using SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Models;
 
 /* 以根据交易订单查询付款结果接口为例 */
-var request = new GetMSEPayPaymentByPaymentIdRequest()
+var request = new GetPaymentByPaymentIdRequest()
 {
     OutPaymentId = "平台支付单号"
 };
-var response = await client.ExecuteGetMSEPayPaymentByOutPaymentIdAsync(request);
+var response = await client.ExecuteGetPaymentByOutPaymentIdAsync(request);
 if (response.IsSuccessful())
 {
     Console.WriteLine("微企付支付单号：" + response.PaymentId);

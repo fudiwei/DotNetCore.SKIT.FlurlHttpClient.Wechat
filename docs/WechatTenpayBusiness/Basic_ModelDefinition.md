@@ -4,7 +4,7 @@
 
 本库提供的请求模型、响应模型和接口方法，三者均保持同名。
 
-例如，申请产品开通的请求是 `CreateMSEPayProductApplicationRequest`，响应是 `CreateMSEPayProductApplicationResponse`，接口是 `ExecuteCreateMSEPayProductApplicationAsync()`。知道其中一个，其余两个就可以快速地推断出了。
+例如，申请产品开通的请求是 `CreateProductApplicationRequest`，响应是 `CreateProductApplicationResponse`，接口是 `ExecuteCreateProductApplicationAsync()`。知道其中一个，其余两个就可以快速地推断出了。
 
 再有，每个对象的命名与官方文档的接口地址大体保持一致。例如刚刚提到的申请产品开通，它的接口地址是 `[POST] /mse-pay/product-applications`，将其中的反斜杠去掉、并以大驼峰命名法的方式调整它，就可以得到前文提到的几个对象了。
 
@@ -24,38 +24,102 @@
 
 ### 【附】微企付商户 API 模型命名速查表：
 
+注：树形结构与[微企付开发文档](https://businesspay.qq.com/p/doc/mse/api/server.html)目录结构保持一致。
+
 <details>
 
 <summary>[展开查看]</summary>
 
 -   商户入驻
 
-    -   申请产品开通：`CreateMSEPayProductApplication`
+    -   文件上传：`UploadFile`
 
-    -   查询产品开通：`GetMSEPayProductApplicationByOutRequestNumber` / `GetMSEPayProductApplicationByRequestNumber`
+    -   申请入驻：`CreateProductApplication`
 
-    -   创建开通跳转链接：`CreateMSEPayProductApplicationLink`
+    -   创建入驻跳转链接：`CreateProductApplicationLink`
 
-    -   图片上传接口：`UploadFile`
+    -   查询入驻结果（内单号）：`GetProductApplicationByRequestNumber`
+
+    -   查询入驻结果（外单号）：`GetProductApplicationByOutRequestNumber`
+
+-   二维码支付
+
+    -   二维码支付预下单：`CreatePaymentQrcodePay`
+
+    -   获取跳转对象信息：`CreatePaymentRedirectLink`
+
+    -   查询订单明细（内单号）：`GetPaymentByPaymentId`
+
+    -   查询订单明细（外单号）：`GetPaymentByOutPaymentId`
+
+    -   支付关单：`ClosePayment`
+
+-   小程序支付
+
+    -   小程序支付预下单：`CreatePaymentMiniProgramPay`
+
+    -   获取跳转对象信息：`CreatePaymentRedirectLink`
+
+    -   查询订单明细（内单号）：`GetPaymentByPaymentId`
+
+    -   查询订单明细（外单号）：`GetPaymentByOutPaymentId`
+
+    -   支付关单：`ClosePayment`
 
 -   H5 支付
 
-    -   H5 支付预下单：`CreateMSEPayPaymentH5Pay`
+    -   H5 支付预下单：`CreatePaymentH5Pay`
 
-    -   根据交易订单查询付款结果：`GetMSEPayPaymentByOutPaymentId` / `GetMSEPayPaymentByPaymentId`
+    -   获取跳转对象信息：`CreatePaymentRedirectLink`
 
-    -   主动关单：`CloseMSEPayPayment`
+    -   查询订单明细（内单号）：`GetPaymentByPaymentId`
 
-    -   主动关单：`CloseMSEPayPayment`
+    -   查询订单明细（外单号）：`GetPaymentByOutPaymentId`
 
--   公共资源 Redirect：
+    -   支付关单：`ClosePayment`
 
-    -   获取跳转对象：`CreateMSEPayRedirectLink`
+-   App 支付
 
--   文件获取：
+    -   App 支付预下单：`CreatePaymentAppPay`
 
-    -   获取账单文件下载地址：`GetMSEPayAccountBill`
+    -   获取跳转对象信息：`CreatePaymentRedirectLink`
 
-    -   文件获取：`DownloadMSEPayAccountBill`
+    -   查询订单明细（内单号）：`GetPaymentByPaymentId`
+
+    -   查询订单明细（外单号）：`GetPaymentByOutPaymentId`
+
+    -   支付关单：`ClosePayment`
+
+-   企业微信支付
+
+    -   开通并支付预下单：`CreatePaymentAppRegisteringPay`
+
+    -   支付预下单：`CreatePaymentAppPay`
+
+    -   获取跳转对象信息：`CreatePaymentRedirectLink`
+
+    -   查询订单明细（内单号）：`GetPaymentByPaymentId`
+
+    -   查询订单明细（外单号）：`GetPaymentByOutPaymentId`
+
+    -   支付关单：`ClosePayment`
+
+-   账单下载：
+
+    -   获取资金账单下载链接：`GetBill`
+
+    -   资金账单下载：`DownloadBillFile`
+
+    -   获取交易账单下载链接：`GetBillTransaction`
+
+    -   交易账单下载：`DownloadBillFile`
+
+-   退款：
+
+    -   退款申请：`CreateRefund`
+
+    -   退款查询（内单号）：`GetRefundByRefundId`
+
+    -   退款查询（外单号）：`GetRefundByOutRefundId`
 
 </details>
