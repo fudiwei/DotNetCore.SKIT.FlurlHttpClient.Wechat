@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -127,30 +127,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinDraftBatchGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/draft/switch 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Draft_Box/Temporary_MP_Switch.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        [Obsolete("相关接口或字段于 2022-02-25 下线。")]
-        public static async Task<Models.CgibinDraftSwitchResponse> ExecuteCgibinDraftSwitchAsync(this WechatApiClient client, Models.CgibinDraftSwitchRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "draft", "switch")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.OnlyCheck != null)
-                flurlReq.SetQueryParam("checkonly", request.OnlyCheck.Value ? 1 : 0);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinDraftSwitchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
