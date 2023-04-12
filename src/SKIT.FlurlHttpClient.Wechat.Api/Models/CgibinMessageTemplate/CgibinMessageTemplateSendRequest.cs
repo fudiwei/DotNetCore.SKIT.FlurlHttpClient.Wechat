@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -38,6 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置消息字体颜色（格式：#RRGGBB）。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2023-05-04 下线。")]
                 [Newtonsoft.Json.JsonProperty("color")]
                 [System.Text.Json.Serialization.JsonPropertyName("color")]
                 public string? Color { get; set; }
@@ -78,5 +80,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
         public IDictionary<string, Types.DataItem>? Data { get; set; }
+
+        /// <summary>
+        /// 获取或设置调用方请求的唯一标识。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("client_msg_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("client_msg_id")]
+        public string? ClientMessageId { get; set; }
     }
 }
