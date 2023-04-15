@@ -1,0 +1,35 @@
+{
+    "out_application_id": "string",
+    "ent_id": "stringstri",
+    "receiver_type": "ENTERPRISE",
+    "out_receiver_name": "string",
+    "natural_person_info": {
+        "name": "string",
+        "number": "string",
+        "validity_period": [ "string" ],
+        "front_photocopy_file_id": "string",
+        "back_photocopy_file_id": "string",
+        "id_card_address_info": {
+            "detail_address": "string",
+            "province_name": "string",
+            "province_code": "string",
+            "city_name": "string",
+            "city_code": "string",
+            "area_name": "string",
+            "area_code": "string"
+        }
+    },
+    "settlement_account": {
+        "account_type": "ENTERPRISE_ACCOUNT",
+        "bank_account_name": "string",
+        "bank_account_number": "string",
+        "bank_account_mobile": "string",
+        "bank_branch_id": "string",
+        "bank_branch_name": "string",
+        "bank_name": "string"
+    },
+    "withdraw_cycle": {
+        "cycle_type": "T_N",
+        "cycle_value": 0
+    }
+}

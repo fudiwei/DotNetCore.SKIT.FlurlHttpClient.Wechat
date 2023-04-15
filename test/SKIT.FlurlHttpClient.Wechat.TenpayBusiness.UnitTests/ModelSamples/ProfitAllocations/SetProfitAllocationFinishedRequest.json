@@ -1,0 +1,7 @@
+{
+    "ent_id": "stringstri",
+    "payment_id": "string",
+    "out_allocation_id": "string",
+    "desc": "string",
+    "server_notify_url": "string"
+}

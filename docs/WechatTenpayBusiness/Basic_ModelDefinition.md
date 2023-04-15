@@ -104,6 +104,26 @@
 
     -   支付关单：`ClosePayment`
 
+-   智能分账：
+
+    -   分账接收方账户查询：`QueryProfitAllocationReceiverAccounts`
+
+    -   添加分账接收方账户申请：`CreateProfitAllocationReceiverAccountApplication`
+
+    -   查询添加分账接收方账户申请结果（内单号）：`GetProfitAllocationReceiverAccountApplicationByApplicationId`
+
+    -   查询添加分账接收方账户申请结果（外单号）：`GetProfitAllocationReceiverAccountApplicationByOutApplicationId`
+
+    -   分账申请：`CreateProfitAllocation`
+
+    -   解冻剩余资金：`SetProfitAllocationFinished`
+
+    -   分账查询（内单号）：`GetProfitAllocationAmountByPaymentId`
+
+    -   分账查询（外单号）：`GetProfitAllocationAmountByOutPaymentId`
+
+    -   查询订单剩余待分金额：`GetProfitAllocationByOutAllocationId`
+
 -   账单下载：
 
     -   获取资金账单下载链接：`GetBill`

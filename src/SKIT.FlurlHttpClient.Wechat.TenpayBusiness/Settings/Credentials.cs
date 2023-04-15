@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Settings
         /// <summary>
         /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.EnterpriseId"/> 的副本。
         /// </summary>
-        public string EnterpriseId { get; }
+        public string? EnterpriseId { get; }
 
         /// <summary>
         /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.EnterpriseCertificateSerialNumber"/> 的副本。
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Settings
         /// <summary>
         /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.TBEPCertificateSerialNumber"/> 的副本。
         /// </summary>
-        public string? TBEPCertificateSerialNumber { get; }
+        public string TBEPCertificateSerialNumber { get; }
 
         /// <summary>
         /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.TBEPCertificatePublicKey"/> 的副本。
