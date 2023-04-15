@@ -28,25 +28,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /mse-pay/product-applications/out-request-no/{out_request_no} 接口。</para>
-        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E5%85%A5%E9%A9%BB%E7%BB%93%E6%9E%9C-%E5%A4%96%E5%8D%95%E5%8F%B7 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.GetProductApplicationByOutRequestNumberResponse> ExecuteGetProductApplicationByOutRequestNumberAsync(this WechatTenpayBusinessClient client, Models.GetProductApplicationByOutRequestNumberRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "product-applications", "out-request-no", request.OutRequestNumber);
-
-            return await client.SendRequestWithJsonAsync<Models.GetProductApplicationByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
         /// <para>异步调用 [GET] /mse-pay/product-applications/{request_no} 接口。</para>
         /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E5%85%A5%E9%A9%BB%E7%BB%93%E6%9E%9C-%E5%86%85%E5%8D%95%E5%8F%B7 </para>
         /// </summary>
@@ -63,6 +44,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 .CreateRequest(request, HttpMethod.Get, "mse-pay", "product-applications", request.RequestNumber);
 
             return await client.SendRequestWithJsonAsync<Models.GetProductApplicationByRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /mse-pay/product-applications/out-request-no/{out_request_no} 接口。</para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E5%85%A5%E9%A9%BB%E7%BB%93%E6%9E%9C-%E5%A4%96%E5%8D%95%E5%8F%B7 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetProductApplicationByOutRequestNumberResponse> ExecuteGetProductApplicationByOutRequestNumberAsync(this WechatTenpayBusinessClient client, Models.GetProductApplicationByOutRequestNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "mse-pay", "product-applications", "out-request-no", request.OutRequestNumber);
+
+            return await client.SendRequestWithJsonAsync<Models.GetProductApplicationByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

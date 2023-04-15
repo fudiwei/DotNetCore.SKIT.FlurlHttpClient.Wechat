@@ -105,28 +105,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /mse-pay/payments/out-payment-id/{out_payment_id} 接口。</para>
-        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%A4%96%E5%8D%95%E5%8F%B7 </para>
-        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%A4%96%E5%8D%95%E5%8F%B7-2 </para>
-        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%A4%96%E5%8D%95%E5%8F%B7-3 </para>
-        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%A4%96%E5%8D%95%E5%8F%B7-4 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.GetPaymentByOutPaymentIdResponse> ExecuteGetPaymentByOutPaymentIdAsync(this WechatTenpayBusinessClient client, Models.GetPaymentByOutPaymentIdRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "payments", "out-payment-id", request.OutPaymentId);
-
-            return await client.SendRequestWithJsonAsync<Models.GetPaymentByOutPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
         /// <para>异步调用 [GET] /mse-pay/payments/{payment_id} 接口。</para>
         /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%86%85%E5%8D%95%E5%8F%B7 </para>
         /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%86%85%E5%8D%95%E5%8F%B7-2 </para>
@@ -146,6 +124,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 .CreateRequest(request, HttpMethod.Get, "mse-pay", "payments", request.PaymentId);
 
             return await client.SendRequestWithJsonAsync<Models.GetPaymentByPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /mse-pay/payments/out-payment-id/{out_payment_id} 接口。</para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%A4%96%E5%8D%95%E5%8F%B7 </para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%A4%96%E5%8D%95%E5%8F%B7-2 </para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%A4%96%E5%8D%95%E5%8F%B7-3 </para>
+        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%9F%A5%E8%AF%A2%E8%AE%A2%E5%8D%95%E6%98%8E%E7%BB%86-%E5%A4%96%E5%8D%95%E5%8F%B7-4 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPaymentByOutPaymentIdResponse> ExecuteGetPaymentByOutPaymentIdAsync(this WechatTenpayBusinessClient client, Models.GetPaymentByOutPaymentIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "mse-pay", "payments", "out-payment-id", request.OutPaymentId);
+
+            return await client.SendRequestWithJsonAsync<Models.GetPaymentByOutPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
