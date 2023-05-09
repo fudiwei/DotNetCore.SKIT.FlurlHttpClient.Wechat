@@ -1,6 +1,6 @@
-﻿{
+{
     "order_key": {
-        "order_number_type": "WXPAY_TRADE_NUMBER",
+        "order_number_type": 2,
         "transaction_id": "g2frh",
         "mchid": "2qf8n",
         "out_trade_no": "t6htn"

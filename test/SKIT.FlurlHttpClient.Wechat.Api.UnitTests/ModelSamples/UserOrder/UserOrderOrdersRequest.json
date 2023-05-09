@@ -1,6 +1,6 @@
-﻿{
+{
     "order_key": {
-        "order_number_type": "MERCHANT_TRADE_NUMBER",
+        "order_number_type": 1,
         "transaction_id": "0unu3",
         "mchid": "idgsc",
         "out_trade_no": "e8zef"

@@ -1,6 +1,6 @@
-﻿{
+{
     "order_key": {
-        "order_number_type": "MERCHANT_TRADE_NUMBER",
+        "order_number_type": 1,
         "transaction_id": "nep9a",
         "mchid": "8wu3m",
         "out_trade_no": "x5mr9"

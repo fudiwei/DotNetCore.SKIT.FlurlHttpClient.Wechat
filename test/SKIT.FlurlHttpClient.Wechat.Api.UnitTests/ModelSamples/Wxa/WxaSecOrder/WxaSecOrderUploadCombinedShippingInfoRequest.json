@@ -1,0 +1,60 @@
+{
+    "order_key": {
+        "order_number_type": 1,
+        "mchid": "fake-mchid-123",
+        "out_trade_no": "fake-tradeno-20221214190427-0"
+    },
+    "sub_orders": [
+        {
+            "order_key": {
+                "order_number_type": 1,
+                "mchid": "fake-mchid-123",
+                "out_trade_no": "fake-tradeno-20221214190427-01"
+            },
+            "delivery_mode": 2,
+            "logistics_type": 1,
+            "is_all_delivered": true,
+            "shipping_list": [
+                {
+                    "tracking_no": "fake-trackingno-202212141904271",
+                    "express_company": "YD",
+                    "item_desc": "微信气泡狗零钱包*1",
+                    "contact": {
+                        "consignor_contact": "021-**34-12"
+                    }
+                },
+                {
+                    "tracking_no": "fake-trackingno-202212141904272",
+                    "express_company": "DHL",
+                    "item_desc": "微信黄脸布艺胸针*1；微信气泡狗零钱包*1",
+                    "contact": {
+                        "consignor_contact": "021-**34-12"
+                    }
+                }
+            ]
+        },
+        {
+            "order_key": {
+                "order_number_type": 1,
+                "mchid": "fake-mchid-321",
+                "out_trade_no": "fake-tradeno-20221214190427-02"
+            },
+            "delivery_mode": 1,
+            "logistics_type": 1,
+            "shipping_list": [
+                {
+                    "tracking_no": "fake-trackingno-202212141904273",
+                    "express_company": "YTO",
+                    "item_desc": "微信气泡狗双面钥匙扣*1",
+                    "contact": {
+                        "receiver_contact": "+86-123****4321"
+                    }
+                }
+            ]
+        }
+    ],
+    "upload_time": "2022-12-15T13:29:35.120+08:00",
+    "payer": {
+        "openid": "ogqztkPsejM9MQAFfwCQSCi4oNg3"
+    }
+}

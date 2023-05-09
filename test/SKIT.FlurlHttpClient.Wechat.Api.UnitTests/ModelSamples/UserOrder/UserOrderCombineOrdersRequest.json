@@ -1,6 +1,6 @@
-﻿{
+{
     "order_key": {
-        "order_number_type": "MERCHANT_TRADE_NUMBER",
+        "order_number_type": 1,
         "transaction_id": "0unu3",
         "mchid": "idgsc",
         "out_trade_no": "e8zef"
@@ -8,7 +8,7 @@
     "sub_orders": [
         {
             "order_key": {
-                "order_number_type": "MERCHANT_TRADE_NUMBER",
+                "order_number_type": 2,
                 "transaction_id": "zlt49",
                 "mchid": "uqlxl",
                 "out_trade_no": "pzlfp"
@@ -76,7 +76,7 @@
         },
         {
             "order_key": {
-                "order_number_type": "WXPAY_TRADE_NUMBER",
+                "order_number_type": 2,
                 "transaction_id": "27kd6",
                 "mchid": "44anx",
                 "out_trade_no": "pj396"
@@ -140,7 +140,7 @@
         },
         {
             "order_key": {
-                "order_number_type": "WXPAY_TRADE_NUMBER",
+                "order_number_type": 1,
                 "transaction_id": "0jo3k",
                 "mchid": "6rcmv",
                 "out_trade_no": "yld2x"

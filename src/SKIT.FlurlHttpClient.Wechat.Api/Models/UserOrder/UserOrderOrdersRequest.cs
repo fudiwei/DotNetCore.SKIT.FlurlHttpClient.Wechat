@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_number_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_number_type")]
-                public string OrderNumberType { get; set; } = string.Empty;
+                public int OrderNumberType { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付下单商户的商户号。
