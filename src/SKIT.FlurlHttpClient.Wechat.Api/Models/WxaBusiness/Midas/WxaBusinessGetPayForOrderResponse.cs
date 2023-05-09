@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/business/getpayfororder 接口的响应。</para>
@@ -56,7 +56,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("env")]
                 [System.Text.Json.Serialization.JsonPropertyName("env")]
-                public string MidasEnv { get; set; } = default!;
+                public int MidasEnvironment { get; set; }
 
                 /// <summary>
                 /// 获取或设置支付时间戳。

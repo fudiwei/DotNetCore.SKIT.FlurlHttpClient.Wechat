@@ -10,29 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     public static class WechatApiClientExecuteWxaBusinessExtensions
     {
         /// <summary>
-        /// <para>异步调用 [POST] /wxa/business/getpayfororder 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/business.getPayForOrder.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaBusinessGetPayForOrderResponse> ExecuteWxaBusinessGetPayForOrderAsync(this WechatApiClient client, Models.WxaBusinessGetPayForOrderRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            if (request.AppId == null)
-                request.AppId = client.Credentials.AppId;
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "getpayfororder")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetPayForOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /wxa/business/checkencryptedmsg 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/user-info/auth.checkEncryptedData.html </para>
         /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/user-info/auth.checkEncryptedData.html </para>
@@ -73,6 +50,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetUserPhoneNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region Midas
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/getpayfororder 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/business.getPayForOrder.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessGetPayForOrderResponse> ExecuteWxaBusinessGetPayForOrderAsync(this WechatApiClient client, Models.WxaBusinessGetPayForOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.AppId == null)
+                request.AppId = client.Credentials.AppId;
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "getpayfororder")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetPayForOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
 
         #region GameMatch
         /// <summary>
@@ -324,6 +326,68 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("sig_method", request.SignMethod);
 
             return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetUserEncryptKeyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region B2BStore
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/getretailinfo 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/B2b_store_assistant.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessGetRetailInfoResponse> ExecuteWxaBusinessGetRetailInfoAsync(this WechatApiClient client, Models.WxaBusinessGetRetailInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "getretailinfo")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessGetRetailInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/batchcreateretail 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/B2b_store_assistant.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessBatchCreateRetailResponse> ExecuteWxaBusinessBatchCreateRetailAsync(this WechatApiClient client, Models.WxaBusinessBatchCreateRetailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "batchcreateretail")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessBatchCreateRetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/retailnotifybusiness 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/B2b_store_assistant.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessRetailNotifyBusinessResponse> ExecuteWxaBusinessRetailNotifyBusinessAsync(this WechatApiClient client, Models.WxaBusinessRetailNotifyBusinessRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "retailnotifybusiness")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessRetailNotifyBusinessResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
