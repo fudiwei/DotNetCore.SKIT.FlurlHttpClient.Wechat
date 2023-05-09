@@ -33,6 +33,18 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.27.0
+
+    -   **新增**：新增人脸核身相关接口。
+
+    -   **新增**：新增小程序 B2B 门店助手相关接口。
+
+    -   **新增**：新增小程序发货信息管理服务相关接口。
+
+    -   **变更**：随官方标记发送模板消息相关接口或字段为废弃。
+
+    -   **变更**：移除部分已标记为废弃的接口及模型。
+
 -   Release 2.26.1
 
     -   **修复**：修复视频号小店订单、售后单 ID 字段类型定义错误。（_via_ [GitHub #90](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/90)）
