@@ -42,8 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         [SuppressUnmanagedCodeSecurity]
-        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(UTF8Marshaler))]
-        public static extern string GetContentFromSlice([In] IntPtr slice);
+        public static extern IntPtr GetContentFromSlice([In] IntPtr slice);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         [SuppressUnmanagedCodeSecurity]
@@ -59,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         [SuppressUnmanagedCodeSecurity]
-        public static extern string GetOutIndexBuf([In] IntPtr mediaData);
+        public static extern IntPtr GetOutIndexBuf([In] IntPtr mediaData);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         [SuppressUnmanagedCodeSecurity]

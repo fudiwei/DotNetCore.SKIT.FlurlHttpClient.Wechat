@@ -129,10 +129,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                         //    IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetSliceLen(dataPtr) :
                         //    IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetSliceLen(dataPtr) :
                         //    throw new PlatformNotSupportedException();
-                        string dataContent = /* 获取聊天记录数据内容 */
+                        IntPtr dataContentPtr = /* 获取聊天记录数据内容 */
                             IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(dataPtr) :
                             IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(dataPtr) :
                             throw new PlatformNotSupportedException();
+                        string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr);
 
                         response = JsonSerializer.Deserialize<Models.GetChatRecordsResponse>(dataContent);
                         response.RawBytes = Encoding.UTF8.GetBytes(dataContent);
@@ -220,10 +221,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                         //    IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetSliceLen(dataPtr) :
                         //    IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetSliceLen(dataPtr) :
                         //    throw new PlatformNotSupportedException();
-                        string dataContent = /* 获取聊天记录数据内容 */
+                        IntPtr dataContentPtr = /* 获取聊天记录数据内容 */
                             IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(dataPtr) :
                             IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(dataPtr) :
                             throw new PlatformNotSupportedException();
+                        string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr);
 
                         response = JsonSerializer.Deserialize<Models.DecryptChatRecordResponse>(dataContent);
                         response.RawBytes = Encoding.UTF8.GetBytes(dataContent);
@@ -293,7 +295,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                             IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetData(dataPtr) :
                             IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetData(dataPtr) :
                             throw new PlatformNotSupportedException();
-                        string dataNextBufferIndex = /* 获取媒体文件数据内容缓冲标识 */
+                        IntPtr dataNextBufferIndex = /* 获取媒体文件数据内容缓冲标识 */
                             IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetOutIndexBuf(dataPtr) :
                             IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetOutIndexBuf(dataPtr) :
                             throw new PlatformNotSupportedException();
@@ -304,10 +306,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 
                         byte[] bytes = new byte[dataSize];
                         Marshal.Copy(dataContentPtr, bytes, 0, bytes.Length);
-                        Marshal.FreeHGlobal(dataContentPtr);
 
                         response.FileBufferBytes = bytes;
-                        response.NextBufferIndex = dataNextBufferIndex;
+                        response.NextBufferIndex = MarshalerHelper.PtrToStringAnsi(dataNextBufferIndex);
                         response.IsFinished = dataIsFinishFlag != 0;
                     }
 
