@@ -32,8 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
         public static extern void FreeSlice([In] IntPtr slice);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
-        [return: MarshalAs(UnmanagedType.CustomMarshaler, MarshalTypeRef = typeof(UTF8Marshaler))]
-        public static extern string GetContentFromSlice([In] IntPtr slice);
+        public static extern IntPtr GetContentFromSlice([In] IntPtr slice);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         public static extern int GetSliceLen([In] IntPtr slice);
@@ -45,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
         public static extern void FreeMediaData([In] IntPtr mediaData);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
-        public static extern string GetOutIndexBuf([In] IntPtr mediaData);
+        public static extern IntPtr GetOutIndexBuf([In] IntPtr mediaData);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         public static extern IntPtr GetData([In] IntPtr mediaData);

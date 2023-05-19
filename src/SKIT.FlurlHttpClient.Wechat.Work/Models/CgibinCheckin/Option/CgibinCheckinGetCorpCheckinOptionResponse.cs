@@ -332,27 +332,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public Types.Overtime? Overtime { get; set; }
 
                 /// <summary>
-                /// 获取或设置每月最多补卡次数。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("allow_apply_bk_cnt")]
-                [System.Text.Json.Serialization.JsonPropertyName("allow_apply_bk_cnt")]
-                public int LimitApplyRecheckinCount { get; set; }
-
-                /// <summary>
-                /// 获取或设置补卡时限（单位：天）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("allow_apply_bk_day_limit")]
-                [System.Text.Json.Serialization.JsonPropertyName("allow_apply_bk_day_limit")]
-                public int LimitApplyRecheckinDay { get; set; }
-
-                /// <summary>
-                /// 获取或设置补卡时限（单位：天）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("buka_limit_next_month")]
-                [System.Text.Json.Serialization.JsonPropertyName("buka_limit_next_month")]
-                public int LimitApplyRecheckinNextMonth { get; set; }
-
-                /// <summary>
                 /// 获取或设置范围外打卡处理方式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("option_out_range")]
