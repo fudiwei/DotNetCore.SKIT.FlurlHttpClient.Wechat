@@ -863,6 +863,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.17.1
+
+    -   **修复**：修复会话内容存档下载媒体文件时 Windows 环境下存在的 IntPtr Double Free 问题。（_via_ [GitHub #95](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/95)）
+
 -   Release 2.17.0
 
     -   **新增**：新增外部用户临时 ID 转换接口。
