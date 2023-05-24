@@ -863,6 +863,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.18.0
+
+    -   **新增**：新增获客助手相关接口。
+
+    -   **新增**：新增对外收款账户相关接口。
+
+    -   **新增**：新增第三方应用开发多企业新购订单相关接口。
+
+    -   **新增**：随官方更新普通邮件、日历、会议室等相关接口模型。
+
 -   Release 2.17.1
 
     -   **修复**：修复会话内容存档下载媒体文件时 Windows 环境下存在的 IntPtr Double Free 问题。（_via_ [GitHub #95](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/95)）
