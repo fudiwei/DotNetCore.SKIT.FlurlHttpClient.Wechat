@@ -475,89 +475,374 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
-        #region Transfer
+        #region CustomerAcquisition
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/transfer_customer 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92125 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94096 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_acquisition/list_link 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97297 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactTransferCustomerResponse> ExecuteCgibinExternalContactTransferCustomerAsync(this WechatWorkClient client, Models.CgibinExternalContactTransferCustomerRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactCustomerAcquisitionListLinkResponse> ExecuteCgibinExternalContactCustomerAcquisitionListLinkAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerAcquisitionListLinkRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "transfer_customer")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_acquisition", "list_link")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactTransferCustomerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerAcquisitionListLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/transfer_result 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94088 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94097 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_acquisition/get 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97297 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactTransferResultResponse> ExecuteCgibinExternalContactTransferResultAsync(this WechatWorkClient client, Models.CgibinExternalContactTransferResultRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactCustomerAcquisitionGetResponse> ExecuteCgibinExternalContactCustomerAcquisitionGetAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerAcquisitionGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "transfer_result")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_acquisition", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactTransferResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerAcquisitionGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/resigned/transfer_customer 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94081 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94100 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_acquisition/create_link 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97297 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactResignedTransferCustomerResponse> ExecuteCgibinExternalContactResignedTransferCustomerAsync(this WechatWorkClient client, Models.CgibinExternalContactResignedTransferCustomerRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactCustomerAcquisitionCreateLinkResponse> ExecuteCgibinExternalContactCustomerAcquisitionCreateLinkAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerAcquisitionCreateLinkRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "resigned", "transfer_customer")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_acquisition", "create_link")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactResignedTransferCustomerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerAcquisitionCreateLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/resigned/transfer_result 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94082 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94101 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_acquisition/update_link 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97297 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactResignedTransferResultResponse> ExecuteCgibinExternalContactResignedTransferResultAsync(this WechatWorkClient client, Models.CgibinExternalContactResignedTransferResultRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactCustomerAcquisitionUpdateLinkResponse> ExecuteCgibinExternalContactCustomerAcquisitionUpdateLinkAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerAcquisitionUpdateLinkRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "resigned", "transfer_result")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_acquisition", "update_link")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactResignedTransferResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerAcquisitionUpdateLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_acquisition/delete_link 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97297 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCustomerAcquisitionDeleteLinkResponse> ExecuteCgibinExternalContactCustomerAcquisitionDeleteLinkAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerAcquisitionDeleteLinkRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_acquisition", "delete_link")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerAcquisitionDeleteLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_acquisition/customer 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97298 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCustomerAcquisitionCustomerResponse> ExecuteCgibinExternalContactCustomerAcquisitionCustomerAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerAcquisitionCustomerRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_acquisition", "customer")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerAcquisitionCustomerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_acquisition_quota 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97375 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCustomerAcquisitionQuotaResponse> ExecuteCgibinExternalContactCustomerAcquisitionQuotaAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerAcquisitionQuotaRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_acquisition_quota")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerAcquisitionQuotaResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region CustomerStrategy
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/list 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCustomerStrategyListResponse> ExecuteCgibinExternalContactCustomerStrategyListAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/get 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCustomerStrategyGetResponse> ExecuteCgibinExternalContactCustomerStrategyGetAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/get_range 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCustomerStrategyGetRangeResponse> ExecuteCgibinExternalContactCustomerStrategyGetRangeAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyGetRangeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "get_range")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyGetRangeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/create 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCustomerStrategyCreateResponse> ExecuteCgibinExternalContactCustomerStrategyCreateAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyCreateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "create")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/edit 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCustomerStrategyEditResponse> ExecuteCgibinExternalContactCustomerStrategyEditAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyEditRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "edit")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyEditResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/del 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactCustomerStrategyDeleteResponse> ExecuteCgibinExternalContactCustomerStrategyDeleteAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "del")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region InterceptRule
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_intercept_rule 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactAddInterceptRuleResponse> ExecuteCgibinExternalContactAddInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactAddInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "add_intercept_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactAddInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/externalcontact/get_intercept_rule_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetInterceptRuleListResponse> ExecuteCgibinExternalContactGetInterceptRuleListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetInterceptRuleListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "externalcontact", "get_intercept_rule_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetInterceptRuleListResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_intercept_rule 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactGetInterceptRuleResponse> ExecuteCgibinExternalContactGetInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactGetInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_intercept_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/update_intercept_rule 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactUpdateInterceptRuleResponse> ExecuteCgibinExternalContactUpdateInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactUpdateInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "update_intercept_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactUpdateInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/del_intercept_rule 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactDeleteInterceptRuleResponse> ExecuteCgibinExternalContactDeleteInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactDeleteInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "del_intercept_rule")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactDeleteInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -770,175 +1055,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatDeleteJoinWayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
-        #endregion
-
-        #region Moment
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_list 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetMomentListResponse> ExecuteCgibinExternalContactGetMomentListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentListRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_list")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_moment_task 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95094 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95095 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactAddMomentTaskResponse> ExecuteCgibinExternalContactAddMomentTaskAsync(this WechatWorkClient client, Models.CgibinExternalContactAddMomentTaskRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "add_moment_task")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactAddMomentTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/cancel_moment_task 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97612 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactCancelMomentTaskResponse> ExecuteCgibinExternalContactCancelMomentTaskAsync(this WechatWorkClient client, Models.CgibinExternalContactCancelMomentTaskRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "cancel_moment_task")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCancelMomentTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_task 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetMomentTaskResponse> ExecuteCgibinExternalContactGetMomentTaskAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentTaskRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_task")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_task_result 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95094 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95095 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetMomentTaskResultResponse> ExecuteCgibinExternalContactGetMomentTaskResultAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentTaskResultRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_task_result")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentTaskResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_customer_list 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetMomentCustomerListResponse> ExecuteCgibinExternalContactGetMomentCustomerListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentCustomerListRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_customer_list")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentCustomerListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_send_result 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetMomentSendResultResponse> ExecuteCgibinExternalContactGetMomentSendResultAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentSendResultRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_send_result")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentSendResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_comments 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetMomentCommentsResponse> ExecuteCgibinExternalContactGetMomentCommentsAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentCommentsRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_comments")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentCommentsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
         #endregion
 
         #region GroupMessage
@@ -1201,276 +1317,220 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
-        #region Subscribe
+        #region Migration
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/externalcontact/get_subscribe_qr_code 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92320 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92197 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_new_external_userid 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95327 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95435 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetSubscribeQrcodeResponse> ExecuteCgibinExternalContactGetSubscribeQrcodeAsync(this WechatWorkClient client, Models.CgibinExternalContactGetSubscribeQrcodeRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetNewExternalUserIdResponse> ExecuteCgibinExternalContactGetNewExternalUserIdAsync(this WechatWorkClient client, Models.CgibinExternalContactGetNewExternalUserIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "externalcontact", "get_subscribe_qr_code")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_new_external_userid")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetSubscribeQrcodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetNewExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/set_subscribe_mode 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92318 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92290 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/groupchat/get_new_external_userid 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95327 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95435 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactSetSubscribeModeResponse> ExecuteCgibinExternalContactSetSubscribeModeAsync(this WechatWorkClient client, Models.CgibinExternalContactSetSubscribeModeRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGroupChatGetNewExternalUserIdResponse> ExecuteCgibinExternalContactGroupChatGetNewExternalUserIdAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatGetNewExternalUserIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "set_subscribe_mode")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "groupchat", "get_new_external_userid")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactSetSubscribeModeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/externalcontact/get_subscribe_mode 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92318 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92290 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetSubscribeModeResponse> ExecuteCgibinExternalContactGetSubscribeModeAsync(this WechatWorkClient client, Models.CgibinExternalContactGetSubscribeModeRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "externalcontact", "get_subscribe_mode")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetSubscribeModeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatGetNewExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
-        #region CustomerStrategy
+        #region Moment
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/list 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactCustomerStrategyListResponse> ExecuteCgibinExternalContactCustomerStrategyListAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyListRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetMomentListResponse> ExecuteCgibinExternalContactGetMomentListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentListRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "list")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_list")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/get 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_moment_task 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95094 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95095 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactCustomerStrategyGetResponse> ExecuteCgibinExternalContactCustomerStrategyGetAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyGetRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactAddMomentTaskResponse> ExecuteCgibinExternalContactAddMomentTaskAsync(this WechatWorkClient client, Models.CgibinExternalContactAddMomentTaskRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "get")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "add_moment_task")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactAddMomentTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/get_range 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/cancel_moment_task 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97612 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactCustomerStrategyGetRangeResponse> ExecuteCgibinExternalContactCustomerStrategyGetRangeAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyGetRangeRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactCancelMomentTaskResponse> ExecuteCgibinExternalContactCancelMomentTaskAsync(this WechatWorkClient client, Models.CgibinExternalContactCancelMomentTaskRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "get_range")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "cancel_moment_task")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyGetRangeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCancelMomentTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/create 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_task 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactCustomerStrategyCreateResponse> ExecuteCgibinExternalContactCustomerStrategyCreateAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyCreateRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetMomentTaskResponse> ExecuteCgibinExternalContactGetMomentTaskAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentTaskRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "create")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_task")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/edit 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_task_result 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95094 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95095 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactCustomerStrategyEditResponse> ExecuteCgibinExternalContactCustomerStrategyEditAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyEditRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetMomentTaskResultResponse> ExecuteCgibinExternalContactGetMomentTaskResultAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentTaskResultRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "edit")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_task_result")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyEditResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentTaskResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_strategy/del 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94883 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_customer_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactCustomerStrategyDeleteResponse> ExecuteCgibinExternalContactCustomerStrategyDeleteAsync(this WechatWorkClient client, Models.CgibinExternalContactCustomerStrategyDeleteRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetMomentCustomerListResponse> ExecuteCgibinExternalContactGetMomentCustomerListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentCustomerListRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "customer_strategy", "del")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_customer_list")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactCustomerStrategyDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region StrategyTag
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_strategy_tag_list 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94882 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetStrategyTagListResponse> ExecuteCgibinExternalContactGetStrategyTagListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetStrategyTagListRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_strategy_tag_list")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetStrategyTagListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentCustomerListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_strategy_tag 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94882 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_send_result 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactAddStrategyTagResponse> ExecuteCgibinExternalContactAddStrategyTagAsync(this WechatWorkClient client, Models.CgibinExternalContactAddStrategyTagRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetMomentSendResultResponse> ExecuteCgibinExternalContactGetMomentSendResultAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentSendResultRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "add_strategy_tag")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_send_result")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactAddStrategyTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentSendResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/edit_strategy_tag 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94882 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_moment_comments 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93333 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93443 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactEditStrategyTagResponse> ExecuteCgibinExternalContactEditStrategyTagAsync(this WechatWorkClient client, Models.CgibinExternalContactEditStrategyTagRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetMomentCommentsResponse> ExecuteCgibinExternalContactGetMomentCommentsAsync(this WechatWorkClient client, Models.CgibinExternalContactGetMomentCommentsRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "edit_strategy_tag")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_moment_comments")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactEditStrategyTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/del_strategy_tag 接口。</para>
-        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94882 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactDeleteStrategyTagResponse> ExecuteCgibinExternalContactDeleteStrategyTagAsync(this WechatWorkClient client, Models.CgibinExternalContactDeleteStrategyTagRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "del_strategy_tag")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactDeleteStrategyTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetMomentCommentsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
-        #region CustomerStrategy
+        #region MomentStrategy
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/moment_strategy/list 接口。</para>
         /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94890 </para>
@@ -1699,154 +1759,236 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
-        #region InterceptRule
+        #region Subscribe
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_intercept_rule 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
+        /// <para>异步调用 [GET] /cgi-bin/externalcontact/get_subscribe_qr_code 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92320 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92197 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactAddInterceptRuleResponse> ExecuteCgibinExternalContactAddInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactAddInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetSubscribeQrcodeResponse> ExecuteCgibinExternalContactGetSubscribeQrcodeAsync(this WechatWorkClient client, Models.CgibinExternalContactGetSubscribeQrcodeRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "add_intercept_rule")
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "externalcontact", "get_subscribe_qr_code")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactAddInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetSubscribeQrcodeResponse>(flurlReq, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/externalcontact/get_intercept_rule_list 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/set_subscribe_mode 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92318 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92290 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetInterceptRuleListResponse> ExecuteCgibinExternalContactGetInterceptRuleListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetInterceptRuleListRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactSetSubscribeModeResponse> ExecuteCgibinExternalContactSetSubscribeModeAsync(this WechatWorkClient client, Models.CgibinExternalContactSetSubscribeModeRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "externalcontact", "get_intercept_rule_list")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "set_subscribe_mode")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetInterceptRuleListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactSetSubscribeModeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_intercept_rule 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
+        /// <para>异步调用 [GET] /cgi-bin/externalcontact/get_subscribe_mode 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92318 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92290 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetInterceptRuleResponse> ExecuteCgibinExternalContactGetInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactGetInterceptRuleRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetSubscribeModeResponse> ExecuteCgibinExternalContactGetSubscribeModeAsync(this WechatWorkClient client, Models.CgibinExternalContactGetSubscribeModeRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_intercept_rule")
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "externalcontact", "get_subscribe_mode")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/update_intercept_rule 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactUpdateInterceptRuleResponse> ExecuteCgibinExternalContactUpdateInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactUpdateInterceptRuleRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "update_intercept_rule")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactUpdateInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/del_intercept_rule 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95097 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95130 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactDeleteInterceptRuleResponse> ExecuteCgibinExternalContactDeleteInterceptRuleAsync(this WechatWorkClient client, Models.CgibinExternalContactDeleteInterceptRuleRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "del_intercept_rule")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactDeleteInterceptRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetSubscribeModeResponse>(flurlReq, cancellationToken: cancellationToken);
         }
         #endregion
 
-        #region Migration
+        #region StrategyTag
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_new_external_userid 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95327 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95435 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_strategy_tag_list 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94882 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGetNewExternalUserIdResponse> ExecuteCgibinExternalContactGetNewExternalUserIdAsync(this WechatWorkClient client, Models.CgibinExternalContactGetNewExternalUserIdRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactGetStrategyTagListResponse> ExecuteCgibinExternalContactGetStrategyTagListAsync(this WechatWorkClient client, Models.CgibinExternalContactGetStrategyTagListRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_new_external_userid")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "get_strategy_tag_list")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetNewExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGetStrategyTagListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/externalcontact/groupchat/get_new_external_userid 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95327 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95435 </para>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_strategy_tag 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94882 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExternalContactGroupChatGetNewExternalUserIdResponse> ExecuteCgibinExternalContactGroupChatGetNewExternalUserIdAsync(this WechatWorkClient client, Models.CgibinExternalContactGroupChatGetNewExternalUserIdRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExternalContactAddStrategyTagResponse> ExecuteCgibinExternalContactAddStrategyTagAsync(this WechatWorkClient client, Models.CgibinExternalContactAddStrategyTagRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "groupchat", "get_new_external_userid")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "add_strategy_tag")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactGroupChatGetNewExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactAddStrategyTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/edit_strategy_tag 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94882 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactEditStrategyTagResponse> ExecuteCgibinExternalContactEditStrategyTagAsync(this WechatWorkClient client, Models.CgibinExternalContactEditStrategyTagRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "edit_strategy_tag")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactEditStrategyTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/del_strategy_tag 接口。</para>
+        /// <para>REF: https://work.weixin.qq.com/api/doc/90000/90135/94882 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactDeleteStrategyTagResponse> ExecuteCgibinExternalContactDeleteStrategyTagAsync(this WechatWorkClient client, Models.CgibinExternalContactDeleteStrategyTagRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "del_strategy_tag")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactDeleteStrategyTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Transfer
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/transfer_customer 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92125 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94096 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactTransferCustomerResponse> ExecuteCgibinExternalContactTransferCustomerAsync(this WechatWorkClient client, Models.CgibinExternalContactTransferCustomerRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "transfer_customer")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactTransferCustomerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/transfer_result 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94088 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94097 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactTransferResultResponse> ExecuteCgibinExternalContactTransferResultAsync(this WechatWorkClient client, Models.CgibinExternalContactTransferResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "transfer_result")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactTransferResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/resigned/transfer_customer 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94081 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94100 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactResignedTransferCustomerResponse> ExecuteCgibinExternalContactResignedTransferCustomerAsync(this WechatWorkClient client, Models.CgibinExternalContactResignedTransferCustomerRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "resigned", "transfer_customer")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactResignedTransferCustomerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/resigned/transfer_result 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94082 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94101 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactResignedTransferResultResponse> ExecuteCgibinExternalContactResignedTransferResultAsync(this WechatWorkClient client, Models.CgibinExternalContactResignedTransferResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "resigned", "transfer_result")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactResignedTransferResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
