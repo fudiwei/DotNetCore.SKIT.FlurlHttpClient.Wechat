@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/calendar/get 接口的响应。</para>
@@ -21,13 +21,11 @@
                         public string UserId { get; set; } = default!;
 
                         /// <summary>
-                        /// 获取或设置共享者对日历是否只读权限。
+                        /// 获取或设置日历通知范围成员权限。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("readonly")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
-                        public bool IsReadonly { get; set; }
+                        [Newtonsoft.Json.JsonProperty("permission")]
+                        [System.Text.Json.Serialization.JsonPropertyName("permission")]
+                        public int Permission { get; set; }
                     }
 
                     public class PublicRange

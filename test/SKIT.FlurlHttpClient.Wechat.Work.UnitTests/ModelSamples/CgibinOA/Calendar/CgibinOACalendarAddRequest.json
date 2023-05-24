@@ -1,4 +1,4 @@
-﻿{
+{
     "calendar": {
         "admins": ["admin1", "admin2"],
         "set_as_default": 1,
@@ -7,11 +7,12 @@
         "description": "test_describe",
         "shares": [
             {
-                "userid": "userid2"
+                "userid": "userid2",
+                "permission": 1
             },
             {
-                "userid": "userid3",
-                "readonly": 1
+                "userid": "userid1",
+                "permission": 3
             }
         ],
         "is_public": 1,

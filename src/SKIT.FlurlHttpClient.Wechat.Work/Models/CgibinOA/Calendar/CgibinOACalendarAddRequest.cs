@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -23,13 +23,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public string UserId { get; set; } = string.Empty;
 
                         /// <summary>
-                        /// 获取或设置共享者对日历是否只读权限。
+                        /// 获取或设置日历通知范围成员权限。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("readonly")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
-                        [System.Text.Json.Serialization.JsonPropertyName("readonly")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
-                        public bool? IsReadonly { get; set; }
+                        [Newtonsoft.Json.JsonProperty("permission")]
+                        [System.Text.Json.Serialization.JsonPropertyName("permission")]
+                        public int? Permission { get; set; }
                     }
 
                     public class PublicRange

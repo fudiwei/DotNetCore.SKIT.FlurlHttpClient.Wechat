@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "calendar_list": [
@@ -10,11 +10,12 @@
             "description": "test_describe_1",
             "shares": [
                 {
-                    "userid": "userid2"
+                    "userid": "userid2",
+                    "permission": 1
                 },
                 {
                     "userid": "userid1",
-                    "readonly": 1
+                    "permission": 3
                 }
             ],
             "is_public": 1,
