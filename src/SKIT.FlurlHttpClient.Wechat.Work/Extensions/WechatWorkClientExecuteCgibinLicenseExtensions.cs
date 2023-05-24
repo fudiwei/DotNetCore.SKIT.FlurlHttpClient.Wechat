@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -9,128 +9,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     public static class WechatWorkClientExecuteCgibinLicenseExtensions
     {
-        #region Order
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/license/create_new_order 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95644 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinLicenseCreateNewOrderResponse> ExecuteCgibinLicenseCreateNewOrderAsync(this WechatWorkClient client, Models.CgibinLicenseCreateNewOrderRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "create_new_order")
-                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateNewOrderResponse>(flurlReq, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/license/create_renew_order_job 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95646 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinLicenseCreateRenewOrderJobResponse> ExecuteCgibinLicenseCreateRenewOrderJobAsync(this WechatWorkClient client, Models.CgibinLicenseCreateRenewOrderJobRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "create_renew_order_job")
-                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateRenewOrderJobResponse>(flurlReq, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/license/list_order 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95647 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinLicenseListOrderResponse> ExecuteCgibinLicenseListOrderAsync(this WechatWorkClient client, Models.CgibinLicenseListOrderRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "list_order")
-                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListOrderResponse>(flurlReq, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/license/get_order 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95648 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinLicenseGetOrderResponse> ExecuteCgibinLicenseGetOrderAsync(this WechatWorkClient client, Models.CgibinLicenseGetOrderRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_order")
-                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetOrderResponse>(flurlReq, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/license/list_order_account 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95649 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinLicenseListOrderAccountResponse> ExecuteCgibinLicenseListOrderAccountAsync(this WechatWorkClient client, Models.CgibinLicenseListOrderAccountRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "list_order_account")
-                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListOrderAccountResponse>(flurlReq, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/license/cancel_order 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96106 </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.CgibinLicenseCancelOrderResponse> ExecuteCgibinLicenseCancelOrderAsync(this WechatWorkClient client, Models.CgibinLicenseCancelOrderRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "cancel_order")
-                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCancelOrderResponse>(flurlReq, cancellationToken: cancellationToken);
-        }
-        #endregion
-
         #region Account
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/license/active_account 接口。</para>
@@ -318,7 +196,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
-        #region App
+        #region AutoActive
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/license/set_auto_active_status 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/95873 </para>
@@ -357,6 +235,210 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetAutoActiveStatusResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Order
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/create_new_order 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95644 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseCreateNewOrderResponse> ExecuteCgibinLicenseCreateNewOrderAsync(this WechatWorkClient client, Models.CgibinLicenseCreateNewOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "create_new_order")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateNewOrderResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/create_renew_order_job 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95646 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseCreateRenewOrderJobResponse> ExecuteCgibinLicenseCreateRenewOrderJobAsync(this WechatWorkClient client, Models.CgibinLicenseCreateRenewOrderJobRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "create_renew_order_job")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateRenewOrderJobResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/list_order 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95647 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseListOrderResponse> ExecuteCgibinLicenseListOrderAsync(this WechatWorkClient client, Models.CgibinLicenseListOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "list_order")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListOrderResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/get_order 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95648 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseGetOrderResponse> ExecuteCgibinLicenseGetOrderAsync(this WechatWorkClient client, Models.CgibinLicenseGetOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_order")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetOrderResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/list_order_account 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95649 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseListOrderAccountResponse> ExecuteCgibinLicenseListOrderAccountAsync(this WechatWorkClient client, Models.CgibinLicenseListOrderAccountRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "list_order_account")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListOrderAccountResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/cancel_order 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96106 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseCancelOrderResponse> ExecuteCgibinLicenseCancelOrderAsync(this WechatWorkClient client, Models.CgibinLicenseCancelOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "cancel_order")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCancelOrderResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region OrderJob
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/create_new_order_job 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98892 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseCreateNewOrderJobResponse> ExecuteCgibinLicenseCreateNewOrderJobAsync(this WechatWorkClient client, Models.CgibinLicenseCreateNewOrderJobRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "create_new_order_job")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateNewOrderJobResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/submit_new_order_job 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98892 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseSubmitNewOrderJobResponse> ExecuteCgibinLicenseSubmitNewOrderJobAsync(this WechatWorkClient client, Models.CgibinLicenseSubmitNewOrderJobRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "submit_new_order_job")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseSubmitNewOrderJobResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/new_order_job_result 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98892 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseNewOrderJobResultResponse> ExecuteCgibinLicenseNewOrderJobResultAsync(this WechatWorkClient client, Models.CgibinLicenseNewOrderJobResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "new_order_job_result")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseNewOrderJobResultResponse>(flurlReq, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/get_union_order 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98893 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseGetUnionOrderResponse> ExecuteCgibinLicenseGetUnionOrderAsync(this WechatWorkClient client, Models.CgibinLicenseGetUnionOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_union_order")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetUnionOrderResponse>(flurlReq, cancellationToken: cancellationToken);
         }
         #endregion
 

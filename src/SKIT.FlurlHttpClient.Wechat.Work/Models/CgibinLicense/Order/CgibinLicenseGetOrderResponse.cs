@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/license/get_order 接口的响应。</para>
@@ -52,6 +52,7 @@
                         public long? NewExpireTimestamp { get; set; }
                     }
                 }
+
                 /// <summary>
                 /// 获取或设置订单状态。
                 /// </summary>
