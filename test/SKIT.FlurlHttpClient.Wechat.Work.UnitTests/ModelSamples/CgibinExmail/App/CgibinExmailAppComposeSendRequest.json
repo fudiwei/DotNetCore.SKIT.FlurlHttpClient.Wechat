@@ -1,14 +1,14 @@
-﻿{
+{
     "to": {
-        "emails": ["word@bgjkcsqy.wecom.work", "jyan1@tiyantest.wang"],
-        "userids": ["william"]
+        "emails": [ "word@bgjkcsqy.wecom.work", "jyan1@tiyantest.wang" ],
+        "userids": [ "william" ]
     },
     "cc": {
         "emails": [],
-        "userids": ["panyy"]
+        "userids": [ "panyy" ]
     },
     "bcc": {
-        "emails": ["zoro@bgjkcsqy.wecom.work"],
+        "emails": [ "zoro@bgjkcsqy.wecom.work" ],
         "userids": []
     },
     "subject": "这是标题",
@@ -32,7 +32,7 @@
             "timezone": 8,
             "repeat_interval": 1,
             "repeat_type": 1,
-            "repeat_day_of_week": [4, 5],
+            "repeat_day_of_week": [ 4, 5 ],
             "repeat_day_of_month": [],
             "repeat_week_of_month": [],
             "repeat_month_of_year": [],
@@ -52,10 +52,11 @@
             "water_mark_type": 0
         },
         "hosts": {
-            "userids": ["zoro"]
+            "userids": [ "zoro" ]
         },
         "meeting_admins": {
-            "userids": ["zoro"]
+            "userids": [ "zoro" ]
         }
-    }
+    },
+    "enable_id_trans": 1
 }

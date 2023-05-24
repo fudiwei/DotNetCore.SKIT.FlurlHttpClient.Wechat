@@ -291,5 +291,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("meeting")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting")]
         public Types.Meeting? Meeting { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否开启 ID 转译。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("enable_id_trans")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("enable_id_trans")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        public bool? EnableIdTransform { get; set; }
     }
 }
