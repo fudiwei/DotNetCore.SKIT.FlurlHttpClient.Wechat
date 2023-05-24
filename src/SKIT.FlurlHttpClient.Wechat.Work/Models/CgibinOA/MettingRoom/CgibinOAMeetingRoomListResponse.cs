@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/meetingroom/list 接口的响应。</para>
@@ -13,6 +13,23 @@
                 {
                     public class Coordinate : CgibinOAMeetingRoomAddRequest.Types.Coordinate
                     {
+                    }
+
+                    public class Range
+                    {
+                        /// <summary>
+                        /// 获取或设置使用范围的成员 UserId 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_list")]
+                        public string[]? UserIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置使用范围的部门 ID 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("department_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("department_list")]
+                        public long[]? DepartmentId { get; set; }
                     }
                 }
 
@@ -64,6 +81,13 @@
                 [Newtonsoft.Json.JsonProperty("coordinate")]
                 [System.Text.Json.Serialization.JsonPropertyName("coordinate")]
                 public Types.Coordinate? Coordinate { get; set; }
+
+                /// <summary>
+                /// 获取或设置使用范围信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("range")]
+                [System.Text.Json.Serialization.JsonPropertyName("range")]
+                public Types.Range? Range { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议室支持的设备 ID 列表。

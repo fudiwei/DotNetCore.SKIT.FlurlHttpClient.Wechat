@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -10,6 +10,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public static class Types
         {
             public class Coordinate : CgibinOAMeetingRoomAddRequest.Types.Coordinate
+            {
+            }
+
+            public class Range : CgibinOAMeetingRoomAddRequest.Types.Range
             {
             }
         }
@@ -62,6 +66,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("coordinate")]
         [System.Text.Json.Serialization.JsonPropertyName("coordinate")]
         public Types.Coordinate? Coordinate { get; set; }
+
+        /// <summary>
+        /// 获取或设置使用范围信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("range")]
+        [System.Text.Json.Serialization.JsonPropertyName("range")]
+        public Types.Range? Range { get; set; }
 
         /// <summary>
         /// 获取或设置会议室支持的设备 ID 列表。

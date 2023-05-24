@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -24,6 +24,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("latitude")]
                 [System.Text.Json.Serialization.JsonPropertyName("latitude")]
                 public double Latitude { get; set; }
+            }
+
+            public class Range
+            {
+                /// <summary>
+                /// 获取或设置使用范围的成员 UserId 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("user_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("user_list")]
+                public IList<string>? UserIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置使用范围的部门 ID 列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("department_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("department_list")]
+                public IList<long>? DepartmentId { get; set; }
             }
         }
 
@@ -68,6 +85,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("coordinate")]
         [System.Text.Json.Serialization.JsonPropertyName("coordinate")]
         public Types.Coordinate? Coordinate { get; set; }
+
+        /// <summary>
+        /// 获取或设置使用范围信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("range")]
+        [System.Text.Json.Serialization.JsonPropertyName("range")]
+        public Types.Range? Range { get; set; }
 
         /// <summary>
         /// 获取或设置会议室支持的设备 ID 列表。
