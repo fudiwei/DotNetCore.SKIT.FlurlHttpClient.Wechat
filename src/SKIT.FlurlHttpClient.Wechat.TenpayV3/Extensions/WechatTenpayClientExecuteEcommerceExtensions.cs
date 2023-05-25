@@ -8,6 +8,75 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     public static class WechatTenpayClientExecuteEcommerceExtensions
     {
+        #region Account
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/account/cancel-applications 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/create-cancel-application.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateEcommerceAccountCancelApplicationResponse> ExecuteCreateEcommerceAccountCancelApplicationAsync(this WechatTenpayClient client, Models.CreateEcommerceAccountCancelApplicationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "account", "cancel-applications");
+
+            return await client.SendRequestWithJsonAsync<Models.CreateEcommerceAccountCancelApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /ecommerce/account/cancel-applications/out-apply-no/{out_apply_no} 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/get-cancel-application.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetEcommerceAccountCancelApplicationByOutApplyNumberResponse> ExecuteGetEcommerceAccountCancelApplicationByOutApplyNumberAsync(this WechatTenpayClient client, Models.GetEcommerceAccountCancelApplicationByOutApplyNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "ecommerce", "account", "cancel-applications", "out-apply-no", request.OutApplyNumber);
+
+            return await client.SendRequestWithJsonAsync<Models.GetEcommerceAccountCancelApplicationByOutApplyNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/account/cancel-applications/media 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/media/upload-media.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UploadEcommerceAccountCancelApplicationMediaResponse> ExecuteUploadEcommerceAccountCancelApplicationMediaAsync(this WechatTenpayClient client, Models.UploadEcommerceAccountCancelApplicationMediaRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.FileName == null)
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
+
+            if (request.FileHash == null)
+                request.FileHash = BitConverter.ToString(Utilities.SHA256Utility.Hash(request.FileBytes)).Replace("-", string.Empty).ToLower();
+
+            if (request.FileContentType == null)
+                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "ecommerce", "account", "cancel-applications", "media");
+
+            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
+            return await client.SendRequestAsync<Models.UploadEcommerceAccountCancelApplicationMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Applyments
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/applyments/ 接口。</para>
