@@ -483,6 +483,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.3.1
+
+    -   **新增**：修复 Windows 环境下潜在的证书加载失败问题。（_via_ [GitHub #93](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/93)）
+
 -   Release 2.3.0
 
     -   **新增**：新增反序列化微信支付回调通知事件模型的扩展方法。
