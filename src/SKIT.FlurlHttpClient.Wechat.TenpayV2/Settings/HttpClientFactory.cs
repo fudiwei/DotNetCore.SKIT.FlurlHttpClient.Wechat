@@ -1,5 +1,7 @@
-﻿using System.Net.Http;
+using System;
+using System.Net.Http;
 using System.Net.Security;
+using System.Runtime.InteropServices;
 using System.Security.Cryptography.X509Certificates;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
@@ -27,7 +29,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
 
             if (_certBytes != null)
             {
-                X509Certificate x509 = (_certPassword == null) ? new X509Certificate2(_certBytes) : new X509Certificate2(_certBytes, _certPassword);
+                X509Certificate x509;
+
+#if NET471_OR_GREATER || NET5_0_OR_GREATER || NETSTANDARD2_0_OR_GREATER
+                if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+#else
+                if (Environment.OSVersion.Platform == PlatformID.Win32NT)
+#endif
+                {
+                    x509 = (_certPassword == null)
+                        ? new X509Certificate2(_certBytes)
+                        : new X509Certificate2(_certBytes, _certPassword, X509KeyStorageFlags.MachineKeySet);
+                }
+                else
+                {
+                    x509 = (_certPassword == null)
+                        ? new X509Certificate2(_certBytes)
+                        : new X509Certificate2(_certBytes, _certPassword);
+                }
+
                 handler.ClientCertificates.Add(x509);
             }
 
