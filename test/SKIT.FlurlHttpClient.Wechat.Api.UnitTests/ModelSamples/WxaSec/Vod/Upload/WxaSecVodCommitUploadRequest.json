@@ -1,0 +1,17 @@
+{
+    "upload_id": "abcdefg12345",
+    "media_part_infos": [
+        {
+            "part_number": 1,
+            "etag": "\"d899fbd1e06109ea2e4550f5751c88d6\""
+        },
+        {
+            "part_number": 2,
+            "etag": "\"jfb9892jfnhda2e4550f5bvhju9392af\""
+        },
+        {
+            "part_number": 3,
+            "etag": "\"bifh9u92wjefvjhytvn9u2898ef9uhea\""
+        }
+    ]
+}
