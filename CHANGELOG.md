@@ -33,6 +33,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.28.0
+
+    -   **新增**：新增小程序短剧媒资管理相关接口。
+
+    -   **修复**：修复微信卡券更新子商户接口缺失问题。（_via_ [Gitee #I78KMU](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I78KMU)）
+
 -   Release 2.27.0
 
     -   **新增**：新增人脸核身相关接口。
