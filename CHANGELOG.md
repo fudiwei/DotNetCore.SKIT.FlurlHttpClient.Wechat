@@ -33,6 +33,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.29.0
+
+    -   **新增**：新增获取稳定版接口调用凭据接口。（_via_ [GitHub #99](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/99)）
+
 -   Release 2.28.0
 
     -   **新增**：新增小程序短剧媒资管理相关接口。
