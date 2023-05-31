@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /cgi-bin/stable_token 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/stable_token 接口的请求。</para>
     /// </summary>
     public class CgibinStableTokenRequest : WechatApiRequest, IInferable<CgibinTokenRequest, CgibinTokenResponse>
     {

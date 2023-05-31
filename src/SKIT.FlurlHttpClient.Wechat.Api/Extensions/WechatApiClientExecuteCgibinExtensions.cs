@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/stable_token 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/stable_token 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/getStableAccessToken.html </para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/mp-access-token/getStableAccessToken.html </para>
         /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/access-token/auth.getStableAccessToken.html </para>

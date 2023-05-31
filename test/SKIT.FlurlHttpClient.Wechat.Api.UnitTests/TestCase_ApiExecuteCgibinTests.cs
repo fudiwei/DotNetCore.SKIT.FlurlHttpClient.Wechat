@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             Assert.NotNull(response.AccessToken);
         }
 
-        [Fact(DisplayName = "测试用例：调用 API [GET] /cgi-bin/stable_token")]
+        [Fact(DisplayName = "测试用例：调用 API [POST] /cgi-bin/stable_token")]
         public async Task TestExecuteCgibinStableToken()
         {
             var request = new Models.CgibinStableTokenRequest();
