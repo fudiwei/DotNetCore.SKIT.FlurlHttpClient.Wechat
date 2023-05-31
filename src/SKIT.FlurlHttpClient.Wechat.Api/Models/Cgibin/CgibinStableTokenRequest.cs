@@ -1,6 +1,3 @@
-using Newtonsoft.Json;
-using System.Text.Json.Serialization;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -9,31 +6,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class CgibinStableTokenRequest : WechatApiRequest, IInferable<CgibinTokenRequest, CgibinTokenResponse>
     {
         /// <summary>
-        /// 使用默认值即可，无需修改
+        /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.AppId"/> 参数。
         /// </summary>
-        [JsonProperty("grant_type")]
-        [JsonPropertyName("grant_type")]
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信 AppSecret。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.AppSecret"/> 参数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("secret")]
+        [System.Text.Json.Serialization.JsonPropertyName("secret")]
+        public string? AppSecret { get; set; }
+        
+        /// <summary>
+        /// <i>（使用默认值即可，无需修改）</i>
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("grant_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("grant_type")]
         public string GrantType { get; set; } = "client_credential";
 
         /// <summary>
-        /// 账号唯一凭证，即 AppID
+        /// 获取或设置是否强制刷新。
         /// </summary>
-        [JsonProperty("appid")]
-        [JsonPropertyName("appid")]
-        public string AppId { get; set; } = default!;
-
-        /// <summary>
-        /// 帐号唯一凭证密钥，即 AppSecret
-        /// </summary>
-        [JsonProperty("secret")]
-        [JsonPropertyName("secret")]
-        public string AppSecret { get; set; } = default!;
-
-        /// <summary>
-        /// 是否强制刷新
-        /// </summary>
-        [JsonProperty("force_refresh")]
-        [JsonPropertyName("force_refresh")]
+        [Newtonsoft.Json.JsonProperty("force_refresh")]
+        [System.Text.Json.Serialization.JsonPropertyName("force_refresh")]
         public bool ForceRefresh { get; set; }
     }
 }
