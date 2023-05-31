@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
@@ -10,6 +10,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
         {
             var request = new Models.CgibinTokenRequest();
             var response = await TestClients.Instance.ExecuteCgibinTokenAsync(request);
+
+            Assert.NotNull(response.AccessToken);
+        }
+
+        [Fact(DisplayName = "测试用例：调用 API [GET] /cgi-bin/stable_token")]
+        public async Task TestExecuteCgibinStableToken()
+        {
+            var request = new Models.CgibinStableTokenRequest();
+            var response = await TestClients.Instance.ExecuteCgibinStableTokenAsync(request);
 
             Assert.NotNull(response.AccessToken);
         }

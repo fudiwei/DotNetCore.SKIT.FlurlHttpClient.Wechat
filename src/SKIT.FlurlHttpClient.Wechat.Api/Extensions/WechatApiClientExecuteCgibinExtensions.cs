@@ -36,6 +36,37 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/stable_token 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/getStableAccessToken.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/mp-access-token/getStableAccessToken.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/access-token/auth.getStableAccessToken.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinStableTokenResponse> ExecuteCgibinStableTokenAsync(this WechatApiClient client, Models.CgibinStableTokenRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (string.IsNullOrWhiteSpace(request.AppId))
+            {
+                request.AppId = client.Credentials.AppId;
+            }
+
+            if (string.IsNullOrWhiteSpace(request.AppSecret))
+            {
+                request.AppSecret = client.Credentials.AppSecret;
+            }
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "stable_token");
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinStableTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/ticket/getticket 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/OA_Web_Apps/JS-SDK.html#54 </para>
         /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/E_Invoice/Vendor_API_List.html#1 </para>
