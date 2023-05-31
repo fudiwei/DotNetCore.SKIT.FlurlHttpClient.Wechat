@@ -50,15 +50,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (string.IsNullOrWhiteSpace(request.AppId))
-            {
+            if (request.AppId == null)
                 request.AppId = client.Credentials.AppId;
-            }
 
-            if (string.IsNullOrWhiteSpace(request.AppSecret))
-            {
+            if (request.AppSecret == null)
                 request.AppSecret = client.Credentials.AppSecret;
-            }
 
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "stable_token");
