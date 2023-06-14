@@ -496,6 +496,88 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
+        #region MRA
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/mra/query_status 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98786 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingMRAQueryStatusResponse> ExecuteCgibinMeetingMRAQueryStatusAsync(this WechatWorkClient client, Models.CgibinMeetingMRAQueryStatusRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "mra", "query_status")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingMRAQueryStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/mra/set_default_layout 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98787 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingMRASetDefaultLayoutResponse> ExecuteCgibinMeetingMRASetDefaultLayoutAsync(this WechatWorkClient client, Models.CgibinMeetingMRASetDefaultLayoutRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "mra", "set_default_layout")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingMRASetDefaultLayoutResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/mra/set_raise_hand 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98788 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingMRASetRaiseHandResponse> ExecuteCgibinMeetingMRASetRaiseHandAsync(this WechatWorkClient client, Models.CgibinMeetingMRASetRaiseHandRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "mra", "set_raise_hand")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingMRASetRaiseHandResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/mra/hangup 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98789 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingMRAHangupResponse> ExecuteCgibinMeetingMRAHangupAsync(this WechatWorkClient client, Models.CgibinMeetingMRAHangupRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "mra", "hangup")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingMRAHangupResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Phone
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/phone/callout 接口。</para>
