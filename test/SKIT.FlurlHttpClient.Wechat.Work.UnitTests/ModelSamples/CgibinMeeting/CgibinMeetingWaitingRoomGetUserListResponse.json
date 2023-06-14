@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": true,
+    "next_cursor": "NGIENIG",
+    "user_list": [
+        {
+            "userid": "USERID",
+            "tmp_openid": "tmpid",
+            "instance_id": 1,
+            "join_time": 13525325,
+            "quit_time": 12491059320
+        }
+    ]
+}

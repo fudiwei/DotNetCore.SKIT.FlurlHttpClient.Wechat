@@ -113,5 +113,245 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMeetingGetUserMeetingIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/get_invitees 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98160 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingGetInviteesResponse> ExecuteCgibinMeetingGetInviteesAsync(this WechatWorkClient client, Models.CgibinMeetingGetInviteesRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "get_invitees")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingGetInviteesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/set_invitees 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98162 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingSetInviteesResponse> ExecuteCgibinMeetingSetInviteesAsync(this WechatWorkClient client, Models.CgibinMeetingSetInviteesRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "set_invitees")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingSetInviteesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/create_customer_short_url 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98818 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingCreateCustomerShortUrlResponse> ExecuteCgibinMeetingCreateCustomerShortUrlAsync(this WechatWorkClient client, Models.CgibinMeetingCreateCustomerShortUrlRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "create_customer_short_url")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingCreateCustomerShortUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/get_customer_short_url 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98819 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingGetCustomerShortUrlResponse> ExecuteCgibinMeetingGetCustomerShortUrlAsync(this WechatWorkClient client, Models.CgibinMeetingGetCustomerShortUrlRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "get_customer_short_url")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingGetCustomerShortUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/get_realtime_attendee_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98157 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingGetRealtimeAttendeeListResponse> ExecuteCgibinMeetingGetRealtimeAttendeeListAsync(this WechatWorkClient client, Models.CgibinMeetingGetRealtimeAttendeeListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "get_realtime_attendee_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingGetRealtimeAttendeeListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/get_attendee_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98156 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingGetAttendeeListResponse> ExecuteCgibinMeetingGetAttendeeListAsync(this WechatWorkClient client, Models.CgibinMeetingGetAttendeeListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "get_attendee_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingGetAttendeeListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/waitingroom/get_current_user_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98163 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingWaitingRoomGetCurrentUserListResponse> ExecuteCgibinMeetingWaitingRoomGetCurrentUserListAsync(this WechatWorkClient client, Models.CgibinMeetingWaitingRoomGetCurrentUserListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "waitingroom", "get_current_user_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWaitingRoomGetCurrentUserListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/waitingroom/get_user_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98164 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingWaitingRoomGetUserListResponse> ExecuteCgibinMeetingWaitingRoomGetUserListAsync(this WechatWorkClient client, Models.CgibinMeetingWaitingRoomGetUserListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "waitingroom", "get_user_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWaitingRoomGetUserListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/check_device_in_meeting 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98164 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingCheckDeviceInMeetingResponse> ExecuteCgibinMeetingCheckDeviceInMeetingAsync(this WechatWorkClient client, Models.CgibinMeetingCheckDeviceInMeetingRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "check_device_in_meeting")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingCheckDeviceInMeetingResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/get_guests 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99039 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingGetGuestsResponse> ExecuteCgibinMeetingGetGuestsAsync(this WechatWorkClient client, Models.CgibinMeetingGetGuestsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "get_guests")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingGetGuestsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/set_guests 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99040 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingSetGuestsResponse> ExecuteCgibinMeetingSetGuestsAsync(this WechatWorkClient client, Models.CgibinMeetingSetGuestsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "set_guests")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingSetGuestsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/get_quality 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98821 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingGetQualityResponse> ExecuteCgibinMeetingGetQualityAsync(this WechatWorkClient client, Models.CgibinMeetingGetQualityRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "get_quality")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingGetQualityResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }

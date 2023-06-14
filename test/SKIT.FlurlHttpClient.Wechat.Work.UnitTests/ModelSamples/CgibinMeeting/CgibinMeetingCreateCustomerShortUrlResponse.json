@@ -1,0 +1,8 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "meeting_short_url_customer_data": {
+        "customer_data": "CUSTOMERDATA",
+        "meeting_short_url": "URL"
+    }
+}
