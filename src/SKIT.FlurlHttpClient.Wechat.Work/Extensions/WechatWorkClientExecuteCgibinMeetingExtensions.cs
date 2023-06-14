@@ -11,8 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/create 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93627 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93706 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98148 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -32,8 +32,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/update 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93631 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93710 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98154 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -53,8 +53,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/cancel 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93630 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93709 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98153 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -74,8 +74,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/get_info 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93629 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93708 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98149 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -95,8 +95,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/get_user_meetingid 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93628 </para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/93707 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98714 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

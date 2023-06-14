@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/meeting/get_info 接口的请求。</para>
@@ -10,6 +10,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        public string MeetingId { get; set; } = string.Empty;
+        public string? MeetingId { get; set; }
+
+        /// <summary>
+        /// 获取或设置入会码。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("meeting_code")]
+        [System.Text.Json.Serialization.JsonPropertyName("meeting_code")]
+        public string? MeetingCode { get; set; }
     }
 }

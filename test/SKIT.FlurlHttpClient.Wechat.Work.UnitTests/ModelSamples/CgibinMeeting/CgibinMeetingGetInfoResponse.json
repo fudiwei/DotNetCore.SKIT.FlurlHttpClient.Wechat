@@ -9,6 +9,7 @@
     "location": "广州媒体港",
     "main_department": 1,
     "status": 1,
+    "meeting_type": 1,
     "attendees": {
         "member": [
             {
@@ -49,14 +50,30 @@
     },
     "settings": {
         "remind_scope": 4,
+        "need_password": true,
         "password": "1234",
         "enable_waiting_room": false,
         "allow_enter_before_host": true,
         "enable_enter_mute": 1,
+        "allow_unmute_self": true,
         "allow_external_user": false,
         "enable_screen_watermark": false,
+        "watermark_type": 1,
+        "auto_record_type": "none",
+        "participant_join_auto_record": false,
+        "enable_host_pause_auto_record": false,
+        "enable_doc_upload_permission": true,
+        "enable_enroll": true,
+        "enable_host_key": true,
+        "host_key": "meetinghostkey",
         "hosts": {
             "userid": [ "lisi", "wangwu" ]
+        },
+        "current_hosts": {
+            "userid": [ "wangwu", "lisi" ]
+        },
+        "co_hosts": {
+            "userid": [ "zhangsan", "lisi" ]
         },
         "ring_users": {
             "userid": [ "zhangsan", "lis" ]
@@ -66,10 +83,34 @@
     "reminders": {
         "is_repeat": 1,
         "repeat_type": 0,
+        "repeat_until_type": 1,
+        "repeat_until_count": 10,
         "repeat_until": 1606976813,
         "repeat_interval": 1,
-        "remind_before": [ 5, 10 ]
+        "is_custom_repeat": 1,
+        "repeat_day_of_week": [ 3, 7 ],
+        "repeat_day_of_month": [ 10, 21 ],
+        "remind_before": [ 0, 900 ]
     },
     "meeting_code": "123456789",
-    "meeting_link": "https://wecomm.com/znigeot"
+    "meeting_link": "https://wecomm.com/znigeot",
+    "has_vote": true,
+    "has_more_sub_meeting": 1,
+    "remain_sub_meetings": 2,
+    "current_sub_meetingid": "cursubmeetingid",
+    "sub_meetings": [
+        {
+            "sub_meetingid": "sub_meetingid",
+            "status": 0,
+            "start_time": 16888888888,
+            "end_time": 179888888888
+        }
+    ],
+    "guests": [
+        {
+            "area": "86",
+            "phone_number": "135123454321",
+            "guest_name": "lisi"
+        }
+    ]
 }

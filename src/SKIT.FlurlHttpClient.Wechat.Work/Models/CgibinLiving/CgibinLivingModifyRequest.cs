@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+using System.Collections.Generic;
+
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/living/modify 接口的请求。</para>
@@ -7,8 +9,21 @@
     {
         public static class Types
         {
-            public class Attendee : CgibinMeetingCreateRequest.Types.Attendee
+            public class Attendee
             {
+                /// <summary>
+                /// 获取或设置参与者成员账号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                public IList<string>? UserIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置设备序列号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("device_sn")]
+                [System.Text.Json.Serialization.JsonPropertyName("device_sn")]
+                public IList<string>? DeviceSerialNumberList { get; set; }
             }
         }
 

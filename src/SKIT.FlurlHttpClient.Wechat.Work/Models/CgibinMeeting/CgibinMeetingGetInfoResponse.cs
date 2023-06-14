@@ -141,6 +141,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public Types.Device[] DeviceList { get; set; } = default!;
             }
 
+            public class Guest
+            {
+                /// <summary>
+                /// 获取或设置国家地区代码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("area")]
+                [System.Text.Json.Serialization.JsonPropertyName("area")]
+                public string AreaCode { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置手机号码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("phone_number")]
+                [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
+                public string PhoneNumber { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置会议嘉宾姓名。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("guest_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("guest_name")]
+                public string? GuestName { get; set; }
+            }
+
             public class Settings
             {
                 public static class Types
@@ -165,6 +189,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public string[]? UserIdList { get; set; }
                     }
                 }
+
+                /// <summary>
+                /// 获取或设置是否开启入会密码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("need_password")]
+                [System.Text.Json.Serialization.JsonPropertyName("need_password")]
+                public bool EnablePassword { get; set; }
 
                 /// <summary>
                 /// 获取或设置入会密码。
@@ -195,6 +226,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public bool AllowExternalUser { get; set; }
 
                 /// <summary>
+                /// 获取或设置成员入会时静音模式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("enable_enter_mute")]
+                [System.Text.Json.Serialization.JsonPropertyName("enable_enter_mute")]
+                public int EnterMuteMode { get; set; }
+
+                /// <summary>
+                /// 获取或设置允许参会者取消静音。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("allow_unmute_self")]
+                [System.Text.Json.Serialization.JsonPropertyName("allow_unmute_self")]
+                public bool AllowUnmuteSelf { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否设置全体静音。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mute_all")]
+                [System.Text.Json.Serialization.JsonPropertyName("mute_all")]
+                public bool IsMuteAll { get; set; }
+
+                /// <summary>
                 /// 获取或设置是否开启屏幕水印。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("enable_screen_watermark")]
@@ -202,11 +254,67 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public bool EnableScreenWatermark { get; set; }
 
                 /// <summary>
-                /// 获取或设置成员入会时静音模式。
+                /// 获取或设置水印样式。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("enable_enter_mute")]
-                [System.Text.Json.Serialization.JsonPropertyName("enable_enter_mute")]
-                public int EnterMuteMode { get; set; }
+                [Newtonsoft.Json.JsonProperty("watermark_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("watermark_type")]
+                public int WatermarkType { get; set; }
+
+                /// <summary>
+                /// 获取或设置自动会议录制类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("auto_record_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("auto_record_type")]
+                public string AutoRecordType { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置是否当有参会成员入会时立即开启云录制。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("participant_join_auto_record")]
+                [System.Text.Json.Serialization.JsonPropertyName("participant_join_auto_record")]
+                public bool IsAttendeeJoinAutoRecord { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否允许主持人暂停或者停止云录制。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("enable_host_pause_auto_record")]
+                [System.Text.Json.Serialization.JsonPropertyName("enable_host_pause_auto_record")]
+                public bool EnableHostPauseAutoRecord { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否开启同声传译。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("enable_interpreter")]
+                [System.Text.Json.Serialization.JsonPropertyName("enable_interpreter")]
+                public bool EnableInterpreter { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否允许成员上传文档。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("enable_doc_upload_permission")]
+                [System.Text.Json.Serialization.JsonPropertyName("enable_doc_upload_permission")]
+                public bool EnableDocumentUploadPermission { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否激活报名。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("enable_enroll")]
+                [System.Text.Json.Serialization.JsonPropertyName("enable_enroll")]
+                public bool EnableEnroll { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否开启主持人密钥。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("enable_host_key")]
+                [System.Text.Json.Serialization.JsonPropertyName("enable_host_key")]
+                public bool EnableHostKey { get; set; }
+
+                /// <summary>
+                /// 获取或设置主持人密钥。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("host_key")]
+                [System.Text.Json.Serialization.JsonPropertyName("host_key")]
+                public string? HostKey { get; set; }
 
                 /// <summary>
                 /// 获取或设置会议开始提醒范围。
@@ -223,6 +331,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public Types.Host? Host { get; set; }
 
                 /// <summary>
+                /// 获取或设置会议当前主持人信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("current_hosts")]
+                [System.Text.Json.Serialization.JsonPropertyName("current_hosts")]
+                public Types.Host? CurrentHost { get; set; }
+
+                /// <summary>
+                /// 获取或设置会议联席主持人信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("co_hosts")]
+                [System.Text.Json.Serialization.JsonPropertyName("co_hosts")]
+                public Types.Host? CoHost { get; set; }
+
+                /// <summary>
                 /// 获取或设置响铃用户信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ring_users")]
@@ -236,10 +358,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// 获取或设置是否重复会议。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_repeat")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_repeat")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
-                public bool? IsRepeat { get; set; }
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                public bool IsRepeat { get; set; }
 
                 /// <summary>
                 /// 获取或设置重复类型。
@@ -247,6 +369,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("repeat_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("repeat_type")]
                 public int? RepeatType { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否自定义重复设置。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_custom_repeat")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_custom_repeat")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                public bool IsCustomRepeat { get; set; }
+
+                /// <summary>
+                /// 获取或设置结束重复类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_until_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_until_type")]
+                public int? RepeatUntilType { get; set; }
+
+                /// <summary>
+                /// 获取或设置周期会议限定次数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_until_count")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_until_count")]
+                public int? RepeatUntilCount { get; set; }
 
                 /// <summary>
                 /// 获取或设置重复结束时间戳。
@@ -263,11 +408,56 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public int? RepeatInterval { get; set; }
 
                 /// <summary>
+                /// 获取或设置每周周几重复。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_day_of_week")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_week")]
+                public int[]? RepeatDaysOfWeek { get; set; }
+
+                /// <summary>
+                /// 获取或设置每月哪几天重复。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_day_of_month")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_month")]
+                public int[]? RepeatDaysOfMonth { get; set; }
+
+                /// <summary>
                 /// 获取或设置会议开始前多久提醒（单位：秒）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("remind_before")]
                 [System.Text.Json.Serialization.JsonPropertyName("remind_before")]
                 public int[]? RemindBeforeEventTimeList { get; set; }
+            }
+
+            public class SubMeeting
+            {
+                /// <summary>
+                /// 获取或设置子会议 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_meetingid")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_meetingid")]
+                public string SubMeetingId { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("status")]
+                [System.Text.Json.Serialization.JsonPropertyName("status")]
+                public int Status { get; set; }
+
+                /// <summary>
+                /// 获取或设置开始时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("start_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("start_time")]
+                public long StartTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置结束时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("end_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("end_time")]
+                public long EndTimestamp { get; set; }
             }
         }
 
@@ -321,6 +511,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public int Status { get; set; }
 
         /// <summary>
+        /// 获取或设置会议类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("meeting_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("meeting_type")]
+        public int MeetingType { get; set; }
+
+        /// <summary>
         /// 获取或设置会议描述。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("description")]
@@ -349,6 +546,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public Types.Attendee Attendee { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置会议嘉宾列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("guests")]
+        [System.Text.Json.Serialization.JsonPropertyName("guests")]
+        public Types.Guest[]? GuestList { get; set; }
+
+        /// <summary>
         /// 获取或设置会议设置信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("settings")]
@@ -375,5 +579,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("meeting_link")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_link")]
         public string MeetingLink { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置是否有投票。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("has_vote")]
+        [System.Text.Json.Serialization.JsonPropertyName("has_vote")]
+        public bool HasVote { get; set; }
+
+        /// <summary>
+        /// 获取或设置子会议列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_meetings")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_meetings")]
+        public Types.SubMeeting[]? SubMeetingList { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否还有更多子会议特例。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("has_more_sub_meeting")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("has_more_sub_meeting")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        public bool HasMoreSubMeeting { get; set; }
+
+        /// <summary>
+        /// 获取或设置剩余子会议场数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("remain_sub_meetings")]
+        [System.Text.Json.Serialization.JsonPropertyName("remain_sub_meetings")]
+        public int? RemainSubMeetingCount { get; set; }
+
+        /// <summary>
+        /// 获取或设置当前子会议 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("current_sub_meetingid")]
+        [System.Text.Json.Serialization.JsonPropertyName("current_sub_meetingid")]
+        public string? CurrentSubMeetingId { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+using System.Collections.Generic;
+
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/meeting/update 接口的请求。</para>
@@ -7,7 +9,11 @@
     {
         public static class Types
         {
-            public class Attendee : CgibinMeetingCreateRequest.Types.Attendee
+            public class Invitee : CgibinMeetingCreateRequest.Types.Invitee
+            {
+            }
+
+            public class Guest : CgibinMeetingCreateRequest.Types.Guest
             {
             }
 
@@ -96,9 +102,16 @@
         /// <summary>
         /// 获取或设置参与者信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("attendees")]
-        [System.Text.Json.Serialization.JsonPropertyName("attendees")]
-        public Types.Attendee? Attendee { get; set; }
+        [Newtonsoft.Json.JsonProperty("invitees")]
+        [System.Text.Json.Serialization.JsonPropertyName("invitees")]
+        public Types.Invitee? Invitee { get; set; }
+
+        /// <summary>
+        /// 获取或设置会议嘉宾列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("guests")]
+        [System.Text.Json.Serialization.JsonPropertyName("guests")]
+        public IList<Types.Guest>? GuestList { get; set; }
 
         /// <summary>
         /// 获取或设置会议设置信息。
