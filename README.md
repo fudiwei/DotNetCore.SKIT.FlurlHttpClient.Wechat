@@ -99,10 +99,10 @@
 
 ## 使用案例
 
-| 项目名称  |                                                                                       项目简介                                                                                       |                                                          项目地址                                                           |
-| :-------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: |
-| CoreShop  |             核心商城系统：支持可视化布局的 .NET 商城系统，拥有分销、代理、团购、拼团、秒杀、直播、优惠券、自定义表单等众多营销功能，拥有完整 SKU、下单、售后、物流流程。             |   [![Gitee Stars](https://gitee.com/CoreUnion/CoreShop/badge/star.svg?title=Stars)](https://gitee.com/CoreUnion/CoreShop)   |
-| Admin.NET | 通用权限开发框架：整合最新技术，模块插件式开发，前后端分离，开箱即用。集成 SqlSugar、多租户、缓存、数据校验、鉴权、事件总线、动态 API、通讯、远程请求、任务调度、gRPC 等众多黑科技。 | [![Gitee Stars](https://gitee.com/zuohuaijun/Admin.NET/badge/star.svg?title=Stars)](https://gitee.com/zuohuaijun/Admin.NET) |
+| 项目名称  |                                项目简介                                |                                                          项目地址                                                           |
+| :-------: | :--------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------: |
+| CoreShop  |             核心商城系统：支持可视化布局的 .NET 商城系统。             |   [![Gitee Stars](https://gitee.com/CoreUnion/CoreShop/badge/star.svg?title=Stars)](https://gitee.com/CoreUnion/CoreShop)   |
+| Admin.NET | 通用权限开发框架：整合最新技术，模块插件式开发，前后端分离，开箱即用。 | [![Gitee Stars](https://gitee.com/zuohuaijun/Admin.NET/badge/star.svg?title=Stars)](https://gitee.com/zuohuaijun/Admin.NET) |
 
 注：以上案例均来自第三方，本项目不对其项目做任何保证，仅作列举展示。如果你有项目也使用了本库、希望加到案例列表中，可以在 Issue 中提出。
 
