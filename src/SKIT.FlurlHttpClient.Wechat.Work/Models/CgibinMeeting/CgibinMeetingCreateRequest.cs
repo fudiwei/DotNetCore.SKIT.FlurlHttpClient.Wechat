@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string AreaCode { get; set; } = string.Empty;
 
                 /// <summary>
-                /// 获取或设置手机号码。
+                /// 获取或设置电话号码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
