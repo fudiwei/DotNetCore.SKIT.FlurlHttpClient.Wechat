@@ -47,7 +47,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="BouncyCastle.Cryptography" Version="2.1.1" />
+        <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
         <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.6.0" />
     </ItemGroup>
 
