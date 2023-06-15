@@ -1,0 +1,11 @@
+{
+    "meetingid": "meetingid11234",
+    "enroll_list": [
+        {
+            "userid": "USERID",
+            "area": "86",
+            "phone_number": "13333333333",
+            "nick_name": "NICKNAME"
+        }
+    ]
+}

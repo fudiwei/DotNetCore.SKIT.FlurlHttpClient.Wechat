@@ -1124,6 +1124,148 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWebinarUpdateWarmUpResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region /Webinar/Enroll
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/webinar/enroll/set_config 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98875 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingWebinarEnrollSetConfigResponse> ExecuteCgibinMeetingWebinarEnrollSetConfigAsync(this WechatWorkClient client, Models.CgibinMeetingWebinarEnrollSetConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "webinar", "enroll", "set_config")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWebinarEnrollSetConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/webinar/enroll/get_config 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98874 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingWebinarEnrollGetConfigResponse> ExecuteCgibinMeetingWebinarEnrollGetConfigAsync(this WechatWorkClient client, Models.CgibinMeetingWebinarEnrollGetConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "webinar", "enroll", "get_config")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWebinarEnrollGetConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/webinar/enroll/query_by_tmp_openid 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98873 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingWebinarEnrollQueryByTempOpenIdResponse> ExecuteCgibinMeetingWebinarEnrollQueryByTempOpenIdAsync(this WechatWorkClient client, Models.CgibinMeetingWebinarEnrollQueryByTempOpenIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "webinar", "enroll", "query_by_tmp_openid")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWebinarEnrollQueryByTempOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/webinar/enroll/list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98876 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingWebinarEnrollListResponse> ExecuteCgibinMeetingWebinarEnrollListAsync(this WechatWorkClient client, Models.CgibinMeetingWebinarEnrollListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "webinar", "enroll", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWebinarEnrollListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/webinar/enroll/approve 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98877 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingWebinarEnrollApproveResponse> ExecuteCgibinMeetingWebinarEnrollApproveAsync(this WechatWorkClient client, Models.CgibinMeetingWebinarEnrollApproveRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "webinar", "enroll", "approve")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWebinarEnrollApproveResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/webinar/enroll/import 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98880 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingWebinarEnrollImportResponse> ExecuteCgibinMeetingWebinarEnrollImportAsync(this WechatWorkClient client, Models.CgibinMeetingWebinarEnrollImportRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "webinar", "enroll", "import")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWebinarEnrollImportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/webinar/enroll/delete 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98881 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingWebinarEnrollDeleteResponse> ExecuteCgibinMeetingWebinarEnrollDeleteAsync(this WechatWorkClient client, Models.CgibinMeetingWebinarEnrollDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "webinar", "enroll", "delete")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingWebinarEnrollDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
         #endregion
     }
 }

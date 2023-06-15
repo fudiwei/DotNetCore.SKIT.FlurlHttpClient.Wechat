@@ -62,6 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("enroll_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("enroll_id")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringReadOnlyConverter))]
                 public string EnrollId { get; set; } = default!;
 
                 /// <summary>

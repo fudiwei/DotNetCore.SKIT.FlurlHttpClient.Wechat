@@ -1,0 +1,10 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "enroll_id_list": [
+        {
+            "tmp_openid": "agaqwwgdkkddd",
+            "enroll_id": "mexxxxxxxx"
+        }
+    ]
+}
