@@ -1,0 +1,30 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "record_meetings": [
+        {
+            "meeting_record_id": "GEIGN",
+            "meetingid": "GEMIGE",
+            "meeting_code": "GEJIGNEO",
+            "host_user_id": "XGMEIG",
+            "meeting_start_time": 177777777,
+            "title": "TJIE",
+            "state": 1,
+            "record_files": [
+                {
+                    "record_file_id": "FILEID",
+                    "record_start_time": 15555,
+                    "record_end_time": 1777777,
+                    "record_size": 323235325,
+                    "sharing_state": 1,
+                    "sharing_url": "https://share.url",
+                    "required_same_corp": true,
+                    "required_attendee": true,
+                    "password": "fgjisnge",
+                    "sharing_expire": 3323,
+                    "allow_download": true
+                }
+            ]
+        }
+    ]
+}
