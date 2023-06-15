@@ -640,6 +640,188 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
+        #region RealControl
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/set 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98175 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingRealControlSetResponse> ExecuteCgibinMeetingRealControlSetAsync(this WechatWorkClient client, Models.CgibinMeetingRealControlSetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "realcontrol", "set")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingRealControlSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/set_cohost 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98180 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingRealControlSetCoHostResponse> ExecuteCgibinMeetingRealControlSetCoHostAsync(this WechatWorkClient client, Models.CgibinMeetingRealControlSetCoHostRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "realcontrol", "set_cohost")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingRealControlSetCoHostResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/mute_user 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98184 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingRealControlMuteUserResponse> ExecuteCgibinMeetingRealControlMuteUserAsync(this WechatWorkClient client, Models.CgibinMeetingRealControlMuteUserRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "realcontrol", "mute_user")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingRealControlMuteUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/switch_user_video 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98189 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingRealControlSwitchUserVideoResponse> ExecuteCgibinMeetingRealControlSwitchUserVideoAsync(this WechatWorkClient client, Models.CgibinMeetingRealControlSwitchUserVideoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "realcontrol", "switch_user_video")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingRealControlSwitchUserVideoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/close_screen_share 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98185 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingRealControlCloseScreenShareResponse> ExecuteCgibinMeetingRealControlCloseScreenShareAsync(this WechatWorkClient client, Models.CgibinMeetingRealControlCloseScreenShareRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "realcontrol", "close_screen_share")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingRealControlCloseScreenShareResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/set_nicknames 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98188 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingRealControlSetNicknamesResponse> ExecuteCgibinMeetingRealControlSetNicknamesAsync(this WechatWorkClient client, Models.CgibinMeetingRealControlSetNicknamesRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "realcontrol", "set_nicknames")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingRealControlSetNicknamesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/manage_waiting_room_users 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98186 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingRealControlManageWaitingRoomUsersResponse> ExecuteCgibinMeetingRealControlManageWaitingRoomUsersAsync(this WechatWorkClient client, Models.CgibinMeetingRealControlManageWaitingRoomUsersRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "realcontrol", "manage_waiting_room_users")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingRealControlManageWaitingRoomUsersResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/kickout_users 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98181 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingRealControlKickoutUsersResponse> ExecuteCgibinMeetingRealControlKickoutUsersAsync(this WechatWorkClient client, Models.CgibinMeetingRealControlKickoutUsersRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "realcontrol", "kickout_users")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingRealControlKickoutUsersResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/dismiss 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98187 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingRealControlDismissResponse> ExecuteCgibinMeetingRealControlDismissAsync(this WechatWorkClient client, Models.CgibinMeetingRealControlDismissRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "realcontrol", "dismiss")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingRealControlDismissResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Record
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/record/list 接口。</para>

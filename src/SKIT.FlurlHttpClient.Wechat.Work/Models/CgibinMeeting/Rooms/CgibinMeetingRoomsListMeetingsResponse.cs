@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string MeetingId { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置入会码。
+                /// 获取或设置会议号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("meeting_code")]
                 [System.Text.Json.Serialization.JsonPropertyName("meeting_code")]

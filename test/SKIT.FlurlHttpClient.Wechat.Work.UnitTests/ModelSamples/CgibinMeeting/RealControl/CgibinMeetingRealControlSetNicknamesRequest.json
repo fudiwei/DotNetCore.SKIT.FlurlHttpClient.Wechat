@@ -1,0 +1,10 @@
+{
+    "meetingid": "meetingid11234",
+    "operated_users": [
+        {
+            "tmp_openid": "MSOPENID",
+            "instance_id": 1,
+            "nickname": "nick"
+        }
+    ]
+}
