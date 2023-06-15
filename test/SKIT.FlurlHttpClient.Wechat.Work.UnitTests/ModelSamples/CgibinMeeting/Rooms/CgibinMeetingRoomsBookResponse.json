@@ -1,0 +1,16 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "meeting_room_list": [
+        {
+            "meeting_room_id": "100001",
+            "meeting_room_name": "会议室测试1",
+            "meeting_room_location": "广州-大厦-10"
+        },
+        {
+            "meeting_room_id": "100002",
+            "meeting_room_name": "会议室测试2",
+            "meeting_room_location": "广州-大厦-11"
+        }
+    ]
+}

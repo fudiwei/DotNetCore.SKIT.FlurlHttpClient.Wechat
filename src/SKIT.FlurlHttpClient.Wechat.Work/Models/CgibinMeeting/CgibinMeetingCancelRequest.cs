@@ -17,6 +17,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_meetingid")]
-        public string? SubMeetingId { get; set; } = string.Empty;
+        public string? SubMeetingId { get; set; }
     }
 }

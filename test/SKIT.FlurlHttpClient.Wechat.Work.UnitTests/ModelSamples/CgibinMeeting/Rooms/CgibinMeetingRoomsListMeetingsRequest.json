@@ -1,0 +1,8 @@
+{
+    "meeting_room_id": "MEETINGROOMID",
+    "rooms_id": "ROOMSID",
+    "start_time": 1679299200,
+    "end_time": 1679558400,
+    "cursor": "CURSOR",
+    "limit": 20
+}

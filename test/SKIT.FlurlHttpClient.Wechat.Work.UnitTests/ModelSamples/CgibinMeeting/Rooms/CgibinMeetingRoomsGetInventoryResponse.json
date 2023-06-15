@@ -1,0 +1,10 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "normal_count": 10,
+    "special_count": 2,
+    "normal_used_count": 2,
+    "special_used_count": 1,
+    "normal_expired_count": 0,
+    "special_expired_count": 0
+}

@@ -1,0 +1,22 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": true,
+    "next_cursor": "CURSOR",
+    "device_info_list": [
+        {
+            "meeting_room_id": "100001",
+            "rooms_id": "45613",
+            "meeting_room_name": "会议室测试1",
+            "meeting_room_location": "广州-大厦-10",
+            "device_model": "TT-IP65T",
+            "app_version": "4.1.6.0",
+            "meeting_room_status": 1,
+            "device_monitor_info": {
+                "camera_status": true,
+                "microphone_status": true,
+                "speaker_status": true
+            }
+        }
+    ]
+}
