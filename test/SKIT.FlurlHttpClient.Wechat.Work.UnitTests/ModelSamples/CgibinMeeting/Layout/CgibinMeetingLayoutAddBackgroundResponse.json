@@ -1,0 +1,11 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "selected_background_id": "BACKID1",
+    "background_list": [
+        {
+            "background_id": "BACKID1",
+            "image_md5": "eax879asd3z"
+        }
+    ]
+}

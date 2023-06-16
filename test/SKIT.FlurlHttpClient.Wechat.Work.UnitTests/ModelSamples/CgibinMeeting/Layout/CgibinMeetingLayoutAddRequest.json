@@ -1,0 +1,23 @@
+{
+    "meetingid": "MEETINGID",
+    "layout_list": [
+        {
+            "page_list": [
+                {
+                    "layout_template_id": "TEMID1",
+                    "user_seat_list": [
+                        {
+                            "grid_id": "10",
+                            "grid_type": 1,
+                            "userid": "USERID",
+                            "tmp_openid": "68j2xkYT1",
+                            "nick_name": "NICK",
+                            "tool_sdkid": "SDKID"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "default_layout_order": 1
+}
