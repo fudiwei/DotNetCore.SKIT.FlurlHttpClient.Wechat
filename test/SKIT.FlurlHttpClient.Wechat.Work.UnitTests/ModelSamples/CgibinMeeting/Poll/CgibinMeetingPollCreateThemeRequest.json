@@ -1,0 +1,15 @@
+{
+    "operator_userid": "OPENID",
+    "instance_id": 1,
+    "meetingid": "ID",
+    "poll_topic": "TOPIC",
+    "poll_desc": "desc",
+    "is_anony": 1,
+    "poll_questions": [
+        {
+            "question_type": 1,
+            "question_desc": "DESC",
+            "poll_option": [ "OPTION1", "OPTION2" ]
+        }
+    ]
+}

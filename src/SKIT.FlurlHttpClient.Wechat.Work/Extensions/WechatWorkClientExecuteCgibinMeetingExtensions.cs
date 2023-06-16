@@ -640,6 +640,168 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
+        #region Poll
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/poll/create_theme 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98834 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingPollCreateThemeResponse> ExecuteCgibinMeetingPollCreateThemeAsync(this WechatWorkClient client, Models.CgibinMeetingPollCreateThemeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "poll", "create_theme")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingPollCreateThemeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/poll/update_theme 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98835 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingPollUpdateThemeResponse> ExecuteCgibinMeetingPollUpdateThemeAsync(this WechatWorkClient client, Models.CgibinMeetingPollUpdateThemeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "poll", "update_theme")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingPollUpdateThemeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/poll/get_poll_list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98836 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingPollGetPollListResponse> ExecuteCgibinMeetingPollGetPollListAsync(this WechatWorkClient client, Models.CgibinMeetingPollGetPollListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "poll", "get_poll_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingPollGetPollListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/poll/get_theme_info 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98837 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingPollGetThemeInfoResponse> ExecuteCgibinMeetingPollGetThemeInfoAsync(this WechatWorkClient client, Models.CgibinMeetingPollGetThemeInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "poll", "get_theme_info")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingPollGetThemeInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/poll/get_poll_detail 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98838 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingPollGetPollDetailResponse> ExecuteCgibinMeetingPollGetPollDetailAsync(this WechatWorkClient client, Models.CgibinMeetingPollGetPollDetailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "poll", "get_poll_detail")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingPollGetPollDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/poll/delete 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98839 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingPollDeleteResponse> ExecuteCgibinMeetingPollDeleteAsync(this WechatWorkClient client, Models.CgibinMeetingPollDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "poll", "delete")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingPollDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/poll/start 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98840 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingPollStartResponse> ExecuteCgibinMeetingPollStartAsync(this WechatWorkClient client, Models.CgibinMeetingPollStartRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "poll", "start")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingPollStartResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/poll/finish 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98841 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingPollFinishResponse> ExecuteCgibinMeetingPollFinishAsync(this WechatWorkClient client, Models.CgibinMeetingPollFinishRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "poll", "finish")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingPollFinishResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region RealControl
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/realcontrol/set 接口。</para>
