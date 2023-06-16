@@ -33,6 +33,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.30.0
+
+    -   **新增**：新增小程序硬件设备组相关接口。（_via_ [GitHub #100](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/100)）
+
+    -   **新增**：新增视频号小店物流公司虚拟号码相关接口。
+
 -   Release 2.29.0
 
     -   **新增**：新增获取稳定版接口调用凭据接口。（_via_ [GitHub #99](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/99)）
