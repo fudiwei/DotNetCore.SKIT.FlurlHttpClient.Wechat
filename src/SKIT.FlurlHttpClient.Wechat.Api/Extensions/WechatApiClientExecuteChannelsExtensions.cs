@@ -1567,6 +1567,68 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
         #endregion
 
+        #region ECLogistics
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/phonenumberpool/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/logistics/delivery_virtual_number.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsPhoneNumberPoolGetResponse> ExecuteChannelsECLogisticsPhoneNumberPoolGetAsync(this WechatApiClient client, Models.ChannelsECLogisticsPhoneNumberPoolGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "phonenumberpool", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsPhoneNumberPoolGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/phonenumber/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/logistics/delivery_virtual_number_get.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsPhoneNumberGetResponse> ExecuteChannelsECLogisticsPhoneNumberGetAsync(this WechatApiClient client, Models.ChannelsECLogisticsPhoneNumberGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "phonenumber", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsPhoneNumberGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/virtualnumber/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/logistics/delivery_virtual_number_get_virtual.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsVirtualNumberGetResponse> ExecuteChannelsECLogisticsVirtualNumberGetAsync(this WechatApiClient client, Models.ChannelsECLogisticsVirtualNumberGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "virtualnumber", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsVirtualNumberGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region ECSharer
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/sharer/bind 接口。</para>
