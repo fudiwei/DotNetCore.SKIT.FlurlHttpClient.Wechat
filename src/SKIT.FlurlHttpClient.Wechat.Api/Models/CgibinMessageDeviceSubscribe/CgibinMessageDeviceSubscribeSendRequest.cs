@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -35,11 +35,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string TemplateId { get; set; } = string.Empty;
 
         /// <summary>
+        /// 获取或设置设备型号 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("modelId")]
+        [System.Text.Json.Serialization.JsonPropertyName("modelId")]
+        public string? ModelId { get; set; }
+
+        /// <summary>
         /// 获取或设置设备序列号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sn")]
         [System.Text.Json.Serialization.JsonPropertyName("sn")]
-        public string SerialNumber { get; set; } = string.Empty;
+        public string? SerialNumber { get; set; }
 
         /// <summary>
         /// 获取或设置小程序页面路径。
