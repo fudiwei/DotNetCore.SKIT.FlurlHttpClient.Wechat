@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             where TEvent : WechatOpenAIEvent
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
-            if (string.IsNullOrEmpty(callbackXml)) throw new ArgumentNullException(callbackXml);
+            if (callbackXml == null) throw new ArgumentNullException(callbackXml);
 
             try
             {

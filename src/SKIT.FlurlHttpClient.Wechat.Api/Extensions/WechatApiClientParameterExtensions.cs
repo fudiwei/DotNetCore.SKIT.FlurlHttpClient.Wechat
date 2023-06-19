@@ -54,9 +54,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             string nonce = Guid.NewGuid().ToString("N");
             string cardType = "INVOICE";
 
-            List<string> lstParams = new List<string>() { cardType, timestamp, client.Credentials.AppId, nonce, wxcardTicket };
-            lstParams.Sort(StringComparer.Ordinal);
-            string cardSign = Utilities.SHA1Utility.Hash(string.Join(string.Empty, lstParams)).ToLower();
+            List<string> tmp = new List<string>(capacity: 5) { cardType, timestamp, client.Credentials.AppId, nonce, wxcardTicket };
+            tmp.Sort(StringComparer.Ordinal);
+            string cardSign = Utilities.SHA1Utility.Hash(string.Concat(tmp)).ToLower();
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
             {

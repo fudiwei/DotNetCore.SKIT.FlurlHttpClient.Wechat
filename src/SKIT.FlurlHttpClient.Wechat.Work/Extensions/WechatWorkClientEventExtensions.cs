@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             where TEvent : WechatWorkEvent
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
-            if (string.IsNullOrEmpty(callbackJson)) throw new ArgumentNullException(callbackJson);
+            if (callbackJson == null) throw new ArgumentNullException(callbackJson);
 
             try
             {
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             where TEvent : WechatWorkEvent
         {
             if (client == null) throw new ArgumentNullException(nameof(client));
-            if (string.IsNullOrEmpty(callbackXml)) throw new ArgumentNullException(callbackXml);
+            if (callbackXml == null) throw new ArgumentNullException(callbackXml);
 
             try
             {

@@ -260,10 +260,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (callbackNonce == null) throw new ArgumentNullException(nameof(callbackNonce));
             if (callbackSignature == null) throw new ArgumentNullException(nameof(callbackSignature));
 
-            List<string> lstParams = new List<string>() { client.Credentials.PushToken!, callbackTimestamp, callbackNonce };
-            lstParams.Sort(StringComparer.Ordinal);
+            List<string> tmp = new List<string>(capacity: 3) { client.Credentials.PushToken!, callbackTimestamp, callbackNonce };
+            tmp.Sort(StringComparer.Ordinal);
 
-            string sign = Utilities.SHA1Utility.Hash(string.Concat(lstParams));
+            string sign = Utilities.SHA1Utility.Hash(string.Concat(tmp));
             return string.Equals(sign, callbackSignature, StringComparison.OrdinalIgnoreCase);
         }
 

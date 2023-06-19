@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Security;
 using System.Security.Cryptography;
@@ -230,14 +229,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             if (sNonce == null) throw new ArgumentNullException(nameof(sNonce));
             if (sMsgEncrypt == null) throw new ArgumentNullException(nameof(sMsgEncrypt));
 
-            ISet<string> set = new SortedSet<string>(StringComparer.Ordinal);
-            set.Add(sToken);
-            set.Add(sTimestamp);
-            set.Add(sNonce);
-            set.Add(sMsgEncrypt);
+            List<string> tmp = new List<string>(capacity: 4) { sToken, sTimestamp, sNonce, sMsgEncrypt };
+            tmp.Sort(StringComparer.Ordinal);
 
-            string rawText = string.Join(string.Empty, set.ToArray());
-            string signText = Utilities.SHA1Utility.Hash(rawText);
+            string rawText = string.Join(string.Empty, tmp);
+            string signText = SHA1Utility.Hash(rawText);
             return signText.ToLower();
         }
 
