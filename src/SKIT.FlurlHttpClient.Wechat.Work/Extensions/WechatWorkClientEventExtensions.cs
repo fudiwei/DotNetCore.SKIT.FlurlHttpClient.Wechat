@@ -159,7 +159,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 string cipher = Utilities.WxMsgCryptor.AESEncrypt(
                     plainText: json,
                     encodingAESKey: client.Credentials.PushEncodingAESKey!,
-                    corpOrSuiteId: string.IsNullOrEmpty(client.Credentials.SuiteId) ? client.Credentials.CorpId : client.Credentials.SuiteId!
+                    corpId: string.IsNullOrEmpty(client.Credentials.SuiteId) ? client.Credentials.CorpId : client.Credentials.SuiteId!
                 );
                 string sign = Utilities.WxMsgCryptor.GenerateSignature(
                     sToken: client.Credentials.PushToken!,
@@ -215,7 +215,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 string cipher = Utilities.WxMsgCryptor.AESEncrypt(
                     plainText: xml,
                     encodingAESKey: client.Credentials.PushEncodingAESKey!,
-                    corpOrSuiteId: string.IsNullOrEmpty(client.Credentials.SuiteId) ? client.Credentials.CorpId : client.Credentials.SuiteId!
+                    corpId: string.IsNullOrEmpty(client.Credentials.SuiteId) ? client.Credentials.CorpId : client.Credentials.SuiteId!
                 );
 
                 xml = Utilities.WxMsgCryptor.WrapXml(sToken: client.Credentials.PushToken!, sMsgEncrypt: cipher);

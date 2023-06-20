@@ -153,11 +153,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             len = IPAddress.NetworkToHostOrder(len);
 
             byte[] bMsg = new byte[len];
-            byte[] bCorpId = new byte[btmpMsg.Length - 20 - len];
+            byte[] bAppId = new byte[btmpMsg.Length - 20 - len];
             Array.Copy(btmpMsg, 20, bMsg, 0, len);
-            Array.Copy(btmpMsg, 20 + len, bCorpId, 0, btmpMsg.Length - 20 - len);
+            Array.Copy(btmpMsg, 20 + len, bAppId, 0, btmpMsg.Length - 20 - len);
 
-            appId = Encoding.UTF8.GetString(bCorpId);
+            appId = Encoding.UTF8.GetString(bAppId);
             return Encoding.UTF8.GetString(bMsg);
         }
 
@@ -180,15 +180,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 
             string randCode = CreateRandCode(16);
             byte[] bRand = Encoding.UTF8.GetBytes(randCode);
-            byte[] bCorpId = Encoding.UTF8.GetBytes(appId);
+            byte[] bAppId = Encoding.UTF8.GetBytes(appId);
             byte[] bMsgTmp = Encoding.UTF8.GetBytes(plainText);
             byte[] bMsgLen = BitConverter.GetBytes(IPAddress.HostToNetworkOrder(bMsgTmp.Length));
-            byte[] bMsg = new byte[bRand.Length + bMsgLen.Length + bCorpId.Length + bMsgTmp.Length];
+            byte[] bMsg = new byte[bRand.Length + bMsgLen.Length + bAppId.Length + bMsgTmp.Length];
 
             Array.Copy(bRand, bMsg, bRand.Length);
             Array.Copy(bMsgLen, 0, bMsg, bRand.Length, bMsgLen.Length);
             Array.Copy(bMsgTmp, 0, bMsg, bRand.Length + bMsgLen.Length, bMsgTmp.Length);
-            Array.Copy(bCorpId, 0, bMsg, bRand.Length + bMsgLen.Length + bMsgTmp.Length, bCorpId.Length);
+            Array.Copy(bAppId, 0, bMsg, bRand.Length + bMsgLen.Length + bMsgTmp.Length, bAppId.Length);
 
             return AESEncrypt(keyBytes: keyBytes, ivBytes: ivBytes, plainBytes: bMsg);
         }

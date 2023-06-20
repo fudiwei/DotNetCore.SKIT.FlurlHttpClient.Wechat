@@ -578,6 +578,106 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/advanced_layout/add 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98861 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingAdvancedLayoutAddResponse> ExecuteCgibinMeetingAdvancedLayoutAddAsync(this WechatWorkClient client, Models.CgibinMeetingAdvancedLayoutAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "advanced_layout", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingAdvancedLayoutAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/advanced_layout/update 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98868 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingAdvancedLayoutUpdateResponse> ExecuteCgibinMeetingAdvancedLayoutUpdateAsync(this WechatWorkClient client, Models.CgibinMeetingAdvancedLayoutUpdateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "advanced_layout", "update")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingAdvancedLayoutUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/advanced_layout/apply 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98869 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingAdvancedLayoutApplyResponse> ExecuteCgibinMeetingAdvancedLayoutApplyAsync(this WechatWorkClient client, Models.CgibinMeetingAdvancedLayoutApplyRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "advanced_layout", "apply")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingAdvancedLayoutApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/advanced_layout/list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98862 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingAdvancedLayoutListResponse> ExecuteCgibinMeetingAdvancedLayoutListAsync(this WechatWorkClient client, Models.CgibinMeetingAdvancedLayoutListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "advanced_layout", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingAdvancedLayoutListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/advanced_layout/get_user_layout 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98865 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingAdvancedLayoutGetUserLayoutResponse> ExecuteCgibinMeetingAdvancedLayoutGetUserLayoutAsync(this WechatWorkClient client, Models.CgibinMeetingAdvancedLayoutGetUserLayoutRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "advanced_layout", "get_user_layout")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingAdvancedLayoutGetUserLayoutResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/advanced_layout/batch_delete 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/98866 </para>
         /// </summary>
@@ -585,7 +685,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinMeetingLayoutBatchDeleteResponse> ExecuteCgibinMeetingLayoutBatchDeleteAsync(this WechatWorkClient client, Models.CgibinMeetingLayoutBatchDeleteRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinMeetingAdvancedLayoutBatchDeleteResponse> ExecuteCgibinMeetingAdvancedLayoutBatchDeleteAsync(this WechatWorkClient client, Models.CgibinMeetingAdvancedLayoutBatchDeleteRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -594,7 +694,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "advanced_layout", "batch_delete")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingLayoutBatchDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingAdvancedLayoutBatchDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
