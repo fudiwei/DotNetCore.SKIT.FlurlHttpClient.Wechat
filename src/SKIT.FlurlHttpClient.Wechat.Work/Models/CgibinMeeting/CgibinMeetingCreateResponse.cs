@@ -13,6 +13,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string MeetingId { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置会议号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("meeting_code")]
+        [System.Text.Json.Serialization.JsonPropertyName("meeting_code")]
+        public string? MeetingCode { get; set; }
+
+        /// <summary>
+        /// 获取或设置会议链接。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("meeting_link")]
+        [System.Text.Json.Serialization.JsonPropertyName("meeting_link")]
+        public string? MeetingLink { get; set; }
+
+        /// <summary>
         /// 获取或设置无效会议帐号 UserId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("excess_users")]
