@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("agentid", request.AgentId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMenuGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMenuGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("agentid", request.AgentId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMenuDeleteResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMenuDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("id", request.DepartmentId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentDeleteResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request.ParentDepartmentId != null)
                 flurlReq.SetQueryParam("id", request.ParentDepartmentId.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request.ParentDepartmentId != null)
                 flurlReq.SetQueryParam("id", request.ParentDepartmentId.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentSimpleListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentSimpleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("id", request.DepartmentId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinDepartmentGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "sync", "contact_sync_success")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSyncContactSyncSuccessResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSyncContactSyncSuccessResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

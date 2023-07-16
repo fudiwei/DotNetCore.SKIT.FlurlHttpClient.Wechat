@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -117,7 +117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("jobid", request.JobId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinBatchGetResultResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinBatchGetResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

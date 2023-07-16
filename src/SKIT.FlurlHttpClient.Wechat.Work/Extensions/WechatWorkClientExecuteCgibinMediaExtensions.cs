@@ -164,7 +164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("media_id", request.MediaId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMediaGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMediaGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -187,7 +187,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("media_id", request.MediaId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMediaGetJssdkResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMediaGetJssdkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

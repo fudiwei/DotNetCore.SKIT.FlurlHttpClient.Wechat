@@ -178,7 +178,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("open_kfid", request.OpenKfId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinKfServicerListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfServicerListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -245,7 +245,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "kf", "customer", "get_upgrade_service_config")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinKfCustomerGetUpgradeServiceConfigResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinKfCustomerGetUpgradeServiceConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

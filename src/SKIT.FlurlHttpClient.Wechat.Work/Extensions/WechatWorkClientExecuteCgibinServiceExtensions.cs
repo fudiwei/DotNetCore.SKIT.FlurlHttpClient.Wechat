@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "service", "get_pre_auth_code")
                 .SetQueryParam("suite_access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetPreAuthCodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceGetPreAuthCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -343,7 +343,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("suite_access_token", request.AccessToken)
                 .SetQueryParam("code", request.Code);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinServiceUserInfo3rdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceUserInfo3rdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -490,7 +490,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken)
                 .SetQueryParam("jobid", request.JobId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinServiceBatchGetResultResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinServiceBatchGetResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 

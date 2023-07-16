@@ -174,7 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "oa", "vacation", "getcorpconf")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinOAVacationGetCorpConfigResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinOAVacationGetCorpConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

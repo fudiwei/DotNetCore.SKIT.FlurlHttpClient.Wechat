@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request.SizeType != null)
                 flurlReq.SetQueryParam("size_type", request.SizeType.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGetJoinQrcodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGetJoinQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

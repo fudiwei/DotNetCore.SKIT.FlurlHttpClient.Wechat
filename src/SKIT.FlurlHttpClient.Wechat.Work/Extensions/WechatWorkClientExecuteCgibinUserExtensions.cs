@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("userid", request.UserId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("userid", request.UserId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserDeleteResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request.RequireFetchChild != null)
                 flurlReq.SetQueryParam("fetch_child", request.RequireFetchChild.Value ? 1 : 0);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserSimpleListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserSimpleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -170,7 +170,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request.RequireFetchChild != null)
                 flurlReq.SetQueryParam("fetch_child", request.RequireFetchChild.Value ? 1 : 0);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -238,7 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("code", request.Code);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserGetUserInfoResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserGetUserInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("userid", request.UserId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserAuthSuccessResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserAuthSuccessResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -328,7 +328,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request.Limit != null)
                 flurlReq.SetQueryParam("limit", request.Limit);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserListMemberAuthResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserListMemberAuthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -349,7 +349,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("open_userid", request.OpenUserId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserCheckMemberAuthResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserCheckMemberAuthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -371,7 +371,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("selected_ticket", request.SelectedTicket);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserListSelectedTicketUserResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserListSelectedTicketUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -391,7 +391,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "user", "list_id")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinUserListIdResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinUserListIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

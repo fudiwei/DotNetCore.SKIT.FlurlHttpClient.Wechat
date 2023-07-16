@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "security", "get_file_oper_record")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSecurityGetFileOperateRecordResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSecurityGetFileOperateRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

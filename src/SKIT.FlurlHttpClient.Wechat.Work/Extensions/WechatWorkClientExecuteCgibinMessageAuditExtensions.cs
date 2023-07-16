@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("robot_id", request.RobotId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMessageAuditGetRobotInfoResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinMessageAuditGetRobotInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>

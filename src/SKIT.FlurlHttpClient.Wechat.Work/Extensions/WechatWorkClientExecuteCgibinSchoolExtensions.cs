@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "school", "get_teacher_view_mode")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolGetTeacherViewModeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolGetTeacherViewModeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("userid", request.StudentOrParentUserId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserGetResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -157,7 +157,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request.RequireFetchChild != null)
                 flurlReq.SetQueryParam("fetch_child", request.RequireFetchChild.Value ? 1 : 0);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -178,7 +178,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("department_id", request.DeparmentId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserListParentResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserListParentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region UserStudent
@@ -222,7 +222,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("userid", request.StudentUserId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserDeleteStudentResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserDeleteStudentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -351,7 +351,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("userid", request.ParentUserId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserDeleteParentResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolUserDeleteParentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -564,7 +564,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("id", request.DepartmentId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolDepartmentDeleteResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolDepartmentDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -588,7 +588,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request.ParentDepartmentId != null)
                 flurlReq.SetQueryParam("id", request.ParentDepartmentId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolDepartmentListResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolDepartmentListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -612,7 +612,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("livingid", request.LivingId);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolLivingGetLivingInfoResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolLivingGetLivingInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -760,7 +760,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Get, "cgi-bin", "school", "agent", "get_allow_scope")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolAgentGetAllowScopeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinSchoolAgentGetAllowScopeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

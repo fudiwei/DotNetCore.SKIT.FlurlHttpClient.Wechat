@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "active_account")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseActiveAccountResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseActiveAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "batch_active_account")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseBatchActiveAccountResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseBatchActiveAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_active_info_by_code")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetActiveInfoByCodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetActiveInfoByCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "batch_get_active_info_by_code")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseBatchGetActiveInfoByCodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseBatchGetActiveInfoByCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "list_actived_account")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListActivedAccountResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListActivedAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -127,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_active_info_by_user")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetActiveInfoByUserResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetActiveInfoByUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -147,7 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "batch_transfer_license")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseBatchTransferLicenseResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseBatchTransferLicenseResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "batch_share_active_code")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseBatchShareActiveCodeResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseBatchShareActiveCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -192,7 +192,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_app_license_info")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetAppLicenseInfoResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetAppLicenseInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -214,7 +214,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "set_auto_active_status")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseSetAutoActiveStatusResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseSetAutoActiveStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_auto_active_status")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetAutoActiveStatusResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetAutoActiveStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -256,7 +256,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "create_new_order")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateNewOrderResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateNewOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -276,7 +276,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "create_renew_order_job")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateRenewOrderJobResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateRenewOrderJobResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -296,7 +296,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "list_order")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListOrderResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -316,7 +316,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_order")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetOrderResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -336,7 +336,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "list_order_account")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListOrderAccountResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseListOrderAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -356,7 +356,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "cancel_order")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCancelOrderResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCancelOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -378,7 +378,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "create_new_order_job")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateNewOrderJobResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseCreateNewOrderJobResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -398,7 +398,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "submit_new_order_job")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseSubmitNewOrderJobResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseSubmitNewOrderJobResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -418,7 +418,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "new_order_job_result")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseNewOrderJobResultResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseNewOrderJobResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -438,7 +438,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "get_union_order")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetUnionOrderResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseGetUnionOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -459,7 +459,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "support_policy_query")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseSupportPolicyQueryResponse>(flurlReq, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseSupportPolicyQueryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
