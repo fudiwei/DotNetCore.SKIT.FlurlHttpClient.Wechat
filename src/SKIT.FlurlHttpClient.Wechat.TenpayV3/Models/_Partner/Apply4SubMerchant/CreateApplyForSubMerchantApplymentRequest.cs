@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
@@ -967,11 +968,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? ActivityId { get; set; }
 
                 /// <summary>
-                /// 获取或设置优惠费率活动值字符串。
+                /// 获取或设置优惠费率字符串。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2023-09-18 下线。")]
                 [Newtonsoft.Json.JsonProperty("activities_rate")]
                 [System.Text.Json.Serialization.JsonPropertyName("activities_rate")]
                 public string? ActivityRateString { get; set; }
+
+                /// <summary>
+                /// 获取或设置非信用卡活动优惠费率字符串。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("debit_activities_rate")]
+                [System.Text.Json.Serialization.JsonPropertyName("debit_activities_rate")]
+                public string? DebitActivityRateString { get; set; }
+
+                /// <summary>
+                /// 获取或设置信用卡活动优惠费率字符串。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("credit_activities_rate")]
+                [System.Text.Json.Serialization.JsonPropertyName("credit_activities_rate")]
+                public string? CreditActivityRateString { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠费率活动补充材料媒体文件标识 ID 列表。

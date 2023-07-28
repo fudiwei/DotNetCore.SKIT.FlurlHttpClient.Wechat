@@ -107,6 +107,8 @@
         "activities_additions": [ "0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo" ],
         "activities_id": "20191030111cff5b5e",
         "activities_rate": "0.6",
+        "debit_activities_rate": "0.6",
+        "credit_activities_rate": "0.6",
         "qualification_type": "餐饮",
         "qualifications": [ "0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo" ],
         "settlement_id": "719"
