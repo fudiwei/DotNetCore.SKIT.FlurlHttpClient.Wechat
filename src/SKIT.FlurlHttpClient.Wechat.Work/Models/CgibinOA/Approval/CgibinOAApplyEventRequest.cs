@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             public class Value
                             {
                                 /// <summary>
-                                /// 获取或设置 Text 控件文本值。
+                                /// 获取或设置 TextSettings 控件文本值。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("text")]
                                 [System.Text.Json.Serialization.JsonPropertyName("text")]

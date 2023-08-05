@@ -1,4 +1,4 @@
-﻿{
+{
 	"oper": 1,
 	"formid": "FORMID",
     "form_info": {
@@ -22,7 +22,8 @@
                             "status": 1
                         }
                     ],
-                    "placeholder": "PLACEHOLDER"
+                    "placeholder": "PLACEHOLDER",
+                    "question_extend_setting": {}
                 }
             ]
         },

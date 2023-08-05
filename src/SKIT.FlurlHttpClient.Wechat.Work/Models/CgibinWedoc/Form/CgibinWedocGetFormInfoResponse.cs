@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wedoc/get_form_info 接口的响应。</para>
@@ -47,6 +47,10 @@
                                 [Newtonsoft.Json.JsonProperty("status")]
                                 [System.Text.Json.Serialization.JsonPropertyName("status")]
                                 public int Status { get; set; }
+                            }
+
+                            public class ExtendedSettings : CgibinWedocCreateFormRequest.Types.Form.Types.QuestionItem.Types.ExtendedSettings
+                            {
                             }
                         }
 
@@ -112,6 +116,13 @@
                         [Newtonsoft.Json.JsonProperty("placeholder")]
                         [System.Text.Json.Serialization.JsonPropertyName("placeholder")]
                         public string? Placeholder { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题的额外设置。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("question_extend_setting")]
+                        [System.Text.Json.Serialization.JsonPropertyName("question_extend_setting")]
+                        public Types.ExtendedSettings? ExtendedSettings { get; set; }
                     }
 
                     public class Settings

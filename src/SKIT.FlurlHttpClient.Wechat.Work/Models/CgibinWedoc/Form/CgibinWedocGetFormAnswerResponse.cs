@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wedoc/get_form_answer 接口的响应。</para>
@@ -35,7 +35,7 @@
                     {
                         public static class Types
                         {
-                            public class ExtendedFileReply
+                            public class FileReply
                             {
                                 /// <summary>
                                 /// 获取或设置文件 ID。
@@ -52,7 +52,7 @@
                                 public string Name { get; set; } = default!;
                             }
 
-                            public class ExtendedOptionReply
+                            public class OptionReply
                             {
                                 /// <summary>
                                 /// 获取或设置额外回答选项键。
@@ -68,6 +68,97 @@
                                 [System.Text.Json.Serialization.JsonPropertyName("extend_text")]
                                 public string Text { get; set; } = default!;
                             }
+
+                            public class DurationReply
+                            {
+                                /// <summary>
+                                /// 获取或设置开始时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("begin_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
+                                public long BeginTimestamp { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置结束时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("end_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("end_time")]
+                                public long EndTimestamp { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置时间刻度。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("time_scale")]
+                                [System.Text.Json.Serialization.JsonPropertyName("time_scale")]
+                                public int TimeScale { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置单位换算。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("day_range")]
+                                [System.Text.Json.Serialization.JsonPropertyName("day_range")]
+                                public int DayRange { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置天数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("days")]
+                                [System.Text.Json.Serialization.JsonPropertyName("days")]
+                                public double? Days { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置小时数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("hours")]
+                                [System.Text.Json.Serialization.JsonPropertyName("hours")]
+                                public double? Hours { get; set; }
+                            }
+
+                            public class DepartmentReply
+                            {
+                                public static class Types
+                                {
+                                    public class Department
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置部门 ID。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("department_id")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("department_id")]
+                                        public long DepartmentId { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置部门列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("list")]
+                                public Types.Department[] DepartmentList { get; set; } = default!;
+                            }
+
+                            public class MemberReply
+                            {
+                                public static class Types
+                                {
+                                    public class Member
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置成员账号。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("userid")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                                        public string UserId { get; set; } = default!;
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置成员列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("list")]
+                                public Types.Member[] MemberList { get; set; } = default!;
+                            }
                         }
 
                         /// <summary>
@@ -82,28 +173,49 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("text_reply")]
                         [System.Text.Json.Serialization.JsonPropertyName("text_reply")]
-                        public string? ReplyText { get; set; }
+                        public string? TextReply { get; set; }
 
                         /// <summary>
                         /// 获取或设置回答选项键列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_reply")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_reply")]
-                        public int[]? ReplyOptionKeyList { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置回答文件列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("file_extend_reply")]
-                        [System.Text.Json.Serialization.JsonPropertyName("file_extend_reply")]
-                        public Types.ExtendedFileReply[]? ReplyExtendedFileReply { get; set; }
+                        public int[]? OptionReplyKeyList { get; set; }
 
                         /// <summary>
                         /// 获取或设置回答额外选项列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("option_extend_reply")]
                         [System.Text.Json.Serialization.JsonPropertyName("option_extend_reply")]
-                        public Types.ExtendedOptionReply[]? ReplyExtendedOptionList { get; set; }
+                        public Types.OptionReply[]? OptionReplyList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置回答文件列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("file_extend_reply")]
+                        [System.Text.Json.Serialization.JsonPropertyName("file_extend_reply")]
+                        public Types.FileReply[]? FileReply { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置回答时长信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("duration_reply")]
+                        [System.Text.Json.Serialization.JsonPropertyName("duration_reply")]
+                        public Types.DurationReply? DurationReply { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置回答部门信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("department_reply")]
+                        [System.Text.Json.Serialization.JsonPropertyName("department_reply")]
+                        public Types.DepartmentReply? DepartmentReply { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置回答成员信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("member_reply")]
+                        [System.Text.Json.Serialization.JsonPropertyName("member_reply")]
+                        public Types.MemberReply? MemberReply { get; set; }
                     }
                 }
 

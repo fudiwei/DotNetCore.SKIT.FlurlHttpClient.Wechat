@@ -50,6 +50,327 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("status")]
                                 public int Status { get; set; }
                             }
+
+                            public class ExtendedSettings
+                            {
+                                public static class Types
+                                {
+                                    public class TextSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置校验类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("validation_type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("validation_type")]
+                                        public int? ValidationType { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置校验详情类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("validation_detail")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("validation_detail")]
+                                        public int? ValidationDetailType { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置字符长度。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("char_len")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("char_len")]
+                                        public int? CharacterLength { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置数字的区间左端。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("number_min")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("number_min")]
+                                        public double? NumberMinimum { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置数字的区间右端。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("number_max")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("number_max")]
+                                        public double? NumberMaximum { get; set; }
+                                    }
+
+                                    public class RadioSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置是否增加“其他”选项。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("add_other_option")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("add_other_option")]
+                                        public bool? RequireAddOtherOption { get; set; }
+                                    }
+
+                                    public class CheckboxSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置是否增加“其他”选项。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("add_other_option")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("add_other_option")]
+                                        public bool? RequireAddOtherOption { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置多选类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                                        public int? Type { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置多选题可勾选的数量的限制。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("number")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("number")]
+                                        public int? Count { get; set; }
+                                    }
+
+                                    public class LocationSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置位置类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("location_type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("location_type")]
+                                        public int? LocationType { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置允许定位范围类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("distance_type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("distance_type")]
+                                        public int? DistanceType { get; set; }
+                                    }
+
+                                    public class ImageSettings
+                                    {
+                                        public static class Types
+                                        {
+                                            public class UploadLimitation
+                                            {
+                                                /// <summary>
+                                                /// 获取或设置数量限制类型。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("count_limit_type")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("count_limit_type")]
+                                                public int? CountLimitType { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置数量限制。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("count")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("count")]
+                                                public int? Count { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置单个文件大小限制（单位：字节）。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("max_size")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("max_size")]
+                                                public int? MaxSize { get; set; }
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置是否仅限手机拍照。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("camera_only")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("camera_only")]
+                                        public bool? IsCameraOnly { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置上传限制信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("upload_image_limit")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("upload_image_limit")]
+                                        public Types.UploadLimitation? UploadLimitation { get; set; }
+                                    }
+
+                                    public class FileSettings
+                                    {
+                                        public static class Types
+                                        {
+                                            public class UploadLimitation : ImageSettings.Types.UploadLimitation
+                                            {
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置是否仅限手机拍照。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("camera_only")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("camera_only")]
+                                        public bool? IsCameraOnly { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置上传限制信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("upload_image_limit")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("upload_image_limit")]
+                                        public Types.UploadLimitation? UploadLimitation { get; set; }
+                                    }
+
+                                    public class DateSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置日期格式类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("date_format_type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("date_format_type")]
+                                        public int? DateFormatType { get; set; }
+                                    }
+
+                                    public class TimeSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置时间格式类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("time_format_type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("time_format_type")]
+                                        public int? TimeFormatType { get; set; }
+                                    }
+
+                                    public class DurationSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置时间刻度。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("time_scale")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("time_scale")]
+                                        public int? TimeScale { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置日期类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("date_type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("date_type")]
+                                        public int? DateType { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置单位换算。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("day_range")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("day_range")]
+                                        public int? DayRange { get; set; }
+                                    }
+
+                                    public class TemperatureSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置温度单位类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("unit_type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("unit_type")]
+                                        public int? UnitType { get; set; }
+                                    }
+
+                                    public class DepartmentSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置是否允许多选。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("allow_multiple_selection")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("allow_multiple_selection")]
+                                        public bool? AllowMultipleSelection { get; set; }
+                                    }
+
+                                    public class MemberSettings
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置是否允许多选。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("allow_multiple_selection")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("allow_multiple_selection")]
+                                        public bool? AllowMultipleSelection { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置文本题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("text_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("text_setting")]
+                                public Types.TextSettings? TextSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置单选题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("radio_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("radio_setting")]
+                                public Types.RadioSettings? RadioSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置多选题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("checkbox_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("checkbox_setting")]
+                                public Types.CheckboxSettings? CheckboxSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置位置题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("location_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("location_setting")]
+                                public Types.LocationSettings? LocationSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置图片题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("image_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("image_setting")]
+                                public Types.ImageSettings? ImageSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置文件题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("file_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("file_setting")]
+                                public Types.FileSettings? FileSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置日期题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("date_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("date_setting")]
+                                public Types.DateSettings? DateSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置时间题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("time_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("time_setting")]
+                                public Types.TimeSettings? TimeSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置时长题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("duration_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("duration_setting")]
+                                public Types.DurationSettings? DurationSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置体温题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("temperature_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("temperature_setting")]
+                                public Types.TemperatureSettings? TemperatureSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置部门题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("department_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("department_setting")]
+                                public Types.DepartmentSettings? DepartmentSettings { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置成员题的题目设置。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("member_setting")]
+                                [System.Text.Json.Serialization.JsonPropertyName("member_setting")]
+                                public Types.MemberSettings? MemberSettings { get; set; }
+                            }
                         }
 
                         /// <summary>
@@ -114,6 +435,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("placeholder")]
                         [System.Text.Json.Serialization.JsonPropertyName("placeholder")]
                         public string? Placeholder { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置问题的额外设置。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("question_extend_setting")]
+                        [System.Text.Json.Serialization.JsonPropertyName("question_extend_setting")]
+                        public Types.ExtendedSettings? ExtendedSettings { get; set; }
                     }
 
                     public class Settings

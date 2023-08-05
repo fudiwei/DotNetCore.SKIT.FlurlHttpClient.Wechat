@@ -22,7 +22,8 @@
                             "status": 1
                         }
                     ],
-                    "placeholder": "PLACEHOLDER"
+                    "placeholder": "PLACEHOLDER",
+                    "question_extend_setting": {}
                 }
             ]
         },

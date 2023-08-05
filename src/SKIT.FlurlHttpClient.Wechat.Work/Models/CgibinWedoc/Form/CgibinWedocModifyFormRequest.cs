@@ -56,6 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             {
                             }
                         }
+
                         /// <summary>
                         /// 获取或设置填写范围信息。
                         /// </summary>
