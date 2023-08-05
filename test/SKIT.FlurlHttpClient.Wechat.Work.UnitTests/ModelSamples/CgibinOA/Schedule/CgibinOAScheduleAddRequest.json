@@ -1,6 +1,6 @@
-﻿{
+{
     "schedule": {
-        "admins": ["admin1", "admin2"],
+        "admins": [ "admin1", "admin2" ],
         "start_time": 1571274600,
         "end_time": 1571320210,
         "attendees": [
@@ -18,12 +18,13 @@
             "repeat_until": 1606976813,
             "is_custom_repeat": 1,
             "repeat_interval": 1,
-            "repeat_day_of_week": [3, 7],
-            "repeat_day_of_month": [10, 21],
+            "repeat_day_of_week": [ 3, 7 ],
+            "repeat_day_of_month": [ 10, 21 ],
             "timezone": 8
         },
         "location": "广州国际媒体港10楼1005会议室",
-        "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA"
+        "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
+        "is_whole_day": 1
     },
     "agentid": 1000014
 }

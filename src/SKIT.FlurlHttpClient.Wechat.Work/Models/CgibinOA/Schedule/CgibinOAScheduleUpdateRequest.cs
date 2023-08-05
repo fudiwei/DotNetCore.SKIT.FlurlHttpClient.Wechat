@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -49,6 +49,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("end_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("end_time")]
                 public long? EndTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否设置为全天日程。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_whole_day")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_whole_day")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                public bool? IsWholeDay { get; set; }
 
                 /// <summary>
                 /// 获取或设置日程标题。

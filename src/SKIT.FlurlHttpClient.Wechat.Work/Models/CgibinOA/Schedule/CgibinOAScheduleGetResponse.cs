@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/schedule/get 接口的响应。</para>
@@ -162,6 +162,15 @@
                 [Newtonsoft.Json.JsonProperty("end_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("end_time")]
                 public long? EndTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否设置为全天日程。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_whole_day")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_whole_day")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                public bool IsWholeDay { get; set; }
 
                 /// <summary>
                 /// 获取或设置所属日历 ID。
