@@ -1,0 +1,58 @@
+{
+    "userid": "xxxxx",
+    "update_items": [
+        {
+            "fieldid": 11020,
+            "sub_idx": 0,
+            "value_string": "xxxxx"
+        },
+        {
+            "fieldid": 17003,
+            "sub_idx": 1,
+            "value_mobile": {
+                "value_country_code": "xxx",
+                "value_mobile": "xxxxxxxx"
+            }
+        }
+    ],
+    "remove_items": [
+        {
+            "group_type": 1,
+            "sub_idx": 1
+        },
+        {
+            "group_type": 1,
+            "sub_idx": 2
+        }
+    ],
+    "insert_items": [
+        {
+            "group_type": 4,
+            "item": [
+                {
+                    "fieldid": 17001,
+                    "sub_idx": 0,
+                    "value_string": "孙悟空"
+                },
+                {
+                    "fieldid": 17002,
+                    "sub_idx": 0,
+                    "value_uint32": 1
+                },
+                {
+                    "fieldid": 17003,
+                    "sub_idx": 0,
+                    "value_mobile": {
+                        "value_country_code": "xxx",
+                        "value_mobile": "xxxxxxxx"
+                    }
+                },
+                {
+                    "fieldid": 17004,
+                    "sub_idx": 0,
+                    "value_string": "娜美克星"
+                }
+            ]
+        }
+    ]
+}

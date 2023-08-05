@@ -1,0 +1,14 @@
+{
+    "userid": "xxxxx",
+    "get_all": false,
+    "fieldids": [
+        {
+            "fieldid": 11004,
+            "sub_idx": 0
+        },
+        {
+            "fieldid": 14001,
+            "sub_idx": 1
+        }
+    ]
+}
