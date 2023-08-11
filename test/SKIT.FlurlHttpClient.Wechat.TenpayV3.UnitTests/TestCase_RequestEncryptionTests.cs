@@ -653,6 +653,44 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /merchant-risk-manage/report-trade-union-information）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateMerchantRiskManageTradeUnionInformationReportRequest()
+        {
+            static Models.CreateMerchantRiskManageTradeUnionInformationReportRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateMerchantRiskManageTradeUnionInformationReportRequest()
+                {
+                    PhoneNumber = MOCK_PLAIN_STR,
+                    IdCardNumber = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateMerchantRiskManageTradeUnionInformationReportRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.PhoneNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PhoneNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCardNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateMerchantRiskManageTradeUnionInformationReportAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateMerchantRiskManageTradeUnionInformationReportAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /merchants）")]
         public async Task TestEncryptRequestSensitiveProperty_AddHKSubMerchantRequest()
         {

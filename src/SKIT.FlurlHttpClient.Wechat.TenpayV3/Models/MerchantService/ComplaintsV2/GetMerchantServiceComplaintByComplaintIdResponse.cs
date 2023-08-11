@@ -48,7 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("media_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_url")]
-                public string[] MediaUrl { get; set; } = default!;
+                public string[] MediaUrlList { get; set; } = default!;
             }
 
             public class ServiceOrder
