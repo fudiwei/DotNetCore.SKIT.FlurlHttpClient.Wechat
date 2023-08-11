@@ -30,54 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /transfer/batches/batch-id/{batch_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter4_3_2.shtml </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.GetTransferBatchByBatchIdResponse> ExecuteGetTransferBatchByBatchIdAsync(this WechatTenpayClient client, Models.GetTransferBatchByBatchIdRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "transfer", "batches", "batch-id", request.BatchId)
-                .SetQueryParam("need_query_detail", request.RequireQueryDetail);
-
-            if (request.DetailStatus != null)
-                flurlReq.SetQueryParam("detail_status", request.DetailStatus);
-
-            if (request.Offset != null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value);
-
-            if (request.Limit != null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value);
-
-            return await client.SendRequestWithJsonAsync<Models.GetTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter4_3_2.shtml </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.GetTransferBatchDetailByDetailIdResponse> ExecuteGetTransferBatchDetailByDetailIdAsync(this WechatTenpayClient client, Models.GetTransferBatchDetailByDetailIdRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "transfer", "batches", "batch-id", request.BatchId, "details", "detail-id", request.DetailId);
-
-            return await client.SendRequestWithJsonAsync<Models.GetTransferBatchDetailByDetailIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
         /// <para>异步调用 [GET] /transfer/batches/out-batch-no/{out_batch_no} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter4_3_5.shtml </para>
         /// </summary>
@@ -107,6 +59,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// <para>异步调用 [GET] /transfer/batches/batch-id/{batch_id} 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter4_3_2.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetTransferBatchByBatchIdResponse> ExecuteGetTransferBatchByBatchIdAsync(this WechatTenpayClient client, Models.GetTransferBatchByBatchIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "transfer", "batches", "batch-id", request.BatchId)
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail);
+
+            if (request.DetailStatus != null)
+                flurlReq.SetQueryParam("detail_status", request.DetailStatus);
+
+            if (request.Offset != null)
+                flurlReq.SetQueryParam("offset", request.Offset.Value);
+
+            if (request.Limit != null)
+                flurlReq.SetQueryParam("limit", request.Limit.Value);
+
+            return await client.SendRequestWithJsonAsync<Models.GetTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [GET] /transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no} 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter4_3_6.shtml </para>
         /// </summary>
@@ -123,6 +104,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateRequest(request, HttpMethod.Get, "transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber);
 
             return await client.SendRequestWithJsonAsync<Models.GetTransferBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id} 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter4_3_2.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetTransferBatchDetailByDetailIdResponse> ExecuteGetTransferBatchDetailByDetailIdAsync(this WechatTenpayClient client, Models.GetTransferBatchDetailByDetailIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "transfer", "batches", "batch-id", request.BatchId, "details", "detail-id", request.DetailId);
+
+            return await client.SendRequestWithJsonAsync<Models.GetTransferBatchDetailByDetailIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -168,7 +168,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
         #endregion
 
-        #region Detail
+        #region DetailReceipt
         /// <summary>
         /// <para>异步调用 [POST] /transfer-detail/electronic-receipts 接口。</para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter4_3_9.shtml </para>
@@ -213,9 +213,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendRequestWithJsonAsync<Models.GetTransferDetailElectronicReceiptByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        #endregion
-
-        #region Transfer
         #endregion
     }
 }
