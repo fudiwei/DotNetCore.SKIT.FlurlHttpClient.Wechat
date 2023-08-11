@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -40,6 +40,54 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public int UnitPrice { get; set; }
             }
 
+            public class Express
+            {
+                /// <summary>
+                /// 获取或设置物流单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("courier_number")]
+                [System.Text.Json.Serialization.JsonPropertyName("courier_number")]
+                public string CourierNumber { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置物流商名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("express_company_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("express_company_name")]
+                public string ExpressCompanyName { get; set; } = string.Empty;
+            }
+
+            public class Presale
+            {
+                /// <summary>
+                /// 获取或设置订单类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("type")]
+                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                public string Type { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置关联定金订单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("deposit_transaction_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("deposit_transaction_id")]
+                public string? DepositTransactionId { get; set; }
+
+                /// <summary>
+                /// 获取或设置关联尾款订单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("balance_transaction_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("balance_transaction_id")]
+                public string? BalanceTransactionId { get; set; }
+
+                /// <summary>
+                /// 获取或设置预售订单总金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("total_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("total_amount")]
+                public int TotalAmount { get; set; }
+            }
+
             public class Seller
             {
                 /// <summary>
@@ -62,23 +110,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("seller_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("seller_id")]
                 public string SellerId { get; set; } = string.Empty;
-            }
-
-            public class Express
-            {
-                /// <summary>
-                /// 获取或设置物流单号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("courier_number")]
-                [System.Text.Json.Serialization.JsonPropertyName("courier_number")]
-                public string CourierNumber { get; set; } = string.Empty;
-
-                /// <summary>
-                /// 获取或设置物流商名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("express_company_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("express_company_name")]
-                public string ExpressCompanyName { get; set; } = string.Empty;
             }
 
             public class Payee
@@ -135,18 +166,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public IList<Types.Goods>? GoodsList { get; set; }
 
         /// <summary>
+        /// 获取或设置物流信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("express_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("express_info")]
+        public Types.Express? Express { get; set; }
+
+        /// <summary>
+        /// 获取或设置预售信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("presale_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("presale_info")]
+        public Types.Presale? Presale { get; set; }
+
+        /// <summary>
         /// 获取或设置卖家信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("seller_info")]
         [System.Text.Json.Serialization.JsonPropertyName("seller_info")]
         public Types.Seller Seller { get; set; } = new Types.Seller();
-
-        /// <summary>
-        /// 获取或设置物流信息。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("express_info")]
-        [System.Text.Json.Serialization.JsonPropertyName("express_info")]
-        public Types.Express Express { get; set; } = new Types.Express();
 
         /// <summary>
         /// 获取或设置付款人信息。

@@ -1,4 +1,4 @@
-﻿{
+{
     "amount": 10,
     "express_info": {
         "courier_number": "curier_number_1231",
@@ -13,6 +13,12 @@
             "goods_unit_price": 1
         }
     ],
+    "presale_info": {
+        "type": "DEPOSIT",
+        "deposit_transaction_id": "4208450740201411110007820472",
+        "balance_transaction_id": "4208450740201411110007820472",
+        "total_amount": 10
+    },
     "out_order_id": "merchant_1123123",
     "payee_info": {
         "payee_id": "ID123112312"
