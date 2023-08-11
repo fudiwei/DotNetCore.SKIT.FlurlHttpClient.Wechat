@@ -1,0 +1,16 @@
+{
+    "custom_entrance_type": "MERCHANT_ACTIVITY",
+    "subtitle": "双十一8折活动",
+    "goods_thumbnail_url": "https://qpic.cn/xxx",
+    "custom_entrance_state": "ONLINE",
+    "start_time": "2015-05-20T13:29:35+08:00",
+    "end_time": "2019-12-31T13:29:35.120+08:00",
+    "brand_id": "1014",
+    "create_time": "2015-05-20T13:29:35+08:00",
+    "modify_time": "2015-05-20T13:29:35+08:00",
+    "out_request_no": "100002322019090134234sfdf",
+    "jump_link": {
+        "mini_programs_appid": "wxea9c30a90fs8d3fe",
+        "mini_programs_path": "/pages/bonus/bonus"
+    }
+}
