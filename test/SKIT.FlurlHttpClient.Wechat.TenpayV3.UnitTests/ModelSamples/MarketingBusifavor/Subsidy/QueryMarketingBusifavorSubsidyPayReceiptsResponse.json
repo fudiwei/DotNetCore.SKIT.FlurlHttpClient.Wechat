@@ -1,0 +1,18 @@
+{
+    "pay_receipt_list": [
+        {
+            "subsidy_receipt_id": "1120200119165100000000000001",
+            "stock_id": "128888000000001",
+            "coupon_code": "ABCD12345678",
+            "transaction_id": "4200000913202101152566792388",
+            "payer_merchant": "1900000001",
+            "payee_merchant": "1900000002",
+            "amount": 100,
+            "description": "20210115DESCRIPTION",
+            "status": "SUCCESS",
+            "success_time": "2021-01-20T10:29:35.120+08:00",
+            "out_subsidy_no": "subsidy-abcd-12345678",
+            "create_time": "2021-01-20T10:29:35.120+08:00"
+        }
+    ]
+}
