@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /taxi-invoice/attendance/punch 接口的请求。</para>
     /// </summary>
-    public class PunchTaxiInvoiceAttendanceRequest : WechatTenpayRequest
+    public class CreateTaxiInvoicePunchAttendanceRequest : WechatTenpayRequest
     {
         internal static class Converters
         {
