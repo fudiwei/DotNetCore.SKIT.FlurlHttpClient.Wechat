@@ -11,7 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region CardTemplate
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/card-template 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_5.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-card-template/create-fapiao-card-template.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-card-template/create-fapiao-card-template.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,8 +32,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         #region Merchant
         /// <summary>
+        /// <para>异步调用 [POST] /new-tax-control-fapiao/merchant/{sub_mchid}/check 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/check-merchant-status.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CheckNewTaxControlFapiaoMerchantResponse> ExecuteCheckNewTaxControlFapiaoMerchantAsync(this WechatTenpayClient client, Models.CheckNewTaxControlFapiaoMerchantRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "merchant", request.SubMerchantId, "check");
+
+            return await client.SendRequestWithJsonAsync<Models.CheckNewTaxControlFapiaoMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [PATCH] /new-tax-control-fapiao/merchant/development-config 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_18.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/update-development-config.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/update-development-config.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -51,7 +72,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/merchant/development-config 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_18.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/query-development-config.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/query-development-config.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -65,12 +87,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "merchant", "development-config");
 
+            if (request.SubMerchantId != null)
+                flurlReq.SetQueryParam("sub_mch_code", request.SubMerchantId);
+
             return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoMerchantDevelopmentConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/merchant/base-information 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/get-merchant-info.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/get-merchant-info.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -84,12 +110,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "merchant", "base-information");
 
+            if (request.SubMerchantId != null)
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+
             return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoMerchantBaseInformationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/merchant/tax-codes 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/list-merchant-tax-codes.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/list-merchant-tax-codes.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -105,6 +135,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
+            if (request.SubMerchantId != null)
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+
             return await client.SendRequestWithJsonAsync<Models.QueryNewTaxControlFapiaoMerchantTaxCodesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
@@ -112,7 +145,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region UserTitle
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/user-title/title-url 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/user-title/acquire-fapiao-title-url.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/user-title/acquire-fapiao-title-url.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -130,6 +164,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("total_amount", request.TotalAmount)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("openid", request.OpenId);
+
+            if (request.SubMerchantId != null)
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             if (request.SellerName != null)
                 flurlReq.SetQueryParam("seller_name", request.SellerName);
@@ -151,7 +188,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/user-title 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_7.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/user-title/get-user-title.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/user-title/get-user-title.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -167,6 +205,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("fapiao_apply_id", request.FapiaoApplyId)
                 .SetQueryParam("scene", request.Scene);
 
+            if (request.SubMerchantId != null)
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+
             return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoUserTitleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
@@ -174,7 +215,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region FapiaoApplication
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/fapiao-applications 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_8.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/issue-fapiao-applications.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/issue-fapiao-applications.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -193,7 +235,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/reverse 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_10.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/reverse-fapiao-applications.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/reverse-fapiao-applications.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -212,7 +255,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/get-fapiao-applications.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-applications.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -229,12 +273,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.FapiaoId != null)
                 flurlReq.SetQueryParam("fapiao_id", request.FapiaoId);
 
+            if (request.SubMerchantId != null)
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+
             return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/fapiao-files 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -251,12 +299,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.FapiaoId != null)
                 flurlReq.SetQueryParam("fapiao_id", request.FapiaoId);
 
+            if (request.SubMerchantId != null)
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+
             return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoApplicationFilesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
         /// <para>异步调用 [GET] /{download_url} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_21.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/download-invoice-file.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/download-invoice-file.html </para>
         /// <para><i>（请注意此接口不受构造 <see cref="WechatTenpayClient" /> 时指定的 <see cref="WechatTenpayClientOptions.Endpoint"/> 参数控制。）</i></para>
         /// </summary>
         /// <param name="client"></param>
@@ -280,11 +332,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("invoice_code", request.FapiaoCode)
                 .SetQueryParam("invoice_no", request.FapiaoNumber);
 
+            if (request.SubMerchantId != null)
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+
             return await client.SendRequestWithJsonAsync<Models.DownloadNewTaxControlFapiaoApplicationFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/fapiao-applications/upload-fapiao-file 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_14.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/upload-fapiao-file.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/upload-fapiao-file.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -304,7 +361,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/insert-cards 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_15.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/insert-cards.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/insert-cards.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -18,5 +18,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string? FapiaoId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? SubMerchantId { get; set; }
     }
 }
