@@ -45,6 +45,7 @@
 |  √  |       经营能力：支付即服务        | 直连商户 & 服务商 |                   |
 |  √  |        经营能力：点金计划         |      服务商       |                   |
 |  √  |      经营能力：连锁品牌门店       |      服务商       |                   |
+|  √  |      经营能力：品牌小店营销       |      服务商       |                   |
 |  √  |   经营能力：微信支付分停车服务    | 直连商户 & 服务商 |                   |
 |  √  |   经营能力：租用充电宝隔夜归还    |     直连商户      |                   |
 |  √  |        经营能力：ETC 扣费         |      服务商       |                   |
@@ -814,6 +815,10 @@
 
         -   关闭广告展示：`CloseGoldPlanAdvertisingShow`
 
+    -   扣款服务
+
+        -   预扣费通知：`NotifyPartnerPAPPayContract`
+
     -   连锁品牌门店
 
         -   创建门店：`CreateMerchantStore`
@@ -826,9 +831,23 @@
 
         -   解除门店收款信息绑定：`UnbindMerchantStoreRecipient`
 
-    -   扣款服务
+    -   品牌小店营销
 
-        -   预扣费通知：`NotifyPartnerPAPPayContract`
+        -   查询零售小店活动业务代理：`QueryMarketingGoodsSubsidyActivityRetailStoreRepresentatives`
+
+        -   添加零售小店活动业务代理：`AddMarketingGoodsSubsidyActivityRetailStoreRepresentative`
+
+        -   删除零售小店活动业务代理：`DeleteMarketingGoodsSubsidyActivityRetailStoreRepresentative`
+
+        -   生成小店活动物料码：`CreateMarketingGoodsSubsidyActivityRetailStoreMaterial`
+
+        -   查询小店活动门店列表：`QueryMarketingGoodsSubsidyActivityRetailStores`
+
+        -   查询小店活动门店详情：`GetMarketingGoodsSubsidyActivityRetailStoreByStoreCode`
+
+        -   添加小店活动门店：`AddMarketingGoodsSubsidyActivityRetailStore`
+
+        -   删除小店活动门店：`DeleteMarketingGoodsSubsidyActivityRetailStore`
 
 -   行业方案
 
