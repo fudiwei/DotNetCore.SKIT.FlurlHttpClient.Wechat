@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -19,6 +19,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ids")]
         [System.Text.Json.Serialization.JsonPropertyName("ids")]
-        public IList<int> GoodsIdList { get; set; } = new List<int>();
+        public IList<long> GoodsIdList { get; set; } = new List<long>();
     }
 }
