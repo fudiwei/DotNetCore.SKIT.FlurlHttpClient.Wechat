@@ -35,6 +35,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
         public string? ImmeDeliveryAppSecret { get; }
 
         /// <summary>
+        /// 初始化客户端时 <see cref="WechatApiClientOptions.VirtualPaymentAppKey"/> 的副本。
+        /// </summary>
+        public string? VirtualPaymentAppKey { get; }
+
+        /// <summary>
         /// 初始化客户端时 <see cref="WechatApiClientOptions.MidasAppKey"/> 的副本。
         /// </summary>
         public string? MidasAppKey { get; }
@@ -64,6 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
             PushToken = options.PushToken;
             ImmeDeliveryAppKey = options.ImmeDeliveryAppKey;
             ImmeDeliveryAppSecret = options.ImmeDeliveryAppSecret;
+            VirtualPaymentAppKey = options.VirtualPaymentAppKey;
             MidasAppKey = options.MidasAppKey;
             MidasOfferId = options.MidasOfferId;
             MidasAppKeyV2 = options.MidasAppKeyV2;

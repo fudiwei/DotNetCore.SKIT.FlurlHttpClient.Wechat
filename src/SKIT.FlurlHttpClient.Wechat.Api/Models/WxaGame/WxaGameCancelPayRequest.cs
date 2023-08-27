@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string BillNumber { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置本次退回的退游戏币的数量。
+        /// 获取或设置本次退回的游戏币的数量。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]

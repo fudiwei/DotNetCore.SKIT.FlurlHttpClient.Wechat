@@ -48,6 +48,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public string? ImmeDeliveryAppSecret { get; set; }
 
         /// <summary>
+        /// 获取或设置虚拟支付 AppKey（用于小程序虚拟支付相关接口）。
+        /// </summary>
+        public string? VirtualPaymentAppKey { get; set; }
+
+        /// <summary>
         /// 获取或设置米大师平台 OfferId（用于小游戏虚拟支付 1.0 相关接口）。
         /// </summary>
         public string? MidasOfferId { get; set; }

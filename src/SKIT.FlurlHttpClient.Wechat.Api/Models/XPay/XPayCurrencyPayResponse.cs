@@ -1,16 +1,16 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /wxa/game/pay 接口的响应。</para>
+    /// <para>表示 [POST] /xpay/currency_pay 接口的响应。</para>
     /// </summary>
-    public class WxaGamePayResponse : WechatApiResponse
+    public class XPayCurrencyPayResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置扣除游戏币的订单号。
+        /// 获取或设置扣除代币的订单号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("bill_no")]
-        [System.Text.Json.Serialization.JsonPropertyName("bill_no")]
-        public string BillNumber { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("order_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("order_id")]
+        public string OrderId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置预扣后的余额。

@@ -1,13 +1,9 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
-using System.Web;
 using Flurl;
 using Flurl.Http;
-using Newtonsoft.Json.Converters;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
@@ -36,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.SignMethod = Constants.MidasSignMethods.HMAC_SHA256;
             }
 
-            if (request.Signature == null)
+            if (request.Signature == null && request.SessionKey != null)
             {
                 tmpRawData = tmpRawData ?? client.JsonSerializer.Serialize(request);
 
@@ -45,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                     case Constants.MidasSignMethods.HMAC_SHA256:
                         {
                             string msgText = tmpRawData;
-                            request.Signature = Utilities.HMACUtility.HashWithSHA256(request.SessionKey ?? string.Empty, msgText).ToLower();
+                            request.Signature = Utilities.HMACUtility.HashWithSHA256(request.SessionKey, msgText).ToLower();
                         }
                         break;
 
