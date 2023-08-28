@@ -79,6 +79,292 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.WxaGetPluginOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
+        #region Analysis
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/performance/boot 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getPerformanceData.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessPerformanceBootResponse> ExecuteWxaBusinessPerformanceBootAsync(this WechatApiClient client, Models.WxaBusinessPerformanceBootRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "performance", "boot")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessPerformanceBootResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Charge
+        /// <summary>
+        /// <para>异步调用 [GET] /wxa/charge/usage/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/charge/api/charge_get_usage_detail.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaChargeUsageGetResponse> ExecuteWxaChargeUsageGetAsync(this WechatApiClient client, Models.WxaChargeUsageGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxa", "charge", "usage", "get")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("spuId", request.SPUId)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaChargeUsageGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxa/charge/usage/get_recent_average 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/charge/api/charge_get_usage_detail.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaChargeUsageGetRecentAverageResponse> ExecuteWxaChargeUsageGetRecentAverageAsync(this WechatApiClient client, Models.WxaChargeUsageGetRecentAverageRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxa", "charge", "usage", "get_recent_average")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("spuId", request.SPUId);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaChargeUsageGetRecentAverageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region HardwareDevice
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/getsnticket 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/hardware-device/hardwareDevice.getSnTicket.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetSnTicketResponse> ExecuteWxaGetSnTicketAsync(this WechatApiClient client, Models.WxaGetSnTicketRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "getsnticket")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGetSnTicketResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region LockStep
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/createwxagameroom 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/lock-step/lock-step.createGameRoom.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaCreateWxaGameRoomResponse> ExecuteWxaCreateWxaGameRoomAsync(this WechatApiClient client, Models.WxaCreateWxaGameRoomRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "createwxagameroom")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaCreateWxaGameRoomResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxa/getwxagameframe 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/lock-step/lock-step.createGameRoom.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetWxaGameFrameResponse> ExecuteWxaGetWxaGameFrameAsync(this WechatApiClient client, Models.WxaGetWxaGameFrameRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxa", "getwxagameframe")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("access_info", request.AccessInformation)
+                .SetQueryParam("begin_frame_id", request.BeginFrameId)
+                .SetQueryParam("end_frame_id", request.EndFrameId);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaGameFrameResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxa/getwxagameidentityinfo 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/lock-step/lock-step.getGameIdentityInfo.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetWxaGameIdentityInfoResponse> ExecuteWxaGetWxaGameIdentityInfoAsync(this WechatApiClient client, Models.WxaGetWxaGameIdentityInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxa", "getwxagameidentityinfo")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("access_info", request.AccessInformation);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaGameIdentityInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxa/getwxagameroominfo 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/lock-step/lock-step.getGameRoomInfo.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetWxaGameRoomInfoResponse> ExecuteWxaGetWxaGameRoomInfoAsync(this WechatApiClient client, Models.WxaGetWxaGameRoomInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxa", "getwxagameroominfo")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("access_info", request.AccessInformation);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaGameRoomInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region NearybyPOI
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/addnearbypoi 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.add.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaAddNearbyPOIResponse> ExecuteWxaAddNearbyPOIAsync(this WechatApiClient client, Models.WxaAddNearbyPOIRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "addnearbypoi")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaAddNearbyPOIResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/delnearbypoi 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.delete.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaDeleteNearbyPOIResponse> ExecuteWxaDeleteNearbyPOIAsync(this WechatApiClient client, Models.WxaDeleteNearbyPOIRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "delnearbypoi")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaDeleteNearbyPOIResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxa/getnearbypoilist 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.getList.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetNearbyPOIListResponse> ExecuteWxaGetNearbyPOIListAsync(this WechatApiClient client, Models.WxaGetNearbyPOIListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxa", "getnearbypoilist")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("page", request.Page)
+                .SetQueryParam("page_rows", request.Limit);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGetNearbyPOIListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/setnearbypoishowstatus 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.setShowStatus.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSetNearbyPOIShowStatusResponse> ExecuteWxaSetNearbyPOIShowStatusAsync(this WechatApiClient client, Models.WxaSetNearbyPOIShowStatusRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "setnearbypoishowstatus")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaSetNearbyPOIShowStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Operation
+        /// <summary>
+        /// <para>异步调用 [GET] /wxa/getwxadevinfo 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/operation/operation.getDomainInfo.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetWxaDevInfoResponse> ExecuteWxaGetWxaDevInfoAsync(this WechatApiClient client, Models.WxaGetWxaDevInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "wxa", "getwxadevinfo")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            if (request.Action != null)
+                flurlReq.SetQueryParam("action", request.Action);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaDevInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Plugin
         /// <summary>
         /// <para>异步调用 [POST] /wxa/plugin?action=apply 接口。</para>
@@ -235,156 +521,92 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
-        #region WxaCode
+        #region RiskControl
         /// <summary>
-        /// <para>异步调用 [POST] /wxa/getwxacode 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/qr-code/wxacode.get.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/qr-code/wxacode.get.html </para>
+        /// <para>异步调用 [POST] /wxa/getuserriskrank 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/safety-control-capability/riskControl.getUserRiskRank.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/safety-control-capability/riskControl.getUserRiskRank.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.WxaGetWxaCodeResponse> ExecuteWxaGetWxaCodeAsync(this WechatApiClient client, Models.WxaGetWxaCodeRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.WxaGetUserRiskRankResponse> ExecuteWxaGetUserRiskRankAsync(this WechatApiClient client, Models.WxaGetUserRiskRankRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "getwxacode")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/getwxacodeunlimit 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/qr-code/wxacode.getUnlimited.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/qr-code/wxacode.getUnlimited.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaGetWxaCodeUnlimitResponse> ExecuteWxaGetWxaCodeUnlimitAsync(this WechatApiClient client, Models.WxaGetWxaCodeUnlimitRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
+            if (request.AppId == null)
+                request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "getwxacodeunlimit")
+                .CreateRequest(request, HttpMethod.Post, "wxa", "getuserriskrank")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaCodeUnlimitResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.WxaGetUserRiskRankResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
-        #region UrlScheme
+        #region Search
         /// <summary>
-        /// <para>异步调用 [POST] /wxa/generatescheme 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-scheme/urlscheme.generate.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-scheme/urlscheme.generate.html </para>
+        /// <para>异步调用 [POST] /wxa/imagesearch 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/search/search.imageSearch.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.WxaGenerateSchemeResponse> ExecuteWxaGenerateSchemeAsync(this WechatApiClient client, Models.WxaGenerateSchemeRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.WxaImageSearchResponse> ExecuteWxaImageSearchAsync(this WechatApiClient client, Models.WxaImageSearchRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "generatescheme")
+                .CreateRequest(request, HttpMethod.Post, "wxa", "imagesearch")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.WxaGenerateSchemeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
+            return await client.SendRequestAsync<Models.WxaImageSearchResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /wxa/queryscheme 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-scheme/urlscheme.query.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-scheme/urlscheme.query.html </para>
+        /// <para>异步调用 [POST] /wxa/sitesearch 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/search/search.siteSearch.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.WxaQuerySchemeResponse> ExecuteWxaQuerySchemeAsync(this WechatApiClient client, Models.WxaQuerySchemeRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.WxaSiteSearchResponse> ExecuteWxaSiteSearchAsync(this WechatApiClient client, Models.WxaSiteSearchRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "queryscheme")
+                .CreateRequest(request, HttpMethod.Post, "wxa", "sitesearch")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.WxaQuerySchemeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.WxaSiteSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /wxa/generatenfcscheme 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-scheme/urlscheme.generateNFC.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-scheme/urlscheme.generateNFC.html </para>
+        /// <para>异步调用 [POST] /wxa/search/wxaapi_submitpages 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/search/search.submitPages.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.WxaGenerateNFCSchemeResponse> ExecuteWxaGenerateNFCSchemeAsync(this WechatApiClient client, Models.WxaGenerateNFCSchemeRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.WxaSearchWxaApiSubmitPagesResponse> ExecuteWxaSearchWxaApiSubmitPagesAsync(this WechatApiClient client, Models.WxaSearchWxaApiSubmitPagesRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "generatenfcscheme")
+                .CreateRequest(request, HttpMethod.Post, "wxa", "search", "wxaapi_submitpages")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.WxaGenerateNFCSchemeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region UrlLink
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/generate_urllink 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-link/urllink.generate.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-link/urllink.generate.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaGenerateUrlLinkResponse> ExecuteWxaGenerateUrlLinkAsync(this WechatApiClient client, Models.WxaGenerateUrlLinkRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "generate_urllink")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaGenerateUrlLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/query_urllink 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-link/urllink.query.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-link/urllink.query.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaQueryUrlLinkResponse> ExecuteWxaQueryUrlLinkAsync(this WechatApiClient client, Models.WxaQueryUrlLinkRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "query_urllink")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaQueryUrlLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.WxaSearchWxaApiSubmitPagesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -455,384 +677,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaMessageSecurityCheckResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region RiskControl
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/getuserriskrank 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/safety-control-capability/riskControl.getUserRiskRank.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/safety-control-capability/riskControl.getUserRiskRank.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaGetUserRiskRankResponse> ExecuteWxaGetUserRiskRankAsync(this WechatApiClient client, Models.WxaGetUserRiskRankRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            if (request.AppId == null)
-                request.AppId = client.Credentials.AppId;
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "getuserriskrank")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaGetUserRiskRankResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region Analysis
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/business/performance/boot 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/data-analysis/analysis.getPerformanceData.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaBusinessPerformanceBootResponse> ExecuteWxaBusinessPerformanceBootAsync(this WechatApiClient client, Models.WxaBusinessPerformanceBootRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "performance", "boot")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaBusinessPerformanceBootResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region Storage
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/remove_user_storage 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/data/storage.removeUserStorage.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaRemoveUserStorageResponse> ExecuteWxaRemoveUserStorageAsync(this WechatApiClient client, Models.WxaRemoveUserStorageRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "remove_user_storage")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("openid", request.OpenId)
-                .SetQueryParam("signature", request.Signature)
-                .SetQueryParam("sig_method", request.SignMethod);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaRemoveUserStorageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/setuserinteractivedata 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/data/storage.setUserInteractiveData.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaSetUserInteractiveDataResponse> ExecuteWxaSetUserInteractiveDataAsync(this WechatApiClient client, Models.WxaSetUserInteractiveDataRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "setuserinteractivedata")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("openid", request.OpenId)
-                .SetQueryParam("signature", request.Signature)
-                .SetQueryParam("sig_method", request.SignMethod);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaSetUserInteractiveDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/set_user_storage 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/data/storage.setUserStorage.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaSetUserStorageResponse> ExecuteWxaSetUserStorageAsync(this WechatApiClient client, Models.WxaSetUserStorageRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "set_user_storage")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("openid", request.OpenId)
-                .SetQueryParam("signature", request.Signature)
-                .SetQueryParam("sig_method", request.SignMethod);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaSetUserStorageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region NearybyPOI
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/addnearbypoi 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.add.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaAddNearbyPOIResponse> ExecuteWxaAddNearbyPOIAsync(this WechatApiClient client, Models.WxaAddNearbyPOIRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "addnearbypoi")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaAddNearbyPOIResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/delnearbypoi 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.delete.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaDeleteNearbyPOIResponse> ExecuteWxaDeleteNearbyPOIAsync(this WechatApiClient client, Models.WxaDeleteNearbyPOIRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "delnearbypoi")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaDeleteNearbyPOIResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxa/getnearbypoilist 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.getList.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaGetNearbyPOIListResponse> ExecuteWxaGetNearbyPOIListAsync(this WechatApiClient client, Models.WxaGetNearbyPOIListRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "wxa", "getnearbypoilist")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("page", request.Page)
-                .SetQueryParam("page_rows", request.Limit);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaGetNearbyPOIListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/setnearbypoishowstatus 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/nearby-poi/nearbyPoi.setShowStatus.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaSetNearbyPOIShowStatusResponse> ExecuteWxaSetNearbyPOIShowStatusAsync(this WechatApiClient client, Models.WxaSetNearbyPOIShowStatusRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "setnearbypoishowstatus")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaSetNearbyPOIShowStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region LockStep
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/createwxagameroom 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/lock-step/lock-step.createGameRoom.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaCreateWxaGameRoomResponse> ExecuteWxaCreateWxaGameRoomAsync(this WechatApiClient client, Models.WxaCreateWxaGameRoomRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "createwxagameroom")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaCreateWxaGameRoomResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxa/getwxagameframe 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/lock-step/lock-step.createGameRoom.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaGetWxaGameFrameResponse> ExecuteWxaGetWxaGameFrameAsync(this WechatApiClient client, Models.WxaGetWxaGameFrameRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "wxa", "getwxagameframe")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("access_info", request.AccessInformation)
-                .SetQueryParam("begin_frame_id", request.BeginFrameId)
-                .SetQueryParam("end_frame_id", request.EndFrameId);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaGameFrameResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxa/getwxagameidentityinfo 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/lock-step/lock-step.getGameIdentityInfo.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaGetWxaGameIdentityInfoResponse> ExecuteWxaGetWxaGameIdentityInfoAsync(this WechatApiClient client, Models.WxaGetWxaGameIdentityInfoRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "wxa", "getwxagameidentityinfo")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("access_info", request.AccessInformation);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaGameIdentityInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [GET] /wxa/getwxagameroominfo 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/lock-step/lock-step.getGameRoomInfo.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaGetWxaGameRoomInfoResponse> ExecuteWxaGetWxaGameRoomInfoAsync(this WechatApiClient client, Models.WxaGetWxaGameRoomInfoRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "wxa", "getwxagameroominfo")
-                .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("access_info", request.AccessInformation);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaGameRoomInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region Operation
-        /// <summary>
-        /// <para>异步调用 [GET] /wxa/getwxadevinfo 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/operation/operation.getDomainInfo.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaGetWxaDevInfoResponse> ExecuteWxaGetWxaDevInfoAsync(this WechatApiClient client, Models.WxaGetWxaDevInfoRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "wxa", "getwxadevinfo")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.Action != null)
-                flurlReq.SetQueryParam("action", request.Action);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaDevInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region Search
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/imagesearch 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/search/search.imageSearch.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaImageSearchResponse> ExecuteWxaImageSearchAsync(this WechatApiClient client, Models.WxaImageSearchRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "imagesearch")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
-            return await client.SendRequestAsync<Models.WxaImageSearchResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/sitesearch 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/search/search.siteSearch.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaSiteSearchResponse> ExecuteWxaSiteSearchAsync(this WechatApiClient client, Models.WxaSiteSearchRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "sitesearch")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaSiteSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/search/wxaapi_submitpages 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/search/search.submitPages.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaSearchWxaApiSubmitPagesResponse> ExecuteWxaSearchWxaApiSubmitPagesAsync(this WechatApiClient client, Models.WxaSearchWxaApiSubmitPagesRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "search", "wxaapi_submitpages")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaSearchWxaApiSubmitPagesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -978,6 +822,230 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaGenerateWxaShortLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Storage
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/remove_user_storage 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/data/storage.removeUserStorage.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaRemoveUserStorageResponse> ExecuteWxaRemoveUserStorageAsync(this WechatApiClient client, Models.WxaRemoveUserStorageRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "remove_user_storage")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("openid", request.OpenId)
+                .SetQueryParam("signature", request.Signature)
+                .SetQueryParam("sig_method", request.SignMethod);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaRemoveUserStorageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/setuserinteractivedata 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/data/storage.setUserInteractiveData.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSetUserInteractiveDataResponse> ExecuteWxaSetUserInteractiveDataAsync(this WechatApiClient client, Models.WxaSetUserInteractiveDataRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "setuserinteractivedata")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("openid", request.OpenId)
+                .SetQueryParam("signature", request.Signature)
+                .SetQueryParam("sig_method", request.SignMethod);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaSetUserInteractiveDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/set_user_storage 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/data/storage.setUserStorage.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSetUserStorageResponse> ExecuteWxaSetUserStorageAsync(this WechatApiClient client, Models.WxaSetUserStorageRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "set_user_storage")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("openid", request.OpenId)
+                .SetQueryParam("signature", request.Signature)
+                .SetQueryParam("sig_method", request.SignMethod);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaSetUserStorageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region UrlLink
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/generate_urllink 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-link/urllink.generate.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-link/urllink.generate.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGenerateUrlLinkResponse> ExecuteWxaGenerateUrlLinkAsync(this WechatApiClient client, Models.WxaGenerateUrlLinkRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "generate_urllink")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGenerateUrlLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/query_urllink 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-link/urllink.query.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-link/urllink.query.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaQueryUrlLinkResponse> ExecuteWxaQueryUrlLinkAsync(this WechatApiClient client, Models.WxaQueryUrlLinkRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "query_urllink")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaQueryUrlLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region UrlScheme
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/generatescheme 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-scheme/urlscheme.generate.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-scheme/urlscheme.generate.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGenerateSchemeResponse> ExecuteWxaGenerateSchemeAsync(this WechatApiClient client, Models.WxaGenerateSchemeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "generatescheme")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGenerateSchemeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/queryscheme 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-scheme/urlscheme.query.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-scheme/urlscheme.query.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaQuerySchemeResponse> ExecuteWxaQuerySchemeAsync(this WechatApiClient client, Models.WxaQuerySchemeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "queryscheme")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaQuerySchemeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/generatenfcscheme 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/url-scheme/urlscheme.generateNFC.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/url-scheme/urlscheme.generateNFC.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGenerateNFCSchemeResponse> ExecuteWxaGenerateNFCSchemeAsync(this WechatApiClient client, Models.WxaGenerateNFCSchemeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "generatenfcscheme")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGenerateNFCSchemeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region WxaCode
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/getwxacode 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/qr-code/wxacode.get.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/qr-code/wxacode.get.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetWxaCodeResponse> ExecuteWxaGetWxaCodeAsync(this WechatApiClient client, Models.WxaGetWxaCodeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "getwxacode")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/getwxacodeunlimit 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/qr-code/wxacode.getUnlimited.html </para>
+        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/qr-code/wxacode.getUnlimited.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGetWxaCodeUnlimitResponse> ExecuteWxaGetWxaCodeUnlimitAsync(this WechatApiClient client, Models.WxaGetWxaCodeUnlimitRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "getwxacodeunlimit")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaGetWxaCodeUnlimitResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -1220,28 +1288,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaDeleteStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region HardwareDevice
-        /// <summary>
-        /// <para>异步调用 [POST] /wxa/getsnticket 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/hardware-device/hardwareDevice.getSnTicket.html </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.WxaGetSnTicketResponse> ExecuteWxaGetSnTicketAsync(this WechatApiClient client, Models.WxaGetSnTicketRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxa", "getsnticket")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendRequestWithJsonAsync<Models.WxaGetSnTicketResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
