@@ -33,6 +33,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.31.1
+
+    -   **新增**：新增小程序虚拟支付相关接口。（_via_ [GitHub #105](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/105)）
+
+    -   **新增**：新增小程序付费管理相关接口。
+
+    -   **变更**：统一小程序直播相关接口的商品 ID 字段类型。（_via_ [Gitee #I7EZYT](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I7EZYT)）
+
 -   Release 2.30.0
 
     -   **新增**：新增小程序硬件设备组相关接口。（_via_ [GitHub #100](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/100)）
