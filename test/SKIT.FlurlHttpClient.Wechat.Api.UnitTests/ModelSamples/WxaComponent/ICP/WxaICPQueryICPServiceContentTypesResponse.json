@@ -1,0 +1,17 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "items": [
+        {
+            "type": 1,
+            "parent_type": 500,
+            "name": "生活缴费",
+            "remark": "水电煤气话费等"
+        },
+        {
+            "type": 2,
+            "parent_type": 500,
+            "name": "招聘"
+        }
+    ]
+}
