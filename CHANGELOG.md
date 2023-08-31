@@ -33,7 +33,11 @@
 
 <summary>[展开查看]</summary>
 
--   Release 2.31.1
+-   Release 2.32.0
+
+    -   **新增**：新增第三方平台小程序备案相关接口。
+
+-   Release 2.31.0
 
     -   **新增**：新增小程序虚拟支付相关接口。（_via_ [GitHub #105](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/105)）
 
