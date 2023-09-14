@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events.OpenComponent
 {
     /// <summary>
@@ -21,11 +15,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events.OpenComponent
         public string AuthorizerAppId { get; set; } = default!;
 
         /// <summary>
-        /// 备案状态
+        /// 获取或设置备案状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("beian_status")]
         [System.Text.Json.Serialization.JsonPropertyName("beian_status")]
         [System.Xml.Serialization.XmlElement("beian_status")]
-        public int BeianStatus { get; set; }
+        public int FilingStatus { get; set; }
     }
 }
