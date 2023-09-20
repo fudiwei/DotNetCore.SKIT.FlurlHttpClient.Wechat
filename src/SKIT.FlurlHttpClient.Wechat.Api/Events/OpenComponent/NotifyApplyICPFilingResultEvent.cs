@@ -1,4 +1,4 @@
-namespace SKIT.FlurlHttpClient.Wechat.Api.Events.OpenComponent
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 INFO.notify_apply_icpfiling_result 事件的数据。</para>

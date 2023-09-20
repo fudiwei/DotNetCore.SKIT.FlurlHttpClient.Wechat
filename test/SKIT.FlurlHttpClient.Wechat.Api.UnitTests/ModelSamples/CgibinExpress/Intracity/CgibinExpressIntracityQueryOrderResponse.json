@@ -1,0 +1,48 @@
+{
+    "wx_order_id": "2000000000000042007",
+    "store_order_id": "testorder12345",
+    "order_status": 10000,
+    "appid": "wx539e0b4872f196d1",
+    "user_openid": "ozMQO0ehr_FBgL5mWa5_duxH71Yw",
+    "service_trans_id": "SFTC",
+    "delivery_no": "SF6508800795950",
+    "distance": 2358,
+    "actualfee": 201,
+    "deductfee": 0,
+    "create_time": 1682318663,
+    "expected_finish_time": 1682319663,
+    "store_info": {
+        "phone_num": "13800000138",
+        "address": "北京市海淀区西三旗街道永辉超市",
+        "lng": 116.354787,
+        "lat": 40.030613,
+        "store_name": "测试门店3"
+    },
+    "receiver_info": {
+        "phone_num": "顺丰同城",
+        "address": "北京市海淀区学清嘉创大厦A座15层）",
+        "lng": 116.353093,
+        "lat": 40.01496
+    },
+    "cargo_info": {
+        "cargo_name": "榴莲披萨套餐",
+        "cargo_weight": 500,
+        "cargo_price": 5000,
+        "cargo_num": 3,
+        "cargo_type": 1,
+        "item_list": [
+            {
+                "item_name": "8寸榴莲",
+                "item_num": 1,
+                "item_pic_url": "https://www.qq.com"
+            },
+            {
+                "item_name": "可口可乐",
+                "item_num": 2,
+                "item_pic_url": "https://www.qq.com"
+            }
+        ]
+    },
+    "errcode": 0,
+    "errmsg": "ok"
+}

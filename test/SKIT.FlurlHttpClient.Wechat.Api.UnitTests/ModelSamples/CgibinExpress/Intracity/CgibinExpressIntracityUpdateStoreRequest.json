@@ -1,0 +1,20 @@
+{
+    "keys": {
+        "wx_store_id": "4000000000000042001"
+    },
+    "content": {
+        "store_name": "测试门店3",
+        "address_info": {
+            "province": "北京市",
+            "city": "北京市",
+            "area": "海淀区",
+            "street": "西三旗街道",
+            "house": "海淀区清河龙岗路51号清润家园小区 永辉",
+            "phone": "13800000138",
+            "lat": 40.030613,
+            "lng": 116.354787
+        },
+        "order_pattern": 2,
+        "service_trans_prefer": "SFTC"
+    }
+}
