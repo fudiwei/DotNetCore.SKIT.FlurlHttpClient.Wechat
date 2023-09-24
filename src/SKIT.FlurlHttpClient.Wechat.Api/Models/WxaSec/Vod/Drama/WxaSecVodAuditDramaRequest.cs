@@ -76,5 +76,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("authorized_material_id")]
         [System.Text.Json.Serialization.JsonPropertyName("authorized_material_id")]
         public string? AuthorizationMaterialMediaId { get; set; }
+        
+        /// <summary>
+        /// 剧目备案号
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("registration_number")]
+        [System.Text.Json.Serialization.JsonPropertyName("registration_number")]
+        public string? RegistrationNumber { get; set; }
     }
 }
