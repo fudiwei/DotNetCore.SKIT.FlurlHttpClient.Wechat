@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -28,6 +28,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("value")]
                         [System.Text.Json.Serialization.JsonPropertyName("value")]
                         public string PictureMediaId { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置资质过期时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("expire_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("expire_time")]
+                        public long? ExpireTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置资质是否永久有效。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_permanent")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_permanent")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        public bool? IsPermanent { get; set; }
                     }
                 }
 
