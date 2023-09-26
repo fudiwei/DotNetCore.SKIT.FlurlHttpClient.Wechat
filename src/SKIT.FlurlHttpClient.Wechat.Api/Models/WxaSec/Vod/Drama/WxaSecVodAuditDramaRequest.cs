@@ -7,6 +7,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class WxaSecVodAuditDramaRequest : WechatApiRequest, IInferable<WxaSecVodAuditDramaRequest, WxaSecVodAuditDramaResponse>
     {
+        public static class Types
+        {
+            public class ReplaceMedia
+            {
+                /// <summary>
+                /// 获取或设置旧媒资文件 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("old")]
+                [System.Text.Json.Serialization.JsonPropertyName("old")]
+                public long OldMediaId { get; set; }
+                
+                /// <summary>
+                /// 获取或设置新媒资文件 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("new")]
+                [System.Text.Json.Serialization.JsonPropertyName("new")]
+                public long NewMediaId { get; set; }
+            }
+        }
+    
         /// <summary>
         /// 获取或设置剧目 ID。
         /// </summary>
@@ -76,5 +96,42 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("authorized_material_id")]
         [System.Text.Json.Serialization.JsonPropertyName("authorized_material_id")]
         public string? AuthorizationMaterialMediaId { get; set; }
+        
+        /// <summary>
+        /// 获取或设置剧目备案号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("registration_number")]
+        [System.Text.Json.Serialization.JsonPropertyName("registration_number")]
+        public string? RegistrationNumber { get; set; }
+        
+        /// <summary>
+        /// 获取或设置网络剧片发行许可证编号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("publish_license")]
+        [System.Text.Json.Serialization.JsonPropertyName("publish_license")]
+        public string? PublishLicenseNumber { get; set; }
+        
+        /// <summary>
+        /// 获取或设置网络剧片发行许可证图片 MediaId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("publish_license_material_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("publish_license_material_id")]
+        public string? PublishLicenseMaterialMediaId { get; set; }
+        
+        /// <summary>
+        /// 获取或设置是否加急审核。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("expedited")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("expedited")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        public bool? IsExpedited { get; set; }
+        
+        /// <summary>
+        /// 获取或设置用于重新提审时替换审核不通过的剧集信息列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("replace_media_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("replace_media_list")]
+        public IList<Types.ReplaceMedia>? ReplaceMediaList { get; set; }
     }
 }
