@@ -112,11 +112,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? Playwright { get; set; }
 
                 /// <summary>
+                /// 获取或设置广播电视节目制作经营许可证 MediaId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("production_license")]
+                [System.Text.Json.Serialization.JsonPropertyName("production_license")]
+                public string? ProductionLicenseMaterialMediaId { get; set; }
+
+                /// <summary>
                 /// 获取或设置审核详细信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("audit_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("audit_detail")]
                 public Types.AuditDetail? AuditDetail { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否加急审核。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("expedited")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("expedited")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanReadOnlyConverter))]
+                public bool? IsExpedited { get; set; }
             }
         }
 

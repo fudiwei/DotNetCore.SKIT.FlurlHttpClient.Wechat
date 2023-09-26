@@ -427,6 +427,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.WxaSecVodGetDramaResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/sec/vod/submitreplacedramamedias 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_3-4-%E6%8F%90%E4%BA%A4%E6%9B%BF%E6%8D%A2%E5%89%A7%E9%9B%86%E5%AE%A1%E6%A0%B8 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodSubmitReplaceDramaMediasResponse> ExecuteWxaSecVodSubmitReplaceDramaMediasAsync(this WechatApiClient client, Models.WxaSecVodSubmitReplaceDramaMediasRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "submitreplacedramamedias")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaSecVodSubmitReplaceDramaMediasResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/sec/vod/replacedramamedia 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_3-5-%E6%9B%BF%E6%8D%A2%E5%AE%A1%E6%A0%B8%E9%80%9A%E8%BF%87%E7%9A%84%E5%89%A7%E9%9B%86 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodReplaceDramaMediaResponse> ExecuteWxaSecVodReplaceDramaMediaAsync(this WechatApiClient client, Models.WxaSecVodReplaceDramaMediaRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "replacedramamedia")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaSecVodReplaceDramaMediaResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
         #endregion
     }

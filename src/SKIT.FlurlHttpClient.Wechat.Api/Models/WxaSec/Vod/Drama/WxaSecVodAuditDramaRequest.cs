@@ -126,9 +126,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [System.Text.Json.Serialization.JsonPropertyName("expedited")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? IsExpedited { get; set; }
-        
+
         /// <summary>
-        /// 获取或设置用于重新提审时替换审核不通过的剧集信息列表。
+        /// 获取或设置替换的剧集信息列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("replace_media_list")]
         [System.Text.Json.Serialization.JsonPropertyName("replace_media_list")]

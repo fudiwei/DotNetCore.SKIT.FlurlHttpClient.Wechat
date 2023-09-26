@@ -7,5 +7,16 @@
     "description": "很有意思的一部剧",
     "cover_material_id": "1223",
     "production_license_material_id": "12233",
-    "authorized_material_id": "122344"
+    "registration_number": "012345678901234",
+    "authorized_material_id": "122344",
+    "replace_media_list": [
+        {
+            "old": 20001,
+            "new": 20021
+        },
+        {
+            "old": 20002,
+            "new": 20022
+        }
+    ]
 }
