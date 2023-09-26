@@ -306,8 +306,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region ContactWay
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_contact_way 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92572 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92577 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92228 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96348 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -327,8 +327,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/get_contact_way 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92572 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92577 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92228 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96348 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -347,9 +347,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/list_contact_way 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92228 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96348 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactListContactWayResponse> ExecuteCgibinExternalContactListContactWayAsync(this WechatWorkClient client, Models.CgibinExternalContactListContactWayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "list_contact_way")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExternalContactListContactWayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/update_contact_way 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92572 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92577 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92228 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96348 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -369,8 +390,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/del_contact_way 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92572 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92577 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92228 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96348 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
