@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("user_limit")]
                         [System.Text.Json.Serialization.JsonPropertyName("user_limit")]
-                        public int UserLimit { get; set; }
+                        public long UserLimit { get; set; }
 
                         /// <summary>
                         /// 获取或设置过期时间戳。
