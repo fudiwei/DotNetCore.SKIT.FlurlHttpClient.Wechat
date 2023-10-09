@@ -9,6 +9,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
+            public class TagFilter
+            {
+                public static class Types
+                {
+                    public class TagFilterGroup
+                    {
+                        /// <summary>
+                        /// 获取或设置标签列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("tag_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("tag_list")]
+                        public IList<string>? TagList { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置标签筛选分组列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("group_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("group_list")]
+                public IList<Types.TagFilterGroup>? GroupList { get; set; }
+            }
+
             public class Text
             {
                 /// <summary>
@@ -180,6 +203,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("external_userid")]
         [System.Text.Json.Serialization.JsonPropertyName("external_userid")]
         public IList<string>? ExternalUserIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置客户群 ID 列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("chat_id_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("chat_id_list")]
+        public IList<string>? GroupChatIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置标签筛选条件。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("tag_filter")]
+        [System.Text.Json.Serialization.JsonPropertyName("tag_filter")]
+        public Types.TagFilter? TagFilter { get; set; }
 
         /// <summary>
         /// 获取或设置发送者成员账号。
