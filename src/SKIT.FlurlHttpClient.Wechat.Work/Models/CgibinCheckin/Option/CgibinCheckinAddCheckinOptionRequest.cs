@@ -927,6 +927,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("buka_remind")]
                 [System.Text.Json.Serialization.JsonPropertyName("buka_remind")]
                 public Types.RecheckinReminder? RecheckinReminder { get; set; }
+
+                /// <summary>
+                /// 获取或设置补卡异常类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("buka_restriction")]
+                [System.Text.Json.Serialization.JsonPropertyName("buka_restriction")]
+                public int? RecheckinRestriction { get; set; }
             }
         }
 

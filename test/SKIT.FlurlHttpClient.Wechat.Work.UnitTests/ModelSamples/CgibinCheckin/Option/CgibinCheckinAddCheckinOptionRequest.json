@@ -87,6 +87,7 @@
             "open_remind": true,
             "buka_remind_day": 28,
             "buka_remind_month": 0
-        }
+        },
+        "buka_restriction": 0
     }
 }
