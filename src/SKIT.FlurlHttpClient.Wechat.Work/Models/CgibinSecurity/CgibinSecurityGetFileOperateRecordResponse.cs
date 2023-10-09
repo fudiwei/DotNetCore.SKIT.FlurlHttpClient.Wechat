@@ -87,6 +87,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("file_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("file_info")]
                 public string? FileInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置申请人姓名。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("applicant_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("applicant_name")]
+                public string? ApplicantName { get; set; }
             }
         }
 
