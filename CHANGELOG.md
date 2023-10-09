@@ -925,6 +925,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.22.0
+
+    -   **新增**：新增获取企业已配置的联系我列表接口。（_via_ [Gitee #I83NZZ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I83NZZ)）
+
+    -   **新增**：新增接口调用许可余额支付相关接口。
+
+    -   **新增**：随官方更新文件防泄漏、企业群发、微信客服消息、管理打卡规则等相关接口模型。
+
+    -   **修复**：修复用户上限数值溢出错误问题。（_via_ [GitHub #112](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/112)）
+
 -   Release 2.21.0
 
     -   **新增**：随官方更新获客助手、日程、文档收集表等相关接口模型。
