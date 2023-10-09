@@ -1,0 +1,16 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "status": 3,
+    "pay_job_result": {
+        "errcode": 700001,
+        "errmsg": "xxx",
+        "fail_corp_list": [
+            {
+                "corpid": "wwxxx",
+                "errcode": 700002,
+                "errmsg": "xxx"
+            }
+        ]
+    }
+}

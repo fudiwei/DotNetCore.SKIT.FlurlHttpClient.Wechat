@@ -442,6 +442,48 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
+        #region PayJob
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/submit_pay_job 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99415 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicenseSubmitPayJobResponse> ExecuteCgibinLicenseSubmitPayJobAsync(this WechatWorkClient client, Models.CgibinLicenseSubmitPayJobRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "submit_pay_job")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicenseSubmitPayJobResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/license/pay_job_result 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99415 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinLicensePayJobResultResponse> ExecuteCgibinLicensePayJobResultAsync(this WechatWorkClient client, Models.CgibinLicensePayJobResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "license", "pay_job_result")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinLicensePayJobResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/license/support_policy_query 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/96515 </para>
