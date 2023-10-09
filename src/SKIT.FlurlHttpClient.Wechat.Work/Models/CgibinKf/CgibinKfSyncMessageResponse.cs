@@ -198,6 +198,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public string? RecalledMessageId { get; set; }
                     }
 
+                    public class ChannelsMessage
+                    {
+                        /// <summary>
+                        /// 获取或设置视频号消息类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sub_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("sub_type")]
+                        public int SubType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频号名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("nickname")]
+                        [System.Text.Json.Serialization.JsonPropertyName("nickname")]
+                        public string Nickname { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置视频号动态标题。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                        public string? Title { get; set; }
+                    }
+
                     public class ChannelsShopProductMessage
                     {
                         /// <summary>
@@ -288,6 +312,57 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [System.Text.Json.Serialization.JsonPropertyName("shop_nickname")]
                         public string ShopNickname { get; set; } = default!;
                     }
+
+                    public class MergedMessage
+                    {
+                        public static class Types
+                        {
+                            public class Item
+                            {
+                                /// <summary>
+                                /// 获取或设置发送者名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sender_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sender_name")]
+                                public string SenderName { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置消息类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("msgtype")]
+                                [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
+                                public string MessageType { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置消息内容（JSON 格式）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("msg_content")]
+                                [System.Text.Json.Serialization.JsonPropertyName("msg_content")]
+                                public string MessageContentJson { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置发送时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("send_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("send_time")]
+                                public long SendTimestamp { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置聊天记录标题。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("title")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                        public string Title { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置聊天记录列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("item")]
+                        [System.Text.Json.Serialization.JsonPropertyName("item")]
+                        public Types.Item[] ItemList { get; set; } = default!;
+                    }
                 }
 
                 /// <summary>
@@ -337,91 +412,105 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("text")]
                 [System.Text.Json.Serialization.JsonPropertyName("text")]
-                public Types.TextMessage? MessageContentForText { get; set; }
+                public Types.TextMessage? MessageContentAsText { get; set; }
 
                 /// <summary>
                 /// 获取或设置图片消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("image")]
                 [System.Text.Json.Serialization.JsonPropertyName("image")]
-                public Types.ImageMessage? MessageContentForImage { get; set; }
+                public Types.ImageMessage? MessageContentAsImage { get; set; }
 
                 /// <summary>
                 /// 获取或设置语音消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("voice")]
                 [System.Text.Json.Serialization.JsonPropertyName("voice")]
-                public Types.VoiceMessage? MessageContentForVoice { get; set; }
+                public Types.VoiceMessage? MessageContentAsVoice { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("video")]
                 [System.Text.Json.Serialization.JsonPropertyName("video")]
-                public Types.VideoMessage? MessageContentForVideo { get; set; }
+                public Types.VideoMessage? MessageContentAsVideo { get; set; }
 
                 /// <summary>
                 /// 获取或设置文件消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("file")]
                 [System.Text.Json.Serialization.JsonPropertyName("file")]
-                public Types.FileMessage? MessageContentForFile { get; set; }
+                public Types.FileMessage? MessageContentAsFile { get; set; }
 
                 /// <summary>
                 /// 获取或设置图文链接消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("link")]
                 [System.Text.Json.Serialization.JsonPropertyName("link")]
-                public Types.LinkMessage? MessageContentForLink { get; set; }
+                public Types.LinkMessage? MessageContentAsLink { get; set; }
 
                 /// <summary>
                 /// 获取或设置小程序消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("miniprogram")]
                 [System.Text.Json.Serialization.JsonPropertyName("miniprogram")]
-                public Types.MiniProgramMessage? MessageContentForMiniProgram { get; set; }
+                public Types.MiniProgramMessage? MessageContentAsMiniProgram { get; set; }
 
                 /// <summary>
                 /// 获取或设置菜单消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("msgmenu")]
                 [System.Text.Json.Serialization.JsonPropertyName("msgmenu")]
-                public Types.MenuMessage? MessageContentForMenu { get; set; }
+                public Types.MenuMessage? MessageContentAsMenu { get; set; }
 
                 /// <summary>
                 /// 获取或设置地理位置消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("location")]
                 [System.Text.Json.Serialization.JsonPropertyName("location")]
-                public Types.LocationMessage? MessageContentForLocation { get; set; }
+                public Types.LocationMessage? MessageContentAsLocation { get; set; }
 
                 /// <summary>
                 /// 获取或设置名片消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("business_card")]
                 [System.Text.Json.Serialization.JsonPropertyName("business_card")]
-                public Types.BusinessCardMessage? MessageContentForBusinessCard { get; set; }
+                public Types.BusinessCardMessage? MessageContentAsBusinessCard { get; set; }
 
                 /// <summary>
                 /// 获取或设置事件消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("event")]
                 [System.Text.Json.Serialization.JsonPropertyName("event")]
-                public Types.EventMessage? MessageContentForEvent { get; set; }
+                public Types.EventMessage? MessageContentAsEvent { get; set; }
+
+                /// <summary>
+                /// 获取或设置视频号消息信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("channels")]
+                [System.Text.Json.Serialization.JsonPropertyName("channels")]
+                public Types.ChannelsMessage? MessageContentAsChannels { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频号商品消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("channels_shop_product")]
                 [System.Text.Json.Serialization.JsonPropertyName("channels_shop_product")]
-                public Types.ChannelsShopProductMessage? MessageContentForChannelsShopProduct { get; set; }
+                public Types.ChannelsShopProductMessage? MessageContentAsChannelsShopProduct { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频号订单消息信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("channels_shop_order")]
                 [System.Text.Json.Serialization.JsonPropertyName("channels_shop_order")]
-                public Types.ChannelsShopOrderMessage? MessageContentForChannelsShopOrder { get; set; }
+                public Types.ChannelsShopOrderMessage? MessageContentAsChannelsShopOrder { get; set; }
+
+                /// <summary>
+                /// 获取或设置聊天记录消息信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("merged_msg")]
+                [System.Text.Json.Serialization.JsonPropertyName("merged_msg")]
+                public Types.MergedMessage? MessageContentAsMerged { get; set; }
 
                 /// <summary>
                 /// 获取或设置发送时间戳。

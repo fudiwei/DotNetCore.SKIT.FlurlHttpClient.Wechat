@@ -49,12 +49,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                         {
                             var reqGetMediaFile = new GetMediaFileRequest()
                             {
-                                FileId = resDecryptChatRecord.MessageContentForImage!.FileId
+                                FileId = resDecryptChatRecord.MessageContentAsImage!.FileId
                             };
                             var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile);
 
                             Assert.True(resGetMediaFile.IsSuccessful());
-                            Assert.Equal(resDecryptChatRecord.MessageContentForImage!.FileSize, resGetMediaFile.FileBytes.Length);
+                            Assert.Equal(resDecryptChatRecord.MessageContentAsImage!.FileSize, resGetMediaFile.FileBytes.Length);
                         }
                         break;
 
@@ -62,12 +62,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                         {
                             var reqGetMediaFile = new GetMediaFileRequest()
                             {
-                                FileId = resDecryptChatRecord.MessageContentForVoice!.FileId
+                                FileId = resDecryptChatRecord.MessageContentAsVoice!.FileId
                             };
                             var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile);
 
                             Assert.True(resGetMediaFile.IsSuccessful());
-                            Assert.Equal(resDecryptChatRecord.MessageContentForVoice!.FileSize, resGetMediaFile.FileBytes.Length);
+                            Assert.Equal(resDecryptChatRecord.MessageContentAsVoice!.FileSize, resGetMediaFile.FileBytes.Length);
                         }
                         break;
 
@@ -75,12 +75,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                         {
                             var reqGetMediaFile = new GetMediaFileRequest()
                             {
-                                FileId = resDecryptChatRecord.MessageContentForVideo!.FileId
+                                FileId = resDecryptChatRecord.MessageContentAsVideo!.FileId
                             };
                             var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile);
 
                             Assert.True(resGetMediaFile.IsSuccessful());
-                            Assert.Equal(resDecryptChatRecord.MessageContentForVideo!.FileSize, resGetMediaFile.FileBytes.Length);
+                            Assert.Equal(resDecryptChatRecord.MessageContentAsVideo!.FileSize, resGetMediaFile.FileBytes.Length);
                         }
                         break;
 
@@ -88,12 +88,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                         {
                             var reqGetMediaFile = new GetMediaFileRequest()
                             {
-                                FileId = resDecryptChatRecord.MessageContentForFile!.FileId
+                                FileId = resDecryptChatRecord.MessageContentAsFile!.FileId
                             };
                             var resGetMediaFile = await client.ExecuteGetMediaFileAsync(reqGetMediaFile);
 
                             Assert.True(resGetMediaFile.IsSuccessful());
-                            Assert.Equal(resDecryptChatRecord.MessageContentForFile!.FileSize, resGetMediaFile.FileBytes.Length);
+                            Assert.Equal(resDecryptChatRecord.MessageContentAsFile!.FileSize, resGetMediaFile.FileBytes.Length);
                         }
                         break;
                 }
@@ -174,7 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("text", model.MessageType);
-                    Assert.Equal("test", model.MessageContentForText!.Content);
+                    Assert.Equal("test", model.MessageContentAsText!.Content);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -203,9 +203,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("image", model.MessageType);
-                    Assert.Equal("FILEID", model.MessageContentForImage!.FileId);
-                    Assert.Equal("50de8e5ae8ffe4f1df7a93841f71993a", model.MessageContentForImage!.FileMD5);
-                    Assert.Equal(70961, model.MessageContentForImage!.FileSize);
+                    Assert.Equal("FILEID", model.MessageContentAsImage!.FileId);
+                    Assert.Equal("50de8e5ae8ffe4f1df7a93841f71993a", model.MessageContentAsImage!.FileMD5);
+                    Assert.Equal(70961, model.MessageContentAsImage!.FileSize);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -232,7 +232,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("revoke", model.MessageType);
-                    Assert.Equal("14822339130656386894_1603875600", model.MessageContentForRevoke!.PreviousMessageId);
+                    Assert.Equal("14822339130656386894_1603875600", model.MessageContentAsRevoke!.PreviousMessageId);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -260,8 +260,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("agree", model.MessageType);
-                    Assert.Equal("wmGAgeDQAAvQeaTqWwkMTxGMkvI7OOuQ", model.MessageContentForAgree!.UserId);
-                    Assert.Equal(1603875826656, model.MessageContentForAgree!.AgreeTimeMilliseconds);
+                    Assert.Equal("wmGAgeDQAAvQeaTqWwkMTxGMkvI7OOuQ", model.MessageContentAsAgree!.UserId);
+                    Assert.Equal(1603875826656, model.MessageContentAsAgree!.AgreeTimeMilliseconds);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -291,10 +291,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("voice", model.MessageType);
-                    Assert.Equal("FILEID", model.MessageContentForVoice!.FileId);
-                    Assert.Equal("9db09c7fa627c9e53f17736c786a74d5", model.MessageContentForVoice!.FileMD5);
-                    Assert.Equal(6810, model.MessageContentForVoice!.FileSize);
-                    Assert.Equal(10, model.MessageContentForVoice!.Duration);
+                    Assert.Equal("FILEID", model.MessageContentAsVoice!.FileId);
+                    Assert.Equal("9db09c7fa627c9e53f17736c786a74d5", model.MessageContentAsVoice!.FileMD5);
+                    Assert.Equal(6810, model.MessageContentAsVoice!.FileSize);
+                    Assert.Equal(10, model.MessageContentAsVoice!.Duration);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -324,10 +324,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("video", model.MessageType);
-                    Assert.Equal("FILEID", model.MessageContentForVideo!.FileId);
-                    Assert.Equal("d06fc80c01d6fbffcca3b229ba41eac6", model.MessageContentForVideo!.FileMD5);
-                    Assert.Equal(15169724, model.MessageContentForVideo!.FileSize);
-                    Assert.Equal(108, model.MessageContentForVideo!.Duration);
+                    Assert.Equal("FILEID", model.MessageContentAsVideo!.FileId);
+                    Assert.Equal("d06fc80c01d6fbffcca3b229ba41eac6", model.MessageContentAsVideo!.FileMD5);
+                    Assert.Equal(15169724, model.MessageContentAsVideo!.FileSize);
+                    Assert.Equal(108, model.MessageContentAsVideo!.Duration);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -355,8 +355,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("card", model.MessageType);
-                    Assert.Equal("微信联系人", model.MessageContentForBusinessCard!.CorpName);
-                    Assert.Equal("wmGAgeDQAAGjFmfnP7A3j2JxQDdLNhSw", model.MessageContentForBusinessCard!.UserId);
+                    Assert.Equal("微信联系人", model.MessageContentAsBusinessCard!.CorpName);
+                    Assert.Equal("wmGAgeDQAAGjFmfnP7A3j2JxQDdLNhSw", model.MessageContentAsBusinessCard!.UserId);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -387,11 +387,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("location", model.MessageType);
-                    Assert.Equal(116.586285899, model.MessageContentForLocation!.Longitude);
-                    Assert.Equal(39.911125799, model.MessageContentForLocation!.Latitude);
-                    Assert.Equal("北京市xxx区xxx路xxx大厦x座", model.MessageContentForLocation.Address);
-                    Assert.Equal("xxx管理中心", model.MessageContentForLocation.Title);
-                    Assert.Equal(15, model.MessageContentForLocation.Zoom);
+                    Assert.Equal(116.586285899, model.MessageContentAsLocation!.Longitude);
+                    Assert.Equal(39.911125799, model.MessageContentAsLocation!.Latitude);
+                    Assert.Equal("北京市xxx区xxx路xxx大厦x座", model.MessageContentAsLocation.Address);
+                    Assert.Equal("xxx管理中心", model.MessageContentAsLocation.Title);
+                    Assert.Equal(15, model.MessageContentAsLocation.Zoom);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -423,12 +423,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("emotion", model.MessageType);
-                    Assert.Equal(1, model.MessageContentForEmotion!.Type);
-                    Assert.Equal(290, model.MessageContentForEmotion!.Width);
-                    Assert.Equal(290, model.MessageContentForEmotion!.Height);
-                    Assert.Equal("FILEID", model.MessageContentForEmotion.FileId);
-                    Assert.Equal("94c2b0bba52cc456cb8221b248096612", model.MessageContentForEmotion.FileMD5);
-                    Assert.Equal(962604, model.MessageContentForEmotion.FileSize);
+                    Assert.Equal(1, model.MessageContentAsEmotion!.Type);
+                    Assert.Equal(290, model.MessageContentAsEmotion!.Width);
+                    Assert.Equal(290, model.MessageContentAsEmotion!.Height);
+                    Assert.Equal("FILEID", model.MessageContentAsEmotion.FileId);
+                    Assert.Equal("94c2b0bba52cc456cb8221b248096612", model.MessageContentAsEmotion.FileMD5);
+                    Assert.Equal(962604, model.MessageContentAsEmotion.FileSize);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -459,11 +459,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("file", model.MessageType);
-                    Assert.Equal("资料.docx", model.MessageContentForFile!.FileName);
-                    Assert.Equal("docx", model.MessageContentForFile!.FileExtension);
-                    Assert.Equal("FILEID", model.MessageContentForFile.FileId);
-                    Assert.Equal("18e93fc2ea884df23b3d2d3b8667b9f0", model.MessageContentForFile.FileMD5);
-                    Assert.Equal(18181, model.MessageContentForFile.FileSize);
+                    Assert.Equal("资料.docx", model.MessageContentAsFile!.FileName);
+                    Assert.Equal("docx", model.MessageContentAsFile!.FileExtension);
+                    Assert.Equal("FILEID", model.MessageContentAsFile.FileId);
+                    Assert.Equal("18e93fc2ea884df23b3d2d3b8667b9f0", model.MessageContentAsFile.FileMD5);
+                    Assert.Equal(18181, model.MessageContentAsFile.FileSize);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -493,10 +493,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("link", model.MessageType);
-                    Assert.Equal("邀请你加入群聊", model.MessageContentForLink!.Title);
-                    Assert.Equal("技术支持群，进入可查看详情", model.MessageContentForLink!.Description);
-                    Assert.Equal("https://work.weixin.qq.com/wework_admin/external_room/join/exceed?vcode=xxx", model.MessageContentForLink.LinkUrl);
-                    Assert.Equal("https://wework.qpic.cn/wwpic/xxx/0", model.MessageContentForLink.ImageUrl);
+                    Assert.Equal("邀请你加入群聊", model.MessageContentAsLink!.Title);
+                    Assert.Equal("技术支持群，进入可查看详情", model.MessageContentAsLink!.Description);
+                    Assert.Equal("https://work.weixin.qq.com/wework_admin/external_room/join/exceed?vcode=xxx", model.MessageContentAsLink.LinkUrl);
+                    Assert.Equal("https://wework.qpic.cn/wwpic/xxx/0", model.MessageContentAsLink.ImageUrl);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -526,10 +526,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("weapp", model.MessageType);
-                    Assert.Equal("开始聊天前请仔细阅读服务须知事项", model.MessageContentForMiniProgram!.Title);
-                    Assert.Equal("客户需同意存档聊天记录", model.MessageContentForMiniProgram!.Description);
-                    Assert.Equal("xxx@app", model.MessageContentForMiniProgram.UserName);
-                    Assert.Equal("服务须知", model.MessageContentForMiniProgram.DisplayName);
+                    Assert.Equal("开始聊天前请仔细阅读服务须知事项", model.MessageContentAsMiniProgram!.Title);
+                    Assert.Equal("客户需同意存档聊天记录", model.MessageContentAsMiniProgram!.Description);
+                    Assert.Equal("xxx@app", model.MessageContentAsMiniProgram.UserName);
+                    Assert.Equal("服务须知", model.MessageContentAsMiniProgram.DisplayName);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -567,10 +567,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("chatrecord", model.MessageType);
-                    Assert.Equal("群聊", model.MessageContentForChatRecord!.Title);
-                    Assert.Equal("ChatRecordText", model.MessageContentForChatRecord!.RecordList[0]!.MessageType);
-                    Assert.Equal("{\"content\":\"test\"}", model.MessageContentForChatRecord!.RecordList[0]!.MessageContentJson);
-                    Assert.Equal(1603875610, model.MessageContentForChatRecord!.RecordList[0]!.MessageTimestamp);
+                    Assert.Equal("群聊", model.MessageContentAsChatRecord!.Title);
+                    Assert.Equal("ChatRecordText", model.MessageContentAsChatRecord!.RecordList[0]!.MessageType);
+                    Assert.Equal("{\"content\":\"test\"}", model.MessageContentAsChatRecord!.RecordList[0]!.MessageContentJson);
+                    Assert.Equal(1603875610, model.MessageContentAsChatRecord!.RecordList[0]!.MessageTimestamp);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -598,8 +598,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("todo", model.MessageType);
-                    Assert.Equal("来源文本", model.MessageContentForTodo!.Title);
-                    Assert.Equal("具体内容", model.MessageContentForTodo!.Content);
+                    Assert.Equal("来源文本", model.MessageContentAsTodo!.Title);
+                    Assert.Equal("具体内容", model.MessageContentAsTodo!.Content);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -629,10 +629,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("vote", model.MessageType);
-                    Assert.Equal(101, model.MessageContentForVote!.Type);
-                    Assert.Equal("1603875610", model.MessageContentForVote!.VoteId);
-                    Assert.Equal("投票主题", model.MessageContentForVote!.Title);
-                    Assert.Equal("投票选项", model.MessageContentForVote!.Options[0]!);
+                    Assert.Equal(101, model.MessageContentAsVote!.Type);
+                    Assert.Equal("1603875610", model.MessageContentAsVote!.VoteId);
+                    Assert.Equal("投票主题", model.MessageContentAsVote!.Title);
+                    Assert.Equal("投票选项", model.MessageContentAsVote!.Options[0]!);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -679,13 +679,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("collect", model.MessageType);
-                    Assert.Equal("这是一个群", model.MessageContentForCollect!.RoomName);
-                    Assert.Equal("nick", model.MessageContentForCollect!.CreatorName);
-                    Assert.Equal("2019-12-11 11:21:22", model.MessageContentForCollect!.CreateTimeString);
-                    Assert.Equal("这是填表title", model.MessageContentForCollect!.Title);
-                    Assert.Equal(1, model.MessageContentForCollect!.DetailList[0]!.ID);
-                    Assert.Equal("Text", model.MessageContentForCollect!.DetailList[0]!.Type);
-                    Assert.Equal("表项1，文本", model.MessageContentForCollect!.DetailList[0]!.Question);
+                    Assert.Equal("这是一个群", model.MessageContentAsCollect!.RoomName);
+                    Assert.Equal("nick", model.MessageContentAsCollect!.CreatorName);
+                    Assert.Equal("2019-12-11 11:21:22", model.MessageContentAsCollect!.CreateTimeString);
+                    Assert.Equal("这是填表title", model.MessageContentAsCollect!.Title);
+                    Assert.Equal(1, model.MessageContentAsCollect!.DetailList[0]!.ID);
+                    Assert.Equal("Text", model.MessageContentAsCollect!.DetailList[0]!.Type);
+                    Assert.Equal("表项1，文本", model.MessageContentAsCollect!.DetailList[0]!.Question);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -715,10 +715,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("redpacket", model.MessageType);
-                    Assert.Equal(1, model.MessageContentForRedPacket!.Type);
-                    Assert.Equal("恭喜发财，大吉大利", model.MessageContentForRedPacket!.Wishing);
-                    Assert.Equal(10, model.MessageContentForRedPacket!.TotalCount);
-                    Assert.Equal(3000, model.MessageContentForRedPacket!.TotalAmount);
+                    Assert.Equal(1, model.MessageContentAsRedPacket!.Type);
+                    Assert.Equal("恭喜发财，大吉大利", model.MessageContentAsRedPacket!.Wishing);
+                    Assert.Equal(10, model.MessageContentAsRedPacket!.TotalCount);
+                    Assert.Equal(3000, model.MessageContentAsRedPacket!.TotalAmount);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -752,14 +752,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("meeting", model.MessageType);
-                    Assert.Equal(102, model.MessageContentForMeeting!.Type);
-                    Assert.Equal(1210342560, model.MessageContentForMeeting!.MeetingId);
-                    Assert.Equal("夕会", model.MessageContentForMeeting!.Topic);
-                    Assert.Equal(1603877400, model.MessageContentForMeeting!.StartTimestamp);
-                    Assert.Equal(1603881000, model.MessageContentForMeeting!.EndTimestamp);
-                    Assert.Equal("地址", model.MessageContentForMeeting!.Address);
-                    Assert.Equal("备注", model.MessageContentForMeeting!.Remark);
-                    Assert.Equal(1, model.MessageContentForMeeting!.Status);
+                    Assert.Equal(102, model.MessageContentAsMeeting!.Type);
+                    Assert.Equal(1210342560, model.MessageContentAsMeeting!.MeetingId);
+                    Assert.Equal("夕会", model.MessageContentAsMeeting!.Topic);
+                    Assert.Equal(1603877400, model.MessageContentAsMeeting!.StartTimestamp);
+                    Assert.Equal(1603881000, model.MessageContentAsMeeting!.EndTimestamp);
+                    Assert.Equal("地址", model.MessageContentAsMeeting!.Address);
+                    Assert.Equal("备注", model.MessageContentAsMeeting!.Remark);
+                    Assert.Equal(1, model.MessageContentAsMeeting!.Status);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -809,9 +809,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("docmsg", model.MessageType);
-                    Assert.Equal("测试&演示客户", model.MessageContentForDocument!.Title);
-                    Assert.Equal("test", model.MessageContentForDocument!.CreatorUserId);
-                    Assert.Equal("https://doc.weixin.qq.com/txdoc/excel?docid=xxx", model.MessageContentForDocument!.LinkUrl);
+                    Assert.Equal("测试&演示客户", model.MessageContentAsDocument!.Title);
+                    Assert.Equal("test", model.MessageContentAsDocument!.CreatorUserId);
+                    Assert.Equal("https://doc.weixin.qq.com/txdoc/excel?docid=xxx", model.MessageContentAsDocument!.LinkUrl);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -838,7 +838,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("markdown", model.MessageType);
-                    Assert.Equal("请前往系统查看，谢谢。", model.MessageContentForInfo!.MarkdownContent);
+                    Assert.Equal("请前往系统查看，谢谢。", model.MessageContentAsInfo!.MarkdownContent);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -871,13 +871,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("calendar", model.MessageType);
-                    Assert.Equal("xxx业绩复盘会", model.MessageContentForCalendar!.Title);
-                    Assert.Equal("test", model.MessageContentForCalendar!.CreatorName);
-                    Assert.Equal("aaa", model.MessageContentForCalendar!.AttendeeNameList[0]);
-                    Assert.Equal(1603882800, model.MessageContentForCalendar!.StartTimestamp);
-                    Assert.Equal(1603886400, model.MessageContentForCalendar!.EndTimestamp);
-                    Assert.Equal("地点", model.MessageContentForCalendar!.Place);
-                    Assert.Equal("备注", model.MessageContentForCalendar!.Remark);
+                    Assert.Equal("xxx业绩复盘会", model.MessageContentAsCalendar!.Title);
+                    Assert.Equal("test", model.MessageContentAsCalendar!.CreatorName);
+                    Assert.Equal("aaa", model.MessageContentAsCalendar!.AttendeeNameList[0]);
+                    Assert.Equal(1603882800, model.MessageContentAsCalendar!.StartTimestamp);
+                    Assert.Equal(1603886400, model.MessageContentAsCalendar!.EndTimestamp);
+                    Assert.Equal("地点", model.MessageContentAsCalendar!.Place);
+                    Assert.Equal("备注", model.MessageContentAsCalendar!.Remark);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -910,8 +910,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("mixed", model.MessageType);
-                    Assert.Equal("text", model.MessageContentForMixed!.MessageList[0]!.Type);
-                    Assert.Equal("{\"content\":\"你好[微笑]\\n\"}", model.MessageContentForMixed!.MessageList[0]!.ContentJson);
+                    Assert.Equal("text", model.MessageContentAsMixed!.MessageList[0]!.Type);
+                    Assert.Equal("{\"content\":\"你好[微笑]\\n\"}", model.MessageContentAsMixed!.MessageList[0]!.ContentJson);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -951,15 +951,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("meeting_voice_call", model.MessageType);
                     Assert.Equal("grb8a4c48a3c094a70982c518d55e40557", model.VoiceId);
-                    Assert.Equal(1594197635, model.MessageContentForMeetingVoiceCall!.EndTimestamp);
-                    Assert.Equal("FILEID", model.MessageContentForMeetingVoiceCall!.FileId);
-                    Assert.Equal("65eb1cdd3e7a3c1740ecd74220b6c627.docx", model.MessageContentForMeetingVoiceCall!.ShareFileDataList![0]!.FileName);
-                    Assert.Equal("wo137MCgAAYW6pIiKKrDe5SlzEhSgwbA", model.MessageContentForMeetingVoiceCall!.ShareFileDataList![0]!.OperatorUserId);
-                    Assert.Equal(1594197599, model.MessageContentForMeetingVoiceCall!.ShareFileDataList![0]!.StartTimestamp);
-                    Assert.Equal(1594197609, model.MessageContentForMeetingVoiceCall!.ShareFileDataList![0]!.EndTimestamp);
-                    Assert.Equal("wo137MCgAAYW6pIiKKrDe5SlzEhSgwbA", model.MessageContentForMeetingVoiceCall!.ShareScreenDataList![0]!.SharerUserId);
-                    Assert.Equal(1594197624, model.MessageContentForMeetingVoiceCall!.ShareScreenDataList![0]!.StartTimestamp);
-                    Assert.Equal(1594197624, model.MessageContentForMeetingVoiceCall!.ShareScreenDataList![0]!.EndTimestamp);
+                    Assert.Equal(1594197635, model.MessageContentAsMeetingVoiceCall!.EndTimestamp);
+                    Assert.Equal("FILEID", model.MessageContentAsMeetingVoiceCall!.FileId);
+                    Assert.Equal("65eb1cdd3e7a3c1740ecd74220b6c627.docx", model.MessageContentAsMeetingVoiceCall!.ShareFileDataList![0]!.FileName);
+                    Assert.Equal("wo137MCgAAYW6pIiKKrDe5SlzEhSgwbA", model.MessageContentAsMeetingVoiceCall!.ShareFileDataList![0]!.OperatorUserId);
+                    Assert.Equal(1594197599, model.MessageContentAsMeetingVoiceCall!.ShareFileDataList![0]!.StartTimestamp);
+                    Assert.Equal(1594197609, model.MessageContentAsMeetingVoiceCall!.ShareFileDataList![0]!.EndTimestamp);
+                    Assert.Equal("wo137MCgAAYW6pIiKKrDe5SlzEhSgwbA", model.MessageContentAsMeetingVoiceCall!.ShareScreenDataList![0]!.SharerUserId);
+                    Assert.Equal(1594197624, model.MessageContentAsMeetingVoiceCall!.ShareScreenDataList![0]!.StartTimestamp);
+                    Assert.Equal(1594197624, model.MessageContentAsMeetingVoiceCall!.ShareScreenDataList![0]!.EndTimestamp);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -990,10 +990,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("voip_doc_share", model.MessageType);
                     Assert.Equal("gr2751c98b19300571f8afb3b74514bd32", model.VoIPId);
-                    Assert.Equal("欢迎使用微盘.pdf", model.MessageContentForVoIPDocumentShare!.FileName);
-                    Assert.Equal("FILEID", model.MessageContentForVoIPDocumentShare!.FileId);
-                    Assert.Equal("ff893900f24e55e216e617a40e5c4648", model.MessageContentForVoIPDocumentShare!.FileMD5);
-                    Assert.Equal(4400654, model.MessageContentForVoIPDocumentShare!.FileSize);
+                    Assert.Equal("欢迎使用微盘.pdf", model.MessageContentAsVoIPDocumentShare!.FileName);
+                    Assert.Equal("FILEID", model.MessageContentAsVoIPDocumentShare!.FileId);
+                    Assert.Equal("ff893900f24e55e216e617a40e5c4648", model.MessageContentAsVoIPDocumentShare!.FileMD5);
+                    Assert.Equal(4400654, model.MessageContentAsVoIPDocumentShare!.FileSize);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -1023,10 +1023,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("external_redpacket", model.MessageType);
-                    Assert.Equal(1, model.MessageContentForRedPacket!.Type);
-                    Assert.Equal("恭喜发财，大吉大利", model.MessageContentForRedPacket!.Wishing);
-                    Assert.Equal(2, model.MessageContentForRedPacket!.TotalCount);
-                    Assert.Equal(20, model.MessageContentForRedPacket!.TotalAmount);
+                    Assert.Equal(1, model.MessageContentAsRedPacket!.Type);
+                    Assert.Equal("恭喜发财，大吉大利", model.MessageContentAsRedPacket!.Wishing);
+                    Assert.Equal(2, model.MessageContentAsRedPacket!.TotalCount);
+                    Assert.Equal(20, model.MessageContentAsRedPacket!.TotalAmount);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -1055,9 +1055,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("sphfeed", model.MessageType);
-                    Assert.Equal(4, model.MessageContentForChannelsFeed!.FeedType);
-                    Assert.Equal("云游天地旅行家", model.MessageContentForChannelsFeed!.ChannelsNickName);
-                    Assert.Equal("瑞士丨盖尔默缆车，名副其实的过山车~\n\n#旅行#风景#热门", model.MessageContentForChannelsFeed!.Description);
+                    Assert.Equal(4, model.MessageContentAsChannelsFeed!.FeedType);
+                    Assert.Equal("云游天地旅行家", model.MessageContentAsChannelsFeed!.ChannelsNickName);
+                    Assert.Equal("瑞士丨盖尔默缆车，名副其实的过山车~\n\n#旅行#风景#热门", model.MessageContentAsChannelsFeed!.Description);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -1085,8 +1085,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("voiptext", model.MessageType);
-                    Assert.Equal(9, model.MessageContentForInfo!.VoIPCallDuration);
-                    Assert.Equal(2, model.MessageContentForInfo!.VoIPInviteType);
+                    Assert.Equal(9, model.MessageContentAsInfo!.VoIPCallDuration);
+                    Assert.Equal(2, model.MessageContentAsInfo!.VoIPInviteType);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -1113,7 +1113,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("qydiskfile", model.MessageType);
-                    Assert.Equal(".sys.log", model.MessageContentForInfo!.WedriveFileName);
+                    Assert.Equal(".sys.log", model.MessageContentAsInfo!.WedriveFileName);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);

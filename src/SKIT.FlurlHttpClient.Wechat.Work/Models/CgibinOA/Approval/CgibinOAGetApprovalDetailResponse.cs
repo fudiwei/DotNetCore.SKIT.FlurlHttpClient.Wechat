@@ -172,14 +172,14 @@
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("members")]
                                         [System.Text.Json.Serialization.JsonPropertyName("members")]
-                                        public ContactControlValueForUser[]? ContactMembers { get; set; }
+                                        public ContactControlValueAsUser[]? ContactMembers { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置 Contact 控件部门值。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("departments")]
                                         [System.Text.Json.Serialization.JsonPropertyName("departments")]
-                                        public ContactControlValueForDepartment[]? ContactDepartments { get; set; }
+                                        public ContactControlValueAsDepartment[]? ContactDepartments { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置 File 控件值。
@@ -300,7 +300,7 @@
                                         public Types.Option[] OptionList { get; set; } = default!;
                                     }
 
-                                    public class ContactControlValueForUser
+                                    public class ContactControlValueAsUser
                                     {
                                         /// <summary>
                                         /// 获取或设置成员账号。
@@ -317,7 +317,7 @@
                                         public string? Name { get; set; }
                                     }
 
-                                    public class ContactControlValueForDepartment
+                                    public class ContactControlValueAsDepartment
                                     {
                                         /// <summary>
                                         /// 获取或设置部门 ID。

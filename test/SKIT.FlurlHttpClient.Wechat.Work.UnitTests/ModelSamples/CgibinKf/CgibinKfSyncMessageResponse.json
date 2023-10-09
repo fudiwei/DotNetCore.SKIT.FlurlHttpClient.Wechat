@@ -53,6 +53,28 @@
                 "image_url": "IMAGE_URL",
                 "shop_nickname": "SHOP_NICKNAME"
             }
+        },
+        {
+            "msgtype": "channels",
+            "channels": {
+                "sub_type": 1,
+                "nickname": "视频号名称",
+                "title": "动态标题"
+            }
+        },
+        {
+            "msgtype": "merged_msg",
+            "merged_msg": {
+                "title": "群聊的聊天记录",
+                "item": [
+                    {
+                        "send_time": 1665649618,
+                        "msgtype": "text",
+                        "sender_name": "发送者",
+                        "msg_content": "{\"msgtype\":\"text\",\"text\":{\"content\":\"消息内容\"}}"
+                    }
+                ]
+            }
         }
     ]
 }

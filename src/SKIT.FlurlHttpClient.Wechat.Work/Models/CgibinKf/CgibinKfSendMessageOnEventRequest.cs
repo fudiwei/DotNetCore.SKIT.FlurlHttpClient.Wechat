@@ -42,13 +42,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("text")]
         [System.Text.Json.Serialization.JsonPropertyName("text")]
-        public Types.TextMessage? MessageContentForText { get; set; }
+        public Types.TextMessage? MessageContentAsText { get; set; }
 
         /// <summary>
         /// 获取或设置菜单消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msgmenu")]
         [System.Text.Json.Serialization.JsonPropertyName("msgmenu")]
-        public Types.MenuMessage? MessageContentForMenu { get; set; }
+        public Types.MenuMessage? MessageContentAsMenu { get; set; }
     }
 }

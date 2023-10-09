@@ -75,14 +75,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("members")]
                                         [System.Text.Json.Serialization.JsonPropertyName("members")]
-                                        public ContactControlValueForUser[]? ContactMembers { get; set; }
+                                        public ContactControlValueAsUser[]? ContactMembers { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置 Contact 控件部门值。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("departments")]
                                         [System.Text.Json.Serialization.JsonPropertyName("departments")]
-                                        public ContactControlValueForDepartment[]? ContactDepartments { get; set; }
+                                        public ContactControlValueAsDepartment[]? ContactDepartments { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置 File 控件值。
@@ -197,11 +197,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         public new Types.Option[] OptionList { get; set; } = default!;
                                     }
 
-                                    public class ContactControlValueForUser : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.ContactControlValueForUser
+                                    public class ContactControlValueAsUser : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.ContactControlValueAsUser
                                     {
                                     }
 
-                                    public class ContactControlValueForDepartment : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.ContactControlValueForDepartment
+                                    public class ContactControlValueAsDepartment : CgibinOAGetApprovalDetailResponse.Types.Approval.Types.ApplyData.Types.ApplyContent.Types.ContactControlValueAsDepartment
                                     {
                                     }
 

@@ -164,175 +164,175 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("text")]
         [System.Text.Json.Serialization.JsonPropertyName("text")]
-        public Types.TextMessage? MessageContentForText { get; set; }
+        public Types.TextMessage? MessageContentAsText { get; set; }
 
         /// <summary>
         /// 获取或设置图片消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("image")]
         [System.Text.Json.Serialization.JsonPropertyName("image")]
-        public Types.ImageMessage? MessageContentForImage { get; set; }
+        public Types.ImageMessage? MessageContentAsImage { get; set; }
 
         /// <summary>
         /// 获取或设置撤回消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("revoke")]
         [System.Text.Json.Serialization.JsonPropertyName("revoke")]
-        public Types.RevokeMessage? MessageContentForRevoke { get; set; }
+        public Types.RevokeMessage? MessageContentAsRevoke { get; set; }
 
         /// <summary>
         /// 获取或设置同意/不同意消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("agree")]
         [System.Text.Json.Serialization.JsonPropertyName("agree")]
-        public Types.AgreeMessage? MessageContentForAgree { get; set; }
+        public Types.AgreeMessage? MessageContentAsAgree { get; set; }
 
         /// <summary>
         /// 获取或设置语音消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("voice")]
         [System.Text.Json.Serialization.JsonPropertyName("voice")]
-        public Types.VoiceMessage? MessageContentForVoice { get; set; }
+        public Types.VoiceMessage? MessageContentAsVoice { get; set; }
 
         /// <summary>
         /// 获取或设置视频消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("video")]
         [System.Text.Json.Serialization.JsonPropertyName("video")]
-        public Types.VideoMessage? MessageContentForVideo { get; set; }
+        public Types.VideoMessage? MessageContentAsVideo { get; set; }
 
         /// <summary>
         /// 获取或设置名片消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card")]
         [System.Text.Json.Serialization.JsonPropertyName("card")]
-        public Types.BusinessCardMessage? MessageContentForBusinessCard { get; set; }
+        public Types.BusinessCardMessage? MessageContentAsBusinessCard { get; set; }
 
         /// <summary>
         /// 获取或设置位置消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("location")]
         [System.Text.Json.Serialization.JsonPropertyName("location")]
-        public Types.LocationMessage? MessageContentForLocation { get; set; }
+        public Types.LocationMessage? MessageContentAsLocation { get; set; }
 
         /// <summary>
         /// 获取或设置表情消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("emotion")]
         [System.Text.Json.Serialization.JsonPropertyName("emotion")]
-        public Types.EmotionMessage? MessageContentForEmotion { get; set; }
+        public Types.EmotionMessage? MessageContentAsEmotion { get; set; }
 
         /// <summary>
         /// 获取或设置文件消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file")]
         [System.Text.Json.Serialization.JsonPropertyName("file")]
-        public Types.FileMessage? MessageContentForFile { get; set; }
+        public Types.FileMessage? MessageContentAsFile { get; set; }
 
         /// <summary>
         /// 获取或设置图文链接消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("link")]
         [System.Text.Json.Serialization.JsonPropertyName("link")]
-        public Types.LinkMessage? MessageContentForLink { get; set; }
+        public Types.LinkMessage? MessageContentAsLink { get; set; }
 
         /// <summary>
         /// 获取或设置小程序消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("weapp")]
         [System.Text.Json.Serialization.JsonPropertyName("weapp")]
-        public Types.MiniProgramMessage? MessageContentForMiniProgram { get; set; }
+        public Types.MiniProgramMessage? MessageContentAsMiniProgram { get; set; }
 
         /// <summary>
         /// 获取或设置会话记录消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("chatrecord")]
         [System.Text.Json.Serialization.JsonPropertyName("chatrecord")]
-        public Types.ChatRecordMessage? MessageContentForChatRecord { get; set; }
+        public Types.ChatRecordMessage? MessageContentAsChatRecord { get; set; }
 
         /// <summary>
         /// 获取或设置待办消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("todo")]
         [System.Text.Json.Serialization.JsonPropertyName("todo")]
-        public Types.TodoMessage? MessageContentForTodo { get; set; }
+        public Types.TodoMessage? MessageContentAsTodo { get; set; }
 
         /// <summary>
         /// 获取或设置投票消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("vote")]
         [System.Text.Json.Serialization.JsonPropertyName("vote")]
-        public Types.VoteMessage? MessageContentForVote { get; set; }
+        public Types.VoteMessage? MessageContentAsVote { get; set; }
 
         /// <summary>
         /// 获取或设置填表消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("collect")]
         [System.Text.Json.Serialization.JsonPropertyName("collect")]
-        public Types.CollectMessage? MessageContentForCollect { get; set; }
+        public Types.CollectMessage? MessageContentAsCollect { get; set; }
 
         /// <summary>
         /// 获取或设置红包消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("redpacket")]
         [System.Text.Json.Serialization.JsonPropertyName("redpacket")]
-        public Types.RedPacketMessage? MessageContentForRedPacket { get; set; }
+        public Types.RedPacketMessage? MessageContentAsRedPacket { get; set; }
 
         /// <summary>
         /// 获取或设置会议消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting")]
-        public Types.MeetingMessage? MessageContentForMeeting { get; set; }
+        public Types.MeetingMessage? MessageContentAsMeeting { get; set; }
 
         /// <summary>
         /// 获取或设置在线文档消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("doc")]
         [System.Text.Json.Serialization.JsonPropertyName("doc")]
-        public Types.DocumentMessage? MessageContentForDocument { get; set; }
+        public Types.DocumentMessage? MessageContentAsDocument { get; set; }
 
         /// <summary>
         /// 获取或设置 Markdown、图文消息或音视频通话信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("info")]
         [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.InfoMessage? MessageContentForInfo { get; set; }
+        public Types.InfoMessage? MessageContentAsInfo { get; set; }
 
         /// <summary>
         /// 获取或设置日程消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("calendar")]
         [System.Text.Json.Serialization.JsonPropertyName("calendar")]
-        public Types.CalendarMessage? MessageContentForCalendar { get; set; }
+        public Types.CalendarMessage? MessageContentAsCalendar { get; set; }
 
         /// <summary>
         /// 获取或设置混合消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mixed")]
         [System.Text.Json.Serialization.JsonPropertyName("mixed")]
-        public Types.MixedMessage? MessageContentForMixed { get; set; }
+        public Types.MixedMessage? MessageContentAsMixed { get; set; }
 
         /// <summary>
         /// 获取或设置会议音频存档消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_voice_call")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_voice_call")]
-        public Types.MeetingVoiceCallMessage? MessageContentForMeetingVoiceCall { get; set; }
+        public Types.MeetingVoiceCallMessage? MessageContentAsMeetingVoiceCall { get; set; }
 
         /// <summary>
         /// 获取或设置 VoIP 音频存档消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("voip_doc_share")]
         [System.Text.Json.Serialization.JsonPropertyName("voip_doc_share")]
-        public Types.VoIPDocumentShareMessage? MessageContentForVoIPDocumentShare { get; set; }
+        public Types.VoIPDocumentShareMessage? MessageContentAsVoIPDocumentShare { get; set; }
 
         /// <summary>
         /// 获取或设置视频号消息信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sphfeed")]
         [System.Text.Json.Serialization.JsonPropertyName("sphfeed")]
-        public Types.ChannelsFeedMessage? MessageContentForChannelsFeed { get; set; }
+        public Types.ChannelsFeedMessage? MessageContentAsChannelsFeed { get; set; }
 
         /// <summary>
         /// 获取或设置音频 ID。
