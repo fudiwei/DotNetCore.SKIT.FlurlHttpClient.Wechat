@@ -925,6 +925,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.23.0
+
+    -   **新增**：新增小程序接入对外收款相关接口。（_via_ [GitHub #113](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/113)）
+
 -   Release 2.22.0
 
     -   **新增**：新增获取企业已配置的联系我列表接口。（_via_ [Gitee #I83NZZ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I83NZZ)）
