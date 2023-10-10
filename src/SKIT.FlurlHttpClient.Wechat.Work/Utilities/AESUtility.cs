@@ -4,7 +4,7 @@ using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Security;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
+namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 {
     /// <summary>
     /// AES 算法工具类。
