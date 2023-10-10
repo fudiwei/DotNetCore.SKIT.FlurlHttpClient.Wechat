@@ -1,43 +1,16 @@
 using System;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /refund/domestic/refunds/{out_refund_no} 接口的响应。</para>
+    /// <para>表示 [POST] /cgi-bin/miniapppay/get_refund_detail 接口的响应。</para>
     /// </summary>
-    public class GetRefundDomesticRefundByOutRefundNumberResponse : WechatTenpayResponse
+    public class CgibinMiniAppPayGetRefundDetailResponse : WechatWorkResponse
     {
         public static class Types
         {
             public class Amount
             {
-                public static class Types
-                {
-                    public class From
-                    {
-                        /// <summary>
-                        /// 获取或设置出资金额	（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                        public int Amount { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置出资账户。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("account")]
-                        [System.Text.Json.Serialization.JsonPropertyName("account")]
-                        public string Account { get; set; } = default!;
-                    }
-                }
-
-                /// <summary>
-                /// 获取或设置原订单金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("total")]
-                [System.Text.Json.Serialization.JsonPropertyName("total")]
-                public int Total { get; set; }
-
                 /// <summary>
                 /// 获取或设置退款金额（单位：分）。
                 /// </summary>
@@ -53,105 +26,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string Currency { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置用户支付金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("payer_total")]
-                [System.Text.Json.Serialization.JsonPropertyName("payer_total")]
-                public int PayerTotal { get; set; }
-
-                /// <summary>
                 /// 获取或设置用户退款金额（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("payer_refund")]
                 [System.Text.Json.Serialization.JsonPropertyName("payer_refund")]
-                public int PayerRefund { get; set; }
-
-                /// <summary>
-                /// 获取或设置应结订单金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("settlement_total")]
-                [System.Text.Json.Serialization.JsonPropertyName("settlement_total")]
-                public int SettlementTotal { get; set; }
-
-                /// <summary>
-                /// 获取或设置应结退款金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("settlement_refund")]
-                [System.Text.Json.Serialization.JsonPropertyName("settlement_refund")]
-                public int SettlementRefund { get; set; }
+                public int? PayerRefund { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠退款金额（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("discount_refund")]
                 [System.Text.Json.Serialization.JsonPropertyName("discount_refund")]
-                public int DiscountRefund { get; set; }
-
-                /// <summary>
-                /// 获取或设置退款出资账户及金额列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("from")]
-                [System.Text.Json.Serialization.JsonPropertyName("from")]
-                public Types.From[]? FromList { get; set; }
-
-                /// <summary>
-                /// 获取或设置手续费退款金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("refund_fee")]
-                [System.Text.Json.Serialization.JsonPropertyName("refund_fee")]
-                public int? RefundFee { get; set; }
+                public int? DiscountRefund { get; set; }
             }
 
             public class Promotion
             {
-                public static class Types
-                {
-                    public class GoodsDetail
-                    {
-                        /// <summary>
-                        /// 获取或设置商户侧商品编码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("merchant_goods_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("merchant_goods_id")]
-                        public string MerchantGoodsId { get; set; } = default!;
-
-                        /// <summary>
-                        /// 获取或设置微信侧商品编码。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("wechatpay_goods_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("wechatpay_goods_id")]
-                        public string? WechatpayGoodsId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("goods_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("goods_name")]
-                        public string? GoodsName { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品单价（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("unit_price")]
-                        [System.Text.Json.Serialization.JsonPropertyName("unit_price")]
-                        public int UnitPrice { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品退款金额（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("refund_amount")]
-                        [System.Text.Json.Serialization.JsonPropertyName("refund_amount")]
-                        public int RefundAmount { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置商品退货数量（单位：分）。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("refund_quantity")]
-                        [System.Text.Json.Serialization.JsonPropertyName("refund_quantity")]
-                        public int RefundQuantity { get; set; }
-                    }
-                }
-
                 /// <summary>
                 /// 获取或设置券 ID。
                 /// </summary>
@@ -186,13 +76,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("refund_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_amount")]
                 public int RefundAmount { get; set; }
-
-                /// <summary>
-                /// 获取或设置单品列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("goods_detail")]
-                [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
-                public Types.GoodsDetail[]? GoodsList { get; set; }
             }
         }
 
@@ -237,13 +120,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("user_received_account")]
         [System.Text.Json.Serialization.JsonPropertyName("user_received_account")]
         public string UserReceivedAccount { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置退款资金来源。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("funds_account")]
-        [System.Text.Json.Serialization.JsonPropertyName("funds_account")]
-        public string FundsAccount { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置退款状态。

@@ -1,0 +1,40 @@
+{
+    "appid": "xx",
+    "mchid": "xx",
+    "out_trade_no": "xxxx",
+    "description": "xxxxx",
+    "scenekey": "xxxx",
+    "amount": {
+        "total": 100,
+        "currency": "CNY"
+    },
+    "payer": {
+        "openid": "xxx"
+    },
+    "time_expire": "2015-05-20T13:29:35+08:00",
+    "attach": "xxxxx",
+    "goods_tag": "xxxxxxx",
+    "scene_info": {
+        "payer_client_ip": "127.0.0.1",
+        "device_id": "xxxxxxx",
+        "store_info": {
+            "id": "xxxx",
+            "name": "xxxx",
+            "area_code": "xxxx",
+            "address": "xxxxx"
+        }
+    },
+    "detail": {
+        "cost_price": 123,
+        "invoice_id": "asdfasdfasdf",
+        "goods_detail": [
+            {
+                "merchant_goods_id": "xxxx",
+                "wechatpay_goods_id": "xxxx",
+                "goods_name": "iPhoneX 256G",
+                "quantity": 1,
+                "unit_price": 828800
+            }
+        ]
+    }
+}

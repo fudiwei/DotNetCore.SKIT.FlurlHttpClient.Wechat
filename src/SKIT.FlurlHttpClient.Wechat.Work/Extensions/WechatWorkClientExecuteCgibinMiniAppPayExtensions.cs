@@ -36,6 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestAsync<Models.CgibinMiniAppPayUploadImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
+        #region Applyment
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/miniapppay/apply_mch 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/98973 </para>
@@ -75,5 +76,162 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinMiniAppPayGetApplymentStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+        #endregion
+
+        #region Bill
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/miniapppay/get_bill 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98115 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMiniAppPayGetBillResponse> ExecuteCgibinMiniAppPayGetBillAsync(this WechatWorkClient client, Models.CgibinMiniAppPayGetBillRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "miniapppay", "get_bill")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("mchid", request.MerchantId)
+                .SetQueryParam("bill_date", request.BillDateString)
+                .SetQueryParam("bill_type", request.BillType)
+                .SetQueryParam("tar_type", request.TarType);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMiniAppPayGetBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Order
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/miniapppay/create_order 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97322 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMiniAppPayCreateOrderResponse> ExecuteCgibinMiniAppPayCreateOrderAsync(this WechatWorkClient client, Models.CgibinMiniAppPayCreateOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "miniapppay", "create_order")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMiniAppPayCreateOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/miniapppay/get_order 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97323 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMiniAppPayGetOrderResponse> ExecuteCgibinMiniAppPayGetOrderAsync(this WechatWorkClient client, Models.CgibinMiniAppPayGetOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "miniapppay", "get_order")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMiniAppPayGetOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/miniapppay/close_order 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97324 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMiniAppPayCloseOrderResponse> ExecuteCgibinMiniAppPayCloseOrderAsync(this WechatWorkClient client, Models.CgibinMiniAppPayCloseOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "miniapppay", "close_order")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMiniAppPayCloseOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/miniapppay/get_sign 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98130 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMiniAppPayGetSignResponse> ExecuteCgibinMiniAppPayGetSignAsync(this WechatWorkClient client, Models.CgibinMiniAppPayGetSignRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.Nonce == null)
+                request.Nonce = Guid.NewGuid().ToString("N");
+
+            if (request.Timestamp == null)
+                request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "miniapppay", "get_sign")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMiniAppPayGetSignResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Refund
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/miniapppay/refund 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97333 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMiniAppPayRefundResponse> ExecuteCgibinMiniAppPayRefundAsync(this WechatWorkClient client, Models.CgibinMiniAppPayRefundRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "miniapppay", "refund")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMiniAppPayRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/miniapppay/get_refund_detail 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97352 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMiniAppPayGetRefundDetailResponse> ExecuteCgibinMiniAppPayGetRefundDetailAsync(this WechatWorkClient client, Models.CgibinMiniAppPayGetRefundDetailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "miniapppay", "get_refund_detail")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMiniAppPayGetRefundDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
