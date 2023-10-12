@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.FREEPUBLISHJOBFINISH 事件的数据。</para>
@@ -59,8 +59,9 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("publish_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("publish_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 [System.Xml.Serialization.XmlElement("publish_id")]
-                public string PublishId { get; set; } = default!;
+                public long PublishId { get; set; }
 
                 /// <summary>
                 /// 获取或设置发布状态。
@@ -75,6 +76,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("article_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("article_id")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringReadOnlyConverter))]
                 [System.Xml.Serialization.XmlElement("article_id")]
                 public string? ArticleId { get; set; }
 

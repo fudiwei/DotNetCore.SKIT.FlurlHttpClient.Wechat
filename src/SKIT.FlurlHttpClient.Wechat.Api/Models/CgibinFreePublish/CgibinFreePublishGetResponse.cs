@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/freepublish/get 接口的响应。</para>
@@ -50,7 +50,8 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("publish_id")]
         [System.Text.Json.Serialization.JsonPropertyName("publish_id")]
-        public string PublishId { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public long PublishId { get; set; }
 
         /// <summary>
         /// 获取或设置发布状态。
@@ -64,6 +65,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("article_id")]
         [System.Text.Json.Serialization.JsonPropertyName("article_id")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringReadOnlyConverter))]
         public string? ArticleId { get; set; }
 
         /// <summary>

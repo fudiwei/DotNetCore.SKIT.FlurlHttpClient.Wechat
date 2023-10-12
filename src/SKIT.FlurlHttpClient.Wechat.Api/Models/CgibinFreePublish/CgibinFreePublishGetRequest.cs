@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/freepublish/get 接口的请求。</para>
@@ -10,6 +10,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("publish_id")]
         [System.Text.Json.Serialization.JsonPropertyName("publish_id")]
-        public string PublishId { get; set; } = string.Empty;
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public long PublishId { get; set; }
     }
 }

@@ -10,7 +10,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("publish_id")]
         [System.Text.Json.Serialization.JsonPropertyName("publish_id")]
-        public string PublishId { get; set; } = default!;
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public long PublishId { get; set; }
 
         /// <summary>
         /// 获取或设置消息数据 ID。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/freepublish/batchget 接口的响应。</para>
@@ -34,6 +34,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("article_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("article_id")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringReadOnlyConverter))]
                 public string ArticleId { get; set; } = default!;
 
                 /// <summary>
