@@ -352,6 +352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryPathUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
+        #region Delivery/OpenMessage
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/express/delivery/open_msg/follow_waybill 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/express_open_msg.html#_4-1%E3%80%81%E4%BC%A0%E8%BF%90%E5%8D%95%E6%8E%A5%E5%8F%A3-follow-waybill </para>
@@ -433,6 +434,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/express/delivery/open_msg/open_query_plugin 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/logistics-service/applyQueryPlugin.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExpressDeliveryOpenMessageOpenQueryPluginResponse> ExecuteCgibinExpressDeliveryOpenMessageOpenQueryPluginAsync(this WechatApiClient client, Models.CgibinExpressDeliveryOpenMessageOpenQueryPluginRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "open_msg", "open_query_plugin")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryOpenMessageOpenQueryPluginResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region Delivery/Return
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/express/delivery/return/open_return 接口。</para>
         /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/logistics-service/applyReturnPlugin.html </para>
         /// </summary>
@@ -453,24 +476,65 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /cgi-bin/express/delivery/open_msg/open_query_plugin 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/logistics-service/applyQueryPlugin.html </para>
+        /// <para>异步调用 [POST] /cgi-bin/express/delivery/return/add 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/express_sale_return.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinExpressDeliveryOpenMessageOpenQueryPluginResponse> ExecuteCgibinExpressDeliveryOpenMessageOpenQueryPluginAsync(this WechatApiClient client, Models.CgibinExpressDeliveryOpenMessageOpenQueryPluginRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinExpressDeliveryReturnAddResponse> ExecuteCgibinExpressDeliveryReturnAddAsync(this WechatApiClient client, Models.CgibinExpressDeliveryReturnAddRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "open_msg", "open_query_plugin")
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "return", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryOpenMessageOpenQueryPluginResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryReturnAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/express/delivery/return/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/express_sale_return.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExpressDeliveryReturnGetResponse> ExecuteCgibinExpressDeliveryReturnGetAsync(this WechatApiClient client, Models.CgibinExpressDeliveryReturnGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "return", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryReturnGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/express/delivery/return/unbind 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/express_sale_return.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExpressDeliveryReturnUnbindResponse> ExecuteCgibinExpressDeliveryReturnUnbindAsync(this WechatApiClient client, Models.CgibinExpressDeliveryReturnUnbindRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "return", "unbind")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryReturnUnbindResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
 
         #region Delivery/SingleWaybill
         /// <summary>
