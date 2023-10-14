@@ -1,12 +1,9 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/express/delivery/open_msg/follow_waybill 接口的响应。</para>
+    /// <para>表示 [POST] /cgi-bin/express/delivery/open_msg/trace_waybill 接口的响应。</para>
     /// </summary>
-    [Obsolete("相关接口或字段于 2023-05-31 下线。")]
-    public class CgibinExpressDeliveryOpenMessageFollowWaybillResponse : WechatApiResponse
+    public class CgibinExpressDeliveryOpenMessageTraceWaybillResponse : WechatApiResponse
     {
         /// <summary>
         /// 获取或设置微信订单查询 Token。

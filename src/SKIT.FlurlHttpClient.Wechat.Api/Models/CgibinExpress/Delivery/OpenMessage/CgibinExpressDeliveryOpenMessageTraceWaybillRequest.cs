@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/express/delivery/open_msg/follow_waybill 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/express/delivery/open_msg/trace_waybill 接口的请求。</para>
     /// </summary>
-    [Obsolete("相关接口或字段于 2023-05-31 下线。")]
-    public class CgibinExpressDeliveryOpenMessageFollowWaybillRequest : WechatApiRequest, IInferable<CgibinExpressDeliveryOpenMessageFollowWaybillRequest, CgibinExpressDeliveryOpenMessageFollowWaybillResponse>
+    public class CgibinExpressDeliveryOpenMessageTraceWaybillRequest : WechatApiRequest, IInferable<CgibinExpressDeliveryOpenMessageTraceWaybillRequest, CgibinExpressDeliveryOpenMessageTraceWaybillResponse>
     {
         public static class Types
         {
@@ -83,6 +81,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("goods_info")]
         [System.Text.Json.Serialization.JsonPropertyName("goods_info")]
         public Types.Goods? Goods { get; set; }
+
+        /// <summary>
+        /// 获取或设置快递公司 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("delivery_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
+        public string? DeliveryId { get; set; }
 
         /// <summary>
         /// 获取或设置微信交易单号。

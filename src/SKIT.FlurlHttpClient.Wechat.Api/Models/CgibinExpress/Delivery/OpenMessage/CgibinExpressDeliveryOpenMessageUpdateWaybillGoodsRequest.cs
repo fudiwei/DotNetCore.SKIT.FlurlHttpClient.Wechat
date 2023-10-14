@@ -1,13 +1,11 @@
-using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /cgi-bin/express/delivery/open_msg/update_follow_waybill_goods 接口的请求。</para>
+    /// <para>表示 [POST] /cgi-bin/express/delivery/open_msg/update_waybill_goods 接口的请求。</para>
     /// </summary>
-    [Obsolete("相关接口或字段于 2023-05-31 下线。")]
-    public class CgibinExpressDeliveryOpenMessageUpdateFollowWaybillGoodsRequest : WechatApiRequest, IInferable<CgibinExpressDeliveryOpenMessageUpdateFollowWaybillGoodsRequest, CgibinExpressDeliveryOpenMessageUpdateFollowWaybillGoodsResponse>
+    public class CgibinExpressDeliveryOpenMessageUpdateWaybillGoodsRequest : WechatApiRequest, IInferable<CgibinExpressDeliveryOpenMessageUpdateWaybillGoodsRequest, CgibinExpressDeliveryOpenMessageUpdateWaybillGoodsResponse>
     {
         public static class Types
         {
@@ -15,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class Detail : CgibinExpressDeliveryOpenMessageFollowWaybillRequest.Types.Goods.Types.Detail
+                    public class Detail : CgibinExpressDeliveryOpenMessageTraceWaybillRequest.Types.Goods.Types.Detail
                     {
                     }
                 }
@@ -34,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string OpenId { get; set; } = string.Empty;
+        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置微信订单查询 Token。
