@@ -33,6 +33,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.34.0
+
+    -   **新增**：新增小程序微信物流服务退货组件、查询组件等相关接口。
+
+    -   **新增**：随官方更新第三方平台代商家管理小程序类目管理相关接口模型。（_via_ [Gitee #I83L82](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I83L82)）
+
+    -   **变更**：调整部分微信模板消息相关接口模型的命名方式。
+
+    -   **修复**：修复发布能力相关接口模型字段类型定义错误。（_via_ [Gitee #I87LB3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I87LB3)）
+
 -   Release 2.33.0
 
     -   **新增**：新增小程序 ICP 备案审核通知事件。（_via_ [GitHub #108](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/108)）
