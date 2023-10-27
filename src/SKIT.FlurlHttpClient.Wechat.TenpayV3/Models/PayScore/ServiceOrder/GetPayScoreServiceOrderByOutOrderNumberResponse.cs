@@ -16,28 +16,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置付费说明。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置付费金额（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public int Amount { get; set; }
+                public int? Amount { get; set; }
 
                 /// <summary>
                 /// 获取或设置付费数量。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("count")]
                 [System.Text.Json.Serialization.JsonPropertyName("count")]
-                public int Count { get; set; }
+                public int? Count { get; set; }
             }
 
             public class Discount
@@ -47,28 +47,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("name")]
                 [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = default!;
+                public string? Name { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠说明。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
-                public string Description { get; set; } = default!;
+                public string? Description { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠金额（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                public int Amount { get; set; }
+                public int? Amount { get; set; }
 
                 /// <summary>
                 /// 获取或设置优惠数量。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("count")]
                 [System.Text.Json.Serialization.JsonPropertyName("count")]
-                public int Count { get; set; }
+                public int? Count { get; set; }
             }
 
             public class TimeRange
