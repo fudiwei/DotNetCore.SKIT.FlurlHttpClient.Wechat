@@ -257,9 +257,9 @@
 
     -   **新增**：新增自定义交易组件订单回调通知事件模型。
 
-    -   **修复**：修复自定义交易组件订单发货接口请求模型定义问题。（_via_ [GitHub #39](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/39)）
+    -   **修复**：修复自定义交易组件订单发货接口请求模型定义错误。（_via_ [GitHub #39](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/39)）
 
-    -   **修复**：修复自定义交易组件售后列表接口响应模型定义问题。（_via_ [GitHub #39](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/39)）
+    -   **修复**：修复自定义交易组件售后列表接口响应模型定义错误。（_via_ [GitHub #39](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/39)）
 
 -   Release 2.10.0
 
@@ -593,6 +593,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.20.1
+
+    -   **修复**：修复创建支付分订单接口模型定义错误。（_via_ [Gitee #I8B8UI](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I8B8UI)）
+
 -   Release 2.20.0
 
     -   **新增**：新增查询营销补差付款单列表接口。
@@ -701,7 +705,7 @@
 
     -   **新增**：新增出行券切卡组件预下单接口。
 
-    -   **修复**：修复特约商户进件接口模型定义问题。（_via_ [Gitee #I5FCR5](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5FCR5)）
+    -   **修复**：修复特约商户进件接口模型定义错误。（_via_ [Gitee #I5FCR5](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5FCR5)）
 
 -   Release 2.10.0
 
