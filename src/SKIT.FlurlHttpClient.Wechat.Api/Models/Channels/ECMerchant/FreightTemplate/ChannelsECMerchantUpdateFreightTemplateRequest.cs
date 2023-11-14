@@ -3,11 +3,11 @@
     /// <summary>
     /// <para>表示 [POST] /channels/ec/merchant/updatefreighttemplate 接口的请求。</para>
     /// </summary>
-    public class ChannelsECMerchantUpdateFreightTemplateRequest : WechatApiRequest, IInferable<ChannelsECMerchantUpdateFreightTemplateRequest, ProductDeliveryUpdateFreightTemplateResponse>
+    public class ChannelsECMerchantUpdateFreightTemplateRequest : WechatApiRequest, IInferable<ChannelsECMerchantUpdateFreightTemplateRequest, ChannelsECMerchantUpdateFreightTemplateResponse>
     {
         public static class Types
         {
-            public class FreightTemplate : ProductDeliveryInsertFreightTemplateRequest.Types.FreightTemplate
+            public class FreightTemplate : ChannelsECMerchantAddFreightTemplateRequest.Types.FreightTemplate
             {
                 /// <summary>
                 /// 获取或设置运费模板 ID。
