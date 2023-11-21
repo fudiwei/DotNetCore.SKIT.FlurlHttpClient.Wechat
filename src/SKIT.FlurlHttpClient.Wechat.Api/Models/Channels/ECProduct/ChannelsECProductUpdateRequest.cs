@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -75,9 +75,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("sku_attrs")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_attrs")]
                 public IList<Attribute>? AttributeList { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品配送信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
+                public SKUDeliver? SKUDeliver { get; set; }
+            }
+
+            public class SKUDeliver : ChannelsECProductAddRequest.Types.SKUDeliver
+            {
             }
 
             public class Limitation : ChannelsECProductAddRequest.Types.Limitation
+            {
+            }
+
+            public class ExtraService : ChannelsECProductAddRequest.Types.ExtraService
+            {
+            }
+
+            public class Aftersale : ChannelsECProductAddRequest.Types.Aftersale
             {
             }
         }
@@ -132,6 +151,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public IList<Types.Attribute>? AttributeList { get; set; }
 
         /// <summary>
+        /// 获取或设置商品编码。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("spu_code")]
+        [System.Text.Json.Serialization.JsonPropertyName("spu_code")]
+        public string? ApuCode { get; set; }
+
+        /// <summary>
+        /// 获取或设置品牌 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("brand_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public long? BrandId { get; set; }
+
+        /// <summary>
+        /// 获取或设置特殊资质图片媒体文件标识 ID 列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("qualifications")]
+        [System.Text.Json.Serialization.JsonPropertyName("qualifications")]
+        public IList<string>? QualificationPictureMediaIdList { get; set; }
+
+        /// <summary>
         /// 获取或设置发货方式。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("deliver_method")]
@@ -167,6 +208,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public Types.Limitation? Limitation { get; set; }
 
         /// <summary>
+        /// 获取或设置额外的服务信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("extra_service")]
+        [System.Text.Json.Serialization.JsonPropertyName("extra_service")]
+        public Types.ExtraService? ExtraService { get; set; }
+
+        /// <summary>
         /// 获取或设置更新后是否立即上架。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("listing")]
@@ -174,5 +222,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [System.Text.Json.Serialization.JsonPropertyName("listing")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
         public bool? RequireListing { get; set; }
+
+        /// <summary>
+        /// 获取或设置售后地址。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("after_sale_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("after_sale_info")]
+        public Types.Aftersale? Aftersale { get; set; }
     }
 }

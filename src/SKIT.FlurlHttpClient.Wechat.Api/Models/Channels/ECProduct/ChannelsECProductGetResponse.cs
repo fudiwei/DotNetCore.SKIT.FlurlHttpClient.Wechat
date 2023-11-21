@@ -132,6 +132,51 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("status")]
                         [System.Text.Json.Serialization.JsonPropertyName("status")]
                         public int Status { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品配送信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
+                        public SKUDeliver? SKUDeliver { get; set; }
+                    }
+
+                    public class SKUDeliver
+                    {
+                        /// <summary>
+                        /// 获取或设置 SKU 库存情况。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("stock_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("stock_type")]
+                        public int StockType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 SKU 发货节点。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("full_payment_presale_delivery_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("full_payment_presale_delivery_type")]
+                        public int FullPaymentPresaleDeliveryType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 SKU 预售周期开始时间。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("presale_begin_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("presale_begin_time")]
+                        public long PresaleBeginTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 SKU 预售周期结束时间。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("presale_end_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("presale_end_time")]
+                        public long PresaleEndTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 SKU 发货时效。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("full_payment_presale_delivery_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("full_payment_presale_delivery_time")]
+                        public int FullPaymentPresaleDeliveryTime { get; set; }
                     }
 
                     public class Limitation
@@ -149,6 +194,44 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("limited_buy_num")]
                         [System.Text.Json.Serialization.JsonPropertyName("limited_buy_num")]
                         public int? LimitedBuyCount { get; set; }
+                    }
+
+                    public class ExtraService
+                    {
+                        /// <summary>
+                        /// 获取或设置是否支持七天无理由退货。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("seven_day_return")]
+                        [System.Text.Json.Serialization.JsonPropertyName("seven_day_return")]
+                        public int SevenDayReturn { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置先用后付类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pay_after_use")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("pay_after_use")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        public bool IsPayAfterUseSupported { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否支持运费险。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("freight_insurance")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("freight_insurance")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        public bool IsFreightInsuranceSupported { get; set; }
+                    }
+
+                    public class Aftersale
+                    {
+                        /// <summary>
+                        /// 获取或设置地址 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("after_sale_address_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("after_sale_address_id")]
+                        public long? AftersaleAddressId { get; set; }
                     }
                 }
 
@@ -210,6 +293,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.Attribute[]? AttributeList { get; set; }
 
                 /// <summary>
+                /// 获取或设置商品编码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("spu_code")]
+                [System.Text.Json.Serialization.JsonPropertyName("spu_code")]
+                public string? ApuCode { get; set; }
+
+                /// <summary>
+                /// 获取或设置品牌 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("brand_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public long? BrandId { get; set; }
+
+                /// <summary>
                 /// 获取或设置发货方式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("deliver_method")]
@@ -264,6 +362,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("limited_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("limited_info")]
                 public Types.Limitation? Limitation { get; set; }
+
+                /// <summary>
+                /// 获取或设置额外的服务信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("extra_service")]
+                [System.Text.Json.Serialization.JsonPropertyName("extra_service")]
+                public Types.ExtraService? ExtraService { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("product_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("product_type")]
+                public int? ProductType { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品草稿最近一次修改时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("edit_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("edit_time")]
+                public long EditTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置售后地址。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("after_sale_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("after_sale_info")]
+                public Types.Aftersale? Aftersale { get; set; }
             }
         }
 

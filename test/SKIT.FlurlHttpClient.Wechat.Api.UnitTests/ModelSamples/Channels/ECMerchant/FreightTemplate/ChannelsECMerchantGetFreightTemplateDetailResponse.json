@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "freight_template": {
@@ -27,7 +27,7 @@
         },
         "create_time": 1653892643,
         "update_time": 1653892643,
-        "is_default": 0,
+        "is_default": false,
         "not_send_area": {
             "address_info": []
         }

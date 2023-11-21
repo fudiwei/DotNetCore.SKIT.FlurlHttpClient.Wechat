@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "product": {
@@ -50,9 +50,28 @@
                 "stock_num": 5,
                 "sku_code": "SKU_CODE_TEST",
                 "sku_attrs": [],
-                "status": 0
+                "status": 0,
+                "sku_deliver_info": {
+                    "stock_type": 1,
+                    "full_payment_presale_delivery_type": 2,
+                    "presale_begin_time": 1700450698,
+                    "presale_end_time": 1700882698,
+                    "full_payment_presale_delivery_time": 3
+                }
             }
         ],
-        "min_price": 1
+        "min_price": 1,
+        "product_type": 1,
+        "spu_code": "AABBCC",
+        "brand_id": 2100000000,
+        "extra_service": {
+            "seven_day_return": 1,
+            "pay_after_use": 1,
+            "freight_insurance": 0
+        },
+        "edit_time": 1700450698,
+        "after_sale_info": {
+            "after_sale_address_id": 123345
+        }
     }
 }

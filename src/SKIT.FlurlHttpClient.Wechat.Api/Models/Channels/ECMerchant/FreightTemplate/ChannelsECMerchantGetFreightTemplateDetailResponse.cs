@@ -152,9 +152,7 @@
                         /// 获取或设置是否为默认运费。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_default")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("is_default")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                         public bool IsDefault { get; set; }
 
                         /// <summary>
@@ -272,9 +270,7 @@
                 /// 获取或设置是否为默认模版。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_default")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_default")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
                 public bool IsDefault { get; set; }
 
                 /// <summary>
