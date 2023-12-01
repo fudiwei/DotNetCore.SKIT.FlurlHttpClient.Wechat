@@ -642,3 +642,19 @@
     -   Uploading Image： `UploadMerchantMedia`
 
 </details>
+
+---
+
+### 【附】企业微信支付 API 模型命名速查表：
+
+<details>
+
+<summary>[展开查看]</summary>
+
+-   企业红包：
+
+    -   发放企业红包：`SendPayMarketingTransfersWeWorkRedPack`
+
+-   向员工付款：
+
+    -   向员工付款：`CreatePayMarketingTransfersPromotionWeWorkTransfer`
