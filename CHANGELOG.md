@@ -939,6 +939,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.24.0
+
+    -   **新增**：新增二次验证相关接口。
+
+    -   **新增**：新增根据会议室预定 ID 查询预定详情接口。
+
+    -   **新增**：随官方更新客户群管理、文件防泄漏、打卡等相关接口模型。
+
+    -   **新增**：会话内容存档支持会议邀请消息和会议控制消息。
+
 -   Release 2.23.0
 
     -   **新增**：新增小程序接入对外收款相关接口。（_via_ [GitHub #113](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/113)）
