@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "datas": [
@@ -56,7 +56,14 @@
                 }
             ],
             "overwork_info": {
-                "workday_over_sec": 10800
+                "workday_over_sec": 54000,
+                "restdays_over_sec": 205560,
+                "workdays_over_as_vacation": 0,
+                "workdays_over_as_money": 54000,
+                "restdays_over_as_vacation": 0,
+                "restdays_over_as_money": 172800,
+                "holidays_over_as_vacation": 0,
+                "holidays_over_as_money": 0
             }
         }
     ]

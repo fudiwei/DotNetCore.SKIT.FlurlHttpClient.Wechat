@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/checkin/getcheckin_daydata 接口的响应。</para>
@@ -301,6 +301,48 @@
                         [Newtonsoft.Json.JsonProperty("exception_duration")]
                         [System.Text.Json.Serialization.JsonPropertyName("exception_duration")]
                         public int[]? ExceptionDurationList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置工作日加班记为调休（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("workday_over_as_vacation")]
+                        [System.Text.Json.Serialization.JsonPropertyName("workday_over_as_vacation")]
+                        public int? OvertimeWorkdayTimeAsVacation { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置工作日加班记为加班费（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("workday_over_as_money")]
+                        [System.Text.Json.Serialization.JsonPropertyName("workday_over_as_money")]
+                        public int? OvertimeWorkdayTimeAsMoney { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置休息日加班记为加班费（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("restday_over_as_vacation")]
+                        [System.Text.Json.Serialization.JsonPropertyName("restday_over_as_vacation")]
+                        public int? OvertimeRestdayTimeAsVacation { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置休息日加班记为加班费（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("restday_over_as_money")]
+                        [System.Text.Json.Serialization.JsonPropertyName("restday_over_as_money")]
+                        public int? OvertimeRestdayTimeAsMoney { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置节假日加班记为加班费（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("holiday_over_as_vacation")]
+                        [System.Text.Json.Serialization.JsonPropertyName("holiday_over_as_vacation")]
+                        public int? OvertimeHolidayTimeAsVacation { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置节假日加班记为加班费（单位：秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("holiday_over_as_money")]
+                        [System.Text.Json.Serialization.JsonPropertyName("holiday_over_as_money")]
+                        public int? OvertimeHolidayTimeAsMoney { get; set; }
                     }
                 }
 

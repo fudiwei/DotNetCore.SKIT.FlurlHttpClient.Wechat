@@ -838,7 +838,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("markdown", model.MessageType);
-                    Assert.Equal("请前往系统查看，谢谢。", model.MessageContentAsInfo!.MarkdownContent);
+                    Assert.Equal("请前往系统查看，谢谢。", model.MessageContentAsInfo!.Content);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);

@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "datas": [
@@ -86,7 +86,13 @@
             "ot_info": {
                 "ot_status": 1,
                 "ot_duration": 3600,
-                "exception_duration": []
+                "exception_duration": [],
+                "workday_over_as_vacation": 0,
+                "workday_over_as_money": 54000,
+                "restday_over_as_vacation": 0,
+                "restday_over_as_money": 172800,
+                "holiday_over_as_vacation": 0,
+                "holiday_over_as_money": 0
             },
             "sp_items": [
                 {

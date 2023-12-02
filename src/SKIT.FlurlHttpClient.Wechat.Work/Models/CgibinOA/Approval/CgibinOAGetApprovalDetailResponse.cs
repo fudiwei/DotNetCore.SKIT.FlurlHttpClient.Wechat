@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/getapprovaldetail 接口的响应。</para>
@@ -592,12 +592,27 @@
                                         public string State { get; set; } = default!;
 
                                         /// <summary>
+                                        /// 获取或设置版本标识。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("version")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("version")]
+                                        public int? Version { get; set; }
+
+                                        /// <summary>
                                         /// 获取或设置补卡时间戳。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("time")]
                                         [System.Text.Json.Serialization.JsonPropertyName("time")]
                                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
                                         public long? Timestamp { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置补卡日期时间戳。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("daymonthyear")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("daymonthyear")]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
+                                        public long? DateTimestamp { get; set; }
                                     }
                                 }
 
