@@ -21,9 +21,21 @@
                 "corp_name": "十分科技"
             },
             "operation": {
-                "type": 113
+                "type": 10001
             },
-            "file_info": "通过zhangsan的链接下载了1234567890.jpg"
+            "file_info": "通过zhangsan的链接下载了1234567890.jpg",
+            "applicant_name": "张三"
+        },
+        {
+            "time": 16666666666,
+            "userid": "lisi",
+            "operation": {
+                "type": 103,
+                "source": 401
+            },
+            "file_info": "通过zhangsan的链接下载了1234567890.jpg",
+            "device_type": 1,
+            "device_code": "owM2ovo"
         }
     ]
 }
