@@ -33,6 +33,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.35.0
+
+    -   **新增**：新增视频号小店获取生效中的品牌资质列表接口。（_via_ [Gitee #12](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/12)）
+
+    -   **修复**：修复视频号小店运费模板更新接口模型定义错误。（_via_ [Gitee #10](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/10)）
+
 -   Release 2.34.0
 
     -   **新增**：新增小程序微信物流服务退货组件、查询组件等相关接口。

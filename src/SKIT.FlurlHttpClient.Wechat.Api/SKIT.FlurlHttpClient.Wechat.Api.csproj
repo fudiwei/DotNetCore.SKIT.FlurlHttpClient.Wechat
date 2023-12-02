@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage MiniProgram MiniGame MiniStore 微信 公众号 服务号 订阅号 小程序 小游戏 小商店 视频号 公众平台 开放平台 微信公众号 微信服务号 微信订阅号 微信小程序 微信小游戏 微信小商店 微信视频号 微信公众平台 微信开放平台</PackageTags>
-        <Version>2.34.0</Version>
+        <Version>2.35.0</Version>
         <Description>基于 Flurl.Http 的微信 API 客户端，支持公众平台（订阅号、服务号、小程序、小游戏、小商店、视频号）、开放平台等平台，支持基础服务、模板消息、订阅消息、客服消息、动态消息、菜单管理、素材管理、留言管理、用户管理、账号管理、草稿箱、发布能力、数据统计、微信门店、微信小店、视频号小店、智能接口、一物一码、微信发票、微信非税缴费、插件管理、附近的小程序、小程序码、小程序搜索、URL Scheme、URL Link、即时配送、物流助手、直播、生物认证、虚拟支付、开放数据、对局匹配、帧同步、内容安全、安全风控、交易组件、小程序联盟、第三方平台、服务平台等功能。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
