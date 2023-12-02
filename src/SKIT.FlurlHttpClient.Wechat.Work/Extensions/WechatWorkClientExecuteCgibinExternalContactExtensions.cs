@@ -500,6 +500,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_acquisition/list_link 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/97297 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99484 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -520,6 +521,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/customer_acquisition/get 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/97297 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99484 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -640,6 +642,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/externalcontact/customer_acquisition/statistic 接口。</para>
         /// <para>REF: https://developer.work.weixin.qq.com/document/path/97375 </para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99483 </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

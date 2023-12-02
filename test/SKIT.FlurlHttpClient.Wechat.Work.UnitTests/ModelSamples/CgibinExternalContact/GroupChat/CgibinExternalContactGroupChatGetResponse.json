@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "group_chat": {
@@ -37,6 +37,7 @@
             {
                 "userid": "pony"
             }
-        ]
+        ],
+        "member_version": "71217227bbd112ecfe3a49c482195cb4"
     }
 }

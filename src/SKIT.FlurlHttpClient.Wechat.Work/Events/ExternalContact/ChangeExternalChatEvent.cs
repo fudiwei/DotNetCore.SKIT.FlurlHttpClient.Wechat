@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.change_external_chat 或 INFO.change_external_chat 事件的数据。</para>
@@ -54,5 +54,17 @@
         /// </summary>
         [System.Xml.Serialization.XmlElement("MemChangeCnt", IsNullable = true)]
         public int? MemberChangedCount { get; set; }
+
+        /// <summary>
+        /// 获取或设置变更前的群成员版本号。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("LastMemVer", IsNullable = true)]
+        public string? LastMemberVersion { get; set; }
+
+        /// <summary>
+        /// 获取或设置变更后的群成员版本号。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("CurMemVer", IsNullable = true)]
+        public string? CurrentMemberVersion { get; set; }
     }
 }
