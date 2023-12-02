@@ -50,5 +50,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendRequestWithJsonAsync<Models.CgibinAuthGetUserDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region TAF
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/auth/get_tfa_info 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99499 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinAuthGetTAFInfoResponse> ExecuteCgibinAuthGetTAFInfoAsync(this WechatWorkClient client, Models.CgibinAuthGetTAFInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "auth", "get_tfa_info")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinAuthGetTAFInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
