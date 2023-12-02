@@ -617,11 +617,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models.Abstractions
     public class InfoMessage : ChatMessageBase
     {
         /// <summary>
-        /// 获取或设置 Markdown 内容。
+        /// 获取或设置内容。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("content")]
         [System.Text.Json.Serialization.JsonPropertyName("content")]
-        public string? MarkdownContent { get; set; }
+        public string? Content { get; set; }
 
         /// <summary>
         /// 获取或设置图文消息链接。
@@ -664,6 +664,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models.Abstractions
         [Newtonsoft.Json.JsonProperty("filename")]
         [System.Text.Json.Serialization.JsonPropertyName("filename")]
         public string? WedriveFileName { get; set; }
+
+        /// <summary>
+        /// 获取或设置会议类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("meeting_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("meeting_id")]
+        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+        public long? MeetingId { get; set; }
+
+        /// <summary>
+        /// 获取或设置通知类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("notification_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("notification_type")]
+        public int? NotificationType { get; set; }
     }
 
     public class CalendarMessage : ChatMessageBase
