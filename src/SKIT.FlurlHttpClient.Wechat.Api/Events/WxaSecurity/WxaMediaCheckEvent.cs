@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.wxa_media_check 事件的数据。</para>
@@ -90,7 +90,7 @@
         [Newtonsoft.Json.JsonProperty("extra_info_json")]
         [System.Text.Json.Serialization.JsonPropertyName("extra_info_json")]
         [System.Xml.Serialization.XmlElement("extra_info_json", IsNullable = true)]
-        public string? JsonExtra { get; set; }
+        public string? ExtraJson { get; set; }
 
         /// <summary>
         /// 获取或设置小程序 AppId。

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/commit 接口的请求。</para>
@@ -17,7 +17,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ext_json")]
         [System.Text.Json.Serialization.JsonPropertyName("ext_json")]
-        public string JsonExtra { get; set; } = "{}";
+        public string ExtraJson { get; set; } = "{}";
 
         /// <summary>
         /// 获取或设置用户自定义版本号。
