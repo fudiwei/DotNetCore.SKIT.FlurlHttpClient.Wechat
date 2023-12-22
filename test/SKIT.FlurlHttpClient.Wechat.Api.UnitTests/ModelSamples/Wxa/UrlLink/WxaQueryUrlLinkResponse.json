@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "url_link_info": {
@@ -16,8 +16,7 @@
             "resource_appid": ""
         }
     },
-    "url_link_quota": {
-        "long_time_used": 100,
-        "long_time_limit": 100000
+    "quota_info": {
+        "remain_visit_quota": 1000000
     }
 }

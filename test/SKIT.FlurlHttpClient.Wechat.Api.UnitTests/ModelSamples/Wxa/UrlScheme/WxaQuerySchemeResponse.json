@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "scheme_info": {
@@ -9,8 +9,7 @@
         "expire_time": 0,
         "env_version": "release"
     },
-    "scheme_quota": {
-        "long_time_used": 100,
-        "long_time_limit": 100000
+    "quota_info": {
+        "remain_visit_quota": 1000000
     }
 }

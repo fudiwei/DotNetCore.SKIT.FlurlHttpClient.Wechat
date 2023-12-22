@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/queryscheme 接口的响应。</para>
@@ -55,18 +55,11 @@
             public class Quota
             {
                 /// <summary>
-                /// 获取或设置长期有效的已生成次数。
+                /// 获取或设置单天剩余访问次数。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("long_time_used")]
-                [System.Text.Json.Serialization.JsonPropertyName("long_time_used")]
-                public int LongTimeUsed { get; set; }
-
-                /// <summary>
-                /// 获取或设置长期有效的次数上限。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("long_time_limit")]
-                [System.Text.Json.Serialization.JsonPropertyName("long_time_limit")]
-                public int LongTimeLimit { get; set; }
+                [Newtonsoft.Json.JsonProperty("remain_visit_quota")]
+                [System.Text.Json.Serialization.JsonPropertyName("remain_visit_quota")]
+                public int RemainVisitQuota { get; set; }
             }
         }
 
@@ -80,8 +73,8 @@
         /// <summary>
         /// 获取或设置配额信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("scheme_quota")]
-        [System.Text.Json.Serialization.JsonPropertyName("scheme_quota")]
+        [Newtonsoft.Json.JsonProperty("quota_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("quota_info")]
         public Types.Quota Quota { get; set; } = default!;
     }
 }
