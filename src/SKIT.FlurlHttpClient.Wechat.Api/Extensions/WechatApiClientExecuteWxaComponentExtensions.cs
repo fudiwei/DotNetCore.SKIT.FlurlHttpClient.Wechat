@@ -1619,7 +1619,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "wxa", "component", "fastregisterpersonalweapp")
                 .SetQueryParam("action", "create")
-                .SetQueryParam("component_access_token", request.ComponentAccessToken);
+                .SetQueryParam("access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaComponentFastRegisterPersonalWeappCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
@@ -1640,7 +1640,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateRequest(request, HttpMethod.Post, "wxa", "component", "fastregisterpersonalweapp")
                 .SetQueryParam("action", "query")
-                .SetQueryParam("component_access_token", request.ComponentAccessToken);
+                .SetQueryParam("access_token", request.ComponentAccessToken);
 
             return await client.SendRequestWithJsonAsync<Models.WxaComponentFastRegisterPersonalWeappQueryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
