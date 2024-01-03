@@ -1630,6 +1630,108 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
+        #region Vip
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/vip/submit_batch_add_job 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99508 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingVipSubmitBatchAddJobResponse> ExecuteCgibinMeetingVipSubmitBatchAddJobAsync(this WechatWorkClient client, Models.CgibinMeetingVipSubmitBatchAddJobRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "vip", "submit_batch_add_job")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingVipSubmitBatchAddJobResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/vip/batch_add_job_result 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99508 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingVipBatchAddJobResultResponse> ExecuteCgibinMeetingVipBatchAddJobResultAsync(this WechatWorkClient client, Models.CgibinMeetingVipBatchAddJobResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "vip", "batch_add_job_result")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingVipBatchAddJobResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/vip/submit_batch_del_job 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99509 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingVipSubmitBatchDeleteJobResponse> ExecuteCgibinMeetingVipSubmitBatchDeleteJobAsync(this WechatWorkClient client, Models.CgibinMeetingVipSubmitBatchDeleteJobRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "vip", "submit_batch_del_job")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingVipSubmitBatchDeleteJobResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/vip/batch_del_job_result 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99509 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingVipBatchDeleteJobResultResponse> ExecuteCgibinMeetingVipBatchDeleteJobResultAsync(this WechatWorkClient client, Models.CgibinMeetingVipBatchDeleteJobResultRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "vip", "batch_del_job_result")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingVipBatchDeleteJobResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/vip/list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99510 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingVipListResponse> ExecuteCgibinMeetingVipListAsync(this WechatWorkClient client, Models.CgibinMeetingVipListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "vip", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinMeetingVipListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Webinar
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/webinar/create 接口。</para>
