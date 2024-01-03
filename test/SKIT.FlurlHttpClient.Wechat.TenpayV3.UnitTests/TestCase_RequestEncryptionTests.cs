@@ -1007,6 +1007,44 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /refund/domestic/refunds/{refund_id}/apply-abnormal-refund）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateRefundDomesticAbnormalRefundApply()
+        {
+            static Models.CreateRefundDomesticAbnormalRefundApplyRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateRefundDomesticAbnormalRefundApplyRequest()
+                {
+                    BankAccountNumber = MOCK_PLAIN_STR,
+                    RealName = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateRefundDomesticAbnormalRefundApplyRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.BankAccountNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.RealName!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccountNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealName!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            var reqA1 = GenerateMockRequestModel();
+            CreateMockClientUseRSA(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA1);
+            AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqA2 = GenerateMockRequestModel();
+            CreateMockClientUseSM2(autoEncrypt: false).EncryptRequestSensitiveProperty(reqA2);
+            AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+
+            var reqB1 = GenerateMockRequestModel();
+            await CreateMockClientUseRSA(autoEncrypt: true).ExecuteCreateRefundDomesticAbnormalRefundApplyAsync(reqB1);
+            AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+
+            var reqB2 = GenerateMockRequestModel();
+            await CreateMockClientUseSM2(autoEncrypt: true).ExecuteCreateRefundDomesticAbnormalRefundApplyAsync(reqB2);
+            AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /smartguide/guides）")]
         public async Task TestEncryptRequestSensitiveProperty_CreateSmartGuideRequest()
         {

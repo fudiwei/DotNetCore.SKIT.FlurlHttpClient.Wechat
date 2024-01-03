@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -72,6 +72,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendRequestWithJsonAsync<Models.GetRefundDomesticRefundByOutRefundNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /refund/domestic/refunds/{refund_id}/apply-abnormal-refund 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/refund/refunds/create-abnormal-refund.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/refund/refunds/create-abnormal-refund.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateRefundDomesticAbnormalRefundApplyResponse> ExecuteCreateRefundDomesticAbnormalRefundApplyAsync(this WechatTenpayClient client, Models.CreateRefundDomesticAbnormalRefundApplyRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "refund", "domestic", "refunds", request.RefundId, "apply-abnormal-refund");
+
+            return await client.SendRequestWithJsonAsync<Models.CreateRefundDomesticAbnormalRefundApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
