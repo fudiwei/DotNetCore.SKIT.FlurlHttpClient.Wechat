@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
@@ -8,16 +8,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>生成客户端 JSAPI / 小程序调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_8.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_9.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_5_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter5_1_3.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter5_1_9.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_3_8.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_3_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/jsapi-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/mini-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/jsapi-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/mini-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/jsapi-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/mini-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/jsapi-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/mini-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/jsapi-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/jsapi-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/mini-transfer-payment.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -50,11 +51,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>生成 APP 调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_6.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_2_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter5_1_6.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_3_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/app-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/app-transfer-payment.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -67,11 +65,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>生成 APP 调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter5_1_6.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_2_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter5_1_6.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_3_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/app-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/app-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/app-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/mini-transfer-payment.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/app-transfer-payment.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="merchantId"></param>

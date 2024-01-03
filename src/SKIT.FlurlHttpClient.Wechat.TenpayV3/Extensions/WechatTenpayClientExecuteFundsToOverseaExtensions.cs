@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [GET] /funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/transaction-api/get-available-abroad-amount.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /funds-to-oversea/orders 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/funds-to-os-order-api/create-order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /funds-to-oversea/orders/{out_order_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/funds-to-os-order-api/query-order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -71,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /funds-to-oversea/bill-download-url 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/purchase-payment-bill/query-download-info.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

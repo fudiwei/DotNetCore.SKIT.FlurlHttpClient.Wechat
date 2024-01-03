@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region ViolationNotification
         /// <summary>
         /// <para>异步调用 [POST] /merchant-risk-manage/violation-notifications 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/create-violation-notification.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -105,7 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /merchant-risk-manage/violation-notifications 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/query-violation-notification.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [PUT] /merchant-risk-manage/violation-notifications 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/update-violation-notification.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -143,7 +143,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [DELETE] /merchant-risk-manage/violation-notifications 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/delete-violation-notification.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

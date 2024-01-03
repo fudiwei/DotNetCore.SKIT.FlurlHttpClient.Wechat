@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,8 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /profitsharing/orders 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_1.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/orders/create-order.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/orders/create-order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,8 +31,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /profitsharing/orders/{out_order_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_2.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/orders/query-order.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/orders/query-order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -55,8 +55,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /profitsharing/return-orders 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_3.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/return-orders/create-return-order.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/return-orders/create-return-order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -75,8 +75,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /profitsharing/return-orders/{out_order_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/return-orders/query-return-order.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/return-orders/query-return-order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -99,8 +99,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /profitsharing/orders/unfreeze 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_5.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_5.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/orders/unfreeze-order.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/orders/unfreeze-order.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -119,8 +119,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /profitsharing/transactions/{transaction_id}/amounts 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_6.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/transactions/query-order-amount.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/transactions/query-order-amount.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -139,7 +139,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /profitsharing/merchant-configs/{sub_mchid} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_7.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/merchants/query-merchant-ratio.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/merchants/query-merchant-ratio.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -158,8 +159,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /profitsharing/receivers/add 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_8.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_8.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/receivers/add-receiver.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/receivers/add-receiver.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -178,8 +179,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /profitsharing/receivers/delete 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_9.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/receivers/delete-receiver.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/receivers/delete-receiver.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -199,8 +200,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Bills
         /// <summary>
         /// <para>异步调用 [GET] /profitsharing/bills 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_1_11.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_11.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/bill-shipment/split-bill.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/bill-shipment/split-bill.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-bill-download/split-bill.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /apply4subject/applyment 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/submit-applyment.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /apply4subject/applyment 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/get-audit-result.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /apply4subject/applyment 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/get-audit-result.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -70,7 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /apply4subject/applyment/{business_code}/cancel 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/cancel-applyment.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /apply4subject/applyment/{applyment_id}/cancel 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/cancel-applyment.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -108,7 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /apply4subject/applyment/merchants/{sub_mchid}/state 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/get-authorize-state.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

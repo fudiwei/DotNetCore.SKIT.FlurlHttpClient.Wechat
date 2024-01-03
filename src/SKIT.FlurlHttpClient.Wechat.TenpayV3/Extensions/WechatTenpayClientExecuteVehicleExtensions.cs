@@ -12,8 +12,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Parking
         /// <summary>
         /// <para>异步调用 [GET] /vehicle/parking/services/find 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_8_1.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/services/query-plate-service.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/services/query-plate-service.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -39,8 +39,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /vehicle/parking/parkings 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_8_2.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/parkings/create-parking.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/parkings/create-parking.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -61,8 +61,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Transactions
         /// <summary>
         /// <para>异步调用 [POST] /vehicle/transactions/parking 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_8_3.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/transactions/create-transaction.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/transactions/create-transaction.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -81,8 +81,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /vehicle/transactions/out-trade-no/{out_trade_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_8_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/transactions/query-transaction.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/transactions/query-transaction.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

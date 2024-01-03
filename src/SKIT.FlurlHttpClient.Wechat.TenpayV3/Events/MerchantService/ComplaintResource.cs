@@ -1,8 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
     /// <para>表示 COMPLAINT.CREATE 通知的数据。</para>
     /// <para>表示 COMPLAINT.STATE_CHANGE 通知的数据。</para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/consumer-complaint/complaint-notifications/complaint-notifications.html </para>
     /// </summary>
     public class ComplaintResource : WechatTenpayEvent.Types.IDecryptedResource
     {

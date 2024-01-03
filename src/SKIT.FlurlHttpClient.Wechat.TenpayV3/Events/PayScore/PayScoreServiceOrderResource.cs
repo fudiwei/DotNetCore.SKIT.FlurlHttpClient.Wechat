@@ -5,6 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <summary>
     /// <para>表示 PAYSCORE.USER_CONFIRM（针对直连商户）通知的数据。</para>
     /// <para>表示 PAYSCORE.USER_PAID（针对直连商户）通知的数据。</para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/success-notification.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/confirm-notification.html </para>
     /// </summary>
     public class PayScoreServiceOrderResource : WechatTenpayEvent.Types.IDecryptedResource
     {

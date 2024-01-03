@@ -1,9 +1,19 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
     /// <para>表示 TRANSACTION.SUCCESS （仅限服务商）通知的数据。</para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/payment-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/payment-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/payment-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/payment-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/payment-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/payment-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/payment-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/notification.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/notice-division.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/brand-profit-sharing/notification.html </para>
     /// </summary>
     public class PartnerTransactionResource : WechatTenpayEvent.Types.IDecryptedResource
     {

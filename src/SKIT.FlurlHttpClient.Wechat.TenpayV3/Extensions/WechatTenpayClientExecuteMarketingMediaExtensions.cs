@@ -10,8 +10,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /marketing/favor/media/image-upload 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_0_1.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_0_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/cash-coupons/upload-image.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/upload-image.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/upload-image.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/cash-coupons/upload-image.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/upload-image.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gift-activity/upload-image.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

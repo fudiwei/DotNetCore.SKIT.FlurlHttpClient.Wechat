@@ -8,6 +8,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>标识 FAPIAO.CARD_DISCARDED 通知的数据。</para>
     /// <para>标识 FAPIAO.ISSUED 通知的数据。</para>
     /// <para>标识 FAPIAO.REVERSED 通知的数据。</para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-card-template/invoice-card-cancel-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/invoice-issued-success-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/invoice-flush-success-notice.html </para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/invoice-insert-bag-success-notice.html </para>
     /// </summary>
     public class FapiaoResource : WechatTenpayEvent.Types.IDecryptedResource
     {

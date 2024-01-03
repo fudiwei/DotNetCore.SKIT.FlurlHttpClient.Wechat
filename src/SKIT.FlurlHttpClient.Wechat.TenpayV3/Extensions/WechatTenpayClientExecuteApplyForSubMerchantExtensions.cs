@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /applyment4sub/applyment/ 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter11_1_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/contracted-merchant-application/applyment/submit.html </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_6_1.shtml </para>
         /// </summary>
         /// <param name="client"></param>
@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /applyment4sub/applyment/business_code/{business_code} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter11_1_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/contracted-merchant-application/applyment/query-state.html </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_6_2.shtml </para>
         /// </summary>
         /// <param name="client"></param>
@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /applyment4sub/applyment/applyment_id/{applyment_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter11_1_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/contracted-merchant-application/applyment/query-state-by-id.html </para>
         /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_6_2.shtml </para>
         /// </summary>
         /// <param name="client"></param>
@@ -71,7 +71,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /apply4sub/sub_merchants/{sub_mchid}/modify-settlement 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/modify-settlement/sub-merchants/modify-settlement.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/modify-settlement.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/contracted-merchant-application/modify-settlement.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -90,7 +91,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /apply4sub/sub_merchants/{sub_mchid}/settlement 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/modify-settlement/sub-merchants/get-settlement.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/get-settlement.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/contracted-merchant-application/get-settlement.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -109,7 +111,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /apply4sub/sub_merchants/{sub_mchid}/application/{application_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/modify-settlement/sub-merchants/get-application.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/get-application.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/contracted-merchant-application/get-application.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

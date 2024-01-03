@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
@@ -6,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 VIOLATION.PUNISH 通知的数据。</para>
     /// <para>表示 VIOLATION.INTERCEPT 通知的数据。</para>
     /// <para>表示 VIOLATION.APPEAL 通知的数据。</para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/disposal-record-notice.html </para>
     /// </summary>
     public class ViolationResource : WechatTenpayEvent.Types.IDecryptedResource
     {

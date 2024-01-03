@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,8 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /marketing/partnerships/build 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_5_1.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_5_1.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/commissioned-marketing/partnerships/build-partnerships.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/commissioned-marketing/partnerships/build-partnerships.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -32,8 +32,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/partnerships/terminate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_5_2.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_5_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/commissioned-marketing/partnerships/terminate-partnerships.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/commissioned-marketing/partnerships/terminate-partnerships.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -53,8 +53,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/partnerships 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_5_3.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_5_3.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/commissioned-marketing/partnerships/list-partnerships.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/commissioned-marketing/partnerships/list-partnerships.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

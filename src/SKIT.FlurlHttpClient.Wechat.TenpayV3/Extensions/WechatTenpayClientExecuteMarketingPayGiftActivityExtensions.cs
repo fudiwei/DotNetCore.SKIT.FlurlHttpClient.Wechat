@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,8 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /marketing/paygiftactivity/unique-threshold-activity 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_7_2.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_7_2.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/activity/create-full-send-act.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gift-activity/activity/create-full-send-act.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,8 +31,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/paygiftactivity/activities/{activity_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_7_4.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_7_4.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/activity/get-act-detail.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gift-activity/activity/get-act-detail.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -51,8 +51,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/paygiftactivity/activities 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_7_9.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_7_9.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/activity/list-activities.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gift-activity/activity/list-activities.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -82,8 +82,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/paygiftactivity/activities/{activity_id}/terminate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_7_7.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_7_7.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/activity/ter-minate-activity.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gift-activity/activity/ter-minate-activity.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -102,8 +102,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/paygiftactivity/activities/{activity_id}/merchants/add 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_7_8.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_7_8.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/activity/add-activity-merchant.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gift-activity/activity/add-activity-merchant.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -122,8 +122,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/paygiftactivity/activities/{activity_id}/merchants 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_7_5.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_7_5.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/activity/list-activity-merchant.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gift-activity/activity/list-activity-merchant.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -148,8 +148,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/paygiftactivity/activities/{activity_id}/merchants/delete 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_7_10.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_7_10.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/activity/delete-activity-merchant.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gift-activity/activity/delete-activity-merchant.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -168,8 +168,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/paygiftactivity/activities/{activity_id}/goods 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_7_6.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_7_6.shtml </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/activity/list-activity-sku.html </para>
+        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gift-activity/activity/list-activity-sku.html </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

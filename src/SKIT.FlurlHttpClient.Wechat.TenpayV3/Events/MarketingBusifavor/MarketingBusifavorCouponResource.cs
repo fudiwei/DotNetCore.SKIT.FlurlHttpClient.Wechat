@@ -1,9 +1,10 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
     /// <para>表示 COUPON.SEND 通知的数据。</para>
+    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/busicoupon-send.html </para>
     /// </summary>
     public class MarketingBusifavorCouponResource : WechatTenpayEvent.Types.IDecryptedResource
     {
