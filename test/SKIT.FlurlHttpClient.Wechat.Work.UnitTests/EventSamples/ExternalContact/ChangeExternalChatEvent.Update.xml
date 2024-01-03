@@ -1,4 +1,4 @@
-﻿<xml>
+<xml>
     <SuiteId><![CDATA[ww4asffe99e54c0f4c]]></SuiteId>
     <AuthCorpId><![CDATA[wxf8b4f85f3a794e77]]></AuthCorpId>
     <InfoType><![CDATA[change_external_chat]]></InfoType>
@@ -9,4 +9,10 @@
     <JoinScene>1</JoinScene>
     <QuitScene>0</QuitScene>
     <MemChangeCnt>10</MemChangeCnt>
+    <MemChangeList>
+        <Item>Jack</Item>
+        <Item>Rose</Item>
+    </MemChangeList>
+    <LastMemVer>9c3f97c2ada667dfb5f6d03308d963e1</LastMemVer>
+    <CurMemVer>71217227bbd112ecfe3a49c482195cb4</CurMemVer>
 </xml>

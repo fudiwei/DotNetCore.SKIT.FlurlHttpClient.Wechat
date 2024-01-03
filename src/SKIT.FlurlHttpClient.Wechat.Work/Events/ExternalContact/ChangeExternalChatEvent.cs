@@ -7,6 +7,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// </summary>
     public class ChangeExternalChatEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
     {
+        public static class Types
+        {
+            public class MemberChangedList
+            {
+                /// <summary>
+                /// 获取或设置成员账号列表。
+                /// </summary>
+                [System.Xml.Serialization.XmlElement("Item")]
+                public string[] Items { get; set; } = default!;
+            }
+        }
+
         /// <summary>
         /// 获取或设置第三方应用的 SuiteId。
         /// </summary>
@@ -54,6 +66,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         /// </summary>
         [System.Xml.Serialization.XmlElement("MemChangeCnt", IsNullable = true)]
         public int? MemberChangedCount { get; set; }
+
+        /// <summary>
+        /// 获取或设置成员变更列表。
+        /// </summary>
+        [System.Xml.Serialization.XmlElement("MemChangeList", IsNullable = true)]
+        public Types.MemberChangedList? MemberChangedList { get; set; }
 
         /// <summary>
         /// 获取或设置变更前的群成员版本号。
