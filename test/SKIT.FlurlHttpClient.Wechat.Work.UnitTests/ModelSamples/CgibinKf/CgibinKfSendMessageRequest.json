@@ -80,5 +80,8 @@
     },
     "business_card": {
         "userid": "USERID"
+    },
+    "ca_link": {
+        "link_url": "https://work.weixin.qq.com/ca/xxxxxx"
     }
 }

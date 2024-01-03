@@ -276,6 +276,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
                 public string UserId { get; set; } = string.Empty;
             }
+
+            public class CustomerAcquisitionLinkMessage
+            {
+                /// <summary>
+                /// 获取或设置获客链接。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("link_url")]
+                [System.Text.Json.Serialization.JsonPropertyName("link_url")]
+                public string LinkUrl { get; set; } = string.Empty;
+            }
         }
 
         /// <summary>
@@ -375,5 +385,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("business_card")]
         [System.Text.Json.Serialization.JsonPropertyName("business_card")]
         public Types.BusinessCardMessage? MessageContentAsBusinessCard { get; set; }
+
+        /// <summary>
+        /// 获取或设置获客链接消息信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ca_link")]
+        [System.Text.Json.Serialization.JsonPropertyName("ca_link")]
+        public Types.CustomerAcquisitionLinkMessage? MessageContentAsCustomerAcquisitionLink { get; set; }
     }
 }
