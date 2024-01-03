@@ -578,5 +578,67 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinWedriveManageCapacityResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region Vip
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedrive/vip/batch_add 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99512 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedriveVipBatchAddResponse> ExecuteCgibinWedriveVipBatchAddAsync(this WechatWorkClient client, Models.CgibinWedriveVipBatchAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedrive", "vip", "batch_add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedriveVipBatchAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedrive/vip/batch_del 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99513 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedriveVipBatchDeleteResponse> ExecuteCgibinWedriveVipBatchDeleteAsync(this WechatWorkClient client, Models.CgibinWedriveVipBatchDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedrive", "vip", "batch_del")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedriveVipBatchDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedrive/vip/list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99514 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedriveVipListResponse> ExecuteCgibinWedriveVipListAsync(this WechatWorkClient client, Models.CgibinWedriveVipListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedrive", "vip", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedriveVipListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }
