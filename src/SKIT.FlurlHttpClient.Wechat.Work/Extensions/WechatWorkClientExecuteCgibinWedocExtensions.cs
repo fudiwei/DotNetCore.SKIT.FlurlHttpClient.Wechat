@@ -374,5 +374,67 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendRequestWithJsonAsync<Models.CgibinWedocSpreadSheetGetSheetRangeDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
+
+        #region Vip
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/vip/batch_add 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99516 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocVipBatchAddResponse> ExecuteCgibinWedocVipBatchAddAsync(this WechatWorkClient client, Models.CgibinWedocVipBatchAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "vip", "batch_add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedocVipBatchAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/vip/batch_del 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99517 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocVipBatchDeleteResponse> ExecuteCgibinWedocVipBatchDeleteAsync(this WechatWorkClient client, Models.CgibinWedocVipBatchDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "vip", "batch_del")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedocVipBatchDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/vip/list 接口。</para>
+        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99518 </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocVipListResponse> ExecuteCgibinWedocVipListAsync(this WechatWorkClient client, Models.CgibinWedocVipListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "vip", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinWedocVipListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
     }
 }

@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("customer_list")]
         [System.Text.Json.Serialization.JsonPropertyName("customer_list")]
-        public Types.Customer[] CustomerLsit { get; set; } = default!;
+        public Types.Customer[] CustomerList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置无效的外部联系人账号列表。
