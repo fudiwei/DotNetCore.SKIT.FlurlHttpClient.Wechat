@@ -227,7 +227,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                             throw new PlatformNotSupportedException();
                         string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr);
 
-                        response = JsonSerializer.Deserialize<Models.DecryptChatRecordResponse>(dataContent);
+                        try
+                        {
+                            response = JsonSerializer.Deserialize<Models.DecryptChatRecordResponse>(dataContent);
+                        }
+                        catch (System.Text.Json.JsonException)
+                        {
+                            // NOTICE: 某些情况下微信返回的 JSON 字符串中包含设备控制符，可能导致 System.Text.Json 反序列化抛出异常
+                            if (JsonSerializer is FlurlSystemTextJsonSerializer)
+                            {
+                                string fixedDataContent = dataContent
+                                    .Replace("\\u0011", string.Empty)
+                                    .Replace("\\u0012", string.Empty)
+                                    .Replace("\\u0013", string.Empty)
+                                    .Replace("\\u0014", string.Empty);
+                                response = JsonSerializer.Deserialize<Models.DecryptChatRecordResponse>(fixedDataContent);
+                            }
+                            else
+                            {
+                                throw;
+                            }
+                        }
+
                         response.RawBytes = Encoding.UTF8.GetBytes(dataContent);
                     }
 
