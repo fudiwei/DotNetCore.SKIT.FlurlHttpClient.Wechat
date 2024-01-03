@@ -959,6 +959,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.25.0
+
+    -   **新增**：新增会议高级功能账号、文档高级功能账号、微盘高级功能账号等相关接口。
+
+    -   **新增**：随官方更新发送客服消息相关接口模型。
+
+    -   **新增**：随官方更新客户群变更事件相关通知事件模型。（_via_ [Gitee #I8SEGH](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I8SEGH)）
+
+    -   **修复**：尝试规避部分场景下企业会话存档 JSON 反序列化异常的问题。（_via_ [Gitee #I8SY9T](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I8SY9T)）
+
 -   Release 2.24.0
 
     -   **新增**：新增二次验证相关接口。
