@@ -613,6 +613,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 2.21.0
+
+    -   **新增**：新增发起异常退款接口。
+
+    -   **新增**：新增不活跃商户身份核实相关接口。
+
 -   Release 2.20.1
 
     -   **修复**：修复创建支付分订单接口模型定义错误。（_via_ [Gitee #I8B8UI](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I8B8UI)）
