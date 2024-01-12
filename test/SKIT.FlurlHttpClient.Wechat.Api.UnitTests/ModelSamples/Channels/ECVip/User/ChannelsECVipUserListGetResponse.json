@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "openid": "OPENID",
+            "unionid": "UNIONID",
+            "user_info": {
+                "phone_number": "123456789"
+            },
+            "user_grade_info": {
+                "grade": 1,
+                "experience_value": "100"
+            }
+        }
+    ],
+    "total_num": 100
+}

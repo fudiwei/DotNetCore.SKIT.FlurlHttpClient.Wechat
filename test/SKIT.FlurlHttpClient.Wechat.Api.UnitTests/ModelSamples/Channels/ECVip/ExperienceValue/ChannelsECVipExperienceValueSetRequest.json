@@ -1,0 +1,12 @@
+{
+    "conf": {
+        "pay_amount_rule": {
+            "pay_value": "100",
+            "gain_value": "1",
+            "pay_amount_floor": "100"
+        },
+        "pay_time_rule": {
+            "gain_value": "1"
+        }
+    }
+}
