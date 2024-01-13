@@ -1707,6 +1707,130 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsVirtualNumberGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        #region ECLogistics/EWaybill
+        #region ECLogistics/EWaybill/Template
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/config 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_template_config.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillTemplateConfigResponse> ExecuteChannelsECLogisticsEWaybillTemplateConfigAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillTemplateConfigRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "template", "config")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillTemplateConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/create 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/add_template.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillTemplateCreateResponse> ExecuteChannelsECLogisticsEWaybillTemplateCreateAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillTemplateCreateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "template", "create")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillTemplateCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/update 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/update_template.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillTemplateUpdateResponse> ExecuteChannelsECLogisticsEWaybillTemplateUpdateAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillTemplateUpdateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "template", "update")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillTemplateUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/delete 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/delete_template.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillTemplateDeleteResponse> ExecuteChannelsECLogisticsEWaybillTemplateDeleteAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillTemplateDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "template", "delete")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillTemplateDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_template.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillTemplateGetResponse> ExecuteChannelsECLogisticsEWaybillTemplateGetAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillTemplateGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "template", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillTemplateGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/template/getbyid 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_templatebyid.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillTemplateGetByIdResponse> ExecuteChannelsECLogisticsEWaybillTemplateGetByIdAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillTemplateGetByIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "template", "getbyid")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillTemplateGetByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+        #endregion
         #endregion
 
         #region ECSharer
