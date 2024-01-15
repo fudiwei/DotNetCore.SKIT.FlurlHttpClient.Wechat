@@ -1,0 +1,40 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_num": 1,
+    "account_list": [
+        {
+            "delivery_id": "JTSD",
+            "shop_id": "5xxxxxxxxx8",
+            "acct_id": "6xxxxxxxxx6",
+            "status": 3,
+            "available": 0,
+            "allocated": 0,
+            "recycled": 0,
+            "cancel": 0,
+            "site_info": {
+                "delivery_id": "JTSD",
+                "site_status": 1,
+                "site_code": "2100002",
+                "site_name": "测试网点02",
+                "address": {
+                    "city_code": "310100000",
+                    "city_name": "上海市",
+                    "detail_address": "上海上海市青浦区华新镇华隆路1777号",
+                    "district_code": "310118000",
+                    "district_name": "青浦区",
+                    "province_code": "310000000",
+                    "province_name": "上海",
+                    "street_code": "",
+                    "street_name": ""
+                },
+                "contact": {
+                    "mobile": "15xxxxxxxxx",
+                    "name": "测试团队",
+                    "phone": "15xxxxxxxxx"
+                },
+                "site_fullname": "测试网点02"
+            }
+        }
+    ]
+}
