@@ -1,0 +1,12 @@
+{
+    "transfer_amount": 0,
+    "transfer_account_uid": 0,
+    "transfer_account_name": "",
+    "transfer_account_agency_id": 0,
+    "request_id": "",
+    "settle_begin": 0,
+    "settle_end": 0,
+    "env": 1,
+    "authorize_advertise": 0,
+    "fund_type": 0
+}

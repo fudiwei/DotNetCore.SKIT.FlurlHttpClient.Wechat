@@ -1,0 +1,8 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "balance_available": {
+        "amount": 1,
+        "currency_code": "CNY"
+    }
+}

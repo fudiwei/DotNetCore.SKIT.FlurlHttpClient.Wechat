@@ -141,6 +141,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("wxpay_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("wxpay_order_id")]
                 public string? TransactionId { get; set; }
+
+                /// <summary>
+                /// 获取或设置结算状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sett_state")]
+                [System.Text.Json.Serialization.JsonPropertyName("sett_state")]
+                public long SettleState { get; set; }
+
+                /// <summary>
+                /// 获取或设置结算时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sett_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("sett_time")]
+                public long SettleTimestamp { get; set; }
             }
         }
 

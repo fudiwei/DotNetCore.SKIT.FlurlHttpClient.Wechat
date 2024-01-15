@@ -1,0 +1,10 @@
+{
+    "page": 0,
+    "page_size": 0,
+    "filter": {
+        "recover_time_begin": 0,
+        "recover_time_end": 0,
+        "bill_id": ""
+    },
+    "env": 1
+}

@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "acct_list": [
+        {
+            "transfer_account_name": "",
+            "transfer_account_uid": 0,
+            "transfer_account_agency_id": 0,
+            "transfer_account_agency_name": ""
+        }
+    ]
+}

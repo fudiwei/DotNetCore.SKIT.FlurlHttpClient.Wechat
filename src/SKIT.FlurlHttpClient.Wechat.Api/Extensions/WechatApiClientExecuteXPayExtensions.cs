@@ -360,5 +360,166 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.XPayQueryPublishGoodsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/query_biz_balance 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayQueryBusinessBalanceResponse> ExecuteXPayQueryBusinessBalanceAsync(this WechatApiClient client, Models.XPayQueryBusinessBalanceRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "xpay", "query_biz_balance")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendRequestWithJsonAsync<Models.XPayQueryBusinessBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/query_transfer_account 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayQueryTransferAccountResponse> ExecuteXPayQueryTransferAccountAsync(this WechatApiClient client, Models.XPayQueryTransferAccountRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "xpay", "query_transfer_account")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendRequestWithJsonAsync<Models.XPayQueryTransferAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/query_adver_funds 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayQueryAdverFundsResponse> ExecuteXPayQueryAdverFundsAsync(this WechatApiClient client, Models.XPayQueryAdverFundsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "xpay", "query_adver_funds")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendRequestWithJsonAsync<Models.XPayQueryAdverFundsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/create_funds_bill 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayCreateFundsBillResponse> ExecuteXPayCreateFundsBillAsync(this WechatApiClient client, Models.XPayCreateFundsBillRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "xpay", "create_funds_bill")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendRequestWithJsonAsync<Models.XPayCreateFundsBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/bind_transfer_accout 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayBindTransferAccountResponse> ExecuteXPayBindTransferAccountAsync(this WechatApiClient client, Models.XPayBindTransferAccountRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "xpay", "bind_transfer_accout")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendRequestWithJsonAsync<Models.XPayBindTransferAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/query_funds_bill 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayQueryFundsListResponse> ExecuteXPayQueryFundsListAsync(this WechatApiClient client, Models.XPayQueryFundsListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "xpay", "query_funds_bill")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendRequestWithJsonAsync<Models.XPayQueryFundsListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/query_recover_bill 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayQueryRecoverListResponse> ExecuteXPayQueryRecoverListAsync(this WechatApiClient client, Models.XPayQueryRecoverListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "xpay", "query_recover_bill")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendRequestWithJsonAsync<Models.XPayQueryRecoverListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
     }
 }
