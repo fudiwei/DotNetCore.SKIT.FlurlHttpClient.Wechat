@@ -1,0 +1,6 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "succ_ewaybill_order_id": [ "1111", "222" ],
+    "fail_ewaybill_order_id": [ "1111", "222" ]
+}

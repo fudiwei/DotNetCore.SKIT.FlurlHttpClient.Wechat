@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/paygiftcard/add 接口的响应。</para>
@@ -58,13 +58,13 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fail_mchid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("fail_mchid_list")]
-        public Types.Merchant[] FailMerchantList { get; set; } = default!;
+        public Types.Merchant[] FailedMerchantList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置设置成功的微信商户号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("succ_mchid_list")]
         [System.Text.Json.Serialization.JsonPropertyName("succ_mchid_list")]
-        public string[] SuccessMerchantIdList { get; set; } = default!;
+        public string[] SuccessfulMerchantIdList { get; set; } = default!;
     }
 }

@@ -1833,6 +1833,68 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillOrderGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/print 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/notify_print.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillOrderPrintResponse> ExecuteChannelsECLogisticsEWaybillOrderPrintAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillOrderPrintRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "order", "print")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillOrderPrintResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/batchprint 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/batchnotify_print.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillOrderBatchPrintResponse> ExecuteChannelsECLogisticsEWaybillOrderBatchPrintAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillOrderBatchPrintRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "order", "batchprint")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillOrderBatchPrintResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region ECLogistics/EWaybill/Print
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/print/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_print_info.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillPrintGetResponse> ExecuteChannelsECLogisticsEWaybillPrintGetAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillPrintGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "print", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.ChannelsECLogisticsEWaybillPrintGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region ECLogistics/EWaybill/Template
