@@ -297,6 +297,228 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region InsuranceFreight
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/open 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightOpenResponse> ExecuteWxaBusinessInsuranceFreightOpenAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightOpenRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "open")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightOpenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/query_open 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightQueryOpenResponse> ExecuteWxaBusinessInsuranceFreightQueryOpenAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightQueryOpenRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "query_open")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightQueryOpenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/createorder 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightCreateOrderResponse> ExecuteWxaBusinessInsuranceFreightCreateOrderAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightCreateOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "createorder")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightCreateOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/claim 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightClaimResponse> ExecuteWxaBusinessInsuranceFreightClaimAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightClaimRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "claim")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightClaimResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/createchargeid 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightCreateChargeIdResponse> ExecuteWxaBusinessInsuranceFreightCreateChargeIdAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightCreateChargeIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "createchargeid")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightCreateChargeIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/applypay 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightApplyPayResponse> ExecuteWxaBusinessInsuranceFreightApplyPayAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightApplyPayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "applypay")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightApplyPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/getpayorderlist 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightGetPayOrderListResponse> ExecuteWxaBusinessInsuranceFreightGetPayOrderListAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightGetPayOrderListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "getpayorderlist")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightGetPayOrderListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/refund 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightRefundResponse> ExecuteWxaBusinessInsuranceFreightRefundAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightRefundRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "refund")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/getsummary 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightGetSummaryResponse> ExecuteWxaBusinessInsuranceFreightGetSummaryAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightGetSummaryRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "getsummary")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightGetSummaryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/getorderlist 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightGetOrderListResponse> ExecuteWxaBusinessInsuranceFreightGetOrderListAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightGetOrderListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "getorderlist")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightGetOrderListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/insurance_freight/update_notify_funds 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessInsuranceFreightUpdateNotifyFundsResponse> ExecuteWxaBusinessInsuranceFreightUpdateNotifyFundsAsync(this WechatApiClient client, Models.WxaBusinessInsuranceFreightUpdateNotifyFundsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "wxa", "business", "insurance_freight", "update_notify_funds")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.WxaBusinessInsuranceFreightUpdateNotifyFundsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Internet
         /// <summary>
         /// <para>异步调用 [POST] /wxa/business/getuserencryptkey 接口。</para>

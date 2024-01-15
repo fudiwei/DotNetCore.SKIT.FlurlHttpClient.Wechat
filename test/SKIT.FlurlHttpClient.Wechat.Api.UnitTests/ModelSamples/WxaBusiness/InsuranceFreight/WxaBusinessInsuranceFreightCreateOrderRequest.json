@@ -1,0 +1,19 @@
+{
+    "openid": "oZGTP5DwGDPfEf1EBBHH_oxHw2aU",
+    "order_no": "4200001197202103228672982585",
+    "pay_amount": 1,
+    "pay_time": 1679473667,
+    "delivery_place": {
+        "province": "广东省",
+        "city": "广州市",
+        "county": "海珠区",
+        "address": "创业园23号"
+    },
+    "receipt_place": {
+        "province": "广东省",
+        "city": "惠州市",
+        "county": "惠普区",
+        "address": "龙山村10-2"
+    },
+    "delivery_no": "d20230322001"
+}

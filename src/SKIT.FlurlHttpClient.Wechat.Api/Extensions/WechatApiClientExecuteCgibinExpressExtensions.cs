@@ -352,6 +352,68 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryPathUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
+        #region Delivery/NoWorryReturn
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/express/delivery/no_worry_return/add 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExpressDeliveryNoWorryReturnAddResponse> ExecuteCgibinExpressDeliveryNoWorryReturnAddAsync(this WechatApiClient client, Models.CgibinExpressDeliveryNoWorryReturnAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "no_worry_return", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryNoWorryReturnAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/express/delivery/no_worry_return/get 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExpressDeliveryNoWorryReturnGetResponse> ExecuteCgibinExpressDeliveryNoWorryReturnGetAsync(this WechatApiClient client, Models.CgibinExpressDeliveryNoWorryReturnGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "no_worry_return", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryNoWorryReturnGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/express/delivery/no_worry_return/unbind 接口。</para>
+        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/business/freight_insurance.html </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExpressDeliveryNoWorryReturnUnbindResponse> ExecuteCgibinExpressDeliveryNoWorryReturnUnbindAsync(this WechatApiClient client, Models.CgibinExpressDeliveryNoWorryReturnUnbindRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "express", "delivery", "no_worry_return", "unbind")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendRequestWithJsonAsync<Models.CgibinExpressDeliveryNoWorryReturnUnbindResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region Delivery/OpenMessage
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/express/delivery/open_msg/follow_waybill 接口。</para>
