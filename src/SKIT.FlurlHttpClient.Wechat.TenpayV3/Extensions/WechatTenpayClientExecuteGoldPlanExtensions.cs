@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "goldplan", "merchants", "changegoldplanstatus");
+                .CreateFlurlRequest(request, HttpMethod.Post, "goldplan", "merchants", "changegoldplanstatus");
 
-            return await client.SendRequestWithJsonAsync<Models.ChangeGoldPlanStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChangeGoldPlanStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "goldplan", "merchants", "changecustompagestatus");
+                .CreateFlurlRequest(request, HttpMethod.Post, "goldplan", "merchants", "changecustompagestatus");
 
-            return await client.SendRequestWithJsonAsync<Models.ChangeGoldPlanCustomPageStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChangeGoldPlanCustomPageStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "goldplan", "merchants", "set-advertising-industry-filter");
+                .CreateFlurlRequest(request, HttpMethod.Post, "goldplan", "merchants", "set-advertising-industry-filter");
 
-            return await client.SendRequestWithJsonAsync<Models.SetGoldPlanAdvertisingIndustryFilterResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SetGoldPlanAdvertisingIndustryFilterResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -79,9 +79,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "goldplan", "merchants", "open-advertising-show");
+                .CreateFlurlRequest(request, HttpMethod.Post, "goldplan", "merchants", "open-advertising-show");
 
-            return await client.SendRequestWithJsonAsync<Models.OpenGoldPlanAdvertisingShowResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.OpenGoldPlanAdvertisingShowResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -98,9 +98,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "goldplan", "merchants", "close-advertising-show");
+                .CreateFlurlRequest(request, HttpMethod.Post, "goldplan", "merchants", "close-advertising-show");
 
-            return await client.SendRequestWithJsonAsync<Models.CloseGoldPlanAdvertisingShowResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CloseGoldPlanAdvertisingShowResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

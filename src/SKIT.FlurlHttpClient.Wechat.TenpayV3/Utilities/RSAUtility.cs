@@ -94,8 +94,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>签名字节数组。</returns>
         public static byte[] SignWithSHA256(byte[] privateKeyBytes, byte[] msgBytes)
         {
-            if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
-            if (msgBytes == null) throw new ArgumentNullException(nameof(msgBytes));
+            if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
+            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
 
             RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyPemToPrivateKeyParameters(privateKeyBytes);
             return SignWithSHA256(rsaPrivateKeyParams, msgBytes);
@@ -109,8 +109,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>经 Base64 编码的签名。</returns>
         public static string SignWithSHA256(string privateKey, string message)
         {
-            if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
-            if (message == null) throw new ArgumentNullException(nameof(message));
+            if (privateKey is null) throw new ArgumentNullException(nameof(privateKey));
+            if (message is null) throw new ArgumentNullException(nameof(message));
 
             byte[] privateKeyBytes = ConvertPrivateKeyPkcs8PemToByteArray(privateKey);
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
@@ -127,9 +127,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>验证结果。</returns>
         public static bool VerifyWithSHA256(byte[] publicKeyBytes, byte[] msgBytes, byte[] signBytes)
         {
-            if (publicKeyBytes == null) throw new ArgumentNullException(nameof(publicKeyBytes));
-            if (msgBytes == null) throw new ArgumentNullException(nameof(msgBytes));
-            if (signBytes == null) throw new ArgumentNullException(nameof(signBytes));
+            if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
+            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (signBytes is null) throw new ArgumentNullException(nameof(signBytes));
 
             RsaKeyParameters rsaPublicKeyParams = ParsePublicKeyPemToPublicKeyParameters(publicKeyBytes);
             return VerifyWithSHA256(rsaPublicKeyParams, msgBytes, signBytes);
@@ -144,9 +144,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>验证结果。</returns>
         public static bool VerifyWithSHA256(string publicKey, string message, string signature)
         {
-            if (publicKey == null) throw new ArgumentNullException(nameof(publicKey));
-            if (message == null) throw new ArgumentNullException(nameof(message));
-            if (signature == null) throw new ArgumentNullException(nameof(signature));
+            if (publicKey is null) throw new ArgumentNullException(nameof(publicKey));
+            if (message is null) throw new ArgumentNullException(nameof(message));
+            if (signature is null) throw new ArgumentNullException(nameof(signature));
 
             byte[] publicKeyBytes = ConvertPublicKeyPkcs8PemToByteArray(publicKey);
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
@@ -163,7 +163,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>验证结果。</returns>
         public static bool VerifyWithSHA256ByCertificate(string certificate, string message, string signature)
         {
-            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+            if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
             string publicKey = ExportPublicKeyFromCertificate(certificate);
             return VerifyWithSHA256(publicKey, message, signature);
@@ -178,8 +178,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>解密后的数据字节数组。</returns>
         public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
-            if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
-            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
+            if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
+            if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
 
             RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyPemToPrivateKeyParameters(privateKeyBytes);
             return DecryptWithECB(rsaPrivateKeyParams, cipherBytes, paddingMode);
@@ -194,8 +194,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>解密后的文本数据。</returns>
         public static string DecryptWithECB(string privateKey, string cipherText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
-            if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
-            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
+            if (privateKey is null) throw new ArgumentNullException(nameof(privateKey));
+            if (cipherText is null) throw new ArgumentNullException(nameof(cipherText));
 
             byte[] privateKeyBytes = ConvertPrivateKeyPkcs8PemToByteArray(privateKey);
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
@@ -212,8 +212,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>加密后的数据字节数组。</returns>
         public static byte[] EncryptWithECB(byte[] publicKeyBytes, byte[] plainBytes, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
-            if (publicKeyBytes == null) throw new ArgumentNullException(nameof(publicKeyBytes));
-            if (plainBytes == null) throw new ArgumentNullException(nameof(plainBytes));
+            if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
+            if (plainBytes is null) throw new ArgumentNullException(nameof(plainBytes));
 
             RsaKeyParameters rsaPublicKeyParams = ParsePublicKeyPemToPublicKeyParameters(publicKeyBytes);
             return EncryptWithECB(rsaPublicKeyParams, plainBytes, paddingMode);
@@ -228,8 +228,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>经 Base64 编码的加密数据。</returns>
         public static string EncryptWithECB(string publicKey, string plainText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
-            if (publicKey == null) throw new ArgumentNullException(nameof(publicKey));
-            if (plainText == null) throw new ArgumentNullException(nameof(plainText));
+            if (publicKey is null) throw new ArgumentNullException(nameof(publicKey));
+            if (plainText is null) throw new ArgumentNullException(nameof(plainText));
 
             byte[] publicKeyBytes = ConvertPublicKeyPkcs8PemToByteArray(publicKey);
             byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
@@ -246,7 +246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>经 Base64 编码的加密数据。</returns>
         public static string EncryptWithECBByCertificate(string certificate, string plainText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
-            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+            if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
             string publicKey = ExportPublicKeyFromCertificate(certificate);
             return EncryptWithECB(publicKey, plainText, paddingMode);
@@ -263,7 +263,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>PKCS#8 公钥（PEM 格式）。</returns>
         public static string ExportPublicKeyFromCertificate(string certificate)
         {
-            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+            if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
             using (TextWriter swriter = new StringWriter())
             {
@@ -283,7 +283,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>证书序列号。</returns>
         public static string ExportSerialNumberFromCertificate(string certificate)
         {
-            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+            if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
             X509Certificate x509cert = ParseCertificatePemToX509(certificate);
             return x509cert.SerialNumber.ToString(16);
@@ -296,7 +296,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>证书颁发时间。</returns>
         public static DateTimeOffset ExportEffectiveTimeFromCertificate(string certificate)
         {
-            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+            if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
             X509Certificate x509cert = ParseCertificatePemToX509(certificate);
             return new DateTimeOffset(x509cert.NotBefore);
@@ -309,7 +309,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>证书过期时间。</returns>
         public static DateTimeOffset ExportExpireTimeFromCertificate(string certificate)
         {
-            if (certificate == null) throw new ArgumentNullException(nameof(certificate));
+            if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
             X509Certificate x509cert = ParseCertificatePemToX509(certificate);
             return new DateTimeOffset(x509cert.NotAfter);

@@ -23,22 +23,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.CombineMerchantId == null)
+            if (request.CombineMerchantId is null)
                 request.CombineMerchantId = client.Credentials.MerchantId;
 
-            if (request.SubOrderList != null)
+            if (request.SubOrderList is not null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (subOrder.MerchantId == null)
+                    if (subOrder.MerchantId is null)
                         subOrder.MerchantId = request.CombineMerchantId;
                 }
             }
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "combine-transactions", "app");
+                .CreateFlurlRequest(request, HttpMethod.Post, "combine-transactions", "app");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateCombineTransactionAppResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateCombineTransactionAppResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -59,22 +59,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.CombineMerchantId == null)
+            if (request.CombineMerchantId is null)
                 request.CombineMerchantId = client.Credentials.MerchantId;
 
-            if (request.SubOrderList != null)
+            if (request.SubOrderList is not null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (subOrder.MerchantId == null)
+                    if (subOrder.MerchantId is null)
                         subOrder.MerchantId = request.CombineMerchantId;
                 }
             }
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "combine-transactions", "jsapi");
+                .CreateFlurlRequest(request, HttpMethod.Post, "combine-transactions", "jsapi");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateCombineTransactionJsapiResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateCombineTransactionJsapiResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -92,22 +92,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.CombineMerchantId == null)
+            if (request.CombineMerchantId is null)
                 request.CombineMerchantId = client.Credentials.MerchantId;
 
-            if (request.SubOrderList != null)
+            if (request.SubOrderList is not null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (subOrder.MerchantId == null)
+                    if (subOrder.MerchantId is null)
                         subOrder.MerchantId = request.CombineMerchantId;
                 }
             }
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "combine-transactions", "h5");
+                .CreateFlurlRequest(request, HttpMethod.Post, "combine-transactions", "h5");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateCombineTransactionH5Response>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateCombineTransactionH5Response>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -125,22 +125,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.CombineMerchantId == null)
+            if (request.CombineMerchantId is null)
                 request.CombineMerchantId = client.Credentials.MerchantId;
 
-            if (request.SubOrderList != null)
+            if (request.SubOrderList is not null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (subOrder.MerchantId == null)
+                    if (subOrder.MerchantId is null)
                         subOrder.MerchantId = request.CombineMerchantId;
                 }
             }
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "combine-transactions", "native");
+                .CreateFlurlRequest(request, HttpMethod.Post, "combine-transactions", "native");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateCombineTransactionNativeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateCombineTransactionNativeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -159,9 +159,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "combine-transactions", "out-trade-no", request.CombineOutTradeNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "combine-transactions", "out-trade-no", request.CombineOutTradeNumber);
 
-            return await client.SendRequestWithJsonAsync<Models.GetCombineTransactionByCombineOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetCombineTransactionByCombineOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -179,19 +179,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.SubOrderList != null)
+            if (request.SubOrderList is not null)
             {
                 foreach (var subOrder in request.SubOrderList)
                 {
-                    if (subOrder.MerchantId == null)
+                    if (subOrder.MerchantId is null)
                         subOrder.MerchantId = client.Credentials.MerchantId;
                 }
             }
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "combine-transactions", "out-trade-no", request.CombineOutTradeNumber, "close");
+                .CreateFlurlRequest(request, HttpMethod.Post, "combine-transactions", "out-trade-no", request.CombineOutTradeNumber, "close");
 
-            return await client.SendRequestWithJsonAsync<Models.CloseCombineTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CloseCombineTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

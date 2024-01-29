@@ -24,10 +24,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", "search-banks-by-bank-account")
+                .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", "search-banks-by-bank-account")
                 .SetQueryParam("account_number", request.AccountNumber);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryCapitalBanksByBankAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryCapitalBanksByBankAccountResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -44,11 +44,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", "personal-banking")
+                .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", "personal-banking")
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryCapitalBanksPersonalBankingResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryCapitalBanksPersonalBankingResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -65,11 +65,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", "corporate-banking")
+                .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", "corporate-banking")
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryCapitalBanksCorporateBankingResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryCapitalBanksCorporateBankingResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -86,12 +86,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", request.BankAliasCode, "branches")
+                .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "banks", request.BankAliasCode, "branches")
                 .SetQueryParam("city_code", request.CityCode)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryCapitalBanksBranchesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryCapitalBanksBranchesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -110,9 +110,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "capital", "capitallhh", "areas", "provinces");
+                .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "areas", "provinces");
 
-            return await client.SendRequestWithJsonAsync<Models.QueryCapitalAreasProvincesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryCapitalAreasProvincesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -129,9 +129,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "capital", "capitallhh", "areas", "provinces", request.ProvinceCode, "cities");
+                .CreateFlurlRequest(request, HttpMethod.Get, "capital", "capitallhh", "areas", "provinces", request.ProvinceCode, "cities");
 
-            return await client.SendRequestWithJsonAsync<Models.QueryCapitalAreasCitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryCapitalAreasCitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "eduschoolpay", "contracts", "presign");
+                .CreateFlurlRequest(request, HttpMethod.Post, "eduschoolpay", "contracts", "presign");
 
-            return await client.SendRequestWithJsonAsync<Models.PresignEducationSchoolPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.PresignEducationSchoolPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "eduschoolpay", "contracts", request.ContractId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "contracts", request.ContractId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetEducationSchoolPayContractByContractIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayContractByContractIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -60,17 +60,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "eduschoolpay", "users", request.OpenId, "contracts")
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "users", request.OpenId, "contracts")
                 .SetQueryParam("plan_id", request.PlanId)
                 .SetQueryParam("contract_status", request.ContractStatus); ;
 
-            if (request.Limit != null)
+            if (request.Limit is not null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value);
 
-            if (request.Offset != null)
+            if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryEducationSchoolPayUserContractsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryEducationSchoolPayUserContractsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "eduschoolpay", "contracts", request.ContractId, "terminate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "eduschoolpay", "contracts", request.ContractId, "terminate");
 
-            return await client.SendRequestWithJsonAsync<Models.TerminateEducationSchoolPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.TerminateEducationSchoolPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -106,9 +106,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "eduschoolpay", "transactions");
+                .CreateFlurlRequest(request, HttpMethod.Post, "eduschoolpay", "transactions");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateEducationSchoolPayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateEducationSchoolPayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -125,12 +125,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "out-trade-no", request.OutTradeNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "out-trade-no", request.OutTradeNumber);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetEducationSchoolPayTransactionByOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayTransactionByOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -147,12 +147,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "id", request.TransactionId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "id", request.TransactionId);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetEducationSchoolPayTransactionByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayTransactionByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -169,9 +169,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "eduschoolpay", "users", request.OpenId, "debt-state");
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "users", request.OpenId, "debt-state");
 
-            return await client.SendRequestWithJsonAsync<Models.GetEducationSchoolPayUserDebtStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayUserDebtStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

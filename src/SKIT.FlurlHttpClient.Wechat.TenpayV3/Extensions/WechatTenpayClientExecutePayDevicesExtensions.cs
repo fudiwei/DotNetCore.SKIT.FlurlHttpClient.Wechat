@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "pay-devices", "printers", request.DeviceId, "print-orders");
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay-devices", "printers", request.DeviceId, "print-orders");
 
-            return await client.SendRequestWithJsonAsync<Models.CreatePayDevicePrinterPrintOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayDevicePrinterPrintOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "pay-devices", "printers", request.DeviceId, "print-orders", request.PrintOrderNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "pay-devices", "printers", request.DeviceId, "print-orders", request.PrintOrderNumber);
 
-            return await client.SendRequestWithJsonAsync<Models.GetPayDevicePrinterPrintOrderByPrintOrderNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPayDevicePrinterPrintOrderByPrintOrderNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

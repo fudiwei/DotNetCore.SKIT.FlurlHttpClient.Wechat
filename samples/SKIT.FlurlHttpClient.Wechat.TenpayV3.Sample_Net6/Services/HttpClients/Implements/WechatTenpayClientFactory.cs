@@ -1,22 +1,18 @@
 using System;
 using System.Linq;
-using System.Net.Http;
 using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
 {
-    internal partial class WechatTenpayHttpClientFactory : IWechatTenpayHttpClientFactory
+    internal partial class WechatTenpayClientFactory : IWechatTenpayClientFactory
     {
-        private readonly IHttpClientFactory _httpClientFactory;
         private readonly Options.TenpayOptions _tenpayOptions;
         private readonly IWechatTenpayCertificateManagerFactory _tenpayCertificateManagerFactory;
 
-        public WechatTenpayHttpClientFactory(
-            IHttpClientFactory httpClientFactory,
+        public WechatTenpayClientFactory(
             IOptions<Options.TenpayOptions> tenpayOptions,
             IWechatTenpayCertificateManagerFactory tenpayCertificateManagerFactory)
         {
-            _httpClientFactory = httpClientFactory;
             _tenpayOptions = tenpayOptions.Value;
             _tenpayCertificateManagerFactory = tenpayCertificateManagerFactory;
         }
@@ -42,26 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Imple
                 AutoDecryptResponseSensitiveProperty = false
             };
             var wechatTenpayClient = new WechatTenpayClient(wechatTenpayClientOptions);
-            wechatTenpayClient.Configure((settings) => settings.FlurlHttpClientFactory = new DelegatingFlurlClientFactory(_httpClientFactory));
             return wechatTenpayClient;
-        }
-    }
-
-    internal partial class WechatTenpayHttpClientFactory
-    {
-        internal class DelegatingFlurlClientFactory : Flurl.Http.Configuration.DefaultHttpClientFactory
-        {
-            private readonly IHttpClientFactory _httpClientFactory;
-
-            public DelegatingFlurlClientFactory(IHttpClientFactory httpClientFactory)
-            {
-                _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
-            }
-
-            public override HttpClient CreateHttpClient(HttpMessageHandler handler)
-            {
-                return _httpClientFactory.CreateClient();
-            }
         }
     }
 }

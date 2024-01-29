@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
             // 注入工厂 HTTP 客户端
             services.AddHttpClient();
             services.AddSingleton<Services.HttpClients.IWechatTenpayCertificateManagerFactory, Services.HttpClients.Implements.WechatTenpayCertificateManagerFactory>();
-            services.AddSingleton<Services.HttpClients.IWechatTenpayHttpClientFactory, Services.HttpClients.Implements.WechatTenpayHttpClientFactory>();
+            services.AddSingleton<Services.HttpClients.IWechatTenpayClientFactory, Services.HttpClients.Implements.WechatTenpayClientFactory>();
 
             // 注入后台任务
             services.AddHostedService<Services.BackgroundServices.TenpayCertificateRefreshingBackgroundService>();

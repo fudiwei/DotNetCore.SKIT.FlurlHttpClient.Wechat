@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "taxi-invoice", "taxi-company", "create-taxi-company");
+                .CreateFlurlRequest(request, HttpMethod.Post, "taxi-invoice", "taxi-company", "create-taxi-company");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateTaxiInvoiceTaxiCompanyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateTaxiInvoiceTaxiCompanyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -42,10 +42,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "taxi-invoice", "taxi-companies", request.CompanyMerchantId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "taxi-companies", request.CompanyMerchantId)
                 .SetQueryParam("region_id", request.RegionId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetTaxiInvoiceTaxiCompanyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetTaxiInvoiceTaxiCompanyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -64,9 +64,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "taxi-invoice", "taxi", "update-taxi");
+                .CreateFlurlRequest(request, HttpMethod.Post, "taxi-invoice", "taxi", "update-taxi");
 
-            return await client.SendRequestWithJsonAsync<Models.UpdateTaxiInvoiceTaxiResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UpdateTaxiInvoiceTaxiResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -83,10 +83,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "taxi-invoice", "taxies", request.PlateNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "taxies", request.PlateNumber)
                 .SetQueryParam("region_id", request.RegionId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetTaxiInvoiceTaxiResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetTaxiInvoiceTaxiResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -105,9 +105,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "taxi-invoice", "driver", "update-driver");
+                .CreateFlurlRequest(request, HttpMethod.Post, "taxi-invoice", "driver", "update-driver");
 
-            return await client.SendRequestWithJsonAsync<Models.UpdateTaxiInvoiceDriverResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UpdateTaxiInvoiceDriverResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -124,10 +124,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "taxi-invoice", "drivers", request.DriverLicenseNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "drivers", request.DriverLicenseNumber)
                 .SetQueryParam("region_id", request.RegionId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetTaxiInvoiceDriverResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetTaxiInvoiceDriverResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -146,9 +146,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "taxi-invoice", "attendance", "punch");
+                .CreateFlurlRequest(request, HttpMethod.Post, "taxi-invoice", "attendance", "punch");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateTaxiInvoicePunchAttendanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateTaxiInvoicePunchAttendanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -167,14 +167,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "taxi-invoice", "user-taxi-order", "find-by-token")
+                .CreateFlurlRequest(request, HttpMethod.Get, "taxi-invoice", "user-taxi-order", "find-by-token")
                 .SetQueryParam("token", request.Token)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("openid", request.OpenId)
                 .SetQueryParam("auth_mode", request.AuthMode)
                 .SetQueryParam("region_id", request.RegionId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetTaxiInvoiceUserTaxiOrderByTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetTaxiInvoiceUserTaxiOrderByTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -193,10 +193,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "taxi-invoice", "cards", "upload-file");
+                .CreateFlurlRequest(request, HttpMethod.Post, "taxi-invoice", "cards", "upload-file");
 
             using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "file.pdf", fileBytes: request.FileBytes, fileContentType: "application/pdf", fileMetaJson: client.JsonSerializer.Serialize(request));
-            return await client.SendRequestAsync<Models.UploadTaxiInvoiceCardFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.UploadTaxiInvoiceCardFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -213,9 +213,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "taxi-invoice", "cards");
+                .CreateFlurlRequest(request, HttpMethod.Post, "taxi-invoice", "cards");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateTaxiInvoiceCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateTaxiInvoiceCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

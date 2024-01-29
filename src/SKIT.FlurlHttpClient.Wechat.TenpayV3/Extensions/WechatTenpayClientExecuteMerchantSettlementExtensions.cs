@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "merchant-settlement", "merchant-settle-rule-applications");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-settlement", "merchant-settle-rule-applications");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateMerchantSettlementSettleRuleApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantSettlementSettleRuleApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "merchant-settlement", "merchant-settle-rule-applications", request.ApplymentId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-settlement", "merchant-settle-rule-applications", request.ApplymentId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMerchantSettlementSettleRuleApplicationByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantSettlementSettleRuleApplicationByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

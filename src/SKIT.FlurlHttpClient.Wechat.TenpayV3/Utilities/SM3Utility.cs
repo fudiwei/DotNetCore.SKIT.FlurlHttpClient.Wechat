@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>哈希字节数组。</returns>
         public static byte[] Hash(byte[] bytes)
         {
-            if (bytes == null) throw new ArgumentNullException(nameof(bytes));
+            if (bytes is null) throw new ArgumentNullException(nameof(bytes));
 
             SM3Digest sm3 = new SM3Digest();
             sm3.BlockUpdate(bytes, 0, bytes.Length);
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>哈希值。</returns>
         public static string Hash(string message)
         {
-            if (message == null) throw new ArgumentNullException(nameof(message));
+            if (message is null) throw new ArgumentNullException(nameof(message));
 
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
             byte[] hashBytes = Hash(msgBytes);

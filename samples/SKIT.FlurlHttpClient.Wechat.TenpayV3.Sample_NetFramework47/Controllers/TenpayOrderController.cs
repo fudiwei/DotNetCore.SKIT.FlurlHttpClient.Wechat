@@ -1,14 +1,14 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 {
     [RoutePrefix("api/order")]
     public class TenpayOrderController : ApiController
     {
-        private readonly Services.HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
+        private readonly Services.HttpClients.IWechatTenpayClientFactory _wechatTenpayClientFactory;
 
         public TenpayOrderController(
-            Services.HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
+            Services.HttpClients.IWechatTenpayClientFactory wechatTenpayClientFactory)
         {
-            _tenpayHttpClientFactory = tenpayHttpClientFactory;
+            _wechatTenpayClientFactory = wechatTenpayClientFactory;
         }
 
         [HttpPost]
@@ -18,7 +18,7 @@
             if (requestModel == null)
                 return BadRequest();
 
-            var client = _tenpayHttpClientFactory.Create(requestModel.MerchantId);
+            using var client = _wechatTenpayClientFactory.Create(requestModel.MerchantId);
             var request = new CreatePayTransactionJsapiRequest()
             {
                 OutTradeNumber = "SAMPLE_OTN_" + DateTimeOffset.Now.ToString("yyyyMMddHHmmssfff"),
@@ -33,7 +33,7 @@
             {
                 Debug.WriteLine(
                     "JSAPI 下单失败（状态码：{0}，错误代码：{1}，错误描述：{2}）。",
-                    response.RawStatus, response.ErrorCode, response.ErrorMessage
+                    response.GetRawStatus(), response.ErrorCode, response.ErrorMessage
                 );
             }
 

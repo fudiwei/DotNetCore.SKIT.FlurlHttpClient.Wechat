@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "apply4subject", "applyment");
+                .CreateFlurlRequest(request, HttpMethod.Post, "apply4subject", "applyment");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateApplyForSubjectApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateApplyForSubjectApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -42,10 +42,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "apply4subject", "applyment")
+                .CreateFlurlRequest(request, HttpMethod.Get, "apply4subject", "applyment")
                 .SetQueryParam("business_code", request.BusinessCode);
 
-            return await client.SendRequestWithJsonAsync<Models.GetApplyForSubjectApplymentByBusinessCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetApplyForSubjectApplymentByBusinessCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -62,10 +62,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "apply4subject", "applyment")
+                .CreateFlurlRequest(request, HttpMethod.Get, "apply4subject", "applyment")
                 .SetQueryParam("applyment_id", request.ApplymentId.ToString());
 
-            return await client.SendRequestWithJsonAsync<Models.GetApplyForSubjectApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetApplyForSubjectApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -82,9 +82,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "apply4subject", "applyment", request.BusinessCode, "cancel");
+                .CreateFlurlRequest(request, HttpMethod.Post, "apply4subject", "applyment", request.BusinessCode, "cancel");
 
-            return await client.SendRequestWithJsonAsync<Models.CancelApplyForSubjectApplymentByBusinessCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CancelApplyForSubjectApplymentByBusinessCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -101,9 +101,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "apply4subject", "applyment", request.ApplymentId.ToString(), "cancel");
+                .CreateFlurlRequest(request, HttpMethod.Post, "apply4subject", "applyment", request.ApplymentId.ToString(), "cancel");
 
-            return await client.SendRequestWithJsonAsync<Models.CancelApplyForSubjectApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CancelApplyForSubjectApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -120,9 +120,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "apply4subject", "applyment", "merchants", request.SubMerchantId, "state");
+                .CreateFlurlRequest(request, HttpMethod.Get, "apply4subject", "applyment", "merchants", request.SubMerchantId, "state");
 
-            return await client.SendRequestWithJsonAsync<Models.GetApplyForSubjectApplymentMerchantStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetApplyForSubjectApplymentMerchantStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

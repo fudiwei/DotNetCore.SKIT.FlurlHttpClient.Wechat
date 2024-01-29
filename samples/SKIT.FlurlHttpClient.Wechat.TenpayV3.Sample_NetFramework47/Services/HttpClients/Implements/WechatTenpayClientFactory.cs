@@ -1,10 +1,10 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
 {
-    internal partial class WechatTenpayHttpClientFactory : IWechatTenpayHttpClientFactory
+    internal partial class WechatTenpayClientFactory : IWechatTenpayClientFactory
     {
         private readonly IWechatTenpayCertificateManagerFactory _tenpayCertificateManagerFactory;
 
-        public WechatTenpayHttpClientFactory(
+        public WechatTenpayClientFactory(
             IWechatTenpayCertificateManagerFactory tenpayCertificateManagerFactory)
         {
             _tenpayCertificateManagerFactory = tenpayCertificateManagerFactory;

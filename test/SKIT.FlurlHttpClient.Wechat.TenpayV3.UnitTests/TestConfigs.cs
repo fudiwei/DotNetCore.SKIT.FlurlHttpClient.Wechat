@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using var stream = File.OpenRead("appsettings.local.json");
                 using var jdoc = JsonDocument.Parse(stream);
 
-                var config = jdoc.RootElement.GetProperty("TestConfig");
+                var config = jdoc.RootElement.GetProperty("TestConfigs");
                 WechatMerchantId = config.GetProperty("MerchantId").GetString()!;
                 WechatMerchantSecret = config.GetProperty("MerchantSecret").GetString()!;
                 WechatMerchantRSACertificateSerialNumber = config.GetProperty("MerchantRSACertificateSerialNumber").GetString()!;
@@ -25,9 +25,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 WechatMerchantSM2CertificatePrivateKey = config.GetProperty("MerchantSM2CertificatePrivateKey").GetString();
                 WechatAppId = config.GetProperty("AppId").GetString()!;
                 WechatOpenId = config.GetProperty("OpenId").GetString()!;
-
-                WorkDirectoryForSdk = jdoc.RootElement.GetProperty("WorkDirectoryForSdk").GetString()!;
-                WorkDirectoryForTest = jdoc.RootElement.GetProperty("WorkDirectoryForTest").GetString()!;
             }
             catch (Exception ex)
             {
@@ -43,8 +40,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         public static readonly string? WechatMerchantSM2CertificatePrivateKey;
         public static readonly string WechatAppId;
         public static readonly string WechatOpenId;
-
-        public static readonly string WorkDirectoryForSdk;
-        public static readonly string WorkDirectoryForTest;
     }
 }

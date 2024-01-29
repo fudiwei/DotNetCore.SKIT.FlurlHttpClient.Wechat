@@ -1,19 +1,20 @@
 using System;
 using System.Linq;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
 {
-    internal class WechatTenpayRequestSignatureInterceptor : FlurlHttpCallInterceptor
+    internal class WechatTenpayRequestSigningInterceptor : HttpInterceptor
     {
         private readonly string _scheme;
         private readonly string _mchId;
         private readonly string _mchCertSn;
         private readonly string _mchCertPk;
 
-        public WechatTenpayRequestSignatureInterceptor(string scheme, string mchId, string mchCertSn, string mchCertPk)
+        public WechatTenpayRequestSigningInterceptor(string scheme, string mchId, string mchCertSn, string mchCertPk)
         {
             _scheme = scheme;
             _mchId = mchId;
@@ -21,29 +22,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
             _mchCertPk = mchCertPk;
         }
 
-        public override async Task BeforeCallAsync(FlurlCall flurlCall)
+        public override async Task BeforeCallAsync(HttpInterceptorContext context, CancellationToken cancellationToken = default)
         {
-            if (flurlCall == null) throw new ArgumentNullException(nameof(flurlCall));
-            if (flurlCall.Completed) throw new Exceptions.WechatTenpayRequestSignatureException("This interceptor must be called before request completed.");
+            if (context is null) throw new ArgumentNullException(nameof(context));
+            if (context.FlurlCall.Completed) throw new WechatTenpayException("Failed to sign request. This interceptor must be called before request completed.");
 
-            string method = flurlCall.HttpRequestMessage.Method.ToString().ToUpper();
-            string url = flurlCall.HttpRequestMessage.RequestUri?.PathAndQuery ?? string.Empty;
+            string method = context.FlurlCall.HttpRequestMessage.Method.ToString().ToUpper();
+            string url = context.FlurlCall.HttpRequestMessage.RequestUri?.PathAndQuery ?? string.Empty;
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
             string body = string.Empty;
 
-            if (flurlCall.HttpRequestMessage.Content is MultipartFormDataContent formdataContent)
+            if (context.FlurlCall.HttpRequestMessage.Content is MultipartFormDataContent formdataContent)
             {
                 // NOTICE: multipart/form-data 文件上传请求的待签名参数需特殊处理
                 var httpContent = formdataContent.SingleOrDefault(e => Constants.FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
-                if (httpContent != null)
+                if (httpContent is not null)
                 {
                     body = await httpContent.ReadAsStringAsync();
                 }
             }
             else
             {
-                body = flurlCall.RequestBody ?? string.Empty;
+                body = context.FlurlCall.RequestBody ?? string.Empty;
             }
 
             string msgText = $"{method}\n{url}\n{timestamp}\n{nonce}\n{body}\n";
@@ -59,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                         }
                         catch (Exception ex)
                         {
-                            throw new Exceptions.WechatTenpayRequestSignatureException("Failed to generate signature of request. Please see the inner exception for more details.", ex);
+                            throw new WechatTenpayException("Failed to sign request. Please see the inner exception for more details.", ex);
                         }
                     }
                     break;
@@ -72,18 +73,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                         }
                         catch (Exception ex)
                         {
-                            throw new Exceptions.WechatTenpayRequestSignatureException("Failed to generate signature of request. Please see the inner exception for more details.", ex);
+                            throw new WechatTenpayException("Failed to sign request. Please see the inner exception for more details.", ex);
                         }
                     }
                     break;
 
                 default:
-                    throw new Exceptions.WechatTenpayRequestSignatureException($"Unsupported signature scheme: \"{_scheme}\".");
+                    throw new WechatTenpayException($"Failed to sign request. Unsupported signing scheme: \"{_scheme}\".");
             }
 
-            string auth = $"mchid=\"{_mchId}\",nonce_str=\"{nonce}\",signature=\"{signText}\",timestamp=\"{timestamp}\",serial_no=\"{_mchCertSn}\"";
-            flurlCall.Request.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.Authorization);
-            flurlCall.Request.WithHeader(FlurlHttpClient.Constants.HttpHeaders.Authorization, $"{_scheme} {auth}");
+            context.FlurlCall.Request.WithHeader(HttpHeaders.Authorization, $"{_scheme} mchid=\"{_mchId}\",nonce_str=\"{nonce}\",signature=\"{signText}\",timestamp=\"{timestamp}\",serial_no=\"{_mchCertSn}\"");
         }
     }
 }

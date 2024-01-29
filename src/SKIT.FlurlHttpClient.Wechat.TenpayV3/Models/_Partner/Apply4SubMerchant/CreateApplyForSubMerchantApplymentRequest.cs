@@ -941,7 +941,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// 获取或设置结算规则 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settlement_id")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualIntegerConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("settlement_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
                 public int SettlementId { get; set; }

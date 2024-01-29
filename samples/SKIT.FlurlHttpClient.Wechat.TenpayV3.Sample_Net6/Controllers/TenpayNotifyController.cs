@@ -11,14 +11,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
     public class TenpayNotifyController : ControllerBase
     {
         private readonly ILogger _logger;
-        private readonly Services.HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
+        private readonly Services.HttpClients.IWechatTenpayClientFactory _wechatTenpayClientFactory;
 
         public TenpayNotifyController(
             ILoggerFactory loggerFactory,
-            Services.HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
+            Services.HttpClients.IWechatTenpayClientFactory wechatTenpayClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
-            _tenpayHttpClientFactory = tenpayHttpClientFactory;
+            _wechatTenpayClientFactory = wechatTenpayClientFactory;
         }
 
 
@@ -35,13 +35,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
             string content = await reader.ReadToEndAsync();
             _logger.LogInformation("接收到微信支付推送的数据：{0}", content);
 
-            var client = _tenpayHttpClientFactory.Create(merchantId);
+            using var client = _wechatTenpayClientFactory.Create(merchantId);
             bool valid = client.VerifyEventSignature(
-                callbackTimestamp: timestamp,
-                callbackNonce: nonce,
-                callbackBody: content,
-                callbackSignature: signature,
-                callbackSerialNumber: serialNumber
+                webhookTimestamp: timestamp,
+                webhookNonce: nonce,
+                webhookBody: content,
+                webhookSignature: signature,
+                webhookSerialNumber: serialNumber
             );
             if (!valid)
             {

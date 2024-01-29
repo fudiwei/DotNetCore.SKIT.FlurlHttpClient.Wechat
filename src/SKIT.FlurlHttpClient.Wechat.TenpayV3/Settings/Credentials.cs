@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
 
         internal Credentials(WechatTenpayClientOptions options)
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (options is null) throw new ArgumentNullException(nameof(options));
 
             MerchantId = options.MerchantId;
             MerchantV3Secret = options.MerchantV3Secret;

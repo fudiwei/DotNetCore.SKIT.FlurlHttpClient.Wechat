@@ -12,16 +12,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         private static TRequest InnerEncryptRequestSensitivePropertyByRSA<TRequest>(WechatTenpayClient client, TRequest request)
             where TRequest : WechatTenpayRequest
         {
-            Utilities.ReflectionUtility.ReplacePropertyStringValue(ref request, (target, currentProp, oldValue) =>
+            Utilities.ReflectionHelper.ReplacePropertyStringValue(ref request, (target, currentProp, oldValue) =>
             {
                 WechatTenpaySensitivePropertyAttribute? attribute = currentProp
                     .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
                     .FirstOrDefault(attr => Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256.Equals(attr.Scheme));
-                if (attribute == null)
+                if (attribute is null)
                     return (false, oldValue);
 
-                if (client.PlatformCertificateManager == null)
-                    throw new Exceptions.WechatTenpayRequestEncryptionException("Failed to encrypt request, because the platform certificate manager is not initialized.");
+                if (client.PlatformCertificateManager is null)
+                    throw new WechatTenpayException("Failed to encrypt request, because the platform certificate manager is not initialized.");
 
                 string certificate;
                 if (string.IsNullOrEmpty(request.WechatpayCertificateSerialNumber))
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         .OrderByDescending(e => e.ExpireTime);
                     if (!entries.Any())
                     {
-                        throw new Exceptions.WechatTenpayEventVerificationException("Failed to encrypt request, because there is no platform certificate in the manager. Please make sure you have downloaded platform certificates first.");
+                        throw new WechatTenpayException("Failed to encrypt request, because the platform certificate manager is empty. Please make sure you have downloaded platform certificates first.");
                     }
 
                     CertificateEntry entry = entries.First();
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     CertificateEntry? entry = client.PlatformCertificateManager.GetEntry(request.WechatpayCertificateSerialNumber!);
                     if (!entry.HasValue)
                     {
-                        throw new Exceptions.WechatTenpayEventVerificationException($"Failed to encrypt request, because there is no platform certificate matched the serial number: \"{request.WechatpayCertificateSerialNumber}\". Please make sure you have downloaded platform certificates first.");
+                        throw new WechatTenpayException($"Failed to encrypt request, because the platform certificate manager does not contain a certificate matched the serial number \"{request.WechatpayCertificateSerialNumber}\". Please make sure you have downloaded platform certificates first.");
                     }
 
                     certificate = entry.Value.Certificate;
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                     default:
                         {
-                            throw new Exceptions.WechatTenpayRequestEncryptionException($"Unsupported encryption algorithm: \"{attribute.Algorithm}\".");
+                            throw new WechatTenpayException($"Failed to encrypt request. Unsupported encryption algorithm: \"{attribute.Algorithm}\".");
                         }
                 }
 
@@ -87,16 +87,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         private static TRequest InnerEncryptRequestSensitivePropertyBySM<TRequest>(WechatTenpayClient client, TRequest request)
             where TRequest : WechatTenpayRequest
         {
-            Utilities.ReflectionUtility.ReplacePropertyStringValue(ref request, (target, currentProp, oldValue) =>
+            Utilities.ReflectionHelper.ReplacePropertyStringValue(ref request, (target, currentProp, oldValue) =>
             {
                 WechatTenpaySensitivePropertyAttribute? attribute = currentProp
                     .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
                     .FirstOrDefault(attr => Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3.Equals(attr.Scheme));
-                if (attribute == null)
+                if (attribute is null)
                     return (false, oldValue);
 
-                if (client.PlatformCertificateManager == null)
-                    throw new Exceptions.WechatTenpayRequestEncryptionException("Failed to encrypt request, because the platform certificate manager is not initialized.");
+                if (client.PlatformCertificateManager is null)
+                    throw new WechatTenpayException("Failed to encrypt request, because the platform certificate manager is not initialized.");
 
                 string certificate;
                 if (string.IsNullOrEmpty(request.WechatpayCertificateSerialNumber))
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         .OrderByDescending(e => e.ExpireTime);
                     if (!entries.Any())
                     {
-                        throw new Exceptions.WechatTenpayEventVerificationException("Failed to encrypt request, because there is no platform certificate in the manager. Please make sure you have downloaded platform certificates first.");
+                        throw new WechatTenpayException("Failed to encrypt request, because the platform certificate manager is empty. Please make sure you have downloaded platform certificates first.");
                     }
 
                     CertificateEntry entry = entries.First();
@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     CertificateEntry? entry = client.PlatformCertificateManager.GetEntry(request.WechatpayCertificateSerialNumber!);
                     if (!entry.HasValue)
                     {
-                        throw new Exceptions.WechatTenpayEventVerificationException($"Failed to encrypt request, because there is no platform certificate matched the serial number: \"{request.WechatpayCertificateSerialNumber}\". Please make sure you have downloaded platform certificates first.");
+                        throw new WechatTenpayException($"Failed to encrypt request, because the platform certificate manager does not contain a certificate matched the serial number \"{request.WechatpayCertificateSerialNumber}\". Please make sure you have downloaded platform certificates first.");
                     }
 
                     certificate = entry.Value.Certificate;
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                     default:
                         {
-                            throw new Exceptions.WechatTenpayRequestEncryptionException($"Unsupported encryption algorithm: \"{attribute.Algorithm}\".");
+                            throw new WechatTenpayException($"Failed to encrypt request. Unsupported encryption algorithm: \"{attribute.Algorithm}\".");
                         }
                 }
 
@@ -159,8 +159,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public static TRequest EncryptRequestSensitiveProperty<TRequest>(this WechatTenpayClient client, TRequest request)
             where TRequest : WechatTenpayRequest
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
-            if (request == null) throw new ArgumentNullException(nameof(request));
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
 
             try
             {
@@ -186,7 +186,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatTenpayRequestEncryptionException("Failed to encrypt request. Please see the inner exception for more details.", ex);
+                throw new WechatTenpayException("Failed to encrypt request. Please see the inner exception for more details.", ex);
             }
         }
     }

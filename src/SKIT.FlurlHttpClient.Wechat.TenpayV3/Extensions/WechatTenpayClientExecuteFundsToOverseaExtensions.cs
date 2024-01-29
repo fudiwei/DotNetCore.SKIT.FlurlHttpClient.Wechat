@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "funds-to-oversea", "transactions", request.TransactionId, "available_abroad_amounts")
+                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "transactions", request.TransactionId, "available_abroad_amounts")
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetFundsToOverseaTransactionAvailableAbroadAmountByTransactionIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetFundsToOverseaTransactionAvailableAbroadAmountByTransactionIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -43,9 +43,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "funds-to-oversea", "orders");
+                .CreateFlurlRequest(request, HttpMethod.Post, "funds-to-oversea", "orders");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateFundsToOverseaOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateFundsToOverseaOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -62,11 +62,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "funds-to-oversea", "orders", request.OutOrderId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "orders", request.OutOrderId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("transaction_id", request.TransactionId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetFundsToOverseaOrderByOutOrderIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetFundsToOverseaOrderByOutOrderIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -83,11 +83,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "funds-to-oversea", "bill-download-url")
+                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "bill-download-url")
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("bill_date", request.BillDateString);
 
-            return await client.SendRequestWithJsonAsync<Models.GetFundsToOverseaBillDownloadUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetFundsToOverseaBillDownloadUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

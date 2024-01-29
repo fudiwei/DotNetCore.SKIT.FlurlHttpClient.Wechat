@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -15,23 +15,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
     {
         private readonly ILogger _logger;
         private readonly Options.TenpayOptions _tenpayOptions;
-        private readonly Services.HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
+        private readonly Services.HttpClients.IWechatTenpayClientFactory _wechatTenpayClientFactory;
 
         public TenpayRefundController(
             ILoggerFactory loggerFactory,
             IOptions<Options.TenpayOptions> tenpayOptions,
-            Services.HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
+            Services.HttpClients.IWechatTenpayClientFactory wechatTenpayClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
             _tenpayOptions = tenpayOptions.Value;
-            _tenpayHttpClientFactory = tenpayHttpClientFactory;
+            _wechatTenpayClientFactory = wechatTenpayClientFactory;
         }
 
         [HttpPost]
         [Route("")]
         public async Task<IActionResult> CreateRefund([FromBody] Models.CreateRefundRequest requestModel)
         {
-            var client = _tenpayHttpClientFactory.Create(requestModel.MerchantId);
+            using var client = _wechatTenpayClientFactory.Create(requestModel.MerchantId);
             var request = new CreateRefundDomesticRefundRequest()
             {
                 TransactionId = requestModel.TransactionId,
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
             {
                 _logger.LogWarning(
                     "申请退款失败（状态码：{0}，错误代码：{1}，错误描述：{2}）。",
-                    response.RawStatus, response.ErrorCode, response.ErrorMessage
+                    response.GetRawStatus(), response.ErrorCode, response.ErrorMessage
                 );
             }
 

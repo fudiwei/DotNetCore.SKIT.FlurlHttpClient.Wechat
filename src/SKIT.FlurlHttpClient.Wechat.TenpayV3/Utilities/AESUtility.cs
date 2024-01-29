@@ -29,11 +29,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             const int NONCE_LENGTH_BYTE = 12;
             const int TAG_LENGTH_BYTE = 16;
 
-            if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
+            if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
             if (keyBytes.Length != KEY_LENGTH_BYTE) throw new ArgumentException($"Invalid key byte length (expected: {KEY_LENGTH_BYTE}, actual: {keyBytes.Length}).", nameof(keyBytes));
-            if (nonceBytes == null) throw new ArgumentNullException(nameof(nonceBytes));
+            if (nonceBytes is null) throw new ArgumentNullException(nameof(nonceBytes));
             if (nonceBytes.Length != NONCE_LENGTH_BYTE) throw new ArgumentException($"Invalid nonce byte length (expected: {NONCE_LENGTH_BYTE}, actual: {nonceBytes.Length}).", nameof(nonceBytes));
-            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
+            if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
             if (cipherBytes.Length < TAG_LENGTH_BYTE) throw new ArgumentException($"Invalid cipher byte length (expected: more than {TAG_LENGTH_BYTE}, actual: {cipherBytes.Length}).", nameof(cipherBytes));
 
             IBufferedCipher cipher = CipherUtilities.GetCipher(string.Format("{0}/{1}", AES_CIPHER_ALGORITHM_GCM, paddingMode));
@@ -61,14 +61,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <returns>解密后的文本数据。</returns>
         public static string DecryptWithGCM(string key, string nonce, string? aad, string cipherText, string paddingMode = AES_CIPHER_PADDING_NOPADDING)
         {
-            if (key == null) throw new ArgumentNullException(nameof(key));
-            if (nonce == null) throw new ArgumentNullException(nameof(nonce));
-            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
+            if (key is null) throw new ArgumentNullException(nameof(key));
+            if (nonce is null) throw new ArgumentNullException(nameof(nonce));
+            if (cipherText is null) throw new ArgumentNullException(nameof(cipherText));
 
             byte[] plainBytes = DecryptWithGCM(
                 keyBytes: Encoding.UTF8.GetBytes(key),
                 nonceBytes: Encoding.UTF8.GetBytes(nonce),
-                aadBytes: aad != null ? Encoding.UTF8.GetBytes(aad) : null,
+                aadBytes: aad is not null ? Encoding.UTF8.GetBytes(aad) : null,
                 cipherBytes: Convert.FromBase64String(cipherText),
                 paddingMode: paddingMode
             );

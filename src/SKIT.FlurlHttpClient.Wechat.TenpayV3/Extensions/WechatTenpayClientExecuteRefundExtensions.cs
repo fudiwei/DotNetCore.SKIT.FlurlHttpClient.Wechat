@@ -40,9 +40,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "refund", "domestic", "refunds");
+                .CreateFlurlRequest(request, HttpMethod.Post, "refund", "domestic", "refunds");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateRefundDomesticRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateRefundDomesticRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -74,12 +74,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "refund", "domestic", "refunds", request.OutRefundNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "refund", "domestic", "refunds", request.OutRefundNumber);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetRefundDomesticRefundByOutRefundNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetRefundDomesticRefundByOutRefundNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -97,9 +97,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "refund", "domestic", "refunds", request.RefundId, "apply-abnormal-refund");
+                .CreateFlurlRequest(request, HttpMethod.Post, "refund", "domestic", "refunds", request.RefundId, "apply-abnormal-refund");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateRefundDomesticAbnormalRefundApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateRefundDomesticAbnormalRefundApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

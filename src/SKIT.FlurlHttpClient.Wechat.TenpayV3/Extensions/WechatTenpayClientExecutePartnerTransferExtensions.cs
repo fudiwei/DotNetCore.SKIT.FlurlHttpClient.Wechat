@@ -24,9 +24,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "partner-transfer", "batches");
+                .CreateFlurlRequest(request, HttpMethod.Post, "partner-transfer", "batches");
 
-            return await client.SendRequestWithJsonAsync<Models.CreatePartnerTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePartnerTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -43,19 +43,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "partner-transfer", "batches", "out-batch-no", request.OutBatchNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "partner-transfer", "batches", "out-batch-no", request.OutBatchNumber)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail);
 
-            if (request.DetailStatus != null)
+            if (request.DetailStatus is not null)
                 flurlReq.SetQueryParam("detail_status", request.DetailStatus);
 
-            if (request.Offset != null)
+            if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value);
 
-            if (request.Limit != null)
+            if (request.Limit is not null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.GetPartnerTransferBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPartnerTransferBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -72,19 +72,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "partner-transfer", "batches", "batch-id", request.BatchId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "partner-transfer", "batches", "batch-id", request.BatchId)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail);
 
-            if (request.DetailStatus != null)
+            if (request.DetailStatus is not null)
                 flurlReq.SetQueryParam("detail_status", request.DetailStatus);
 
-            if (request.Offset != null)
+            if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value);
 
-            if (request.Limit != null)
+            if (request.Limit is not null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.GetPartnerTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPartnerTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -101,9 +101,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "partner-transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "partner-transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber);
 
-            return await client.SendRequestWithJsonAsync<Models.GetPartnerTransferBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPartnerTransferBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -120,9 +120,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "partner-transfer", "batches", "batch-id", request.BatchId, "details", "detail-id", request.DetailId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "partner-transfer", "batches", "batch-id", request.BatchId, "details", "detail-id", request.DetailId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetPartnerTransferBatchDetailByDetailIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPartnerTransferBatchDetailByDetailIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

@@ -14,16 +14,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundService
     {
         private readonly ILogger _logger;
         private readonly Options.TenpayOptions _tenpayOptions;
-        private readonly HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
+        private readonly HttpClients.IWechatTenpayClientFactory _wechatTenpayClientFactory;
 
         public TenpayCertificateRefreshingBackgroundService(
             ILoggerFactory loggerFactory,
             IOptions<Options.TenpayOptions> tenpayOptions,
-            HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
+            HttpClients.IWechatTenpayClientFactory wechatTenpayClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
             _tenpayOptions = tenpayOptions.Value;
-            _tenpayHttpClientFactory = tenpayHttpClientFactory;
+            _wechatTenpayClientFactory = wechatTenpayClientFactory;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundService
                     try
                     {
                         const string ALGORITHM_TYPE = "RSA";
-                        var client = _tenpayHttpClientFactory.Create(tenpayMerchantOptions.MerchantId);
+                        var client = _wechatTenpayClientFactory.Create(tenpayMerchantOptions.MerchantId);
                         var request = new QueryCertificatesRequest() { AlgorithmType = ALGORITHM_TYPE };
                         var response = await client.ExecuteQueryCertificatesAsync(request, cancellationToken: stoppingToken);
                         if (response.IsSuccessful())
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundService
 
                             foreach (var certificate in response.CertificateList)
                             {
-                                client.PlatformCertificateManager.AddEntry(new CertificateEntry(ALGORITHM_TYPE, certificate));
+                                client.PlatformCertificateManager.AddEntry(CertificateEntry.Parse(ALGORITHM_TYPE, certificate));
                             }
 
                             _logger.LogInformation("刷新微信商户平台证书成功。");
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundService
                         {
                             _logger.LogWarning(
                                 "刷新微信商户平台证书失败（状态码：{0}，错误代码：{1}，错误描述：{2}）。",
-                                response.RawStatus, response.ErrorCode, response.ErrorMessage
+                                response.GetRawStatus(), response.ErrorCode, response.ErrorMessage
                             );
                         }
                     }

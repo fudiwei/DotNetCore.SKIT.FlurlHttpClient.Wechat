@@ -7,7 +7,7 @@
     {
         public override bool IsSuccessful()
         {
-            return RawStatus == 200;
+            return GetRawStatus() == 200;
         }
     }
 }

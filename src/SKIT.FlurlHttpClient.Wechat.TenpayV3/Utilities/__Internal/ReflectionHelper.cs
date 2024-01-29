@@ -4,20 +4,20 @@ using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 {
-    internal static partial class ReflectionUtility
+    internal static partial class ReflectionHelper
     {
-        private static readonly Hashtable _typeProperties = new Hashtable();
+        private static readonly Hashtable _cache = new Hashtable();
 
         private static PropertyInfo[] GetTypedProperties(Type type)
         {
-            if (type == null) throw new ArgumentNullException(nameof(type));
+            if (type is null) throw new ArgumentNullException(nameof(type));
 
-            string skey = type.AssemblyQualifiedName ?? type.GetHashCode().ToString();
-            PropertyInfo[]? properties = (PropertyInfo[]?)_typeProperties[skey];
-            if (properties == null)
+            string key = type.FullName ?? type.AssemblyQualifiedName!;
+            PropertyInfo[]? properties = (PropertyInfo[]?)_cache[key];
+            if (properties is null)
             {
                 properties = type.GetProperties(BindingFlags.Public | BindingFlags.Instance);
-                _typeProperties[skey] = properties;
+                _cache[key] = properties;
             }
 
             return properties;
@@ -30,8 +30,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
         private static void InnerReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacementHandler replacement)
         {
-            if (obj == null) throw new ArgumentNullException(nameof(obj));
-            if (replacement == null) throw new ArgumentNullException(nameof(replacement));
+            if (obj is null) throw new ArgumentNullException(nameof(obj));
+            if (replacement is null) throw new ArgumentNullException(nameof(replacement));
 
             Type objType = obj.GetType();
             if (!objType.IsClass)
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     Type elementType = element.GetType();
                     if (elementType == typeof(string))
                     {
-                        if (currentProp == null)
+                        if (currentProp is null)
                             continue;
                         if (!currentProp.CanWrite)
                             continue;
@@ -136,7 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     Type elementType = element.GetType();
                     if (elementType == typeof(string))
                     {
-                        if (currentProp == null)
+                        if (currentProp is null)
                             continue;
                         if (!currentProp.CanWrite)
                             continue;
@@ -175,7 +175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
                     Type entryValueType = entryValue.GetType();
                     if (entryValueType == typeof(string))
                     {
-                        if (currentProp == null)
+                        if (currentProp is null)
                             continue;
                         if (!currentProp.CanWrite)
                             continue;
@@ -204,7 +204,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         }
     }
 
-    partial class ReflectionUtility
+    partial class ReflectionHelper
     {
         public delegate (bool Modified, string NewValue) ReplacePropertyStringValueReplacementHandler(object target, PropertyInfo currentProp, string oldValue);
     }

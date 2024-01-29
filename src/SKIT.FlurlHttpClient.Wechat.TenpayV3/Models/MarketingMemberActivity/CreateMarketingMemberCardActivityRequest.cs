@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
@@ -20,18 +20,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// 获取或设置开始时间。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("begin_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
                         public DateTimeOffset BeginTime { get; set; }
 
                         /// <summary>
                         /// 获取或设置结束时间。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("end_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
                         public DateTimeOffset EndTime { get; set; }
                     }
 
@@ -65,14 +65,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("award_send_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("award_send_time")]
-                public Types.AwardSendTime[]? AwardSendTimeList { get; set; }
+                public IList<Types.AwardSendTime>? AwardSendTimeList { get; set; }
 
                 /// <summary>
                 /// 获取或设置指定时间段列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("award_send_day_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("award_send_day_time")]
-                public Types.AwardSendDayTime[]? AwardSendDayTimeList { get; set; }
+                public IList<Types.AwardSendDayTime>? AwardSendDayTimeList { get; set; }
             }
 
             public class Stock
@@ -284,18 +284,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// 获取或设置活动开始时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("begin_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset? BeginTime { get; set; }
 
         /// <summary>
         /// 获取或设置活动结束时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("end_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset? EndTime { get; set; }
 
         /// <summary>

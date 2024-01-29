@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "compliance", "inactive-merchant-identity-verification", "merchants");
+                .CreateFlurlRequest(request, HttpMethod.Post, "compliance", "inactive-merchant-identity-verification", "merchants");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateComplianceInactiveMerchantIdentityVerificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateComplianceInactiveMerchantIdentityVerificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "compliance", "inactive-merchant-identity-verification", "merchants", request.SubMerchantId, "verifications", request.VerificationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "compliance", "inactive-merchant-identity-verification", "merchants", request.SubMerchantId, "verifications", request.VerificationId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetComplianceInactiveMerchantIdentityVerificationByVerificationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetComplianceInactiveMerchantIdentityVerificationByVerificationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

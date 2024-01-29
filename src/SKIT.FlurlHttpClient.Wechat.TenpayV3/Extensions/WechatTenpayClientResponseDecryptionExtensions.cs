@@ -10,12 +10,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         private static TResponse InnerDecryptResponseSensitiveProperty<TResponse>(WechatTenpayClient client, TResponse response)
             where TResponse : Models.QueryCertificatesResponse
         {
-            if (response.CertificateList == null)
+            if (response.CertificateList is null)
                 return response;
 
             foreach (var certificate in response.CertificateList)
             {
-                if (certificate.EncryptCertificate == null)
+                if (certificate.EncryptCertificate is null)
                     continue;
 
                 switch (certificate.EncryptCertificate.Algorithm)
@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     case Constants.EncryptionAlgorithms.AEAD_AES_256_GCM:
                         {
                             if (string.IsNullOrEmpty(client.Credentials.MerchantCertificatePrivateKey))
-                                throw new Exceptions.WechatTenpayResponseDecryptionException("Failed to decrypt response, because there is no merchant private key.");
+                                throw new WechatTenpayException("Failed to decrypt response, because the merchant private key is not set.");
 
                             certificate.EncryptCertificate.CipherText = Utilities.AESUtility.DecryptWithGCM(
                                 key: client.Credentials.MerchantV3Secret,
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     case Constants.EncryptionAlgorithms.AEAD_SM4_128_GCM:
                         {
                             if (string.IsNullOrEmpty(client.Credentials.MerchantV3Secret))
-                                throw new Exceptions.WechatTenpayResponseDecryptionException("Failed to decrypt response, because there is no merchant APIv3 secret.");
+                                throw new WechatTenpayException("Failed to decrypt response, because the merchant APIv3 secret is not set.");
 
                             // REF: https://pay.weixin.qq.com/docs/merchant/development/shangmi/guide.html
                             // 由于 SM4 密钥长度的限制，密钥由 APIv3 密钥通过国密 SM3 Hash 计算生成。SM4 密钥取其摘要（256bit）的前 128bit。
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                     default:
                         {
-                            throw new Exceptions.WechatTenpayResponseDecryptionException($"Unsupported encryption algorithm: \"{certificate.EncryptCertificate.Algorithm}\".");
+                            throw new WechatTenpayException($"Failed to decrypt response. Unsupported encryption algorithm: \"{certificate.EncryptCertificate.Algorithm}\".");
                         }
                 }
             }
@@ -68,12 +68,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         private static TResponse InnerDecryptResponseSensitivePropertyByRSA<TResponse>(WechatTenpayClient client, TResponse response)
             where TResponse : WechatTenpayResponse
         {
-            Utilities.ReflectionUtility.ReplacePropertyStringValue(ref response, (target, currentProp, oldValue) =>
+            Utilities.ReflectionHelper.ReplacePropertyStringValue(ref response, (target, currentProp, oldValue) =>
             {
                 WechatTenpaySensitivePropertyAttribute? attribute = currentProp
                     .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
                     .FirstOrDefault(attr => Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256.Equals(attr.Scheme));
-                if (attribute == null)
+                if (attribute is null)
                     return (false, oldValue);
 
                 string newValue;
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                     default:
                         {
-                            throw new Exceptions.WechatTenpayResponseDecryptionException($"Unsupported encryption algorithm: \"{attribute.Algorithm}\".");
+                            throw new WechatTenpayException($"Failed to decrypt response. Unsupported encryption algorithm: \"{attribute.Algorithm}\".");
                         }
                 }
 
@@ -112,12 +112,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         private static TResponse InnerDecryptResponseSensitivePropertyBySM<TResponse>(WechatTenpayClient client, TResponse response)
             where TResponse : WechatTenpayResponse
         {
-            Utilities.ReflectionUtility.ReplacePropertyStringValue(ref response, (target, currentProp, oldValue) =>
+            Utilities.ReflectionHelper.ReplacePropertyStringValue(ref response, (target, currentProp, oldValue) =>
             {
                 WechatTenpaySensitivePropertyAttribute? attribute = currentProp
                     .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
                     .FirstOrDefault(attr => Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3.Equals(attr.Scheme));
-                if (attribute == null)
+                if (attribute is null)
                     return (false, oldValue);
 
                 string newValue;
@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                     default:
                         {
-                            throw new Exceptions.WechatTenpayResponseDecryptionException($"Unsupported encryption algorithm: \"{attribute.Algorithm}\".");
+                            throw new WechatTenpayException($"Failed to decrypt response. Unsupported encryption algorithm: \"{attribute.Algorithm}\".");
                         }
                 }
 
@@ -153,11 +153,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public static TResponse DecryptResponseSensitiveProperty<TResponse>(this WechatTenpayClient client, TResponse response)
             where TResponse : WechatTenpayResponse
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
-            if (response == null) throw new ArgumentNullException(nameof(response));
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (response is null) throw new ArgumentNullException(nameof(response));
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Failed to decrypt response, because the response is not successful.");
+                throw new WechatTenpayException("Failed to decrypt response, because the response is not successful.");
 
             try
             {
@@ -189,7 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatTenpayResponseDecryptionException("Failed to decrypt response. Please see the inner exception for more details.", ex);
+                throw new WechatTenpayException("Failed to decrypt response. Please see the inner exception for more details.", ex);
             }
         }
     }

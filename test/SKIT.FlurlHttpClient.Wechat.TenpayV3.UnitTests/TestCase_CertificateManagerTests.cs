@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         [Fact(DisplayName = "测试用例：`CertificateEntry` 构造器")]
         public void TestCertificateEntryConstructor()
         {
-            var certRSA = new Settings.CertificateEntry(
+            var certRSA = Settings.CertificateEntry.Parse(
                 new Models.QueryCertificatesResponse.Types.Certificate()
                 {
                     SerialNumber = CERT_RSA_SN,
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             );
             Assert.Equal(Settings.CertificateEntry.ALGORITHM_TYPE_RSA, certRSA.AlgorithmType);
 
-            var certSM2 = new Settings.CertificateEntry(
+            var certSM2 = Settings.CertificateEntry.Parse(
                 new Models.QueryCertificatesResponse.Types.Certificate()
                 {
                     SerialNumber = CERT_SM2_SN,

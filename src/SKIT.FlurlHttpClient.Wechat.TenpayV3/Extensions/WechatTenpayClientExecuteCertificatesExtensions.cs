@@ -29,12 +29,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "certificates");
+                .CreateFlurlRequest(request, HttpMethod.Get, "certificates");
 
-            if (request.AlgorithmType != null)
+            if (request.AlgorithmType is not null)
                 flurlReq.SetQueryParam("algorithm_type", request.AlgorithmType);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryCertificatesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryCertificatesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
