@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("confidence")]
                 [System.Text.Json.Serialization.JsonPropertyName("confidence")]
-                public float Confidence { get; set; } = default!;
+                public decimal Confidence { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置消息类型。
@@ -156,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("confidence")]
                 [System.Text.Json.Serialization.JsonPropertyName("confidence")]
-                public double Confidence { get; set; }
+                public decimal Confidence { get; set; }
             }
 
             public class Slot
@@ -274,7 +274,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("confidence")]
         [System.Text.Json.Serialization.JsonPropertyName("confidence")]
-        public double Confidence { get; set; }
+        public decimal Confidence { get; set; }
 
         /// <summary>
         /// 获取或设置发起查询的用户 ID。

@@ -46,45 +46,45 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                                         /// 获取或设置是否开通微信门店功能。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("open_store")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("open_store")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                                         public bool IsOpenStore { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置是否开通微信扫商品功能。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("open_scan")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("open_scan")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                                         public bool IsOpenScan { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置是否开通微信支付功能。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("open_pay")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("open_pay")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                                         public bool IsOpenPay { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置是否开通微信卡券功能。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("open_card")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("open_card")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                                         public bool IsOpenCard { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置是否开通微信摇一摇功能。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("open_shake")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("open_shake")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                                         public bool IsOpenShake { get; set; }
                                     }
 
