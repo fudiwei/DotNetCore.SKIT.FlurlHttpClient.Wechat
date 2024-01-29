@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置工作表名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
-                        [System.Text.Json.Serialization.JsonPropertyName("text")]
+                        [System.Text.Json.Serialization.JsonPropertyName("title")]
                         public string Title { get; set; } = string.Empty;
 
                         /// <summary>

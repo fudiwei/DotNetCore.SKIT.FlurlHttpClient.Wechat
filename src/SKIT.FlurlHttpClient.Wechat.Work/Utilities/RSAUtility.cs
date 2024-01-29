@@ -61,8 +61,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         /// <returns>解密后的数据字节数组。</returns>
         public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingMode = RSA_CIPHER_PADDING_PKCS1)
         {
-            if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
-            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
+            if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
+            if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
 
             RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyPemToPrivateKeyParameters(privateKeyBytes);
             return DecryptWithECB(rsaPrivateKeyParams, cipherBytes, paddingMode);
@@ -77,8 +77,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         /// <returns>解密后的文本数据。</returns>
         public static string DecryptWithECB(string privateKey, string cipherText, string paddingMode = RSA_CIPHER_PADDING_PKCS1)
         {
-            if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
-            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
+            if (privateKey is null) throw new ArgumentNullException(nameof(privateKey));
+            if (cipherText is null) throw new ArgumentNullException(nameof(cipherText));
 
             byte[] privateKeyBytes = ConvertPrivateKeyPkcs1PemToByteArray(privateKey);
             byte[] cipherBytes = Convert.FromBase64String(cipherText);

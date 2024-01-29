@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
 {
     /// <summary>
@@ -6,14 +8,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
     public class GetMediaFileBufferResponse : WechatWorkFinanceResponse
     {
         /// <summary>
-        /// 获取或设置文件分片二进制数组。
+        /// 获取文件分片二进制数组。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public byte[] FileBufferBytes
         {
-            get { return RawBytes; }
-            set { RawBytes = value; }
+            get { return GetRawBytes(); }
         }
 
         /// <summary>
@@ -32,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
 
         public override bool IsSuccessful()
         {
-            return base.IsSuccessful() && FileBufferBytes?.Length > 0;
+            return base.IsSuccessful() && FileBufferBytes.Any();
         }
     }
 }

@@ -42,7 +42,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("phone")]
                         [System.Text.Json.Serialization.JsonPropertyName("phone")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
                         public string? PhoneNumber { get; set; }
 
                         /// <summary>

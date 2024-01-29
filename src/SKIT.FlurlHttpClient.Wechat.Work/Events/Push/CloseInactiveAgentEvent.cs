@@ -6,11 +6,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/90376 </para>
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/90858 </para>
     /// </summary>
-    public class CloseInactiveAgentEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
+    public class CloseInactiveAgentEvent : WechatWorkEvent
     {
         /// <summary>
         /// 获取或设置应用 ID。
         /// </summary>
+        [Newtonsoft.Json.JsonProperty("AgentID")]
+        [System.Text.Json.Serialization.JsonPropertyName("AgentID")]
         [System.Xml.Serialization.XmlElement("AgentID")]
         public int AgentId { get; set; }
     }

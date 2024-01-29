@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         public WechatWorkFinanceClient(WechatWorkFinanceClientOptions options)
             : base()
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (options is null) throw new ArgumentNullException(nameof(options));
 
             Credentials = new Settings.Credentials(options);
             EncryptionKeyManager = options.EncryptionKeyManager;
@@ -83,6 +83,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
 #endif
         }
 
+        private void EnsureInitialized()
+        {
+            if (_disposed)
+                throw new ObjectDisposedException(nameof(WechatWorkFinanceClient));
+
+            if (!_initialized)
+            {
+                lock (_lockObj)
+                {
+                    if (!_initialized)
+                    {
+                        int ret = /* 初始化 SDK */
+                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.Init(_sdkPtr, Credentials.CorpId, Credentials.SecretKey) :
+                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.Init(_sdkPtr, Credentials.CorpId, Credentials.SecretKey) :
+                            throw new PlatformNotSupportedException();
+                        if (ret != 0)
+                            throw new WechatWorkFinanceException($"Failed to initialize Wechat Work Finance SDK (ret: {ret}).");
+
+                        _initialized = true;
+                    }
+                }
+            }
+        }
+
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
@@ -91,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         /// <returns></returns>
         public Task<Models.GetChatRecordsResponse> ExecuteGetChatRecordsAsync(Models.GetChatRecordsRequest request, CancellationToken cancellationToken = default)
         {
-            if (request == null) throw new ArgumentNullException(nameof(request));
+            if (request is null) throw new ArgumentNullException(nameof(request));
 
             EnsureInitialized();
 
@@ -120,8 +144,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 try
                 {
                     int ret = /* 获取聊天记录数据 */
-                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, dataPtr) :
-                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, dataPtr) :
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (long)(request._InternalTimeout?.TotalMilliseconds ?? _timeout) / 1000, dataPtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetChatData(_sdkPtr, request.LastSequence, request.Limit, _proxyAddress!, _proxyAuthentication!, (long)(request._InternalTimeout?.TotalMilliseconds ?? _timeout) / 1000, dataPtr) :
                         throw new PlatformNotSupportedException();
                     if (ret == 0)
                     {
@@ -136,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                         string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr);
 
                         response = JsonSerializer.Deserialize<Models.GetChatRecordsResponse>(dataContent);
-                        response.RawBytes = Encoding.UTF8.GetBytes(dataContent);
+                        response._InternalRawBytes = Encoding.UTF8.GetBytes(dataContent);
                     }
 
                     response.ReturnCode = ret;
@@ -161,7 +185,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         /// <returns></returns>
         public Task<Models.DecryptChatRecordResponse> ExecuteDecryptChatRecordAsync(Models.DecryptChatRecordRequest request, CancellationToken cancellationToken = default)
         {
-            if (request == null) throw new ArgumentNullException(nameof(request));
+            if (request is null) throw new ArgumentNullException(nameof(request));
 
             EnsureInitialized();
 
@@ -234,7 +258,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                         catch (System.Text.Json.JsonException)
                         {
                             // NOTICE: 某些情况下微信返回的 JSON 字符串中包含设备控制符，可能导致 System.Text.Json 反序列化抛出异常
-                            if (JsonSerializer is FlurlSystemTextJsonSerializer)
+                            if (JsonSerializer is SystemTextJsonSerializer)
                             {
                                 string fixedDataContent = dataContent
                                     .Replace("\\u0011", string.Empty)
@@ -249,7 +273,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                             }
                         }
 
-                        response.RawBytes = Encoding.UTF8.GetBytes(dataContent);
+                        response._InternalRawBytes = Encoding.UTF8.GetBytes(dataContent);
                     }
 
                     response.ReturnCode = ret;
@@ -274,7 +298,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         /// <returns></returns>
         public Task<Models.GetMediaFileBufferResponse> ExecuteGetMediaFileBufferAsync(Models.GetMediaFileBufferRequest request, CancellationToken cancellationToken = default)
         {
-            if (request == null) throw new ArgumentNullException(nameof(request));
+            if (request is null) throw new ArgumentNullException(nameof(request));
 
             EnsureInitialized();
 
@@ -303,8 +327,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                 try
                 {
                     int ret = /* 获取媒体文件数据 */
-                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, dataPtr) :
-                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId, _proxyAddress!, _proxyAuthentication!, (request.Timeout ?? _timeout) / 1000, dataPtr) :
+                        IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId, _proxyAddress!, _proxyAuthentication!, (long)(request._InternalTimeout?.TotalMilliseconds ?? _timeout) / 1000, dataPtr) :
+                        IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetMediaData(_sdkPtr, request.BufferIndex ?? string.Empty, request.FileId, _proxyAddress!, _proxyAuthentication!, (long)(request._InternalTimeout?.TotalMilliseconds ?? _timeout) / 1000, dataPtr) :
                         throw new PlatformNotSupportedException();
                     if (ret == 0)
                     {
@@ -328,7 +352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                         byte[] bytes = new byte[dataSize];
                         Marshal.Copy(dataContentPtr, bytes, 0, bytes.Length);
 
-                        response.FileBufferBytes = bytes;
+                        response._InternalRawBytes = bytes;
                         response.NextBufferIndex = MarshalerHelper.PtrToStringAnsi(dataNextBufferIndex);
                         response.IsFinished = dataIsFinishFlag != 0;
                     }
@@ -355,7 +379,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
         /// <returns></returns>
         public async Task<Models.GetMediaFileResponse> ExecuteGetMediaFileAsync(Models.GetMediaFileRequest request, CancellationToken cancellationToken = default)
         {
-            if (request == null) throw new ArgumentNullException(nameof(request));
+            if (request is null) throw new ArgumentNullException(nameof(request));
 
             EnsureInitialized();
 
@@ -380,7 +404,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                     {
                         FileId = fileId,
                         BufferIndex = nextBufferIndex,
-                        Timeout = request.Timeout
+                        _InternalTimeout = request._InternalTimeout
                     };
                     var resBuffer = await ExecuteGetMediaFileBufferAsync(reqBuffer, cancellationToken);
                     response.ReturnCode = resBuffer.ReturnCode;
@@ -410,65 +434,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
                     }
                 }
 
-                response.RawBytes = stream.ToArray();
+                response._InternalRawBytes = stream.ToArray();
                 return response;
             }
         }
 
-        private void EnsureInitialized()
-        {
-            if (_disposed)
-                throw new ObjectDisposedException(nameof(WechatWorkFinanceClient));
-
-            if (!_initialized)
-            {
-                lock (_lockObj)
-                {
-                    if (!_initialized)
-                    {
-                        int ret = /* 初始化 SDK */
-                            IsRunOnWindows() ? FinanceDllWindowsPInvoker.Init(_sdkPtr, Credentials.CorpId, Credentials.SecretKey) :
-                            IsRunOnLinux() ? FinanceDllLinuxPInvoker.Init(_sdkPtr, Credentials.CorpId, Credentials.SecretKey) :
-                            throw new PlatformNotSupportedException();
-                        if (ret != 0)
-                            throw new WechatWorkFinanceException($"Failed to initialize Wechat Work Finance SDK (ret: {ret}).");
-
-                        _initialized = true;
-                    }
-                }
-            }
-        }
-
-        private void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
             if (!_disposed)
             {
-                if (disposing)
+                IntPtr sdkPtr = _sdkPtr;
+                if (sdkPtr != IntPtr.Zero)
                 {
-                    // 释放托管资源
-                }
-
-                // 释放非托管资源
-                IntPtr tmpptr = _sdkPtr;
-                if (tmpptr != IntPtr.Zero)
-                {
-                    if (IsRunOnWindows()) FinanceDllWindowsPInvoker.DestroySdk(tmpptr);
-                    else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.DestroySdk(tmpptr);
-                    else Marshal.FreeHGlobal(tmpptr);
-
                     _sdkPtr = IntPtr.Zero;
+
+                    if (IsRunOnWindows()) FinanceDllWindowsPInvoker.DestroySdk(sdkPtr);
+                    else if (IsRunOnLinux()) FinanceDllLinuxPInvoker.DestroySdk(sdkPtr);
+                    else Marshal.FreeHGlobal(sdkPtr);
                 }
 
                 _disposed = true;
             }
-        }
 
-        public override void Dispose()
-        {
-            base.Dispose();
-
-            Dispose(disposing: true);
-            GC.SuppressFinalize(this);
+            base.Dispose(disposing);
         }
     }
 }

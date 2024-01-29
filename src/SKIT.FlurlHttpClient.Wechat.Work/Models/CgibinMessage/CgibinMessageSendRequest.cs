@@ -440,7 +440,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("aspect_ratio")]
                         [System.Text.Json.Serialization.JsonPropertyName("aspect_ratio")]
-                        public double? AspectRatio { get; set; }
+                        public decimal? AspectRatio { get; set; }
                     }
 
                     public class QuoteArea
@@ -978,27 +978,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置接收消息的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("touser")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringListWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("touser")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringListWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringListWithPipeSplitConverter))]
         public IList<string>? ToUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("toparty")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualLongListWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedNumberListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("toparty")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualLongListWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedNumberListWithPipeSplitConverter))]
         public IList<long>? ToDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的标签 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("totag")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualIntegerListWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedNumberListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("totag")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualIntegerListWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedNumberListWithPipeSplitConverter))]
         public IList<int>? ToTagIdList { get; set; }
 
         /// <summary>
@@ -1117,27 +1117,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否是保密消息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("safe")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("safe")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool? IsSafe { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启 ID 转译。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enable_id_trans")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("enable_id_trans")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool? EnableIdTransform { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启重复消息检查。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enable_duplicate_check")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("enable_duplicate_check")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool? EnableDuplicateCheck { get; set; }
 
         /// <summary>

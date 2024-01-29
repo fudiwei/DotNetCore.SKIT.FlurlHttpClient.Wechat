@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "hardware", "get_device_feature")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "hardware", "get_device_feature")
                 .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinHardwareGetDeviceFeatureResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinHardwareGetDeviceFeatureResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -44,10 +44,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "hardware", "get_hardware_checkin_data")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "hardware", "get_hardware_checkin_data")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinHardwareGetHardwareCheckinDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinHardwareGetHardwareCheckinDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

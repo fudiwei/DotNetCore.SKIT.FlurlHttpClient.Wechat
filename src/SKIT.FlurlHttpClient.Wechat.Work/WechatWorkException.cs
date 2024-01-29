@@ -1,12 +1,11 @@
 using System;
-using Newtonsoft.Json;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     /// <summary>
     /// 当调用企业微信 API 出错时引发的异常。
     /// </summary>
-    public class WechatWorkException : CommonExceptionBase
+    public class WechatWorkException : CommonException
     {
         /// <inheritdoc/>
         public WechatWorkException()

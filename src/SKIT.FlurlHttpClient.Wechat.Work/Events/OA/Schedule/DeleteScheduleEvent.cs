@@ -5,7 +5,7 @@
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/93651 </para>
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/93704 </para>
     /// </summary>
-    public class DeleteScheduleEvent : AddScheduleEvent, WechatWorkEvent.Serialization.IJsonSerializable, WechatWorkEvent.Serialization.IXmlSerializable
+    public class DeleteScheduleEvent : AddScheduleEvent
     {
     }
 }

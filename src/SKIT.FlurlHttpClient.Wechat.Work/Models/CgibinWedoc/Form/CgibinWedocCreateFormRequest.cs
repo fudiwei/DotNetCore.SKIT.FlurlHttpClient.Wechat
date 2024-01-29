@@ -83,14 +83,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("number_min")]
                                         [System.Text.Json.Serialization.JsonPropertyName("number_min")]
-                                        public double? NumberMinimum { get; set; }
+                                        public decimal? NumberMinimum { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置数字的区间右端。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("number_max")]
                                         [System.Text.Json.Serialization.JsonPropertyName("number_max")]
-                                        public double? NumberMaximum { get; set; }
+                                        public decimal? NumberMaximum { get; set; }
                                     }
 
                                     public class RadioSettings

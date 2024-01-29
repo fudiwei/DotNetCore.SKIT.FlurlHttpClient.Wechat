@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("sptime")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sptime")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
                                 public long? ApproveTimestamp { get; set; }
 
                                 /// <summary>
@@ -259,7 +259,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("s_timestamp")]
                                         [System.Text.Json.Serialization.JsonPropertyName("s_timestamp")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
                                         public long? Timestamp { get; set; }
                                     }
 
@@ -471,14 +471,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("longitude")]
                                         [System.Text.Json.Serialization.JsonPropertyName("longitude")]
-                                        public double Longitude { get; set; }
+                                        public decimal Longitude { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置纬度。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("latitude")]
                                         [System.Text.Json.Serialization.JsonPropertyName("latitude")]
-                                        public double Latitude { get; set; }
+                                        public decimal Latitude { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置地点标题。
@@ -499,7 +499,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("time")]
                                         [System.Text.Json.Serialization.JsonPropertyName("time")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
                                         public long? Timestamp { get; set; }
                                     }
 
@@ -603,7 +603,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("time")]
                                         [System.Text.Json.Serialization.JsonPropertyName("time")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
                                         public long? Timestamp { get; set; }
 
                                         /// <summary>
@@ -611,7 +611,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("daymonthyear")]
                                         [System.Text.Json.Serialization.JsonPropertyName("daymonthyear")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualNullableLongConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
                                         public long? DateTimestamp { get; set; }
                                     }
                                 }
@@ -674,7 +674,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("commentid")]
                         [System.Text.Json.Serialization.JsonPropertyName("commentid")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
                         public string CommentId { get; set; } = default!;
 
                         /// <summary>

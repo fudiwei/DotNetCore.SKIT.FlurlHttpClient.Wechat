@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "dial", "get_dial_record")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "dial", "get_dial_record")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinDialogGetDialogRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinDialogGetDialogRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

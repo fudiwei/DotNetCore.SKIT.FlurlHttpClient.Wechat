@@ -283,8 +283,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// <summary>
                         /// 获取或设置特殊日期开始时间戳。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("timestamp")]
-                        [System.Text.Json.Serialization.JsonPropertyName("timestamp")]
+                        [Newtonsoft.Json.JsonProperty("begintime")]
+                        [System.Text.Json.Serialization.JsonPropertyName("begintime")]
                         public long? BeginTimestamp { get; set; }
 
                         /// <summary>
@@ -347,14 +347,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("lng")]
                         [System.Text.Json.Serialization.JsonPropertyName("lng")]
-                        public double Longitude { get; set; }
+                        public decimal Longitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置位置打卡地点纬度。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("lat")]
                         [System.Text.Json.Serialization.JsonPropertyName("lat")]
-                        public double Latitude { get; set; }
+                        public decimal Latitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置允许打卡范围（单位：米）。

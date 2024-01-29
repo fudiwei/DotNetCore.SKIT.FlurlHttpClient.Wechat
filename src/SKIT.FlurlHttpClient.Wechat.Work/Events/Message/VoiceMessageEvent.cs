@@ -6,7 +6,7 @@
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/90375 </para>
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/90855 </para>
     /// </summary>
-    public class VoiceMessageEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
+    public class VoiceMessageEvent : WechatWorkEvent
     {
         /// <summary>
         /// 获取或设置应用 ID。

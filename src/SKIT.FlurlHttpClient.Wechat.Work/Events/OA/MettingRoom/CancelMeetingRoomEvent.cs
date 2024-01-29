@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.cancel_meeting_room 事件的数据。</para>
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/95333 </para>
     /// </summary>
-    public class CancelMeetingRoomEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IJsonSerializable, WechatWorkEvent.Serialization.IXmlSerializable
+    public class CancelMeetingRoomEvent : WechatWorkEvent
     {
         /// <summary>
         /// 获取或设置会议室 ID。

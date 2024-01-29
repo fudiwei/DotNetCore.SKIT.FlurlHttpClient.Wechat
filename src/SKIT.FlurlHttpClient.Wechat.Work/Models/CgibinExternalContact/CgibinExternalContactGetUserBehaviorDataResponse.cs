@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_user_behavior_data 接口的响应。</para>
@@ -35,7 +35,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reply_percentage")]
                 [System.Text.Json.Serialization.JsonPropertyName("reply_percentage")]
-                public double? ReplyPercentage { get; set; }
+                public decimal? ReplyPercentage { get; set; }
 
                 /// <summary>
                 /// 获取或设置平均首次回复时长（单位：分钟）。

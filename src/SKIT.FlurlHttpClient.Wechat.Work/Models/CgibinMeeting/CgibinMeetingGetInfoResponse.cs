@@ -185,7 +185,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// 获取或设置企业成员的 UserId 列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("userid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("userids")]
+                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
                         public string[]? UserIdList { get; set; }
                     }
                 }
@@ -358,9 +358,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// 获取或设置是否重复会议。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_repeat")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_repeat")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsRepeat { get; set; }
 
                 /// <summary>
@@ -374,9 +374,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// 获取或设置是否自定义重复设置。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_custom_repeat")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_custom_repeat")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsCustomRepeat { get; set; }
 
                 /// <summary>
@@ -598,9 +598,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否还有更多子会议特例。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("has_more_sub_meeting")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("has_more_sub_meeting")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool HasMoreSubMeeting { get; set; }
 
         /// <summary>
