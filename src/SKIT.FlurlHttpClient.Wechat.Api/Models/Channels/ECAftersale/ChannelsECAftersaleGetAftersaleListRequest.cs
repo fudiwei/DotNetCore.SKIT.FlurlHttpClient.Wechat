@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/aftersale/getaftersalelist 接口的请求。</para>
     /// </summary>
-    public class ChannelsECAftersaleGetAftersaleListRequest : WechatApiRequest, IInferable<ChannelsECAftersaleGetAftersaleListRequest, ChannelsECOrderListGetResponse>
+    public class ChannelsECAftersaleGetAftersaleListRequest : WechatApiRequest, IInferable<ChannelsECAftersaleGetAftersaleListRequest, ChannelsECAftersaleGetAftersaleListResponse>
     {
         /// <summary>
         /// 获取或设置创建时间开始时间戳。

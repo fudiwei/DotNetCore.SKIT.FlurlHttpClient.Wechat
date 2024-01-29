@@ -35,7 +35,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("page_staytime_pv")]
                 [System.Text.Json.Serialization.JsonPropertyName("page_staytime_pv")]
-                public double PageStayTimePerPV { get; set; }
+                public decimal PageStayTimePerPV { get; set; }
 
                 /// <summary>
                 /// 获取或设置进入页次数。

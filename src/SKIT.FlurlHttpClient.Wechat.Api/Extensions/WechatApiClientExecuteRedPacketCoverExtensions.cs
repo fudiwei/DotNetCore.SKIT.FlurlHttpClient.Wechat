@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "redpacketcover", "wxapp", "cover_url", "get_by_token")
+                .CreateFlurlRequest(request, HttpMethod.Post, "redpacketcover", "wxapp", "cover_url", "get_by_token")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.RedPacketCoverWxAppCoverUrlGetByTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.RedPacketCoverWxAppCoverUrlGetByTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

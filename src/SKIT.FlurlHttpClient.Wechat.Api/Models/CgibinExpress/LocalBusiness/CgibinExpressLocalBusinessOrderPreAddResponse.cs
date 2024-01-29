@@ -24,35 +24,35 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fee")]
         [System.Text.Json.Serialization.JsonPropertyName("fee")]
-        public double Fee { get; set; }
+        public decimal Fee { get; set; }
 
         /// <summary>
         /// 获取或设置运费（单位：元）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("deliverfee")]
         [System.Text.Json.Serialization.JsonPropertyName("deliverfee")]
-        public double DeliverFee { get; set; }
+        public decimal DeliverFee { get; set; }
 
         /// <summary>
         /// 获取或设置优惠券费用（单位：元）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("couponfee")]
         [System.Text.Json.Serialization.JsonPropertyName("couponfee")]
-        public double CouponFee { get; set; }
+        public decimal CouponFee { get; set; }
 
         /// <summary>
         /// 获取或设置小费（单位：元）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tips")]
         [System.Text.Json.Serialization.JsonPropertyName("tips")]
-        public double TipFee { get; set; }
+        public decimal TipFee { get; set; }
 
         /// <summary>
         /// 获取或设置保价费（单位：元）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("insurancefee")]
         [System.Text.Json.Serialization.JsonPropertyName("insurancefee")]
-        public double InsuranceFee { get; set; }
+        public decimal InsuranceFee { get; set; }
 
         /// <summary>
         /// 获取或设置配送距离（单位：米）。

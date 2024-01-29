@@ -94,9 +94,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置是否停止群发转载。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("send_ignore_reprint")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("send_ignore_reprint")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool? IsIgnoreReprint { get; set; }
 
         /// <summary>

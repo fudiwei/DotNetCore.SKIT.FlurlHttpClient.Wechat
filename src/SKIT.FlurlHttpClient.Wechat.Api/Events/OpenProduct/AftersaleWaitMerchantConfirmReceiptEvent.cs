@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.aftersale_wait_merchant_confirm_receipt 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/aftersale/aftersale_wait_merchant_confirm_receipt.html </para>
     /// </summary>
-    public class AftersaleWaitMerchantConfirmReceiptEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class AftersaleWaitMerchantConfirmReceiptEvent : WechatApiEvent
     {
         public static class Types
         {

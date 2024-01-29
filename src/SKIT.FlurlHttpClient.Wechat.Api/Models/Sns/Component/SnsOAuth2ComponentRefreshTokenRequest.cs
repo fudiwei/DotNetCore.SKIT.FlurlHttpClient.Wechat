@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /sns/oauth2/component/refresh_token 接口的请求。</para>
     /// </summary>
-    public class SnsOAuth2ComponentRefreshTokenRequest : SnsOAuth2RefreshTokenRequest
+    public class SnsOAuth2ComponentRefreshTokenRequest : SnsOAuth2RefreshTokenRequest, IInferable<SnsOAuth2ComponentRefreshTokenRequest, SnsOAuth2ComponentRefreshTokenResponse>
     {
         /// <summary>
         /// 获取或设置微信 AppId。

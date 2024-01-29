@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.channels_ec_vip_grade_info_update 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/vip/callback/member/usergrade_update.html </para>
     /// </summary>
-    public class ChannelsECVipGradeInfoUpgradeEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECVipGradeInfoUpgradeEvent : WechatApiEvent
     {
         public static class Types
         {

@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -14,16 +14,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Controllers
     {
         private readonly ILogger _logger;
         private readonly Services.Repositories.IWechatAccessTokenEntityRepository _wechatAccessTokenEntityRepository;
-        private readonly Services.HttpClients.IWechatApiHttpClientFactory _wechatApiHttpClientFactory;
+        private readonly Services.HttpClients.IWechatApiClientFactory _wechatApiClientFactory;
 
         public WechatUserController(
             ILoggerFactory loggerFactory,
             Services.Repositories.IWechatAccessTokenEntityRepository wechatAccessTokenEntityRepository,
-            Services.HttpClients.IWechatApiHttpClientFactory wechatApiHttpClientFactory)
+            Services.HttpClients.IWechatApiClientFactory wechatApiClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
             _wechatAccessTokenEntityRepository = wechatAccessTokenEntityRepository;
-            _wechatApiHttpClientFactory = wechatApiHttpClientFactory;
+            _wechatApiClientFactory = wechatApiClientFactory;
         }
 
         [HttpGet]
@@ -33,14 +33,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Controllers
             [FromQuery(Name = "open_id")] string openId)
         {
             var entity = _wechatAccessTokenEntityRepository.FirstOrDefault(e => e.AppId == appId);
-            var client = _wechatApiHttpClientFactory.Create(appId);
+            var client = _wechatApiClientFactory.Create(appId);
             var request = new CgibinUserInfoRequest() { AccessToken = entity?.AccessToken, OpenId = openId };
             var response = await client.ExecuteCgibinUserInfoAsync(request, cancellationToken: HttpContext.RequestAborted);
             if (!response.IsSuccessful())
             {
                 _logger.LogWarning(
                     "获取用户基本信息失败（状态码：{0}，错误代码：{1}，错误描述：{2}）。",
-                    response.RawStatus, response.ErrorCode, response.ErrorMessage
+                    response.GetRawStatus(), response.ErrorCode, response.ErrorMessage
                 );
             }
 

@@ -41,7 +41,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
                 public string ServiceId { get; set; } = default!;
 
                 /// <summary>

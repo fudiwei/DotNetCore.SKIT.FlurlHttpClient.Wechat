@@ -5,7 +5,7 @@
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Create_a_Coupon_Voucher_or_Card.html#13 </para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons_Vouchers_and_Cards_Event_Push_Messages.html#6 </para>
     /// </summary>
-    public class UserPayFromPayCellEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class UserPayFromPayCellEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

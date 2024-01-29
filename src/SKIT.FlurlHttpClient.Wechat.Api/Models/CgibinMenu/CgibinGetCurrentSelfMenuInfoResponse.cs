@@ -52,9 +52,9 @@
                                 /// 获取或设置是否显示封面。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("show_cover")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("show_cover")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                                 public bool IsShowCover { get; set; }
 
                                 /// <summary>
@@ -154,9 +154,9 @@
         /// 获取或设置菜单信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_menu_open")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("is_menu_open")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool IsMenuOpen { get; set; }
 
         /// <summary>

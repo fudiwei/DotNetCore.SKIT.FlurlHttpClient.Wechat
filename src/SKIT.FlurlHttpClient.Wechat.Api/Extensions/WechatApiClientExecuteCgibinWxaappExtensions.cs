@@ -25,10 +25,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "wxaapp", "createwxaqrcode")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "wxaapp", "createwxaqrcode")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinWxaappCreateWxaQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWxaappCreateWxaQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

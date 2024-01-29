@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/update_store 接口的请求。</para>
@@ -8,17 +8,6 @@
         public static class Types
         {
             public class Picture : WxaAddStoreRequest.Types.Picture
-            {
-            }
-        }
-
-        internal static class Converters
-        {
-            internal class RequestPropertyPictureNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Picture?>
-            {
-            }
-
-            internal class RequestPropertyPictureSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Picture?>
             {
             }
         }
@@ -41,9 +30,9 @@
         /// 获取或设置门店图片信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pic_list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyPictureNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyPictureSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.Picture Picture { get; set; } = new Types.Picture();
 
         /// <summary>

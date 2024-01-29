@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("avg_price")]
                         [System.Text.Json.Serialization.JsonPropertyName("avg_price")]
-                        public double? AveragePrice { get; set; }
+                        public decimal? AveragePrice { get; set; }
                     }
                 }
 

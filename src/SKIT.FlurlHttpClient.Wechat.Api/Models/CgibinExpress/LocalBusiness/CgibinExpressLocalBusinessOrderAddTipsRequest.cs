@@ -31,7 +31,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tips")]
         [System.Text.Json.Serialization.JsonPropertyName("tips")]
-        public double TipValue { get; set; }
+        public decimal TipValue { get; set; }
 
         /// <summary>
         /// 获取或设置备注。

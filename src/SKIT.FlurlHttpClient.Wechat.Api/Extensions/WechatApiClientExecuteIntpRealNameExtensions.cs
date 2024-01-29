@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "intp", "realname", "getauthurl")
+                .CreateFlurlRequest(request, HttpMethod.Post, "intp", "realname", "getauthurl")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.IntpRealNameGetAuthUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.IntpRealNameGetAuthUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -43,10 +43,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "intp", "realname", "checkrealnameinfo")
+                .CreateFlurlRequest(request, HttpMethod.Post, "intp", "realname", "checkrealnameinfo")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.IntpRealNameCheckRealNameInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.IntpRealNameCheckRealNameInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

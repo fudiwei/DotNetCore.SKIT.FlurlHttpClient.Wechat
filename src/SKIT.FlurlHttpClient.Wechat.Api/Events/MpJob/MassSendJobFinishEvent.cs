@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.MASSSENDJOBFINISH 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Batch_Sends_and_Originality_Checks.html#7 </para>
     /// </summary>
-    public class MassSendJobFinishEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class MassSendJobFinishEvent : WechatApiEvent
     {
         public static class Types
         {
@@ -59,7 +59,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("CanReprint")]
                         [System.Text.Json.Serialization.JsonPropertyName("CanReprint")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         [System.Xml.Serialization.XmlElement("CanReprint")]
                         public bool CanReprint { get; set; }
 
@@ -68,7 +68,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("NeedReplaceContent")]
                         [System.Text.Json.Serialization.JsonPropertyName("NeedReplaceContent")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         [System.Xml.Serialization.XmlElement("NeedReplaceContent")]
                         public bool RequireReplaceContent { get; set; }
 
@@ -77,7 +77,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("NeedShowReprintSource")]
                         [System.Text.Json.Serialization.JsonPropertyName("NeedShowReprintSource")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         [System.Xml.Serialization.XmlElement("NeedShowReprintSource")]
                         public bool RequireShowReprintSource { get; set; }
                     }

@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.product_spu_listing 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/product/callback/ProductSpuListing.html </para>
     /// </summary>
-    public class ChannelsECProductSPUListingEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECProductSPUListingEvent : WechatApiEvent
     {
         public static class Types
         {

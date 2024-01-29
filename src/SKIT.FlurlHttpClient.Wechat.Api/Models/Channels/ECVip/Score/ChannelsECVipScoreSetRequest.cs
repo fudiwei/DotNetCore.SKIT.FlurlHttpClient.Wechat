@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// 获取或设置消费积分。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("pay_value")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualNullableIntegerConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("pay_value")]
                                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
                                 public int? PayValue { get; set; }
@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// 获取或设置获得积分。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("gain_value")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualNullableIntegerConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("gain_value")]
                                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
                                 public int? GainValue { get; set; }
@@ -61,16 +61,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置是否开启。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("open_mgr")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("open_mgr")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool IsOpen { get; set; }
 
                         /// <summary>
                         /// 获取或设置抵扣比例（单位：百分数）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ratio")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualNullableIntegerConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("ratio")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
                         public int? Ratio { get; set; }
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置抵扣上限。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("limit")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualNullableIntegerConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("limit")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
                         public int? Limit { get; set; }

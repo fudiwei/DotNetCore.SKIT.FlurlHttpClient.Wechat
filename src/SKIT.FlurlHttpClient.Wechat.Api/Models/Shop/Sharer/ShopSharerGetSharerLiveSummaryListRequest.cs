@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/sharer/get_sharer_live_summary_list 接口的请求。</para>
     /// </summary>
-    public class ShopSharerGetSharerLiveSummaryListRequest : WechatApiRequest, IInferable<ShopSharerGetSharerLiveSummaryListRequest, ShopSharerGetSharerLiveOrderListResponse>
+    public class ShopSharerGetSharerLiveSummaryListRequest : WechatApiRequest, IInferable<ShopSharerGetSharerLiveSummaryListRequest, ShopSharerGetSharerLiveSummaryListResponse>
     {
         /// <summary>
         /// 获取或设置分享员 OpenId。

@@ -25,9 +25,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置打印员面单打印权限列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("tagid_list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringListWithCommaSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringListWithCommaSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("tagid_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringListWithCommaSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringListWithCommaSplitConverter))]
         public IList<string>? TagIdList { get; set; }
     }
 }

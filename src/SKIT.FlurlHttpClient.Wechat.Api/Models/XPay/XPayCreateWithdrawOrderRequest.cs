@@ -16,10 +16,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置提现金额（单位：元）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("withdraw_amount")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualDoubleConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("withdraw_amount")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
-        public double? Amount { get; set; }
+        public decimal? Amount { get; set; }
 
         protected internal override string GetRequestPath()
         {

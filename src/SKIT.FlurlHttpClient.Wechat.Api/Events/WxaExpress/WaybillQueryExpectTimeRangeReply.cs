@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示回复 EVENT.waybill_query_expect_time_range 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/delivery/single-delivery.html </para>
     /// </summary>
-    public class WaybillQueryExpectTimeRangeReply : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class WaybillQueryExpectTimeRangeReply : WechatApiEvent
     {
         public static class Types
         {

@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.ewaybill_push_path 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/ewaybill/push_path.html </para>
     /// </summary>
-    public class EWaybillPushPathEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class EWaybillPushPathEvent : WechatApiEvent
     {
         public static class Types
         {
@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ewaybill_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
                 [System.Xml.Serialization.XmlElement("ewaybill_order_id")]
                 public string EWaybillOrderId { get; set; } = default!;
 

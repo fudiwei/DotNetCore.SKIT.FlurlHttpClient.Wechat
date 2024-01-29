@@ -293,9 +293,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置是否有佣金。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("hasCommission")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("hasCommission")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool HasCommission { get; set; }
 
                         /// <summary>
@@ -409,18 +409,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// 获取或设置领取开始时间戳。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("startTime")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                                         public DateTimeOffset? StartTime { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置领取结束时间戳。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("endTime")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                                         public DateTimeOffset? EndTime { get; set; }
                                     }
 
@@ -444,18 +444,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// 获取或设置绝对生效开始时间戳。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("startTime")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("startTime")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                                         public DateTimeOffset? StartTime { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置绝对生效结束时间戳。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("endTime")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("endTime")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                                         public DateTimeOffset? EndTime { get; set; }
                                     }
                                 }
@@ -501,9 +501,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置是否有联盟优惠券。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("hasCoupon")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("hasCoupon")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool HasCoupon { get; set; }
 
                         /// <summary>

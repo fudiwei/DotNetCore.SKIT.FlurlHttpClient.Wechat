@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
                     {
                         string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
+                        if (value is null)
                             return existingValue;
 
                         IList<Types.WaybillData> list = new List<Types.WaybillData>();
@@ -187,7 +187,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                 public override void WriteJson(Newtonsoft.Json.JsonWriter writer, IList<Types.WaybillData>? value, Newtonsoft.Json.JsonSerializer serializer)
                 {
-                    if (value != null)
+                    if (value is not null)
                         writer.WriteValue("##" + string.Join("##", value.SelectMany(e => new string[] { e.Key, e.Value }).Select(e => e.Replace("#", string.Empty))) + "##");
                     else
                         writer.WriteNull();
@@ -205,7 +205,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
                     {
                         string? value = reader.GetString();
-                        if (value == null)
+                        if (value is null)
                             return null;
 
                         IList<Types.WaybillData> list = new List<Types.WaybillData>();
@@ -226,7 +226,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                 public override void Write(System.Text.Json.Utf8JsonWriter writer, IList<Types.WaybillData>? value, System.Text.Json.JsonSerializerOptions options)
                 {
-                    if (value != null)
+                    if (value is not null)
                         writer.WriteStringValue("##" + string.Join("##", value.SelectMany(e => new string[] { e.Key, e.Value }).Select(e => e.Replace("#", string.Empty))) + "##");
                     else
                         writer.WriteNullValue();

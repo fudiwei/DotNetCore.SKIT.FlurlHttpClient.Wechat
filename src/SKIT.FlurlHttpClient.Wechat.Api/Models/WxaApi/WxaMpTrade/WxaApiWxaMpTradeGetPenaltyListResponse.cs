@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// 获取或设置扣分记录 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("illegalOrderId")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualLongReadOnlyConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberReadOnlyConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("illegalOrderId")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public long AppealId { get; set; }
@@ -23,14 +23,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("orderId")]
                 [System.Text.Json.Serialization.JsonPropertyName("orderId")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
                 public string OrderId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置投诉单 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("complaintOrderId")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualLongReadOnlyConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberReadOnlyConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("complaintOrderId")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public long ComplaintOrderId { get; set; }

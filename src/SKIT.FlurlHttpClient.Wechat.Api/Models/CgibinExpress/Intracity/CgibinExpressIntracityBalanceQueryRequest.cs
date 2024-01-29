@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/intracity/balancequery 接口的请求。</para>
     /// </summary>
-    public class CgibinExpressIntracityBalanceQueryRequest : WechatApiRequest, IInferable<CgibinExpressIntracityBalanceQueryRequest, CgibinExpressIntracityStoreChargeResponse>
+    public class CgibinExpressIntracityBalanceQueryRequest : WechatApiRequest, IInferable<CgibinExpressIntracityBalanceQueryRequest, CgibinExpressIntracityBalanceQueryResponse>
     {
         /// <summary>
         /// 获取或设置微信门店编号。

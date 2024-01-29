@@ -31,7 +31,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("percentage")]
                 [System.Text.Json.Serialization.JsonPropertyName("percentage")]
-                public double Percentage { get; set; }
+                public decimal Percentage { get; set; }
             }
         }
 

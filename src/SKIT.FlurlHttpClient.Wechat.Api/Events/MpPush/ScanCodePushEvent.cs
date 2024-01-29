@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.scancode_push 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Custom_Menus/Custom_Menu_Push_Events.html#2 </para>
     /// </summary>
-    public class ScanCodePushEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ScanCodePushEvent : WechatApiEvent
     {
         public static class Types
         {

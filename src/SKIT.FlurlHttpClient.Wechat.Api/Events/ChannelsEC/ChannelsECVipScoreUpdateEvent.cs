@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.channels_ec_vip_score_update 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/vip/callback/score/user_score_update.html </para>
     /// </summary>
-    public class ChannelsECVipScoreUpdateEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECVipScoreUpdateEvent : WechatApiEvent
     {
         public static class Types
         {

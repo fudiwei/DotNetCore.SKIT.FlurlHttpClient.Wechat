@@ -1,3 +1,5 @@
+using System.Linq;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -7,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public override bool IsSuccessful()
         {
-            return base.IsSuccessful() && RawBytes?.Length > 0;
+            return base.IsSuccessful() && GetRawBytes().Any();
         }
     }
 }

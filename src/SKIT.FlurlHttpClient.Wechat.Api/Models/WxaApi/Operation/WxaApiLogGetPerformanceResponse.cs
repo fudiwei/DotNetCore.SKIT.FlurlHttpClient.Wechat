@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxaapi/log/get_performance 接口的响应。</para>
@@ -45,24 +45,13 @@
             }
         }
 
-        internal static class Converters
-        {
-            internal class ResponsePropertyDefaultTimeDataNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.DefaultTimeData?>
-            {
-            }
-
-            internal class ResponsePropertyDefaultTimeDataSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.DefaultTimeData?>
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置查询数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("default_time_data")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyDefaultTimeDataNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("default_time_data")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyDefaultTimeDataSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.DefaultTimeData? DefaultTimeData { get; set; }
 
         /// <summary>

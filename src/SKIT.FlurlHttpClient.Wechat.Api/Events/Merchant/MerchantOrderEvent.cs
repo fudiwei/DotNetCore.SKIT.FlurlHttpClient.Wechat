@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.merchant_order 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Stores/WeChat_Store_Interface.html#8 </para>
     /// </summary>
-    public class MerchantOrderEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class MerchantOrderEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置订单号。

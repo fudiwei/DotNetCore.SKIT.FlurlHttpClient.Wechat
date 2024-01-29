@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.aftersale_refund_success 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/aftersale/aftersale_refund_success.html </para>
     /// </summary>
-    public class AftersaleRefundSuccessEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class AftersaleRefundSuccessEvent : WechatApiEvent
     {
         public static class Types
         {

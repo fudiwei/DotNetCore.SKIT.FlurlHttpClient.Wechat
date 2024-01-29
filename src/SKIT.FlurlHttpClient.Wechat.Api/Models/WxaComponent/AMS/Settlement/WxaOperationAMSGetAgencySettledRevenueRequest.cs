@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/operationams?action=get_agency_settled_revenue 接口的请求。</para>
     /// </summary>
-    public class WxaOperationAMSGetAgencySettledRevenueRequest : WechatApiRequest, IInferable<WxaOperationAMSGetAgencySettledRevenueRequest, WxaOperationAMSAgencyGetSettlementResponse>
+    public class WxaOperationAMSGetAgencySettledRevenueRequest : WechatApiRequest, IInferable<WxaOperationAMSGetAgencySettledRevenueRequest, WxaOperationAMSGetAgencySettledRevenueResponse>
     {
         /// <summary>
         /// 获取或设置分页页数。

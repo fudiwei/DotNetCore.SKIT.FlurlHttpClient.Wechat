@@ -167,28 +167,28 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("min_price")]
                         [System.Text.Json.Serialization.JsonPropertyName("min_price")]
-                        public double MinPrice { get; set; }
+                        public decimal MinPrice { get; set; }
 
                         /// <summary>
                         /// 获取或设置现价最高价（单位：元）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("max_price")]
                         [System.Text.Json.Serialization.JsonPropertyName("max_price")]
-                        public double MaxPrice { get; set; }
+                        public decimal MaxPrice { get; set; }
 
                         /// <summary>
                         /// 获取或设置原价最低价（单位：元）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("min_ori_price")]
                         [System.Text.Json.Serialization.JsonPropertyName("min_ori_price")]
-                        public double? MinOriginalPrice { get; set; }
+                        public decimal? MinOriginalPrice { get; set; }
 
                         /// <summary>
                         /// 获取或设置原价最高价（单位：元）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("max_ori_price")]
                         [System.Text.Json.Serialization.JsonPropertyName("max_ori_price")]
-                        public double? MaxOriginalPrice { get; set; }
+                        public decimal? MaxOriginalPrice { get; set; }
                     }
 
                     public class Sale

@@ -9,27 +9,27 @@
         /// 获取或设置目前生效的全网发布版第三方平台小程序服务器域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("published_wxa_server_domain")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringArrayWithSemicolonSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringArrayWithSemicolonSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("published_wxa_server_domain")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringArrayWithSemicolonSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringArrayWithSemicolonSplitConverter))]
         public string[]? PublishedWxaServerDomainList { get; set; }
 
         /// <summary>
         /// 获取或设置目前生效的测试版第三方平台小程序服务器域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("testing_wxa_server_domain")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringArrayWithSemicolonSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringArrayWithSemicolonSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("testing_wxa_server_domain")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringArrayWithSemicolonSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringArrayWithSemicolonSplitConverter))]
         public string[]? TestingWxaServerDomainList { get; set; }
 
         /// <summary>
         /// 获取或设置未通过验证的第三方平台小程序服务器域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalid_wxa_server_domain")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringArrayWithSemicolonSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringArrayWithSemicolonSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("invalid_wxa_server_domain")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringArrayWithSemicolonSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringArrayWithSemicolonSplitConverter))]
         public string[]? InvalidWxaServerDomainList { get; set; }
     }
 }

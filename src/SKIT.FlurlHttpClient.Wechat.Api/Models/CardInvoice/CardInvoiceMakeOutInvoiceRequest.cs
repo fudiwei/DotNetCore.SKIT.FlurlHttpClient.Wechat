@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("xmdj")]
                         [System.Text.Json.Serialization.JsonPropertyName("xmdj")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public double Price { get; set; }
+                        public decimal Price { get; set; }
 
                         /// <summary>
                         /// 获取或设置项目金额（单位：元）。
@@ -73,7 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("xmje")]
                         [System.Text.Json.Serialization.JsonPropertyName("xmje")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public double Amount { get; set; }
+                        public decimal Amount { get; set; }
 
                         /// <summary>
                         /// 获取或设置税率。
@@ -81,7 +81,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("sl")]
                         [System.Text.Json.Serialization.JsonPropertyName("sl")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public double TaxRate { get; set; }
+                        public decimal TaxRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置税额（单位：元）。
@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("se")]
                         [System.Text.Json.Serialization.JsonPropertyName("se")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public double Tax { get; set; }
+                        public decimal Tax { get; set; }
                     }
                 }
 
@@ -225,7 +225,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("jshj")]
                 [System.Text.Json.Serialization.JsonPropertyName("jshj")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public double Fee { get; set; }
+                public decimal Fee { get; set; }
 
                 /// <summary>
                 /// 获取或设置合计金额（单位：元）。
@@ -233,7 +233,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("hjje")]
                 [System.Text.Json.Serialization.JsonPropertyName("hjje")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public double FeeWithoutTax { get; set; }
+                public decimal FeeWithoutTax { get; set; }
 
                 /// <summary>
                 /// 获取或设置合计税额（单位：元）。
@@ -241,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("hjse")]
                 [System.Text.Json.Serialization.JsonPropertyName("hjse")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public double Tax { get; set; }
+                public decimal Tax { get; set; }
 
                 /// <summary>
                 /// 获取或设置备注。

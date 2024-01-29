@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("exposure_rate")]
                 [System.Text.Json.Serialization.JsonPropertyName("exposure_rate")]
-                public double ExposureRate { get; set; }
+                public decimal ExposureRate { get; set; }
 
                 /// <summary>
                 /// 获取或设置点击量。
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("click_rate")]
                 [System.Text.Json.Serialization.JsonPropertyName("click_rate")]
-                public double ClickRate { get; set; }
+                public decimal ClickRate { get; set; }
 
                 /// <summary>
                 /// 获取或设置收入（单位：分）。
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ecpm")]
                 [System.Text.Json.Serialization.JsonPropertyName("ecpm")]
-                public double ECPM { get; set; }
+                public decimal ECPM { get; set; }
             }
 
             public class Data : Summary
@@ -118,7 +118,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         public override bool IsSuccessful()
         {
-            return base.IsSuccessful() && BaseResponse != null && BaseResponse.ErrorCode == 0;
+            return base.IsSuccessful() && BaseResponse is not null && BaseResponse.ErrorCode == 0;
         }
     }
 }

@@ -55,7 +55,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("metric_value")]
                 [System.Text.Json.Serialization.JsonPropertyName("metric_value")]
-                public double MetricValue { get; set; } = default!;
+                public decimal MetricValue { get; set; } = default!;
             }
         }
 

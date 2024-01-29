@@ -5,7 +5,7 @@
     /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Login/authorization_change.html </para>
     /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Login/authorization_change.html </para>
     /// </summary>
-    public class UserInfoModifiedEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class UserInfoModifiedEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置微信 AppId。

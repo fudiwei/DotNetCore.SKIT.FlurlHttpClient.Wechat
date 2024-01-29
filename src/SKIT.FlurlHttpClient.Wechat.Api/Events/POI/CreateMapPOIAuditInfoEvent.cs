@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.create_map_poi_audit_info 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Stores/WeChat_Shop_Miniprogram_Interface.html#11 </para>
     /// </summary>
-    public class CreateMapPOIAuditInfoEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class CreateMapPOIAuditInfoEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置审核单 ID。
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("longitude")]
         [System.Text.Json.Serialization.JsonPropertyName("longitude")]
         [System.Xml.Serialization.XmlElement("longitude")]
-        public double Longitude { get; set; }
+        public decimal Longitude { get; set; }
 
         /// <summary>
         /// 获取或设置门店位置纬度。
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("latitude")]
         [System.Text.Json.Serialization.JsonPropertyName("latitude")]
         [System.Xml.Serialization.XmlElement("latitude")]
-        public double Latitude { get; set; }
+        public decimal Latitude { get; set; }
 
         /// <summary>
         /// 获取或设置备注。

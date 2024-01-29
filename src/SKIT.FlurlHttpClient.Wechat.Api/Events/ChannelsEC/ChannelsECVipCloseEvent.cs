@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.channels_ec_vip_close 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/vip/callback/member/user_join_vip.html </para>
     /// </summary>
-    public class ChannelsECVipCloseEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECVipCloseEvent : WechatApiEvent
     {
         public static class Types
         {

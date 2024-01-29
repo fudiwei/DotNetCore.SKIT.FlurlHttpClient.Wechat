@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Settings
 
         internal Credentials(WechatApiClientOptions options)
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (options is null) throw new ArgumentNullException(nameof(options));
 
             AppId = options.AppId;
             AppSecret = options.AppSecret;

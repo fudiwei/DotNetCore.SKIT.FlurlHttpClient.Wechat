@@ -24,10 +24,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "promotion", "add")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "promotion", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterPromotionAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterPromotionAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -44,10 +44,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "promotion", "del")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "promotion", "del")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterPromotionDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterPromotionDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -64,10 +64,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "promotion", "upd")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "promotion", "upd")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterPromotionUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterPromotionUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -84,12 +84,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "promotion", "list")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "promotion", "list")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("start", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterPromotionListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterPromotionListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -109,10 +109,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "product", "category")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "product", "category")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterProductCategoryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterProductCategoryResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -130,51 +130,51 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "product", "list")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "product", "list")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("from", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            if (request.QueryType != null)
+            if (request.QueryType is not null)
                 flurlReq.SetQueryParam("queryType", request.QueryType.Value);
 
-            if (request.Query != null)
+            if (request.Query is not null)
                 flurlReq.SetQueryParam("query", request.Query);
 
-            if (request.MaxPrice != null)
+            if (request.MaxPrice is not null)
                 flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
 
-            if (request.MinPrice != null)
+            if (request.MinPrice is not null)
                 flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
 
-            if (request.MinCommissionValue != null)
+            if (request.MinCommissionValue is not null)
                 flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
 
-            if (request.MinCommissionRatio != null)
+            if (request.MinCommissionRatio is not null)
                 flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
 
-            if (request.SortType != null)
+            if (request.SortType is not null)
                 flurlReq.SetQueryParam("sortType", request.SortType.Value);
 
-            if (request.HasCoupon != null)
+            if (request.HasCoupon is not null)
                 flurlReq.SetQueryParam("hasCoupon", request.HasCoupon.Value ? 1 : 0);
 
-            if (request.ShopAppIdList != null)
+            if (request.ShopAppIdList is not null)
                 flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
 
-            if (request.CategoryId != null)
+            if (request.CategoryId is not null)
                 flurlReq.SetQueryParam("categoryId", request.CategoryId);
 
-            if (request.CategoryIdList != null)
+            if (request.CategoryIdList is not null)
                 flurlReq.SetQueryParam("category", string.Join(",", request.CategoryIdList));
 
-            if (request.CategoryIdBlackList != null)
+            if (request.CategoryIdBlackList is not null)
                 flurlReq.SetQueryParam("noCategory", string.Join(",", request.CategoryIdBlackList));
 
-            if (request.ProductIdList != null)
+            if (request.ProductIdList is not null)
                 flurlReq.SetQueryParam("productId", string.Join(",", request.ProductIdList));
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterProductListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterProductListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -191,51 +191,51 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "product", "select")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "product", "select")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("from", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            if (request.MaxPrice != null)
+            if (request.MaxPrice is not null)
                 flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
 
-            if (request.MinPrice != null)
+            if (request.MinPrice is not null)
                 flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
 
-            if (request.MinCommissionValue != null)
+            if (request.MinCommissionValue is not null)
                 flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
 
-            if (request.MinCommissionRatio != null)
+            if (request.MinCommissionRatio is not null)
                 flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
 
-            if (request.SortType != null)
+            if (request.SortType is not null)
                 flurlReq.SetQueryParam("sortType", request.SortType.Value);
 
-            if (request.HasCoupon != null)
+            if (request.HasCoupon is not null)
                 flurlReq.SetQueryParam("hasCoupon", request.HasCoupon.Value ? 1 : 0);
 
-            if (request.ShopAppIdList != null)
+            if (request.ShopAppIdList is not null)
                 flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
 
-            if (request.CategoryId != null)
+            if (request.CategoryId is not null)
                 flurlReq.SetQueryParam("categoryId", request.CategoryId);
 
-            if (request.CategoryIdList != null)
+            if (request.CategoryIdList is not null)
                 flurlReq.SetQueryParam("category", string.Join(",", request.CategoryIdList));
 
-            if (request.CategoryIdBlackList != null)
+            if (request.CategoryIdBlackList is not null)
                 flurlReq.SetQueryParam("noCategory", string.Join(",", request.CategoryIdBlackList));
 
-            if (request.ProductIdList != null)
+            if (request.ProductIdList is not null)
                 flurlReq.SetQueryParam("productId", string.Join(",", request.ProductIdList));
 
-            if (request.ShippingMethods != null)
+            if (request.ShippingMethods is not null)
                 flurlReq.SetQueryParam("shippingMethods", client.JsonSerializer.Serialize(request.ShippingMethods));
 
-            if (request.AddressList != null)
+            if (request.AddressList is not null)
                 flurlReq.SetQueryParam("addressList", client.JsonSerializer.Serialize(request.AddressList));
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterProductSelectResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterProductSelectResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -253,10 +253,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "product", "generate")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "product", "generate")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterProductGenerateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterProductGenerateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -273,10 +273,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "product", "parse_tag")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "product", "parse_tag")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterProductParseTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterProductParseTagResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -295,10 +295,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "open_account", "bind")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "open_account", "bind")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenAccountBindResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOpenAccountBindResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -315,10 +315,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "open_account", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "open_account", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenAccountGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOpenAccountGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -335,10 +335,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "open_account", "add_customize_info")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "open_account", "add_customize_info")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenAccountAddCustomizeInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOpenAccountAddCustomizeInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -355,10 +355,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "open_account", "del_customize_info")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "open_account", "del_customize_info")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenAccountDeleteCustomizeInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOpenAccountDeleteCustomizeInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -375,11 +375,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "open_account", "get_customize_info")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "open_account", "get_customize_info")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("unionid", request.UnionId);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenAccountGetCustomizeInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOpenAccountGetCustomizeInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -398,48 +398,48 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "open_product", "list")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "open_product", "list")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("from", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            if (request.QueryType != null)
+            if (request.QueryType is not null)
                 flurlReq.SetQueryParam("queryType", request.QueryType.Value);
 
-            if (request.Query != null)
+            if (request.Query is not null)
                 flurlReq.SetQueryParam("query", request.Query);
 
-            if (request.MaxPrice != null)
+            if (request.MaxPrice is not null)
                 flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
 
-            if (request.MinPrice != null)
+            if (request.MinPrice is not null)
                 flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
 
-            if (request.MinCommissionValue != null)
+            if (request.MinCommissionValue is not null)
                 flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
 
-            if (request.MinCommissionRatio != null)
+            if (request.MinCommissionRatio is not null)
                 flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
 
-            if (request.SortType != null)
+            if (request.SortType is not null)
                 flurlReq.SetQueryParam("sortType", request.SortType.Value);
 
-            if (request.ShopAppIdList != null)
+            if (request.ShopAppIdList is not null)
                 flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
 
-            if (request.CategoryId != null)
+            if (request.CategoryId is not null)
                 flurlReq.SetQueryParam("categoryId", request.CategoryId);
 
-            if (request.CategoryIdList != null)
+            if (request.CategoryIdList is not null)
                 flurlReq.SetQueryParam("category", string.Join(",", request.CategoryIdList));
 
-            if (request.CategoryIdBlackList != null)
+            if (request.CategoryIdBlackList is not null)
                 flurlReq.SetQueryParam("noCategory", string.Join(",", request.CategoryIdBlackList));
 
-            if (request.ProductIdList != null)
+            if (request.ProductIdList is not null)
                 flurlReq.SetQueryParam("productId", string.Join(",", request.ProductIdList));
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenProductListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOpenProductListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -456,10 +456,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "open_product", "generate")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "open_product", "generate")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOpenProductGenerateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOpenProductGenerateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -478,10 +478,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "order", "info")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "order", "info")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOrderInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOrderInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -498,20 +498,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "order", "search")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "order", "search")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("page", request.Page);
 
-            if (request.StartTimestamp != null)
+            if (request.StartTimestamp is not null)
                 flurlReq.SetQueryParam("startTimestamp", request.StartTimestamp.Value);
 
-            if (request.EndTimestamp != null)
+            if (request.EndTimestamp is not null)
                 flurlReq.SetQueryParam("endTimestamp", request.EndTimestamp.Value);
 
-            if (request.CommissionStatus != null)
+            if (request.CommissionStatus is not null)
                 flurlReq.SetQueryParam("commissionStatus", request.CommissionStatus);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOrderSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOrderSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -528,51 +528,51 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "order", "search_normal_order")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "order", "search_normal_order")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            if (request.Query != null)
+            if (request.Query is not null)
                 flurlReq.SetQueryParam("query", request.Query);
 
-            if (request.OrderId != null)
+            if (request.OrderId is not null)
                 flurlReq.SetQueryParam("orderId", request.OrderId.Value);
 
-            if (request.OutOrderId != null)
+            if (request.OutOrderId is not null)
                 flurlReq.SetQueryParam("outOrderId", request.OutOrderId);
 
-            if (request.OutOrderIdList != null)
+            if (request.OutOrderIdList is not null)
                 flurlReq.SetQueryParam("outOrderIdList", string.Join(",", request.OutOrderId));
 
-            if (request.TransactionId != null)
+            if (request.TransactionId is not null)
                 flurlReq.SetQueryParam("tradeNo", request.TransactionId);
 
-            if (request.TransactionIdList != null)
+            if (request.TransactionIdList is not null)
                 flurlReq.SetQueryParam("transactionIdList", string.Join(",", request.TransactionIdList));
 
-            if (request.StartPayTimestamp != null)
+            if (request.StartPayTimestamp is not null)
                 flurlReq.SetQueryParam("startPayTime", request.StartPayTimestamp.Value);
 
-            if (request.EndPayTimestamp != null)
+            if (request.EndPayTimestamp is not null)
                 flurlReq.SetQueryParam("endPayTime", request.EndPayTimestamp.Value);
 
-            if (request.CommissionStatus != null)
+            if (request.CommissionStatus is not null)
                 flurlReq.SetQueryParam("commissionStatus", request.CommissionStatus);
 
-            if (request.StartStatusUpdateTimestamp != null)
+            if (request.StartStatusUpdateTimestamp is not null)
                 flurlReq.SetQueryParam("startStatusUpdateTime", request.StartStatusUpdateTimestamp.Value);
 
-            if (request.EndStatusUpdateTimestamp != null)
+            if (request.EndStatusUpdateTimestamp is not null)
                 flurlReq.SetQueryParam("endStatusUpdateTime", request.EndStatusUpdateTimestamp.Value);
 
-            if (request.SortBy != null)
+            if (request.SortBy is not null)
                 flurlReq.SetQueryParam("sortBy", request.SortBy);
 
-            if (request.SortOrder != null)
+            if (request.SortOrder is not null)
                 flurlReq.SetQueryParam("sortOrder", request.SortOrder);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterOrderSearchNormalOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOrderSearchNormalOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -591,11 +591,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "target", "plan_info")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "target", "plan_info")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("planInvitationUrl", request.PlanInvitaionUrl);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterTargetPlanInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterTargetPlanInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -612,10 +612,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "union", "promoter", "target", "apply_target")
+                .CreateFlurlRequest(request, HttpMethod.Post, "union", "promoter", "target", "apply_target")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterTargetApplyTargetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterTargetApplyTargetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -632,11 +632,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "union", "promoter", "target", "apply_status")
+                .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "target", "apply_status")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("planId", request.PlanId);
 
-            return await client.SendRequestWithJsonAsync<Models.UnionPromoterTargetApplyStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterTargetApplyStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

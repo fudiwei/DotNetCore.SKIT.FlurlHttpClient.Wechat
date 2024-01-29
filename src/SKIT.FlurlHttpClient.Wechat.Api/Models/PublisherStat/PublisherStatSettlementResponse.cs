@@ -162,7 +162,7 @@
 
         public override bool IsSuccessful()
         {
-            return base.IsSuccessful() && BaseResponse != null && BaseResponse.ErrorCode == 0;
+            return base.IsSuccessful() && BaseResponse is not null && BaseResponse.ErrorCode == 0;
         }
     }
 }

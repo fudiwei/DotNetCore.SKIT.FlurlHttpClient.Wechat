@@ -27,17 +27,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             }
         }
 
-        internal static class Converters
-        {
-            internal class RequestPropertyBlackListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<Types.Advertiser>?>
-            {
-            }
-
-            internal class RequestPropertyBlackListSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<Types.Advertiser>?>
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置操作类型。
         /// </summary>
@@ -49,9 +38,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置屏蔽的广告主列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyBlackListNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyBlackListSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public IList<Types.Advertiser> BlackList { get; set; } = new List<Types.Advertiser>();
     }
 }

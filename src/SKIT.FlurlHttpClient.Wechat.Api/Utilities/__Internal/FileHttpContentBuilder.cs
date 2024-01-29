@@ -14,9 +14,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 
         public static MultipartFormDataContent Build(string fileName, byte[] fileBytes, string fileContentType, string formDataName, Action<HttpContent> configureFileHttpContent)
         {
-            if (fileName == null) throw new ArgumentNullException(nameof(fileName));
-            if (formDataName == null) throw new ArgumentNullException(nameof(formDataName));
-            if (configureFileHttpContent == null) throw new ArgumentNullException(nameof(configureFileHttpContent));
+            if (fileName is null) throw new ArgumentNullException(nameof(fileName));
+            if (formDataName is null) throw new ArgumentNullException(nameof(formDataName));
+            if (configureFileHttpContent is null) throw new ArgumentNullException(nameof(configureFileHttpContent));
 
             fileName = fileName.Replace("\"", string.Empty);
             fileBytes = fileBytes ?? Array.Empty<byte>();

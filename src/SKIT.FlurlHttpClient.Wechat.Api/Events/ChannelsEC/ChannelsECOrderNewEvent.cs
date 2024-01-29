@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.channels_ec_order_new 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/order/callback/channels_ec_order_new.html </para>
     /// </summary>
-    public class ChannelsECOrderNewEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECOrderNewEvent : WechatApiEvent
     {
         public static class Types
         {

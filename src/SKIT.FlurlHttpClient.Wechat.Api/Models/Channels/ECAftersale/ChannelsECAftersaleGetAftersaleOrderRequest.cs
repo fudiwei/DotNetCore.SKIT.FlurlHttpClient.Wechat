@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/aftersale/getaftersaleorder 接口的请求。</para>
     /// </summary>
-    public class ChannelsECAftersaleGetAftersaleOrderRequest : WechatApiRequest, IInferable<ChannelsECAftersaleGetAftersaleOrderRequest, ChannelsECOrderListGetResponse>
+    public class ChannelsECAftersaleGetAftersaleOrderRequest : WechatApiRequest, IInferable<ChannelsECAftersaleGetAftersaleOrderRequest, ChannelsECAftersaleGetAftersaleOrderResponse>
     {
         /// <summary>
         /// 获取或设置售后单 ID。

@@ -1,20 +1,16 @@
 using System;
 using System.Linq;
-using System.Net.Http;
 using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.HttpClients.Implements
 {
-    internal partial class WechatApiHttpClientFactory : IWechatApiHttpClientFactory
+    internal partial class WechatApiClientFactory : IWechatApiClientFactory
     {
-        private readonly IHttpClientFactory _httpClientFactory;
         private readonly Options.WechatOptions _wechatOptions;
 
-        public WechatApiHttpClientFactory(
-            IHttpClientFactory httpClientFactory,
+        public WechatApiClientFactory(
             IOptions<Options.WechatOptions> wechatOptions)
         {
-            _httpClientFactory = httpClientFactory;
             _wechatOptions = wechatOptions.Value;
         }
 
@@ -36,26 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.HttpClients.Implements
                 PushToken = _wechatOptions.CallbackToken
             };
             var wechatApiClient = new WechatApiClient(wechatApiClientOptions);
-            wechatApiClient.Configure((settings) => settings.FlurlHttpClientFactory = new DelegatingFlurlClientFactory(_httpClientFactory));
             return wechatApiClient;
-        }
-    }
-
-    internal partial class WechatApiHttpClientFactory
-    {
-        internal class DelegatingFlurlClientFactory : Flurl.Http.Configuration.DefaultHttpClientFactory
-        {
-            private readonly IHttpClientFactory _httpClientFactory;
-
-            public DelegatingFlurlClientFactory(IHttpClientFactory httpClientFactory)
-            {
-                _httpClientFactory = httpClientFactory ?? throw new ArgumentNullException(nameof(httpClientFactory));
-            }
-
-            public override HttpClient CreateHttpClient(HttpMessageHandler handler)
-            {
-                return _httpClientFactory.CreateClient();
-            }
         }
     }
 }

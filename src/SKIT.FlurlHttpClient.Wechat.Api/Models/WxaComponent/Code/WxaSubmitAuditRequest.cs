@@ -119,9 +119,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// 获取或设置是否有审核团队。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("has_audit_team")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("has_audit_team")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? HasAuditTeam { get; set; }
 
                 /// <summary>
@@ -165,9 +165,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置反馈附件 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("feedback_stuff")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringListWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("feedback_stuff")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringListWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringListWithPipeSplitConverter))]
         public IList<string>? FeedbackStuffMediaIdList { get; set; }
 
         /// <summary>

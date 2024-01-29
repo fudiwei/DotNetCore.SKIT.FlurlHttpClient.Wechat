@@ -218,9 +218,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置更新后是否立即上架。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("listing")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("listing")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool? RequireListing { get; set; }
 
         /// <summary>

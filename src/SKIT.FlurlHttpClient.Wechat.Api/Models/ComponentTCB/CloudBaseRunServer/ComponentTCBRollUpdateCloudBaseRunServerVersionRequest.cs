@@ -92,14 +92,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cpu")]
         [System.Text.Json.Serialization.JsonPropertyName("cpu")]
-        public double? CPUSize { get; set; }
+        public decimal? CPUSize { get; set; }
 
         /// <summary>
         /// 获取或设置内存大小（单位：GB）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mem")]
         [System.Text.Json.Serialization.JsonPropertyName("mem")]
-        public double? MemorySize { get; set; }
+        public decimal? MemorySize { get; set; }
 
         /// <summary>
         /// 获取或设置最小副本数。
@@ -127,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("policy_threshold")]
         [System.Text.Json.Serialization.JsonPropertyName("policy_threshold")]
-        public double? PolicyThreshold { get; set; }
+        public decimal? PolicyThreshold { get; set; }
 
         /// <summary>
         /// 获取或设置服务端口。

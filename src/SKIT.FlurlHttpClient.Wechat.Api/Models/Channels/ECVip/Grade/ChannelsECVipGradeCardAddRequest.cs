@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置经验值门槛。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("experience_value_threshold")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualIntegerConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("experience_value_threshold")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
         public int ExperienceValueThreshold { get; set; }
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置经验值倍数（×10）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("experience_value_multiple")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualIntegerConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("experience_value_multiple")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
         public int ExperienceValueMultiple { get; set; }

@@ -53,14 +53,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("longitude")]
                         [System.Text.Json.Serialization.JsonPropertyName("longitude")]
-                        public double Longitude { get; set; }
+                        public decimal Longitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置门店位置纬度。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("latitude")]
                         [System.Text.Json.Serialization.JsonPropertyName("latitude")]
-                        public double Latitude { get; set; }
+                        public decimal Latitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置门店图片 URL 列表。

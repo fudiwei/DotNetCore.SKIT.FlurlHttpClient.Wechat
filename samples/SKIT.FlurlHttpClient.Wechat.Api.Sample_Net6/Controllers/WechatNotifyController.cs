@@ -13,14 +13,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Controllers
     public class WechatNotifyController : ControllerBase
     {
         private readonly ILogger _logger;
-        private readonly Services.HttpClients.IWechatApiHttpClientFactory _wechatApiHttpClientFactory;
+        private readonly Services.HttpClients.IWechatApiClientFactory _wechatApiClientFactory;
 
         public WechatNotifyController(
             ILoggerFactory loggerFactory,
-            Services.HttpClients.IWechatApiHttpClientFactory wechatApiHttpClientFactory)
+            Services.HttpClients.IWechatApiClientFactory wechatApiClientFactory)
         {
             _logger = loggerFactory.CreateLogger(GetType());
-            _wechatApiHttpClientFactory = wechatApiHttpClientFactory;
+            _wechatApiClientFactory = wechatApiClientFactory;
         }
 
         [HttpGet]
@@ -35,8 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Controllers
             // 验证服务器推送
             // 文档：https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html
 
-            var client = _wechatApiHttpClientFactory.Create(appId);
-            bool valid = client.VerifyEventSignatureForEcho(callbackTimestamp: timestamp, callbackNonce: nonce, callbackSignature: signature);
+            var client = _wechatApiClientFactory.Create(appId);
+            bool valid = client.VerifyEventSignatureForEcho(webhookTimestamp: timestamp, webhookNonce: nonce, webhookSignature: signature);
             if (!valid)
             {
                 return Content("fail");
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Controllers
             string content = await reader.ReadToEndAsync();
             _logger.LogInformation("接收到微信推送的数据：{0}", content);
 
-            var client = _wechatApiHttpClientFactory.Create(appId);
+            var client = _wechatApiClientFactory.Create(appId);
             var msgType = client.DeserializeEventFromXml(content).MessageType?.ToUpper();
             switch (msgType)
             {
