@@ -39,8 +39,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>加密后的数据字节数组。</returns>
         public static byte[] EncryptWithCBC(byte[] keyBytes, byte[] ivBytes, byte[] plainBytes, string paddingMode = SM4_CIPHER_PADDING_PKCS7PADDING)
         {
-            if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
-            if (plainBytes == null) throw new ArgumentNullException(nameof(plainBytes));
+            if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
+            if (plainBytes is null) throw new ArgumentNullException(nameof(plainBytes));
 
             KeyParameter sm4KeyParams = ParameterUtilities.CreateKeyParameter(SM4_ALGORITHM_NAME, keyBytes);
             ParametersWithIV sm4keyParamsWithIv = new ParametersWithIV(sm4KeyParams, ivBytes);
@@ -57,8 +57,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>经 Base64 编码的加密数据。</returns>
         public static string EncryptWithCBC(string key, string iv, string plainText, string paddingMode = SM4_CIPHER_PADDING_PKCS7PADDING)
         {
-            if (key == null) throw new ArgumentNullException(nameof(key));
-            if (plainText == null) throw new ArgumentNullException(nameof(plainText));
+            if (key is null) throw new ArgumentNullException(nameof(key));
+            if (plainText is null) throw new ArgumentNullException(nameof(plainText));
 
             byte[] keyBytes = Convert.FromBase64String(key);
             byte[] ivBytes = Convert.FromBase64String(iv);
@@ -77,8 +77,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>解密后的数据字节数组。</returns>
         public static byte[] DecryptWithCBC(byte[] keyBytes, byte[] ivBytes, byte[] cipherBytes, string paddingMode = SM4_CIPHER_PADDING_PKCS7PADDING)
         {
-            if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
-            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
+            if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
+            if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
 
             KeyParameter sm4KeyParams = ParameterUtilities.CreateKeyParameter(SM4_ALGORITHM_NAME, keyBytes);
             ParametersWithIV sm4keyParamsWithIv = new ParametersWithIV(sm4KeyParams, ivBytes);
@@ -95,8 +95,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>解密后的文本数据。</returns>
         public static string DecryptWithCBC(string key, string iv, string cipherText, string paddingMode = SM4_CIPHER_PADDING_PKCS7PADDING)
         {
-            if (key == null) throw new ArgumentNullException(nameof(key));
-            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
+            if (key is null) throw new ArgumentNullException(nameof(key));
+            if (cipherText is null) throw new ArgumentNullException(nameof(cipherText));
 
             byte[] keyBytes = Convert.FromBase64String(key);
             byte[] ivBytes = Convert.FromBase64String(iv);

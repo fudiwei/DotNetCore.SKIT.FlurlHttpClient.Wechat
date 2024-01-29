@@ -21,13 +21,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.EnterpriseId == null)
+            if (request.EnterpriseId is null)
                 request.EnterpriseId = client.Credentials.EnterpriseId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mse-pay", "profit-allocations");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "profit-allocations");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateProfitAllocationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateProfitAllocationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -43,13 +43,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.EnterpriseId == null)
+            if (request.EnterpriseId is null)
                 request.EnterpriseId = client.Credentials.EnterpriseId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mse-pay", "profit-allocations", "finish");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "profit-allocations", "finish");
 
-            return await client.SendRequestWithJsonAsync<Models.SetProfitAllocationFinishedResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SetProfitAllocationFinishedResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -66,9 +66,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.AllocationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.AllocationId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetProfitAllocationByAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationByAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -85,9 +85,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "out-allocation-id", request.OutAllocationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "out-allocation-id", request.OutAllocationId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetProfitAllocationByOutAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationByOutAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -104,9 +104,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.PaymentId, "amounts");
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.PaymentId, "amounts");
 
-            return await client.SendRequestWithJsonAsync<Models.GetProfitAllocationAmountByPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationAmountByPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region ReceiverAccount
@@ -123,18 +123,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.EnterpriseId == null)
+            if (request.EnterpriseId is null)
                 request.EnterpriseId = client.Credentials.EnterpriseId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts")
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts")
                 .SetQueryParam("ent_id", request.EnterpriseId);
 
-            if (request.UnifiedSocialCreditCode != null)
+            if (request.UnifiedSocialCreditCode is not null)
                 flurlReq.SetQueryParam("unified_social_credit_code", request.UnifiedSocialCreditCode);
 
 
-            return await client.SendRequestWithJsonAsync<Models.QueryProfitAllocationReceiverAccountsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryProfitAllocationReceiverAccountsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -150,13 +150,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.EnterpriseId == null)
+            if (request.EnterpriseId is null)
                 request.EnterpriseId = client.Credentials.EnterpriseId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mse-pay", "profit-allocations", "receiver-accounts-applications");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "profit-allocations", "receiver-accounts-applications");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateProfitAllocationReceiverAccountApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateProfitAllocationReceiverAccountApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -173,9 +173,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", request.ApplicationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", request.ApplicationId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -192,9 +192,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", "out_application_id", request.OutApplicationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", "out_application_id", request.OutApplicationId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByOutApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByOutApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

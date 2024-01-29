@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Settings
 
         internal Credentials(WechatTenpayBusinessClientOptions options)
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (options is null) throw new ArgumentNullException(nameof(options));
 
             PlatformId = options.PlatformId;
             PlatformCertificateSerialNumber = options.PlatformCertificateSerialNumber;

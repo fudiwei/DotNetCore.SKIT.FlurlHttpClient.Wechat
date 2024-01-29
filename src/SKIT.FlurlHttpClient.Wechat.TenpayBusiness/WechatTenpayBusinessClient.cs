@@ -35,20 +35,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// </summary>
         /// <param name="options">配置项。</param>
         public WechatTenpayBusinessClient(WechatTenpayBusinessClientOptions options)
+            : this(options, null)
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="options"></param>
+        /// <param name="httpClient"></param>
+        /// <param name="disposeClient"></param>
+        internal protected WechatTenpayBusinessClient(WechatTenpayBusinessClientOptions options, HttpClient? httpClient, bool disposeClient = true)
+            : base(httpClient, disposeClient)
+        {
+            if (options is null) throw new ArgumentNullException(nameof(options));
 
             Credentials = new Settings.Credentials(options);
             AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty;
             AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
             FlurlClient.BaseUrl = options.Endpoint ?? WechatTenpayBusinessEndpoints.DEFAULT;
-            FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.Accept);
-            FlurlClient.Headers.Remove(FlurlHttpClient.Constants.HttpHeaders.AcceptLanguage);
-            FlurlClient.WithHeader(FlurlHttpClient.Constants.HttpHeaders.Accept, "application/json");
-            FlurlClient.WithTimeout(TimeSpan.FromMilliseconds(options.Timeout));
+            FlurlClient.Headers.Remove(HttpHeaders.Accept);
+            FlurlClient.Headers.Remove(HttpHeaders.AcceptLanguage);
+            FlurlClient.WithHeader(HttpHeaders.Accept, "application/json");
+            FlurlClient.WithTimeout(options.Timeout <= 0 ? Timeout.InfiniteTimeSpan : TimeSpan.FromMilliseconds(options.Timeout));
 
-            Interceptors.Add(new Interceptors.WechatTenpayBusinessRequestSignatureInterceptor(
+            Interceptors.Add(new Interceptors.WechatTenpayBusinessRequestSigningInterceptor(
                 signAlg: options.SignAlgorithm,
                 platformId: options.PlatformId,
                 platformCertSn: options.PlatformCertificateSerialNumber,
@@ -63,27 +75,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// 使用当前客户端生成一个新的 <see cref="IFlurlRequest"/> 对象。
         /// </summary>
         /// <param name="request"></param>
-        /// <param name="method"></param>
+        /// <param name="httpMethod"></param>
         /// <param name="urlSegments"></param>
         /// <returns></returns>
-        public IFlurlRequest CreateRequest(WechatTenpayBusinessRequest request, HttpMethod method, params object[] urlSegments)
+        public IFlurlRequest CreateFlurlRequest(WechatTenpayBusinessRequest request, HttpMethod httpMethod, params object[] urlSegments)
         {
-            IFlurlRequest flurlRequest = FlurlClient.Request(urlSegments).WithVerb(method);
+            IFlurlRequest flurlRequest = base.CreateFlurlRequest(request, httpMethod, urlSegments);
 
             if (AutoEncryptRequestSensitiveProperty)
             {
                 this.EncryptRequestSensitiveProperty(request);
             }
 
-            if (request.Timeout != null)
-            {
-                flurlRequest.WithTimeout(TimeSpan.FromMilliseconds(request.Timeout.Value));
-            }
-
-            if (request.Encryption != null)
+            if (request.WechatpayEncryption is not null)
             {
                 flurlRequest.Headers.Remove("TBEP-Encrypt");
-                flurlRequest.WithHeader("TBEP-Encrypt", $"enc_key=\"{request.Encryption.EncryptedKey}\",iv=\"{Convert.ToBase64String(Encoding.UTF8.GetBytes(request.Encryption.IV))}\",tbep_serial_number=\"{request.Encryption.SerialNumber}\",algorithm=\"{request.Encryption.Algorithm}\"");
+                flurlRequest.WithHeader("TBEP-Encrypt", $"enc_key=\"{request.WechatpayEncryption.EncryptedKey}\",iv=\"{Convert.ToBase64String(Encoding.UTF8.GetBytes(request.WechatpayEncryption.IV))}\",tbep_serial_number=\"{request.WechatpayEncryption.SerialNumber}\",algorithm=\"{request.WechatpayEncryption.Algorithm}\"");
             }
 
             return flurlRequest;
@@ -97,30 +104,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <param name="httpContent"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<T> SendRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
+        public async Task<T> SendFlurlRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
             where T : WechatTenpayBusinessResponse, new()
         {
-            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
+            if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
 
-            if (httpContent != null)
+            if (httpContent is not null)
             {
                 if (string.IsNullOrEmpty(httpContent.Headers.ContentType?.MediaType))
                     httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             }
 
-            try
-            {
-                using IFlurlResponse flurlResponse = await base.SendRequestAsync(flurlRequest, httpContent, cancellationToken);
-                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
-            }
-            catch (FlurlHttpTimeoutException ex)
-            {
-                throw new Exceptions.WechatTenpayBusinessRequestTimeoutException(ex.Message, ex);
-            }
-            catch (FlurlHttpException ex)
-            {
-                throw new WechatTenpayBusinessException(ex.Message, ex);
-            }
+            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken);
+            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken);
         }
 
         /// <summary>
@@ -131,36 +127,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <param name="data"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public async Task<T> SendRequestWithJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
+        public async Task<T> SendFlurlRequestAsJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
             where T : WechatTenpayBusinessResponse, new()
         {
-            if (flurlRequest == null) throw new ArgumentNullException(nameof(flurlRequest));
+            if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
 
-            try
-            {
-                bool isSimpleRequest = data == null ||
-                    flurlRequest.Verb == HttpMethod.Get ||
-                    flurlRequest.Verb == HttpMethod.Head ||
-                    flurlRequest.Verb == HttpMethod.Options;
-                using IFlurlResponse flurlResponse = isSimpleRequest ?
-                    await base.SendRequestAsync(flurlRequest, null, cancellationToken) :
-                    await base.SendRequestWithJsonAsync(flurlRequest, data, cancellationToken);
-                return await WrapResponseWithJsonAsync<T>(flurlResponse, cancellationToken);
-            }
-            catch (FlurlHttpTimeoutException ex)
-            {
-                throw new Exceptions.WechatTenpayBusinessRequestTimeoutException(ex.Message, ex);
-            }
-            catch (FlurlHttpException ex)
-            {
-                throw new WechatTenpayBusinessException(ex.Message, ex);
-            }
+            bool isSimpleRequest = data is null ||
+                flurlRequest.Verb == HttpMethod.Get ||
+                flurlRequest.Verb == HttpMethod.Head ||
+                flurlRequest.Verb == HttpMethod.Options;
+            using IFlurlResponse flurlResponse = isSimpleRequest ?
+                await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken) :
+                await base.SendFlurlRequestAsJsonAsync(flurlRequest, data, cancellationToken);
+            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken);
         }
 
-        private new async Task<TResponse> WrapResponseWithJsonAsync<TResponse>(IFlurlResponse flurlResponse, CancellationToken cancellationToken = default)
+        private new async Task<TResponse> WrapFlurlResponseAsJsonAsync<TResponse>(IFlurlResponse flurlResponse, CancellationToken cancellationToken = default)
             where TResponse : WechatTenpayBusinessResponse, new()
         {
-            TResponse result = await base.WrapResponseWithJsonAsync<TResponse>(flurlResponse, cancellationToken);
+            TResponse result = await base.WrapFlurlResponseAsJsonAsync<TResponse>(flurlResponse, cancellationToken);
 
             string? strEncryption = flurlResponse.Headers.FirstOrDefault("TBEP-Encrypt");
             if (!string.IsNullOrEmpty(strEncryption))
@@ -172,13 +157,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                         k => k[0],
                         v => v.Length > 1 ? v[1].TrimStart('\"').TrimEnd('\"') : null
                     );
-                result.Encryption = new WechatTenpayBusinessResponseEncryption();
-                result.Encryption.PlatformId = dictEncryption.GetValueOrDefault("platform_id");
-                result.Encryption.EnterpriseId = dictEncryption.GetValueOrDefault("ent_id");
-                result.Encryption.EncryptedKey = dictEncryption.GetValueOrDefault("enc_key");
-                result.Encryption.IV = dictEncryption.GetValueOrDefault("iv");
-                result.Encryption.SerialNumber = dictEncryption.GetValueOrDefault("platform_serial_number") ?? dictEncryption.GetValueOrDefault("enterprise_serial_number");
-                result.Encryption.Algorithm = dictEncryption.GetValueOrDefault("algorithm");
+                result.WechatpayEncryption = new WechatTenpayBusinessResponseEncryption();
+                result.WechatpayEncryption.PlatformId = dictEncryption.GetValueOrDefault("platform_id");
+                result.WechatpayEncryption.EnterpriseId = dictEncryption.GetValueOrDefault("ent_id");
+                result.WechatpayEncryption.EncryptedKey = dictEncryption.GetValueOrDefault("enc_key");
+                result.WechatpayEncryption.IV = dictEncryption.GetValueOrDefault("iv");
+                result.WechatpayEncryption.SerialNumber = dictEncryption.GetValueOrDefault("platform_serial_number") ?? dictEncryption.GetValueOrDefault("enterprise_serial_number");
+                result.WechatpayEncryption.Algorithm = dictEncryption.GetValueOrDefault("algorithm");
 
                 if (AutoDecryptResponseSensitiveProperty && result.IsSuccessful())
                 {

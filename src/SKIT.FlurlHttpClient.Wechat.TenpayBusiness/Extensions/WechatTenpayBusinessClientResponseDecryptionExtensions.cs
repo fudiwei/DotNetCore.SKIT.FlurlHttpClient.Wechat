@@ -15,40 +15,40 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         public static TResponse DecryptResponseSensitiveProperty<TResponse>(this WechatTenpayBusinessClient client, TResponse response)
             where TResponse : WechatTenpayBusinessResponse
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
-            if (response == null) throw new ArgumentNullException(nameof(response));
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (response is null) throw new ArgumentNullException(nameof(response));
 
             if (!response.IsSuccessful())
-                throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Failed to decrypt response, because the response is not successful.");
+                throw new WechatTenpayBusinessException("Failed to decrypt response, because the response is not successful.");
 
             try
             {
                 bool requireDecrypt = response.GetType().GetCustomAttributes<WechatTenpayBusinessSensitiveAttribute>(inherit: true).Any();
                 if (requireDecrypt)
                 {
-                    if (response.Encryption is null)
-                        throw new InvalidOperationException("Could not read value of 'TBEP-Encrypt'.");
-                    if (response.Encryption.PlatformId != null && response.Encryption.SerialNumber != client.Credentials.PlatformCertificateSerialNumber)
-                        throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Failed to decrypt response, because the platform certificate serial number does not match.");
-                    if (response.Encryption.EnterpriseId != null && response.Encryption.SerialNumber != client.Credentials.EnterpriseCertificateSerialNumber)
-                        throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Failed to decrypt response, because the enterprise certificate serial number does not match.");
+                    if (response.WechatpayEncryption is null)
+                        throw new InvalidOperationException("Failed to decrypt response, because the value of \"TBEP-Encrypt\" is empty.");
+                    if (response.WechatpayEncryption.PlatformId is not null && response.WechatpayEncryption.SerialNumber != client.Credentials.PlatformCertificateSerialNumber)
+                        throw new WechatTenpayBusinessException($"Failed to decrypt response, because the platform certificate with serial number \"{response.WechatpayEncryption.SerialNumber}\" does not existed.");
+                    if (response.WechatpayEncryption.EnterpriseId is not null && response.WechatpayEncryption.SerialNumber != client.Credentials.EnterpriseCertificateSerialNumber)
+                        throw new WechatTenpayBusinessException($"Failed to decrypt response, because the enterprise certificate serial number \"{response.WechatpayEncryption.SerialNumber}\" does not existed.");
 
-                    if (Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC.Equals(response.Encryption.Algorithm))
+                    if (Constants.EncryptionAlgorithms.RSA_OAEP_WITH_SM4_128_CBC.Equals(response.WechatpayEncryption.Algorithm))
                     {
                         Utilities.ReflectionUtility.ReplacePropertyStringValue(ref response, (target, currentProp, oldValue) =>
                         {
                             var attr = currentProp.GetCustomAttribute<WechatTenpayBusinessSensitivePropertyAttribute>();
-                            if (attr == null)
+                            if (attr is null)
                                 return (false, oldValue);
 
-                            string sm4EncryptedKey = response.Encryption.EncryptedKey!;
+                            string sm4EncryptedKey = response.WechatpayEncryption.EncryptedKey!;
                             string sm4Key = Utilities.RSAUtility.DecryptWithECB(
-                                privateKey: response.Encryption.PlatformId != null ? client.Credentials.PlatformCertificatePrivateKey! :
-                                            response.Encryption.EnterpriseId != null ? client.Credentials.EnterpriseCertificatePrivateKey! :
+                                privateKey: response.WechatpayEncryption.PlatformId is not null ? client.Credentials.PlatformCertificatePrivateKey! :
+                                            response.WechatpayEncryption.EnterpriseId is not null ? client.Credentials.EnterpriseCertificatePrivateKey! :
                                             string.Empty,
                                 cipherText: sm4EncryptedKey
                             );
-                            string sm4IV = response.Encryption.IV!;
+                            string sm4IV = response.WechatpayEncryption.IV!;
 
                             string newValue = Utilities.SM4Utility.DecryptWithCBC(key: sm4Key, iv: sm4IV, cipherText: oldValue);
                             return (true, newValue);
@@ -56,13 +56,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                     }
                     else
                     {
-                        throw new NotSupportedException("Unsupported decryption algorithm.");
+                        throw new WechatTenpayBusinessException($"Failed to decrypt response. Unsupported encryption algorithm: \"{response.WechatpayEncryption.Algorithm}\".");
                     }
                 }
             }
-            catch (Exception ex) when (!(ex is Exceptions.WechatTenpayBusinessResponseDecryptionException))
+            catch (WechatTenpayBusinessException)
             {
-                throw new Exceptions.WechatTenpayBusinessResponseDecryptionException("Failed to decrypt response. Please see the inner exception for more details.", ex);
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new WechatTenpayBusinessException("Failed to decrypt response. Please see the inner exception for more details.", ex);
             }
 
             return response;
