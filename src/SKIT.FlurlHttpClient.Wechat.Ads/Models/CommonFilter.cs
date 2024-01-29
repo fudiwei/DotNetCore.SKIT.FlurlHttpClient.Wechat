@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Models.Abstractions
 {
     public abstract class CommonFilter
@@ -29,6 +31,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Models.Abstractions
         /// </summary>
         [Newtonsoft.Json.JsonProperty("values")]
         [System.Text.Json.Serialization.JsonPropertyName("values")]
-        public string[] Values { get; set; } = new string[0];
+        public IList<string> Values { get; set; } = new List<string>();
     }
 }

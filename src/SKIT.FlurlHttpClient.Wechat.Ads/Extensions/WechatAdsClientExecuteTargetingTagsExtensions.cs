@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.TagType);
 
-            return await client.SendRequestWithJsonAsync<Models.TargetingTagsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.TargetingTagsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
