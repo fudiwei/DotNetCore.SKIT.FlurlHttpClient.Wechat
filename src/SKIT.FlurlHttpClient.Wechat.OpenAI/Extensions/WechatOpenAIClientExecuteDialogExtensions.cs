@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "sign", client.Credentials.Token!);
+                .CreateFlurlRequest(request, HttpMethod.Post, "sign", client.Credentials.Token!);
 
-            return await client.SendRequestWithJsonAsync<Models.SignResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SignResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "aibot", client.Credentials.Token!);
+                .CreateFlurlRequest(request, HttpMethod.Post, "aibot", client.Credentials.Token!);
 
-            return await client.SendRequestWithJsonAsync<Models.AIBotResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AIBotResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "feedback", client.Credentials.Token!);
+                .CreateFlurlRequest(request, HttpMethod.Post, "feedback", client.Credentials.Token!);
 
-            return await client.SendRequestWithJsonAsync<Models.FeedbackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.FeedbackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -79,9 +79,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "gethotquerylist", client.Credentials.Token!);
+                .CreateFlurlRequest(request, HttpMethod.Post, "gethotquerylist", client.Credentials.Token!);
 
-            return await client.SendRequestWithJsonAsync<Models.GetHotQueryListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetHotQueryListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -98,9 +98,9 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "gethotquerydetail", client.Credentials.Token!);
+                .CreateFlurlRequest(request, HttpMethod.Post, "gethotquerydetail", client.Credentials.Token!);
 
-            return await client.SendRequestWithJsonAsync<Models.GetHotQueryDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetHotQueryDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Settings
 
         internal Credentials(WechatOpenAIClientOptions options)
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (options is null) throw new ArgumentNullException(nameof(options));
 
             AppId = options.AppId;
             Token = options.Token;

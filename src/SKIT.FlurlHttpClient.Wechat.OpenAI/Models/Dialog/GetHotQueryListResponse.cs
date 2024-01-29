@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("score")]
                                 [System.Text.Json.Serialization.JsonPropertyName("score")]
-                                public double Score { get; set; }
+                                public decimal Score { get; set; }
                             }
                         }
 

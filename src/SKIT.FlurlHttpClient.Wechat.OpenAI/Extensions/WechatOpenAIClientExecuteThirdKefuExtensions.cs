@@ -21,13 +21,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.AppId == null)
+            if (request.AppId is null)
                 request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "sendmsg", client.Credentials.Token!);
+                .CreateFlurlRequest(request, HttpMethod.Post, "sendmsg", client.Credentials.Token!);
 
-            return await client.SendRequestWithJsonAsync<Models.SendMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SendMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -43,13 +43,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.AppId == null)
+            if (request.AppId is null)
                 request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "kefustate", "get", client.Credentials.Token!);
+                .CreateFlurlRequest(request, HttpMethod.Post, "kefustate", "get", client.Credentials.Token!);
 
-            return await client.SendRequestWithJsonAsync<Models.KefuStateGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.KefuStateGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -65,13 +65,13 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.AppId == null)
+            if (request.AppId is null)
                 request.AppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "kefustate", "change", client.Credentials.Token!);
+                .CreateFlurlRequest(request, HttpMethod.Post, "kefustate", "change", client.Credentials.Token!);
 
-            return await client.SendRequestWithJsonAsync<Models.KefuStateChangeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.KefuStateChangeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
