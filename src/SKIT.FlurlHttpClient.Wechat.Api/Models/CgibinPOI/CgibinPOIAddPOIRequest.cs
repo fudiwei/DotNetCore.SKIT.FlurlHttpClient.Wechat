@@ -103,14 +103,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("longitude")]
                         [System.Text.Json.Serialization.JsonPropertyName("longitude")]
-                        public double Longitude { get; set; }
+                        public decimal Longitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置坐标纬度。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("latitude")]
                         [System.Text.Json.Serialization.JsonPropertyName("latitude")]
-                        public double Latitude { get; set; }
+                        public decimal Latitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置门店照片列表。
@@ -152,7 +152,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("avg_price")]
                         [System.Text.Json.Serialization.JsonPropertyName("avg_price")]
-                        public double? AveragePrice { get; set; }
+                        public decimal? AveragePrice { get; set; }
                     }
                 }
 

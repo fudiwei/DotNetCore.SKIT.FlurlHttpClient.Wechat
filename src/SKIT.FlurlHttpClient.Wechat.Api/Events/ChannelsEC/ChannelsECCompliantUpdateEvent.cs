@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.channels_ec_complaint_update 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/complaint/callback/channels_ec_complaint_update.html </para>
     /// </summary>
-    public class ChannelsECCompliantUpdateEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECCompliantUpdateEvent : WechatApiEvent
     {
         public static class Types
         {

@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置屏蔽的行业类别列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ams_category")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.TextualStringArrayWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringArrayWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("ams_category")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.TextualStringArrayWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringArrayWithPipeSplitConverter))]
         public string[] AMSCategoryList { get; set; } = default!;
 
         public override bool IsSuccessful()

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -33,14 +33,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cpu")]
         [System.Text.Json.Serialization.JsonPropertyName("cpu")]
-        public double CPUCount { get; set; }
+        public decimal CPUCount { get; set; }
 
         /// <summary>
         /// 获取或设置内存大小（单位：GB）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mem")]
         [System.Text.Json.Serialization.JsonPropertyName("mem")]
-        public double MemorySize { get; set; }
+        public decimal MemorySize { get; set; }
 
         /// <summary>
         /// 获取或设置最小副本数（范围：0～50）。
@@ -172,18 +172,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置修改时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("updated_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("updated_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset UpdateTime { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置创建时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("created_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("created_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset CreateTime { get; set; } = default!;
     }
 }

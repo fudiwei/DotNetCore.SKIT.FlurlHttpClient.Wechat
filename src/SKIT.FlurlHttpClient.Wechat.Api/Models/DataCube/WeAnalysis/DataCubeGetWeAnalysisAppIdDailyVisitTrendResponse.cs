@@ -49,21 +49,21 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stay_time_uv")]
                 [System.Text.Json.Serialization.JsonPropertyName("stay_time_uv")]
-                public double StayTimePerUV { get; set; }
+                public decimal StayTimePerUV { get; set; }
 
                 /// <summary>
                 /// 获取或设置次均停留时长（单位：秒）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stay_time_session")]
                 [System.Text.Json.Serialization.JsonPropertyName("stay_time_session")]
-                public double StayTimePerSession { get; set; }
+                public decimal StayTimePerSession { get; set; }
 
                 /// <summary>
                 /// 获取或设置平均访问深度。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("visit_depth")]
                 [System.Text.Json.Serialization.JsonPropertyName("visit_depth")]
-                public double VisitDepth { get; set; }
+                public decimal VisitDepth { get; set; }
             }
         }
 

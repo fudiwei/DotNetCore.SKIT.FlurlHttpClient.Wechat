@@ -24,7 +24,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_begin_id")]
         [System.Text.Json.Serialization.JsonPropertyName("next_begin_id")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
         public string? NextMerchantId { get; set; }
     }
 }

@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("extInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("extInfo")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.DynamicObjectConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DynamicObjectConverter))]
                 public dynamic? Extra { get; set; }
             }
 
@@ -178,27 +178,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置是否为禁用的微信 UIN。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("banBizuin")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("banBizuin")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsBannedBusinessUIN { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否为禁用的类目。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("banCategory")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("banCategory")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsBannedCategory { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否为禁用的商品。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("banProduct")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("banProduct")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsBannedProduct { get; set; }
                     }
 

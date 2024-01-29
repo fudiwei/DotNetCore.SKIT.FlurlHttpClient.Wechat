@@ -78,9 +78,9 @@
         /// 获取或设置是否已经打开二维码跳转链接设置。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("qrcodejump_open")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("qrcodejump_open")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool IsQrcodeJumpOpen { get; set; }
     }
 }

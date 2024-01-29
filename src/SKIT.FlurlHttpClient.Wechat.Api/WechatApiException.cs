@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     /// <summary>
     /// 当调用微信 API 出错时引发的异常。
     /// </summary>
-    public class WechatApiException : CommonExceptionBase
+    public class WechatApiException : CommonException
     {
         /// <inheritdoc/>
         public WechatApiException()

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/coupon/get 接口的响应。</para>
@@ -15,18 +15,32 @@
                     {
                         public static class Types
                         {
-                            public class Discount : ChannelsECCouponCreateRequest.Types.Discount
+                            public class Discount
                             {
-                                public static new class Types
+                                public static class Types
                                 {
-                                    public class DiscountCondidtion : ChannelsECCouponCreateRequest.Types.Discount.Types.DiscountCondidtion
+                                    public class DiscountCondidtion
                                     {
+                                        /// <summary>
+                                        /// 获取或设置商品数量。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("product_cnt")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("product_cnt")]
+                                        public int? ProductCount { get; set; }
+
                                         /// <summary>
                                         /// 获取或设置商品 ID 列表。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("product_ids")]
                                         [System.Text.Json.Serialization.JsonPropertyName("product_ids")]
-                                        public new long[]? ProductIdList { get; set; }
+                                        public long[]? ProductIdList { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置商品价格（单位：分）。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("product_price")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("product_price")]
+                                        public int? ProductPrice { get; set; }
                                     }
                                 }
 
@@ -35,7 +49,21 @@
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("discount_condition")]
                                 [System.Text.Json.Serialization.JsonPropertyName("discount_condition")]
-                                public new Types.DiscountCondidtion? DiscountCondidtion { get; set; }
+                                public Types.DiscountCondidtion? DiscountCondidtion { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置满减金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("discount_fee")]
+                                [System.Text.Json.Serialization.JsonPropertyName("discount_fee")]
+                                public int? DiscountFee { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置折扣数值（范围：1000～10000）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("discount_num")]
+                                [System.Text.Json.Serialization.JsonPropertyName("discount_num")]
+                                public int? DiscountNumber { get; set; }
                             }
 
                             public class Extra : ChannelsECCouponCreateRequest.Types.Extra

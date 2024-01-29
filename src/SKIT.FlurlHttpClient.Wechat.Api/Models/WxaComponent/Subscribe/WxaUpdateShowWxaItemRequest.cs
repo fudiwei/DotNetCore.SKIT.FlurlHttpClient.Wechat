@@ -9,9 +9,9 @@
         /// 获取或设置是否打开扫码关注组件。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_subscribe_biz_flag")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_subscribe_biz_flag")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool IsOpen { get; set; }
 
         /// <summary>

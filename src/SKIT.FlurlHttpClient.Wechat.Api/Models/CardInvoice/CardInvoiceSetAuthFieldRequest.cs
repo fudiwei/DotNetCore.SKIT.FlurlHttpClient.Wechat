@@ -19,27 +19,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置是否填写抬头。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("show_title")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("show_title")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsShowTitle { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否填写联系电话。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("show_phone")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("show_phone")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsShowPhoneNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否填写邮箱。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("show_email")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("show_email")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsShowEmail { get; set; }
 
                         /// <summary>
@@ -56,54 +56,54 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置是否填写抬头。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("show_title")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("show_title")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsShowTitle { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否填写税号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("show_tax_no")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("show_tax_no")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsShowTaxNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否填写单位地址。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("show_addr")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("show_addr")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsShowAddress { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否填写联系电话。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("show_phone")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("show_phone")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsShowPhoneNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否填写开户银行。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("show_bank_type")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("show_bank_type")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsShowBankType { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否填写银行账号。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("show_bank_no")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("show_bank_no")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsShowBankNumber { get; set; }
 
                         /// <summary>

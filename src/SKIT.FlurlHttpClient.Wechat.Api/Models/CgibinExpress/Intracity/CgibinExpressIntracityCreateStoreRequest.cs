@@ -49,14 +49,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("lng")]
                 [System.Text.Json.Serialization.JsonPropertyName("lng")]
-                public double Longitude { get; set; }
+                public decimal Longitude { get; set; }
 
                 /// <summary>
                 /// 获取或设置纬度。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("lat")]
                 [System.Text.Json.Serialization.JsonPropertyName("lat")]
-                public double Latitude { get; set; }
+                public decimal Latitude { get; set; }
 
                 /// <summary>
                 /// 获取或设置门店联系电话。

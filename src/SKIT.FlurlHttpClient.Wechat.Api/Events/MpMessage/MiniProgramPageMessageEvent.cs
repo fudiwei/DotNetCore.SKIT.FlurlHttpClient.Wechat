@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 MINIPROGRAMPAGE 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/customer-message/receive.html </para>
     /// </summary>
-    public class MiniProgramPageMessageEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class MiniProgramPageMessageEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置消息 ID。

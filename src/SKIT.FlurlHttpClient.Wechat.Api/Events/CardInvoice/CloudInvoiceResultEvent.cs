@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.cloud_invoice_invoiceresult_event 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/E_Invoice/Vendor_API_List.html#19 </para>
     /// </summary>
-    public class CloudInvoiceResultEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class CloudInvoiceResultEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置开票状态码。

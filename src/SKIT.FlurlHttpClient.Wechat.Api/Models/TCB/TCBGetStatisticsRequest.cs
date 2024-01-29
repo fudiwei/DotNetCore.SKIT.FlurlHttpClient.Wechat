@@ -27,9 +27,9 @@
                 /// 获取或设置是否按渠道划分。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("by_channel_id")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("by_channel_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsByChannelId { get; set; }
 
                 /// <summary>

@@ -43,18 +43,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置提交时间。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("submit_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularDateTimeOffsetConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("submit_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                         public DateTimeOffset SubmitTime { get; set; }
 
                         /// <summary>
                         /// 获取或设置审核时间。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("audit_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("audit_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                         public DateTimeOffset? AuditTime { get; set; }
 
                         /// <summary>
@@ -251,18 +251,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// 获取或设置更新时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("update_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularDateTimeOffsetConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("update_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                 public DateTimeOffset UpdateTime { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularDateTimeOffsetConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                 public DateTimeOffset CreateTime { get; set; }
             }
         }

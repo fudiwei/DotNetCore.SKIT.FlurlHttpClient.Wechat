@@ -18,9 +18,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>解密后的数据字节数组。</returns>
         public static byte[] DecryptWithCBC(byte[] keyBytes, byte[] ivBytes, byte[] cipherBytes)
         {
-            if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
-            if (ivBytes == null) throw new ArgumentNullException(nameof(ivBytes));
-            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
+            if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
+            if (ivBytes is null) throw new ArgumentNullException(nameof(ivBytes));
+            if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
 
             using (SymmetricAlgorithm aes = Aes.Create())
             {
@@ -43,8 +43,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>解密后的文本数据。</returns>
         public static string DecryptWithCBC(string encodingKey, string encodingIV, string encodingCipherText)
         {
-            if (encodingKey == null) throw new ArgumentNullException(nameof(encodingKey));
-            if (encodingCipherText == null) throw new ArgumentNullException(nameof(encodingCipherText));
+            if (encodingKey is null) throw new ArgumentNullException(nameof(encodingKey));
+            if (encodingCipherText is null) throw new ArgumentNullException(nameof(encodingCipherText));
 
             byte[] plainBytes = DecryptWithCBC(
                 keyBytes: Convert.FromBase64String(encodingKey),
@@ -63,9 +63,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>加密后的数据字节数组。</returns>
         public static byte[] EncryptWithCBC(byte[] keyBytes, byte[] ivBytes, byte[] plainBytes)
         {
-            if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
-            if (ivBytes == null) throw new ArgumentNullException(nameof(ivBytes));
-            if (plainBytes == null) throw new ArgumentNullException(nameof(plainBytes));
+            if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
+            if (ivBytes is null) throw new ArgumentNullException(nameof(ivBytes));
+            if (plainBytes is null) throw new ArgumentNullException(nameof(plainBytes));
 
             using (SymmetricAlgorithm aes = Aes.Create())
             {
@@ -88,8 +88,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>经 Base64 编码的加密后的数据。</returns>
         public static string EncryptWithCBC(string encodingKey, string encodingIV, string plainText)
         {
-            if (encodingKey == null) throw new ArgumentNullException(nameof(encodingKey));
-            if (plainText == null) throw new ArgumentNullException(nameof(plainText));
+            if (encodingKey is null) throw new ArgumentNullException(nameof(encodingKey));
+            if (plainText is null) throw new ArgumentNullException(nameof(plainText));
 
             byte[] plainBytes = EncryptWithCBC(
                 keyBytes: Convert.FromBase64String(encodingKey),

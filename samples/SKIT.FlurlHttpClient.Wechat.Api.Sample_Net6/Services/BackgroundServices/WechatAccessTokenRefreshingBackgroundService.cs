@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
@@ -17,20 +17,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.BackgroundServices
         private readonly ILogger _logger;
         private readonly Options.WechatOptions _wechatOptions;
         private readonly DistributedLock.IDistributedLockFactory _distributedLockFactory;
-        private readonly HttpClients.IWechatApiHttpClientFactory _wechatApiHttpClientFactory;
+        private readonly HttpClients.IWechatApiClientFactory _wechatApiClientFactory;
         private readonly Repositories.IWechatAccessTokenEntityRepository _wechatAccessTokenEntityRepository;
 
         public WechatAccessTokenRefreshingBackgroundService(
             ILoggerFactory loggerFactory,
             IOptions<Options.WechatOptions> wechatOptions,
             DistributedLock.IDistributedLockFactory distributedLockFactory,
-            HttpClients.IWechatApiHttpClientFactory wechatApiHttpClientFactory,
+            HttpClients.IWechatApiClientFactory wechatApiClientFactory,
             Repositories.IWechatAccessTokenEntityRepository wechatAccessTokenEntityRepository)
         {
             _logger = loggerFactory.CreateLogger(GetType());
             _wechatOptions = wechatOptions.Value;
             _distributedLockFactory = distributedLockFactory;
-            _wechatApiHttpClientFactory = wechatApiHttpClientFactory;
+            _wechatApiClientFactory = wechatApiClientFactory;
             _wechatAccessTokenEntityRepository = wechatAccessTokenEntityRepository;
         }
 
@@ -64,14 +64,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.BackgroundServices
             if (lockHandler == null)
                 return; // 未取得锁
 
-            var client = _wechatApiHttpClientFactory.Create(appId);
+            var client = _wechatApiClientFactory.Create(appId);
             var request = new CgibinTokenRequest();
             var response = await client.ExecuteCgibinTokenAsync(request, cancellationToken);
             if (!response.IsSuccessful())
             {
                 _logger.LogWarning(
                     "刷新 AppId 为 {0} 微信 AccessToken 失败（状态码：{1}，错误代码：{2}，错误描述：{3}）。",
-                    appId, response.RawStatus, response.ErrorCode, response.ErrorMessage
+                    appId, response.GetRawStatus(), response.ErrorCode, response.ErrorMessage
                 );
                 return; // 请求失败
             }

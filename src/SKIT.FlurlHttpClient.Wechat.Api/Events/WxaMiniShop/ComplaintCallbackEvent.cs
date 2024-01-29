@@ -4,8 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.complaint_callback 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/guarantee/complaint.html </para>
     /// </summary>
-    public class ComplaintCallbackEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable,
-        WechatApiEvent.Serialization.IXmlSerializable
+    public class ComplaintCallbackEvent : WechatApiEvent
     {
         public static class Types
         {
@@ -96,8 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("phone_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-                [System.Text.Json.Serialization.JsonConverter(
-                    typeof(System.Text.Json.Converters.NumericalStringConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
                 [System.Xml.Serialization.XmlElement("phone_number")]
                 public string PhoneNumber { get; set; } = default!;
 

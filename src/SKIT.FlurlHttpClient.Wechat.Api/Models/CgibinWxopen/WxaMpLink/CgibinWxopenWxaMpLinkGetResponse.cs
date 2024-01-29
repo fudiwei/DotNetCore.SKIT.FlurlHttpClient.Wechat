@@ -99,27 +99,27 @@
                 /// 获取或设置是否在公众号管理页展示中。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("selected")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("selected")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsSelected { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否展示在附近的小程序中。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nearby_display_status")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("nearby_display_status")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsNearby { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否已经发布。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("released")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("released")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsReleased { get; set; }
 
                 /// <summary>

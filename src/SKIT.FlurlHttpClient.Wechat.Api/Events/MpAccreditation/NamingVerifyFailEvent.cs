@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.naming_verify_fail 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Account_Management/Wechat_Accreditation_Event_Push.html#3 </para>
     /// </summary>
-    public class NamingVerifyFailEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class NamingVerifyFailEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置失败时间戳。

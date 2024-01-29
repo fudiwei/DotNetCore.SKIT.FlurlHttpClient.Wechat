@@ -94,18 +94,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置是否发货完成。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finish_all_delivery")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("finish_all_delivery")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool IsFinishAll { get; set; }
 
         /// <summary>
         /// 获取或设置完成发货时间.
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ship_done_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("ship_done_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
         public DateTimeOffset? ShipDoneTime { get; set; }
     }
 }

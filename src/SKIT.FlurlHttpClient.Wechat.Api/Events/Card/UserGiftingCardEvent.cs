@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.user_gifting_card 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons_Vouchers_and_Cards_Event_Push_Messages.html#3 </para>
     /// </summary>
-    public class UserGiftingCardEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class UserGiftingCardEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置卡券模板编号。
@@ -35,7 +35,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsReturnBack")]
         [System.Text.Json.Serialization.JsonPropertyName("IsReturnBack")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsReturnBack")]
         public bool IsReturnBack { get; set; }
 
@@ -44,7 +44,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsChatRoom")]
         [System.Text.Json.Serialization.JsonPropertyName("IsChatRoom")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsChatRoom")]
         public bool IsFromChatroom { get; set; }
     }

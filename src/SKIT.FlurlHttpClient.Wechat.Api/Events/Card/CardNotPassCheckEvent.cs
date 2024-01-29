@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.card_not_pass_check 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons_Vouchers_and_Cards_Event_Push_Messages.html#1 </para>
     /// </summary>
-    public class CardNotPassCheckEvent : CardPassCheckEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class CardNotPassCheckEvent : CardPassCheckEvent
     {
         /// <summary>
         /// 获取或设置审核不通过原因。

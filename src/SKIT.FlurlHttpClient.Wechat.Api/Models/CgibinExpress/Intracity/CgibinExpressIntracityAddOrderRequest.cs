@@ -87,14 +87,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_lng")]
         [System.Text.Json.Serialization.JsonPropertyName("user_lng")]
-        public double UserLongitude { get; set; }
+        public decimal UserLongitude { get; set; }
 
         /// <summary>
         /// 获取或设置收件用户位置维度。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_lat")]
         [System.Text.Json.Serialization.JsonPropertyName("user_lat")]
-        public double UserLatitude { get; set; }
+        public decimal UserLatitude { get; set; }
 
         /// <summary>
         /// 获取或设置收件用户详细地址。
@@ -142,9 +142,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置是否使用沙箱。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("use_sandbox")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("use_sandbox")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool? IsSandbox { get; set; }
     }
 }

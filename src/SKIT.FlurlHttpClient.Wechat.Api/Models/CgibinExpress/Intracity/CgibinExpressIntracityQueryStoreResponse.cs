@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("lng")]
                         [System.Text.Json.Serialization.JsonPropertyName("lng")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public double Longitude { get; set; }
+                        public decimal Longitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置纬度。
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("lat")]
                         [System.Text.Json.Serialization.JsonPropertyName("lat")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public double Latitude { get; set; }
+                        public decimal Latitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置门店联系电话。

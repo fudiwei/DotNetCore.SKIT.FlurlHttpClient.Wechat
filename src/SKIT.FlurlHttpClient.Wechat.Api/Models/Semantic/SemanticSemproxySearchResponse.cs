@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /semantic/semproxy/search 接口的响应。</para>
@@ -465,9 +465,9 @@
                 /// 获取或设置是否有 Wi-Fi。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("wifi")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("wifi")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? HasWifi { get; set; }
 
                 /// <summary>
@@ -1206,8 +1206,7 @@
                 public string? Channel { get; set; }
             }
 
-            public class Semantic<D>
-                where D : IDetail
+            public class Semantic<D> where D : IDetail
             {
                 /// <summary>
                 /// 获取或设置语义详情。

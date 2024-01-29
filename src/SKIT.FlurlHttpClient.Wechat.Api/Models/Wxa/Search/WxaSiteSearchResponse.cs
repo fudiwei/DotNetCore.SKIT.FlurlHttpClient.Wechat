@@ -51,7 +51,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("has_next_page")]
         [System.Text.Json.Serialization.JsonPropertyName("has_next_page")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool HasNextPage { get; set; }
 
         /// <summary>

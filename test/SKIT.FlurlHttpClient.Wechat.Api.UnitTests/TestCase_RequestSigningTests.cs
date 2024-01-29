@@ -3,7 +3,7 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
-    public class TestCase_RequestSignatureTests
+    public class TestCase_RequestSigningTests
     {
         [Fact(DisplayName = "测试用例：即时配送请求签名")]
         public async Task TestImmeDeliveryRequestSignature()
@@ -36,11 +36,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             });
             mockClient.Configure(settings =>
             {
-                var jsonOptions = FlurlSystemTextJsonSerializer.GetDefaultSerializerOptions();
+                var jsonOptions = SystemTextJsonSerializer.GetDefaultSerializerOptions();
                 jsonOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
                 jsonOptions.NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.Strict;
                 jsonOptions.WriteIndented = false;
-                settings.JsonSerializer = new FlurlSystemTextJsonSerializer(jsonOptions);
+                settings.JsonSerializer = new SystemTextJsonSerializer(jsonOptions);
             });
 
             var request = new Models.XPayQueryUserBalanceRequest()
@@ -91,11 +91,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             });
             mockClient.Configure(settings =>
             {
-                var jsonOptions = FlurlSystemTextJsonSerializer.GetDefaultSerializerOptions();
+                var jsonOptions = SystemTextJsonSerializer.GetDefaultSerializerOptions();
                 jsonOptions.DefaultIgnoreCondition = System.Text.Json.Serialization.JsonIgnoreCondition.WhenWritingNull;
                 jsonOptions.NumberHandling = System.Text.Json.Serialization.JsonNumberHandling.Strict;
                 jsonOptions.WriteIndented = false;
-                settings.JsonSerializer = new FlurlSystemTextJsonSerializer(jsonOptions);
+                settings.JsonSerializer = new SystemTextJsonSerializer(jsonOptions);
             });
 
             var request = new Models.WxaGameGetBalanceRequest()

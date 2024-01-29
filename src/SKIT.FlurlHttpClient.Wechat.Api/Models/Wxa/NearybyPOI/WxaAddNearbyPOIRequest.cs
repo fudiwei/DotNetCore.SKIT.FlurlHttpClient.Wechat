@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -102,33 +102,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             }
         }
 
-        internal static class Converters
-        {
-            internal class RequestPropertyPictureNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Picture?>
-            {
-            }
-
-            internal class RequestPropertyPictureSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Picture?>
-            {
-            }
-
-            internal class RequestPropertyServiceNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Service?>
-            {
-            }
-
-            internal class RequestPropertyServiceSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Service?>
-            {
-            }
-
-            internal class RequsetPropertyKfNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Kf?>
-            {
-            }
-
-            internal class RequestPropertyKfSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Kf?>
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置附近地点 ID。
         /// </summary>
@@ -140,9 +113,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <i>（使用默认值即可，无需修改）</i>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_comm_nearby")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("is_comm_nearby")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool IsCommonNearby { get; set; } = true;
 
         /// <summary>
@@ -156,27 +129,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置门店图片信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pic_list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyPictureNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyPictureSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.Picture Picture { get; set; } = new Types.Picture();
 
         /// <summary>
         /// 获取或设置服务标签信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("service_infos")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyServiceNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("service_infos")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyServiceSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.Service Service { get; set; } = new Types.Service();
 
         /// <summary>
         /// 获取或设置客服信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("kf_info")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequsetPropertyKfNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("kf_info")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyKfSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.Kf? Kf { get; set; }
 
         /// <summary>

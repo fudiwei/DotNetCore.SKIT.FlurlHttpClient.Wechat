@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.xpay_goods_deliver_notify 事件的数据。</para>
     /// <para>https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html </para>
     /// </summary>
-    public class XPayGoodsDeliverNotifyEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class XPayGoodsDeliverNotifyEvent : WechatApiEvent
     {
         public static class Types
         {

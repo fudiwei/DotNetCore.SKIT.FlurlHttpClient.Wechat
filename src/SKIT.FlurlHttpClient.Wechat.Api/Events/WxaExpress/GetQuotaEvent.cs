@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.get_quota 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/express/express-by-provider/onGetQuota.html </para>
     /// </summary>
-    public class GetQuotaEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class GetQuotaEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置快递公司客户编码。

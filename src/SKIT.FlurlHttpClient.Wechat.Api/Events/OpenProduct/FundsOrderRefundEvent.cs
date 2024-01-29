@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.funds_order_refund 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/wxafunds/callback/refunds_order.html </para>
     /// </summary>
-    public class FundsOrderRefundEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class FundsOrderRefundEvent : WechatApiEvent
     {
         public static class Types
         {

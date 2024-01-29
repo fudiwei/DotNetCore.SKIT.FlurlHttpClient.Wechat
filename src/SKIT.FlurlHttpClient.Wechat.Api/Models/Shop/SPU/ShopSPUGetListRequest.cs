@@ -11,36 +11,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置指定创建时间的开始时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("start_create_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("start_create_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
         public DateTimeOffset? StartCreateTime { get; set; }
 
         /// <summary>
         /// 获取或设置指定创建时间的结束时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("end_create_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("end_create_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
         public DateTimeOffset? EndCreateTime { get; set; }
 
         /// <summary>
         /// 获取或设置指定更新时间的开始时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("start_update_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("start_update_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
         public DateTimeOffset? StartUpdateTime { get; set; }
 
         /// <summary>
         /// 获取或设置指定更新时间的结束时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("end_update_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("end_update_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
         public DateTimeOffset? EndUpdateTime { get; set; }
 
         /// <summary>
@@ -68,9 +68,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置是否获取草稿数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("need_edit_spu")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("need_edit_spu")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool? RequireEdittingSPU { get; set; }
     }
 }

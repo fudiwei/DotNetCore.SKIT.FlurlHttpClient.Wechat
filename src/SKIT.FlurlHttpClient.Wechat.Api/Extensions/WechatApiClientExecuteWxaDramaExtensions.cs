@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "wxadrama", "setplayerdramarecmdswitch")
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxadrama", "setplayerdramarecmdswitch")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.WxaDramaSetPlayerDramaRecommendSwitchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaDramaSetPlayerDramaRecommendSwitchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

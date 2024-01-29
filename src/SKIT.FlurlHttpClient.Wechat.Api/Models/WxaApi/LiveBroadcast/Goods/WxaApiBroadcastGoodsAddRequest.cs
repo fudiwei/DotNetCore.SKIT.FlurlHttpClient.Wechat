@@ -42,14 +42,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("price")]
                 [System.Text.Json.Serialization.JsonPropertyName("price")]
-                public double Price1 { get; set; }
+                public decimal Price1 { get; set; }
 
                 /// <summary>
                 /// 获取或设置价格 2（单位：元）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("price2")]
                 [System.Text.Json.Serialization.JsonPropertyName("price2")]
-                public double Price2 { get; set; }
+                public decimal Price2 { get; set; }
 
                 /// <summary>
                 /// 获取或设置第三方小程序 AppId。

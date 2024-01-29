@@ -120,28 +120,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("space_x")]
                 [System.Text.Json.Serialization.JsonPropertyName("space_x")]
-                public double? Length { get; set; }
+                public decimal? Length { get; set; }
 
                 /// <summary>
                 /// 获取或设置包裹宽度（单位：厘米）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("space_y")]
                 [System.Text.Json.Serialization.JsonPropertyName("space_y")]
-                public double? Width { get; set; }
+                public decimal? Width { get; set; }
 
                 /// <summary>
                 /// 获取或设置包裹高度（单位：厘米）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("space_z")]
                 [System.Text.Json.Serialization.JsonPropertyName("space_z")]
-                public double? Height { get; set; }
+                public decimal? Height { get; set; }
 
                 /// <summary>
                 /// 获取或设置包裹重量（单位：千克）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("weight")]
                 [System.Text.Json.Serialization.JsonPropertyName("weight")]
-                public double? Weight { get; set; }
+                public decimal? Weight { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品详情列表。
@@ -222,9 +222,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// 获取或设置是否保价。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("use_insured")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("use_insured")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsUseInsured { get; set; }
 
                 /// <summary>

@@ -79,14 +79,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rider_lng")]
         [System.Text.Json.Serialization.JsonPropertyName("rider_lng")]
-        public double? RiderLongitude { get; set; }
+        public decimal? RiderLongitude { get; set; }
 
         /// <summary>
         /// 获取或设置骑手位置纬度。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rider_lat")]
         [System.Text.Json.Serialization.JsonPropertyName("rider_lat")]
-        public double? RiderLatitude { get; set; }
+        public decimal? RiderLatitude { get; set; }
 
         /// <summary>
         /// 获取或设置预计剩余送达时间（单位：秒）。

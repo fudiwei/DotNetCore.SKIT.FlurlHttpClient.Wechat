@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.open_product_order_cancel 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/order_cancel.html </para>
     /// </summary>
-    public class OpenProductOrderCancelEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class OpenProductOrderCancelEvent : WechatApiEvent
     {
         public static class Types
         {

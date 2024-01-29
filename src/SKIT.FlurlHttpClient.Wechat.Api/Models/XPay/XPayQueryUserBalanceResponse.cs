@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置是否满足首充活动。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("first_save_flag")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("first_save_flag")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool IsFirstSave { get; set; }
 
         /// <summary>

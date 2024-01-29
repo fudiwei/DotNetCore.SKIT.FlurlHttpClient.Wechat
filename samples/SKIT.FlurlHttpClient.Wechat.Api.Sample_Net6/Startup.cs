@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample
 
             // 注入工厂 HTTP 客户端
             services.AddHttpClient();
-            services.AddSingleton<Services.HttpClients.IWechatApiHttpClientFactory, Services.HttpClients.Implements.WechatApiHttpClientFactory>();
+            services.AddSingleton<Services.HttpClients.IWechatApiClientFactory, Services.HttpClients.Implements.WechatApiClientFactory>();
 
             // 注入后台任务
             services.AddHostedService<Services.BackgroundServices.WechatAccessTokenRefreshingBackgroundService>();

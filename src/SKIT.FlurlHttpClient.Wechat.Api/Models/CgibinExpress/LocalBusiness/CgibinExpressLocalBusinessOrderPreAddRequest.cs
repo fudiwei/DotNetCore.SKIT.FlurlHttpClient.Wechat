@@ -51,14 +51,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("lng")]
                 [System.Text.Json.Serialization.JsonPropertyName("lng")]
-                public double Longitude { get; set; }
+                public decimal Longitude { get; set; }
 
                 /// <summary>
                 /// 获取或设置纬度。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("lat")]
                 [System.Text.Json.Serialization.JsonPropertyName("lat")]
-                public double Latitude { get; set; }
+                public decimal Latitude { get; set; }
 
                 /// <summary>
                 /// 获取或设置坐标类型。
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("good_price")]
                                 [System.Text.Json.Serialization.JsonPropertyName("good_price")]
-                                public double? Price { get; set; }
+                                public decimal? Price { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置货物单位。
@@ -126,35 +126,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_value")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_value")]
-                public double GoodsVaue { get; set; }
+                public decimal GoodsVaue { get; set; }
 
                 /// <summary>
                 /// 获取或设置货物高度（单位：厘米）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_height")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_height")]
-                public double? GoodsHeight { get; set; }
+                public decimal? GoodsHeight { get; set; }
 
                 /// <summary>
                 /// 获取或设置货物长度（单位：厘米）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_length")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_length")]
-                public double? GoodsLength { get; set; }
+                public decimal? GoodsLength { get; set; }
 
                 /// <summary>
                 /// 获取或设置货物宽度（单位：厘米）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_width")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_width")]
-                public double? GoodsWidth { get; set; }
+                public decimal? GoodsWidth { get; set; }
 
                 /// <summary>
                 /// 获取或设置货物重量（单位：千克）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("goods_weight")]
                 [System.Text.Json.Serialization.JsonPropertyName("goods_weight")]
-                public double? GoodsWeight { get; set; }
+                public decimal? GoodsWeight { get; set; }
 
                 /// <summary>
                 /// 获取或设置货物详情信息。
@@ -247,9 +247,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// 获取或设置用户下单付款时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_insured")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_insured")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsInsured { get; set; }
 
                 /// <summary>
@@ -257,22 +257,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("declared_value")]
                 [System.Text.Json.Serialization.JsonPropertyName("declared_value")]
-                public double? DeclaredValue { get; set; }
+                public decimal? DeclaredValue { get; set; }
 
                 /// <summary>
                 /// 获取或设置小费金额（单位：元）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tips")]
                 [System.Text.Json.Serialization.JsonPropertyName("tips")]
-                public double? TipValue { get; set; }
+                public decimal? TipValue { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否选择直拿直送。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_direct_delivery")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_direct_delivery")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsDirectDelivery { get; set; }
 
                 /// <summary>
@@ -280,14 +280,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cash_on_delivery")]
                 [System.Text.Json.Serialization.JsonPropertyName("cash_on_delivery")]
-                public double? CashOnDelivery { get; set; }
+                public decimal? CashOnDelivery { get; set; }
 
                 /// <summary>
                 /// 获取或设置骑手应收金额（单位：元）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cash_on_pickup")]
                 [System.Text.Json.Serialization.JsonPropertyName("cash_on_pickup")]
-                public double? CashOnPickup { get; set; }
+                public decimal? CashOnPickup { get; set; }
 
                 /// <summary>
                 /// 获取或设置物流流向类型。
@@ -300,18 +300,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// 获取或设置是否骑手必须输入收货码才能完成订单妥投。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_finish_code_needed")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_finish_code_needed")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsFinishCodeRequired { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否骑手必须输入取货码才能从商家取货。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_pickup_code_needed")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_pickup_code_needed")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsPickupCodeRequired { get; set; }
 
                 /// <summary>

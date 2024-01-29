@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.aftersale_new_order 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/aftersale/aftersale_new_order.html </para>
     /// </summary>
-    public class AftersaleNewOrderEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class AftersaleNewOrderEvent : WechatApiEvent
     {
         public static class Types
         {

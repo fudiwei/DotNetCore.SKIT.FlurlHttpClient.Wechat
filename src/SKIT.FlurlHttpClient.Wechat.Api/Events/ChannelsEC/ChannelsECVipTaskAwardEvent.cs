@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.channels_ec_vip_task_award 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/vip/callback/member/user_finish_task.html </para>
     /// </summary>
-    public class ChannelsECVipTaskAwardEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECVipTaskAwardEvent : WechatApiEvent
     {
         public static class Types
         {

@@ -24,7 +24,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("deduct_fee")]
         [System.Text.Json.Serialization.JsonPropertyName("deduct_fee")]
-        public double DeductFee { get; set; }
+        public decimal DeductFee { get; set; }
 
         /// <summary>
         /// 获取或设置说明。

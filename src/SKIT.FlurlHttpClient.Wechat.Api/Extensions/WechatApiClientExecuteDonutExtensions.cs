@@ -23,14 +23,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "donut", "code2verifyinfo")
+                .CreateFlurlRequest(request, HttpMethod.Get, "donut", "code2verifyinfo")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("appid", client.Credentials.AppId)
                 .SetQueryParam("appsecret", client.Credentials.AppSecret)
                 .SetQueryParam("code", request.Code)
                 .SetQueryParam("grant_type", request.GrantType);
 
-            return await client.SendRequestWithJsonAsync<Models.DonutCode2VerifyInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DonutCode2VerifyInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -47,10 +47,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "donut", "unbindphone")
+                .CreateFlurlRequest(request, HttpMethod.Post, "donut", "unbindphone")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.DonutUnbindPhoneResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DonutUnbindPhoneResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -67,10 +67,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "donut", "unbindweixin")
+                .CreateFlurlRequest(request, HttpMethod.Post, "donut", "unbindweixin")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.DonutUnbindWeixinResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DonutUnbindWeixinResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -87,10 +87,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "donut", "unbindapple")
+                .CreateFlurlRequest(request, HttpMethod.Post, "donut", "unbindapple")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.DonutUnbindAppleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DonutUnbindAppleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -107,10 +107,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "donut", "unregisteruser")
+                .CreateFlurlRequest(request, HttpMethod.Post, "donut", "unregisteruser")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.DonutUnregisterUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DonutUnregisterUserResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

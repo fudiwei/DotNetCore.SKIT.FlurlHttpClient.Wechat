@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("poi_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("poi_id")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
                                 public string POIId { get; set; } = default!;
 
                                 /// <summary>
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
                             {
                                 string? value = serializer.Deserialize<string>(reader);
-                                if (value == null)
+                                if (value is null)
                                     return existingValue;
 
                                 return Newtonsoft.Json.JsonConvert.DeserializeObject<Types.POI>(value);
@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                         public override void WriteJson(Newtonsoft.Json.JsonWriter writer, Types.POI? value, Newtonsoft.Json.JsonSerializer serializer)
                         {
-                            if (value != null)
+                            if (value is not null)
                                 writer.WriteValue(Newtonsoft.Json.JsonConvert.SerializeObject(value, Newtonsoft.Json.Formatting.None));
                             else
                                 writer.WriteNull();
@@ -125,7 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
                             {
                                 string? value = reader.GetString();
-                                if (value == null)
+                                if (value is null)
                                     return null;
 
                                 return System.Text.Json.JsonSerializer.Deserialize<Types.POI>(value, options);
@@ -136,7 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                         public override void Write(System.Text.Json.Utf8JsonWriter writer, Types.POI? value, System.Text.Json.JsonSerializerOptions options)
                         {
-                            if (value != null)
+                            if (value is not null)
                                 writer.WriteStringValue(System.Text.Json.JsonSerializer.Serialize(value, options));
                             else
                                 writer.WriteNullValue();

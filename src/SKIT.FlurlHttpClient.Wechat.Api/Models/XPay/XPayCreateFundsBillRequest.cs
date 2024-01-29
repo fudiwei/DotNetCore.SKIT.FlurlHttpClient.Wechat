@@ -65,9 +65,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置是否授权广告数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorize_advertise")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("authorize_advertise")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool IsAdvertiseAuthorized { get; set; }
 
         protected internal override string GetRequestPath()

@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "message", "wxopen", "template", "uniform_send")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "message", "wxopen", "template", "uniform_send")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMessageWxopenTemplateUniformSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinMessageWxopenTemplateUniformSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -44,10 +44,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "message", "wxopen", "activityid", "create")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "message", "wxopen", "activityid", "create")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMessageWxopenActivityIdCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinMessageWxopenActivityIdCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -65,10 +65,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "message", "wxopen", "updatablemsg", "send")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "message", "wxopen", "updatablemsg", "send")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMessageWxopenUpdatableMessageSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinMessageWxopenUpdatableMessageSendResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

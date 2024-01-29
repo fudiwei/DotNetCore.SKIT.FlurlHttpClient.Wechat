@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/sec/vod/uploadpart 接口的请求。</para>
     /// </summary>
-    public class WxaSecVodUploadPartRequest : WechatApiRequest, IInferable<WxaSecVodUploadPartRequest, WxaSecVodSingleFileUploadResponse>
+    public class WxaSecVodUploadPartRequest : WechatApiRequest, IInferable<WxaSecVodUploadPartRequest, WxaSecVodUploadPartResponse>
     {
         /// <summary>
         /// 获取或设置分片上传 ID。

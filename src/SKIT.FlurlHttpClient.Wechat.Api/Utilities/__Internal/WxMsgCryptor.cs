@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 
         private static byte[] Decode2(byte[] decryptedBytes)
         {
-            if (decryptedBytes == null) throw new ArgumentNullException(nameof(decryptedBytes));
+            if (decryptedBytes is null) throw new ArgumentNullException(nameof(decryptedBytes));
 
             int pad = (int)decryptedBytes[decryptedBytes.Length - 1];
             if (pad < 1 || pad > 32)
@@ -75,9 +75,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 
         private static byte[] AESDecrypt(byte[] keyBytes, byte[] ivBytes, byte[] cipherBytes)
         {
-            if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
-            if (ivBytes == null) throw new ArgumentNullException(nameof(ivBytes));
-            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
+            if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
+            if (ivBytes is null) throw new ArgumentNullException(nameof(ivBytes));
+            if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
 
             using var aes = Aes.Create();
             aes.KeySize = AES_KEY_SIZE;
@@ -103,9 +103,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 
         private static string AESEncrypt(byte[] keyBytes, byte[] ivBytes, byte[] plainBytes)
         {
-            if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
-            if (ivBytes == null) throw new ArgumentNullException(nameof(ivBytes));
-            if (plainBytes == null) throw new ArgumentNullException(nameof(plainBytes));
+            if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
+            if (ivBytes is null) throw new ArgumentNullException(nameof(ivBytes));
+            if (plainBytes is null) throw new ArgumentNullException(nameof(plainBytes));
 
             using var aes = Aes.Create();
             aes.KeySize = AES_KEY_SIZE;
@@ -140,8 +140,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>解密后的文本内容。</returns>
         public static string AESDecrypt(string cipherText, string encodingAESKey, out string appId)
         {
-            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
-            if (encodingAESKey == null) throw new ArgumentNullException(nameof(encodingAESKey));
+            if (cipherText is null) throw new ArgumentNullException(nameof(cipherText));
+            if (encodingAESKey is null) throw new ArgumentNullException(nameof(encodingAESKey));
 
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
             byte[] keyBytes = Convert.FromBase64String(encodingAESKey + "=");
@@ -170,9 +170,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>加密后的文本内容。</returns>
         public static string AESEncrypt(string plainText, string encodingAESKey, string appId)
         {
-            if (plainText == null) throw new ArgumentNullException(nameof(plainText));
-            if (encodingAESKey == null) throw new ArgumentNullException(nameof(encodingAESKey));
-            if (appId == null) throw new ArgumentNullException(nameof(appId));
+            if (plainText is null) throw new ArgumentNullException(nameof(plainText));
+            if (encodingAESKey is null) throw new ArgumentNullException(nameof(encodingAESKey));
+            if (appId is null) throw new ArgumentNullException(nameof(appId));
 
             byte[] keyBytes = Convert.FromBase64String(encodingAESKey + "=");
             byte[] ivBytes = new byte[16];
@@ -204,11 +204,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>验证结果。</returns>
         public static bool VerifySignature(string sToken, string sTimestamp, string sNonce, string sMsgEncrypt, string sMsgSign)
         {
-            if (sToken == null) throw new ArgumentNullException(nameof(sToken));
-            if (sTimestamp == null) throw new ArgumentNullException(nameof(sTimestamp));
-            if (sNonce == null) throw new ArgumentNullException(nameof(sNonce));
-            if (sMsgEncrypt == null) throw new ArgumentNullException(nameof(sMsgEncrypt));
-            if (sMsgSign == null) throw new ArgumentNullException(nameof(sMsgSign));
+            if (sToken is null) throw new ArgumentNullException(nameof(sToken));
+            if (sTimestamp is null) throw new ArgumentNullException(nameof(sTimestamp));
+            if (sNonce is null) throw new ArgumentNullException(nameof(sNonce));
+            if (sMsgEncrypt is null) throw new ArgumentNullException(nameof(sMsgEncrypt));
+            if (sMsgSign is null) throw new ArgumentNullException(nameof(sMsgSign));
 
             string expectedSign = GenerateSignature(sToken, sTimestamp, sNonce, sMsgEncrypt);
             return string.Equals(expectedSign, sMsgSign, StringComparison.OrdinalIgnoreCase);
@@ -224,10 +224,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>签名。</returns>
         public static string GenerateSignature(string sToken, string sTimestamp, string sNonce, string sMsgEncrypt)
         {
-            if (sToken == null) throw new ArgumentNullException(nameof(sToken));
-            if (sTimestamp == null) throw new ArgumentNullException(nameof(sTimestamp));
-            if (sNonce == null) throw new ArgumentNullException(nameof(sNonce));
-            if (sMsgEncrypt == null) throw new ArgumentNullException(nameof(sMsgEncrypt));
+            if (sToken is null) throw new ArgumentNullException(nameof(sToken));
+            if (sTimestamp is null) throw new ArgumentNullException(nameof(sTimestamp));
+            if (sNonce is null) throw new ArgumentNullException(nameof(sNonce));
+            if (sMsgEncrypt is null) throw new ArgumentNullException(nameof(sMsgEncrypt));
 
             List<string> tmp = new List<string>(capacity: 4) { sToken, sTimestamp, sNonce, sMsgEncrypt };
             tmp.Sort(StringComparer.Ordinal);
@@ -257,7 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns>指示是否是有效的 XML 内容。</returns>
         public static bool TryParseXml(string xml, out string encryptedMsg, out string toUserName)
         {
-            if (xml == null) throw new ArgumentNullException(nameof(xml));
+            if (xml is null) throw new ArgumentNullException(nameof(xml));
 
             encryptedMsg = string.Empty;
             toUserName = string.Empty;
@@ -269,7 +269,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
                 xmlDoc.LoadXml(xml);
 
                 XmlNode? xmlRoot = xmlDoc.FirstChild;
-                if (xmlRoot == null)
+                if (xmlRoot is null)
                     return false;
 
                 encryptedMsg = xmlRoot["Encrypt"]?.InnerText?.ToString() ?? string.Empty;
@@ -291,8 +291,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns></returns>
         public static string WrapXml(string sToken, string sMsgEncrypt)
         {
-            if (sToken == null) throw new ArgumentNullException(nameof(sToken));
-            if (sMsgEncrypt == null) throw new ArgumentNullException(nameof(sMsgEncrypt));
+            if (sToken is null) throw new ArgumentNullException(nameof(sToken));
+            if (sMsgEncrypt is null) throw new ArgumentNullException(nameof(sMsgEncrypt));
 
             string sTimestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string sNonce = DateTimeOffset.Now.Ticks.ToString("x");
@@ -310,10 +310,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <returns></returns>
         public static string WrapXml(string sTimestamp, string sNonce, string sMsgEncrypt, string sMsgSign)
         {
-            if (sTimestamp == null) throw new ArgumentNullException(nameof(sTimestamp));
-            if (sNonce == null) throw new ArgumentNullException(nameof(sNonce));
-            if (sMsgEncrypt == null) throw new ArgumentNullException(nameof(sMsgEncrypt));
-            if (sMsgSign == null) throw new ArgumentNullException(nameof(sMsgSign));
+            if (sTimestamp is null) throw new ArgumentNullException(nameof(sTimestamp));
+            if (sNonce is null) throw new ArgumentNullException(nameof(sNonce));
+            if (sMsgEncrypt is null) throw new ArgumentNullException(nameof(sMsgEncrypt));
+            if (sMsgSign is null) throw new ArgumentNullException(nameof(sMsgSign));
 
             StringBuilder builder = new StringBuilder();
             builder.AppendFormat("<xml>");

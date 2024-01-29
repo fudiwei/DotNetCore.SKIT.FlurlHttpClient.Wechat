@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.card_sku_remind 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons_Vouchers_and_Cards_Event_Push_Messages.html#10 </para>
     /// </summary>
-    public class CardSKURemindEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class CardSKURemindEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置卡券模板编号。

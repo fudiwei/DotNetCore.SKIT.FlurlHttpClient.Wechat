@@ -4,7 +4,7 @@
     /// <para>表示 EVENT.aftersale_merchant_confirm_receipt_overdue 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/aftersale/aftersale_merchant_confirm_receipt_overdue.html </para>
     /// </summary>
-    public class AftersaleMerchantConfirmReceiptOverdueEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class AftersaleMerchantConfirmReceiptOverdueEvent : WechatApiEvent
     {
         public static class Types
         {

@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.channels_ec_order_deliver 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/order/callback/channels_ec_order_deliver.html </para>
     /// </summary>
-    public class ChannelsECOrderDeliverEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECOrderDeliverEvent : WechatApiEvent
     {
         public static class Types
         {
@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// 获取或设置是否发货完成。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("finish_delivery")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("finish_delivery")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsFinishDelivery { get; set; }
             }
         }

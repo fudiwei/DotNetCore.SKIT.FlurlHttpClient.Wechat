@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /channels/ec/brand/valid/list/get 接口的请求。</para>
     /// </summary>
-    public class ChannelsECBrandValidListGetRequest : WechatApiRequest, IInferable<ChannelsECBrandValidListGetRequest, ChannelsECBrandListGetResponse>
+    public class ChannelsECBrandValidListGetRequest : WechatApiRequest, IInferable<ChannelsECBrandValidListGetRequest, ChannelsECBrandValidListGetResponse>
     {
         /// <summary>
         /// 获取或设置分页每页页数。

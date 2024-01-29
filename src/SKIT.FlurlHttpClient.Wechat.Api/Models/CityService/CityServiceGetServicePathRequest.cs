@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -24,17 +24,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("value")]
                 [System.Text.Json.Serialization.JsonPropertyName("value")]
                 public string Value { get; set; } = string.Empty;
-            }
-        }
-
-        internal static class Converters
-        {
-            internal class RequestPropertyParameterListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<Types.Parameter>>
-            {
-            }
-
-            internal class RequestPropertyParameterListSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<Types.Parameter>>
-            {
             }
         }
 
@@ -84,9 +73,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置参数列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("params")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyParameterListNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("params")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyParameterListSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public IList<Types.Parameter>? ParameterList { get; set; }
 
         /// <summary>

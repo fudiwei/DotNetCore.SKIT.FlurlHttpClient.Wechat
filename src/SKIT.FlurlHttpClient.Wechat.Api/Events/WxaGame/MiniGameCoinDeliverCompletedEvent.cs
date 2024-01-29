@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.minigame_coin_deliver_completed 事件的数据。</para>
     /// <para>https://docs.qq.com/doc/DVVZZdHFsYkttYmxl </para>
     /// </summary>
-    public class MiniGameCoinDeliverCompletedEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class MiniGameCoinDeliverCompletedEvent : WechatApiEvent
     {
         public static class Types
         {

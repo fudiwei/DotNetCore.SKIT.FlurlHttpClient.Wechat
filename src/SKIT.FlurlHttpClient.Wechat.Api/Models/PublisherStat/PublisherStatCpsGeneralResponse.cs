@@ -39,7 +39,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("click_rate")]
                 [System.Text.Json.Serialization.JsonPropertyName("click_rate")]
-                public double ClickRate { get; set; }
+                public decimal ClickRate { get; set; }
 
                 /// <summary>
                 /// 获取或设置下单量。
@@ -53,7 +53,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_rate")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_rate")]
-                public double OrderRate { get; set; }
+                public decimal OrderRate { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单总金额（单位：分）。
@@ -111,7 +111,7 @@
 
         public override bool IsSuccessful()
         {
-            return base.IsSuccessful() && BaseResponse != null && BaseResponse.ErrorCode == 0;
+            return base.IsSuccessful() && BaseResponse is not null && BaseResponse.ErrorCode == 0;
         }
     }
 }

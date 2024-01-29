@@ -6,7 +6,7 @@
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/E_Invoice/Vendor_API_List.html#6 </para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/WeChat_Invoice/Nontax_Bill/API_list.html#2.3 </para>
     /// </summary>
-    public class UserAuthorizeInvoiceEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class UserAuthorizeInvoiceEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置授权成功的订单号。

@@ -4,13 +4,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示回复 EVENT.get_auth_info 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/immediate-delivery/by-provider/immediateDelivery.onPreAuthCodeGet.html </para>
     /// </summary>
-    public class GetAuthInfoReply : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable
+    public class GetAuthInfoReply : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置错误码。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resultcode")]
         [System.Text.Json.Serialization.JsonPropertyName("resultcode")]
+        [System.Xml.Serialization.XmlElement("resultcode")]
         public int ResultCode { get; set; }
 
         /// <summary>
@@ -18,6 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("resultmsg")]
         [System.Text.Json.Serialization.JsonPropertyName("resultmsg")]
+        [System.Xml.Serialization.XmlElement("resultmsg", IsNullable = true)]
         public string? ResultMessage { get; set; }
 
         /// <summary>
@@ -25,6 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appkey")]
         [System.Text.Json.Serialization.JsonPropertyName("appkey")]
+        [System.Xml.Serialization.XmlElement("appkey")]
         public string AppKey { get; set; } = default!;
 
         /// <summary>
@@ -32,6 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_type")]
         [System.Text.Json.Serialization.JsonPropertyName("account_type")]
+        [System.Xml.Serialization.XmlElement("account_type")]
         public int AccountType { get; set; }
 
         /// <summary>
@@ -39,6 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account")]
         [System.Text.Json.Serialization.JsonPropertyName("account")]
+        [System.Xml.Serialization.XmlElement("account")]
         public string Account { get; set; } = default!;
 
         public GetAuthInfoReply()

@@ -25,13 +25,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "sns", "oauth2", "access_token")
+                .CreateFlurlRequest(request, HttpMethod.Get, "sns", "oauth2", "access_token")
                 .SetQueryParam("grant_type", request.GrantType)
                 .SetQueryParam("appid", client.Credentials.AppId)
                 .SetQueryParam("secret", client.Credentials.AppSecret)
                 .SetQueryParam("code", request.Code);
 
-            return await client.SendRequestWithJsonAsync<Models.SnsOAuth2AccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SnsOAuth2AccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -50,12 +50,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "sns", "oauth2", "refresh_token")
+                .CreateFlurlRequest(request, HttpMethod.Get, "sns", "oauth2", "refresh_token")
                 .SetQueryParam("grant_type", request.GrantType)
                 .SetQueryParam("appid", client.Credentials.AppId)
                 .SetQueryParam("refresh_token", request.RefreshToken);
 
-            return await client.SendRequestWithJsonAsync<Models.SnsOAuth2RefreshTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SnsOAuth2RefreshTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -74,12 +74,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "sns", "userinfo")
+                .CreateFlurlRequest(request, HttpMethod.Get, "sns", "userinfo")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("openid", request.OpenId)
                 .SetQueryParam("lang", request.Language);
 
-            return await client.SendRequestWithJsonAsync<Models.SnsUserInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SnsUserInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -98,11 +98,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "sns", "auth")
+                .CreateFlurlRequest(request, HttpMethod.Get, "sns", "auth")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("openid", request.OpenId);
 
-            return await client.SendRequestWithJsonAsync<Models.SnsAuthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SnsAuthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -120,13 +120,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "sns", "jscode2session")
+                .CreateFlurlRequest(request, HttpMethod.Get, "sns", "jscode2session")
                 .SetQueryParam("grant_type", request.GrantType)
                 .SetQueryParam("appid", client.Credentials.AppId)
                 .SetQueryParam("secret", client.Credentials.AppSecret)
                 .SetQueryParam("js_code", request.JsCode);
 
-            return await client.SendRequestWithJsonAsync<Models.SnsJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SnsJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region Component
@@ -143,18 +143,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.ComponentAppId == null)
+            if (request.ComponentAppId is null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "sns", "component", "jscode2session")
+                .CreateFlurlRequest(request, HttpMethod.Get, "sns", "component", "jscode2session")
                 .SetQueryParam("grant_type", request.GrantType)
                 .SetQueryParam("js_code", request.JsCode)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("component_appid", request.ComponentAppId)
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.SnsComponentJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SnsComponentJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -170,18 +170,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.ComponentAppId == null)
+            if (request.ComponentAppId is null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "sns", "oauth2", "component", "access_token")
+                .CreateFlurlRequest(request, HttpMethod.Get, "sns", "oauth2", "component", "access_token")
                 .SetQueryParam("grant_type", request.GrantType)
                 .SetQueryParam("code", request.Code)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("component_appid", request.ComponentAppId)
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.SnsOAuth2ComponentAccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SnsOAuth2ComponentAccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -197,18 +197,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.ComponentAppId == null)
+            if (request.ComponentAppId is null)
                 request.ComponentAppId = client.Credentials.AppId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "sns", "oauth2", "component", "refresh_token")
+                .CreateFlurlRequest(request, HttpMethod.Get, "sns", "oauth2", "component", "refresh_token")
                 .SetQueryParam("grant_type", request.GrantType)
                 .SetQueryParam("refresh_token", request.RefreshToken)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("component_appid", request.ComponentAppId)
                 .SetQueryParam("component_access_token", request.ComponentAccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.SnsOAuth2ComponentRefreshTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SnsOAuth2ComponentRefreshTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

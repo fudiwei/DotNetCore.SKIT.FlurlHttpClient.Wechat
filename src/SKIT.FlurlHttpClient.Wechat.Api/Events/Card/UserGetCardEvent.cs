@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.user_get_card 事件的数据。</para>
@@ -7,7 +7,7 @@
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Membership_Cards/Create_a_membership_card.html#13 </para>
     /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/gift_card.html#_10-4%E3%80%81%E8%B5%A0%E9%80%8124%E5%B0%8F%E6%97%B6%E5%AF%B9%E6%96%B9%E6%9C%AA%E9%A2%86%E5%8F%96%E9%80%80%E5%9B%9E%E5%90%8E%E7%9A%84%E4%BA%8B%E4%BB%B6 </para>
     /// </summary>
-    public class UserGetCardEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class UserGetCardEvent : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置卡券模板编号。
@@ -46,7 +46,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsGiveByFriend")]
         [System.Text.Json.Serialization.JsonPropertyName("IsGiveByFriend")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsGiveByFriend")]
         public bool IsTransferedByFriend { get; set; }
 
@@ -63,7 +63,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsRestoreMemberCard")]
         [System.Text.Json.Serialization.JsonPropertyName("IsRestoreMemberCard")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsRestoreMemberCard", IsNullable = true)]
         public bool? IsRestoreMemberCard { get; set; }
 
@@ -72,7 +72,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsRecommendByFriend")]
         [System.Text.Json.Serialization.JsonPropertyName("IsRecommendByFriend")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsRecommendByFriend", IsNullable = true)]
         public bool? IsRecommendByFriend { get; set; }
 

@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示回复 EVENT.query_single_waybill_fee 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/express/delivery/single-delivery.html </para>
     /// </summary>
-    public class QuerySingleWaybillFeeReply : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class QuerySingleWaybillFeeReply : WechatApiEvent
     {
         /// <summary>
         /// 获取或设置处理结果错误码。
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("Fee")]
         [System.Text.Json.Serialization.JsonPropertyName("Fee")]
         [System.Xml.Serialization.XmlElement("Fee")]
-        public double Fee { get; set; }
+        public decimal Fee { get; set; }
 
         /// <summary>
         /// 获取或设置预估原价（单位：元）。
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("OriginalFee")]
         [System.Text.Json.Serialization.JsonPropertyName("OriginalFee")]
         [System.Xml.Serialization.XmlElement("OriginalFee", IsNullable = true)]
-        public double? OriginalFee { get; set; }
+        public decimal? OriginalFee { get; set; }
 
         public QuerySingleWaybillFeeReply()
         {

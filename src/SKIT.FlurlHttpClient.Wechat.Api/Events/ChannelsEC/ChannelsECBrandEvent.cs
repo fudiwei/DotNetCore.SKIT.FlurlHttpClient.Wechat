@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.channels_ec_brand 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/brand/callback/brand_event.html </para>
     /// </summary>
-    public class ChannelsECBrandEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class ChannelsECBrandEvent : WechatApiEvent
     {
         public static class Types
         {

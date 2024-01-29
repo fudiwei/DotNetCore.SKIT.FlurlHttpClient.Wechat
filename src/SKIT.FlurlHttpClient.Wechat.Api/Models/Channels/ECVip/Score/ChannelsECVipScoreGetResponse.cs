@@ -59,9 +59,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置是否开启。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("open_mgr")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("open_mgr")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool IsOpen { get; set; }
 
                         /// <summary>

@@ -90,9 +90,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置商标有效时间。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("trademark_authorization_period")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("trademark_authorization_period")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                         public DateTimeOffset? TrademarkAuthorizationTime { get; set; }
 
                         /// <summary>
@@ -113,9 +113,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置商标申请时间。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("trademark_application_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("trademark_application_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularNullableDateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                         public DateTimeOffset? TrademarkApplicationTime { get; set; }
 
                         /// <summary>

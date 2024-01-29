@@ -154,14 +154,14 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cpu")]
         [System.Text.Json.Serialization.JsonPropertyName("cpu")]
-        public double? CPUCount { get; set; }
+        public decimal? CPUCount { get; set; }
 
         /// <summary>
         /// 获取或设置内存大小（单位：GB）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mem")]
         [System.Text.Json.Serialization.JsonPropertyName("mem")]
-        public double? MemorySize { get; set; }
+        public decimal? MemorySize { get; set; }
 
         /// <summary>
         /// 获取或设置最小副本数（范围：0～50）。

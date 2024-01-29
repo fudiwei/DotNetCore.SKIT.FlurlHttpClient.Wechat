@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.add_waybill 事件的数据。</para>
     /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/express/express-by-provider/onAddOrder.html </para>
     /// </summary>
-    public class AddWaybillEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class AddWaybillEvent : WechatApiEvent
     {
         public static class Types
         {
@@ -133,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Space_X")]
                 [System.Text.Json.Serialization.JsonPropertyName("Space_X")]
                 [System.Xml.Serialization.XmlElement("Space_X", IsNullable = true)]
-                public double? Length { get; set; }
+                public decimal? Length { get; set; }
 
                 /// <summary>
                 /// 获取或设置包裹宽度（单位：厘米）。
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Space_Y")]
                 [System.Text.Json.Serialization.JsonPropertyName("Space_Y")]
                 [System.Xml.Serialization.XmlElement("Space_Y", IsNullable = true)]
-                public double? Width { get; set; }
+                public decimal? Width { get; set; }
 
                 /// <summary>
                 /// 获取或设置包裹高度（单位：厘米）。
@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("space_z")]
                 [System.Text.Json.Serialization.JsonPropertyName("space_z")]
                 [System.Xml.Serialization.XmlElement("Space_Z", IsNullable = true)]
-                public double? Height { get; set; }
+                public decimal? Height { get; set; }
 
                 /// <summary>
                 /// 获取或设置包裹重量（单位：千克）。
@@ -157,7 +157,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("weight")]
                 [System.Text.Json.Serialization.JsonPropertyName("weight")]
                 [System.Xml.Serialization.XmlElement("Weight", IsNullable = true)]
-                public double? Weight { get; set; }
+                public decimal? Weight { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品详情列表。
@@ -175,7 +175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("UseInsured")]
                 [System.Text.Json.Serialization.JsonPropertyName("UseInsured")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 [System.Xml.Serialization.XmlElement("UseInsured")]
                 public bool IsUseInsured { get; set; }
 

@@ -53,14 +53,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("price")]
                         [System.Text.Json.Serialization.JsonPropertyName("price")]
-                        public double Price1 { get; set; }
+                        public decimal Price1 { get; set; }
 
                         /// <summary>
                         /// 获取或设置价格 2（单位：元）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("price2")]
                         [System.Text.Json.Serialization.JsonPropertyName("price2")]
-                        public double Price2 { get; set; }
+                        public decimal Price2 { get; set; }
 
                         /// <summary>
                         /// 获取或设置第三方小程序 AppId。
@@ -152,27 +152,27 @@
                 /// 获取或设置是否开启官方收录。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_feeds_public")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_feeds_public")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsFeedsPublic { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否关闭点赞。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("close_like")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("close_like")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsCloseLike { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否关闭货架。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("close_goods")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("close_goods")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsCloseGoods { get; set; }
 
                 /// <summary>
@@ -186,27 +186,27 @@
                 /// 获取或设置是否关闭评论。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("close_comment")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("close_comment")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsCloseComment { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否关闭回放。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("close_replay")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("close_replay")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsCloseReplay { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否关闭客服。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("close_kf")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("close_kf")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool IsCloseKf { get; set; }
             }
         }

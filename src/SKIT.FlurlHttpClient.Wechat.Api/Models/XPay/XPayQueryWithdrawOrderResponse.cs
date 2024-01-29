@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("withdraw_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("withdraw_amount")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
 
         /// <summary>
         /// 获取或设置提现状态。

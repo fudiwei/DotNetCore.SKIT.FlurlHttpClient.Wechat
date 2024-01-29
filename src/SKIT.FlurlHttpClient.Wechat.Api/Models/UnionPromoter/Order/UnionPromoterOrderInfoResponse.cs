@@ -217,14 +217,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     else if (reader.TokenType == Newtonsoft.Json.JsonToken.String)
                     {
                         string? value = serializer.Deserialize<string>(reader);
-                        if (value == null)
+                        if (value is null)
                             return existingValue;
 
                         value = value.Replace("¥", string.Empty).Replace("-", string.Empty);
                         if (string.IsNullOrEmpty(value))
                             return existingValue;
 
-                        if (double.TryParse(value, out double currency))
+                        if (decimal.TryParse(value, out decimal currency))
                         {
                             return (int)(currency * 100);
                         }
@@ -235,7 +235,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                 public override void WriteJson(Newtonsoft.Json.JsonWriter writer, int value, Newtonsoft.Json.JsonSerializer serializer)
                 {
-                    writer.WriteValue("¥" + ((double)value / 100).ToString("#.##"));
+                    writer.WriteValue("¥" + ((decimal)value / 100).ToString("#.##"));
                 }
             }
 
@@ -250,14 +250,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     else if (reader.TokenType == System.Text.Json.JsonTokenType.String)
                     {
                         string? value = reader.GetString();
-                        if (value == null)
+                        if (value is null)
                             return default;
 
                         value = value.Replace("¥", string.Empty).Replace("-", string.Empty);
                         if (string.IsNullOrEmpty(value))
                             return default;
 
-                        if (double.TryParse(value, out double currency))
+                        if (decimal.TryParse(value, out decimal currency))
                         {
                             return (int)(currency * 100);
                         }
@@ -268,7 +268,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                 public override void Write(System.Text.Json.Utf8JsonWriter writer, int value, System.Text.Json.JsonSerializerOptions options)
                 {
-                    writer.WriteStringValue("¥" + ((double)value / 100).ToString("#.##"));
+                    writer.WriteStringValue("¥" + ((decimal)value / 100).ToString("#.##"));
                 }
             }
         }

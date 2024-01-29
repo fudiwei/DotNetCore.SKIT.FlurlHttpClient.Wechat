@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/sec-check/security.mediaCheckAsync.html </para>
     /// <para>https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/sec-check/security.mediaCheckAsync-v1.html </para>
     /// </summary>
-    public class WxaMediaCheckEvent : WechatApiEvent, WechatApiEvent.Serialization.IJsonSerializable, WechatApiEvent.Serialization.IXmlSerializable
+    public class WxaMediaCheckEvent : WechatApiEvent
     {
         public static class Types
         {
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("isrisky")]
         [System.Text.Json.Serialization.JsonPropertyName("isrisky")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         [System.Xml.Serialization.XmlElement("isrisky")]
         public bool IsRisky { get; set; }
 

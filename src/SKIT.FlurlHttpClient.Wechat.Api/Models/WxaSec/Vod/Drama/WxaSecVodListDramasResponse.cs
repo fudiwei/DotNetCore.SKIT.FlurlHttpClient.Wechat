@@ -129,9 +129,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// 获取或设置是否加急审核。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("expedited")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanReadOnlyConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanReadOnlyConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("expedited")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanReadOnlyConverter))]
                 public bool? IsExpedited { get; set; }
             }
         }

@@ -84,7 +84,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("barcode")]
                 [System.Text.Json.Serialization.JsonPropertyName("barcode")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
                 public string? BarCode { get; set; }
 
                 /// <summary>

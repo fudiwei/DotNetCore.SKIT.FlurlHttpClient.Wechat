@@ -40,9 +40,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// 获取或设置资质是否永久有效。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_permanent")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("is_permanent")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool? IsPermanent { get; set; }
                     }
                 }
