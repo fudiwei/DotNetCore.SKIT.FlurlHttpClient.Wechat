@@ -7,13 +7,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
     {
         /// <summary>
         /// 获取或设置请求超时时间（单位：毫秒）。
-        /// <para>默认值：30000</para>
+        /// <para>
+        /// 默认值：30000
+        /// </para>
         /// </summary>
         public int Timeout { get; set; } = 30 * 1000;
 
         /// <summary>
         /// 获取或设置微信广告平台 API 入口点。
-        /// <para>默认值：<see cref="WechatAdsEndpoints.DEFAULT"/></para>
+        /// <para>
+        /// 默认值：<see cref="WechatAdsEndpoints.DEFAULT"/>
+        /// </para>
         /// </summary>
         public string Endpoint { get; set; } = WechatAdsEndpoints.DEFAULT;
 

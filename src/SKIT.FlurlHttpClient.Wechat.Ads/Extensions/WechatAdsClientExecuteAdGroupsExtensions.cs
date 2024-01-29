@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "adgroups", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.AdGroupsAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AdGroupsAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "adgroups", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.AdGroupsUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AdGroupsUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -63,19 +63,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Get, "adgroups", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.AdGroupId != null)
+            if (request.AdGroupId is not null)
                 flurlReq.SetQueryParam("adgroup_id", request.AdGroupId.Value);
 
-            if (request.Filters != null)
+            if (request.Filters is not null)
                 flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
-            if (request.PageSize != null)
+            if (request.PageSize is not null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page != null)
+            if (request.Page is not null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.AdGroupsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AdGroupsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "adgroups", "delete")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.AdGroupsDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AdGroupsDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

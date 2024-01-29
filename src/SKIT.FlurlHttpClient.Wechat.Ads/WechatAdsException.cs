@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads
 {
     /// <summary>
     /// 微信广告平台 API 出错时引发的异常。
     /// </summary>
-    public class WechatAdsException : CommonExceptionBase
+    public class WechatAdsException : CommonException
     {
         /// <inheritdoc/>
         public WechatAdsException()

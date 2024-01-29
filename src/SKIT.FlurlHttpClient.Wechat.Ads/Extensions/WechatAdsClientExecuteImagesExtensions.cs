@@ -23,17 +23,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.FileName == null)
+            if (request.FileName is null)
             {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower();
             }
 
-            if (request.FileContentType == null)
+            if (request.FileContentType is null)
             {
                 request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
             }
 
-            if (request.FileHash == null)
+            if (request.FileHash is null)
             {
                 request.FileHash = BitConverter.ToString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", string.Empty);
             }
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "images", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestAsync<Models.ImagesAddResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.ImagesAddResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -68,19 +68,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Get, "images", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.ImageId != null)
+            if (request.ImageId is not null)
                 flurlReq.SetQueryParam("image_id", request.ImageId);
 
-            if (request.Filters != null)
+            if (request.Filters is not null)
                 flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
-            if (request.PageSize != null)
+            if (request.PageSize is not null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page != null)
+            if (request.Page is not null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.ImagesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ImagesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

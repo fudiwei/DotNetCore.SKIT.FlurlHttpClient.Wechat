@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "campaigns", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CampaignsAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CampaignsAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "campaigns", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CampaignsUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CampaignsUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -63,19 +63,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Get, "campaigns", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.CampaignId != null)
+            if (request.CampaignId is not null)
                 flurlReq.SetQueryParam("campaign_id", request.CampaignId.Value);
 
-            if (request.Filters != null)
+            if (request.Filters is not null)
                 flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
-            if (request.PageSize != null)
+            if (request.PageSize is not null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page != null)
+            if (request.Page is not null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.CampaignsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CampaignsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

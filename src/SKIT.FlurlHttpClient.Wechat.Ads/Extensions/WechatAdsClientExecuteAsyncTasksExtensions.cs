@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "async_tasks", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.AsyncTasksAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTasksAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -45,16 +45,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Get, "async_tasks", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.Filters != null && request.Filters.Any())
+            if (request.Filters is not null && request.Filters.Any())
                 flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
-            if (request.PageSize != null)
+            if (request.PageSize is not null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page != null)
+            if (request.Page is not null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.AsyncTasksGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTasksGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region Files
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .SetQueryParam("task_id", request.TaskId)
                 .SetQueryParam("file_id", request.FileId);
 
-            return await client.SendRequestWithJsonAsync<Models.AsyncTaskFilesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTaskFilesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text.Json;
 
@@ -17,14 +17,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.UnitTests
                 using var stream = File.OpenRead("appsettings.local.json");
                 using var jdoc = JsonDocument.Parse(stream);
 
-                var config = jdoc.RootElement.GetProperty("TestConfig");
+                var config = jdoc.RootElement.GetProperty("TestConfigs");
                 WechatAgencyId = config.GetProperty("AgencyId").GetString()!;
                 WechatAgencyAppId = config.GetProperty("AgencyAppId").GetString()!;
                 WechatAgencyApiKey = config.GetProperty("AgencyApiKey").GetString()!;
                 WechatAccessToken = config.GetProperty("AccessToken").GetString()!;
-
-                WorkDirectoryForSdk = jdoc.RootElement.GetProperty("WorkDirectoryForSdk").GetString()!;
-                WorkDirectoryForTest = jdoc.RootElement.GetProperty("WorkDirectoryForTest").GetString()!;
             }
             catch (Exception ex)
             {
@@ -36,8 +33,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.UnitTests
         public static readonly string WechatAgencyAppId;
         public static readonly string WechatAgencyApiKey;
         public static readonly string WechatAccessToken;
-
-        public static readonly string WorkDirectoryForSdk;
-        public static readonly string WorkDirectoryForTest;
     }
 }

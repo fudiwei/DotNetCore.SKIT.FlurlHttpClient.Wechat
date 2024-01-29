@@ -26,22 +26,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Get, "daily_reports", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.DateRange != null)
+            if (request.DateRange is not null)
                 flurlReq.SetQueryParam("date_range", client.JsonSerializer.Serialize(request.DateRange));
 
-            if (request.ReportType != null)
+            if (request.ReportType is not null)
                 flurlReq.SetQueryParam("report_type", request.ReportType);
 
-            if (request.ReportLevel != null)
+            if (request.ReportLevel is not null)
                 flurlReq.SetQueryParam("level", request.ReportLevel);
 
-            if (request.PageSize != null)
+            if (request.PageSize is not null)
                 flurlReq.SetQueryParam("page_size", request.PageSize.Value);
 
-            if (request.Page != null)
+            if (request.Page is not null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.DailyReportsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DailyReportsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -62,10 +62,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .SetQueryParam("date", request.DateString)
                 .SetQueryParam("level", request.Level);
 
-            if (request.Filters != null && request.Filters.Any())
+            if (request.Filters is not null && request.Filters.Any())
                 flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
-            return await client.SendRequestWithJsonAsync<Models.RealtimeCostGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.RealtimeCostGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
