@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "payroll-card", "tokens");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payroll-card", "tokens");
 
-            return await client.SendRequestWithJsonAsync<Models.CreatePayrollCardTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayrollCardTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,18 +41,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "payroll-card", "relations", request.OpenId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "payroll-card", "relations", request.OpenId);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            if (request.AppId != null)
+            if (request.AppId is not null)
                 flurlReq.SetQueryParam("appid", request.AppId);
 
-            if (request.SubAppId != null)
+            if (request.SubAppId is not null)
                 flurlReq.SetQueryParam("sub_appid", request.SubAppId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetPayrollRelationByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPayrollRelationByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region Authentications
@@ -70,9 +70,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "payroll-card", "authentications", "pre-order-with-auth");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payroll-card", "authentications", "pre-order-with-auth");
 
-            return await client.SendRequestWithJsonAsync<Models.PreorderPayrollCardAuthenticationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.PreorderPayrollCardAuthenticationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -89,12 +89,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "payroll-card", "authentications", request.AuthenticateNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "payroll-card", "authentications", request.AuthenticateNumber);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetPayrollCardAuthenticationByAuthenticateNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPayrollCardAuthenticationByAuthenticateNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -111,31 +111,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "payroll-card", "authentications")
+                .CreateFlurlRequest(request, HttpMethod.Get, "payroll-card", "authentications")
                 .SetQueryParam("openid", request.OpenId);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            if (request.AppId != null)
+            if (request.AppId is not null)
                 flurlReq.SetQueryParam("appid", request.AppId);
 
-            if (request.SubAppId != null)
+            if (request.SubAppId is not null)
                 flurlReq.SetQueryParam("sub_appid", request.SubAppId);
 
-            if (request.AuthenticateDateString != null)
+            if (request.AuthenticateDateString is not null)
                 flurlReq.SetQueryParam("authenticate_date", request.AuthenticateDateString);
 
-            if (request.AuthenticateState != null)
+            if (request.AuthenticateState is not null)
                 flurlReq.SetQueryParam("authenticate_state", request.AuthenticateState);
 
-            if (request.Limit != null)
+            if (request.Limit is not null)
                 flurlReq.SetQueryParam("limit", request.Limit);
 
-            if (request.Offset != null)
+            if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryPayrollCardAuthenticationsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryPayrollCardAuthenticationsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -154,9 +154,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "payroll-card", "transfer-batches");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payroll-card", "transfer-batches");
 
-            return await client.SendRequestWithJsonAsync<Models.CreatePayrollCardTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayrollCardTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

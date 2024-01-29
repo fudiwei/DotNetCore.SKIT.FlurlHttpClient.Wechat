@@ -5,7 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
     /// <summary>
     /// 表示一个微信商户平台证书实体。
     /// </summary>
-    public struct CertificateEntry : IEquatable<CertificateEntry>
+    public partial struct CertificateEntry : IEquatable<CertificateEntry>
     {
         public const string ALGORITHM_TYPE_RSA = "RSA";
         public const string ALGORITHM_TYPE_SM2 = "SM2";
@@ -95,45 +95,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
             }
         }
 
-        public CertificateEntry(string algorithmType, Models.QueryCertificatesResponse.Types.Certificate certificate)
-            : this(algorithmType, certificate.SerialNumber, certificate.EncryptCertificate.CipherText, certificate.EffectiveTime, certificate.ExpireTime)
-        {
-        }
-
-        public CertificateEntry(Models.QueryCertificatesResponse.Types.Certificate certificate)
-        {
-            AlgorithmType = default!;
-            Certificate = certificate.EncryptCertificate.CipherText;
-            SerialNumber = certificate.SerialNumber.ToUpper();
-            EffectiveTime = certificate.EffectiveTime;
-            ExpireTime = certificate.ExpireTime;
-
-            if (AlgorithmType == null)
-            {
-                try
-                {
-                    Utilities.RSAUtility.ExportPublicKeyFromCertificate(Certificate);
-                    AlgorithmType = ALGORITHM_TYPE_RSA;
-                }
-                catch { }
-            }
-
-            if (AlgorithmType == null)
-            {
-                try
-                {
-                    Utilities.SM2Utility.ExportPublicKeyFromCertificate(Certificate);
-                    AlgorithmType = ALGORITHM_TYPE_SM2;
-                }
-                catch { }
-            }
-
-            if (AlgorithmType == null)
-            {
-                throw new ArgumentException("Unrecognized certificate algorithm type. Please make sure you have decrypted the certificate content first.");
-            }
-        }
-
         public bool IsAvailable()
         {
             DateTimeOffset now = DateTimeOffset.Now;
@@ -174,6 +135,46 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         public static bool operator !=(CertificateEntry left, CertificateEntry right)
         {
             return !left.Equals(right);
+        }
+    }
+
+    partial struct CertificateEntry
+    {
+        public static CertificateEntry Parse(string algorithmType, Models.QueryCertificatesResponse.Types.Certificate certificate)
+        {
+            return new CertificateEntry(algorithmType, certificate.SerialNumber, certificate.EncryptCertificate.CipherText, certificate.EffectiveTime, certificate.ExpireTime);
+        }
+
+        public static CertificateEntry Parse(Models.QueryCertificatesResponse.Types.Certificate certificate)
+        {
+            string? algorithmType = default!;
+
+            if (algorithmType is null)
+            {
+                try
+                {
+                    Utilities.RSAUtility.ExportPublicKeyFromCertificate(certificate.EncryptCertificate.CipherText);
+                    algorithmType = ALGORITHM_TYPE_RSA;
+                }
+                catch { }
+            }
+
+            if (algorithmType is null)
+            {
+                try
+                {
+                    Utilities.SM2Utility.ExportPublicKeyFromCertificate(certificate.EncryptCertificate.CipherText);
+                    algorithmType = ALGORITHM_TYPE_SM2;
+                }
+                catch { }
+            }
+
+            if (algorithmType is null)
+            {
+                throw new ArgumentException("Unrecognized certificate algorithm type. Please make sure you have decrypted the certificate content first.");
+            }
+
+            return Parse(algorithmType, certificate);
         }
     }
 }

@@ -11,9 +11,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// 获取或设置微信侧取消关联成功时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wechatpay_disassociate_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("wechatpay_disassociate_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset WechatpayDisassociateTime { get; set; }
     }
 }

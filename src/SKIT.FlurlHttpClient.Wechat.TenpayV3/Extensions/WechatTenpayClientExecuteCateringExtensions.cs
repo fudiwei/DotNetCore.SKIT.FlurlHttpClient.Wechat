@@ -21,13 +21,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.MerchantId == null)
+            if (request.MerchantId is null)
                 request.MerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "catering", "orders", "sync-status");
+                .CreateFlurlRequest(request, HttpMethod.Post, "catering", "orders", "sync-status");
 
-            return await client.SendRequestWithJsonAsync<Models.SyncCateringOrderStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SyncCateringOrderStatusResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

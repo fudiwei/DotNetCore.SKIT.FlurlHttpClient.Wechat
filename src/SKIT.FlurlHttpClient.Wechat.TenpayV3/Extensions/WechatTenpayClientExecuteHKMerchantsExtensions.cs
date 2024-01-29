@@ -22,14 +22,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.MerchantId == null)
+            if (request.MerchantId is null)
                 request.MerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "merchants")
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchants")
                 .WithHeader("Idempotency-Key", request.IdempotencyKey);
 
-            return await client.SendRequestWithJsonAsync<Models.AddHKSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AddHKSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -46,15 +46,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.MerchantId == null)
+            if (request.MerchantId is null)
                 request.MerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "merchants", request.SubMerchantId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "merchants", request.SubMerchantId)
                 .SetQueryParam("sp_mchid", request.MerchantId)
                 .SetQueryParam("sp_appid", request.AppId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetHKSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetHKSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -71,13 +71,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.MerchantId == null)
+            if (request.MerchantId is null)
                 request.MerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Put, "merchants");
+                .CreateFlurlRequest(request, HttpMethod.Put, "merchants");
 
-            return await client.SendRequestWithJsonAsync<Models.ModifyHKSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ModifyHKSubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

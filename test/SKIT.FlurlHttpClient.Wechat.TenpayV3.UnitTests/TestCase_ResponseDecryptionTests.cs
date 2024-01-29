@@ -1,10 +1,10 @@
 using System;
 using System.Net;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using Flurl.Http.Configuration;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
@@ -24,9 +24,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetBillSubMerchantFundflowBillResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetBillSubMerchantFundflowBillResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetBillSubMerchantFundflowBillResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     DownloadBillList = new Models.GetBillSubMerchantFundflowBillResponse.Types.DownloadBill[]
                     {
                         new Models.GetBillSubMerchantFundflowBillResponse.Types.DownloadBill()
@@ -34,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                             EncryptKey = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
                     }
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetBillSubMerchantFundflowBillResponse response)
@@ -42,106 +41,136 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.DownloadBillList![0].EncryptKey!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetBillSubMerchantFundflowBillRequest();
+                    var response = await client.ExecuteGetBillSubMerchantFundflowBillAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetBillSubMerchantFundflowBillAsync(new Models.GetBillSubMerchantFundflowBillRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetBillSubMerchantFundflowBillAsync(new Models.GetBillSubMerchantFundflowBillRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetBillSubMerchantFundflowBillRequest();
+                    var response = await client.ExecuteGetBillSubMerchantFundflowBillAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /certificates）")]
         public async Task TestDecryptResponseSensitiveProperty_QueryCertificatesResponse()
         {
-            using (var client = new WechatTenpayClient(new WechatTenpayClientOptions()
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
             {
-                MerchantId = TestConfigs.WechatMerchantId,
-                MerchantV3Secret = TestConfigs.WechatMerchantSecret,
-                MerchantCertificateSerialNumber = TestConfigs.WechatMerchantRSACertificateSerialNumber,
-                MerchantCertificatePrivateKey = TestConfigs.WechatMerchantRSACertificatePrivateKey
-            }))
-            {
-                var response = await client.ExecuteQueryCertificatesAsync(new Models.QueryCertificatesRequest());
-                client.DecryptResponseSensitiveProperty(response);
-
-                Assert.All(response.CertificateList, (e) =>
+                using (var client = new WechatTenpayClient(new WechatTenpayClientOptions()
                 {
-                    Assert.StartsWith("-----BEGIN CERTIFICATE-----", e.EncryptCertificate.CipherText);
-                    Assert.EndsWith("-----END CERTIFICATE-----", e.EncryptCertificate.CipherText);
-                });
+                    MerchantId = TestConfigs.WechatMerchantId,
+                    MerchantV3Secret = TestConfigs.WechatMerchantSecret,
+                    MerchantCertificateSerialNumber = TestConfigs.WechatMerchantRSACertificateSerialNumber,
+                    MerchantCertificatePrivateKey = TestConfigs.WechatMerchantRSACertificatePrivateKey
+                }))
+                {
+                    var request = new Models.QueryCertificatesRequest();
+                    var response = await client.ExecuteQueryCertificatesAsync(request);
+                    client.DecryptResponseSensitiveProperty(response);
+
+                    Assert.All(response.CertificateList, (e) =>
+                    {
+                        Assert.StartsWith("-----BEGIN CERTIFICATE-----", e.EncryptCertificate.CipherText);
+                        Assert.EndsWith("-----END CERTIFICATE-----", e.EncryptCertificate.CipherText);
+                    });
+                }
+
+                using (var client = new WechatTenpayClient(new WechatTenpayClientOptions()
+                {
+                    MerchantId = TestConfigs.WechatMerchantId,
+                    MerchantV3Secret = TestConfigs.WechatMerchantSecret,
+                    MerchantCertificateSerialNumber = TestConfigs.WechatMerchantRSACertificateSerialNumber,
+                    MerchantCertificatePrivateKey = TestConfigs.WechatMerchantRSACertificatePrivateKey,
+                    AutoDecryptResponseSensitiveProperty = true
+                }))
+                {
+                    var request = new Models.QueryCertificatesRequest();
+                    var response = await client.ExecuteQueryCertificatesAsync(request);
+
+                    Assert.All(response.CertificateList, (e) =>
+                    {
+                        Assert.StartsWith("-----BEGIN CERTIFICATE-----", e.EncryptCertificate.CipherText);
+                        Assert.EndsWith("-----END CERTIFICATE-----", e.EncryptCertificate.CipherText);
+                    });
+                }
             }
 
-            using (var client = new WechatTenpayClient(new WechatTenpayClientOptions()
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
             {
-                MerchantId = TestConfigs.WechatMerchantId,
-                MerchantV3Secret = TestConfigs.WechatMerchantSecret,
-                MerchantCertificateSerialNumber = TestConfigs.WechatMerchantSM2CertificateSerialNumber!,
-                MerchantCertificatePrivateKey = TestConfigs.WechatMerchantSM2CertificatePrivateKey!,
-                SignScheme = Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3
-            }))
-            {
-                var response = await client.ExecuteQueryCertificatesAsync(new Models.QueryCertificatesRequest());
-                client.DecryptResponseSensitiveProperty(response);
-
-                Assert.All(response.CertificateList, (e) =>
+                using (var client = new WechatTenpayClient(new WechatTenpayClientOptions()
                 {
-                    Assert.StartsWith("-----BEGIN CERTIFICATE-----", e.EncryptCertificate.CipherText);
-                    Assert.EndsWith("-----END CERTIFICATE-----", e.EncryptCertificate.CipherText);
-                });
-            }
-
-            using (var client = new WechatTenpayClient(new WechatTenpayClientOptions()
-            {
-                MerchantId = TestConfigs.WechatMerchantId,
-                MerchantV3Secret = TestConfigs.WechatMerchantSecret,
-                MerchantCertificateSerialNumber = TestConfigs.WechatMerchantRSACertificateSerialNumber,
-                MerchantCertificatePrivateKey = TestConfigs.WechatMerchantRSACertificatePrivateKey,
-                AutoDecryptResponseSensitiveProperty = true
-            }))
-            {
-                var response = await client.ExecuteQueryCertificatesAsync(new Models.QueryCertificatesRequest());
-
-                Assert.All(response.CertificateList, (e) =>
+                    MerchantId = TestConfigs.WechatMerchantId,
+                    MerchantV3Secret = TestConfigs.WechatMerchantSecret,
+                    MerchantCertificateSerialNumber = TestConfigs.WechatMerchantSM2CertificateSerialNumber!,
+                    MerchantCertificatePrivateKey = TestConfigs.WechatMerchantSM2CertificatePrivateKey!,
+                    SignScheme = Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3
+                }))
                 {
-                    Assert.StartsWith("-----BEGIN CERTIFICATE-----", e.EncryptCertificate.CipherText);
-                    Assert.EndsWith("-----END CERTIFICATE-----", e.EncryptCertificate.CipherText);
-                });
-            }
+                    var request = new Models.QueryCertificatesRequest();
+                    var response = await client.ExecuteQueryCertificatesAsync(request);
+                    client.DecryptResponseSensitiveProperty(response);
 
-            using (var client = new WechatTenpayClient(new WechatTenpayClientOptions()
-            {
-                MerchantId = TestConfigs.WechatMerchantId,
-                MerchantV3Secret = TestConfigs.WechatMerchantSecret,
-                MerchantCertificateSerialNumber = TestConfigs.WechatMerchantSM2CertificateSerialNumber!,
-                MerchantCertificatePrivateKey = TestConfigs.WechatMerchantSM2CertificatePrivateKey!,
-                SignScheme = Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3,
-                AutoDecryptResponseSensitiveProperty = true
-            }))
-            {
-                var response = await client.ExecuteQueryCertificatesAsync(new Models.QueryCertificatesRequest());
+                    Assert.All(response.CertificateList, (e) =>
+                    {
+                        Assert.StartsWith("-----BEGIN CERTIFICATE-----", e.EncryptCertificate.CipherText);
+                        Assert.EndsWith("-----END CERTIFICATE-----", e.EncryptCertificate.CipherText);
+                    });
+                }
 
-                Assert.All(response.CertificateList, (e) =>
+                using (var client = new WechatTenpayClient(new WechatTenpayClientOptions()
                 {
-                    Assert.StartsWith("-----BEGIN CERTIFICATE-----", e.EncryptCertificate.CipherText);
-                    Assert.EndsWith("-----END CERTIFICATE-----", e.EncryptCertificate.CipherText);
-                });
+                    MerchantId = TestConfigs.WechatMerchantId,
+                    MerchantV3Secret = TestConfigs.WechatMerchantSecret,
+                    MerchantCertificateSerialNumber = TestConfigs.WechatMerchantSM2CertificateSerialNumber!,
+                    MerchantCertificatePrivateKey = TestConfigs.WechatMerchantSM2CertificatePrivateKey!,
+                    SignScheme = Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3,
+                    AutoDecryptResponseSensitiveProperty = true
+                }))
+                {
+                    var request = new Models.QueryCertificatesRequest();
+                    var response = await client.ExecuteQueryCertificatesAsync(request);
+
+                    Assert.All(response.CertificateList, (e) =>
+                    {
+                        Assert.StartsWith("-----BEGIN CERTIFICATE-----", e.EncryptCertificate.CipherText);
+                        Assert.EndsWith("-----END CERTIFICATE-----", e.EncryptCertificate.CipherText);
+                    });
+                }
             }
         }
 
@@ -150,16 +179,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetEcommerceApplymentByOutRequestNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetEcommerceApplymentByOutRequestNumberResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetEcommerceApplymentByOutRequestNumberResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     AccountValidation = new Models.GetEcommerceApplymentByOutRequestNumberResponse.Types.AccountValidation()
                     {
                         AccountName = encryptor.Invoke(MOCK_PLAIN_STR),
                         AccountNumber = encryptor.Invoke(MOCK_PLAIN_STR),
                         Deadline = DateTimeOffset.Now
                     }
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetEcommerceApplymentByOutRequestNumberResponse response)
@@ -168,29 +196,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.AccountValidation!.AccountNumber!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetEcommerceApplymentByOutRequestNumberRequest();
+                    var response = await client.ExecuteGetEcommerceApplymentByOutRequestNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetEcommerceApplymentByOutRequestNumberAsync(new Models.GetEcommerceApplymentByOutRequestNumberRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetEcommerceApplymentByOutRequestNumberAsync(new Models.GetEcommerceApplymentByOutRequestNumberRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetEcommerceApplymentByOutRequestNumberRequest();
+                    var response = await client.ExecuteGetEcommerceApplymentByOutRequestNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /ecommerce/bill/fundflowbill）")]
@@ -198,9 +246,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetEcommerceBillFundflowBillResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetEcommerceBillFundflowBillResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetEcommerceBillFundflowBillResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     DownloadBillList = new Models.GetEcommerceBillFundflowBillResponse.Types.DownloadBill[]
                     {
                         new Models.GetEcommerceBillFundflowBillResponse.Types.DownloadBill()
@@ -208,7 +255,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                             EncryptKey = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
                     }
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetEcommerceBillFundflowBillResponse response)
@@ -216,29 +263,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.DownloadBillList![0].EncryptKey!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetEcommerceBillFundflowBillRequest();
+                    var response = await client.ExecuteGetEcommerceBillFundflowBillAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetEcommerceBillFundflowBillAsync(new Models.GetEcommerceBillFundflowBillRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetEcommerceBillFundflowBillAsync(new Models.GetEcommerceBillFundflowBillRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetEcommerceBillFundflowBillRequest();
+                    var response = await client.ExecuteGetEcommerceBillFundflowBillAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /marketing/shopping-receipt/shoppingreceipts）")]
@@ -246,9 +313,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.UploadMarketingShoppingReceiptResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.UploadMarketingShoppingReceiptResponse()
+                return SetMockResponseRawStatusAsOk(new Models.UploadMarketingShoppingReceiptResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     Receipt = new Models.UploadMarketingShoppingReceiptResponse.Types.Receipt()
                     {
                         MerchantContactInformation = new Models.UploadMarketingShoppingReceiptResponse.Types.Receipt.Types.MerchantContactInformation()
@@ -256,7 +322,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                             ConsultationPhoneNumber = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
                     }
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.UploadMarketingShoppingReceiptResponse response)
@@ -264,29 +330,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.Receipt.MerchantContactInformation!.ConsultationPhoneNumber!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.UploadMarketingShoppingReceiptRequest();
+                    var response = await client.ExecuteUploadMarketingShoppingReceiptAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteUploadMarketingShoppingReceiptAsync(new Models.UploadMarketingShoppingReceiptRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteUploadMarketingShoppingReceiptAsync(new Models.UploadMarketingShoppingReceiptRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.UploadMarketingShoppingReceiptRequest();
+                    var response = await client.ExecuteUploadMarketingShoppingReceiptAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /merchants/{sub_mchid}）")]
@@ -294,16 +380,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetHKSubMerchantResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetHKSubMerchantResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetHKSubMerchantResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     Contact = new Models.GetHKSubMerchantResponse.Types.Contact
                     {
                         ContactName = encryptor.Invoke(MOCK_PLAIN_STR),
                         MobileNumber = encryptor.Invoke(MOCK_PLAIN_STR),
                         Email = encryptor.Invoke(MOCK_PLAIN_STR)
                     }
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetHKSubMerchantResponse response)
@@ -313,29 +398,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.Contact!.Email!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain, "Pkcs1Padding"));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain, "Pkcs1Padding"));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain, "Pkcs1Padding"))
+                    )
+                ))
+                {
+                    var request = new Models.GetHKSubMerchantRequest();
+                    var response = await client.ExecuteGetHKSubMerchantAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain, "Pkcs1Padding"))
-                )
-            ).ExecuteGetHKSubMerchantAsync(new Models.GetHKSubMerchantRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetHKSubMerchantAsync(new Models.GetHKSubMerchantRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetHKSubMerchantRequest();
+                    var response = await client.ExecuteGetHKSubMerchantAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /merchant-service/complaints-v2）")]
@@ -343,9 +448,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.QueryMerchantServiceComplaintsResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.QueryMerchantServiceComplaintsResponse()
+                return SetMockResponseRawStatusAsOk(new Models.QueryMerchantServiceComplaintsResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     ComplaintList = new Models.QueryMerchantServiceComplaintsResponse.Types.Complaint[]
                     {
                         new Models.QueryMerchantServiceComplaintsResponse.Types.Complaint()
@@ -353,7 +457,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                             PayerPhone = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
                     }
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.QueryMerchantServiceComplaintsResponse response)
@@ -361,29 +465,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.ComplaintList![0].PayerPhone!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.QueryMerchantServiceComplaintsRequest();
+                    var response = await client.ExecuteQueryMerchantServiceComplaintsAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteQueryMerchantServiceComplaintsAsync(new Models.QueryMerchantServiceComplaintsRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteQueryMerchantServiceComplaintsAsync(new Models.QueryMerchantServiceComplaintsRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.QueryMerchantServiceComplaintsRequest();
+                    var response = await client.ExecuteQueryMerchantServiceComplaintsAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /merchant-service/complaints-v2/{complaint_id}）")]
@@ -391,11 +515,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetMerchantServiceComplaintByComplaintIdResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetMerchantServiceComplaintByComplaintIdResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetMerchantServiceComplaintByComplaintIdResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     PayerPhone = encryptor.Invoke(MOCK_PLAIN_STR)
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetMerchantServiceComplaintByComplaintIdResponse response)
@@ -403,29 +526,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.PayerPhone!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetMerchantServiceComplaintByComplaintIdRequest();
+                    var response = await client.ExecuteGetMerchantServiceComplaintByComplaintIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetMerchantServiceComplaintByComplaintIdAsync(new Models.GetMerchantServiceComplaintByComplaintIdRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetMerchantServiceComplaintByComplaintIdAsync(new Models.GetMerchantServiceComplaintByComplaintIdRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetMerchantServiceComplaintByComplaintIdRequest();
+                    var response = await client.ExecuteGetMerchantServiceComplaintByComplaintIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}）")]
@@ -433,9 +576,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     FapiaoList = new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse.Types.Fapiao[]
                     {
                         new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse.Types.Fapiao()
@@ -447,7 +589,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                             }
                         }
                     }
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse response)
@@ -456,29 +598,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.FapiaoList[0]!.Buyer!.UserEmail!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdRequest();
+                    var response = await client.ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdRequest();
+                    var response = await client.ExecuteGetNewTaxControlFapiaoApplicationByFapiaoApplyIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /new-tax-control-fapiao/user-title）")]
@@ -486,12 +648,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetNewTaxControlFapiaoUserTitleResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetNewTaxControlFapiaoUserTitleResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetNewTaxControlFapiaoUserTitleResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     UserMobileNumber = encryptor.Invoke(MOCK_PLAIN_STR),
                     UserEmail = encryptor.Invoke(MOCK_PLAIN_STR)
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetNewTaxControlFapiaoUserTitleResponse response)
@@ -500,29 +661,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.UserEmail!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetNewTaxControlFapiaoUserTitleRequest();
+                    var response = await client.ExecuteGetNewTaxControlFapiaoUserTitleAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetNewTaxControlFapiaoUserTitleAsync(new Models.GetNewTaxControlFapiaoUserTitleRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetNewTaxControlFapiaoUserTitleAsync(new Models.GetNewTaxControlFapiaoUserTitleRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetNewTaxControlFapiaoUserTitleRequest();
+                    var response = await client.ExecuteGetNewTaxControlFapiaoUserTitleAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /partner-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}）")]
@@ -530,11 +711,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetPartnerTransferBatchDetailByDetailIdResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetPartnerTransferBatchDetailByDetailIdResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetPartnerTransferBatchDetailByDetailIdResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     UserName = encryptor.Invoke(MOCK_PLAIN_STR)
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetPartnerTransferBatchDetailByDetailIdResponse response)
@@ -542,29 +722,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetPartnerTransferBatchDetailByDetailIdRequest();
+                    var response = await client.ExecuteGetPartnerTransferBatchDetailByDetailIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetPartnerTransferBatchDetailByDetailIdAsync(new Models.GetPartnerTransferBatchDetailByDetailIdRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetPartnerTransferBatchDetailByDetailIdAsync(new Models.GetPartnerTransferBatchDetailByDetailIdRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetPartnerTransferBatchDetailByDetailIdRequest();
+                    var response = await client.ExecuteGetPartnerTransferBatchDetailByDetailIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /partner-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}）")]
@@ -572,11 +772,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetPartnerTransferBatchDetailByOutDetailNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetPartnerTransferBatchDetailByOutDetailNumberResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetPartnerTransferBatchDetailByOutDetailNumberResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     UserName = encryptor.Invoke(MOCK_PLAIN_STR)
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetPartnerTransferBatchDetailByOutDetailNumberResponse response)
@@ -584,29 +783,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetPartnerTransferBatchDetailByOutDetailNumberRequest();
+                    var response = await client.ExecuteGetPartnerTransferBatchDetailByOutDetailNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetPartnerTransferBatchDetailByOutDetailNumberAsync(new Models.GetPartnerTransferBatchDetailByOutDetailNumberRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetPartnerTransferBatchDetailByOutDetailNumberAsync(new Models.GetPartnerTransferBatchDetailByOutDetailNumberRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetPartnerTransferBatchDetailByOutDetailNumberRequest();
+                    var response = await client.ExecuteGetPartnerTransferBatchDetailByOutDetailNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /payscore/merchant-bill）")]
@@ -614,9 +833,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetPayScoreMerchantBillResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetPayScoreMerchantBillResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetPayScoreMerchantBillResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     DownloadBillList = new Models.GetPayScoreMerchantBillResponse.Types.DownloadBill[]
                     {
                         new Models.GetPayScoreMerchantBillResponse.Types.DownloadBill()
@@ -624,7 +842,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                             EncryptKey = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
                     }
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetPayScoreMerchantBillResponse response)
@@ -632,29 +850,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.DownloadBillList![0].EncryptKey!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetPayScoreMerchantBillRequest();
+                    var response = await client.ExecuteGetPayScoreMerchantBillAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetPayScoreMerchantBillAsync(new Models.GetPayScoreMerchantBillRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetPayScoreMerchantBillAsync(new Models.GetPayScoreMerchantBillRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetPayScoreMerchantBillRequest();
+                    var response = await client.ExecuteGetPayScoreMerchantBillAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /smartguide/guides）")]
@@ -662,9 +900,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.QuerySmartGuidesResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.QuerySmartGuidesResponse()
+                return SetMockResponseRawStatusAsOk(new Models.QuerySmartGuidesResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     GuideList = new Models.QuerySmartGuidesResponse.Types.Guide[]
                     {
                         new Models.QuerySmartGuidesResponse.Types.Guide()
@@ -673,7 +910,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                             UserMobile = encryptor.Invoke(MOCK_PLAIN_STR)
                         }
                     }
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.QuerySmartGuidesResponse response)
@@ -682,29 +919,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.GuideList![0].UserMobile!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.QuerySmartGuidesRequest();
+                    var response = await client.ExecuteQuerySmartGuidesAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteQuerySmartGuidesAsync(new Models.QuerySmartGuidesRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteQuerySmartGuidesAsync(new Models.QuerySmartGuidesRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.QuerySmartGuidesRequest();
+                    var response = await client.ExecuteQuerySmartGuidesAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}）")]
@@ -712,11 +969,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetTransferBatchDetailByOutDetailNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetTransferBatchDetailByOutDetailNumberResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetTransferBatchDetailByOutDetailNumberResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     UserName = encryptor.Invoke(MOCK_PLAIN_STR)
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetTransferBatchDetailByOutDetailNumberResponse response)
@@ -724,29 +980,49 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetTransferBatchDetailByOutDetailNumberRequest();
+                    var response = await client.ExecuteGetTransferBatchDetailByOutDetailNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetTransferBatchDetailByOutDetailNumberAsync(new Models.GetTransferBatchDetailByOutDetailNumberRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetTransferBatchDetailByOutDetailNumberAsync(new Models.GetTransferBatchDetailByOutDetailNumberRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetTransferBatchDetailByOutDetailNumberRequest();
+                    var response = await client.ExecuteGetTransferBatchDetailByOutDetailNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
 
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}）")]
@@ -754,11 +1030,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         {
             static Models.GetTransferBatchDetailByDetailIdResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return new Models.GetTransferBatchDetailByDetailIdResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetTransferBatchDetailByDetailIdResponse()
                 {
-                    RawStatus = (int)HttpStatusCode.OK,
                     UserName = encryptor.Invoke(MOCK_PLAIN_STR)
-                };
+                });
             }
 
             static void AssertMockResponseModel(Models.GetTransferBatchDetailByDetailIdResponse response)
@@ -766,73 +1041,87 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
 
-            var resA1 = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
-            CreateMockClientUseRSA(autoDecrypt: false).DecryptResponseSensitiveProperty(resA1);
-            AssertMockResponseModel(resA1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var request = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(request);
+                    AssertMockResponseModel(request);
+                }
 
-            var resA2 = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
-            CreateMockClientUseSM2(autoDecrypt: false).DecryptResponseSensitiveProperty(resA2);
-            AssertMockResponseModel(resA2);
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetTransferBatchDetailByDetailIdRequest();
+                    var response = await client.ExecuteGetTransferBatchDetailByDetailIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
 
-            var resB1 = await CreateMockClientUseRSA(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetTransferBatchDetailByDetailIdAsync(new Models.GetTransferBatchDetailByDetailIdRequest());
-            AssertMockResponseModel(resB1);
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
 
-            var resB2 = await CreateMockClientUseSM2(
-                autoDecrypt: true,
-                mockResponse: new FlurlSystemTextJsonSerializer().Serialize(
-                    GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
-                )
-            ).ExecuteGetTransferBatchDetailByDetailIdAsync(new Models.GetTransferBatchDetailByDetailIdRequest());
-            AssertMockResponseModel(resB2);
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                    )
+                ))
+                {
+                    var request = new Models.GetTransferBatchDetailByDetailIdRequest();
+                    var response = await client.ExecuteGetTransferBatchDetailByDetailIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
         }
     }
 
     partial class TestCase_ResponseDecryptionTests
     {
-        public class MockHttpClientFactory : DefaultHttpClientFactory
+        public class MockHttpClient : HttpClient
         {
-            private readonly string? _mockResponseContent;
-
-            public MockHttpClientFactory(string? mockResponseContent)
+            public MockHttpClient(string? mockResponseContent)
+                : base(new MockHttpMessageHandler(new HttpClientHandler(), mockResponseContent))
             {
-                _mockResponseContent = mockResponseContent;
-            }
-
-            public override HttpMessageHandler CreateMessageHandler()
-            {
-                return new MockHttpMessageHandler(base.CreateMessageHandler(), _mockResponseContent);
             }
         }
 
         public class MockHttpMessageHandler : DelegatingHandler
         {
-            private readonly string? _mockResponse;
+            private readonly string? _mockResponseContent;
 
-            public MockHttpMessageHandler(HttpMessageHandler innerHandler, string? mockResponse)
+            public MockHttpMessageHandler(HttpMessageHandler innerHandler, string? mockResponseContent)
                 : base(innerHandler)
             {
-                _mockResponse = mockResponse;
+                _mockResponseContent = mockResponseContent;
             }
 
             protected override Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
             {
-                bool hasContent = !string.IsNullOrEmpty(_mockResponse);
+                bool hasContent = !string.IsNullOrEmpty(_mockResponseContent);
                 var resp = new HttpResponseMessage
                 {
+                    RequestMessage = request,
                     StatusCode = hasContent ? HttpStatusCode.OK : HttpStatusCode.NoContent,
-                    Content = hasContent ? new StringContent(_mockResponse!, Encoding.UTF8) : new ByteArrayContent(Array.Empty<byte>()),
+                    Content = hasContent ? new StringContent(_mockResponseContent!, Encoding.UTF8) : new ByteArrayContent(Array.Empty<byte>()),
                 };
-                resp.Headers.TryAddWithoutValidation("Content-Length", hasContent ? Encoding.UTF8.GetBytes(_mockResponse!).Length.ToString() : (0).ToString());
+                resp.Headers.TryAddWithoutValidation("Content-Length", hasContent ? Encoding.UTF8.GetBytes(_mockResponseContent!).Length.ToString() : (0).ToString());
                 return Task.FromResult(resp);
             }
         }
 
-        private static WechatTenpayClient CreateMockClientUseRSA(bool autoDecrypt, string? mockResponse = null)
+        private static WechatTenpayClient CreateMockClientUseRSA(bool autoDecrypt, string? mockResponseContent = null)
         {
             var client = new WechatTenpayClient(new WechatTenpayClientOptions()
             {
@@ -841,13 +1130,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 MerchantCertificatePrivateKey = RSA_PEM_PRIVATE_KEY,
                 MerchantV3Secret = Guid.NewGuid().ToString("N"),
                 AutoDecryptResponseSensitiveProperty = autoDecrypt
-            });
-            client.Configure(settings => settings.FlurlHttpClientFactory = new MockHttpClientFactory(mockResponse));
+            }, new MockHttpClient(mockResponseContent));
             return client;
         }
 
-        private static WechatTenpayClient CreateMockClientUseSM2(bool autoDecrypt, string? mockResponse = null)
+        private static WechatTenpayClient CreateMockClientUseSM2(bool autoDecrypt, string? mockResponseContent = null)
         {
+            var httpClient = new HttpClient(new MockHttpMessageHandler(new HttpClientHandler(), mockResponseContent));
             var client = new WechatTenpayClient(new WechatTenpayClientOptions()
             {
                 MerchantId = DateTimeOffset.Now.ToUnixTimeSeconds().ToString(),
@@ -856,9 +1145,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 MerchantV3Secret = Guid.NewGuid().ToString("N"),
                 SignScheme = Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3,
                 AutoDecryptResponseSensitiveProperty = autoDecrypt
-            });
-            client.Configure(settings => settings.FlurlHttpClientFactory = new MockHttpClientFactory(mockResponse));
+            }, new MockHttpClient(mockResponseContent));
             return client;
+        }
+
+        private static T SetMockResponseRawStatusAsOk<T>(T response) where T : WechatTenpayResponse
+        {
+            FieldInfo fieldInfo = typeof(CommonResponseBase).GetField("_InternalRawStatus", BindingFlags.Instance | BindingFlags.NonPublic)!;
+            fieldInfo.SetValue(response, (int)HttpStatusCode.OK);
+            return response;
         }
     }
 }

@@ -11,9 +11,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// 获取或设置终止合作关系时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("terminate_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("terminate_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset TerminateTime { get; set; }
     }
 }

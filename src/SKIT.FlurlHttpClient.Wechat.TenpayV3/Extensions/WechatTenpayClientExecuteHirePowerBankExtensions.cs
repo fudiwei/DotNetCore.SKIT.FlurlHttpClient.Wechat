@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "hire-power-bank", "insurance-orders");
+                .CreateFlurlRequest(request, HttpMethod.Post, "hire-power-bank", "insurance-orders");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateHirePowerBankInsuranceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateHirePowerBankInsuranceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "hire-power-bank", "insurance-orders", request.OutOrderNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "hire-power-bank", "insurance-orders", request.OutOrderNumber);
 
-            return await client.SendRequestWithJsonAsync<Models.GetHirePowerBankInsuranceOrderByOutOrderNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetHirePowerBankInsuranceOrderByOutOrderNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "hire-power-bank", "user-qualifications", request.OpenId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "hire-power-bank", "user-qualifications", request.OpenId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetHirePowerBankUserQualificationByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetHirePowerBankUserQualificationByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

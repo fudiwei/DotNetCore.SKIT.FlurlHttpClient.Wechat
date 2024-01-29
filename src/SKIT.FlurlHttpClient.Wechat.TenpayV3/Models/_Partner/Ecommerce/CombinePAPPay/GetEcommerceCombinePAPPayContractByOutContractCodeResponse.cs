@@ -15,9 +15,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// 获取或设置解约时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contract_terminated_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("contract_terminated_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
                 public DateTimeOffset TerminateTime { get; set; }
 
                 /// <summary>
@@ -96,18 +96,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// 获取或设置签署时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_signed_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("contract_signed_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset SignTime { get; set; }
 
         /// <summary>
         /// 获取或设置到期时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_expired_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("contract_expired_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset ExpireTime { get; set; }
 
         /// <summary>

@@ -24,9 +24,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "bank-transfer", "batches");
+                .CreateFlurlRequest(request, HttpMethod.Post, "bank-transfer", "batches");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateBankTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateBankTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -43,19 +43,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "bank-transfer", "batches", "out-batch-no", request.OutBatchNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "bank-transfer", "batches", "out-batch-no", request.OutBatchNumber)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail);
 
-            if (request.DetailStatus != null)
+            if (request.DetailStatus is not null)
                 flurlReq.SetQueryParam("detail_status", request.DetailStatus);
 
-            if (request.Offset != null)
+            if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value);
 
-            if (request.Limit != null)
+            if (request.Limit is not null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.GetBankTransferBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBankTransferBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -72,19 +72,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "bank-transfer", "batches", "batch-id", request.BatchId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "bank-transfer", "batches", "batch-id", request.BatchId)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail);
 
-            if (request.DetailStatus != null)
+            if (request.DetailStatus is not null)
                 flurlReq.SetQueryParam("detail_state", request.DetailStatus);
 
-            if (request.Offset != null)
+            if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value);
 
-            if (request.Limit != null)
+            if (request.Limit is not null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.GetBankTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBankTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -101,9 +101,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "bank-transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "bank-transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber);
 
-            return await client.SendRequestWithJsonAsync<Models.GetBankTransferBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBankTransferBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -120,9 +120,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "bank-transfer", "batches", "batch-id", request.BatchId, "details", "detail-id", request.DetailId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "bank-transfer", "batches", "batch-id", request.BatchId, "details", "detail-id", request.DetailId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetBankTransferBatchDetailByDetailIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBankTransferBatchDetailByDetailIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -141,9 +141,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "bank-batch-transfer", "receipt", "summary-receipts");
+                .CreateFlurlRequest(request, HttpMethod.Post, "bank-batch-transfer", "receipt", "summary-receipts");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateBankBatchTransferSummaryReceiptResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateBankBatchTransferSummaryReceiptResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -160,10 +160,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "bank-batch-transfer", "receipt", "summary-receipts")
+                .CreateFlurlRequest(request, HttpMethod.Get, "bank-batch-transfer", "receipt", "summary-receipts")
                 .SetQueryParam("out_batch_no", request.OutBatchNumber);
 
-            return await client.SendRequestWithJsonAsync<Models.GetBankBatchTransferSummaryReceiptByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBankBatchTransferSummaryReceiptByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -180,9 +180,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "bank-batch-transfer", "receipt", "detail-receipts");
+                .CreateFlurlRequest(request, HttpMethod.Post, "bank-batch-transfer", "receipt", "detail-receipts");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateBankBatchTransferDetailReceiptResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateBankBatchTransferDetailReceiptResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -199,11 +199,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "bank-batch-transfer", "receipt", "detail-receipts")
+                .CreateFlurlRequest(request, HttpMethod.Get, "bank-batch-transfer", "receipt", "detail-receipts")
                 .SetQueryParam("out_batch_no", request.OutBatchNumber)
                 .SetQueryParam("out_detail_no", request.OutDetailNumber);
 
-            return await client.SendRequestWithJsonAsync<Models.GetBankBatchTransferDetailReceiptByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBankBatchTransferDetailReceiptByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

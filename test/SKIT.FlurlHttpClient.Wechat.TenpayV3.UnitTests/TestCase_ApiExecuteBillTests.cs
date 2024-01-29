@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             var response = await TestClients.InstanceUseRSA.ExecuteDownloadBillFileAsync(request);
 
             Assert.True(response.IsSuccessful());
-            Assert.NotEmpty(response.RawBytes);
+            Assert.NotEmpty(response.GetRawBytes());
         }
     }
 }

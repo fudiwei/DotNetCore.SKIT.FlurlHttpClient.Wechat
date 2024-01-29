@@ -16,9 +16,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// 获取或设置报名商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("applying_merchant_id")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalStringConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalStringConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("applying_merchant_id")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
         public string ApplyingMerchantId { get; set; } = string.Empty;
 
         /// <summary>

@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "industry-coupon", "tokens");
+                .CreateFlurlRequest(request, HttpMethod.Post, "industry-coupon", "tokens");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateIndustryCouponTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateIndustryCouponTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

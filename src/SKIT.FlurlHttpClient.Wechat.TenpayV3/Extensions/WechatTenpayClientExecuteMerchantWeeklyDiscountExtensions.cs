@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "marketing", "weekly-discount", "activities", request.ActivityId, "apply");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "weekly-discount", "activities", request.ActivityId, "apply");
 
-            return await client.SendRequestWithJsonAsync<Models.ApplyMarketingWeeklyDiscountActivityResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ApplyMarketingWeeklyDiscountActivityResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,17 +41,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "marketing", "weekly-discount", "activities")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "weekly-discount", "activities")
                 .SetQueryParam("applying_merchant_id", request.ApplyingMerchantId)
                 .SetQueryParam("activity_area_code", request.ActivityAreaCode)
                 .SetQueryParam("activity_scene", request.ActivityScene)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 
-            if (request.StoreId != null)
+            if (request.StoreId is not null)
                 flurlReq.SetQueryParam("store_id", request.StoreId.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryApplyMarketingWeeklyDiscountActivitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryApplyMarketingWeeklyDiscountActivitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -68,9 +68,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "marketing", "weekly-discount", "activities", request.ActivityId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "weekly-discount", "activities", request.ActivityId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetApplyMarketingWeeklyDiscountActivityByActivityIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetApplyMarketingWeeklyDiscountActivityByActivityIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

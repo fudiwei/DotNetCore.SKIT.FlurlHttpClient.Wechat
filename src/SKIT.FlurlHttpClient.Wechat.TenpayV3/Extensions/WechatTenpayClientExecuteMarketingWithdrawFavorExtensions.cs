@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "marketing", "withdraw-favor", "users", request.OpenId, "coupons");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "withdraw-favor", "users", request.OpenId, "coupons");
 
-            return await client.SendRequestWithJsonAsync<Models.SendMarketingWithdrawFavorUserCouponResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SendMarketingWithdrawFavorUserCouponResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,18 +41,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "marketing", "withdraw-favor", "users", request.OpenId, "coupons")
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "withdraw-favor", "users", request.OpenId, "coupons")
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("mchid", request.CreatorMerchantId)
                 .SetQueryParam("stock_id", request.StockId);
 
-            if (request.Limit != null)
+            if (request.Limit is not null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
 
-            if (request.Offset != null)
+            if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingWithdrawFavorUserCouponsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingWithdrawFavorUserCouponsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

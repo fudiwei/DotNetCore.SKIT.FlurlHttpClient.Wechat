@@ -75,9 +75,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// 获取或设置服务开启或解除授权时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openorclose_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.DigitalDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("openorclose_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
         public DateTimeOffset? OpenOrCloseTime { get; set; }
     }
 }

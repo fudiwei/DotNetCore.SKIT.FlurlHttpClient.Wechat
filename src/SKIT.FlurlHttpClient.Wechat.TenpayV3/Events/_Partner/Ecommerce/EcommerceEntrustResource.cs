@@ -69,18 +69,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// 获取或设置操作时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("operate_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("operate_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset OperateTime { get; set; }
 
         /// <summary>
         /// 获取或设置到期时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_expired_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("contract_expired_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset? ExpireTime { get; set; }
 
         /// <summary>

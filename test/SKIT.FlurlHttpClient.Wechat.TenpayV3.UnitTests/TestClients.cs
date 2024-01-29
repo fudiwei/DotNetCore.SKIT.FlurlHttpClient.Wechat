@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
             foreach (var certificate in InstanceUseRSA.DecryptResponseSensitiveProperty(response).CertificateList)
             {
-                InstanceUseRSA.PlatformCertificateManager.AddEntry(new Settings.CertificateEntry(certificate));
+                InstanceUseRSA.PlatformCertificateManager.AddEntry(Settings.CertificateEntry.Parse(certificate));
             }
         }
 

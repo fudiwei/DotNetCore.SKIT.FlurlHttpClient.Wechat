@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.CombineAppId);
             Assert.NotNull(response.CombineMerchantId);
             Assert.NotNull(response.CombineOutTradeNumber);
-            Assert.NotEmpty(response.SubOrderList);
+            Assert.NotEmpty(response.SubOrderList!);
         }
 
         [Fact(DisplayName = "测试用例：调用 API [POST] /combine-transactions/out-trade-no/{combine_out_trade_no}/close")]

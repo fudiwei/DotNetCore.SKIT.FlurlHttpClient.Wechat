@@ -25,18 +25,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// 获取或设置授权时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorize_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("authorize_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset? AuthorizeTime { get; set; }
 
         /// <summary>
         /// 获取或设置取消授权时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("deauthorize_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("deauthorize_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339NullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset? DeauthorizeTime { get; set; }
     }
 }

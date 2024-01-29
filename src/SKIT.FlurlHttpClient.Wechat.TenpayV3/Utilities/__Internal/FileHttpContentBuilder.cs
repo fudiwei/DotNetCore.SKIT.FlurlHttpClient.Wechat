@@ -15,10 +15,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
         public static MultipartFormDataContent Build(string fileName, byte[] fileBytes, string fileContentType, string fileMetaJson, string formDataName, Action<HttpContent> configureMetaHttpContent, Action<HttpContent> configureFileHttpContent)
         {
-            if (fileName == null) throw new ArgumentNullException(nameof(fileName));
-            if (fileMetaJson == null) throw new ArgumentNullException(nameof(fileMetaJson));
-            if (formDataName == null) throw new ArgumentNullException(nameof(formDataName));
-            if (configureFileHttpContent == null) throw new ArgumentNullException(nameof(configureFileHttpContent));
+            if (fileName is null) throw new ArgumentNullException(nameof(fileName));
+            if (fileMetaJson is null) throw new ArgumentNullException(nameof(fileMetaJson));
+            if (formDataName is null) throw new ArgumentNullException(nameof(formDataName));
+            if (configureFileHttpContent is null) throw new ArgumentNullException(nameof(configureFileHttpContent));
 
             fileBytes = fileBytes ?? Array.Empty<byte>();
             fileContentType = string.IsNullOrEmpty(fileContentType) ? "application/octet-stream" : fileContentType;

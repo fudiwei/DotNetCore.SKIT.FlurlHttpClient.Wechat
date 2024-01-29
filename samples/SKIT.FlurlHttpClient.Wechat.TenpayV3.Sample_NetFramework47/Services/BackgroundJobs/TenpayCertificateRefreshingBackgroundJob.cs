@@ -2,12 +2,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
 {
     internal class TenpayCertificateRefreshingBackgroundJob
     {
-        private readonly HttpClients.IWechatTenpayHttpClientFactory _tenpayHttpClientFactory;
+        private readonly HttpClients.IWechatTenpayClientFactory _wechatTenpayClientFactory;
 
         public TenpayCertificateRefreshingBackgroundJob(
-            HttpClients.IWechatTenpayHttpClientFactory tenpayHttpClientFactory)
+            HttpClients.IWechatTenpayClientFactory wechatTenpayClientFactory)
         {
-            _tenpayHttpClientFactory = tenpayHttpClientFactory;
+            _wechatTenpayClientFactory = wechatTenpayClientFactory;
         }
 
         public async Task ExecuteAsync()
@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
                 try
                 {
                     const string ALGORITHM_TYPE = "RSA";
-                    var client = _tenpayHttpClientFactory.Create(tenpayMerchantOptions.MerchantId);
+                    var client = _wechatTenpayClientFactory.Create(tenpayMerchantOptions.MerchantId);
                     var request = new QueryCertificatesRequest() { AlgorithmType = ALGORITHM_TYPE };
                     var response = await client.ExecuteQueryCertificatesAsync(request);
                     if (response.IsSuccessful())
@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
 
                         foreach (var certificate in response.CertificateList)
                         {
-                            client.CertificateManager.AddEntry(new CertificateEntry(ALGORITHM_TYPE, certificate));
+                            client.CertificateManager.AddEntry(CertificateEntry.Parse(ALGORITHM_TYPE, certificate));
                         }
 
                         Debug.WriteLine("刷新微信商户平台证书成功。");
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
                     {
                         Debug.WriteLine(
                             "刷新微信商户平台证书失败（状态码：{0}，错误代码：{1}，错误描述：{2}）。",
-                            response.RawStatus, response.ErrorCode, response.ErrorMessage
+                            response.GetRawStatus(), response.ErrorCode, response.ErrorMessage
                         );
                     }
                 }

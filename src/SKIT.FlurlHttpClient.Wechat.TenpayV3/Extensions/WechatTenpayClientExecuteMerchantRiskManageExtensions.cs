@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "merchant-risk-manage", "report-trade-union-information");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-risk-manage", "report-trade-union-information");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateMerchantRiskManageTradeUnionInformationReportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantRiskManageTradeUnionInformationReportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -42,25 +42,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "merchant-risk-manage", "trade-risk-information")
+                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-risk-manage", "trade-risk-information")
                 .SetQueryParam("out_trade_no", request.OutTradeNumber);
 
-            if (request.MerchantId != null)
+            if (request.MerchantId is not null)
                 flurlReq.SetQueryParam("sp_mchid", request.MerchantId);
 
-            if (request.AcquiringBankId != null)
+            if (request.AcquiringBankId is not null)
                 flurlReq.SetQueryParam("acquiring_bank_id", request.AcquiringBankId);
 
-            if (request.ChannelId != null)
+            if (request.ChannelId is not null)
                 flurlReq.SetQueryParam("channel_id", request.ChannelId);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            if (request.ComplaintsInformation != null)
+            if (request.ComplaintsInformation is not null)
                 flurlReq.SetQueryParam("complaints_information", request.ComplaintsInformation);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMerchantRiskManageTradeRiskInformationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantRiskManageTradeRiskInformationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -77,9 +77,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "merchant-risk-manage", "trade-risk-result");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-risk-manage", "trade-risk-result");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateMerchantRiskManageTradeRiskResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantRiskManageTradeRiskResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -98,9 +98,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "merchant-risk-manage", "violation-notifications");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-risk-manage", "violation-notifications");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -117,9 +117,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "merchant-risk-manage", "violation-notifications");
+                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-risk-manage", "violation-notifications");
 
-            return await client.SendRequestWithJsonAsync<Models.GetMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -136,9 +136,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Put, "merchant-risk-manage", "violation-notifications");
+                .CreateFlurlRequest(request, HttpMethod.Put, "merchant-risk-manage", "violation-notifications");
 
-            return await client.SendRequestWithJsonAsync<Models.UpdateMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -155,9 +155,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Delete, "merchant-risk-manage", "violation-notifications");
+                .CreateFlurlRequest(request, HttpMethod.Delete, "merchant-risk-manage", "violation-notifications");
 
-            return await client.SendRequestWithJsonAsync<Models.DeleteMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DeleteMerchantRiskManageViolationNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

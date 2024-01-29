@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "rate-activity", "applications");
+                .CreateFlurlRequest(request, HttpMethod.Post, "rate-activity", "applications");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateRateActivityApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateRateActivityApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "rate-activity", "applications", "id", request.ApplicationId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "rate-activity", "applications", "id", request.ApplicationId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetRateActivityApplicationByApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetRateActivityApplicationByApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, new HttpMethod("PATCH"), "rate-activity", "applications", "id", request.ApplicationId);
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "rate-activity", "applications", "id", request.ApplicationId);
 
-            return await client.SendRequestWithJsonAsync<Models.UpdateRateActivityApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UpdateRateActivityApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

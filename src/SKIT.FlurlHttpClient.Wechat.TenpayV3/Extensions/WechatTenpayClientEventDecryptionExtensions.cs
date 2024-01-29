@@ -9,14 +9,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>反序列化得到 <see cref="WechatTenpayEvent"/> 对象。</para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackJson"></param>
+        /// <param name="webhookJson"></param>
         /// <returns></returns>
-        public static WechatTenpayEvent DeserializeEvent(this WechatTenpayClient client, string callbackJson)
+        public static WechatTenpayEvent DeserializeEvent(this WechatTenpayClient client, string webhookJson)
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
-            if (string.IsNullOrEmpty(callbackJson)) throw new ArgumentNullException(callbackJson);
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (string.IsNullOrEmpty(webhookJson)) throw new ArgumentNullException(webhookJson);
 
-            return client.JsonSerializer.Deserialize<WechatTenpayEvent>(callbackJson);
+            return client.JsonSerializer.Deserialize<WechatTenpayEvent>(webhookJson);
         }
 
         /// <summary>
@@ -24,15 +24,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="client"></param>
-        /// <param name="callback"></param>
+        /// <param name="webhookEvent"></param>
         /// <returns></returns>
-        public static T DecryptEventResource<T>(this WechatTenpayClient client, WechatTenpayEvent callback)
+        public static T DecryptEventResource<T>(this WechatTenpayClient client, WechatTenpayEvent webhookEvent)
             where T : WechatTenpayEvent.Types.IDecryptedResource, new()
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
-            if (callback == null) throw new ArgumentNullException(nameof(callback));
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (webhookEvent is null) throw new ArgumentNullException(nameof(webhookEvent));
 
-            return DecryptEventResource<T>(client, callback.Resource);
+            return DecryptEventResource<T>(client, webhookEvent.Resource);
         }
 
         /// <summary>
@@ -40,16 +40,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="client"></param>
-        /// <param name="resource"></param>
+        /// <param name="webhookEventResource"></param>
         /// <returns></returns>
-        public static T DecryptEventResource<T>(this WechatTenpayClient client, WechatTenpayEvent.Types.Resource resource)
+        public static T DecryptEventResource<T>(this WechatTenpayClient client, WechatTenpayEvent.Types.Resource webhookEventResource)
             where T : WechatTenpayEvent.Types.IDecryptedResource, new()
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
-            if (resource == null) throw new ArgumentNullException(nameof(resource));
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (webhookEventResource is null) throw new ArgumentNullException(nameof(webhookEventResource));
 
             string plainJson;
-            switch (resource.Algorithm)
+            switch (webhookEventResource.Algorithm)
             {
                 case Constants.EncryptionAlgorithms.AEAD_AES_256_GCM:
                     {
@@ -57,14 +57,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         {
                             plainJson = Utilities.AESUtility.DecryptWithGCM(
                                 key: client.Credentials.MerchantV3Secret,
-                                nonce: resource.Nonce,
-                                aad: resource.AssociatedData,
-                                cipherText: resource.CipherText
+                                nonce: webhookEventResource.Nonce,
+                                aad: webhookEventResource.AssociatedData,
+                                cipherText: webhookEventResource.CipherText
                             );
                         }
                         catch (Exception ex)
                         {
-                            throw new Exceptions.WechatTenpayEventDecryptionException("Failed to decrypt event resource data. Please see the inner exception for more details.", ex);
+                            throw new WechatTenpayException("Failed to decrypt event resource data. Please see the inner exception for more details.", ex);
                         }
                     }
                     break;
@@ -81,22 +81,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                             byte[] plainBytes = Utilities.SM4Utility.DecryptWithGCM(
                                 keyBytes: keyBytes,
-                                nonceBytes: Encoding.UTF8.GetBytes(resource.Nonce),
-                                aadBytes: resource.AssociatedData is null ? null : Encoding.UTF8.GetBytes(resource.AssociatedData),
-                                cipherBytes: Convert.FromBase64String(resource.CipherText)
+                                nonceBytes: Encoding.UTF8.GetBytes(webhookEventResource.Nonce),
+                                aadBytes: webhookEventResource.AssociatedData is null ? null : Encoding.UTF8.GetBytes(webhookEventResource.AssociatedData),
+                                cipherBytes: Convert.FromBase64String(webhookEventResource.CipherText)
                             );
                             plainJson = Encoding.UTF8.GetString(plainBytes);
                         }
                         catch (Exception ex)
                         {
-                            throw new Exceptions.WechatTenpayEventDecryptionException("Failed to decrypt event resource data. Please see the inner exception for more details.", ex);
+                            throw new WechatTenpayException("Failed to decrypt event resource data. Please see the inner exception for more details.", ex);
                         }
                     }
                     break;
 
                 default:
                     {
-                        throw new Exceptions.WechatTenpayEventDecryptionException($"Unsupported encryption algorithm: \"{resource.Algorithm}\".");
+                        throw new WechatTenpayException($"Failed to decrypt event resource data. Unsupported encryption algorithm: \"{webhookEventResource.Algorithm}\".");
                     }
             }
 

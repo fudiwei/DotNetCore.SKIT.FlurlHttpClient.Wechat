@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -22,9 +22,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "marketing", "membercard-activity", "activities");
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-activity", "activities");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateMarketingMemberCardActivityResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMarketingMemberCardActivityResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/membercard-activity/activities/{activity_id}/terminate 接口。</para>
+        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_2.shtml </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TerminateMarketingMemberCardActivityResponse> ExecuteTerminateMarketingMemberCardActivityAsync(this WechatTenpayClient client, Models.TerminateMarketingMemberCardActivityRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "membercard-activity", "activities", request.ActivityId, "terminate");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.TerminateMarketingMemberCardActivityResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,24 +60,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "marketing", "membercard-activity", "activities");
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-activity", "activities");
 
-            if (request.CardId != null)
+            if (request.CardId is not null)
                 flurlReq.SetQueryParam("card_id", request.CardId);
 
-            if (request.ActivityType != null)
+            if (request.ActivityType is not null)
                 flurlReq.SetQueryParam("activity_type", request.ActivityType);
 
-            if (request.ActivityStatus != null)
+            if (request.ActivityStatus is not null)
                 flurlReq.SetQueryParam("activity_status", request.ActivityStatus);
 
-            if (request.Limit != null)
+            if (request.Limit is not null)
                 flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
 
-            if (request.Offset != null)
+            if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
 
-            return await client.SendRequestWithJsonAsync<Models.QueryMarketingMemberCardActivitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingMemberCardActivitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -75,9 +94,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "marketing", "membercard-activity", "activities", request.ActivityId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "membercard-activity", "activities", request.ActivityId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMarketingMemberCardActivityByActivityIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingMemberCardActivityByActivityIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "merchant-store", "stores");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-store", "stores");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateMerchantStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -40,12 +40,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "merchant-store", "stores", request.StoreId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-store", "stores", request.StoreId);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetMerchantStoreByStoreIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantStoreByStoreIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -61,9 +61,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, new HttpMethod("PATCH"), "merchant-store", "stores", request.StoreId);
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "merchant-store", "stores", request.StoreId);
 
-            return await client.SendRequestWithJsonAsync<Models.ModifyMerchantStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ModifyMerchantStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region
@@ -80,9 +80,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "merchant-store", "stores", request.StoreId, "recipients", "bind");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-store", "stores", request.StoreId, "recipients", "bind");
 
-            return await client.SendRequestWithJsonAsync<Models.BindMerchantStoreRecipientResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.BindMerchantStoreRecipientResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -98,9 +98,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "merchant-store", "stores", request.StoreId, "recipients", "unbind");
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-store", "stores", request.StoreId, "recipients", "unbind");
 
-            return await client.SendRequestWithJsonAsync<Models.UnbindMerchantStoreRecipientResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnbindMerchantStoreRecipientResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

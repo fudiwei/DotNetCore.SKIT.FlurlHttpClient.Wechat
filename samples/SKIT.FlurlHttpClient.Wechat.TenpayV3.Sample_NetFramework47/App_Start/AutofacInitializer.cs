@@ -13,8 +13,8 @@
             builder.RegisterType<Services.HttpClients.Implements.WechatTenpayCertificateManagerFactory>()
                    .As<Services.HttpClients.IWechatTenpayCertificateManagerFactory>()
                    .SingleInstance();
-            builder.RegisterType<Services.HttpClients.Implements.WechatTenpayHttpClientFactory>()
-                   .As<Services.HttpClients.IWechatTenpayHttpClientFactory>()
+            builder.RegisterType<Services.HttpClients.Implements.WechatTenpayClientFactory>()
+                   .As<Services.HttpClients.IWechatTenpayClientFactory>()
                    .SingleInstance();
 
             builder.RegisterType<Services.BackgroundJobs.TenpayCertificateRefreshingBackgroundJob>()

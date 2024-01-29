@@ -24,9 +24,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "card-template");
+                .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "card-template");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateNewTaxControlFapiaoCardTemplateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateNewTaxControlFapiaoCardTemplateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -45,9 +45,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "merchant", request.SubMerchantId, "check");
+                .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "merchant", request.SubMerchantId, "check");
 
-            return await client.SendRequestWithJsonAsync<Models.CheckNewTaxControlFapiaoMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CheckNewTaxControlFapiaoMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -65,9 +65,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, new HttpMethod("PATCH"), "new-tax-control-fapiao", "merchant", "development-config");
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "new-tax-control-fapiao", "merchant", "development-config");
 
-            return await client.SendRequestWithJsonAsync<Models.ModifyNewTaxControlFapiaoMerchantDevelopmentConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ModifyNewTaxControlFapiaoMerchantDevelopmentConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -85,12 +85,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "merchant", "development-config");
+                .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "merchant", "development-config");
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mch_code", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoMerchantDevelopmentConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetNewTaxControlFapiaoMerchantDevelopmentConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -108,12 +108,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "merchant", "base-information");
+                .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "merchant", "base-information");
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoMerchantBaseInformationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetNewTaxControlFapiaoMerchantBaseInformationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -131,14 +131,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "merchant", "tax-codes")
+                .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "merchant", "tax-codes")
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.QueryNewTaxControlFapiaoMerchantTaxCodesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryNewTaxControlFapiaoMerchantTaxCodesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -158,32 +158,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "user-title", "title-url")
+                .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "user-title", "title-url")
                 .SetQueryParam("fapiao_apply_id", request.FapiaoApplyId)
                 .SetQueryParam("source", request.Source)
                 .SetQueryParam("total_amount", request.TotalAmount)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("openid", request.OpenId);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            if (request.SellerName != null)
+            if (request.SellerName is not null)
                 flurlReq.SetQueryParam("seller_name", request.SellerName);
 
-            if (request.RequireShowMobileCell != null)
+            if (request.RequireShowMobileCell is not null)
                 flurlReq.SetQueryParam("show_phone_cell", request.RequireShowMobileCell.Value ? "true" : "false");
 
-            if (request.RequireMustInputMobile != null)
+            if (request.RequireMustInputMobile is not null)
                 flurlReq.SetQueryParam("must_input_phone", request.RequireMustInputMobile.Value ? "true" : "false");
 
-            if (request.RequireShowEmailCell != null)
+            if (request.RequireShowEmailCell is not null)
                 flurlReq.SetQueryParam("show_email_cell", request.RequireShowEmailCell.Value ? "true" : "false");
 
-            if (request.RequireMustInputEmail != null)
+            if (request.RequireMustInputEmail is not null)
                 flurlReq.SetQueryParam("must_input_email", request.RequireMustInputEmail.Value ? "true" : "false");
 
-            return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoUserTitleUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetNewTaxControlFapiaoUserTitleUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -201,14 +201,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "user-title")
+                .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "user-title")
                 .SetQueryParam("fapiao_apply_id", request.FapiaoApplyId)
                 .SetQueryParam("scene", request.Scene);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoUserTitleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetNewTaxControlFapiaoUserTitleResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -228,9 +228,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications");
+                .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateNewTaxControlFapiaoApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateNewTaxControlFapiaoApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -248,9 +248,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId, "reverse");
+                .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId, "reverse");
 
-            return await client.SendRequestWithJsonAsync<Models.ReverseNewTaxControlFapiaoApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ReverseNewTaxControlFapiaoApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -268,15 +268,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId);
 
-            if (request.FapiaoId != null)
+            if (request.FapiaoId is not null)
                 flurlReq.SetQueryParam("fapiao_id", request.FapiaoId);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetNewTaxControlFapiaoApplicationByFapiaoApplyIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -294,15 +294,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId, "fapiao-files");
+                .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId, "fapiao-files");
 
-            if (request.FapiaoId != null)
+            if (request.FapiaoId is not null)
                 flurlReq.SetQueryParam("fapiao_id", request.FapiaoId);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetNewTaxControlFapiaoApplicationFilesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetNewTaxControlFapiaoApplicationFilesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -320,11 +320,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.MerchantId == null)
+            if (request.MerchantId is null)
                 request.MerchantId = client.Credentials.MerchantId;
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, request.DownloadUrl)
+                .CreateFlurlRequest(request, HttpMethod.Get, request.DownloadUrl)
                 .WithUrl(request.DownloadUrl)
                 .SetQueryParam("mchid", request.MerchantId)
                 .SetQueryParam("openid", request.OpenId)
@@ -332,10 +332,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("invoice_code", request.FapiaoCode)
                 .SetQueryParam("invoice_no", request.FapiaoNumber);
 
-            if (request.SubMerchantId != null)
+            if (request.SubMerchantId is not null)
                 flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendRequestWithJsonAsync<Models.DownloadNewTaxControlFapiaoApplicationFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DownloadNewTaxControlFapiaoApplicationFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -353,10 +353,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications", "upload-fapiao-file");
+                .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications", "upload-fapiao-file");
 
             using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "file.pdf", fileBytes: request.FileBytes, fileContentType: "application/pdf", fileMetaJson: client.JsonSerializer.Serialize(request));
-            return await client.SendRequestAsync<Models.UploadNewTaxControlFapiaoApplicationFapiaoFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.UploadNewTaxControlFapiaoApplicationFapiaoFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -374,9 +374,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId, "insert-cards");
+                .CreateFlurlRequest(request, HttpMethod.Post, "new-tax-control-fapiao", "fapiao-applications", request.FapiaoApplyId, "insert-cards");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateNewTaxControlFapiaoApplicationCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateNewTaxControlFapiaoApplicationCardResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
