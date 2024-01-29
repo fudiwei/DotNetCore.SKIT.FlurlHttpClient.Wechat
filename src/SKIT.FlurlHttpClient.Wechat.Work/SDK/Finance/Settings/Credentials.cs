@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Settings
 
         internal Credentials(WechatWorkFinanceClientOptions options)
         {
-            if (options == null) throw new ArgumentNullException(nameof(options));
+            if (options is null) throw new ArgumentNullException(nameof(options));
 
             CorpId = options.CorpId;
             SecretKey = options.SecretKey;

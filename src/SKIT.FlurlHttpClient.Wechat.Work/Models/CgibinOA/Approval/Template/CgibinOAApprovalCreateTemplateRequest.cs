@@ -55,18 +55,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// 获取或设置是否为必填项。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("require")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("require")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                                 public bool? IsRequired { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置是否不可打印。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("un_print")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("un_print")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                                 public bool IsUnprintable { get; set; }
                             }
 

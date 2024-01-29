@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/checkin/getcheckindata 接口的响应。</para>
@@ -77,14 +77,14 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("lng")]
                 [System.Text.Json.Serialization.JsonPropertyName("lng")]
-                public double? LocationLongitude { get; set; }
+                public decimal? LocationLongitude { get; set; }
 
                 /// <summary>
                 /// 获取或设置打卡地点纬度。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("lat")]
                 [System.Text.Json.Serialization.JsonPropertyName("lat")]
-                public double? LocationLatitude { get; set; }
+                public decimal? LocationLatitude { get; set; }
 
                 /// <summary>
                 /// 获取或设置打卡 Wi-Fi 名称。

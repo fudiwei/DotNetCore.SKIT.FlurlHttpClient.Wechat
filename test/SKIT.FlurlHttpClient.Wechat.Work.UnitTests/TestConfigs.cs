@@ -17,16 +17,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                 using var stream = File.OpenRead("appsettings.local.json");
                 using var jdoc = JsonDocument.Parse(stream);
 
-                var config = jdoc.RootElement.GetProperty("TestConfig");
+                var config = jdoc.RootElement.GetProperty("TestConfigs");
                 WechatCorpId = config.GetProperty("CorpId").GetString()!;
                 WechatAgentId = int.Parse(config.GetProperty("AgentId").GetString()!);
                 WechatAgentSecret = config.GetProperty("AgentSecret").GetString()!;
                 WechatAccessToken = config.GetProperty("AccessToken").GetString()!;
                 WechatFinanceSecretKey = config.GetProperty("FinanceSecretKey").GetString()!;
                 WechatFinanceEncryptionPrivateKey = config.GetProperty("FinanceEncryptionPrivateKey").GetString()!;
-
-                WorkDirectoryForSdk = jdoc.RootElement.GetProperty("WorkDirectoryForSdk").GetString()!;
-                WorkDirectoryForTest = jdoc.RootElement.GetProperty("WorkDirectoryForTest").GetString()!;
             }
             catch (Exception ex)
             {
@@ -40,8 +37,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
         public static readonly string WechatAccessToken;
         public static readonly string WechatFinanceSecretKey;
         public static readonly string WechatFinanceEncryptionPrivateKey;
-
-        public static readonly string WorkDirectoryForSdk;
-        public static readonly string WorkDirectoryForTest;
     }
 }

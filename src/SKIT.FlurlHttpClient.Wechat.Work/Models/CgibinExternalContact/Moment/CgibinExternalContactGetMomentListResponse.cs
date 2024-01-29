@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_moment_list 接口的响应。</para>
@@ -72,14 +72,14 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("longitude")]
                         [System.Text.Json.Serialization.JsonPropertyName("longitude")]
-                        public double Longitude { get; set; }
+                        public decimal Longitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置地理位置纬度。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("latitude")]
                         [System.Text.Json.Serialization.JsonPropertyName("latitude")]
-                        public double Latitude { get; set; }
+                        public decimal Latitude { get; set; }
 
                         /// <summary>
                         /// 获取或设置地理位置名称。

@@ -1,26 +1,12 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     /// <summary>
     /// 表示微信 API 回调通知事件的基类。
     /// </summary>
-    [Serializable]
-    public class WechatWorkEvent
+    [Newtonsoft.Json.JsonObject]
+    [System.Xml.Serialization.XmlRoot("xml")]
+    public class WechatWorkEvent : ICommonWebhookEvent
     {
-        public static class Serialization
-        {
-            [Newtonsoft.Json.JsonObject]
-            public interface IJsonSerializable
-            {
-            }
-
-            [System.Xml.Serialization.XmlRoot("xml")]
-            public interface IXmlSerializable
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置企业 CorpId 或第三方应用的 SuiteId。
         /// </summary>

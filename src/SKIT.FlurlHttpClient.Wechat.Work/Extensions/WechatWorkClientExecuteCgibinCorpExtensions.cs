@@ -23,13 +23,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "corp", "get_join_qrcode")
+                .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "corp", "get_join_qrcode")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            if (request.SizeType != null)
+            if (request.SizeType is not null)
                 flurlReq.SetQueryParam("size_type", request.SizeType.Value);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGetJoinQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCorpGetJoinQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -48,10 +48,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corp", "getopenapprovaldata")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "corp", "getopenapprovaldata")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinCorpGetOpenApprovalDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCorpGetOpenApprovalDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -68,10 +68,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "corp", "apply_mass_call_ticket")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "corp", "apply_mass_call_ticket")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinCorpApplyMassCallTicketResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCorpApplyMassCallTicketResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

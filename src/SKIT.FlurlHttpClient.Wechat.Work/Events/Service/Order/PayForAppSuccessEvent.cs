@@ -4,7 +4,7 @@
     /// <para>表示 INFO.pay_for_app_success 事件的数据。</para>
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/91931 </para>
     /// </summary>
-    public class PayForAppSuccessEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IXmlSerializable
+    public class PayForAppSuccessEvent : WechatWorkEvent
     {
         /// <summary>
         /// 获取或设置第三方应用的 SuiteId。

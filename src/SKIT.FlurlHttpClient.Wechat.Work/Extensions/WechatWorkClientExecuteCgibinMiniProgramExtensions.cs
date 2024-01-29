@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "miniprogram", "transfer_session")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "miniprogram", "transfer_session")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMiniProgramTransferSessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinMiniProgramTransferSessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -43,12 +43,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "cgi-bin", "miniprogram", "jscode2session")
+                .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "miniprogram", "jscode2session")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("js_code", request.JsCode)
                 .SetQueryParam("grant_type", request.GrantType);
 
-            return await client.SendRequestWithJsonAsync<Models.CgibinMiniProgramJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinMiniProgramJsCode2SessionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

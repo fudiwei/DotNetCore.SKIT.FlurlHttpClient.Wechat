@@ -230,14 +230,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("lng")]
                                 [System.Text.Json.Serialization.JsonPropertyName("lng")]
-                                public double Longitude { get; set; }
+                                public decimal Longitude { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置位置打卡地点纬度。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("lat")]
                                 [System.Text.Json.Serialization.JsonPropertyName("lat")]
-                                public double Latitude { get; set; }
+                                public decimal Latitude { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置允许打卡范围（单位：米）。

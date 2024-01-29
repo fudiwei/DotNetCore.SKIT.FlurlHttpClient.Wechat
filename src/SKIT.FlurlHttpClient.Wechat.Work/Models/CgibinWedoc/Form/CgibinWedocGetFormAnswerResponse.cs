@@ -104,14 +104,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("days")]
                                 [System.Text.Json.Serialization.JsonPropertyName("days")]
-                                public double? Days { get; set; }
+                                public decimal? Days { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置小时数。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("hours")]
                                 [System.Text.Json.Serialization.JsonPropertyName("hours")]
-                                public double? Hours { get; set; }
+                                public decimal? Hours { get; set; }
                             }
 
                             public class DepartmentReply

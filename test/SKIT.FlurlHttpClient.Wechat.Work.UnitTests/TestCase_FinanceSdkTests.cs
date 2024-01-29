@@ -1,5 +1,4 @@
 using System.Threading.Tasks;
-using Flurl.Http.Configuration;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
@@ -103,12 +102,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
         [Fact(DisplayName = "测试用例：聊天记录 - 会话内容存档数据结构反序列化")]
         public void TestFinanceSdkModelsDeserialization()
         {
-            var newtonsoftJsonSerializer = new FlurlNewtonsoftJsonSerializer();
-            var systemTextJsonSerializer = new FlurlSystemTextJsonSerializer();
+            var newtonsoftJsonSerializer = new NewtonsoftJsonSerializer();
+            var systemTextJsonSerializer = new SystemTextJsonSerializer();
 
             #region 用例：聊天记录列表
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""errcode"": 0,
@@ -137,7 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = "{\"msgid\":\"MSGID\",\"action\":\"ACTION\",\"from\":\"FROM\",\"tolist\":[\"TO\"],\"roomid\":\"ROOMID\",\"msgtime\":1234567890}";
 
@@ -157,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 文本
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""CAQQluDa4QUY0On2rYSAgAMgzPrShAE="",
@@ -184,7 +183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 图片
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""CAQQvPnc4QUY0On2rYSAgAMgooLa0Q8="",
@@ -215,7 +214,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 撤回消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""15775510700152506326_1603875615"",
@@ -242,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 同意会话聊天内容
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""8891446340739254950_1603875826"",
@@ -271,7 +270,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 语音
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""10958372969718811103_1603875609"",
@@ -304,7 +303,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 视频
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""17955920891003447432_1603875627"",
@@ -337,7 +336,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 名片
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""13714216591700685558_1603875680"",
@@ -366,7 +365,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 位置
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""2641513858500683770_1603876152"",
@@ -401,7 +400,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 位置
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""6623217619416669654_1603875612"",
@@ -438,7 +437,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 文件
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""18039699423706571225_1603875608"",
@@ -473,7 +472,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 链接
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""11788441727514772650_1603875624"",
@@ -506,7 +505,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 小程序消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""11930598857592605935_1603875608"",
@@ -539,7 +538,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 会话记录消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""11354299838102555191_1603875658"",
@@ -580,7 +579,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 待办消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""11354299838102555191_1603875658"",
@@ -609,7 +608,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 投票消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""11354299838102555191_1603875658"",
@@ -642,7 +641,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 填表消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""2500536226619379797_1576034482"",
@@ -695,7 +694,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 红包消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""333590477316965370_1603877439"",
@@ -728,7 +727,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 会议邀请消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""5935786683775673543_1603877328"",
@@ -769,7 +768,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 切换企业日志
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""125289002219525886280"",
@@ -790,7 +789,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 在线文档消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""9732089160923053207_1603877765"",
@@ -821,7 +820,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - Markdown 格式消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""7546287934688259248_1603875715"",
@@ -848,7 +847,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 日程消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""2345881211604379705_1603877680"",
@@ -887,7 +886,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 混合消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""DAQQluDa4QUY0On4kYSABAMgzPrShAE="",
@@ -921,7 +920,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 音频存档消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""17952229780246929345_1594197637"",
@@ -969,7 +968,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 音频共享文档消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""16527954622422422847_1594199256"",
@@ -1003,7 +1002,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 互通红包消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""8632214264349267353_1603786184"",
@@ -1036,7 +1035,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 视频号消息
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""5702551662099334532_1619511584_external"",
@@ -1067,7 +1066,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 音视频通话
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""10950316726562067988_1666601563058"",
@@ -1096,7 +1095,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
             #region 用例：聊天记录 - 微盘文件
             {
-                static void AssertModelWithJsonSerializer(ISerializer serializer)
+                static void AssertModelWithJsonSerializer(IJsonSerializer serializer)
                 {
                     const string json = @"{
 	                    ""msgid"": ""904076622482680588_1666602581569_external"",

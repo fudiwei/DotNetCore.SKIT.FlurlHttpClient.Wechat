@@ -60,14 +60,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ai_transfer_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("ai_transfer_rate")]
-                        public double AITransferRate { get; set; }
+                        public decimal AITransferRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置智能回复知识命中率。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ai_knowledge_hit_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("ai_knowledge_hit_rate")]
-                        public double AIKnowledgeHitRate { get; set; }
+                        public decimal AIKnowledgeHitRate { get; set; }
                     }
                 }
 

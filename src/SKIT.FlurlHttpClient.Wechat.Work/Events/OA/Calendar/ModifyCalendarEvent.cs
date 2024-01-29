@@ -5,7 +5,7 @@
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/93651 </para>
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/93704 </para>
     /// </summary>
-    public class ModifyCalendarEvent : AddCalendarEvent, WechatWorkEvent.Serialization.IJsonSerializable, WechatWorkEvent.Serialization.IXmlSerializable
+    public class ModifyCalendarEvent : AddCalendarEvent
     {
     }
 }

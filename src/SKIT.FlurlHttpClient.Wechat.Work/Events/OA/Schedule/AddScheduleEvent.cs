@@ -5,7 +5,7 @@
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/93651 </para>
     /// <para>REF: https://developer.work.weixin.qq.com/document/path/93704 </para>
     /// </summary>
-    public class AddScheduleEvent : WechatWorkEvent, WechatWorkEvent.Serialization.IJsonSerializable, WechatWorkEvent.Serialization.IXmlSerializable
+    public class AddScheduleEvent : WechatWorkEvent
     {
         /// <summary>
         /// 获取或设置日程 ID。

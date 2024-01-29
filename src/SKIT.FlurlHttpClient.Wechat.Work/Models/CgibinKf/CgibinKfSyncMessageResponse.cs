@@ -51,8 +51,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     {
                     }
 
-                    public class MenuMessage : CgibinKfSendMessageRequest.Types.MenuMessage
+                    public class MenuMessage
                     {
+                        public static class Types
+                        {
+                            public class MenuItem : CgibinKfSendMessageRequest.Types.MenuMessage.Types.MenuItem
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置头部内容。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("head_content")]
+                        [System.Text.Json.Serialization.JsonPropertyName("head_content")]
+                        public string? HeadContent { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置菜单列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("list")]
+                        public Types.MenuItem[] List { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置尾部内容。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("tail_content")]
+                        [System.Text.Json.Serialization.JsonPropertyName("tail_content")]
+                        public string? TailContent { get; set; }
                     }
 
                     public class LocationMessage : CgibinKfSendMessageRequest.Types.LocationMessage
@@ -532,9 +559,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否还有更多数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("has_more")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("has_more")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool HasMore { get; set; }
 
         /// <summary>

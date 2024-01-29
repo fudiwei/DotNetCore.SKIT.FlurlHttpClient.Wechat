@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("reply_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("reply_rate")]
-                        public double ReplyRate { get; set; }
+                        public decimal ReplyRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置平均首次响应时长（单位：秒）。
@@ -60,28 +60,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("satisfaction_participation_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("satisfaction_participation_rate")]
-                        public double SatisfactionParticipationRate { get; set; }
+                        public decimal SatisfactionParticipationRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置“满意”评价占比。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("satisfied_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("satisfied_rate")]
-                        public double SatisfiedRate { get; set; }
+                        public decimal SatisfiedRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置“一般”评价占比。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("middling_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("middling_rate")]
-                        public double MiddlingRate { get; set; }
+                        public decimal MiddlingRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置“不满意”评价占比。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("dissatisfied_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("dissatisfied_rate")]
-                        public double DissatisfiedRate { get; set; }
+                        public decimal DissatisfiedRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置升级服务客户数。

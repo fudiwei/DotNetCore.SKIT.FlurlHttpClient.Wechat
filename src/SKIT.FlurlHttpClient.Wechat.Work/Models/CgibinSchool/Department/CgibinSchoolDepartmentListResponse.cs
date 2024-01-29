@@ -96,18 +96,18 @@
                 /// 获取或设置是否已毕业。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_graduated")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_graduated")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsGraduated { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否开启客户群（即班级群）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("open_group_chat")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.NumericalNullableBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("open_group_chat")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalNullableBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                 public bool? IsOpenGroupChat { get; set; }
 
                 /// <summary>
@@ -115,7 +115,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("group_chat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("group_chat_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.NumericalStringConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
                 public string? GroupChatId { get; set; }
             }
         }
