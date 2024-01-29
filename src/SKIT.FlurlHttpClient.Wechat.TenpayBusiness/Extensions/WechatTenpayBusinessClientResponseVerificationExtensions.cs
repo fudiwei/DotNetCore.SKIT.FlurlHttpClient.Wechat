@@ -30,18 +30,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         public static bool VerifyResponseSignature<TResponse>(this WechatTenpayBusinessClient client, TResponse response, out Exception? error)
             where TResponse : WechatTenpayBusinessResponse
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (client is null) throw new ArgumentNullException(nameof(client));
 
-            bool ret = WechatTenpayBusinessClientSignExtensions.VerifySignature(
+            bool ret = WechatTenpayBusinessClientSigningExtensions.VerifySignature(
                 client,
-                strAuthorization: response.RawHeaders.FirstOrDefault(e => string.Equals(e.Key, "TBEP-Authorization", StringComparison.OrdinalIgnoreCase)).Value,
-                strContent: Encoding.UTF8.GetString(response.RawBytes),
+                strAuthorization: response.GetRawHeaders().GetFirstValueOrEmpty("TBEP-Authorization"),
+                strContent: Encoding.UTF8.GetString(response.GetRawBytes()),
                 out error
             );
 
-            if (error != null)
+            if (error is not null)
             {
-                error = new Exceptions.WechatTenpayBusinessResponseVerificationException("Verify signature of response failed. Please see the inner exception for more details.", error);
+                error = new WechatTenpayBusinessException("Verify signature of response failed. Please see the inner exception for more details.", error);
             }
 
             return ret;
@@ -135,9 +135,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <returns></returns>
         public static bool VerifyResponseSignature(this WechatTenpayBusinessClient client, string responseTimestamp, string responseNonce, string responseBody, string responseSignature, string responseSignatureAlgorithm, string responseSerialNumber, out Exception? error)
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (client is null) throw new ArgumentNullException(nameof(client));
 
-            bool ret = WechatTenpayBusinessClientSignExtensions.VerifySignature(
+            bool ret = WechatTenpayBusinessClientSigningExtensions.VerifySignature(
                 client,
                 strTimestamp: responseTimestamp,
                 strNonce: responseNonce,
@@ -148,10 +148,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 out error
             );
 
-            if (error != null)
-            {
-                error = new Exceptions.WechatTenpayBusinessResponseVerificationException("Verify signature of response failed. Please see the inner exception for more details.", error);
-            }
+            if (!ret)
+                error ??= new Exception($"Failed to verify response. Maybe the raw signature \"{responseSignature}\" is invalid.");
 
             return ret;
         }

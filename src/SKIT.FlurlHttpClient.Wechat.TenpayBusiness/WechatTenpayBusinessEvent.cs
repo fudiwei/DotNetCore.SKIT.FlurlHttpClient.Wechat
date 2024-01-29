@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
     /// 表示微企付 API 回调通知事件的基类。
     /// </summary>
     [Serializable]
-    public class WechatTenpayBusinessEvent
+    public class WechatTenpayBusinessEvent : ICommonWebhookEvent
     {
         /// <summary>
         /// 获取或设置 API 版本。
@@ -48,9 +48,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// 获取或设置通知创建时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("create_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("create_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RFC3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset CreateTime { get; set; }
     }
 

@@ -72,8 +72,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>签名字节数组。</returns>
         public static byte[] SignWithSHA256(byte[] privateKeyBytes, byte[] msgBytes)
         {
-            if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
-            if (msgBytes == null) throw new ArgumentNullException(nameof(msgBytes));
+            if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
+            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
 
             RsaKeyParameters rsaPrivateKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
             return SignWithSHA256(rsaPrivateKeyParams, msgBytes);
@@ -87,8 +87,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>经 Base64 编码的签名。</returns>
         public static string SignWithSHA256(string privateKey, string message)
         {
-            if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
-            if (message == null) throw new ArgumentNullException(nameof(message));
+            if (privateKey is null) throw new ArgumentNullException(nameof(privateKey));
+            if (message is null) throw new ArgumentNullException(nameof(message));
 
             byte[] privateKeyBytes = ConvertPrivateKeyPkcs8PemToByteArray(privateKey);
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
@@ -105,9 +105,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>验证结果。</returns>
         public static bool VerifyWithSHA256(byte[] publicKeyBytes, byte[] msgBytes, byte[] signBytes)
         {
-            if (publicKeyBytes == null) throw new ArgumentNullException(nameof(publicKeyBytes));
-            if (msgBytes == null) throw new ArgumentNullException(nameof(msgBytes));
-            if (signBytes == null) throw new ArgumentNullException(nameof(signBytes));
+            if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
+            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (signBytes is null) throw new ArgumentNullException(nameof(signBytes));
 
             RsaKeyParameters rsaPublicKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
             return VerifyWithSHA256(rsaPublicKeyParams, msgBytes, signBytes);
@@ -122,9 +122,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>验证结果。</returns>
         public static bool VerifyWithSHA256(string publicKey, string message, string signature)
         {
-            if (publicKey == null) throw new ArgumentNullException(nameof(publicKey));
-            if (message == null) throw new ArgumentNullException(nameof(message));
-            if (signature == null) throw new ArgumentNullException(nameof(signature));
+            if (publicKey is null) throw new ArgumentNullException(nameof(publicKey));
+            if (message is null) throw new ArgumentNullException(nameof(message));
+            if (signature is null) throw new ArgumentNullException(nameof(signature));
 
             byte[] publicKeyBytes = ConvertPublicKeyPkcs8PemToByteArray(publicKey);
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
@@ -141,8 +141,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>解密后的数据字节数组。</returns>
         public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingAlgorithm = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
-            if (privateKeyBytes == null) throw new ArgumentNullException(nameof(privateKeyBytes));
-            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
+            if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
+            if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
 
             RsaKeyParameters rsaPrivateKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
             return DecryptWithECB(rsaPrivateKeyParams, cipherBytes, paddingAlgorithm);
@@ -157,8 +157,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>解密后的文本数据。</returns>
         public static string DecryptWithECB(string privateKey, string cipherText, string paddingAlgorithm = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
-            if (privateKey == null) throw new ArgumentNullException(nameof(privateKey));
-            if (cipherText == null) throw new ArgumentNullException(nameof(cipherText));
+            if (privateKey is null) throw new ArgumentNullException(nameof(privateKey));
+            if (cipherText is null) throw new ArgumentNullException(nameof(cipherText));
 
             byte[] privateKeyBytes = ConvertPrivateKeyPkcs8PemToByteArray(privateKey);
             byte[] cipherBytes = Convert.FromBase64String(cipherText);
@@ -175,8 +175,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>加密后的数据字节数组。</returns>
         public static byte[] EncryptWithECB(byte[] publicKeyBytes, byte[] plainBytes, string paddingAlgorithm = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
-            if (publicKeyBytes == null) throw new ArgumentNullException(nameof(publicKeyBytes));
-            if (plainBytes == null) throw new ArgumentNullException(nameof(plainBytes));
+            if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
+            if (plainBytes is null) throw new ArgumentNullException(nameof(plainBytes));
 
             RsaKeyParameters rsaPublicKeyParams = (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
             return EncryptWithECB(rsaPublicKeyParams, plainBytes, paddingAlgorithm);
@@ -191,8 +191,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// <returns>经 Base64 编码的加密数据。</returns>
         public static string EncryptWithECB(string publicKey, string plainText, string paddingAlgorithm = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
         {
-            if (publicKey == null) throw new ArgumentNullException(nameof(publicKey));
-            if (plainText == null) throw new ArgumentNullException(nameof(plainText));
+            if (publicKey is null) throw new ArgumentNullException(nameof(publicKey));
+            if (plainText is null) throw new ArgumentNullException(nameof(plainText));
 
             byte[] publicKeyBytes = ConvertPublicKeyPkcs8PemToByteArray(publicKey);
             byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);

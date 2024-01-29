@@ -21,20 +21,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.FileName == null)
+            if (request.FileName is null)
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
-            if (request.FileHash == null)
+            if (request.FileHash is null)
                 request.FileHash = BitConverter.ToString(Utilities.SM3Utility.Hash(request.FileBytes)).Replace("-", string.Empty).ToLower();
 
-            if (request.FileContentType == null)
+            if (request.FileContentType is null)
                 request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mse-pay", "file-uploads");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "file-uploads");
 
             using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
-            return await client.SendRequestAsync<Models.UploadFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.UploadFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
     }
 }

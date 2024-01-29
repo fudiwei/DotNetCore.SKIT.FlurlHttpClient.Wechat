@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
-    internal static class WechatTenpayBusinessClientSignExtensions
+    internal static class WechatTenpayBusinessClientSigningExtensions
     {
         public static bool VerifySignature(this WechatTenpayBusinessClient client, string strAuthorization, string strContent, out Exception? error)
         {
@@ -43,26 +43,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 }
             }
 
-            error = new Exception("Could not read value of 'TBEP-Authorization'.");
+            error = new Exception("The value of \"TBEP-Authorization\" is empty.");
             return false;
         }
 
         public static bool VerifySignature(this WechatTenpayBusinessClient client, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignatureAlgorithm, string strSerialNumber, out Exception? error)
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
+            if (client is null) throw new ArgumentNullException(nameof(client));
 
             switch (strSignatureAlgorithm)
             {
                 case Constants.SignAlgorithms.SHA245_WITH_RSA:
                     {
-                        if (client.Credentials.TBEPCertificateSerialNumber != null &&
-                            client.Credentials.TBEPCertificatePublicKey != null)
+                        if (client.Credentials.TBEPCertificateSerialNumber is not null &&
+                            client.Credentials.TBEPCertificatePublicKey is not null)
                         {
                             try
                             {
                                 if (!string.Equals(client.Credentials.TBEPCertificateSerialNumber, strSerialNumber))
                                 {
-                                    error = new Exception("There is no TBEP public key matched the serial number.");
+                                    error = new Exception($"There is no TBEP public key matched the serial number \"{strSerialNumber}\".");
                                     return false;
                                 }
 
@@ -86,7 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
                 default:
                     {
-                        error = new Exception("Unsupported sign algorithm.");
+                        error = new Exception($"Unsupported sign algorithm: \"{strSignatureAlgorithm}\".");
                         return false;
                     }
             }

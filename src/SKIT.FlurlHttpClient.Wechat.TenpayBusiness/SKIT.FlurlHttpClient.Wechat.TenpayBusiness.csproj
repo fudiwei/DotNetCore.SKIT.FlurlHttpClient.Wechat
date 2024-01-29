@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-		<TargetFrameworks>net461; net47; netstandard2.0; net6.0</TargetFrameworks>
-        <LangVersion>8.0</LangVersion>
+		<TargetFrameworks>net461; net471; netstandard2.0; net6.0</TargetFrameworks>
+        <LangVersion>10.0</LangVersion>
         <Nullable>enable</Nullable>
         <NullableReferenceTypes>true</NullableReferenceTypes>
     </PropertyGroup>
@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Tencent Tenpay FiT 腾讯金融科技服务平台 腾讯金融科技 腾讯金融 腾讯商企付 腾讯微企付 商企付 微企付</PackageTags>
-        <Version>2.2.0</Version>
+        <Version>3.0.0-preview.1</Version>
         <Description>基于 Flurl.Http 的微企付 API 客户端。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
@@ -36,13 +36,13 @@
 	</ItemGroup>
 
     <ItemGroup>
-		<Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461' Or '$(TargetFramework)' == 'net47'" />
+		<Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461' Or '$(TargetFramework)' == 'net471'" />
     </ItemGroup>
 
     <ItemGroup>
         <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
         <PackageReference Include="System.ValueTuple" Version="4.5.0" Condition="'$(TargetFramework)' == 'net461'" />
-		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="2.6.0" />
+		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="3.0.0-preview.1" />
     </ItemGroup>
 
 </Project>

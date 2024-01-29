@@ -15,8 +15,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
 
         private static void InnerReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacementHandler replacement)
         {
-            if (obj == null) throw new ArgumentNullException(nameof(obj));
-            if (replacement == null) throw new ArgumentNullException(nameof(replacement));
+            if (obj is null) throw new ArgumentNullException(nameof(obj));
+            if (replacement is null) throw new ArgumentNullException(nameof(replacement));
 
             Type objType = obj.GetType();
             if (!objType.IsClass)
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
                     Type elementType = element.GetType();
                     if (elementType == typeof(string))
                     {
-                        if (currentProp == null)
+                        if (currentProp is null)
                             continue;
                         if (!currentProp.CanWrite)
                             continue;
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
                     Type elementType = element.GetType();
                     if (elementType == typeof(string))
                     {
-                        if (currentProp == null)
+                        if (currentProp is null)
                             continue;
                         if (!currentProp.CanWrite)
                             continue;
@@ -160,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
                     Type entryValueType = entryValue.GetType();
                     if (entryValueType == typeof(string))
                     {
-                        if (currentProp == null)
+                        if (currentProp is null)
                             continue;
                         if (!currentProp.CanWrite)
                             continue;

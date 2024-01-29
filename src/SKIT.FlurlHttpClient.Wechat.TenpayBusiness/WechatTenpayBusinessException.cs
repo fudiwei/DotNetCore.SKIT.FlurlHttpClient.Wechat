@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
     /// <summary>
     /// 当调用微企付 API 出错时引发的异常。
     /// </summary>
-    public class WechatTenpayBusinessException : CommonExceptionBase
+    public class WechatTenpayBusinessException : CommonException
     {
         /// <inheritdoc/>
         public WechatTenpayBusinessException()

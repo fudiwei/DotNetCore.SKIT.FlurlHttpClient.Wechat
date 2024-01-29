@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mse-pay", "refunds");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "refunds");
 
-            return await client.SendRequestWithJsonAsync<Models.CreateRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "refunds", "refund-id", request.RefundId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "refunds", "refund-id", request.RefundId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetRefundByRefundIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetRefundByRefundIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "mse-pay", "refunds", "out-refund-id", request.OutRefundId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "refunds", "out-refund-id", request.OutRefundId);
 
-            return await client.SendRequestWithJsonAsync<Models.GetRefundByOutRefundIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetRefundByOutRefundIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }
