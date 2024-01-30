@@ -12,31 +12,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>反序列化得到 <see cref="WechatTenpayEvent"/> 对象。</para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackXml"></param>
+        /// <param name="webhookXml"></param>
         /// <returns></returns>
-        public static WechatTenpayEvent DeserializeEvent(this WechatTenpayClient client, string callbackXml)
+        public static WechatTenpayEvent DeserializeEvent(this WechatTenpayClient client, string webhookXml)
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
-            if (callbackXml == null) throw new ArgumentNullException(callbackXml);
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (webhookXml is null) throw new ArgumentNullException(webhookXml);
 
-            string callbackJson = Utilities.XmlUtility.ConvertToJson(callbackXml);
-            return client.JsonSerializer.Deserialize<WechatTenpayEvent>(callbackJson);
+            string webhookJson = Utilities.XmlHelper.ConvertToJson(webhookXml);
+            return client.JsonSerializer.Deserialize<WechatTenpayEvent>(webhookJson);
         }
 
         /// <summary>
         /// <para>反序列化得到微信支付回调通知事件模型对象。</para>
         /// </summary>
         /// <param name="client"></param>
-        /// <param name="callbackXml"></param>
+        /// <param name="webhookXml"></param>
         /// <returns></returns>
-        public static TEvent DeserializeEvent<TEvent>(this WechatTenpayClient client, string callbackXml)
+        public static TEvent DeserializeEvent<TEvent>(this WechatTenpayClient client, string webhookXml)
             where TEvent : WechatTenpayEvent, new()
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
-            if (callbackXml == null) throw new ArgumentNullException(callbackXml);
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (webhookXml is null) throw new ArgumentNullException(webhookXml);
 
-            string callbackJson = Utilities.XmlUtility.ConvertToJson(callbackXml);
-            return client.JsonSerializer.Deserialize<TEvent>(callbackJson);
+            string webhookJson = Utilities.XmlHelper.ConvertToJson(webhookXml);
+            return client.JsonSerializer.Deserialize<TEvent>(webhookJson);
         }
 
         /// <summary>
@@ -44,13 +44,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <param name="client"></param>
-        /// <param name="callback"></param>
+        /// <param name="webhookEvent"></param>
         /// <returns></returns>
-        public static T DecryptEventRequestInfo<T>(this WechatTenpayClient client, WechatTenpayEvent callback)
+        public static T DecryptEventRequestInfo<T>(this WechatTenpayClient client, WechatTenpayEvent webhookEvent)
             where T : WechatTenpayEvent.Types.IDecryptedRequestInfo, new()
         {
-            if (client == null) throw new ArgumentNullException(nameof(client));
-            if (callback == null) throw new ArgumentNullException(nameof(callback));
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (webhookEvent is null) throw new ArgumentNullException(nameof(webhookEvent));
 
             string plainJson;
 
@@ -59,13 +59,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 string key = Utilities.MD5Utility.Hash(client.Credentials.MerchantSecret).ToLower();
                 string plainXml = Utilities.AESUtility.DecryptWithECB(
                     encodingKey: Convert.ToBase64String(Encoding.UTF8.GetBytes(key)),
-                    encodingCipherText: callback.EncryptedRequestInfo!
+                    encodingCipherText: webhookEvent.EncryptedRequestInfo!
                 );
-                plainJson = Utilities.XmlUtility.ConvertToJson(plainXml);
+                plainJson = Utilities.XmlHelper.ConvertToJson(plainXml);
             }
             catch (Exception ex)
             {
-                throw new Exceptions.WechatTenpayEventDecryptionException("Failed to decrypt event resource data. Please see the inner exception for more details.", ex);
+                throw new WechatTenpayException("Failed to decrypt event resource data. Please see the inner exception for more details.", ex);
             }
 
             return client.JsonSerializer.Deserialize<T>(plainJson);

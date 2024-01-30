@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 
         public static string Sign(IDictionary<string, string?> paramsMap, string secretKey, string secretValue, string? signType = null)
         {
-            if (paramsMap == null) throw new ArgumentNullException(nameof(paramsMap));
+            if (paramsMap is null) throw new ArgumentNullException(nameof(paramsMap));
 
             IDictionary<string, string?> sortedParamsMap = new SortedDictionary<string, string?>(paramsMap, StringComparer.OrdinalIgnoreCase);
             string sortedQueryString = string.Join("&", sortedParamsMap.Where(e => !string.IsNullOrEmpty(e.Value)).Select(e => $"{e.Key}={e.Value}"));
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 
         public static string SignFromJson(string json, string secretKey, string secretValue, string? signType = null)
         {
-            return SignFromSortedQueryString(queryString: JsonUtility.ParseToSortedQueryString(json), secretKey: secretKey, secretValue: secretValue, signType: signType);
+            return SignFromSortedQueryString(queryString: JsonHelper.ParseToSortedQueryString(json), secretKey: secretKey, secretValue: secretValue, signType: signType);
         }
 
         public static string SignFromSortedQueryString(string queryString, string secret, string? signType = null)

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text.Json.Nodes;
 using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Common;
 using System.Text.RegularExpressions;
 
 namespace System.Text.Json.Converters
@@ -68,7 +69,7 @@ namespace System.Text.Json.Converters
                 foreach (JsonProperty jProperty in jElement.EnumerateObject())
                 {
                     InnerTypedJsonPropertyInfo? typedJsonPropertyInfo = typedJsonProperties.SingleOrDefault(e => e.PropertyName == jProperty.Name);
-                    if (typedJsonPropertyInfo != null)
+                    if (typedJsonPropertyInfo is not null)
                     {
                         JsonSerializerOptions tmpOptions = GetClonedJsonSerializerOptions(options, typedJsonPropertyInfo.JsonConverter);
                         object? propertyValue = jProperty.Value.Deserialize(typedJsonPropertyInfo.PropertyType, tmpOptions);
@@ -81,12 +82,12 @@ namespace System.Text.Json.Converters
                             typedJsonPropertyInfo = _;
 
                             Array? propertyValue = typedJsonPropertyInfo.PropertyInfo.GetValue(tObject) as Array;
-                            ReflectionUtility.CreateOrExpandArray(ref propertyValue, typedJsonPropertyInfo.PropertyType.GetElementType()!, index + 1);
-                            ReflectionUtility.CreateOrExpandArrayElement(propertyValue!, index, (object element) =>
+                            ReflectionHelper.CreateOrExpandArray(ref propertyValue, typedJsonPropertyInfo.PropertyType.GetElementType()!, index + 1);
+                            ReflectionHelper.CreateOrExpandArrayElement(propertyValue!, index, (object element) =>
                             {
                                 InnerTypedJsonPropertyInfo? insider = GetTypedJsonProperties(element.GetType())
                                     .SingleOrDefault(p => string.Equals(p.PropertyName.Replace(PROPERTY_WILDCARD_NARRAY_ELEMENT, index.ToString()), jProperty.Name));
-                                if (insider != null)
+                                if (insider is not null)
                                 {
                                     JsonSerializerOptions tmpOptions = GetClonedJsonSerializerOptions(options, insider.JsonConverter);
                                     object? elementPropertyValue = JsonSerializer.Deserialize(jProperty.Value, insider.PropertyType, tmpOptions)!;
@@ -134,7 +135,7 @@ namespace System.Text.Json.Converters
                     }
 
                     JsonSerializerOptions tmpOptions = GetClonedJsonSerializerOptions(options, typedJsonProperty.JsonConverter);
-                    if (typedJsonProperty.JsonConverter != null && ReflectionUtility.CheckTypeIsSubclassOf(typedJsonProperty.JsonConverter.GetType(), typeof(TextualObjectInJsonFormatConverterBase<>)))
+                    if (typedJsonProperty.JsonConverter is not null && ReflectionHelper.CheckTypeIsSubclassOf(typedJsonProperty.JsonConverter.GetType(), typeof(StringifiedObjectInJsonFormatConverter)))
                     {
                         // TODO: 优化
                         tmpOptions.Converters.Remove(typedJsonProperty.JsonConverter);
@@ -176,12 +177,12 @@ namespace System.Text.Json.Converters
 
         private static InnerTypedJsonPropertyInfo[] GetTypedJsonProperties(Type type)
         {
-            if (type == null) throw new ArgumentNullException(nameof(type));
+            if (type is null) throw new ArgumentNullException(nameof(type));
 
             string mappedKey = type.AssemblyQualifiedName ?? type.GetHashCode().ToString();
             InnerTypedJsonPropertyInfo[]? mappedValue = (InnerTypedJsonPropertyInfo[]?)_mappedTypeJsonProperties[mappedKey];
 
-            if (mappedValue == null)
+            if (mappedValue is null)
             {
                 mappedValue = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
                     .Where(p =>
@@ -214,7 +215,7 @@ namespace System.Text.Json.Converters
 
         private static JsonConverter? GetTypedJsonConverter(MemberInfo? memberInfo)
         {
-            if (memberInfo == null)
+            if (memberInfo is null)
                 return null;
 
             return memberInfo.GetCustomAttributes<JsonConverterAttribute>(inherit: true)
@@ -232,21 +233,21 @@ namespace System.Text.Json.Converters
                         converter = attr.CreateConverter(propertyInfo.PropertyType);
                     }
 
-                    if (converter == null && attr.ConverterType != null)
+                    if (converter is null && attr.ConverterType is not null)
                     {
                         converter = (JsonConverter)Activator.CreateInstance(attr.ConverterType)!;
                     }
 
                     return converter;
                 })
-                .FirstOrDefault(converter => converter != null);
+                .FirstOrDefault(converter => converter is not null);
         }
 
         private static JsonSerializerOptions GetClonedJsonSerializerOptions(JsonSerializerOptions options, JsonConverter? converter)
         {
             JsonSerializerOptions optionsCopy = options;
 
-            if (converter != null)
+            if (converter is not null)
             {
                 optionsCopy = new JsonSerializerOptions(options);
                 optionsCopy.Converters.Add(converter);

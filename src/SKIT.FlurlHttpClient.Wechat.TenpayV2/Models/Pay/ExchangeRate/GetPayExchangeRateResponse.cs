@@ -53,6 +53,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("rate")]
         [System.Text.Json.Serialization.JsonPropertyName("rate")]
-        public double? ExchangeRate { get; set; } = default!;
+        public decimal? ExchangeRate { get; set; } = default!;
     }
 }

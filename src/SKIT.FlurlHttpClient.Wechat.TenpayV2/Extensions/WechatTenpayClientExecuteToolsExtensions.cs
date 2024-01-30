@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "tools", "authcodetoopenid");
+                .CreateFlurlRequest(request, HttpMethod.Post, "tools", "authcodetoopenid");
 
-            return await client.SendRequestWithXmlAsync<Models.ToolsAuthCodeToOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.ToolsAuthCodeToOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -43,9 +43,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "tools", "shorturl");
+                .CreateFlurlRequest(request, HttpMethod.Post, "tools", "shorturl");
 
-            return await client.SendRequestWithXmlAsync<Models.ToolsShortUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.ToolsShortUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

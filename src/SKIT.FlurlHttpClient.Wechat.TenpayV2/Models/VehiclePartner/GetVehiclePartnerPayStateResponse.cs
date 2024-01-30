@@ -25,17 +25,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
             }
         }
 
-        internal static new class Converters
-        {
-            internal class ResponsePropertyPlateNumberInfoNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.PlateNumberInfo>
-            {
-            }
-
-            internal class ResponsePropertyPlateNumberInfoSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.PlateNumberInfo>
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置子商户号。
         /// </summary>
@@ -61,9 +50,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置车牌号信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plate_number_info")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyPlateNumberInfoNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("plate_number_info")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyPlateNumberInfoSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public new Types.PlateNumberInfo? PlateNumberInfo { get; set; }
     }
 }

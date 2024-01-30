@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     /// 表示微信支付 API 回调通知事件的基类。
     /// </summary>
     [Serializable]
-    public class WechatTenpayEvent
+    public class WechatTenpayEvent : ICommonWebhookEvent
     {
         public static class Types
         {

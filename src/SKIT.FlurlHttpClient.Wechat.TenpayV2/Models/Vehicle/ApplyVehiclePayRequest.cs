@@ -19,9 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// 获取或设置出场时间。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("end_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.DigitalDateTimeOffsetConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
                         public DateTimeOffset? EndTime { get; set; }
 
                         /// <summary>
@@ -130,17 +130,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 [Newtonsoft.Json.JsonProperty("scene_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
                 public Types.Data Data { get; set; } = new Types.Data();
-            }
-        }
-
-        internal static class Converters
-        {
-            internal class RequestPropertySceneNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Scene>
-            {
-            }
-
-            internal class RequestPropertySceneSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Scene>
-            {
             }
         }
 
@@ -258,18 +247,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置场景信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene_info")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertySceneNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertySceneSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.Scene? Scene { get; set; }
 
         /// <summary>
         /// 获取或设置是否分账。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("profit_sharing")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.YesOrNoNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Internal.YesOrNoBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("profit_sharing")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.YesOrNoNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Internal.YesOrNoBooleanConverter))]
         public bool? IsProfitSharing { get; set; }
     }
 }

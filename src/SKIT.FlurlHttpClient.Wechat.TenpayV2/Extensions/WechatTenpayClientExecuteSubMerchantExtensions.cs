@@ -25,9 +25,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "secapi", "mch", "addsubdevconfig");
+                .CreateFlurlRequest(request, HttpMethod.Post, "secapi", "mch", "addsubdevconfig");
 
-            return await client.SendRequestWithXmlAsync<Models.AddSubMerchantDevelopConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.AddSubMerchantDevelopConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -45,9 +45,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "secapi", "mch", "querysubdevconfig");
+                .CreateFlurlRequest(request, HttpMethod.Post, "secapi", "mch", "querysubdevconfig");
 
-            return await client.SendRequestWithXmlAsync<Models.GetSubMerchantDevelopConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetSubMerchantDevelopConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -64,9 +64,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "secapi", "mkt", "addrecommendconf");
+                .CreateFlurlRequest(request, HttpMethod.Post, "secapi", "mkt", "addrecommendconf");
 
-            return await client.SendRequestWithXmlAsync<Models.AddSubMerchantMarketingRecommendConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.AddSubMerchantMarketingRecommendConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

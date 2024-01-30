@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaysptrans", "pay_bank");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaysptrans", "pay_bank");
 
-            return await client.SendRequestWithXmlAsync<Models.CreatePayServicePartnerTransfersPayToBankResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePayServicePartnerTransfersPayToBankResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaysptrans", "query_bank");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaysptrans", "query_bank");
 
-            return await client.SendRequestWithXmlAsync<Models.GetPayServicePartnerTransfersPayToBankInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetPayServicePartnerTransfersPayToBankInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

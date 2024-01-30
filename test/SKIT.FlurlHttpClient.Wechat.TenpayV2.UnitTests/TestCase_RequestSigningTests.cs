@@ -1,9 +1,9 @@
-﻿using System.Net.Http;
+using System.Net.Http;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {
-    public class TestCase_RequestSignTests
+    public class TestCase_RequestSigningTests
     {
         internal class InnerFakeRequest : WechatTenpaySignableRequest
         {
@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
         }
 
         [Fact(DisplayName = "测试用例：生成请求签名")]
-        public void TestRequestSign()
+        public void TestRequestSigning()
         {
             const string MCHID = "10000100";
             const string MCHKEY = "192006250b4c09247ec02edce69f6a2d";
@@ -37,8 +37,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
                 Body = "test",
                 NonceString = "ibuaiVcKdpRxkhJA"
             };
-            var client = new WechatTenpayClient(MCHID, MCHKEY);
-            client.CreateRequest(request, HttpMethod.Post);
+            var client = new WechatTenpayClient(new WechatTenpayClientOptions() { MerchantId = MCHID, MerchantSecret = MCHKEY });
+            client.CreateFlurlRequest(request, HttpMethod.Post);
 
             string actualSign = "9A0A8659F005D6984697E2CA0A9CF3B7";
             string expectedSign = request.Signature!;

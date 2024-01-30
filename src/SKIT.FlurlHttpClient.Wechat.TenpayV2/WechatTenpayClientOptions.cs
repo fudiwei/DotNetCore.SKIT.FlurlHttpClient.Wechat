@@ -7,13 +7,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     {
         /// <summary>
         /// 获取或设置请求超时时间（单位：毫秒）。
-        /// <para>默认值：30000</para>
+        /// <para>
+        /// 默认值：30000
+        /// </para>
         /// </summary>
         public int Timeout { get; set; } = 30 * 1000;
 
         /// <summary>
         /// 获取或设置微信支付 API 入口点。
-        /// <para>默认值：<see cref="WechatTenpayEndpoints.DEFAULT"/></para>
+        /// <para>
+        /// 默认值：<see cref="WechatTenpayEndpoints.DEFAULT"/>
+        /// </para>
         /// </summary>
         public string Endpoint { get; set; } = WechatTenpayEndpoints.DEFAULT;
 
@@ -34,7 +38,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// 获取或设置微信商户 API 证书导入密码。仅部分敏感接口需要传入此参数。
-        /// <para>默认值：与 <see cref="MerchantId"/> 参数值相同。</para>
+        /// <para>
+        /// 默认值：与 <see cref="MerchantId"/> 参数值相同。
+        /// </para>
         /// </summary>
         public string? MerchantCertificatePassword { get; set; }
 

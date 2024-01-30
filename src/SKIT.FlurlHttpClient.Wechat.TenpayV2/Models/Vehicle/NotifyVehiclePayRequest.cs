@@ -19,9 +19,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                         /// 获取或设置入场时间。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("start_time")]
-                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.PureDigitalTextDateTimeOffsetConverter))]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.DigitalDateTimeOffsetConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("start_time")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.PureDigitalTextDateTimeOffsetConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
                         public DateTimeOffset StartTime { get; set; }
 
                         /// <summary>
@@ -91,17 +91,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
             }
         }
 
-        internal static class Converters
-        {
-            internal class RequestPropertySceneNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Scene>
-            {
-            }
-
-            internal class RequestPropertySceneSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.Scene>
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置接口版本号。
         /// <para>默认值：3.0</para>
@@ -145,9 +134,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置场景信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene_info")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertySceneNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertySceneSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.Scene? Scene { get; set; }
     }
 }

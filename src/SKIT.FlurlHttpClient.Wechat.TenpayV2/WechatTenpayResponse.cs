@@ -1,60 +1,10 @@
-using System.Collections.Generic;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
     /// <summary>
     /// 表示微信支付 API 响应的基类。
     /// </summary>
-    public abstract class WechatTenpayResponse : ICommonResponse
+    public abstract class WechatTenpayResponse : CommonResponseBase, ICommonResponse
     {
-        /// <summary>
-        ///
-        /// </summary>
-        int ICommonResponse.RawStatus { get; set; }
-
-        /// <summary>
-        ///
-        /// </summary>
-        IDictionary<string, string> ICommonResponse.RawHeaders { get; set; } = default!;
-
-        /// <summary>
-        ///
-        /// </summary>
-        byte[] ICommonResponse.RawBytes { get; set; } = default!;
-
-        /// <summary>
-        /// 获取原始的 HTTP 响应状态码。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public int RawStatus
-        {
-            get { return ((ICommonResponse)this).RawStatus; }
-            internal set { ((ICommonResponse)this).RawStatus = value; }
-        }
-
-        /// <summary>
-        /// 获取原始的 HTTP 响应表头集合。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public IDictionary<string, string> RawHeaders
-        {
-            get { return ((ICommonResponse)this).RawHeaders; }
-            internal set { ((ICommonResponse)this).RawHeaders = value; }
-        }
-
-        /// <summary>
-        /// 获取原始的 HTTP 响应正文。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public byte[] RawBytes
-        {
-            get { return ((ICommonResponse)this).RawBytes; }
-            internal set { ((ICommonResponse)this).RawBytes = value; }
-        }
-
         /// <summary>
         /// 获取微信支付 API 返回的状态码。
         /// </summary>
@@ -120,12 +70,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         public abstract string? AppId { get; set; }
 
         /// <summary>
-        /// 获取一个值，该值指示调用微信 API 是否成功（即 HTTP 状态码为 200、且 return_code 值 SUCCESS）。
+        /// 获取一个值，该值指示调用微信 API 是否成功。
+        /// <para>
+        ///（即 HTTP 状态码为 200，且 <see cref="ReturnCode"/> 值为 "SUCCESS"）
+        /// </para>
         /// </summary>
         /// <returns></returns>
-        public virtual bool IsSuccessful()
+        public override bool IsSuccessful()
         {
-            bool ret1 = RawStatus == 200 && "SUCCESS".Equals(ReturnCode);
+            bool ret1 = GetRawStatus() == 200 && "SUCCESS".Equals(ReturnCode);
             bool ret2 = string.IsNullOrEmpty(ErrorCode) || "0".Equals(ErrorCode);
             bool ret3 = string.IsNullOrEmpty(ResultCode) || "SUCCESS".Equals(ResultCode);
             return ret1 && ret2 && ret3;

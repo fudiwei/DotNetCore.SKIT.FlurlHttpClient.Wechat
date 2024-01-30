@@ -1,4 +1,4 @@
-﻿using Xunit;
+using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 {
@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
             string merchantId = "10000100";
             string merchantSecret = "192006250b4c09247ec02edce69f6a2d";
 
-            var client = new WechatTenpayClient(merchantId, merchantSecret);
+            var client = new WechatTenpayClient(new WechatTenpayClientOptions() { MerchantId = merchantId, MerchantSecret = merchantSecret });
             Assert.True(client.VerifyEventSignature(callbackXml));
         }
     }

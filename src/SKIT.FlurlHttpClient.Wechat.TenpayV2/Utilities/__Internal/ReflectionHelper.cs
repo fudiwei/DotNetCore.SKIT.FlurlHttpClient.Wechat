@@ -1,16 +1,16 @@
-﻿using System;
+using System;
 using System.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 {
-    internal static class ReflectionUtility
+    internal static class ReflectionHelper
     {
         public static void CreateOrExpandArray(ref Array? array, Type elementType, int capacity)
         {
-            if (elementType == null) throw new ArgumentNullException(nameof(elementType));
+            if (elementType is null) throw new ArgumentNullException(nameof(elementType));
             if (capacity <= 0) throw new ArgumentOutOfRangeException(nameof(capacity));
 
-            if (array == null)
+            if (array is null)
             {
                 array = Array.CreateInstance(elementType, capacity);
             }
@@ -24,9 +24,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 
         public static void CreateOrExpandArrayElement(Array array, int index, Func<object, object>? updateFactory)
         {
-            if (array == null) throw new ArgumentNullException(nameof(array));
+            if (array is null) throw new ArgumentNullException(nameof(array));
             if (index < 0 || index >= array.Length) throw new ArgumentOutOfRangeException(nameof(index));
-            if (updateFactory == null) throw new ArgumentNullException(nameof(updateFactory));
+            if (updateFactory is null) throw new ArgumentNullException(nameof(updateFactory));
 
             object? element = array.GetValue(index);
             if (element is null)
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
                 return true;
 
             Type? t = childType;
-            while (t != null && t != typeof(object))
+            while (t is not null && t != typeof(object))
             {
                 isTheRawGenericType = IsTheRawGenericType(t);
                 if (isTheRawGenericType) return true;

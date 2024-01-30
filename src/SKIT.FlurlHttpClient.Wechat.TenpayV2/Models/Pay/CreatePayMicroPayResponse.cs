@@ -40,17 +40,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
             }
         }
 
-        internal static class Converters
-        {
-            internal class ResponsePropertyPromotionDetailNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.PromotionDetail>
-            {
-            }
-
-            internal class ResponsePropertyPromotionDetailSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.PromotionDetail>
-            {
-            }
-        }
-
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
@@ -105,9 +94,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置用户是否订阅该公众号标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_subscribe")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.YesOrNoBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Internal.YesOrNoBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("is_subscribe")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.YesOrNoBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Internal.YesOrNoBooleanConverter))]
         public bool IsSubscribed { get; set; }
 
         /// <summary>
@@ -121,9 +110,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置用户是否订阅子商户公众号标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_is_subscribe")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.YesOrNoNullableBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Internal.YesOrNoBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("sub_is_subscribe")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.YesOrNoNullableBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Internal.YesOrNoBooleanConverter))]
         public bool? IsSubSubscribed { get; set; }
 
         /// <summary>
@@ -211,18 +200,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置支付完成时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("time_end")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.DigitalDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("time_end")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
         public DateTimeOffset? EndTime { get; set; }
 
         /// <summary>
         /// 获取或设置优惠信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("promotion_detail")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyPromotionDetailNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyPromotionDetailSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.PromotionDetail? PromotionDetail { get; set; }
     }
 }

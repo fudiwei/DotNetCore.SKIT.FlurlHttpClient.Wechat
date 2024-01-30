@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Text.Json;
 
@@ -17,15 +17,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
                 using var stream = File.OpenRead("appsettings.local.json");
                 using var jdoc = JsonDocument.Parse(stream);
 
-                var config = jdoc.RootElement.GetProperty("TestConfig");
+                var config = jdoc.RootElement.GetProperty("TestConfigs");
                 WechatAppId = config.GetProperty("AppId").GetString()!;
                 WechatMerchantId = config.GetProperty("MerchantId").GetString()!;
                 WechatMerchantSecret = config.GetProperty("MerchantSecret").GetString()!;
                 WechatMerchantCertificateBytes = config.GetProperty("MerchantCertificateBase64String").GetBytesFromBase64();
                 WechatOpenId = config.GetProperty("OpenId").GetString()!;
-
-                WorkDirectoryForSdk = jdoc.RootElement.GetProperty("WorkDirectoryForSdk").GetString()!;
-                WorkDirectoryForTest = jdoc.RootElement.GetProperty("WorkDirectoryForTest").GetString()!;
             }
             catch (Exception ex)
             {
@@ -38,8 +35,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
         public static readonly string WechatMerchantSecret;
         public static readonly byte[] WechatMerchantCertificateBytes;
         public static readonly string WechatOpenId;
-
-        public static readonly string WorkDirectoryForSdk;
-        public static readonly string WorkDirectoryForTest;
     }
 }

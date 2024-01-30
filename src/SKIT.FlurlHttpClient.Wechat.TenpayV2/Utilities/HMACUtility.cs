@@ -17,8 +17,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
         /// <returns>消息认证码字节数组。</returns>
         public static byte[] HashWithSHA256(byte[] secretBytes, byte[] msgBytes)
         {
-            if (secretBytes == null) throw new ArgumentNullException(nameof(secretBytes));
-            if (msgBytes == null) throw new ArgumentNullException(nameof(msgBytes));
+            if (secretBytes is null) throw new ArgumentNullException(nameof(secretBytes));
+            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
 
             using HMAC hmac = new HMACSHA256(secretBytes);
             return hmac.ComputeHash(msgBytes);
@@ -32,8 +32,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
         /// <returns>消息认证码。</returns>
         public static string HashWithSHA256(string secret, string message)
         {
-            if (secret == null) throw new ArgumentNullException(nameof(secret));
-            if (message == null) throw new ArgumentNullException(nameof(message));
+            if (secret is null) throw new ArgumentNullException(nameof(secret));
+            if (message is null) throw new ArgumentNullException(nameof(message));
 
             byte[] secretBytes = Encoding.UTF8.GetBytes(secret);
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
