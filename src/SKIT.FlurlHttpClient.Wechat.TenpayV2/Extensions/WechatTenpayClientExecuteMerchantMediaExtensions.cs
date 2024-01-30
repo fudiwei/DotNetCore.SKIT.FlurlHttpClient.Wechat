@@ -25,14 +25,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.FileName == null)
+            if (request.FileName is null)
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
 
-            if (request.FileHash == null)
+            if (request.FileHash is null)
                 request.FileHash = BitConverter.ToString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", string.Empty).ToLower();
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "secapi", "mch", "uploadmedia");
+                .CreateFlurlRequest(request, HttpMethod.Post, "secapi", "mch", "uploadmedia");
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             string sign = Utilities.RequestSigner.Sign(new Dictionary<string, string?>() { { "mch_id", client.Credentials.MerchantId }, { "media_hash", request.FileHash } }, client.Credentials.MerchantSecret, Constants.SignTypes.MD5);
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/jpeg");
             fileContent.Headers.ContentLength = request.FileBytes?.Length;
 
-            return await client.SendRequestAsync<Models.UploadMerchantMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.UploadMerchantMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
         }
     }
 }

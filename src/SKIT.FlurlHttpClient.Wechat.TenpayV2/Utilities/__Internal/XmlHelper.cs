@@ -1,4 +1,4 @@
-﻿using System.Linq;
+using System.Linq;
 using System.Xml;
 using System.Xml.Linq;
 using Newtonsoft.Json;
@@ -6,7 +6,7 @@ using Newtonsoft.Json.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 {
-    internal static class XmlUtility
+    internal static class XmlHelper
     {
         public static string ConvertFromJson(string json)
         {

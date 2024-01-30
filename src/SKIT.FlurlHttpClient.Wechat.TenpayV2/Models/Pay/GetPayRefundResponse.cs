@@ -83,9 +83,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// 获取或设置退款成功时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("refund_success_time_$n")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.DigitalDateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_success_time_$n")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.PureDigitalTextNullableDateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
                 public DateTimeOffset? SuccessTime { get; set; }
             }
         }

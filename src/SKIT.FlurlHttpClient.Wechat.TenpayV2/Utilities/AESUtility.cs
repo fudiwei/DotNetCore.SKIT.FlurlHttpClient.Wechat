@@ -17,8 +17,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
         /// <returns>解密后的数据字节数组。</returns>
         public static byte[] DecryptWithECB(byte[] keyBytes, byte[] cipherBytes)
         {
-            if (keyBytes == null) throw new ArgumentNullException(nameof(keyBytes));
-            if (cipherBytes == null) throw new ArgumentNullException(nameof(cipherBytes));
+            if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
+            if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
 
             using (SymmetricAlgorithm aes = Aes.Create())
             {
@@ -39,8 +39,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
         /// <returns>解密后的文本数据。</returns>
         public static string DecryptWithECB(string encodingKey, string encodingCipherText)
         {
-            if (encodingKey == null) throw new ArgumentNullException(nameof(encodingKey));
-            if (encodingCipherText == null) throw new ArgumentNullException(nameof(encodingCipherText));
+            if (encodingKey is null) throw new ArgumentNullException(nameof(encodingKey));
+            if (encodingCipherText is null) throw new ArgumentNullException(nameof(encodingCipherText));
 
             byte[] plainBytes = DecryptWithECB(
                 keyBytes: Convert.FromBase64String(encodingKey),

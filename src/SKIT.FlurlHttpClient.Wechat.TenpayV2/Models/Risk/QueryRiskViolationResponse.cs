@@ -67,21 +67,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 /// 获取或设置处罚时间。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("punish_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.RegularDateTimeOffsetConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("punish_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.RegularDateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
                 public DateTimeOffset PunishTime { get; set; }
-            }
-        }
-
-        internal static class Converters
-        {
-            internal class ResponsePropertyViolationListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.ViolationList>
-            {
-            }
-
-            internal class ResponsePropertyViolationListSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.ViolationList>
-            {
             }
         }
 
@@ -103,9 +92,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置违规记录列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("violation_records")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyViolationListNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("violation_records")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyViolationListSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.ViolationList ViolationList { get; set; } = default!;
     }
 }

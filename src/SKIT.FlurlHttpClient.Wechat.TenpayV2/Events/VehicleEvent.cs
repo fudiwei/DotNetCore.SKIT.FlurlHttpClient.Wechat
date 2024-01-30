@@ -53,9 +53,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// 获取或设置变更事件时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("vehicle_event_createtime")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.PureDigitalTextDateTimeOffsetConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.DigitalDateTimeOffsetConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("vehicle_event_createtime")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Converters.PureDigitalTextDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
         public DateTimeOffset EventTime { get; set; }
     }
 }

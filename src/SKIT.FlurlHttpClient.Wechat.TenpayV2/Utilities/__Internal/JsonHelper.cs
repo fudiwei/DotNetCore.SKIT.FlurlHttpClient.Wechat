@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.Json.Nodes;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 {
-    internal static class JsonUtility
+    internal static class JsonHelper
     {
         internal static string ParseToSortedQueryString(string json)
         {

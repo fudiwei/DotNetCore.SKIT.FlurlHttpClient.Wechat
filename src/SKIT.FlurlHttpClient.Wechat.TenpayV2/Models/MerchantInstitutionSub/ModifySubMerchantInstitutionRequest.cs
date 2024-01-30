@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -7,17 +7,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     /// </summary>
     public class ModifySubMerchantInstitutionRequest : WechatTenpaySignableRequest
     {
-        internal static class Converters
-        {
-            internal class RequestPropertyStorePhotoMediaIdListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<string>>
-            {
-            }
-
-            internal class RequestPropertyStorePhotoMediaIdListSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<IList<string>>
-            {
-            }
-        }
-
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
@@ -155,9 +144,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置门店照片 MediaId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("store_photos")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.RequestPropertyStorePhotoMediaIdListNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("store_photos")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.RequestPropertyStorePhotoMediaIdListSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public IList<string>? StorePhotoMediaIdList { get; set; }
 
         /// <summary>

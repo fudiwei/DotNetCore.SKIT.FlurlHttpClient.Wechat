@@ -45,25 +45,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
             }
         }
 
-        internal static class Converters
-        {
-            internal class ResponsePropertyAppIdConfigListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.AppIdConfigList>
-            {
-            }
-
-            internal class ResponsePropertyAppIdConfigListSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.AppIdConfigList>
-            {
-            }
-
-            internal class ResponsePropertyJsapiPathListNewtonsoftJsonConverter : Newtonsoft.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.JsapiPathList>
-            {
-            }
-
-            internal class ResponsePropertyJsapiPathListSystemTextJsonConverter : System.Text.Json.Converters.TextualObjectInJsonFormatConverterBase<Types.JsapiPathList>
-            {
-            }
-        }
-
         /// <summary>
         /// <i>（冗余字段，请忽略）</i>
         /// </summary>
@@ -82,18 +63,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// 获取或设置关联 AppId 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid_config_list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyAppIdConfigListNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("appid_config_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyAppIdConfigListSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.AppIdConfigList AppIdConfigList { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置授权目录列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jsapi_path_list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Converters.ResponsePropertyJsapiPathListNewtonsoftJsonConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("jsapi_path_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyJsapiPathListSystemTextJsonConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
         public Types.JsapiPathList JsapiPathList { get; set; } = default!;
     }
 }

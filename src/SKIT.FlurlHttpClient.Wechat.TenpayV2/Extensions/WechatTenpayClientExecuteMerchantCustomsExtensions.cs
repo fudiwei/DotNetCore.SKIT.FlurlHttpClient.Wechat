@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "mch", "customs", "customdeclareorder");
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "mch", "customs", "customdeclareorder");
 
-            return await client.SendRequestWithXmlAsync<Models.CreateMerchantCustomsCustomDeclarationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreateMerchantCustomsCustomDeclarationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -41,9 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "mch", "customs", "customdeclarequery");
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "mch", "customs", "customdeclarequery");
 
-            return await client.SendRequestWithXmlAsync<Models.QueryMerchantCustomsCustomDeclarationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.QueryMerchantCustomsCustomDeclarationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -60,9 +60,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "cgi-bin", "mch", "newcustoms", "customdeclareredeclare");
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "mch", "newcustoms", "customdeclareredeclare");
 
-            return await client.SendRequestWithXmlAsync<Models.RedeclareMerchantCustomsCustomDeclarationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.RedeclareMerchantCustomsCustomDeclarationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

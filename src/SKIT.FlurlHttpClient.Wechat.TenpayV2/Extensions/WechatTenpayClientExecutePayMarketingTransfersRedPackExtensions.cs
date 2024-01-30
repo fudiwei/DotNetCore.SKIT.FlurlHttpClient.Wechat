@@ -25,9 +25,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendredpack");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendredpack");
 
-            return await client.SendRequestWithXmlAsync<Models.SendPayMarketingTransfersRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.SendPayMarketingTransfersRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -45,9 +45,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendgroupredpack");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendgroupredpack");
 
-            return await client.SendRequestWithXmlAsync<Models.SendPayMarketingTransfersGroupRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.SendPayMarketingTransfersGroupRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -65,9 +65,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendminiprogramhb");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendminiprogramhb");
 
-            return await client.SendRequestWithXmlAsync<Models.SendPayMarketingTransfersMiniProgramRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.SendPayMarketingTransfersMiniProgramRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -87,9 +87,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "gethbinfo");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "gethbinfo");
 
-            return await client.SendRequestWithXmlAsync<Models.GetPayMarketingTransfersRedPackInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetPayMarketingTransfersRedPackInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region WeWork
@@ -106,19 +106,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.WeWorkSign == null)
+            if (request.WeWorkSign is null)
             {
-                if (request.MerchantId == null)
+                if (request.MerchantId is null)
                 {
                     request.MerchantId = client.Credentials.MerchantId;
                 }
 
-                if (request.AppId == null)
+                if (request.AppId is null)
                 {
                     request.AppId = client.Credentials.AppId;
                 }
 
-                if (request.NonceString == null)
+                if (request.NonceString is null)
                 {
                     request.NonceString = Guid.NewGuid().ToString("N");
                 }
@@ -141,9 +141,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             }
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendworkwxredpack");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendworkwxredpack");
 
-            return await client.SendRequestWithXmlAsync<Models.SendPayMarketingTransfersWeWorkRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.SendPayMarketingTransfersWeWorkRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }

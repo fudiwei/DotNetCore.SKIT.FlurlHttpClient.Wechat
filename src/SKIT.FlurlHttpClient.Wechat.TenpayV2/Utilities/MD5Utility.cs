@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
         /// <returns>信息摘要字节数组。</returns>
         public static byte[] Hash(byte[] bytes)
         {
-            if (bytes == null) throw new ArgumentNullException(nameof(bytes));
+            if (bytes is null) throw new ArgumentNullException(nameof(bytes));
 
             using MD5 md5 = MD5.Create();
             return md5.ComputeHash(bytes);
@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
         /// <returns>信息摘要。</returns>
         public static string Hash(string message)
         {
-            if (message == null) throw new ArgumentNullException(nameof(message));
+            if (message is null) throw new ArgumentNullException(nameof(message));
 
             byte[] msgBytes = Encoding.UTF8.GetBytes(message);
             byte[] hashBytes = Hash(msgBytes);

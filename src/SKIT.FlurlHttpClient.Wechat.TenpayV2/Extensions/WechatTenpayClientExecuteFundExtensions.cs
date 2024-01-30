@@ -22,9 +22,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "fund", "queryautowithdrawbydate");
+                .CreateFlurlRequest(request, HttpMethod.Post, "fund", "queryautowithdrawbydate");
 
-            return await client.SendRequestWithXmlAsync<Models.GetFundAutoWithdrawByDateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetFundAutoWithdrawByDateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

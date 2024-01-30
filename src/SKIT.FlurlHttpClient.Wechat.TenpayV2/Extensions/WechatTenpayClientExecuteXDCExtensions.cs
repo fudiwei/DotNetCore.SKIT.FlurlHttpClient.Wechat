@@ -33,9 +33,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "xdc", "apiv2getsignkey", "sign", "getsignkey");
+                .CreateFlurlRequest(request, HttpMethod.Post, "xdc", "apiv2getsignkey", "sign", "getsignkey");
 
-            return await client.SendRequestWithXmlAsync<Models.GetSandboxSignKeyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetSandboxSignKeyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

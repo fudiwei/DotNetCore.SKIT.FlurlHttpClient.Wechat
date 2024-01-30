@@ -39,9 +39,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "payitil", "report");
+                .CreateFlurlRequest(request, HttpMethod.Post, "payitil", "report");
 
-            return await client.SendRequestWithXmlAsync<Models.SubmitPayITILReportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.SubmitPayITILReportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

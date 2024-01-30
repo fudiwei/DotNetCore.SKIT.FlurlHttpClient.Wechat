@@ -3,15 +3,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     /// <summary>
     /// 表示微信支付 API 请求的基类。
     /// </summary>
-    public abstract class WechatTenpayRequest : ICommonRequest
+    public abstract class WechatTenpayRequest : CommonRequestBase, ICommonRequest
     {
-        /// <summary>
-        /// 获取或设置请求超时时间（单位：毫秒）。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.Timeout"/> 参数，这在需要指定特定耗时请求（比如上传或下载文件）的超时时间时很有用。
-        /// </summary>
-        [Newtonsoft.Json.JsonIgnore]
-        [System.Text.Json.Serialization.JsonIgnore]
-        public virtual int? Timeout { get; set; }
-
         /// <summary>
         /// 获取或设置微信商户号。请不要手动赋值，默认将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
         /// </summary>
@@ -21,7 +14,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// 获取或设置微信 AppId。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.AppId"/> 参数。
-        /// <para>注意：部分接口不支持指定，请直接忽略此字段。</para>
+        /// <para>
+        /// 注意：部分接口不支持指定，请直接忽略此字段。
+        /// </para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

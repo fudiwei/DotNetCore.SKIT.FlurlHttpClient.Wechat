@@ -21,13 +21,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.Timestamp == null)
+            if (request.Timestamp is null)
                 request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "papay", "preentrustweb");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "preentrustweb");
 
-            return await client.SendRequestWithXmlAsync<Models.CreatePAPPayPreEntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayPreEntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -43,13 +43,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.Timestamp == null)
+            if (request.Timestamp is null)
                 request.Timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "papay", "h5entrustweb");
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "h5entrustweb");
 
-            return await client.SendRequestWithXmlAsync<Models.CreatePAPPayH5EntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayH5EntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -66,9 +66,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "pay", "contractorder");
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "contractorder");
 
-            return await client.SendRequestWithXmlAsync<Models.CreateContractOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreateContractOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -85,9 +85,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "pay", "pappayapply");
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "pappayapply");
 
-            return await client.SendRequestWithXmlAsync<Models.ApplyPAPPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.ApplyPAPPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -105,9 +105,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "papay", "deletecontract");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "deletecontract");
 
-            return await client.SendRequestWithXmlAsync<Models.DeletePAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.DeletePAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -124,9 +124,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "papay", "querycontract");
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "querycontract");
 
-            return await client.SendRequestWithXmlAsync<Models.GetPAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetPAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
     }
 }

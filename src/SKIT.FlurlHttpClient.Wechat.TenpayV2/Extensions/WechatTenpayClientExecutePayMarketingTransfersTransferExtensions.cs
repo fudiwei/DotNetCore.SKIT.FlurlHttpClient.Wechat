@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "promotion", "transfers");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "promotion", "transfers");
 
-            return await client.SendRequestWithXmlAsync<Models.CreatePayMarketingTransfersPromotionTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePayMarketingTransfersPromotionTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         /// <summary>
@@ -42,9 +42,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "gettransferinfo");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "gettransferinfo");
 
-            return await client.SendRequestWithXmlAsync<Models.GetPayMarketingTransfersTransferInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetPayMarketingTransfersTransferInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region WeWork
@@ -61,19 +61,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            if (request.WeWorkSign == null)
+            if (request.WeWorkSign is null)
             {
-                if (request.MerchantId == null)
+                if (request.MerchantId is null)
                 {
                     request.MerchantId = client.Credentials.MerchantId;
                 }
 
-                if (request.AppId == null)
+                if (request.AppId is null)
                 {
                     request.AppId = client.Credentials.AppId;
                 }
 
-                if (request.NonceString == null)
+                if (request.NonceString is null)
                 {
                     request.NonceString = Guid.NewGuid().ToString("N");
                 }
@@ -97,9 +97,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             }
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "mmpaymkttransfers", "promotion", "paywwsptrans2pocket");
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "promotion", "paywwsptrans2pocket");
 
-            return await client.SendRequestWithXmlAsync<Models.CreatePayMarketingTransfersPromotionWeWorkTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePayMarketingTransfersPromotionWeWorkTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
     }
