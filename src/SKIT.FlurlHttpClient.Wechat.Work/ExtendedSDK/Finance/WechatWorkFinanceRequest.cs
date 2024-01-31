@@ -1,6 +1,6 @@
 using System;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
 {
     /// <summary>
     /// 表示企业微信会话内容存档 API 请求的基类。

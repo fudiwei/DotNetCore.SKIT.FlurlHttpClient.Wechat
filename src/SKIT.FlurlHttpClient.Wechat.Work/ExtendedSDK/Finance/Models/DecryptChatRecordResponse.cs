@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
 {
     /// <summary>
     /// <para>表示会话内容存档之解密会话记录数据接口的响应。</para>

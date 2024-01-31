@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
 {
-    using SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices;
+    using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices;
 
     /// <summary>
     /// 一个企业微信会话内容存档 API HTTP 客户端。

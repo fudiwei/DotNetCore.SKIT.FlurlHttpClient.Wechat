@@ -2,7 +2,7 @@ using System;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices
 {
     internal static class MarshalerHelper
     {

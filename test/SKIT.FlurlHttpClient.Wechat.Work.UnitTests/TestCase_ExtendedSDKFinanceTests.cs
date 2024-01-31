@@ -4,10 +4,11 @@ using Xunit;
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
     using SKIT.FlurlHttpClient;
-    using SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance;
-    using SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models;
+    using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance;
+    using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models;
+    using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings;
 
-    public class TestCase_FinanceSdkTests
+    public class TestCase_ExtendedSDKFinanceTests
     {
         [Fact(DisplayName = "测试用例：聊天记录 - 会话内容存档 SDK")]
         public async Task TestFinanceSdk()
@@ -17,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                 CorpId = TestConfigs.WechatCorpId,
                 SecretKey = TestConfigs.WechatFinanceSecretKey
             };
-            options.EncryptionKeyManager.AddEntry(new SDK.Finance.Settings.EncryptionKeyEntry(1, TestConfigs.WechatFinanceEncryptionPrivateKey));
+            options.EncryptionKeyManager.AddEntry(new EncryptionKeyEntry(1, TestConfigs.WechatFinanceEncryptionPrivateKey));
             using var client = new WechatWorkFinanceClient(options);
 
             var reqGetChatRecords = new GetChatRecordsRequest();
@@ -386,8 +387,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("location", model.MessageType);
-                    Assert.Equal(116.586285899, model.MessageContentAsLocation!.Longitude);
-                    Assert.Equal(39.911125799, model.MessageContentAsLocation!.Latitude);
+                    Assert.Equal(116.586285899M, model.MessageContentAsLocation!.Longitude);
+                    Assert.Equal(39.911125799M, model.MessageContentAsLocation!.Latitude);
                     Assert.Equal("北京市xxx区xxx路xxx大厦x座", model.MessageContentAsLocation.Address);
                     Assert.Equal("xxx管理中心", model.MessageContentAsLocation.Title);
                     Assert.Equal(15, model.MessageContentAsLocation.Zoom);

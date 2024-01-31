@@ -1,4 +1,4 @@
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
 {
     /// <summary>
     /// <para>表示会话内容存档之获取媒体文件接口的请求。</para>

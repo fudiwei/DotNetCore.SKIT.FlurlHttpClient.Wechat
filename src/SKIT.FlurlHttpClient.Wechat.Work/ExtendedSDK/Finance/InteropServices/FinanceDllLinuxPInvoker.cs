@@ -1,7 +1,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.InteropServices
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices
 {
     internal static partial class FinanceDllLinuxPInvoker
     {
