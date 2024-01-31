@@ -1,6 +1,6 @@
 using System;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Settings
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
 {
     public class Credentials
     {

@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models.Abstractions
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractions
 {
     public abstract class ChatMessageBase
     {

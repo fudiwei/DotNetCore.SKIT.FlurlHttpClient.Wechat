@@ -1,6 +1,6 @@
 using System;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Settings
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
 {
     /// <summary>
     /// 表示一个企业微信会话内容存档的消息加解密密钥实体。

@@ -2,7 +2,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Settings
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
 {
     /// <summary>
     /// 企业微信会话内容存档的消息加解密密钥管理器接口。

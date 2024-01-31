@@ -1,4 +1,4 @@
-namespace SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
 {
     /// <summary>
     /// 一个用于构造 <see cref="WechatWorkFinanceClient"/> 时使用的配置项。
