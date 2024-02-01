@@ -81,19 +81,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.UnitTests
 
                 Assert.DoesNotContain("#n", actualJson);
                 Assert.DoesNotContain("$n", actualJson);
+                Assert.DoesNotContain("_flattenProperty", actualJson);
+                Assert.DoesNotContain(nameof(Models.QueryMerchantCustomsCustomDeclarationResponse.RecordList), actualJson);
 
-                Assert.Contains("\"return_code\"", actualJson);
-                Assert.Contains("\"RETURN_CODE\"", actualJson);
-                Assert.Contains("\"return_msg\"", actualJson);
-                Assert.Contains("\"RETURN_MSG\"", actualJson);
-                Assert.Contains("\"sub_order_no_0\"", actualJson);
-                Assert.Contains("\"SUB_ORDER_NO_0\"", actualJson);
-                Assert.Contains("\"sub_order_id_0\"", actualJson);
-                Assert.Contains("\"SUB_ORDER_ID_0\"", actualJson);
-                Assert.Contains("\"sub_order_no_1\"", actualJson);
-                Assert.Contains("\"SUB_ORDER_NO_1\"", actualJson);
-                Assert.Contains("\"sub_order_id_1\"", actualJson);
-                Assert.Contains("\"SUB_ORDER_ID_1\"", actualJson);
+                Assert.Contains("\"return_code\":\"RETURN_CODE\"", actualJson);
+                Assert.Contains("\"return_msg\":\"RETURN_MSG\"", actualJson);
+                Assert.Contains("\"appid\":\"APPID\"", actualJson);
+                Assert.Contains("\"mch_id\":\"MCH_ID\"", actualJson);
+                Assert.Contains("\"result_code\":\"RESULT_CODE\"", actualJson);
+                Assert.Contains("\"err_code\":\"ERR_CODE\"", actualJson);
+                Assert.Contains("\"err_code_des\":\"ERR_CODE_DESC\"", actualJson);
+                Assert.Contains("\"transaction_id\":\"TRANSACTION_ID\"", actualJson);
+                Assert.Contains("\"sub_order_no_0\":\"SUB_ORDER_NO_0\"", actualJson);
+                Assert.Contains("\"sub_order_id_0\":\"SUB_ORDER_ID_0\"", actualJson);
+                Assert.Contains("\"mch_customs_no_0\":\"MCH_CUSTOMS_NO_0\"", actualJson);
+                Assert.Contains("\"customs_0\":\"CUSTOMS_0\"", actualJson);
+                Assert.Contains("\"duty_0\":10", actualJson);
+                Assert.Contains("\"fee_type_0\":\"FEE_TYPE_0\"", actualJson);
+                Assert.Contains("\"modify_time_0\":\"20000101112233\"", actualJson);
+                Assert.Contains("\"sub_order_no_1\":\"SUB_ORDER_NO_1\"", actualJson);
+                Assert.Contains("\"sub_order_id_1\":\"SUB_ORDER_ID_1\"", actualJson);
+                Assert.Contains("\"mch_customs_no_1\":\"MCH_CUSTOMS_NO_1\"", actualJson);
+                Assert.Contains("\"customs_1\":\"CUSTOMS_1\"", actualJson);
+                Assert.Contains("\"duty_1\":11", actualJson);
+                Assert.Contains("\"fee_type_1\":\"FEE_TYPE_1\"", actualJson);
+                Assert.Contains("\"modify_time_1\":\"20010101112233\"", actualJson);
+                Assert.Contains("\"count\":2", actualJson);
             });
         }
 
