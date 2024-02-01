@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 {
@@ -38,14 +39,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
 
         internal static class Converters
         {
-            internal class EventClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<OrderEvent>
+            internal class EventClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.Internal.FlattenNArrayObjectConverterBase<OrderEvent, Types.Coupon>
             {
+                protected override PropertyInfo FlattenProperty => OrderEvent._flattenProperty;
             }
 
-            internal class EventClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<OrderEvent>
+            internal class EventClassSystemTextJsonConverter : System.Text.Json.Serialization.Internal.FlattenNArrayObjectConverterBase<OrderEvent, Types.Coupon>
             {
+                protected override PropertyInfo FlattenProperty => OrderEvent._flattenProperty;
             }
         }
+
+        private readonly static PropertyInfo _flattenProperty = typeof(OrderEvent).GetProperty(nameof(CouponList), BindingFlags.Instance | BindingFlags.Public)!;
 
         /// <summary>
         /// 获取或设置子商户号。
@@ -161,8 +166,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Events
         /// <summary>
         /// 获取或设置代金券使用列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty(Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase.PROPERTY_NAME_NARRAY)]
-        [System.Text.Json.Serialization.JsonPropertyName(System.Text.Json.Converters.FlattenNArrayObjectConverterBase.PROPERTY_NAME_NARRAY)]
+        [Newtonsoft.Json.JsonProperty(Converters.EventClassNewtonsoftJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
+        [System.Text.Json.Serialization.JsonPropertyName(Converters.EventClassSystemTextJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
         public Types.Coupon[]? CouponList { get; set; }
 
         /// <summary>

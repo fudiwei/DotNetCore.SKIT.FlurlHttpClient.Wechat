@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
@@ -18,14 +19,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<GetTransitOrderResponse>
+            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.Internal.FlattenNArrayObjectConverterBase<GetTransitOrderResponse, Types.Coupon>
             {
+                protected override PropertyInfo FlattenProperty => GetTransitOrderResponse._flattenProperty;
             }
 
-            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<GetTransitOrderResponse>
+            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Serialization.Internal.FlattenNArrayObjectConverterBase<GetTransitOrderResponse, Types.Coupon>
             {
+                protected override PropertyInfo FlattenProperty => GetTransitOrderResponse._flattenProperty;
             }
         }
+
+        private readonly static PropertyInfo _flattenProperty = typeof(GetTransitOrderResponse).GetProperty(nameof(CouponList), BindingFlags.Instance | BindingFlags.Public)!;
 
         /// <summary>
         /// <inheritdoc/>
@@ -142,8 +147,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// <summary>
         /// 获取或设置代金券使用列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty(Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase.PROPERTY_NAME_NARRAY)]
-        [System.Text.Json.Serialization.JsonPropertyName(System.Text.Json.Converters.FlattenNArrayObjectConverterBase.PROPERTY_NAME_NARRAY)]
+        [Newtonsoft.Json.JsonProperty(Converters.ResponseClassNewtonsoftJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
+        [System.Text.Json.Serialization.JsonPropertyName(Converters.ResponseClassSystemTextJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
         public Types.Coupon[]? CouponList { get; set; }
 
         /// <summary>

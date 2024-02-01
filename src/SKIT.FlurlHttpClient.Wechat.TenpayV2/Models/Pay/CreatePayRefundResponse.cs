@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
@@ -9,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     {
         public static class Types
         {
-            public class Coupon
+            public class RefundCoupon
             {
                 /// <summary>
                 /// 获取或设置代金券 ID。
@@ -36,14 +38,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 
         internal static class Converters
         {
-            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase<CreatePayRefundResponse>
+            internal class ResponseClassNewtonsoftJsonConverter : Newtonsoft.Json.Converters.Internal.FlattenNArrayObjectConverterBase<CreatePayRefundResponse, Types.RefundCoupon>
             {
+                protected override PropertyInfo FlattenProperty => CreatePayRefundResponse._flattenProperty;
             }
 
-            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Converters.FlattenNArrayObjectConverterBase<CreatePayRefundResponse>
+            internal class ResponseClassSystemTextJsonConverter : System.Text.Json.Serialization.Internal.FlattenNArrayObjectConverterBase<CreatePayRefundResponse, Types.RefundCoupon>
             {
+                protected override PropertyInfo FlattenProperty => CreatePayRefundResponse._flattenProperty;
             }
         }
+
+        private readonly static PropertyInfo _flattenProperty = typeof(CreatePayRefundResponse).GetProperty(nameof(CouponRefundList), BindingFlags.Instance | BindingFlags.Public)!;
 
         /// <summary>
         /// <inheritdoc/>
@@ -167,9 +173,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         /// <summary>
         /// 获取或设置代金券退款列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty(Newtonsoft.Json.Converters.FlattenNArrayObjectConverterBase.PROPERTY_NAME_NARRAY)]
-        [System.Text.Json.Serialization.JsonPropertyName(System.Text.Json.Converters.FlattenNArrayObjectConverterBase.PROPERTY_NAME_NARRAY)]
-        public Types.Coupon[]? CouponRefundList { get; set; }
+        [Newtonsoft.Json.JsonProperty(Converters.ResponseClassNewtonsoftJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
+        [System.Text.Json.Serialization.JsonPropertyName(Converters.ResponseClassSystemTextJsonConverter.FLATTEN_PROPERTY_JSON_NAME)]
+        public Types.RefundCoupon[]? CouponRefundList { get; set; }
 
         /// <summary>
         /// 获取或设置现金支付金额（单位：分）。
