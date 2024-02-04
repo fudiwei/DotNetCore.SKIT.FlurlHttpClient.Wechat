@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
 {
+    using SKIT.FlurlHttpClient.Primitives;
     using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices;
 
     /// <summary>
@@ -200,9 +201,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                         throw new WechatWorkFinanceException($"Failed to decrypt random key of the encrypted chat data, because there is no private key matched the verion: \"{request.PublicKeyVersion}\".");
 
                     encryptKey = Utilities.RSAUtility.DecryptWithECB(
-                        privateKey: encryptionKeyEntry.Value.PrivateKey,
-                        cipherText: request.EncryptedRandomKey
-                    );
+                        privateKeyPem: encryptionKeyEntry.Value.PrivateKey,
+                        encodingCipher: new EncodedString(request.EncryptedRandomKey, EncodingKinds.Base64)
+                    )!;
                 }
                 catch (WechatWorkFinanceException)
                 {

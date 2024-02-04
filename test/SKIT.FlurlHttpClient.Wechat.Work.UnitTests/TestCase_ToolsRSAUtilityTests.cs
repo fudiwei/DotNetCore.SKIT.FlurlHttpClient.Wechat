@@ -2,6 +2,8 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     public class TestCase_ToolsRSAUtilityTests
     {
         // 此处测试的 RSA 公钥/私钥是自签名生成的，仅供执行 RSA 相关的单元测试，不能用于调用企业微信 API
@@ -12,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
         public void TestRSADecrypt()
         {
             string cipherText = "ewwZ8LmXVJpkJpj/JWcz16L4bePAGcf3Fi2EKyC6AS3JsF5u4aku7iOYqtcAczjoYwE1fqSadRd6YTrWr3tLP3uWFYmhqthQoaAcjmQS0vHYRFeS1V7q5hbziVLRp7C42S4YrvqXAmSmUyjPUXG5tXFVchARVkTr1F53HGoPP+iBg+i8y0uJK4FgiuKraFgdtKofv/k5/30xKzRHxdLFCFt1rF7wL+Hk/7Bl0tFZM/rfhmuvwbf46zWhxKKviAge+61tEot4QCSBLnAFpPuSQsTOOSOrlCl92DwW54dWdlWwhqkTVHdm6pXEdUE66y1yoZkXfpqjnONjta0njqN/Jw==";
-            string actualPlain = Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipherText);
+            string actualPlain = Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, new EncodedString(cipherText, EncodingKinds.Base64))!;
             string expectedPlain = "RsaDecryptTest";
 
             Assert.Equal(expectedPlain, actualPlain);
