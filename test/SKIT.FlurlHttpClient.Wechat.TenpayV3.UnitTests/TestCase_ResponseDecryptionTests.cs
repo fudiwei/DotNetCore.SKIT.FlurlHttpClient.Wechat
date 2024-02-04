@@ -9,6 +9,8 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
+    using SKIT.FlurlHttpClient.Internal;
+
     public partial class TestCase_ResponseDecryptionTests
     {
         // 此处测试的 RSA/SM2 证书/公钥/私钥是自签名生成的，仅供执行 RSA/SM2 相关的单元测试，不能用于调用微信支付 API。
@@ -1151,8 +1153,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 
         private static T SetMockResponseRawStatusAsOk<T>(T response) where T : WechatTenpayResponse
         {
-            FieldInfo fieldInfo = typeof(CommonResponseBase).GetField("_InternalRawStatus", BindingFlags.Instance | BindingFlags.NonPublic)!;
-            fieldInfo.SetValue(response, (int)HttpStatusCode.OK);
+            var accessor = _UnsafeAccessor.VisitCommonResponse(response);
+            accessor.RawStatus = (int)HttpStatusCode.OK;
             return response;
         }
     }
