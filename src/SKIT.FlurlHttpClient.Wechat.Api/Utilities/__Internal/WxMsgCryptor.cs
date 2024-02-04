@@ -233,7 +233,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             tmp.Sort(StringComparer.Ordinal);
 
             string rawText = string.Join(string.Empty, tmp);
-            string signText = SHA1Utility.Hash(rawText);
+            string signText = SHA1Utility.Hash(rawText).Value!;
             return signText.ToLower();
         }
 

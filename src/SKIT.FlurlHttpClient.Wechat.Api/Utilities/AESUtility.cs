@@ -1,9 +1,10 @@
 using System;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     /// <summary>
     /// AES 算法工具类。
     /// </summary>
@@ -37,21 +38,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <summary>
         /// 基于 CBC 模式解密数据。
         /// </summary>
-        /// <param name="encodingKey">经 Base64 编码后的 AES 密钥。</param>
-        /// <param name="encodingIV">经 Base64 编码后的 AES 初始化向量。</param>
-        /// <param name="encodingCipherText">经 Base64 编码后的待解密数据。</param>
-        /// <returns>解密后的文本数据。</returns>
-        public static string DecryptWithCBC(string encodingKey, string encodingIV, string encodingCipherText)
+        /// <param name="encodingKey">经过编码后的（通常为 Base64）AES 密钥。</param>
+        /// <param name="encodingIV">经过编码后的（通常为 Base64）初始化向量。</param>
+        /// <param name="encodingCipher">经过编码后的（通常为 Base64）待解密数据。</param>
+        /// <returns>解密后的数据。</returns>
+        public static EncodedString DecryptWithCBC(EncodedString encodingKey, EncodedString encodingIV, EncodedString encodingCipher)
         {
-            if (encodingKey is null) throw new ArgumentNullException(nameof(encodingKey));
-            if (encodingCipherText is null) throw new ArgumentNullException(nameof(encodingCipherText));
+            if (encodingKey.Value is null) throw new ArgumentNullException(nameof(encodingKey));
+            if (encodingIV.Value is null) throw new ArgumentNullException(nameof(encodingIV));
+            if (encodingCipher.Value is null) throw new ArgumentNullException(nameof(encodingCipher));
 
             byte[] plainBytes = DecryptWithCBC(
-                keyBytes: Convert.FromBase64String(encodingKey),
-                ivBytes: Convert.FromBase64String(encodingIV),
-                cipherBytes: Convert.FromBase64String(encodingCipherText)
+                keyBytes: EncodedString.FromString(encodingKey, fallbackEncodingKind: EncodingKinds.Base64),
+                ivBytes: EncodedString.FromString(encodingIV, fallbackEncodingKind: EncodingKinds.Base64),
+                cipherBytes: EncodedString.FromString(encodingCipher, fallbackEncodingKind: EncodingKinds.Base64)
             );
-            return Encoding.UTF8.GetString(plainBytes);
+            return EncodedString.ToLiteralString(plainBytes);
         }
 
         /// <summary>
@@ -82,21 +84,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         /// <summary>
         /// 基于 CBC 模式加密数据。
         /// </summary>
-        /// <param name="encodingKey">经 Base64 编码后的 AES 密钥。</param>
-        /// <param name="encodingIV">经 Base64 编码后的 AES 初始化向量。</param>
-        /// <param name="plainText">待加密文本。</param>
-        /// <returns>经 Base64 编码的加密后的数据。</returns>
-        public static string EncryptWithCBC(string encodingKey, string encodingIV, string plainText)
+        /// <param name="encodingKey">经过编码后的（通常为 Base64）AES 密钥。</param>
+        /// <param name="encodingIV">经过编码后的（通常为 Base64）初始化向量。</param>
+        /// <param name="plainData">待加密数据。</param>
+        /// <returns>经过 Base64 编码的加密后的数据。</returns>
+        public static EncodedString EncryptWithCBC(EncodedString encodingKey, EncodedString encodingIV, string plainData)
         {
-            if (encodingKey is null) throw new ArgumentNullException(nameof(encodingKey));
-            if (plainText is null) throw new ArgumentNullException(nameof(plainText));
+            if (encodingKey.Value is null) throw new ArgumentNullException(nameof(encodingKey));
+            if (encodingIV.Value is null) throw new ArgumentNullException(nameof(encodingIV));
+            if (plainData is null) throw new ArgumentNullException(nameof(plainData));
 
             byte[] plainBytes = EncryptWithCBC(
-                keyBytes: Convert.FromBase64String(encodingKey),
-                ivBytes: Convert.FromBase64String(encodingIV),
-                plainBytes: Encoding.UTF8.GetBytes(plainText)
+                keyBytes: EncodedString.FromString(encodingKey, fallbackEncodingKind: EncodingKinds.Base64),
+                ivBytes: EncodedString.FromString(encodingIV, fallbackEncodingKind: EncodingKinds.Base64),
+                plainBytes: EncodedString.FromLiteralString(plainData)
             );
-            return Convert.ToBase64String(plainBytes);
+            return EncodedString.ToBase64String(plainBytes);
         }
     }
 }

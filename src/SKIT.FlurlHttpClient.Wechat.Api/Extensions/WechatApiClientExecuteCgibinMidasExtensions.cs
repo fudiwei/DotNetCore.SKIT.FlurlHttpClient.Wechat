@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                     + $"&org_loc={request.GetRequestPath()}"
                     + $"&method={request.GetRequestMethod()}"
                     + $"&secret={client.Credentials.MidasAppKey}";
-                request.Signature = Utilities.HMACUtility.HashWithSHA256(client.Credentials.MidasAppKey ?? string.Empty, msgText).ToLower();
+                request.Signature = Utilities.HMACUtility.HashWithSHA256(client.Credentials.MidasAppKey ?? string.Empty, msgText).Value!.ToLower();
             }
 
             return request;

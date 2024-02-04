@@ -1,44 +1,49 @@
 using System;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     /// <summary>
     /// HMAC 算法工具类。
     /// </summary>
     public static class HMACUtility
     {
         /// <summary>
-        /// 获取 HMAC-SHA-256 消息认证码。
+        /// 计算 HMAC-SHA-256 哈希值。
         /// </summary>
-        /// <param name="secretBytes">密钥字节数组。</param>
-        /// <param name="msgBytes">信息字节数组。</param>
-        /// <returns>消息认证码字节数组。</returns>
-        public static byte[] HashWithSHA256(byte[] secretBytes, byte[] msgBytes)
+        /// <param name="keyBytes">密钥字节数组。</param>
+        /// <param name="msgBytes">要计算哈希值的信息字节数组。</param>
+        /// <returns>哈希值字节数组。</returns>
+        public static byte[] HashWithSHA256(byte[] keyBytes, byte[] msgBytes)
         {
-            if (secretBytes is null) throw new ArgumentNullException(nameof(secretBytes));
+            if (keyBytes is null) throw new ArgumentNullException(nameof(keyBytes));
             if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
 
-            using HMAC hmac = new HMACSHA256(secretBytes);
+#if NET5_0_OR_GREATER
+            return HMACSHA256.HashData(keyBytes, msgBytes);
+#else
+            using HMAC hmac = new HMACSHA256(keyBytes);
             return hmac.ComputeHash(msgBytes);
+#endif
         }
 
         /// <summary>
-        /// 获取 HMAC-SHA-256 消息认证码。
+        /// 计算 HMAC-SHA-256 哈希值。
         /// </summary>
-        /// <param name="secret">密钥。</param>
-        /// <param name="message">文本信息。</param>
-        /// <returns>消息认证码。</returns>
-        public static string HashWithSHA256(string secret, string message)
+        /// <param name="key">密钥。</param>
+        /// <param name="message">要计算哈希值的信息。</param>
+        /// <returns>经过十六进制编码的哈希值。</returns>
+        public static EncodedString HashWithSHA256(string key, string message)
         {
-            if (secret is null) throw new ArgumentNullException(nameof(secret));
+            if (key is null) throw new ArgumentNullException(nameof(key));
             if (message is null) throw new ArgumentNullException(nameof(message));
 
-            byte[] secretBytes = Encoding.UTF8.GetBytes(secret);
-            byte[] msgBytes = Encoding.UTF8.GetBytes(message);
-            byte[] hashBytes = HashWithSHA256(secretBytes, msgBytes);
-            return BitConverter.ToString(hashBytes).Replace("-", string.Empty);
+            byte[] keyBytes = EncodedString.FromLiteralString(key);
+            byte[] msgBytes = EncodedString.FromLiteralString(message);
+            byte[] hashBytes = HashWithSHA256(keyBytes, msgBytes);
+            return EncodedString.ToHexString(hashBytes);
         }
     }
 }

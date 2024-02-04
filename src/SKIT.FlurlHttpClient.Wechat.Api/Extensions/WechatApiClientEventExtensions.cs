@@ -183,7 +183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             List<string> tmp = new List<string>(capacity: 3) { client.Credentials.PushToken!, webhookTimestamp, webhookNonce };
             tmp.Sort(StringComparer.Ordinal);
 
-            string sign = Utilities.SHA1Utility.Hash(string.Concat(tmp));
+            string sign = Utilities.SHA1Utility.Hash(string.Concat(tmp)).Value!;
             return string.Equals(sign, webhookSignature, StringComparison.OrdinalIgnoreCase);
         }
 
