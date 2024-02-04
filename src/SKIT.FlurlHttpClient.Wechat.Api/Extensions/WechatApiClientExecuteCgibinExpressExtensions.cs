@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.DeliverySignature is null)
             {
                 string msgText = $"{request.ShopId}{request.ShopOrderId}{client.Credentials.ImmeDeliveryAppSecret}";
-                request.DeliverySignature = Utilities.SHA1Utility.Hash(msgText).ToLower();
+                request.DeliverySignature = Utilities.SHA1Utility.Hash(msgText).Value!.ToLower();
             }
 
             return request;

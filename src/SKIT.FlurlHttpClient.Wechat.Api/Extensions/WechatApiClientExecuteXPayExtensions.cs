@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 tmpRawData = tmpRawData ?? client.JsonSerializer.Serialize(request);
 
                 string msgText = tmpRawData;
-                request.Signature = Utilities.HMACUtility.HashWithSHA256(request.SessionKey, msgText).ToLower();
+                request.Signature = Utilities.HMACUtility.HashWithSHA256(request.SessionKey, msgText).Value!.ToLower();
             }
 
             if (request.PaySign is null)
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 tmpRawData = tmpRawData ?? client.JsonSerializer.Serialize(request);
 
                 string msgText = $"{request.GetRequestPath()}&{tmpRawData}";
-                request.PaySign = Utilities.HMACUtility.HashWithSHA256(client.Credentials.VirtualPaymentAppKey ?? string.Empty, msgText).ToLower();
+                request.PaySign = Utilities.HMACUtility.HashWithSHA256(client.Credentials.VirtualPaymentAppKey ?? string.Empty, msgText).Value!.ToLower();
             }
 
             return request;
