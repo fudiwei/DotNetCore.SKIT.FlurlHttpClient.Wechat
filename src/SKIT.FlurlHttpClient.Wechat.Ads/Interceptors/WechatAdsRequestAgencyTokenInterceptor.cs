@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads.Interceptors
 
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string nonce = Guid.NewGuid().ToString("N");
-            string sign = Utilities.MD5Utility.Hash($"{_agencyId}{timestamp}{nonce}{_agencyApiKey}").ToLower();
+            string sign = Utilities.MD5Utility.Hash($"{_agencyId}{timestamp}{nonce}{_agencyApiKey}").Value!.ToLower();
             string token = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{_agencyId},{timestamp},{nonce},{sign}"));
 
             context.FlurlCall.Request.SetQueryParam("agency_token", token);
