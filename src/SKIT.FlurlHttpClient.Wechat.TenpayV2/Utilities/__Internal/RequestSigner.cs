@@ -46,12 +46,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
             {
                 case Constants.SignTypes.MD5:
                     {
-                        return MD5Utility.Hash(queryString).ToUpper();
+                        return MD5Utility.Hash(queryString).Value!.ToUpper();
                     }
 
                 case Constants.SignTypes.HMAC_SHA256:
                     {
-                        return HMACUtility.HashWithSHA256(secretValue, queryString).ToUpper();
+                        return HMACUtility.HashWithSHA256(secretValue, queryString).Value!.ToUpper();
                     }
 
                 default:

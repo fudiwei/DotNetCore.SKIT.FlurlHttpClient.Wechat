@@ -10,6 +10,8 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     public static class WechatTenpayClientExecuteMerchantMediaExtensions
     {
         /// <summary>
@@ -29,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
 
             if (request.FileHash is null)
-                request.FileHash = BitConverter.ToString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", string.Empty).ToLower();
+                request.FileHash = EncodedString.ToHexString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Value!.ToLower();
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "secapi", "mch", "uploadmedia");
