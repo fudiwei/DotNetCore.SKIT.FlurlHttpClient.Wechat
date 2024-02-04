@@ -1,29 +1,32 @@
 using System;
-using System.Text;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Security;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     /// <summary>
     /// AES 算法工具类。
     /// </summary>
     public static class AESUtility
     {
-        private const string AES_CIPHER_ALGORITHM_GCM = "AES/GCM";
-        private const string AES_CIPHER_PADDING_NOPADDING = "NoPadding";
+        /// <summary>
+        /// 填充模式：NoPadding。
+        /// </summary>
+        public const string PADDING_MODE_NOPADDING = "NoPadding";
 
         /// <summary>
         /// 基于 GCM 模式解密数据。
         /// </summary>
         /// <param name="keyBytes">AES 密钥字节数组。</param>
-        /// <param name="nonceBytes">加密使用的初始化向量字节数组。</param>
-        /// <param name="aadBytes">加密使用的附加数据包字节数组。</param>
+        /// <param name="nonceBytes">初始化向量字节数组。</param>
+        /// <param name="associatedDataBytes">附加数据字节数组。</param>
         /// <param name="cipherBytes">待解密数据字节数组。</param>
-        /// <param name="paddingMode">填充模式。（默认值：<see cref="AES_CIPHER_PADDING_NOPADDING"/>）</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="PADDING_MODE_NOPADDING"/>）</param>
         /// <returns>解密后的数据字节数组。</returns>
-        public static byte[] DecryptWithGCM(byte[] keyBytes, byte[] nonceBytes, byte[]? aadBytes, byte[] cipherBytes, string paddingMode = AES_CIPHER_PADDING_NOPADDING)
+        public static byte[] DecryptWithGCM(byte[] keyBytes, byte[] nonceBytes, byte[]? associatedDataBytes, byte[] cipherBytes, string paddingMode = PADDING_MODE_NOPADDING)
         {
             const int KEY_LENGTH_BYTE = 32;
             const int NONCE_LENGTH_BYTE = 12;
@@ -36,12 +39,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
             if (cipherBytes.Length < TAG_LENGTH_BYTE) throw new ArgumentException($"Invalid cipher byte length (expected: more than {TAG_LENGTH_BYTE}, actual: {cipherBytes.Length}).", nameof(cipherBytes));
 
-            IBufferedCipher cipher = CipherUtilities.GetCipher(string.Format("{0}/{1}", AES_CIPHER_ALGORITHM_GCM, paddingMode));
+            IBufferedCipher cipher = CipherUtilities.GetCipher($"AES/GCM/{paddingMode}");
             ICipherParameters cipherParams = new AeadParameters(
                 new KeyParameter(keyBytes),
                 TAG_LENGTH_BYTE * 8,
                 nonceBytes,
-                aadBytes
+                associatedDataBytes
             );
             cipher.Init(false, cipherParams);
             byte[] plainBytes = new byte[cipher.GetOutputSize(cipherBytes.Length)];
@@ -53,26 +56,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         /// <summary>
         /// 基于 GCM 模式解密数据。
         /// </summary>
-        /// <param name="key">AES 密钥。</param>
-        /// <param name="nonce">加密使用的初始化向量。</param>
-        /// <param name="aad">加密使用的附加数据包。</param>
-        /// <param name="cipherText">经 Base64 编码后的待解密数据。</param>
-        /// <param name="paddingMode">填充模式。（默认值：<see cref="AES_CIPHER_PADDING_NOPADDING"/>）</param>
-        /// <returns>解密后的文本数据。</returns>
-        public static string DecryptWithGCM(string key, string nonce, string? aad, string cipherText, string paddingMode = AES_CIPHER_PADDING_NOPADDING)
+        /// <param name="encodingKey">经过编码后的（通常为 Base64）AES 密钥。</param>
+        /// <param name="encodingNonce">经过编码后的（通常为 Base64）初始化向量。</param>
+        /// <param name="encodingAssociatedData">经过编码后的（通常为 Base64）附加数据。</param>
+        /// <param name="encodingCipher">经过编码后的（通常为 Base64）待解密数据。</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="PADDING_MODE_NOPADDING"/>）</param>
+        /// <returns>解密后的数据。</returns>
+        public static EncodedString DecryptWithGCM(EncodedString encodingKey, EncodedString encodingNonce, EncodedString encodingAssociatedData, EncodedString encodingCipher, string paddingMode = PADDING_MODE_NOPADDING)
         {
-            if (key is null) throw new ArgumentNullException(nameof(key));
-            if (nonce is null) throw new ArgumentNullException(nameof(nonce));
-            if (cipherText is null) throw new ArgumentNullException(nameof(cipherText));
+            if (encodingKey.Value is null) throw new ArgumentNullException(nameof(encodingKey));
+            if (encodingNonce.Value is null) throw new ArgumentNullException(nameof(encodingNonce));
+            if (encodingCipher.Value is null) throw new ArgumentNullException(nameof(encodingCipher));
 
             byte[] plainBytes = DecryptWithGCM(
-                keyBytes: Encoding.UTF8.GetBytes(key),
-                nonceBytes: Encoding.UTF8.GetBytes(nonce),
-                aadBytes: aad is not null ? Encoding.UTF8.GetBytes(aad) : null,
-                cipherBytes: Convert.FromBase64String(cipherText),
+                keyBytes: EncodedString.FromString(encodingKey, fallbackEncodingKind: EncodingKinds.Base64),
+                nonceBytes: EncodedString.FromString(encodingNonce, fallbackEncodingKind: EncodingKinds.Base64),
+                associatedDataBytes: encodingAssociatedData.Value is not null ? EncodedString.FromString(encodingAssociatedData, fallbackEncodingKind: EncodingKinds.Base64) : null,
+                cipherBytes: EncodedString.FromString(encodingCipher, fallbackEncodingKind: EncodingKinds.Base64),
                 paddingMode: paddingMode
             );
-            return Encoding.UTF8.GetString(plainBytes);
+            return EncodedString.ToLiteralString(plainBytes);
         }
     }
 }
