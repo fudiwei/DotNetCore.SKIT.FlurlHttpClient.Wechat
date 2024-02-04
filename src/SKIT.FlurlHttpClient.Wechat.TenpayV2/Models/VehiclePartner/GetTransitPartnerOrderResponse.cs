@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
     [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponseClassSystemTextJsonConverter))]
     public class GetTransitPartnerOrderResponse : WechatTenpaySignableResponse
     {
-        public static new class Types
+        public static class Types
         {
             public class Coupon : GetTransitOrderResponse.Types.Coupon
             {

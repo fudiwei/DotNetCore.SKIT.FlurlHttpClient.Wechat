@@ -1,8 +1,9 @@
 using System;
-using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     /// <summary>
     /// 为 <see cref="WechatTenpayClient"/> 提供回调通知事件敏感数据解密的扩展方法。
     /// </summary>
@@ -56,11 +57,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             try
             {
-                string key = Utilities.MD5Utility.Hash(client.Credentials.MerchantSecret).ToLower();
+                string key = Utilities.MD5Utility.Hash(client.Credentials.MerchantSecret).Value!.ToLower();
                 string plainXml = Utilities.AESUtility.DecryptWithECB(
-                    encodingKey: Convert.ToBase64String(Encoding.UTF8.GetBytes(key)),
-                    encodingCipherText: webhookEvent.EncryptedRequestInfo!
-                );
+                    encodingKey: new EncodedString(key, EncodingKinds.Literal),
+                    encodingCipher: new EncodedString(webhookEvent.EncryptedRequestInfo!, EncodingKinds.Base64)
+                )!;
                 plainJson = Utilities.XmlHelper.ConvertToJson(plainXml);
             }
             catch (Exception ex)
