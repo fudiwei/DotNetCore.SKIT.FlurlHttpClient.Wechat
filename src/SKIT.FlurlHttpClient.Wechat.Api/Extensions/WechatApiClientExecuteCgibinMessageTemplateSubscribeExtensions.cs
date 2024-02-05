@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,8 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/message/template/subscribe 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/One-time_subscription_info.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Mobile_App/One-time_subscription_info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/One-time_subscription_info.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Mobile_App/One-time_subscription_info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

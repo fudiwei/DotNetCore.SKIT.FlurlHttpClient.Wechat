@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                             bool valid = Utilities.RSAUtility.VerifyByCertificate(
                                 certificatePem: entry.Value.Certificate,
-                                message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
+                                messageData: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
                                 encodingSignature: new EncodedString(strSignature, EncodingKinds.Base64)
                             );
                             if (valid)
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                             bool valid = Utilities.SM2Utility.VerifyWithSM3ByCertificate(
                                 certificatePem: entry.Value.Certificate,
-                                message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
+                                messageData: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
                                 encodingSignature: new EncodedString(strSignature, EncodingKinds.Base64)
                             );
                             if (valid)

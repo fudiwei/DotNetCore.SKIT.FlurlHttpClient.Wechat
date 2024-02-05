@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,7 +12,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Banks
         /// <summary>
         /// <para>异步调用 [GET] /capital/capitallhh/banks/search-banks-by-bank-account 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_1.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_1.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -32,7 +35,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /capital/capitallhh/banks/personal-banking 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_2.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_2.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -53,7 +59,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /capital/capitallhh/banks/corporate-banking 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_3.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_3.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -74,7 +83,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /capital/capitallhh/banks/{bank_alias_code}/branches 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_6.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_6.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -98,7 +110,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Areas
         /// <summary>
         /// <para>异步调用 [GET] /capital/capitallhh/areas/provinces 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_4.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_4.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -117,7 +132,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /capital/capitallhh/areas/provinces/{province_code}/cities 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_5.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter11_2_5.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

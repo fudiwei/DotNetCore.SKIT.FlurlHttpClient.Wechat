@@ -2,9 +2,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示被动回复视频消息的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90241#%E8%A7%86%E9%A2%91%E6%B6%88%E6%81%AF </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90377#%E8%A7%86%E9%A2%91%E6%B6%88%E6%81%AF </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90859#%E8%A7%86%E9%A2%91%E6%B6%88%E6%81%AF </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90241#%E8%A7%86%E9%A2%91%E6%B6%88%E6%81%AF ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90377#%E8%A7%86%E9%A2%91%E6%B6%88%E6%81%AF ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90859#%E8%A7%86%E9%A2%91%E6%B6%88%E6%81%AF ]]>
+    /// </para>
     /// </summary>
     public class VideoMessageReply : WechatWorkEvent
     {

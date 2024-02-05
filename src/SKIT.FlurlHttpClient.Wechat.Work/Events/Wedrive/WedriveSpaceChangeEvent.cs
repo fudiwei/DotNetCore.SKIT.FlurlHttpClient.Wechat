@@ -2,10 +2,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.wedrive_space_change 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97973 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97976 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97977 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97978 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97973 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97976 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97977 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97978 ]]>
+    /// </para>
     /// </summary>
     public class WedriveSpaceChangeEvent : WechatWorkEvent
     {

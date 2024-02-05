@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [GET] /funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/transaction-api/get-available-abroad-amount.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/transaction-api/get-available-abroad-amount.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,7 +34,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /funds-to-oversea/orders 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/funds-to-os-order-api/create-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/funds-to-os-order-api/create-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -50,7 +56,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /funds-to-oversea/orders/{out_order_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/funds-to-os-order-api/query-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/funds-to-os-order-api/query-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -71,7 +80,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /funds-to-oversea/bill-download-url 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/purchase-payment-bill/query-download-info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/purchase-payment-bill/query-download-info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,9 +11,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/card/invoice/reimburse/getinvoiceinfo 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90284 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90420 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90902 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90284 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90420 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90902 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -33,9 +36,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/card/invoice/reimburse/updateinvoicestatus 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90285 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90421 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90903 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90285 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90421 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90903 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -55,9 +61,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/card/invoice/reimburse/updatestatusbatch 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90286 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90422 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90904 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90286 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90422 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90904 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -77,9 +86,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/card/invoice/reimburse/getinvoiceinfobatch 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90287 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90423 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90905 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90287 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90423 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90905 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

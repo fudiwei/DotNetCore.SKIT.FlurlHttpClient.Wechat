@@ -162,9 +162,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90930 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91116 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91148 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90930 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91116 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91148 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="webhookTimestamp">微信回调通知中的 "timestamp" 查询参数。</param>
@@ -211,9 +214,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90930 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91116 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91148 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90930 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91116 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91148 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="webhookTimestamp">微信回调通知中的 "timestamp" 查询参数。</param>
@@ -253,9 +259,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>验证回调通知事件签名。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90930 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91116 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91148 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90930 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91116 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91148 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="webhookTimestamp">微信回调通知中的 "timestamp" 查询参数。</param>

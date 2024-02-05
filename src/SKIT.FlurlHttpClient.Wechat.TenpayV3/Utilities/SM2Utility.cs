@@ -189,11 +189,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             }
         }
 
-        private static byte[] SignWithSM3(ECPrivateKeyParameters sm2PrivateKeyParams, byte[] uidBytes, byte[] msgBytes, bool asn1Encoding)
+        private static byte[] SignWithSM3(ECPrivateKeyParameters sm2PrivateKeyParams, byte[] uidBytes, byte[] messageBytes, bool asn1Encoding)
         {
             ISigner signer = SignerUtilities.GetSigner("SM3withSM2");
             signer.Init(true, new ParametersWithID(sm2PrivateKeyParams, uidBytes));
-            signer.BlockUpdate(msgBytes, 0, msgBytes.Length);
+            signer.BlockUpdate(messageBytes, 0, messageBytes.Length);
             byte[] signBytes = signer.GenerateSignature();
 
             // BouncyCastle 库的签名结果默认 ASN.1 编码，如不需要需要手动转换
@@ -205,11 +205,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             return signBytes;
         }
 
-        private static bool VerifyWithSM3(ECPublicKeyParameters sm2PublicKeyParams, byte[] uidBytes, byte[] msgBytes, byte[] signBytes, bool asn1Encoding)
+        private static bool VerifyWithSM3(ECPublicKeyParameters sm2PublicKeyParams, byte[] uidBytes, byte[] messageBytes, byte[] signBytes, bool asn1Encoding)
         {
             ISigner signer = SignerUtilities.GetSigner("SM3withSM2");
             signer.Init(false, new ParametersWithID(sm2PublicKeyParams, uidBytes));
-            signer.BlockUpdate(msgBytes, 0, msgBytes.Length);
+            signer.BlockUpdate(messageBytes, 0, messageBytes.Length);
 
             // BouncyCastle 库的签名结果默认 ASN.1 编码，如不需要需要手动转换
             if (!asn1Encoding)
@@ -270,32 +270,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="privateKeyBytes">PKCS#8 私钥字节数组。</param>
         /// <param name="uidBytes">用户标识符字节数组。</param>
-        /// <param name="msgBytes">数据字节数组。</param>
+        /// <param name="messageBytes">数据字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static byte[] SignWithSM3(byte[] privateKeyBytes, byte[] uidBytes, byte[] msgBytes, bool asn1Encoding = true)
+        public static byte[] SignWithSM3(byte[] privateKeyBytes, byte[] uidBytes, byte[] messageBytes, bool asn1Encoding = true)
         {
             if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
             if (uidBytes is null) throw new ArgumentNullException(nameof(uidBytes));
-            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
 
             ECPrivateKeyParameters sm2PrivateKeyParams = ParsePrivateKeyToParameters(privateKeyBytes);
-            return SignWithSM3(sm2PrivateKeyParams, uidBytes, msgBytes, asn1Encoding);
+            return SignWithSM3(sm2PrivateKeyParams, uidBytes, messageBytes, asn1Encoding);
         }
 
         /// <summary>
         /// 使用私钥基于 SM3 算法生成签名。
         /// </summary>
         /// <param name="privateKeyBytes">PKCS#8 私钥字节数组。</param>
-        /// <param name="msgBytes">待签名的数据字节数组。</param>
+        /// <param name="messageBytes">待签名的数据字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static byte[] SignWithSM3(byte[] privateKeyBytes, byte[] msgBytes, bool asn1Encoding = true)
+        public static byte[] SignWithSM3(byte[] privateKeyBytes, byte[] messageBytes, bool asn1Encoding = true)
         {
             return SignWithSM3(
                 privateKeyBytes: privateKeyBytes,
                 uidBytes: SM2_DEFAULT_UID,
-                msgBytes: msgBytes,
+                messageBytes: messageBytes,
                 asn1Encoding: asn1Encoding
             );
         }
@@ -304,17 +304,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// 使用私钥基于 SM3 算法生成签名。
         /// </summary>
         /// <param name="privateKeyPem">PKCS#8 私钥（PEM 格式）。</param>
-        /// <param name="message">待签名的数据。</param>
+        /// <param name="messageData">待签名的数据。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>经过 Base64 编码的签名。</returns>
-        public static EncodedString SignWithSM3(string privateKeyPem, string message, bool asn1Encoding = true)
+        public static EncodedString SignWithSM3(string privateKeyPem, string messageData, bool asn1Encoding = true)
         {
             if (privateKeyPem is null) throw new ArgumentNullException(nameof(privateKeyPem));
-            if (message is null) throw new ArgumentNullException(nameof(message));
+            if (messageData is null) throw new ArgumentNullException(nameof(messageData));
 
             byte[] signBytes = SignWithSM3(
                 privateKeyBytes: ConvertPrivateKeyPemToByteArray(privateKeyPem),
-                msgBytes: EncodedString.FromLiteralString(message),
+                messageBytes: EncodedString.FromLiteralString(messageData),
                 asn1Encoding: asn1Encoding
             );
             return EncodedString.ToBase64String(signBytes);
@@ -325,32 +325,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="ecPrivateKeyBytes">EC 私钥字节数组。</param>
         /// <param name="uidBytes">用户标识符字节数组。</param>
-        /// <param name="msgBytes">待签名的数据字节数组。</param>
+        /// <param name="messageBytes">待签名的数据字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static byte[] SignWithSM3ByECPrivateKey(byte[] ecPrivateKeyBytes, byte[] uidBytes, byte[] msgBytes, bool asn1Encoding = true)
+        public static byte[] SignWithSM3ByECPrivateKey(byte[] ecPrivateKeyBytes, byte[] uidBytes, byte[] messageBytes, bool asn1Encoding = true)
         {
             if (ecPrivateKeyBytes is null) throw new ArgumentNullException(nameof(ecPrivateKeyBytes));
             if (uidBytes is null) throw new ArgumentNullException(nameof(uidBytes));
-            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
 
             ECPrivateKeyParameters sm2PrivateKeyParams = ParseECPrivateKeyToParameters(ecPrivateKeyBytes);
-            return SignWithSM3(sm2PrivateKeyParams, uidBytes, msgBytes, asn1Encoding);
+            return SignWithSM3(sm2PrivateKeyParams, uidBytes, messageBytes, asn1Encoding);
         }
 
         /// <summary>
         /// 使用 EC 私钥基于 SM3 算法生成签名。
         /// </summary>
         /// <param name="ecPrivateKeyBytes">EC 私钥字节数组。</param>
-        /// <param name="msgBytes">待签名的数据字节数组。</param>
+        /// <param name="messageBytes">待签名的数据字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static byte[] SignWithSM3ByECPrivateKey(byte[] ecPrivateKeyBytes, byte[] msgBytes, bool asn1Encoding = true)
+        public static byte[] SignWithSM3ByECPrivateKey(byte[] ecPrivateKeyBytes, byte[] messageBytes, bool asn1Encoding = true)
         {
             return SignWithSM3ByECPrivateKey(
                 ecPrivateKeyBytes: ecPrivateKeyBytes,
                 uidBytes: SM2_DEFAULT_UID,
-                msgBytes: msgBytes,
+                messageBytes: messageBytes,
                 asn1Encoding: asn1Encoding
             );
         }
@@ -360,19 +360,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="encodingECPrivateKey">经过编码后的（通常为十六进制）EC 私钥。</param>
         /// <param name="uidBytes">用户标识符字节数组。</param>
-        /// <param name="msgBytes">待签名的数据字节数组。</param>
+        /// <param name="messageBytes">待签名的数据字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static byte[] SignWithSM3ByECPrivateKey(EncodedString encodingECPrivateKey, byte[] uidBytes, byte[] msgBytes, bool asn1Encoding = true)
+        public static byte[] SignWithSM3ByECPrivateKey(EncodedString encodingECPrivateKey, byte[] uidBytes, byte[] messageBytes, bool asn1Encoding = true)
         {
             if (encodingECPrivateKey.Value is null) throw new ArgumentNullException(nameof(encodingECPrivateKey));
             if (uidBytes is null) throw new ArgumentNullException(nameof(uidBytes));
-            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
 
             return SignWithSM3ByECPrivateKey(
                 ecPrivateKeyBytes: EncodedString.FromString(encodingECPrivateKey, fallbackEncodingKind: EncodingKinds.Hex),
                 uidBytes: uidBytes,
-                msgBytes: msgBytes,
+                messageBytes: messageBytes,
                 asn1Encoding: asn1Encoding
             );
         }
@@ -381,15 +381,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// 使用 EC 私钥基于 SM3 算法生成签名。
         /// </summary>
         /// <param name="encodingECPrivateKey">经过编码后的（通常为十六进制）EC 私钥。</param>
-        /// <param name="msgBytes">待签名的数据字节数组。</param>
+        /// <param name="messageBytes">待签名的数据字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static byte[] SignWithSM3ByECPrivateKey(EncodedString encodingECPrivateKey, byte[] msgBytes, bool asn1Encoding = true)
+        public static byte[] SignWithSM3ByECPrivateKey(EncodedString encodingECPrivateKey, byte[] messageBytes, bool asn1Encoding = true)
         {
             return SignWithSM3ByECPrivateKey(
                 encodingECPrivateKey: encodingECPrivateKey,
                 uidBytes: SM2_DEFAULT_UID,
-                msgBytes: msgBytes,
+                messageBytes: messageBytes,
                 asn1Encoding: asn1Encoding
             );
         }
@@ -399,35 +399,35 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="publicKeyBytes">PKCS#8 公钥字节数组。</param>
         /// <param name="uidBytes">用户标识符字节数组。</param>
-        /// <param name="msgBytes">待验证的数据字节数组。</param>
+        /// <param name="messageBytes">待验证的数据字节数组。</param>
         /// <param name="signBytes">签名字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>验证结果。</returns>
-        public static bool VerifyWithSM3(byte[] publicKeyBytes, byte[] uidBytes, byte[] msgBytes, byte[] signBytes, bool asn1Encoding = true)
+        public static bool VerifyWithSM3(byte[] publicKeyBytes, byte[] uidBytes, byte[] messageBytes, byte[] signBytes, bool asn1Encoding = true)
         {
             if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
             if (uidBytes is null) throw new ArgumentNullException(nameof(uidBytes));
-            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
             if (signBytes is null) throw new ArgumentNullException(nameof(signBytes));
 
             ECPublicKeyParameters sm2PublicKeyParams = ParsePublicKeyToParameters(publicKeyBytes);
-            return VerifyWithSM3(sm2PublicKeyParams, uidBytes, msgBytes, signBytes, asn1Encoding);
+            return VerifyWithSM3(sm2PublicKeyParams, uidBytes, messageBytes, signBytes, asn1Encoding);
         }
 
         /// <summary>
         /// 使用公钥基于 SM3 算法验证签名。
         /// </summary>
         /// <param name="publicKeyBytes">PKCS#8 公钥字节数组。</param>
-        /// <param name="msgBytes">待验证的数据字节数组。</param>
+        /// <param name="messageBytes">待验证的数据字节数组。</param>
         /// <param name="signBytes">签名字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>验证结果。</returns>
-        public static bool VerifyWithSM3(byte[] publicKeyBytes, byte[] msgBytes, byte[] signBytes, bool asn1Encoding = true)
+        public static bool VerifyWithSM3(byte[] publicKeyBytes, byte[] messageBytes, byte[] signBytes, bool asn1Encoding = true)
         {
             return VerifyWithSM3(
                 publicKeyBytes: publicKeyBytes,
                 uidBytes: SM2_DEFAULT_UID,
-                msgBytes: msgBytes,
+                messageBytes: messageBytes,
                 signBytes: signBytes,
                 asn1Encoding: asn1Encoding
             );
@@ -437,19 +437,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// 使用公钥基于 SM3 算法验证签名。
         /// </summary>
         /// <param name="publicKeyPem">PKCS#8 公钥（PEM 格式）。</param>
-        /// <param name="message">待验证的数据。</param>
+        /// <param name="messageData">待验证的数据。</param>
         /// <param name="encodingSignature">经过编码后的（通常为 Base64）签名。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>验证结果。</returns>
-        public static bool VerifyWithSM3(string publicKeyPem, string message, EncodedString encodingSignature, bool asn1Encoding = true)
+        public static bool VerifyWithSM3(string publicKeyPem, string messageData, EncodedString encodingSignature, bool asn1Encoding = true)
         {
             if (publicKeyPem is null) throw new ArgumentNullException(nameof(publicKeyPem));
-            if (message is null) throw new ArgumentNullException(nameof(message));
+            if (messageData is null) throw new ArgumentNullException(nameof(messageData));
             if (encodingSignature.Value is null) throw new ArgumentNullException(nameof(encodingSignature));
 
             return VerifyWithSM3(
                 publicKeyBytes: ConvertPublicKeyPemToByteArray(publicKeyPem),
-                msgBytes: EncodedString.FromLiteralString(message),
+                messageBytes: EncodedString.FromLiteralString(messageData),
                 signBytes: EncodedString.FromString(encodingSignature, fallbackEncodingKind: EncodingKinds.Base64),
                 asn1Encoding: asn1Encoding
             );
@@ -459,18 +459,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// 使用证书基于 SM3 算法验证签名。
         /// </summary>
         /// <param name="certificatePem">证书内容（PEM 格式）。</param>
-        /// <param name="message">待验证的数据。</param>
+        /// <param name="messageData">待验证的数据。</param>
         /// <param name="encodingSignature">经过编码后的（通常为 Base64）签名。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>验证结果。</returns>
-        public static bool VerifyWithSM3ByCertificate(string certificatePem, string message, EncodedString encodingSignature, bool asn1Encoding = true)
+        public static bool VerifyWithSM3ByCertificate(string certificatePem, string messageData, EncodedString encodingSignature, bool asn1Encoding = true)
         {
             if (certificatePem is null) throw new ArgumentNullException(nameof(certificatePem));
 
             string publicKeyPem = ExportPublicKeyFromCertificate(certificatePem);
             return VerifyWithSM3(
                 publicKeyPem: publicKeyPem,
-                message: message,
+                messageData: messageData,
                 encodingSignature: encodingSignature,
                 asn1Encoding: asn1Encoding
             );
@@ -481,34 +481,34 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="ecPublicKeyBytes">EC 公钥字节数组。</param>
         /// <param name="uidBytes">用户标识符字节数组。</param>
-        /// <param name="msgBytes">待验证的数据字节数组。</param>
+        /// <param name="messageBytes">待验证的数据字节数组。</param>
         /// <param name="signBytes">签名字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static bool VerifyWithSM3ByECPublicKey(byte[] ecPublicKeyBytes, byte[] uidBytes, byte[] msgBytes, byte[] signBytes, bool asn1Encoding = true)
+        public static bool VerifyWithSM3ByECPublicKey(byte[] ecPublicKeyBytes, byte[] uidBytes, byte[] messageBytes, byte[] signBytes, bool asn1Encoding = true)
         {
             if (ecPublicKeyBytes is null) throw new ArgumentNullException(nameof(ecPublicKeyBytes));
             if (uidBytes is null) throw new ArgumentNullException(nameof(uidBytes));
-            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
 
             ECPublicKeyParameters sm2PublicKeyParams = ParseECPublicKeyToParameters(ecPublicKeyBytes);
-            return VerifyWithSM3(sm2PublicKeyParams, uidBytes, msgBytes, signBytes, asn1Encoding);
+            return VerifyWithSM3(sm2PublicKeyParams, uidBytes, messageBytes, signBytes, asn1Encoding);
         }
 
         /// <summary>
         /// 使用 EC 公钥基于 SM3 算法生成签名。
         /// </summary>
         /// <param name="ecPublicKeyBytes">EC 公钥字节数组。</param>
-        /// <param name="msgBytes">待验证的数据字节数组。</param>
+        /// <param name="messageBytes">待验证的数据字节数组。</param>
         /// <param name="signBytes">签名字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static bool VerifyWithSM3ByECPublicKey(byte[] ecPublicKeyBytes, byte[] msgBytes, byte[] signBytes, bool asn1Encoding = true)
+        public static bool VerifyWithSM3ByECPublicKey(byte[] ecPublicKeyBytes, byte[] messageBytes, byte[] signBytes, bool asn1Encoding = true)
         {
             return VerifyWithSM3ByECPublicKey(
                 ecPublicKeyBytes: ecPublicKeyBytes,
                 uidBytes: SM2_DEFAULT_UID,
-                msgBytes: msgBytes,
+                messageBytes: messageBytes,
                 signBytes: signBytes,
                 asn1Encoding: asn1Encoding
             );
@@ -519,20 +519,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// </summary>
         /// <param name="encodingECPublicKey">经过编码后的（通常为十六进制）EC 公钥。</param>
         /// <param name="uidBytes">用户标识符字节数组。</param>
-        /// <param name="msgBytes">待验证的数据字节数组。</param>
+        /// <param name="messageBytes">待验证的数据字节数组。</param>
         /// <param name="signBytes">签名字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static bool VerifyWithSM3ByECPublicKey(EncodedString encodingECPublicKey, byte[] uidBytes, byte[] msgBytes, byte[] signBytes, bool asn1Encoding = true)
+        public static bool VerifyWithSM3ByECPublicKey(EncodedString encodingECPublicKey, byte[] uidBytes, byte[] messageBytes, byte[] signBytes, bool asn1Encoding = true)
         {
             if (encodingECPublicKey.Value is null) throw new ArgumentNullException(nameof(encodingECPublicKey));
             if (uidBytes is null) throw new ArgumentNullException(nameof(uidBytes));
-            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
 
             return VerifyWithSM3ByECPublicKey(
                 ecPublicKeyBytes: EncodedString.FromString(encodingECPublicKey, fallbackEncodingKind: EncodingKinds.Hex),
                 uidBytes: uidBytes,
-                msgBytes: msgBytes,
+                messageBytes: messageBytes,
                 signBytes: signBytes,
                 asn1Encoding: asn1Encoding
             );
@@ -542,16 +542,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// 使用 EC 公钥基于 SM3 算法生成签名。
         /// </summary>
         /// <param name="encodingECPublicKey">经过编码后的（通常为十六进制）EC 公钥。</param>
-        /// <param name="msgBytes">待验证的数据字节数组。</param>
+        /// <param name="messageBytes">待验证的数据字节数组。</param>
         /// <param name="signBytes">签名字节数组。</param>
         /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
         /// <returns>签名字节数组。</returns>
-        public static bool VerifyWithSM3ByECPublicKey(EncodedString encodingECPublicKey, byte[] msgBytes, byte[] signBytes, bool asn1Encoding = true)
+        public static bool VerifyWithSM3ByECPublicKey(EncodedString encodingECPublicKey, byte[] messageBytes, byte[] signBytes, bool asn1Encoding = true)
         {
             return VerifyWithSM3ByECPublicKey(
                 encodingECPublicKey: encodingECPublicKey,
                 uidBytes: SM2_DEFAULT_UID,
-                msgBytes: msgBytes,
+                messageBytes: messageBytes,
                 signBytes: signBytes,
                 asn1Encoding: asn1Encoding
             );

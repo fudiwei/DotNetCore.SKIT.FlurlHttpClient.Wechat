@@ -4,21 +4,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.change_contact 或 INFO.change_contact 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90970 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90971 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90972 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90240 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92654 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92655 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92656 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90639 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90640 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90641 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90376 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90796 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90797 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90798 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90858 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90970 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90971 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90972 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90240 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92654 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92655 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92656 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90639 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90640 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90641 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90376 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90796 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90797 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90798 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90858 ]]>
+    /// </para>
     /// </summary>
     public class ChangeContactEvent : WechatWorkEvent
     {

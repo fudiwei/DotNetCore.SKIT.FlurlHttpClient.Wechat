@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,9 +11,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tag/create 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90210 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90346 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90829 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90210 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90346 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90829 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -33,9 +36,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tag/update 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90211 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90347 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90830 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90211 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90347 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90830 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -55,9 +61,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/tag/delete 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90212 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90348 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90831 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90212 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90348 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90831 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -78,9 +87,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/tag/list 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90216 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90352 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90835 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90216 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90352 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90835 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -100,9 +112,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/tag/get 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90213 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90349 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90832 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90213 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90349 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90832 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -124,9 +139,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region TagUser
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tag/addtagusers 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90214 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90350 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90833 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90214 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90350 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90833 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -146,9 +164,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tag/deltagusers 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90215 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90351 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90834 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90215 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90351 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90834 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

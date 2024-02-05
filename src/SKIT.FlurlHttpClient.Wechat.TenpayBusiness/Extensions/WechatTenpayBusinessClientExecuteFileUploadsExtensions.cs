@@ -12,7 +12,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
     {
         /// <summary>
         /// <para>异步调用 [POST] /mse-pay/file-uploads 接口。</para>
-        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://businesspay.qq.com/p/doc/mse/api/server.html#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

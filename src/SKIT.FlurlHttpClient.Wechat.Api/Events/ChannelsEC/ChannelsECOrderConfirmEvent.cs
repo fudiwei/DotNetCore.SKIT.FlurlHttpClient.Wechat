@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.channels_ec_order_confirm 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/order/callback/channels_ec_order_confirm.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/callback/channels_ec_order_confirm.html ]]>
+    /// </para>
     /// </summary>
     public class ChannelsECOrderConfirmEvent : WechatApiEvent
     {

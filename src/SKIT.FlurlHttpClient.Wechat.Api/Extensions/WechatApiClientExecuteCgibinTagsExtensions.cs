@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/create 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,7 +34,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/tags/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -51,7 +57,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/update 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -71,7 +80,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/delete 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -91,7 +103,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/user/tag/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -112,7 +127,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Members
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/members/batchtagging 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -132,7 +150,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/members/batchuntagging 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -152,7 +173,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/getidlist 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/User_Tag_Management.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -174,7 +198,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region MembersBlackList
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/members/getblacklist 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/Manage_blacklist.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/Manage_blacklist.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -194,7 +221,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/members/batchblacklist 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/Manage_blacklist.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/Manage_blacklist.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -214,7 +244,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/tags/members/batchunblacklist 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/User_Management/Manage_blacklist.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/User_Management/Manage_blacklist.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

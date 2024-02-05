@@ -66,7 +66,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxa/game/getbalance 接口。</para>
-        /// <para>REF: https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -91,7 +94,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxa/game/pay 接口。</para>
-        /// <para>REF: https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -116,7 +122,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxa/game/cancelpay 接口。</para>
-        /// <para>REF: https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -141,7 +150,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wxa/game/present 接口。</para>
-        /// <para>REF: https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://docs.qq.com/doc/DVUN0QWJja0J5c2x4 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

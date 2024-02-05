@@ -10,7 +10,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /goldplan/merchants/changegoldplanstatus 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gold-plan/status/change-gold-plan-status.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/status/change-gold-plan-status.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -29,7 +32,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /goldplan/merchants/changecustompagestatus 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gold-plan/status/change-custom-page-status.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/status/change-custom-page-status.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -48,7 +54,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /goldplan/merchants/set-advertising-industry-filter 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gold-plan/merchants/set-advertising-industry-filter.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/merchants/set-advertising-industry-filter.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -67,7 +76,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /goldplan/merchants/open-advertising-show 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gold-plan/merchants/open-advertising-show.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/merchants/open-advertising-show.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -86,7 +98,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /goldplan/merchants/close-advertising-show 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/gold-plan/merchants/close-advertising-show.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/merchants/close-advertising-show.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

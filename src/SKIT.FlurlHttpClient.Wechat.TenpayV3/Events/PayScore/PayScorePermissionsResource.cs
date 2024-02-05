@@ -5,7 +5,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <summary>
     /// <para>表示 PAYSCORE.USER_OPEN_SERVICE（针对直连商户）通知的数据。</para>
     /// <para>表示 PAYSCORE.USER_CLOSE_SERVICE（针对直连商户）通知的数据。</para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/open/disable-notification.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/open/disable-notification.html ]]>
+    /// </para>
     /// </summary>
     public class PayScorePermissionsResource : WechatTenpayEvent.Types.IDecryptedResource
     {

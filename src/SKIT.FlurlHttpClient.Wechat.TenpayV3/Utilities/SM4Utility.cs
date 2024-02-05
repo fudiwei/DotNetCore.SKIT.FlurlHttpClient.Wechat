@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 填充模式：NoPadding。
         /// </summary>
-        private const string PADDING_MODE_NOPADDING = "NoPadding";
+        public const string PADDING_MODE_NOPADDING = "NoPadding";
 
         /// <summary>
         /// 基于 GCM 模式解密数据。

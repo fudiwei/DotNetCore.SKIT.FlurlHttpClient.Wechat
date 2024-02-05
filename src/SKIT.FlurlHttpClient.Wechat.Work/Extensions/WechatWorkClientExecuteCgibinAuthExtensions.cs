@@ -11,8 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/auth/getuserinfo 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91023 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91437 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91023 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91437 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -33,7 +36,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/auth/getuserdetail 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95833 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95833 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -54,7 +60,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region TAF
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/auth/get_tfa_info 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/99499 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99499 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

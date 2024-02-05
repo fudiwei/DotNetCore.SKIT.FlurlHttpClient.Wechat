@@ -11,21 +11,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [GET] /bill/tradebill 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/native-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/bill-download/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/bill-download/trade-bill/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/bill-download/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/bill-download/trade-bill/get-trade-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-bill-download/get-trade-bill.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/bill-download/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/bill-download/trade-bill/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/bill-download/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/bill-download/trade-bill/get-trade-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-bill-download/get-trade-bill.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -54,21 +57,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /bill/fundflowbill 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/native-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/bill-download/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/bill-download/fund-bill/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/bill-download/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/bill-download/fund-bill/get-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-bill-download/get-fund-bill.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/bill-download/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/bill-download/fund-bill/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/bill-download/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/bill-download/fund-bill/get-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-bill-download/get-fund-bill.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -94,13 +100,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /bill/sub-merchant-fundflowbill 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/get-sub-mch-fund-flow-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/get-sub-mch-fund-flow-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/get-sub-mch-fund-flow-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/get-sub-mch-fund-flow-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/get-sub-mch-fund-flow-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/bill-download/get-sub-mch-fund-flow-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/bill-download/sub-mch-fund-flow-bill/get-sub-mch-fund-flow-bill.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/get-sub-mch-fund-flow-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/get-sub-mch-fund-flow-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/get-sub-mch-fund-flow-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/get-sub-mch-fund-flow-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/get-sub-mch-fund-flow-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/bill-download/get-sub-mch-fund-flow-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/bill-download/sub-mch-fund-flow-bill/get-sub-mch-fund-flow-bill.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -128,25 +137,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /{download_url} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/native-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/bill-download/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/bill-download/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/batch-transfer-to-balance/download-receipt.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/bill-download/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/bill-download/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/bill-download/download-sub-merchant-fund-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/download-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/brand-profit-sharing/download-bill.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/bill-download/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/bill-download/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/batch-transfer-to-balance/download-receipt.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/bill-download/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/bill-download/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/bill-download/download-sub-merchant-fund-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/download-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/brand-profit-sharing/download-bill.html ]]>
+        /// </para>
         /// <para><i>（请注意此接口不受构造 <see cref="WechatTenpayClient" /> 时指定的 <see cref="WechatTenpayClientOptions.Endpoint"/> 参数控制。）</i></para>
         /// </summary>
         /// <param name="client"></param>

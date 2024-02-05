@@ -2,8 +2,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.open_approval_change 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90269 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/93798 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90269 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/93798 ]]>
+    /// </para>
     /// </summary>
     public class OpenApprovalChangeEvent : WechatWorkEvent
     {

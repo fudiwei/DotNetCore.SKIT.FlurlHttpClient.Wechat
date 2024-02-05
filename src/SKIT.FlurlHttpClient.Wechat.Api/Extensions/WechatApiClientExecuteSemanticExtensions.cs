@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,9 +11,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         /// <summary>
         /// <para>异步调用 [POST] /semantic/semproxy/search 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Natural_Language_Processing.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Smart_APIs/Semantic_Understanding.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Smart_APIs/Semantic_Understanding.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Natural_Language_Processing.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Mobile_App/WeChat_Smart_APIs/Semantic_Understanding.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/Website_App/WeChat_Smart_APIs/Semantic_Understanding.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

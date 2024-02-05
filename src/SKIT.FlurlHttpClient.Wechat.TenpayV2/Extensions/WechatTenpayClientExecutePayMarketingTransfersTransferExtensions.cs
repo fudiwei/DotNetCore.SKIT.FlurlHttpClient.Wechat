@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     {
         /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/promotion/transfers 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -30,7 +33,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/gettransferinfo 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_3 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_3 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -50,7 +56,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         #region WeWork
         /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/promotion/paywwsptrans2pocket 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96697 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96697 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

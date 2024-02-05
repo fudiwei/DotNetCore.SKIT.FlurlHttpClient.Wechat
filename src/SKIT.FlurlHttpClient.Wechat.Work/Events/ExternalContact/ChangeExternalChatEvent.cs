@@ -2,8 +2,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.change_external_chat 或 INFO.change_external_chat 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92130 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92277 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92130 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92277 ]]>
+    /// </para>
     /// </summary>
     public class ChangeExternalChatEvent : WechatWorkEvent
     {

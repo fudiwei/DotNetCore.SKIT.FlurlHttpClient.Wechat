@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -32,8 +32,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Image
         /// <summary>
         /// <para>异步调用 [POST] /cv/img/qrcode 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Img_Proc.html#%E4%BA%8C%E3%80%81%E4%BA%8C%E7%BB%B4%E7%A0%81-%E6%9D%A1%E7%A0%81%E8%AF%86%E5%88%AB%E6%8E%A5%E5%8F%A3 </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/img/img.scanQRCode.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Img_Proc.html#%E4%BA%8C%E3%80%81%E4%BA%8C%E7%BB%B4%E7%A0%81-%E6%9D%A1%E7%A0%81%E8%AF%86%E5%88%AB%E6%8E%A5%E5%8F%A3 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/img/img.scanQRCode.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -57,8 +60,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cv/img/superresolution 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Img_Proc.html#%E4%B8%89%E3%80%81%E5%9B%BE%E7%89%87%E9%AB%98%E6%B8%85%E5%8C%96%E6%8E%A5%E5%8F%A3 </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/img/img.superresolution.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Img_Proc.html#%E4%B8%89%E3%80%81%E5%9B%BE%E7%89%87%E9%AB%98%E6%B8%85%E5%8C%96%E6%8E%A5%E5%8F%A3 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/img/img.superresolution.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -82,8 +88,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cv/img/aicrop 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Img_Proc.html#%E5%9B%9B%E3%80%81%E5%9B%BE%E7%89%87%E6%99%BA%E8%83%BD%E8%A3%81%E5%89%AA%E6%8E%A5%E5%8F%A3 </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/img/img.aiCrop.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/Img_Proc.html#%E5%9B%9B%E3%80%81%E5%9B%BE%E7%89%87%E6%99%BA%E8%83%BD%E8%A3%81%E5%89%AA%E6%8E%A5%E5%8F%A3 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/img/img.aiCrop.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -109,8 +118,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region OCR
         /// <summary>
         /// <para>异步调用 [POST] /cv/ocr/idcard 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.idcard.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.idcard.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -135,8 +147,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cv/ocr/bankcard 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.bankcard.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.bankcard.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -161,8 +176,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cv/ocr/driving 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.vehicleLicense.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.vehicleLicense.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -187,8 +205,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cv/ocr/drivinglicense 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.driverLicense.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.driverLicense.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -213,8 +234,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cv/ocr/bizlicense 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.businessLicense.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.businessLicense.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -239,8 +263,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cv/ocr/comm 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.printedText.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/ocr/ocr.printedText.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -264,7 +291,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cv/ocr/platenum 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Intelligent_Interface/OCR.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

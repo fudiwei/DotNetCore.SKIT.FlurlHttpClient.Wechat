@@ -4,12 +4,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
     /// <para>表示 TRANSACTION.SUCCESS （仅限直连商户）通知的数据。</para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/payment-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/payment-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/payment-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/native-payment/payment-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/payment-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/notice-division.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/payment-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/payment-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/payment-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/payment-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/payment-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/notice-division.html ]]>
+    /// </para>
     /// </summary>
     public class TransactionResource : WechatTenpayEvent.Types.IDecryptedResource
     {

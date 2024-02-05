@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.kf_account_auth_change 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97712 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97712 ]]>
+    /// </para>
     /// </summary>
     public class KfAccountAuthChangeEvent : WechatWorkEvent
     {

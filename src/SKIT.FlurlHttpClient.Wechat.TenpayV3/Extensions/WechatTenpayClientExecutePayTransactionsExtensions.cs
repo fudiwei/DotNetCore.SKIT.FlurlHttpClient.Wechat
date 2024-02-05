@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /pay/transactions/app 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/direct-jsons/app-prepay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/direct-jsons/app-prepay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -33,8 +36,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /pay/transactions/jsapi 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/direct-jsons/jsapi-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/mini-prepay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/direct-jsons/jsapi-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/mini-prepay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -56,7 +62,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /pay/transactions/h5 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/direct-jsons/h5-prepay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/direct-jsons/h5-prepay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -78,7 +87,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /pay/transactions/native 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/native-payment/direct-jsons/native-prepay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/direct-jsons/native-prepay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -100,11 +112,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /pay/transactions/out-trade-no/{out_trade_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/query-by-out-trade-no.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/query-by-out-trade-no.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/query-by-out-trade-no.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/native-payment/query-by-out-trade-no.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/query-by-out-trade-no.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/query-by-out-trade-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/query-by-out-trade-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/query-by-out-trade-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/query-by-out-trade-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/query-by-out-trade-no.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -127,11 +142,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /pay/transactions/id/{transaction_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/query-by-wx-trade-no.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/query-by-wx-trade-no.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/query-by-wx-trade-no.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/native-payment/query-by-wx-trade-no.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/query-by-wx-trade-no.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/query-by-wx-trade-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/query-by-wx-trade-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/query-by-wx-trade-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/query-by-wx-trade-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/query-by-wx-trade-no.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -154,11 +172,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /pay/transactions/out-trade-no/{out_trade_no}/close 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/close-order.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/close-order.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/close-order.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/native-payment/close-order.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/close-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/close-order.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/close-order.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/close-order.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/close-order.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/close-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

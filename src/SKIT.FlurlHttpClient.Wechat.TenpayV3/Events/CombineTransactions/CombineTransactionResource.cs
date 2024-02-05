@@ -2,8 +2,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
     /// <para>表示 TRANSACTION.SUCCESS 通知的数据。</para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/payment-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/payment-notice.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/payment-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/payment-notice.html ]]>
+    /// </para>
     /// </summary>
     public class CombineTransactionResource : WechatTenpayEvent.Types.IDecryptedResource
     {

@@ -2,8 +2,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.template_card_event 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90240 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90240 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90240 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90240 ]]>
+    /// </para>
     /// </summary>
     public class TemplateCardPushEvent : WechatWorkEvent
     {

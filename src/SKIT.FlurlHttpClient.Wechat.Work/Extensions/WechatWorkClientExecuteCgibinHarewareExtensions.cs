@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/hardware/get_device_feature 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/92739 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92739 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,8 +34,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/hardware/get_hardware_checkin_data 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/94126 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95176 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/94126 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95176 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

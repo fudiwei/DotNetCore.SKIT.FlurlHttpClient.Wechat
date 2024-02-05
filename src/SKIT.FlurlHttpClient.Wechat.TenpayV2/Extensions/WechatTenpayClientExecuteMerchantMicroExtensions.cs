@@ -10,7 +10,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     {
         /// <summary>
         /// <para>异步调用 [POST] /applyment/micro/modifyarchives 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_2 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_2 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -29,7 +32,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /applyment/micro/modifycontactinfo 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_4 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_4 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

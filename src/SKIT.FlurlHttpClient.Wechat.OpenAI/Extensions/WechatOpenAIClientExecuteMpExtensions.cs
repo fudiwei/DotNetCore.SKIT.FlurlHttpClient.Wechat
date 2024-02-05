@@ -13,7 +13,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     {
         /// <summary>
         /// <para>异步调用 [POST] /getbindlink/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/mp/getbindlink.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/mp/getbindlink.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -32,7 +35,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
         /// <summary>
         /// <para>异步调用 [POST] /getbindlist/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/mp/getbindlist.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/mp/getbindlist.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -51,7 +57,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
         /// <summary>
         /// <para>异步调用 [POST] /unbindmp/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/mp/unbindmp.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/mp/unbindmp.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -70,7 +79,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
         /// <summary>
         /// <para>异步调用 [POST] /geth5link/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/mp/getbindlist.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/mp/getbindlist.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -89,7 +101,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
         /// <summary>
         /// <para>异步调用 [POST] /assetsupload/{TOKEN} 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/aispeech/confapi/mp/assetsupload.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/mp/assetsupload.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

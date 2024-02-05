@@ -9,8 +9,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>验证响应签名。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html ]]>
+        /// </para>
         /// </summary>
         /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
@@ -35,8 +38,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>验证响应签名。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="responseTimestamp"></param>
@@ -60,8 +66,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>验证响应签名。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="responseTimestamp"></param>

@@ -4,8 +4,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
     /// <para>表示 MALL_REFUND.SUCCESS 通知的数据。</para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/smart-business-circle/on-site-refund.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/on-site-refund.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/smart-business-circle/on-site-refund.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/on-site-refund.html ]]>
+    /// </para>
     /// </summary>
     public class MallRefundResource : WechatTenpayEvent.Types.IDecryptedResource
     {

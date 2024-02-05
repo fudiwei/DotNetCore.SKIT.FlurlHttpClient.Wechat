@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         /// <summary>
         /// <para>异步调用 [POST] /scan/product/v2/add 接口。</para>
-        /// <para>REF: https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=11533749572M9ODP&platform=2 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=11533749572M9ODP&platform=2 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,7 +34,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /scan/product/v2/status 接口。</para>
-        /// <para>REF: https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=11533749572M9ODP&platform=2 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=11533749572M9ODP&platform=2 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -51,7 +57,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /scan/product/v2/getinfo 接口。</para>
-        /// <para>REF: https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=11533749572M9ODP&platform=2 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=11533749572M9ODP&platform=2 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -71,7 +80,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /scan/product/v2/getinfobypage 接口。</para>
-        /// <para>REF: https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=11533749572M9ODP&platform=2 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&key=11533749572M9ODP&platform=2 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

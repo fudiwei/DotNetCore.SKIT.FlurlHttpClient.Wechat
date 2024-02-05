@@ -10,9 +10,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /combine-transactions/app 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/app-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/app-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/app-prepay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/app-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/app-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/app-prepay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -43,12 +46,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /combine-transactions/jsapi 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/jsapi-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/mini-program-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/jsapi-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/mini-program-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/jsapi-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/mini-program-prepay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/jsapi-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/mini-program-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/jsapi-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/mini-program-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/jsapi-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/mini-program-prepay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -79,9 +85,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /combine-transactions/h5 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/h5-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/h5-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/h5-prepay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/h5-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/h5-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/h5-prepay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -112,9 +121,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /combine-transactions/native 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/native-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/native-prepay.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/native-prepay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/native-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/native-prepay.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/native-prepay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -145,9 +157,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /combine-transactions/out-trade-no/{combine_out_trade_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/query-order.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/query-order.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/query-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/query-order.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/query-order.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/query-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -166,9 +181,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /combine-transactions/out-trade-no/{combine_out_trade_no}/close 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/close-order.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/close-order.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/close-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/close-order.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/close-order.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/close-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

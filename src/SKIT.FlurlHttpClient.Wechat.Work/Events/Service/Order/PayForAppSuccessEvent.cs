@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Events
+namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 INFO.pay_for_app_success 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/91931 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91931 ]]>
+    /// </para>
     /// </summary>
     public class PayForAppSuccessEvent : WechatWorkEvent
     {

@@ -6,10 +6,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示微信支付分停车服务 TRANSACTION.SUCCESS 通知的数据。</para>
     /// <para>表示微信支付分停车服务 TRANSACTION.FAIL 通知的数据。</para>
     /// <para>表示微信支付分停车服务 TRANSACTION.PAY_BACK 通知的数据。</para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/parking-status-notification.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/payment-result-notification.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/parking-status-notification.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/payment-result-notification.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/parking-status-notification.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/payment-result-notification.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/parking-status-notification.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/payment-result-notification.html ]]>
+    /// </para>
     /// </summary>
     public class VehicleTransactionResource : WechatTenpayEvent.Types.IDecryptedResource
     {

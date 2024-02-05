@@ -11,8 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/stocks 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/create-busifavor-stock.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/create-busifavor-stock.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/create-busifavor-stock.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/create-busifavor-stock.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -34,8 +37,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/busifavor/stocks/{stock_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/query-stock.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/query-stock.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/query-stock.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/query-stock.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -54,8 +60,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [PATCH] /marketing/busifavor/stocks/{stock_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/modify-stock-info.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/modify-stock-info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/modify-stock-info.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/modify-stock-info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -74,8 +83,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [PATCH] /marketing/busifavor/stocks/{stock_id}/budget 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/modify-budget.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/modify-budget.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/modify-budget.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/modify-budget.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -94,8 +106,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/stocks/{stock_id}/couponcodes 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/upload-coupon-code.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/upload-coupon-code.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/busi-favor/upload-coupon-code.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/busi-favor/upload-coupon-code.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -114,8 +129,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/query-coupon.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/query-coupon.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/query-coupon.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/query-coupon.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -134,8 +152,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/busifavor/users/{openid}/coupons 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/list-coupons-by-filter.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/list-coupons-by-filter.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/list-coupons-by-filter.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/list-coupons-by-filter.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -176,8 +197,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/coupons/use 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/use-coupon.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/use-coupon.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/use-coupon.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/use-coupon.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -196,8 +220,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/coupons/associate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/associate-trade-info.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/associate-trade-info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/associate-trade-info.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/associate-trade-info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -216,8 +243,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/coupons/disassociate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/disassociate-trade-info.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/disassociate-trade-info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/disassociate-trade-info.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/disassociate-trade-info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -236,8 +266,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/coupons/return 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/return-coupon.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/return-coupon.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/return-coupon.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/return-coupon.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -256,8 +289,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/coupons/deactivate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/deactivate-coupon.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/deactivate-coupon.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/deactivate-coupon.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/coupon/deactivate-coupon.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -294,8 +330,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/busifavor/callbacks 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/call-back/get-coupon-notify.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/call-back/get-coupon-notify.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/call-back/get-coupon-notify.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/call-back/get-coupon-notify.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -318,8 +357,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/callbacks 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/call-back/set-coupon-notify.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/call-back/set-coupon-notify.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/call-back/set-coupon-notify.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/call-back/set-coupon-notify.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -341,8 +383,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/subsidy/pay-receipts 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_16.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_2_16.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_16.shtml ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_2_16.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -367,8 +412,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/busifavor/subsidy/pay-receipts 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_19.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_2_19.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_19.shtml ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_2_19.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -392,8 +440,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/busifavor/subsidy/pay-receipts/{subsidy_receipt_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_18.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_2_18.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_18.shtml ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_2_18.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -412,8 +463,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/busifavor/subsidy/return-receipts 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_17.shtml </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_2_17.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_17.shtml ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_2_17.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

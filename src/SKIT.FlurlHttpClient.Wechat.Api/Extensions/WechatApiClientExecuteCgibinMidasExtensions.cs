@@ -58,7 +58,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/getbalance 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.getBalance.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.getBalance.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -80,7 +83,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/pay 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.pay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.pay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -102,7 +108,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/cancelpay 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.cancelPay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.cancelPay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -124,7 +133,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/present 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.present.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.present.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -147,7 +159,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Sandbox
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/sandbox/getbalance 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.getBalance.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.getBalance.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -169,7 +184,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/sandbox/pay 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.pay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.pay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -191,7 +209,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/sandbox/cancelpay 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.cancelPay.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.cancelPay.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -213,7 +234,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/midas/sandbox/present 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.present.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/midas-payment/midas.present.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -6,15 +6,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 REFUND.SUCCESS （仅限服务商）通知的数据。</para>
     /// <para>表示 REFUND.ABNORMAL （仅限服务商）通知的数据。</para>
     /// <para>表示 REFUND.CLOSED （仅限服务商）通知的数据。</para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/refund-result-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/refund-result-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/refund-result-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/refund-result-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/refund-result-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/refunds/refund-result-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/refund/refunds/refund-result-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/refund-notification.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refund-result.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/refund-result-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/refund-result-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/refund-result-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/refund-result-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/refund-result-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/refunds/refund-result-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/refund/refunds/refund-result-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/refund-notification.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refund-result.html ]]>
+    /// </para>
     /// </summary>
     public class PartnerRefundResource : WechatTenpayEvent.Types.IDecryptedResource
     {

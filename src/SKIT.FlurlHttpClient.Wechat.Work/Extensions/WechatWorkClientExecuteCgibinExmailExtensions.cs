@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,9 +12,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region App
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/app/compose_send 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97445 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97854 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97855 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97445 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97854 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97855 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -34,7 +37,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/app/get_mail_list 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97505 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97505 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -54,7 +60,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/app/read_mail 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97982 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97982 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -74,7 +83,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/app/update_email_alias 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97503 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97503 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -94,7 +106,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/app/get_email_alias 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97992 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97992 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -116,7 +131,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region Group
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/group/create 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95510 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95510 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -136,7 +154,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/group/update 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97995 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97995 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -156,7 +177,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/group/delete 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97996 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97996 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -176,7 +200,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/exmail/group/search 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97998 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97998 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -200,7 +227,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/exmail/group/get 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97997 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97997 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -223,7 +253,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region PublicMail
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/create 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95511 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95511 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -243,7 +276,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/update 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98000 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98000 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -263,7 +299,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/delete 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98001 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98001 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -283,7 +322,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/exmail/publicmail/search 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98003 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98003 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -307,7 +349,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/publicmail/get 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98002 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98002 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -329,7 +374,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region Account
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/account/act_email 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95512 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95512 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -351,7 +399,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region UserOption
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/useroption/get 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95513 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95513 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -371,7 +422,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/useroption/update 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98008 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98008 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -393,7 +447,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region Mail
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/exmail/mail/get_newcount 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95514 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95514 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

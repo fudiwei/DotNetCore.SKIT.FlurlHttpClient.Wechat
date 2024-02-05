@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.wedrive_file_change 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97975 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97975 ]]>
+    /// </para>
     /// </summary>
     public class WedriveFileChangeEvent : WechatWorkEvent
     {

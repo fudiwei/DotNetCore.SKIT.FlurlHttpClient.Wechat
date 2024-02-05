@@ -111,19 +111,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             return (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
         }
 
-        private static byte[] Sign(RsaKeyParameters rsaPrivateKeyParams, byte[] msgBytes, string digestAlgorithm)
+        private static byte[] Sign(RsaKeyParameters rsaPrivateKeyParams, byte[] messageBytes, string digestAlgorithm)
         {
             ISigner signer = SignerUtilities.GetSigner(digestAlgorithm);
             signer.Init(true, rsaPrivateKeyParams);
-            signer.BlockUpdate(msgBytes, 0, msgBytes.Length);
+            signer.BlockUpdate(messageBytes, 0, messageBytes.Length);
             return signer.GenerateSignature();
         }
 
-        private static bool Verify(RsaKeyParameters rsaPublicKeyParams, byte[] msgBytes, byte[] signBytes, string digestAlgorithm)
+        private static bool Verify(RsaKeyParameters rsaPublicKeyParams, byte[] messageBytes, byte[] signBytes, string digestAlgorithm)
         {
             ISigner signer = SignerUtilities.GetSigner(digestAlgorithm);
             signer.Init(false, rsaPublicKeyParams);
-            signer.BlockUpdate(msgBytes, 0, msgBytes.Length);
+            signer.BlockUpdate(messageBytes, 0, messageBytes.Length);
             return signer.VerifySignature(signBytes);
         }
 
@@ -134,44 +134,44 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
             return cipher.DoFinal(cipherBytes);
         }
 
-        private static byte[] EncryptWithECB(RsaKeyParameters rsaPublicKeyParams, byte[] msgBytes, string paddingMode)
+        private static byte[] EncryptWithECB(RsaKeyParameters rsaPublicKeyParams, byte[] messageBytes, string paddingMode)
         {
             IBufferedCipher cipher = CipherUtilities.GetCipher($"RSA/ECB/{paddingMode}");
             cipher.Init(true, rsaPublicKeyParams);
-            return cipher.DoFinal(msgBytes);
+            return cipher.DoFinal(messageBytes);
         }
 
         /// <summary>
         /// 使用私钥生成签名。
         /// </summary>
         /// <param name="privateKeyBytes">PKCS#1/PKCS#8 私钥字节数组。</param>
-        /// <param name="msgBytes">待签名的数据字节数组。</param>
+        /// <param name="messageBytes">待签名的数据字节数组。</param>
         /// <param name="digestAlgorithm">签名算法。（默认值：<see cref="DIGEST_ALGORITHM_SHA256"/>）</param>
         /// <returns>签名字节数组。</returns>
-        public static byte[] Sign(byte[] privateKeyBytes, byte[] msgBytes, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
+        public static byte[] Sign(byte[] privateKeyBytes, byte[] messageBytes, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
         {
             if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
-            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
 
             RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyToParameters(privateKeyBytes);
-            return Sign(rsaPrivateKeyParams, msgBytes, digestAlgorithm);
+            return Sign(rsaPrivateKeyParams, messageBytes, digestAlgorithm);
         }
 
         /// <summary>
         /// 使用私钥生成签名。
         /// </summary>
         /// <param name="privateKeyPem">PKCS#1/PKCS#8 私钥（PEM 格式）。</param>
-        /// <param name="message">待签名的数据。</param>
+        /// <param name="messageData">待签名的数据。</param>
         /// <param name="digestAlgorithm">签名算法。（默认值：<see cref="DIGEST_ALGORITHM_SHA256"/>）</param>
         /// <returns>经过 Base64 编码的签名。</returns>
-        public static EncodedString Sign(string privateKeyPem, string message, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
+        public static EncodedString Sign(string privateKeyPem, string messageData, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
         {
             if (privateKeyPem is null) throw new ArgumentNullException(nameof(privateKeyPem));
-            if (message is null) throw new ArgumentNullException(nameof(message));
+            if (messageData is null) throw new ArgumentNullException(nameof(messageData));
 
             byte[] privateKeyBytes = ConvertPrivateKeyPemToByteArray(privateKeyPem);
-            byte[] msgBytes = EncodedString.FromLiteralString(message);
-            byte[] signBytes = Sign(privateKeyBytes, msgBytes, digestAlgorithm);
+            byte[] messageBytes = EncodedString.FromLiteralString(messageData);
+            byte[] signBytes = Sign(privateKeyBytes, messageBytes, digestAlgorithm);
             return EncodedString.ToBase64String(signBytes);
         }
 
@@ -179,38 +179,38 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
         /// 使用公钥验证签名。
         /// </summary>
         /// <param name="publicKeyBytes">PKCS#1/PKCS#8 公钥字节数组。</param>
-        /// <param name="msgBytes">待验证的数据字节数组。</param>
+        /// <param name="messageBytes">待验证的数据字节数组。</param>
         /// <param name="signBytes">签名字节数组。</param>
         /// <param name="digestAlgorithm">签名算法。（默认值：<see cref="DIGEST_ALGORITHM_SHA256"/>）</param>
         /// <returns>验证结果。</returns>
-        public static bool Verify(byte[] publicKeyBytes, byte[] msgBytes, byte[] signBytes, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
+        public static bool Verify(byte[] publicKeyBytes, byte[] messageBytes, byte[] signBytes, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
         {
             if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
-            if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
+            if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
             if (signBytes is null) throw new ArgumentNullException(nameof(signBytes));
 
             RsaKeyParameters rsaPublicKeyParams = ParsePublicKeyToParameters(publicKeyBytes);
-            return Verify(rsaPublicKeyParams, msgBytes, signBytes, digestAlgorithm);
+            return Verify(rsaPublicKeyParams, messageBytes, signBytes, digestAlgorithm);
         }
 
         /// <summary>
         /// 使用公钥验证签名。
         /// </summary>
         /// <param name="publicKeyPem">PKCS#1/PKCS#8 公钥（PEM 格式）。</param>
-        /// <param name="message">待验证的数据。</param>
+        /// <param name="messageData">待验证的数据。</param>
         /// <param name="encodingSignature">经过编码后的（通常为 Base64）签名。</param>
         /// <param name="digestAlgorithm">签名算法。（默认值：<see cref="DIGEST_ALGORITHM_SHA256"/>）</param>
         /// <returns>验证结果。</returns>
-        public static bool Verify(string publicKeyPem, string message, EncodedString encodingSignature, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
+        public static bool Verify(string publicKeyPem, string messageData, EncodedString encodingSignature, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
         {
             if (publicKeyPem is null) throw new ArgumentNullException(nameof(publicKeyPem));
-            if (message is null) throw new ArgumentNullException(nameof(message));
+            if (messageData is null) throw new ArgumentNullException(nameof(messageData));
             if (encodingSignature.Value is null) throw new ArgumentNullException(nameof(encodingSignature));
 
             byte[] publicKeyBytes = ConvertPublicKeyPemToByteArray(publicKeyPem);
-            byte[] msgBytes = EncodedString.FromLiteralString(message);
+            byte[] messageBytes = EncodedString.FromLiteralString(messageData);
             byte[] signBytes = EncodedString.FromString(encodingSignature, fallbackEncodingKind: EncodingKinds.Base64);
-            return Verify(publicKeyBytes, msgBytes, signBytes, digestAlgorithm);
+            return Verify(publicKeyBytes, messageBytes, signBytes, digestAlgorithm);
         }
 
         /// <summary>
