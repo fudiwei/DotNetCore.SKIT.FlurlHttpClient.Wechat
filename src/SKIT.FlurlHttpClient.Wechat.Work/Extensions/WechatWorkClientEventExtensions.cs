@@ -3,6 +3,8 @@ using System.Xml.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     /// <summary>
     /// 为 <see cref="WechatWorkClient"/> 提供回调通知事件的扩展方法。
     /// </summary>
@@ -171,13 +173,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="webhookSignature">微信回调通知中的 "msg_signature" 查询参数。</param>
         /// <param name="replyEcho"></param>
         /// <returns></returns>
-        public static bool VerifyEventSignatureForEcho(this WechatWorkClient client, string webhookTimestamp, string webhookNonce, string webhookEcho, string webhookSignature, out string? replyEcho)
+        public static ErroredResult VerifyEventSignatureForEcho(this WechatWorkClient client, string webhookTimestamp, string webhookNonce, string webhookEcho, string webhookSignature, out string? replyEcho)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
+            ErroredResult result;
+
             try
             {
-                bool ret = Utilities.WxMsgCryptor.VerifySignature(
+                bool valid = Utilities.WxMsgCryptor.VerifySignature(
                     sToken: client.Credentials.PushToken!,
                     sTimestamp: webhookTimestamp,
                     sNonce: webhookNonce,
@@ -185,16 +189,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                     sMsgSign: webhookSignature
                 );
 
-                if (ret)
+                if (valid)
                 {
                     replyEcho = Utilities.WxMsgCryptor.AESDecrypt(cipherText: webhookEcho, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
-                    return true;
+                    result = ErroredResult.Ok();
+                }
+                else
+                {
+                    replyEcho = null;
+                    result = ErroredResult.Fail(new Exception($"Signature does not match. Maybe \"{webhookSignature}\" is an illegal signature."));
                 }
             }
-            catch { }
+            catch (Exception ex)
+            {
+                replyEcho = null;
+                result = ErroredResult.Fail(ex);
+            }
 
-            replyEcho = null;
-            return false;
+            return result;
         }
 
         /// <summary>
@@ -209,25 +221,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="webhookJson">微信回调通知中请求正文（JSON 格式）。</param>
         /// <param name="webhookSignature">微信回调通知中的 "msg_signature" 查询参数。</param>
         /// <returns></returns>
-        public static bool VerifyEventSignatureFromJson(this WechatWorkClient client, string webhookTimestamp, string webhookNonce, string webhookJson, string webhookSignature)
+        public static ErroredResult VerifyEventSignatureFromJson(this WechatWorkClient client, string webhookTimestamp, string webhookNonce, string webhookJson, string webhookSignature)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
+            ErroredResult result;
+
             try
             {
-                var encryptedEvent = client.JsonSerializer.Deserialize<InnerEncryptedEvent>(webhookJson);
-                return Utilities.WxMsgCryptor.VerifySignature(
+                InnerEncryptedEvent encryptedEvent = client.JsonSerializer.Deserialize<InnerEncryptedEvent>(webhookJson);
+                bool valid = Utilities.WxMsgCryptor.VerifySignature(
                     sToken: client.Credentials.PushToken!,
                     sTimestamp: webhookTimestamp,
                     sNonce: webhookNonce,
                     sMsgEncrypt: encryptedEvent.EncryptedData,
                     sMsgSign: webhookSignature
                 );
+
+                if (valid)
+                    result = ErroredResult.Ok();
+                else
+                    result = ErroredResult.Fail(new Exception($"Signature does not match. Maybe \"{webhookSignature}\" is an illegal signature."));
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                result = ErroredResult.Fail(ex);
             }
+
+            return result;
         }
 
         /// <summary>
@@ -242,27 +263,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="webhookXml">微信回调通知中请求正文（XML 格式）。</param>
         /// <param name="webhookSignature">微信回调通知中的 "msg_signature" 查询参数。</param>
         /// <returns></returns>
-        public static bool VerifyEventSignatureFromXml(this WechatWorkClient client, string webhookTimestamp, string webhookNonce, string webhookXml, string webhookSignature)
+        public static ErroredResult VerifyEventSignatureFromXml(this WechatWorkClient client, string webhookTimestamp, string webhookNonce, string webhookXml, string webhookSignature)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
+
+            ErroredResult result;
 
             try
             {
                 XDocument xDoc = XDocument.Parse(webhookXml);
                 string? msgEncrypt = xDoc.Root?.Element("Encrypt")?.Value;
 
-                return Utilities.WxMsgCryptor.VerifySignature(
+                bool valid = Utilities.WxMsgCryptor.VerifySignature(
                     sToken: client.Credentials.PushToken!,
                     sTimestamp: webhookTimestamp,
                     sNonce: webhookNonce,
                     sMsgEncrypt: msgEncrypt!,
                     sMsgSign: webhookSignature
                 );
+
+                if (valid)
+                    result = ErroredResult.Ok();
+                else
+                    result = ErroredResult.Fail(new Exception($"Signature does not match. Maybe \"{webhookSignature}\" is an illegal signature."));
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                result = ErroredResult.Fail(ex);
             }
+
+            return result;
         }
     }
 
