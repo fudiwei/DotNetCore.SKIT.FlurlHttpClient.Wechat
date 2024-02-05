@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "papay", "preentrustweb");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayPreEntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayPreEntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "papay", "h5entrustweb");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayH5EntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayH5EntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "contractorder");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.CreateContractOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreateContractOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "pappayapply");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.ApplyPAPPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.ApplyPAPPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "papay", "deletecontract");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.DeletePAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.DeletePAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -144,7 +144,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "papay", "querycontract");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.GetPAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetPAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

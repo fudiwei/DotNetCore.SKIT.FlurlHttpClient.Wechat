@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "payments", "app-pay");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentAppPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentAppPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "payments", "app-registering-pay");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentAppRegisteringPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentAppRegisteringPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "payments", "qrcode-pay");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentQrcodePayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentQrcodePayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "payments", "h5-pay");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentH5PayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentH5PayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "payments", "mp-pay");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentMiniProgramPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentMiniProgramPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "payments", request.PaymentId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPaymentByPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPaymentByPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -166,7 +166,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "payments", "out-payment-id", request.OutPaymentId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPaymentByOutPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPaymentByOutPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -191,7 +191,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "payments", request.PaymentId, "close");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ClosePaymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ClosePaymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -216,7 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "redirects");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentRedirectLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePaymentRedirectLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

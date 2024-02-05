@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "applyment", "micro", "modifyarchives");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.ModifyMicroMerchantArchivesResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.ModifyMicroMerchantArchivesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "applyment", "micro", "modifycontactinfo");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.ModifyMicroMerchantContactInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.ModifyMicroMerchantContactInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -115,8 +115,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                     httpContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
             }
 
-            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken);
-            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken);
+            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
+            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -137,15 +137,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 flurlRequest.Verb == HttpMethod.Head ||
                 flurlRequest.Verb == HttpMethod.Options;
             using IFlurlResponse flurlResponse = isSimpleRequest ?
-                await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken) :
-                await base.SendFlurlRequestAsJsonAsync(flurlRequest, data, cancellationToken);
-            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken);
+                await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false) :
+                await base.SendFlurlRequestAsJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
+            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
         }
 
         private new async Task<TResponse> WrapFlurlResponseAsJsonAsync<TResponse>(IFlurlResponse flurlResponse, CancellationToken cancellationToken = default)
             where TResponse : WechatTenpayBusinessResponse, new()
         {
-            TResponse result = await base.WrapFlurlResponseAsJsonAsync<TResponse>(flurlResponse, cancellationToken);
+            TResponse result = await base.WrapFlurlResponseAsJsonAsync<TResponse>(flurlResponse, cancellationToken).ConfigureAwait(false);
 
             string? strEncryption = flurlResponse.Headers.FirstOrDefault("TBEP-Encrypt");
             if (!string.IsNullOrEmpty(strEncryption))

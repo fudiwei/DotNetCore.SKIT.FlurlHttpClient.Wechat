@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "images", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsync<Models.ImagesAddResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.ImagesAddResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Page is not null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ImagesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ImagesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

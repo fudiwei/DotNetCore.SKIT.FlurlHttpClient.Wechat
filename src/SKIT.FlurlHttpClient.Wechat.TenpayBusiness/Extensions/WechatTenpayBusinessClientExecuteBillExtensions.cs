@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "bill-downloads");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "bill-downloads", "trans");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetBillTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBillTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 .CreateFlurlRequest(request, HttpMethod.Get, request.DownloadUrl)
                 .WithUrl(request.DownloadUrl);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.DownloadBillFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DownloadBillFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

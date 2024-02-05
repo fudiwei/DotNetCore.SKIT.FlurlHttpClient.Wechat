@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "papay", "partner", "preentrustweb");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayPartnerPreEntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayPartnerPreEntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 .SetQueryParam("outerid", request.OuterId)
                 .SetQueryParam("return_appid", request.ReturnAppId);
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayPartnerH5EntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePAPPayPartnerH5EntrustWebResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "pappayapply");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.ApplyPAPPayPartnerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.ApplyPAPPayPartnerResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "papay", "partner", "querycontract");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.GetPAPPayPartnerContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetPAPPayPartnerContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "promotion", "transfers");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePayMarketingTransfersPromotionTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePayMarketingTransfersPromotionTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "gettransferinfo");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.GetPayMarketingTransfersTransferInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetPayMarketingTransfersTransferInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         #region WeWork
@@ -108,7 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "promotion", "paywwsptrans2pocket");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePayMarketingTransfersPromotionWeWorkTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.CreatePayMarketingTransfersPromotionWeWorkTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

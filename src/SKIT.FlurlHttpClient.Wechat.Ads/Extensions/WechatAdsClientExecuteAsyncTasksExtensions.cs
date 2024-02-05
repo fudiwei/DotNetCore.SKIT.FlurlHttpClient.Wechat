@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "async_tasks", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTasksAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTasksAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Page is not null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTasksGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTasksGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         #region Files
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .SetQueryParam("task_id", request.TaskId)
                 .SetQueryParam("file_id", request.FileId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTaskFilesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTaskFilesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

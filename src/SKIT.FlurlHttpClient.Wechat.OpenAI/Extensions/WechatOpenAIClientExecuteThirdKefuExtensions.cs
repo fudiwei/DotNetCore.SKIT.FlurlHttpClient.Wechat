@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "sendmsg", client.Credentials.Token!);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.SendMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SendMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "kefustate", "get", client.Credentials.Token!);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.KefuStateGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.KefuStateGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "kefustate", "change", client.Credentials.Token!);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.KefuStateChangeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.KefuStateChangeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

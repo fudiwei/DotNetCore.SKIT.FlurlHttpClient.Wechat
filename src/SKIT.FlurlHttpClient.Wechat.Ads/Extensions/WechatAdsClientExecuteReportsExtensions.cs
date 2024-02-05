@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Page is not null)
                 flurlReq.SetQueryParam("page", request.Page.Value);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.DailyReportsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.DailyReportsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request.Filters is not null && request.Filters.Any())
                 flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.RealtimeCostGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.RealtimeCostGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

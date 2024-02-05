@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 .CreateFlurlRequest(request, HttpMethod.Post, "risk", "getpublickey")
                 .WithUrl("https://fraud.mch.weixin.qq.com/risk/getpublickey");
 
-            return await client.SendFlurlRequestAsXmlAsync<Models.GetRiskPublicKeyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetRiskPublicKeyResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

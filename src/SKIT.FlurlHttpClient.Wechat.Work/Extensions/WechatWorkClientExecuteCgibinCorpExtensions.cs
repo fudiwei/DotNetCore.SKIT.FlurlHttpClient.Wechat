@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             if (request.SizeType is not null)
                 flurlReq.SetQueryParam("size_type", request.SizeType.Value);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCorpGetJoinQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCorpGetJoinQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "corp", "getopenapprovaldata")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCorpGetOpenApprovalDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCorpGetOpenApprovalDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "corp", "apply_mass_call_ticket")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCorpApplyMassCallTicketResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCorpApplyMassCallTicketResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

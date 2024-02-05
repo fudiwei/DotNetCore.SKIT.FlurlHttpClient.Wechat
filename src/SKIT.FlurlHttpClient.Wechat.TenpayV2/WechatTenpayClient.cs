@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading;
@@ -107,8 +106,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         {
             if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
 
-            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken);
-            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken);
+            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
+            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -130,8 +129,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 flurlRequest.Verb == HttpMethod.Options;
             if (isSimpleRequest)
             {
-                using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken);
-                return await WrapFlurlResponseAsXmlAsync<T>(flurlResponse, cancellationToken);
+                using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false);
+                return await WrapFlurlResponseAsXmlAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
             }
             else
             {
@@ -151,8 +150,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
                 try
                 {
-                    using IFlurlResponse flurlResponse = await SendFlurlRequestAsync(flurlRequest, httpContent: httpContent, cancellationToken);
-                    return await WrapFlurlResponseAsXmlAsync<T>(flurlResponse, cancellationToken);
+                    using IFlurlResponse flurlResponse = await SendFlurlRequestAsync(flurlRequest, httpContent: httpContent, cancellationToken).ConfigureAwait(false);
+                    return await WrapFlurlResponseAsXmlAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
                 }
                 catch (OperationCanceledException)
                 {
@@ -161,10 +160,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 catch (CommonException)
                 {
                     throw;
-                }
-                catch (FlurlHttpException ex)
-                {
-                    throw new CommonHttpException(ex.Message, ex);
                 }
                 catch (Exception ex)
                 {
@@ -180,7 +175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         private async Task<TResponse> WrapFlurlResponseAsXmlAsync<TResponse>(IFlurlResponse flurlResponse, CancellationToken cancellationToken = default)
             where TResponse : WechatTenpayResponse, new()
         {
-            var tmp = await WrapFlurlResponseAsync<TResponse>(flurlResponse, cancellationToken);
+            var tmp = await WrapFlurlResponseAsync<TResponse>(flurlResponse, cancellationToken).ConfigureAwait(false);
             var tmpBytes = tmp.GetRawBytes();
 
             var result = default(TResponse);

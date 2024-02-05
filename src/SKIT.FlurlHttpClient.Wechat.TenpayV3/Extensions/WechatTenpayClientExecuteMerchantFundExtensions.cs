@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "merchant", "fund", "balance", request.AccountType);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "merchant", "fund", "dayendbalance", request.AccountType)
                 .SetQueryParam("date", request.DateString);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundDayendBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundDayendBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.QueryMerchantFundMerchantIncomeRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryMerchantFundMerchantIncomeRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.Offset is not null)
                 flurlReq.SetQueryParam("offset", request.Offset);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.QueryMerchantFundPartnerIncomeRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryMerchantFundPartnerIncomeRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -138,7 +138,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "merchant", "fund", "withdraw");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantFundWithdrawResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantFundWithdrawResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "merchant", "fund", "withdraw", "out-request-no", request.OutRequestNumber);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundWithdrawByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundWithdrawByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -182,7 +182,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "merchant", "fund", "withdraw", request.WithdrawId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundWithdrawByWithdrawIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundWithdrawByWithdrawIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -209,7 +209,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.TarType is not null)
                 flurlReq.SetQueryParam("tar_type", request.TarType);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundWithdrawBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundWithdrawBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

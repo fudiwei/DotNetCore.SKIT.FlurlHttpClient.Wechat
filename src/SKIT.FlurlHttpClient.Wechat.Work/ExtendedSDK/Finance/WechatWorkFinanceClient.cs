@@ -407,14 +407,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                         BufferIndex = nextBufferIndex,
                         _InternalTimeout = request._InternalTimeout
                     };
-                    var resBuffer = await ExecuteGetMediaFileBufferAsync(reqBuffer, cancellationToken);
+                    var resBuffer = await ExecuteGetMediaFileBufferAsync(reqBuffer, cancellationToken).ConfigureAwait(false);
                     response.ReturnCode = resBuffer.ReturnCode;
 
                     if (resBuffer.IsSuccessful())
                     {
                         retryCount = 0;
                         nextBufferIndex = resBuffer.NextBufferIndex;
-                        await stream.WriteAsync(resBuffer.FileBufferBytes, 0, resBuffer.FileBufferBytes.Length, cancellationToken);
+                        await stream.WriteAsync(resBuffer.FileBufferBytes, 0, resBuffer.FileBufferBytes.Length, cancellationToken).ConfigureAwait(false);
 
                         if (resBuffer.IsFinished)
                             break;
@@ -426,7 +426,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                             10003 == resBuffer.ReturnCode)
                         {
                             // 根据官方建议，这三种错误代码需要重试
-                            await Task.Delay(ATTAMPT_INTERVAL);
+                            await Task.Delay(ATTAMPT_INTERVAL).ConfigureAwait(false);
                             retryCount++;
                             continue;
                         }

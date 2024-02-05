@@ -7,6 +7,8 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
 {
+    using SKIT.FlurlHttpClient.Internal;
+
     internal class WechatTenpayRequestSigningInterceptor : HttpInterceptor
     {
         private readonly string _scheme;
@@ -39,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                 var httpContent = formdataContent.SingleOrDefault(e => Constants.FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
                 if (httpContent is not null)
                 {
-                    body = await httpContent.ReadAsStringAsync();
+                    body = await _AsyncEx.RunTaskWithCancellationTokenAsync(httpContent.ReadAsStringAsync(), cancellationToken).ConfigureAwait(false);
                 }
             }
             else

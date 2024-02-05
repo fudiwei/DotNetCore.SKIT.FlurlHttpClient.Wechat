@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "file-uploads");
 
             using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
-            return await client.SendFlurlRequestAsync<Models.UploadFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.UploadFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createenv")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "modifyenv")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBModifyEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBModifyEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "describeenvs")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDescribeEnvironmentsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDescribeEnvironmentsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchshareenv")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchShareEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchShareEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchgetenvid")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchGetEnvironmentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchGetEnvironmentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -149,7 +149,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchuploadscf")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchUploadSCFResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchUploadSCFResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchuploadscfcode")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchUploadSCFCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchUploadSCFCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -195,7 +195,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "updatescfconfig")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBUploadSCFConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBUploadSCFConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -218,7 +218,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "deletescf")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteSCFConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteSCFConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -241,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "getscflist")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetSCFListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetSCFListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -264,7 +264,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "gettriggers")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetTriggersResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetTriggersResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -287,7 +287,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchupdatetriggers")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchUpdateTriggersResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchUpdateTriggersResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -314,7 +314,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("name", request.FunctionName);
 
             using var httpContent = new StringContent(request.Data ?? string.Empty, Encoding.UTF8);
-            return await client.SendFlurlRequestAsync<Models.ComponentTCBInvokeCloudFunctionResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.ComponentTCBInvokeCloudFunctionResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -339,7 +339,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "opencontainerservice")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBOpenContainerServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBOpenContainerServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -362,7 +362,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "tcb", "usecloudaccesstoken")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBUseCloudAccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBUseCloudAccessTokenResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -385,7 +385,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createcontainerservice")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateContainerServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateContainerServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -408,7 +408,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "getcslist")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetContainerServiceListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetContainerServiceListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -431,7 +431,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "delcontainerservice")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteContainerServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteContainerServiceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -454,7 +454,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createcsversion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -477,7 +477,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchcreatecsversion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchCreateContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchCreateContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -500,7 +500,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "delcsversion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -523,7 +523,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchdelcsversion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchDeleteContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchDeleteContainerServiceVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -546,7 +546,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "getcsversionlist")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetContainerServiceVersionListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetContainerServiceVersionListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -569,7 +569,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "getcsversiondetail")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetContainerServiceVersionDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetContainerServiceVersionDetailResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -592,7 +592,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "setcsversionconfig")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBSetContainerServiceVersionConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBSetContainerServiceVersionConfigResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -615,7 +615,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "setcspropotion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBSetContainerServicePropotionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBSetContainerServicePropotionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -638,7 +638,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchsetcspropotion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchSetContainerServicePropotionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchSetContainerServicePropotionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -663,7 +663,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "uploadfile")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBUploadFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBUploadFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -686,7 +686,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchdownloadfile")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchDownloadFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchDownloadFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -709,7 +709,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "batchdeletefile")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchDeleteFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBBatchDeleteFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -732,7 +732,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "getbucket")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetBucketResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBGetBucketResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -757,7 +757,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createstaticstore")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateStaticStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateStaticStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -780,7 +780,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "describestaticstore")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDescribeStaticStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDescribeStaticStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -803,7 +803,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "staticfilelist")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBStaticFileListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBStaticFileListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -826,7 +826,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "staticuploadfile")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBStaticUploadFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBStaticUploadFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -851,7 +851,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "dbcollection")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbCollectionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbCollectionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -874,7 +874,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "dbrecord")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -897,7 +897,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "dbindex")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbIndexResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbIndexResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -920,7 +920,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "dbimport")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbImportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbImportResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -943,7 +943,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "dbexport")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbExportResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbExportResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -966,7 +966,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "dbmigrationstate")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbMigrationStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbMigrationStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -989,7 +989,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "dbaggregate")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbAggregateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbAggregateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1012,7 +1012,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "dbgetacl")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbGetACLResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbGetACLResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1035,7 +1035,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "dbmodifyacl")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbModifyACLResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDbModifyACLResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -1060,7 +1060,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "describecloudbaserunenvs")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDescribeCloudBaseRunEnvironmentsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDescribeCloudBaseRunEnvironmentsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1083,7 +1083,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createcloudbaserunenv")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateCloudBaseRunEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateCloudBaseRunEnvironmentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -1108,7 +1108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "establishcloudbaserunserver")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBEstablishCloudBaseRunServerResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBEstablishCloudBaseRunServerResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1131,7 +1131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createcloudbaserunserverversion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateCloudBaseRunServerVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateCloudBaseRunServerVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1154,7 +1154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "rollupdatecloudbaserunserverversion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBRollUpdateCloudBaseRunServerVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBRollUpdateCloudBaseRunServerVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1177,7 +1177,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "deletecloudbaserunserverversion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteCloudBaseRunServerVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBDeleteCloudBaseRunServerVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1200,7 +1200,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "releasecloudbaserunversion")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBReleaseCloudBaseRunVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBReleaseCloudBaseRunVersionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -1223,7 +1223,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "componenttcb", "createcloudbaserunresauth")
                 .SetQueryParam("access_token", request.ComponentAccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateCloudBaseRunResauthResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ComponentTCBCreateCloudBaseRunResauthResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

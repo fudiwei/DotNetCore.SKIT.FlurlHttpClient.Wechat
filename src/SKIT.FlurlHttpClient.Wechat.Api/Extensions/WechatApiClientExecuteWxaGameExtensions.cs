@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("signature", request.Signature)
                 .SetQueryParam("pay_sig", request.PaySign);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGameGetBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGameGetBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -117,7 +117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("signature", request.Signature)
                 .SetQueryParam("pay_sig", request.PaySign);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGamePayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGamePayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("signature", request.Signature)
                 .SetQueryParam("pay_sig", request.PaySign);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGameCancelPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGameCancelPayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -173,7 +173,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("signature", request.Signature)
                 .SetQueryParam("pay_sig", request.PaySign);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGamePresentResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGamePresentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

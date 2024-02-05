@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "getbindlink", client.Credentials.Token!);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetBindLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBindLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "getbindlist", client.Credentials.Token!);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetBindListResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetBindListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "unbindmp", client.Credentials.Token!);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.UnbindMpResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnbindMpResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "geth5link", client.Credentials.Token!);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetH5LinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetH5LinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -139,7 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
             fileContent.Headers.ContentLength = request.FileBytes?.Length;
 
-            return await client.SendFlurlRequestAsync<Models.AssetsUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.AssetsUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

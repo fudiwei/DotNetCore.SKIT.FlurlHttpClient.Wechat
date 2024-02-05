@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateRequest(request, HttpMethod.Post, "estimation", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.EstimationGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.EstimationGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
