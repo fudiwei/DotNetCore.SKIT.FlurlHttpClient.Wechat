@@ -75,16 +75,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
                 case ALGORITHM_TYPE_RSA:
                     {
                         SerialNumber = Utilities.RSAUtility.ExportSerialNumberFromCertificate(certificate).ToUpper();
-                        EffectiveTime = Utilities.RSAUtility.ExportEffectiveTimeFromCertificate(certificate);
-                        ExpireTime = Utilities.RSAUtility.ExportExpireTimeFromCertificate(certificate);
+                        EffectiveTime = Utilities.RSAUtility.ExportValidFromDateFromCertificate(certificate);
+                        ExpireTime = Utilities.RSAUtility.ExportValidToDateFromCertificate(certificate);
                     }
                     break;
 
                 case ALGORITHM_TYPE_SM2:
                     {
                         SerialNumber = Utilities.SM2Utility.ExportSerialNumberFromCertificate(certificate).ToUpper();
-                        EffectiveTime = Utilities.SM2Utility.ExportEffectiveTimeFromCertificate(certificate);
-                        ExpireTime = Utilities.SM2Utility.ExportExpireTimeFromCertificate(certificate);
+                        EffectiveTime = Utilities.SM2Utility.ExportValidFromDateFromCertificate(certificate);
+                        ExpireTime = Utilities.SM2Utility.ExportValidToDateFromCertificate(certificate);
                     }
                     break;
 

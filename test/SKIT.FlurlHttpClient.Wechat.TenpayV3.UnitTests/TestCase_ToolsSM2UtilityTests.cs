@@ -4,6 +4,8 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     public class TestCase_ToolsSM2UtilityTests
     {
         // 此处测试的 SM2 证书/公钥/私钥是自签名生成的，仅供执行 SM2 相关的单元测试，不能用于调用微信支付 API。
@@ -38,19 +40,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.Equal(expectedSerialNumber, actualSerialNumber, ignoreCase: true);
         }
 
-        [Fact(DisplayName = "测试用例：从 SM2 证书中导出证书颁发时间")]
-        public void TestSM2ExportEffectiveTimeFromCertificate()
+        [Fact(DisplayName = "测试用例：从 SM2 证书中导出证书有效期的开始时间")]
+        public void TestSM2ExportValidFromDateFromCertificate()
         {
-            DateTimeOffset actualEffectiveTime = Utilities.SM2Utility.ExportEffectiveTimeFromCertificate(SM2_PEM_CERTIFICATE);
+            DateTimeOffset actualEffectiveTime = Utilities.SM2Utility.ExportValidFromDateFromCertificate(SM2_PEM_CERTIFICATE);
             DateTimeOffset expectedEffectiveTime = DateTimeOffset.Parse(SM2_CERT_START_DATE);
 
             Assert.Equal(expectedEffectiveTime, actualEffectiveTime);
         }
 
-        [Fact(DisplayName = "测试用例：从 SM2 证书中导出证书过期时间")]
-        public void TestSM2ExportExpireTimeFromCertificate()
+        [Fact(DisplayName = "测试用例：从 SM2 证书中导出证书有效期的结束时间")]
+        public void TestSM2ExportValidToDateFromCertificate()
         {
-            DateTimeOffset actualExpireTime = Utilities.SM2Utility.ExportExpireTimeFromCertificate(SM2_PEM_CERTIFICATE);
+            DateTimeOffset actualExpireTime = Utilities.SM2Utility.ExportValidToDateFromCertificate(SM2_PEM_CERTIFICATE);
             DateTimeOffset expectedExpireTime = DateTimeOffset.Parse(SM2_CERT_END_DATE);
 
             Assert.Equal(expectedExpireTime, actualExpireTime);
@@ -76,12 +78,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
         public void TestSM2SignatureSM2WithSM3Sign()
         {
             string msgText = "SM2WithSM3SignTest";
-            string actualSignByPrivateKey = Utilities.SM2Utility.SignWithSM3(SM2_PEM_PRIVATE_KEY, msgText);
-            string actualSignByECPrivateKey = Convert.ToBase64String(Utilities.SM2Utility.SignWithSM3ByECPrivateKey(SM2_HEX_EC_PRIVATE_KEY, Encoding.UTF8.GetBytes(msgText)));
+            string actualSignByPrivateKey = Utilities.SM2Utility.SignWithSM3(SM2_PEM_PRIVATE_KEY, msgText)!;
+            string actualSignByECPrivateKey = Convert.ToBase64String(Utilities.SM2Utility.SignWithSM3ByECPrivateKey((EncodedString)SM2_HEX_EC_PRIVATE_KEY, Encoding.UTF8.GetBytes(msgText)));
 
             Assert.NotNull(actualSignByPrivateKey);
             Assert.NotNull(actualSignByECPrivateKey);
-            Assert.True(Utilities.SM2Utility.VerifyWithSM3(SM2_PEM_PUBLIC_KEY, msgText, actualSignByPrivateKey));
+            Assert.True(Utilities.SM2Utility.VerifyWithSM3(SM2_PEM_PUBLIC_KEY, msgText, (EncodedString)actualSignByPrivateKey));
         }
 
         [Fact(DisplayName = "测试用例：SM2WithSM3 签名验证")]
@@ -90,36 +92,36 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             string msgText = "SM2WithSM3SignTest";
             string signText = "MEUCIQCDzgpF2Z//sbFzASVQnwme2phm4ho5cr8/1Pz0+MONTwIgeQvhoWOTk1rngYRSlHeqqwtNFVD/vf3qtgl9mecvERI=";
             
-            Assert.True(Utilities.SM2Utility.VerifyWithSM3(SM2_PEM_PUBLIC_KEY, msgText, signText));
-            Assert.False(Utilities.SM2Utility.VerifyWithSM3(SM2_PEM_PUBLIC_KEY, msgText, "FAKE SIGN"));
-            Assert.True(Utilities.SM2Utility.VerifyWithSM3ByCertificate(SM2_PEM_CERTIFICATE, msgText, signText));
-            Assert.False(Utilities.SM2Utility.VerifyWithSM3ByCertificate(SM2_PEM_CERTIFICATE, msgText, "FAKE SIGN"));
-            Assert.True(Utilities.SM2Utility.VerifyWithSM3ByECPublicKey(SM2_HEX_EC_PUBLIC_KEY, Encoding.UTF8.GetBytes(msgText), Convert.FromBase64String("MEUCIQCDzgpF2Z//sbFzASVQnwme2phm4ho5cr8/1Pz0+MONTwIgeQvhoWOTk1rngYRSlHeqqwtNFVD/vf3qtgl9mecvERI=")));
-            Assert.False(Utilities.SM2Utility.VerifyWithSM3ByECPublicKey(SM2_HEX_EC_PUBLIC_KEY, Encoding.UTF8.GetBytes(msgText), Encoding.UTF8.GetBytes("FAKE SIGN")));
+            Assert.True(Utilities.SM2Utility.VerifyWithSM3(SM2_PEM_PUBLIC_KEY, msgText, (EncodedString)signText));
+            Assert.False(Utilities.SM2Utility.VerifyWithSM3(SM2_PEM_PUBLIC_KEY, msgText, (EncodedString)"FAKE SIGN"));
+            Assert.True(Utilities.SM2Utility.VerifyWithSM3ByCertificate(SM2_PEM_CERTIFICATE, msgText, (EncodedString)signText));
+            Assert.False(Utilities.SM2Utility.VerifyWithSM3ByCertificate(SM2_PEM_CERTIFICATE, msgText, (EncodedString)"FAKE SIGN"));
+            Assert.True(Utilities.SM2Utility.VerifyWithSM3ByECPublicKey((EncodedString)SM2_HEX_EC_PUBLIC_KEY, Encoding.UTF8.GetBytes(msgText), Convert.FromBase64String("MEUCIQCDzgpF2Z//sbFzASVQnwme2phm4ho5cr8/1Pz0+MONTwIgeQvhoWOTk1rngYRSlHeqqwtNFVD/vf3qtgl9mecvERI=")));
+            Assert.False(Utilities.SM2Utility.VerifyWithSM3ByECPublicKey((EncodedString)SM2_HEX_EC_PUBLIC_KEY, Encoding.UTF8.GetBytes(msgText), Encoding.UTF8.GetBytes("FAKE SIGN")));
         }
 
         [Fact(DisplayName = "测试用例：使用 SM2 公钥加密")]
         public void TestSM2Encrypt()
         {
             string plainText = "SM2EncryptTest";
-            string actualCipherByPublicKey = Utilities.SM2Utility.Encrypt(SM2_PEM_PUBLIC_KEY, plainText);
-            string actualCipherByCertificate = Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plainText);
-            string actualCipherByECPublicKey = Convert.ToBase64String(Utilities.SM2Utility.EncryptByECPublicKey(SM2_HEX_EC_PUBLIC_KEY, Encoding.UTF8.GetBytes(plainText)));
+            string actualCipherByPublicKey = Utilities.SM2Utility.Encrypt(SM2_PEM_PUBLIC_KEY, plainText)!;
+            string actualCipherByCertificate = Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plainText)!;
+            string actualCipherByECPublicKey = Convert.ToBase64String(Utilities.SM2Utility.EncryptByECPublicKey((EncodedString)SM2_HEX_EC_PUBLIC_KEY, Encoding.UTF8.GetBytes(plainText)));
 
             Assert.NotNull(actualCipherByPublicKey);
             Assert.NotNull(actualCipherByCertificate);
             Assert.NotNull(actualCipherByECPublicKey);
-            Assert.Equal(plainText, Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, actualCipherByPublicKey));
-            Assert.Equal(plainText, Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, actualCipherByCertificate));
-            Assert.Equal(plainText, Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, actualCipherByECPublicKey));
+            Assert.Equal(plainText, Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)actualCipherByPublicKey));
+            Assert.Equal(plainText, Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)actualCipherByCertificate));
+            Assert.Equal(plainText, Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)actualCipherByECPublicKey));
         }
 
         [Fact(DisplayName = "测试用例：使用 SM2 私钥解密")]
         public void TestSM2Decrypt()
         {
             string cipherText = "MHYCIGJ7gjFjd6U7kOj63HLbRgPAn6cVf4eDF4emz9oCX5gKAiBAHmgAvH2WU/2+dyqMK7/Q8eD/Q9LhYFV2gqc+fv7EiAQgiHX2wr7GCnBbAsfR3stJ1i/Csc0Mq3RzVd+ZefVlr7gEDvfJIMlMcs4Q2HoMd8Jk";
-            string actualPlainByPrivateKey = Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipherText);
-            string actualPlainByECPrivateKey = Encoding.UTF8.GetString(Utilities.SM2Utility.DecryptByECPrivateKey(SM2_HEX_EC_PRIVATE_KEY, Convert.FromBase64String(cipherText)));
+            string actualPlainByPrivateKey = Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipherText)!;
+            string actualPlainByECPrivateKey = Encoding.UTF8.GetString(Utilities.SM2Utility.DecryptByECPrivateKey((EncodedString)SM2_HEX_EC_PRIVATE_KEY, Convert.FromBase64String(cipherText)));
             string expectedPlain = "SM2DecryptTest";
             Assert.Equal(expectedPlain, actualPlainByPrivateKey);
             Assert.Equal(expectedPlain, actualPlainByECPrivateKey);

@@ -10,6 +10,8 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     public partial class TestCase_RequestEncryptionTests
     {
         // 此处测试的 RSA/SM2 证书/公钥/私钥是自签名生成的，仅供执行 RSA/SM2 相关的单元测试，不能用于调用微信支付 API。
@@ -48,14 +50,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteModifyApplyForSubMerchantSettlementAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -65,14 +67,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteModifyApplyForSubMerchantSettlementAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -137,14 +139,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateApplyForSubjectApplymentAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -154,14 +156,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateApplyForSubjectApplymentAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -256,14 +258,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateApplyForSubMerchantApplymentAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -273,14 +275,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateApplyForSubMerchantApplymentAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -315,14 +317,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateBrandProfitSharingOrderAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -332,14 +334,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateBrandProfitSharingOrderAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -368,14 +370,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteQueryCapitalBanksByBankAccountAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -385,14 +387,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteQueryCapitalBanksByBankAccountAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -424,14 +426,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher, "Pkcs1Padding"));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher, Utilities.RSAUtility.PADDING_MODE_PKCS1)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteVerifyHKCustomsCertificateAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher, "Pkcs1Padding"));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher, Utilities.RSAUtility.PADDING_MODE_PKCS1)!);
                 }
             }
 
@@ -441,14 +443,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteVerifyHKCustomsCertificateAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -537,14 +539,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateEcommerceApplymentAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -554,14 +556,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateEcommerceApplymentAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -596,14 +598,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateEcommerceProfitSharingOrderAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -613,14 +615,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateEcommerceProfitSharingOrderAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -649,14 +651,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteAddEcommerceProfitSharingReceiverAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -666,14 +668,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteAddEcommerceProfitSharingReceiverAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -717,14 +719,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecutePresignEducationSchoolPayContractAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -734,14 +736,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecutePresignEducationSchoolPayContractAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -770,14 +772,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteImportMarketingMemberCardOpenCardPhoneAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -787,14 +789,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteImportMarketingMemberCardOpenCardPhoneAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -826,14 +828,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteUploadMarketingShoppingReceiptAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -844,14 +846,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteUploadMarketingShoppingReceiptAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -898,14 +900,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateMerchantOperateRiskWithdrawlApplyAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -915,14 +917,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateMerchantOperateRiskWithdrawlApplyAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -954,14 +956,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateMerchantRiskManageTradeUnionInformationReportAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -971,14 +973,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateMerchantRiskManageTradeUnionInformationReportAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1016,14 +1018,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher, "Pkcs1Padding"));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher, Utilities.RSAUtility.PADDING_MODE_PKCS1)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteAddHKSubMerchantAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher, "Pkcs1Padding"));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher, Utilities.RSAUtility.PADDING_MODE_PKCS1)!);
                 }
             }
 
@@ -1033,14 +1035,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteAddHKSubMerchantAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1075,14 +1077,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateNewTaxControlFapiaoApplicationAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1092,14 +1094,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateNewTaxControlFapiaoApplicationAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1134,14 +1136,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateNewTaxControlFapiaoApplicationCardAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1151,14 +1153,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateNewTaxControlFapiaoApplicationCardAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1190,14 +1192,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecutePreorderPayrollCardAuthenticationAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1207,14 +1209,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecutePreorderPayrollCardAuthenticationAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1246,14 +1248,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreatePayrollCardTokenAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1263,14 +1265,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreatePayrollCardTokenAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1305,14 +1307,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateProfitSharingOrderAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1322,14 +1324,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var reqB2 = GenerateMockRequestModel();
                     await client.ExecuteCreateProfitSharingOrderAsync(reqB2);
-                    AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1358,14 +1360,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteAddProfitSharingReceiverAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1375,14 +1377,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteAddProfitSharingReceiverAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1414,14 +1416,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var reqA1 = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(reqA1);
-                    AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var reqB1 = GenerateMockRequestModel();
                     await client.ExecuteCreateRefundDomesticAbnormalRefundApplyAsync(reqB1);
-                    AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1431,14 +1433,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var reqA2 = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(reqA2);
-                    AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var reqB2 = GenerateMockRequestModel();
                     await client.ExecuteCreateRefundDomesticAbnormalRefundApplyAsync(reqB2);
-                    AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1470,14 +1472,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var reqA1 = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(reqA1);
-                    AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(reqA1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var reqB1 = GenerateMockRequestModel();
                     await client.ExecuteCreateSmartGuideAsync(reqB1);
-                    AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(reqB1, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1487,14 +1489,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var reqA2 = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(reqA2);
-                    AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(reqA2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var reqB2 = GenerateMockRequestModel();
                     await client.ExecuteCreateSmartGuideAsync(reqB2);
-                    AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(reqB2, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1523,14 +1525,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteQuerySmartGuidesAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1540,14 +1542,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteQuerySmartGuidesAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1579,14 +1581,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteUpdateSmartGuideAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1596,14 +1598,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteUpdateSmartGuideAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1635,14 +1637,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteUpdateTaxiInvoiceDriverAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1652,14 +1654,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteUpdateTaxiInvoiceDriverAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1697,14 +1699,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateTransferBatchAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1714,14 +1716,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecuteCreateTransferBatchAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }
@@ -1759,14 +1761,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecutePreopenVehicleETCAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
 
@@ -1776,14 +1778,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = GenerateMockRequestModel();
                     client.EncryptRequestSensitiveProperty(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
 
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
                     await client.ExecutePreopenVehicleETCAsync(request);
-                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, cipher));
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
         }

@@ -82,29 +82,30 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         case Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1:
                             {
                                 newValue = RSAUtility.EncryptWithECBByCertificate(
-                                    certificate: certificate,
-                                    plainText: oldValue
-                                );
+                                    certificatePem: certificate,
+                                    plainData: oldValue,
+                                    paddingMode: RSAUtility.PADDING_MODE_OAEPWITHSHA1ANDMGF1
+                                )!;
                             }
                             break;
 
                         case Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1:
                             {
                                 newValue = RSAUtility.EncryptWithECBByCertificate(
-                                    certificate: certificate,
-                                    plainText: oldValue,
-                                    paddingMode: "PKCS1PADDING"
-                                );
+                                    certificatePem: certificate,
+                                    plainData: oldValue,
+                                    paddingMode: RSAUtility.PADDING_MODE_PKCS1
+                                )!;
                             }
                             break;
 
                         case Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1:
                             {
                                 newValue = SM2Utility.EncryptByCertificate(
-                                    certificate: certificate,
-                                    plainText: oldValue,
+                                    certificatePem: certificate,
+                                    plainData: oldValue,
                                     asn1Encoding: true
-                                );
+                                )!;
                             }
                             break;
 

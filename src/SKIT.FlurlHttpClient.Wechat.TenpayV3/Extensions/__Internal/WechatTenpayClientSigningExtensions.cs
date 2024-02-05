@@ -2,6 +2,7 @@ using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient.Primitives;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
     internal static class WechatTenpayClientSigningExtensions
@@ -36,10 +37,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         error = null;
                         try
                         {
-                            return Utilities.RSAUtility.VerifyWithSHA256ByCertificate(
-                                certificate: entry.Value.Certificate,
+                            return Utilities.RSAUtility.VerifyByCertificate(
+                                certificatePem: entry.Value.Certificate,
                                 message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
-                                signature: strSignature
+                                encodingSignature: new EncodedString(strSignature, EncodingKinds.Base64)
                             );
                         }
                         catch (Exception ex)
@@ -74,9 +75,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         try
                         {
                             return Utilities.SM2Utility.VerifyWithSM3ByCertificate(
-                                certificate: entry.Value.Certificate,
+                                certificatePem: entry.Value.Certificate,
                                 message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
-                                signature: strSignature
+                                encodingSignature: new EncodedString(strSignature, EncodingKinds.Base64)
                             );
                         }
                         catch (Exception ex)
