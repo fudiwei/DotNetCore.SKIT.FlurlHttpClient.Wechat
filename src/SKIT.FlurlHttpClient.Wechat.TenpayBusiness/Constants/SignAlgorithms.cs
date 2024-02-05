@@ -5,6 +5,6 @@
         /// <summary>
         /// SHA256withRSA。
         /// </summary>
-        public const string SHA245_WITH_RSA = "SHA256withRSA";
+        public const string SHA256_WITH_RSA = "SHA256withRSA";
     }
 }

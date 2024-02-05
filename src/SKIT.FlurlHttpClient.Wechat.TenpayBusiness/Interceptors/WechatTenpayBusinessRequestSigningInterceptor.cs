@@ -7,6 +7,8 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Interceptors
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     internal class WechatTenpayBusinessRequestSigningInterceptor : HttpInterceptor
     {
         private const string HTTP_HEADER_PLATFORM_AUTHORIZATION = HttpHeaders.Authorization;
@@ -64,17 +66,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Interceptors
 
             switch (_signAlg)
             {
-                case Constants.SignAlgorithms.SHA245_WITH_RSA:
+                case Constants.SignAlgorithms.SHA256_WITH_RSA:
                     {
                         try
                         {
-                            signText = Utilities.RSAUtility.SignWithSHA256(_platformCertPk, plainText);
+                            signText = Utilities.RSAUtility.Sign(_platformCertPk, plainText).Value!;
 
                             if (softSignRequired)
                             {
-                                byte[] keyBytes = Convert.FromBase64String(_enterpriseCertPk!);
-                                byte[] msgBytes = Convert.FromBase64String(signText);
-                                softSignText = Convert.ToBase64String(Utilities.RSAUtility.SignWithSHA256(keyBytes, msgBytes));
+                                byte[] keyBytes = EncodedString.FromBase64String(_enterpriseCertPk!);
+                                byte[] msgBytes = EncodedString.FromBase64String(signText);
+                                softSignText = EncodedString.ToBase64String(Utilities.RSAUtility.Sign(keyBytes, msgBytes)).Value!;
                             }
                         }
                         catch (Exception ex)

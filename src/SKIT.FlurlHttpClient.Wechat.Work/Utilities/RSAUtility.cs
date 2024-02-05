@@ -22,25 +22,43 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 
         private static byte[] ConvertPrivateKeyPemToByteArray(string privateKeyPem)
         {
-            using (TextReader textReader = new StringReader(privateKeyPem))
-            using (PemReader pemReader = new PemReader(textReader))
+            if (!privateKeyPem.StartsWith("-----BEGIN PRIVATE KEY-----"))
             {
-                AsymmetricCipherKeyPair cipherKeyPair = (AsymmetricCipherKeyPair)pemReader.ReadObject();
-                using (TextWriter textWriter = new StringWriter())
-                using (PemWriter pemWriter = new PemWriter(textWriter))
+                using (TextReader textReader = new StringReader(privateKeyPem))
+                using (PemReader pemReader = new PemReader(textReader))
                 {
-                    Pkcs8Generator pkcs8 = new Pkcs8Generator(cipherKeyPair.Private);
-                    pemWriter.WriteObject(pkcs8);
-                    pemWriter.Writer.Close();
+                    object pemObject = pemReader.ReadObject();
 
-                    privateKeyPem = textWriter.ToString()!;
-                    privateKeyPem = privateKeyPem
-                        .Replace("-----BEGIN PRIVATE KEY-----", string.Empty)
-                        .Replace("-----END PRIVATE KEY-----", string.Empty);
-                    privateKeyPem = Regex.Replace(privateKeyPem, "\\s+", string.Empty);
-                    return Convert.FromBase64String(privateKeyPem);
+                    if (pemObject is AsymmetricCipherKeyPair)
+                    {
+                        // PKCS#1 格式
+                        AsymmetricCipherKeyPair cipherKeyPair = (AsymmetricCipherKeyPair)pemObject;
+                        using (TextWriter textWriter = new StringWriter())
+                        using (PemWriter pemWriter = new PemWriter(textWriter))
+                        {
+                            Pkcs8Generator pkcs8 = new Pkcs8Generator(cipherKeyPair.Private);
+                            pemWriter.WriteObject(pkcs8);
+                            pemWriter.Writer.Close();
+
+                            privateKeyPem = textWriter.ToString()!;
+                        }
+                    }
+                    else if (pemObject is RsaPrivateCrtKeyParameters)
+                    {
+                        // PKCS#8 格式
+                    }
+                    else
+                    {
+                        throw new NotSupportedException("Private key format is not supported.");
+                    }
                 }
             }
+
+            privateKeyPem = privateKeyPem
+                .Replace("-----BEGIN PRIVATE KEY-----", string.Empty)
+                .Replace("-----END PRIVATE KEY-----", string.Empty);
+            privateKeyPem = Regex.Replace(privateKeyPem, "\\s+", string.Empty);
+            return Convert.FromBase64String(privateKeyPem);
         }
 
         private static byte[] DecryptWithECB(RsaKeyParameters rsaPrivateKeyParams, byte[] cipherBytes, string paddingMode)

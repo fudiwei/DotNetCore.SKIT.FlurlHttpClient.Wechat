@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 webhookNonce: webhookNonce,
                 webhookBody: webhookBody,
                 webhookSignature: webhookSignature,
-                webhookSignatureAlgorithm: Constants.SignAlgorithms.SHA245_WITH_RSA,
+                webhookSignatureAlgorithm: Constants.SignAlgorithms.SHA256_WITH_RSA,
                 webhookSerialNumber: webhookSerialNumber,
                 out _
             );
@@ -112,7 +112,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 webhookNonce: webhookNonce,
                 webhookBody: webhookBody,
                 webhookSignature: webhookSignature,
-                webhookSignatureAlgorithm: Constants.SignAlgorithms.SHA245_WITH_RSA,
+                webhookSignatureAlgorithm: Constants.SignAlgorithms.SHA256_WITH_RSA,
                 webhookSerialNumber: webhookSerialNumber,
                 out error
             );

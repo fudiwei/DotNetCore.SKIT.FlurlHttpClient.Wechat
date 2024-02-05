@@ -1,157 +1,122 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
 using System.Reflection;
+using System.Runtime.CompilerServices;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
 {
-    internal static class ReflectionUtility
+    internal static partial class ReflectionHelper
     {
-        public delegate (bool Modified, string NewValue) ReplacePropertyStringValueReplacementHandler(object target, PropertyInfo currentProp, string oldValue);
-
-        public static void ReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacementHandler replacement)
+        public static void ReplaceObjectStringProperties(object targetObj, ReplaceObjectStringPropertiesReplacementDelegate replacement)
         {
-            InnerReplacePropertyStringValue(ref obj, replacement);
-        }
-
-        private static void InnerReplacePropertyStringValue<T>(ref T obj, ReplacePropertyStringValueReplacementHandler replacement)
-        {
-            if (obj is null) throw new ArgumentNullException(nameof(obj));
+            if (targetObj is null) throw new ArgumentNullException(nameof(targetObj));
             if (replacement is null) throw new ArgumentNullException(nameof(replacement));
 
-            Type objType = obj.GetType();
-            if (!objType.IsClass)
-                throw new NotSupportedException();
-
-            if (objType.IsArray || obj is IList || obj is IDictionary)
-            {
-                InnerReplaceEachCollectionPropertyStringValue(ref obj, objType, replacement, null);
-            }
-            else
-            {
-                foreach (var childProp in objType.GetProperties(BindingFlags.Public | BindingFlags.Instance))
-                {
-                    if (!childProp.CanWrite)
-                        continue;
-
-                    Type propType = childProp.PropertyType;
-                    if (propType == typeof(string))
-                    {
-                        string value = (string)childProp.GetValue(obj, null)!;
-                        if (value is null)
-                            continue;
-
-                        var result = replacement(obj, childProp, value);
-                        if (result.Modified)
-                        {
-                            childProp.SetValue(obj, result.NewValue);
-                        }
-                    }
-                    else if (propType.IsClass)
-                    {
-                        object? value = childProp.GetValue(obj, null);
-                        if (value is null)
-                            continue;
-
-                        InnerReplacePropertyStringValue(ref value, replacement);
-                        childProp.SetValue(obj, value);
-                    }
-                    else
-                    {
-                        object? value = childProp.GetValue(obj, null);
-                        if (value is null)
-                            continue;
-
-                        InnerReplaceEachCollectionPropertyStringValue(ref value, propType, replacement, childProp);
-                    }
-                }
-            }
+            ISet<object> visited = new HashSet<object>(ReferenceEqualityComparer.Instance); // 处理循环引用问题
+            InnerReplaceObjectStringProperties(ref targetObj, null, replacement, visited);
         }
+    }
 
-        private static void InnerReplaceEachCollectionPropertyStringValue<T>(ref T obj, Type objType, ReplacePropertyStringValueReplacementHandler replacement, PropertyInfo? currentProp)
+    partial class ReflectionHelper
+    {
+        public delegate (bool IsModified, string NewValue) ReplaceObjectStringPropertiesReplacementDelegate(object currentObj, PropertyInfo? currentProp, string oldValue);
+
+        private static void InnerReplaceObjectStringProperties(ref object currentObj, PropertyInfo? currentProp, ReplaceObjectStringPropertiesReplacementDelegate replacement, ISet<object> visited)
         {
-            if (objType.IsArray)
-            {
-                var array = (obj as Array)!;
+            if (currentObj is null) throw new ArgumentNullException(nameof(currentObj));
+            if (replacement is null) throw new ArgumentNullException(nameof(replacement));
 
-                for (int i = 0, len = array.Length; i < len; i++)
+            if (!visited.Add(currentObj)) return;
+
+            Type type = currentObj.GetType();
+
+            // 跳过基元类型、枚举类型、抽象或接口类型，及部分 CLR 内置类型
+            if (type.IsPrimitive ||
+                type.IsEnum ||
+                type.IsAbstract ||
+                type.IsInterface ||
+                type == typeof(Guid) ||
+                type == typeof(DateTime) ||
+                type == typeof(DateTimeOffset) ||
+#if NET5_0_OR_GREATER
+                type == typeof(DateOnly) ||
+                type == typeof(TimeOnly) ||
+#endif
+                type == typeof(TimeSpan))
+            {
+                return;
+            }
+
+            // 处理数组类型
+            if (type.IsArray)
+            {
+                Array currentObjAsArray = (Array)currentObj;
+                for (int i = 0; i < currentObjAsArray.Length; i++)
                 {
-                    object? element = array.GetValue(i);
+                    object? element = currentObjAsArray.GetValue(i);
                     if (element is null)
                         continue;
 
                     Type elementType = element.GetType();
                     if (elementType == typeof(string))
                     {
-                        if (currentProp is null)
+                        if (currentObjAsArray.IsReadOnly)
                             continue;
-                        if (!currentProp.CanWrite)
+                        if ((string)element == string.Empty)
                             continue;
 
-                        var oldValue = (string)element!;
-                        var resHandler = replacement(obj!, currentProp, oldValue);
-                        if (resHandler.Modified && !array.IsReadOnly)
-                        {
-                            array.SetValue(resHandler.NewValue, i);
-                        }
-                    }
-                    else if (elementType.IsClass)
-                    {
-                        InnerReplacePropertyStringValue(ref element, replacement);
-                        //if (!array.IsReadOnly)
-                        //{
-                        //    array.SetValue(element, i);
-                        //}
+                        var res = replacement(currentObjAsArray, currentProp, (string)element);
+                        if (res.IsModified)
+                            currentObjAsArray.SetValue(res.NewValue, i);
                     }
                     else
                     {
-                        continue;
+                        InnerReplaceObjectStringProperties(ref element, currentProp, replacement, visited);
                     }
                 }
-            }
-            else if (obj is IList)
-            {
-                var list = (obj as IList)!;
 
-                for (int i = 0, len = list.Count; i < len; i++)
+                return;
+            }
+
+            // 处理列表类型
+            if (currentObj is IList)
+            {
+                IList currentObjAsList = (IList)currentObj;
+                for (int i = 0; i < currentObjAsList.Count; i++)
                 {
-                    object? element = list[i];
+                    object? element = currentObjAsList[i];
                     if (element is null)
                         continue;
 
                     Type elementType = element.GetType();
                     if (elementType == typeof(string))
                     {
-                        if (currentProp is null)
+                        if (currentObjAsList.IsReadOnly)
                             continue;
-                        if (!currentProp.CanWrite)
+                        if ((string)element == string.Empty)
                             continue;
 
-                        var oldValue = (string)element!;
-                        var resHandler = replacement(obj, currentProp, oldValue);
-                        if (resHandler.Modified && !list.IsReadOnly)
-                        {
-                            list[i] = resHandler.NewValue;
-                        }
-                    }
-                    else if (elementType.IsClass)
-                    {
-                        InnerReplacePropertyStringValue(ref element, replacement);
-                        //if (!list.IsReadOnly)
-                        //{
-                        //    list[i] = element;
-                        //}
+                        var res = replacement(currentObjAsList, currentProp, (string)element);
+                        if (res.IsModified)
+                            currentObjAsList[i] = res.NewValue;
                     }
                     else
                     {
-                        continue;
+                        InnerReplaceObjectStringProperties(ref element, currentProp, replacement, visited);
                     }
                 }
-            }
-            else if (obj is IDictionary)
-            {
-                var dict = (obj as IDictionary)!;
 
-                foreach (DictionaryEntry entry in dict)
+                return;
+            }
+
+            // 处理字典类型
+            if (currentObj is IDictionary)
+            {
+                IDictionary currentObjAsDictionary = (IDictionary)currentObj;
+                foreach (DictionaryEntry entry in currentObjAsDictionary)
                 {
                     object? entryValue = entry.Value;
                     if (entryValue is null)
@@ -160,32 +125,137 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Utilities
                     Type entryValueType = entryValue.GetType();
                     if (entryValueType == typeof(string))
                     {
-                        if (currentProp is null)
+                        if (currentObjAsDictionary.IsReadOnly)
                             continue;
-                        if (!currentProp.CanWrite)
+                        if ((string)entryValue == string.Empty)
                             continue;
 
-                        string oldValue = (string)entryValue!;
-                        var resHandler = replacement(obj, currentProp, oldValue);
-                        if (resHandler.Modified && !dict.IsReadOnly)
-                        {
-                            dict[entry.Key] = resHandler.NewValue;
-                        }
-                    }
-                    else if (entryValueType.IsClass)
-                    {
-                        InnerReplacePropertyStringValue(ref entryValue, replacement);
-                        //if (!dict.IsReadOnly)
-                        //{
-                        //    dict[entry.Key] = entryValue;
-                        //}
+                        var res = replacement(currentObjAsDictionary, currentProp, (string)entryValue);
+                        if (res.IsModified)
+                            currentObjAsDictionary[entry.Key] = res.NewValue;
                     }
                     else
                     {
-                        continue;
+                        InnerReplaceObjectStringProperties(ref entryValue, currentProp, replacement, visited);
                     }
+                }
+
+                return;
+            }
+
+            // 遍历属性
+            foreach (PropertyInfo property in GetWritableProperties(type))
+            {
+                Type propertyType = property.PropertyType;
+                if (propertyType == typeof(string))
+                {
+                    string? propertyValue = GetPropertyValue<string>(currentObj, property);
+                    if (propertyValue is null || propertyValue == string.Empty)
+                        continue;
+
+                    var res = replacement(currentObj, property, propertyValue);
+                    if (res.IsModified)
+                        SetPropertyValue(currentObj, property, res.NewValue);
+                }
+                else
+                {
+                    object? propertyValue = GetPropertyValue<object>(currentObj, property);
+                    if (propertyValue is null)
+                        continue;
+
+                    InnerReplaceObjectStringProperties(ref propertyValue, property, replacement, visited);
                 }
             }
         }
+    }
+
+    partial class ReflectionHelper
+    {
+        private static readonly IDictionary<Type, PropertyInfo[]> _propsCache = new Dictionary<Type, PropertyInfo[]>(capacity: 128);
+        private static readonly Hashtable _getterCache = new Hashtable(capacity: 128);
+        private static readonly Hashtable _setterCache = new Hashtable(capacity: 128);
+
+        private static PropertyInfo[] GetWritableProperties(Type type)
+        {
+            if (type is null) throw new ArgumentNullException(nameof(type));
+
+            if (!_propsCache.TryGetValue(type, out PropertyInfo[]? properties))
+            {
+                properties = type.GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                    .Where(e => e.CanRead && e.CanWrite)
+                    .ToArray();
+                _propsCache[type] = properties;
+            }
+
+            return properties;
+        }
+
+        private static T? GetPropertyValue<T>(object targetObj, PropertyInfo property)
+        {
+            // 提供比 PropertyInfo.GetValue() 更快的属性取值方法
+            // 只可针对热点类型使用，否则可能会更慢
+
+            if (targetObj is null) throw new ArgumentNullException(nameof(targetObj));
+            if (property is null) throw new ArgumentNullException(nameof(property));
+
+            if (!property.CanRead)
+                throw new InvalidOperationException($"Property '{property.Name}' of type '{typeof(T).FullName}' does not have a getter.");
+
+            Func<object, T>? getter = _getterCache[property] as Func<object, T>;
+            if (getter is null)
+            {
+                ParameterExpression targetExpr = Expression.Parameter(typeof(object));
+                UnaryExpression castTargetExpr = Expression.Convert(targetExpr, targetObj.GetType());
+                MemberExpression getPropertyValueExpr = Expression.Property(castTargetExpr, property);
+                UnaryExpression castPropertyValueExpr = Expression.Convert(getPropertyValueExpr, typeof(T));
+                getter = Expression.Lambda<Func<object, T>>(castPropertyValueExpr, targetExpr).Compile();
+                _getterCache[property] = getter;
+            }
+
+            return getter.Invoke(targetObj);
+        }
+
+        private static void SetPropertyValue<T>(object targetObj, PropertyInfo property, T? value)
+        {
+            // 提供比 PropertyInfo.SetValue() 更快的属性赋值方法
+            // 只可针对热点类型使用，否则可能会更慢
+
+            if (targetObj is null) throw new ArgumentNullException(nameof(targetObj));
+            if (property is null) throw new ArgumentNullException(nameof(property));
+
+            if (!property.CanWrite)
+                throw new InvalidOperationException($"Property '{property.Name}' of type '{typeof(T).FullName}' does not have a setter.");
+
+            Action<object, T?>? setter = _setterCache[property] as Action<object, T?>;
+            if (setter is null)
+            {
+                ParameterExpression targetExpr = Expression.Parameter(typeof(object));
+                ParameterExpression propertyValueExpr = Expression.Parameter(typeof(T));
+                UnaryExpression castTargetExpr = Expression.Convert(targetExpr, targetObj.GetType());
+                UnaryExpression castPropertyValueExpr = Expression.Convert(propertyValueExpr, property.PropertyType);
+                MethodCallExpression setPropertyValueExpr = Expression.Call(castTargetExpr, property.GetSetMethod()!, castPropertyValueExpr);
+                setter = Expression.Lambda<Action<object, T?>>(setPropertyValueExpr, targetExpr, propertyValueExpr).Compile();
+                _setterCache[property] = setter;
+            }
+
+            setter.Invoke(targetObj, value);
+        }
+    }
+
+    partial class ReflectionHelper
+    {
+#if NET5_0_OR_GREATER
+#else
+        private sealed class ReferenceEqualityComparer : IEqualityComparer<object?>, IEqualityComparer
+        {
+            public static ReferenceEqualityComparer Instance { get; } = new ReferenceEqualityComparer();
+
+            private ReferenceEqualityComparer() { }
+
+            public new bool Equals(object? x, object? y) => ReferenceEquals(x, y);
+
+            public int GetHashCode(object? obj) => RuntimeHelpers.GetHashCode(obj!);
+        }
+#endif
     }
 }

@@ -24,10 +24,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
         /// <summary>
         /// 获取或设置微企付 API 签名认证方式。
         /// <para>
-        /// 默认值：<see cref="Constants.SignAlgorithms.SHA245_WITH_RSA"/>
+        /// 默认值：<see cref="Constants.SignAlgorithms.SHA256_WITH_RSA"/>
         /// </para>
         /// </summary>
-        public string SignAlgorithm { get; set; } = Constants.SignAlgorithms.SHA245_WITH_RSA;
+        public string SignAlgorithm { get; set; } = Constants.SignAlgorithms.SHA256_WITH_RSA;
 
         /// <summary>
         /// 获取或设置微企付平台账号。
