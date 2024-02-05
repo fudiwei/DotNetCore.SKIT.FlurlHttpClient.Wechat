@@ -5,32 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     /// <summary>
     /// 为 <see cref="WechatOpenAIClient"/> 提供回调通知事件的扩展方法。
     /// </summary>
-    public static class WechatOpenAIClientEventExtensions
+    public static partial class WechatOpenAIClientEventExtensions
     {
-        private static TEvent InnerDeserializeEventFromXml<TEvent>(this WechatOpenAIClient client, string webhookXml)
-            where TEvent : WechatOpenAIEvent
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (webhookXml is null) throw new ArgumentNullException(webhookXml);
-
-            try
-            {
-                if (!Utilities.WxMsgCryptor.TryParseXml(webhookXml, out string? encryptedXml))
-                    throw new WechatOpenAIException("Failed to decrypt event data, because of the encrypted data is empty.");
-
-                webhookXml = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.EncodingAESKey!, out _);
-                return Utilities.XmlHelper.Deserialize<TEvent>(webhookXml);
-            }
-            catch (WechatOpenAIException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new WechatOpenAIException("Failed to deserialize event data. Please see the inner exception for more details.", ex);
-            }
-        }
-
         /// <summary>
         /// <para>从 XML 反序列化得到 <see cref="WechatOpenAIEvent"/> 对象。</para>
         /// </summary>
@@ -97,6 +73,33 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
             }
 
             return xml;
+        }
+    }
+
+    partial class WechatOpenAIClientEventExtensions
+    {
+        private static TEvent InnerDeserializeEventFromXml<TEvent>(this WechatOpenAIClient client, string webhookXml)
+            where TEvent : WechatOpenAIEvent
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (webhookXml is null) throw new ArgumentNullException(webhookXml);
+
+            try
+            {
+                if (!Utilities.WxMsgCryptor.TryParseXml(webhookXml, out string? encryptedXml))
+                    throw new WechatOpenAIException("Failed to decrypt event data, because of the encrypted data is empty.");
+
+                webhookXml = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedXml!, encodingAESKey: client.Credentials.EncodingAESKey!, out _);
+                return Utilities.XmlHelper.Deserialize<TEvent>(webhookXml);
+            }
+            catch (WechatOpenAIException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new WechatOpenAIException("Failed to deserialize event data. Please see the inner exception for more details.", ex);
+            }
         }
     }
 }
