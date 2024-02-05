@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         /// <summary>
         /// <para>异步调用 [POST] /wedata/wedata_get_login_config 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataGetLoginConfig.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataGetLoginConfig.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,7 +34,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wedata/wedata_set_login_config 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataSetLoginConfig.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataSetLoginConfig.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -51,7 +57,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wedata/wedata_get_perm_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataGetPermList.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataGetPermList.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -71,7 +80,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wedata/wedata_set_user_perm 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataSetUserPerm.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataSetUserPerm.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -91,7 +103,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wedata/wedata_query_bind_list 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataQueryBindList.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataQueryBindList.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -111,7 +126,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wedata/wedata_unbind_user 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataUnbindUser.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/weDataUnbindUser.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -131,7 +149,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /wedata/wedata_login 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/wedata_login.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/we-analysis/wedata_login.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

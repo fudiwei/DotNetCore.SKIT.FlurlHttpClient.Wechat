@@ -8,17 +8,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>生成客户端 JSAPI / 小程序调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/jsapi-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/mini-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/jsapi-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/mini-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/jsapi-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/mini-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/jsapi-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/mini-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/jsapi-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/jsapi-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/mini-transfer-payment.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/jsapi-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/mini-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/jsapi-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/mini-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/jsapi-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/mini-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/jsapi-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/mini-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/jsapi-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/jsapi-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/mini-transfer-payment.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -35,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             string package = $"prepay_id={prepayId}";
             string sign = Utilities.RSAUtility.Sign(
                 privateKeyPem: client.Credentials.MerchantCertificatePrivateKey,
-                message: $"{appId}\n{timestamp}\n{nonce}\n{package}\n"
+                messageData: $"{appId}\n{timestamp}\n{nonce}\n{package}\n"
             )!;
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()
@@ -51,8 +54,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>生成 APP 调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/app-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/app-transfer-payment.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/app-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/app-transfer-payment.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -65,11 +71,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>生成 APP 调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/app-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/app-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/app-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/mini-transfer-payment.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/app-transfer-payment.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/app-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/app-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/app-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/mini-transfer-payment.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/app-transfer-payment.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="merchantId"></param>
@@ -87,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             string nonce = Guid.NewGuid().ToString("N");
             string sign = Utilities.RSAUtility.Sign(
                 privateKeyPem: client.Credentials.MerchantCertificatePrivateKey,
-                message: $"{appId}\n{timestamp}\n{nonce}\n{prepayId}\n"
+                messageData: $"{appId}\n{timestamp}\n{nonce}\n{prepayId}\n"
             )!;
 
             return new ReadOnlyDictionary<string, string>(new Dictionary<string, string>()

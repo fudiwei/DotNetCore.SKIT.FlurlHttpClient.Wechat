@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.wxa_appeal_record 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/record-management/getAppealRecords.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/miniprogram-management/record-management/getAppealRecords.html ]]>
+    /// </para>
     /// </summary>
     public class WxaAppealRecordEvent : WechatApiEvent
     {

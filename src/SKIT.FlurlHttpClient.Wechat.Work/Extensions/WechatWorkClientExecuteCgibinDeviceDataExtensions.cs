@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/devicedata/get_auth_info 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96097 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96097 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,7 +34,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/devicedata/get_checkin_data 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96027 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96027 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -51,7 +57,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/devicedata/get_temperature_data 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96028 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96028 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -71,7 +80,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/devicedata/get_accesscontrol_data 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96029 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96029 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -92,7 +104,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         #region AccessControlRule
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/devicedata/get_accesscontrol_rule 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96030 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96030 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -112,7 +127,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/devicedata/add_accesscontrol_rule 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96031 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96031 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -132,7 +150,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/devicedata/mod_accesscontrol_rule 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96221 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96221 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -152,7 +173,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/devicedata/del_accesscontrol_rule 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96227 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96227 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

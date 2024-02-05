@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 INFO.open_order 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/91929 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91929 ]]>
+    /// </para>
     /// </summary>
     public class OpenOrderEvent : WechatWorkEvent
     {

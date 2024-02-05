@@ -10,7 +10,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /marketing/membercard-activity/activities 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_1.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_1.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -29,7 +32,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/membercard-activity/activities/{activity_id}/terminate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_2.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_2.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -48,7 +54,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/membercard-activity/activities 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_3.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_3.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -82,7 +91,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/membercard-activity/activities/{activity_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_4.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_4.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

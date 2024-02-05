@@ -10,7 +10,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /catering/orders/sync-status 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/catering.php?chapter=26_1 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/catering.php?chapter=26_1 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

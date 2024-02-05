@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.product_spu_audit 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/channels/API/product/callback/ProductSpuAudit.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/product/callback/ProductSpuAudit.html ]]>
+    /// </para>
     /// </summary>
     public class ChannelsECProductSPUAuditEvent : WechatApiEvent
     {

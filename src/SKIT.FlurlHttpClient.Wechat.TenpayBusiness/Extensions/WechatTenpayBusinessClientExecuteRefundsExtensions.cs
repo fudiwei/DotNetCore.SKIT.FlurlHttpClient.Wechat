@@ -10,7 +10,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
     {
         /// <summary>
         /// <para>异步调用 [POST] /mse-pay/refunds 接口。</para>
-        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E9%80%80%E6%AC%BE%E7%94%B3%E8%AF%B7 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://businesspay.qq.com/p/doc/mse/api/server.html#%E9%80%80%E6%AC%BE%E7%94%B3%E8%AF%B7 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -29,7 +32,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
         /// <summary>
         /// <para>异步调用 [GET] /mse-pay/refunds/refund-id/{refund_id} 接口。</para>
-        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E9%80%80%E6%AC%BE%E6%9F%A5%E8%AF%A2-%E5%86%85%E5%8D%95%E5%8F%B7 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://businesspay.qq.com/p/doc/mse/api/server.html#%E9%80%80%E6%AC%BE%E6%9F%A5%E8%AF%A2-%E5%86%85%E5%8D%95%E5%8F%B7 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -48,7 +54,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
         /// <summary>
         /// <para>异步调用 [GET] /mse-pay/refunds/out-refund-id/{out_refund_id} 接口。</para>
-        /// <para>REF: https://businesspay.qq.com/p/doc/mse/api/server.html#%E9%80%80%E6%AC%BE%E6%9F%A5%E8%AF%A2-%E5%A4%96%E5%8D%95%E5%8F%B7 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://businesspay.qq.com/p/doc/mse/api/server.html#%E9%80%80%E6%AC%BE%E6%9F%A5%E8%AF%A2-%E5%A4%96%E5%8D%95%E5%8F%B7 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

@@ -2,14 +2,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.batch_job_result 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90973 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90240 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90973 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90240 ]]>
+    /// </para>
     /// <para>REF; https://developer.work.weixin.qq.com/document/path/94946 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/91135 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90376 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/91167 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90858 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/95797 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91135 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90376 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91167 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90858 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95797 ]]>
+    /// </para>
     /// </summary>
     public class BatchJobResultEvent : WechatWorkEvent
     {

@@ -12,9 +12,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region KfAccount
         /// <summary>
         /// <para>异步调用 [POST] /customservice/kfaccount/add 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#1 </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#2 </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E6%B7%BB%E5%8A%A0%E5%AE%A2%E6%9C%8D%E8%B4%A6%E5%8F%B7 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#1 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#2 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E6%B7%BB%E5%8A%A0%E5%AE%A2%E6%9C%8D%E8%B4%A6%E5%8F%B7 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -34,8 +37,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /customservice/kfaccount/update 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#2 </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#4 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#2 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#4 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -55,8 +61,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /customservice/kfaccount/del 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#3 </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#6 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#3 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#6 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -76,7 +85,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [GET] /customservice/kfaccount/del 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%88%A0%E9%99%A4%E5%AE%A2%E6%9C%8D%E8%B4%A6%E5%8F%B7 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%88%A0%E9%99%A4%E5%AE%A2%E6%9C%8D%E8%B4%A6%E5%8F%B7 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -97,8 +109,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /customservice/kfaccount/uploadheadimg 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#4 </para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#5 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#4 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#5 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -119,7 +134,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /customservice/kfaccount/inviteworker 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#3 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Customer_Service_Management.html#3 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -139,7 +157,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [GET] /customservice/kfaccount/setadmin 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E8%AE%BE%E7%BD%AE%E5%AE%A2%E6%9C%8D%E7%AE%A1%E7%90%86%E5%91%98 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E8%AE%BE%E7%BD%AE%E5%AE%A2%E6%9C%8D%E7%AE%A1%E7%90%86%E5%91%98 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -160,7 +181,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [GET] /customservice/kfaccount/canceladmin 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%8F%96%E6%B6%88%E5%AE%A2%E6%9C%8D%E7%AE%A1%E7%90%86%E5%91%98 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%8F%96%E6%B6%88%E5%AE%A2%E6%9C%8D%E7%AE%A1%E7%90%86%E5%91%98 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -183,7 +207,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region KfSession
         /// <summary>
         /// <para>异步调用 [POST] /customservice/kfsession/create 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -203,7 +230,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /customservice/kfsession/close 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -223,7 +253,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [GET] /customservice/kfsession/getsession 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -244,7 +277,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [GET] /customservice/kfsession/getsessionlist 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -265,7 +301,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [GET] /customservice/kfsession/getwaitcase 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Session_control.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -287,7 +326,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region MessageRecord
         /// <summary>
         /// <para>异步调用 [POST] /customservice/msgrecord/getmsglist 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Obtain_chat_transcript.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Customer_Service/Obtain_chat_transcript.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -309,7 +351,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Work
         /// <summary>
         /// <para>异步调用 [POST] /customservice/work/get 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/kf-work/getKfWorkBound.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/kf-work/getKfWorkBound.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -329,7 +374,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /customservice/work/unbind 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/kf-work/unbindKfWork.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/kf-work/unbindKfWork.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -349,7 +397,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /customservice/work/bind 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/kf-work/bindKfWork.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/kf-work/bindKfWork.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

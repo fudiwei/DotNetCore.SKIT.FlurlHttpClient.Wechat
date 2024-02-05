@@ -12,7 +12,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Permissions
         /// <summary>
         /// <para>异步调用 [POST] /payscore/acquiringbank/permissions 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-auth/apply-acquiring-bank-permissions.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-auth/apply-acquiring-bank-permissions.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,7 +34,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /payscore/acquiringbank/permissions/authorization-code/{authorization_code} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-auth/get-acquiring-bank-permissions-by-code.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-auth/get-acquiring-bank-permissions-by-code.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -52,7 +58,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/acquiringbank/permissions/authorization-code/{authorization_code}/terminate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-auth/terminate-acquiring-bank-permissions-by-code.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-auth/terminate-acquiring-bank-permissions-by-code.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -73,7 +82,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region ServiceOrder
         /// <summary>
         /// <para>异步调用 [POST] /payscore/acquiringbank/serviceorder 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-service-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-service-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -92,7 +104,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /payscore/acquiringbank/serviceorder 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_acquiringbank/chapter3_2.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_acquiringbank/chapter3_2.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -115,7 +130,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /payscore/acquiringbank/serviceorder 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-service-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/acquiringbank/apis/acquiringbank-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-service-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -138,7 +156,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/acquiringbank/serviceorder/{out_order_no}/cancel 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/cancel-acquiring-bank-service-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/cancel-acquiring-bank-service-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -157,7 +178,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/acquiringbank/serviceorder/{out_order_no}/complete 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_acquiringbank/chapter3_5.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_acquiringbank/chapter3_5.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -176,7 +200,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/acquiringbank/serviceorder/{out_order_no}/registerdeductinfo 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/register-deduct-info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/register-deduct-info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -195,7 +222,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /payscore/acquiringbank/serviceorder/deduction 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-deduct-info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-deduct-info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

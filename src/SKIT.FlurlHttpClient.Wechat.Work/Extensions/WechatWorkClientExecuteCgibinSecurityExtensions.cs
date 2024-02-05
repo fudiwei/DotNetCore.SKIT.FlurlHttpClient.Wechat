@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/security/get_file_oper_record 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98079 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98079 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

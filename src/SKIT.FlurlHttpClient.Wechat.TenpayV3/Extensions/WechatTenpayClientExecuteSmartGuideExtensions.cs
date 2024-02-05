@@ -11,8 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /smartguide/guides 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/after-payment-service/guides/insert-guide.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/after-payment-service/guides/insert-guide.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/after-payment-service/guides/insert-guide.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/after-payment-service/guides/insert-guide.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,8 +34,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /smartguide/guides/{guide_id}/assign 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/after-payment-service/guides/assign-guide.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/after-payment-service/guides/assign-guide.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/after-payment-service/guides/assign-guide.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/after-payment-service/guides/assign-guide.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -51,8 +57,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /smartguide/guides 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/after-payment-service/guides/list-guides.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/after-payment-service/guides/list-guides.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/after-payment-service/guides/list-guides.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/after-payment-service/guides/list-guides.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -90,8 +99,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [PATCH] /smartguide/guides/{guide_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/after-payment-service/guides/update-guide.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/after-payment-service/guides/update-guide.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/after-payment-service/guides/update-guide.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/after-payment-service/guides/update-guide.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

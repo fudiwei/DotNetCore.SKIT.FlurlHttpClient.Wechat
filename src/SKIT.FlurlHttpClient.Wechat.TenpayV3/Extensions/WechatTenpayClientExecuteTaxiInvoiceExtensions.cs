@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region TaxiCompany
         /// <summary>
         /// <para>异步调用 [POST] /taxi-invoice/taxi-company/create-taxi-company 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-company/create-taxi-company.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-company/create-taxi-company.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -30,7 +33,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /taxi-invoice/taxi-companies/{company_mchid} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-company/query-taxi-company.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-company/query-taxi-company.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -52,7 +58,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Taxi
         /// <summary>
         /// <para>异步调用 [POST] /taxi-invoice/taxi/update-taxi 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi/update-taxi.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi/update-taxi.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -71,7 +80,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /taxi-invoice/taxies/{plate_number} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi/query-taxi.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi/query-taxi.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -93,7 +105,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Driver
         /// <summary>
         /// <para>异步调用 [POST] /taxi-invoice/driver/update-driver 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/update-driver.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/update-driver.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -112,7 +127,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /taxi-invoice/drivers/{driver_license} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/query-driver.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/query-driver.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -134,7 +152,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Attendance
         /// <summary>
         /// <para>异步调用 [POST] /taxi-invoice/attendance/punch 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/attendance/punch-attendance.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/attendance/punch-attendance.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -155,7 +176,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region UserTaxiOrder
         /// <summary>
         /// <para>异步调用 [GET] /taxi-invoice/user-taxi-order/find-by-token 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/user-taxi-order/query-user-taxi-order-by-token.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/user-taxi-order/query-user-taxi-order-by-token.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -181,7 +205,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Card
         /// <summary>
         /// <para>异步调用 [POST] /taxi-invoice/cards/upload-file 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-invoice-card/upload-taxi-invoice-card-file.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-invoice-card/upload-taxi-invoice-card-file.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -201,7 +228,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /taxi-invoice/cards 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-invoice-card/create-taxi-invoice-card.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-invoice-card/create-taxi-invoice-card.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

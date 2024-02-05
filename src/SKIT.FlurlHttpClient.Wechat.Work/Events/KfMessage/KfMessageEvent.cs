@@ -2,8 +2,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.kf_msg_or_event 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/94670 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/94699 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/94670 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/94699 ]]>
+    /// </para>
     /// </summary>
     public class KfMessageEvent : WechatWorkEvent
     {

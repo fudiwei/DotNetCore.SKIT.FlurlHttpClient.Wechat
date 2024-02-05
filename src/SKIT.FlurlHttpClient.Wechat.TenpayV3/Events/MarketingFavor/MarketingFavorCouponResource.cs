@@ -4,8 +4,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
     /// <para>表示 COUPON.USE 通知的数据。</para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/cash-coupons/check-notice.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/cash-coupons/check-notice.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/cash-coupons/check-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/cash-coupons/check-notice.html ]]>
+    /// </para>
     /// </summary>
     public class MarketingFavorCouponResource : WechatTenpayEvent.Types.IDecryptedResource
     {

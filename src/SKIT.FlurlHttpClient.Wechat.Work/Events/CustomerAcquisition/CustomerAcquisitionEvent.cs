@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.customer_acquisition 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97299 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97299 ]]>
+    /// </para>
     /// </summary>
     public class CustomerAcquisitionEvent : WechatWorkEvent
     {

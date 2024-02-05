@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         /// <summary>
         /// <para>异步调用 [GET] /donut/code2verifyinfo 接口。</para>
-        /// <para>REF: https://dev.weixin.qq.com/docs/framework/dev/openapi/code2Verifyinfo.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://dev.weixin.qq.com/docs/framework/dev/openapi/code2Verifyinfo.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -35,7 +38,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /donut/unbindphone 接口。</para>
-        /// <para>REF: https://dev.weixin.qq.com/docs/framework/dev/openapi/unbindphone.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://dev.weixin.qq.com/docs/framework/dev/openapi/unbindphone.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -55,7 +61,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /donut/unbindweixin 接口。</para>
-        /// <para>REF: https://dev.weixin.qq.com/docs/framework/dev/openapi/unbindweixin.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://dev.weixin.qq.com/docs/framework/dev/openapi/unbindweixin.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -75,7 +84,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /donut/unbindapple 接口。</para>
-        /// <para>REF: https://dev.weixin.qq.com/docs/framework/dev/openapi/unbindapple.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://dev.weixin.qq.com/docs/framework/dev/openapi/unbindapple.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -95,7 +107,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /donut/unregisteruser 接口。</para>
-        /// <para>REF: https://dev.weixin.qq.com/docs/framework/dev/openapi/unregisteruser.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://dev.weixin.qq.com/docs/framework/dev/openapi/unregisteruser.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

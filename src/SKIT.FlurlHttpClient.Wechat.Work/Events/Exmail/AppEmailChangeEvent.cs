@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.app_email_change 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97506 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97506 ]]>
+    /// </para>
     /// </summary>
     public class AppEmailChangeEvent : WechatWorkEvent
     {

@@ -10,8 +10,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     {
         /// <summary>
         /// <para>异步调用 [POST] /deposit/unifiedorder 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_7 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_8 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_7 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_8 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -30,7 +33,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /deposit/micropay 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_1 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_1 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -49,7 +55,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /deposit/facepay 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_0 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_0 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -68,7 +77,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /deposit/orderquery 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_2 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_2 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -87,7 +99,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /deposit/reverse 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_3 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_3 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -106,7 +121,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /deposit/consume 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_4 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_4 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -125,7 +143,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /deposit/refund 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_5 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_5 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -144,7 +165,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /deposit/refundquery 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_6 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_6 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

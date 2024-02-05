@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,8 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/message/custom/send 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#7 </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.send.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#7 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.send.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -32,8 +35,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/message/custom/typing 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#8 </para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.setTyping.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Service_Center_messages.html#8 ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/customer-message/customerServiceMessage.setTyping.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -54,7 +60,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #region Business
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/message/custom/business/send 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%8F%91%E9%80%81%E5%AE%A2%E6%9C%8D%E6%B6%88%E6%81%AF </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%8F%91%E9%80%81%E5%AE%A2%E6%9C%8D%E6%B6%88%E6%81%AF ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -74,7 +83,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/message/custom/business/typing 接口。</para>
-        /// <para>REF: https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%AE%A2%E6%9C%8D%E8%BE%93%E5%85%A5%E7%8A%B6%E6%80%81 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/introduction/custom.html#%E5%AE%A2%E6%9C%8D%E8%BE%93%E5%85%A5%E7%8A%B6%E6%80%81 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

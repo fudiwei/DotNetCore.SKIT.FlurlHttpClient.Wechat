@@ -2,8 +2,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 INFO.enter_register_package 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90585 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90810 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90585 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90810 ]]>
+    /// </para>
     /// </summary>
     public class EnterRegisterPackageEvent : WechatWorkEvent
     {

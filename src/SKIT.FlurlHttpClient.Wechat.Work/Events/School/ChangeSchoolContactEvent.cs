@@ -2,10 +2,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.change_school_contact 或 INFO.change_school_contact 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92032 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92052 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92051 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/92050 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92032 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92052 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92051 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92050 ]]>
+    /// </para>
     /// </summary>
     public class ChangeSchoolContactEvent : WechatWorkEvent
     {

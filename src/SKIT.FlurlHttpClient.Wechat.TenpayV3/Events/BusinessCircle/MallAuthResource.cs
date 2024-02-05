@@ -2,8 +2,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
     /// <para>表示 MALL_AUTH.ACTIVATE_CARD 通知的数据。</para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/smart-business-circle/authorization-services.html </para>
-    /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/authorization-services.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/smart-business-circle/authorization-services.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/authorization-services.html ]]>
+    /// </para>
     /// </summary>
     public class MallAuthResource : WechatTenpayEvent.Types.IDecryptedResource
     {

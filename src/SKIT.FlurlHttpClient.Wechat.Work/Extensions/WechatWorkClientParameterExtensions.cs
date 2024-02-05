@@ -13,9 +13,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业微信 JS-SDK `wx.config` 所需的参数字典。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90506 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90539 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90777 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90506 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90539 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90777 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="jsapiTicket"></param>
@@ -42,9 +45,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业微信 JS-SDK `wx.agentConfig` 所需的参数字典。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90506 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90539 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90777 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90506 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90539 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90777 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="jsapiTicket"></param>
@@ -72,8 +78,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业微信网页授权 URL。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91022 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91120 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91022 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91120 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="redirectUrl"></param>
@@ -87,8 +96,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业微信网页授权 URL。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91022 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91120 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91022 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91120 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="agentId"></param>
@@ -112,8 +124,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业微信扫码授权 URL。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91019 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91124 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91019 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91124 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="redirectUrl"></param>
@@ -128,8 +143,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业微信扫码授权 URL。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91019 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91124 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91019 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91124 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="agentId"></param>
@@ -153,7 +171,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>生成企业微信第三方单点登录扫码授权 URL。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/10991 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/10991 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="redirectUrl"></param>

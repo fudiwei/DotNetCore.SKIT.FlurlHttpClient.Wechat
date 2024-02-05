@@ -12,8 +12,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
     {
         /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/sendredpack 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_4 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_4 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -32,8 +35,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/sendgroupredpack 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_5 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_5 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_5 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_5 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -52,8 +58,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/sendminiprogramhb 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_2 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_2 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_2 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_2 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -72,10 +81,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/gethbinfo 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_6 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_6 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_6 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_6 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_6 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_6 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -95,7 +107,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         #region WeWork
         /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/sendworkwxredpack 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96697 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96697 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

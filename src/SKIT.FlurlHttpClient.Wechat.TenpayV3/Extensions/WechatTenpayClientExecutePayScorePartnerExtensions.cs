@@ -12,7 +12,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Permissions
         /// <summary>
         /// <para>异步调用 [POST] /payscore/partner/permissions 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_1.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_1.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,7 +34,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /payscore/partner/permissions/authorization-code/{authorization_code} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_2.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_2.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -52,7 +58,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/partner/permissions/authorization-code/{authorization_code}/terminate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_4.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_4.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -71,7 +80,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /payscore/partner/permissions/search 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_3.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_3.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -100,7 +112,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/partner/permissions/terminate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_5.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_5.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -121,7 +136,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region ServiceOrder
         /// <summary>
         /// <para>异步调用 [POST] /payscore/partner/serviceorder 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_1.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_1.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -140,7 +158,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /payscore/partner/serviceorder 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_2.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_2.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -162,7 +183,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /payscore/partner/serviceorder 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_2.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_2.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -184,7 +208,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/cancel 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_3.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_3.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -203,7 +230,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/modify 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_4.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_4.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -222,7 +252,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/complete 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_5.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_5.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -241,7 +274,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/pay 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_6.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_6.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -260,7 +296,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/sync 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_7.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_7.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

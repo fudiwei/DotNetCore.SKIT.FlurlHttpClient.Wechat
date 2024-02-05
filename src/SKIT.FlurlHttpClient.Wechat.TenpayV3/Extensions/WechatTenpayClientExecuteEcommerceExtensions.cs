@@ -13,7 +13,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Account
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/account/cancel-applications 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/create-cancel-application.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/create-cancel-application.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -32,7 +35,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/account/cancel-applications/out-apply-no/{out_apply_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/get-cancel-application.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/get-cancel-application.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -51,7 +57,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/account/cancel-applications/media 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/media/upload-media.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/media/upload-media.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -82,7 +91,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Applyments
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/applyments/ 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/submit-applyment.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/submit-applyment.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -102,7 +114,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/applyments/{applyment_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/get-applyment-state.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/get-applyment-state.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -121,7 +136,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/applyments/out-request-no/{out_request_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/get-state-by-out-request-no.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/get-state-by-out-request-no.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -142,8 +160,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Bill
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/bill/fundflowbill 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/bill-download/sub-merchant-fund-flow-bill/get-sub-merchant-fund-flow-bill.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-bill-download/get-sub-merchant-fund-flow-bill.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/bill-download/sub-merchant-fund-flow-bill/get-sub-merchant-fund-flow-bill.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-bill-download/get-sub-merchant-fund-flow-bill.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -170,8 +191,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Fund
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/fund/balance/{sub_mchid} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-balance/accounts/query-e-commerce-balance.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter5_1.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-balance/accounts/query-e-commerce-balance.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter5_1.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -193,8 +217,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/fund/enddaybalance/{sub_mchid} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-balance/accounts/query-e-commerce-day-end-balance.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter5_3.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-balance/accounts/query-e-commerce-day-end-balance.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter5_3.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -214,8 +241,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/fund/withdraw 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-withdraw/with-draws/create-sub-merchant-withdraw.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter6_1.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-withdraw/with-draws/create-sub-merchant-withdraw.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter6_1.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -235,8 +265,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/fund/withdraw/out-request-no/{out_request_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-withdraw/with-draws/query-sub-merchant-by-out-request-no.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter6_2.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-withdraw/with-draws/query-sub-merchant-by-out-request-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter6_2.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -256,8 +289,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/fund/withdraw/{withdraw_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-withdraw/with-draws/query-sub-merchant-withdraw-by-id.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter6_2.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-withdraw/with-draws/query-sub-merchant-withdraw-by-id.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter6_2.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -279,7 +315,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region ProfitSharing
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/profitsharing/orders 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/orders/create-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/orders/create-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -299,7 +338,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/profitsharing/orders 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/orders/query-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/orders/query-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -321,7 +363,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/profitsharing/returnorders 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/return-orders/create-return-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/return-orders/create-return-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -341,7 +386,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/profitsharing/returnorders 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/return-orders/query-return-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/return-orders/query-return-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -363,7 +411,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/profitsharing/returnorders 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/return-orders/query-return-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/return-orders/query-return-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -385,7 +436,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/profitsharing/finish-order 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/orders/finish-order.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/orders/finish-order.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -405,7 +459,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/profitsharing/orders/{transaction_id}/amounts 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/orders/query-order-amount.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/orders/query-order-amount.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -425,7 +482,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/profitsharing/receivers/add 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/receivers/add-receiver.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/receivers/add-receiver.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -445,7 +505,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/profitsharing/receivers/delete 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/receivers/delete-receiver.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/receivers/delete-receiver.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -467,7 +530,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Refunds
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/refunds/apply 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-refund.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-refund.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -487,7 +553,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/refunds/out-refund-no/{out_refund_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund-by-out-refund-no.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund-by-out-refund-no.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -507,7 +576,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/refunds/id/{refund_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -527,7 +599,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/refunds/{refund_id}/return-advance 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-return-advance.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-return-advance.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -547,7 +622,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/refunds/{refund_id}/return-advance 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-return-advance.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-return-advance.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -569,7 +647,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Subsidies
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/subsidies/create 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-subsidy/subsidies/create.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-subsidy/subsidies/create.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -588,7 +669,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/subsidies/return 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-subsidy/subsidies/return.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-subsidy/subsidies/return.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -607,7 +691,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/subsidies/cancel 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/ecommerce-subsidy/subsidies/cancel.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-subsidy/subsidies/cancel.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -628,7 +715,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region CombinePAPPay
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/combine-papay/contracts/pre-entrust-sign 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_1.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_1.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -647,7 +737,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/combine-papay/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_2.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_2.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -666,7 +759,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/combine-papay/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_3.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_3.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -685,7 +781,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/combine-papay/transactions 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_4.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_4.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -716,7 +815,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/combine-papay/transactions/{combine_out_trade_no}/reverse 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_5.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_5.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -744,7 +846,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /ecommerce/combine-papay/transactions/{combine_out_trade_no} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_6.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_6.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

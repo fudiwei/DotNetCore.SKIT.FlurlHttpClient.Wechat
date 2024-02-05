@@ -12,7 +12,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /marketing/shopping-receipt/shoppingreceipts 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/shopping-receipts/upload-shopping-receipt.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/shopping-receipts/upload-shopping-receipt.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -41,7 +44,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/shopping-receipt/merchantshoppingreceiptjumpinfos 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/merchant-shopping-receipt-jump-infos/create-merchant-shopping-receipt-jump-info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/merchant-shopping-receipt-jump-infos/create-merchant-shopping-receipt-jump-info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -61,7 +67,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region CustomEntrance
         /// <summary>
         /// <para>异步调用 [POST] /marketing/shopping-receipt/customentrances 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/create-custom-entrance.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/create-custom-entrance.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -80,7 +89,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/shopping-receipt/customentrances/{brand_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/query-custom-entrance.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/query-custom-entrance.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -99,7 +111,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [PATCH] /marketing/shopping-receipt/customentrances/{brand_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/update-custom-entrance.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/update-custom-entrance.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

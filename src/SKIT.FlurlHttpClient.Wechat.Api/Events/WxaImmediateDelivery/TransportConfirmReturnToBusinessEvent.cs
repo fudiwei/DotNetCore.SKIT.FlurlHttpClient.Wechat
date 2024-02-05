@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.transport_confirm_return_to_biz 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/immediate-delivery/by-provider/immediateDelivery.onOrderPreCancel.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/api-backend/open-api/immediate-delivery/by-provider/immediateDelivery.onOrderPreCancel.html ]]>
+    /// </para>
     /// </summary>
     public class TransportConfirmReturnToBusinessEvent : WechatApiEvent
     {

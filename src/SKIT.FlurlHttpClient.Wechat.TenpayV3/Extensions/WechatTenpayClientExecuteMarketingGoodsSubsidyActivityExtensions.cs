@@ -12,7 +12,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region RetailStore/Representative
         /// <summary>
         /// <para>异步调用 [POST] /marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-stores/add-representative.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-stores/add-representative.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,7 +34,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representatives 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-representative.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-representative.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -52,7 +58,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [DELETE] /marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-representative.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-representative.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -73,7 +82,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region RetailStore/Material
         /// <summary>
         /// <para>异步调用 [POST] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/materials 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -94,7 +106,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region RetailStore/Store
         /// <summary>
         /// <para>异步调用 [GET] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -115,7 +130,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores/{store_code} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -134,7 +152,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/add-stores.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/add-stores.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -153,7 +174,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [DELETE] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-stores.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-stores.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

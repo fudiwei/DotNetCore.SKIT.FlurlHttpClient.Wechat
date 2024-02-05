@@ -11,8 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region CardTemplate
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/card-template 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-card-template/create-fapiao-card-template.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-card-template/create-fapiao-card-template.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-card-template/create-fapiao-card-template.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-card-template/create-fapiao-card-template.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -33,7 +36,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region Merchant
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/merchant/{sub_mchid}/check 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/check-merchant-status.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/check-merchant-status.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -52,8 +58,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [PATCH] /new-tax-control-fapiao/merchant/development-config 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/update-development-config.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/update-development-config.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/update-development-config.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/update-development-config.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -72,8 +81,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/merchant/development-config 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/query-development-config.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/query-development-config.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/query-development-config.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/query-development-config.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -95,8 +107,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/merchant/base-information 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/get-merchant-info.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/get-merchant-info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/get-merchant-info.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/get-merchant-info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -118,8 +133,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/merchant/tax-codes 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/list-merchant-tax-codes.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/list-merchant-tax-codes.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-merchant/list-merchant-tax-codes.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-merchant/list-merchant-tax-codes.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -145,8 +163,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region UserTitle
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/user-title/title-url 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/user-title/acquire-fapiao-title-url.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/user-title/acquire-fapiao-title-url.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/user-title/acquire-fapiao-title-url.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/user-title/acquire-fapiao-title-url.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -188,8 +209,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/user-title 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/user-title/get-user-title.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/user-title/get-user-title.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/user-title/get-user-title.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/user-title/get-user-title.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -215,8 +239,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #region FapiaoApplication
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/fapiao-applications 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/issue-fapiao-applications.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/issue-fapiao-applications.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/issue-fapiao-applications.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/issue-fapiao-applications.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -235,8 +262,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/reverse 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/reverse-fapiao-applications.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/reverse-fapiao-applications.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/reverse-fapiao-applications.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/reverse-fapiao-applications.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -255,8 +285,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/get-fapiao-applications.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-applications.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/get-fapiao-applications.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-applications.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -281,8 +314,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/fapiao-files 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -307,8 +343,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /{download_url} 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/download-invoice-file.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/download-invoice-file.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/download-invoice-file.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/download-invoice-file.html ]]>
+        /// </para>
         /// <para><i>（请注意此接口不受构造 <see cref="WechatTenpayClient" /> 时指定的 <see cref="WechatTenpayClientOptions.Endpoint"/> 参数控制。）</i></para>
         /// </summary>
         /// <param name="client"></param>
@@ -340,8 +379,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/fapiao-applications/upload-fapiao-file 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/upload-fapiao-file.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/upload-fapiao-file.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/upload-fapiao-file.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/upload-fapiao-file.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -361,8 +403,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/insert-cards 接口。</para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/insert-cards.html </para>
-        /// <para>REF: https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/insert-cards.html </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/fapiao/fapiao-applications/insert-cards.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/insert-cards.html ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

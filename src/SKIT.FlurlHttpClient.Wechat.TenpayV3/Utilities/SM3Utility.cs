@@ -13,14 +13,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 计算 SM3 哈希值。
         /// </summary>
-        /// <param name="bytes">要计算哈希值的信息字节数组。</param>
+        /// <param name="messageBytes">要计算哈希值的信息字节数组。</param>
         /// <returns>哈希值字节数组。</returns>
-        public static byte[] Hash(byte[] bytes)
+        public static byte[] Hash(byte[] messageBytes)
         {
-            if (bytes is null) throw new ArgumentNullException(nameof(bytes));
+            if (messageBytes is null) throw new ArgumentNullException(nameof(messageBytes));
 
             SM3Digest sm3 = new SM3Digest();
-            sm3.BlockUpdate(bytes, 0, bytes.Length);
+            sm3.BlockUpdate(messageBytes, 0, messageBytes.Length);
             byte[] hashBytes = new byte[sm3.GetDigestSize()];
             sm3.DoFinal(hashBytes, 0);
             return hashBytes;
@@ -29,14 +29,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// 计算 SM3 哈希值。
         /// </summary>
-        /// <param name="message">要计算哈希值的信息。</param>
+        /// <param name="messageData">要计算哈希值的信息。</param>
         /// <returns>经过十六进制编码的哈希值。</returns>
-        public static EncodedString Hash(string message)
+        public static EncodedString Hash(string messageData)
         {
-            if (message is null) throw new ArgumentNullException(nameof(message));
+            if (messageData is null) throw new ArgumentNullException(nameof(messageData));
 
-            byte[] msgBytes = EncodedString.FromLiteralString(message);
-            byte[] hashBytes = Hash(msgBytes);
+            byte[] messageBytes = EncodedString.FromLiteralString(messageData);
+            byte[] hashBytes = Hash(messageBytes);
             return EncodedString.ToHexString(hashBytes);
         }
     }

@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 INFO.error_report 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/90751 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90751 ]]>
+    /// </para>
     /// </summary>
     public class ErrorReportEvent : WechatWorkEvent
     {

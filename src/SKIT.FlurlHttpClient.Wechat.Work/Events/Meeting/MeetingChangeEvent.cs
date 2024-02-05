@@ -2,35 +2,38 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.meeting_change 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/99081 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/99082 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98333 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98337 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98341 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98345 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98348 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98352 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98353 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98354 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98355 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98393 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98394 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98395 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98396 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98397 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98771 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98773 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98774 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98775 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98398 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98399 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98400 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98401 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98402 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98404 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98781 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98782 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98783 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99081 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99082 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98333 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98337 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98341 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98345 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98348 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98352 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98353 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98354 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98355 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98393 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98394 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98395 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98396 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98397 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98771 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98773 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98774 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98775 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98398 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98399 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98400 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98401 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98402 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98404 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98781 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98782 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98783 ]]>
+    /// </para>
     /// </summary>
     public class MeetingChangeEvent : WechatWorkEvent
     {

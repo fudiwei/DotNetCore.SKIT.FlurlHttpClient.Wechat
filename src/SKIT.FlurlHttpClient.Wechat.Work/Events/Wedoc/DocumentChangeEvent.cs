@@ -2,11 +2,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.doc_change 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97833 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97834 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/97835 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98095 </para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/98096 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97833 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97834 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97835 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98095 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98096 ]]>
+    /// </para>
     /// </summary>
     public class DocumentChangeEvent : WechatWorkEvent
     {

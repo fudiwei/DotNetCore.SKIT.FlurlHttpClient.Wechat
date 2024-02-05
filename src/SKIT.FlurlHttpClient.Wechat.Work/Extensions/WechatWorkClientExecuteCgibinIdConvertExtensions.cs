@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/idconvert/unionid_to_external_userid 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95926 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95926 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -31,8 +34,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/idconvert/batch/external_userid_to_pending_id 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95926 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95900 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95926 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95900 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -52,8 +58,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/idconvert/external_tagid 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/95926 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96169 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95926 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96169 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -73,8 +82,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/idconvert/open_kfid 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/97064 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96169 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97064 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96169 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -94,7 +106,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/idconvert/convert_tmp_external_userid 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/98729 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98729 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

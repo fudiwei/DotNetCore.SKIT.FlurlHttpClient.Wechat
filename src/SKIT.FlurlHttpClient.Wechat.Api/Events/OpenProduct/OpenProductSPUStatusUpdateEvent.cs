@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.open_product_spu_status_update 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/spu_status_update.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/spu_status_update.html ]]>
+    /// </para>
     /// </summary>
     public class OpenProductSPUStatusUpdateEvent : WechatApiEvent
     {

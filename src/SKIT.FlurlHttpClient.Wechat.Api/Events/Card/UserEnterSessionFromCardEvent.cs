@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.user_enter_session_from_card 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons_Vouchers_and_Cards_Event_Push_Messages.html#8 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Cards_and_Offer/Coupons_Vouchers_and_Cards_Event_Push_Messages.html#8 ]]>
+    /// </para>
     /// </summary>
     public class UserEnterSessionFromCardEvent : WechatApiEvent
     {

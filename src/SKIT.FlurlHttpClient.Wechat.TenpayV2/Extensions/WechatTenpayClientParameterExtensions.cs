@@ -15,8 +15,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端小程序调起领取红包所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_3 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_3 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_3 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_3 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -45,9 +48,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端 JSAPI 调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=7_7 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=7_7 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=7_7 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=7_7 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=7_7 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -80,8 +86,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端 App 调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_12 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_12 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_12 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_12 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="merchantId"></param>
@@ -117,9 +126,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端 App 调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_12 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_12 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_9 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_12 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_12 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_9 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -133,8 +145,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端小程序调起支付所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7 </para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=7_7 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=7_7 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=7_7 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -166,7 +181,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端公众号唤起微信委托代扣的 URL。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_1.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_1.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -207,7 +225,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端公众号唤起微信委托代扣的 URL。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_1.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_1.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -252,7 +273,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端小程序唤起微信委托代扣页面所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_3.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_3.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -287,7 +311,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端小程序唤起微信委托代扣页面所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_3.shtml </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_3.shtml ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -340,7 +367,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端小程序唤起开通车主服务页面所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_1010 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_1010 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -380,7 +410,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端 App 唤起开通车主服务页面所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_1010 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_1010 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -412,7 +445,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端小程序唤起免密支付升级无感支付页面所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_1021 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_1021 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>
@@ -446,7 +482,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
         /// <summary>
         /// <para>生成客户端 App 唤起免密支付升级无感支付页面所需的参数字典。</para>
-        /// <para>REF: https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_1010 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_1010 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="appId"></param>

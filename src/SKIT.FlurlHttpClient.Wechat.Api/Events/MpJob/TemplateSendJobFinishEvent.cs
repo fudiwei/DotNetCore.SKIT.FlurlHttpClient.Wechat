@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.TEMPLATESENDJOBFINISH 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#%E4%BA%8B%E4%BB%B6%E6%8E%A8%E9%80%81 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Template_Message_Interface.html#%E4%BA%8B%E4%BB%B6%E6%8E%A8%E9%80%81 ]]>
+    /// </para>
     /// </summary>
     public class TemplateSendJobFinishEvent : WechatApiEvent
     {

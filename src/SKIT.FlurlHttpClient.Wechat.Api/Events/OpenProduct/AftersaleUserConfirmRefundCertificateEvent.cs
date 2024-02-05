@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Events
+namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.aftersale_user_confirm_refund_certificate 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/aftersale/aftersale_user_confirm_refund_certificate.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/ministore/minishopopencomponent2/callback/aftersale/aftersale_user_confirm_refund_certificate.html ]]>
+    /// </para>
     /// </summary>
     public class AftersaleUserConfirmRefundCertificateEvent : WechatApiEvent
     {

@@ -11,7 +11,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     {
         /// <summary>
         /// <para>异步调用 [GET] /cgi-bin/corp/get_join_qrcode 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91039 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91039 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -34,9 +37,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/corp/getopenapprovaldata 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/90269 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/93798 </para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/91188 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90269 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/93798 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/91188 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -56,7 +62,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/corp/apply_mass_call_ticket 接口。</para>
-        /// <para>REF: https://developer.work.weixin.qq.com/document/path/96250 </para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96250 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>

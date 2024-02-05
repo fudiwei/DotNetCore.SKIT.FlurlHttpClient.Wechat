@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
 {
     /// <summary>
     /// <para>表示 EVENT.unlicensed_notify 事件的数据。</para>
-    /// <para>REF: https://developer.work.weixin.qq.com/document/path/95716 </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95716 ]]>
+    /// </para>
     /// </summary>
     public class UnlicensedNotifyEvent : WechatWorkEvent
     {
