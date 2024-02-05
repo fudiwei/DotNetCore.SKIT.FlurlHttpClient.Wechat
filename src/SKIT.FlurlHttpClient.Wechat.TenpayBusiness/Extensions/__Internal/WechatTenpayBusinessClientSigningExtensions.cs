@@ -4,6 +4,8 @@ using System.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     internal static class WechatTenpayBusinessClientSigningExtensions
     {
         public static bool VerifySignature(this WechatTenpayBusinessClient client, string strAuthorization, string strContent, out Exception? error)
@@ -53,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
             switch (strSignatureAlgorithm)
             {
-                case Constants.SignAlgorithms.SHA245_WITH_RSA:
+                case Constants.SignAlgorithms.SHA256_WITH_RSA:
                     {
                         if (client.Credentials.TBEPCertificateSerialNumber is not null &&
                             client.Credentials.TBEPCertificatePublicKey is not null)
@@ -67,10 +69,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                                 }
 
                                 error = null;
-                                return Utilities.RSAUtility.VerifyWithSHA256(
-                                    publicKey: client.Credentials.TBEPCertificatePublicKey,
+                                return Utilities.RSAUtility.Verify(
+                                    publicKeyPem: client.Credentials.TBEPCertificatePublicKey,
                                     message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
-                                    signature: strSignature
+                                    encodingSignature: new EncodedString(strSignature, EncodingKinds.Base64)
                                 );
                             }
                             catch (Exception ex)

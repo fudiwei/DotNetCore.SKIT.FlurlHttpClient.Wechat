@@ -1,5 +1,4 @@
 using System;
-using System.Linq;
 using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
@@ -65,7 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 responseNonce: responseNonce,
                 responseBody: responseBody,
                 responseSignature: responseSignature,
-                responseSignatureAlgorithm: Constants.SignAlgorithms.SHA245_WITH_RSA,
+                responseSignatureAlgorithm: Constants.SignAlgorithms.SHA256_WITH_RSA,
                 responseSerialNumber: responseSerialNumber,
                 out _
             );
@@ -115,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 responseNonce: responseNonce,
                 responseBody: responseBody,
                 responseSignature: responseSignature,
-                responseSignatureAlgorithm: Constants.SignAlgorithms.SHA245_WITH_RSA,
+                responseSignatureAlgorithm: Constants.SignAlgorithms.SHA256_WITH_RSA,
                 responseSerialNumber: responseSerialNumber,
                 out error
             );
