@@ -108,8 +108,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
 
-            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken);
-            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken);
+            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
+            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -130,15 +130,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 flurlRequest.Verb == HttpMethod.Head ||
                 flurlRequest.Verb == HttpMethod.Options;
             using IFlurlResponse flurlResponse = isSimpleRequest ?
-                await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken) :
-                await base.SendFlurlRequestAsJsonAsync(flurlRequest, data, cancellationToken);
-            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken);
+                await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false) :
+                await base.SendFlurlRequestAsJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
+            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
         }
 
         private new async Task<TResponse> WrapFlurlResponseAsJsonAsync<TResponse>(IFlurlResponse flurlResponse, CancellationToken cancellationToken = default)
             where TResponse : WechatTenpayResponse, new()
         {
-            TResponse result = await base.WrapFlurlResponseAsJsonAsync<TResponse>(flurlResponse, cancellationToken);
+            TResponse result = await base.WrapFlurlResponseAsJsonAsync<TResponse>(flurlResponse, cancellationToken).ConfigureAwait(false);
 
             if (AutoDecryptResponseSensitiveProperty && result.IsSuccessful())
             {

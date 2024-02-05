@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("image/jpeg");
             fileContent.Headers.ContentLength = request.FileBytes?.Length;
 
-            return await client.SendFlurlRequestAsync<Models.UploadMerchantMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsync<Models.UploadMerchantMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

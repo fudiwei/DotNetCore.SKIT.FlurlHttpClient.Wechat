@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request.AdSlotName is not null)
                 flurlReq.SetQueryParam("ad_slot", request.AdSlotName);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.PublisherStatAdposGeneralResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.PublisherStatAdposGeneralResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("start_date", request.StartDateString)
                 .SetQueryParam("end_date", request.EndDateString);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.PublisherStatCpsGeneralResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.PublisherStatCpsGeneralResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -90,7 +90,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("start_date", request.StartDateString)
                 .SetQueryParam("end_date", request.EndDateString);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.PublisherStatSettlementResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.PublisherStatSettlementResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

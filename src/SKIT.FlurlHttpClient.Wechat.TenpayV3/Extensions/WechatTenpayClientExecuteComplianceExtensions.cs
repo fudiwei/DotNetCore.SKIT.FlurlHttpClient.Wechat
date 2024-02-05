@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "compliance", "inactive-merchant-identity-verification", "merchants");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreateComplianceInactiveMerchantIdentityVerificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateComplianceInactiveMerchantIdentityVerificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "compliance", "inactive-merchant-identity-verification", "merchants", request.SubMerchantId, "verifications", request.VerificationId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetComplianceInactiveMerchantIdentityVerificationByVerificationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetComplianceInactiveMerchantIdentityVerificationByVerificationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

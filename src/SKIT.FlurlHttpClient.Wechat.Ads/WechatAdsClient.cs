@@ -79,8 +79,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         {
             if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
 
-            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken);
-            return await base.WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken);
+            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
+            return await base.WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -101,9 +101,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 flurlRequest.Verb == HttpMethod.Head ||
                 flurlRequest.Verb == HttpMethod.Options;
             using IFlurlResponse flurlResponse = isSimpleRequest ?
-                await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken) :
-                await base.SendFlurlRequestAsJsonAsync(flurlRequest, data, cancellationToken);
-            return await base.WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken);
+                await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false) :
+                await base.SendFlurlRequestAsJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
+            return await base.WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
         }
     }
 }

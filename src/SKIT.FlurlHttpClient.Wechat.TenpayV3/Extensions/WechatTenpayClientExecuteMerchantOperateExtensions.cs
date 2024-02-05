@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mch_operate", "risk", "withdrawl-apply");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantOperateRiskWithdrawlApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantOperateRiskWithdrawlApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mch_operate", "risk", "withdrawl-apply", "out-request-no", request.OutRequestNumber);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantOperateRiskWithdrawlApplyByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantOperateRiskWithdrawlApplyByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -71,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mch_operate", "risk", "withdrawl-apply", "applyment-id", request.ApplymentId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantOperateRiskWithdrawlApplyByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantOperateRiskWithdrawlApplyByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

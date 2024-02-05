@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "profit-allocations");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreateProfitAllocationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateProfitAllocationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "profit-allocations", "finish");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.SetProfitAllocationFinishedResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.SetProfitAllocationFinishedResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.AllocationId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationByAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationByAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "out-allocation-id", request.OutAllocationId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationByOutAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationByOutAllocationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", request.PaymentId, "amounts");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationAmountByPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationAmountByPaymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         #region ReceiverAccount
@@ -152,7 +152,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                 flurlReq.SetQueryParam("unified_social_credit_code", request.UnifiedSocialCreditCode);
 
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.QueryProfitAllocationReceiverAccountsResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryProfitAllocationReceiverAccountsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "mse-pay", "profit-allocations", "receiver-accounts-applications");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreateProfitAllocationReceiverAccountApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateProfitAllocationReceiverAccountApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -199,7 +199,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", request.ApplicationId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -221,7 +221,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts-applications", "out_application_id", request.OutApplicationId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByOutApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitAllocationReceiverAccountApplicationByOutApplicationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }
