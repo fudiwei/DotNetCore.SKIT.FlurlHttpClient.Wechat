@@ -1,39 +1,44 @@
 using System;
 using System.Security.Cryptography;
-using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     /// <summary>
     /// SHA-256 算法工具类。
     /// </summary>
     public static class SHA256Utility
     {
         /// <summary>
-        /// 获取 SHA-256 信息摘要。
+        /// 计算 SHA-256 哈希值。
         /// </summary>
-        /// <param name="bytes">信息字节数组。</param>
-        /// <returns>信息摘要字节数组。</returns>
+        /// <param name="bytes">要计算哈希值的信息字节数组。</param>
+        /// <returns>哈希值字节数组。</returns>
         public static byte[] Hash(byte[] bytes)
         {
             if (bytes is null) throw new ArgumentNullException(nameof(bytes));
 
-            using SHA256 sha = SHA256.Create();
-            return sha.ComputeHash(bytes);
+#if NET5_0_OR_GREATER
+            return SHA256.HashData(bytes);
+#else
+            using SHA256 sha256 = SHA256.Create();
+            return sha256.ComputeHash(bytes);
+#endif
         }
 
         /// <summary>
-        /// 获取 SHA-256 信息摘要。
+        /// 计算 SHA-256 哈希值。
         /// </summary>
-        /// <param name="message">文本信息。</param>
-        /// <returns>信息摘要。</returns>
-        public static string Hash(string message)
+        /// <param name="message">要计算哈希值的信息。</param>
+        /// <returns>经过十六进制编码的哈希值。</returns>
+        public static EncodedString Hash(string message)
         {
             if (message is null) throw new ArgumentNullException(nameof(message));
 
-            byte[] msgBytes = Encoding.UTF8.GetBytes(message);
+            byte[] msgBytes = EncodedString.FromLiteralString(message);
             byte[] hashBytes = Hash(msgBytes);
-            return BitConverter.ToString(hashBytes).Replace("-", string.Empty);
+            return EncodedString.ToHexString(hashBytes);
         }
     }
 }

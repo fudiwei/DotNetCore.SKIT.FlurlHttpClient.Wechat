@@ -1,72 +1,143 @@
 using System;
 using System.IO;
-using System.Text;
 using System.Text.RegularExpressions;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.X509;
+using Org.BouncyCastle.Asn1.Pkcs;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     /// <summary>
     /// RSA 算法工具类。
     /// </summary>
     public static class RSAUtility
     {
-        private const string RSA_CIPHER_ALGORITHM_ECB = "RSA/ECB";
-        private const string RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1 = "OAEPWITHSHA1ANDMGF1PADDING";
-        private const string RSA_SIGNER_ALGORITHM_SHA256 = "SHA-256withRSA";
+        /// <summary>
+        /// 填充模式：OAEPwithSHA-256andMGF1Padding。
+        /// </summary>
+        public const string PADDING_MODE_OAEPWITHSHA1ANDMGF1 = "OAEPWITHSHA1ANDMGF1PADDING";
 
-        private static byte[] ConvertPrivateKeyPkcs8PemToByteArray(string privateKey)
+        /// <summary>
+        /// 填充模式：PKCS1Padding。
+        /// </summary>
+        public const string PADDING_MODE_PKCS1 = "PKCS1PADDING";
+
+        /// <summary>
+        /// 签名算法：SHA-256withRSA。
+        /// </summary>
+        public const string DIGEST_ALGORITHM_SHA256 = "SHA-256withRSA";
+
+        private static byte[] ConvertPrivateKeyPemToByteArray(string privateKeyPem)
         {
-            privateKey = privateKey
+            if (!privateKeyPem.StartsWith("-----BEGIN PRIVATE KEY-----"))
+            {
+                using (TextReader textReader = new StringReader(privateKeyPem))
+                using (PemReader pemReader = new PemReader(textReader))
+                {
+                    object pemObject = pemReader.ReadObject();
+
+                    if (pemObject is AsymmetricCipherKeyPair)
+                    {
+                        // PKCS#1 格式
+                        AsymmetricCipherKeyPair cipherKeyPair = (AsymmetricCipherKeyPair)pemObject;
+                        using (TextWriter textWriter = new StringWriter())
+                        using (PemWriter pemWriter = new PemWriter(textWriter))
+                        {
+                            Pkcs8Generator pkcs8 = new Pkcs8Generator(cipherKeyPair.Private);
+                            pemWriter.WriteObject(pkcs8);
+                            pemWriter.Writer.Close();
+
+                            privateKeyPem = textWriter.ToString()!;
+                        }
+                    }
+                    else if (pemObject is RsaPrivateCrtKeyParameters)
+                    {
+                        // PKCS#8 格式
+                    }
+                    else
+                    {
+                        throw new NotSupportedException("Private key format is not supported.");
+                    }
+                }
+            }
+
+            privateKeyPem = privateKeyPem
                 .Replace("-----BEGIN PRIVATE KEY-----", string.Empty)
                 .Replace("-----END PRIVATE KEY-----", string.Empty);
-            privateKey = Regex.Replace(privateKey, "\\s+", string.Empty);
-            return Convert.FromBase64String(privateKey);
+            privateKeyPem = Regex.Replace(privateKeyPem, "\\s+", string.Empty);
+            return Convert.FromBase64String(privateKeyPem);
         }
 
-        private static byte[] ConvertPublicKeyPkcs8PemToByteArray(string publicKey)
+        private static byte[] ConvertPublicKeyPemToByteArray(string publicKeyPem)
         {
-            publicKey = publicKey
+            if (!publicKeyPem.StartsWith("-----BEGIN PUBLIC KEY-----"))
+            {
+                using (TextReader textReader = new StringReader(publicKeyPem))
+                using (PemReader pemReader = new PemReader(textReader))
+                {
+                    object pemObject = pemReader.ReadObject();
+                    if (pemObject is RsaKeyParameters)
+                    {
+                        // PKCS#1 或 PKCS#8 格式
+                        RsaKeyParameters rsaKeyParams = (RsaKeyParameters)pemObject;
+                        using (TextWriter textWriter = new StringWriter())
+                        using (PemWriter pemWriter = new PemWriter(textWriter))
+                        {
+                            pemWriter.WriteObject(rsaKeyParams);
+                            pemWriter.Writer.Close();
+
+                            publicKeyPem = textWriter.ToString()!;
+                        }
+                    }
+                    else
+                    {
+                        throw new NotSupportedException("Public key format is not supported.");
+                    }
+                }
+            }
+
+            publicKeyPem = publicKeyPem
                 .Replace("-----BEGIN PUBLIC KEY-----", string.Empty)
                 .Replace("-----END PUBLIC KEY-----", string.Empty);
-            publicKey = Regex.Replace(publicKey, "\\s+", string.Empty);
-            return Convert.FromBase64String(publicKey);
+            publicKeyPem = Regex.Replace(publicKeyPem, "\\s+", string.Empty);
+            return Convert.FromBase64String(publicKeyPem);
         }
 
-        private static X509Certificate ParseCertificatePemToX509(string certificate)
+        private static X509Certificate ParseCertificatePemToX509(string certificatePem)
         {
-            using (TextReader sreader = new StringReader(certificate))
+            using (TextReader sreader = new StringReader(certificatePem))
             {
                 PemReader pemReader = new PemReader(sreader);
                 return (X509Certificate)pemReader.ReadObject();
             }
         }
 
-        private static RsaKeyParameters ParsePrivateKeyPemToPrivateKeyParameters(byte[] privateKeyBytes)
+        private static RsaKeyParameters ParsePrivateKeyToParameters(byte[] privateKeyBytes)
         {
             return (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
         }
 
-        private static RsaKeyParameters ParsePublicKeyPemToPublicKeyParameters(byte[] publicKeyBytes)
+        private static RsaKeyParameters ParsePublicKeyToParameters(byte[] publicKeyBytes)
         {
             return (RsaKeyParameters)PublicKeyFactory.CreateKey(publicKeyBytes);
         }
 
-        private static byte[] SignWithSHA256(RsaKeyParameters rsaPrivateKeyParams, byte[] msgBytes)
+        private static byte[] Sign(RsaKeyParameters rsaPrivateKeyParams, byte[] msgBytes, string digestAlgorithm)
         {
-            ISigner signer = SignerUtilities.GetSigner(RSA_SIGNER_ALGORITHM_SHA256);
+            ISigner signer = SignerUtilities.GetSigner(digestAlgorithm);
             signer.Init(true, rsaPrivateKeyParams);
             signer.BlockUpdate(msgBytes, 0, msgBytes.Length);
             return signer.GenerateSignature();
         }
 
-        private static bool VerifyWithSHA256(RsaKeyParameters rsaPublicKeyParams, byte[] msgBytes, byte[] signBytes)
+        private static bool Verify(RsaKeyParameters rsaPublicKeyParams, byte[] msgBytes, byte[] signBytes, string digestAlgorithm)
         {
-            ISigner signer = SignerUtilities.GetSigner(RSA_SIGNER_ALGORITHM_SHA256);
+            ISigner signer = SignerUtilities.GetSigner(digestAlgorithm);
             signer.Init(false, rsaPublicKeyParams);
             signer.BlockUpdate(msgBytes, 0, msgBytes.Length);
             return signer.VerifySignature(signBytes);
@@ -74,182 +145,187 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
         private static byte[] DecryptWithECB(RsaKeyParameters rsaPrivateKeyParams, byte[] cipherBytes, string paddingMode)
         {
-            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingMode}");
+            IBufferedCipher cipher = CipherUtilities.GetCipher($"RSA/ECB/{paddingMode}");
             cipher.Init(false, rsaPrivateKeyParams);
             return cipher.DoFinal(cipherBytes);
         }
 
         private static byte[] EncryptWithECB(RsaKeyParameters rsaPublicKeyParams, byte[] plainBytes, string paddingMode)
         {
-            IBufferedCipher cipher = CipherUtilities.GetCipher($"{RSA_CIPHER_ALGORITHM_ECB}/{paddingMode}");
+            IBufferedCipher cipher = CipherUtilities.GetCipher($"RSA/ECB/{paddingMode}");
             cipher.Init(true, rsaPublicKeyParams);
             return cipher.DoFinal(plainBytes);
         }
 
         /// <summary>
-        /// 使用私钥基于 SHA-256 算法生成签名。
+        /// 使用私钥生成签名。
         /// </summary>
-        /// <param name="privateKeyBytes">PKCS#8 私钥字节数组。</param>
+        /// <param name="privateKeyBytes">PKCS#1/PKCS#8 私钥字节数组。</param>
         /// <param name="msgBytes">待签名的数据字节数组。</param>
+        /// <param name="digestAlgorithm">签名算法。（默认值：<see cref="DIGEST_ALGORITHM_SHA256"/>）</param>
         /// <returns>签名字节数组。</returns>
-        public static byte[] SignWithSHA256(byte[] privateKeyBytes, byte[] msgBytes)
+        public static byte[] Sign(byte[] privateKeyBytes, byte[] msgBytes, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
         {
             if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
             if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
 
-            RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyPemToPrivateKeyParameters(privateKeyBytes);
-            return SignWithSHA256(rsaPrivateKeyParams, msgBytes);
+            RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyToParameters(privateKeyBytes);
+            return Sign(rsaPrivateKeyParams, msgBytes, digestAlgorithm);
         }
 
         /// <summary>
-        /// 使用私钥基于 SHA-256 算法生成签名。
+        /// 使用私钥生成签名。
         /// </summary>
-        /// <param name="privateKey">PKCS#8 私钥（PEM 格式）。</param>
-        /// <param name="message">待签名的文本数据。</param>
-        /// <returns>经 Base64 编码的签名。</returns>
-        public static string SignWithSHA256(string privateKey, string message)
+        /// <param name="privateKeyPem">PKCS#1/PKCS#8 私钥（PEM 格式）。</param>
+        /// <param name="message">待签名的数据。</param>
+        /// <param name="digestAlgorithm">签名算法。（默认值：<see cref="DIGEST_ALGORITHM_SHA256"/>）</param>
+        /// <returns>经过 Base64 编码的签名。</returns>
+        public static EncodedString Sign(string privateKeyPem, string message, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
         {
-            if (privateKey is null) throw new ArgumentNullException(nameof(privateKey));
+            if (privateKeyPem is null) throw new ArgumentNullException(nameof(privateKeyPem));
             if (message is null) throw new ArgumentNullException(nameof(message));
 
-            byte[] privateKeyBytes = ConvertPrivateKeyPkcs8PemToByteArray(privateKey);
-            byte[] msgBytes = Encoding.UTF8.GetBytes(message);
-            byte[] signBytes = SignWithSHA256(privateKeyBytes, msgBytes);
-            return Convert.ToBase64String(signBytes);
+            byte[] privateKeyBytes = ConvertPrivateKeyPemToByteArray(privateKeyPem);
+            byte[] msgBytes = EncodedString.FromLiteralString(message);
+            byte[] signBytes = Sign(privateKeyBytes, msgBytes, digestAlgorithm);
+            return EncodedString.ToBase64String(signBytes);
         }
 
         /// <summary>
-        /// 使用公钥基于 SHA-256 算法验证签名。
+        /// 使用公钥验证签名。
         /// </summary>
-        /// <param name="publicKeyBytes">PKCS#8 公钥字节数据。</param>
-        /// <param name="msgBytes">待验证的数据字节数据。</param>
-        /// <param name="signBytes">待验证的签名字节数据。</param>
+        /// <param name="publicKeyBytes">PKCS#1/PKCS#8 公钥字节数组。</param>
+        /// <param name="msgBytes">待验证的数据字节数组。</param>
+        /// <param name="signBytes">签名字节数组。</param>
+        /// <param name="digestAlgorithm">签名算法。（默认值：<see cref="DIGEST_ALGORITHM_SHA256"/>）</param>
         /// <returns>验证结果。</returns>
-        public static bool VerifyWithSHA256(byte[] publicKeyBytes, byte[] msgBytes, byte[] signBytes)
+        public static bool Verify(byte[] publicKeyBytes, byte[] msgBytes, byte[] signBytes, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
         {
             if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
             if (msgBytes is null) throw new ArgumentNullException(nameof(msgBytes));
             if (signBytes is null) throw new ArgumentNullException(nameof(signBytes));
 
-            RsaKeyParameters rsaPublicKeyParams = ParsePublicKeyPemToPublicKeyParameters(publicKeyBytes);
-            return VerifyWithSHA256(rsaPublicKeyParams, msgBytes, signBytes);
+            RsaKeyParameters rsaPublicKeyParams = ParsePublicKeyToParameters(publicKeyBytes);
+            return Verify(rsaPublicKeyParams, msgBytes, signBytes, digestAlgorithm);
         }
 
         /// <summary>
-        /// 使用公钥基于 SHA-256 算法验证签名。
+        /// 使用公钥验证签名。
         /// </summary>
-        /// <param name="publicKey">PKCS#8 公钥（PEM 格式）。</param>
-        /// <param name="message">待验证的文本数据。</param>
-        /// <param name="signature">经 Base64 编码的待验证的签名。</param>
+        /// <param name="publicKeyPem">PKCS#1/PKCS#8 公钥（PEM 格式）。</param>
+        /// <param name="message">待验证的数据。</param>
+        /// <param name="encodingSignature">经过编码后的（通常为 Base64）签名。</param>
+        /// <param name="digestAlgorithm">签名算法。（默认值：<see cref="DIGEST_ALGORITHM_SHA256"/>）</param>
         /// <returns>验证结果。</returns>
-        public static bool VerifyWithSHA256(string publicKey, string message, string signature)
+        public static bool Verify(string publicKeyPem, string message, EncodedString encodingSignature, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
         {
-            if (publicKey is null) throw new ArgumentNullException(nameof(publicKey));
+            if (publicKeyPem is null) throw new ArgumentNullException(nameof(publicKeyPem));
             if (message is null) throw new ArgumentNullException(nameof(message));
-            if (signature is null) throw new ArgumentNullException(nameof(signature));
+            if (encodingSignature.Value is null) throw new ArgumentNullException(nameof(encodingSignature));
 
-            byte[] publicKeyBytes = ConvertPublicKeyPkcs8PemToByteArray(publicKey);
-            byte[] msgBytes = Encoding.UTF8.GetBytes(message);
-            byte[] signBytes = Convert.FromBase64String(signature);
-            return VerifyWithSHA256(publicKeyBytes, msgBytes, signBytes);
+            byte[] publicKeyBytes = ConvertPublicKeyPemToByteArray(publicKeyPem);
+            byte[] msgBytes = EncodedString.FromLiteralString(message);
+            byte[] signBytes = EncodedString.FromString(encodingSignature, fallbackEncodingKind: EncodingKinds.Base64);
+            return Verify(publicKeyBytes, msgBytes, signBytes, digestAlgorithm);
         }
 
         /// <summary>
         /// 使用证书基于 SHA-256 算法验证签名。
         /// </summary>
-        /// <param name="certificate">证书（PEM 格式）。</param>
-        /// <param name="message">待验证的文本数据。</param>
-        /// <param name="signature">经 Base64 编码的待验证的签名。</param>
+        /// <param name="certificatePem">证书内容（PEM 格式）。</param>
+        /// <param name="message">待验证的数据。</param>
+        /// <param name="encodingSignature">经过编码后的（通常为 Base64）签名。</param>
+        /// <param name="digestAlgorithm">签名算法。（默认值：<see cref="DIGEST_ALGORITHM_SHA256"/>）</param>
         /// <returns>验证结果。</returns>
-        public static bool VerifyWithSHA256ByCertificate(string certificate, string message, string signature)
+        public static bool VerifyByCertificate(string certificatePem, string message, EncodedString encodingSignature, string digestAlgorithm = DIGEST_ALGORITHM_SHA256)
         {
-            if (certificate is null) throw new ArgumentNullException(nameof(certificate));
+            if (certificatePem is null) throw new ArgumentNullException(nameof(certificatePem));
 
-            string publicKey = ExportPublicKeyFromCertificate(certificate);
-            return VerifyWithSHA256(publicKey, message, signature);
+            string publicKeyPem = ExportPublicKeyFromCertificate(certificatePem);
+            return Verify(publicKeyPem, message, encodingSignature, digestAlgorithm);
         }
 
         /// <summary>
         /// 使用私钥基于 ECB 模式解密数据。
         /// </summary>
-        /// <param name="privateKeyBytes">PKCS#8 私钥字节数据。</param>
-        /// <param name="cipherBytes">待解密的数据字节数据。</param>
-        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
+        /// <param name="privateKeyBytes">PKCS#1/PKCS#8 私钥字节数组。</param>
+        /// <param name="cipherBytes">待解密的数据字节数组。</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="PADDING_MODE_OAEPWITHSHA1ANDMGF1"/>）</param>
         /// <returns>解密后的数据字节数组。</returns>
-        public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        public static byte[] DecryptWithECB(byte[] privateKeyBytes, byte[] cipherBytes, string paddingMode = PADDING_MODE_OAEPWITHSHA1ANDMGF1)
         {
             if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
             if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
 
-            RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyPemToPrivateKeyParameters(privateKeyBytes);
+            RsaKeyParameters rsaPrivateKeyParams = ParsePrivateKeyToParameters(privateKeyBytes);
             return DecryptWithECB(rsaPrivateKeyParams, cipherBytes, paddingMode);
         }
 
         /// <summary>
         /// 使用私钥基于 ECB 模式解密数据。
         /// </summary>
-        /// <param name="privateKey">PKCS#8 私钥（PEM 格式）。</param>
-        /// <param name="cipherText">经 Base64 编码的待解密数据。</param>
-        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
-        /// <returns>解密后的文本数据。</returns>
-        public static string DecryptWithECB(string privateKey, string cipherText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        /// <param name="privateKeyPem">PKCS#1/PKCS#8 私钥（PEM 格式）。</param>
+        /// <param name="encodingCipher">经过编码后的（通常为 Base64）待解密数据。</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="PADDING_MODE_OAEPWITHSHA1ANDMGF1"/>）</param>
+        /// <returns>解密后的数据。</returns>
+        public static EncodedString DecryptWithECB(string privateKeyPem, EncodedString encodingCipher, string paddingMode = PADDING_MODE_OAEPWITHSHA1ANDMGF1)
         {
-            if (privateKey is null) throw new ArgumentNullException(nameof(privateKey));
-            if (cipherText is null) throw new ArgumentNullException(nameof(cipherText));
+            if (privateKeyPem is null) throw new ArgumentNullException(nameof(privateKeyPem));
+            if (encodingCipher.Value is null) throw new ArgumentNullException(nameof(encodingCipher));
 
-            byte[] privateKeyBytes = ConvertPrivateKeyPkcs8PemToByteArray(privateKey);
-            byte[] cipherBytes = Convert.FromBase64String(cipherText);
+            byte[] privateKeyBytes = ConvertPrivateKeyPemToByteArray(privateKeyPem);
+            byte[] cipherBytes = EncodedString.FromString(encodingCipher, fallbackEncodingKind: EncodingKinds.Base64);
             byte[] plainBytes = DecryptWithECB(privateKeyBytes, cipherBytes, paddingMode);
-            return Encoding.UTF8.GetString(plainBytes);
+            return EncodedString.ToLiteralString(plainBytes);
         }
 
         /// <summary>
         /// 使用公钥基于 ECB 模式加密数据。
         /// </summary>
-        /// <param name="publicKeyBytes">PKCS#8 公钥字节数据。</param>
-        /// <param name="plainBytes">待加密的数据字节数据。</param>
-        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
+        /// <param name="publicKeyBytes">PKCS#1/PKCS#8 公钥字节数组。</param>
+        /// <param name="plainBytes">待加密的数据字节数组。</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="PADDING_MODE_OAEPWITHSHA1ANDMGF1"/>）</param>
         /// <returns>加密后的数据字节数组。</returns>
-        public static byte[] EncryptWithECB(byte[] publicKeyBytes, byte[] plainBytes, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        public static byte[] EncryptWithECB(byte[] publicKeyBytes, byte[] plainBytes, string paddingMode = PADDING_MODE_OAEPWITHSHA1ANDMGF1)
         {
             if (publicKeyBytes is null) throw new ArgumentNullException(nameof(publicKeyBytes));
             if (plainBytes is null) throw new ArgumentNullException(nameof(plainBytes));
 
-            RsaKeyParameters rsaPublicKeyParams = ParsePublicKeyPemToPublicKeyParameters(publicKeyBytes);
+            RsaKeyParameters rsaPublicKeyParams = ParsePublicKeyToParameters(publicKeyBytes);
             return EncryptWithECB(rsaPublicKeyParams, plainBytes, paddingMode);
         }
 
         /// <summary>
         /// 使用公钥基于 ECB 模式加密数据。
         /// </summary>
-        /// <param name="publicKey">PKCS#8 公钥（PEM 格式）。</param>
-        /// <param name="plainText">待加密的文本数据。</param>
-        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
-        /// <returns>经 Base64 编码的加密数据。</returns>
-        public static string EncryptWithECB(string publicKey, string plainText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        /// <param name="publicKeyPem">PKCS#1/PKCS#8 公钥（PEM 格式）。</param>
+        /// <param name="plainData">待加密数据。</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="PADDING_MODE_OAEPWITHSHA1ANDMGF1"/>）</param>
+        /// <returns>经过 Base64 编码的加密数据。</returns>
+        public static EncodedString EncryptWithECB(string publicKeyPem, string plainData, string paddingMode = PADDING_MODE_OAEPWITHSHA1ANDMGF1)
         {
-            if (publicKey is null) throw new ArgumentNullException(nameof(publicKey));
-            if (plainText is null) throw new ArgumentNullException(nameof(plainText));
+            if (publicKeyPem is null) throw new ArgumentNullException(nameof(publicKeyPem));
+            if (plainData is null) throw new ArgumentNullException(nameof(plainData));
 
-            byte[] publicKeyBytes = ConvertPublicKeyPkcs8PemToByteArray(publicKey);
-            byte[] plainBytes = Encoding.UTF8.GetBytes(plainText);
+            byte[] publicKeyBytes = ConvertPublicKeyPemToByteArray(publicKeyPem);
+            byte[] plainBytes = EncodedString.FromLiteralString(plainData);
             byte[] cipherBytes = EncryptWithECB(publicKeyBytes, plainBytes, paddingMode);
-            return Convert.ToBase64String(cipherBytes);
+            return EncodedString.ToBase64String(cipherBytes);
         }
 
         /// <summary>
         /// 使用证书基于 ECB 模式加密数据。
         /// </summary>
-        /// <param name="certificate">证书（PEM 格式）。</param>
-        /// <param name="plainText">待加密的文本数据。</param>
-        /// <param name="paddingMode">填充模式。（默认值：<see cref="RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1"/>）</param>
-        /// <returns>经 Base64 编码的加密数据。</returns>
-        public static string EncryptWithECBByCertificate(string certificate, string plainText, string paddingMode = RSA_CIPHER_PADDING_OAEP_WITH_SHA1_AND_MGF1)
+        /// <param name="certificatePem">证书（PEM 格式）。</param>
+        /// <param name="plainData">待加密的数据。</param>
+        /// <param name="paddingMode">填充模式。（默认值：<see cref="PADDING_MODE_OAEPWITHSHA1ANDMGF1"/>）</param>
+        /// <returns>经过 Base64 编码的加密数据。</returns>
+        public static EncodedString EncryptWithECBByCertificate(string certificatePem, string plainData, string paddingMode = PADDING_MODE_OAEPWITHSHA1ANDMGF1)
         {
-            if (certificate is null) throw new ArgumentNullException(nameof(certificate));
+            if (certificatePem is null) throw new ArgumentNullException(nameof(certificatePem));
 
-            string publicKey = ExportPublicKeyFromCertificate(certificate);
-            return EncryptWithECB(publicKey, plainText, paddingMode);
+            string publicKeyPem = ExportPublicKeyFromCertificate(certificatePem);
+            return EncryptWithECB(publicKeyPem, plainData, paddingMode);
         }
 
         /// <summary>
@@ -259,7 +335,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         ///     转为 -----BEGIN PUBLIC KEY----- ..... -----END PUBLIC KEY-----
         /// </para>
         /// </summary>
-        /// <param name="certificate">证书（PEM 格式）。</param>
+        /// <param name="certificate">证书内容（PEM 格式）。</param>
         /// <returns>PKCS#8 公钥（PEM 格式）。</returns>
         public static string ExportPublicKeyFromCertificate(string certificate)
         {
@@ -279,7 +355,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         /// <summary>
         /// <para>从 CRT/CER 证书中导出证书序列号。</para>
         /// </summary>
-        /// <param name="certificate">证书（PEM 格式）。</param>
+        /// <param name="certificate">证书内容（PEM 格式）。</param>
         /// <returns>证书序列号。</returns>
         public static string ExportSerialNumberFromCertificate(string certificate)
         {
@@ -290,11 +366,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         }
 
         /// <summary>
-        /// <para>从 CRT/CER 证书中导出证书颁发时间。</para>
+        /// <para>从 CRT/CER 证书中导出证书有效期的开始时间。</para>
         /// </summary>
-        /// <param name="certificate">证书（PEM 格式）。</param>
-        /// <returns>证书颁发时间。</returns>
-        public static DateTimeOffset ExportEffectiveTimeFromCertificate(string certificate)
+        /// <param name="certificate">证书内容（PEM 格式）。</param>
+        /// <returns>证书有效期的开始时间。</returns>
+        public static DateTimeOffset ExportValidFromDateFromCertificate(string certificate)
         {
             if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 
@@ -303,11 +379,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         }
 
         /// <summary>
-        /// <para>从 CRT/CER 证书中导出证书过期时间。</para>
+        /// <para>从 CRT/CER 证书中导出证书有效期的结束时间。</para>
         /// </summary>
-        /// <param name="certificate">证书（PEM 格式）。</param>
-        /// <returns>证书过期时间。</returns>
-        public static DateTimeOffset ExportExpireTimeFromCertificate(string certificate)
+        /// <param name="certificate">证书内容（PEM 格式）。</param>
+        /// <returns>证书有效期的结束时间。</returns>
+        public static DateTimeOffset ExportValidToDateFromCertificate(string certificate)
         {
             if (certificate is null) throw new ArgumentNullException(nameof(certificate));
 

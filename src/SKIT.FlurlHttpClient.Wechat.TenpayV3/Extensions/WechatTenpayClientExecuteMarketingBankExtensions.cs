@@ -6,6 +6,8 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     public static class WechatTenpayClientExecuteMarketingBankExtensions
     {
         /// <summary>
@@ -26,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".txt";
 
             if (request.FileHash is null)
-                request.FileHash = BitConverter.ToString(Utilities.SHA256Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Replace("-", string.Empty).ToLower();
+                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Value!.ToLower();
 
             if (request.FileContentType is null)
                 request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "text/plain";

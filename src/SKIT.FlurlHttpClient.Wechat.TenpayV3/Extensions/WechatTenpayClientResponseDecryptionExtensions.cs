@@ -1,10 +1,10 @@
 using System;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient.Primitives;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities;
 
@@ -37,11 +37,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                                 throw new WechatTenpayException("Failed to decrypt response, because the merchant private key is not set.");
 
                             certificate.EncryptCertificate.CipherText = AESUtility.DecryptWithGCM(
-                                key: client.Credentials.MerchantV3Secret,
-                                nonce: certificate.EncryptCertificate.Nonce,
-                                aad: certificate.EncryptCertificate.AssociatedData,
-                                cipherText: certificate.EncryptCertificate.CipherText
-                            );
+                                encodingKey: new EncodedString(client.Credentials.MerchantV3Secret, EncodingKinds.Literal),
+                                encodingNonce: new EncodedString(certificate.EncryptCertificate.Nonce, EncodingKinds.Literal),
+                                encodingAssociatedData: new EncodedString(certificate.EncryptCertificate.AssociatedData, EncodingKinds.Literal),
+                                encodingCipher: new EncodedString(certificate.EncryptCertificate.CipherText, EncodingKinds.Base64)
+                            )!;
                         }
                         break;
 
@@ -52,17 +52,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                             // REF: https://pay.weixin.qq.com/docs/merchant/development/shangmi/guide.html
                             // 由于 SM4 密钥长度的限制，密钥由 APIv3 密钥通过国密 SM3 Hash 计算生成。SM4 密钥取其摘要（256bit）的前 128bit。
-                            byte[] secretBytes = SM3Utility.Hash(Encoding.UTF8.GetBytes(client.Credentials.MerchantV3Secret));
+                            byte[] secretBytes = SM3Utility.Hash(EncodedString.FromLiteralString(client.Credentials.MerchantV3Secret));
                             byte[] keyBytes = new byte[16];
                             Array.Copy(secretBytes, keyBytes, keyBytes.Length);
 
                             byte[] plainBytes = SM4Utility.DecryptWithGCM(
                                 keyBytes: keyBytes,
-                                nonceBytes: Encoding.UTF8.GetBytes(certificate.EncryptCertificate.Nonce),
-                                aadBytes: Encoding.UTF8.GetBytes(certificate.EncryptCertificate.AssociatedData ?? string.Empty),
-                                cipherBytes: Convert.FromBase64String(certificate.EncryptCertificate.CipherText)
+                                nonceBytes: EncodedString.FromLiteralString(certificate.EncryptCertificate.Nonce),
+                                associatedDataBytes: EncodedString.FromLiteralString(certificate.EncryptCertificate.AssociatedData),
+                                cipherBytes: EncodedString.FromBase64String(certificate.EncryptCertificate.CipherText)
                             );
-                            certificate.EncryptCertificate.CipherText = Encoding.UTF8.GetString(plainBytes);
+                            certificate.EncryptCertificate.CipherText = EncodedString.ToLiteralString(plainBytes).Value!;
                         }
                         break;
 
@@ -123,29 +123,30 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         case Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1:
                             {
                                 newValue = RSAUtility.DecryptWithECB(
-                                    privateKey: client.Credentials.MerchantCertificatePrivateKey,
-                                    cipherText: oldValue
-                                );
+                                    privateKeyPem: client.Credentials.MerchantCertificatePrivateKey,
+                                    encodingCipher: new EncodedString(oldValue, EncodingKinds.Base64),
+                                    paddingMode: RSAUtility.PADDING_MODE_OAEPWITHSHA1ANDMGF1
+                                )!;
                             }
                             break;
 
                         case Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1:
                             {
                                 newValue = RSAUtility.DecryptWithECB(
-                                    privateKey: client.Credentials.MerchantCertificatePrivateKey,
-                                    cipherText: oldValue,
-                                    paddingMode: "PKCS1PADDING"
-                                );
+                                    privateKeyPem: client.Credentials.MerchantCertificatePrivateKey,
+                                    encodingCipher: new EncodedString(oldValue, EncodingKinds.Base64),
+                                    paddingMode: RSAUtility.PADDING_MODE_PKCS1
+                                )!;
                             }
                             break;
 
                         case Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1:
                             {
                                 newValue = SM2Utility.Decrypt(
-                                    privateKey: client.Credentials.MerchantCertificatePrivateKey,
-                                    cipherText: oldValue,
+                                    privateKeyPem: client.Credentials.MerchantCertificatePrivateKey,
+                                    encodingCipher: new EncodedString(oldValue, EncodingKinds.Base64),
                                     asn1Encoding: true
-                                );
+                                )!;
                             }
                             break;
 

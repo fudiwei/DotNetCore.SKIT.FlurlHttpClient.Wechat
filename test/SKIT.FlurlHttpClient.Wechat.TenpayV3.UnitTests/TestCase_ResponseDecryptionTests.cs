@@ -1,7 +1,6 @@
 using System;
 using System.Net;
 using System.Net.Http;
-using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -10,6 +9,7 @@ using Xunit;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
     using SKIT.FlurlHttpClient.Internal;
+    using SKIT.FlurlHttpClient.Primitives;
 
     public partial class TestCase_ResponseDecryptionTests
     {
@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -202,7 +202,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -210,7 +210,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -224,7 +224,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -232,7 +232,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -269,7 +269,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -277,7 +277,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -291,7 +291,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -299,7 +299,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -336,7 +336,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -344,7 +344,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -358,7 +358,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -366,7 +366,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -404,7 +404,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain, "Pkcs1Padding"));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain, Utilities.RSAUtility.PADDING_MODE_PKCS1)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -412,7 +412,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain, "Pkcs1Padding"))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain, Utilities.RSAUtility.PADDING_MODE_PKCS1)!)
                     )
                 ))
                 {
@@ -426,7 +426,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -434,7 +434,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -471,7 +471,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -479,7 +479,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -493,7 +493,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -501,7 +501,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -532,7 +532,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -540,7 +540,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -554,7 +554,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -562,7 +562,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -604,7 +604,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -612,7 +612,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -626,7 +626,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -634,7 +634,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -667,7 +667,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -675,7 +675,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -689,7 +689,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -697,7 +697,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -728,7 +728,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -736,7 +736,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -750,7 +750,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -758,7 +758,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -789,7 +789,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -797,7 +797,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -811,7 +811,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -819,7 +819,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -856,7 +856,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -864,7 +864,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -878,7 +878,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -886,7 +886,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -925,7 +925,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -933,7 +933,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -947,7 +947,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -955,7 +955,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -986,7 +986,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -994,7 +994,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -1008,7 +1008,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -1016,7 +1016,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -1047,7 +1047,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseRSA(autoDecrypt: false))
                 {
-                    var request = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain));
+                    var request = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(request);
                     AssertMockResponseModel(request);
                 }
@@ -1055,7 +1055,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
@@ -1069,7 +1069,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 using (var client = CreateMockClientUseSM2(autoDecrypt: false))
                 {
-                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain));
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
                     client.DecryptResponseSensitiveProperty(response);
                     AssertMockResponseModel(response);
                 }
@@ -1077,7 +1077,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(
                     autoDecrypt: true,
                     mockResponseContent: new SystemTextJsonSerializer().Serialize(
-                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain))
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
                     )
                 ))
                 {
