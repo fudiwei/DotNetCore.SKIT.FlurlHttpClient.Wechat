@@ -6,6 +6,8 @@ using System.Web;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
+
     internal static class FileHttpContentBuilder
     {
         public static MultipartFormDataContent Build(string fileName, byte[] fileBytes, string fileContentType, string fileMetaJson, string formDataName = "file")
@@ -35,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             MultipartFormDataContent httpContent = new MultipartFormDataContent(boundary);
             httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse($"multipart/form-data; boundary={boundary}");
-            httpContent.Add(metaContent, $"\"{Constants.FormDataFields.FORMDATA_META}\"");
+            httpContent.Add(metaContent, $"\"{FormDataFields.FORMDATA_META}\"");
             httpContent.Add(fileContent, $"\"{formDataName}\"", $"\"{HttpUtility.UrlEncode(fileName)}\"");
             return httpContent;
         }

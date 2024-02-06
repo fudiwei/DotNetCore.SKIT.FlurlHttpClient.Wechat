@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// 获取当前客户端使用的微信支付平台证书管理器。
         /// </summary>
-        public Settings.CertificateManager PlatformCertificateManager { get; }
+        public Settings.ICertificateManager PlatformCertificateManager { get; }
 
         /// <summary>
         /// 获取是否自动加密请求中的敏感信息字段。

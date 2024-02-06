@@ -6,7 +6,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
 {
-    public class WechatpayHttpHandler : DelegatingHandler
+    public sealed class WechatpayHttpHandler : DelegatingHandler
     {
         public WechatpayHttpHandler(byte[]? certificateBytes, string? certificatePassword)
         {
