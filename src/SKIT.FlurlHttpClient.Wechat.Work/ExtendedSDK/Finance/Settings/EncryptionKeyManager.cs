@@ -1,45 +1,70 @@
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
 {
     /// <summary>
     /// 企业微信会话内容存档的消息加解密密钥管理器接口。
     /// </summary>
-    public abstract class EncryptionKeyManager
+    public interface IEncryptionKeyManager
     {
-        /// <summary>
-        /// 获取存储的全部消息加解密密钥实体。
-        /// </summary>
-        /// <returns></returns>
-        public abstract IEnumerable<EncryptionKeyEntry> AllEntries();
-
         /// <summary>
         /// 添加一个消息加解密密钥实体。
         /// </summary>
         /// <param name="entry"></param>
-        public abstract void AddEntry(EncryptionKeyEntry entry);
+        void AddEntry(EncryptionKeyEntry entry);
 
         /// <summary>
         /// 根据版本号获取消息加解密密钥实体。
         /// </summary>
         /// <param name="version"></param>
         /// <returns></returns>
-        public abstract EncryptionKeyEntry? GetEntry(int version);
+        EncryptionKeyEntry? GetEntry(int version);
 
         /// <summary>
         /// 根据版本号移除消息加解密密钥实体。
         /// </summary>
         /// <param name="version"></param>
         /// <returns></returns>
-        public abstract bool RemoveEntry(int version);
+        bool RemoveEntry(int version);
     }
 
     /// <summary>
-    /// 一个基于内存实现的 <see cref="EncryptionKeyManager"/>。
+    /// 企业微信会话内容存档的消息加解密密钥管理器接口。
     /// </summary>
-    public class InMemoryEncryptionKeyManager : EncryptionKeyManager
+    public interface IEncryptionKeyManagerAsync : IEncryptionKeyManager
+    {
+        /// <summary>
+        /// 异步添加一个消息加解密密钥实体。
+        /// </summary>
+        /// <param name="entry"></param>
+        /// <param name="cancellationToken"></param>
+        Task AddEntryAsync(EncryptionKeyEntry entry, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 异步根据版本号获取消息加解密密钥实体。
+        /// </summary>
+        /// <param name="version"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<EncryptionKeyEntry?> GetEntryAsync(int version, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// 异步根据版本号移除消息加解密密钥实体。
+        /// </summary>
+        /// <param name="version"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        Task<bool> RemoveEntryAsync(int version, CancellationToken cancellationToken = default);
+    }
+
+    /// <summary>
+    /// 一个基于内存实现的 <see cref="IEncryptionKeyManager"/>。
+    /// </summary>
+    public sealed class InMemoryEncryptionKeyManager : IEncryptionKeyManager
     {
         private readonly ConcurrentDictionary<int, EncryptionKeyEntry> _dict;
 
@@ -48,20 +73,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
             _dict = new ConcurrentDictionary<int, EncryptionKeyEntry>();
         }
 
-        public override IEnumerable<EncryptionKeyEntry> AllEntries()
+        public void AddEntry(EncryptionKeyEntry entry)
         {
-            return _dict.Values.ToArray();
+            _dict.AddOrUpdate(entry.Version, (_) => entry, (_, _) => entry);
         }
 
-        public override void AddEntry(EncryptionKeyEntry entry)
+        public EncryptionKeyEntry? GetEntry(int version)
         {
-            _dict.TryRemove(entry.Version, out _);
-            _dict.TryAdd(entry.Version, entry);
-        }
-
-        public override EncryptionKeyEntry? GetEntry(int version)
-        {
-            if (_dict.TryGetValue(version, out var entry))
+            if (_dict.TryGetValue(version, out EncryptionKeyEntry entry))
             {
                 return entry;
             }
@@ -69,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
             return null;
         }
 
-        public override bool RemoveEntry(int version)
+        public bool RemoveEntry(int version)
         {
             return _dict.TryRemove(version, out _);
         }

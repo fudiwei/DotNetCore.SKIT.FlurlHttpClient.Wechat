@@ -9,6 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
 {
     using SKIT.FlurlHttpClient.Primitives;
     using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices;
+    using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings;
 
     /// <summary>
     /// 一个企业微信会话内容存档 API HTTP 客户端。
@@ -28,12 +29,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
         /// <summary>
         /// 获取当前客户端使用的企业微信会话内容存档凭证。
         /// </summary>
-        public Settings.Credentials Credentials { get; }
+        public Credentials Credentials { get; }
 
         /// <summary>
         /// 获取当前客户端使用的企业微信会话内容存档消息加解密密钥管理器。
         /// </summary>
-        public Settings.EncryptionKeyManager EncryptionKeyManager { get; }
+        public IEncryptionKeyManager EncryptionKeyManager { get; }
 
         /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatWorkFinanceClient"/> 类的新实例。
@@ -44,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
         {
             if (options is null) throw new ArgumentNullException(nameof(options));
 
-            Credentials = new Settings.Credentials(options);
+            Credentials = new Credentials(options);
             EncryptionKeyManager = options.EncryptionKeyManager;
 
             _timeout = options.Timeout;
@@ -190,13 +191,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
 
             EnsureInitialized();
 
-            return Task.Run(() =>
+            return Task.Run(async () =>
             {
                 string encryptKey;
 
                 try
                 {
-                    Settings.EncryptionKeyEntry? encryptionKeyEntry = EncryptionKeyManager.GetEntry(request.PublicKeyVersion);
+                    EncryptionKeyEntry? encryptionKeyEntry = (EncryptionKeyManager is IEncryptionKeyManagerAsync asyncMananger)
+                        ? await asyncMananger.GetEntryAsync(request.PublicKeyVersion, cancellationToken).ConfigureAwait(false)
+                        : EncryptionKeyManager.GetEntry(request.PublicKeyVersion);
                     if (!encryptionKeyEntry.HasValue)
                         throw new WechatWorkFinanceException($"Failed to decrypt random key of the encrypted chat data, because there is no private key matched the verion: \"{request.PublicKeyVersion}\".");
 
