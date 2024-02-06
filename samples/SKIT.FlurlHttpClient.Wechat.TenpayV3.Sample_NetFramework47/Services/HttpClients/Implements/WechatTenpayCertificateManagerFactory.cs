@@ -1,12 +1,16 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
+using System.Collections.Concurrent;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
+
     internal partial class WechatTenpayCertificateManagerFactory : IWechatTenpayCertificateManagerFactory
     {
-        private readonly ConcurrentDictionary<string, CertificateManager> _dict;
+        private readonly ConcurrentDictionary<string, ICertificateManager> _dict;
 
         public WechatTenpayCertificateManagerFactory()
         {
-            _dict = new ConcurrentDictionary<string, CertificateManager>();
+            _dict = new ConcurrentDictionary<string, ICertificateManager>();
         }
 
         public CertificateManager Create(string merchantId)

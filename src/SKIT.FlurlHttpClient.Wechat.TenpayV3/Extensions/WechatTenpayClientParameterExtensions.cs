@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
+
     public static class WechatTenpayClientParameterExtensions
     {
         /// <summary>
@@ -47,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 { "timeStamp", timestamp },
                 { "nonceStr", nonce },
                 { "package", package },
-                { "signType", Constants.SignTypes.RSA },
+                { "signType", SignTypes.RSA },
                 { "paySign", sign }
             });
         }

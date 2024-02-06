@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Settings
 {
-    public class Credentials
+    public sealed class Credentials
     {
         /// <summary>
         /// 初始化客户端时 <see cref="WechatWorkClientOptions.CorpId"/> 的副本。

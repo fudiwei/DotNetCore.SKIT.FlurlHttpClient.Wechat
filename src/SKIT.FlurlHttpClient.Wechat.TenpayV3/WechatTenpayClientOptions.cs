@@ -82,6 +82,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// 默认值：<see cref="Settings.InMemoryCertificateManager"/>
         /// </para>
         /// </summary>
-        public Settings.CertificateManager PlatformCertificateManager { get; set; } = new Settings.InMemoryCertificateManager();
+        public Settings.ICertificateManager PlatformCertificateManager { get; set; } = new Settings.InMemoryCertificateManager();
     }
 }

@@ -5,6 +5,7 @@ using System.Reflection;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     using SKIT.FlurlHttpClient.Primitives;
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities;
 
@@ -31,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                 switch (certificate.EncryptCertificate.Algorithm)
                 {
-                    case Constants.EncryptionAlgorithms.AEAD_AES_256_GCM:
+                    case EncryptionAlgorithms.AEAD_AES_256_GCM:
                         {
                             if (string.IsNullOrEmpty(client.Credentials.MerchantCertificatePrivateKey))
                                 throw new WechatTenpayException("Failed to decrypt response, because the merchant private key is not set.");
@@ -45,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         }
                         break;
 
-                    case Constants.EncryptionAlgorithms.AEAD_SM4_128_GCM:
+                    case EncryptionAlgorithms.AEAD_SM4_128_GCM:
                         {
                             if (string.IsNullOrEmpty(client.Credentials.MerchantV3Secret))
                                 throw new WechatTenpayException("Failed to decrypt response, because the merchant APIv3 secret is not set.");
@@ -120,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     string newValue;
                     switch (attribute.Algorithm)
                     {
-                        case Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1:
+                        case EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1:
                             {
                                 newValue = RSAUtility.DecryptWithECB(
                                     privateKeyPem: client.Credentials.MerchantCertificatePrivateKey,
@@ -130,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                             }
                             break;
 
-                        case Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS1:
+                        case EncryptionAlgorithms.RSA_2048_ECB_PKCS1:
                             {
                                 newValue = RSAUtility.DecryptWithECB(
                                     privateKeyPem: client.Credentials.MerchantCertificatePrivateKey,
@@ -140,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                             }
                             break;
 
-                        case Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1:
+                        case EncryptionAlgorithms.SM2_C1C3C2_ASN1:
                             {
                                 newValue = SM2Utility.Decrypt(
                                     privateKeyPem: client.Credentials.MerchantCertificatePrivateKey,

@@ -3,6 +3,7 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     using SKIT.FlurlHttpClient.Primitives;
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
 
     public static class WechatTenpayClientEventDecryptionExtensions
     {
@@ -52,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             string plainJson;
             switch (webhookEventResource.Algorithm)
             {
-                case Constants.EncryptionAlgorithms.AEAD_AES_256_GCM:
+                case EncryptionAlgorithms.AEAD_AES_256_GCM:
                     {
                         try
                         {
@@ -70,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     }
                     break;
 
-                case Constants.EncryptionAlgorithms.AEAD_SM4_128_GCM:
+                case EncryptionAlgorithms.AEAD_SM4_128_GCM:
                     {
                         try
                         {

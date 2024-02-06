@@ -1,4 +1,4 @@
-﻿using System.Collections.Concurrent;
+using System.Collections.Concurrent;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
 {
@@ -6,14 +6,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Imple
 
     internal partial class WechatTenpayCertificateManagerFactory : IWechatTenpayCertificateManagerFactory
     {
-        private readonly ConcurrentDictionary<string, CertificateManager> _dict;
+        private readonly ConcurrentDictionary<string, ICertificateManager> _dict;
 
         public WechatTenpayCertificateManagerFactory()
         {
-            _dict = new ConcurrentDictionary<string, CertificateManager>();
+            _dict = new ConcurrentDictionary<string, ICertificateManager>();
         }
 
-        public CertificateManager Create(string merchantId)
+        public ICertificateManager Create(string merchantId)
         {
             // NOTICE:
             //   这里的工厂方法是为了演示多租户而存在的，可根据商户号生成不同的证书管理器。

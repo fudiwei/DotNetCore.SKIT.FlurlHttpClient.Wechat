@@ -2,7 +2,7 @@ using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Settings
 {
-    public class Credentials
+    public sealed class Credentials
     {
         /// <summary>
         /// 初始化客户端时 <see cref="WechatTenpayBusinessClientOptions.PlatformId"/> 的副本。

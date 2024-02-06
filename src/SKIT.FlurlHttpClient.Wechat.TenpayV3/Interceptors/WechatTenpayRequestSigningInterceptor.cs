@@ -8,6 +8,7 @@ using Flurl.Http;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
 {
     using SKIT.FlurlHttpClient.Internal;
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
 
     internal class WechatTenpayRequestSigningInterceptor : HttpInterceptor
     {
@@ -38,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
             if (context.FlurlCall.HttpRequestMessage.Content is MultipartFormDataContent formdataContent)
             {
                 // NOTICE: multipart/form-data 文件上传请求的待签名参数需特殊处理
-                var httpContent = formdataContent.SingleOrDefault(e => Constants.FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
+                var httpContent = formdataContent.SingleOrDefault(e => FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
                 if (httpContent is not null)
                 {
                     body = await _AsyncEx.RunTaskWithCancellationTokenAsync(httpContent.ReadAsStringAsync(), cancellationToken).ConfigureAwait(false);
@@ -54,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
 
             switch (_scheme)
             {
-                case Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256:
+                case SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256:
                     {
                         try
                         {
@@ -67,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                     }
                     break;
 
-                case Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3:
+                case SignSchemes.WECHATPAY2_SM2_WITH_SM3:
                     {
                         try
                         {

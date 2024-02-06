@@ -2,7 +2,7 @@ using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads.Settings
 {
-    public class Credentials
+    public sealed class Credentials
     {
         /// <summary>
         /// 初始化客户端时 <see cref="WechatAdsClientOptions.AgencyId"/> 的副本。
