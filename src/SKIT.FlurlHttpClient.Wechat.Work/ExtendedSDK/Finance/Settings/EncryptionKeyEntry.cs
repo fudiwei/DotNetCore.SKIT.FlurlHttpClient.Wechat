@@ -17,6 +17,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
         /// </summary>
         public string PrivateKey { get; }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="version"></param>
+        /// <param name="privateKey"></param>
         [Newtonsoft.Json.JsonConstructor]
         [System.Text.Json.Serialization.JsonConstructor]
         public EncryptionKeyEntry(int version, string privateKey)
@@ -32,12 +37,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
             PrivateKey = privateKey;
         }
 
+        /// <inheritdoc/>
         public bool Equals(EncryptionKeyEntry other)
         {
             return int.Equals(Version, other.Version) &&
                    string.Equals(PrivateKey, other.PrivateKey);
         }
 
+        /// <inheritdoc/>
         public override bool Equals(object? obj)
         {
             if (ReferenceEquals(null, obj))
@@ -48,20 +55,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
             return Equals((EncryptionKeyEntry)obj);
         }
 
+        /// <inheritdoc/>
         public override int GetHashCode()
         {
-#if NETFRAMEWORK || NETSTANDARD2_0
-            return (Version.GetHashCode(), PrivateKey?.GetHashCode()).GetHashCode();
-#else
+#if NETCOREAPP || NET5_0_OR_GREATER
             return HashCode.Combine(Version.GetHashCode(), PrivateKey?.GetHashCode());
+#else
+            return (Version.GetHashCode(), PrivateKey?.GetHashCode()).GetHashCode();
 #endif
         }
 
+        /// <inheritdoc/>
         public static bool operator ==(EncryptionKeyEntry left, EncryptionKeyEntry right)
         {
             return left.Equals(right);
         }
 
+        /// <inheritdoc/>
         public static bool operator !=(EncryptionKeyEntry left, EncryptionKeyEntry right)
         {
             return !left.Equals(right);
