@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
             string content = await reader.ReadToEndAsync();
             _logger.LogInformation("接收到微信支付推送的数据：{0}", content);
 
-            using var client = _wechatTenpayClientFactory.Create(merchantId);
+            var client = _wechatTenpayClientFactory.Create(merchantId);
             bool valid = client.VerifyEventSignature(
                 webhookTimestamp: timestamp,
                 webhookNonce: nonce,

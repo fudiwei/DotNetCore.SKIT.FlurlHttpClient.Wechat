@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
                 try
                 {
                     const string ALGORITHM_TYPE = "RSA";
-                    var client = _wechatTenpayClientFactory.Create(tenpayMerchantOptions.MerchantId);
+                    using var client = _wechatTenpayClientFactory.Create(tenpayMerchantOptions.MerchantId);
                     var request = new QueryCertificatesRequest() { AlgorithmType = ALGORITHM_TYPE };
                     var response = await client.ExecuteQueryCertificatesAsync(request);
                     if (response.IsSuccessful())

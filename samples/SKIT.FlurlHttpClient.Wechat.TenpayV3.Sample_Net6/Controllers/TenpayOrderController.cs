@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
         [Route("jsapi")]
         public async Task<IActionResult> CreateOrderByJsapi([FromBody] Models.CreateOrderByJsapiRequest requestModel)
         {
-            using var client = _wechatTenpayClientFactory.Create(requestModel.MerchantId);
+            var client = _wechatTenpayClientFactory.Create(requestModel.MerchantId);
             var request = new CreatePayTransactionJsapiRequest()
             {
                 OutTradeNumber = "SAMPLE_OTN_" + DateTimeOffset.Now.ToString("yyyyMMddHHmmssfff"),
