@@ -1,16 +1,20 @@
 using System;
 using System.Linq;
+using System.Net.Http;
 using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.HttpClients.Implements
 {
     internal partial class WechatApiClientFactory : IWechatApiClientFactory
     {
+        private readonly IHttpClientFactory _httpClientFactory;
         private readonly Options.WechatOptions _wechatOptions;
 
         public WechatApiClientFactory(
+            IHttpClientFactory httpClientFactory,
             IOptions<Options.WechatOptions> wechatOptions)
         {
+            _httpClientFactory = httpClientFactory;
             _wechatOptions = wechatOptions.Value;
         }
 
@@ -31,7 +35,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Sample.Services.HttpClients.Implements
                 PushEncodingAESKey = _wechatOptions.CallbackEncodingAESKey,
                 PushToken = _wechatOptions.CallbackToken
             };
-            var wechatApiClient = new WechatApiClient(wechatApiClientOptions);
+            var wechatApiClient = WechatApiClientBuilder.Create(wechatApiClientOptions)
+                .UseHttpClient(_httpClientFactory.CreateClient(), disposeClient: false)
+                .Build();
             return wechatApiClient;
         }
     }
