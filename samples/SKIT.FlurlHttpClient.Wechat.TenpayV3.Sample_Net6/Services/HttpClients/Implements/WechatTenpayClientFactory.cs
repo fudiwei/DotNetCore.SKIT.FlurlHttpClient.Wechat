@@ -1,18 +1,22 @@
 using System;
 using System.Linq;
+using System.Net.Http;
 using Microsoft.Extensions.Options;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
 {
     internal partial class WechatTenpayClientFactory : IWechatTenpayClientFactory
     {
+        private readonly IHttpClientFactory _httpClientFactory;
         private readonly Options.TenpayOptions _tenpayOptions;
         private readonly IWechatTenpayCertificateManagerFactory _tenpayCertificateManagerFactory;
 
         public WechatTenpayClientFactory(
+            IHttpClientFactory httpClientFactory,
             IOptions<Options.TenpayOptions> tenpayOptions,
             IWechatTenpayCertificateManagerFactory tenpayCertificateManagerFactory)
         {
+            _httpClientFactory = httpClientFactory;
             _tenpayOptions = tenpayOptions.Value;
             _tenpayCertificateManagerFactory = tenpayCertificateManagerFactory;
         }
@@ -37,7 +41,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Imple
                 AutoEncryptRequestSensitiveProperty = false,
                 AutoDecryptResponseSensitiveProperty = false
             };
-            var wechatTenpayClient = new WechatTenpayClient(wechatTenpayClientOptions);
+            var wechatTenpayClient = WechatTenpayClientBuilder.Create(wechatTenpayClientOptions)
+                .UseHttpClient(_httpClientFactory.CreateClient(), disposeClient: false)
+                .Build();
             return wechatTenpayClient;
         }
     }
