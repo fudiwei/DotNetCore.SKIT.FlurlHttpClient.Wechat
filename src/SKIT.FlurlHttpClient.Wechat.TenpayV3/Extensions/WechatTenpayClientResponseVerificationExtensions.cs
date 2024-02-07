@@ -109,6 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <typeparam name="TResponse"></typeparam>
         /// <param name="client"></param>
         /// <param name="response"></param>
+        /// <param name="cancellationToken"></param>
         /// <returns></returns>
         public static Task<ErroredResult> VerifyResponseSignatureAsync<TResponse>(this WechatTenpayClient client, TResponse response, CancellationToken cancellationToken = default)
             where TResponse : WechatTenpayResponse
@@ -142,6 +143,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="responseBody"></param>
         /// <param name="responseSignature"></param>
         /// <param name="responseSerialNumber"></param>
+        /// <param name="cancellationToken"></param>
         /// <returns></returns>
         public static Task<ErroredResult> VerifyResponseSignatureAsync(this WechatTenpayClient client, string responseTimestamp, string responseNonce, string responseBody, string responseSignature, string responseSerialNumber, CancellationToken cancellationToken = default)
         {
@@ -172,6 +174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="responseSignature"></param>
         /// <param name="responseSignatureType"></param>
         /// <param name="responseSerialNumber"></param>
+        /// <param name="cancellationToken"></param>
         /// <returns></returns>
         public static Task<ErroredResult> VerifyResponseSignatureAsync(this WechatTenpayClient client, string responseTimestamp, string responseNonce, string responseBody, string responseSignature, string responseSignatureType, string responseSerialNumber, CancellationToken cancellationToken = default)
         {

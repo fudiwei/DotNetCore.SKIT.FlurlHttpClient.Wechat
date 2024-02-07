@@ -51,7 +51,7 @@ bool ret = client.VerifyEventSignature(
 
 ### 调试验签错误：
 
-由于 `VerifyEventSignature()` 方法内部会 `try-catch` 掉所有异常情况，并直接返回 `false`。为方便开发者在调试阶段排查验签的错误信息，你可以在验证回调通知事件签名时指定返回值类型为 `ErroredResult` 而非 `Boolean`，该返回值中包含了一些异常的原因和相关堆栈信息。
+由于 `VerifyEventSignature()` 方法内部会 `try-catch` 捕获所有异常，并直接返回 `false`。为方便开发者在调试阶段排查验签的错误信息，你可以在验证回调通知事件签名时指定返回值类型为 `ErroredResult` 而非 `Boolean`，该返回值中包含了一些异常的原因和相关堆栈信息。
 
 ```csharp
 ErroredResult res = client.VerifyEventSignature(timestamp, nonce, body, signature, serialNumber);
