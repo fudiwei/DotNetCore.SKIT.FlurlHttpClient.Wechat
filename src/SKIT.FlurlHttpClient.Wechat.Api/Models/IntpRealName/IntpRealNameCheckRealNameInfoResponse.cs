@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /intp/realname/checkrealnameinfo 接口的响应。</para>
     /// </summary>
-    public class IntpRealNameCheckRealNameInfoResponse : IntpMarketCodeActiveCodeQueryResponse
+    public class IntpRealNameCheckRealNameInfoResponse : WechatApiResponse
     {
         /// <summary>
         /// 获取或设置 OpenId 验证结果，使用分号分隔。

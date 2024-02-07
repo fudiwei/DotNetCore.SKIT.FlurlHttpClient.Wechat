@@ -1,9 +1,9 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /intp/realname/getauthurl 接口的响应。</para>
     /// </summary>
-    public class IntpRealNameGetAuthUrlResponse : IntpMarketCodeActiveCodeQueryResponse
+    public class IntpRealNameGetAuthUrlResponse : WechatApiResponse
     {
         /// <summary>
         /// 获取或设置授权链接。
