@@ -23,7 +23,7 @@
 
 -   SDK v2.x.x 将依赖公共组件 v2.x.x；
 -   SDK v3.x.x 将依赖公共组件 v3.x.x。
--   依此类推。
+-   依此类推。如果你正在使用依赖了低版本公共组件的模块，请不要单独升级公共组件，以免发生兼容性问题。
 
 ---
 
@@ -33,18 +33,24 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.0.0
+
+    -   **新增**：新增快速获取学生身份接口。
+
+    -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
+
 -   Release 2.37.0
 
     -   **新增**：新增视频号小店会员功能、电子面单等相关接口。
 
     -   **新增**：新增小程序微信物流服务运费险组件相关接口。
-    
+
     -   **新增**：新增小程序短剧媒资剧目授权、短剧播放器推荐位控制等相关接口。
-    
+
     -   **新增**：新增小程序 Donut 多端能力服务端接口。
-     
+
     -   **新增**：新增微信就医助手通用消息推送接口。（_via_ [Gitee #I8U7U4](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I8U7U4)）
-    
+
     -   **新增**：随官方更新小程序虚拟支付相关接口模型。
 
 -   Release 2.36.0
@@ -563,6 +569,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.0.0
+
+    -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
+
 -   Release 2.3.1
 
     -   **新增**：修复 Windows 环境下潜在的证书加载失败问题。（_via_ [GitHub #93](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/93)）
@@ -626,6 +636,10 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 3.0.0
+
+    -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
 -   Release 2.21.0
 
@@ -978,6 +992,10 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 3.0.0
+
+    -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
 -   Release 2.25.0
 
@@ -1389,6 +1407,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.0.0
+
+    -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
+
 -   Release 2.0.0
 
     -   首次发布。
@@ -1402,6 +1424,10 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 3.0.0
+
+    -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
 -   Release 2.0.1
 
@@ -1420,6 +1446,10 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+-   Release 3.0.0
+
+    -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
 -   Release 2.2.0
 
