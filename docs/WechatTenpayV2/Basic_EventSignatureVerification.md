@@ -10,6 +10,6 @@
 
 ```csharp
 bool ret = client.VerifyEventSignature(
-    callbackBody: "<xml> 微信回调通知中请求正文 XML 内容 </xml>"
+    webhookBody: "<xml> 微信回调通知中请求正文 XML 内容 </xml>"
 );
 ```

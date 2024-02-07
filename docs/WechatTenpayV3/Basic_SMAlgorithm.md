@@ -22,7 +22,7 @@ var options = new WechatTenpayClientOptions()
     // 其他配置项略
     SignScheme = Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3
 };
-var client = new WechatTenpayClient(options);
+var client = WechatTenpayClientBuilder.Create(options).Build();
 ```
 
 接着，在获取平台证书时，需指定证书的算法类型：

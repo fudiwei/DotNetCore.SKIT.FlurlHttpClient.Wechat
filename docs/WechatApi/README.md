@@ -14,6 +14,9 @@
 
 ## 快速入门
 
+> [!IMPORTANT]
+> 此目录下的文档适用于 v3.x 版本的模块。如果你正在使用 2.x 版本，请移步至 GitHub/Gitee 的已归档分支。
+
 ### 安装：
 
 提示：如果你使用 Visual Studio NuGet 管理器图形化界面，请在搜索结果中勾选“**包括预发行版**”。
@@ -44,7 +47,7 @@ var options = new WechatApiClientOptions()
     MidasOfferIdV2 = "米大师 2.0 相关服务 OfferId，不用则不填",
     MidasAppKeyV2 = "米大师 2.0 相关服务 AppKey，不用则不填"
 };
-var client = new WechatApiClient(options);
+var client = WechatApiClientBuilder.Create(options).Build();
 ```
 
 ### 请求 & 响应：
@@ -76,7 +79,7 @@ else
 
 ## 基础用法
 
--   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Basic_ModelDefinition.md)
+-   ⭐ [如何快速找到需要调用的 API 模型类名 / 方法名？](./Basic_ModelDefinition.md)
 
 -   [如何解析回调通知事件？](./Basic_EventDeserialization.md)
 
@@ -84,7 +87,7 @@ else
 
 -   [如何解密经过加密处理的开放数据？](./Basic_OpenDataDecryption.md)
 
--   [如何生成 JS-SDK 初始化时所需的参数及签名？](./Basic_Parameters.md)
+-   ⭐ [如何生成 JS-SDK 初始化时所需的参数及签名？](./Basic_Parameters.md)
 
 -   [如何自定义额外的 API 接口？](./Basic_Extensions.md)
 
@@ -92,7 +95,7 @@ else
 
 ## 高级技巧
 
--   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
+-   [如何与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 
 -   [如何指定 JSON 序列化器？](./Advanced_JsonSerializer.md)
 

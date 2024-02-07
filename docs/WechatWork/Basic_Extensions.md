@@ -30,10 +30,10 @@ public static class MyFakeClientExtensions
         if (request is null) throw new ArgumentNullException(nameof(request));
 
         IFlurlRequest flurlReq = client
-            .CreateRequest(request, HttpMethod.Post, "my-fake-url")
+            .CreateFlurlRequest(request, HttpMethod.Post, "my-fake-url")
             .SetQueryParam("access_token", request.AccessToken);
 
-        return await client.SendRequestWithJsonAsync<MyFakeResponse>(flurlReq, request, cancellationToken);
+        return await client.SendFlurlRequestAsJsonAsync<MyFakeResponse>(flurlReq, request, cancellationToken);
     }
 }
 ```
@@ -42,7 +42,7 @@ public static class MyFakeClientExtensions
 
 ```csharp
 /* 继承 WechatWorkEvent 实现自定义的 JSON 格式的回调通知事件 */
-public class MyFakeEvent : WechatWorkEvent, WechatWorkEvent.Types.IJsonSerializable
+public class MyFakeEvent : WechatWorkEvent
 {
     [Newtonsoft.Json.JsonProperty("my_fake_props")]
     [System.Text.Json.Serialization.JsonPropertyName("my_fake_props")]
@@ -50,7 +50,7 @@ public class MyFakeEvent : WechatWorkEvent, WechatWorkEvent.Types.IJsonSerializa
 }
 
 /* 继承 WechatWorkEvent 实现自定义的 XML 格式的回调通知事件 */
-public class MyFakeEvent : WechatWorkEvent, WechatWorkEvent.Types.IXmlSerializable
+public class MyFakeEvent : WechatWorkEvent
 {
     [System.Xml.Serialization.XmlElement("my_fake_props")]
     public string MyFakeProps { get; set; }

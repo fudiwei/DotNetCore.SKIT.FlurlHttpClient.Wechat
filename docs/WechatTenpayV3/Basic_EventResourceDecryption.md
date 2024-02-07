@@ -26,16 +26,16 @@
 
 ```csharp
 /* 微信商户平台发来的通知内容 */
-string callbackJson = "{ ... }";
+string webhookJson = "{ ... }";
 /* 将 JSON 反序列化得到通知对象 */
 /* 你也可以将 WechatTenpayEvent 类型直接绑定到 MVC 模型上，这样就不再需要手动反序列化 */
-var callbackModel = client.DeserializeEvent(callbackJson);
-if ("TRANSACTION.SUCCESS".Equals(callbackModel.EventType))
+var webhookModel = client.DeserializeEvent(webhookJson);
+if ("TRANSACTION.SUCCESS".Equals(webhookModel.EventType))
 {
     /* 根据事件类型，解密得到支付通知敏感数据 */
-    var callbackResource = client.DecryptEventResource<Events.TransactionResource>(callbackModel);
-    string outTradeNumber = callbackResource.OutTradeNumber;
-    string transactionId = callbackResource.TransactionId;
+    var webhookResource = client.DecryptEventResource<Events.TransactionResource>(webhookModel);
+    string outTradeNumber = webhookResource.OutTradeNumber;
+    string transactionId = webhookResource.TransactionId;
 }
 ```
 

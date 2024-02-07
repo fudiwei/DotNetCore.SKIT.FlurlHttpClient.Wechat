@@ -37,11 +37,11 @@
 
 ```csharp
 bool ret = client.VerifyEventSignature(
-    callbackTimestamp: "微信回调通知中的 Wechatpay-Timestamp 标头",
-    callbackNonce: "微信回调通知中的 Wechatpay-Nonce 标头",
-    callbackBody: "微信回调通知中请求正文",
-    callbackSignature: "微信回调通知中的 Wechatpay-Signature 标头",
-    callbackSerialNumber: "微信回调通知中的 Wechatpay-Serial 标头"
+    webhookTimestamp: "微信回调通知中的 Wechatpay-Timestamp 标头",
+    webhookNonce: "微信回调通知中的 Wechatpay-Nonce 标头",
+    webhookBody: "微信回调通知中请求正文",
+    webhookSignature: "微信回调通知中的 Wechatpay-Signature 标头",
+    webhookSerialNumber: "微信回调通知中的 Wechatpay-Serial 标头"
 );
 ```
 
@@ -51,14 +51,13 @@ bool ret = client.VerifyEventSignature(
 
 ### 调试验签错误：
 
-由于 `VerifyEventSignature()` 方法内部会 `try-catch` 掉所有异常情况，并直接返回 `false`。为方便开发者在调试阶段排查验签的错误信息，你可以在验证回调通知事件签名时指定接收最后一个 `out` 返回参数，该参数中包含了一些异常的原因和相关堆栈信息。
+由于 `VerifyEventSignature()` 方法内部会 `try-catch` 掉所有异常情况，并直接返回 `false`。为方便开发者在调试阶段排查验签的错误信息，你可以在验证回调通知事件签名时指定返回值类型为 `ErroredResult` 而非 `Boolean`，该返回值中包含了一些异常的原因和相关堆栈信息。
 
 ```csharp
-bool ret = client.VerifyEventSignature(timestamp, nonce, body, signature, serialNumber, out Exception error);
-if (!ret)
+ErroredResult res = client.VerifyEventSignature(timestamp, nonce, body, signature, serialNumber);
+if (!res.Result)
 {
-    Console.WriteLine(error);
-    Console.WriteLine(error?.InnerException);
+    Console.WriteLine(res.Error);
 }
 ```
 

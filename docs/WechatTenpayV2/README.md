@@ -18,6 +18,9 @@
 
 ## 快速入门
 
+> [!IMPORTANT]
+> 此目录下的文档适用于 v3.x 版本的模块。如果你正在使用 2.x 版本，请移步至 GitHub/Gitee 的已归档分支。
+
 ### 安装：
 
 提示：如果你使用 Visual Studio NuGet 管理器图形化界面，请在搜索结果中勾选“**包括预发行版**”。
@@ -33,7 +36,6 @@
 ### 初始化：
 
 ```csharp
-using SKIT.FlurlHttpClient.Wechat;
 using SKIT.FlurlHttpClient.Wechat.TenpayV2;
 
 var options = new WechatTenpayClientOptions()
@@ -43,7 +45,7 @@ var options = new WechatTenpayClientOptions()
     MerchantCertificateBytes = File.ReadAllBytes("/微信商户证书文件路径/apiclient_cert.p12"),
     MerchantCertificatePassword = "微信商户证书密码，通常是商户号"
 };
-var client = new WechatTenpayClient(options);
+var client = WechatTenpayClientBuilder.Create(options).Build();
 ```
 
 ### 请求 & 响应：
@@ -82,7 +84,7 @@ else
 
 ## 基础用法
 
--   [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Basic_ModelDefinition.md)
+-   ⭐ [如何快速找到需要调用的 API 模型类名 / 方法名（附完整 API 对照表）？](./Basic_ModelDefinition.md)
 
 -   [如何解密回调通知事件中的敏感数据？](./Basic_EventInfoDecryption.md)
 
@@ -94,7 +96,7 @@ else
 
 ## 高级技巧
 
--   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
+-   [如何与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 
 -   [如何指定 JSON 序列化器？](./Advanced_JsonSerializer.md)
 

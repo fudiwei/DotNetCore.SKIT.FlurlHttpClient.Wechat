@@ -16,6 +16,9 @@
 
 ## 快速入门
 
+> [!IMPORTANT]
+> 此目录下的文档适用于 v3.x 版本的模块。如果你正在使用 2.x 版本，请移步至 GitHub/Gitee 的已归档分支。
+
 ### 安装：
 
 提示：如果你使用 Visual Studio NuGet 管理器图形化界面，请在搜索结果中勾选“**包括预发行版**”。
@@ -40,7 +43,7 @@ var options = new WechatAdsClientOptions()
     AgencyAppId = "广告服务商 AppId",
     AgencyApiKey = "广告服务商 ApiKey"
 };
-var client = new WechatAdsClient(options);
+var client = WechatAdsClientBuilder.Create(options).Build();
 ```
 
 ### 请求 & 响应：
@@ -63,7 +66,7 @@ var response = await client.ExecuteCampaignsAddAsync(request);
 
 ## 基础用法
 
--   [如何快速找到需要调用的 API 模型类名 / 方法名？](./Basic_ModelDefinition.md)
+-   ⭐ [如何快速找到需要调用的 API 模型类名 / 方法名？](./Basic_ModelDefinition.md)
 
 -   [如何获取接口调用凭据（即 AccessToken）？](./Basic_AccessToken.md)
 
@@ -71,7 +74,7 @@ var response = await client.ExecuteCampaignsAddAsync(request);
 
 ## 高级技巧
 
--   [如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
+-   [如何与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
 
 -   [如何指定 JSON 序列化器？](./Advanced_JsonSerializer.md)
 

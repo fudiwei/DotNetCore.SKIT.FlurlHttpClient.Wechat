@@ -10,8 +10,8 @@
 
 ```csharp
 bool ret = client.VerifyEventSignature(
-    callbackAuthorization: "微企付回调通知中的 TBEP-Authorization 标头",
-    callbackBody: "微企付回调通知中请求正文"
+    webhookAuthorization: "微企付回调通知中的 TBEP-Authorization 标头",
+    webhookBody: "微企付回调通知中请求正文"
 );
 ```
 
@@ -19,13 +19,12 @@ bool ret = client.VerifyEventSignature(
 
 ### 调试验签错误：
 
-由于 `VerifyEventSignature()` 方法内部会 `try-catch` 掉所有异常情况，并直接返回 `false`。为方便开发者在调试阶段排查验签的错误信息，你可以在验证回调通知事件签名时指定接收最后一个 `out` 返回参数，该参数中包含了一些异常的原因和相关堆栈信息。
+由于 `VerifyEventSignature()` 方法内部会 `try-catch` 掉所有异常情况，并直接返回 `false`。为方便开发者在调试阶段排查验签的错误信息，你可以在验证回调通知事件签名时指定返回值类型为 `ErroredResult` 而非 `Boolean`，该返回值中包含了一些异常的原因和相关堆栈信息。
 
 ```csharp
-bool ret = client.VerifyEventSignature(authorization, signature, out Exception error);
-if (!ret)
+ErroredResult res = client.VerifyEventSignature(authorization, signature);
+if (!res.Result)
 {
-    Console.WriteLine(error);
-    Console.WriteLine(error?.InnerException);
+    Console.WriteLine(res.Error);
 }
 ```

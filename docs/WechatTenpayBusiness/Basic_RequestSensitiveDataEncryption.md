@@ -58,7 +58,7 @@ var options = new WechatTenpayBusinessOptions()
     SensitivePropertyEncryptionSM4Key = "SM4 密钥",
     SensitivePropertyEncryptionSM4IV = "SM4 偏移量"
 };
-var client = new WechatTenpayBusinessClient(options);
+var client = WechatTenpayBusinessClientBuilder.Create(options).Build();
 ```
 
 这样，本库会在实际发出请求前自动为你调用 `EncryptRequestSensitiveProperty()` 方法。

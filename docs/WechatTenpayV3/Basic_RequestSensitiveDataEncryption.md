@@ -82,7 +82,7 @@ var options = new WechatTenpayClientOptions()
     // 其他配置项略
     AutoEncryptRequestSensitiveProperty = true
 };
-var client = new WechatTenpayClient(options);
+var client = WechatTenpayClientBuilder.Create(options).Build();
 ```
 
 这样，本库会在实际发出请求前自动为你调用 `EncryptRequestSensitiveProperty()` 方法。
@@ -95,7 +95,7 @@ var client = new WechatTenpayClient(options);
 
 ### 通过 `CertificateManager` 管理平台证书信息：
 
-微信商户平台证书需要通过 API 的方式获取、且可能同时存在多个有效证书，本库提供了一个 `CertificateManager` 类型可用于管理证书信息。
+微信商户平台证书需要通过 API 的方式获取、且可能同时存在多个有效证书，本库提供了一个 `ICertificateManager` 接口可用于管理证书信息。
 
 你可以在构造得到 `WechatTenpayClient` 对象时指定证书管理器：
 
@@ -106,7 +106,7 @@ var options = new WechatTenpayClientOptions()
     // 其他配置项略
     PlatformCertificateManager = manager
 };
-var client = new WechatTenpayClient(options);
+var client = WechatTenpayClientBuilder.Create(options).Build();
 ```
 
 > 注：`InMemoryCertificateManager` 是本库内置的基于内存实现的证书管理器；你也可自行继承并实现一个 `CertificateManager`，例如利用数据库或 Redis 等方式存取证书信息。
@@ -142,7 +142,7 @@ client.EncryptRequestSensitiveProperty(request);
 ```csharp
 using StackExchange.Redis;
 
-public class RedisCertificateManager : CertificateManager
+public class RedisCertificateManager : ICertificateManager
 {
     private const string REDIS_KEY_PREFIX = "wxpaypc-";
 
@@ -184,7 +184,7 @@ public class RedisCertificateManager : CertificateManager
         };
     }
 
-    public override IEnumerable<CertificateEntry> AllEntries()
+    public IEnumerable<CertificateEntry> AllEntries()
     {
         // 生产环境中不应该使用 Redis KEYS 命令，这里代码仅作参考
         // 你可以使用 SCAN + CURSOR 来实现类似功能
@@ -203,7 +203,7 @@ public class RedisCertificateManager : CertificateManager
         return Array.Empty<CertificateEntry>();
     }
 
-    public override void AddEntry(CertificateEntry entry)
+    public void AddEntry(CertificateEntry entry)
     {
         string key = GenerateRedisKey(serialNumber);
         HashEntry[] values = ConvertCertificateEntryToHashEntries(entry);
@@ -211,7 +211,7 @@ public class RedisCertificateManager : CertificateManager
         Connection.GetDatabase().KeyExpire(key, entry.ExpireTime - DateTimeOffset.Now);
     }
 
-    public override CertificateEntry? GetEntry(string serialNumber)
+    public CertificateEntry? GetEntry(string serialNumber)
     {
         string key = GenerateRedisKey(serialNumber);
         HashEntry[] values = Connection.GetDatabase().HashGetAll(key);
@@ -223,7 +223,7 @@ public class RedisCertificateManager : CertificateManager
         return null;
     }
 
-    public override bool RemoveEntry(string serialNumber)
+    public bool RemoveEntry(string serialNumber)
     {
         string key = GenerateRedisKey(serialNumber);
         return Connection.GetDatabase().KeyDelete(key);
