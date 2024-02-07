@@ -25,13 +25,12 @@ bool ret = client.VerifyResponseSignature(response);
 
 ### 调试验签错误：
 
-由于 `VerifyResponseSignature()` 方法内部会 `try-catch` 掉所有异常情况，并直接返回 `false`。为方便开发者在调试阶段排查验签的错误信息，你可以在验证响应签名时指定接收最后一个 `out` 返回参数，该参数中包含了一些异常的原因和相关堆栈信息。
+由于 `VerifyResponseSignature()` 方法内部会 `try-catch` 掉所有异常情况，并直接返回 `false`。为方便开发者在调试阶段排查验签的错误信息，你可以在验证响应签名时指定返回值类型为 `ErroredResult` 而非 `Boolean`，该返回值中包含了一些异常的原因和相关堆栈信息。
 
 ```csharp
-bool ret = client.VerifyResponseSignature(response, out Exception error);
-if (!ret)
+ErroredResult res = client.VerifyResponseSignature(response);
+if (!res.Result)
 {
-    Console.WriteLine(error);
-    Console.WriteLine(error?.InnerException);
+    Console.WriteLine(res.Error);
 }
 ```

@@ -44,9 +44,9 @@
 与初始化本库的 HTTP API 客户端的过程类似。
 
 ```csharp
-using SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance;
-using SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Models;
-using SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance.Settings;
+using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance;
+using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models;
+using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings;
 
 var manager = new InMemoryEncryptionKeyManager();
 manager.AddEntry(new EncryptionKeyEntry(1, "-----BEGIN RSA PRIVATE KEY----- 消息加解密私钥 PKCS#1 PEM 内容 -----END RSA PRIVATE KEY-----"));

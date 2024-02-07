@@ -38,7 +38,7 @@ var options = new WechatTenpayBusinessClientOptions()
 {
     AutoDecryptResponseSensitiveProperty = true
 };
-var client = new WechatTenpayBusinessClient(options);
+var client = WechatTenpayBusinessClientBuilder.Create(options).Build();
 ```
 
 这样，本库会在实际收到响应后自动为你调用 `DecryptResponseSensitiveProperty()` 方法。

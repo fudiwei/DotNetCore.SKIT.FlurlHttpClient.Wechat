@@ -6,12 +6,12 @@
 
 ```csharp
 /* 如果是 JSON 格式的通知内容，以 add_schedule 事件为例 */
-string callbackJson = "{ ... }";
-var callbackModel = client.DeserializeEventFromJson<Events.AddScheduleEvent>(callbackJson);
+string webhookJson = "{ ... }";
+var webhookModel = client.DeserializeEventFromJson<Events.AddScheduleEvent>(webhookJson);
 
 /* 如果是 XML 格式的通知内容，以 text 事件为例 */
-string callbackXml = "<xml> ... </xml>";
-var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml);
+string webhookXml = "<xml> ... </xml>";
+var webhookModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(webhookXml);
 ```
 
 完整的回调通知模型定义可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Work/Events_ 目录。
@@ -25,14 +25,12 @@ var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(call
 这里给出一种解决方案：
 
 ```csharp
-WechatApiEvent eventModel = client.DeserializeEventFromXml(callbackXml);
-string msgType = eventModel.MessageType?.ToUpper();
-
+string msgType = eventModel = client.DeserializeEventFromXml(webhookXml).MessageType?.ToUpper();
 switch (msgType)
 {
     case "TEXT":
         {
-            var callbackModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(callbackXml);
+            var webhookModel = client.DeserializeEventFromXml<Events.TextMessageEvent>(webhookXml);
         }
         break;
     // 其他情况略
@@ -56,7 +54,7 @@ var options = new WechatWorkClientOptions()
     PushToken = "Token",
     PushEncodingAESKey = "EncodingAESKey"
 };
-var client = new WechatWorkClient(options);
+var client = WechatWorkClientBuilder.Create(options).Build();
 ```
 
 ---

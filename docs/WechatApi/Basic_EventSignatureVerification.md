@@ -16,22 +16,22 @@ var options = new WechatApiClientOptions()
     PushToken = "Token",
     PushEncodingAESKey = "EncodingAESKey"
 };
-var client = new WechatApiClient(options);
+var client = WechatApiClientBuilder.Create(options).Build();
 
 /* 验证微信服务器 */
 bool ret = client.VerifyEventSignatureForEcho(
-    callbackTimestamp: "微信回调通知中的 timestamp 字段",
-    callbackNonce: "微信回调通知中的 nonce 字段",
-    callbackSignature: "微信回调通知中的 signature 字段"
+    webhookTimestamp: "微信回调通知中的 timestamp 字段",
+    webhookNonce: "微信回调通知中的 nonce 字段",
+    webhookSignature: "微信回调通知中的 signature 字段"
 );
 
 /* 验证安全模式下 XML 消息的签名 */
 bool ret = client.VerifyEventSignatureFromXml(
-    callbackXml: "微信公众平台发来的通知内容，形如：<xml><Encrypt>...</Encrypt></xml>"
+    webhookXml: "微信公众平台发来的通知内容，形如：<xml><Encrypt>...</Encrypt></xml>"
 );
 
 /* 验证安全模式下 JSON 消息的签名 */
 bool ret = client.VerifyEventSignatureFromJson(
-    callbackJson: "微信公众平台发来的通知内容，形如：{\"Encrypt\":\"...\"}"
+    webhookJson: "微信公众平台发来的通知内容，形如：{\"Encrypt\":\"...\"}"
 );
 ```

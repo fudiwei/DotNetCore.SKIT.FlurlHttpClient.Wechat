@@ -1,10 +1,10 @@
-﻿## 如何在 ASP.NET Core 中与 `IHttpClientFactory` 集成？
+﻿## 如何与 `IHttpClientFactory` 集成？
 
 ---
 
 本功能来自于公共组件，请参阅公共组件下的相关文档：
 
-> [《SKIT.FlurlHttpClient FAQ：如何在 ASP.NET Core 中与 IHttpClientFactory 集成？》](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/blob/main/docs/FAQ_IHttpClientFactory.md)
+> [《SKIT.FlurlHttpClient FAQ：如何与 IHttpClientFactory 集成？》](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/blob/main/docs/README.md)
 
 ---
 

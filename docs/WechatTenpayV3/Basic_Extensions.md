@@ -30,10 +30,10 @@ public static class MyFakeClientExtensions
         if (request is null) throw new ArgumentNullException(nameof(request));
 
         IFlurlRequest flurlReq = client
-            .CreateRequest(request, HttpMethod.Post, "my-fake-url")
+            .CreateFlurlRequest(request, HttpMethod.Post, "my-fake-url")
             .SetQueryParam("access_token", request.AccessToken);
 
-        return await client.SendRequestWithJsonAsync<MyFakeResponse>(flurlReq, request, cancellationToken);
+        return await client.SendFlurlRequestAsJsonAsync<MyFakeResponse>(flurlReq, request, cancellationToken);
     }
 }
 ```
