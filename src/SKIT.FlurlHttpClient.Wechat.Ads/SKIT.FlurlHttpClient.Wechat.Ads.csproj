@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net461; netstandard2.0; net6.0</TargetFrameworks>
+        <TargetFrameworks>net462; netstandard2.0; net6.0</TargetFrameworks>
         <LangVersion>10.0</LangVersion>
         <Nullable>enable</Nullable>
         <NullableReferenceTypes>true</NullableReferenceTypes>
@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage WechatAds WechatAdvertisting 微信 广告平台 微信广告平台 腾讯广告平台 广点通 微信广点通 腾讯广点通</PackageTags>
-        <Version>3.0.0-preview.1</Version>
+        <Version>3.0.0</Version>
         <Description>基于 Flurl.Http 的微信广告平台（广点通）API 客户端。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
@@ -36,11 +36,11 @@
 	</ItemGroup>
 
     <ItemGroup>
-        <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461'" />
+        <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net462'" />
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="3.0.0-preview.1" />
+        <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="3.0.0" />
     </ItemGroup>
 
 </Project>
