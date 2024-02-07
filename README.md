@@ -15,8 +15,8 @@
 
 ## 特性
 
--   基于 `Flurl.Http`，可与 `IHttpClientFactory` 集成。
--   支持 .NET Framework 4.6.1+、.NET Standard 2.0+、.NET Core 2.0+、.NET 5+。
+-   基于 `Flurl.Http`。
+-   支持 .NET Framework 4.6.2+、.NET Standard 2.0+、.NET Core 2.0+、.NET 5.0+ 多目标框架。
 -   支持 Windows / Linux / macOS 多平台部署。
 -   支持 `System.Text.Json`（默认）和 `Newtonsoft.Json` 两种序列化方式。
 -   强类型接口模型。
@@ -42,24 +42,11 @@
 
 ## Q & A
 
-### 1. 为什么要“造轮子”？
-
-这都 2021 年了，官方本身提供的示例代码还只能运行在 .NET Framework on Windows 上；就连 RSA 签名这么基础的东西都没有人封装（确切地说是因为 RSA 有很多种分块模式和填充模式，网上能找到的往往只封装了其中一种，但却未必符合微信的要求）；全网很难找到一个封装微信 API 尽可能全的 .NET SDK，开源的项目有不少，但作者能坚持下去的不多。
-
-于是萌生了自己封装一个库的想法，打算解决这几个痛点，同时也是推广一下微软官方的 `System.Text.Json`。
-
-### 2. `Flurl.Http` 是什么？
+### 1. `Flurl.Http` 是什么？
 
 [`Flurl.Http`](https://flurl.dev/) 是一个轻量级 HTTP 库，是 .NET 中最受欢迎扩展库之一，在 NuGet 上的累计下载量超过 1700 万、日均下载量超过 6 千、GitHub 2.6k Stars（数据统计截至 2021-06-01）。
 
-与另一个流行的 HTTP 库 [`RestSharp`](https://restsharp.dev/) 相比，`Flurl.Http` 底层基于 `System.Net.Http.HttpClient`，而 `RestSharp` 底层则基于 `System.Net.HttpWebRequest`，前者在多核多线程环境下的性能基准测试中表现要远优于后者，同时也是微软官方目前推荐的 HTTP 客户端方案。
-
-> 注：微软官方关于 `System.Net.HttpWebRequest` 与 `System.Net.Http.HttpClient` 的说明：
->
-> -   [《Microsoft Docs - HttpWebRequest 类（Systen.Net）》](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.httpwebrequest#remarks)
-> -   [《Microsoft Docs - HttpClient 类（Systen.Net.Http）》](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient#httpclient-and-net-core)
-
-### 3. 本库与盛派微信 SDK（Senparc.Weixin）有什么区别？
+### 2. 本库与盛派微信 SDK（Senparc.Weixin）有什么区别？
 
 > 注：[盛派微信 SDK](https://github.com/JeffreySu/WeiXinMPSDK) 是由苏震巍先生发起的国内知名的 .NET 开源项目。
 
@@ -69,15 +56,7 @@
 
 -   本库封装了目前微信官方提供的几乎所有 API（极个别不支持的已在各模块文档中列出具体原因）；盛派微信 SDK 只提供了常用的 API。
 
-### 4. 为什么不支持 .NET Framework 4.0 / .NET Framework 4.5？
-
-直接原因是本项目的依赖库最低支持到 .NET Framework 4.6.1。
-
-间接原因是为了支持跨平台的 .NET Standard 2.0，只能兼容到 .NET Framework 4.6.1。
-
-根本原因是微软官方已于 2016 年 1 月 12 日终止了对 .NET Framework 4.6.1 以下版本的技术支持（详情请阅读[官方公告](https://docs.microsoft.com/zh-cn/lifecycle/faq/dotnet-framework)）。也就是说，微软已经不再为此提供安全更新，在大部分技术合规要求中这一点都是扣分项，所以建议各位开发者目标框架能升级就升级。
-
-### 5. 看了源码，发现模型定义里很多同样的代码是复制粘贴的，为什么不使用面向对象中的继承？
+### 3. 看了源码，发现模型定义里很多同样的代码是复制粘贴的，为什么不使用面向对象中的继承？
 
 关于这点得吐槽微信提供的 API 了，很显然微信内部也是很多个 Team 在共同开发，每个 Team、甚至每个人的字段命名风格、约束条件、接口规则都大相径庭。就连微信支付虽然 v3 版 API 号称是 “RESTful” 的，却也没个统一标准。
 
@@ -87,7 +66,7 @@
 
 本项目已经尽可能在条件允许的范围内抽象出了一些公共基类、并封装了各种奇怪场景下的自定义 JsonConverter。
 
-### 6. 所有 API 都经过了测试吗？
+### 4. 所有 API 都经过了测试吗？
 
 由于微信的产品业务线众多，很多业务也需要前置条件才能继续，截至目前本项目已封装超过 2300 余个 API，虽然同时也编写了若干单元测试用例，但与数量庞大的 API 相比仍远远不够。
 

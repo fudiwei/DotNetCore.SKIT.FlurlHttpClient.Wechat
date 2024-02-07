@@ -93,3 +93,9 @@ else
 -   [如何指定 JSON 序列化器？](./Advanced_JsonSerializer.md)
 
 -   [如何使用拦截器？](./Advanced_Interceptor.md)
+
+---
+
+## 迁移指南
+
+-   [v3.x 迁移指南](./Migration_V3.md)

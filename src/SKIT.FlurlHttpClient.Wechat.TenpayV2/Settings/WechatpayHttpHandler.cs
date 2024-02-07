@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
             {
                 X509Certificate x509;
 
-#if NET471_OR_GREATER || NET5_0_OR_GREATER || NETSTANDARD2_0_OR_GREATER
+#if NET471_OR_GREATER || NETSTANDARD2_0_OR_GREATER || NET5_0_OR_GREATER
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 #else
                 if (Environment.OSVersion.Platform == PlatformID.Win32NT)
