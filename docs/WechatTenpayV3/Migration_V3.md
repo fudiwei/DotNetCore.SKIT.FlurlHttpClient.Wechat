@@ -16,7 +16,29 @@ v3.x 版本是一个主要版本，其中包括了一些破坏性的变化。从
 
 通常情况下，开发者不需要关注这些变化，除非你正在自定义额外的 API 接口。
 
-### 新的构造器模式
+### 新的请求、响应模型
+
+原有的请求模型中的 `Timeout` 属性，变更为 `WithTimeout()` 方法：
+
+```csharp
+/* v2.x 设置单个请求超时时间 */
+request.Timeout = TimeSpan.FromMinutes(2);
+
+/* v3.x 设置单个请求超时时间 */
+request.WithTimeout(TimeSpan.FromMinutes(2));
+```
+
+原有的响应模型中的 `RawStatus` 属性，变更为 `GetRawStatus()` 方法；`RawHeaders` 属性，变更为 `GetRawHeaders()` 方法；`RawBytes` 属性，变更为 `GetRawBytes()` 方法。
+
+```csharp
+/* v2.x 读取单个响应原始状态码 */
+int statusCode = response.RawStatus;
+
+/* v3.x 读取单个响应原始状态码 */
+int statusCode = response.GetRawStatus();
+```
+
+### 新的构造器模式（设置 `HttpClient`）
 
 随着 `Flurl.Http` 的升级，原有的与 `IHttpClientFactory` 集成的方式发生了根本性的改变。
 
@@ -78,7 +100,7 @@ bool ret = (bool)eret;
 
 涉及到变化的包括 `VerifyResponseSignature()`、`VerifyEventSignature()` 等扩展方法。
 
-### 新的平台证书管理器
+### 平台证书管理器
 
 原有的平台证书管理器由抽象类型 `CertificateManager` 调整为接口 `ICertificateManager`。
 
