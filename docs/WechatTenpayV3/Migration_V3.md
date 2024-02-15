@@ -33,12 +33,22 @@ request.WithTimeout(TimeSpan.FromMinutes(2));
 ```csharp
 /* v2.x 读取单个响应原始状态码 */
 int statusCode = response.RawStatus;
+/* v2.x 读取单个响应原始响应标头 */
+IDictionary<string, string> headers = response.RawHeaders;
+/* v2.x 读取单个响应原始响应体 */
+byte[] bytes = response.RawBytes;
 
 /* v3.x 读取单个响应原始状态码 */
 int statusCode = response.GetRawStatus();
+/* v3.x 读取单个响应原始响应标头 */
+HttpHeaderCollection headers = response.GetRawHeaders();
+/* v3.x 读取单个响应原始响应体 */
+byte[] bytes = response.GetRawBytes();
 ```
 
-### 新的构造器模式（设置 `HttpClient`）
+需要注意的是，上述 Get 方法返回的均为同一个对象引用，因此请不要在获取后尝试修改它们的内容。
+
+### 新的构造器模式（配置 `HttpClient`）
 
 随着 `Flurl.Http` 的升级，原有的与 `IHttpClientFactory` 集成的方式发生了根本性的改变。
 
@@ -55,6 +65,26 @@ var client = WechatTenpayClientBuilder.Create(options).Build();
 var options = new WechatTenpayClientOptions() { /* 具体配置项略 */ };
 var client = new WechatTenpayClient(options);
 ```
+
+### 新的异常类型
+
+公共组件中提供了如下的异常类型：
+
+-   `CommonException`：异常基类。
+-   `CommonHttpException`：执行 HTTP 请求时引发的异常。
+-   `CommonTimeoutException`：超时引发的异常。
+-   `CommonSerializationException`：序列化或反序列化时引发的异常。
+-   `CommonInterceptorCallException`：拦截器引发的异常。
+
+模块内更加细化的异常信息，统一由 `WechatTenpayException` 异常类型包装，但废弃并移除了其派生的异常类型：
+
+-   `WechatTenpayRequestTimeoutException`
+-   `WechatTenpayRequestEncryptionException`
+-   `WechatTenpayRequestSignatureException`
+-   `WechatTenpayResponseDecryptionException`
+-   `WechatTenpayResponseVerificationException`
+-   `WechatTenpayEventDecryptionException`
+-   `WechatTenpayEventVerificationException`
 
 ### 基础类型：`SKIT.FlurlHttpClient.Primitives.EncodedeString`
 
