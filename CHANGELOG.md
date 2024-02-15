@@ -637,6 +637,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.0.1
+
+    -   **修复**：修复部分接口请求签名错误。（_via_ [GitHub #122](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/122)）
+
 -   Release 3.0.0
 
     -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
