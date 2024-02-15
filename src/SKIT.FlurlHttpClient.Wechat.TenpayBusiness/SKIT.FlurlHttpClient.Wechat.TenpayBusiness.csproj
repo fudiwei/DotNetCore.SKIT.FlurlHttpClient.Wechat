@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Tencent Tenpay FiT 腾讯金融科技服务平台 腾讯金融科技 腾讯金融 腾讯商企付 腾讯微企付 商企付 微企付</PackageTags>
-        <Version>3.0.0</Version>
+        <Version>3.0.1</Version>
         <Description>基于 Flurl.Http 的微企付 API 客户端。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
