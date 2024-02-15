@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(request.FileContentType);
             fileContent.Headers.ContentLength = request.FileBytes?.Length;
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "images", "add")
+                .CreateFlurlRequest(request, HttpMethod.Post, "images", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsync<Models.ImagesAddResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "images", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "images", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.ImageId is not null)

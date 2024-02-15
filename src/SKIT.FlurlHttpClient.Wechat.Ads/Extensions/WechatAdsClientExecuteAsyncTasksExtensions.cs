@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "async_tasks", "add")
+                .CreateFlurlRequest(request, HttpMethod.Post, "async_tasks", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AsyncTasksAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "async_tasks", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "async_tasks", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.Filters is not null && request.Filters.Any())
@@ -71,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "async_task_files", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "async_task_files", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("task_id", request.TaskId)
                 .SetQueryParam("file_id", request.FileId);

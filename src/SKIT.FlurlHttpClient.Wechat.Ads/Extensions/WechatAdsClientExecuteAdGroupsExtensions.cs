@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "adgroups", "add")
+                .CreateFlurlRequest(request, HttpMethod.Post, "adgroups", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AdGroupsAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "adgroups", "update")
+                .CreateFlurlRequest(request, HttpMethod.Post, "adgroups", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AdGroupsUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "adgroups", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "adgroups", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.AdGroupId is not null)
@@ -91,7 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "adgroups", "delete")
+                .CreateFlurlRequest(request, HttpMethod.Post, "adgroups", "delete")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AdGroupsDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "credit_bills", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "credit_bills", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("bill_year", request.BillYear)
                 .SetQueryParam("bill_month", request.BillMonth);

@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
         /// <param name="httpMethod"></param>
         /// <param name="urlSegments"></param>
         /// <returns></returns>
-        public IFlurlRequest CreateRequest(WechatAdsRequest request, HttpMethod httpMethod, params object[] urlSegments)
+        public IFlurlRequest CreateFlurlRequest(WechatAdsRequest request, HttpMethod httpMethod, params object[] urlSegments)
         {
             IFlurlRequest flurlRequest = base.CreateFlurlRequest(request, httpMethod, urlSegments);
 

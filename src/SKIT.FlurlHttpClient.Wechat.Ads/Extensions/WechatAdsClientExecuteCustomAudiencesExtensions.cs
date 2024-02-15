@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "custom_audiences", "add")
+                .CreateFlurlRequest(request, HttpMethod.Post, "custom_audiences", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CustomAudiencesAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "custom_audiences", "update")
+                .CreateFlurlRequest(request, HttpMethod.Post, "custom_audiences", "update")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CustomAudiencesUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "custom_audiences", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "custom_audiences", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.CustomAudienceId is not null)
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse("application/zip");
             fileContent.Headers.ContentLength = request.FileBytes?.Length;
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Post, "custom_audience_files", "add")
+                .CreateFlurlRequest(request, HttpMethod.Post, "custom_audience_files", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsync<Models.CustomAudienceFilesAddResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "custom_audience_files", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "custom_audience_files", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.CustomAudienceId is not null)

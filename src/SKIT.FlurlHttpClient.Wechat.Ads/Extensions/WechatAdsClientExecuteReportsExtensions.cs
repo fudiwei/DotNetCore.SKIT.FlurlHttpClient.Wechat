@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "daily_reports", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "daily_reports", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             if (request.DateRange is not null)
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateRequest(request, HttpMethod.Get, "realtime_cost", "get")
+                .CreateFlurlRequest(request, HttpMethod.Get, "realtime_cost", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("date", request.DateString)
                 .SetQueryParam("level", request.Level);
