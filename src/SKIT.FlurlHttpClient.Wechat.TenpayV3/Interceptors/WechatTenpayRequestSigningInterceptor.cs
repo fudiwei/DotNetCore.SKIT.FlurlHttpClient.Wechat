@@ -36,22 +36,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
             string nonce = Guid.NewGuid().ToString("N");
             string body = string.Empty;
 
-            if (context.FlurlCall.HttpRequestMessage.Content is MultipartFormDataContent formdataContent)
+            if (context.FlurlCall.HttpRequestMessage?.Content is not null)
             {
-                // NOTICE: multipart/form-data 文件上传请求的待签名参数需特殊处理
-                var httpContent = formdataContent.SingleOrDefault(e => FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
-                if (httpContent is not null)
+                if (context.FlurlCall.HttpRequestMessage.Content is MultipartFormDataContent multipartFormData)
                 {
+                    HttpContent httpContent = multipartFormData.SingleOrDefault(e => FormDataFields.FORMDATA_META.Equals(e.Headers.ContentDisposition?.Name?.Trim('\"')));
+                    if (httpContent is not null)
+                    {
+                        body = await _AsyncEx.RunTaskWithCancellationTokenAsync(httpContent.ReadAsStringAsync(), cancellationToken).ConfigureAwait(false);
+                    }
+                }
+                else if (method != "GET")
+                {
+                    HttpContent httpContent = context.FlurlCall.HttpRequestMessage.Content;
                     body = await _AsyncEx.RunTaskWithCancellationTokenAsync(httpContent.ReadAsStringAsync(), cancellationToken).ConfigureAwait(false);
                 }
             }
-            else
-            {
-                body = context.FlurlCall.RequestBody ?? string.Empty;
-            }
 
-            string msgText = $"{method}\n{url}\n{timestamp}\n{nonce}\n{body}\n";
-            string signText;
+            string signData = $"{method}\n{url}\n{timestamp}\n{nonce}\n{body}\n";
+            string sign;
 
             switch (_scheme)
             {
@@ -59,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                     {
                         try
                         {
-                            signText = Utilities.RSAUtility.Sign(_mchCertPk, msgText).Value!;
+                            sign = Utilities.RSAUtility.Sign(_mchCertPk, signData).Value!;
                         }
                         catch (Exception ex)
                         {
@@ -72,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                     {
                         try
                         {
-                            signText = Utilities.SM2Utility.SignWithSM3(_mchCertPk, msgText).Value!;
+                            sign = Utilities.SM2Utility.SignWithSM3(_mchCertPk, signData).Value!;
                         }
                         catch (Exception ex)
                         {
@@ -85,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Interceptors
                     throw new WechatTenpayException($"Failed to sign request. Unsupported signing scheme: \"{_scheme}\".");
             }
 
-            context.FlurlCall.Request.WithHeader(HttpHeaders.Authorization, $"{_scheme} mchid=\"{_mchId}\",nonce_str=\"{nonce}\",signature=\"{signText}\",timestamp=\"{timestamp}\",serial_no=\"{_mchCertSn}\"");
+            context.FlurlCall.Request.WithHeader(HttpHeaders.Authorization, $"{_scheme} mchid=\"{_mchId}\",nonce_str=\"{nonce}\",signature=\"{sign}\",timestamp=\"{timestamp}\",serial_no=\"{_mchCertSn}\"");
         }
     }
 }
