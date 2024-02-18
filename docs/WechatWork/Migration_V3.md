@@ -101,7 +101,7 @@ EncodedString estr = new EncodedString("U0tJVC5GbHVybEh0dHBDbGllbnQgaXMgQVdFU09N
 string str = (string)estr;
 ```
 
-涉及到变化的包括 `AESUtility`、`RSAUtility`、`SHA1Utility` 等工具类。
+涉及此变化的包括 `AESUtility`、`RSAUtility`、`SHA1Utility` 等工具类。
 
 ### 基础类型：`SKIT.FlurlHttpClient.Primitives.ErroredResult`
 
@@ -123,10 +123,16 @@ ErroredResult eret = new ErroredResult(true);
 bool ret = (bool)eret;
 ```
 
-涉及到变化的包括 `VerifyEventSignatureForEcho()`、`VerifyEventSignatureFromJson()`、`VerifyEventSignatureFromXml()` 等扩展方法。
+涉及此变化的包括 `VerifyEventSignatureForEcho()`、`VerifyEventSignatureFromJson()`、`VerifyEventSignatureFromXml()` 等扩展方法。
 
-### 企业会话存档 SDK
+### 企业会话存档 SDK 的变化
 
 原企业会话存档 SDK 客户端的命名空间发生了变化，由 `SKIT.FlurlHttpClient.Wechat.Work.SDK.Finance` 移动至 `SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance`。
 
 同时，我们提供了新的 `IEncryptionKeyManagerAsync` 接口，开发者可以基于此自定义异步的密钥管理器实现。
+
+### 方法命名参数的变化
+
+为了统一并规范化各个模块，我们调整了部分方法的命名参数。如果你在调用该方法时使用了命名实参，请注意修改。
+
+涉及此变化的包括 `DeserializeEventFromJson()`、`DeserializeEventFromXml()`、`SerializeEventToJson`、`SerializeEventToXml`、`VerifyEventSignatureForEcho`、`VerifyEventSignatureFromJson`、`VerifyEventSignatureFromXml` 等扩展方法，及 `AESUtility`、`RSAUtility`、`SHA1Utility` 等工具类。

@@ -130,10 +130,16 @@ bool ret = (bool)eret;
 
 涉及到变化的包括 `VerifyResponseSignature()`、`VerifyEventSignature()` 等扩展方法。
 
-### 平台证书管理器
+### 平台证书管理器的变化
 
 原有的平台证书管理器由抽象类型 `CertificateManager` 调整为接口 `ICertificateManager`。
 
 同时，我们提供了新的 `ICertificateManagerAsync` 接口，开发者可以基于此自定义异步的密钥管理器实现。然后，你就可以调用 `VerifyResponseSignatureAsync()`、`VerifyEventSignatureAsync()`、`EncryptRequestSensitivePropertyAsync()` 等新的扩展方法，来异步地执行原本的业务流程了。
 
 此外，我们废弃了原本的 `CertificateEntry` 的一个构造函数 `CertificateEntry(QueryCertificatesResponse.Types.Certificate model)` 重载。取而代之的是新的静态方法 `CertificateEntry.Parse(QueryCertificatesResponse.Types.Certificate model)`。
+
+### 方法命名参数的变化
+
+为了统一并规范化各个模块，我们调整了部分方法的命名参数。如果你在调用该方法时使用了命名实参，请注意修改。
+
+涉及此变化的包括 `DeserializeEvent()`、`DecryptEventResource()`、`VerifyEventSignature`、`VerifyResponseSignature` 等扩展方法，及 `AESUtility`、`RSAUtility`、`SHA256Utility`、`SM2Utility`、`SM3Utility`、`SM4Utility` 等工具类。

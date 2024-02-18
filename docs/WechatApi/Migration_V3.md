@@ -101,7 +101,7 @@ EncodedString estr = new EncodedString("U0tJVC5GbHVybEh0dHBDbGllbnQgaXMgQVdFU09N
 string str = (string)estr;
 ```
 
-涉及到变化的包括 `AESUtility`、`SHA1Utility`、`HMACUtility` 等工具类。
+涉及此变化的包括 `AESUtility`、`SHA1Utility`、`HMACUtility` 等工具类。
 
 ### 基础类型：`SKIT.FlurlHttpClient.Primitives.ErroredResult`
 
@@ -123,4 +123,10 @@ ErroredResult eret = new ErroredResult(true);
 bool ret = (bool)eret;
 ```
 
-涉及到变化的包括 `VerifyEventSignatureFromJson()`、`VerifyEventSignatureFromXml()` 等扩展方法。
+涉及此变化的包括 `VerifyEventSignatureFromJson()`、`VerifyEventSignatureFromXml()` 等扩展方法。
+
+### 方法命名参数的变化
+
+为了统一并规范化各个模块，我们调整了部分方法的命名参数。如果你在调用该方法时使用了命名实参，请注意修改。
+
+涉及此变化的包括 `DeserializeEventFromJson()`、`DeserializeEventFromXml()`、`SerializeEventToJson`、`SerializeEventToXml`、`VerifyEventSignatureForEcho`、`VerifyEventSignatureFromJson`、`VerifyEventSignatureFromXml` 等扩展方法，及 `AESUtility`、`SHA1Utility`、`HMACUtility` 等工具类。
