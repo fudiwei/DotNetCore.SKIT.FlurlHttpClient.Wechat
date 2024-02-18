@@ -83,6 +83,7 @@
 |  √  |         其他：银行周周惠          |      合作伙伴       |                   |
 |  √  |           其他：微工卡            |      合作伙伴       |                   |
 |  √  |        其他：优惠费率活动         |      合作伙伴       |                   |
+|  √  |           其他：爱心餐            |      直连商户       |                   |
 |  ×  |     <del>其他：清关报关</del>     |      直连商户       | 官方未提供 v3 API |
 |  √  |       境外支付：子商户进件        |      合作伙伴       |                   |
 |  √  |        境外支付：融合钱包         |      合作伙伴       |                   |
@@ -546,6 +547,10 @@
             -   查询保险订单详情：`GetHirePowerBankInsuranceOrderByOutOrderNumber`
 
             -   查询用户保险订单领取资格：`GetHirePowerBankUserQualificationByOpenId`
+
+    -   爱心餐
+
+        -   查询爱心餐品牌信息：`GetLovefeastBrandByBrandId`
 
 </details>
 
