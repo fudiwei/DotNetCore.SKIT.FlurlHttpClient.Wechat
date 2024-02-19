@@ -34,8 +34,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 {
                     case EncryptionAlgorithms.AEAD_AES_256_GCM:
                         {
-                            if (string.IsNullOrEmpty(client.Credentials.MerchantCertificatePrivateKey))
-                                throw new WechatTenpayException("Failed to decrypt response, because the merchant private key is not set.");
+                            if (string.IsNullOrEmpty(client.Credentials.MerchantV3Secret))
+                                throw new WechatTenpayException("Failed to decrypt response, because the merchant APIv3 secret is not set.");
 
                             certificate.EncryptCertificate.CipherText = AESUtility.DecryptWithGCM(
                                 encodingKey: new EncodedString(client.Credentials.MerchantV3Secret, EncodingKinds.Literal),
