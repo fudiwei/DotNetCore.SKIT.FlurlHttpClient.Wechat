@@ -28,7 +28,7 @@ request.Timeout = TimeSpan.FromMinutes(2);
 request.WithTimeout(TimeSpan.FromMinutes(2));
 ```
 
-原有的响应模型中的 `RawStatus` 属性，变更为 `GetRawStatus()` 方法；`RawHeaders` 属性，变更为 `GetRawHeaders()` 方法；`RawBytes` 属性，变更为 `GetRawBytes()` 方法。
+原有的响应模型中的 `RawStatus` 属性，变更为 `GetRawStatus()` 方法；`RawHeaders` 属性，变更为 `GetRawHeaders()` 方法；`RawBytes` 属性，变更为 `GetRawBytes()` 方法：
 
 ```csharp
 /* v2.x 读取单个响应原始状态码 */
@@ -48,7 +48,7 @@ byte[] bytes = response.GetRawBytes();
 
 需要注意的是，上述 Get 方法返回的均为同一个对象引用，因此请不要在获取后尝试修改它们的内容。
 
-### 新的构造器模式（配置 `HttpClient`）
+### 新的构造器模式
 
 随着 `Flurl.Http` 的升级，原有的与 `IHttpClientFactory` 集成的方式发生了根本性的改变。
 

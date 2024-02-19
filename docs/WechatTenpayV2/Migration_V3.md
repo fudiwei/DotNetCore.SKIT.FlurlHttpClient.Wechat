@@ -16,6 +16,38 @@ v3.x 版本是一个主要版本，其中包括了一些破坏性的变化。从
 
 通常情况下，开发者不需要关注这些变化，除非你正在自定义额外的 API 接口。
 
+### 新的请求、响应模型
+
+原有的请求模型中的 `Timeout` 属性，变更为 `WithTimeout()` 方法：
+
+```csharp
+/* v2.x 设置单个请求超时时间 */
+request.Timeout = TimeSpan.FromMinutes(2);
+
+/* v3.x 设置单个请求超时时间 */
+request.WithTimeout(TimeSpan.FromMinutes(2));
+```
+
+原有的响应模型中的 `RawStatus` 属性，变更为 `GetRawStatus()` 方法；`RawHeaders` 属性，变更为 `GetRawHeaders()` 方法；`RawBytes` 属性，变更为 `GetRawBytes()` 方法：
+
+```csharp
+/* v2.x 读取单个响应原始状态码 */
+int statusCode = response.RawStatus;
+/* v2.x 读取单个响应原始响应标头 */
+IDictionary<string, string> headers = response.RawHeaders;
+/* v2.x 读取单个响应原始响应体 */
+byte[] bytes = response.RawBytes;
+
+/* v3.x 读取单个响应原始状态码 */
+int statusCode = response.GetRawStatus();
+/* v3.x 读取单个响应原始响应标头 */
+HttpHeaderCollection headers = response.GetRawHeaders();
+/* v3.x 读取单个响应原始响应体 */
+byte[] bytes = response.GetRawBytes();
+```
+
+需要注意的是，上述 Get 方法返回的均为同一个对象引用，因此请不要在获取后尝试修改它们的内容。
+
 ### 新的构造器模式
 
 随着 `Flurl.Http` 的升级，原有的与 `IHttpClientFactory` 集成的方式发生了根本性的改变。
@@ -33,6 +65,23 @@ var client = WechatTenpayClientBuilder.Create(options).Build();
 var options = new WechatTenpayClientOptions() { /* 具体配置项略 */ };
 var client = new WechatTenpayClient(options);
 ```
+
+### 新的异常类型
+
+公共组件中提供了如下的异常类型：
+
+-   `CommonException`：异常基类。
+-   `CommonHttpException`：执行 HTTP 请求时引发的异常。
+-   `CommonTimeoutException`：超时引发的异常。
+-   `CommonSerializationException`：序列化或反序列化时引发的异常。
+-   `CommonInterceptorCallException`：拦截器引发的异常。
+
+模块内更加细化的异常信息，统一由 `WechatTenpayException` 异常类型包装，但废弃并移除了其派生的异常类型：
+
+-   `WechatTenpayRequestTimeoutException`
+-   `WechatTenpayRequestSignatureException`
+-   `WechatTenpayEventDecryptionException`
+-   `WechatTenpayEventVerificationException`
 
 ### 基础类型：`SKIT.FlurlHttpClient.Primitives.EncodedeString`
 
@@ -76,4 +125,11 @@ ErroredResult eret = new ErroredResult(true);
 bool ret = (bool)eret;
 ```
 
-涉及到变化的包括 `VerifyResponseSignature()`、`VerifyEventSignature()` 等扩展方法。
+涉及到变化的包括 `VerifyEventSignature()` 等扩展方法。
+
+
+### 方法命名参数的变化
+
+为了统一并规范化各个模块，我们调整了部分方法的命名参数。如果你在调用该方法时使用了命名实参，请注意修改。
+
+涉及此变化的包括 `VerifyEventSignature()`、`DeserializeEvent()`、`DecryptEventRequestInfo()` 等扩展方法，及 `AESUtility`、`MD5Utility`、`HMACUtility` 等工具类。

@@ -28,7 +28,7 @@ request.Timeout = TimeSpan.FromMinutes(2);
 request.WithTimeout(TimeSpan.FromMinutes(2));
 ```
 
-原有的响应模型中的 `RawStatus` 属性，变更为 `GetRawStatus()` 方法；`RawHeaders` 属性，变更为 `GetRawHeaders()` 方法；`RawBytes` 属性，变更为 `GetRawBytes()` 方法。
+原有的响应模型中的 `RawStatus` 属性，变更为 `GetRawStatus()` 方法；`RawHeaders` 属性，变更为 `GetRawHeaders()` 方法；`RawBytes` 属性，变更为 `GetRawBytes()` 方法：
 
 ```csharp
 /* v2.x 读取单个响应原始状态码 */
