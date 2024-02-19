@@ -108,7 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client.PlatformCertificateManager is not ICertificateManagerAsync)
             {
                 // 降级为同步调用
-                return Task.FromResult(request);
+                return Task.FromResult(EncryptRequestSensitiveProperty(client, request));
             }
 
             try
