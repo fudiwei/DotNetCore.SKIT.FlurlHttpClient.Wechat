@@ -42,7 +42,7 @@ var options = new WechatTenpayClientOptions()
 {
     MerchantId = "微信商户号",
     MerchantSecret = "微信商户 API 密钥",
-    MerchantCertificateBytes = File.ReadAllBytes("/微信商户证书文件路径/apiclient_cert.p12"),
+    MerchantCertificateBytes = System.IO.File.ReadAllBytes("/微信商户证书文件路径/apiclient_cert.p12"),
     MerchantCertificatePassword = "微信商户证书密码，通常是商户号"
 };
 var client = WechatTenpayClientBuilder.Create(options).Build();

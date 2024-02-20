@@ -8,7 +8,7 @@ v3.x 版本是一个主要版本，其中包括了一些破坏性的变化。从
 
 微软官方已与 2022 年 4 月 26 日宣布中止对 .NET Framework 4.6.1 的支持。因此，本项目的最低运行时要求调整为 .NET Framework 4.6.2。
 
-与此同时，相关的 .NET 基础库（即通常在 `System.*` 或 `Microsoft.*` 命名空间下的内置类型）版本对齐至 .NET 8.0。
+与此同时，相关的 .NET 基础库（即通常在 `System.*` 或 `Microsoft.*` 命名空间下的内置依赖）版本对齐至 .NET 8.0。
 
 ### `Flurl.Http` 的变更
 
@@ -143,3 +143,9 @@ bool ret = (bool)eret;
 为了统一并规范化各个模块，我们调整了部分方法的命名参数。如果你在调用该方法时使用了命名实参，请注意修改。
 
 涉及此变化的包括 `DeserializeEvent()`、`DecryptEventResource()`、`VerifyEventSignature`、`VerifyResponseSignature` 等扩展方法，及 `AESUtility`、`RSAUtility`、`SHA256Utility`、`SM2Utility`、`SM3Utility`、`SM4Utility` 等工具类。
+
+### 遇到报错："NotSupportedException: Private key format is not supported."
+
+请参考此 Issue 处理：
+
+> https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/123
