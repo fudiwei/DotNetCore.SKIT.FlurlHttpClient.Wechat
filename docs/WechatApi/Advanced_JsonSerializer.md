@@ -1,10 +1,10 @@
-﻿## 如何指定 JSON 序列化器？
+﻿## 如何配置 JSON 序列化器？
 
 ---
 
 本功能来自于公共组件，请参阅公共组件下的相关文档：
 
-> [《SKIT.FlurlHttpClient FAQ：如何指定 JSON 序列化器？》](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/blob/main/docs/README.md)
+> [《SKIT.FlurlHttpClient FAQ：如何配置 JSON 序列化器？》](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/blob/main/docs/README.md)
 
 ---
 
