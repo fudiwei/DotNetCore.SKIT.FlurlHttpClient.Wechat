@@ -33,13 +33,13 @@
 
 <summary>[展开查看]</summary>
 
--   Release 3.0.0
+-   Release 3.0.0 (2024-02-27)
 
     -   **新增**：新增快速获取学生身份接口。
 
     -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
--   Release 2.37.0
+-   Release 2.37.0 (2024-01-15)
 
     -   **新增**：新增视频号小店会员功能、电子面单等相关接口。
 
@@ -53,7 +53,7 @@
 
     -   **新增**：随官方更新小程序虚拟支付相关接口模型。
 
--   Release 2.36.0
+-   Release 2.36.0 (2023-12-25)
 
     -   **新增**：新增小程序服务卡片相关接口。
 
@@ -67,13 +67,13 @@
 
     -   **新增**：随官方更新第三方平台授权账号管理、代商家注册小程序等相关接口模型。
 
--   Release 2.35.0
+-   Release 2.35.0 (2023-12-02)
 
     -   **新增**：新增视频号小店获取生效中的品牌资质列表接口。（_via_ [Gitee #12](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/12)）
 
     -   **修复**：修复视频号小店运费模板更新接口模型定义错误。（_via_ [Gitee #10](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/10)）
 
--   Release 2.34.0
+-   Release 2.34.0 (2023-10-14)
 
     -   **新增**：新增小程序微信物流服务退货组件、查询组件等相关接口。
 
@@ -83,7 +83,7 @@
 
     -   **修复**：修复发布能力相关接口模型字段类型定义错误。（_via_ [Gitee #I87LB3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I87LB3)）
 
--   Release 2.33.0
+-   Release 2.33.0 (2023-09-20)
 
     -   **新增**：新增小程序 ICP 备案审核通知事件。（_via_ [GitHub #108](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/108)）
 
@@ -91,11 +91,11 @@
 
     -   **新增**：随官方更新获得模板消息 ID 接口模型。（_via_ [Gitee #8](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/8)）
 
--   Release 2.32.0
+-   Release 2.32.0 (2023-08-31)
 
     -   **新增**：新增第三方平台小程序备案相关接口。
 
--   Release 2.31.0
+-   Release 2.31.0 (2023-08-28)
 
     -   **新增**：新增小程序虚拟支付相关接口。（_via_ [GitHub #105](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/105)）
 
@@ -103,23 +103,23 @@
 
     -   **变更**：统一小程序直播相关接口的商品 ID 字段类型。（_via_ [Gitee #I7EZYT](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I7EZYT)）
 
--   Release 2.30.0
+-   Release 2.30.0 (2023-06-16)
 
     -   **新增**：新增小程序硬件设备组相关接口。（_via_ [GitHub #100](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/100)）
 
     -   **新增**：新增视频号小店物流公司虚拟号码相关接口。
 
--   Release 2.29.0
+-   Release 2.29.0 (2023-05-31)
 
     -   **新增**：新增获取稳定版接口调用凭据接口。（_via_ [GitHub #99](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/99)）
 
--   Release 2.28.0
+-   Release 2.28.0 (2023-05-28)
 
     -   **新增**：新增小程序短剧媒资管理相关接口。
 
     -   **修复**：修复微信卡券更新子商户接口缺失问题。（_via_ [Gitee #I78KMU](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I78KMU)）
 
--   Release 2.27.0
+-   Release 2.27.0 (2023-05-09)
 
     -   **新增**：新增人脸核身相关接口。
 
@@ -131,11 +131,11 @@
 
     -   **变更**：移除部分已标记为废弃的接口及模型。
 
--   Release 2.26.1
+-   Release 2.26.1 (2023-04-04)
 
     -   **修复**：修复视频号小店订单、售后单 ID 字段类型定义错误。（_via_ [GitHub #90](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/90)）
 
--   Release 2.26.0
+-   Release 2.26.0 (2023-03-29)
 
     -   **新增**：新增微信物流服务散单寄件相关接口。
 
@@ -145,7 +145,7 @@
 
     -   **修复**：修复投诉信息回调通知事件模型定义错误。（_via_ [GitHub #88](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/88)）
 
--   Release 2.25.0
+-   Release 2.25.0 (2023-03-02)
 
     -   **新增**：随官方更新网页授权相关接口模型。
 
@@ -153,11 +153,11 @@
 
     -   **新增**：新增用户在小程序“客服会话按钮”进入客服会话时产生的回调通知事件模型。（_via_ [Gitee #I6IU5T](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I6IU5T)）
 
--   Release 2.24.0
+-   Release 2.24.0 (2023-02-15)
 
     -   **新增**：新增小游戏虚拟支付 2.0 相关接口。（_via_ [Gitee #I6F3OX](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I6F3OX)）
 
--   Release 2.23.0
+-   Release 2.23.0 (2023-02-07)
 
     -   **新增**：新增视频号小店资质图片、商品类目、品牌资质、区域仓库、纠纷、分享员、资金、优选联盟等相关接口。
 
@@ -167,17 +167,17 @@
 
     -   **新增**：随官方更新第三方平台提交代码审核接口模型。
 
--   Release 2.22.0
+-   Release 2.22.0 (2023-01-16)
 
     -   **新增**：新增第三方平台小程序流量主代运营相关接口。
 
--   Release 2.21.1
+-   Release 2.21.1 (2022-12-06)
 
     -   **修复**：修复第三方平台小程序分阶段发布接口模型参数缺失问题。（_via_ [GitHub #73](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/74)）
 
     -   **变更**：升级公共组件至 v2.6.0。
 
--   Release 2.21.0
+-   Release 2.21.0 (2022-12-01)
 
     -   **新增**：新增第三方平台申请设置订单页信息、获取订单页信息接口。
 
@@ -193,15 +193,15 @@
 
     -   **修复**：修复获取小程序历史版本接口模型定义错误。（_via_ [GitHub #73](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/73)）
 
--   Release 2.20.2
+-   Release 2.20.2 (2022-11-18)
 
     -   **修复**：修复获取小程序模板库列表不正确的问题。（_via_ [GitHub #71](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/71)）
 
--   Release 2.20.1
+-   Release 2.20.1 (2022-11-07)
 
     -   **修复**：修复快速注册个人小程序回调通知事件模型字段定义错误。（_via_ [GitHub #67](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/67)）
 
--   Release 2.20.0
+-   Release 2.20.0 (2022-11-04)
 
     -   **新增**：新增视频号小店相关接口。
 
@@ -213,7 +213,7 @@
 
     -   **变更**：调整部分腾讯云服务 TCB 相关接口模型的命名方式。
 
--   Release 2.19.0
+-   Release 2.19.0 (2022-10-27)
 
     -   **新增**：新增使用 AppSecret 重置第三方平台 API 调用次数接口。
 
@@ -223,7 +223,7 @@
 
     -   **新增**：新增若干第三方平台微信云托管接口。
 
--   Release 2.18.0
+-   Release 2.18.0 (2022-10-12)
 
     -   **新增**：新增小程序购物订单相关接口。
 
@@ -231,7 +231,7 @@
 
     -   **修复**：修复订阅消息事件通知模型在 JSON 模式下反序列化的错误。（_via_ [GitHub #58](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/58)）
 
--   Release 2.17.0
+-   Release 2.17.0 (2022-09-07)
 
     -   **新增**：新增小程序交易保障相关接口。
 
@@ -239,7 +239,7 @@
 
     -   **新增**：随官方更新获取订阅消息个人模板列表的接口模型。（_via_ [GitHub #56](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/56)）
 
--   Release 2.16.0
+-   Release 2.16.0 (2022-07-01)
 
     -   **新增**：新增客服子商户能力相关接口。（_via_ [Gitee #I5F24Z](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5F24Z)）
 
@@ -253,7 +253,7 @@
 
     -   **新增**：随随官方更新小程序自定义交易组件提交支付资质接口模型。
 
--   Release 2.15.0
+-   Release 2.15.0 (2022-06-20)
 
     -   **新增**：新增获取公众号的自动回复规则接口。
 
@@ -271,13 +271,13 @@
 
     -   **新增**：随官方更新小程序自定义交易组件订单相关接口模型。
 
--   Release 2.14.0
+-   Release 2.14.0 (2022-05-10)
 
     -   **新增**：新增云开通物流服务相关接口。（_via_ [GitHub #41](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/41)）
 
     -   **新增**：新增城市服务开放互联能力相关接口。
 
--   Release 2.13.0
+-   Release 2.13.0 (2022-05-01)
 
     -   **新增**：新增第三方平台复用商户号资质快速转正、查询公众号或小程序是否绑定开放平台帐号、申请开通物流退货组件、半屏小程序管理接口。
 
@@ -285,7 +285,7 @@
 
     -   **修复**：修复部分事件通知模型中数组类型字段反序列化错误的问题。
 
--   Release 2.12.0
+-   Release 2.12.0 (2022-04-26)
 
     -   **新增**：随官方更新自定义交易组件获取售后详情接口响应模型。（_via_ [GitHub #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/40)）
 
@@ -293,7 +293,7 @@
 
     -   **修复**：修复上传素材接口不支持 Unicode 文件名问题。（_via_ [GitHub #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/40)）
 
--   Release 2.11.0
+-   Release 2.11.0 (2022-04-19)
 
     -   **新增**：新增自定义交易组件订单回调通知事件模型。
 
@@ -301,7 +301,7 @@
 
     -   **修复**：修复自定义交易组件售后列表接口响应模型定义错误。（_via_ [GitHub #39](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/39)）
 
--   Release 2.10.0
+-   Release 2.10.0 (2022-04-12)
 
     -   **新增**：新增自定义交易组件进件、资金、分享员、售后、纠纷相关接口及回调通知事件模型。
 
@@ -311,7 +311,7 @@
 
     -   **变更**：升级公共组件至 v2.5.0。
 
--   Release 2.9.0
+-   Release 2.9.0 (2022-02-28)
 
     -   **新增**：新增请求响应模型类型推断辅助接口 `IInferable`。（_via_ [GitHub #21](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/21)）
 
@@ -325,15 +325,15 @@
 
     -   **变更**：调整 `SHA1Utility` 工具类的计算字节数组哈希值方法的返回值类型。
 
--   Release 2.8.2
+-   Release 2.8.2 (2022-02-25)
 
     -   **变更**：升级公共组件至 v2.3.3。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
 
--   Release 2.8.1
+-   Release 2.8.1 (2022-02-24)
 
     -   **变更**：升级公共组件至 v2.3.2。
 
--   Release 2.8.0
+-   Release 2.8.0 (2022-02-23)
 
     -   **变更**：随官方标记永久图文素材相关接口或字段为废弃。
 
@@ -343,27 +343,27 @@
 
     -   **修复**：修复微信卡券回调通知事件模型的定义错误。
 
--   Release 2.7.0
+-   Release 2.7.0 (2022-01-21)
 
     -   **新增**：随官方更新生成自定义交易组件上传图片相关接口模型。（_via_ [Gitee #I4RONZ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4RONZ)）
 
     -   **变更**：升级公共组件至 v2.2.0。
 
--   Release 2.6.1
+-   Release 2.6.1 (2022-01-18)
 
     -   **修复**：修复获取小程序订阅消息公共模板标题时出现的 200019 错误。（_via_ [GitHub #28](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/28)）
 
--   Release 2.6.0
+-   Release 2.6.0 (2022-01-17)
 
     -   **新增**：随官方更新生成小程序码相关接口模型。（_via_ [GitHub #27](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/27)）
 
     -   **新增**：随官方更新生成 URL Scheme、URL Link 相关接口模型。
 
--   Release 2.5.0
+-   Release 2.5.0 (2022-01-14)
 
     -   **新增**：新增换取用户手机号相关接口。
 
--   Release 2.4.0
+-   Release 2.4.0 (2022-01-10)
 
     -   **新增**：新增获取小程序插件用户的唯一标识相关接口。
 
@@ -375,15 +375,15 @@
 
     -   **变更**：升级公共组件至 v2.1.1。
 
--   Release 2.3.0
+-   Release 2.3.0 (2022-01-03)
 
     -   **新增**：新增第三方平台代公众号发起网页授权相关接口。
 
--   Release 2.2.1
+-   Release 2.2.1 (2021-12-21)
 
     -   **修复**：修复获取会员卡信息接口模型的字段缺失问题。（_via_ [Gitee #3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/3)）
 
--   Release 2.2.0
+-   Release 2.2.0 (2021-12-15)
 
     -   **新增**：新增小程序硬件设备相关接口。
 
@@ -393,29 +393,27 @@
 
     -   **变更**：随官方标记获取用户信息相关接口或字段为废弃。
 
--   Release 2.1.0
+-   Release 2.1.0 (2021-11-20)
 
     -   **新增**：新增第三方平台服务器域名相关接口。
 
     -   **新增**：新增第三方平台小程序用户隐私保护指引相关接口。
 
--   Release 2.0.1
+-   Release 2.0.1 (2021-11-16)
 
     -   **修复**：修复部分回调通知事件模型字段缺失的问题。
 
--   Release 2.0.0
-
-    -   **新增**：适配 .NET 6.0。
+-   Release 2.0.0 (2021-11-09)
 
     -   **变更**：移除核心库依赖，引入公共组件。
 
--   Release 1.12.0
+-   Release 1.12.0 (2021-10-31)
 
     -   **新增**：新增网络检测相关接口。
 
     -   **新增**：新增 OpenAPI 管理相关接口。
 
--   Release 1.11.0
+-   Release 1.11.0 (2021-10-21)
 
     -   **新增**：新增草稿箱相关接口。
 
@@ -425,11 +423,11 @@
 
     -   **新增**：随官方更新自定义菜单相关接口模型。
 
--   Release 1.10.1
+-   Release 1.10.1 (2021-10-19)
 
     -   **修复**：修复 XmlSerializer 潜在的内存泄漏问题。（_via_ [GitHub #11](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/11)）
 
--   Release 1.10.0
+-   Release 1.10.0 (2021-10-18)
 
     -   **新增**：新增第三方平台申请开通直播相关接口。
 
@@ -441,7 +439,7 @@
 
     -   **修复**：修复 AES 解密结果结尾有冗余的空白字符问题。
 
--   Release 1.9.0
+-   Release 1.9.0 (2021-10-07)
 
     -   **新增**：新增标准版交易组件售后相关接口。
 
@@ -455,7 +453,7 @@
 
     -   **变更**：重命名生成 JS-SDK 客户端签名参数的扩展方法。
 
--   Release 1.8.0
+-   Release 1.8.0 (2021-09-21)
 
     -   **新增**：新增交易组件修改订单价格相关接口。
 
@@ -477,7 +475,7 @@
 
     -   **新增**：新增微信物流服务消息组件相关接口。
 
--   Release 1.7.0
+-   Release 1.7.0 (2021-09-03)
 
     -   **新增**：新增小程序检查加密信息是否由微信生成的接口。
 
@@ -485,49 +483,49 @@
 
     -   **新增**：新增 AES 解密工具类。
 
--   Release 1.6.0
+-   Release 1.6.0 (2021-08-26)
 
     -   **新增**：新增小程序发送订阅消息的接口。（_via_ [Gitee #I47D5T](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I47D5T)）
 
     -   **变更**：调整 `IXmlSerializable`、`IJsonSerializable` 接口定义。
 
--   Release 1.5.0
+-   Release 1.5.0 (2021-08-20)
 
     -   **变更**：升级核心库。
 
     -   **修复**：修复潜在的 XXE 漏洞风险。
 
--   Release 1.4.1
+-   Release 1.4.1 (2021-08-12)
 
     -   **修复**：修复部分场景下生成微信回调通知事件签名错误的问题。（_via_ [GitHub #4](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/4)）
 
--   Release 1.4.0
+-   Release 1.4.0 (2021-08-07)
 
     -   **新增**：新增第三方平台代云开发相关接口。
 
     -   **新增**：随官方更新内容安全相关字段。
 
--   Release 1.3.5
+-   Release 1.3.5 (2021-08-04)
 
     -   **修复**：修复获取图文素材接口模型的字段缺失问题。（_via_ [Gitee #I43QPI](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I43QPI)）
 
--   Release 1.3.4
+-   Release 1.3.4 (2021-08-02)
 
     -   **修复**：修复安全模式下反序列化微信回调通知事件的问题。
 
--   Release 1.3.3
+-   Release 1.3.3 (2021-08-02)
 
     -   **新增**：新增验证微信回调通知事件签名的扩展方法。
 
--   Release 1.3.2
+-   Release 1.3.2 (2021-08-02)
 
     -   **新增**：反序列化微信回调通知事件模型时支持 `WechatApiEvent` 基类，以便业务逻辑判断。
 
--   Release 1.3.1
+-   Release 1.3.1 (2021-07-31)
 
     -   **修复**：修复自定义交易组件获取快递公司列表接口的模型定义错误。（_via_ [Gitee #I43AM2](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I43AM2)）
 
--   Release 1.3.0
+-   Release 1.3.0 (2021-07-30)
 
     -   **新增**：新增序列化回调通知事件实体类的扩展方法。
 
@@ -535,27 +533,27 @@
 
     -   **修复**：修复部分微信回调通知事件模型反序列化的问题。
 
--   Release 1.2.1
+-   Release 1.2.1 (2021-07-29)
 
     -   **修复**：修复生成小程序码接口的模型定义错误。（_via_ [Gitee #I42XC0](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I42XC0)）
 
--   Release 1.2.0
+-   Release 1.2.0 (2021-07-26)
 
     -   **新增**：新增 `WechatApiClient.Credentials` 属性。
 
     -   **变更**：移除 `WechatApiClient.FlurlJsonSerializer` 属性。
 
--   Release 1.1.0
+-   Release 1.1.0 (2021-07-21)
 
     -   **新增**：新增小程序获取用户加密 Key 相关接口。
 
     -   **新增**：新增小程序生成 ShortLink 相关接口。
 
--   Release 1.0.1
+-   Release 1.0.1 (2021-07-10)
 
     -   **新增**：新增 `WechatApiClient.CreateRequest()` 方法。
 
--   Release 1.0.0
+-   Release 1.0.0 (2021-06-17)
 
     -   首次发布。
 
@@ -569,15 +567,15 @@
 
 <summary>[展开查看]</summary>
 
--   Release 3.0.0
+-   Release 3.0.0 (2024-02-27)
 
     -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
--   Release 2.3.1
+-   Release 2.3.1 (2023-05-25)
 
     -   **新增**：修复 Windows 环境下潜在的证书加载失败问题。（_via_ [GitHub #93](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/93)）
 
--   Release 2.3.0
+-   Release 2.3.0 (2023-04-04)
 
     -   **新增**：新增反序列化微信支付回调通知事件模型的扩展方法。
 
@@ -591,39 +589,39 @@
 
     -   **新增**：随官方更新清关报关订单附加信息重推接口模型。
 
--   Release 2.2.3
+-   Release 2.2.3 (2023-03-13)
 
     -   **修复**：修复部分场景下付款码支付接口响应模型反序列化错误的问题。
 
--   Release 2.2.2
+-   Release 2.2.2 (2023-03-02)
 
     -   **修复**：修复酒店押金查询退款接口响应反序列化不正确的问题。（_via_ [GitHub #82](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/82)）
 
--   Release 2.2.1
+-   Release 2.2.1 (2022-12-06)
 
     -   **变更**：升级公共组件至 v2.6.0。
 
--   Release 2.2.0
+-   Release 2.2.0 (2022-11-08)
 
     -   **新增**：支持新版仿真测试系统沙箱。
 
     -   **变更**：重命名查询退款接口响应模型中的部分字段。（_via_ [GitHub #66](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/66)）
 
--   Release 2.1.0
+-   Release 2.1.0 (2022-10-31)
 
     -   **新增**：新增企业微信企业支付相关接口。
 
     -   **新增**：付款码支付撤掉订单接口支持微信订单号字段。（_via_ [GitHub #64](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/64)）
 
--   Release 2.0.2
+-   Release 2.0.2 (2022-10-22)
 
     -   **修复**：修复付款码支付接口响应模型参数缺失问题。（_via_ [GitHub #61](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/61)）
 
--   Release 2.0.1
+-   Release 2.0.1 (2022-10-13)
 
     -   **修复**：修复生成客户端调起支付二次签名时的参数排序错误。
 
--   Release 2.0.0
+-   Release 2.0.0 (2022-08-15)
 
     -   首次发布。
 
@@ -637,25 +635,25 @@
 
 <summary>[展开查看]</summary>
 
--   Release 3.0.1
+-   Release 3.0.1 (2024-02-15)
 
     -   **修复**：修复部分接口请求签名错误。（_via_ [GitHub #122](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/122)）
 
--   Release 3.0.0
+-   Release 3.0.0 (2024-02-27)
 
     -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
--   Release 2.21.0
+-   Release 2.21.0 (2024-01-08)
 
     -   **新增**：新增发起异常退款接口。
 
     -   **新增**：新增不活跃商户身份核实相关接口。
 
--   Release 2.20.1
+-   Release 2.20.1 (2023-10-27)
 
     -   **修复**：修复创建支付分订单接口模型定义错误。（_via_ [Gitee #I8B8UI](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I8B8UI)）
 
--   Release 2.20.0
+-   Release 2.20.0 (2023-08-11)
 
     -   **新增**：新增查询营销补差付款单列表接口。
 
@@ -673,11 +671,11 @@
 
     -   **新增**：随官方更新电子发票相关接口模型。
 
--   Release 2.19.0
+-   Release 2.19.0 (2023-05-25)
 
     -   **新增**：新增电商收付通注销申请相关接口。
 
--   Release 2.18.0
+-   Release 2.18.0 (2023-04-06)
 
     -   **新增**：新增电商收付通合单代扣相关接口。
 
@@ -685,7 +683,7 @@
 
     -   **新增**：新增刷脸支付智能设备列表接口。
 
--   Release 2.17.0
+-   Release 2.17.0 (2023-04-03)
 
     -   **新增**：随官方更新商户进件结算账号相关接口模型。
 
@@ -705,7 +703,7 @@
 
     -   **新增**：新增微信点餐订单、微信寄快递等相关接口。
 
--   Release 2.16.0
+-   Release 2.16.0 (2023-03-09)
 
     -   **新增**：随官方更新特约商户进件、二级商户进件申请接口模型。
 
@@ -713,21 +711,21 @@
 
     -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.1.1。
 
--   Release 2.15.2
+-   Release 2.15.2 (2022-12-12)
 
     -   **修复**：修复部分包含敏感信息字段的接口模型不能正确触发自动加解密的问题。（_via_ [GitHub #76](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/76)）
 
--   Release 2.15.1
+-   Release 2.15.1 (2022-12-06)
 
     -   **变更**：升级依赖 `BouncyCastle.Cryptography`（即原 `Portable.BouncyCastle`）至 v2.0.0。
 
     -   **变更**：升级公共组件至 v2.6.0。
 
--   Release 2.15.0
+-   Release 2.15.0 (2022-11-26)
 
     -   **新增**：随官方更新商家转账到零钱相关接口模型。
 
--   Release 2.14.0
+-   Release 2.14.0 (2022-11-24)
 
     -   **新增**：支持国密算法接入。
 
@@ -741,11 +739,11 @@
 
     -   **变更**：移除部分已被标记为废弃的配置项参数。
 
--   Release 2.13.1
+-   Release 2.13.1 (2022-09-13)
 
     -   **修复**：修复电商收付通二级商户进件申请接口请求模型定义错误。（_via_ [Gitee #I5QM1P](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5QM1P)）
 
--   Release 2.13.0
+-   Release 2.13.0 (2022-09-09)
 
     -   **新增**：随官方更新退款相关接口模型。
 
@@ -753,33 +751,33 @@
 
     -   **修复**：修复根据过滤条件查询用户券接口查询参数定义错误。（_via_ [Gitee #I5QFB3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5QFB3)）
 
--   Release 2.12.0
+-   Release 2.12.0 (2022-08-26)
 
     -   **新增**：新增智慧商圈会员待积分状态查询、会员停车状态同步接口。
 
     -   **新增**：随官方更新智慧商圈相关回调通知事件模型。
 
--   Release 2.11.0
+-   Release 2.11.0 (2022-07-07)
 
     -   **新增**：新增出行券切卡组件预下单接口。
 
     -   **修复**：修复特约商户进件接口模型定义错误。（_via_ [Gitee #I5FCR5](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I5FCR5)）
 
--   Release 2.10.0
+-   Release 2.10.0 (2022-06-09)
 
     -   **新增**：新增电商收付通跨境付款相关接口。
 
     -   **新增**：随官方更新消费者投诉单相关接口模型。
 
--   Release 2.9.1
+-   Release 2.9.1 (2022-05-27)
 
     -   **修复**：修复查询分账回退结果接口 URL 错误。（_via_ [GitHub #46](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/46)）
 
--   Release 2.9.0
+-   Release 2.9.0 (2022-05-21)
 
     -   **新增**：随官方更新特约商户进件、电商收付通二级商户进件相关接口模型。
 
--   Release 2.8.0
+-   Release 2.8.0 (2022-05-11)
 
     -   **新增**：随官方更新合单支付相关接口模型。
 
@@ -787,27 +785,27 @@
 
     -   **变更**：升级公共组件至 v2.5.0。
 
--   Release 2.7.0
+-   Release 2.7.0 (2022-03-03)
 
     -   **新增**：新增小微商户进件相关接口。
 
     -   **新增**：随官方更新二级商户进件、电商收付通商户进件相关接口模型。
 
--   Release 2.6.0
+-   Release 2.6.0 (2022-02-25)
 
     -   **新增**：支持境外支付 For HK 的相关接口。
 
--   Release 2.5.2
+-   Release 2.5.2 (2022-02-25)
 
     -   **变更**：升级公共组件至 v2.3.3。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
 
--   Release 2.5.1
+-   Release 2.5.1 (2022-02-24)
 
     -   **新增**：调整 RSA 工具类使之支持多种填充方式。
 
     -   **变更**：升级公共组件至 v2.3.2。
 
--   Release 2.5.0
+-   Release 2.5.0 (2022-02-23)
 
     -   **新增**：随官方更新根据过滤条件查询用户券相关接口模型。
 
@@ -819,51 +817,51 @@
 
     -   **修复**：修复电商收付通二级商户进件接口的请求模型定义错误。
 
--   Release 2.4.0
+-   Release 2.4.0 (2022-01-21)
 
     -   **变更**：升级公共组件至 v2.2.0。
 
     -   **变更**：重命名部分与证书有关的参数名，涉及到变化的类有 `WechatTenpayClientOptions`、`WechatTenpayClient`、`WechatTenpayRequest`、`WechatTenpayResponse`。
 
--   Release 2.3.1
+-   Release 2.3.1 (2022-01-11)
 
     -   **新增**：随官方更新发起批量转账相关接口模型。
 
     -   **修复**：修复无法自动为请求设置平台证书序列号的问题。
 
--   Release 2.3.0
+-   Release 2.3.0 (2022-01-07)
 
     -   **新增**：新增银行组件相关接口。
 
     -   **变更**：升级公共组件至 v2.1.1。
 
--   Release 2.2.2
+-   Release 2.2.2 (2021-12-24)
 
     -   **修复**：修复二级商户进件提交申请单接口因 URL 结尾反斜杠问题而无法正常请求的问题。（_via_ [GitHub #19](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/19)）
 
--   Release 2.2.1
+-   Release 2.2.1 (2021-12-13)
 
     -   **修复**：修复空响应时无法正确反序列化的问题。
 
--   Release 2.2.0
+-   Release 2.2.0 (2021-12-09)
 
     -   **新增**：新增会员卡相关接口。
 
--   Release 2.1.3
+-   Release 2.1.3 (2021-12-03)
 
     -   **修复**：修复部分响应模型解密敏感数据字段时抛出异常的问题。（_via_ [GitHub #17](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/17)）
 
--   Release 2.1.2
+-   Release 2.1.2 (2021-12-02)
 
     -   **修复**：修复部分嵌套类型中属性的敏感数据不能自动加密的问题。（_via_ [Gitee #I4K40Y](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4K40Y)）
 
     -   **修复**：修复 `CertificateEntry` 不支持 JSON 反序列化的问题。（_via_ [Gitee #I4KP8H](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4KP8H)）
 
--   Release 2.1.1
+-   Release 2.1.1 (2021-11-25)
 
     -   **修复**：修复部分请求模型加密敏感数据字段时抛出异常的问题。（_via_ [Gitee #I4JIZC](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4JIZC)）
 
--   Release 2.1.0
+-   Release 2.1.0 (2021-11-25)
 
     -   **新增**：新增商户平台处置通知相关接口。
 
@@ -875,75 +873,73 @@
 
     -   **变更**：移除原有的解密响应中敏感信息字段的扩展方法。
 
--   Release 2.0.3
+-   Release 2.0.3 (2021-11-18)
 
     -   **修复**：修复创建代金券批次相关接口的请求模型定义错误。（_via_ [Gitee #I4ITW6](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4ITW6)）
 
--   Release 2.0.2
+-   Release 2.0.2 (2021-11-17)
 
     -   **修复**：修复发放代金券批次相关接口的请求模型定义错误。（_via_ [Gitee #I4IJDR](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4IJDR)）
 
--   Release 2.0.1
+-   Release 2.0.1 (2021-11-11)
 
     -   **变更**：升级依赖 `Portable.BouncyCastle` 至 v1.9.0。
 
     -   **修复**：修复查询代金券相关接口的响应模型定义错误。（_via_ [Gitee #I4HRYL](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4HRYL)）
 
--   Release 2.0.0
+-   Release 2.0.0 (2021-11-09)
 
     -   **新增**：随官方更新商家券相关接口模型。
 
-    -   **新增**：适配 .NET 6.0。
-
     -   **变更**：移除核心库依赖，引入公共组件。
 
--   Release 1.8.2
+-   Release 1.8.2 (2021-09-24)
 
     -   **新增**：新增商户申请获取微信支付分对账单相关接口。
 
     -   **修复**：修复部分请求模型中可空字段的初值问题。（_via_ [Gitee #I4BF0K](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4BF0K)）
 
--   Release 1.8.1
+-   Release 1.8.1 (2021-09-23)
 
     -   **修复**：修复查询分账结果接口的调用时参数缺失问题。（_via_ [Gitee #I4BITZ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I4BITZ)）
 
--   Release 1.8.0
+-   Release 1.8.0 (2021-08-30)
 
     -   **新增**：新增消费者投诉下载图片相关接口。
 
     -   **新增**：随官方更新消费者投诉接口相关字段。
 
--   Release 1.7.0
+-   Release 1.7.0 (2021-08-20)
 
     -   **变更**：升级核心库。
 
--   Release 1.6.0
+-   Release 1.6.0 (2021-08-17)
 
     -   **新增**：新增银行定向促活相关接口。
 
--   Release 1.5.4
+-   Release 1.5.4 (2021-08-16)
 
     -   **修复**：修复特约商户进件提交申请单接口请求模型定义错误的问题。（_via_ [Gitee #I45RRM](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I45RRM)）
 
--   Release 1.5.2
+-   Release 1.5.2 (2021-08-16)
 
     -   **修复**：修复特约商户进件提交申请单接口因 URL 结尾反斜杠问题而无法正常请求的问题。（_via_ [Gitee #I45QFY](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I45QFY)）
 
--   Release 1.5.1
+-   Release 1.5.1 (2021-08-16)
 
     -   **修复**：修复部分接口模型因继承问题在使用 System.Text.Json 时序列化有误的问题。（_via_ [Gitee #I45C27](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I45C27)）
 
--   Release 1.5.0
+-   Release 1.5.0 (2021-08-13)
 
     -   **新增**：新增微信支付分停车服务相关接口。
 
     -   **新增**：随官方更新电商分账、连锁品牌分账接口相关字段。
 
--   Release 1.4.2
+-   Release 1.4.2 (2021-08-09)
 
     -   **变更**：验证响应或回调通知签名时不再抛出异常。
 
--   Release 1.4.0
+-   Release 1.4.0 (2021-07-26)
 
     -   **新增**：新增获取分账账单相关接口。
 
@@ -957,7 +953,11 @@
 
     -   **修复**：修复部分场景下生成请求签名的错误。（_via_ [GitHub #2](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/2)）
 
--   Release 1.3.1
+-   Release 1.3.1 (2021-07-20)
+
+    -   **修复**：修复验签错误的问题。
+
+-   Release 1.3.0 (2021-07-19)
 
     -   **新增**：新增批量转账到零钱相关接口。
 
@@ -965,25 +965,25 @@
 
     -   **新增**：新增 `ICertificateStorer` 接口，并基于此重新实现验签的扩展方法。（_via_ [GitHub #1](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/1)）
 
--   Release 1.2.1
+-   Release 1.2.1 (2021-07-10)
 
     -   **新增**：新增 `WechatTenpayV3Client.CreateRequest()` 方法。
 
--   Release 1.2.0
+-   Release 1.2.0 (2021-07-08)
 
     -   **变更**：调整包含需加解密字段的接口模型，去除 _EncryptedData_ 的字段名结尾。
 
--   Release 1.1.0
+-   Release 1.1.0 (2021-07-06)
 
     -   **新增**：新增分账相关接口。
 
--   Release 1.0.1
+-   Release 1.0.1 (2021-07-05)
 
     -   **新增**：随官方更新服务商提现、服务商结算账户接口相关字段。
 
     -   **修复**：修复调起支付所需参数签名生成错误。（_via_ [Gitee #I3YY2C](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I3YY2C)）
 
--   Release 1.0.0
+-   Release 1.0.0 (2021-06-17)
 
     -   首次发布。
 
@@ -997,11 +997,11 @@
 
 <summary>[展开查看]</summary>
 
--   Release 3.0.0
+-   Release 3.0.0 (2024-02-07)
 
     -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
--   Release 2.25.0
+-   Release 2.25.0 (2024-01-03)
 
     -   **新增**：新增会议高级功能账号、文档高级功能账号、微盘高级功能账号等相关接口。
 
@@ -1011,7 +1011,7 @@
 
     -   **修复**：尝试规避部分场景下企业会话存档 JSON 反序列化异常的问题。（_via_ [Gitee #I8SY9T](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I8SY9T)）
 
--   Release 2.24.0
+-   Release 2.24.0 (2023-12-02)
 
     -   **新增**：新增二次验证相关接口。
 
@@ -1021,11 +1021,11 @@
 
     -   **新增**：会话内容存档支持会议邀请消息和会议控制消息。
 
--   Release 2.23.0
+-   Release 2.23.0 (2023-10-10)
 
     -   **新增**：新增小程序接入对外收款相关接口。（_via_ [GitHub #113](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/113)）
 
--   Release 2.22.0
+-   Release 2.22.0 (2023-10-09)
 
     -   **新增**：新增获取企业已配置的联系我列表接口。（_via_ [Gitee #I83NZZ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I83NZZ)）
 
@@ -1035,29 +1035,29 @@
 
     -   **修复**：修复用户上限数值溢出错误问题。（_via_ [GitHub #112](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/112)）
 
--   Release 2.21.0
+-   Release 2.21.0 (2023-08-05)
 
     -   **新增**：随官方更新获客助手、日程、文档收集表等相关接口模型。
 
     -   **新增**：新增人事助手花名册相关接口。
 
--   Release 2.20.1
+-   Release 2.20.1 (2023-07-16)
 
     -   **修复**：修复部分 POST 接口丢失请求正文的问题。
 
--   Release 2.20.0
+-   Release 2.20.0 (2023-06-20)
 
     -   **新增**：新增会议高级布局管理相关接口。
 
     -   **新增**：随官方更新创建预约会议接口响应模型。
 
--   Release 2.19.0
+-   Release 2.19.0 (2023-06-16)
 
     -   **新增**：新增会议高级管理、会中控制管理、网络研讨会管理、电话入会管理、Rooms 会议室管理、会议室连接器管理、会议布局和背景管理、会议录制管理等相关接口。
 
     -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.2.1。
 
--   Release 2.18.0
+-   Release 2.18.0 (2023-05-24)
 
     -   **新增**：新增获客助手相关接口。
 
@@ -1067,11 +1067,11 @@
 
     -   **新增**：随官方更新普通邮件、日历、会议室等相关接口模型。
 
--   Release 2.17.1
+-   Release 2.17.1 (2023-05-19)
 
     -   **修复**：修复会话内容存档下载媒体文件时 Windows 环境下存在的 IntPtr Double Free 问题。（_via_ [GitHub #95](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/95)）
 
--   Release 2.17.0
+-   Release 2.17.0 (2023-03-22)
 
     -   **新增**：新增外部用户临时 ID 转换接口。
 
@@ -1083,11 +1083,11 @@
 
     -   **新增**：新增生成第三方单点登录扫码授权 URL 的扩展方法。
 
--   Release 2.16.0
+-   Release 2.16.0 (2023-03-09)
 
     -   **新增**：实现会话内容存档导出聊天记录相关功能。
 
--   Release 2.15.0
+-   Release 2.15.0 (2023-01-12)
 
     -   **新增**：新增文档表格相关接口。
 
@@ -1103,17 +1103,17 @@
 
     -   **新增**：新增若干回调通知事件模型。
 
--   Release 2.14.2
+-   Release 2.14.2 (2022-12-06)
 
     -   **变更**：升级公共组件至 v2.6.0。
 
     -   **修复**：修复发送应用消息接口模型参数缺失问题。（_via_ [Gitee #I64NYJ](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I64NYJ)）
 
--   Release 2.14.1
+-   Release 2.14.1 (2022-12-05)
 
     -   **修复**：修复更新模版卡片消息接口模型参数缺失问题。（_via_ [Gitee #I64O6T](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I64O6T)）
 
--   Release 2.14.0
+-   Release 2.14.0 (2022-12-03)
 
     -   **新增**：新增停止发表企业朋友圈、提醒成员群发、停止企业群发接口。
 
@@ -1145,7 +1145,7 @@
 
     -   **修复**：修复微盘相关接口模型的拼写错误。
 
--   Release 2.13.0
+-   Release 2.13.0 (2022-10-31)
 
     -   **新增**：新增接口调用许可相关接口。
 
@@ -1153,13 +1153,13 @@
 
     -   **新增**：新增获取访问用户身份或敏感信息接口。
 
--   Release 2.12.0
+-   Release 2.12.0 (2022-10-25)
 
     -   **新增**：新增 OA 导出汇报文档接口。
 
     -   **新增**：随官方更新 OA 汇报相关接口模型。
 
--   Release 2.11.0
+-   Release 2.11.0 (2022-10-12)
 
     -   **新增**：新增素材管理上传临时素材接口相关接口。
 
@@ -1175,7 +1175,7 @@
 
     -   **新增**：随官方更新发送应用消息接口响应模型。
 
--   Release 2.10.0
+-   Release 2.10.0 (2022-08-15)
 
     -   **新增**：新增获取收款项目的商户单号相关接口。
 
@@ -1191,7 +1191,7 @@
 
     -   **变更**：随官方标记通讯录同步相关接口或字段为废弃。
 
--   Release 2.9.0
+-   Release 2.9.0 (2022-06-23)
 
     -   **新增**：新增分配在职成员的客户群接口。
 
@@ -1207,21 +1207,21 @@
 
     -   **修复**：修复部分接口模型命名拼写错误。
 
--   Release 2.8.0
+-   Release 2.8.0 (2022-05-01)
 
     -   **新增**：新增上下游规则相关接口。
 
     -   **新增**：随官方更新获取客户详情、微信客服接待人员管理相关接口模型。
 
--   Release 2.7.2
+-   Release 2.7.2 (2022-04-22)
 
     -   **修复**：修复上传素材接口不支持 Unicode 文件名问题。（_via_ [GitHub #40](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/40)）
 
--   Release 2.7.1
+-   Release 2.7.1 (2022-04-14)
 
     -   **修复**：修复部分事件通知模型中数组类型字段反序列化错误的问题。（_via_ [Gitee #I52P9I](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I52P9I)）
 
--   Release 2.7.0
+-   Release 2.7.0 (2022-03-14)
 
     -   **新增**：新增企业邮箱相关接口。
 
@@ -1239,33 +1239,33 @@
 
     -   **变更**：调整 `SHA1Utility` 工具类的计算字节数组哈希值方法的返回值类型。
 
--   Release 2.6.3
+-   Release 2.6.3 (2022-03-10)
 
     -   **修复**：修复部分场景下无法反序列化空字符串字段为数值类型的问题。
 
--   Release 2.6.2
+-   Release 2.6.2 (2022-02-25)
 
     -   **变更**：升级公共组件至 v2.3.3。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
 
--   Release 2.6.1
+-   Release 2.6.1 (2022-02-24)
 
     -   **变更**：升级公共组件至 v2.3.2。（_via_ [GitHub #34](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/34)）
 
--   Release 2.6.0
+-   Release 2.6.0 (2022-02-23)
 
     -   **变更**：升级公共组件至 v2.3.1。
 
     -   **修复**：修复自建应用审批回调通知事件模型的定义错误。
 
--   Release 2.5.1
+-   Release 2.5.1 (2022-01-28)
 
     -   **修复**：修复部门 ID 可能溢出的问题。（_via_ [Gitee #5](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/5)）
 
--   Release 2.5.0
+-   Release 2.5.0 (2022-01-21)
 
     -   **变更**：升级公共组件至 v2.2.0。
 
--   Release 2.4.0
+-   Release 2.4.0 (2022-01-13)
 
     -   **新增**：新增获取单个部门和子部门 ID 列表的相关接口。
 
@@ -1283,7 +1283,7 @@
 
     -   **新增**：随官方更新成员相关接口模型。
 
--   Release 2.3.0
+-   Release 2.3.0 (2022-01-10)
 
     -   **新增**：新增生成参数化 URL 的扩展方法。
 
@@ -1291,17 +1291,17 @@
 
     -   **变更**：重命名生成 JS-SDK 客户端签名参数的扩展方法。
 
--   Release 2.2.1
+-   Release 2.2.1 (2021-12-29)
 
     -   **修复**：修复部门次序值可能溢出的问题。
 
--   Release 2.2.0
+-   Release 2.2.0 (2021-12-17)
 
     -   **新增**：新增会议室预定的回调通知事件模型。
 
     -   **新增**：新增根据会议 ID 查询会议室预订详情的相关接口。
 
--   Release 2.1.0
+-   Release 2.1.0 (2021-11-19)
 
     -   **新增**：随官方更新企业通讯录成员相关接口模型。
 
@@ -1311,13 +1311,11 @@
 
     -   **修复**：修复部分回调通知事件模型字段缺失的问题。
 
--   Release 2.0.0
-
-    -   **新增**：适配 .NET 6.0。
+-   Release 2.0.0 (2021-11-09)
 
     -   **变更**：移除核心库依赖，引入公共组件。
 
--   Release 1.4.0
+-   Release 1.4.0 (2021-09-30)
 
     -   **新增**：新增微信客服相关接口。
 
@@ -1327,23 +1325,23 @@
 
     -   **新增**：新增管理员变更相关的回调通知事件模型。
 
--   Release 1.3.4
+-   Release 1.3.4 (2021-09-13)
 
     -   **修复**：修复应用消息相关接口的调用时参数缺失问题。（_via_ [GitHub #10](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/10)）
 
--   Release 1.3.3
+-   Release 1.3.3 (2021-09-08)
 
     -   **修复**：修复批量获取客户详情时的请求模型定义错误。（_via_ [GitHub #9](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/9)）
 
--   Release 1.3.2
+-   Release 1.3.2 (2021-09-06)
 
     -   **修复**：修复创建或获取通讯录成员时的请求模型定义错误。（_via_ [GitHub #8](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/8)）
 
--   Release 1.3.1
+-   Release 1.3.1 (2021-08-30)
 
     -   **修复**：修复获取服务商凭证接口请求模型定义错误。（_via_ [GitHub #5](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/5)）
 
--   Release 1.3.0
+-   Release 1.3.0 (2021-08-20)
 
     -   **新增**：新增通讯录异步导出相关接口。
 
@@ -1367,11 +1365,15 @@
 
     -   **修复**：修复潜在的 XXE 漏洞风险。
 
--   Release 1.2.3
+-   Release 1.2.3 (2021-08-12)
 
     -   **修复**：修复部分场景下生成微信回调通知事件签名错误的问题。（_via_ [GitHub #4](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/4)）
 
--   Release 1.2.2
+-   Release 1.2.2 (2021-08-02)
+
+    -   **修复**：修复部分企业微信回调通知事件模型反序列化的问题。
+
+-   Release 1.2.1 (2021-07-29)
 
     -   **新增**：新增序列化回调通知事件实体类的扩展方法。
 
@@ -1379,25 +1381,25 @@
 
     -   **修复**：修复部分企业微信回调通知事件模型反序列化的问题。
 
--   Release 1.2.0
+-   Release 1.2.0 (2021-07-26)
 
     -   **新增**：新增 `WechatWorkClient.Credentials` 属性。
 
     -   **变更**：移除 `WechatWorkClient.FlurlJsonSerializer` 属性。
 
--   Release 1.1.0
+-   Release 1.1.0 (2021-07-21)
 
     -   **新增**：随官方更新客户联系接口相关字段。
 
     -   **新增**：新增班级收款相关接口。
 
--   Release 1.0.1
+-   Release 1.0.1 (2021-07-10)
 
     -   **新增**：新增 `WechatWorkClient.CreateRequest()` 方法。
 
     -   **新增**：新增企业微信小程序相关接口。
 
--   Release 1.0.0
+-   Release 1.0.0 (2021-06-17)
 
     -   首次发布。
 
@@ -1411,11 +1413,11 @@
 
 <summary>[展开查看]</summary>
 
--   Release 3.0.0
+-   Release 3.0.0 (2024-02-07)
 
     -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
--   Release 2.0.0
+-   Release 2.0.0 (2022-12-06)
 
     -   首次发布。
 
@@ -1429,15 +1431,11 @@
 
 <summary>[展开查看]</summary>
 
--   Release 3.0.0
+-   Release 3.0.0 (2024-02-07)
 
     -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
--   Release 2.0.1
-
-    -   **变更**：升级公共组件至 v2.6.0。
-
--   Release 2.0.0
+-   Release 2.0.0 (2022-11-21)
 
     -   首次发布。
 
@@ -1451,19 +1449,19 @@
 
 <summary>[展开查看]</summary>
 
--   Release 3.0.1
+-   Release 3.0.1 (2024-02-15)
 
     -   **修复**：修复部分接口请求签名错误。
 
--   Release 3.0.0
+-   Release 3.0.0 (2024-02-07)
 
     -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
 
--   Release 2.2.0
+-   Release 2.2.0 (2023-04-15)
 
     -   **新增**：新增分账、提现等相关接口。
 
--   Release 2.1.0
+-   Release 2.1.0 (2023-04-11)
 
     -   **新增**：新增二维码支付预下单、小程序支付预下单、App 支付预下单、企业微信支付预下单等接口。
 
@@ -1477,11 +1475,11 @@
 
     -   **变更**：重命名接口模型中关于敏感字段加解密相关的字段，去除公共部分 "TBEP"。
 
--   Release 2.0.1
+-   Release 2.0.1 (2023-03-09)
 
     -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.1.1。
 
--   Release 2.0.0
+-   Release 2.0.0 (2022-12-06)
 
     -   首次发布。
 
