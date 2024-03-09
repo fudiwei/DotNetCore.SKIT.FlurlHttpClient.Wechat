@@ -1,10 +1,10 @@
-﻿## 如何与 `IHttpClientFactory` 集成？
+﻿## 与 `IHttpClientFactory` 集成
 
 ---
 
 本功能来自于公共组件，请参阅公共组件下的相关文档：
 
-> [《SKIT.FlurlHttpClient FAQ：如何与 IHttpClientFactory 集成？》](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/blob/main/docs/README.md)
+> [《SKIT.FlurlHttpClient 最佳实践：与 `IHttpClientFactory` 集成》](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/blob/main/docs/README.md)
 
 ---
 

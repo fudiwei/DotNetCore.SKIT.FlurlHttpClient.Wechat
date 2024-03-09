@@ -2,7 +2,7 @@
 
 基于 `Flurl.Http` 的[微信商户平台](https://pay.weixin.qq.com/) HTTP API SDK。
 
-本模块仅支持微信支付 v2 版 API，如需接入微信支付 v3 版 API，请移步 [`SKIT.FlurlHttpClient.WechantTenpayV3`](../WechatTenpayV3/README.md) 模块。
+本模块仅支持微信支付 v2 版 API，如需接入微信支付 v3 版 API，请移步 [`SKIT.FlurlHttpClient.Wechant.TenpayV3`](../WechatTenpayV3/README.md) 模块。
 
 ---
 
@@ -96,13 +96,15 @@ else
 
 ## 高级技巧
 
--   [如何销毁客户端？](./Advanced_Dispose.md)
+-   [配置 JSON 序列化器](./Advanced_JsonSerializer.md)
 
--   [如何与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
+-   [配置 HttpClient](./Advanced_HttpClient.md)
 
--   [如何配置 JSON 序列化器？](./Advanced_JsonSerializer.md)
+-   [使用拦截器](./Advanced_Interceptor.md)
 
--   [如何使用拦截器？](./Advanced_Interceptor.md)
+-   [避免内存泄漏](./Advanced_Dispose.md)
+
+-   [与 `IHttpClientFactory` 集成](./Advanced_HttpClientFactory.md)
 
 ---
 

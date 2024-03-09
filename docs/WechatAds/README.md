@@ -74,10 +74,12 @@ var response = await client.ExecuteCampaignsAddAsync(request);
 
 ## 高级技巧
 
--   [如何销毁客户端？](./Advanced_Dispose.md)
+-   [配置 JSON 序列化器](./Advanced_JsonSerializer.md)
 
--   [如何与 `IHttpClientFactory` 集成？](./Advanced_IHttpClientFactory.md)
+-   [配置 HttpClient](./Advanced_HttpClient.md)
 
--   [如何配置 JSON 序列化器？](./Advanced_JsonSerializer.md)
+-   [使用拦截器](./Advanced_Interceptor.md)
 
--   [如何使用拦截器？](./Advanced_Interceptor.md)
+-   [避免内存泄漏](./Advanced_Dispose.md)
+
+-   [与 `IHttpClientFactory` 集成](./Advanced_HttpClientFactory.md)

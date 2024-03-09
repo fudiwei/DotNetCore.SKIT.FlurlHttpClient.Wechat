@@ -1,16 +1,10 @@
-﻿## 使用拦截器
+﻿## 配置 HttpClient
 
 ---
 
 本功能来自于公共组件，请参阅公共组件下的相关文档：
 
-> [《SKIT.FlurlHttpClient 高级用法：使用拦截器》](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/blob/main/docs/README.md)
-
----
-
-### 内置拦截器
-
-本库内置了一个用于在发出请求时自动生成请求签名的拦截器。
+> [《SKIT.FlurlHttpClient 高级用法：配置 HttpClient》](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/blob/main/docs/README.md)
 
 ---
 
