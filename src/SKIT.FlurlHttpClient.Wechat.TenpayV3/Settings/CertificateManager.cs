@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
     }
 
     /// <summary>
-    /// 一个基于内存实现的 <see cref="CertificateManager"/>。
+    /// 一个基于内存实现的 <see cref="ICertificateManager"/>。
     /// </summary>
     public sealed class InMemoryCertificateManager : ICertificateManager
     {
