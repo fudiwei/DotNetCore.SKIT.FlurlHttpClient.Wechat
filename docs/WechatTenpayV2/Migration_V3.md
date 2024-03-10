@@ -4,7 +4,7 @@ v3.x 版本是一个主要版本，其中包括了一些破坏性的变化。从
 
 ---
 
-### 目标框架和框架的变更
+### 目标框架和基础库的变更
 
 微软官方已与 2022 年 4 月 26 日宣布中止对 .NET Framework 4.6.1 的支持。因此，本项目的最低运行时要求调整为 .NET Framework 4.6.2。
 
@@ -52,7 +52,7 @@ byte[] bytes = response.GetRawBytes();
 
 随着 `Flurl.Http` 的升级，原有的与 `IHttpClientFactory` 集成的方式发生了根本性的改变。
 
-为了应对这种变化（请参阅本文档[《如何与 `IHttpClientFactory` 集成？》](./Advanced_IHttpClientFactory.md)），也为了日后能更加灵活地配置客户端，我们在新版本中提供了构造器模式来构造客户端：
+为了应对这种变化（请参阅本文档[《与 `HttpClientFactory` 集成》](./Advanced_HttpClientFactory.md)这一章节），也为了日后能更加灵活地配置客户端，我们在新版本中提供了构造器模式来构造客户端：
 
 ```csharp
 var options = new WechatTenpayClientOptions() { /* 具体配置项略 */ };
