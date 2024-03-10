@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             // NOTICE: 注意本接口 URL 结尾的反斜杠不能删除
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "applyment4sub", "applyment", "");
+                .CreateFlurlRequest(request, HttpMethod.Post, "applyment4sub", "applyment/");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateApplyForSubMerchantApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
