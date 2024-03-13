@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -29,5 +29,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [System.Text.Json.Serialization.JsonPropertyName("create_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset CreateTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置批次状态。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("batch_status")]
+        [System.Text.Json.Serialization.JsonPropertyName("batch_status")]
+        public string? BatchStatus { get; set; }
     }
 }
