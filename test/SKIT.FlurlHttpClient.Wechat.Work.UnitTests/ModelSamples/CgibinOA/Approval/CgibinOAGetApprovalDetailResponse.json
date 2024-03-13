@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "info": {
@@ -59,7 +59,11 @@
                         "new_money": "700",
                         "date": {
                             "type": "day",
-                            "s_timestamp": "1569859200"
+                            "s_timestamp": "1569859200",
+                            "timezone_info": {
+                                "zone_offset": "-9",
+                                "zone_desc": "UTC+9"
+                            }
                         },
                         "selector": {
                             "type": "multi",
@@ -187,7 +191,11 @@
                             "type": "halfday",
                             "new_begin": 1570550400,
                             "new_end": 1570593600,
-                            "new_duration": 86400
+                            "new_duration": 86400,
+                            "timezone_info": {
+                                "zone_offset": "-9",
+                                "zone_desc": "UTC+9"
+                            }
                         },
                         "location": {
                             "latitude": "30.547239",

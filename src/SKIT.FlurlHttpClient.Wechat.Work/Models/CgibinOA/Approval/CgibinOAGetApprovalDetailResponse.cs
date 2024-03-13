@@ -247,6 +247,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
                                     public class DateControlValue
                                     {
+                                        public static class Types
+                                        {
+                                            public class Timezone
+                                            {
+                                                /// <summary>
+                                                /// 获取或设置时区偏移量。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("zone_offset")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("zone_offset")]
+                                                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                                                public int Offset { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置时区描述。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("zone_desc")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("zone_desc")]
+                                                public string Description { get; set; } = default!;
+                                            }
+                                        }
+
                                         /// <summary>
                                         /// 获取或设置时间展示类型。
                                         /// </summary>
@@ -261,6 +282,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         [System.Text.Json.Serialization.JsonPropertyName("s_timestamp")]
                                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
                                         public long? Timestamp { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置时区信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("timezone_info")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("timezone_info")]
+                                        public Types.Timezone? Timezone { get; set; }
                                     }
 
                                     public class SelectorControlValue
@@ -553,6 +581,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
                                     public class DateRangeControlValue
                                     {
+                                        public static class Types
+                                        {
+                                            public class Timezone : DateControlValue.Types.Timezone
+                                            {
+                                            }
+                                        }
+
                                         /// <summary>
                                         /// 获取或设置时间展示类型。
                                         /// </summary>
@@ -580,6 +615,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         [Newtonsoft.Json.JsonProperty("new_duration")]
                                         [System.Text.Json.Serialization.JsonPropertyName("new_duration")]
                                         public int Duration { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置时区信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("timezone_info")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("timezone_info")]
+                                        public Types.Timezone? Timezone { get; set; }
                                     }
 
                                     public class CheckinControlValue
