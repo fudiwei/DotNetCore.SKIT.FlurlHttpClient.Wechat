@@ -129,4 +129,4 @@ bool ret = (bool)eret;
 
 为了统一并规范化各个模块，我们调整了部分方法的命名参数。如果你在调用该方法时使用了命名实参，请注意修改。
 
-涉及此变化的包括 `DeserializeEventFromJson()`、`DeserializeEventFromXml()`、`SerializeEventToJson`、`SerializeEventToXml`、`VerifyEventSignatureForEcho`、`VerifyEventSignatureFromJson`、`VerifyEventSignatureFromXml` 等扩展方法，及 `AESUtility`、`SHA1Utility`、`HMACUtility` 等工具类。
+涉及此变化的包括 `DeserializeEventFromJson()`、`DeserializeEventFromXml()`、`SerializeEventToJson()`、`SerializeEventToXml()`、`VerifyEventSignatureForEcho()`、`VerifyEventSignatureFromJson()`、`VerifyEventSignatureFromXml()` 等扩展方法，及 `AESUtility`、`SHA1Utility`、`HMACUtility` 等工具类。
