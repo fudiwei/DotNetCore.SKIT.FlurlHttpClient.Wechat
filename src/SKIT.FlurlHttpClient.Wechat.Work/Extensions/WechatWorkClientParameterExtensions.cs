@@ -2,14 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using Flurl;
-using static SKIT.FlurlHttpClient.Wechat.Work.Models.CgibinSchoolAgentGetAllowScopeResponse.Types;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work
 {
     public static class WechatWorkClientParameterExtensions
     {
-        private const string BASE_URL_OPEN = "https://open.weixin.qq.com/";
-        private const string BASE_URL_OPENWORK = "https://open.work.weixin.qq.com/";
+        private const string BASE_URL_OPEN = "https://open.weixin.qq.com";
+        private const string BASE_URL_OPENWORK = "https://open.work.weixin.qq.com";
+        private const string BASE_URL_LOGINWORK = "https://login.work.weixin.qq.com";
 
         /// <summary>
         /// <para>生成企业微信 JS-SDK `wx.config` 所需的参数字典。</para>
@@ -136,6 +136,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="language"></param>
         /// <param name="userType"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段已于 2023-12-29 下线。")]
         public static string GenerateParameterizedUrlForSSOQrcodeConnectAuthorize(this WechatWorkClient client, string redirectUrl, string? state = null, string? language = null, string? userType = null)
         {
             return GenerateParameterizedUrlForSSOQrcodeConnectAuthorize(client, agentId: client.Credentials.AgentId.GetValueOrDefault(), redirectUrl: redirectUrl, state: state, language: language, userType: userType);
@@ -156,6 +157,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="language"></param>
         /// <param name="userType"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段已于 2023-12-29 下线。")]
         public static string GenerateParameterizedUrlForSSOQrcodeConnectAuthorize(this WechatWorkClient client, int agentId, string redirectUrl, string? state = null, string? language = null, string? userType = null)
         {
             return new Url(BASE_URL_OPENWORK)
@@ -166,6 +168,92 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("state", state)
                 .SetQueryParam("lang", language)
                 .SetQueryParam("usertype", userType)
+                .ToString();
+        }
+
+        /// <summary>
+        /// <para>生成企业微信 Web 登录 URL（企业自建/代开发应用登录）。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98152 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="state"></param>
+        /// <param name="language"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForSSOLoginAsCorpApp(this WechatWorkClient client, string redirectUrl, string? state = null, string? language = null)
+        {
+            return GenerateParameterizedUrlForSSOLoginAsCorpApp(client, appId: client.Credentials.CorpId, agentId: client.Credentials.AgentId, redirectUrl: redirectUrl, state: state, language: language);
+        }
+
+        /// <summary>
+        /// <para>生成企业微信 Web 登录 URL（企业自建/代开发应用登录）。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98152 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="agentId"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="state"></param>
+        /// <param name="language"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForSSOLoginAsCorpApp(this WechatWorkClient client, string appId, int? agentId, string redirectUrl, string? state = null, string? language = null)
+        {
+            return new Url(BASE_URL_LOGINWORK)
+                .AppendPathSegments("wwlogin", "sso", "login")
+                .SetQueryParam("login_type", "CorpApp")
+                .SetQueryParam("appid", appId)
+                .SetQueryParam("agentid", agentId)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("state", state)
+                .SetQueryParam("lang", language)
+                .ToString();
+        }
+
+        /// <summary>
+        /// <para>生成企业微信 Web 登录 URL（服务商登录）。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98152 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="state"></param>
+        /// <param name="language"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForSSOLoginAsServiceApp(this WechatWorkClient client, string redirectUrl, string? state = null, string? language = null)
+        {
+            return GenerateParameterizedUrlForSSOLoginAsServiceApp(client, appId: client.Credentials.CorpId, redirectUrl: redirectUrl, state: state, language: language);
+        }
+
+        /// <summary>
+        /// <para>生成企业微信 Web 登录 URL（服务商登录）。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/98152 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="appId"></param>
+        /// <param name="redirectUrl"></param>
+        /// <param name="state"></param>
+        /// <param name="language"></param>
+        /// <returns></returns>
+        public static string GenerateParameterizedUrlForSSOLoginAsServiceApp(this WechatWorkClient client, string appId, string redirectUrl, string? state = null, string? language = null)
+        {
+            return new Url(BASE_URL_LOGINWORK)
+                .AppendPathSegments("wwlogin", "sso", "login")
+                .SetQueryParam("login_type", "ServiceApp")
+                .SetQueryParam("appid", appId)
+                .SetQueryParam("redirect_uri", redirectUrl)
+                .SetQueryParam("state", state)
+                .SetQueryParam("lang", language)
                 .ToString();
         }
 
