@@ -32,6 +32,8 @@ var paramMap = client.GenerateParametersForJssdkConfigRequest(response.Ticket, "
 
 -   生成网页授权 URL：`GenerateParameterizedUrlForConnectOAuth2Authorize`
 
--   生成扫码授权 URL：`GenerateParameterizedUrlForSSOQrcodeConnectAuthorize`
+-   生成企业微信 Web 登录 URL（企业自建/代开发应用登录）：`GenerateParameterizedUrlForSSOLoginAsCorpApp`
+
+-   生成企业微信 Web 登录 URL（服务商登录）：`GenerateParameterizedUrlForSSOLoginAsServiceApp`
 
 -   生成第三方单点登录扫码授权 URL：`GenerateParameterizedUrlForSSO3rdQrcodeConnectAuthorize`
