@@ -1009,6 +1009,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.1.0 (2024-03-15)
+
+    -   **新增**：新增安全管理高级功能账号相关接口。
+
+    -   **新增**：新增服务商会话内容存档相关接口。
+
+    -   **新增**：新增生成企业微信 Web 登录 URL 扩展方法。（_via_ [Gitee #I986JC](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I986JC)）
+
+    -   **新增**：随官方更新获取审批申请详情接口模型。
+
 -   Release 3.0.0 (2024-02-07)
 
     -   **变更**：升级公共组件至 v3.0.0。完整变更说明请参阅迁移指南。
