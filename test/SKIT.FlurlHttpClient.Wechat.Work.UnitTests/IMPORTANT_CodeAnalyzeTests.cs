@@ -6,6 +6,8 @@ using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
 {
+    using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi;
+
     public class CodeAnalyzeTests
     {
         [Fact(DisplayName = "代码质量分析")]
@@ -24,6 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     SdkResponseModelDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.Work.Models",
                     SdkExecutingExtensionDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.Work",
                     SdkWebhookEventDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.Work.Events",
+                    IgnoreExecutingExtensionTypes = static type => type.Namespace!.Contains(".ExtendedSDK."),
                     ThrowOnNotFoundRequestModelTypes = true,
                     ThrowOnNotFoundResponseModelTypes = true,
                     ThrowOnNotFoundExecutingExtensionTypes = true,
@@ -54,6 +57,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     ThrowOnNotFoundWebhookEventSerializationSampleFiles = true
                 };
                 new SourceFileAnalyzer(options).AssertNoIssues();
+            }));
+
+            Assert.Null(Record.Exception(() =>
+            {
+                var options = new TypeDeclarationAnalyzerOptions()
+                {
+                    SdkAssembly = Assembly.GetAssembly(typeof(WechatWorkSpecialApiClient))!,
+                    SdkRequestModelDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi.Models",
+                    SdkResponseModelDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi.Models",
+                    SdkExecutingExtensionDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi",
+                    ThrowOnNotFoundRequestModelTypes = true,
+                    ThrowOnNotFoundResponseModelTypes = true,
+                    ThrowOnNotFoundExecutingExtensionTypes = true
+                };
+                new TypeDeclarationAnalyzer(options).AssertNoIssues();
             }));
         }
     }

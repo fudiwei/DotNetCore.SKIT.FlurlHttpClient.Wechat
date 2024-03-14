@@ -5,7 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90642 ]]> <br/>
-    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90795 ]]>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90795 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97086 ]]>
     /// </para>
     /// </summary>
     public class CreateAuthEvent : WechatWorkEvent

@@ -1,6 +1,6 @@
 using System;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work
+namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
 {
     /// <summary>
     /// 当调用企业微信会话内容存档 API 出错时引发的异常。

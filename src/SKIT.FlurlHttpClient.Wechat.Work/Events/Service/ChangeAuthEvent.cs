@@ -5,7 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90642 ]]> <br/>
-    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99401 ]]>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99401 ]]> <br/>
+    /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97086 ]]>
     /// </para>
     /// </summary>
     public class ChangeAuthEvent : WechatWorkEvent

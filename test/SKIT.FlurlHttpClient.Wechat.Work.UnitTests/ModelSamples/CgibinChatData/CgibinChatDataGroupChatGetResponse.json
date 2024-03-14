@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "creator": "woAAAAAAA",
+    "room_create_time": 1592361604,
+    "members": [
+        {
+            "memberid": "woAAAAAAAA",
+            "jointime": 1592361605,
+            "type": 1
+        },
+        {
+            "memberid": "woBBBBBBBB",
+            "jointime": 1592377076,
+            "type": 2
+        }
+    ]
+}
