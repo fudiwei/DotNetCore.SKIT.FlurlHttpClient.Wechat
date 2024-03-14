@@ -294,6 +294,100 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
 
         #region Vod
+        #region Vod/App
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/sec/vod/authorizeapp 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_6-1-%E5%A2%9E%E5%8A%A0%E8%B4%A6%E5%8F%B7%E6%8E%88%E6%9D%83 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodAuthorizeAppResponse> ExecuteWxaSecVodAuthorizeAppAsync(this WechatApiClient client, Models.WxaSecVodAuthorizeAppRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "authorizeapp")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSecVodAuthorizeAppResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/sec/vod/deauthorizeapp 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_6-2-%E8%A7%A3%E9%99%A4%E8%B4%A6%E5%8F%B7%E6%8E%88%E6%9D%83 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodDeauthorizeAppResponse> ExecuteWxaSecVodDeauthorizeAppAsync(this WechatApiClient client, Models.WxaSecVodDeauthorizeAppRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "deauthorizeapp")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSecVodDeauthorizeAppResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxa/sec/vod/getauthorizeapps 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_6-2-%E8%A7%A3%E9%99%A4%E8%B4%A6%E5%8F%B7%E6%8E%88%E6%9D%83 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodGetAuthorizeAppsResponse> ExecuteWxaSecVodGetAuthorizeAppsAsync(this WechatApiClient client, Models.WxaSecVodGetAuthorizeAppsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxa", "sec", "vod", "getauthorizeapps")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSecVodGetAuthorizeAppsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxa/sec/vod/getauthorizedapps 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_6-4-%E6%9F%A5%E8%AF%A2%E8%A2%AB%E8%B4%A6%E5%8F%B7%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodGetAuthorizedAppsResponse> ExecuteWxaSecVodGetAuthorizedAppsAsync(this WechatApiClient client, Models.WxaSecVodGetAuthorizedAppsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxa", "sec", "vod", "getauthorizedapps")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSecVodGetAuthorizedAppsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region Vod/Upload
         /// <summary>
         /// <para>异步调用 [POST] /wxa/sec/vod/singlefileupload 接口。</para>
@@ -442,7 +536,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
-        #region /Vod/Media
+        #region Vod/Media
         /// <summary>
         /// <para>异步调用 [POST] /wxa/sec/vod/listmedia 接口。</para>
         /// <para>
@@ -536,7 +630,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
-        #region /Vod/Drama
+        #region Vod/Drama
         /// <summary>
         /// <para>异步调用 [POST] /wxa/sec/vod/auditdrama 接口。</para>
         /// <para>
