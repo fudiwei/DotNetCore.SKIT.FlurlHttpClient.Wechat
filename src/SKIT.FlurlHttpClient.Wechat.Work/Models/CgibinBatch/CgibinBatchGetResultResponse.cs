@@ -65,7 +65,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total")]
         [System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int TotalCount { get; set; }
+        public long TotalCount { get; set; }
 
         /// <summary>
         /// 获取或设置目前运行百分比。
