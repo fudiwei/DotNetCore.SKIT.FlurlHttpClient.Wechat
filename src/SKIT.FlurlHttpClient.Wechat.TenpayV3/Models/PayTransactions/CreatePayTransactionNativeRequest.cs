@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -83,6 +83,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("goods_tag")]
         [System.Text.Json.Serialization.JsonPropertyName("goods_tag")]
         public string? GoodsTag { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否支持开票。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("support_fapiao")]
+        [System.Text.Json.Serialization.JsonPropertyName("support_fapiao")]
+        public bool? IsSupportFapiao { get; set; }
 
         /// <summary>
         /// 获取或设置金额信息。

@@ -3,25 +3,29 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /pay/partner/transactions/h5 接口的请求。</para>
+    /// <para>表示 [POST] /pay/partner/transactions/scannedpos 接口的请求。</para>
     /// </summary>
-    public class CreatePayPartnerTransactionH5Request : WechatTenpayRequest
+    public class CreatePayPartnerTransactionScannedPosRequest : WechatTenpayRequest
     {
         public static class Types
         {
-            public class Amount : CreatePayTransactionH5Request.Types.Amount
+            public class Amount : CreatePayPartnerTransactionJsapiRequest.Types.Amount
             {
             }
 
-            public class Detail : CreatePayTransactionH5Request.Types.Detail
+            public class Payer : CreatePayPartnerTransactionJsapiRequest.Types.Payer
             {
             }
 
-            public class Scene : CreatePayTransactionH5Request.Types.Scene
+            public class Detail : CreatePayPartnerTransactionJsapiRequest.Types.Detail
             {
             }
 
-            public class Settlement : CreatePayTransactionH5Request.Types.Settlement
+            public class Scene : CreatePayPartnerTransactionJsapiRequest.Types.Scene
+            {
+            }
+
+            public class Settlement : CreatePayPartnerTransactionJsapiRequest.Types.Settlement
             {
             }
         }
@@ -111,6 +115,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("amount")]
         [System.Text.Json.Serialization.JsonPropertyName("amount")]
         public Types.Amount Amount { get; set; } = new Types.Amount();
+
+        /// <summary>
+        /// 获取或设置支付者信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("payer")]
+        [System.Text.Json.Serialization.JsonPropertyName("payer")]
+        public Types.Payer Payer { get; set; } = new Types.Payer();
 
         /// <summary>
         /// 获取或设置商品信息。
