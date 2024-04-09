@@ -130,6 +130,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/checkin/add_checkin_record 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99647 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinCheckinAddCheckinRecordResponse> ExecuteCgibinCheckinAddCheckinRecordAsync(this WechatWorkClient client, Models.CgibinCheckinAddCheckinRecordRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "checkin", "add_checkin_record")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinCheckinAddCheckinRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/checkin/addcheckinuserface 接口。</para>
         /// <para>
         /// REF: <br/>

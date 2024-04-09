@@ -1,0 +1,20 @@
+{
+    "records": [
+        {
+            "userid": "userId",
+            "checkin_time": 1705899000,
+            "location_title": "1234",
+            "location_detail": "1234",
+            "mediaids": [
+                "mediaId"
+            ],
+            "notes": "",
+            "device_type": 1,
+            "lat": 22234233,
+            "lng": 1233123,
+            "device_detail": "device_detail_test",
+            "wifiname": "Tencent-WiFi",
+            "wifimac": "a2:8b:7f:c0:27:4b"
+        }
+    ]
+}
