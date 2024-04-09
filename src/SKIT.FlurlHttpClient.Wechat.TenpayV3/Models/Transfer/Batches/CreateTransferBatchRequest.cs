@@ -115,5 +115,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("transfer_scene_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_scene_id")]
         public string? TransferSceneId { get; set; }
+
+        /// <summary>
+        /// 获取或设置通知地址。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("notify_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
+        public string? NotifyUrl { get; set; }
     }
 }
