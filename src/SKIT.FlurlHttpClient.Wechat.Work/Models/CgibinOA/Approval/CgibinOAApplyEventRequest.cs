@@ -43,6 +43,45 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string Text { get; set; } = string.Empty;
             }
 
+            public class Process
+            {
+                public static class Types
+                {
+                    public class Node
+                    {
+                        /// <summary>
+                        /// 获取或设置节点类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        [System.Xml.Serialization.XmlElement("type")]
+                        public int NodeType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置多人办理方式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("apv_rel")]
+                        [System.Text.Json.Serialization.JsonPropertyName("apv_rel")]
+                        [System.Xml.Serialization.XmlElement("apv_rel", IsNullable = true)]
+                        public int? ApproversRelation { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置处理人成员账号列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                        public IList<string>? UserIdList { get; set; } 
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置节点列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("node_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("node_list")]
+                public IList<Types.Node> NodeList { get; set; } = new List<Types.Node>();
+            }
+
             public class ApplyData
             {
                 public static class Types
@@ -157,6 +196,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [Newtonsoft.Json.JsonProperty("date_range")]
                                 [System.Text.Json.Serialization.JsonPropertyName("date_range")]
                                 public DateRangeControlValue? DateRange { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置 PunchCorrection 控件值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("punch_correction")]
+                                [System.Text.Json.Serialization.JsonPropertyName("punch_correction")]
+                                public CheckinControlValue? Checkin { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置 BankAccount 控件值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("bank_account")]
+                                [System.Text.Json.Serialization.JsonPropertyName("bank_account")]
+                                public BankAccountControlValue? BankAccount { get; set; }
                             }
 
                             public class DateControlValue
@@ -420,6 +473,137 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("new_duration")]
                                 public int Duration { get; set; }
                             }
+
+                            public class CheckinControlValue
+                            {
+                                /// <summary>
+                                /// 获取或设置异常状态说明。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("state")]
+                                [System.Text.Json.Serialization.JsonPropertyName("state")]
+                                public string State { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置版本标识。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("version")]
+                                [System.Text.Json.Serialization.JsonPropertyName("version")]
+                                public int? Version { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置补卡时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("time")]
+                                public long? Timestamp { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置补卡日期时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("daymonthyear")]
+                                [System.Text.Json.Serialization.JsonPropertyName("daymonthyear")]
+                                public long? DateTimestamp { get; set; }
+                            }
+
+                            public class BankAccountControlValue
+                            {
+                                public static class Types
+                                {
+                                    public class Bank
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置银行名称。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("bank_alias")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("bank_alias")]
+                                        public string? BankAlias { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置银行代码。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("bank_alias_code")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("bank_alias_code")]
+                                        public string? BankAliasCode { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置银行支行联行号。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("bank_branch_id")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("bank_branch_id")]
+                                        public string? BankBranchId { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置银行支行。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("bank_branch_name")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("bank_branch_name")]
+                                        public string? BankBranchName { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置省份。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("province")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("province")]
+                                        public string? Province { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置省份代码。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("province_code")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("province_code")]
+                                        public int? ProvinceCode { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置城市。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("city")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("city")]
+                                        public string? City { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置城市代码。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("city_code")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("city_code")]
+                                        public int? CityCode { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置账户类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("account_type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("account_type")]
+                                public int AccountType { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置账户名。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("account_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("account_name")]
+                                public string AccountName { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置账号。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("account_number")]
+                                [System.Text.Json.Serialization.JsonPropertyName("account_number")]
+                                public string AccountNumber { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置备注。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("remark")]
+                                [System.Text.Json.Serialization.JsonPropertyName("remark")]
+                                public string Remark { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置银行信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("bank")]
+                                [System.Text.Json.Serialization.JsonPropertyName("bank")]
+                                public Types.Bank Bank { get; set; } = new Types.Bank();
+                            }
                         }
 
                         /// <summary>
@@ -500,6 +684,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("approver")]
         [System.Text.Json.Serialization.JsonPropertyName("approver")]
         public IList<Types.Approver> ApproverList { get; set; } = new List<Types.Approver>();
+
+        /// <summary>
+        /// 获取或设置审批流程信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("process")]
+        [System.Text.Json.Serialization.JsonPropertyName("process")]
+        public Types.Process? Process { get; set; }
 
         /// <summary>
         /// 获取或设置抄送方式。

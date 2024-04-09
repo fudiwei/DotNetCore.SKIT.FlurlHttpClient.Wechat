@@ -1,19 +1,39 @@
-﻿{
+{
     "creator_userid": "WangXiaoMing",
     "template_id": "3Tka1eD6v6JfzhDMqPd3aMkFdxqtJMc2ZRioeFXkaaa",
     "use_template_approver": 0,
     "choose_department": 2,
+    "process": {
+        "node_list": [
+            {
+                "type": 1,
+                "apv_rel": 1,
+                "userid": [
+                    "abc",
+                    "bcd"
+                ]
+            },
+            {
+                "type": 1,
+                "apv_rel": 1,
+                "userid": [
+                    "abc"
+                ]
+            }
+
+        ]
+    },
     "approver": [
         {
             "attr": 2,
-            "userid": ["WuJunJie", "WangXiaoMing"]
+            "userid": [ "WuJunJie", "WangXiaoMing" ]
         },
         {
             "attr": 1,
-            "userid": ["LiuXiaoGang"]
+            "userid": [ "LiuXiaoGang" ]
         }
     ],
-    "notifyer": ["WuJunJie", "WangXiaoMing"],
+    "notifyer": [ "WuJunJie", "WangXiaoMing" ],
     "notify_type": 1,
     "apply_data": {
         "contents": [
@@ -136,6 +156,22 @@
                         "new_begin": 1570550400,
                         "new_end": 1570593600,
                         "new_duration": 86400
+                    },
+                    "bank_account": {
+                        "account_type": 1,
+                        "account_name": "账户名",
+                        "account_number": "621200000000000111",
+                        "remark": "备注",
+                        "bank": {
+                            "bank_alias": "工商银行",
+                            "bank_alias_code": "1000009547",
+                            "province": "上海市",
+                            "province_code": 2,
+                            "city": "上海市",
+                            "city_code": 21,
+                            "bank_branch_name": "中国工商银行股份有限公司上海市新江湾城支行",
+                            "bank_branch_id": "102290000121"
+                        }
                     }
                 }
             }

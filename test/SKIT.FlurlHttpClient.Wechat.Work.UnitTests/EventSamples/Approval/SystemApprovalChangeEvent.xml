@@ -1,4 +1,4 @@
-﻿<xml>
+<xml>
     <ToUserName><![CDATA[ww1cSD21f1e9c0caaa]]></ToUserName>
     <FromUserName><![CDATA[sys]]></FromUserName>
     <CreateTime>1571732272</CreateTime>
@@ -50,6 +50,37 @@
         <Notifyer>
             <UserId><![CDATA[ChengLiang]]></UserId>
         </Notifyer>
+        <ProcessList>
+            <NodeList>
+                <NodeType>1</NodeType>
+                <SpStatus>1</SpStatus>
+                <ApvRel>2</ApvRel>
+                <SubNodeList>
+                    <UserInfo>
+                        <UserId><![CDATA[userid1]]></UserId>
+                    </UserInfo>
+                    <Speech><![CDATA[]]></Speech>
+                    <SpYj>1</SpYj>
+                    <Sptime>0</Sptime>
+                </SubNodeList>
+                <SubNodeList>
+                    <UserInfo>
+                        <UserId><![CDATA[userid2]]></UserId>
+                    </UserInfo>
+                    <Speech><![CDATA[]]></Speech>
+                    <SpYj>1</SpYj>
+                    <Sptime>0</Sptime>
+                </SubNodeList>
+            </NodeList>
+            <NodeList>
+                <NodeType>2</NodeType>
+                <SubNodeList>
+                    <UserInfo>
+                        <UserId><![CDATA[userid3]]></UserId>
+                    </UserInfo>
+                </SubNodeList>
+            </NodeList>
+        </ProcessList>
         <Comments>
             <CommentUserInfo>
                 <UserId><![CDATA[LiuZhi]]></UserId>

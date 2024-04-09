@@ -92,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("media_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("media_id")]
-                                public string[]? SpeechMediaIdList { get; set; }
+                                public string[]? AttachmentMediaIdList { get; set; }
                             }
                         }
 
@@ -243,6 +243,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         [Newtonsoft.Json.JsonProperty("punch_correction")]
                                         [System.Text.Json.Serialization.JsonPropertyName("punch_correction")]
                                         public CheckinControlValue? Checkin { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置 BankAccount 控件值。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("bank_account")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("bank_account")]
+                                        public BankAccountControlValue? BankAccount { get; set; }
                                     }
 
                                     public class DateControlValue
@@ -655,6 +662,106 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         [System.Text.Json.Serialization.JsonPropertyName("daymonthyear")]
                                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
                                         public long? DateTimestamp { get; set; }
+                                    }
+
+                                    public class BankAccountControlValue
+                                    {
+                                        public static class Types
+                                        {
+                                            public class Bank
+                                            {
+                                                /// <summary>
+                                                /// 获取或设置银行名称。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("bank_alias")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("bank_alias")]
+                                                public string? BankAlias { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置银行代码。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("bank_alias_code")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("bank_alias_code")]
+                                                public string? BankAliasCode { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置银行支行联行号。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("bank_branch_id")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("bank_branch_id")]
+                                                public string? BankBranchId { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置银行支行。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("bank_branch_name")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("bank_branch_name")]
+                                                public string? BankBranchName { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置省份。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("province")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("province")]
+                                                public string? Province { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置省份代码。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("province_code")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("province_code")]
+                                                public int? ProvinceCode { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置城市。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("city")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("city")]
+                                                public string? City { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置城市代码。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("city_code")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("city_code")]
+                                                public int? CityCode { get; set; }
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置账户类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("account_type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("account_type")]
+                                        public int AccountType { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置账户名。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("account_name")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("account_name")]
+                                        public string AccountName { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置账号。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("account_number")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("account_number")]
+                                        public string AccountNumber { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置备注。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("remark")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("remark")]
+                                        public string Remark { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置银行信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("bank")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("bank")]
+                                        public Types.Bank Bank { get; set; } = default!;
                                     }
                                 }
 

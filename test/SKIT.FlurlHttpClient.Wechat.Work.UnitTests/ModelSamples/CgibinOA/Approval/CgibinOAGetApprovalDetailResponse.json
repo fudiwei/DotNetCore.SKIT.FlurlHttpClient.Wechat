@@ -224,6 +224,22 @@
                         ],
                         "formula": {
                             "value": "5.0"
+                        },
+                        "bank_account": {
+                            "account_type": 1,
+                            "account_name": "账户名",
+                            "account_number": "621200000000000111",
+                            "remark": "备注",
+                            "bank": {
+                                "bank_alias": "工商银行",
+                                "bank_alias_code": "1000009547",
+                                "province": "上海市",
+                                "province_code": 2,
+                                "city": "上海市",
+                                "city_code": 21,
+                                "bank_branch_name": "中国工商银行股份有限公司上海市新江湾城支行",
+                                "bank_branch_id": "102290000121"
+                            }
                         }
                     }
                 }
