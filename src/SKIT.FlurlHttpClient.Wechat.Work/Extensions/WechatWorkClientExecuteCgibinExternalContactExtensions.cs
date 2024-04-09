@@ -345,6 +345,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExternalContactToServiceExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/externalcontact/contact_list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99434 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinExternalContactContactListResponse> ExecuteCgibinExternalContactContactListAsync(this WechatWorkClient client, Models.CgibinExternalContactContactListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "externalcontact", "contact_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExternalContactContactListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
         #region ContactWay
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/externalcontact/add_contact_way 接口。</para>
