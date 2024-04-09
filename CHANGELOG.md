@@ -635,6 +635,12 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.2.0 (2024-04-09)
+
+    -   **新增**：新增服务商扫码支付下单接口。
+
+    -   **新增**：随官方更新发起商家转账接口模型。（_via_ [GitHub #128](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/128), [Gitee #I956HH](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I956HH)）
+
 -   Release 3.1.0 (2024-03-10)
 
     -   **新增**：新增查询爱心餐品牌信息接口。
