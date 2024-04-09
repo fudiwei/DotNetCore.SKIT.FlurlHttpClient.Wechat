@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/corpgroup/unionid_to_external_userid 接口的请求。</para>
@@ -25,5 +25,12 @@
         [Newtonsoft.Json.JsonProperty("corpid")]
         [System.Text.Json.Serialization.JsonPropertyName("corpid")]
         public string? CorpId { get; set; }
+
+        /// <summary>
+        /// 获取或设置大批量调用凭据。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mass_call_ticket")]
+        [System.Text.Json.Serialization.JsonPropertyName("mass_call_ticket")]
+        public string? MassCallTicket { get; set; }
     }
 }

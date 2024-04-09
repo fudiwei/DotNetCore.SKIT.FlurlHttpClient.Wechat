@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/corpgroup/unionid_to_external_userid 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95342 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95818 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

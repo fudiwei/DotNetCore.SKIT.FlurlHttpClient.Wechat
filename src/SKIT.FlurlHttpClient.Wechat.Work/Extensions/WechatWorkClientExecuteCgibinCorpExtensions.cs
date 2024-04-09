@@ -64,6 +64,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/corp/apply_mass_call_ticket 接口。</para>
         /// <para>
         /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96168 ]]> <br/>
         /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96250 ]]>
         /// </para>
         /// </summary>

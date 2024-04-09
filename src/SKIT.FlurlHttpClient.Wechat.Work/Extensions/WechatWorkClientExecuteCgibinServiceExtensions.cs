@@ -799,7 +799,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/service/corpid_to_opencorpid 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95435 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97061 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
