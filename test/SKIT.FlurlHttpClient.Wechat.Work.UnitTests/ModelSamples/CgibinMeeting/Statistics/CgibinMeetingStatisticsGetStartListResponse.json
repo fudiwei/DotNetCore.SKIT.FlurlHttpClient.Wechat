@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "next_cursor": "abcd",
+    "meeting_list": [
+        {
+            "userid": "USERID1",
+            "start_time": 1700000000
+        },
+        {
+            "userid": "USERID2",
+            "start_time": 1700000000
+        }
+    ]
+}

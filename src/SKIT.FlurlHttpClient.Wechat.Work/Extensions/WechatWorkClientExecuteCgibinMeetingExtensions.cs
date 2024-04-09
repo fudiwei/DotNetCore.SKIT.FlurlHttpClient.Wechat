@@ -1870,6 +1870,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
+        #region Statistics
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/meeting/statistics/get_start_list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99651 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinMeetingStatisticsGetStartListResponse> ExecuteCgibinMeetingStatisticsGetStartListAsync(this WechatWorkClient client, Models.CgibinMeetingStatisticsGetStartListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "meeting", "statistics", "get_start_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinMeetingStatisticsGetStartListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region Vip
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/meeting/vip/submit_batch_add_job 接口。</para>
