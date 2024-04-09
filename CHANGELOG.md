@@ -1009,6 +1009,24 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.2.0 (2024-04-09)
+
+    -   **新增**：新增添加打卡记录接口。
+
+    -   **新增**：新增获取会议发起记录接口。
+
+    -   **新增**：新增获取已服务的外部联系人接口。（_via_ [GitHub #124](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/124)）
+
+    -   **新增**：新增接口调用许可提交续期订单接口。（_via_ [Gitee #I9DVIS](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I9DVIS)）
+
+    -   **新增**：随官方更新企业互联获取应用共享信息接口模型。
+
+    -   **新增**：随官方更新上下游关联客户信息相关接口模型。
+
+    -   **新增**：随官方更新审批相关接口模型。
+
+    -   **修复**：修复获取异步任务结果某些情况下会数值溢出的问题。（_via_ [GitHub #125](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/125)）
+
 -   Release 3.1.0 (2024-03-15)
 
     -   **新增**：新增安全管理高级功能账号相关接口。
