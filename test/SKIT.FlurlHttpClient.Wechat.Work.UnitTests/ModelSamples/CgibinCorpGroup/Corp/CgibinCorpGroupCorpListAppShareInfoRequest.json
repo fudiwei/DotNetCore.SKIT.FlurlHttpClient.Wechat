@@ -1,3 +1,7 @@
-﻿{
-    "agentid": 1111
+{
+    "agentid": 1111,
+    "business_type": 1,
+    "corpid": "wwcorp",
+    "limit": 100,
+    "cursor": "xxxxxx"
 }

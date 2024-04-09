@@ -1,6 +1,7 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
+    "ending": 0,
     "corp_list": [
         {
             "corpid": "wwcorpid1",
@@ -12,5 +13,6 @@
             "corp_name": "测试企业2",
             "agentid": 1112
         }
-    ]
+    ],
+    "next_cursor": "next_cursor1111"
 }

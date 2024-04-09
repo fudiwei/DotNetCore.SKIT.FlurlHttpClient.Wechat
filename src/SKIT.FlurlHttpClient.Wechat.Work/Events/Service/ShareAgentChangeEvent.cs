@@ -28,19 +28,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         public string? ParentCorpId { get; set; }
 
         /// <summary>
-        /// 获取或设置上级企业应用 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("AgentId")]
-        [System.Text.Json.Serialization.JsonPropertyName("AgentId")]
-        [System.Xml.Serialization.XmlElement("AgentId")]
-        public int ParentAgentId { get; set; }
-
-        /// <summary>
         /// 获取或设置下级企业应用 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("AppId")]
         [System.Text.Json.Serialization.JsonPropertyName("AppId")]
         [System.Xml.Serialization.XmlElement("AppId", IsNullable = true)]
         public int? AgentId { get; set; }
+
+        /// <summary>
+        /// 获取或设置上级企业应用 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("AgentId")]
+        [System.Text.Json.Serialization.JsonPropertyName("AgentId")]
+        [System.Xml.Serialization.XmlElement("AgentId")]
+        public int ParentAgentId { get; set; }
     }
 }
