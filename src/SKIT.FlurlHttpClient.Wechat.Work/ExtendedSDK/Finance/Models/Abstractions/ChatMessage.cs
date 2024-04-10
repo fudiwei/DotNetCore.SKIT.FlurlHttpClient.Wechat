@@ -444,8 +444,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
                 /// 获取或设置表项 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("id")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalStringReadOnlyConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public long ID { get; set; }
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                public string ID { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置表项类型。
@@ -543,9 +545,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// 获取或设置会议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meetingid")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalStringReadOnlyConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("meetingid")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public long MeetingId { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置会议主题。
@@ -666,12 +669,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         public string? WedriveFileName { get; set; }
 
         /// <summary>
-        /// 获取或设置会议类型。
+        /// 获取或设置会议 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("meeting_id")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalStringReadOnlyConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_id")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public long? MeetingId { get; set; }
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+        public string? MeetingId { get; set; }
 
         /// <summary>
         /// 获取或设置通知类型。

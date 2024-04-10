@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("seq")]
                 [System.Text.Json.Serialization.JsonPropertyName("seq")]
-                public long Sequence { get; set; }
+                public ulong Sequence { get; set; }
 
                 /// <summary>
                 /// 获取或设置消息 ID。

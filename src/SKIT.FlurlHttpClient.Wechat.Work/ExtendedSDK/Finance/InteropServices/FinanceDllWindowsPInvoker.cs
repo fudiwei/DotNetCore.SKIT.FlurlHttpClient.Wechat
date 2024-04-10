@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         [SuppressUnmanagedCodeSecurity]
-        public static extern int GetChatData([In] IntPtr sdk, [In] long seq, [In] long limit, [In] string proxy, [In] string passwd, [In] long timeout, [Out] IntPtr chatData);
+        public static extern int GetChatData([In] IntPtr sdk, [In] ulong seq, [In] long limit, [In] string proxy, [In] string passwd, [In] long timeout, [Out] IntPtr chatData);
 
         [DllImport(DLL_NAME, SetLastError = true, CallingConvention = CallingConvention.Cdecl)]
         [SuppressUnmanagedCodeSecurity]

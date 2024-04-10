@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public long LastSequence { get; set; }
+        public ulong LastSequence { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。
