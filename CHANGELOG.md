@@ -1015,6 +1015,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.2.1 (2024-04-10)
+
+    -   **修复**：修复企业会话存档相关接口模型中 ID 数值可能溢出的问题。（_via_ [GitHub #129](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/129)）
+
 -   Release 3.2.0 (2024-04-09)
 
     -   **新增**：新增添加打卡记录接口。
