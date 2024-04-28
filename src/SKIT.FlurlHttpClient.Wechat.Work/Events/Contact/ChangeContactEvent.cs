@@ -232,6 +232,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         [Obsolete("相关接口或字段于 2022-08-15 下线。")]
         [Newtonsoft.Json.JsonProperty("Gender")]
         [System.Text.Json.Serialization.JsonPropertyName("Gender")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberReadOnlyConverter))]
         [System.Xml.Serialization.XmlElement("Gender", IsNullable = true)]
         public int? UserGender { get; set; }
 

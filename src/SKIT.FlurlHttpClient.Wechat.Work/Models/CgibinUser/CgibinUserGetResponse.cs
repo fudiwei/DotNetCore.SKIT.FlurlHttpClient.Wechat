@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/user/get 接口的响应。</para>
@@ -261,6 +261,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("gender")]
         [System.Text.Json.Serialization.JsonPropertyName("gender")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberReadOnlyConverter))]
         public int Gender { get; set; }
 
         /// <summary>
