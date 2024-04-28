@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     }";
 
                     var model = serializer.Deserialize<GetChatRecordsResponse>(json);
-                    Assert.Equal(196, model.RecordList[0]!.Sequence);
+                    Assert.Equal(196ul, model.RecordList[0]!.Sequence);
                     Assert.Equal("CAQQ2fbb4QUY0On2rYSAgAMgip/yzgs=", model.RecordList[0]!.MessageId);
                     Assert.Equal(3, model.RecordList[0]!.PublicKeyVersion);
                     Assert.Equal("ftJ+uz3n/z1DsxlkwxNgE+mL38H42/KCvN8T60gbbtPD+Rta1hKTuQPzUzO6Hzne97MgKs7FfdDxDck/v8cDT6gUVjA2tZ/M7euSD0L66opJ/IUeBtpAtvgVSD5qhlaQjvfKJc/zPMGNK2xCLFYqwmQBZXbNT7uA69Fflm512nZKW/piK2RKdYJhRyvQnA1ISxK097sp9WlEgDg250fM5tgwMjujdzr7ehK6gtVBUFldNSJS7ndtIf6aSBfaLktZgwHZ57ONewWq8GJe7WwQf1hwcDbCh7YMG8nsweEwhDfUz+u8rz9an+0lgrYMZFRHnmzjgmLwrR7B/32Qxqd79A==", model.RecordList[0]!.EncryptedRandomKey);
@@ -683,7 +683,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     Assert.Equal("nick", model.MessageContentAsCollect!.CreatorName);
                     Assert.Equal("2019-12-11 11:21:22", model.MessageContentAsCollect!.CreateTimeString);
                     Assert.Equal("这是填表title", model.MessageContentAsCollect!.Title);
-                    Assert.Equal(1, model.MessageContentAsCollect!.DetailList[0]!.ID);
+                    Assert.Equal("1", model.MessageContentAsCollect!.DetailList[0]!.ID);
                     Assert.Equal("Text", model.MessageContentAsCollect!.DetailList[0]!.Type);
                     Assert.Equal("表项1，文本", model.MessageContentAsCollect!.DetailList[0]!.Question);
                 }
@@ -753,7 +753,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("meeting", model.MessageType);
                     Assert.Equal(102, model.MessageContentAsMeeting!.Type);
-                    Assert.Equal(1210342560, model.MessageContentAsMeeting!.MeetingId);
+                    Assert.Equal("1210342560", model.MessageContentAsMeeting!.MeetingId);
                     Assert.Equal("夕会", model.MessageContentAsMeeting!.Topic);
                     Assert.Equal(1603877400, model.MessageContentAsMeeting!.StartTimestamp);
                     Assert.Equal(1603881000, model.MessageContentAsMeeting!.EndTimestamp);

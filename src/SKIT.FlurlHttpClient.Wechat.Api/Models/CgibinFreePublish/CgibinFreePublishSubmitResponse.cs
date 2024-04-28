@@ -18,6 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_data_id")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_data_id")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
         public string? MessageDataId { get; set; }
     }
 }
