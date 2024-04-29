@@ -13,6 +13,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string OpenId { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置分享员 UnionId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("unionid")]
+        [System.Text.Json.Serialization.JsonPropertyName("unionid")]
+        public string? UnionId { get; set; }
+
+        /// <summary>
         /// 获取或设置分享员昵称。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("nickname")]
