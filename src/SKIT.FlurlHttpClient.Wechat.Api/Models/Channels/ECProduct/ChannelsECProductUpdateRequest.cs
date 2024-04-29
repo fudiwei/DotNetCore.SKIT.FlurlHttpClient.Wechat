@@ -32,7 +32,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sku_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
-                public long SKUId { get; set; }
+                public long? SKUId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商家自定义 SKU ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_sku_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_sku_id")]
+                public string? OutSKUId { get; set; }
 
                 /// <summary>
                 /// 获取或设置缩略图 URL。

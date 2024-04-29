@@ -61,6 +61,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("template_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("template_id")]
                 public long TemplateId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品重量（单位：克）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("weight")]
+                [System.Text.Json.Serialization.JsonPropertyName("weight")]
+                public int? Weight { get; set; }
             }
 
             public class SKU

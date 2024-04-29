@@ -36,7 +36,8 @@
             }
         ],
         "express_info": {
-            "template_id": "123456"
+            "template_id": "123456",
+            "weight": 100
         },
         "status": 5,
         "edit_status": 2,

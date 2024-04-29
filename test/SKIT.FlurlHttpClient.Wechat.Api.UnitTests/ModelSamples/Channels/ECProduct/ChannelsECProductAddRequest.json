@@ -31,7 +31,8 @@
         }
     ],
     "express_info": {
-        "template_id": "47428464001"
+        "template_id": "47428464001",
+        "weight": 100
     },
     "skus": [
         {
@@ -61,11 +62,11 @@
     ],
     "spu_code": "AABBCC",
     "brand_id": 2100000000,
-    "qualifications": [ "123123" ],
+    "qualifications": ["123123"],
     "extra_service": {
         "seven_day_return": 1,
         "pay_after_use": 1,
-        "freight_insurance":  0
+        "freight_insurance": 0
     },
     "listing": true,
     "after_sale_info": {

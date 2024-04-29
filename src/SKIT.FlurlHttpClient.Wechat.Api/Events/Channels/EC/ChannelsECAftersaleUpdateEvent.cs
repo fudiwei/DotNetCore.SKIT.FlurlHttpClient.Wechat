@@ -22,6 +22,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [System.Xml.Serialization.XmlElement("after_sale_order_id")]
                 public long AftersaleOrderId { get; set; }
 
+
+                /// <summary>
+                /// 获取或设置订单 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                [System.Xml.Serialization.XmlElement("order_id")]
+                public long OrderId { get; set; }
+
                 /// <summary>
                 /// 获取或设置售后单状态。
                 /// </summary>
