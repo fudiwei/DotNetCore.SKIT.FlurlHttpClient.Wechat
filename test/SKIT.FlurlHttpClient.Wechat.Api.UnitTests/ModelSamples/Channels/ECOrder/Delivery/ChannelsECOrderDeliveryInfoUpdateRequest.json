@@ -1,0 +1,17 @@
+{
+    "order_id": "12345",
+    "delivery_list": [
+        {
+            "delivery_id": "EMS",
+            "waybill_id": "1234",
+            "deliver_type": 1,
+            "product_infos": [
+                {
+                    "product_cnt": 1,
+                    "product_id": "112233",
+                    "sku_id": "445566"
+                }
+            ]
+        }
+    ]
+}
