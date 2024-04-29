@@ -1,0 +1,17 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "record_data": [
+        {
+            "anchor_nickname": "xxx",
+            "live_description": "xxx",
+            "live_start_time": 1688393984,
+            "exposure_uv": "6960",
+            "click_uv": "233",
+            "exposure_click_rate": 0.0334,
+            "leads_num": "64"
+        }
+    ],
+    "last_buffer": "EB4YAg=",
+    "continue_flag": true
+}
