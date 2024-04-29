@@ -26,6 +26,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("num")]
                         [System.Text.Json.Serialization.JsonPropertyName("num")]
                         public int Stock { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置锁定库存数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("lock_stock")]
+                        [System.Text.Json.Serialization.JsonPropertyName("lock_stock")]
+                        public int? LockStock { get; set; }
                     }
                 }
 
