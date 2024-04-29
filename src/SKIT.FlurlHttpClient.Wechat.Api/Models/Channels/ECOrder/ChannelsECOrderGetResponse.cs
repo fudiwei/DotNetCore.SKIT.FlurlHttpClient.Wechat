@@ -238,7 +238,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("delivery_deadline")]
                                 [System.Text.Json.Serialization.JsonPropertyName("delivery_deadline")]
-                                public long DeliveryDeadlineTimestamp { get; set; }
+                                public long? DeliveryDeadlineTimestamp { get; set; }
                             }
 
                             public class Payment
@@ -439,12 +439,69 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                                     public class Address : ChannelsECMerchantAddressGetResponse.Types.AddressDetail.Types.Address
                                     {
+                                        public static class Types
+                                        {
+                                            public class TeleNumberExtendedInfo
+                                            {
+                                                /// <summary>
+                                                /// 获取或设置脱敏手机号。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("real_tel_number")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("real_tel_number")]
+                                                public string? RealTeleNumber { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置虚拟号码。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("virtual_tel_number")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_number")]
+                                                public string? VirtualTeleNumber { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置主动兑换的虚拟号码过期时间戳。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("virtual_tel_expire_time")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_expire_time")]
+                                                public long? VirtualTeleNumberExpireTimestamp { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置主动兑换虚拟号码次数。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("get_virtual_tel_cnt")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("get_virtual_tel_cnt")]
+                                                public int? GetVirtualTeleNumberCount { get; set; }
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置当前店铺下一个唯一的用户收货地址标识。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("hash_code")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("hash_code")]
+                                        public string? HashCode { get; set; }
+
                                         /// <summary>
                                         /// 获取或设置虚拟号码。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("virtual_order_tel_number")]
                                         [System.Text.Json.Serialization.JsonPropertyName("virtual_order_tel_number")]
                                         public string? VirtualTeleNumber { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置是否使用虚拟号码。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("use_tel_number")]
+                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonPropertyName("use_tel_number")]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                        public bool? IsVirtualTeleNumber { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置额外的联系方式信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("tel_number_ext_info")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("tel_number_ext_info")]
+                                        public Types.TeleNumberExtendedInfo? TeleNumberExtendedInfo { get; set; }
                                     }
                                 }
 
@@ -525,6 +582,51 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("merchant_notes")]
                                 [System.Text.Json.Serialization.JsonPropertyName("merchant_notes")]
                                 public string? MerchantNotes { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置确认收货时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("confirm_receipt_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("confirm_receipt_time")]
+                                public long? ConfirmReceiptTimestamp { get; set; }
+                            }
+
+                            public class Settlement
+                            {
+                                /// <summary>
+                                /// 获取或设置预计技术服务费（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("predict_commission_fee")]
+                                [System.Text.Json.Serialization.JsonPropertyName("predict_commission_fee")]
+                                public int PredictCommissionFee { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置实际技术服务费（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("commission_fee")]
+                                [System.Text.Json.Serialization.JsonPropertyName("commission_fee")]
+                                public int? CommissionFee { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置预计人气卡返佣金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("predict_wecoin_commission")]
+                                [System.Text.Json.Serialization.JsonPropertyName("predict_wecoin_commission")]
+                                public int? PredictWecoinCommission { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置实际人气卡返佣金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("wecoin_commission")]
+                                [System.Text.Json.Serialization.JsonPropertyName("wecoin_commission")]
+                                public int? WecoinCommission { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置结算时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("settle_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("settle_time")]
+                                public long? SettleTimestamp { get; set; }
                             }
 
                             public class Sharer
@@ -576,21 +678,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public bool IsFromWecom { get; set; }
                             }
 
-                            public class Settlement
+                            public class AgentFinder
                             {
                                 /// <summary>
-                                /// 获取或设置预计技术服务费（单位：分）。
+                                /// 获取或设置授权视频号 ID。
                                 /// </summary>
-                                [Newtonsoft.Json.JsonProperty("predict_commission_fee")]
-                                [System.Text.Json.Serialization.JsonPropertyName("predict_commission_fee")]
-                                public int PredictCommissionFee { get; set; }
+                                [Newtonsoft.Json.JsonProperty("agent_finder_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("agent_finder_id")]
+                                public string AgentFinderId { get; set; } = default!;
 
                                 /// <summary>
-                                /// 获取或设置实际技术服务费（单位：分）。
+                                /// 获取或设置授权视频号昵称。
                                 /// </summary>
-                                [Newtonsoft.Json.JsonProperty("commission_fee")]
-                                [System.Text.Json.Serialization.JsonPropertyName("commission_fee")]
-                                public int? CommissionFee { get; set; }
+                                [Newtonsoft.Json.JsonProperty("agent_finder_nickname")]
+                                [System.Text.Json.Serialization.JsonPropertyName("agent_finder_nickname")]
+                                public bool AgentFinderNickname { get; set; }
                             }
                         }
 
@@ -636,12 +738,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("ext_info")]
                         public Types.Extra? Extra { get; set; }
 
+                        /// <summary>
+                        /// 获取或设置结算信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("settle_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
+                        public Types.Settlement? Settlement { get; set; }
+
+                        /// <summary>
                         /// 获取或设置分享员信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sharer_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("sharer_info")]
                         public Types.Sharer? Sharer { get; set; }
 
+                        /// <summary>
                         /// 获取或设置 SKU 分享员信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sku_sharer_infos")]
@@ -649,11 +760,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public Types.SKUSharer[]? SKUSharerList { get; set; }
 
                         /// <summary>
-                        /// 获取或设置服务费信息。
+                        /// 获取或设置授权账号信息。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("settle_info")]
-                        [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
-                        public Types.Settlement? Settlement { get; set; }
+                        [Newtonsoft.Json.JsonProperty("agent_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("agent_info")]
+                        public Types.AgentFinder? AgentFinder { get; set; }
                     }
 
                     public class AftersaleDetail

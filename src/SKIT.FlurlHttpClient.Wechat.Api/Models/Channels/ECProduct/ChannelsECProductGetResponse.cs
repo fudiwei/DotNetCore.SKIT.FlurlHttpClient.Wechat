@@ -240,6 +240,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("after_sale_address_id")]
                         public long? AftersaleAddressId { get; set; }
                     }
+
+                    public class Qualification
+                    {
+                        /// <summary>
+                        /// 获取或设置资质 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("qua_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("qua_id")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public long QualificationId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置资质图片 URL 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("qua_url")]
+                        [System.Text.Json.Serialization.JsonPropertyName("qua_url")]
+                        public string[] PictureUrlList { get; set; } = default!;
+                    }
                 }
 
                 /// <summary>
@@ -392,11 +410,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long EditTimestamp { get; set; }
 
                 /// <summary>
+                /// 获取或设置导入的来源商品 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("src_product_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("src_product_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public long? SourceProductId { get; set; }
+
+                /// <summary>
                 /// 获取或设置售后地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("after_sale_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("after_sale_info")]
                 public Types.Aftersale? Aftersale { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品资质列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("product_qua_infos")]
+                [System.Text.Json.Serialization.JsonPropertyName("product_qua_infos")]
+                public Types.Qualification[]? QualificationList { get; set; }
             }
         }
 

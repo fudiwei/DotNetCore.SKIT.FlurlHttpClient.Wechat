@@ -1,4 +1,4 @@
-﻿{
+{
     "order_id": "123456",
     "delivery_list": [
         {
@@ -11,7 +11,16 @@
                     "product_id": "12345",
                     "sku_id": "678910"
                 }
-            ]
+            ],
+            "course_info": {
+                "start_time": 1675180800,
+                "end_time": 1675958400,
+                "course_path": {
+                    "type": 0,
+                    "wxa_appid": "wxabcdes",
+                    "wxa_path": "path"
+                }
+            }
         }
     ]
 }

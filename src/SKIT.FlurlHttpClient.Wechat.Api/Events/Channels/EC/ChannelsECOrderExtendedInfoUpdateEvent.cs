@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/callback/channels_ec_order_ext_info.html ]]>
     /// </para>
     /// </summary>
-    public class ChannelsECOrderExtInfoUpdateEvent : WechatApiEvent
+    public class ChannelsECOrderExtendedInfoUpdateEvent : WechatApiEvent
     {
         public static class Types
         {

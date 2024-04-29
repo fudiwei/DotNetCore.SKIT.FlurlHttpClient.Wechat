@@ -12,17 +12,46 @@
                         "level": 3
                     },
                     "qua": {
-                        "qua_id": "1003",
+                        "qua_id": "0",
                         "need_to_apply": true,
                         "tips": "",
                         "mandatory": true
                     },
                     "product_qua": {
-                        "qua_id": "1003",
+                        "qua_id": "0",
                         "need_to_apply": true,
                         "tips": "",
                         "mandatory": true
-                    }
+                    },
+                    "brand_qua": {
+                        "qua_id": "0",
+                        "need_to_apply": true,
+                        "tips": "",
+                        "mandatory": true
+                    },
+                    "product_qua_list": [
+                        {
+                            "qua_id": "1111487",
+                            "need_to_apply": true,
+                            "tips": "若涉及名人或大师作品，可提供作品授权证明/大师资质证明",
+                            "mandatory": true,
+                            "name": "作品授权证明/大师资质证明"
+                        },
+                        {
+                            "qua_id": "1111488",
+                            "need_to_apply": true,
+                            "tips": "若涉及名人或大师作品，可提供鉴定证书",
+                            "mandatory": false,
+                            "name": "鉴定证书"
+                        },
+                        {
+                            "qua_id": "1111489",
+                            "need_to_apply": true,
+                            "tips": "若涉及名人或大师作品，可提供收藏证书",
+                            "mandatory": false,
+                            "name": "收藏证书"
+                        }
+                    ]
                 },
                 {
                     "cat": {

@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class ChannelsECLeaguePromoterGetRequest : WechatApiRequest, IInferable<ChannelsECLeaguePromoterGetRequest, ChannelsECLeaguePromoterGetResponse>
     {
         /// <summary>
-        /// 获取或设置视频号唯一标识。
+        /// 获取或设置视频号 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finder_id")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_id")]

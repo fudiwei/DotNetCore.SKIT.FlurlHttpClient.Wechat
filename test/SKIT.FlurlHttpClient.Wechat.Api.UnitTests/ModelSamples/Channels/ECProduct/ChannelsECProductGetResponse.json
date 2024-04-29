@@ -73,6 +73,27 @@
         "edit_time": 1700450698,
         "after_sale_info": {
             "after_sale_address_id": 123345
-        }
+        },
+        "product_qua_infos": [
+            {
+                "qua_id": 1111484,
+                "qua_url": [
+                    "https://mmecimage.cn/p/wx2b255582a7b4bfd0/HCnhqIWMZSIAJzzDRNmevAzRXj5ZCAZw8vGKYF1GW8Y"
+                ]
+            },
+            {
+                "qua_id": 1111491,
+                "qua_url": [
+                    "https://mmecimage.cn/p/wx2b255582a7b4bfd0/HPySAtxADO1LuDHdmJ7wiSwJzyEicLNTSAE-a10swwM"
+                ]
+            },
+            {
+                "qua_id": 1111492,
+                "qua_url": [
+                    "https://mmecimage.cn/p/wx2b255582a7b4bfd0/HGekHKK4yA_s0Ur3wwgil2x_6sZ7RiFpA4JSSfT_gYI",
+                    "https://mmecimage.cn/p/wx2b255582a7b4bfd0/HPfiP6fjCN5BeLJ48i9e0zANmKUuv-hyo55nuUk9mBA"
+                ]
+            }
+        ]
     }
 }

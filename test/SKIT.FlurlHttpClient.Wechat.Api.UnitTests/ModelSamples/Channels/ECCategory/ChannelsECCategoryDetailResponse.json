@@ -9,6 +9,7 @@
         "shop_no_shipment": false,
         "access_permit_required": false,
         "pre_sale": false,
+        "seven_day_return": false,
         "brand_list": [
             {
                 "brand_id": "10000031"
@@ -28,7 +29,7 @@
             {
                 "name": "检测标准",
                 "type": "select_one",
-                "value": "3C;美标;欧盟 ECE ;ADAC;C-NCAP",
+                "value": "3C;美标;欧盟ECE;ADAC;C-NCAP",
                 "is_required": false
             },
             {
@@ -42,6 +43,30 @@
             "basis_point": 250,
             "original_basis_point": 250,
             "incentive_type": 0
+        },
+        "is_limit_brand": false
+    },
+    "product_qua_list": [
+        {
+            "qua_id": "1111487",
+            "need_to_apply": true,
+            "tips": "若涉及名人或大师作品，可提供作品授权证明/大师资质证明",
+            "mandatory": false,
+            "name": "作品授权证明/大师资质证明"
+        },
+        {
+            "qua_id": "1111488",
+            "need_to_apply": true,
+            "tips": "若涉及名人或大师作品，可提供鉴定证书",
+            "mandatory": false,
+            "name": "鉴定证书"
+        },
+        {
+            "qua_id": "1111489",
+            "need_to_apply": true,
+            "tips": "若涉及名人或大师作品，可提供收藏证书",
+            "mandatory": false,
+            "name": "收藏证书"
         }
-    }
+    ]
 }

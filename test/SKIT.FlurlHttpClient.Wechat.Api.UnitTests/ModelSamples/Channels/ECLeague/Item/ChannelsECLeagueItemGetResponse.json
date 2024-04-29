@@ -14,7 +14,24 @@
             "finder_ids": [
                 "finder_id_01"
             ],
-            "finder_num": 1
+            "finder_num": 1,
+            "finder_info_list": [
+                {
+                    "finder_id": "sphAAAA",
+                    "begin_time": 1669867200,
+                    "end_time": 1672459200
+                },
+                {
+                    "finder_id": "sphBBBB",
+                    "begin_time": 1669867200,
+                    "end_time": 1672459200
+                },
+                {
+                    "finder_id": "sphCCCC",
+                    "begin_time": 1669867200,
+                    "end_time": 1672459200
+                }
+            ]
         },
         "ext_info": {
             "is_sale_forbidden": false,

@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                         public static class Types
                         {
-                            public class ExtraInfo
+                            public class ExtendedInfo
                             {
                                 /// <summary>
                                 /// 获取或设置归还的源库存子类型。
@@ -116,7 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ext_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("ext_info")]
-                        public Types.ExtraInfo? ExtraInfo { get; set; }
+                        public Types.ExtendedInfo? ExtendedInfo { get; set; }
                     }
                 }
 

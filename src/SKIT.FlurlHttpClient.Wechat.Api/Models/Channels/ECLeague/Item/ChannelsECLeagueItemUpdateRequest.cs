@@ -12,14 +12,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class ExclusiveInfo
             {
                 /// <summary>
-                /// 获取或设置新增的视频号唯一标识列表。
+                /// 获取或设置新增的视频号 ID列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("add_finder_ids")]
                 [System.Text.Json.Serialization.JsonPropertyName("add_finder_ids")]
                 public IList<string>? AddFinderIdList { get; set; }
 
                 /// <summary>
-                /// 获取或设置删除的视频号唯一标识列表。
+                /// 获取或设置删除的视频号 ID列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("del_finder_ids")]
                 [System.Text.Json.Serialization.JsonPropertyName("del_finder_ids")]

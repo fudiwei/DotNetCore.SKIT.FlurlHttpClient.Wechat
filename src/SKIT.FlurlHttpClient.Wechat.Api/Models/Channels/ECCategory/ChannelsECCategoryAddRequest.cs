@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -11,6 +11,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         {
             public class Category
             {
+                public static class Types
+                {
+                    public class Brand
+                    {
+                        /// <summary>
+                        /// 获取或设置品牌 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("brand_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("brand_id")]
+                        public long BrandId { get; set; }
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置一级类目 ID。
                 /// </summary>
@@ -38,6 +51,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("certificate")]
                 [System.Text.Json.Serialization.JsonPropertyName("certificate")]
                 public IList<string>? CertificateMediaIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置品牌列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("brand_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("brand_list")]
+                public IList<Types.Brand>? BrandList { get; set; }
             }
         }
 

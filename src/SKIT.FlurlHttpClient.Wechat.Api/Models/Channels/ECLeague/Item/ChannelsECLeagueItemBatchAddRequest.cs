@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public IList<Types.Item> List { get; set; } = new List<Types.Item>();
 
         /// <summary>
-        /// 获取或设置视频号唯一标识列表。
+        /// 获取或设置视频号 ID列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finder_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_ids")]

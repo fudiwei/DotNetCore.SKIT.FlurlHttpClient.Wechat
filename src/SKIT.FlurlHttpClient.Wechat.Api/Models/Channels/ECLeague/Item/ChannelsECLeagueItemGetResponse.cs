@@ -15,6 +15,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 {
                     public class ExclusiveInfo
                     {
+                        public static class Types
+                        {
+                            public class FinderInfo
+                            {
+                                /// <summary>
+                                /// 获取或设置达人视频号。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("finder_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
+                                public string FinderId { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置开始时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("begin_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
+                                public long BeginTimestamp { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置结束时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("end_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("end_time")]
+                                public long EndTimestamp { get; set; }
+                            }
+                        }
+
                         /// <summary>
                         /// 获取或设置特殊推广商品计划 ID。
                         /// </summary>
@@ -24,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public long? InfoId { get; set; }
 
                         /// <summary>
-                        /// 获取或设置推广达人视频号唯一标识列表。
+                        /// 获取或设置推广达人视频号 ID列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("finder_ids")]
                         [System.Text.Json.Serialization.JsonPropertyName("finder_ids")]
@@ -36,6 +63,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("finder_num")]
                         [System.Text.Json.Serialization.JsonPropertyName("finder_num")]
                         public int? FinderTotalCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置推广达人视频号列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("finder_info_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("finder_info_list")]
+                        public Types.FinderInfo[]? FinderInfoList { get; set; }
 
                         /// <summary>
                         /// 获取或设置推广开始时间戳。

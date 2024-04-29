@@ -83,6 +83,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("amount")]
                         [System.Text.Json.Serialization.JsonPropertyName("amount")]
                         public int Amount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置退款直接原因类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("refund_reason")]
+                        [System.Text.Json.Serialization.JsonPropertyName("refund_reason")]
+                        public int? RefundReasonType { get; set; }
                     }
 
                     public class Return
@@ -236,6 +243,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("refund_resp")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_resp")]
                 public Types.RefundResultInfo? RefundResultInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置操作剩余时间（单位：秒）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("deadline")]
+                [System.Text.Json.Serialization.JsonPropertyName("deadline")]
+                public int Deadline { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。

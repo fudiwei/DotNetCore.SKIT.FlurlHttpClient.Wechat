@@ -121,6 +121,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public bool IsPresaleSupported { get; set; }
 
                 /// <summary>
+                /// 获取或设置是否支持七天无理由退货。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("seven_day_return")]
+                [System.Text.Json.Serialization.JsonPropertyName("seven_day_return")]
+                public bool IsSevenDayReturnSupported { get; set; }
+
+                /// <summary>
                 /// 获取或设置定准类目的品牌列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_list")]
@@ -148,6 +155,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("transactionfee_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("transactionfee_info")]
                 public Types.TransactionFee? TransactionFee { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否品牌定向准入。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_limit_brand")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_limit_brand")]
+                public bool IsLimitBrand { get; set; }
+            }
+
+            public class Qualification : ChannelsECCategoryAllResponse.Types.Category.Types.CategoryAndQualification.Types.Qualification
+            {
             }
         }
 
@@ -164,5 +182,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("attr")]
         [System.Text.Json.Serialization.JsonPropertyName("attr")]
         public Types.CategoryAttribute CategoryAttribute { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置商品资质列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("product_qua_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("product_qua_list")]
+        public Types.Qualification[]? ProductQualificationList { get; set; }
     }
 }

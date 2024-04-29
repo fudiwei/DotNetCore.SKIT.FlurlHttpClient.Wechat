@@ -18,7 +18,8 @@
             "tel_number": ""
         },
         "refund_info": {
-            "amount": 11
+            "amount": 11,
+            "refund_reason": 1
         },
         "return_info": {
             "waybill_id": "",

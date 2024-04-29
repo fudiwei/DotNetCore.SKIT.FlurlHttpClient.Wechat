@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -36,6 +36,57 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("product_cnt")]
                         public int Count { get; set; }
                     }
+
+                    public class Course
+                    {
+                        public static class Types
+                        {
+                            public class CoursePath
+                            {
+                                /// <summary>
+                                /// 获取或设置课程地址类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                                public int Type { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置小程序 AppId。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("wxa_appid")]
+                                [System.Text.Json.Serialization.JsonPropertyName("wxa_appid")]
+                                public string? MiniProgramAppId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置小程序页面路径。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("wxa_path")]
+                                [System.Text.Json.Serialization.JsonPropertyName("wxa_path")]
+                                public string? MiniProgramPagePath { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置课程开始时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("start_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("start_time")]
+                        public long? StartTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置课程结束时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("end_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("end_time")]
+                        public long? EndTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置课程地址信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("course_path")]
+                        [System.Text.Json.Serialization.JsonPropertyName("course_path")]
+                        public Types.CoursePath CoursePath { get; set; } = default!;
+                    }
                 }
 
                 /// <summary>
@@ -65,6 +116,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("product_infos")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_infos")]
                 public IList<Types.Product> ProductList { get; set; } = new List<Types.Product>();
+
+                /// <summary>
+                /// 获取或设置课程信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("course_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("course_info")]
+                public Types.Course? Course { get; set; }
             }
         }
 

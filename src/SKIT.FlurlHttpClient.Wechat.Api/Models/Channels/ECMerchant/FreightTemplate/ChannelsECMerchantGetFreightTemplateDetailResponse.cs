@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/merchant/getfreighttemplatedetail 接口的响应。</para>
@@ -51,6 +53,7 @@
                         /// <summary>
                         /// 获取或设置国家码。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2023-11-20 下线。")]
                         [Newtonsoft.Json.JsonProperty("national_code")]
                         [System.Text.Json.Serialization.JsonPropertyName("national_code")]
                         public string? NationalCode { get; set; }
