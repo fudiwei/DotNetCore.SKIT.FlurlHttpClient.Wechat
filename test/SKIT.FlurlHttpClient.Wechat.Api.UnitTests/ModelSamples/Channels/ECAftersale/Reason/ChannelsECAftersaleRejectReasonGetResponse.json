@@ -1,0 +1,21 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "reason_list": [
+        {
+            "reject_reason_type": 21,
+            "reject_reason_type_text": "买家寄回包裹非本订单商品",
+            "reject_reason": "您的退货商品非本订单的商品，若有疑问请点击【联系商家】按钮与客服沟通"
+        },
+        {
+            "reject_reason_type": 20,
+            "reject_reason_type_text": "商品影响二次销售",
+            "reject_reason": "您的退货商品已影响二次销售，若有疑问请点击【联系商家】按钮与客服沟通"
+        },
+        {
+            "reject_reason_type": 19,
+            "reject_reason_type_text": "买家上传的单号有误，商家未收到货",
+            "reject_reason": "您填写的退货物流单号有误，目前无法查询到您退货物流的信息/未收到您的包裹，可点击【修改】按钮重新上传退货物流单号，若有疑问请点击【联系商家】按钮与客服沟通"
+        }
+    ]
+}

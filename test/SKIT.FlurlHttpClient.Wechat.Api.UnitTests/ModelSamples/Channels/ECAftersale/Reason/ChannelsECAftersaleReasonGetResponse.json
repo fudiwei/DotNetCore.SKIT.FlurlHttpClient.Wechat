@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "reason_list": [
+        {
+            "reason": "10000002",
+            "reason_text": "拍错/多拍"
+        },
+        {
+            "reason": "10000001",
+            "reason_text": "缺货"
+        },
+        {
+            "reason": "10000000",
+            "reason_text": "不想要了"
+        }
+    ]
+}
