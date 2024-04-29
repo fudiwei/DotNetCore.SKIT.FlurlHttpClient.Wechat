@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "order": {
@@ -17,14 +17,33 @@
                     "title": "健身环",
                     "thumb_img": "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
                     "sale_price": 2000,
-                    "market_price": 2000
+                    "market_price": 2000,
+                    "sku_code": "18236414",
+                    "sku_attrs": [
+                        {
+                            "attr_key": "个数",
+                            "attr_value": "一套"
+                        }
+                    ],
+                    "real_price": 1900,
+                    "out_product_id": "88",
+                    "out_sku_id": "248",
+                    "out_warehouse_id": "",
+                    "sku_deliver_info": {
+                        "stock_type": 0
+                    },
+                    "extra_service": {
+                        "seven_day_return": 1,
+                        "freight_insurance": 0
+                    }
                 }
             ],
             "pay_info": {
                 "prepay_id": "42526234625",
                 "transaction_id": "131456479687",
                 "prepay_time": 1658509200,
-                "pay_time": 1658509200
+                "pay_time": 1658509200,
+                "payment_method": 1
             },
             "price_info": {
                 "product_price": 20000,
@@ -60,7 +79,8 @@
                     }
                 ],
                 "ship_done_time": 1620738080,
-                "deliver_method": 0
+                "deliver_method": 0,
+                "ewaybill_order_code": "ofskfRaaNSxitNLtwCqOfLMIO4r5ZEOXXVTGjf_g_4LuMzRPsZn2CnTn97xWg3AxHoZQXydN8iQA"
             },
             "coupon_info": {
                 "user_coupon_id": "301234567890"
@@ -68,7 +88,26 @@
             "ext_info": {
                 "customer_notes": "发顺丰",
                 "merchant_notes": "库存不足，取消"
-            }
+            },
+            "sharer_info": {
+                "sharer_openid": "SHAREROPENID",
+                "sharer_unionid": "SHARERUNIONID",
+                "sharer_type": 1,
+                "share_scene": 1
+            },
+            "settle_info": {
+                "commission_fee": 10,
+                "predict_commission_fee": 10
+            },
+            "sku_sharer_infos": [
+                {
+                    "sharer_openid": "SHAREROPENID",
+                    "sharer_unionid": "SHARERUNIONID",
+                    "sharer_type": 1,
+                    "share_scene": 1,
+                    "sku_id": "23424"
+                }
+            ]
         },
         "aftersale_detail": {
             "aftersale_order_list": [
@@ -79,6 +118,7 @@
             ],
             "on_aftersale_order_cnt": 1
         },
-        "openid": "OPENID"
+        "openid": "OPENID",
+        "unionid": "UNIONID"
     }
 }
