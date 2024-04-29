@@ -1,0 +1,25 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "inspect_config": {
+        "warehouse_id": "006",
+        "delivery_address": {
+            "contact_name": "ABC2",
+            "contact_phone": "13566667777",
+            "province": "湖北省",
+            "city": "武汉市",
+            "county": "江夏区",
+            "detail": "江夏大道1号"
+        },
+        "return_address": {
+            "contact_name": "老钱12",
+            "contact_phone": "18535816726",
+            "province": "北京市",
+            "city": "北京市",
+            "county": "大兴区",
+            "detail": "亦庄经济开发区京东总部4号楼"
+        },
+        "warehouse_name": "海南CS",
+        "warehouse_addr": "海南省海南质检机构地址333333221112222"
+    }
+}
