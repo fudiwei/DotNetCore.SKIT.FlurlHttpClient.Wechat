@@ -1,5 +1,8 @@
 using System;
 using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
@@ -53,6 +56,46 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
             Credentials = new Settings.Credentials(options);
 
             FlurlClient.BaseUrl = options.Endpoint ?? WechatTenpayGlobalEndpoints.DEFAULT;
+        }
+
+        /// <summary>
+        /// 使用当前客户端生成一个新的 <see cref="IFlurlRequest"/> 对象。
+        /// </summary>
+        /// <param name="request"></param>
+        /// <param name="httpMethod"></param>
+        /// <param name="urlSegments"></param>
+        /// <returns></returns>
+        public IFlurlRequest CreateFlurlRequest(WechatTenpayGlobalRequest request, HttpMethod httpMethod, params object[] urlSegments)
+        {
+            return base.CreateFlurlRequest(request, httpMethod, urlSegments);
+        }
+
+        /// <summary>
+        /// 异步发起请求。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="flurlRequest"></param>
+        /// <param name="httpContent"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public new Task<T> SendFlurlRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
+            where T : WechatTenpayGlobalResponse, new()
+        {
+            return base.SendFlurlRequestAsync<T>(flurlRequest, httpContent, cancellationToken);
+        }
+
+        /// <summary>
+        /// 异步发起请求。
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="flurlRequest"></param>
+        /// <param name="data"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public new Task<T> SendFlurlRequestAsJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
+            where T : WechatTenpayGlobalResponse, new()
+        {
+            return base.SendFlurlRequestAsJsonAsync<T>(flurlRequest, data, cancellationToken);
         }
     }
 }
