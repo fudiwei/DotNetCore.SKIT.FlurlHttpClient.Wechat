@@ -712,7 +712,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
         #endregion
 
-        #region CombinePAPPay
+        #region CombinePAPay
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/combine-papay/contracts/pre-entrust-sign 接口。</para>
         /// <para>
@@ -746,7 +746,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetEcommerceCombinePAPPayContractByOutContractCodeResponse> ExecuteGetEcommerceCombinePAPPayContractByOutContractCodeAsync(this WechatTenpayClient client, Models.GetEcommerceCombinePAPPayContractByOutContractCodeRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetEcommerceCombinePAPayContractByOutContractCodeResponse> ExecuteGetEcommerceCombinePAPayContractByOutContractCodeAsync(this WechatTenpayClient client, Models.GetEcommerceCombinePAPayContractByOutContractCodeRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -754,7 +754,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "combine-papay", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceCombinePAPPayContractByOutContractCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceCombinePAPayContractByOutContractCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -768,7 +768,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.TerminateEcommerceCombinePAPPayContractResponse> ExecuteTerminateEcommerceCombinePAPPayContractAsync(this WechatTenpayClient client, Models.TerminateEcommerceCombinePAPPayContractRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.TerminateEcommerceCombinePAPayContractResponse> ExecuteTerminateEcommerceCombinePAPayContractAsync(this WechatTenpayClient client, Models.TerminateEcommerceCombinePAPayContractRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -776,7 +776,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "combine-papay", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode, "terminate");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.TerminateEcommerceCombinePAPPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.TerminateEcommerceCombinePAPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -790,7 +790,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CreateEcommerceCombinePAPPayTransactionResponse> ExecuteCreateEcommerceCombinePAPPayTransactionAsync(this WechatTenpayClient client, Models.CreateEcommerceCombinePAPPayTransactionRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CreateEcommerceCombinePAPayTransactionResponse> ExecuteCreateEcommerceCombinePAPayTransactionAsync(this WechatTenpayClient client, Models.CreateEcommerceCombinePAPayTransactionRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -810,7 +810,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "combine-papay", "transactions");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceCombinePAPPayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceCombinePAPayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -824,7 +824,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ReverseEcommerceCombinePAPPayTransactionResponse> ExecuteReverseEcommerceCombinePAPPayTransactionAsync(this WechatTenpayClient client, Models.ReverseEcommerceCombinePAPPayTransactionRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ReverseEcommerceCombinePAPayTransactionResponse> ExecuteReverseEcommerceCombinePAPayTransactionAsync(this WechatTenpayClient client, Models.ReverseEcommerceCombinePAPayTransactionRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -841,7 +841,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "combine-papay", "transactions", request.CombineOutTradeNumber, "reverse");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ReverseEcommerceCombinePAPPayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ReverseEcommerceCombinePAPayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -855,7 +855,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetEcommerceCombinePAPPayTransactionByCombineOutTradeNumberResponse> ExecuteGetEcommerceCombinePAPPayTransactionByCombineOutTradeNumberAsync(this WechatTenpayClient client, Models.GetEcommerceCombinePAPPayTransactionByCombineOutTradeNumberRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetEcommerceCombinePAPayTransactionByCombineOutTradeNumberResponse> ExecuteGetEcommerceCombinePAPayTransactionByCombineOutTradeNumberAsync(this WechatTenpayClient client, Models.GetEcommerceCombinePAPayTransactionByCombineOutTradeNumberRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -863,7 +863,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "combine-papay", "transactions", request.CombineOutTradeNumber);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceCombinePAPPayTransactionByCombineOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceCombinePAPayTransactionByCombineOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

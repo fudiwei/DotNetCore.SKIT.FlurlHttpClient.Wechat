@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     {
         public static class Types
         {
-            public class Contract : Models.GetEducationPAPPayContractByContractIdResponse.Types.Contract
+            public class Contract : Models.GetEducationPAPayContractByContractIdResponse.Types.Contract
             {
             }
         }

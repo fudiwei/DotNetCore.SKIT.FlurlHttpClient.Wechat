@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class Amount : CreateEducationPAPPayTransactionRequest.Types.Amount
+            public class Amount : CreateEducationPAPayTransactionRequest.Types.Amount
             {
             }
 
@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string SceneType { get; set; } = string.Empty;
             }
 
-            public class Device : CreateEducationPAPPayTransactionRequest.Types.Device
+            public class Device : CreateEducationPAPayTransactionRequest.Types.Device
             {
             }
 

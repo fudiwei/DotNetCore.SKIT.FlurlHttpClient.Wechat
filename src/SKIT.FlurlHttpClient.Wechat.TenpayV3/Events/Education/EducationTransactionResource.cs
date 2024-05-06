@@ -10,19 +10,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     {
         public static class Types
         {
-            public class Payer : Models.GetEducationPAPPayTransactionByOutTradeNumberResponse.Types.Payer
+            public class Payer : Models.GetEducationPAPayTransactionByOutTradeNumberResponse.Types.Payer
             {
             }
 
-            public class Amount : Models.GetEducationPAPPayTransactionByOutTradeNumberResponse.Types.Amount
+            public class Amount : Models.GetEducationPAPayTransactionByOutTradeNumberResponse.Types.Amount
             {
             }
 
-            public class Device : Models.GetEducationPAPPayTransactionByOutTradeNumberResponse.Types.Device
+            public class Device : Models.GetEducationPAPayTransactionByOutTradeNumberResponse.Types.Device
             {
             }
 
-            public class Promotion : Models.GetEducationPAPPayTransactionByOutTradeNumberResponse.Types.Promotion
+            public class Promotion : Models.GetEducationPAPayTransactionByOutTradeNumberResponse.Types.Promotion
             {
             }
         }

@@ -514,7 +514,7 @@
 
     -   扣款服务
 
-        -   预扣费通知：`NotifyPAPPayContract`
+        -   预扣费通知：`NotifyPAPayContract`
 
     -   代扣服务切卡组件
 
@@ -522,21 +522,21 @@
 
     -   教育续费通：
 
-        -   预签约：`PresignEducationPAPPayContract`
+        -   预签约：`PresignEducationPAPayContract`
 
-        -   通过协议号查询签约：`GetEducationPAPPayContractByContractId`
+        -   通过协议号查询签约：`GetEducationPAPayContractByContractId`
 
-        -   通过用户标识查询签约：`QueryEducationPAPPayUserContracts`
+        -   通过用户标识查询签约：`QueryEducationPAPayUserContracts`
 
-        -   解约：`TerminateEducationPAPPayContract`
+        -   解约：`TerminateEducationPAPayContract`
 
-        -   发送扣款预通知：`SendEducationPAPPayContractNotification`
+        -   发送扣款预通知：`SendEducationPAPayContractNotification`
 
-        -   教育通扣款受理：`CreateEducationPAPPayTransaction`
+        -   教育通扣款受理：`CreateEducationPAPayTransaction`
 
-        -   微信订单号查单：`GetEducationPAPPayTransactionById`
+        -   微信订单号查单：`GetEducationPAPayTransactionById`
 
-        -   商户订单号查单：`GetEducationPAPPayTransactionByOutTradeNumber`
+        -   商户订单号查单：`GetEducationPAPayTransactionByOutTradeNumber`
 
     -   租用充电宝隔夜归还
 
@@ -778,15 +778,15 @@
 
         -   APP 方式预签约：`PresignEcommerceCombinePAPayContractEntrustApp`
 
-        -   查询协议：`GetEcommerceCombinePAPPayContractByOutContractCode`
+        -   查询协议：`GetEcommerceCombinePAPayContractByOutContractCode`
 
-        -   解约协议：`TerminatEcommerceCombinePAPPayContract`
+        -   解约协议：`TerminatEcommerceCombinePAPayContract`
 
-        -   支付：`CreateEcommerceCombinePAPPayTransaction`
+        -   支付：`CreateEcommerceCombinePAPayTransaction`
 
-        -   撤销订单：`ReverseEcommerceCombinePAPPayTransaction`
+        -   撤销订单：`ReverseEcommerceCombinePAPayTransaction`
 
-        -   查询订单：`GetEcommerceCombinePAPPayTransactionByCombineOutTradeNumber`
+        -   查询订单：`GetEcommerceCombinePAPayTransactionByCombineOutTradeNumber`
 
     -   平台收付通（分账）
 
@@ -1190,7 +1190,7 @@
 
     -   扣款服务
 
-        -   预扣费通知：`NotifyPartnerPAPPayContract`
+        -   预扣费通知：`NotifyPartnerPAPayContract`
 
     -   代扣服务切卡组件
 
@@ -1510,25 +1510,25 @@
 
     -   Auto-Debit Payment
 
-        -   Mini Program Signing: `PresignHKPAPPayContractEntrustMiniProgram` / `PresignHKPartnerPAPPayContractEntrustMiniProgram`
+        -   Mini Program Signing: `PresignHKPAPayContractEntrustMiniProgram` / `PresignHKPartnerPAPayContractEntrustMiniProgram`
 
-        -   H5 Signing: `PresignHKPAPPayContractEntrustH5` / `PresignHKPartnerPAPPayContractEntrustH5`
+        -   H5 Signing: `PresignHKPAPayContractEntrustH5` / `PresignHKPartnerPAPayContractEntrustH5`
 
-        -   JSAPI Signing: `PresignHKPAPPayContractEntrustJsapi` / `PresignHKPartnerPAPPayContractEntrustJsapi`
+        -   JSAPI Signing: `PresignHKPAPayContractEntrustJsapi` / `PresignHKPartnerPAPayContractEntrustJsapi`
 
-        -   PC WEB Signing: `PresignHKPAPPayContractEntrustJsapi` / `PresignHKPartnerPAPPayContractEntrustJsapi`
+        -   PC WEB Signing: `PresignHKPAPayContractEntrustJsapi` / `PresignHKPartnerPAPayContractEntrustJsapi`
 
-        -   APP Signing: `PresignHKPAPPayContractEntrustApp` / `PresignHKPartnerPAPPayContractEntrustApp`
+        -   APP Signing: `PresignHKPAPayContractEntrustApp` / `PresignHKPartnerPAPayContractEntrustApp`
 
-        -   Querying Signing Status: `GetHKPAPPayContractByOutContractCode` / `GetHKPAPPayContractByContractId` / `GetHKPartnerPAPPayContractByOutContractCode` / `GetHKPartnerPAPPayContractByContractId`
+        -   Querying Signing Status: `GetHKPAPayContractByOutContractCode` / `GetHKPAPayContractByContractId` / `GetHKPartnerPAPayContractByOutContractCode` / `GetHKPartnerPAPayContractByContractId`
 
-        -   Applying for Termination: `TerminateHKPAPPayContract` / `TerminateHKPartnerPAPPayContract`
+        -   Applying for Termination: `TerminateHKPAPayContract` / `TerminateHKPartnerPAPayContract`
 
-        -   Deduction: `CreateHKPAPPayTransaction` / `CreateHKPartnerPAPPayTransaction`
+        -   Deduction: `CreateHKPAPayTransaction` / `CreateHKPartnerPAPayTransaction`
 
-        -   Order Query: `GetHKPAPPayTransactionByOutTradeNumber` / `GetHKPAPPayTransactionById` / `GetHKPartnerPAPPayTransactionByOutTradeNumber` / `GetHKPartnerPAPPayTransactionById`
+        -   Order Query: `GetHKPAPayTransactionByOutTradeNumber` / `GetHKPAPayTransactionById` / `GetHKPartnerPAPayTransactionByOutTradeNumber` / `GetHKPartnerPAPayTransactionById`
 
-        -   Order Reversing: `ReverseHKPAPPayTransaction` / `ReverseHKPartnerPAPPayTransaction`
+        -   Order Reversing: `ReverseHKPAPayTransaction` / `ReverseHKPartnerPAPayTransaction`
 
         -   Submit Refund: `CreateHKRefund` / `CreateHKPartnerRefund`
 
