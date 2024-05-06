@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /merchant/fund/withdraw/bill-type/{bill_type} 接口的请求。</para>
@@ -14,7 +14,7 @@
 
         /// <summary>
         /// 获取或设置资金账户类型。
-        /// <para>默认值：NO_SUCC</para>
+        /// <para>默认值："NO_SUCC"</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

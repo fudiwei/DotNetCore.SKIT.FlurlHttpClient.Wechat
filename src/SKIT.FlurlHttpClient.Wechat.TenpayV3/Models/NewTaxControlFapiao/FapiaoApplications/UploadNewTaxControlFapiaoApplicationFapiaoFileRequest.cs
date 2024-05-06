@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
         /// <summary>
         /// 获取或设置文件类型。
-        /// <para>默认值：PDF</para>
+        /// <para>默认值："PDF"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_type")]
         [System.Text.Json.Serialization.JsonPropertyName("file_type")]

@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// 获取或设置声明应答中的错误描述使用的自然语言语种。
         /// <para>
-        /// 默认值：zh_CN
+        /// 默认值："zh-CN"
         /// </para>
         /// </summary>
         public string AcceptLanguage { get; set; } = "zh-CN";

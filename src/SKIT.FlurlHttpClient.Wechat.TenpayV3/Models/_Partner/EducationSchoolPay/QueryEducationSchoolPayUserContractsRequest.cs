@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
         /// <summary>
         /// 获取或设置签约状态。
-        /// <para>默认值：ALL</para>
+        /// <para>默认值："ALL"</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

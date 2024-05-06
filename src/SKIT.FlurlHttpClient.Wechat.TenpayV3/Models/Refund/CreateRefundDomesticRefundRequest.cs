@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
                 /// <summary>
                 /// 获取或设置退款币种。
-                /// <para>默认值：CNY</para>
+                /// <para>默认值："CNY"</para>
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]

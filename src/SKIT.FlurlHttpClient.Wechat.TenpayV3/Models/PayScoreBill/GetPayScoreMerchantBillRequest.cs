@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /payscore/merchant-bill 接口的请求。</para>
@@ -21,7 +21,7 @@
 
         /// <summary>
         /// 获取或设置压缩类型。
-        /// <para>默认值：GZIP</para>
+        /// <para>默认值："GZIP"</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

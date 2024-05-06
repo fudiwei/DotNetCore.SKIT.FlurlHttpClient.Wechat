@@ -209,7 +209,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
                         /// <summary>
                         /// 获取或设置税收优惠政策标识。
-                        /// <para>默认值：NO_FAVORABLE</para>
+                        /// <para>默认值："NO_FAVORABLE"</para>
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tax_prefer_mark")]
                         [System.Text.Json.Serialization.JsonPropertyName("tax_prefer_mark")]

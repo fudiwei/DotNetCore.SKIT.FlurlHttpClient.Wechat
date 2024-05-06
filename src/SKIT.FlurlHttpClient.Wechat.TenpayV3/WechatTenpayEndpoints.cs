@@ -16,16 +16,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public const string BACKUP = "https://api2.mch.weixin.qq.com/v3";
 
         /// <summary>
-        /// 香港域名。
-        /// </summary>
-        public const string REGION_HONGKONG = "https://api.mch.weixin.qq.com/hk/v3";
-
-        /// <summary>
-        /// 香港全球域名。
-        /// </summary>
-        public const string REGION_HONGKONG_GLOBAL = "https://apihk.mch.weixin.qq.com/v3/global";
-
-        /// <summary>
         /// 沙箱域名。
         /// </summary>
         public const string SANDBOX = "https://api.mch.weixin.qq.com/sandboxnew/v3";

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /ecommerce/refunds/apply 接口的请求。</para>
@@ -25,7 +25,7 @@
 
                 /// <summary>
                 /// 获取或设置退款币种。
-                /// <para>默认值：CNY</para>
+                /// <para>默认值："CNY"</para>
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]

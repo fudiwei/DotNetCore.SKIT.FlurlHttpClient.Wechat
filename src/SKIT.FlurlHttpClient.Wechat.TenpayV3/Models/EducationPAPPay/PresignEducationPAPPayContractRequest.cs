@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
         /// <summary>
         /// 获取或设置场景值。
-        /// <para>默认值：EDUCATION_PERIOD</para>
+        /// <para>默认值："EDUCATION_PERIOD"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trade_scene")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scene")]
