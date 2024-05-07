@@ -1,0 +1,20 @@
+{
+    "appid": "wxd678efh567hg6787",
+    "openid": "oYobu0MVnQfWpSMOYJz2AHPG_gQw",
+    "plan_id": 12535,
+    "out_contract_code": "wxwtdk20200910100000",
+    "contract_display_account": "微信代扣用户A",
+    "contract_notify_url": "https://yourapp.com/notify",
+    "out_user_code": "用户A",
+    "deduct_schedule": {
+        "estimated_deduct_date": "2019-11-22",
+        "estimated_deduct_amount": {
+            "total": 1,
+            "currency": "CNY"
+        },
+        "description": "小乔-碎云皮肤（微信83区沧海之耀）"
+    },
+    "jump_control": {
+        "jump_appid": "wxd678efh567hg6787"
+    }
+}

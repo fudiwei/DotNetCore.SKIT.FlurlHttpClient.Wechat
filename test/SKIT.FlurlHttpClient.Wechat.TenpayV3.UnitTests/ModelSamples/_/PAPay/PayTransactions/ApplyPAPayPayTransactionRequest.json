@@ -1,0 +1,13 @@
+{
+    "appid": "wxd678efh567hg6787",
+    "out_trade_no": "1217752501201407033233368018",
+    "description": "Image形象店-深圳腾大-QQ公仔",
+    "transaction_notify_url": "https://www.qq.com/",
+    "contract_id": "123124412412423431",
+    "amount": {
+        "total": 1,
+        "currency": "CNY"
+    },
+    "goods_tag": "DISCOUNTS",
+    "attach": "自定义数据"
+}

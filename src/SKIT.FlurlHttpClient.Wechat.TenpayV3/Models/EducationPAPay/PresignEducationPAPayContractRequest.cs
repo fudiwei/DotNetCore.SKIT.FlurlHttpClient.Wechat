@@ -27,11 +27,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string OpenId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置商户用户账号。
+        /// 获取或设置商户用户账号标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("user_id")]
         [System.Text.Json.Serialization.JsonPropertyName("user_id")]
-        public string UserDisplayId { get; set; } = string.Empty;
+        public string OutUserId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置首次扣款日期字符串（格式：yyyy-MM-dd）。

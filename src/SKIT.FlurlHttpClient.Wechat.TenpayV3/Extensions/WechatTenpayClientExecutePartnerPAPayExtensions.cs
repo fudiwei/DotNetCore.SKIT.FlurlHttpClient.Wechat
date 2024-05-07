@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.NotifyPartnerPAPayContractResponse> ExecuteNotifyPartnerPAPayContractAsync(this WechatTenpayClient client, Models.NotifyPartnerPAPayContractRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CreatePartnerPAPayContractNotificationResponse> ExecuteCreatePartnerPAPayContractNotificationAsync(this WechatTenpayClient client, Models.CreatePartnerPAPayContractNotificationRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "partner-papay", "contracts", request.ContractId, "notify");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.NotifyPartnerPAPayContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePartnerPAPayContractNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -11,7 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/payment-notice.html ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/payment-notice.html ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/notice-division.html ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/notice-division.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html ]]>
     /// </para>
     /// </summary>
     public class TransactionResource : WechatTenpayEvent.Types.IDecryptedResource

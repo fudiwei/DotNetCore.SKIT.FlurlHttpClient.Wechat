@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("plan_id")]
         [System.Text.Json.Serialization.JsonPropertyName("plan_id")]
-        public int PlanId { get; set; }
+        public long PlanId { get; set; }
 
         /// <summary>
         /// 获取或设置用户唯一标识。

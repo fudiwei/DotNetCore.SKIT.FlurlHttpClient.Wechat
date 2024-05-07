@@ -1,0 +1,35 @@
+{
+    "mchid": "1900000109",
+    "contract_id": "123124412412423431",
+    "appid": "wxd678efh567hg6787",
+    "plan_id": 12535,
+    "out_contract_code": "wxwtdk20200910100000",
+    "contract_display_account": "微信代扣用户A",
+    "contract_state": "SIGNED",
+    "contract_signed_time": "2020-09-10T13:29:35+08:00",
+    "contract_expired_time": "2021-09-10T13:29:35+08:00",
+    "openid": "o-MYE42l80oelYMDE34nYD456Xoy",
+    "contract_terminate_info": {
+        "contract_termination_mode": "USER_TERMINATE",
+        "contract_terminated_time": "2020-10-10T13:29:35+08:00",
+        "contract_termination_remark": "用户解约"
+    },
+    "out_user_code": "用户A",
+    "deduct_schedule": {
+        "estimated_deduct_date": "2019-11-22",
+        "estimated_deduct_amount": {
+            "total": 1,
+            "currency": "CNY"
+        },
+        "schedule_state": "NO_SCHEDULED",
+        "scheduled_amount": {
+            "total": 1,
+            "currency": "CNY"
+        },
+        "deduct_amount": {
+            "total": 1,
+            "currency": "CNY"
+        },
+        "deduct_date": "2019-11-22"
+    }
+}

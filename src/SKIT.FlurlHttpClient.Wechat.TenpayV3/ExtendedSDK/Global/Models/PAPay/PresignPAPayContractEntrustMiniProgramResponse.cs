@@ -10,6 +10,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("session_id")]
         [System.Text.Json.Serialization.JsonPropertyName("session_id")]
-        public string SessionId { get; set; } = default!;
+        public string PresignSessionId { get; set; } = default!;
     }
 }

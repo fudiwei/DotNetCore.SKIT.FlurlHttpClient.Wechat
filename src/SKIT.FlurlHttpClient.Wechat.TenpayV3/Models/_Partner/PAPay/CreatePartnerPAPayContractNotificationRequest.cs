@@ -3,11 +3,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /partner-papay/contracts/{contract_id}/notify 接口的请求。</para>
     /// </summary>
-    public class NotifyPartnerPAPayContractRequest : WechatTenpayRequest
+    public class CreatePartnerPAPayContractNotificationRequest : WechatTenpayRequest
     {
         public static class Types
         {
-            public class Amount : NotifyPAPayContractRequest.Types.Amount
+            public class Amount : CreatePAPayContractNotificationRequest.Types.Amount
             {
             }
         }

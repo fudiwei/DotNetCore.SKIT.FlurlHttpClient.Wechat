@@ -520,7 +520,7 @@
 
     -   扣款服务
 
-        -   预扣费通知：`NotifyPAPayContract`
+        -   预扣费通知：`CreatePAPayContractNotification`
 
     -   代扣服务切卡组件
 
