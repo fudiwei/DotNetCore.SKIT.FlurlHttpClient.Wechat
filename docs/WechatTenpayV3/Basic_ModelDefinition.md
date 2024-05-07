@@ -37,7 +37,7 @@
 |  √  |         支付产品：H5 支付         | 直连商户 & 合作伙伴 |                   |
 |  √  |       支付产品：Native 支付       | 直连商户 & 合作伙伴 |                   |
 |  √  |       支付产品：小程序支付        | 直连商户 & 合作伙伴 |                   |
-|  ×  |  <del>支付产品：付款码支付</del>  | 直连商户 & 合作伙伴 | 官方未提供 v3 API |
+|  √  |       支付产品：付款码支付        | 直连商户 & 合作伙伴 |                   |
 |  √  |        支付产品：合单支付         | 直连商户 & 合作伙伴 |                   |
 |  √  |      支付产品：资金/交易账单      | 直连商户 & 合作伙伴 |                   |
 |  √  |          支付产品：退款           | 直连商户 & 合作伙伴 |                   |
@@ -143,6 +143,12 @@
         -   查询订单：`GetPayTransactionById` / `GetPayTransactionByOutTradeNumber`
 
         -   关闭订单：`ClosePayTransaction`
+
+    -   付款码支付
+
+        -   付款码支付：`CreatePayTransactionCodePay`
+
+        -   撤销订单：`ReversePayTransaction`
 
     -   合单支付
 
@@ -617,6 +623,12 @@
         -   查询订单：`GetPayPartnerTransactionById` / `GetPayPartnerTransactionByOutTradeNumber`
 
         -   关闭订单：`ClosePayPartnerTransaction`
+
+    -   付款码支付
+
+        -   付款码支付：`CreatePayPartnerTransactionCodePay`
+
+        -   撤销订单：`ReversePayPartnerTransaction`
 
     -   合单支付
 
@@ -1378,7 +1390,7 @@
 
 ---
 
-### 【附】境外开发 API 模型命名速查表：
+### 【附】境外支付 API 模型命名速查表：
 
 注：树形结构与[微信支付开发者文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pages/Overview.shtml)目录结构保持一致。
 

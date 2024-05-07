@@ -1,0 +1,42 @@
+{
+    "sp_appid": "wxd678efh567hg6787",
+    "sp_mchid": "1230000109",
+    "sub_appid": "wxd678efh567hg6787",
+    "sub_mchid": "1230000109",
+    "description": "Image形象店-深圳腾大-QQ公仔",
+    "out_trade_no": "1217752501201407033233368018",
+    "attach": "自定义数据说明",
+    "goods_tag": "WXG",
+    "support_fapiao": false,
+    "payer": {
+        "auth_code": "130061098828009406"
+    },
+    "amount": {
+        "total": 100,
+        "currency": "CNY"
+    },
+    "scene_info": {
+        "device_id": "013467007045764",
+        "device_ip": "128.0.0.1",
+        "store_info": {
+            "id": "0001",
+            "out_id": "A1111"
+        }
+    },
+    "detail": {
+        "cost_price": 608800,
+        "invoice_id": "微信123",
+        "goods_detail": [
+            {
+                "merchant_goods_id": "1246464644",
+                "wxpay_goods_id": "1001",
+                "goods_name": "iPhoneX 256G",
+                "quantity": 1,
+                "unit_price": 528800
+            }
+        ]
+    },
+    "settle_info": {
+        "profit_sharing": false
+    }
+}

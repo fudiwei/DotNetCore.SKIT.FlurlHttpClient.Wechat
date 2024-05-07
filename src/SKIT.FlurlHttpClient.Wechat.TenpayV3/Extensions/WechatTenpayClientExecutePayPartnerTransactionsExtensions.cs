@@ -116,6 +116,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /pay/partner/transactions/codepay 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-code-payment-v3/partner/partner-code-pay.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayPartnerTransactionCodePayResponse> ExecuteCreatePayPartnerTransactionCodePayAsync(this WechatTenpayClient client, Models.CreatePayPartnerTransactionCodePayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.MerchantId is null)
+                request.MerchantId = client.Credentials.MerchantId;
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "codepay");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayPartnerTransactionCodePayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /pay/partner/transactions/scannedpos 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -232,6 +257,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "out-trade-no", request.OutTradeNumber, "close");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ClosePayPartnerTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /pay/partner/transactions/out-trade-no/{out_trade_no}/reverse 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-code-payment-v3/partner/partner-reverse.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ReversePayPartnerTransactionResponse> ExecuteReversePayPartnerTransactionAsync(this WechatTenpayClient client, Models.ReversePayPartnerTransactionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.MerchantId is null)
+                request.MerchantId = client.Credentials.MerchantId;
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "partner", "transactions", "out-trade-no", request.OutTradeNumber, "reverse");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ReversePayPartnerTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

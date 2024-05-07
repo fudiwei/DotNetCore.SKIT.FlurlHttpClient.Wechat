@@ -1,0 +1,44 @@
+{
+    "appid": "wxd678efh567hg6787",
+    "mchid": "1230000109",
+    "out_trade_no": "1217752501201407033233368018",
+    "transaction_id": "1217752501201407033233368018",
+    "trade_type": "MICROPAY",
+    "bank_type": "CCB_DEBIT",
+    "success_time": "2018-06-08T10:34:56+08:00",
+    "trade_state": "SUCCESS",
+    "trade_state_desc": "支付成功",
+    "attach": "自定义数据说明",
+    "payer": {
+        "openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o"
+    },
+    "amount": {
+        "total": 100,
+        "payer_total": 100,
+        "currency": "CNY",
+        "payer_currency": "CNY"
+    },
+    "promotion_detail": [
+        {
+            "coupon_id": "109519",
+            "name": "单品惠-6",
+            "scope": "GLOBAL",
+            "type": "CASH",
+            "amount": 100,
+            "stock_id": "931386",
+            "wechatpay_contribute": 0,
+            "merchant_contribute": 0,
+            "other_contribute": 0,
+            "currency": "CNY",
+            "goods_detail": [
+                {
+                    "goods_id": "M1006",
+                    "quantity": 1,
+                    "unit_price": 100,
+                    "discount_amount": 1,
+                    "goods_remark": "商品备注信息"
+                }
+            ]
+        }
+    ]
+}
