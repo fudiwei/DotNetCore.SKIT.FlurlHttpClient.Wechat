@@ -1,13 +1,13 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /papay/pay/schedules/contract-id/{contract_id}/schedule 接口的请求。</para>
+    /// <para>表示 [POST] /papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}/schedule 接口的请求。</para>
     /// </summary>
-    public class CreatePAPayPaySchedulesContractScheduleRequest : WechatTenpayRequest
+    public class CreatePAPayInsurancePayPolicyPeriodScheduleRequest : WechatTenpayRequest
     {
         public static class Types
         {
-            public class Amount : PresignPAPayScheduledDeductSignContractEntrustAppRequest.Types.DeductSchedule.Types.Amount
+            public class Amount : PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.Amount
             {
             }
         }
@@ -20,6 +20,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string ContractId { get; set; } = string.Empty;
 
         /// <summary>
+        /// 获取或设置保单的扣费周期编号。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public int PolicyPeriodId { get; set; }
+
+        /// <summary>
         /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
@@ -29,8 +36,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// <summary>
         /// 获取或设置预约的金额信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("schedule_amount")]
-        [System.Text.Json.Serialization.JsonPropertyName("schedule_amount")]
+        [Newtonsoft.Json.JsonProperty("scheduled_amount")]
+        [System.Text.Json.Serialization.JsonPropertyName("scheduled_amount")]
         public Types.Amount ScheduledAmount { get; set; } = new Types.Amount();
     }
 }

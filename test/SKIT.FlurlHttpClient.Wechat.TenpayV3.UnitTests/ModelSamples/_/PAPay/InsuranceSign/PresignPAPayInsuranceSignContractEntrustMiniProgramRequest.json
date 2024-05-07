@@ -1,0 +1,37 @@
+{
+    "appid": "wxd678efh567hg6787",
+    "openid": "oYobu0MVnQfWpSMOYJz2AHPG_gQw",
+    "plan_id": 12535,
+    "out_contract_code": "wxwtdk20200910100000",
+    "insured_display_name": "*明",
+    "contract_notify_url": "https://yourapp.com/notify",
+    "policy_start_date": "2019-11-22",
+    "policy_end_date": "2020-11-22",
+    "policy_periods": [
+        {
+            "policy_period_id": 1,
+            "estimated_deduct_date": "2019-11-22",
+            "estimated_deduct_amount": {
+                "total": 1,
+                "currency": "CNY"
+            }
+        }
+    ],
+    "amount": {
+        "total": 1,
+        "currency": "CNY"
+    },
+    "out_trade_no": "1217752501201407033233368018",
+    "description": "Image形象店-深圳腾大-QQ公仔",
+    "transaction_notify_url": "https://www.qq.com/",
+    "out_user_code": "用户昵称",
+    "goods_tag": "DISCOUNTS",
+    "attach": "自定义数据",
+    "can_auto_insure": true,
+    "can_auto_reinsure": false,
+    "real_identity": {
+        "real_name": "OEimkKuua8igpd+0YDgqF2Z61leeGD7x87j3PhzsBhAK+/lltXENEOf6ThgV7niChzIpDujIpefE2JFZCJFurf6IV5rxNWBbjFeHYyUGAbf8zDx2Wbi7y7BGjApltIhsxAk+LhQ648Kcw4FMidL/79Gh3nHUfSGX+nEl3gtNi24Ilt8Vu0MMXhA1suDzlpbNDDrYnAhb1eeMziSu8jW7lDouwJXjGh9zgFPUuTxfOpteJIZSy8HWR+QPugdXBNouEezDPN8kojKbJHRtjaBJY3n3agkXShI5yvnc+DCYM+4VgNWZpTx9D0w3KAylJPKAAluYMzj4VXzZurjpruDg2A==",
+        "id_card_number": "1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj/mEoNSgJh0nvuqQJ1cdXZHGUzyBjOtuLeVq+OLOaWGUScSM8+QLBk+kOK8QyR1TUo44YrmIl5KkjWLa3dpNJt+nIkpN1e7yr2mxO9LGqJdeQXDCHvOiUTK6lnAVxWY0ZrF4OQFmHqOCvqTaF3VxD5a8AT3gxyayF04IJSfPV0NheZvWFBHIUeRPf1/WQmJ/wXu2MfAuESB0dLBglT85i0Rws2GopaTUNiBuJBHdg01bR+YZvSYv8EJPyxuyYVh5bg/wSotNTYnVp13OUzMBKu25yOW5+RnunesXwq9ogPnSj7EDA==",
+        "identity_type": "ID_CARD"
+    }
+}

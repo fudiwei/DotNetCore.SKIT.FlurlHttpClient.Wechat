@@ -33,6 +33,236 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePAPayContractNotificationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        #region InsurancePayPolicyPeriods
+        /// <summary>
+        /// <para>异步调用 [GET] /papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/schedule/query-policy-period.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPAPayInsurancePayPolicyPeriodByPolicyPeriodIdResponse> ExecuteGetPAPayInsurancePayPolicyPeriodByPolicyPeriodIdAsync(this WechatTenpayClient client, Models.GetPAPayInsurancePayPolicyPeriodByPolicyPeriodIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "insurance-pay", "policy-periods", "contract-id", request.ContractId, "policy-period-id", request.PolicyPeriodId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPAPayInsurancePayPolicyPeriodByPolicyPeriodIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}/schedule 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/schedule/schedule-policy-period.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePAPayInsurancePayPolicyPeriodScheduleResponse> ExecuteCreatePAPayInsurancePayPolicyPeriodScheduleAsync(this WechatTenpayClient client, Models.CreatePAPayInsurancePayPolicyPeriodScheduleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-pay", "policy-periods", "contract-id", request.ContractId, "policy-period-id", request.PolicyPeriodId, "schedule");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePAPayInsurancePayPolicyPeriodScheduleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region InsuranceSign
+        /// <summary>
+        /// <para>异步调用 [POST] /papay/insurance-sign/contracts/pre-entrust-sign/jsapi 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/jsapi-sign-and-create-transaction.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.PresignPAPayInsuranceSignContractEntrustJsapiResponse> ExecutePresignPAPayInsuranceSignContractEntrustJsapiAsync(this WechatTenpayClient client, Models.PresignPAPayInsuranceSignContractEntrustJsapiRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-sign", "contracts", "pre-entrust-sign", "jsapi");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.PresignPAPayInsuranceSignContractEntrustJsapiResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /papay/insurance-sign/contracts/pre-entrust-sign/mini-program 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/mimi-program-sign-and-create-transaction.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.PresignPAPayInsuranceSignContractEntrustMiniProgramResponse> ExecutePresignPAPayInsuranceSignContractEntrustMiniProgramAsync(this WechatTenpayClient client, Models.PresignPAPayInsuranceSignContractEntrustMiniProgramRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-sign", "contracts", "pre-entrust-sign", "mini-program");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.PresignPAPayInsuranceSignContractEntrustMiniProgramResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /papay/insurance-sign/contracts/pre-entrust-sign/h5 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/h5-sign-and-create-transaction.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.PresignPAPayInsuranceSignContractEntrustH5Response> ExecutePresignPAPayInsuranceSignContractEntrustH5Async(this WechatTenpayClient client, Models.PresignPAPayInsuranceSignContractEntrustH5Request request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-sign", "contracts", "pre-entrust-sign", "h5");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.PresignPAPayInsuranceSignContractEntrustH5Response>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region InsuranceSignContracts
+        /// <summary>
+        /// <para>异步调用 [GET] /papay/insurance-sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/operate-contract/get-contract-by-code.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPAPayInsuranceSignContractByOutContractCodeResponse> ExecuteGetPAPayInsuranceSignContractByOutContractCodeAsync(this WechatTenpayClient client, Models.GetPAPayInsuranceSignContractByOutContractCodeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "insurance-sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPAPayInsuranceSignContractByOutContractCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /papay/insurance-sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/operate-contract/terminate-contract-by-code.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.TerminatePAPayInsuranceSignContractResponse> ExecuteTerminatePAPayInsuranceSignContractAsync(this WechatTenpayClient client, Models.TerminatePAPayInsuranceSignContractRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-sign", "contracts", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode, "terminate");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.TerminatePAPayInsuranceSignContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /papay/insurance-sign/policy_periods/plan-id/{plan_id}/out-contract-code/{out_contract_code} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/query-policy-periods-by-code.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.QueryPAPayInsuranceSignPolicyPeriodsResponse> ExecuteQueryPAPayInsuranceSignPolicyPeriodsAsync(this WechatTenpayClient client, Models.QueryPAPayInsuranceSignPolicyPeriodsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "papay", "insurance-sign", "policy_periods", "plan-id", request.PlanId, "out-contract-code", request.OutContractCode)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryPAPayInsuranceSignPolicyPeriodsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /papay/insurance-sign/contracts/plan-id/{plan_id}/contract-id/{contract_id}/renew 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/apply-renew-contract.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.RenewPAPayInsuranceSignContractResponse> ExecuteRenewPAPayInsuranceSignContractAsync(this WechatTenpayClient client, Models.RenewPAPayInsuranceSignContractRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-sign", "contracts", "plan-id", request.PlanId, "contract-id", request.ContractId, "renew");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.RenewPAPayInsuranceSignContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region InsurancePayTransactions
+        /// <summary>
+        /// <para>异步调用 [POST] /papay/insurance-pay/transactions/apply 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct/create-transaction.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ApplyPAPayInsurancePayTransactionResponse> ExecuteApplyPAPayInsurancePayTransactionAsync(this WechatTenpayClient client, Models.ApplyPAPayInsurancePayTransactionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "insurance-pay", "transactions", "apply");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ApplyPAPayInsurancePayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region PaySchedules
         /// <summary>
         /// <para>异步调用 [GET] /papay/pay/schedules/contract-id/{contract_id} 接口。</para>

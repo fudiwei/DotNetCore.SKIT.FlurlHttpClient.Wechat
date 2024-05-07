@@ -3,18 +3,14 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
 {
     /// <summary>
-    /// <para>表示委托代扣 ENTRUST.SIGN （仅限直连商户）通知的数据。</para>
-    /// <para>表示委托代扣 ENTRUST.TERMINATE （仅限直连商户）通知的数据。</para>
+    /// <para>表示保险委托代扣 INSURANCE_ENTRUST.SIGN 通知的数据。</para>
+    /// <para>表示保险委托代扣 INSURANCE_ENTRUST.TERMINATE 通知的数据。</para>
     /// </summary>
-    public class PAPayEntrustResource : WechatTenpayEvent.Types.IDecryptedResource
+    public class PAPayInsuranceEntrustResource : WechatTenpayEvent.Types.IDecryptedResource
     {
         public static class Types
         {
-            public class Termination : Models.GetPAPaySignContractByOutContractCodeResponse.Types.Termination
-            {
-            }
-
-            public class DeductSchedule : Models.GetPAPaySignContractByOutContractCodeResponse.Types.DeductSchedule
+            public class Termination : Models.GetPAPayInsuranceSignContractByOutContractCodeResponse.Types.Termination
             {
             }
         }
@@ -87,11 +83,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置用户账户展示名称。
+        /// 获取或设置被保人姓名。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("contract_display_account")]
-        [System.Text.Json.Serialization.JsonPropertyName("contract_display_account")]
-        public string ContractDisplayAccount { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("insured_display_name")]
+        [System.Text.Json.Serialization.JsonPropertyName("insured_display_name")]
+        public string InsuredDisplayAccount { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置商户侧用户标识。
@@ -106,12 +102,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         [Newtonsoft.Json.JsonProperty("contract_terminate_info")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_terminate_info")]
         public Types.Termination? Termination { get; set; }
-
-        /// <summary>
-        /// 获取或设置预约扣费场景的预约信息。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("deduct_schedule")]
-        [System.Text.Json.Serialization.JsonPropertyName("deduct_schedule")]
-        public Types.DeductSchedule? DeductSchedule { get; set; }
     }
 }
