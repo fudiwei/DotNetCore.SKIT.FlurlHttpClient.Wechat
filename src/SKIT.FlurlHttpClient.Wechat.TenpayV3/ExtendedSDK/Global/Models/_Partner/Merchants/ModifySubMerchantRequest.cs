@@ -22,6 +22,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
             public class Principal : AddSubMerchantRequest.Types.Principal
             {
             }
+
+            public class H5PaymentApplyment : AddSubMerchantRequest.Types.H5PaymentApplyment
+            {
+            }
         }
 
         /// <summary>
@@ -149,5 +153,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         [Newtonsoft.Json.JsonProperty("principal")]
         [System.Text.Json.Serialization.JsonPropertyName("principal")]
         public Types.Principal? Principal { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否申请开通 H5 支付权限。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("apply_h5_payment")]
+        [System.Text.Json.Serialization.JsonPropertyName("apply_h5_payment")]
+        public bool? IsApplyH5Payment { get; set; }
+
+        /// <summary>
+        /// 获取或设置 H5 支付权限申请信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("h5_payment_apply_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("h5_payment_apply_info")]
+        public Types.H5PaymentApplyment? H5PaymentApplyment { get; set; }
     }
 }

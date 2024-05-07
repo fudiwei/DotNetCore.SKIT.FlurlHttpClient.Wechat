@@ -120,6 +120,74 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
                 [System.Text.Json.Serialization.JsonPropertyName("number")]
                 public string? IdNumber { get; set; }
             }
+
+            public class H5PaymentState
+            {
+                /// <summary>
+                /// 获取或设置联系人姓名。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("name")]
+                [System.Text.Json.Serialization.JsonPropertyName("name")]
+                public string? ContactName { get; set; }
+
+                /// <summary>
+                /// 获取或设置审核拒绝原因。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("audit_reject_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("audit_reject_detail")]
+                public string? AuditRejectDetail { get; set; }
+
+                /// <summary>
+                /// 获取或设置 H5 支付认证状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("h5_authorization_state")]
+                [System.Text.Json.Serialization.JsonPropertyName("h5_authorization_state")]
+                public string? H5AuthorizationState { get; set; }
+            }
+
+            public class SubMerchantState
+            {
+                public static class Types
+                {
+                    public class ApplicationRejectDetail
+                    {
+                        /// <summary>
+                        /// 获取或设置字段。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("field")]
+                        [System.Text.Json.Serialization.JsonPropertyName("field")]
+                        public string? Field { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置原因。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("reason")]
+                        [System.Text.Json.Serialization.JsonPropertyName("reason")]
+                        public string? Reason { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置子商户状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_merchant_status")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_merchant_status")]
+                public string? SubMerchantStatus { get; set; }
+
+                /// <summary>
+                /// 获取或设置申请状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("application_status")]
+                [System.Text.Json.Serialization.JsonPropertyName("application_status")]
+                public string? ApplicationStatus { get; set; }
+
+                /// <summary>
+                /// 获取或设置申请拒绝原因。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("application_reject_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("application_reject_detail")]
+                public Types.ApplicationRejectDetail? ApplicationRejectDetail { get; set; }
+            }
         }
 
         /// <summary>
@@ -220,5 +288,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         [Newtonsoft.Json.JsonProperty("principal")]
         [System.Text.Json.Serialization.JsonPropertyName("principal")]
         public Types.Principal? Principal { get; set; }
+
+        /// <summary>
+        /// 获取或设置 H5 支付权限状态信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("h5_payment")]
+        [System.Text.Json.Serialization.JsonPropertyName("h5_payment")]
+        public Types.H5PaymentState? H5PaymentState { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户状态信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_merchant_state")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_merchant_state")]
+        public Types.SubMerchantState? SubMerchantState { get; set; }
     }
 }

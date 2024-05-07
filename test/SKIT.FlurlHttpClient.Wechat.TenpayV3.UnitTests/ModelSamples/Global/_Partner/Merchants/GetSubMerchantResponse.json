@@ -1,4 +1,4 @@
-﻿{
+{
     "sub_mchid": "20000100",
     "name": "test mcherchan_name",
     "shortname": "mcherchan_name",
@@ -12,5 +12,11 @@
     "principal": {
         "name": "Bob",
         "number": "5555-8888"
+    },
+    "h5_payment": {
+        "h5_authorization_state": "APPROVED"
+    },
+    "sub_merchant_state": {
+        "sub_merchant_status": "OPERATING"
     }
 }
