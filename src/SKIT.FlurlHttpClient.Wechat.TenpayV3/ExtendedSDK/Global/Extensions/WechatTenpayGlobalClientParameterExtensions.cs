@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
     public static class WechatTenpayGlobalClientParameterExtensions
     {
@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="appId"></param>
         /// <param name="prepayId"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForJsapiPayRequest(this WechatTenpayClient client, string appId, string prepayId)
+        public static IDictionary<string, string> GenerateParametersForJsapiPayRequest(this WechatTenpayGlobalClient client, string appId, string prepayId)
         {
             return WechatTenpayClientParameterExtensions.GenerateParametersForJsapiPayRequest(client, appId, prepayId);
         }
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="appId"></param>
         /// <param name="prepayId"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForAppPayRequest(this WechatTenpayClient client, string appId, string prepayId)
+        public static IDictionary<string, string> GenerateParametersForAppPayRequest(this WechatTenpayGlobalClient client, string appId, string prepayId)
         {
             return WechatTenpayClientParameterExtensions.GenerateParametersForAppPayRequest(client, appId, prepayId);
         }
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="appId"></param>
         /// <param name="prepayId"></param>
         /// <returns></returns>
-        public static IDictionary<string, string> GenerateParametersForAppPayRequest(this WechatTenpayClient client, string merchantId, string appId, string prepayId)
+        public static IDictionary<string, string> GenerateParametersForAppPayRequest(this WechatTenpayGlobalClient client, string merchantId, string appId, string prepayId)
         {
             return WechatTenpayClientParameterExtensions.GenerateParametersForAppPayRequest(client, merchantId, appId, prepayId);
         }

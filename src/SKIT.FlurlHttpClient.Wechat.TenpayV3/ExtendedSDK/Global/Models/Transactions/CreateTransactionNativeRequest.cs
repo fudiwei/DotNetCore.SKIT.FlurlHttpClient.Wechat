@@ -39,7 +39,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Models
         }
 
         /// <summary>
-        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayClient"/> 时的 <see cref="WechatTenpayClientOptions.MerchantId"/> 参数。
+        /// 获取或设置微信商户号。如果不指定将使用构造 <see cref="WechatTenpayGlobalClient"/> 时的 <see cref="WechatTenpayGlobalClientOptions.MerchantId"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("mchid")]

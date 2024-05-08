@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="client"></param>
         /// <param name="response"></param>
         /// <returns></returns>
-        public static Models.QueryCertificatesResponse DecryptResponseSensitiveProperty(this WechatTenpayClient client, Models.QueryCertificatesResponse response)
+        public static Models.QueryCertificatesResponse DecryptResponseSensitiveProperty(this WechatTenpayGlobalClient client, Models.QueryCertificatesResponse response)
         {
             return WechatTenpayClientResponseDecryptionExtensions.DecryptResponseSensitiveProperty(client, response);
         }
@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="response"></param>
         /// <returns></returns>
         public static TResponse DecryptResponseSensitiveProperty<TResponse>(this WechatTenpayGlobalClient client, TResponse response)
-            where TResponse : WechatTenpayResponse
+            where TResponse : WechatTenpayGlobalResponse
         {
             return WechatTenpayClientResponseDecryptionExtensions.DecryptResponseSensitiveProperty(client, response);
         }

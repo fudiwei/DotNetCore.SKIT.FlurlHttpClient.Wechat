@@ -18,8 +18,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="client"></param>
         /// <param name="response"></param>
         /// <returns></returns>
-        public static ErroredResult VerifyResponseSignature<TResponse>(this WechatTenpayClient client, TResponse response)
-            where TResponse : WechatTenpayResponse
+        public static ErroredResult VerifyResponseSignature<TResponse>(this WechatTenpayGlobalClient client, TResponse response)
+            where TResponse : WechatTenpayGlobalResponse
         {
             return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignature(client, response);
         }
@@ -76,7 +76,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
         public static Task<ErroredResult> VerifyResponseSignatureAsync<TResponse>(this WechatTenpayGlobalClient client, TResponse response, CancellationToken cancellationToken = default)
-            where TResponse : WechatTenpayResponse
+            where TResponse : WechatTenpayGlobalResponse
         {
             return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignatureAsync(client, response, cancellationToken);
         }

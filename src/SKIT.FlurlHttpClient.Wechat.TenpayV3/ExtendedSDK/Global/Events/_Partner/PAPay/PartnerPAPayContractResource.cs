@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global.Events
     /// <para>表示 PAPAY.SIGN （仅限服务商）通知的数据。</para>
     /// <para>表示 PAPAY.TERMINATE （仅限服务商）通知的数据。</para>
     /// </summary>
-    public class PartnerPAPayContractResource : PAPayContractResource, WechatTenpayEvent.Types.IDecryptedResource
+    public class PartnerPAPayContractResource : PAPayContractResource, WechatTenpayGlobalEvent.Types.IDecryptedResource
     {
         /// <summary>
         /// <inheritdoc />
