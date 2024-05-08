@@ -5,6 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /papay/insurance-sign/contracts/pre-entrust-sign/mini-program 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class PresignPAPayInsuranceSignContractEntrustMiniProgramRequest : WechatTenpayRequest
     {
         public static class Types

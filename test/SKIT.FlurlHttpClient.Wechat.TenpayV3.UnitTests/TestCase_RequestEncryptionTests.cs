@@ -1047,6 +1047,183 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /papay/insurance-sign/contracts/pre-entrust-sign/h5）")]
+        public async Task TestEncryptRequestSensitiveProperty_PresignPAPayInsuranceSignContractEntrustH5Request()
+        {
+            static Models.PresignPAPayInsuranceSignContractEntrustH5Request GenerateMockRequestModel()
+            {
+                return new Models.PresignPAPayInsuranceSignContractEntrustH5Request()
+                {
+                    RealIdentity = new Models.PresignPAPayInsuranceSignContractEntrustH5Request.Types.RealIdentity()
+                    {
+                        RealName = MOCK_PLAIN_STR,
+                        IdCardNumber = MOCK_PLAIN_STR
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.PresignPAPayInsuranceSignContractEntrustH5Request request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.RealIdentity!.RealName);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.RealIdentity!.IdCardNumber);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.RealName));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.IdCardNumber));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecutePresignPAPayInsuranceSignContractEntrustH5Async(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecutePresignPAPayInsuranceSignContractEntrustH5Async(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /papay/insurance-sign/contracts/pre-entrust-sign/jsapi）")]
+        public async Task TestEncryptRequestSensitiveProperty_PresignPAPayInsuranceSignContractEntrustJsapiRequest()
+        {
+            static Models.PresignPAPayInsuranceSignContractEntrustJsapiRequest GenerateMockRequestModel()
+            {
+                return new Models.PresignPAPayInsuranceSignContractEntrustJsapiRequest()
+                {
+                    RealIdentity = new Models.PresignPAPayInsuranceSignContractEntrustJsapiRequest.Types.RealIdentity()
+                    {
+                        RealName = MOCK_PLAIN_STR,
+                        IdCardNumber = MOCK_PLAIN_STR
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.PresignPAPayInsuranceSignContractEntrustJsapiRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.RealIdentity!.RealName);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.RealIdentity!.IdCardNumber);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.RealName));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.IdCardNumber));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecutePresignPAPayInsuranceSignContractEntrustJsapiAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecutePresignPAPayInsuranceSignContractEntrustJsapiAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /papay/insurance-sign/contracts/pre-entrust-sign/mini-program）")]
+        public async Task TestEncryptRequestSensitiveProperty_PresignPAPayInsuranceSignContractEntrustMiniProgramRequest()
+        {
+            static Models.PresignPAPayInsuranceSignContractEntrustMiniProgramRequest GenerateMockRequestModel()
+            {
+                return new Models.PresignPAPayInsuranceSignContractEntrustMiniProgramRequest()
+                {
+                    RealIdentity = new Models.PresignPAPayInsuranceSignContractEntrustMiniProgramRequest.Types.RealIdentity()
+                    {
+                        RealName = MOCK_PLAIN_STR,
+                        IdCardNumber = MOCK_PLAIN_STR
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.PresignPAPayInsuranceSignContractEntrustMiniProgramRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.RealIdentity!.RealName);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.RealIdentity!.IdCardNumber);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.RealName));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.IdCardNumber));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecutePresignPAPayInsuranceSignContractEntrustMiniProgramAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecutePresignPAPayInsuranceSignContractEntrustMiniProgramAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /payroll-card/authentications/pre-order-with-auth）")]
         public async Task TestEncryptRequestSensitiveProperty_PreorderPayrollCardAuthenticationRequest()
         {
