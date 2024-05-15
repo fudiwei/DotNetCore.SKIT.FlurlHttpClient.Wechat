@@ -73,7 +73,7 @@
 |  √  |          其他：ETC 扣费           |      合作伙伴       |                   |
 |  √  |          其他：电子小票           |      合作伙伴       |                   |
 |  √  |       其他：出租车电子发票        |      合作伙伴       |                   |
-|  √  |         其他：教育续费通          |      直连商户       |                   |
+|  √  |         其他：教育续费通          | 直连商户 & 合作伙伴 |                   |
 |  √  |         其他：校园轻松付          |      合作伙伴       |                   |
 |  √  |        其他：微信点餐订单         |      合作伙伴       |                   |
 |  √  |         其他：微信寄快递          |      合作伙伴       |                   |
@@ -1293,6 +1293,24 @@
         -   上传出租车电子发票文件：`UploadTaxiInvoiceCardFile`
 
         -   将出租车电子发票插入微信用户卡包：`CreateTaxiInvoiceCard`
+
+    -   教育续费通：
+
+        -   预签约：`PresignEducationPAPayContract`
+
+        -   通过协议号查询签约：`GetEducationPAPayContractByContractId`
+
+        -   通过用户标识查询签约：`QueryEducationPAPayUserContracts`
+
+        -   解约：`TerminateEducationPAPayContract`
+
+        -   发送扣款预通知：`SendEducationPAPayContractNotification`
+
+        -   教育通扣款受理：`CreateEducationPAPayTransaction`
+
+        -   微信订单号查单：`GetEducationPAPayTransactionById`
+
+        -   商户订单号查单：`GetEducationPAPayTransactionByOutTradeNumber`
 
     -   校园轻松付：
 

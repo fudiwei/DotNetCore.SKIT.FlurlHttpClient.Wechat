@@ -1,4 +1,8 @@
 {
+    "sp_mchid": "1230000109",
+    "appid": "wx8888888888888888",
+    "sub_mchid": "1900000109",
+    "sub_appid": "wx8888888888888888",
     "out_trade_no": "201407033233368018",
     "transaction_id": "25012014070332333018",
     "attach": "自定义数据",
@@ -7,7 +11,8 @@
     "trade_state": "SUCCESS",
     "trade_state_description": "支付成功",
     "payer": {
-        "openid": "oUpF8uMuAJOM2pxb1Q"
+        "openid": "oUpF8uMuAJOM2pxb1Q",
+        "sub_openid": "oUpF8uMuAJOM2pxb1Q"
     },
     "amount": {
         "total": 888,
@@ -23,8 +28,8 @@
         {
             "coupon_id": "109519",
             "name": "单品惠-6",
-            "scope": "GLOBALSINGLE",
-            "type": "DISCOUNTCOUPON",
+            "scope": "GLOBAL",
+            "type": "DISCOUNT",
             "amount": 5,
             "stock_id": "931386",
             "wechatpay_contribute": 0,

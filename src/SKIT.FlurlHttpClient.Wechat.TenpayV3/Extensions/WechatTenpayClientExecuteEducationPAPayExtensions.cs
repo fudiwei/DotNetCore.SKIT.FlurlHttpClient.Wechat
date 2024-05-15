@@ -12,7 +12,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /edu-papay/contracts/presign 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/contracts/pre-sign.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts/pre-sign.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /edu-papay/contracts/id/{contract_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/contracts/query-contract.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts/query-contract.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -50,6 +52,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "contracts", "id", request.ContractId)
                 .SetQueryParam("appid", request.AppId);
 
+            if (request.SubMerchantId is not null)
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+
+            if (request.SubAppId is not null)
+                flurlReq.SetQueryParam("sub_appid", request.SubAppId);
+
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationPAPayContractByContractIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -57,7 +65,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /edu-papay/user/{openid}/contracts 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/contracts/list-user-contracts.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts/list-user-contracts.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -73,6 +82,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "user", request.OpenId, "contracts")
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("plan_id", request.PlanId);
+
+            if (request.SubMerchantId is not null)
+                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+
+            if (request.SubAppId is not null)
+                flurlReq.SetQueryParam("sub_appid", request.SubAppId);
+
+            if (request.SubOpenId is not null)
+                flurlReq.SetQueryParam("sub_openid", request.SubOpenId);
 
             if (request.ContractStatus is not null)
                 flurlReq.SetQueryParam("contract_status", request.ContractStatus);
@@ -90,7 +108,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [DELETE] /edu-papay/contracts/{contract_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_4.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/contracts/delete-contract.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts/list-user-contracts.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -112,7 +131,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /edu-papay/user-notifications/{contract_id}/send 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_6.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/user-notifications/send-user-notification.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/user-notifications/send-user-notification.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -134,7 +154,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /edu-papay/transactions 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_7.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/transactions/create-transaction.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/transactions/create-transaction.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -156,7 +177,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /edu-papay/transactions/out-trade-no/{out_trade_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_9.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/transactions/query-transaction-by-out-trade-no.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/transactions/query-transaction-by-out-trade-no.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -178,7 +200,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /edu-papay/transactions/id/{transaction_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_8.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/transactions/query-transaction-by-id.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/transactions/query-transaction-by-id.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
