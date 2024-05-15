@@ -257,8 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "fund", "withdraw")
-                ;
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "fund", "withdraw");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceFundWithdrawResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -330,8 +329,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "orders")
-                ;
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "orders");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceProfitSharingOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -378,8 +376,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "returnorders")
-                ;
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "returnorders");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceProfitSharingReturnOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -435,6 +432,44 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/profitsharing/after-sales-orders 接口。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateEcommerceProfitSharingAftersaleOrderResponse> ExecuteCreateEcommerceProfitSharingAftersaleOrderAsync(this WechatTenpayClient client, Models.CreateEcommerceProfitSharingAftersaleOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "after-sales-orders");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceProfitSharingAftersaleOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /ecommerce/profitsharing/after-sales-orders 接口。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetEcommerceProfitSharingAftersaleOrderOrderByTransactionIdResponse> ExecuteGetEcommerceProfitSharingAftersaleOrderOrderByTransactionIdAsync(this WechatTenpayClient client, Models.GetEcommerceProfitSharingAftersaleOrderOrderByTransactionIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "profitsharing", "after-sales-orders")
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("transaction_id", request.TransactionId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceProfitSharingAftersaleOrderOrderByTransactionIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /ecommerce/profitsharing/finish-order 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -451,8 +486,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "finish-order")
-                ;
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "finish-order");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SetEcommerceProfitSharingOrderFinishResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -474,8 +508,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "profitsharing", "orders", request.TransactionId, "amounts")
-                ;
+                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "profitsharing", "orders", request.TransactionId, "amounts");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceProfitSharingOrderAmountsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -497,8 +530,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "receivers", "add")
-                ;
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "receivers", "add");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AddEcommerceProfitSharingReceiverResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -520,8 +552,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "receivers", "delete")
-                ;
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "receivers", "delete");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DeleteEcommerceProfitSharingReceiverResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -545,8 +576,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "refunds", "apply")
-                ;
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "refunds", "apply");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceRefundResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -614,8 +644,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "refunds", request.RefundId, "return-advance")
-                ;
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "refunds", request.RefundId, "return-advance");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceRefundReturnAdvanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
