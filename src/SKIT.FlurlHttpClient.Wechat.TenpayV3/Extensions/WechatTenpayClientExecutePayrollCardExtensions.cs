@@ -177,5 +177,51 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayrollCardTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
+
+        #region Wesure
+        /// <summary>
+        /// <para>异步调用 [POST] /payroll-card/wesure/insurance 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_32.shtml ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayrollCardWesureInsuranceResponse> ExecuteCreatePayrollCardWesureInsuranceAsync(this WechatTenpayClient client, Models.CreatePayrollCardWesureInsuranceRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "payroll-card", "wesure", "insurance");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayrollCardWesureInsuranceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /payroll-card/wesure/token-validations 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_31.shtml ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPayrollCardWesureTokenValidationResponse> ExecuteGetPayrollCardWesureTokenValidationAsync(this WechatTenpayClient client, Models.GetPayrollCardWesureTokenValidationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "payroll-card", "wesure", "token-validations");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPayrollCardWesureTokenValidationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
     }
 }

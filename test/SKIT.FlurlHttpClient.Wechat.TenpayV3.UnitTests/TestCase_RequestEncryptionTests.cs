@@ -1336,6 +1336,62 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /payroll-card/wesure/token-validations）")]
+        public async Task TestEncryptRequestSensitiveProperty_GetPayrollCardWesureTokenValidationRequest()
+        {
+            static Models.GetPayrollCardWesureTokenValidationRequest GenerateMockRequestModel()
+            {
+                return new Models.GetPayrollCardWesureTokenValidationRequest()
+                {
+                    UserName = MOCK_PLAIN_STR,
+                    IdCardNumber = MOCK_PLAIN_STR
+                };
+            }
+
+            static void AssertMockRequestModel(Models.GetPayrollCardWesureTokenValidationRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCardNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteGetPayrollCardWesureTokenValidationAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteGetPayrollCardWesureTokenValidationAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /profitsharing/orders）")]
         public async Task TestEncryptRequestSensitiveProperty_CreateProfitSharingOrderRequest()
         {
