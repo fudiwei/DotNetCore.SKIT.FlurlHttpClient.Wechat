@@ -120,7 +120,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /vehicle/etc/preopen 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/contracts/pre-open-etc.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -142,7 +142,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /vehicle/etc/transactions/highway 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/transactions/pay-etc-on-highway.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -164,7 +164,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/etc/users/{openid}/contracts 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/contracts/get-no.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -191,7 +191,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/etc/contracts/{contract_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/contracts/get-by.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -216,7 +216,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/etc/transactions/out-trade-no/{out_trade_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_8.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/transactions/get-by-trade-no.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -241,7 +241,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/etc/transactions/id/{transaction_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_8.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/transactions/get-by-transacation-id.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
