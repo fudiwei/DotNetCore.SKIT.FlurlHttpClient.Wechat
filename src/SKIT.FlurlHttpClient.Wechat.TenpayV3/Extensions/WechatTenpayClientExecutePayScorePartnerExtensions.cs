@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/partner/permissions 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/apply-partner-permissions.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /payscore/partner/permissions/authorization-code/{authorization_code} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/get-partner-permissions-by-code.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/partner/permissions/authorization-code/{authorization_code}/terminate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_4.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/terminate-partner-permissions-by-code.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /payscore/partner/permissions/search 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/get-partner-permissions-by-open-id.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -114,7 +114,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/partner/permissions/terminate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter5_5.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/terminate-partner-permissions-by-open-id.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -138,7 +138,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/partner/serviceorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/create-partner-service-order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -160,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /payscore/partner/serviceorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/get-partner-service-order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -185,7 +185,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /payscore/partner/serviceorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/get-partner-service-order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -210,7 +210,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/cancel 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/cancel-partner-service-order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -232,7 +232,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/modify 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_4.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/modify-partner-service-order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -254,7 +254,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/complete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_5.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/complete-partner-service-order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -298,7 +298,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /payscore/partner/serviceorder/{out_order_no}/sync 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore_partner/chapter3_7.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/sync-partner-service-order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -316,6 +316,34 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendFlurlRequestAsJsonAsync<Models.SetPayScorePartnerServiceOrderSyncResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        #endregion
+
+        #region ServiceQuota
+        /// <summary>
+        /// <para>异步调用 [GET] /payscore/partner/servicequotas/service-id/{service_id} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/service-quota/get-partner-user-risk-level-quota.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPayScorePartnerServiceQuotasByServiceIdResponse> ExecuteGetPayScorePartnerServiceQuotasByServiceIdAsync(this WechatTenpayClient client, Models.GetPayScorePartnerServiceQuotasByServiceIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "payscore", "partner", "servicequotas", "service-id", request.ServiceId)
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("sub_appid", request.SubAppId)
+                .SetQueryParam("risk_level_version", request.RiskLevelVersion);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPayScorePartnerServiceQuotasByServiceIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
     }
 }
