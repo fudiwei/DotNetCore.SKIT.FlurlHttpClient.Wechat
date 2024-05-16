@@ -11,12 +11,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         {
             public class Payer : GetEducationPAPayTransactionByOutTradeNumberResponse.Types.Payer
             {
-                /// <summary>
-                /// 获取或设置用户在子商户下唯一标识。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("sub_openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("sub_openid")]
-                public string? SubOpenId { get; set; }
             }
 
             public class Amount : GetEducationPAPayTransactionByOutTradeNumberResponse.Types.Amount

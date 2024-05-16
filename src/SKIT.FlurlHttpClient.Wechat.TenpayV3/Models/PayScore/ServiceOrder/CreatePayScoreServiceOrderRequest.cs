@@ -109,14 +109,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("start_location")]
                 [System.Text.Json.Serialization.JsonPropertyName("start_location")]
-                public string StartLocation { get; set; } = string.Empty;
+                public string? StartLocation { get; set; }
 
                 /// <summary>
                 /// 获取或设置服务结束地点。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("end_location")]
                 [System.Text.Json.Serialization.JsonPropertyName("end_location")]
-                public string EndLocation { get; set; } = string.Empty;
+                public string? EndLocation { get; set; }
             }
 
             public class RiskFund

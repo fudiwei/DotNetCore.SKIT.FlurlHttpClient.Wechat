@@ -124,6 +124,74 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
         #endregion
 
+        #region Plan
+        /// <summary>
+        /// <para>异步调用 [POST] /payscore/plan/payscore-plans 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/pay-score-plan/create-pay-score-plan.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayScorePlanResponse> ExecuteCreatePayScorePlanAsync(this WechatTenpayClient client, Models.CreatePayScorePlanRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "plan", "payscore-plans");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayScorePlanResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /payscore/plan/payscore-plans/merchant-plan-no/{merchant_plan_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/pay-score-plan/query-pay-score-plan.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPayScorePlanByOutPlanNumberResponse> ExecuteGetPayScorePlanByOutPlanNumberAsync(this WechatTenpayClient client, Models.GetPayScorePlanByOutPlanNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "payscore", "plan", "payscore-plans", "merchant-plan-no", request.OutPlanNumber);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPayScorePlanByOutPlanNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /payscore/plan/payscore-plans/merchant-plan-no/{merchant_plan_no}/stop 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/pay-score-plan/stop-pay-score-plan.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.StopPayScorePlanResponse> ExecuteStopPayScorePlanAsync(this WechatTenpayClient client, Models.StopPayScorePlanRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "plan", "payscore-plans", "merchant-plan-no", request.OutPlanNumber, "stop");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.StopPayScorePlanResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ServiceOrder
         /// <summary>
         /// <para>异步调用 [POST] /payscore/serviceorder/direct-complete 接口。</para>
@@ -327,6 +395,96 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "serviceorder", request.OutOrderNumber, "sync");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SetPayScoreServiceOrderSyncResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region SignPlan
+        /// <summary>
+        /// <para>异步调用 [POST] /payscore/sign-plan/serviceorder 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/service-order/create-service-order.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayScoreSignPlanServiceOrderResponse> ExecuteCreatePayScoreSignPlanServiceOrderAsync(this WechatTenpayClient client, Models.CreatePayScoreSignPlanServiceOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "sign-plan", "serviceorder");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayScoreSignPlanServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /payscore/sign-plan/user-sign-plans 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/user-sign-plan/create-user-sign-plan.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayScoreSignPlanUserSignPlanResponse> ExecuteCreatePayScoreSignPlanUserSignPlanAsync(this WechatTenpayClient client, Models.CreatePayScoreSignPlanUserSignPlanRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "sign-plan", "user-sign-plans");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayScoreSignPlanUserSignPlanResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /payscore/sign-plan/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/user-sign-plan/query-user-sign-plan.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPayScoreSignPlanUserSignPlanByOutSignPlanNumberResponse> ExecuteGetPayScoreSignPlanUserSignPlanByOutSignPlanNumberAsync(this WechatTenpayClient client, Models.GetPayScoreSignPlanUserSignPlanByOutSignPlanNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "payscore", "sign-plan", "user-sign-plans", "merchant-sign-plan-no", request.OutSignPlanNumber);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPayScoreSignPlanUserSignPlanByOutSignPlanNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /payscore/sign-plan/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no}/stop 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/user-sign-plan/query-user-sign-plan.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.StopPayScoreSignPlanUserSignPlanResponse> ExecuteStopPayScoreSignPlanUserSignPlanAsync(this WechatTenpayClient client, Models.StopPayScoreSignPlanUserSignPlanRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "sign-plan", "user-sign-plans", "merchant-sign-plan-no", request.OutSignPlanNumber, "stop");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.StopPayScoreSignPlanUserSignPlanResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

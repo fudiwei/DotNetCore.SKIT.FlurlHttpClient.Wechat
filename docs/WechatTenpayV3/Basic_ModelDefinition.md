@@ -45,6 +45,7 @@
 |  ×  | <del>运营工具：转账到银行卡</del> | 直连商户 & 合作伙伴 | 官方未提供 v3 API |
 |  √  |       经营能力：微信支付分        | 直连商户 & 合作伙伴 |                   |
 |  √  |     经营能力：微信支付分停车      | 直连商户 & 合作伙伴 |                   |
+|  √  |   经营能力：微信支付分签约计划    | 直连商户 & 合作伙伴 |                   |
 |  √  |       经营能力：平台收付通        |      合作伙伴       |                   |
 |  √  |         运营工具：代金券          | 直连商户 & 合作伙伴 |                   |
 |  √  |         运营工具：商家券          | 直连商户 & 合作伙伴 |                   |
@@ -257,6 +258,28 @@
         -   扣费受理：`CreateVehicleTransactionParking`
 
         -   查询订单：`GetVehicleTransactionByOutTradeNumber`
+
+    -   微信支付分签约计划
+
+        -   支付分计划操作
+
+            -   创建支付分计划：`CreatePayScorePlan`
+
+            -   查询支付分计划：`GetPayScorePlanByOutPlanNumber`
+
+            -   停止支付分计划：`StopPayScorePlan`
+
+        -   签约计划详情对应的服务订单
+
+            -   创建用户的签约计划详情对应的服务订单：`CreatePayScoreSignPlanServiceOrder`
+
+        -   管理签约计划
+
+            -   创建用户的签约计划：`CreatePayScoreSignPlanUserSignPlan`
+
+            -   查询用户的签约计划：`GetPayScoreSignPlanUserSignPlanByOutSignPlanNumber`
+
+            -   停止用户的签约计划：`StopPayScoreSignPlanUserSignPlan`
 
     -   代金券
 
@@ -739,6 +762,28 @@
         -   扣费受理：`CreateVehicleTransactionParking`
 
         -   查询订单：`GetVehicleTransactionByOutTradeNumber`
+
+    -   微信支付分签约计划
+
+        -   支付分计划操作
+
+            -   创建支付分计划：`CreatePayScorePartnerPlan`
+
+            -   查询支付分计划：`GetPayScorePartnerPlanByOutPlanNumber`
+
+            -   停止支付分计划：`StopPayScorePartnerPlan`
+
+        -   签约计划详情对应的服务订单
+
+            -   创建用户的签约计划详情对应的服务订单：`CreatePayScorePartnerSignPlanServiceOrder`
+
+        -   管理签约计划
+
+            -   创建用户的签约计划：`CreatePayScorePartnerSignPlanUserSignPlan`
+
+            -   查询用户的签约计划：`GetPayScorePartnerSignPlanUserSignPlanByOutSignPlanNumber`
+
+            -   停止用户的签约计划：`StopPayScorePartnerSignPlanUserSignPlan`
 
     -   平台收付通（商户进件）
 
