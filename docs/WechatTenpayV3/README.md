@@ -110,6 +110,8 @@ else
 
 -   [如何接入国密算法？](./Basic_SMAlgorithm.md)
 
+-   [如何接入境外支付 API？](./Basic_GlobalAPI.md)
+
 ---
 
 ## 高级技巧

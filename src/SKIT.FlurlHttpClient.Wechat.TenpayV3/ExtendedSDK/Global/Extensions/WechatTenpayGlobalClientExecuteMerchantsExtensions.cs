@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
+using SKIT.FlurlHttpClient.Primitives;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
@@ -84,6 +85,38 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
                 .CreateFlurlRequest(request, HttpMethod.Put, "merchants");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ModifySubMerchantResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /merchant/media/upload 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api_external/en/apis/chapter4_2_4.shtml ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UploadMerchantMediaImageResponse> ExecuteUploadMerchantMediaImageAsync(this WechatTenpayClient client, Models.UploadMerchantMediaImageRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.FileName is null)
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".jpg";
+
+            if (request.FileHash is null)
+                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
+
+            if (request.FileContentType is null)
+                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/jpeg";
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant", "media", "upload");
+
+            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
+            return await client.SendFlurlRequestAsync<Models.UploadMerchantMediaImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

@@ -1,0 +1,13 @@
+{
+    "applyment_id": 1000000,
+    "applyment_state": "PENDING",
+    "audit_reject_detail": "Illegal content of website homepage screenshot",
+    "domains": [ "qq.com" ],
+    "notify_url": "https://pay.weixin.qq.com/wxpay/pay.action",
+    "sub_mchid": "2491935631",
+    "website_url": "https://qq.com",
+    "website_business_page_pics": [ "6uqyGjvHzOhsLleGFQVRF" ],
+    "website_homepage_pics": [ "6uqyGjvHzOhsLleGFQVRF" ],
+    "out_applyment_id": "123456",
+    "website_state": "HAS_LAUNCHED"
+}
