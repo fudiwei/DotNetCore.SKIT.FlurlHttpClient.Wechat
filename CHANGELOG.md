@@ -1537,6 +1537,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.1.0 (2024-05-17)
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.3.1。
+
 -   Release 3.0.1 (2024-02-15)
 
     -   **修复**：修复部分接口请求签名错误。影响版本：v3.0.0。
