@@ -1069,6 +1069,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.3.0 (2024-05-17)
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.3.1。
+
+    -   **修复**：修复部分接口中用户性别相关字段反序列化异常。（_via_ [GitHub #135](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/135)）
+
+    -   **修复**：修复客户朋友圈相关接口模型字段类型定义错误。（_via_ [Gitee #I9Q0Q3](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I9Q0Q3)）
+
 -   Release 3.2.1 (2024-04-10)
 
     -   **修复**：修复企业会话存档相关接口模型中 ID 数值可能溢出的问题。（_via_ [GitHub #129](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/129)）
