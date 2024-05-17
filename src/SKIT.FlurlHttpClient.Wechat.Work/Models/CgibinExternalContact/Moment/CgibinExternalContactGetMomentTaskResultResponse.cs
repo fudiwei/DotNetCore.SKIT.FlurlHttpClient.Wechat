@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_moment_task_result 接口的响应。</para>
@@ -35,7 +35,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tag_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("tag_list")]
-                        public int[]? TagIdList { get; set; }
+                        public string[]? TagIdList { get; set; }
                     }
                 }
 

@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "status": 1,
@@ -12,7 +12,7 @@
             "department_list": [2, 3]
         },
         "invalid_external_contact_list": {
-            "tag_list": [1]
+            "tag_list": [ "xxx" ]
         }
     }
 }

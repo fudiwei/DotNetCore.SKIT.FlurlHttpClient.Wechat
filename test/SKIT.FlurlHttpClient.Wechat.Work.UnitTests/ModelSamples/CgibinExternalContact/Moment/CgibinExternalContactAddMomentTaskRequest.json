@@ -1,4 +1,4 @@
-﻿{
+{
     "text": {
         "content": "文本消息内容"
     },
@@ -30,7 +30,7 @@
             "department_list": [2, 3]
         },
         "external_contact_list": {
-            "tag_list": [1, 2]
+            "tag_list": [ "etXXXXXXXXXX", "etYYYYYYYYYY" ]
         }
     }
 }
