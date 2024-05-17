@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage Tenpay WechatPay WeixinPay Wxpay 微信 微信支付 微信商户</PackageTags>
-        <Version>3.3.2</Version>
+        <Version>3.4.0</Version>
         <Description>基于 Flurl.Http 的微信支付 API v3 版客户端，支持商户（直连）、合作伙伴（服务商、渠道商、机构、银行）模式，支持基础支付、代金券、商家券、委托营销、消费卡、支付有礼、银行定向促活、微信支付分、微信先享卡、支付即服务、点金计划、智慧商圈、电商收付通、平台收付通、二级商户进件、小微商户进件、消费者投诉、商户风控管理、商户违规通知、批量转账到零钱、银行组件、海关报关、融合钱包、微工卡、电子发票、电子小票、车主平台、教育续费通、校园轻松付等功能。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>
