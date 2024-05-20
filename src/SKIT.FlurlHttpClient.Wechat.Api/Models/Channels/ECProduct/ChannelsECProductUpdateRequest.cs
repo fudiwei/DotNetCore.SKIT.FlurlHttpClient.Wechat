@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -106,6 +107,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class Aftersale : ChannelsECProductAddRequest.Types.Aftersale
             {
             }
+
+            public class Qualification : ChannelsECProductAddRequest.Types.Qualification
+            {
+            }
         }
 
         /// <summary>
@@ -173,11 +178,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long? BrandId { get; set; }
 
         /// <summary>
-        /// 获取或设置特殊资质图片媒体文件标识 ID 列表。
+        /// 获取或设置商品资质图片媒体文件标识 ID 列表。
         /// </summary>
+        [Obsolete("相关接口或字段于 2024-04-29 下线。")]
         [Newtonsoft.Json.JsonProperty("qualifications")]
         [System.Text.Json.Serialization.JsonPropertyName("qualifications")]
         public IList<string>? QualificationPictureMediaIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置商品资质列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("product_qua_infos")]
+        [System.Text.Json.Serialization.JsonPropertyName("product_qua_infos")]
+        public IList<Types.Qualification>? ProductQualificationList { get; set; }
 
         /// <summary>
         /// 获取或设置发货方式。

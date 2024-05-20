@@ -1,4 +1,4 @@
-﻿{
+{
     "order_id": "123456",
     "user_address": {
         "user_name": "陈先生",
@@ -7,7 +7,6 @@
         "city_name": "广州",
         "county_name": "海珠区",
         "detail_info": "大塘",
-        "national_code": "234234",
         "tel_number": "24534252"
     }
 }

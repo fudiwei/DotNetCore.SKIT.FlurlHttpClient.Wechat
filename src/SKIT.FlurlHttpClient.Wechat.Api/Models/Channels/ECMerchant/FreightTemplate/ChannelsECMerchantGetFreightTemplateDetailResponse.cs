@@ -51,14 +51,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? Detail { get; set; }
 
                         /// <summary>
-                        /// 获取或设置国家码。
-                        /// </summary>
-                        [Obsolete("相关接口或字段于 2023-11-20 下线。")]
-                        [Newtonsoft.Json.JsonProperty("national_code")]
-                        [System.Text.Json.Serialization.JsonPropertyName("national_code")]
-                        public string? NationalCode { get; set; }
-
-                        /// <summary>
                         /// 获取或设置收件人电话。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tel_number")]

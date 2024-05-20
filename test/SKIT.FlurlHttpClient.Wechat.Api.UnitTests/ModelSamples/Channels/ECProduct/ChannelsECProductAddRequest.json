@@ -62,7 +62,6 @@
     ],
     "spu_code": "AABBCC",
     "brand_id": 2100000000,
-    "qualifications": ["123123"],
     "extra_service": {
         "seven_day_return": 1,
         "pay_after_use": 1,
@@ -71,5 +70,21 @@
     "listing": true,
     "after_sale_info": {
         "after_sale_address_id": 123345
-    }
+    },
+    "product_qua_infos": [
+        {
+            "qua_id": 1111488,
+            "qua_url": [
+                "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+                "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn71nCC"
+            ]
+        },
+        {
+            "qua_id": 1111489,
+            "qua_url": [
+                "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+                "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn71nCC"
+            ]
+        }
+    ]
 }
