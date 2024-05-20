@@ -1,4 +1,4 @@
-﻿{
+{
     "touser": "OPENID",
     "msgtype": "type",
     "text": {
@@ -32,9 +32,6 @@
                 "picurl": "PIC_URL"
             }
         ]
-    },
-    "mpnews": {
-        "media_id": "MEDIA_ID"
     },
     "msgmenu": {
         "head_content": "您对本次服务是否满意呢? ",
