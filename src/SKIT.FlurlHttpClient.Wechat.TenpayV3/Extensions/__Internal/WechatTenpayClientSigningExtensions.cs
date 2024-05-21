@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     {
                         try
                         {
-                            bool valid = Utilities.RSAUtility.VerifyByCertificate(
+                            bool valid = Utilities.RSAUtility.VerifyWithSHA256ByCertificate(
                                 certificatePem: certificate,
                                 messageData: message,
                                 encodingSignature: new EncodedString(signature, EncodingKinds.Base64)

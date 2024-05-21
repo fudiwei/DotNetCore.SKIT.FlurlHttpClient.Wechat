@@ -88,31 +88,38 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             if (cipherBytes.Length < TAG_LENGTH_BYTE) throw new ArgumentException($"Invalid cipher byte length (expected: more than {TAG_LENGTH_BYTE}, actual: {cipherBytes.Length}).", nameof(cipherBytes));
 
 #if NET5_0_OR_GREATER
-            using (AesGcm aes = new AesGcm(keyBytes))
+            if (AesGcm.IsSupported)
             {
-                byte[] cipherWithoutTagBytes = new byte[cipherBytes.Length - TAG_LENGTH_BYTE];
-                byte[] tagBytes = new byte[TAG_LENGTH_BYTE];
-                Buffer.BlockCopy(cipherBytes, 0, cipherWithoutTagBytes, 0, cipherWithoutTagBytes.Length);
-                Buffer.BlockCopy(cipherBytes, cipherWithoutTagBytes.Length, tagBytes, 0, tagBytes.Length);
+                if (!string.Equals(paddingMode, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase))
+                    throw new NotSupportedException();
 
-                byte[] plainBytes = new byte[cipherWithoutTagBytes.Length];
-                aes.Decrypt(nonceBytes, cipherWithoutTagBytes, tagBytes, plainBytes, associatedDataBytes);
+                using (AesGcm aes = new AesGcm(keyBytes))
+                {
+                    byte[] cipherWithoutTagBytes = new byte[cipherBytes.Length - TAG_LENGTH_BYTE];
+                    byte[] tagBytes = new byte[TAG_LENGTH_BYTE];
+                    Buffer.BlockCopy(cipherBytes, 0, cipherWithoutTagBytes, 0, cipherWithoutTagBytes.Length);
+                    Buffer.BlockCopy(cipherBytes, cipherWithoutTagBytes.Length, tagBytes, 0, tagBytes.Length);
+
+                    byte[] plainBytes = new byte[cipherWithoutTagBytes.Length];
+                    aes.Decrypt(nonceBytes, cipherWithoutTagBytes, tagBytes, plainBytes, associatedDataBytes);
+                    return plainBytes;
+                }
+            }
+#endif
+            {
+                IBufferedCipher cipher = CipherUtilities.GetCipher($"AES/GCM/{paddingMode}");
+                ICipherParameters cipherParams = new AeadParameters(
+                    new KeyParameter(keyBytes),
+                    TAG_LENGTH_BYTE * 8,
+                    nonceBytes,
+                    associatedDataBytes
+                );
+                cipher.Init(false, cipherParams);
+                byte[] plainBytes = new byte[cipher.GetOutputSize(cipherBytes.Length)];
+                int len = cipher.ProcessBytes(cipherBytes, 0, cipherBytes.Length, plainBytes, 0);
+                cipher.DoFinal(plainBytes, len);
                 return plainBytes;
             }
-#else
-            IBufferedCipher cipher = CipherUtilities.GetCipher($"AES/GCM/{paddingMode}");
-            ICipherParameters cipherParams = new AeadParameters(
-                new KeyParameter(keyBytes),
-                TAG_LENGTH_BYTE * 8,
-                nonceBytes,
-                associatedDataBytes
-            );
-            cipher.Init(false, cipherParams);
-            byte[] plainBytes = new byte[cipher.GetOutputSize(cipherBytes.Length)];
-            int len = cipher.ProcessBytes(cipherBytes, 0, cipherBytes.Length, plainBytes, 0);
-            cipher.DoFinal(plainBytes, len);
-            return plainBytes;
-#endif
         }
 
         /// <summary>
@@ -204,32 +211,38 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             if (plainBytes is null) throw new ArgumentNullException(nameof(plainBytes));
 
 #if NET5_0_OR_GREATER
-            using (AesGcm aes = new AesGcm(keyBytes))
+            if (AesGcm.IsSupported)
             {
-                byte[] cipherBytes = new byte[plainBytes.Length];
-                byte[] tagBytes = new byte[TAG_LENGTH_BYTE];
-                aes.Encrypt(nonceBytes, plainBytes, cipherBytes, tagBytes, associatedDataBytes);
+                if (!string.Equals(paddingMode, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase))
+                    throw new NotSupportedException();
 
-                byte[] cipherWithTagBytes = new byte[cipherBytes.Length + tagBytes.Length];
-                Buffer.BlockCopy(cipherBytes, 0, cipherWithTagBytes, 0, cipherBytes.Length);
-                Buffer.BlockCopy(tagBytes, 0, cipherWithTagBytes, cipherBytes.Length, tagBytes.Length);
-                return cipherWithTagBytes;
+                using (AesGcm aes = new AesGcm(keyBytes))
+                {
+                    byte[] cipherBytes = new byte[plainBytes.Length];
+                    byte[] tagBytes = new byte[TAG_LENGTH_BYTE];
+                    aes.Encrypt(nonceBytes, plainBytes, cipherBytes, tagBytes, associatedDataBytes);
+
+                    byte[] cipherWithTagBytes = new byte[cipherBytes.Length + tagBytes.Length];
+                    Buffer.BlockCopy(cipherBytes, 0, cipherWithTagBytes, 0, cipherBytes.Length);
+                    Buffer.BlockCopy(tagBytes, 0, cipherWithTagBytes, cipherBytes.Length, tagBytes.Length);
+                    return cipherWithTagBytes;
+                }
             }
-#else
-
-            IBufferedCipher cipher = CipherUtilities.GetCipher($"AES/GCM/{paddingMode}");
-            ICipherParameters cipherParams = new AeadParameters(
-                new KeyParameter(keyBytes),
-                TAG_LENGTH_BYTE * 8,
-                nonceBytes,
-                associatedDataBytes
-            );
-            cipher.Init(true, cipherParams);
-            byte[] cipherBytes = new byte[cipher.GetOutputSize(plainBytes.Length)];
-            int len = cipher.ProcessBytes(plainBytes, 0, plainBytes.Length, cipherBytes, 0);
-            cipher.DoFinal(cipherBytes, len);
-            return cipherBytes;
 #endif
+            {
+                IBufferedCipher cipher = CipherUtilities.GetCipher($"AES/GCM/{paddingMode}");
+                ICipherParameters cipherParams = new AeadParameters(
+                    new KeyParameter(keyBytes),
+                    TAG_LENGTH_BYTE * 8,
+                    nonceBytes,
+                    associatedDataBytes
+                );
+                cipher.Init(true, cipherParams);
+                byte[] cipherBytes = new byte[cipher.GetOutputSize(plainBytes.Length)];
+                int len = cipher.ProcessBytes(plainBytes, 0, plainBytes.Length, cipherBytes, 0);
+                cipher.DoFinal(cipherBytes, len);
+                return cipherBytes;
+            }
         }
 
         /// <summary>

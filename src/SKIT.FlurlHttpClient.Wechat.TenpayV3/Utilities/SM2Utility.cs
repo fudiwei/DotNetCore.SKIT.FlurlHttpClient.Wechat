@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             return Convert.FromBase64String(publicKeyPem);
         }
 
-        private static X509Certificate ConvertCertificatePemToX509(string certificatePem)
+        private static X509Certificate ParseCertificatePemToX509(string certificatePem)
         {
             using (TextReader sreader = new StringReader(certificatePem))
             {
@@ -726,7 +726,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 
             using (TextWriter swriter = new StringWriter())
             {
-                X509Certificate x509cert = ConvertCertificatePemToX509(certificatePem);
+                X509Certificate x509cert = ParseCertificatePemToX509(certificatePem);
                 ECPublicKeyParameters exPublicKeyParams = (ECPublicKeyParameters)x509cert.GetPublicKey();
                 PemWriter pemWriter = new PemWriter(swriter);
                 pemWriter.WriteObject(exPublicKeyParams);
@@ -744,7 +744,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (certificatePem is null) throw new ArgumentNullException(nameof(certificatePem));
 
-            X509Certificate x509cert = ConvertCertificatePemToX509(certificatePem);
+            X509Certificate x509cert = ParseCertificatePemToX509(certificatePem);
             return x509cert.SerialNumber.ToString(16);
         }
 
@@ -757,7 +757,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (certificatePem is null) throw new ArgumentNullException(nameof(certificatePem));
 
-            X509Certificate x509cert = ConvertCertificatePemToX509(certificatePem);
+            X509Certificate x509cert = ParseCertificatePemToX509(certificatePem);
             return new DateTimeOffset(x509cert.NotBefore);
         }
 
@@ -770,7 +770,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
         {
             if (certificatePem is null) throw new ArgumentNullException(nameof(certificatePem));
 
-            X509Certificate x509cert = ConvertCertificatePemToX509(certificatePem);
+            X509Certificate x509cert = ParseCertificatePemToX509(certificatePem);
             return new DateTimeOffset(x509cert.NotAfter);
         }
 

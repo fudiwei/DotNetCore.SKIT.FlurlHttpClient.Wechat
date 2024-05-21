@@ -75,13 +75,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness.Interceptors
                     {
                         try
                         {
-                            sign = Utilities.RSAUtility.Sign(_platformCertPk, signData).Value!;
+                            sign = Utilities.RSAUtility.SignWithSHA256(_platformCertPk, signData).Value!;
 
                             if (softSignRequired)
                             {
                                 byte[] keyBytes = EncodedString.FromBase64String(_enterpriseCertPk!);
                                 byte[] msgBytes = EncodedString.FromBase64String(sign);
-                                softSign = EncodedString.ToBase64String(Utilities.RSAUtility.Sign(keyBytes, msgBytes)).Value!;
+                                softSign = EncodedString.ToBase64String(Utilities.RSAUtility.SignWithSHA256(keyBytes, msgBytes)).Value!;
                             }
                         }
                         catch (Exception ex)
