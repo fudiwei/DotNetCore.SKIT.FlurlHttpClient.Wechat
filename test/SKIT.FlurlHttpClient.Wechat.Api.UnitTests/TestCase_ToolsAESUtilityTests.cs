@@ -18,5 +18,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 
             Assert.Equal(expectedPlainData, actualPlainData, ignoreCase: true);
         }
+
+        [Fact(DisplayName = "测试用例：AES-GCM 加密")]
+        public void TestAESGCMEncrypt()
+        {
+            string key = "b302fd4719dd26523d555e6fe392b91a";
+            string nonce = "b302fd4719dd";
+            string aad = "26523d555e6fe392b91a";
+            string plainText = "Awesome SKIT.FlurlHttpClient.Wechat.Api!";
+
+            string actualPlain = Utilities.AESUtility.EncryptWithGCM(encodingKey: new EncodedString(key, EncodingKinds.Literal), encodingNonce: new EncodedString(nonce, EncodingKinds.Literal), encodingAssociatedData: new EncodedString(aad, EncodingKinds.Literal), plainData: plainText)!;
+            string expectedPlain = "bUGHWv7V1+rMtfIx4pIhD95i3J72AK+K1I0vsxBNWAUq8JLjUJ1iSY79kdqp2LCDe4IuOpPxXC0=";
+
+            Assert.Equal(expectedPlain, actualPlain);
+        }
+
+        [Fact(DisplayName = "测试用例：AES-GCM 解密")]
+        public void TestAESGCMDecrypt()
+        {
+            string key = "b302fd4719dd26523d555e6fe392b91a";
+            string nonce = "b302fd4719dd";
+            string aad = "26523d555e6fe392b91a";
+            string cipherText = "bUGHWv7V1+rMtfIx4pIhD95i3J72AK+K1I0vsxBNWAUq8JLjUJ1iSY79kdqp2LCDe4IuOpPxXC0=";
+
+            string actualPlain = Utilities.AESUtility.DecryptWithGCM(encodingKey: new EncodedString(key, EncodingKinds.Literal), encodingNonce: new EncodedString(nonce, EncodingKinds.Literal), encodingAssociatedData: new EncodedString(aad, EncodingKinds.Literal), encodingCipher: new EncodedString(cipherText, EncodingKinds.Base64))!;
+            string expectedPlain = "Awesome SKIT.FlurlHttpClient.Wechat.Api!";
+
+            Assert.Equal(expectedPlain, actualPlain);
+        }
     }
 }
