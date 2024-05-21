@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Security.Cryptography;
 using System.Text.RegularExpressions;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
@@ -22,7 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 
         private static byte[] ConvertPrivateKeyPemToByteArray(string privateKeyPem)
         {
-            if (!privateKeyPem.StartsWith("-----BEGIN PRIVATE KEY-----"))
+            const string PKCS8_HEADER = "-----BEGIN PRIVATE KEY-----";
+            const string PKCS8_FOOTER = "-----END PRIVATE KEY-----";
+
+            if (!privateKeyPem.StartsWith(PKCS8_HEADER))
             {
                 using (TextReader textReader = new StringReader(privateKeyPem))
                 using (PemReader pemReader = new PemReader(textReader))
@@ -55,8 +59,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
             }
 
             privateKeyPem = privateKeyPem
-                .Replace("-----BEGIN PRIVATE KEY-----", string.Empty)
-                .Replace("-----END PRIVATE KEY-----", string.Empty);
+                .Replace(PKCS8_HEADER, string.Empty)
+                .Replace(PKCS8_FOOTER, string.Empty);
             privateKeyPem = Regex.Replace(privateKeyPem, "\\s+", string.Empty);
             return Convert.FromBase64String(privateKeyPem);
         }
@@ -71,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         /// <summary>
         /// 使用私钥基于 ECB 模式解密数据。
         /// </summary>
-        /// <param name="privateKeyBytes">PKCS#1/PKCS#8 私钥字节数组。</param>
+        /// <param name="privateKeyBytes">PKCS#8 私钥字节数组。</param>
         /// <param name="cipherBytes">待解密的数据字节数组。</param>
         /// <param name="paddingMode">填充模式。（默认值：<see cref="PADDING_MODE_PKCS1"/>）</param>
         /// <returns>解密后的数据字节数组。</returns>
@@ -79,6 +83,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
         {
             if (privateKeyBytes is null) throw new ArgumentNullException(nameof(privateKeyBytes));
             if (cipherBytes is null) throw new ArgumentNullException(nameof(cipherBytes));
+
+#if NET5_0_OR_GREATER
+            if (string.Equals(paddingMode, PADDING_MODE_PKCS1, StringComparison.OrdinalIgnoreCase))
+            {
+                using (RSA rsa = RSA.Create())
+                {
+                    rsa.ImportPkcs8PrivateKey(privateKeyBytes, out _);
+                    return rsa.Decrypt(cipherBytes, RSAEncryptionPadding.Pkcs1);
+                }
+            }
+#endif
 
             RsaKeyParameters rsaPrivateKeyParams = (RsaKeyParameters)PrivateKeyFactory.CreateKey(privateKeyBytes);
             return DecryptWithECB(rsaPrivateKeyParams, cipherBytes, paddingMode);

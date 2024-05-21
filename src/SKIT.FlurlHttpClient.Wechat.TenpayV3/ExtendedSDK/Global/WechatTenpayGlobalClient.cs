@@ -78,10 +78,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="httpContent"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public new Task<T> SendFlurlRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
+        public async new Task<T> SendFlurlRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
             where T : WechatTenpayGlobalResponse, new()
         {
-            return base.SendFlurlRequestAsync<T>(flurlRequest, httpContent, cancellationToken);
+            if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
+
+            using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
+            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -92,10 +95,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="data"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public new Task<T> SendFlurlRequestAsJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
+        public async new Task<T> SendFlurlRequestAsJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
             where T : WechatTenpayGlobalResponse, new()
         {
-            return base.SendFlurlRequestAsJsonAsync<T>(flurlRequest, data, cancellationToken);
+            if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
+
+            bool isSimpleRequest = data is null ||
+                flurlRequest.Verb == HttpMethod.Get ||
+                flurlRequest.Verb == HttpMethod.Head ||
+                flurlRequest.Verb == HttpMethod.Options;
+            using IFlurlResponse flurlResponse = isSimpleRequest ?
+                await base.SendFlurlRequestAsync(flurlRequest, null, cancellationToken).ConfigureAwait(false) :
+                await base.SendFlurlRequestAsJsonAsync(flurlRequest, data, cancellationToken).ConfigureAwait(false);
+            return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
+        }
+
+        private new async Task<TResponse> WrapFlurlResponseAsJsonAsync<TResponse>(IFlurlResponse flurlResponse, CancellationToken cancellationToken = default)
+            where TResponse : WechatTenpayGlobalResponse, new()
+        {
+            TResponse result = await base.WrapFlurlResponseAsJsonAsync<TResponse>(flurlResponse, cancellationToken).ConfigureAwait(false);
+
+            if (AutoDecryptResponseSensitiveProperty && result.IsSuccessful())
+            {
+                this.DecryptResponseSensitiveProperty(result);
+            }
+
+            return result;
         }
     }
 }

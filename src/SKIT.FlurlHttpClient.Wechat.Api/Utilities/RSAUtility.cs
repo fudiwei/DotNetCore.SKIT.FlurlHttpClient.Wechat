@@ -23,7 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 
         private static byte[] ConvertPrivateKeyPemToByteArray(string privateKeyPem)
         {
-            if (!privateKeyPem.StartsWith("-----BEGIN PRIVATE KEY-----"))
+            const string PKCS8_HEADER = "-----BEGIN PRIVATE KEY-----";
+            const string PKCS8_FOOTER = "-----END PRIVATE KEY-----";
+
+            if (!privateKeyPem.StartsWith(PKCS8_HEADER))
             {
                 using (TextReader textReader = new StringReader(privateKeyPem))
                 using (PemReader pemReader = new PemReader(textReader))
@@ -56,15 +59,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             }
 
             privateKeyPem = privateKeyPem
-                .Replace("-----BEGIN PRIVATE KEY-----", string.Empty)
-                .Replace("-----END PRIVATE KEY-----", string.Empty);
+                .Replace(PKCS8_HEADER, string.Empty)
+                .Replace(PKCS8_FOOTER, string.Empty);
             privateKeyPem = Regex.Replace(privateKeyPem, "\\s+", string.Empty);
             return Convert.FromBase64String(privateKeyPem);
         }
 
         private static byte[] ConvertPublicKeyPemToByteArray(string publicKeyPem)
         {
-            if (!publicKeyPem.StartsWith("-----BEGIN PUBLIC KEY-----"))
+            const string PKCS8_HEADER = "-----BEGIN PUBLIC KEY-----";
+            const string PKCS8_FOOTER = "-----END PUBLIC KEY-----";
+
+            if (!publicKeyPem.StartsWith(PKCS8_HEADER))
             {
                 using (TextReader textReader = new StringReader(publicKeyPem))
                 using (PemReader pemReader = new PemReader(textReader))
@@ -91,8 +97,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             }
 
             publicKeyPem = publicKeyPem
-                .Replace("-----BEGIN PUBLIC KEY-----", string.Empty)
-                .Replace("-----END PUBLIC KEY-----", string.Empty);
+                .Replace(PKCS8_HEADER, string.Empty)
+                .Replace(PKCS8_FOOTER, string.Empty);
             publicKeyPem = Regex.Replace(publicKeyPem, "\\s+", string.Empty);
             return Convert.FromBase64String(publicKeyPem);
         }

@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
                                 break;
                             }
 
-                            bool valid = Utilities.RSAUtility.Verify(
+                            bool valid = Utilities.RSAUtility.VerifyWithSHA256(
                                 publicKeyPem: client.Credentials.TBEPCertificatePublicKey,
                                 messageData: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
                                 encodingSignature: new EncodedString(strSignature, EncodingKinds.Base64)
