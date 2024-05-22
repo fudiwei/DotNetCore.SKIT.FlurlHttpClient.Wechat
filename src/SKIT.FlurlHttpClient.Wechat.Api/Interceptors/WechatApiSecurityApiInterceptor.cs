@@ -23,6 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
          *   https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/getting_started/api_signature.html
          *   https://developers.weixin.qq.com/community/develop/article/doc/00028ca675c708b23f100b8e161013
          *   https://developers.weixin.qq.com/community/develop/article/doc/000e68b8038ed8796f00f6c2f68c13
+         *   https://wxaintpcos.wxqcloud.qq.com.cn/public/tmp/apitool.py
          */
         private static readonly ISet<string> SIGN_REQUIRED_URLS = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
@@ -88,19 +89,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
         private readonly string _appId;
         private readonly string _symmetricAlg;
         private readonly string _symmetricNum;
-        private readonly string _symmetricKey;
+        private readonly string _symmetricEncodingKey;
         private readonly string _asymmetricAlg;
         private readonly string _asymmetricNum;
         private readonly string _asymmetricPrivateKey;
         private readonly Func<string, bool>? _customRequestPathMatcher;
 
-        public WechatApiSecurityApiInterceptor(string baseUrl, string appId, string symmetricAlg, string symmetricNum, string symmetricKey, string asymmetricAlg, string asymmetricNum, string asymmetricPrivateKey, Func<string, bool>? customRequestPathMatcher)
+        public WechatApiSecurityApiInterceptor(string baseUrl, string appId, string symmetricAlg, string symmetricNum, string symmetricEncodingKey, string asymmetricAlg, string asymmetricNum, string asymmetricPrivateKey, Func<string, bool>? customRequestPathMatcher)
         {
             _baseUrl = baseUrl;
             _appId = appId;
             _symmetricAlg = symmetricAlg;
             _symmetricNum = symmetricNum;
-            _symmetricKey = symmetricKey;
+            _symmetricEncodingKey = symmetricEncodingKey;
             _asymmetricAlg = asymmetricAlg;
             _asymmetricNum = asymmetricNum;
             _asymmetricPrivateKey = asymmetricPrivateKey;
@@ -116,10 +117,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                 return;
             if (context.FlurlCall.HttpRequestMessage.RequestUri is null)
                 return;
-            if (!IsRequestUrlRequireEncryption(context.FlurlCall.HttpRequestMessage.RequestUri))
+            if (!IsRequestUrlPathMatched(context.FlurlCall.HttpRequestMessage.RequestUri))
                 return;
 
-            string urlpath = GetRequestUrl(context.FlurlCall.HttpRequestMessage.RequestUri);
+            string urlpath = GetRequestUrlPath(context.FlurlCall.HttpRequestMessage.RequestUri);
             string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
             string postData = "{}";
             string postDataEncrypted;
@@ -140,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
             }
 
             // 对称加密
-            if (string.IsNullOrEmpty(_symmetricKey))
+            if (string.IsNullOrEmpty(_symmetricEncodingKey))
             {
                 throw new WechatApiException("Failed to encrypt request, because the AES/SM4 key is not set.");
             }
@@ -180,7 +181,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                             {
                                 const int TAG_LENGTH_BYTE = 16;
                                 byte[] cipherBytes = Utilities.AESUtility.EncryptWithGCM(
-                                    keyBytes: Convert.FromBase64String(_symmetricKey),
+                                    keyBytes: Convert.FromBase64String(_symmetricEncodingKey),
                                     nonceBytes: Convert.FromBase64String(nonce),
                                     associatedDataBytes: Encoding.UTF8.GetBytes(associatedData),
                                     plainBytes: Encoding.UTF8.GetBytes(plainData)
@@ -207,7 +208,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                             {
                                 const int TAG_LENGTH_BYTE = 16;
                                 byte[] cipherBytes = Utilities.SM4Utility.EncryptWithGCM(
-                                    keyBytes: Convert.FromBase64String(_symmetricKey),
+                                    keyBytes: Convert.FromBase64String(_symmetricEncodingKey),
                                     nonceBytes: Convert.FromBase64String(nonce),
                                     associatedDataBytes: Encoding.UTF8.GetBytes(associatedData),
                                     plainBytes: Encoding.UTF8.GetBytes(plainData)
@@ -250,7 +251,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
             }
             else
             {
-                string signData = $"{urlpath}\n{_appId}\n{timestamp}\n{postDataEncrypted}";
+                string signData = GenerateAymmetricSigningData(urlpath, _appId, timestamp, postDataEncrypted);
                 string sign;
 
                 switch (_asymmetricAlg)
@@ -300,12 +301,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                 return;
             if (context.FlurlCall.HttpRequestMessage.RequestUri is null)
                 return;
-            if (!IsRequestUrlRequireEncryption(context.FlurlCall.HttpRequestMessage.RequestUri))
+            if (!IsRequestUrlPathMatched(context.FlurlCall.HttpRequestMessage.RequestUri))
                 return;
             if (context.FlurlCall.HttpResponseMessage is null)
                 return;
 
-            string urlpath = GetRequestUrl(context.FlurlCall.HttpRequestMessage.RequestUri);
+            string urlpath = GetRequestUrlPath(context.FlurlCall.HttpRequestMessage.RequestUri);
             byte[] respBytes = Array.Empty<byte>();
             if (context.FlurlCall.HttpResponseMessage.Content is not null)
             {
@@ -319,7 +320,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
             }
 
             // 对称解密
-            if (string.IsNullOrEmpty(_symmetricKey))
+            if (string.IsNullOrEmpty(_symmetricEncodingKey))
             {
                 throw new WechatApiException("Failed to decrypt response, because the AES/SM4 key is not set.");
             }
@@ -368,7 +369,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                                     Buffer.BlockCopy(authtagBytes, 0, cipherBytes, encdataBytes.Length, authtagBytes.Length);
 
                                     respBytesDecrypted = Utilities.AESUtility.DecryptWithGCM(
-                                        keyBytes: Convert.FromBase64String(_symmetricKey),
+                                        keyBytes: Convert.FromBase64String(_symmetricEncodingKey),
                                         nonceBytes: Convert.FromBase64String(sIV!),
                                         associatedDataBytes: Encoding.UTF8.GetBytes(associatedData),
                                         cipherBytes: cipherBytes
@@ -392,7 +393,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                                     Buffer.BlockCopy(authtagBytes, 0, cipherBytes, encdataBytes.Length, authtagBytes.Length);
 
                                     respBytesDecrypted = Utilities.SM4Utility.DecryptWithGCM(
-                                        keyBytes: Convert.FromBase64String(_symmetricKey),
+                                        keyBytes: Convert.FromBase64String(_symmetricEncodingKey),
                                         nonceBytes: Convert.FromBase64String(sIV!),
                                         associatedDataBytes: Encoding.UTF8.GetBytes(associatedData),
                                         cipherBytes: cipherBytes
@@ -427,14 +428,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
             return $"{urlpath}|{appId}|{timestamp}|{_symmetricNum}";
         }
 
-        private string GetRequestUrl(Uri uri)
+        private string GenerateAymmetricSigningData(string urlpath, string appId, string timestamp, string postdata)
+        {
+            return $"{urlpath}\n{appId}\n{timestamp}\n{postdata}";
+        }
+
+        private string GetRequestUrlPath(Uri uri)
         {
             return uri.AbsoluteUri.Substring(0, uri.AbsoluteUri.Length - uri.Query.Length);
         }
 
-        private bool IsRequestUrlRequireEncryption(Uri uri)
+        private bool IsRequestUrlPathMatched(Uri uri)
         {
-            string absoluteUrl = GetRequestUrl(uri);
+            string absoluteUrl = GetRequestUrlPath(uri);
             if (!absoluteUrl.StartsWith(_baseUrl))
                 return false;
 

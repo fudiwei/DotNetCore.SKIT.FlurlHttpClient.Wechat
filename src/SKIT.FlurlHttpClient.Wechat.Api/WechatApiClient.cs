@@ -45,10 +45,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             {
                 Interceptors.Add(new Interceptors.WechatApiSecurityApiInterceptor(
                     baseUrl: FlurlClient.BaseUrl,
-                    appId: string.IsNullOrEmpty(options.SecurityApiAppId) ? options.AppId : options.SecurityApiAppId,
+                    appId: string.IsNullOrEmpty(options.SecurityApiAppId) ? options.AppId : options.SecurityApiAppId!,
                     symmetricAlg: options.SecurityApiSymmetricAlgorithm!,
                     symmetricNum: options.SecurityApiSymmetricNumber!,
-                    symmetricKey: options.SecurityApiSymmetricKey!,
+                    symmetricEncodingKey: options.SecurityApiSymmetricEncodingKey!,
                     asymmetricAlg: options.SecurityApiAsymmetricAlgorithm!,
                     asymmetricNum: options.SecurityApiAsymmetricNumber!,
                     asymmetricPrivateKey: options.SecurityApiAsymmetricPrivateKey!,

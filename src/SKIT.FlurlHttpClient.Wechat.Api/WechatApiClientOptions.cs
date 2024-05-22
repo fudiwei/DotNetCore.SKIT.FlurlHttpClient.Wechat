@@ -102,9 +102,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public string? SecurityApiSymmetricNumber { get; set; }
 
         /// <summary>
-        /// 获取或设置 API 安全鉴权模式对称加密密钥。
+        /// 获取或设置 API 安全鉴权模式对称加密密钥（经过 Base64 编码）。
         /// </summary>
-        public string? SecurityApiSymmetricKey { get; set; }
+        public string? SecurityApiSymmetricEncodingKey { get; set; }
 
         /// <summary>
         /// 获取或设置 API 安全鉴权模式非对称加密算法。
