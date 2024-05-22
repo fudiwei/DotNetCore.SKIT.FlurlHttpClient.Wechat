@@ -1,3 +1,5 @@
+using System;
+using System.Text;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
@@ -45,6 +47,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
             string expectedPlain = "Awesome SKIT.FlurlHttpClient.Wechat.Api!";
 
             Assert.Equal(expectedPlain, actualPlain);
+
+            // 以下是根据微信官方文档提供的示例数据的测试用例
+            {
+                string wxsampleKey = "otUpngOjU+nVQaWJIC3D/yMLV17RKaP6t4Ot9tbnzLY=";
+                string wxsampleNonce = "r2WDQt56rEAmMuoR";
+                string wxsampleAad = "https://api.weixin.qq.com/wxa/getuserriskrank|wxba6223c06417af7b|1635927956|fa05fe1e5bcc79b81ad5ad4b58acf787";
+                string wxsampleData = "HExs66Ik3el+iM4IpeQ7SMEN934FRLFYOd3EmeaIrpP4EPTHckoco6O+PaoRZRa3lqaPRZT7r52f7LUok6gLxc6cdR8C4vpIIfh4xfLC4L7FNy9GbuMK1hcoi8b7gkWJcwZMkuCFNEDmqn3T49oWzAQOrY4LZnnnykv6oUJotdAsnKvmoJkLK7hRh7M2B1d2UnTnRuoIyarXc5Iojwoghx4BOvnV";
+                string wxsampleTag = "z2BFD8QctKXTuBlhICGOjQ==";
+
+                byte[] keyBytes = Convert.FromBase64String(wxsampleKey);
+                byte[] nonceBytes = Convert.FromBase64String(wxsampleNonce);
+                byte[] aadBytes = Encoding.UTF8.GetBytes(wxsampleAad);
+                byte[] encdataBytes = Convert.FromBase64String(wxsampleData);
+                byte[] authtagBytes = Convert.FromBase64String(wxsampleTag);
+                byte[] cipherBytes = new byte[encdataBytes.Length + authtagBytes.Length];
+                Buffer.BlockCopy(encdataBytes, 0, cipherBytes, 0, encdataBytes.Length);
+                Buffer.BlockCopy(authtagBytes, 0, cipherBytes, encdataBytes.Length, authtagBytes.Length);
+
+                byte[] plainBytes = Utilities.AESUtility.DecryptWithGCM(keyBytes, nonceBytes, aadBytes, cipherBytes);
+                string plainData = Encoding.UTF8.GetString(plainBytes).Trim();
+                Assert.True(plainData.StartsWith("{") && plainData.EndsWith("}"));
+            }
         }
     }
 }

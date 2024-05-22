@@ -40,6 +40,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             FlurlClient.BaseUrl = options.Endpoint ?? WechatApiEndpoints.DEFAULT;
             FlurlClient.WithTimeout(options.Timeout <= 0 ? Timeout.InfiniteTimeSpan : TimeSpan.FromMilliseconds(options.Timeout));
+
+            if (options.SecurityApiEnabled)
+            {
+                Interceptors.Add(new Interceptors.WechatApiSecurityApiInterceptor(
+                    baseUrl: FlurlClient.BaseUrl,
+                    appId: string.IsNullOrEmpty(options.SecurityApiAppId) ? options.AppId : options.SecurityApiAppId,
+                    symmetricAlg: options.SecurityApiSymmetricAlgorithm!,
+                    symmetricNum: options.SecurityApiSymmetricNumber!,
+                    symmetricKey: options.SecurityApiSymmetricKey!,
+                    asymmetricAlg: options.SecurityApiAsymmetricAlgorithm!,
+                    asymmetricNum: options.SecurityApiAsymmetricNumber!,
+                    asymmetricPrivateKey: options.SecurityApiAsymmetricPrivateKey!,
+                    customRequestPathMatcher: options.SecurityApiCustomRequestPathMatcher
+                ));
+            }
         }
 
         /// <summary>
