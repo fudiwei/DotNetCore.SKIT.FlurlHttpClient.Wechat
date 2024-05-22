@@ -33,6 +33,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.2.0 (2024-05-22)
+
+    -   **新增**：支持 API 安全鉴权模式接入。（_via_ [Gitee #I9F3X5](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/I9F3X5)）
+
+    -   **新增**：随官方更新视频号小店商品相关接口模型。
+
+    -   **变更**：移除部分已标记为废弃的接口及模型。
+
 -   Release 3.1.0 (2024-04-29)
 
     -   **新增**：新增短剧媒资管理账号授权相关接口。
