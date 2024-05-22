@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Linq;
 using System.Text.RegularExpressions;
 using Org.BouncyCastle.Asn1;
@@ -7,9 +8,11 @@ using Org.BouncyCastle.Asn1.X9;
 using Org.BouncyCastle.Crypto;
 using Org.BouncyCastle.Crypto.Parameters;
 using Org.BouncyCastle.Math;
+using Org.BouncyCastle.OpenSsl;
 using Org.BouncyCastle.Security;
 using Org.BouncyCastle.Utilities;
 using Org.BouncyCastle.Utilities.Encoders;
+using Org.BouncyCastle.X509;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
@@ -42,6 +45,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
                 .Replace("-----END PUBLIC KEY-----", string.Empty);
             publicKeyPem = Regex.Replace(publicKeyPem, "\\s+", string.Empty);
             return Convert.FromBase64String(publicKeyPem);
+        }
+
+        private static X509Certificate ParseCertificatePemToX509(string certificatePem)
+        {
+            using (TextReader sreader = new StringReader(certificatePem))
+            {
+                PemReader pemReader = new PemReader(sreader);
+                return (X509Certificate)pemReader.ReadObject();
+            }
         }
 
         private static ECPrivateKeyParameters ParsePrivateKeyToParameters(byte[] privateKeyBytes)
@@ -219,6 +231,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         }
 
         /// <summary>
+        /// 使用私钥基于 SM3 算法生成签名。
+        /// </summary>
+        /// <param name="privateKeyPem">PKCS#8 私钥（PEM 格式）。</param>
+        /// <param name="uidData">用户标识符。</param>
+        /// <param name="messageData">待签名的数据。</param>
+        /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
+        /// <returns>经过 Base64 编码的签名。</returns>
+        public static EncodedString SignWithSM3(string privateKeyPem, string uidData, string messageData, bool asn1Encoding = true)
+        {
+            if (privateKeyPem is null) throw new ArgumentNullException(nameof(privateKeyPem));
+            if (messageData is null) throw new ArgumentNullException(nameof(messageData));
+
+            byte[] signBytes = SignWithSM3(
+                privateKeyBytes: ConvertPrivateKeyPemToByteArray(privateKeyPem),
+                uidBytes: EncodedString.FromLiteralString(uidData),
+                messageBytes: EncodedString.FromLiteralString(messageData),
+                asn1Encoding: asn1Encoding
+            );
+            return EncodedString.ToBase64String(signBytes);
+        }
+
+        /// <summary>
         /// 使用 EC 私钥基于 SM3 算法生成签名。
         /// </summary>
         /// <param name="ecPrivateKeyBytes">EC 私钥字节数组。</param>
@@ -354,6 +388,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
         }
 
         /// <summary>
+        /// 使用证书基于 SM3 算法验证签名。
+        /// </summary>
+        /// <param name="certificatePem">证书内容（PEM 格式）。</param>
+        /// <param name="messageData">待验证的数据。</param>
+        /// <param name="encodingSignature">经过编码后的（通常为 Base64）签名。</param>
+        /// <param name="asn1Encoding">指示签名结果是否为 ASN.1 编码的形式。（默认值：true）</param>
+        /// <returns>验证结果。</returns>
+        public static bool VerifyWithSM3ByCertificate(string certificatePem, string messageData, EncodedString encodingSignature, bool asn1Encoding = true)
+        {
+            if (certificatePem is null) throw new ArgumentNullException(nameof(certificatePem));
+
+            string publicKeyPem = ExportPublicKeyFromCertificate(certificatePem);
+            return VerifyWithSM3(
+                publicKeyPem: publicKeyPem,
+                messageData: messageData,
+                encodingSignature: encodingSignature,
+                asn1Encoding: asn1Encoding
+            );
+        }
+
+        /// <summary>
         /// 使用 EC 公钥基于 SM3 算法生成签名。
         /// </summary>
         /// <param name="ecPublicKeyBytes">EC 公钥字节数组。</param>
@@ -432,6 +487,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
                 signBytes: signBytes,
                 asn1Encoding: asn1Encoding
             );
+        }
+
+        /// <summary>
+        /// <para>从 CRT/CER 证书中导出 PKCS#8 公钥。</para>
+        /// <para>
+        ///     即从 -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----
+        ///     转为 -----BEGIN PUBLIC KEY----- ..... -----END PUBLIC KEY-----
+        /// </para>
+        /// </summary>
+        /// <param name="certificatePem">证书内容（PEM 格式）。</param>
+        /// <returns>PKCS#8 公钥（PEM 格式）。</returns>
+        public static string ExportPublicKeyFromCertificate(string certificatePem)
+        {
+            if (certificatePem is null) throw new ArgumentNullException(nameof(certificatePem));
+
+            using (TextWriter swriter = new StringWriter())
+            {
+                X509Certificate x509cert = ParseCertificatePemToX509(certificatePem);
+                ECPublicKeyParameters exPublicKeyParams = (ECPublicKeyParameters)x509cert.GetPublicKey();
+                PemWriter pemWriter = new PemWriter(swriter);
+                pemWriter.WriteObject(exPublicKeyParams);
+                pemWriter.Writer.Flush();
+                return swriter.ToString()!;
+            }
         }
     }
 }
