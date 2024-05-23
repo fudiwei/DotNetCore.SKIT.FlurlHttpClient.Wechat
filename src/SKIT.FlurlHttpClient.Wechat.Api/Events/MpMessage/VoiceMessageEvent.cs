@@ -34,6 +34,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         public string MediaId { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置 16K 采样率的语音消息 MediaId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("MediaId16K")]
+        [System.Text.Json.Serialization.JsonPropertyName("MediaId16K")]
+        [System.Xml.Serialization.XmlElement("MediaId16K", IsNullable = true)]
+        public string? MediaId16K { get; set; }
+
+        /// <summary>
         /// 获取或设置消息数据 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("MsgDataId")]
