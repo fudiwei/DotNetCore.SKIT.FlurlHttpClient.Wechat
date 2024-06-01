@@ -135,7 +135,19 @@
                             "new_end": 1570593600,
                             "new_duration": 86400
                         },
-                        "type": 4
+                        "type": 4,
+                        "slice_info": {
+                            "day_items": [
+                                {
+                                    "daytime": 1713801600,
+                                    "duration": 84400
+                                },
+                                {
+                                    "daytime": 1713888000,
+                                    "duration": 86400
+                                }
+                            ]
+                        }
                     },
                     "location": {
                         "latitude": "30.547239",

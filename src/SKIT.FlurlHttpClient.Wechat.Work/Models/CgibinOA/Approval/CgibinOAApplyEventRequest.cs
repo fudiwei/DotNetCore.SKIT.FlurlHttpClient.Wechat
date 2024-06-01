@@ -340,6 +340,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                     public class DateRange : DateRangeControlValue
                                     {
                                     }
+
+                                    public class Slice
+                                    {
+                                        public static class Types
+                                        {
+                                            public class DayItem
+                                            {
+                                                /// <summary>
+                                                /// 获取或设置当天零点时间戳。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("daytime")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("daytime")]
+                                                public long DayTimestamp { get; set; }
+
+                                                /// <summary>
+                                                /// 获取或设置时长（单位：秒）。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("duration")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("duration")]
+                                                public int Duration { get; set; }
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置每一天的分片时长列表。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("day_items")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("day_items")]
+                                        public IList<Types.DayItem> DayItems { get; set; } = new List<Types.DayItem>();
+                                    }
                                 }
 
                                 /// <summary>
@@ -355,6 +385,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [Newtonsoft.Json.JsonProperty("date_range")]
                                 [System.Text.Json.Serialization.JsonPropertyName("date_range")]
                                 public Types.DateRange DateRange { get; set; } = new Types.DateRange();
+
+                                /// <summary>
+                                /// 获取或设置时长按天分片信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("slice_info")]
+                                [System.Text.Json.Serialization.JsonPropertyName("slice_info")]
+                                public Types.Slice? Slice { get; set; }
                             }
 
                             public class VacationControlValue
