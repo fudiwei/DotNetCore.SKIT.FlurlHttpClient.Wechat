@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "items": [
+        {
+            "chat_id": "xxxxxx",
+            "new_chat_id": "XXXXXX"
+        },
+        {
+            "chat_id": "yyyyyy",
+            "new_chat_id": "yyyyyy"
+        }
+    ],
+    "invalid_chat_id_list": [ "zzzzzz" ]
+}

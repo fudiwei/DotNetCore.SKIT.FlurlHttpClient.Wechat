@@ -126,5 +126,74 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinIdConvertConvertTempExternalUserIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/idconvert/apply_to_upgrade_chatid 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99601 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinIdConvertApplyToUpgradeChatIdResponse> ExecuteCgibinIdConvertApplyToUpgradeChatIdAsync(this WechatWorkClient client, Models.CgibinIdConvertApplyToUpgradeChatIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "idconvert", "apply_to_upgrade_chatid")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinIdConvertApplyToUpgradeChatIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/idconvert/chatid 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99601 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinIdConvertChatIdResponse> ExecuteCgibinIdConvertChatIdAsync(this WechatWorkClient client, Models.CgibinIdConvertChatIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "idconvert", "chatid")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinIdConvertChatIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/idconvert/upgrade_chatid_for_new_corp 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/99601 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinIdConvertUpgradeChatIdForNewCorpResponse> ExecuteCgibinIdConvertUpgradeChatIdForNewCorpAsync(this WechatWorkClient client, Models.CgibinIdConvertUpgradeChatIdForNewCorpRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "idconvert", "upgrade_chatid_for_new_corp")
+                .SetQueryParam("suite_access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinIdConvertUpgradeChatIdForNewCorpResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
     }
 }
