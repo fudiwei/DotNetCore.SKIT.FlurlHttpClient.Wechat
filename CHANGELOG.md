@@ -1569,6 +1569,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.2.0 (2024-06-01)
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.4.0。
+
 -   Release 3.1.0 (2024-05-17)
 
     -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.3.1。
