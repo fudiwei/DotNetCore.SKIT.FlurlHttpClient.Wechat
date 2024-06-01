@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -28,6 +28,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
             public class AuthorizerCorp : DealerCorp
             {
+                public static class Types
+                {
+                    public class CorpExtraName
+                    {
+                        /// <summary>
+                        /// 获取或设置企业简称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name_list")]
+                        public string Names { get; set; } = default!;
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置企业类型。
                 /// </summary>
@@ -111,6 +124,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("location")]
                 [System.Text.Json.Serialization.JsonPropertyName("location")]
                 public string? Location { get; set; }
+
+                /// <summary>
+                /// 获取或设置企业其他简称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("corp_ex_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("corp_ex_name")]
+                public Types.CorpExtraName? CorpExtraName { get; set; } = default!;
             }
 
             public class Authorization

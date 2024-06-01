@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "dealer_corp_info": {
@@ -19,7 +19,10 @@
         "corp_scale": "1-50人",
         "corp_industry": "IT服务",
         "corp_sub_industry": "计算机软件/硬件/信息服务",
-        "location": "广东省广州市"
+        "location": "广东省广州市",
+        "corp_ex_name": {
+            "name_list": "xx"
+        }
     },
     "auth_info": {
         "agent": [
