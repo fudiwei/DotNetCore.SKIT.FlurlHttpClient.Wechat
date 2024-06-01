@@ -1,0 +1,36 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "device_list": [
+        {
+            "device_code": "49nNtYq",
+            "system": "Windows",
+            "mac_addr": [
+                "50:81:40:29:33:CA"
+            ],
+            "motherboard_uuid": "MB_UUID",
+            "harddisk_uuid": [
+                "HD_UUID1"
+            ],
+            "domain": "WINDOWS_DOMAIN",
+            "pc_name": "PC_001",
+            "last_login_time": 1681722163,
+            "last_login_userid": "lisi",
+            "confirm_timestamp": 1681722163,
+            "confirm_userid": "lisi",
+            "approved_userid": "zhangsan",
+            "source": 3,
+            "status": 5
+        },
+        {
+            "device_code": "rjDTnOh",
+            "system": "Mac",
+            "seq_no": "SEQ_NO1",
+            "mac_addr": [
+                "50:81:40:29:33:CA"
+            ],
+            "source": 1,
+            "status": 5
+        }
+    ]
+}
