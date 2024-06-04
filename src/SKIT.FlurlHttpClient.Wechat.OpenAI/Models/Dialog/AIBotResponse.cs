@@ -5,6 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     /// <summary>
     /// <para>表示 [POST] /aibot/{TOKEN} 接口的响应。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2023-04-10 下线。")]
     public class AIBotResponse : WechatOpenAIResponse
     {
         public static class Types

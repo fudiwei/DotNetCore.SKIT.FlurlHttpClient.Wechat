@@ -1,8 +1,11 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
 {
     /// <summary>
     /// <para>表示 [POST] /label/batchset/{TOKEN} 接口的响应。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2023-04-10 下线。")]
     public class LabelBatchSetResponse : WechatOpenAIResponse
     {
         /// <summary>

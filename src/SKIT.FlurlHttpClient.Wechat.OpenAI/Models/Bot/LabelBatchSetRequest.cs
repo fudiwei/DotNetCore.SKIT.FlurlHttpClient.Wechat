@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
@@ -5,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     /// <summary>
     /// <para>表示 [POST] /label/batchset/{TOKEN} 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2023-04-10 下线。")]
     public class LabelBatchSetRequest : WechatOpenAIRequest, WechatOpenAIRequest.Serialization.IEncryptedXmlable
     {
         public static class Types

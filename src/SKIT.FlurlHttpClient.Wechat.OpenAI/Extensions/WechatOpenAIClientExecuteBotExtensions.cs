@@ -19,6 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2023-04-10 下线。")]
         public static async Task<Models.BatchImportSkillResponse> ExecuteBatchImportSkillAsync(this WechatOpenAIClient client, Models.BatchImportSkillRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -41,6 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2023-04-10 下线。")]
         public static async Task<Models.PublishResponse> ExecutePublishAsync(this WechatOpenAIClient client, Models.PublishRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -63,6 +65,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2023-04-10 下线。")]
         public static async Task<Models.PublishProgressResponse> ExecutePublishProgressAsync(this WechatOpenAIClient client, Models.PublishProgressRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -85,6 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2023-04-10 下线。")]
         public static async Task<Models.SetAutoReplyResponse> ExecuteSetAutoReplyAsync(this WechatOpenAIClient client, Models.SetAutoReplyRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -107,6 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2023-04-10 下线。")]
         public static async Task<Models.LabelBatchSetResponse> ExecuteLabelBatchSetAsync(this WechatOpenAIClient client, Models.LabelBatchSetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
