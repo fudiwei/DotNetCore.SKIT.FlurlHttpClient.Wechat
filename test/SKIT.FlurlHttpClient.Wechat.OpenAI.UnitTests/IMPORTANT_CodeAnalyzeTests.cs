@@ -19,11 +19,15 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
             {
                 var options = new TypeDeclarationAnalyzerOptions()
                 {
-                    SdkAssembly = Assembly.GetAssembly(typeof(WechatOpenAIClient))!,
+                    SdkAssembly = Assembly.GetAssembly(typeof(WechatChatbotClient))!,
                     SdkRequestModelDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.OpenAI.Models",
                     SdkResponseModelDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.OpenAI.Models",
                     SdkExecutingExtensionDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.OpenAI",
                     SdkWebhookEventDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.OpenAI.Events",
+                    IgnoreRequestModelTypes = (type) => !typeof(WechatChatbotRequest).IsAssignableFrom(type),
+                    IgnoreResponseModelTypes = (type) => !typeof(WechatChatbotResponse).IsAssignableFrom(type),
+                    IgnoreExecutingExtensionTypes = (type) => !type.Name.StartsWith(nameof(WechatChatbotClient)),
+                    IgnoreWebhookEventTypes = (type) => !typeof(WechatChatbotEvent).IsAssignableFrom(type),
                     ThrowOnNotFoundRequestModelTypes = true,
                     ThrowOnNotFoundResponseModelTypes = true,
                     ThrowOnNotFoundExecutingExtensionTypes = true,
@@ -39,12 +43,18 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
 
                 var options = new SourceFileAnalyzerOptions()
                 {
-                    SdkAssembly = Assembly.GetAssembly(typeof(WechatOpenAIClient))!,
+                    SdkAssembly = Assembly.GetAssembly(typeof(WechatChatbotClient))!,
                     SdkRequestModelDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.OpenAI.Models",
                     SdkResponseModelDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.OpenAI.Models",
                     SdkWebhookEventDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.OpenAI.Events",
                     ProjectSourceRootDirectory = Path.Combine(projdir, "./src/SKIT.FlurlHttpClient.Wechat.OpenAI/"),
                     ProjectTestRootDirectory = Path.Combine(projdir, "./test/SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests/"),
+                    ProjectSourceRequestModelClassCodeSubDirectory = "Models/Chatbot/",
+                    ProjectSourceResponseModelClassCodeSubDirectory = "Models/Chatbot/",
+                    ProjectSourceWebhookEventClassCodeSubDirectory = "Events/Chatbot/",
+                    ProjectTestRequestModelSerializationSampleSubDirectory = "ModelSamples/Chatbot/",
+                    ProjectTestResponseModelSerializationSampleSubDirectory = "ModelSamples/Chatbot/",
+                    ProjectTestWebhookEventSerializationSampleSubDirectory = "EventSamples/Chatbot/",
                     ThrowOnNotFoundRequestModelClassCodeFiles = true,
                     ThrowOnNotFoundResponseModelClassCodeFiles = true,
                     ThrowOnNotFoundExecutingExtensionClassCodeFiles = true,

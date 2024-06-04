@@ -4,7 +4,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
     {
         static TestClients()
         {
-            Instance = new WechatOpenAIClient(new WechatOpenAIClientOptions()
+            Instance = new WechatChatbotClient(new WechatChatbotClientOptions()
             {
                 AppId = TestConfigs.WechatAppId,
                 Token = TestConfigs.WechatToken,
@@ -12,6 +12,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
             });
         }
 
-        public static readonly WechatOpenAIClient Instance;
+        public static readonly WechatChatbotClient Instance;
     }
 }

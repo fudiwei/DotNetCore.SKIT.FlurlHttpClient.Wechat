@@ -35,13 +35,13 @@
 using SKIT.FlurlHttpClient.Wechat;
 using SKIT.FlurlHttpClient.Wechat.OpenAI;
 
-var options = new WechatOpenAIClientOptions()
+var options = new WechatChatbotClientOptions()
 {
     AppId = "微信智能对话 AppId",
     Token = "微信智能对话 Token",
     EncodingAESKey = "微信智能对话 EncodingAESKey"
 };
-var client = WechatOpenAIClientBuilder.Create(options).Build();
+var client = WechatChatbotClientBuilder.Create(options).Build();
 ```
 
 ### 请求 & 响应：
@@ -66,6 +66,7 @@ if (response.IsSuccessful())
 else
 {
     Console.WriteLine("错误代码：" + response.ErrorCode);
+    Console.WriteLine("错误描述：" + response.ErrorMessage);
     Console.WriteLine("返回代码：" + response.ReturnCode);
     Console.WriteLine("返回错误：" + response.ReturnError);
 }
