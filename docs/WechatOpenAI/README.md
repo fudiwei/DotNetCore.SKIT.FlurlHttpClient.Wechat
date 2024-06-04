@@ -1,4 +1,4 @@
-﻿# SKIT.FlurlHttpClient.Wechat.OpenAI
+# SKIT.FlurlHttpClient.Wechat.OpenAI
 
 基于 `Flurl.Http` 的[微信对话开放平台](https://chatbot.weixin.qq.com/) HTTP API SDK。
 
@@ -7,7 +7,8 @@
 ## 功能
 
 -   基于微信对话开放平台 API 封装。
--   提供了微信对话开放平台所需的 AES、SHA-1 等算法工具类。
+-   针对 v2 版接口，请求时自动生成签名，无需开发者手动干预。
+-   提供了微信对话开放平台所需的 AES、MD5、SHA-1 等算法工具类。
 -   提供了解析回调通知事件等扩展方法。
 
 ---

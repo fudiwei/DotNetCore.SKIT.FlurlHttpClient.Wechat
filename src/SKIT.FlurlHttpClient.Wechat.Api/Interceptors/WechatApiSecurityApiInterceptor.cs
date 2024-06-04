@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
@@ -299,11 +300,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
 
             if (context.FlurlCall.HttpRequestMessage.Method != HttpMethod.Post)
                 return;
-            if (context.FlurlCall.HttpRequestMessage.RequestUri is null)
-                return;
-            if (!IsRequestUrlPathMatched(context.FlurlCall.HttpRequestMessage.RequestUri))
+            if (context.FlurlCall.HttpRequestMessage.RequestUri is null || !IsRequestUrlPathMatched(context.FlurlCall.HttpRequestMessage.RequestUri))
                 return;
             if (context.FlurlCall.HttpResponseMessage is null)
+                return;
+            if (context.FlurlCall.HttpResponseMessage.StatusCode != HttpStatusCode.OK)
                 return;
 
             string urlpath = GetRequestUrlPath(context.FlurlCall.HttpRequestMessage.RequestUri);

@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
         public async Task TestExecuteSign()
         {
             var request = new Models.SignRequest() { UserId = "TEST_USERID" };
-            var response = await TestClients.Instance.ExecuteSignAsync(request);
+            var response = await TestClients.ChatbotInstance.ExecuteSignAsync(request);
 
             Assert.NotNull(response.Signature);
         }
