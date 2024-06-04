@@ -589,6 +589,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("confirm_receipt_time")]
                                 [System.Text.Json.Serialization.JsonPropertyName("confirm_receipt_time")]
                                 public long? ConfirmReceiptTimestamp { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置视频号 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("finder_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
+                                public string? FinderId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置直播 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("live_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("live_id")]
+                                public string? LiveId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置单场景。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("order_scene")]
+                                [System.Text.Json.Serialization.JsonPropertyName("order_scene")]
+                                public int? OrderScene { get; set; }
                             }
 
                             public class Settlement
@@ -658,6 +679,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("share_scene")]
                                 [System.Text.Json.Serialization.JsonPropertyName("share_scene")]
                                 public int ShareScene { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置解析完成度。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("handling_progress")]
+                                [System.Text.Json.Serialization.JsonPropertyName("handling_progress")]
+                                public int HandlingProgress { get; set; }
                             }
 
                             public class SKUSharer : Sharer

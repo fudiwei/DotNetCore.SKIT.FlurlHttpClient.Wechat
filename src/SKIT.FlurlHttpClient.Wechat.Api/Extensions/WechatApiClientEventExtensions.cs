@@ -173,7 +173,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/Access_Overview.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/message_push.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -212,7 +213,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>验证回调通知事件签名（仅安全模式）。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/message_push.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -255,7 +257,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>验证回调通知事件签名（仅安全模式）。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Message_encryption_and_decryption_instructions.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/message_push.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

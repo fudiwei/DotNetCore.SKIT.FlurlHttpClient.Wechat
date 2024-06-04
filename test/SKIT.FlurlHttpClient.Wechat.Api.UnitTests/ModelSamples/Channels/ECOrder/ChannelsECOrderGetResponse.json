@@ -86,13 +86,17 @@
             },
             "ext_info": {
                 "customer_notes": "发顺丰",
-                "merchant_notes": "库存不足，取消"
+                "merchant_notes": "库存不足，取消",
+                "finder_id": "sph3FZbOEY46mAB",
+                "live_id": "export/UzFfAgtgekIEAQAAAAAAt40WWe5njQAAAAstQy6ubaLX4KHWvLEZgBPE5KNoYRJdUeaEzNPgMJq4tEJ8QSCaA2N_Iua2abcd",
+                "order_scene": 2
             },
             "sharer_info": {
                 "sharer_openid": "SHAREROPENID",
                 "sharer_unionid": "SHARERUNIONID",
                 "sharer_type": 1,
-                "share_scene": 1
+                "share_scene": 1,
+                "handling_progress": 1
             },
             "settle_info": {
                 "commission_fee": 10,
