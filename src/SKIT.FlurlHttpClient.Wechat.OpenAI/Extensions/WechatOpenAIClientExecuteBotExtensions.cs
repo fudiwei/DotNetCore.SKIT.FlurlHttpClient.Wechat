@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <para>异步调用 [POST] /batchimportskill/{TOKEN} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/bot/batchimportskill.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/deprecated/bot/batchimportskill.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <para>异步调用 [POST] /publish/{TOKEN} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/bot/publish.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/deprecated/bot/publish.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <para>异步调用 [POST] /publish_progress/{TOKEN} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/bot/publish_progress.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/deprecated/bot/publish_progress.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <para>异步调用 [POST] /setautoreply/{TOKEN} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/bot/setautoreply.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/deprecated/bot/setautoreply.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         /// <para>异步调用 [POST] /label/batchset/{TOKEN} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/bot/batchsetlabel.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/aispeech/confapi/deprecated/bot/batchsetlabel.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
