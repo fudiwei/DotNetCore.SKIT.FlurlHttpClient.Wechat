@@ -36,6 +36,16 @@
 using SKIT.FlurlHttpClient.Wechat;
 using SKIT.FlurlHttpClient.Wechat.OpenAI;
 
+/* 接入新 openaiapi.weixin.qq.com 相关的接口请构建以下客户端 */
+var options = new WechatOpenAIClientOptions()
+{
+    AppId = "微信智能对话 AppId",
+    Token = "微信智能对话 Token",
+    EncodingAESKey = "微信智能对话 EncodingAESKey"
+};
+var client = WechatOpenAIlientBuilder.Create(options).Build();
+
+/* 接入原 chatbot.weixin.qq.com 相关的接口请构建以下客户端 */
 var options = new WechatChatbotClientOptions()
 {
     AppId = "微信智能对话 AppId",
@@ -51,25 +61,22 @@ var client = WechatChatbotClientBuilder.Create(options).Build();
 using SKIT.FlurlHttpClient.Wechat.OpenAI;
 using SKIT.FlurlHttpClient.Wechat.OpenAI.Models;
 
-/* 以发送客服消息接口为例 */
-var request = new SendMessageRequest()
+/* 以调用智能对话接口为例 */
+var request = new Models.BotQueryV2Request()
 {
-    AppId = "公众号或小程序的 AppId",
-    OpenId = "用户的 OpenId",
-    Message = "消息内容",
-    Channel = 0
+    QueryString = "爸爸的爸爸叫什么？",
+    UserId = "用户 ID",
+    UserName = "用户昵称",
+    AccessToken = "微信 AccessToken"
 };
-var response = await client.ExecuteSendMessageAsync(request);
+var response = await client.ExecuteBotQueryV2Async(request);
 if (response.IsSuccessful())
 {
-    Console.WriteLine("错误代码：" + response.ErrorCode);
+    Console.WriteLine("命中回答：" + response.Data.Answer);
 }
 else
 {
-    Console.WriteLine("错误代码：" + response.ErrorCode);
-    Console.WriteLine("错误描述：" + response.ErrorMessage);
-    Console.WriteLine("返回代码：" + response.ReturnCode);
-    Console.WriteLine("返回错误：" + response.ReturnError);
+    Console.WriteLine("返回码：" + response.Code);
 }
 ```
 
