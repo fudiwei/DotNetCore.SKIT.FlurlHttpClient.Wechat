@@ -1569,11 +1569,11 @@
 
 -   Release 3.1.0 (2024-06-05)
 
-    -   **新增**：适配新的 OpenAI v2 版接口。
+    -   **新增**：适配新的 OpenAI v2 版接口。（_via_ [GitHub #143](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/143)）
 
-    -   **变更**：随官方标记部分接口为废弃。
+    -   **变更**：随官方标记部分接口为废弃。（_via_ [GitHub #143](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/143)）
 
-    -   **变更**：重命名原客户端相关类型 "WechatOpenAI" → "WechatChatbot"，并调整默认入口点。
+    -   **变更**：重命名原客户端相关类型 "WechatOpenAI" → "WechatChatbot"，并调整默认入口点。（_via_ [GitHub #143](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/143)）
 
 -   Release 3.0.0 (2024-02-07)
 
