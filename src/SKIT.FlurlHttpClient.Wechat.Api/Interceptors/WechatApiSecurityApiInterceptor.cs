@@ -450,6 +450,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
             { 
                 if (_customRequestPathMatcher is not null)
                     return _customRequestPathMatcher(relativeUrl);
+                return false;
             }
 
             return true;
