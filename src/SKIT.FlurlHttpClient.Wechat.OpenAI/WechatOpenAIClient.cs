@@ -43,11 +43,11 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
 
             Interceptors.Add(new Interceptors.WechatOpenAIRequestEncryptionInterceptor(
                 baseUrl: FlurlClient.BaseUrl,
-                encodingAESKey: options.EncodingAESKey,
+                encodingAESKey: Credentials.EncodingAESKey,
                 customEncryptedRequestPathMatcher: options.CustomEncryptedRequestPathMatcher
             ));
             Interceptors.Add(new Interceptors.WechatOpenAIRequestSigningInterceptor(
-                token: options.Token
+                token: Credentials.Token
             ));
         }
 

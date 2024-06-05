@@ -21,6 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
                 WechatAppId = config.GetProperty("AppId").GetString()!;
                 WechatToken = config.GetProperty("Token").GetString()!;
                 WechatEncodingAESKey = config.GetProperty("EncodingAESKey").GetString()!;
+                WechatAccountId = config.GetProperty("AccountId").GetString()!;
                 WechatAccessToken = config.GetProperty("AccessToken").GetString()!;
             }
             catch (Exception ex)
@@ -32,6 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
         public static readonly string WechatAppId;
         public static readonly string WechatToken;
         public static readonly string WechatEncodingAESKey;
+        public static readonly string WechatAccountId;
         public static readonly string WechatAccessToken;
     }
 }

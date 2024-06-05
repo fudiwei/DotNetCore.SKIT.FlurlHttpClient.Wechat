@@ -30,15 +30,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Interceptors
             _baseUrl = baseUrl;
             _encodingAESKey = encodingAESKey;
             _customEncryptedRequestPathMatcher = customEncryptedRequestPathMatcher;
-
-            // AES 密钥的长度不是 4 的倍数需要补齐，确保其始终为有效的 Base64 字符串
-            const int MULTI = 4;
-            int tLen = _encodingAESKey.Length;
-            int tRem = tLen % MULTI;
-            if (tRem > 0)
-            {
-                _encodingAESKey = _encodingAESKey.PadRight(tLen - tRem + MULTI, '=');
-            }
         }
 
         public override async Task BeforeCallAsync(HttpInterceptorContext context, CancellationToken cancellationToken = default)
@@ -83,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Interceptors
             }
 
             context.FlurlCall.HttpRequestMessage!.Content?.Dispose();
-            context.FlurlCall.HttpRequestMessage!.Content = new ByteArrayContent(reqBytesEncrypted);
+            context.FlurlCall.HttpRequestMessage!.Content = new StringContent(Convert.ToBase64String(reqBytesEncrypted));
             context.FlurlCall.Request.WithHeader(HttpHeaders.ContentType, MimeTypes.Text);
         }
 
@@ -150,9 +141,10 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Interceptors
             { 
                 if (_customEncryptedRequestPathMatcher is not null)
                     return _customEncryptedRequestPathMatcher(relativeUrl);
+                return false;
             }
 
-            return true;
+            return false;
         }
     }
 }

@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Settings
 
             AppId = options.AppId;
             Token = options.Token;
-            EncodingAESKey = options.EncodingAESKey;
+            EncodingAESKey = PadEncodingAESKey(options.EncodingAESKey);
         }
 
         internal Credentials(WechatChatbotClientOptions options)
@@ -34,7 +34,21 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Settings
 
             AppId = options.AppId;
             Token = options.Token;
-            EncodingAESKey = options.EncodingAESKey;
+            EncodingAESKey = PadEncodingAESKey(options.EncodingAESKey);
+        }
+
+        private string PadEncodingAESKey(string encodingAESKey)
+        {
+            // AES 密钥的长度不是 4 的倍数需要补齐，确保其始终为有效的 Base64 字符串
+            const int MULTI = 4;
+            int tLen = encodingAESKey.Length;
+            int tRem = tLen % MULTI;
+            if (tRem > 0)
+            {
+                encodingAESKey = encodingAESKey.PadRight(tLen - tRem + MULTI, '=');
+            }
+
+            return encodingAESKey;
         }
     }
 }

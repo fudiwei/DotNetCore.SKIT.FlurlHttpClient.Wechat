@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
     /// 表示微信智能对话 API 响应的泛型基类。
     /// </summary>
     public abstract class WechatOpenAIResponse<TData> : WechatOpenAIResponse
-        where TData : class
+        where TData : WechatOpenAIResponseData
     {
         /// <summary>
         /// 获取微信智能对话 API 返回的数据。
@@ -51,5 +51,18 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
         public virtual TData? Data { get; set; }
+    }
+
+    /// <summary>
+    /// 表示微信智能对话 API 响应的返回数据基类。
+    /// </summary>
+    public abstract class WechatOpenAIResponseData
+    {
+        /// <summary>
+        /// 获取或设置错误详情。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("err_detail")]
+        [System.Text.Json.Serialization.JsonPropertyName("err_detail")]
+        public virtual string? ErrorDetail { get; set; }
     }
 }

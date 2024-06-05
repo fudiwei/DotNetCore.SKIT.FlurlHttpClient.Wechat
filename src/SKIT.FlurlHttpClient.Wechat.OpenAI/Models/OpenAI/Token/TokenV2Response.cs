@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
     {
         public static class Types
         {
-            public class Data
+            public class Data : WechatOpenAIResponseData
             {
                 /// <summary>
                 /// 获取或设置接口访问令牌。

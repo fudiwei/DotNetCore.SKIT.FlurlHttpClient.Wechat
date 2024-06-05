@@ -1,0 +1,28 @@
+{
+    "code": 0,
+    "data": {
+        "end": 1711088874,
+        "fail_count": 0,
+        "fail_skill_info": null,
+        "progress": 100,
+        "start": 1711088873,
+        "state": 2,
+        "success_count": 1,
+        "success_skill_info": [
+            {
+                "id": 2098207,
+                "intents": [
+                    {
+                        "id": 47147532,
+                        "name": "BBC"
+                    }
+                ],
+                "name": "AAA"
+            }
+        ],
+        "total_count": 1,
+        "url": ""
+    },
+    "msg": "success",
+    "request_id": "test123"
+}
