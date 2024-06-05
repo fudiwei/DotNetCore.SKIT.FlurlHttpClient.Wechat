@@ -11,7 +11,8 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.UnitTests
             var request = new Models.TokenV2Request() { AccountId = TestConfigs.WechatAccountId };
             var response = await TestClients.OpenAIInstance.ExecuteTokenV2Async(request);
 
-            Assert.NotNull(response.Data?.AccessToken);
+            Assert.NotNull(response.Data);
+            Assert.NotNull(response.Data.AccessToken);
         }
     }
 }

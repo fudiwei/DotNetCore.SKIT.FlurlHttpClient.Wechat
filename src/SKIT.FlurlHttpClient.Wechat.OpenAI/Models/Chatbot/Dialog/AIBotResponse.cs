@@ -33,101 +33,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 public bool IsLatestValid { get; set; }
             }
 
-            public class Message
-            {
-                /// <summary>
-                /// 获取或设置技能 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("ans_node_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("ans_node_id")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int AnswerNodeId { get; set; }
-
-                /// <summary>
-                /// 获取或设置技能名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("ans_node_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("ans_node_name")]
-                public string AnswerNodeName { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置置信度。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("confidence")]
-                [System.Text.Json.Serialization.JsonPropertyName("confidence")]
-                public decimal Confidence { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置消息类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("msg_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("msg_type")]
-                public string MessageType { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置消息内容。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("content")]
-                [System.Text.Json.Serialization.JsonPropertyName("content")]
-                public string Content { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置消息状态。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("status")]
-                [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public string Status { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置是否是列表选择。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("list_options")]
-                [System.Text.Json.Serialization.JsonPropertyName("list_options")]
-                public bool IsListOptions { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否仅选择。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("take_options_only")]
-                [System.Text.Json.Serialization.JsonPropertyName("take_options_only")]
-                public bool IsTakeOptionsOnly { get; set; }
-
-                /// <summary>
-                /// 获取或设置当前事件。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("event")]
-                [System.Text.Json.Serialization.JsonPropertyName("event")]
-                public string? Event { get; set; }
-
-                /// <summary>
-                /// 获取或设置调试信息。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("debug_info")]
-                [System.Text.Json.Serialization.JsonPropertyName("debug_info")]
-                public string? DebugInfo { get; set; }
-
-                /// <summary>
-                /// 获取或设置窗口标题。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("resp_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("resp_title")]
-                public string? ResponseTitle { get; set; }
-
-                /// <summary>
-                /// 获取或设置场景状态。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("scene_status")]
-                [System.Text.Json.Serialization.JsonPropertyName("scene_status")]
-                public string? SceneStatus { get; set; }
-
-                /// <summary>
-                /// 获取或设置会话 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("session_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("session_id")]
-                public string? SessionId { get; set; }
-            }
-
             public class Option
             {
                 /// <summary>
@@ -208,14 +113,14 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("norm")]
                 [System.Text.Json.Serialization.JsonPropertyName("norm")]
-                public string? Norm { get; set; }
+                public string? NormalizedValue { get; set; }
 
                 /// <summary>
                 /// 获取或设置归一化的值详细信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("norm_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("norm_detail")]
-                public string? NormDetail { get; set; }
+                public string? NormalizedValueDetail { get; set; }
 
                 /// <summary>
                 /// 获取或设置回复的意图名称。
@@ -310,14 +215,6 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Models
         [Newtonsoft.Json.JsonProperty("msgtype")]
         [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
         public string MessageType { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置回答详细信息。
-        /// </summary>
-        [Obsolete("相关接口或字段于 2022-04-15 下线。")]
-        [Newtonsoft.Json.JsonProperty("msg")]
-        [System.Text.Json.Serialization.JsonPropertyName("msg")]
-        public Types.Message[]? MessageList { get; set; }
 
         /// <summary>
         /// 获取或设置机器人回复的状态。
