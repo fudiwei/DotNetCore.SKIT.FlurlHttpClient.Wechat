@@ -1,9 +1,9 @@
-﻿{
+{
     "search_condition": {
         "title": "标题关键字",
         "sku_code": "12321",
         "user_name": "张三",
-        "tel_number": "13700000000",
+        "tel_number_last4": "0000",
         "order_id": "3713218625342112768"
     },
     "on_aftersale_order_exist": 0,

@@ -33,6 +33,7 @@
                 /// <summary>
                 /// 获取或设置收件人电话号码。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2023-05-31 下线。")]
                 [Newtonsoft.Json.JsonProperty("tel_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
                 public string? TeleNumber { get; set; }
