@@ -31,14 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public bool IsCommissionProduct { get; set; }
 
                 /// <summary>
-                /// 获取或设置佣金率（单位：万分之一）。
+                /// 获取或设置佣金率（单位：万分数）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("commissionRatio")]
                 [System.Text.Json.Serialization.JsonPropertyName("commissionRatio")]
                 public int? CommissionRatio { get; set; }
 
                 /// <summary>
-                /// 获取或设置待生效佣金率（单位：万分之一）。
+                /// 获取或设置待生效佣金率（单位：万分数）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nextCommissionRatio")]
                 [System.Text.Json.Serialization.JsonPropertyName("nextCommissionRatio")]

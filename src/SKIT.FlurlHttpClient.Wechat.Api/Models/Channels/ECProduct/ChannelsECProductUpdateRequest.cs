@@ -111,6 +111,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class Qualification : ChannelsECProductAddRequest.Types.Qualification
             {
             }
+
+            public class SizeChart : ChannelsECProductAddRequest.Types.SizeChart
+            {
+                public static new class Types
+                {
+                    public class Specification : ChannelsECProductAddRequest.Types.SizeChart.Types.Specification
+                    {
+                        public static new class Types
+                        {
+                            public class SpecificationValue : ChannelsECProductAddRequest.Types.SizeChart.Types.Specification.Types.SpecificationValue
+                            {
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -249,5 +265,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("after_sale_info")]
         [System.Text.Json.Serialization.JsonPropertyName("after_sale_info")]
         public Types.Aftersale? Aftersale { get; set; }
+
+        /// <summary>
+        /// 获取或设置尺码表信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("size_chart")]
+        [System.Text.Json.Serialization.JsonPropertyName("size_chart")]
+        public Types.SizeChart? SizeChart { get; set; }
     }
 }

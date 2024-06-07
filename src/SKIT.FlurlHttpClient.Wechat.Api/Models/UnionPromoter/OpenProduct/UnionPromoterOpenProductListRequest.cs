@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public int? MinCommissionValue { get; set; }
 
         /// <summary>
-        /// 获取或设置佣金比例下限（单位：万分之一）。
+        /// 获取或设置佣金比例下限（单位：万分数）。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

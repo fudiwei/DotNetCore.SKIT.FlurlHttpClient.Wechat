@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long ProductId { get; set; }
 
                 /// <summary>
-                /// 获取或设置佣金率（单位：万分之一）。
+                /// 获取或设置佣金率（单位：万分数）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("rate")]
                 [System.Text.Json.Serialization.JsonPropertyName("rate")]

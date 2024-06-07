@@ -86,5 +86,31 @@
                 "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn71nCC"
             ]
         }
-    ]
+    ],
+    "size_chart": {
+        "enable": true,
+        "specification_list": [
+            {
+                "name": "",
+                "unit": "",
+                "is_range": false,
+                "value_list": [
+                    {
+                        "key": "1",
+                        "value": "S",
+                        "left": "",
+                        "right": ""
+                    },
+                    {
+                        "key": "2",
+                        "value": "M"
+                    },
+                    {
+                        "key": "3",
+                        "value": "L"
+                    }
+                ]
+            }
+        ]
+    }
 }

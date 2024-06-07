@@ -258,6 +258,91 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("qua_url")]
                         public string[] PictureUrlList { get; set; } = default!;
                     }
+
+                    public class SizeChart
+                    {
+                        public static class Types
+                        {
+                            public class Specification
+                            {
+                                public static class Types
+                                {
+                                    public class SpecificationValue
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置尺码值。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("key")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("key")]
+                                        public string Key { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置属性值。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("value")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                        public string? Value { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置属性值的左边界。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("left")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("left")]
+                                        public string? Left { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置属性值的右边界。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("right")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("right")]
+                                        public string? Right { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("name")]
+                                public string Name { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置单位。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("unit")]
+                                [System.Text.Json.Serialization.JsonPropertyName("unit")]
+                                public string Unit { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置属性值是否为区间。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("is_range")]
+                                [System.Text.Json.Serialization.JsonPropertyName("is_range")]
+                                public bool IsRange { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置属性值映射列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("value_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("value_list")]
+                                public Types.SpecificationValue[] ValueList { get; set; } = default!;
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置是否启用。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("enable")]
+                        [System.Text.Json.Serialization.JsonPropertyName("enable")]
+                        public bool IsEnabled { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置尺码规格列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("specification_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("specification_list")]
+                        public Types.Specification[]? SpecificationList { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -430,6 +515,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("product_qua_infos")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_qua_infos")]
                 public Types.Qualification[]? QualificationList { get; set; }
+
+                /// <summary>
+                /// 获取或设置尺码表信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("size_chart")]
+                [System.Text.Json.Serialization.JsonPropertyName("size_chart")]
+                public Types.SizeChart? SizeChart { get; set; }
             }
         }
 

@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int ProductCount { get; set; }
 
                         /// <summary>
-                        /// 获取或设置佣金比例（单位：万分之一）。
+                        /// 获取或设置佣金比例（单位：万分数）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ratio")]
                         [System.Text.Json.Serialization.JsonPropertyName("ratio")]

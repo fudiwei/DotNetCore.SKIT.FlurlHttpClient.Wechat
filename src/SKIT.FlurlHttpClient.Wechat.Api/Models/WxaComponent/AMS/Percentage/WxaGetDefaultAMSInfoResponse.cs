@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? ReturnMessage { get; set; }
 
         /// <summary>
-        /// 获取或设置分账比例（单位：百分比）。
+        /// 获取或设置分账比例（单位：百分数）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("share_ratio")]
         [System.Text.Json.Serialization.JsonPropertyName("share_ratio")]

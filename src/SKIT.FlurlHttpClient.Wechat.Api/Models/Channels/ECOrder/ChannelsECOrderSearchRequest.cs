@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/order/search 接口的请求。</para>
@@ -33,10 +35,17 @@
                 /// <summary>
                 /// 获取或设置收件人电话号码。
                 /// </summary>
-                [Obsolete("相关接口或字段于 2023-05-31 下线。")]
+                [Obsolete("相关接口或字段于 2023-06-03 下线。")]
                 [Newtonsoft.Json.JsonProperty("tel_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
                 public string? TeleNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置收件人电话号码后 4 位。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("tel_number_last4")]
+                [System.Text.Json.Serialization.JsonPropertyName("tel_number_last4")]
+                public string? TeleNumberLast4Digits { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单 ID。
