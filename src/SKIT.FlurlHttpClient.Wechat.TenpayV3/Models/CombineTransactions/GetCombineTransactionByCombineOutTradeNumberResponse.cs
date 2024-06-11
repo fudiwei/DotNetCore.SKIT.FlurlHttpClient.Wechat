@@ -42,6 +42,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("payer_currency")]
                         [System.Text.Json.Serialization.JsonPropertyName("payer_currency")]
                         public string PayerCurrency { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置结算汇率（格式：外币兑换人民币的比例乘以 10 的 8 次方）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("settlement_rate")]
+                        [System.Text.Json.Serialization.JsonPropertyName("settlement_rate")]
+                        public long? SettlementRate { get; set; }
                     }
                 }
 
