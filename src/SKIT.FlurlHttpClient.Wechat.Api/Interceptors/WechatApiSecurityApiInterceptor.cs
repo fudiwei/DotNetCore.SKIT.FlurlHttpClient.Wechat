@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
 
         public WechatApiSecurityApiInterceptor(string baseUrl, string appId, string symmetricAlg, string symmetricNum, string symmetricEncodingKey, string asymmetricAlg, string asymmetricNum, string asymmetricPrivateKey, Func<string, bool>? customRequestPathMatcher)
         {
-            _baseUrl = baseUrl;
+            _baseUrl = baseUrl.TrimEnd('/');
             _appId = appId;
             _symmetricAlg = symmetricAlg;
             _symmetricNum = symmetricNum;

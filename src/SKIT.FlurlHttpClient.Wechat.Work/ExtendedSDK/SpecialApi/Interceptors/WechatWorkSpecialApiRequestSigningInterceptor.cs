@@ -1,13 +1,13 @@
 using System;
 using System.Linq;
 using System.Net.Http;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi.Interceptors
 {
-    using System.Text;
     using SKIT.FlurlHttpClient;
     using SKIT.FlurlHttpClient.Internal;
     using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi;

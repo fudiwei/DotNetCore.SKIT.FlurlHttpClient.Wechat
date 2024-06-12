@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.OpenAI.Interceptors
 
         public WechatOpenAIRequestEncryptionInterceptor(string baseUrl, string encodingAESKey, Func<string, bool>? customEncryptedRequestPathMatcher)
         {
-            _baseUrl = baseUrl;
+            _baseUrl = baseUrl.TrimEnd('/');
             _encodingAESKey = encodingAESKey;
             _customEncryptedRequestPathMatcher = customEncryptedRequestPathMatcher;
         }
