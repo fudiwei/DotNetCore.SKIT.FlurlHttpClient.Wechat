@@ -652,6 +652,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public int BusinessId { get; set; }
 
         /// <summary>
+        /// 获取或设置是否是测试版本。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("testonly_is_trial")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("testonly_is_trial")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+        public bool? IsTrial { get; set; }
+
+        /// <summary>
         /// 获取或设置业务字段。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_info")]

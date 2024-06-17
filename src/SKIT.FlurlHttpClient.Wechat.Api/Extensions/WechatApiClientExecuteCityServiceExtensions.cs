@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cityservice/sendchannelmsg 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://docs.qq.com/doc/DQXRyQURVdHJsaGJy ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/medicalassistant.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -76,6 +76,55 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CityServiceGetServicePathResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cityservice/getmedrealname 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/elderMedical/elderMedical-api.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CityServiceGetMedicalRealNameResponse> ExecuteCityServiceGetMedicalRealNameAsync(this WechatApiClient client, Models.CityServiceGetMedicalRealNameRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.AppId is null)
+                request.AppId = client.Credentials.AppId;
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cityservice", "getmedrealname")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CityServiceGetMedicalRealNameResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cityservice/getmsgrelation 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/elderMedical/elderMedical-api.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CityServiceGetMessageRelationResponse> ExecuteCityServiceGetMessageRelationAsync(this WechatApiClient client, Models.CityServiceGetMessageRelationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cityservice", "getmsgrelation")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CityServiceGetMessageRelationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         #region Face
