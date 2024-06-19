@@ -110,7 +110,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene_info")]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
-        public Types.Scene Scene { get; set; } = new Types.Scene();
+        public Types.Scene? Scene { get; set; }
 
         /// <summary>
         /// 获取或设置结算信息。
