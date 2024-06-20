@@ -3,9 +3,9 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /wxa/checksession 接口的请求。</para>
+    /// <para>表示 [GET] /wxa/resetusersessionkey 接口的请求。</para>
     /// </summary>
-    public class WxaCheckSessionRequest : WechatApiRequest, IInferable<WxaCheckSessionRequest, WxaCheckSessionResponse>
+    public class WxaResetUserSessionKeyRequest : WechatApiRequest, IInferable<WxaResetUserSessionKeyRequest, WxaResetUserSessionKeyResponse>
     {
         /// <summary>
         /// 获取或设置用户唯一标识。
