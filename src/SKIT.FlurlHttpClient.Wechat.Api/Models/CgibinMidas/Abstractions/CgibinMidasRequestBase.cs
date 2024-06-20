@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置米大师分区 ID。
-        /// <para>默认值：1</para>
+        /// <para>默认值："1"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("zone_id")]
         [System.Text.Json.Serialization.JsonPropertyName("zone_id")]
@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置平台标识。
-        /// <para>默认值：android</para>
+        /// <para>默认值："android"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("pf")]
         [System.Text.Json.Serialization.JsonPropertyName("pf")]

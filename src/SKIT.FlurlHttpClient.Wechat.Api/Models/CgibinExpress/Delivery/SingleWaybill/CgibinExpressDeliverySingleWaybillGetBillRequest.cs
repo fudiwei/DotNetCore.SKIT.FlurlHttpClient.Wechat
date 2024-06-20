@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置账单类型。
-        /// <para>默认值：ALL</para>
+        /// <para>默认值："ALL"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("type")]
         [System.Text.Json.Serialization.JsonPropertyName("type")]

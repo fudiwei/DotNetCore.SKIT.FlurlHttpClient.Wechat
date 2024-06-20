@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/submerchant/batchget 接口的请求。</para>
@@ -7,7 +7,7 @@
     {
         /// <summary>
         /// 获取或设置起始的子商户 ID。
-        /// <para>默认值：0</para>
+        /// <para>默认值："0"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("begin_id")]
         [System.Text.Json.Serialization.JsonPropertyName("begin_id")]

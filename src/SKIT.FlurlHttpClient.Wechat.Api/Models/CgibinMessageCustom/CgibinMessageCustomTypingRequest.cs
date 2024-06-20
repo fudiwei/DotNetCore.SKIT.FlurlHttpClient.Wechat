@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/message/custom/typing 接口的请求。</para>
@@ -14,7 +14,7 @@
 
         /// <summary>
         /// 获取或设置输入状态。
-        /// <para>默认值：Typing</para>
+        /// <para>默认值："Typing"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("command")]
         [System.Text.Json.Serialization.JsonPropertyName("command")]

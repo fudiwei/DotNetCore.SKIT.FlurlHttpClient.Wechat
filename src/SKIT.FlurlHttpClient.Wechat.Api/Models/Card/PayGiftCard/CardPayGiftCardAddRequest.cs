@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                 /// <summary>
                 /// 获取或设置营销规则类型。
-                /// <para>默认值：RULE_TYPE_PAY_MEMBER_CARD</para>
+                /// <para>默认值："RULE_TYPE_PAY_MEMBER_CARD"</para>
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]

@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                 /// <summary>
                 /// 获取或设置返回国家地区语言版本。
-                /// <para>默认值：zh_CN</para>
+                /// <para>默认值："zh_CN"</para>
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("lang")]
                 [System.Text.Json.Serialization.JsonPropertyName("lang")]

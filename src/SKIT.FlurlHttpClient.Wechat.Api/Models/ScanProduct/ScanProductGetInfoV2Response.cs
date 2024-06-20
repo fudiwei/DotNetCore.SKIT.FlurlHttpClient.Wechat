@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /scan/product/v2/getinfo 接口的响应。</para>
@@ -129,7 +129,7 @@
                     {
                         /// <summary>
                         /// 获取或设置关联类型。
-                        /// <para>默认值：wxa</para>
+                        /// <para>默认值："wxa"</para>
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("link_type")]
                         [System.Text.Json.Serialization.JsonPropertyName("link_type")]
@@ -195,7 +195,6 @@
                     {
                         /// <summary>
                         /// 获取或设置销售状态。
-                        /// <para>默认值：off</para>
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sale_status")]
                         [System.Text.Json.Serialization.JsonPropertyName("sale_status")]

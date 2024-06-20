@@ -21,7 +21,7 @@
 
         /// <summary>
         /// 获取或设置签名方法。
-        /// <para>默认值：hmac_sha256</para>
+        /// <para>默认值："hmac_sha256"</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

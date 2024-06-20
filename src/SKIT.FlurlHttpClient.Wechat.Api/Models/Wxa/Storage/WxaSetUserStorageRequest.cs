@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置用户登录态签名的哈希方法。
-        /// <para>默认值：hmac_sha256</para>
+        /// <para>默认值："hmac_sha256"</para>
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

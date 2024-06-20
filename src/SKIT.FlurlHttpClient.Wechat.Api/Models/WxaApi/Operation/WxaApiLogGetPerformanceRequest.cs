@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxaapi/log/get_performance 接口的请求。</para>
@@ -28,7 +28,7 @@
 
         /// <summary>
         /// 获取或设置设备类型。
-        /// <para>默认值：@_all</para>
+        /// <para>默认值："@_all"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("device")]
         [System.Text.Json.Serialization.JsonPropertyName("device")]
@@ -36,7 +36,7 @@
 
         /// <summary>
         /// 获取或设置下载代码包类型。
-        /// <para>默认值：@_all</para>
+        /// <para>默认值："@_all"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_download_code")]
         [System.Text.Json.Serialization.JsonPropertyName("is_download_code")]
@@ -44,7 +44,7 @@
 
         /// <summary>
         /// 获取或设置网络环境类型。
-        /// <para>默认值：@_all</para>
+        /// <para>默认值："@_all"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("networktype")]
         [System.Text.Json.Serialization.JsonPropertyName("networktype")]

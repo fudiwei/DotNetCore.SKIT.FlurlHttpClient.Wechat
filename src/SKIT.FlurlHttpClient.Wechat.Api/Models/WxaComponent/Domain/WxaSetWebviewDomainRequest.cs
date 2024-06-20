@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         /// <summary>
         /// 获取或设置操作类型。
-        /// <para>默认值：get</para>
+        /// <para>默认值："get"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("action")]
         [System.Text.Json.Serialization.JsonPropertyName("action")]
