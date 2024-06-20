@@ -1,6 +1,6 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
-    public abstract class WxaGameRequestBase : WechatApiRequest
+    public abstract class WxaGamePaymentRequestBase : WechatApiRequest
     {
         /// <summary>
         /// 获取或设置虚拟支付应用 ID。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.MidasOfferIdV2"/> 参数。

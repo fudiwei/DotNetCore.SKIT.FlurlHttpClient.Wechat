@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/game/cancelpay 接口的请求。</para>
     /// </summary>
-    public class WxaGameCancelPayRequest : WxaGameRequestBase, IInferable<WxaGameCancelPayRequest, WxaGameCancelPayResponse>
+    public class WxaGameCancelPayRequest : WxaGamePaymentRequestBase, IInferable<WxaGameCancelPayRequest, WxaGameCancelPayResponse>
     {
         /// <summary>
         /// 获取或设置扣除游戏币的订单号。

@@ -74,7 +74,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
             }
         }
 
-
         /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
@@ -101,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         public string AppId { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置任务 ID。
+        /// 获取或设置请求跟踪标识。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("trace_id")]
         [System.Text.Json.Serialization.JsonPropertyName("trace_id")]

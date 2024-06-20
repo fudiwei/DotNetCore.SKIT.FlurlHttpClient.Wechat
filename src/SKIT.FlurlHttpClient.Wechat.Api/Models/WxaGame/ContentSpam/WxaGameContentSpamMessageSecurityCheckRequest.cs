@@ -1,16 +1,16 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /wxa/msg_sec_check 接口的请求。</para>
+    /// <para>表示 [POST] /wxa/game/content_spam/msg_sec_check 接口的请求。</para>
     /// </summary>
-    public class WxaMessageSecurityCheckRequest : WechatApiRequest, IInferable<WxaMessageSecurityCheckRequest, WxaMessageSecurityCheckResponse>
+    public class WxaGameContentSpamMessageSecurityCheckRequest : WechatApiRequest, IInferable<WxaGameContentSpamMessageSecurityCheckRequest, WxaGameContentSpamMessageSecurityCheckResponse>
     {
         /// <summary>
         /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string? OpenId { get; set; }
+        public string OpenId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置用户昵称。
@@ -18,20 +18,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("nickname")]
         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
         public string? Nickname { get; set; }
-
-        /// <summary>
-        /// 获取或设置用户个性签名。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("signature")]
-        [System.Text.Json.Serialization.JsonPropertyName("signature")]
-        public string? Signature { get; set; }
-
-        /// <summary>
-        /// 获取或设置文本标题。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("title")]
-        [System.Text.Json.Serialization.JsonPropertyName("title")]
-        public string? Title { get; set; }
 
         /// <summary>
         /// 获取或设置文本内容。
@@ -42,16 +28,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置版本号。
+        /// <para>默认值：2</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version")]
         [System.Text.Json.Serialization.JsonPropertyName("version")]
-        public int? Version { get; set; }
+        public int Version { get; set; } = 2;
 
         /// <summary>
         /// 获取或设置场景值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene")]
         [System.Text.Json.Serialization.JsonPropertyName("scene")]
-        public int? Scene { get; set; }
+        public int Scene { get; set; }
     }
 }

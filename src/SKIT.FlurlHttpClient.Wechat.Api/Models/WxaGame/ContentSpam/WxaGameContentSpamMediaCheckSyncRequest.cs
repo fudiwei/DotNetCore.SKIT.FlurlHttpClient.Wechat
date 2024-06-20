@@ -1,16 +1,16 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /wxa/media_check_async 接口的请求。</para>
+    /// <para>表示 [POST] /wxa/game/content_spam/media_check_sync 接口的请求。</para>
     /// </summary>
-    public class WxaMediaCheckRequest : WechatApiRequest, IInferable<WxaMediaCheckRequest, WxaMediaCheckResponse>
+    public class WxaGameContentSpamMediaCheckSyncRequest : WechatApiRequest, IInferable<WxaGameContentSpamMediaCheckSyncRequest, WxaGameContentSpamMediaCheckSyncResponse>
     {
         /// <summary>
         /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]
-        public string? OpenId { get; set; }
+        public string OpenId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置多媒体 URL。
@@ -28,16 +28,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
         /// <summary>
         /// 获取或设置版本号。
+        /// <para>默认值：2</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("version")]
         [System.Text.Json.Serialization.JsonPropertyName("version")]
-        public int? Version { get; set; }
+        public int Version { get; set; } = 2;
 
         /// <summary>
         /// 获取或设置场景值。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("scene")]
         [System.Text.Json.Serialization.JsonPropertyName("scene")]
-        public int? Scene { get; set; }
+        public int Scene { get; set; }
     }
 }

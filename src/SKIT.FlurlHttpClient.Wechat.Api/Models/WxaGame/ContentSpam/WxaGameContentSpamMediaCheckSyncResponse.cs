@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /wxa/msg_sec_check 接口的响应。</para>
+    /// <para>表示 [POST] /wxa/game/content_spam/media_check_sync 接口的响应。</para>
     /// </summary>
-    public class WxaMessageSecurityCheckResponse : WechatApiResponse
+    public class WxaGameContentSpamMediaCheckSyncResponse : WechatApiResponse
     {
         public static class Types
         {
@@ -55,25 +55,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int? Label { get; set; }
 
                 /// <summary>
-                /// 获取或设置级别。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("level")]
-                [System.Text.Json.Serialization.JsonPropertyName("level")]
-                public int? Level { get; set; }
-
-                /// <summary>
                 /// 获取或设置置信度。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("prob")]
                 [System.Text.Json.Serialization.JsonPropertyName("prob")]
                 public int? Probability { get; set; }
-
-                /// <summary>
-                /// 获取或设置命中的自定义关键词。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("keyword")]
-                [System.Text.Json.Serialization.JsonPropertyName("keyword")]
-                public string? Keyword { get; set; }
             }
         }
 

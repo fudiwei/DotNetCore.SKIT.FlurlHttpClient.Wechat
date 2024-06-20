@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /wxa/game/present 接口的请求。</para>
     /// </summary>
-    public class WxaGamePresentRequest : WxaGameRequestBase, IInferable<WxaGamePresentRequest, WxaGamePresentResponse>
+    public class WxaGamePresentRequest : WxaGamePaymentRequestBase, IInferable<WxaGamePresentRequest, WxaGamePresentResponse>
     {
         /// <summary>
         /// 获取或设置赠送游戏币的订单号。

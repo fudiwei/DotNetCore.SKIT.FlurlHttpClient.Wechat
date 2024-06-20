@@ -9,8 +9,57 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static class WechatApiClientExecuteWxaGameExtensions
     {
+        #region ContentSpam
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/game/content_spam/msg_sec_check 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/wxa-sec-check/gamesecurity.msgSecCheck.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGameContentSpamMessageSecurityCheckResponse> ExecuteWxaGameContentSpamMessageSecurityCheckAsync(this WechatApiClient client, Models.WxaGameContentSpamMessageSecurityCheckRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "game", "content_spam", "msg_sec_check")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGameContentSpamMessageSecurityCheckResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/game/content_spam/media_check_sync 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/wxa-sec-check/gamesecurity.mediaCheck.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaGameContentSpamMediaCheckSyncResponse> ExecuteWxaGameContentSpamMediaCheckSyncAsync(this WechatApiClient client, Models.WxaGameContentSpamMediaCheckSyncRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "game", "content_spam", "media_check_sync")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaGameContentSpamMediaCheckSyncResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region Payment
         private static T PreprocessRequest<T>(WechatApiClient client, ref T request)
-            where T : Models.WxaGameRequestBase, new()
+            where T : Models.WxaGamePaymentRequestBase, new()
         {
             if (client is null) throw new ArgumentNullException(nameof(request));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -207,5 +256,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaGameQueryOrderInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+        #endregion
     }
 }
