@@ -41,18 +41,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             FlurlClient.BaseUrl = options.Endpoint ?? WechatApiEndpoints.DEFAULT;
             FlurlClient.WithTimeout(options.Timeout <= 0 ? Timeout.InfiniteTimeSpan : TimeSpan.FromMilliseconds(options.Timeout));
 
-            if (options.SecurityApiEnabled)
+            if (options.SecureApiEnabled)
             {
-                Interceptors.Add(new Interceptors.WechatApiSecurityApiInterceptor(
+                Interceptors.Add(new Interceptors.WechatApiSecureApiInterceptor(
                     baseUrl: FlurlClient.BaseUrl,
-                    appId: string.IsNullOrEmpty(options.SecurityApiAppId) ? options.AppId : options.SecurityApiAppId!,
-                    symmetricAlg: options.SecurityApiSymmetricAlgorithm!,
-                    symmetricNum: options.SecurityApiSymmetricNumber!,
-                    symmetricEncodingKey: options.SecurityApiSymmetricEncodingKey!,
-                    asymmetricAlg: options.SecurityApiAsymmetricAlgorithm!,
-                    asymmetricNum: options.SecurityApiAsymmetricNumber!,
-                    asymmetricPrivateKey: options.SecurityApiAsymmetricPrivateKey!,
-                    customRequestPathMatcher: options.SecurityApiCustomRequestPathMatcher
+                    appId: string.IsNullOrEmpty(options.SecureApiAppId) ? options.AppId : options.SecureApiAppId!,
+                    symmetricAlg: options.SecureApiSymmetricAlgorithm!,
+                    symmetricNum: options.SecureApiSymmetricNumber!,
+                    symmetricEncodingKey: options.SecureApiSymmetricEncodingKey!,
+                    asymmetricAlg: options.SecureApiAsymmetricAlgorithm!,
+                    asymmetricNum: options.SecureApiAsymmetricNumber!,
+                    asymmetricPrivateKey: options.SecureApiAsymmetricPrivateKey!,
+                    customRequestPathMatcher: options.SecureApiCustomRequestPathMatcher
                 ));
             }
         }

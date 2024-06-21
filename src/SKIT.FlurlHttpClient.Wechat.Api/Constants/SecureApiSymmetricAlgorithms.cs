@@ -1,6 +1,6 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Constants
 {
-    public static class SecurityApiSymmetricAlgorithms
+    public static class SecureApiSymmetricAlgorithms
     {
         public const string AES = "AES";
 

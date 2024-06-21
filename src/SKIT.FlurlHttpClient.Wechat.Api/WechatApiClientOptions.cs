@@ -81,52 +81,52 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <summary>
         /// 获取或设置 API 安全鉴权模式是否开启。
         /// </summary>
-        public bool SecurityApiEnabled { get; set; }
+        public bool SecureApiEnabled { get; set; }
 
         /// <summary>
         /// 获取或设置 API 安全鉴权模式所使用的 AppId。如果不指定将使用 <see cref="AppId"/>。
         /// </summary>
-        public string? SecurityApiAppId { get; set; }
+        public string? SecureApiAppId { get; set; }
 
         /// <summary>
         /// 获取或设置 API 安全鉴权模式对称加密算法。
         /// <para>
-        /// 默认值：<see cref="Constants.SecurityApiSymmetricAlgorithms.AES"/>
+        /// 默认值：<see cref="Constants.SecureApiSymmetricAlgorithms.AES"/>
         /// </para>
         /// </summary>
-        public string SecurityApiSymmetricAlgorithm { get; set; } = Constants.SecurityApiSymmetricAlgorithms.AES;
+        public string SecureApiSymmetricAlgorithm { get; set; } = Constants.SecureApiSymmetricAlgorithms.AES;
 
         /// <summary>
         /// 获取或设置 API 安全鉴权模式对称加密密钥编号。
         /// </summary>
-        public string? SecurityApiSymmetricNumber { get; set; }
+        public string? SecureApiSymmetricNumber { get; set; }
 
         /// <summary>
         /// 获取或设置 API 安全鉴权模式对称加密密钥（经过 Base64 编码）。
         /// </summary>
-        public string? SecurityApiSymmetricEncodingKey { get; set; }
+        public string? SecureApiSymmetricEncodingKey { get; set; }
 
         /// <summary>
         /// 获取或设置 API 安全鉴权模式非对称加密算法。
         /// <para>
-        /// 默认值：<see cref="Constants.SecurityApiAsymmetricAlgorithms.RSA"/>
+        /// 默认值：<see cref="Constants.SecureApiAsymmetricAlgorithms.RSA"/>
         /// </para>
         /// </summary>
-        public string SecurityApiAsymmetricAlgorithm { get; set; } = Constants.SecurityApiAsymmetricAlgorithms.RSA;
+        public string SecureApiAsymmetricAlgorithm { get; set; } = Constants.SecureApiAsymmetricAlgorithms.RSA;
 
         /// <summary>
         /// 获取或设置 API 安全鉴权模式非对称加密私钥编号。
         /// </summary>
-        public string? SecurityApiAsymmetricNumber { get; set; }
+        public string? SecureApiAsymmetricNumber { get; set; }
 
         /// <summary>
         /// 获取或设置 API 安全鉴权模式非对称加密私钥。
         /// </summary>
-        public string? SecurityApiAsymmetricPrivateKey { get; set; }
+        public string? SecureApiAsymmetricPrivateKey { get; set; }
 
         /// <summary>
         /// 获取或设置 API 安全鉴权模式自定义请求路径匹配器。如果不指定将只匹配关键 API。
         /// </summary>
-        public Func<string, bool>? SecurityApiCustomRequestPathMatcher { get; set; }
+        public Func<string, bool>? SecureApiCustomRequestPathMatcher { get; set; }
     }
 }

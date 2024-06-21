@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
     using SKIT.FlurlHttpClient.Internal;
     using SKIT.FlurlHttpClient.Wechat.Api.Constants;
 
-    internal class WechatApiSecurityApiInterceptor : HttpInterceptor
+    internal class WechatApiSecureApiInterceptor : HttpInterceptor
     {
         /**
          * REF:
@@ -96,7 +96,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
         private readonly string _asymmetricPrivateKey;
         private readonly Func<string, bool>? _customRequestPathMatcher;
 
-        public WechatApiSecurityApiInterceptor(string baseUrl, string appId, string symmetricAlg, string symmetricNum, string symmetricEncodingKey, string asymmetricAlg, string asymmetricNum, string asymmetricPrivateKey, Func<string, bool>? customRequestPathMatcher)
+        public WechatApiSecureApiInterceptor(string baseUrl, string appId, string symmetricAlg, string symmetricNum, string symmetricEncodingKey, string asymmetricAlg, string asymmetricNum, string asymmetricPrivateKey, Func<string, bool>? customRequestPathMatcher)
         {
             _baseUrl = baseUrl.TrimEnd('/');
             _appId = appId;
@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                 string sData, sIV, sAuthTag;
                 switch (_symmetricAlg)
                 {
-                    case SecurityApiSymmetricAlgorithms.AES:
+                    case SecureApiSymmetricAlgorithms.AES:
                         {
                             try
                             {
@@ -203,7 +203,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                         }
                         break;
 
-                    case SecurityApiSymmetricAlgorithms.SM4:
+                    case SecureApiSymmetricAlgorithms.SM4:
                         {
                             try
                             {
@@ -257,7 +257,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
 
                 switch (_asymmetricAlg)
                 {
-                    case SecurityApiAsymmetricAlgorithms.RSA:
+                    case SecureApiAsymmetricAlgorithms.RSA:
                         {
                             try
                             {
@@ -270,7 +270,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                         }
                         break;
 
-                    case SecurityApiAsymmetricAlgorithms.SM2:
+                    case SecureApiAsymmetricAlgorithms.SM2:
                         {
                             try
                             {
@@ -359,7 +359,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
 
                     switch (_symmetricAlg)
                     {
-                        case SecurityApiSymmetricAlgorithms.AES:
+                        case SecureApiSymmetricAlgorithms.AES:
                             {
                                 try
                                 {
@@ -383,7 +383,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                             }
                             break;
 
-                        case SecurityApiSymmetricAlgorithms.SM4:
+                        case SecureApiSymmetricAlgorithms.SM4:
                             {
                                 try
                                 {

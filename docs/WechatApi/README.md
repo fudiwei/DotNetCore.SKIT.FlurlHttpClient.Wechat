@@ -92,7 +92,7 @@ else
 
 -   [如何自定义额外的 API 接口？](./Basic_Extensions.md)
 
--   [如何接入安全鉴权模式？](./Basic_SecurityAPI.md)
+-   [如何接入安全鉴权模式？](./Basic_SecureAPI.md)
 
 ---
 

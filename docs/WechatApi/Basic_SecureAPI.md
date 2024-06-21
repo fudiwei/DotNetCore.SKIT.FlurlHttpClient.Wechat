@@ -20,13 +20,13 @@
 var options = new WechatApiClientOptions()
 {
     // 其他配置项略
-    SecurityApiEnabled = true,
-    SecurityApiSymmetricAlgorithm = Constants.SecurityApiSymmetricAlgorithms.AES,
-    SecurityApiSymmetricNumber = "AES/SM4 对称加密密钥编号",
-    SecurityApiSymmetricKey = "AES/SM4 对称加密密钥",
-    SecurityApiAsymmetricAlgorithm = Constants.SecurityApiAsymmetricAlgorithms.RSA,
-    SecurityApiAsymmetricNumber = "RSA/SM2 非对称加密私钥编号",
-    SecurityApiAsymmetricPrivateKey = "RSA/SM2 非对称加密私钥"
+    SecureApiEnabled = true,
+    SecureApiSymmetricAlgorithm = Constants.SecureApiSymmetricAlgorithms.AES,
+    SecureApiSymmetricNumber = "AES/SM4 对称加密密钥编号",
+    SecureApiSymmetricKey = "AES/SM4 对称加密密钥",
+    SecureApiAsymmetricAlgorithm = Constants.SecureApiAsymmetricAlgorithms.RSA,
+    SecureApiAsymmetricNumber = "RSA/SM2 非对称加密私钥编号",
+    SecureApiAsymmetricPrivateKey = "RSA/SM2 非对称加密私钥"
 };
 var client = WechatApiClientBuilder.Create(options).Build();
 ```
@@ -39,7 +39,7 @@ var client = WechatApiClientBuilder.Create(options).Build();
 
 默认情况下，启用安全鉴权模式后本库也只会对部分关键 API 自动加密及签名。
 
-完整的关键 API 清单可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Api/Interceptors/WechatApiSecurityApiInterceptor_ 文件的 `SIGN_REQUIRED_URLS` 的常量。
+完整的关键 API 清单可以参考项目目录下的 _src/SKIT.FlurlHttpClient.Wechat.Api/Interceptors/WechatApiSecureApiInterceptor_ 文件的 `SIGN_REQUIRED_URLS` 的常量。
 
 如果你需要开启全部 API 加密及签名，请在上文的基础上额外设置：
 
@@ -47,7 +47,7 @@ var client = WechatApiClientBuilder.Create(options).Build();
 var options = new WechatApiClientOptions()
 {
     // 其他配置项略
-    SecurityApiCustomRequestPathMatcher = (url) =>
+    SecureApiCustomRequestPathMatcher = (url) =>
     {
         if (url == "/sns/auth")
             return true;
