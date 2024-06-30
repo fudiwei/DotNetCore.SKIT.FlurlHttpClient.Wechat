@@ -1,8 +1,11 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
     /// <para>表示 [POST] /mmpaymkttransfers/sendgroupredpack 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2024-06-05 下线。")]
     public class SendPayMarketingTransfersGroupRedPackRequest : WechatTenpaySignableRequest
     {
         /// <summary>

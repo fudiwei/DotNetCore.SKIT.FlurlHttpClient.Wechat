@@ -45,6 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-06-05 下线。")]
         public static async Task<Models.SendPayMarketingTransfersGroupRedPackResponse> ExecuteSendPayMarketingTransfersGroupRedPackAsync(this WechatTenpayClient client, Models.SendPayMarketingTransfersGroupRedPackRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
