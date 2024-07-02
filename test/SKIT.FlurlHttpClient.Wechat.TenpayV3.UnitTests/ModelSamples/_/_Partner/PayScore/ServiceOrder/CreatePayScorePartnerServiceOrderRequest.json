@@ -1,4 +1,4 @@
-﻿{
+{
     "service_id": "2002000000000558128851361561536",
     "appid": "wxd678efh567hg6787",
     "sub_mchid": "1900000109",
@@ -8,8 +8,8 @@
     "post_payments": [
         {
             "name": "就餐费用",
-            "description": "就餐人均100元",
             "amount": 40000,
+            "description": "就餐人均100元",
             "count": 4
         }
     ],
@@ -17,6 +17,7 @@
         {
             "name": "满20减1元",
             "description": "不与其他优惠叠加",
+            "amount": 100,
             "count": 2
         }
     ],
@@ -27,14 +28,15 @@
     },
     "time_range": {
         "start_time": "20091225091010",
-        "start_time_remark": "开始租借时间",
         "end_time": "20091225121010",
-        "end_time_remark": "租借结束时间"
+        "start_time_remark": "备注1",
+        "end_time_remark": "备注2"
     },
     "location": {
         "start_location": "嗨客时尚主题展餐厅",
         "end_location": "嗨客时尚主题展餐厅"
     },
+    "openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
     "sub_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
     "need_user_confirm": false,
     "notify_url": "https://api.test.com",

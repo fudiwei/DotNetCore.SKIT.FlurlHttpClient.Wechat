@@ -233,6 +233,10 @@
 
             -   查询单笔退款：`GetRefundDomesticRefundByOutRefundNumber`
 
+            -   下发服务费用待处理消息：`SendPayScoreServiceOrderPendingMessage`
+
+            -   下发服务预扣费消息：`SendPayScoreServiceOrderPrepaidMessage`
+
         -   微信支付分（免确认模式）
 
             -   创单结单合并：`CreatePayScoreServiceOrderDirectComplete`
@@ -248,6 +252,10 @@
             -   查询用户授权记录（OpenId）：`GetPayScorePermissionsByOpenId`
 
             -   解除用户授权关系（OpenId）：`TerminatePayScorePermissionsByOpenId`
+
+        -   用户分层
+
+            -   评估用户分层：`AssessPayScorePermissionsUserRiskLevel`
 
     -   微信支付分停车
 
@@ -741,6 +749,10 @@
 
             -   商户申请获取对账单：`GetPayScoreMerchantBill`
 
+            -   下发服务费用待处理消息：`SendPayScorePartnerServiceOrderPendingMessage`
+
+            -   下发服务预扣费消息：`SendPayScorePartnerServiceOrderPrepaidMessage`
+
         -   微信支付分（免确认预授权模式）
 
             -   商户预授权：`ApplyPayScorePartnerPermissions`
@@ -752,6 +764,10 @@
             -   查询用户授权记录（OpenId）：`GetPayScorePartnerPermissionsByOpenId`
 
             -   解除用户授权关系（OpenId）：`TerminatePayScorePartnerPermissionsByOpenId`
+
+        -   用户分层
+
+            -   服务商评估用户分层：`AssessPayScorePartnerPermissionsUserRiskLevel`
 
     -   微信支付分停车
 
