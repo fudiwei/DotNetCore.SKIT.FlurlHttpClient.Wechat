@@ -1,0 +1,30 @@
+{
+    "transfer_batch": {
+        "out_batch_no": "sjzz20230223",
+        "batch_id": "131000011085109987515042023022300246500006",
+        "sp_appid": "wxf636efh567hg4356",
+        "sub_mchid": "1900000109",
+        "sub_appid": "wxf636efh567hg4356",
+        "batch_state": "ACCEPTED",
+        "batch_name": "2023年2月深圳分部转账单",
+        "batch_remark": "2023年2月深圳分部报销单",
+        "close_reason": "MERCHANT_REVOCATION",
+        "total_amount": 4000000,
+        "total_num": 200,
+        "create_time": "2023-02-23T13:29:35+08:00",
+        "success_amount": 3900000,
+        "success_num": 199,
+        "failed_amount": 100000,
+        "failed_num": 1,
+        "transfer_scene_id": "1000"
+    },
+    "data": [
+        {
+            "detail_id": "132000011085109987515042023022300246521006",
+            "out_detail_no": "x23zy545Bd5436",
+            "detail_state": "INIT"
+        }
+    ],
+    "offset": 0,
+    "limit": 20
+}

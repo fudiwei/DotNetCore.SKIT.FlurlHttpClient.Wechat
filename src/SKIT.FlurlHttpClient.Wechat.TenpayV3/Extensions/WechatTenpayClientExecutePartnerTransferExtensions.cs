@@ -50,7 +50,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "partner-transfer", "batches", "out-batch-no", request.OutBatchNumber)
-                .SetQueryParam("need_query_detail", request.RequireQueryDetail);
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail ? "true" : "false");
 
             if (request.DetailStatus is not null)
                 flurlReq.SetQueryParam("detail_status", request.DetailStatus);

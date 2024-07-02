@@ -9,7 +9,6 @@ using Xunit;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
 {
     using SKIT.FlurlHttpClient.Internal;
-    using SKIT.FlurlHttpClient.Primitives;
 
     public partial class TestCase_ResponseDecryptionTests
     {
@@ -305,6 +304,128 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = new Models.GetEcommerceBillFundflowBillRequest();
                     var response = await client.ExecuteGetEcommerceBillFundflowBillAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /ecommerce/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetEcommerceMerchantTransferBillByOutBillNumberResponse()
+        {
+            static Models.GetEcommerceMerchantTransferBillByOutBillNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return SetMockResponseRawStatusAsOk(new Models.GetEcommerceMerchantTransferBillByOutBillNumberResponse()
+                {
+                    UserName = encryptor.Invoke(MOCK_PLAIN_STR)
+                });
+            }
+
+            static void AssertMockResponseModel(Models.GetEcommerceMerchantTransferBillByOutBillNumberResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetEcommerceMerchantTransferBillByOutBillNumberRequest();
+                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByOutBillNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetEcommerceMerchantTransferBillByOutBillNumberRequest();
+                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByOutBillNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /ecommerce/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetEcommerceMerchantTransferBillByTransferBillNumberResponse()
+        {
+            static Models.GetEcommerceMerchantTransferBillByTransferBillNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return SetMockResponseRawStatusAsOk(new Models.GetEcommerceMerchantTransferBillByTransferBillNumberResponse()
+                {
+                    UserName = encryptor.Invoke(MOCK_PLAIN_STR)
+                });
+            }
+
+            static void AssertMockResponseModel(Models.GetEcommerceMerchantTransferBillByTransferBillNumberResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetEcommerceMerchantTransferBillByTransferBillNumberRequest();
+                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByTransferBillNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetEcommerceMerchantTransferBillByTransferBillNumberRequest();
+                    var response = await client.ExecuteGetEcommerceMerchantTransferBillByTransferBillNumberAsync(request);
                     AssertMockResponseModel(response);
                 }
             }
@@ -824,6 +945,128 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 {
                     var request = new Models.GetPayScoreMerchantBillRequest();
                     var response = await client.ExecuteGetPayScoreMerchantBillAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /platsolution/mch-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse()
+        {
+            static Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return SetMockResponseRawStatusAsOk(new Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse()
+                {
+                    UserName = encryptor.Invoke(MOCK_PLAIN_STR)
+                });
+            }
+
+            static void AssertMockResponseModel(Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdRequest();
+                    var response = await client.ExecuteGetPlatformSolutionMerchantTransferBatchDetailByDetailIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdRequest();
+                    var response = await client.ExecuteGetPlatformSolutionMerchantTransferBatchDetailByDetailIdAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /platsolution/mch-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse()
+        {
+            static Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return SetMockResponseRawStatusAsOk(new Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse()
+                {
+                    UserName = encryptor.Invoke(MOCK_PLAIN_STR)
+                });
+            }
+
+            static void AssertMockResponseModel(Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberRequest();
+                    var response = await client.ExecuteGetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberRequest();
+                    var response = await client.ExecuteGetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberAsync(request);
                     AssertMockResponseModel(response);
                 }
             }

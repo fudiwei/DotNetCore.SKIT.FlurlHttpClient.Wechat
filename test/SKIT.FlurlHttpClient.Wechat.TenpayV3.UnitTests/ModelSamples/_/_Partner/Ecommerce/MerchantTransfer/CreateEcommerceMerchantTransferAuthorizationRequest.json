@@ -1,0 +1,11 @@
+{
+    "sub_mchid": "1900001109",
+    "agreement_list": [
+        {
+            "agreement_code": "1",
+            "agreement_version": "20230101",
+            "sign_organization": "示例有限责任公司",
+            "sign_time": "2015-05-20T13:29:35.120+08:00"
+        }
+    ]
+}

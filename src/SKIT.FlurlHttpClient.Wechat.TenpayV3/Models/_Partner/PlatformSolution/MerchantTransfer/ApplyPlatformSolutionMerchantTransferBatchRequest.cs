@@ -3,15 +3,48 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /partner-transfer/batches 接口的请求。</para>
+    /// <para>表示 [POST] /platsolution/mch-transfer/batches/apply 接口的请求。</para>
     /// </summary>
-    [WechatTenpaySensitive]
-    public class CreatePartnerTransferBatchRequest : WechatTenpayRequest
+    public class ApplyPlatformSolutionMerchantTransferBatchRequest : WechatTenpayRequest
     {
         public static class Types
         {
-            public class TransferDetail : CreateTransferBatchRequest.Types.TransferDetail
+            public class TransferDetail
             {
+                /// <summary>
+                /// 获取或设置商户明细单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_detail_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_detail_no")]
+                public string OutDetailNumber { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置转账金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("transfer_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("transfer_amount")]
+                public int TransferAmount { get; set; }
+
+                /// <summary>
+                /// 获取或设置转账备注。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("transfer_remark")]
+                [System.Text.Json.Serialization.JsonPropertyName("transfer_remark")]
+                public string TransferRemark { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置收款用户 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("openid")]
+                public string OpenId { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置微信转账预约单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("reservation_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("reservation_id")]
+                public string ReservationId { get; set; } = string.Empty;
             }
         }
 
@@ -30,18 +63,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置特约商户 AppId。
+        /// 获取或设置二级商户 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
         public string? SubAppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置特约商户授权类型。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("authorization_type")]
-        [System.Text.Json.Serialization.JsonPropertyName("authorization_type")]
-        public string AuthorizationType { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置商户批次单号。
@@ -65,6 +91,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string BatchRemark { get; set; } = string.Empty;
 
         /// <summary>
+        /// 获取或设置转账场景 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("transfer_scene_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("transfer_scene_id")]
+        public string TransferSceneId { get; set; } = string.Empty;
+
+        /// <summary>
         /// 获取或设置转账总金额（单位：分）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_amount")]
@@ -86,10 +119,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public IList<Types.TransferDetail> TransferDetailList { get; set; } = new List<Types.TransferDetail>();
 
         /// <summary>
-        /// 获取或设置转账用途。
+        /// 获取或设置回调通知地址。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("transfer_purpose")]
-        [System.Text.Json.Serialization.JsonPropertyName("transfer_purpose")]
-        public string? TransferPurpose { get; set; }
+        [Newtonsoft.Json.JsonProperty("notify_url")]
+        [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
+        public string? NotifyUrl { get; set; }
     }
 }

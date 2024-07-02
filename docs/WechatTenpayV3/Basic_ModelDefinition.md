@@ -941,6 +941,30 @@
 
         -   下载账单：`DownloadBillFile`
 
+    -   平台收付通（商家转账）
+
+        -   批量商家转账
+
+            -   受理商家转账：`ApplyPlatformSolutionMerchantTransferBatch`
+
+            -   微信支付转账批次单号查询批次单：`GetPlatformSolutionMerchantTransferBatchByBatchId`
+
+            -   微信支付转账明细单号查询明细单：`GetPlatformSolutionMerchantTransferBatchDetailByDetailId`
+
+            -   商户转账批次单号查询批次单：`GetPlatformSolutionMerchantTransferBatchByOutBatchNumber`
+
+            -   商户明细单号查询明细单：`GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumber`
+
+        -   预约商家转账
+
+            -   受理单次预约商家转账：`ApplyPlatformSolutionMerchantTransferReservation`
+
+            -   商户预约单号查询预约商家转账记录：`GetPlatformSolutionMerchantTransferReservationByOutReservationNumber`
+
+            -   关闭预约商家转账记录：`ClosePlatformSolutionMerchantTransferReservation`
+
+            -   微信支付预约单号查询预约商家转账记录：`GetPlatformSolutionMerchantTransferReservationByReservationId`
+
     -   代金券
 
         -   创建代金券批次：`CreateMarketingFavorStock`
