@@ -1629,6 +1629,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.3.0 (2024-07-13)
+
+    -   **变更**：升级公共组件至 v3.1.0。
+
 -   Release 3.2.0 (2024-06-01)
 
     -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.4.0。
