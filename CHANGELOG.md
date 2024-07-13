@@ -1603,6 +1603,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.2.0 (2024-07-13)
+
+    -   **变更**：升级公共组件至 v3.1.0。
+
 -   Release 3.1.0 (2024-06-05)
 
     -   **新增**：适配新的 OpenAI v2 版接口。（_via_ [GitHub #143](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/143)）
