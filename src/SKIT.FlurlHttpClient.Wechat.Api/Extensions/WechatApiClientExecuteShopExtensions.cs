@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             {
                 flurlReq.SetQueryParam("upload_type", 0);
 
-                using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.ImageFileBytes!, fileContentType: "image/png", formDataName: "media");
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes!, fileContentType: "image/png", formDataName: "media");
                 return await client.SendFlurlRequestAsync<Models.ShopImageUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }

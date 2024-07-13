@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                         .SetQueryParam("height", request.Height)
                         .SetQueryParam("width", request.Width);
 
-                using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.ImageFileBytes!, fileContentType: "image/png", formDataName: "media");
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes!, fileContentType: "image/png", formDataName: "media");
                 return await client.SendFlurlRequestAsync<Models.ProductImageUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
             }
         }

@@ -401,7 +401,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "card", "invoice", "platform", "setpdf")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "invoice.pdf", fileBytes: request.FileBytes, fileContentType: "application/pdf", formDataName: "pdf");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "invoice.pdf", fileBytes: request.FileBytes, fileContentType: "application/pdf", formDataName: "pdf");
             return await client.SendFlurlRequestAsync<Models.CardInvoicePlatformSetPdfResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

@@ -99,7 +99,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "uploadauthmaterial")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "media.png", fileBytes: request.FileBytes, fileContentType: "image/png", formDataName: "media");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "media.png", fileBytes: request.FileBytes, fileContentType: "image/png", formDataName: "media");
             return await client.SendFlurlRequestAsync<Models.WxaSecUploadAuthMaterialResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -435,7 +435,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "singlefileupload")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: $"{request.MediaName}.{request.MediaType}", fileBytes: request.MediaFileBytes, fileContentType: "video/mp4", formDataName: "media_data");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: $"{request.MediaName}.{request.MediaType}", fileBytes: request.MediaFileBytes, fileContentType: "video/mp4", formDataName: "media_data");
             if (request.CoverType is not null) httpContent.Add(new StringContent(request.CoverType), "cover_type");
             if (request.CoverFileBytes is not null) httpContent.Add(new ByteArrayContent(request.CoverFileBytes), "cover_data");
             if (request.SourceContext is not null) httpContent.Add(new StringContent(request.SourceContext), "source_context");
@@ -531,7 +531,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "uploadpart")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: string.Empty, fileBytes: request.FileBytes, fileContentType: "application/octet-stream", formDataName: "data");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: string.Empty, fileBytes: request.FileBytes, fileContentType: "application/octet-stream", formDataName: "data");
             httpContent.Add(new StringContent(request.UploadId), "upload_id");
             httpContent.Add(new StringContent(request.PartNumber.ToString()), "part_number");
             httpContent.Add(new StringContent(request.FileType.ToString()), "resource_type");

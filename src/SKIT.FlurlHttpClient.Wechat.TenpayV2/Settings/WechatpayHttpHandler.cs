@@ -13,16 +13,22 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
 #if NETCOREAPP2_1_OR_GREATER || NET5_0_OR_GREATER
             SocketsHttpHandler handler = new SocketsHttpHandler();
             handler.SslOptions = new SslClientAuthenticationOptions() { RemoteCertificateValidationCallback = static (_, _, _, _) => true };
-#else
+#elif NET471_OR_GREATER
             HttpClientHandler handler = new HttpClientHandler();
             handler.ServerCertificateCustomValidationCallback = static (_, _, _, sslPolicyErrors) => sslPolicyErrors == SslPolicyErrors.None;
+#elif NET462_OR_GREATER
+            WebRequestHandler handler = new WebRequestHandler();
+            handler.ServerCertificateValidationCallback = static (_, _, _, _) => true;
+#else
+            WinHttpHandler handler = new WinHttpHandler();
+            handler.ServerCertificateValidationCallback = static (_, _, _, _) => true;
 #endif
 
             if (certificateBytes is not null)
             {
                 X509Certificate x509;
 
-#if NET471_OR_GREATER || NETSTANDARD2_0_OR_GREATER || NET5_0_OR_GREATER
+#if NET471_OR_GREATER || NETCOREAPP2_1_OR_GREATER || NET5_0_OR_GREATER
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 #else
                 if (Environment.OSVersion.Platform == PlatformID.Win32NT)

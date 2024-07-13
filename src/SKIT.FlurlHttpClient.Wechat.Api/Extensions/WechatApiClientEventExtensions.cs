@@ -4,6 +4,7 @@ using System.Xml.Linq;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
+    using SKIT.FlurlHttpClient.Internal;
     using SKIT.FlurlHttpClient.Primitives;
 
     /// <summary>
@@ -136,7 +137,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             try
             {
-                xml = Utilities.XmlHelper.Serialize(webhookEvent);
+                xml = _XmlSimpleSerializer.Serialize(webhookEvent, typeof(TEvent));
             }
             catch (Exception ex)
             {
@@ -367,7 +368,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                     webhookXml = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedXml, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
                 }
 
-                return Utilities.XmlHelper.Deserialize<TEvent>(webhookXml);
+                return (TEvent)_XmlSimpleSerializer.Deserialize(webhookXml, typeof(TEvent));
             }
             catch (WechatApiException)
             {

@@ -6,6 +6,7 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient;
     using SKIT.FlurlHttpClient.Primitives;
 
     public static class WechatTenpayClientExecuteMerchantMediaExtensions
@@ -35,12 +36,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
 
             if (request.FileContentType is null)
-                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "merchant", "media", "upload");
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
             return await client.SendFlurlRequestAsync<Models.UploadMerchantMediaImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -67,12 +68,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
 
             if (request.FileContentType is null)
-                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForVideo(request.FileName!) ?? "video/mp4";
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "merchant", "media", "video_upload");
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
             return await client.SendFlurlRequestAsync<Models.UploadMerchantMediaVideoResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

@@ -5,22 +5,18 @@ using System.Text;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
 {
-    internal static class FileHttpContentBuilder
-    {
-        public static MultipartFormDataContent Build(string fileName, byte[] fileBytes, string fileContentType, string formDataName)
-        {
-            return Build(fileName: fileName, fileBytes: fileBytes, fileContentType: fileContentType, formDataName: formDataName, (_) => { });
-        }
+    using SKIT.FlurlHttpClient;
 
-        public static MultipartFormDataContent Build(string fileName, byte[] fileBytes, string fileContentType, string formDataName, Action<HttpContent> configureFileHttpContent)
+    internal static class HttpContentBuilder
+    {
+        public static MultipartFormDataContent BuildWithFile(string fileName, byte[] fileBytes, string? fileContentType, string formDataName, Action<HttpContent>? configureFileHttpContent = null)
         {
             if (fileName is null) throw new ArgumentNullException(nameof(fileName));
             if (formDataName is null) throw new ArgumentNullException(nameof(formDataName));
-            if (configureFileHttpContent is null) throw new ArgumentNullException(nameof(configureFileHttpContent));
 
             fileName = fileName.Replace("\"", string.Empty);
             fileBytes = fileBytes ?? Array.Empty<byte>();
-            fileContentType = string.IsNullOrEmpty(fileContentType) ? "application/octet-stream" : fileContentType;
+            fileContentType = string.IsNullOrEmpty(fileContentType) ? MimeTypes.Binary : fileContentType;
             formDataName = formDataName.Replace("\"", string.Empty);
 
             // HACKED: 默认不支持 Unicode 文件名 https://github.com/dotnet/runtime/issues/22996
@@ -33,11 +29,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
             fileContent.Headers.ContentDisposition = ContentDispositionHeaderValue.Parse($"form-data; name=\"{formDataName}\"; filename=\"{hackedFileName}\"");
             fileContent.Headers.ContentType = MediaTypeHeaderValue.Parse(fileContentType);
             fileContent.Headers.ContentLength = fileBytes.Length;
-            configureFileHttpContent(fileContent);
+            configureFileHttpContent?.Invoke(fileContent);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             MultipartFormDataContent httpContent = new MultipartFormDataContent(boundary);
-            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse($"multipart/form-data; boundary={boundary}");
+            httpContent.Headers.ContentType = MediaTypeHeaderValue.Parse($"{MimeTypes.FormData}; boundary={boundary}");
             httpContent.Add(fileContent);
             return httpContent;
         }

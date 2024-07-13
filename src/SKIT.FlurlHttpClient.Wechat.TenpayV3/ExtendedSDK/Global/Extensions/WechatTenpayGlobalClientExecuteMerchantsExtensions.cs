@@ -3,10 +3,12 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
-using SKIT.FlurlHttpClient.Primitives;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
+    using SKIT.FlurlHttpClient;
+    using SKIT.FlurlHttpClient.Primitives;
+
     public static class WechatTenpayGlobalClientExecuteMerchantsExtensions
     {
         /// <summary>
@@ -110,12 +112,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
                 request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
 
             if (request.FileContentType is null)
-                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/jpeg";
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "merchant", "media", "upload");
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
             return await client.SendFlurlRequestAsync<Models.UploadMerchantMediaImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

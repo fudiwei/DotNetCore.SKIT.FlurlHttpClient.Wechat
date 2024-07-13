@@ -9,6 +9,7 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Ads
 {
+    using SKIT.FlurlHttpClient;
     using SKIT.FlurlHttpClient.Primitives;
 
     public static class WechatAdsClientExecuteImagesExtensions
@@ -32,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 request.FileHash = EncodedString.ToHexString(Utilities.MD5Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Value!;
 
             if (request.FileContentType is null)
-                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             string boundary = "--BOUNDARY--" + DateTimeOffset.Now.Ticks.ToString("x");
             using var fileContent = new ByteArrayContent(request.FileBytes ?? Array.Empty<byte>());

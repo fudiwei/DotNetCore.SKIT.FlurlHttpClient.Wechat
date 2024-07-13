@@ -29,13 +29,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
             if (request.FileContentType is null)
-                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "miniapppay", "upload_image")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
             return await client.SendFlurlRequestAsync<Models.CgibinMiniAppPayUploadImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

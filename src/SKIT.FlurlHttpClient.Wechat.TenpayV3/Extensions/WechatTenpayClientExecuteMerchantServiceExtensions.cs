@@ -7,6 +7,7 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient;
     using SKIT.FlurlHttpClient.Primitives;
 
     public static class WechatTenpayClientExecuteMerchantServiceExtensions
@@ -288,12 +289,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToLower();
 
             if (request.FileContentType is null)
-                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "merchant-service", "images", "upload");
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
             return await client.SendFlurlRequestAsync<Models.UploadMerchantServiceImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

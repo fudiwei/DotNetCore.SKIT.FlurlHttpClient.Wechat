@@ -8,6 +8,8 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
+    using SKIT.FlurlHttpClient;
+
     public static class WechatApiClientExecuteCgibinMediaExtensions
     {
         /// <summary>
@@ -48,23 +50,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
 
             if (request.FileContentType is null)
-            {
-                if (TYPE_IMAGE.Equals(request.Type) || TYPE_THUMB.Equals(request.Type))
-                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
-                else if (TYPE_VOICE.Equals(request.Type))
-                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForVoice(request.FileName!) ?? "audio/mp3";
-                else if (TYPE_VIDEO.Equals(request.Type))
-                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForVideo(request.FileName!) ?? "video/mp4";
-                else
-                    request.FileContentType = "application/octet-stream";
-            }
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "media", "upload")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.Type);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
             return await client.SendFlurlRequestAsync<Models.CgibinMediaUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -116,13 +109,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
             if (request.FileContentType is null)
-                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "media", "uploadimg")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
             return await client.SendFlurlRequestAsync<Models.CgibinMediaUploadImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

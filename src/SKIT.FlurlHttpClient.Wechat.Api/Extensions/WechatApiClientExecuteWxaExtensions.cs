@@ -668,7 +668,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "imagesearch")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.ImageFileBytes, fileContentType: "image/png", formDataName: "img");
             return await client.SendFlurlRequestAsync<Models.WxaImageSearchResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
@@ -741,7 +741,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "img_sec_check")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.png", fileBytes: request.FileBytes, fileContentType: "image/png", formDataName: "media");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.png", fileBytes: request.FileBytes, fileContentType: "image/png", formDataName: "media");
             return await client.SendFlurlRequestAsync<Models.WxaImageSecurityCheckResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

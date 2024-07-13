@@ -8,6 +8,8 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
+    using SKIT.FlurlHttpClient;
+
     public static class WechatApiClientExecuteWxaComponentExtensions
     {
         #region AMS
@@ -1120,23 +1122,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             if (request.FileName is null)
-            {
                 request.FileName = Guid.NewGuid().ToString("N").ToLower();
-            }
 
             if (request.FileContentType is null)
-            {
-                request.FileContentType =
-                    Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ??
-                    Utilities.FileNameToContentTypeMapper.GetContentTypeForVideo(request.FileName!) ??
-                    "application/octet-stream";
-            }
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "uploadmedia")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
             return await client.SendFlurlRequestAsync<Models.WxaUploadMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
@@ -1428,20 +1423,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
 
             if (request.FileContentType is null)
-            {
-                if (TYPE_IMAGE.Equals(request.Type))
-                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "image/png";
-                else if (TYPE_VIDEO.Equals(request.Type))
-                    request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForVideo(request.FileName!) ?? "video/mp4";
-                else
-                    request.FileContentType = "application/octet-stream";
-            }
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "icp", "upload_icp_media")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
             httpContent.Add(new StringContent(request.Type, Encoding.UTF8), "\"type\"");
             httpContent.Add(new StringContent(request.ICPOrderField, Encoding.UTF8), "\"icp_order_field\"");
             if (request.CertificateType is not null) httpContent.Add(new StringContent(request.CertificateType.ToString()!, Encoding.UTF8), "\"certificate_type\"");

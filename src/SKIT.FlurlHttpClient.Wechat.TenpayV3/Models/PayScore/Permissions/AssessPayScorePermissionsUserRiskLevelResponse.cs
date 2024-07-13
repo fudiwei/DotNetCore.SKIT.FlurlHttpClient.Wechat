@@ -18,19 +18,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("user_label")]
         [System.Text.Json.Serialization.JsonPropertyName("user_label")]
         public string? UserLabel { get; set; }
-
-        /// <summary>
-        /// 获取或设置用户分层。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("user_risk_level")]
-        [System.Text.Json.Serialization.JsonPropertyName("user_risk_level")]
-        public int? UserRiskLevel { get; set; }
-
-        /// <summary>
-        /// 获取或设置分层版本。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("risk_level_version")]
-        [System.Text.Json.Serialization.JsonPropertyName("risk_level_version")]
-        public int? RiskLevelVersion { get; set; }
     }
 }

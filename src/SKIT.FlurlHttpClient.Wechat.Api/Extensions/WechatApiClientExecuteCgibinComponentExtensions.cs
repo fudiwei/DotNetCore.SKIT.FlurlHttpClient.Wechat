@@ -430,7 +430,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "component", "uploadprivacyextfile")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "file");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "file");
             return await client.SendFlurlRequestAsync<Models.CgibinComponentUploadPrivacyExtraFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

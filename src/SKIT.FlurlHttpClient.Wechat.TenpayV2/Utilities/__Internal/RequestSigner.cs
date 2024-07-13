@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Text.Json.Nodes;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 {
@@ -29,7 +31,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Utilities
 
         public static string SignFromJson(string json, string secretKey, string secretValue, string? signType = null)
         {
-            return SignFromSortedQueryString(queryString: JsonHelper.ParseToSortedQueryString(json), secretKey: secretKey, secretValue: secretValue, signType: signType);
+            StringBuilder stringBuilder = new StringBuilder();
+            JsonObject jObject = JsonNode.Parse(json)!.AsObject();
+            foreach (KeyValuePair<string, JsonNode?> jProp in jObject.OrderBy(p => p.Key))
+            {
+                string key = jProp.Key;
+                string? value = jProp.Value?.ToString();
+                if (string.IsNullOrEmpty(value))
+                    continue;
+
+                stringBuilder.Append($"{key}={value}&");
+            }
+
+            string sortedQueryString = stringBuilder.ToString().TrimEnd('&');
+            return SignFromSortedQueryString(queryString: sortedQueryString, secretKey: secretKey, secretValue: secretValue, signType: signType);
         }
 
         public static string SignFromSortedQueryString(string queryString, string secret, string? signType = null)

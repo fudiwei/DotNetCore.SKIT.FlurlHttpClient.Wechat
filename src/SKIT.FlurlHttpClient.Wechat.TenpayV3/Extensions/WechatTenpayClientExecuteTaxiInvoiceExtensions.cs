@@ -222,7 +222,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "taxi-invoice", "cards", "upload-file");
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "file.pdf", fileBytes: request.FileBytes, fileContentType: "application/pdf", fileMetaJson: client.JsonSerializer.Serialize(request));
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "file.pdf", fileBytes: request.FileBytes, fileContentType: "application/pdf", fileMetaJson: client.JsonSerializer.Serialize(request));
             return await client.SendFlurlRequestAsync<Models.UploadTaxiInvoiceCardFileResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

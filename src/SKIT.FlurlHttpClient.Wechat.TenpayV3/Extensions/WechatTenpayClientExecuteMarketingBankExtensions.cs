@@ -6,6 +6,7 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient;
     using SKIT.FlurlHttpClient.Primitives;
 
     public static class WechatTenpayClientExecuteMarketingBankExtensions
@@ -34,12 +35,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes ?? Array.Empty<byte>())).Value!.ToLower();
 
             if (request.FileContentType is null)
-                request.FileContentType = Utilities.FileNameToContentTypeMapper.GetContentTypeForImage(request.FileName!) ?? "text/plain";
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "bank", "packages", request.PackageId, "tasks");
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: request.FileName, fileBytes: request.FileBytes!, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes!, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
             return await client.SendFlurlRequestAsync<Models.UploadMarketingBankPackagesTasksResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }

@@ -128,7 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("kf_account", request.KfAccount);
 
-            using var httpContent = Utilities.FileHttpContentBuilder.Build(fileName: "image.jpg", fileBytes: request.HeadImageFileBytes, fileContentType: "image/jpeg", formDataName: "media");
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: "image.jpg", fileBytes: request.HeadImageFileBytes, fileContentType: "image/jpeg", formDataName: "media");
             return await client.SendFlurlRequestAsync<Models.CustomServiceKfAccountUploadHeadImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

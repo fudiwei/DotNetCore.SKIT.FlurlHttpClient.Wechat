@@ -36,8 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
                 string xml = xmlDocument.InnerXml;
                 string json = Utilities.XmlHelper.ConvertToJson(xml);
-                string signData = Utilities.JsonHelper.ParseToSortedQueryString(json);
-                string actualSign = Utilities.RequestSigner.SignFromSortedQueryString(signData, client.Credentials.MerchantSecret, signType);
+                string actualSign = Utilities.RequestSigner.SignFromJson(json, client.Credentials.MerchantSecret, signType);
 
                 bool valid = string.Equals(expectedSign, actualSign, StringComparison.OrdinalIgnoreCase);
                 if (valid)

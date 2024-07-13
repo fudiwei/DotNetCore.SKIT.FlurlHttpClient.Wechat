@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net461; net471; netstandard2.0; net6.0</TargetFrameworks>
+        <TargetFrameworks>net462; net471; netstandard2.0; net6.0</TargetFrameworks>
         <LangVersion>10.0</LangVersion>
         <Nullable>enable</Nullable>
         <NullableReferenceTypes>true</NullableReferenceTypes>
@@ -36,12 +36,12 @@
 	</ItemGroup>
 
 	<ItemGroup>
-        <Reference Include="System.Net.Http.WebRequest" Condition="'$(TargetFramework)' == 'net461' Or '$(TargetFramework)' == 'net471'" />
-        <Reference Include="System.Web" Condition="'$(TargetFramework)' == 'net461' Or '$(TargetFramework)' == 'net471'" />
+        <Reference Include="System.Net.Http.WebRequest" Condition="'$(TargetFramework.TrimEnd(`0123456789`))' == 'net'" />
     </ItemGroup>
 
     <ItemGroup>
-		<PackageReference Include="SKIT.FlurlHttpClient.Common" Version="3.0.0" />
+        <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="3.1.0" />
+        <PackageReference Include="System.Net.Http.WinHttpHandler" Version="8.0.1" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
     </ItemGroup>
 
 </Project>
