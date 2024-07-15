@@ -26,11 +26,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings
         [System.Text.Json.Serialization.JsonConstructor]
         public EncryptionKeyEntry(int version, string privateKey)
         {
+            privateKey = privateKey?.Trim()!;
+
             if (version <= 0)
                 throw new ArgumentException("The value of `version` can not be less than zero.", nameof(version));
             if (string.IsNullOrEmpty(privateKey))
                 throw new ArgumentException("The value of `privateKey` can not be empty.", nameof(privateKey));
-            if (!privateKey.Trim().StartsWith("-----BEGIN RSA PRIVATE KEY-----") || !privateKey.Trim().EndsWith("-----END RSA PRIVATE KEY-----"))
+            if (!(privateKey.StartsWith("-----BEGIN PRIVATE KEY-----") && privateKey.EndsWith("-----END PRIVATE KEY-----")) &&
+                !(privateKey.StartsWith("-----BEGIN RSA PRIVATE KEY-----") && privateKey.EndsWith("-----END RSA PRIVATE KEY-----")))
                 throw new ArgumentException("The value of `privateKey` is an invalid private key file content.", nameof(privateKey));
 
             Version = version;
