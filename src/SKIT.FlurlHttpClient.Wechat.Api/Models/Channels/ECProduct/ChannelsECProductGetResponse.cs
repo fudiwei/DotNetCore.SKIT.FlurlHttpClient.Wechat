@@ -229,6 +229,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("freight_insurance")]
                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
                         public bool IsFreightInsuranceSupported { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否支持假一赔三。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("fake_one_pay_three")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("fake_one_pay_three")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                        public bool? IsFakeOnePayThreeSupported { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否支持坏损包退。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("damage_guarantee")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("damage_guarantee")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                        public bool? IsDamageGuaranteeSupported { get; set; }
                     }
 
                     public class Aftersale
