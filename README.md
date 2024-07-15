@@ -16,7 +16,7 @@
 ## 特性
 
 -   基于 `Flurl.Http`。
--   支持 .NET Framework 4.6.2+、.NET Standard 2.0+、.NET Core 2.0+、.NET 5.0+ 多目标框架。
+-   支持 .NET Framework 4.6.2+、.NET Core 3.1+、.NET 5.0+ 多目标框架。
 -   支持 Windows / Linux / macOS 多平台部署。
 -   支持 `System.Text.Json`（默认）和 `Newtonsoft.Json` 两种序列化方式。
 -   强类型接口模型。
