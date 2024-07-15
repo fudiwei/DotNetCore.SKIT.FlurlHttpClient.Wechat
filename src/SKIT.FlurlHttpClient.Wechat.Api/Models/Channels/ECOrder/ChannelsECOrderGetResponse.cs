@@ -68,6 +68,37 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         [System.Text.Json.Serialization.JsonPropertyName("user_coupon_id")]
                                         public string? UserCouponId { get; set; }
                                     }
+
+                                    public class Voucher
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置团购优惠券码。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("voucher_code")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("voucher_code")]
+                                        public string VoucherCode { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置团购优惠券类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("voucher_type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("voucher_type")]
+                                        public int VoucherType { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置团购优惠券价格（单位：分）。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("voucher_buy_amount")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("voucher_buy_amount")]
+                                        public int VoucherBuyAmount { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置次卡序号标识。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("time_index")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("time_index")]
+                                        public int? TimeIndex { get; set; }
+                                    }
                                 }
 
                                 /// <summary>
@@ -239,6 +270,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("delivery_deadline")]
                                 [System.Text.Json.Serialization.JsonPropertyName("delivery_deadline")]
                                 public long? DeliveryDeadlineTimestamp { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置团购优惠列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("voucher_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("voucher_list")]
+                                public Types.Voucher[]? VoucherList { get; set; }
                             }
 
                             public class Payment

@@ -13,6 +13,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 {
                     public class Product
                     {
+                        public static class Types
+                        {
+                            public class Voucher
+                            {
+                                /// <summary>
+                                /// 获取或设置团购优惠券码。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("vourcher_code")]
+                                [System.Text.Json.Serialization.JsonPropertyName("vourcher_code")]
+                                public string VoucherCode { get; set; } = default!;
+                            }
+                        }
+
                         /// <summary>
                         /// 获取或设置商品 ID。
                         /// </summary>
@@ -35,6 +48,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("count")]
                         [System.Text.Json.Serialization.JsonPropertyName("count")]
                         public int Count { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置团购优惠券列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("voucher_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("voucher_list")]
+                        public Types.Voucher[]? VoucherList { get; set; }
                     }
 
                     public class AftersaleDetail
@@ -243,6 +263,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("refund_resp")]
                 [System.Text.Json.Serialization.JsonPropertyName("refund_resp")]
                 public Types.RefundResultInfo? RefundResultInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置生成售后单场景值。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("gen_scene")]
+                [System.Text.Json.Serialization.JsonPropertyName("gen_scene")]
+                public int? GenerateScene { get; set; }
 
                 /// <summary>
                 /// 获取或设置操作剩余时间（单位：秒）。

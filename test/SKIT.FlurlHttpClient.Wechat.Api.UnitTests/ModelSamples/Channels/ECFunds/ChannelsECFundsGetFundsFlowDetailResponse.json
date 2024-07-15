@@ -1,0 +1,23 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "funds_flow": {
+        "flow_id": "10000057741221110",
+        "funds_type": 3,
+        "flow_type": 2,
+        "amount": 1,
+        "balance": 28281,
+        "related_info_list": [
+            {
+                "related_type": 2,
+                "aftersale_id": "1000283382788072",
+                "transaction_id": "4200001619202211090964182530"
+            },
+            {
+                "related_type": 1,
+                "order_id": "3707337764590192128",
+                "transaction_id": "4200001619202211090964182530"
+            }
+        ]
+    }
+}

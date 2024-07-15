@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("cat_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("cat_id")]
                                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                                public int CategoryId { get; set; }
+                                public long CategoryId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置类目名称。
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("f_cat_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("f_cat_id")]
                                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                                public int ParentCategoryId { get; set; }
+                                public long ParentCategoryId { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置类目层级。

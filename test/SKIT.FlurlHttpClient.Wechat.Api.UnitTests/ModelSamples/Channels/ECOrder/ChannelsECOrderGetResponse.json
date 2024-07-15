@@ -35,7 +35,14 @@
                     "extra_service": {
                         "seven_day_return": 1,
                         "freight_insurance": 0
-                    }
+                    },
+                    "voucher_list": [
+                        {
+                            "voucher_code": "12345",
+                            "voucher_type": 1,
+                            "voucher_buy_amount": 10000
+                        }
+                    ]
                 }
             ],
             "pay_info": {

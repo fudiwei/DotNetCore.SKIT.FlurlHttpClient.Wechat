@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/window/product/get 接口的响应。</para>
@@ -51,7 +51,7 @@
                         [Newtonsoft.Json.JsonProperty("need_apply_category_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("need_apply_category_id")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public int? RequiredCategoryId { get; set; } = default!;
+                        public long? RequiredCategoryId { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置需要申请的类目名称。
@@ -160,7 +160,7 @@
                 [Newtonsoft.Json.JsonProperty("third_category_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("third_category_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int ThirdCategoryId { get; set; }
+                public long ThirdCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品状态。

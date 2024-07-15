@@ -29,21 +29,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("level1")]
                 [System.Text.Json.Serialization.JsonPropertyName("level1")]
-                public int FirstCategoryId { get; set; }
+                public long FirstCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类目 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("level2")]
                 [System.Text.Json.Serialization.JsonPropertyName("level2")]
-                public int SecondCategoryId { get; set; }
+                public long SecondCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置三级类目 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("level3")]
                 [System.Text.Json.Serialization.JsonPropertyName("level3")]
-                public int ThirdCategoryId { get; set; }
+                public long ThirdCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置资质材料图片 MediaId 列表。

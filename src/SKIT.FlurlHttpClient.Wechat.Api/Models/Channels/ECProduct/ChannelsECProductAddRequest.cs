@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("cat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("cat_id")]
-                public int CategoryId { get; set; }
+                public long CategoryId { get; set; }
             }
 
             public class Attribute
@@ -398,7 +398,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spu_code")]
         [System.Text.Json.Serialization.JsonPropertyName("spu_code")]
-        public string? ApuCode { get; set; }
+        public string? SpuCode { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。

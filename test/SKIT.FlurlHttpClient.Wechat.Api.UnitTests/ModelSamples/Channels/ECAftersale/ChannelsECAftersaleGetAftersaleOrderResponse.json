@@ -8,7 +8,15 @@
         "product_info": {
             "product_id": "3286",
             "sku_id": "4740",
-            "count": 1
+            "count": 1,
+            "voucher_list": [
+                {
+                    "vourcher_code": "232323"
+                },
+                {
+                    "vourcher_code": "232324"
+                }
+            ]
         },
         "details": {
             "desc": "1234",
@@ -38,6 +46,7 @@
             "ret": 0,
             "message": ""
         },
-        "type": "REFUND"
+        "type": "REFUND",
+        "gen_scene": 0
     }
 }

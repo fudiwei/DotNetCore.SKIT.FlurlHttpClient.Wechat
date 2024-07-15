@@ -15,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("cat_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("cat_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int CategoryId { get; set; }
+                public long longCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置类目名称。
