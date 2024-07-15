@@ -15,20 +15,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 {
                     public class Qualification : ChannelsECProductGetResponse.Types.Product.Types.Qualification
                     {
-                        /// <summary>
-                        /// 获取或设置资质 ID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("qua_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("qua_id")]
-                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                        public long QualificationId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置资质图片 URL 列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("qua_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("qua_url")]
-                        public string[] PictureUrlList { get; set; } = default!;
                     }
 
                     public class MiniProgramPage
