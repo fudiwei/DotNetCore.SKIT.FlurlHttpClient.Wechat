@@ -93,7 +93,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
                 if (!string.Equals(paddingMode, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase))
                     throw new NotSupportedException();
 
+#if NET8_0_OR_GREATER
+                using (AesGcm aes = new AesGcm(keyBytes, TAG_LENGTH_BYTE))
+#else
                 using (AesGcm aes = new AesGcm(keyBytes))
+#endif
                 {
                     byte[] cipherWithoutTagBytes = new byte[cipherBytes.Length - TAG_LENGTH_BYTE];
                     byte[] tagBytes = new byte[TAG_LENGTH_BYTE];
@@ -216,7 +220,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Utilities
                 if (!string.Equals(paddingMode, PADDING_MODE_NOPADDING, StringComparison.OrdinalIgnoreCase))
                     throw new NotSupportedException();
 
+#if NET8_0_OR_GREATER
+                using (AesGcm aes = new AesGcm(keyBytes, TAG_LENGTH_BYTE))
+#else
                 using (AesGcm aes = new AesGcm(keyBytes))
+#endif
                 {
                     byte[] cipherBytes = new byte[plainBytes.Length];
                     byte[] tagBytes = new byte[TAG_LENGTH_BYTE];

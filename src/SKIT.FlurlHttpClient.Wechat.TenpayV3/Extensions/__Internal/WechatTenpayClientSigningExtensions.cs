@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             CertificateEntry? entry = client.PlatformCertificateManager.GetEntry(strSerialNumber);
             if (!entry.HasValue)
             {
-                return ErroredResult.Fail(new Exception($"The platform certificate manager does not contain a certificate with serial number \"{strSerialNumber}\"."));
+                return ErroredResult.Fail(new Exception($"The platform certificate manager does not contain a certificate matched the serial number \"{strSerialNumber}\"."));
             }
 
             return GenerateSignatureResultByCertificate(
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             CertificateEntry? entry = await ((ICertificateManagerAsync)client.PlatformCertificateManager).GetEntryAsync(strSerialNumber, cancellationToken).ConfigureAwait(false);
             if (!entry.HasValue)
             {
-                return ErroredResult.Fail(new Exception($"The platform certificate manager does not contain a certificate with serial number \"{strSerialNumber}\"."));
+                return ErroredResult.Fail(new Exception($"The platform certificate manager does not contain a certificate matched the serial number \"{strSerialNumber}\"."));
             }
 
             return GenerateSignatureResultByCertificate(

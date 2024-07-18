@@ -7,11 +7,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
     /// </summary>
     public abstract class WechatWorkFinanceResponse : ICommonResponse
     {
-        internal protected WechatWorkFinanceResponse()
-        {
-            _InternalRawBytes = Array.Empty<byte>();
-        }
-
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         internal byte[] _InternalRawBytes;
@@ -32,6 +27,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
         public byte[] GetRawBytes()
         {
             return _InternalRawBytes;
+        }
+
+        internal protected WechatWorkFinanceResponse()
+        {
+            _InternalRawBytes = Array.Empty<byte>();
         }
 
         /// <summary>

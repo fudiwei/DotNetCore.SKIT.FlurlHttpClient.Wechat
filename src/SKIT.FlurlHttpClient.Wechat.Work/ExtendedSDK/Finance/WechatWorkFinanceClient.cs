@@ -159,7 +159,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                             IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(dataPtr) :
                             IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(dataPtr) :
                             throw new PlatformNotSupportedException();
-                        string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr);
+                        string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr)!;
 
                         response = JsonSerializer.Deserialize<Models.GetChatRecordsResponse>(dataContent);
                         response._InternalRawBytes = Encoding.UTF8.GetBytes(dataContent);
@@ -253,7 +253,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                             IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(dataPtr) :
                             IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(dataPtr) :
                             throw new PlatformNotSupportedException();
-                        string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr);
+                        string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr)!;
 
                         try
                         {

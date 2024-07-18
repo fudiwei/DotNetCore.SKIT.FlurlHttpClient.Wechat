@@ -55,6 +55,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         [System.Text.Json.Serialization.JsonConstructor]
         public CertificateEntry(string algorithmType, string serialNumber, string certificate, DateTimeOffset effectiveTime, DateTimeOffset expireTime)
         {
+            certificate = certificate?.Trim()!;
+
             if (string.IsNullOrEmpty(algorithmType))
                 throw new ArgumentException("The value of `algorithmType` can not be empty.", nameof(algorithmType));
             if (string.IsNullOrEmpty(certificate))
@@ -63,8 +65,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
                 throw new ArgumentException("The value of `serialNumber` can not be empty.", nameof(serialNumber));
             if (!ALGORITHM_TYPE_RSA.Equals(algorithmType) && !ALGORITHM_TYPE_SM2.Equals(algorithmType))
                 throw new ArgumentException("The value of `algorithmType` an invalid value.", nameof(algorithmType));
-            if (!certificate.Trim().StartsWith("-----BEGIN CERTIFICATE-----") || !certificate.Trim().EndsWith("-----END CERTIFICATE-----"))
-                throw new ArgumentException("The value of `certificate` is an invalid certificate file content.", nameof(certificate));
+            if (!(certificate.StartsWith("-----BEGIN CERTIFICATE-----") && certificate.EndsWith("-----END CERTIFICATE-----")))
+                throw new ArgumentException("The value of `certificate` is an invalid certificate file content. Maybe you forgot to decrypt?", nameof(certificate));
 
             AlgorithmType = algorithmType;
             SerialNumber = serialNumber.ToUpper();
@@ -80,12 +82,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         /// <param name="certificate"></param>
         public CertificateEntry(string algorithmType, string certificate)
         {
+            certificate = certificate?.Trim()!;
+
             if (string.IsNullOrEmpty(algorithmType))
                 throw new ArgumentException("The value of `algorithmType` can not be empty.", nameof(algorithmType));
             if (string.IsNullOrEmpty(certificate))
                 throw new ArgumentException("The value of `certificate` can not be empty.", nameof(certificate));
-            if (!certificate.Trim().StartsWith("-----BEGIN CERTIFICATE-----") || !certificate.Trim().EndsWith("-----END CERTIFICATE-----"))
-                throw new ArgumentException("The value of `certificate` is an invalid certificate file content.", nameof(certificate));
+            if (!(certificate.StartsWith("-----BEGIN CERTIFICATE-----") && certificate.EndsWith("-----END CERTIFICATE-----")))
+                throw new ArgumentException("The value of `certificate` is an invalid certificate file content. Maybe you forgot to decrypt?", nameof(certificate));
 
             AlgorithmType = algorithmType;
             Certificate = certificate;

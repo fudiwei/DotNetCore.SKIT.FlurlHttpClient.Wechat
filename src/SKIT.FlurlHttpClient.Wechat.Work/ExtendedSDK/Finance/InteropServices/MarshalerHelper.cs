@@ -6,18 +6,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices
 {
     internal static class MarshalerHelper
     {
-        public static string PtrToStringAnsi(IntPtr ptr)
+        public static string? PtrToStringAnsi(IntPtr ptr)
         {
             if (ptr == IntPtr.Zero)
-                return default!;
+                return null;
 
             return Marshal.PtrToStringAnsi(ptr)!;
         }
 
-        public static string PtrToStringUTF8(IntPtr ptr)
+        public static string? PtrToStringUTF8(IntPtr ptr)
         {
             if (ptr == IntPtr.Zero)
-                return default!;
+                return null;
 
 #if NETCOREAPP || NET5_0_OR_GREATER
             return Marshal.PtrToStringUTF8(ptr)!;
