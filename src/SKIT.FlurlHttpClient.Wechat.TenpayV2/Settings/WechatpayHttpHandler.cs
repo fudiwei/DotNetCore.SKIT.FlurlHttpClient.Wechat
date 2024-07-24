@@ -15,13 +15,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
             handler.SslOptions = new SslClientAuthenticationOptions() { RemoteCertificateValidationCallback = static (_, _, _, _) => true };
 #elif NET471_OR_GREATER
             HttpClientHandler handler = new HttpClientHandler();
-            handler.ServerCertificateCustomValidationCallback = static (_, _, _, sslPolicyErrors) => sslPolicyErrors == SslPolicyErrors.None;
+            handler.ServerCertificateCustomValidationCallback = static (_, _, _, _) => true;
 #elif NET462_OR_GREATER
             WebRequestHandler handler = new WebRequestHandler();
             handler.ServerCertificateValidationCallback = static (_, _, _, _) => true;
 #else
-            WinHttpHandler handler = new WinHttpHandler();
-            handler.ServerCertificateValidationCallback = static (_, _, _, _) => true;
+            HttpClientHandler handler = new HttpClientHandler();
+            handler.ServerCertificateCustomValidationCallback = static (_, _, _, _) => true;
 #endif
 
             if (certificateBytes is not null)

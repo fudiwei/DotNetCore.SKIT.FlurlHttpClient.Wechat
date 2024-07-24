@@ -41,7 +41,6 @@
 
     <ItemGroup>
         <PackageReference Include="SKIT.FlurlHttpClient.Common" Version="3.1.0" />
-        <PackageReference Include="System.Net.Http.WinHttpHandler" Version="8.0.1" Condition="'$(TargetFramework)' == 'netstandard2.0'" />
     </ItemGroup>
 
 </Project>
