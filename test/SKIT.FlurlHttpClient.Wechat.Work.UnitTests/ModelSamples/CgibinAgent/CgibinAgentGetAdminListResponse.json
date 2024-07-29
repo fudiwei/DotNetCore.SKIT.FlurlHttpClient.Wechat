@@ -1,0 +1,14 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "admin": [
+        {
+            "userid": "woxxxx",
+            "auth_type": 1
+        },
+        {
+            "userid": "woxxxx",
+            "auth_type": 0
+        }
+    ]
+}
