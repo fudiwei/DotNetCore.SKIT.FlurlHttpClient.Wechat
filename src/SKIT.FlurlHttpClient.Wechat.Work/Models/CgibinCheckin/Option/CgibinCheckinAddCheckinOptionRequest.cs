@@ -485,7 +485,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public Types.LateRule? LateRule { get; set; }
                     }
 
-
                     public class Overtime
                     {
                         public static class Types
@@ -934,6 +933,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("buka_restriction")]
                 [System.Text.Json.Serialization.JsonPropertyName("buka_restriction")]
                 public int? RecheckinRestriction { get; set; }
+
+                /// <summary>
+                /// 获取或设置自由上下班规则的跨天时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("span_day_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("span_day_time")]
+                public int? SpanDayTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置自由上下班规则的工作时长（单位：秒）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("standard_work_duration")]
+                [System.Text.Json.Serialization.JsonPropertyName("standard_work_duration")]
+                public int? StandardWorkDuration { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否开启审批打卡。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("open_sp_checkin")]
+                [System.Text.Json.Serialization.JsonPropertyName("open_sp_checkin")]
+                public bool? IsOpenApprovalCheckin { get; set; }
             }
         }
 
