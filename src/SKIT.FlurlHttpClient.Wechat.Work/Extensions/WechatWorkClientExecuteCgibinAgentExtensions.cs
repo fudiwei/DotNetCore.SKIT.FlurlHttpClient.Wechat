@@ -243,6 +243,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinAgentSetWorkbenchDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/agent/batch_set_workbench_data 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/92535 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/94620 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinAgentBatchSetWorkbenchDataResponse> ExecuteCgibinAgentBatchSetWorkbenchDataAsync(this WechatWorkClient client, Models.CgibinAgentBatchSetWorkbenchDataRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.AgentId is null)
+                request.AgentId = client.Credentials.AgentId;
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "agent", "batch_set_workbench_data")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinAgentBatchSetWorkbenchDataResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
     }
 }
