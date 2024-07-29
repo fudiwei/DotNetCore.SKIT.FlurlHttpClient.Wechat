@@ -32,6 +32,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinSecurityGetFileOperateRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/security/get_server_domain_ip 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/93221 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSecurityGetServerDomainIpResponse> ExecuteCgibinSecurityGetServerDomainIpAsync(this WechatWorkClient client, Models.CgibinSecurityGetServerDomainIpRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "security", "get_server_domain_ip")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinSecurityGetServerDomainIpResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
         #region TrustDevice
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/security/trustdevice/import 接口。</para>
