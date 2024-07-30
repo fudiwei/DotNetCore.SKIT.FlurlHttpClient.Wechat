@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/message/mass/sendall 接口的请求。</para>
@@ -101,6 +103,7 @@
         /// <summary>
         /// 获取或设置卡券消息内容。
         /// </summary>
+        [Obsolete("相关接口或字段于 2024-08-10 下线。")]
         [Newtonsoft.Json.JsonProperty("wxcard")]
         [System.Text.Json.Serialization.JsonPropertyName("wxcard")]
         public Types.CardMessage? MessageContentForCard { get; set; }

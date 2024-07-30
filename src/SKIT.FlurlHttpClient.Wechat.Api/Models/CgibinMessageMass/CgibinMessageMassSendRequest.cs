@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -86,6 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置卡券消息内容。
         /// </summary>
+        [Obsolete("相关接口或字段于 2024-08-10 下线。")]
         [Newtonsoft.Json.JsonProperty("wxcard")]
         [System.Text.Json.Serialization.JsonPropertyName("wxcard")]
         public Types.CardMessage? MessageContentForCard { get; set; }
