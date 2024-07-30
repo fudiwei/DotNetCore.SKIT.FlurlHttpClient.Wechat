@@ -3977,6 +3977,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipExperienceValueSetResponse> ExecuteChannelsECVipExperienceValueSetAsync(this WechatApiClient client, Models.ChannelsECVipExperienceValueSetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4002,6 +4003,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipGradeCardAddResponse> ExecuteChannelsECVipGradeCardAddAsync(this WechatApiClient client, Models.ChannelsECVipGradeCardAddRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4025,6 +4027,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipGradeCardGetResponse> ExecuteChannelsECVipGradeCardGetAsync(this WechatApiClient client, Models.ChannelsECVipGradeCardGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4048,6 +4051,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipGradeCardUpdateResponse> ExecuteChannelsECVipGradeCardUpdateAsync(this WechatApiClient client, Models.ChannelsECVipGradeCardUpdateRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4073,6 +4077,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipScoreSetResponse> ExecuteChannelsECVipScoreSetAsync(this WechatApiClient client, Models.ChannelsECVipScoreSetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4096,6 +4101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipScoreGetResponse> ExecuteChannelsECVipScoreGetAsync(this WechatApiClient client, Models.ChannelsECVipScoreGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4121,6 +4127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipUserInfoGetResponse> ExecuteChannelsECVipUserInfoGetAsync(this WechatApiClient client, Models.ChannelsECVipUserInfoGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4144,6 +4151,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipUserListGetResponse> ExecuteChannelsECVipUserListGetAsync(this WechatApiClient client, Models.ChannelsECVipUserListGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4167,6 +4175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipUserExperienceValueUpdateResponse> ExecuteChannelsECVipUserExperienceValueUpdateAsync(this WechatApiClient client, Models.ChannelsECVipUserExperienceValueUpdateRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4190,6 +4199,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipUserGradeUpdateResponse> ExecuteChannelsECVipUserGradeUpdateAsync(this WechatApiClient client, Models.ChannelsECVipUserGradeUpdateRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4213,6 +4223,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipUserScoreGetResponse> ExecuteChannelsECVipUserScoreGetAsync(this WechatApiClient client, Models.ChannelsECVipUserScoreGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4236,6 +4247,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipUserScoreFlowRecordGetResponse> ExecuteChannelsECVipUserScoreFlowRecordGetAsync(this WechatApiClient client, Models.ChannelsECVipUserScoreFlowRecordGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4259,6 +4271,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipUserScoreIncreaseResponse> ExecuteChannelsECVipUserScoreIncreaseAsync(this WechatApiClient client, Models.ChannelsECVipUserScoreIncreaseRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -4282,6 +4295,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-22 下线。")]
         public static async Task<Models.ChannelsECVipUserScoreDecreaseResponse> ExecuteChannelsECVipUserScoreDecreaseAsync(this WechatApiClient client, Models.ChannelsECVipUserScoreDecreaseRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
