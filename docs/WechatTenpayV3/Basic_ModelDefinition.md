@@ -757,6 +757,8 @@
 
             -   商户预授权：`ApplyPayScorePartnerPermissions`
 
+            -   场景中预授权：`ApplyPayScorePartnerPermissionsForScene`
+
             -   查询用户授权记录（授权协议号）：`GetPayScorePartnerPermissionsByAuthorizationCode`
 
             -   解除用户授权关系（授权协议号）：`TerminatePayScorePartnerPermissionsByAuthorizationCode`
