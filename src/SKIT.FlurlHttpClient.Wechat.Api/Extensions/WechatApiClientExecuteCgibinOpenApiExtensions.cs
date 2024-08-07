@@ -38,6 +38,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/clear_quota/v2 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/openApi/clearQuotaByAppSecret.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinClearQuotaV2Response> ExecuteCgibinClearQuotaV2Async(this WechatApiClient client, Models.CgibinClearQuotaV2Request request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.AppId is null)
+                request.AppId = client.Credentials.AppId;
+
+            if (request.AppSecret is null)
+                request.AppSecret = client.Credentials.AppSecret;
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "clear_quota")
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("appsecret", request.AppSecret);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinClearQuotaV2Response>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/openapi/quota/get 接口。</para>
         /// <para>
         /// REF: <br/>
