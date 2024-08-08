@@ -49,13 +49,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "weekly-discount", "activities")
                 .SetQueryParam("applying_merchant_id", request.ApplyingMerchantId)
+                .SetQueryParam("store_id", request.StoreId)
                 .SetQueryParam("activity_area_code", request.ActivityAreaCode)
                 .SetQueryParam("activity_scene", request.ActivityScene)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
-
-            if (request.StoreId is not null)
-                flurlReq.SetQueryParam("store_id", request.StoreId.Value);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryApplyMarketingWeeklyDiscountActivitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

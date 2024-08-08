@@ -71,13 +71,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "users", request.OpenId, "contracts")
                 .SetQueryParam("plan_id", request.PlanId)
-                .SetQueryParam("contract_status", request.ContractStatus); ;
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value);
+                .SetQueryParam("contract_status", request.ContractStatus)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryEducationSchoolPayUserContractsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -143,10 +139,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "out-trade-no", request.OutTradeNumber);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "out-trade-no", request.OutTradeNumber)
+                .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayTransactionByOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -168,10 +162,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "id", request.TransactionId);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "eduschoolpay", "transactions", "id", request.TransactionId)
+                .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationSchoolPayTransactionByIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

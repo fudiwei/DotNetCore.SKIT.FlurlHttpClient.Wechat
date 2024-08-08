@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
@@ -62,16 +62,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "custom_audiences", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.CustomAudienceId is not null)
-                flurlReq.SetQueryParam("audience_id", request.CustomAudienceId.Value);
-
-            if (request.PageSize is not null)
-                flurlReq.SetQueryParam("page_size", request.PageSize.Value);
-
-            if (request.Page is not null)
-                flurlReq.SetQueryParam("page", request.Page.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("audience_id", request.CustomAudienceId)
+                .SetQueryParam("page_size", request.PageSize)
+                .SetQueryParam("page", request.Page);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CustomAudiencesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -121,19 +115,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "custom_audience_files", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.CustomAudienceId is not null)
-                flurlReq.SetQueryParam("audience_id", request.CustomAudienceId.Value);
-
-            if (request.CustomAudienceFileId is not null)
-                flurlReq.SetQueryParam("custom_audience_file_id", request.CustomAudienceFileId.Value);
-
-            if (request.PageSize is not null)
-                flurlReq.SetQueryParam("page_size", request.PageSize.Value);
-
-            if (request.Page is not null)
-                flurlReq.SetQueryParam("page", request.Page.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("audience_id", request.CustomAudienceId)
+                .SetQueryParam("custom_audience_file_id", request.CustomAudienceFileId)
+                .SetQueryParam("page_size", request.PageSize)
+                .SetQueryParam("page", request.Page);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CustomAudienceFilesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Linq;
 using System.Net.Http;
 using System.Threading;
@@ -24,22 +24,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "daily_reports", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.DateRange is not null)
-                flurlReq.SetQueryParam("date_range", client.JsonSerializer.Serialize(request.DateRange));
-
-            if (request.ReportType is not null)
-                flurlReq.SetQueryParam("report_type", request.ReportType);
-
-            if (request.ReportLevel is not null)
-                flurlReq.SetQueryParam("level", request.ReportLevel);
-
-            if (request.PageSize is not null)
-                flurlReq.SetQueryParam("page_size", request.PageSize.Value);
-
-            if (request.Page is not null)
-                flurlReq.SetQueryParam("page", request.Page.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("date_range", request.DateRange is null ? null : client.JsonSerializer.Serialize(request.DateRange))
+                .SetQueryParam("report_type", request.ReportType)
+                .SetQueryParam("level", request.ReportLevel)
+                .SetQueryParam("page_size", request.PageSize)
+                .SetQueryParam("page", request.Page);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DailyReportsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -60,10 +50,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateFlurlRequest(request, HttpMethod.Get, "realtime_cost", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("date", request.DateString)
-                .SetQueryParam("level", request.Level);
-
-            if (request.Filters is not null && request.Filters.Any())
-                flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
+                .SetQueryParam("level", request.Level)
+                .SetQueryParam("filtering", request.Filters is null ? null : client.JsonSerializer.Serialize(request.Filters));
 
             return await client.SendFlurlRequestAsJsonAsync<Models.RealtimeCostGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -47,16 +47,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "payroll-card", "relations", request.OpenId);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
-
-            if (request.AppId is not null)
-                flurlReq.SetQueryParam("appid", request.AppId);
-
-            if (request.SubAppId is not null)
-                flurlReq.SetQueryParam("sub_appid", request.SubAppId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "payroll-card", "relations", request.OpenId)
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("sub_appid", request.SubAppId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPayrollRelationByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -101,10 +95,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "payroll-card", "authentications", request.AuthenticateNumber);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "payroll-card", "authentications", request.AuthenticateNumber)
+                .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPayrollCardAuthenticationByAuthenticateNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -127,28 +119,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "payroll-card", "authentications")
-                .SetQueryParam("openid", request.OpenId);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
-
-            if (request.AppId is not null)
-                flurlReq.SetQueryParam("appid", request.AppId);
-
-            if (request.SubAppId is not null)
-                flurlReq.SetQueryParam("sub_appid", request.SubAppId);
-
-            if (request.AuthenticateDateString is not null)
-                flurlReq.SetQueryParam("authenticate_date", request.AuthenticateDateString);
-
-            if (request.AuthenticateState is not null)
-                flurlReq.SetQueryParam("authenticate_state", request.AuthenticateState);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset);
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("sub_appid", request.SubAppId)
+                .SetQueryParam("openid", request.OpenId)
+                .SetQueryParam("authenticate_date", request.AuthenticateDateString)
+                .SetQueryParam("authenticate_state", request.AuthenticateState)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryPayrollCardAuthenticationsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

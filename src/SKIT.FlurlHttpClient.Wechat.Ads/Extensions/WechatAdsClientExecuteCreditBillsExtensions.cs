@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -25,13 +25,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
                 .CreateFlurlRequest(request, HttpMethod.Get, "credit_bills", "get")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("bill_year", request.BillYear)
-                .SetQueryParam("bill_month", request.BillMonth);
-
-            if (request.PageSize is not null)
-                flurlReq.SetQueryParam("page_size", request.PageSize.Value);
-
-            if (request.Page is not null)
-                flurlReq.SetQueryParam("page", request.Page.Value);
+                .SetQueryParam("bill_month", request.BillMonth)
+                .SetQueryParam("page_size", request.PageSize)
+                .SetQueryParam("page", request.Page);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CreditBillsGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

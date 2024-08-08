@@ -105,10 +105,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "department", "list")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.ParentDepartmentId is not null)
-                flurlReq.SetQueryParam("id", request.ParentDepartmentId.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("id", request.ParentDepartmentId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinDepartmentListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -132,10 +130,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "department", "simplelist")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.ParentDepartmentId is not null)
-                flurlReq.SetQueryParam("id", request.ParentDepartmentId.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("id", request.ParentDepartmentId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinDepartmentSimpleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

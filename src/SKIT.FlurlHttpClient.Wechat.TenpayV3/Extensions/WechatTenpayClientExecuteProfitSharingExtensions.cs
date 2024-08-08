@@ -51,10 +51,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "orders", request.OutOrderNumber)
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("transaction_id", request.TransactionId);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitSharingOrderByOutOrderNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -101,10 +99,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "return-orders", request.OutReturnNumber)
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("out_order_no", request.OutOrderNumber);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitSharingReturnOrderByOutOrderNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -245,13 +241,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "profitsharing", "bills")
-                .SetQueryParam("bill_date", request.BillDateString);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
-
-            if (request.TarType is not null)
-                flurlReq.SetQueryParam("tar_type", request.TarType);
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("bill_date", request.BillDateString)
+                .SetQueryParam("tar_type", request.TarType);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetProfitSharingBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

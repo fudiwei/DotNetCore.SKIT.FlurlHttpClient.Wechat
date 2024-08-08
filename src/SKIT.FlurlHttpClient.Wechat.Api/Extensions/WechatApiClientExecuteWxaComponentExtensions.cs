@@ -769,10 +769,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxa", "get_qrcode")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.PagePath is not null)
-                flurlReq.SetQueryParam("path", request.PagePath);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("path", request.PagePath);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaGetQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -910,13 +908,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxa", "revertcoderelease")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.Action is not null)
-                flurlReq.SetQueryParam("action", request.Action);
-
-            if (request.AppVersion is not null)
-                flurlReq.SetQueryParam("app_version", request.AppVersion.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", request.Action)
+                .SetQueryParam("app_version", request.AppVersion);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaRevertCodeReleaseResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -2210,10 +2204,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxa", "gettemplatelist")
-                .SetQueryParam("access_token", request.ComponentAccessToken);
-
-            if (request.TemplateType is not null)
-                flurlReq.SetQueryParam("template_type", request.TemplateType.Value);
+                .SetQueryParam("access_token", request.ComponentAccessToken)
+                .SetQueryParam("template_type", request.TemplateType);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaGetTemplateListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

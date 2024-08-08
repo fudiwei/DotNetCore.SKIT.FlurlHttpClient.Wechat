@@ -74,17 +74,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities")
+                .SetQueryParam("activity_name", request.ActivityName)
+                .SetQueryParam("activity_status", request.ActivityStatus)
+                .SetQueryParam("award_type", request.AwardType)
                 .SetQueryParam("limit", request.Limit.ToString())
                 .SetQueryParam("offset", request.Offset.ToString());
-
-            if (request.ActivityName is not null)
-                flurlReq.SetQueryParam("activity_name", request.ActivityName);
-
-            if (request.ActivityStatus is not null)
-                flurlReq.SetQueryParam("activity_status", request.ActivityStatus);
-
-            if (request.AwardType is not null)
-                flurlReq.SetQueryParam("award_type", request.AwardType);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingPayGiftActivitiesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -153,13 +147,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId, "merchants");
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId, "merchants")
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingPayGiftActivityMerchantsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -205,13 +195,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId, "goods");
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "paygiftactivity", "activities", request.ActivityId, "goods")
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingPayGiftActivityGoodsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

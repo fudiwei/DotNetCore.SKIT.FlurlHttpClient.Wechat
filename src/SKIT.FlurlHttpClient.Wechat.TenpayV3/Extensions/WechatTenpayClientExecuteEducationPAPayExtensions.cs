@@ -50,13 +50,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "contracts", "id", request.ContractId)
-                .SetQueryParam("appid", request.AppId);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
-
-            if (request.SubAppId is not null)
-                flurlReq.SetQueryParam("sub_appid", request.SubAppId);
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("sub_appid", request.SubAppId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEducationPAPayContractByContractIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -80,26 +76,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "edu-papay", "user", request.OpenId, "contracts")
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("appid", request.AppId)
-                .SetQueryParam("plan_id", request.PlanId);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
-
-            if (request.SubAppId is not null)
-                flurlReq.SetQueryParam("sub_appid", request.SubAppId);
-
-            if (request.SubOpenId is not null)
-                flurlReq.SetQueryParam("sub_openid", request.SubOpenId);
-
-            if (request.ContractStatus is not null)
-                flurlReq.SetQueryParam("contract_status", request.ContractStatus);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value);
+                .SetQueryParam("sub_appid", request.SubAppId)
+                .SetQueryParam("plan_id", request.PlanId)
+                .SetQueryParam("sub_openid", request.SubOpenId)
+                .SetQueryParam("contract_status", request.ContractStatus)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryEducationPAPayUserContractsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

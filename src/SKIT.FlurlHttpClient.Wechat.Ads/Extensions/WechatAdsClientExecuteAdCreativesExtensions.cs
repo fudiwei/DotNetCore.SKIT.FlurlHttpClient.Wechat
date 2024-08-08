@@ -61,19 +61,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "adcreatives", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.AdCreativeId is not null)
-                flurlReq.SetQueryParam("adcreative_id", request.AdCreativeId.Value);
-
-            if (request.Filters is not null)
-                flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
-
-            if (request.PageSize is not null)
-                flurlReq.SetQueryParam("page_size", request.PageSize.Value);
-
-            if (request.Page is not null)
-                flurlReq.SetQueryParam("page", request.Page.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("adcreative_id", request.AdCreativeId)
+                .SetQueryParam("filtering", request.Filters is null ? null : client.JsonSerializer.Serialize(request.Filters))
+                .SetQueryParam("page_size", request.PageSize)
+                .SetQueryParam("page", request.Page);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.AdCreativesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

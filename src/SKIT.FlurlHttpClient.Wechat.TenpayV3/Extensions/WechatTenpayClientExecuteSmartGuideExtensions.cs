@@ -74,25 +74,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "smartguide", "guides")
-                .SetQueryParam("store_id", request.StoreId.ToString());
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
-
-            if (request.UserId is not null)
-                flurlReq.SetQueryParam("userid", request.UserId);
-
-            if (request.UserMobile is not null)
-                flurlReq.SetQueryParam("mobile", request.UserMobile);
-
-            if (request.UserWorkId is not null)
-                flurlReq.SetQueryParam("work_id", request.UserWorkId);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("store_id", request.StoreId)
+                .SetQueryParam("userid", request.UserId)
+                .SetQueryParam("mobile", request.UserMobile)
+                .SetQueryParam("work_id", request.UserWorkId)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QuerySmartGuidesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

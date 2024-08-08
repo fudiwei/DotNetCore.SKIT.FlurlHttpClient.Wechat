@@ -179,11 +179,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "feedback", "list")
                 .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("type", request.Type)
                 .SetQueryParam("page", request.Page)
                 .SetQueryParam("num", request.Limit);
-
-            if (request.Type is not null)
-                flurlReq.SetQueryParam("type", request.Type);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiFeedbackListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -324,28 +322,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("date", request.DateString)
                 .SetQueryParam("begintime", request.BeginTimestamp)
-                .SetQueryParam("endtime", request.EndTimestamp);
-
-            if (request.TraceId is not null)
-                flurlReq.SetQueryParam("traceId", request.TraceId);
-
-            if (request.PagePath is not null)
-                flurlReq.SetQueryParam("url", request.PagePath);
-
-            if (request.UserId is not null)
-                flurlReq.SetQueryParam("id", request.UserId);
-
-            if (request.FilterMessage is not null)
-                flurlReq.SetQueryParam("filterMsg", request.FilterMessage);
-
-            if (request.LogLevel is not null)
-                flurlReq.SetQueryParam("level", request.LogLevel.Value);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("start", request.Offset.Value);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value);
+                .SetQueryParam("endtime", request.EndTimestamp)
+                .SetQueryParam("traceId", request)
+                .SetQueryParam("url", request)
+                .SetQueryParam("id", request)
+                .SetQueryParam("filterMsg", request)
+                .SetQueryParam("level", request.LogLevel)
+                .SetQueryParam("start", request.Offset)
+                .SetQueryParam("limit", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiUserLogSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -464,10 +448,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "room", "getsharedcode")
                 .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("roomId", request.RoomId);
-
-            if (request.CustomParameter is not null)
-                flurlReq.SetQueryParam("params", request.CustomParameter);
+                .SetQueryParam("roomId", request.RoomId)
+                .SetQueryParam("params", request.CustomParameter);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoomGetSharedCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -1125,19 +1107,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "broadcast", "role", "getrolelist")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.Keyword is not null)
-                flurlReq.SetQueryParam("keyword", request.Keyword);
-
-            if (request.Role is not null)
-                flurlReq.SetQueryParam("role", request.Role.Value);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("keyword", request.Keyword)
+                .SetQueryParam("role", request.Role)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiBroadcastRoleGetRoleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -1258,13 +1232,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "wxaembedded", "get_list")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("start", request.Offset);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("num", request.Limit);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("start", request.Offset)
+                .SetQueryParam("num", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiWxaEmbeddedGetListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -1287,13 +1257,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "wxaembedded", "get_own_list")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("start", request.Offset);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("num", request.Limit);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("start", request.Offset)
+                .SetQueryParam("num", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiWxaEmbeddedGetOwnListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

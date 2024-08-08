@@ -58,13 +58,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("order_type", request.OrderType)
                 .SetQueryParam("order_no", request.OrderNumber)
-                .SetQueryParam("customs", request.Customs);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit);
+                .SetQueryParam("customs", request.Customs)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryCustomsOrdersResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

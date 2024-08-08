@@ -146,11 +146,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayBusiness
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "mse-pay", "profit-allocations", "receiver-accounts")
-                .SetQueryParam("ent_id", request.EnterpriseId);
-
-            if (request.UnifiedSocialCreditCode is not null)
-                flurlReq.SetQueryParam("unified_social_credit_code", request.UnifiedSocialCreditCode);
-
+                .SetQueryParam("ent_id", request.EnterpriseId)
+                .SetQueryParam("unified_social_credit_code", request.UnifiedSocialCreditCode);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryProfitAllocationReceiverAccountsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -31,17 +31,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2")
+                .SetQueryParam("complainted_mchid", request.ComplaintedMerchantId)
                 .SetQueryParam("begin_date", request.BeginDateString)
-                .SetQueryParam("end_date", request.EndDateString);
-
-            if (request.ComplaintedMerchantId is not null)
-                flurlReq.SetQueryParam("complainted_mchid", request.ComplaintedMerchantId);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
+                .SetQueryParam("end_date", request.EndDateString)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMerchantServiceComplaintsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -87,13 +81,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId, "negotiation-historys");
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
+                .CreateFlurlRequest(request, HttpMethod.Get, "merchant-service", "complaints-v2", request.ComplaintId, "negotiation-historys")
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMerchantServiceComplaintNegotiationHistoriesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

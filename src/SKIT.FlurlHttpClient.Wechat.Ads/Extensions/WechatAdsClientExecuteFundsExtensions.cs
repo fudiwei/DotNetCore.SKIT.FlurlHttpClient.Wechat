@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
@@ -61,19 +61,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund_statements_detailed", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.DateRange is not null)
-                flurlReq.SetQueryParam("date_range", client.JsonSerializer.Serialize(request.DateRange));
-
-            if (request.TradeType is not null)
-                flurlReq.SetQueryParam("trade_type", request.TradeType);
-
-            if (request.PageSize is not null)
-                flurlReq.SetQueryParam("page_size", request.PageSize.Value);
-
-            if (request.Page is not null)
-                flurlReq.SetQueryParam("page", request.Page.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("date_range", request.DateRange is null ? null : client.JsonSerializer.Serialize(request.DateRange))
+                .SetQueryParam("trade_type", request.TradeType)
+                .SetQueryParam("page_size", request.PageSize)
+                .SetQueryParam("page", request.Page);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.FundStatementsDetailedGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

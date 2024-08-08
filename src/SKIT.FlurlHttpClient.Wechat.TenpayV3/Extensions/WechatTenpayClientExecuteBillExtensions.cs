@@ -41,16 +41,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "bill", "tradebill")
-                .SetQueryParam("bill_date", request.BillDateString);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
-
-            if (request.BillType is not null)
-                flurlReq.SetQueryParam("bill_type", request.BillType);
-
-            if (request.TarType is not null)
-                flurlReq.SetQueryParam("tar_type", request.TarType);
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("bill_date", request.BillDateString)
+                .SetQueryParam("bill_type", request.BillType)
+                .SetQueryParam("tar_type", request.TarType);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetBillTradeBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -87,13 +81,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "bill", "fundflowbill")
-                .SetQueryParam("bill_date", request.BillDateString);
-
-            if (request.AccountType is not null)
-                flurlReq.SetQueryParam("account_type", request.AccountType);
-
-            if (request.TarType is not null)
-                flurlReq.SetQueryParam("tar_type", request.TarType);
+                .SetQueryParam("bill_date", request.BillDateString)
+                .SetQueryParam("account_type", request.AccountType)
+                .SetQueryParam("tar_type", request.TarType);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetBillFundflowBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -124,13 +114,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "bill", "sub-merchant-fundflowbill")
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("bill_date", request.BillDateString)
+                .SetQueryParam("account_type", request.AccountType)
+                .SetQueryParam("tar_type", request.TarType)
                 .SetQueryParam("algorithm", request.Algorithm);
-
-            if (request.AccountType is not null)
-                flurlReq.SetQueryParam("account_type", request.AccountType);
-
-            if (request.TarType is not null)
-                flurlReq.SetQueryParam("tar_type", request.TarType);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetBillSubMerchantFundflowBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

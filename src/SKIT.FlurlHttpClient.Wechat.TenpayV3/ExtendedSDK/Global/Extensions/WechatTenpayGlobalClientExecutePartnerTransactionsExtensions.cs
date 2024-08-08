@@ -277,10 +277,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "statements")
+                .SetQueryParam("mchid", request.SubMerchantId)
                 .SetQueryParam("date", request.DateString);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.DownloadStatementsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -308,18 +306,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "settle", "settlements")
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("settle_state", request.SettleState)
+                .SetQueryParam("settle_start_date", request.StartDateString)
+                .SetQueryParam("settle_end_date", request.EndDateString)
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
-
-            if (request.StartDateString is not null)
-                flurlReq.SetQueryParam("settle_start_date", request.StartDateString);
-
-            if (request.EndDateString is not null)
-                flurlReq.SetQueryParam("settle_end_date", request.EndDateString);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QuerySettlementsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

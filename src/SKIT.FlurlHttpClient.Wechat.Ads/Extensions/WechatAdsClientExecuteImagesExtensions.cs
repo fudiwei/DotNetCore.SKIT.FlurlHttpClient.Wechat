@@ -63,19 +63,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Ads
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "images", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.ImageId is not null)
-                flurlReq.SetQueryParam("image_id", request.ImageId);
-
-            if (request.Filters is not null)
-                flurlReq.SetQueryParam("filtering", client.JsonSerializer.Serialize(request.Filters));
-
-            if (request.PageSize is not null)
-                flurlReq.SetQueryParam("page_size", request.PageSize.Value);
-
-            if (request.Page is not null)
-                flurlReq.SetQueryParam("page", request.Page.Value);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("image_id", request.ImageId)
+                .SetQueryParam("filtering", request.Filters is null ? null : client.JsonSerializer.Serialize(request.Filters))
+                .SetQueryParam("page_size", request.PageSize)
+                .SetQueryParam("page", request.Page);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ImagesGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

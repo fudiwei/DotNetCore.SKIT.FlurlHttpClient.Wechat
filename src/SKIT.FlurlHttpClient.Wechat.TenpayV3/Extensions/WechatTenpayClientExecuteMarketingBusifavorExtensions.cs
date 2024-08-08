@@ -169,28 +169,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "busifavor", "users", request.OpenId, "coupons")
-                .SetQueryParam("appid", request.AppId);
-
-            if (request.StockId is not null)
-                flurlReq.SetQueryParam("stock_id", request.StockId);
-
-            if (request.CouponState is not null)
-                flurlReq.SetQueryParam("coupon_state", request.CouponState);
-
-            if (request.CreatorMerchantId is not null)
-                flurlReq.SetQueryParam("creator_merchant", request.CreatorMerchantId);
-
-            if (request.SenderMerchantId is not null)
-                flurlReq.SetQueryParam("sender_merchant", request.SenderMerchantId);
-
-            if (request.BelongMerchantId is not null)
-                flurlReq.SetQueryParam("belong_merchant", request.BelongMerchantId);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("stock_id", request.StockId)
+                .SetQueryParam("coupon_state", request.CouponState)
+                .SetQueryParam("creator_merchant", request.CreatorMerchantId)
+                .SetQueryParam("sender_merchant", request.SenderMerchantId)
+                .SetQueryParam("belong_merchant", request.BelongMerchantId)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingBusifavorUserCouponsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -430,10 +416,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "busifavor", "subsidy", "pay-receipts")
                 .SetQueryParam("stock_id", request.StockId)
-                .SetQueryParam("coupon_code", request.CouponCode);
-
-            if (request.OutSubsidyNumber is not null)
-                flurlReq.SetQueryParam("out_subsidy_no", request.OutSubsidyNumber);
+                .SetQueryParam("coupon_code", request.CouponCode)
+                .SetQueryParam("out_subsidy_no", request.OutSubsidyNumber);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingBusifavorSubsidyPayReceiptsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

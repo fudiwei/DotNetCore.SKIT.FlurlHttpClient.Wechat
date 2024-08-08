@@ -163,17 +163,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks")
                 .SetQueryParam("stock_creator_mchid", request.StockCreatorMerchantId)
+                .SetQueryParam("create_start_time", request.CreateStartTime.HasValue ? request.CreateStartTime.Value.ToString("yyyy-MM-dd'T'HH:mm:sszzz") : null)
+                .SetQueryParam("create_end_time", request.CreateEndTime.HasValue ? request.CreateEndTime.Value.ToString("yyyy-MM-dd'T'HH:mm:sszzz") : null)
+                .SetQueryParam("status", request.Status)
                 .SetQueryParam("limit", request.Limit.ToString())
                 .SetQueryParam("offset", request.Offset.ToString());
-
-            if (request.CreateStartTime is not null)
-                flurlReq.SetQueryParam("create_start_time", request.CreateStartTime.Value.ToString("yyyy-MM-dd'T'HH:mm:sszzz"));
-
-            if (request.CreateEndTime is not null)
-                flurlReq.SetQueryParam("create_end_time", request.CreateEndTime.Value.ToString("yyyy-MM-dd'T'HH:mm:sszzz"));
-
-            if (request.Status is not null)
-                flurlReq.SetQueryParam("status", request.Status);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingFavorStocksResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -351,28 +345,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "users", request.OpenId, "coupons")
-                .SetQueryParam("appid", request.AppId);
-
-            if (request.StockId is not null)
-                flurlReq.SetQueryParam("stock_id", request.StockId);
-
-            if (request.Status is not null)
-                flurlReq.SetQueryParam("status", request.Status);
-
-            if (request.CreatorMerchantId is not null)
-                flurlReq.SetQueryParam("creator_mchid", request.CreatorMerchantId);
-
-            if (request.SenderMerchantId is not null)
-                flurlReq.SetQueryParam("sender_mchid", request.SenderMerchantId);
-
-            if (request.AvailableMerchantId is not null)
-                flurlReq.SetQueryParam("available_mchid", request.AvailableMerchantId);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("stock_id", request.StockId)
+                .SetQueryParam("status", request.Status)
+                .SetQueryParam("creator_mchid", request.CreatorMerchantId)
+                .SetQueryParam("sender_mchid", request.SenderMerchantId)
+                .SetQueryParam("available_mchid", request.AvailableMerchantId)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingFavorUserCouponsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

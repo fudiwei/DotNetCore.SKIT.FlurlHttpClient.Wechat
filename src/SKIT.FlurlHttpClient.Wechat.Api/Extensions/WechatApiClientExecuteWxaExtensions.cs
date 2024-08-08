@@ -82,13 +82,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxa", "getpaidunionid")
                 .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("openid", request.OpenId);
-
-            if (request.TransactionId is not null)
-                flurlReq.SetQueryParam("transaction_id", request.TransactionId);
-            else if (request.OutTradeNumber is not null)
-                flurlReq.SetQueryParam("mch_id", request.MerchantId)
-                        .SetQueryParam("out_trade_no", request.OutTradeNumber);
+                .SetQueryParam("openid", request.OpenId)
+                .SetQueryParam("mch_id", request.MerchantId)
+                .SetQueryParam("out_trade_no", request.OutTradeNumber)
+                .SetQueryParam("transaction_id", request.TransactionId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaGetPaidUnionIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -432,10 +429,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "wxa", "getwxadevinfo")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.Action is not null)
-                flurlReq.SetQueryParam("action", request.Action);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("action", request.Action);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaGetWxaDevInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

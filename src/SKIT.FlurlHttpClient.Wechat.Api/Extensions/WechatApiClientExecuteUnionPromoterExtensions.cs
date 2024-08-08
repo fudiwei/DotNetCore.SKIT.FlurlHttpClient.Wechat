@@ -150,47 +150,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "product", "list")
                 .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("queryType", request.QueryType)
+                .SetQueryParam("query", request.Query)
+                .SetQueryParam("maxPrice", request.MaxPrice)
+                .SetQueryParam("minPrice", request.MinPrice)
+                .SetQueryParam("minCommissionValue", request.MinCommissionValue)
+                .SetQueryParam("minCommissionRatio", request.MinCommissionRatio)
+                .SetQueryParam("sortType", request.SortType)
+                .SetQueryParam("hasCoupon", request.HasCoupon.HasValue ? request.HasCoupon.Value ? 1 : 0 : null)
+                .SetQueryParam("shopAppIds", request.ShopAppIdList is null ? null : string.Join(",", request.ShopAppIdList))
+                .SetQueryParam("categoryId", request.CategoryId)
+                .SetQueryParam("category", request.CategoryIdList is null ? null : string.Join(",", request.CategoryIdList))
+                .SetQueryParam("noCategory", request.CategoryIdBlackList is null ? null : string.Join(",", request.CategoryIdBlackList))
+                .SetQueryParam("productId", request.ProductIdList is null ? null : string.Join(",", request.ProductIdList))
                 .SetQueryParam("from", request.Offset)
                 .SetQueryParam("limit", request.Limit);
-
-            if (request.QueryType is not null)
-                flurlReq.SetQueryParam("queryType", request.QueryType.Value);
-
-            if (request.Query is not null)
-                flurlReq.SetQueryParam("query", request.Query);
-
-            if (request.MaxPrice is not null)
-                flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
-
-            if (request.MinPrice is not null)
-                flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
-
-            if (request.MinCommissionValue is not null)
-                flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
-
-            if (request.MinCommissionRatio is not null)
-                flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
-
-            if (request.SortType is not null)
-                flurlReq.SetQueryParam("sortType", request.SortType.Value);
-
-            if (request.HasCoupon is not null)
-                flurlReq.SetQueryParam("hasCoupon", request.HasCoupon.Value ? 1 : 0);
-
-            if (request.ShopAppIdList is not null)
-                flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
-
-            if (request.CategoryId is not null)
-                flurlReq.SetQueryParam("categoryId", request.CategoryId);
-
-            if (request.CategoryIdList is not null)
-                flurlReq.SetQueryParam("category", string.Join(",", request.CategoryIdList));
-
-            if (request.CategoryIdBlackList is not null)
-                flurlReq.SetQueryParam("noCategory", string.Join(",", request.CategoryIdBlackList));
-
-            if (request.ProductIdList is not null)
-                flurlReq.SetQueryParam("productId", string.Join(",", request.ProductIdList));
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterProductListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -214,47 +188,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "product", "select")
                 .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("maxPrice", request.MaxPrice)
+                .SetQueryParam("minPrice", request.MinPrice)
+                .SetQueryParam("minCommissionValue", request.MinCommissionValue)
+                .SetQueryParam("minCommissionRatio", request.MinCommissionRatio)
+                .SetQueryParam("sortType", request.SortType)
+                .SetQueryParam("hasCoupon", request.HasCoupon.HasValue ? request.HasCoupon.Value ? 1 : 0 : null)
+                .SetQueryParam("shopAppIds", request.ShopAppIdList is null ? null : string.Join(",", request.ShopAppIdList))
+                .SetQueryParam("categoryId", request.CategoryId)
+                .SetQueryParam("category", request.CategoryIdList is null ? null : string.Join(",", request.CategoryIdList))
+                .SetQueryParam("noCategory", request.CategoryIdBlackList is null ? null : string.Join(",", request.CategoryIdBlackList))
+                .SetQueryParam("productId", request.ProductIdList is null ? null : string.Join(",", request.ProductIdList))
+                .SetQueryParam("shippingMethods", client.JsonSerializer.Serialize(request.ShippingMethods))
+                .SetQueryParam("addressList", client.JsonSerializer.Serialize(request.AddressList))
                 .SetQueryParam("from", request.Offset)
                 .SetQueryParam("limit", request.Limit);
-
-            if (request.MaxPrice is not null)
-                flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
-
-            if (request.MinPrice is not null)
-                flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
-
-            if (request.MinCommissionValue is not null)
-                flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
-
-            if (request.MinCommissionRatio is not null)
-                flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
-
-            if (request.SortType is not null)
-                flurlReq.SetQueryParam("sortType", request.SortType.Value);
-
-            if (request.HasCoupon is not null)
-                flurlReq.SetQueryParam("hasCoupon", request.HasCoupon.Value ? 1 : 0);
-
-            if (request.ShopAppIdList is not null)
-                flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
-
-            if (request.CategoryId is not null)
-                flurlReq.SetQueryParam("categoryId", request.CategoryId);
-
-            if (request.CategoryIdList is not null)
-                flurlReq.SetQueryParam("category", string.Join(",", request.CategoryIdList));
-
-            if (request.CategoryIdBlackList is not null)
-                flurlReq.SetQueryParam("noCategory", string.Join(",", request.CategoryIdBlackList));
-
-            if (request.ProductIdList is not null)
-                flurlReq.SetQueryParam("productId", string.Join(",", request.ProductIdList));
-
-            if (request.ShippingMethods is not null)
-                flurlReq.SetQueryParam("shippingMethods", client.JsonSerializer.Serialize(request.ShippingMethods));
-
-            if (request.AddressList is not null)
-                flurlReq.SetQueryParam("addressList", client.JsonSerializer.Serialize(request.AddressList));
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterProductSelectResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -445,44 +393,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "open_product", "list")
                 .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("queryType", request.QueryType)
+                .SetQueryParam("query", request.Query)
+                .SetQueryParam("maxPrice", request.MaxPrice)
+                .SetQueryParam("minPrice", request.MinPrice)
+                .SetQueryParam("minCommissionValue", request.MinCommissionValue)
+                .SetQueryParam("minCommissionRatio", request.MinCommissionRatio)
+                .SetQueryParam("sortType", request.SortType)
+                .SetQueryParam("shopAppIds", request.ShopAppIdList is null ? null : string.Join(",", request.ShopAppIdList))
+                .SetQueryParam("categoryId", request.CategoryId)
+                .SetQueryParam("category", request.CategoryIdList is null ? null : string.Join(",", request.CategoryIdList))
+                .SetQueryParam("noCategory", request.CategoryIdBlackList is null ? null : string.Join(",", request.CategoryIdBlackList))
+                .SetQueryParam("productId", request.ProductIdList is null ? null : string.Join(",", request.ProductIdList))
                 .SetQueryParam("from", request.Offset)
                 .SetQueryParam("limit", request.Limit);
-
-            if (request.QueryType is not null)
-                flurlReq.SetQueryParam("queryType", request.QueryType.Value);
-
-            if (request.Query is not null)
-                flurlReq.SetQueryParam("query", request.Query);
-
-            if (request.MaxPrice is not null)
-                flurlReq.SetQueryParam("maxPrice", request.MaxPrice.Value);
-
-            if (request.MinPrice is not null)
-                flurlReq.SetQueryParam("minPrice", request.MinPrice.Value);
-
-            if (request.MinCommissionValue is not null)
-                flurlReq.SetQueryParam("minCommissionValue", request.MinCommissionValue.Value);
-
-            if (request.MinCommissionRatio is not null)
-                flurlReq.SetQueryParam("minCommissionRatio", request.MinCommissionRatio.Value);
-
-            if (request.SortType is not null)
-                flurlReq.SetQueryParam("sortType", request.SortType.Value);
-
-            if (request.ShopAppIdList is not null)
-                flurlReq.SetQueryParam("shopAppIds", string.Join(",", request.ShopAppIdList));
-
-            if (request.CategoryId is not null)
-                flurlReq.SetQueryParam("categoryId", request.CategoryId);
-
-            if (request.CategoryIdList is not null)
-                flurlReq.SetQueryParam("category", string.Join(",", request.CategoryIdList));
-
-            if (request.CategoryIdBlackList is not null)
-                flurlReq.SetQueryParam("noCategory", string.Join(",", request.CategoryIdBlackList));
-
-            if (request.ProductIdList is not null)
-                flurlReq.SetQueryParam("productId", string.Join(",", request.ProductIdList));
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOpenProductListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -554,16 +478,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "order", "search")
                 .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("startTimestamp", request.StartTimestamp)
+                .SetQueryParam("endTimestamp", request.EndTimestamp)
+                .SetQueryParam("commissionStatus", request.CommissionStatus)
                 .SetQueryParam("page", request.Page);
-
-            if (request.StartTimestamp is not null)
-                flurlReq.SetQueryParam("startTimestamp", request.StartTimestamp.Value);
-
-            if (request.EndTimestamp is not null)
-                flurlReq.SetQueryParam("endTimestamp", request.EndTimestamp.Value);
-
-            if (request.CommissionStatus is not null)
-                flurlReq.SetQueryParam("commissionStatus", request.CommissionStatus);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOrderSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -587,47 +505,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "union", "promoter", "order", "search_normal_order")
                 .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("query", request.Query)
+                .SetQueryParam("orderId", request.OrderId)
+                .SetQueryParam("outOrderId", request.OutOrderId)
+                .SetQueryParam("outOrderIdList", request.OutOrderId is null ? null : string.Join(",", request.OutOrderId))
+                .SetQueryParam("tradeNo", request.TransactionId)
+                .SetQueryParam("transactionIdList", request.TransactionIdList is null ? null :string.Join(",", request.TransactionIdList))
+                .SetQueryParam("startPayTime", request.StartPayTimestamp)
+                .SetQueryParam("endPayTime", request.EndPayTimestamp)
+                .SetQueryParam("commissionStatus", request.CommissionStatus)
+                .SetQueryParam("startStatusUpdateTime", request.StartStatusUpdateTimestamp)
+                .SetQueryParam("endStatusUpdateTime", request.EndStatusUpdateTimestamp)
+                .SetQueryParam("sortBy", request.SortBy)
+                .SetQueryParam("sortOrder", request.SortOrder)
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
-
-            if (request.Query is not null)
-                flurlReq.SetQueryParam("query", request.Query);
-
-            if (request.OrderId is not null)
-                flurlReq.SetQueryParam("orderId", request.OrderId.Value);
-
-            if (request.OutOrderId is not null)
-                flurlReq.SetQueryParam("outOrderId", request.OutOrderId);
-
-            if (request.OutOrderIdList is not null)
-                flurlReq.SetQueryParam("outOrderIdList", string.Join(",", request.OutOrderId));
-
-            if (request.TransactionId is not null)
-                flurlReq.SetQueryParam("tradeNo", request.TransactionId);
-
-            if (request.TransactionIdList is not null)
-                flurlReq.SetQueryParam("transactionIdList", string.Join(",", request.TransactionIdList));
-
-            if (request.StartPayTimestamp is not null)
-                flurlReq.SetQueryParam("startPayTime", request.StartPayTimestamp.Value);
-
-            if (request.EndPayTimestamp is not null)
-                flurlReq.SetQueryParam("endPayTime", request.EndPayTimestamp.Value);
-
-            if (request.CommissionStatus is not null)
-                flurlReq.SetQueryParam("commissionStatus", request.CommissionStatus);
-
-            if (request.StartStatusUpdateTimestamp is not null)
-                flurlReq.SetQueryParam("startStatusUpdateTime", request.StartStatusUpdateTimestamp.Value);
-
-            if (request.EndStatusUpdateTimestamp is not null)
-                flurlReq.SetQueryParam("endStatusUpdateTime", request.EndStatusUpdateTimestamp.Value);
-
-            if (request.SortBy is not null)
-                flurlReq.SetQueryParam("sortBy", request.SortBy);
-
-            if (request.SortOrder is not null)
-                flurlReq.SetQueryParam("sortOrder", request.SortOrder);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UnionPromoterOrderSearchNormalOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

@@ -49,22 +49,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "merchant-risk-manage", "trade-risk-information")
-                .SetQueryParam("out_trade_no", request.OutTradeNumber);
-
-            if (request.MerchantId is not null)
-                flurlReq.SetQueryParam("sp_mchid", request.MerchantId);
-
-            if (request.AcquiringBankId is not null)
-                flurlReq.SetQueryParam("acquiring_bank_id", request.AcquiringBankId);
-
-            if (request.ChannelId is not null)
-                flurlReq.SetQueryParam("channel_id", request.ChannelId);
-
-            if (request.SubMerchantId is not null)
-                flurlReq.SetQueryParam("sub_mchid", request.SubMerchantId);
-
-            if (request.ComplaintsInformation is not null)
-                flurlReq.SetQueryParam("complaints_information", request.ComplaintsInformation);
+                .SetQueryParam("sp_mchid", request.MerchantId)
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("out_trade_no", request.OutTradeNumber)
+                .SetQueryParam("acquiring_bank_id", request.AcquiringBankId)
+                .SetQueryParam("channel_id", request.ChannelId)
+                .SetQueryParam("complaints_information", request.ComplaintsInformation);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantRiskManageTradeRiskInformationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

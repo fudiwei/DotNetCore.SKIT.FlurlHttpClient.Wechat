@@ -80,10 +80,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "merchantfund", "merchant", "income-records")
                 .SetQueryParam("account_type", request.AccountType)
                 .SetQueryParam("date", request.DateString)
-                .SetQueryParam("limit", request.Limit);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset);
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMerchantFundMerchantIncomeRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -109,10 +107,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("account_type", request.AccountType)
                 .SetQueryParam("date", request.DateString)
-                .SetQueryParam("limit", request.Limit);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset);
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMerchantFundPartnerIncomeRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -204,10 +200,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "merchant", "fund", "withdraw", "bill-type", request.BillType)
-                .SetQueryParam("bill_date", request.BillDateString);
-
-            if (request.TarType is not null)
-                flurlReq.SetQueryParam("tar_type", request.TarType);
+                .SetQueryParam("bill_date", request.BillDateString)
+                .SetQueryParam("tar_type", request.TarType);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantFundWithdrawBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

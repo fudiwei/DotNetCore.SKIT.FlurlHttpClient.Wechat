@@ -98,10 +98,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "user", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.NextOpenId is not null)
-                flurlReq.SetQueryParam("next_openid", request.NextOpenId);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("next_openid", request.NextOpenId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinUserGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

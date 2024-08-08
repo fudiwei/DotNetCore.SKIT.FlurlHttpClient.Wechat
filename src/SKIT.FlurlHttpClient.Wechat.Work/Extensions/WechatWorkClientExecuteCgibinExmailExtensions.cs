@@ -217,10 +217,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "exmail", "group", "search")
                 .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("groupid", request.GroupId)
                 .SetQueryParam("fuzzy", request.IsFuzzy ? 1 : 0);
-
-            if (request.GroupId is not null)
-                flurlReq.SetQueryParam("groupid", request.GroupId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExmailGroupSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -339,10 +337,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "exmail", "publicmail", "search")
                 .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("email", request.EmailOrName)
                 .SetQueryParam("fuzzy", request.IsFuzzy ? 1 : 0);
-
-            if (request.EmailOrName is not null)
-                flurlReq.SetQueryParam("email", request.EmailOrName);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinExmailPublicMailSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

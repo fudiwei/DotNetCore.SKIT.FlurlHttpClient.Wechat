@@ -75,19 +75,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "partnerships");
-
-            if (request.Partner is not null)
-                flurlReq.SetQueryParam("partner", client.JsonSerializer.Serialize(request.Partner));
-
-            if (request.AuthorizedData is not null)
-                flurlReq.SetQueryParam("authorized_data", client.JsonSerializer.Serialize(request.AuthorizedData));
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "partnerships")
+                .SetQueryParam("partner", request.Partner is null ? null : client.JsonSerializer.Serialize(request.Partner))
+                .SetQueryParam("authorized_data", request.AuthorizedData is null ? null : client.JsonSerializer.Serialize(request.AuthorizedData))
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingPartnershipsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

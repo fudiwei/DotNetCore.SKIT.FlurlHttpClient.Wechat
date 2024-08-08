@@ -121,13 +121,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("service_id", request.ServiceId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("appid", request.AppId)
-                .SetQueryParam("sub_appid", request.SubAppId);
-
-            if (request.OpenId is not null)
-                flurlReq.SetQueryParam("openid", request.OpenId);
-
-            if (request.SubOpenId is not null)
-                flurlReq.SetQueryParam("sub_openid", request.SubOpenId);
+                .SetQueryParam("sub_appid", request.SubAppId)
+                .SetQueryParam("openid", request.OpenId)
+                .SetQueryParam("sub_openid", request.SubOpenId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPayScorePartnerPermissionsByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

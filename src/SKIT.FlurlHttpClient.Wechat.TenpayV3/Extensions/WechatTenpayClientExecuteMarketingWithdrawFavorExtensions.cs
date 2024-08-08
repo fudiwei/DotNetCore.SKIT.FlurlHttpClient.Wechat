@@ -50,13 +50,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "withdraw-favor", "users", request.OpenId, "coupons")
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("mchid", request.CreatorMerchantId)
-                .SetQueryParam("stock_id", request.StockId);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value.ToString());
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value.ToString());
+                .SetQueryParam("stock_id", request.StockId)
+                .SetQueryParam("limit", request.Limit)
+                .SetQueryParam("offset", request.Offset);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingWithdrawFavorUserCouponsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

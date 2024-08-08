@@ -157,10 +157,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "user", "simplelist")
                 .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("department_id", request.DepartmentId);
-
-            if (request.RequireFetchChild is not null)
-                flurlReq.SetQueryParam("fetch_child", request.RequireFetchChild.Value ? 1 : 0);
+                .SetQueryParam("department_id", request.DepartmentId)
+                .SetQueryParam("fetch_child", request.RequireFetchChild.HasValue ? request.RequireFetchChild.Value ? 1 : 0 : null);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinUserSimpleListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -186,10 +184,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "user", "list")
                 .SetQueryParam("access_token", request.AccessToken)
-                .SetQueryParam("department_id", request.DepartmentId);
-
-            if (request.RequireFetchChild is not null)
-                flurlReq.SetQueryParam("fetch_child", request.RequireFetchChild.Value ? 1 : 0);
+                .SetQueryParam("department_id", request.DepartmentId)
+                .SetQueryParam("fetch_child", request.RequireFetchChild.HasValue ? request.RequireFetchChild.Value ? 1 : 0 : null);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinUserListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -432,13 +428,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "user", "list_member_auth")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            if (request.Cursor is not null)
-                flurlReq.SetQueryParam("cursor", request.Cursor);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("cursor", request.Cursor)
+                .SetQueryParam("limit", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinUserListMemberAuthResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

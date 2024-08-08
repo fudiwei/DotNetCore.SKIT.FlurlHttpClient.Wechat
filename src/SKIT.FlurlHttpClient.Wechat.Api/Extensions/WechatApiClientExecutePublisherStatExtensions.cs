@@ -28,13 +28,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "publisher", "stat")
                 .SetQueryParam("action", "publisher_adpos_general")
-                .SetQueryParam("page", request.Page)
-                .SetQueryParam("page_size", request.Limit)
+                .SetQueryParam("ad_slot", request.AdSlotName)
                 .SetQueryParam("start_date", request.StartDateString)
-                .SetQueryParam("end_date", request.EndDateString);
-
-            if (request.AdSlotName is not null)
-                flurlReq.SetQueryParam("ad_slot", request.AdSlotName);
+                .SetQueryParam("end_date", request.EndDateString)
+                .SetQueryParam("page", request.Page)
+                .SetQueryParam("page_size", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.PublisherStatAdposGeneralResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -58,10 +56,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "publisher", "stat")
                 .SetQueryParam("action", "publisher_cps_general")
-                .SetQueryParam("page", request.Page)
-                .SetQueryParam("page_size", request.Limit)
                 .SetQueryParam("start_date", request.StartDateString)
-                .SetQueryParam("end_date", request.EndDateString);
+                .SetQueryParam("end_date", request.EndDateString)
+                .SetQueryParam("page", request.Page)
+                .SetQueryParam("page_size", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.PublisherStatCpsGeneralResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -85,10 +83,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "publisher", "stat")
                 .SetQueryParam("action", "publisher_settlement")
-                .SetQueryParam("page", request.Page)
-                .SetQueryParam("page_size", request.Limit)
                 .SetQueryParam("start_date", request.StartDateString)
-                .SetQueryParam("end_date", request.EndDateString);
+                .SetQueryParam("end_date", request.EndDateString)
+                .SetQueryParam("page", request.Page)
+                .SetQueryParam("page_size", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.PublisherStatSettlementResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

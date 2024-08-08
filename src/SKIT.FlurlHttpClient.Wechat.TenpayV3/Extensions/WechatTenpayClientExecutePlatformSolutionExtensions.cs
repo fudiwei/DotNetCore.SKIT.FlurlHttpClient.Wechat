@@ -50,16 +50,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "mch-transfer", "batches", "out-batch-no", request.OutBatchNumber)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
-                .SetQueryParam("need_query_detail", request.RequireQueryDetail ? "true" : "false");
-
-            if (request.DetailState is not null)
-                flurlReq.SetQueryParam("detail_state", request.DetailState);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value);
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail ? "true" : "false")
+                .SetQueryParam("detail_state", request.DetailState)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionMerchantTransferBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -83,16 +77,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "mch-transfer", "batches", "batch-id", request.BatchId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
-                .SetQueryParam("need_query_detail", request.RequireQueryDetail ? "true" : "false");
-
-            if (request.DetailState is not null)
-                flurlReq.SetQueryParam("detail_state", request.DetailState);
-
-            if (request.Offset is not null)
-                flurlReq.SetQueryParam("offset", request.Offset.Value);
-
-            if (request.Limit is not null)
-                flurlReq.SetQueryParam("limit", request.Limit.Value);
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail ? "true" : "false")
+                .SetQueryParam("detail_state", request.DetailState)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionMerchantTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
