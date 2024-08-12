@@ -1,4 +1,4 @@
-﻿{
+{
     "data": [
         {
             "stock_creator_mchid": "9800064",
@@ -33,7 +33,10 @@
                         "discount_amount": 4
                     }
                 ]
-            }
+            },
+            "out_request_no": "example_out_request_no",
+            "available_balance": 10000,
+            "business_type": "MULTIUSE"
         }
     ],
     "total_count": 100,

@@ -347,10 +347,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "users", request.OpenId, "coupons")
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("stock_id", request.StockId)
-                .SetQueryParam("status", request.Status)
                 .SetQueryParam("creator_mchid", request.CreatorMerchantId)
                 .SetQueryParam("sender_mchid", request.SenderMerchantId)
                 .SetQueryParam("available_mchid", request.AvailableMerchantId)
+                .SetQueryParam("status", request.Status)
+                .SetQueryParam("business_type", request.BusinessType)
                 .SetQueryParam("limit", request.Limit)
                 .SetQueryParam("offset", request.Offset);
 

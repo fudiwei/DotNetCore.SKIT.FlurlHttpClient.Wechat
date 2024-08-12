@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -18,6 +18,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                     }
 
                     public class CutToMessage : GetMarketingFavorStockByStockIdResponse.Types.CutToMessage
+                    {
+                    }
+
+                    public class AvailableRegion : GetMarketingFavorStockByStockIdResponse.Types.AvailableRegion
                     {
                     }
                 }
@@ -97,6 +101,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public int DistributedCoupons { get; set; }
 
                 /// <summary>
+                /// 获取或设置消费卡 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("card_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("card_id")]
+                public string? CardId { get; set; }
+
+                /// <summary>
                 /// 获取或设置是否无资金流。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("no_cash")]
@@ -134,6 +145,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("stop_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
                 public DateTimeOffset? StopTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置业务类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("business_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("business_type")]
+                public string? BusinessType { get; set; }
+
+                /// <summary>
+                /// 获取或设置消费金可用地域列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("available_region_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("available_region_list")]
+                public Types.AvailableRegion[]? AvailableRegionList { get; set; }
+
+                /// <summary>
+                /// 获取或设置消费金可用行业列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("available_industry_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("available_industry_list")]
+                public string[]? AvailableIndustryList { get; set; }
 
                 /// <summary>
                 /// 获取或设置创建时间。

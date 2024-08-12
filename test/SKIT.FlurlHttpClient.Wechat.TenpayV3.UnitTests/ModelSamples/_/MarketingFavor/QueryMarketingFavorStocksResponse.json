@@ -1,4 +1,4 @@
-﻿{
+{
     "total_count": 10,
     "data": [
         {
@@ -17,14 +17,27 @@
                     "transaction_minimum": 100
                 },
                 "max_coupons_per_user": 3,
-                "trade_type": ["OTHER", "APPPAY"]
+                "trade_type": [ "OTHER", "APPPAY" ]
             },
             "available_begin_time": "2015-05-20T13:29:35.120+08:00",
             "available_end_time": "2015-05-20T13:29:35.120+08:00",
             "distributed_coupons": 100,
             "no_cash": true,
             "singleitem": true,
-            "stock_type": "NORMAL"
+            "stock_type": "NORMAL",
+            "business_type": "MULTIUSE",
+            "available_region_list": [
+                {
+                    "type": "PROVINCE",
+                    "province": "广东省",
+                    "city": "深圳市",
+                    "district": "南山区",
+                    "country": "中国大陆"
+                }
+            ],
+            "available_industry_list": [
+                "餐饮"
+            ]
         }
     ],
     "limit": 8,

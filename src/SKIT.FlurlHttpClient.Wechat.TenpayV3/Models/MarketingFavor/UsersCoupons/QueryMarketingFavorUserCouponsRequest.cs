@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /marketing/favor/users/{openid}/coupons 接口的请求。</para>
@@ -53,6 +53,13 @@
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string? Status { get; set; }
+
+        /// <summary>
+        /// 获取或设置业务类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? BusinessType { get; set; }
 
         /// <summary>
         /// 获取或设置分页大小。

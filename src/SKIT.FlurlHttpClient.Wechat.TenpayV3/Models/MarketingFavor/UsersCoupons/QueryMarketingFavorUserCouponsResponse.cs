@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -125,6 +125,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string CouponType { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置商户单据号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_request_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_request_no")]
+                public string OutRequestNumber { get; set; } = default!;
+
+                /// <summary>
                 /// 获取或设置券状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
@@ -197,6 +204,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("consume_information")]
                 [System.Text.Json.Serialization.JsonPropertyName("consume_information")]
                 public Types.Consumption? Consumption { get; set; }
+
+                /// <summary>
+                /// 获取或设置可用余额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("available_balance")]
+                [System.Text.Json.Serialization.JsonPropertyName("available_balance")]
+                public int? AvailableBalance { get; set; }
+
+                /// <summary>
+                /// 获取或设置业务类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("business_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("business_type")]
+                public string? BusinessType { get; set; }
 
                 /// <summary>
                 /// 获取或设置领券时间。
