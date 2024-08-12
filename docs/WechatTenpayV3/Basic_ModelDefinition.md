@@ -49,6 +49,7 @@
 |  √  |       经营能力：平台收付通        |      合作伙伴       |                   |
 |  √  |         运营工具：代金券          | 直连商户 & 合作伙伴 |                   |
 |  √  |         运营工具：商家券          | 直连商户 & 合作伙伴 |                   |
+|  √  |         运营工具：消费金          |      直连商户       |                   |
 |  √  |        运营工具：委托营销         | 直连商户 & 合作伙伴 |                   |
 |  √  |        运营工具：支付有礼         | 直连商户 & 合作伙伴 |                   |
 |  √  |        运营工具：智慧商圈         | 直连商户 & 合作伙伴 |                   |
@@ -360,6 +361,16 @@
         -   查询营销补差付款单详情：`GetMarketingBusifavorSubsidyPayReceiptBySubsidyReceiptId`
 
         -   图片上传：`UploadMerchantMediaImage`
+
+    -   消费金
+
+        -   下载批次退款明细：`GetMultiuseStockRefundFlow`
+
+        -   下载批次发放明细：`GetMultiuseStockSendFlow`
+
+        -   下载核销明细：`GetMultiuseStockUseFlow`
+
+        -   发放指定批次的消费金：`SendMultiuseUserCoupon`
 
     -   委托营销
 
