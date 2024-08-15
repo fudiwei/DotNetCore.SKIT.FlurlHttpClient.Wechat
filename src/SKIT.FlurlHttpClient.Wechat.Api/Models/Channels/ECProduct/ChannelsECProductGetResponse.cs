@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -215,6 +217,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置先用后付类型。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2024-08-05 下线。")]
                         [Newtonsoft.Json.JsonProperty("pay_after_use")]
                         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                         [System.Text.Json.Serialization.JsonPropertyName("pay_after_use")]
