@@ -122,7 +122,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                 return;
 
             string urlpath = GetRequestUrlPath(context.FlurlCall.HttpRequestMessage.RequestUri);
-            string timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds().ToString();
+            long timestamp = DateTimeOffset.Now.ToLocalTime().ToUnixTimeSeconds();
             string postData = "{}";
             string postDataEncrypted;
             if (context.FlurlCall.HttpRequestMessage?.Content is not null)
@@ -156,7 +156,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
                     JsonObject jsonObj = JsonObject.Parse(postData)!.AsObject();
                     jsonObj["_n"] = GenerateSymmetricEncryptionNonce(16);
                     jsonObj["_appid"] = _appId;
-                    jsonObj["_timestamp"] = timestamp;
+                    jsonObj["_timestamp"] = timestamp; // NOTICE: must be a number
 
                     NameValueCollection queryParams = HttpUtility.ParseQueryString(context.FlurlCall.HttpRequestMessage!.RequestUri.Query);
                     foreach (string? key in queryParams.AllKeys)
@@ -424,9 +424,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Interceptors
             return Convert.ToBase64String(bytes);
         }
 
+        private string GenerateSymmetricEncryptionAssociatedData(string urlpath, string appId, long timestamp)
+        {
+            return GenerateSymmetricEncryptionAssociatedData(urlpath, appId, timestamp.ToString());
+        }
+
         private string GenerateSymmetricEncryptionAssociatedData(string urlpath, string appId, string timestamp)
         {
             return $"{urlpath}|{appId}|{timestamp}|{_symmetricNum}";
+        }
+
+        private string GenerateAymmetricSigningData(string urlpath, string appId, long timestamp, string postdata)
+        {
+            return GenerateAymmetricSigningData(urlpath, appId, timestamp.ToString(), postdata);
         }
 
         private string GenerateAymmetricSigningData(string urlpath, string appId, string timestamp, string postdata)
