@@ -33,6 +33,18 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.5.0 (2024-08-15)
+
+    -   **新增**：新增使用 AppSecret 重置 API 调用次数接口。
+
+    -   **新增**：随官方标记视频号小店商品、会员等接口的相关字段为废弃。
+
+    -   **新增**：随官方标记公众号商品消息与卡券发表能力相关接口或字段为废弃。
+
+    -   **修复**：修复 `SubscribeMessagePopupEvent` 不兼容 JSON 格式的微信消息推送的问题。（_via_ [GitHub #147](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/147)）
+
+    -   **修复**：修复部分接口在安全鉴权模式下签名错误的问题。（_via_ [GitHub #151](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/151)）
+
 -   Release 3.4.0 (2024-07-15)
 
     -   **新增**：新增小程序重置登录态接口。
