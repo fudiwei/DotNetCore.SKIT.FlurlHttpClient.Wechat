@@ -37,9 +37,9 @@
 
     -   **新增**：新增使用 AppSecret 重置 API 调用次数接口。
 
-    -   **新增**：随官方标记视频号小店商品、会员等接口的相关字段为废弃。
+    -   **变更**：随官方标记视频号小店商品、会员等接口的相关字段为废弃。
 
-    -   **新增**：随官方标记公众号商品消息与卡券发表能力相关接口或字段为废弃。
+    -   **变更**：随官方标记公众号商品消息与卡券发表能力相关接口或字段为废弃。
 
     -   **修复**：修复 `SubscribeMessagePopupEvent` 不兼容 JSON 格式的微信消息推送的问题。（_via_ [GitHub #147](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/147)）
 
