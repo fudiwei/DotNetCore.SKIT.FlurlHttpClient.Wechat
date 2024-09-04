@@ -1002,6 +1002,12 @@
 
             -   关闭充值：`ClosePlatformSolutionEcommerceRecharge`
 
+    -   平台收付通（赔付）
+
+            -   开通保险理赔功能：`ApplyPlatformSolutionEcommerceInsuranceCompensationContract`
+
+            -   查询保险理赔功能开通状态：`GetPlatformSolutionEcommerceInsuranceCompensationContractBySubMerchantId`
+
     -   代金券
 
         -   创建代金券批次：`CreateMarketingFavorStock`
