@@ -994,6 +994,14 @@
 
             -   微信支付预约单号查询预约商家转账记录：`GetPlatformSolutionMerchantTransferReservationByReservationId`
 
+    -   平台收付通（商家充值）
+
+            -   申请充值：`ApplyPlatformSolutionEcommerceRecharge`
+
+            -   查询充值结果：`GetPlatformSolutionEcommerceRechargeByOutRechargeNumber`
+
+            -   关闭充值：`ClosePlatformSolutionEcommerceRecharge`
+
     -   代金券
 
         -   创建代金券批次：`CreateMarketingFavorStock`
