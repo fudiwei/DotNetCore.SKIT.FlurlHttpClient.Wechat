@@ -39,14 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("reply_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("reply_rate")]
-                        public decimal ReplyRate { get; set; }
+                        public decimal? ReplyRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置平均首次响应时长（单位：秒）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("first_reply_average_sec")]
                         [System.Text.Json.Serialization.JsonPropertyName("first_reply_average_sec")]
-                        public int FirstReplyAverageSeconds { get; set; }
+                        public decimal? FirstReplyAverageSeconds { get; set; }
 
                         /// <summary>
                         /// 获取或设置满意度评价发送数。
@@ -60,28 +60,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("satisfaction_participation_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("satisfaction_participation_rate")]
-                        public decimal SatisfactionParticipationRate { get; set; }
+                        public decimal? SatisfactionParticipationRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置“满意”评价占比。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("satisfied_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("satisfied_rate")]
-                        public decimal SatisfiedRate { get; set; }
+                        public decimal? SatisfiedRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置“一般”评价占比。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("middling_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("middling_rate")]
-                        public decimal MiddlingRate { get; set; }
+                        public decimal? MiddlingRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置“不满意”评价占比。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("dissatisfied_rate")]
                         [System.Text.Json.Serialization.JsonPropertyName("dissatisfied_rate")]
-                        public decimal DissatisfiedRate { get; set; }
+                        public decimal? DissatisfiedRate { get; set; }
 
                         /// <summary>
                         /// 获取或设置升级服务客户数。
