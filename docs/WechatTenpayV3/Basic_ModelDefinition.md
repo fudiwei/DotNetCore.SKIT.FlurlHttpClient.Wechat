@@ -712,473 +712,477 @@
 
 -   运营工具
 
-    -   转账到零钱
+        -   转账到零钱
 
-        -   发起批量转账：`CreatePartnerTransferBatch`
+            -   发起批量转账：`CreatePartnerTransferBatch`
 
-        -   微信批次单号查询批次单：`GetPartnerTransferBatchByBatchId`
+            -   微信批次单号查询批次单：`GetPartnerTransferBatchByBatchId`
 
-        -   微信明细单号查询明细单：`GetPartnerTransferBatchDetailByDetailId`
+            -   微信明细单号查询明细单：`GetPartnerTransferBatchDetailByDetailId`
 
-        -   商家批次单号查询批次单：`GetPartnerTransferBatchByOutBatchNumber`
+            -   商家批次单号查询批次单：`GetPartnerTransferBatchByOutBatchNumber`
 
-        -   商家明细单号查询明细单：`GetPartnerTransferBatchDetailByOutDetailNumber`
+            -   商家明细单号查询明细单：`GetPartnerTransferBatchDetailByOutDetailNumber`
 
-        -   转账电子回单申请受理：`CreateTransferBillReceipt`
+            -   转账电子回单申请受理：`CreateTransferBillReceipt`
 
-        -   查询转账电子回单：`GetTransferBillReceiptByOutBatchNumber`
+            -   查询转账电子回单：`GetTransferBillReceiptByOutBatchNumber`
 
-        -   转账明细电子回单受理：`CreateTransferDetailElectronicReceipt`
+            -   转账明细电子回单受理：`CreateTransferDetailElectronicReceipt`
 
-        -   查询转账明细电子回单受理结果：`GetTransferDetailElectronicReceiptByOutDetailNumber`
+            -   查询转账明细电子回单受理结果：`GetTransferDetailElectronicReceiptByOutDetailNumber`
 
-        -   下载电子回单：`DownloadBillFile`
+            -   下载电子回单：`DownloadBillFile`
 
-        -   查询特约商户账户实时余额：`GetEcommerceFundBalance`
+            -   查询特约商户账户实时余额：`GetEcommerceFundBalance`
 
-        -   查询账户实时余额：`GetMerchantFundBalance`
+            -   查询账户实时余额：`GetMerchantFundBalance`
 
-        -   查询账户日终余额：`GetMerchantFundDayendBalance`
+            -   查询账户日终余额：`GetMerchantFundDayendBalance`
 
-    -   微信支付分
+        -   微信支付分
 
-        -   服务订单
+            -   服务订单
 
-            -   创建支付分订单：`CreatePayScorePartnerServiceOrder`
+                -   创建支付分订单：`CreatePayScorePartnerServiceOrder`
 
-            -   查询支付分订单：`GetPayScorePartnerServiceOrderByQueryId` / `GetPayScoreServiceOrderByOutOrderNumber`
+                -   查询支付分订单：`GetPayScorePartnerServiceOrderByQueryId` / `GetPayScoreServiceOrderByOutOrderNumber`
 
-            -   取消支付分订单：`CancelPayScorePartnerServiceOrder`
+                -   取消支付分订单：`CancelPayScorePartnerServiceOrder`
 
-            -   修改订单金额：`ModifyPayPartnerScoreServiceOrder`
+                -   修改订单金额：`ModifyPayPartnerScoreServiceOrder`
 
-            -   完结支付分订单：`SetPayScorePartnerServiceOrderComplete`
+                -   完结支付分订单：`SetPayScorePartnerServiceOrderComplete`
 
-            -   商户发起催收扣款：`SetPayScorePartnerServiceOrderPay`
+                -   商户发起催收扣款：`SetPayScorePartnerServiceOrderPay`
 
-            -   同步服务订单信息：`SetPayScorePartnerServiceOrderSync`
+                -   同步服务订单信息：`SetPayScorePartnerServiceOrderSync`
 
-            -   商户申请获取对账单：`GetPayScoreMerchantBill`
+                -   商户申请获取对账单：`GetPayScoreMerchantBill`
 
-            -   下发服务费用待处理消息：`SendPayScorePartnerServiceOrderPendingMessage`
+                -   下发服务费用待处理消息：`SendPayScorePartnerServiceOrderPendingMessage`
 
-            -   下发服务预扣费消息：`SendPayScorePartnerServiceOrderPrepaidMessage`
+                -   下发服务预扣费消息：`SendPayScorePartnerServiceOrderPrepaidMessage`
 
-        -   微信支付分（免确认预授权模式）
+            -   微信支付分（免确认预授权模式）
 
-            -   商户预授权：`ApplyPayScorePartnerPermissions`
+                -   商户预授权：`ApplyPayScorePartnerPermissions`
 
-            -   场景中预授权：`ApplyPayScorePartnerPermissionsForScene`
+                -   场景中预授权：`ApplyPayScorePartnerPermissionsForScene`
 
-            -   查询用户授权记录（授权协议号）：`GetPayScorePartnerPermissionsByAuthorizationCode`
+                -   查询用户授权记录（授权协议号）：`GetPayScorePartnerPermissionsByAuthorizationCode`
 
-            -   解除用户授权关系（授权协议号）：`TerminatePayScorePartnerPermissionsByAuthorizationCode`
+                -   解除用户授权关系（授权协议号）：`TerminatePayScorePartnerPermissionsByAuthorizationCode`
 
-            -   查询用户授权记录（OpenId）：`GetPayScorePartnerPermissionsByOpenId`
+                -   查询用户授权记录（OpenId）：`GetPayScorePartnerPermissionsByOpenId`
 
-            -   解除用户授权关系（OpenId）：`TerminatePayScorePartnerPermissionsByOpenId`
+                -   解除用户授权关系（OpenId）：`TerminatePayScorePartnerPermissionsByOpenId`
 
-        -   用户分层
+            -   用户分层
 
-            -   服务商评估用户分层：`AssessPayScorePartnerPermissionsUserRiskLevel`
+                -   服务商评估用户分层：`AssessPayScorePartnerPermissionsUserRiskLevel`
 
-    -   微信支付分停车
+        -   微信支付分停车
 
-        -   查询车牌服务开通信息：`GetVehicleParkingService`
+            -   查询车牌服务开通信息：`GetVehicleParkingService`
 
-        -   创建停车入场：`CreateVehicleParking`
+            -   创建停车入场：`CreateVehicleParking`
 
-        -   扣费受理：`CreateVehicleTransactionParking`
+            -   扣费受理：`CreateVehicleTransactionParking`
 
-        -   查询订单：`GetVehicleTransactionByOutTradeNumber`
+            -   查询订单：`GetVehicleTransactionByOutTradeNumber`
 
-    -   微信支付分签约计划
+        -   微信支付分签约计划
 
-        -   支付分计划操作
+            -   支付分计划操作
 
-            -   创建支付分计划：`CreatePayScorePartnerPlan`
+                -   创建支付分计划：`CreatePayScorePartnerPlan`
 
-            -   查询支付分计划：`GetPayScorePartnerPlanByOutPlanNumber`
+                -   查询支付分计划：`GetPayScorePartnerPlanByOutPlanNumber`
 
-            -   停止支付分计划：`StopPayScorePartnerPlan`
+                -   停止支付分计划：`StopPayScorePartnerPlan`
 
-        -   签约计划详情对应的服务订单
+            -   签约计划详情对应的服务订单
 
-            -   创建用户的签约计划详情对应的服务订单：`CreatePayScorePartnerSignPlanServiceOrder`
+                -   创建用户的签约计划详情对应的服务订单：`CreatePayScorePartnerSignPlanServiceOrder`
 
-        -   管理签约计划
+            -   管理签约计划
 
-            -   创建用户的签约计划：`CreatePayScorePartnerSignPlanUserSignPlan`
+                -   创建用户的签约计划：`CreatePayScorePartnerSignPlanUserSignPlan`
 
-            -   查询用户的签约计划：`GetPayScorePartnerSignPlanUserSignPlanByOutSignPlanNumber`
+                -   查询用户的签约计划：`GetPayScorePartnerSignPlanUserSignPlanByOutSignPlanNumber`
 
-            -   停止用户的签约计划：`StopPayScorePartnerSignPlanUserSignPlan`
+                -   停止用户的签约计划：`StopPayScorePartnerSignPlanUserSignPlan`
 
-    -   平台收付通（商户进件）
+        -   平台收付通（商户进件）
 
-        -   二级商户进件：`CreateEcommerceApplyment`
+            -   二级商户进件：`CreateEcommerceApplyment`
 
-        -   查询申请状态：`GetEcommerceApplymentByApplymentId` / `GetEcommerceApplymentByOutRequestNumber`
+            -   查询申请状态：`GetEcommerceApplymentByApplymentId` / `GetEcommerceApplymentByOutRequestNumber`
 
-        -   下载平台证书：`QueryCertificates`
+            -   下载平台证书：`QueryCertificates`
 
-        -   修改结算帐号：`ModifyApplyForSubMerchantSettlement`
+            -   修改结算帐号：`ModifyApplyForSubMerchantSettlement`
 
-        -   查询结算账户：`GetApplyForSubMerchantSettlement`
+            -   查询结算账户：`GetApplyForSubMerchantSettlement`
 
-        -   查询结算账户修改申请状态：`GetApplyForSubMerchantSettlementByApplicationNumber`
+            -   查询结算账户修改申请状态：`GetApplyForSubMerchantSettlementByApplicationNumber`
 
-    -   平台收付通（普通支付）
+        -   平台收付通（普通支付）
 
-        -   APP 下单：`CreatePayPartnerTransactionApp`
+            -   APP 下单：`CreatePayPartnerTransactionApp`
 
-        -   JSAPI 下单：`CreatePayPartnerTransactionJsapi`
+            -   JSAPI 下单：`CreatePayPartnerTransactionJsapi`
 
-        -   小程序下单：`CreatePayPartnerTransactionJsapi`
+            -   小程序下单：`CreatePayPartnerTransactionJsapi`
 
-        -   H5 下单：`CreatePayPartnerTransactionH5`
+            -   H5 下单：`CreatePayPartnerTransactionH5`
 
-        -   Navive 下单：`CreatePayPartnerTransactionNavive`
+            -   Navive 下单：`CreatePayPartnerTransactionNavive`
 
-        -   查询订单：`GetPayPartnerTransactionById` / `GetPayPartnerTransactionByOutTradeNumber`
+            -   查询订单：`GetPayPartnerTransactionById` / `GetPayPartnerTransactionByOutTradeNumber`
 
-        -   关闭订单：`ClosePayPartnerTransaction`
+            -   关闭订单：`ClosePayPartnerTransaction`
 
-    -   平台收付通（合单支付）
+        -   平台收付通（合单支付）
 
-        -   合单 APP 下单：`CreateCombineTransactionApp`
+            -   合单 APP 下单：`CreateCombineTransactionApp`
 
-        -   合单 JSAPI 下单：`CreateCombineTransactionJsapi`
+            -   合单 JSAPI 下单：`CreateCombineTransactionJsapi`
 
-        -   合单 H5 下单：`CreateCombineTransactionH5`
+            -   合单 H5 下单：`CreateCombineTransactionH5`
 
-        -   合单 Native 下单：`CreateCombineTransactionNative`
+            -   合单 Native 下单：`CreateCombineTransactionNative`
 
-        -   合单小程序下单：`CreateCombineTransactionJsapi`
+            -   合单小程序下单：`CreateCombineTransactionJsapi`
 
-        -   合单查询订单：`GetCombineTransactionByCombineOutTradeNumber`
+            -   合单查询订单：`GetCombineTransactionByCombineOutTradeNumber`
 
-        -   合单关闭订单：`CloseCombineTransaction`
+            -   合单关闭订单：`CloseCombineTransaction`
 
-    -   平台收付通（合单代扣）
+        -   平台收付通（合单代扣）
 
-        -   APP 方式预签约：`PresignEcommerceCombinePAPayContractEntrustApp`
+            -   APP 方式预签约：`PresignEcommerceCombinePAPayContractEntrustApp`
 
-        -   查询协议：`GetEcommerceCombinePAPayContractByOutContractCode`
+            -   查询协议：`GetEcommerceCombinePAPayContractByOutContractCode`
 
-        -   解约协议：`TerminatEcommerceCombinePAPayContract`
+            -   解约协议：`TerminatEcommerceCombinePAPayContract`
 
-        -   支付：`CreateEcommerceCombinePAPayTransaction`
+            -   支付：`CreateEcommerceCombinePAPayTransaction`
 
-        -   撤销订单：`ReverseEcommerceCombinePAPayTransaction`
+            -   撤销订单：`ReverseEcommerceCombinePAPayTransaction`
 
-        -   查询订单：`GetEcommerceCombinePAPayTransactionByCombineOutTradeNumber`
+            -   查询订单：`GetEcommerceCombinePAPayTransactionByCombineOutTradeNumber`
 
-    -   平台收付通（分账）
+        -   平台收付通（分账）
 
-        -   请求分账：`CreateEcommerceProfitSharingOrder`
+            -   请求分账：`CreateEcommerceProfitSharingOrder`
 
-        -   查询分账结果：`GetEcommerceProfitSharingOrderByOutOrderNumber`
+            -   查询分账结果：`GetEcommerceProfitSharingOrderByOutOrderNumber`
 
-        -   请求分账回退：`CreateEcommerceProfitSharingReturnOrder`
+            -   请求分账回退：`CreateEcommerceProfitSharingReturnOrder`
 
-        -   查询分账回退结果：`GetEcommerceProfitSharingReturnOrderByOrderId` / `GetEcommerceProfitSharingReturnOrderByOutOrderNumber`
+            -   查询分账回退结果：`GetEcommerceProfitSharingReturnOrderByOrderId` / `GetEcommerceProfitSharingReturnOrderByOutOrderNumber`
 
-        -   完结分账：`SetEcommerceProfitSharingOrderFinish`
+            -   完结分账：`SetEcommerceProfitSharingOrderFinish`
 
-        -   查询订单剩余待分金额：`GetEcommerceProfitSharingOrderAmounts`
+            -   查询订单剩余待分金额：`GetEcommerceProfitSharingOrderAmounts`
 
-        -   添加分账接收方：`AddEcommerceProfitSharingReceiver`
+            -   添加分账接收方：`AddEcommerceProfitSharingReceiver`
 
-        -   删除分账接收方：`DeleteEcommerceProfitSharingReceiver`
+            -   删除分账接收方：`DeleteEcommerceProfitSharingReceiver`
 
-    -   平台收付通（补差）
+        -   平台收付通（补差）
 
-        -   请求补差：`CreateEcommerceSubsidy`
+            -   请求补差：`CreateEcommerceSubsidy`
 
-        -   请求补差回退：`CreateEcommerceSubsidyReturn`
+            -   请求补差回退：`CreateEcommerceSubsidyReturn`
 
-        -   取消补差：`CancelEcommerceSubsidy`
+            -   取消补差：`CancelEcommerceSubsidy`
 
-    -   平台收付通（退款）
+        -   平台收付通（退款）
 
-        -   申请退款：`CreateEcommerceRefund`
+            -   申请退款：`CreateEcommerceRefund`
 
-        -   查询退款：`GetEcommerceRefundByRefundId` / `GetEcommerceRefundByOutRefundNumber`
+            -   查询退款：`GetEcommerceRefundByRefundId` / `GetEcommerceRefundByOutRefundNumber`
 
-        -   垫付退款回补：`CreateEcommerceRefundReturnAdvance`
+            -   垫付退款回补：`CreateEcommerceRefundReturnAdvance`
 
-        -   查询垫付回补结果：`GetEcommerceRefundReturnAdvance`
+            -   查询垫付回补结果：`GetEcommerceRefundReturnAdvance`
 
-    -   平台收付通（余额查询）
+        -   平台收付通（余额查询）
 
-        -   查询二级商户账户实时余额：`GetEcommerceFundBalance`
+            -   查询二级商户账户实时余额：`GetEcommerceFundBalance`
 
-        -   查询二级商户账户日终余额：`GetEcommerceFundDayendBalance`
+            -   查询二级商户账户日终余额：`GetEcommerceFundDayendBalance`
 
-        -   查询电商平台账户实时余额：`GetMerchantFundBalance`
+            -   查询电商平台账户实时余额：`GetMerchantFundBalance`
 
-        -   查询电商平台账户日终余额：`GetMerchantFundDayendBalance`
+            -   查询电商平台账户日终余额：`GetMerchantFundDayendBalance`
 
-    -   平台收付通（商户提现）
+        -   平台收付通（商户提现）
 
-        -   二级商户余额提现：`CreateEcommerceFundWithdraw`
+            -   二级商户余额提现：`CreateEcommerceFundWithdraw`
 
-        -   二级商户查询提现状态：`GetEcommerceFundWithdrawByWithdrawId` / `GetEcommerceFundWithdrawByOutRequestNumber`
+            -   二级商户查询提现状态：`GetEcommerceFundWithdrawByWithdrawId` / `GetEcommerceFundWithdrawByOutRequestNumber`
 
-        -   电商平台提现：`CreateMerchantFundWithdraw`
+            -   电商平台提现：`CreateMerchantFundWithdraw`
 
-        -   电商平台查询提现状态：`GetMerchantFundWithdrawByWithdrawId` / `GetMerchantFundWithdrawByOutRequestNumber`
+            -   电商平台查询提现状态：`GetMerchantFundWithdrawByWithdrawId` / `GetMerchantFundWithdrawByOutRequestNumber`
 
-        -   按日下载提现异常文件：`GetMerchantFundWithdrawBill`
+            -   按日下载提现异常文件：`GetMerchantFundWithdrawBill`
 
-    -   平台收付通（注销申请）
+        -   平台收付通（注销申请）
 
-        -   提交注销申请单：`CreateEcommerceAccountCancelApplication`
+            -   提交注销申请单：`CreateEcommerceAccountCancelApplication`
 
-        -   查询注销单状态：`GetEcommerceAccountCancelApplicationByOutApplyNumber`
+            -   查询注销单状态：`GetEcommerceAccountCancelApplicationByOutApplyNumber`
 
-        -   图片上传：`UploadEcommerceAccountCancelApplicationMedia`
+            -   图片上传：`UploadEcommerceAccountCancelApplicationMedia`
 
-    -   平台收付通（注销后提现）
+        -   平台收付通（注销后提现）
 
-        -   商户提现申请单号查询提现申请单状态：`GetMerchantOperateRiskWithdrawlApplyByOutRequestNumber`
+            -   商户提现申请单号查询提现申请单状态：`GetMerchantOperateRiskWithdrawlApplyByOutRequestNumber`
 
-        -   微信支付提现申请单号查询提现申请单状态：`GetMerchantOperateRiskWithdrawlApplyByApplymentId`
+            -   微信支付提现申请单号查询提现申请单状态：`GetMerchantOperateRiskWithdrawlApplyByApplymentId`
 
-        -   提交已注销商户号可用余额提现申请单：`CreateMerchantOperateRiskWithdrawlApply`
+            -   提交已注销商户号可用余额提现申请单：`CreateMerchantOperateRiskWithdrawlApply`
 
-    -   平台收付通（跨境付款）
+        -   平台收付通（跨境付款）
 
-        -   查询订单剩余可出境余额：`GetFundsToOverseaTransactionAvailableAbroadAmountByTransactionId`
+            -   查询订单剩余可出境余额：`GetFundsToOverseaTransactionAvailableAbroadAmountByTransactionId`
 
-        -   申请资金出境：`CreateFundsToOverseaOrder`
+            -   申请资金出境：`CreateFundsToOverseaOrder`
 
-        -   查询出境结果：`GetFundsToOverseaOrderByOutOrderId`
+            -   查询出境结果：`GetFundsToOverseaOrderByOutOrderId`
 
-        -   获取购付汇账单文件下载链接：`GetFundsToOverseaBillDownloadUrl`
+            -   获取购付汇账单文件下载链接：`GetFundsToOverseaBillDownloadUrl`
 
-    -   平台收付通（下载账单）
+        -   平台收付通（下载账单）
 
-        -   申请交易账单：`GetBillTradeBill`
+            -   申请交易账单：`GetBillTradeBill`
 
-        -   申请资金账单：`GetBillFundflowBill`
+            -   申请资金账单：`GetBillFundflowBill`
 
-        -   获取分账账单文件下载地址：`GetProfitSharingBill`
+            -   获取分账账单文件下载地址：`GetProfitSharingBill`
 
-        -   申请二级商户资金账单：`GetEcommerceBillFundflowBill`
+            -   申请二级商户资金账单：`GetEcommerceBillFundflowBill`
 
-        -   下载账单：`DownloadBillFile`
+            -   下载账单：`DownloadBillFile`
 
-    -   平台收付通（商家转账）
+        -   平台收付通（商家转账）
 
-        -   批量商家转账
+            -   批量商家转账
 
-            -   受理商家转账：`ApplyPlatformSolutionMerchantTransferBatch`
+                -   受理商家转账：`ApplyPlatformSolutionMerchantTransferBatch`
 
-            -   微信支付转账批次单号查询批次单：`GetPlatformSolutionMerchantTransferBatchByBatchId`
+                -   微信支付转账批次单号查询批次单：`GetPlatformSolutionMerchantTransferBatchByBatchId`
 
-            -   微信支付转账明细单号查询明细单：`GetPlatformSolutionMerchantTransferBatchDetailByDetailId`
+                -   微信支付转账明细单号查询明细单：`GetPlatformSolutionMerchantTransferBatchDetailByDetailId`
 
-            -   商户转账批次单号查询批次单：`GetPlatformSolutionMerchantTransferBatchByOutBatchNumber`
+                -   商户转账批次单号查询批次单：`GetPlatformSolutionMerchantTransferBatchByOutBatchNumber`
 
-            -   商户明细单号查询明细单：`GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumber`
+                -   商户明细单号查询明细单：`GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumber`
 
-        -   预约商家转账
+            -   预约商家转账
 
-            -   受理单次预约商家转账：`ApplyPlatformSolutionMerchantTransferReservation`
+                -   受理单次预约商家转账：`ApplyPlatformSolutionMerchantTransferReservation`
 
-            -   商户预约单号查询预约商家转账记录：`GetPlatformSolutionMerchantTransferReservationByOutReservationNumber`
+                -   商户预约单号查询预约商家转账记录：`GetPlatformSolutionMerchantTransferReservationByOutReservationNumber`
 
-            -   关闭预约商家转账记录：`ClosePlatformSolutionMerchantTransferReservation`
+                -   关闭预约商家转账记录：`ClosePlatformSolutionMerchantTransferReservation`
 
-            -   微信支付预约单号查询预约商家转账记录：`GetPlatformSolutionMerchantTransferReservationByReservationId`
+                -   微信支付预约单号查询预约商家转账记录：`GetPlatformSolutionMerchantTransferReservationByReservationId`
 
-    -   平台收付通（商家充值）
+        -   平台收付通（商家充值）
 
-            -   申请充值：`ApplyPlatformSolutionEcommerceRecharge`
+                -   申请充值：`ApplyPlatformSolutionEcommerceRecharge`
 
-            -   查询充值结果：`GetPlatformSolutionEcommerceRechargeByOutRechargeNumber`
+                -   查询充值结果：`GetPlatformSolutionEcommerceRechargeByOutRechargeNumber`
 
-            -   关闭充值：`ClosePlatformSolutionEcommerceRecharge`
+                -   关闭充值：`ClosePlatformSolutionEcommerceRecharge`
 
-    -   平台收付通（赔付）
+                -   申请银行转账充值：`ApplyPlatformSolutionEcommerceBankTransferRecharge`
 
-            -   开通保险理赔功能：`ApplyPlatformSolutionEcommerceInsuranceCompensationContract`
+                -   查询银行转账充值结果：`GetPlatformSolutionEcommerceBankTransferRechargeByOutRechargeNumber`
 
-            -   查询保险理赔功能开通状态：`GetPlatformSolutionEcommerceInsuranceCompensationContractBySubMerchantId`
+        -   平台收付通（赔付）
 
-    -   代金券
+                -   开通保险理赔功能：`ApplyPlatformSolutionEcommerceInsuranceCompensationContract`
 
-        -   创建代金券批次：`CreateMarketingFavorStock`
+                -   查询保险理赔功能开通状态：`GetPlatformSolutionEcommerceInsuranceCompensationContractBySubMerchantId`
 
-        -   激活代金券批次：`StartMarketingFavorStock`
+        -   代金券
 
-        -   发放代金券批次：`SendMarketingFavorUserCoupon`
+            -   创建代金券批次：`CreateMarketingFavorStock`
 
-        -   暂停代金券批次：`PauseMarketingFavorStock`
+            -   激活代金券批次：`StartMarketingFavorStock`
 
-        -   重启代金券批次：`RestartMarketingFavorStock`
+            -   发放代金券批次：`SendMarketingFavorUserCoupon`
 
-        -   条件查询批次列表：`QueryMarketingFavorStocks`
+            -   暂停代金券批次：`PauseMarketingFavorStock`
 
-        -   查询批次详情：`GetMarketingFavorStockByStockId`
+            -   重启代金券批次：`RestartMarketingFavorStock`
 
-        -   查询代金券详情：`GetMarketingFavorUserCouponByCouponId`
+            -   条件查询批次列表：`QueryMarketingFavorStocks`
 
-        -   查询代金券可用商户：`QueryMarketingFavorStockMerchants`
+            -   查询批次详情：`GetMarketingFavorStockByStockId`
 
-        -   查询代金券可用单品：`QueryMarketingFavorStockItems`
+            -   查询代金券详情：`GetMarketingFavorUserCouponByCouponId`
 
-        -   根据商户号查用户的券：`QueryMarketingFavorUserCoupons`
+            -   查询代金券可用商户：`QueryMarketingFavorStockMerchants`
 
-        -   下载批次核销明细：`GetMarketingFavorStockUseFlow`
+            -   查询代金券可用单品：`QueryMarketingFavorStockItems`
 
-        -   下载批次退款明细：`GetMarketingFavorStockRefundFlow`
+            -   根据商户号查用户的券：`QueryMarketingFavorUserCoupons`
 
-        -   设置消息通知地址：`UpdateMarketingFavorCallback`
+            -   下载批次核销明细：`GetMarketingFavorStockUseFlow`
 
-        -   图片上传：`UploadMarketingMediaImage`
+            -   下载批次退款明细：`GetMarketingFavorStockRefundFlow`
 
-    -   商家券
+            -   设置消息通知地址：`UpdateMarketingFavorCallback`
 
-        -   创建商家券：`CreateMarketingBusifavorStock`
+            -   图片上传：`UploadMarketingMediaImage`
 
-        -   查询商家券详情：`GetMarketingBusifavorStockByStockId`
+        -   商家券
 
-        -   核销用户券：`SetMarketingBusifavorCouponUsed`
+            -   创建商家券：`CreateMarketingBusifavorStock`
 
-        -   根据过滤条件查询用户券：`QueryMarketingBusifavorUserCoupons`
+            -   查询商家券详情：`GetMarketingBusifavorStockByStockId`
 
-        -   查询用户单张券详情：`GetMarketingBusifavorUserCouponByCouponCode`
+            -   核销用户券：`SetMarketingBusifavorCouponUsed`
 
-        -   上传预存 Code：`UploadMarketingBusifavorStockCouponCodes`
+            -   根据过滤条件查询用户券：`QueryMarketingBusifavorUserCoupons`
 
-        -   设置商家券事件通知地址：`UpdateMarketingBusifavorCallback`
+            -   查询用户单张券详情：`GetMarketingBusifavorUserCouponByCouponCode`
 
-        -   查询商家券事件通知地址：`GetMarketingBusifavorCallback`
+            -   上传预存 Code：`UploadMarketingBusifavorStockCouponCodes`
 
-        -   关联订单信息：`AssociateMarketingBusifavorCoupon`
+            -   设置商家券事件通知地址：`UpdateMarketingBusifavorCallback`
 
-        -   取消关联订单信息：`DisassociateMarketingBusifavorCoupon`
+            -   查询商家券事件通知地址：`GetMarketingBusifavorCallback`
 
-        -   修改批次预算：`UpdateMarketingBusifavorStockBudget`
+            -   关联订单信息：`AssociateMarketingBusifavorCoupon`
 
-        -   修改商家券基本信息：`UpdateMarketingBusifavorStock`
+            -   取消关联订单信息：`DisassociateMarketingBusifavorCoupon`
 
-        -   申请退券：`CreateMarketingBusifavorCouponReturn`
+            -   修改批次预算：`UpdateMarketingBusifavorStockBudget`
 
-        -   使券失效：`DeactivateMarketingBusifavorCoupon`
+            -   修改商家券基本信息：`UpdateMarketingBusifavorStock`
 
-        -   营销补差付款：`CreateMarketingBusifavorSubsidyPayReceipt`
+            -   申请退券：`CreateMarketingBusifavorCouponReturn`
 
-        -   营销补差回退：`CreateMarketingBusifavorSubsidyReturnReceipt`
+            -   使券失效：`DeactivateMarketingBusifavorCoupon`
 
-        -   查询营销补差付款单列表：`QueryMarketingBusifavorSubsidyPayReceipts`
+            -   营销补差付款：`CreateMarketingBusifavorSubsidyPayReceipt`
 
-        -   查询营销补差付款单详情：`GetMarketingBusifavorSubsidyPayReceiptBySubsidyReceiptId`
+            -   营销补差回退：`CreateMarketingBusifavorSubsidyReturnReceipt`
 
-        -   图片上传：`UploadMarketingMediaImage`
+            -   查询营销补差付款单列表：`QueryMarketingBusifavorSubsidyPayReceipts`
 
-    -   委托营销
+            -   查询营销补差付款单详情：`GetMarketingBusifavorSubsidyPayReceiptBySubsidyReceiptId`
 
-        -   建立合作关系：`BuildMarketingPartnership`
+            -   图片上传：`UploadMarketingMediaImage`
 
-        -   终止合作关系：`TerminateMarketingPartnership`
+        -   委托营销
 
-        -   查询合作关系列表：`QueryMarketingPartnerships`
+            -   建立合作关系：`BuildMarketingPartnership`
 
-    -   支付有礼
+            -   终止合作关系：`TerminateMarketingPartnership`
 
-        -   创建全场满额送活动：`CreateMarketingPayGiftActivityUniqueThresholdActivity`
+            -   查询合作关系列表：`QueryMarketingPartnerships`
 
-        -   查询活动详情接口：`GetMarketingPayGiftActivityByActivityId`
+        -   支付有礼
 
-        -   查询活动发券商户号：`QueryMarketingPayGiftActivityMerchants`
+            -   创建全场满额送活动：`CreateMarketingPayGiftActivityUniqueThresholdActivity`
 
-        -   查询活动指定商品列表：`QueryMarketingPayGiftActivityGoods`
+            -   查询活动详情接口：`GetMarketingPayGiftActivityByActivityId`
 
-        -   终止活动：`TerminateMarketingPayGiftActivity`
+            -   查询活动发券商户号：`QueryMarketingPayGiftActivityMerchants`
 
-        -   新增活动发券商户号：`AddMarketingPayGiftActivityMerchant`
+            -   查询活动指定商品列表：`QueryMarketingPayGiftActivityGoods`
 
-        -   获取支付有礼活动列表：`QueryMarketingPayGiftActivities`
+            -   终止活动：`TerminateMarketingPayGiftActivity`
 
-        -   删除活动发券商户号：`DeleteMarketingPayGiftActivityMerchant`
+            -   新增活动发券商户号：`AddMarketingPayGiftActivityMerchant`
 
-        -   图片上传：`UploadMarketingMediaImage`
+            -   获取支付有礼活动列表：`QueryMarketingPayGiftActivities`
 
-    -   智慧商圈
+            -   删除活动发券商户号：`DeleteMarketingPayGiftActivityMerchant`
 
-        -   商圈积分同步：`NotifyBusinessCirclePoints`
+            -   图片上传：`UploadMarketingMediaImage`
 
-        -   商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
+        -   智慧商圈
 
-        -   商圈会员待积分状态查询：`GetBusinessCircleUserPointsCommitStatusByOpenId`
+            -   商圈积分同步：`NotifyBusinessCirclePoints`
 
-        -   商圈会员停车状态同步：`NotifyBusinessCircleParkings`
+            -   商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
 
-    -   支付即服务
+            -   商圈会员待积分状态查询：`GetBusinessCircleUserPointsCommitStatusByOpenId`
 
-        -   服务人员注册：`CreateSmartGuide`
+            -   商圈会员停车状态同步：`NotifyBusinessCircleParkings`
 
-        -   服务人员分配：`AssignSmartGuide`
+        -   支付即服务
 
-        -   服务人员查询：`QuerySmartGuides`
+            -   服务人员注册：`CreateSmartGuide`
 
-        -   服务人员信息更新：`UpdateSmartGuide`
+            -   服务人员分配：`AssignSmartGuide`
 
-    -   电子发票
+            -   服务人员查询：`QuerySmartGuides`
 
-        -   电子发票卡券模板
-
-            -   创建电子发票卡券模板：`CreateNewTaxControlFapiaoCardTemplate`
+            -   服务人员信息更新：`UpdateSmartGuide`
 
         -   电子发票
 
-            -   开具电子发票：`CreateNewTaxControlFapiaoApplication`
+            -   电子发票卡券模板
 
-            -   上传电子发票文件：`UploadNewTaxControlFapiaoApplicationFapiaoFile`
+                -   创建电子发票卡券模板：`CreateNewTaxControlFapiaoCardTemplate`
 
-            -   查询电子发票：`GetNewTaxControlFapiaoApplicationByFapiaoApplyId`
+            -   电子发票
 
-            -   获取发票下载信息：`GetNewTaxControlFapiaoApplicationFiles`
+                -   开具电子发票：`CreateNewTaxControlFapiaoApplication`
 
-            -   将电子发票插入微信用户卡包：`CreateNewTaxControlFapiaoApplicationCard`
+                -   上传电子发票文件：`UploadNewTaxControlFapiaoApplicationFapiaoFile`
 
-            -   冲红电子发票：`ReverseNewTaxControlFapiaoApplication`
+                -   查询电子发票：`GetNewTaxControlFapiaoApplicationByFapiaoApplyId`
 
-            -   下载发票文件：`DownloadNewTaxControlFapiaoApplicationFile`
+                -   获取发票下载信息：`GetNewTaxControlFapiaoApplicationFiles`
 
-        -   电子发票商户信息
+                -   将电子发票插入微信用户卡包：`CreateNewTaxControlFapiaoApplicationCard`
 
-            -   获取商户开票基础信息：`GetNewTaxControlFapiaoMerchantBaseInformation`
+                -   冲红电子发票：`ReverseNewTaxControlFapiaoApplication`
 
-            -   查询商户配置的开发选项：`GetNewTaxControlFapiaoMerchantDevelopmentConfig`
+                -   下载发票文件：`DownloadNewTaxControlFapiaoApplicationFile`
 
-            -   配置开发选项：`ModifyNewTaxControlFapiaoMerchantDevelopmentConfig`
+            -   电子发票商户信息
 
-            -   获取商品和服务税收分类对照表：`QueryNewTaxControlFapiaoMerchantTaxCodes`
+                -   获取商户开票基础信息：`GetNewTaxControlFapiaoMerchantBaseInformation`
 
-            -   检查子商户开票功能状态：`CheckNewTaxControlFapiaoMerchant`
+                -   查询商户配置的开发选项：`GetNewTaxControlFapiaoMerchantDevelopmentConfig`
 
-        -   用户抬头
+                -   配置开发选项：`ModifyNewTaxControlFapiaoMerchantDevelopmentConfig`
 
-            -   获取用户填写的抬头：`GetNewTaxControlFapiaoUserTitle`
+                -   获取商品和服务税收分类对照表：`QueryNewTaxControlFapiaoMerchantTaxCodes`
 
-            -   获取抬头填写链接：`GetNewTaxControlFapiaoUserTitleUrl`
+                -   检查子商户开票功能状态：`CheckNewTaxControlFapiaoMerchant`
 
-    -   点金计划
+            -   用户抬头
 
-        -   点金计划管理：`ChangeGoldPlanStatus`
+                -   获取用户填写的抬头：`GetNewTaxControlFapiaoUserTitle`
 
-        -   商家小票管理：`ChangeGoldPlanCustomPageStatus`
+                -   获取抬头填写链接：`GetNewTaxControlFapiaoUserTitleUrl`
 
-        -   同业过滤标签管理：`SetGoldPlanAdvertisingIndustryFilter`
+        -   点金计划
 
-        -   开通广告展示：`OpenGoldPlanAdvertisingShow`
+            -   点金计划管理：`ChangeGoldPlanStatus`
 
-        -   关闭广告展示：`CloseGoldPlanAdvertisingShow`
+            -   商家小票管理：`ChangeGoldPlanCustomPageStatus`
+
+            -   同业过滤标签管理：`SetGoldPlanAdvertisingIndustryFilter`
+
+            -   开通广告展示：`OpenGoldPlanAdvertisingShow`
+
+            -   关闭广告展示：`CloseGoldPlanAdvertisingShow`
 
 -   扩展工具
 
