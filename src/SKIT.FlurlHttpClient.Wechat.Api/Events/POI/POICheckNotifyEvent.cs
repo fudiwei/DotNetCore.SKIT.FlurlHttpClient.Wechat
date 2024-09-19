@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
@@ -7,6 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/WeChat_Stores/WeChat_Store_Interface.html#8 ]]>
     /// </para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2024-07-05 下线。")]
     public class POICheckNotifyEvent : WechatApiEvent
     {
         /// <summary>

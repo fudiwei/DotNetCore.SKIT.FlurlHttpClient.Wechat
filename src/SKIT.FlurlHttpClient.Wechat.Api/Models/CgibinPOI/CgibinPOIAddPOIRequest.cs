@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/poi/addpoi 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2024-07-05 下线。")]
     public class CgibinPOIAddPOIRequest : WechatApiRequest, IInferable<CgibinPOIAddPOIRequest, CgibinPOIAddPOIResponse>
     {
         public static class Types

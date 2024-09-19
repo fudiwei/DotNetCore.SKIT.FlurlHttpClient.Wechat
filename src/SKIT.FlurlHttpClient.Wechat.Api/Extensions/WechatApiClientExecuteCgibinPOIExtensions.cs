@@ -20,6 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-05 下线。")]
         public static async Task<Models.CgibinPOIAddPOIResponse> ExecuteCgibinPOIAddPOIAsync(this WechatApiClient client, Models.CgibinPOIAddPOIRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -90,6 +91,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-07-05 下线。")]
         public static async Task<Models.CgibinPOIUpdatePOIResponse> ExecuteCgibinPOIUpdatePOIAsync(this WechatApiClient client, Models.CgibinPOIUpdatePOIRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
