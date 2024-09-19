@@ -188,11 +188,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public int? EstimatePrice { get; set; }
 
                                 /// <summary>
+                                /// 获取或设置商家优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("merchant_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("merchant_discounted_price")]
+                                public int? MerchantDiscountedPrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置达人优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("finder_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("finder_discounted_price")]
+                                public int? FinderDiscountedPrice { get; set; }
+
+                                /// <summary>
                                 /// 获取或设置是否修改过价格。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("is_change_price")]
                                 [System.Text.Json.Serialization.JsonPropertyName("is_change_price")]
-                                public bool? IsChangePrice { get; set; }
+                                public bool? IsPriceChanged { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置改价后 SKU 总价（单位：分）。
@@ -402,6 +416,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("deduction_price")]
                                 [System.Text.Json.Serialization.JsonPropertyName("deduction_price")]
                                 public int? DeductionPrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商家实收金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("merchant_receieve_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("merchant_receieve_price")]
+                                public int MerchantReceievePrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商家优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("merchant_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("merchant_discounted_price")]
+                                public int MerchantDiscountedPrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置达人优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("finder_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("finder_discounted_price")]
+                                public int FinderDiscountedPrice { get; set; }
                             }
 
                             public class Delivery
@@ -541,6 +576,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         [System.Text.Json.Serialization.JsonPropertyName("tel_number_ext_info")]
                                         public Types.TeleNumberExtendedInfo? TeleNumberExtendedInfo { get; set; }
                                     }
+
+                                    public class QualityInspection
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置质检状态。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("inspect_status")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("inspect_status")]
+                                        public int InspectStatus { get; set; }
+                                    }
                                 }
 
                                 /// <summary>
@@ -593,6 +638,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("ewaybill_order_code")]
                                 [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_code")]
                                 public string? EWaybillOrderCode { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置订单质检类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("quality_inspect_type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("quality_inspect_type")]
+                                public int? QualityInspectType { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置订单质检信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("quality_inspect_info")]
+                                [System.Text.Json.Serialization.JsonPropertyName("quality_inspect_info")]
+                                public Types.QualityInspection? QualityInspection { get; set; }
                             }
 
                             public class Coupon

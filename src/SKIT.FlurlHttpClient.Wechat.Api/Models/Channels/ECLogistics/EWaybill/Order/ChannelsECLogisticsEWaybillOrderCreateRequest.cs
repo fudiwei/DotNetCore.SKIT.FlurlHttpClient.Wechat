@@ -77,6 +77,41 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int? TemperatureRangeType { get; set; }
 
                 /// <summary>
+                /// 获取或设置包裹总重量（单位：克）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("package_weight_g")]
+                [System.Text.Json.Serialization.JsonPropertyName("package_weight_g")]
+                public int? PackageWeight { get; set; }
+
+                /// <summary>
+                /// 获取或设置包裹长度（单位：厘米）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("package_space_x")]
+                [System.Text.Json.Serialization.JsonPropertyName("package_space_x")]
+                public int? PackageLength { get; set; }
+
+                /// <summary>
+                /// 获取或设置包裹宽度（单位：厘米）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("package_space_y")]
+                [System.Text.Json.Serialization.JsonPropertyName("package_space_y")]
+                public int? PackageWidth { get; set; }
+
+                /// <summary>
+                /// 获取或设置包裹高度（单位：厘米）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("package_space_z")]
+                [System.Text.Json.Serialization.JsonPropertyName("package_space_z")]
+                public int? PackageHeight { get; set; }
+
+                /// <summary>
+                /// 获取或设置包裹体积（单位：立方厘米）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("package_volume_ccm")]
+                [System.Text.Json.Serialization.JsonPropertyName("package_volume_ccm")]
+                public int? PackageVolume { get; set; }
+
+                /// <summary>
                 /// 获取或设置扩展字段。
                 /// </summary>
                 [Newtonsoft.Json.JsonExtensionData]
