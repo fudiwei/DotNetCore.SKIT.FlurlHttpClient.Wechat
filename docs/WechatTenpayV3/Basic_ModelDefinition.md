@@ -482,27 +482,35 @@
 
     -   消费者投诉 2.0
 
-        -   查询投诉单列表：`QueryMerchantServiceComplaints`
+        -   主动查询投诉信息
 
-        -   查询投诉单详情：`GetMerchantServiceComplaintByComplaintId`
+            -   查询投诉单列表：`QueryMerchantServiceComplaints`
 
-        -   查询投诉协商历史：`QueryMerchantServiceComplaintNegotiationHistories`
+            -   查询投诉单详情：`GetMerchantServiceComplaintByComplaintId`
 
-        -   创建投诉通知回调地址：`CreateMerchantServiceComplaintNotification`
+            -   查询投诉协商历史：`QueryMerchantServiceComplaintNegotiationHistories`
 
-        -   查询投诉通知回调地址：`GetMerchantServiceComplaintNotification`
+        -   实时获取投诉信息
 
-        -   更新投诉通知回调地址：`UpdateMerchantServiceComplaintNotification`
+            -   创建投诉通知回调地址：`CreateMerchantServiceComplaintNotification`
 
-        -   删除投诉通知回调地址：`DeleteMerchantServiceComplaintNotification`
+            -   查询投诉通知回调地址：`GetMerchantServiceComplaintNotification`
 
-        -   提交回复：`CreateMerchantServiceComplaintResponse`
+            -   更新投诉通知回调地址：`UpdateMerchantServiceComplaintNotification`
 
-        -   反馈处理完成：`SetMerchantServiceComplaintComplete`
+            -   删除投诉通知回调地址：`DeleteMerchantServiceComplaintNotification`
 
-        -   商户上传反馈图片：`UploadMerchantServiceImage`
+        -   商户处理用户投诉
 
-        -   下载图片：`DownloadMerchantServiceImage`
+            -   回复用户：`CreateMerchantServiceComplaintResponse`
+
+            -   反馈处理完成：`SetMerchantServiceComplaintComplete`
+
+        -   商户反馈图片
+
+            -   图片上传接口：`UploadMerchantServiceImage`
+
+            -   图片请求接口：`DownloadMerchantServiceImage`
 
 -   安全工具
 
@@ -1230,29 +1238,41 @@
 
         -   删除分账接收方：`DeleteBrandProfitSharingReceiver`
 
+        -   申请分账账单：`GetProfitSharingBill`
+
+        -   下载账单：`DownloadBillFile`
+
     -   消费者投诉 2.0
 
-        -   查询投诉单列表：`QueryMerchantServiceComplaints`
+        -   主动查询投诉信息
 
-        -   查询投诉单详情：`GetMerchantServiceComplaintByComplaintId`
+            -   查询投诉单列表：`QueryMerchantServiceComplaints`
 
-        -   查询投诉协商历史：`QueryMerchantServiceComplaintNegotiationHistories`
+            -   查询投诉单详情：`GetMerchantServiceComplaintByComplaintId`
 
-        -   创建投诉通知回调地址：`CreateMerchantServiceComplaintNotification`
+            -   查询投诉协商历史：`QueryMerchantServiceComplaintNegotiationHistories`
 
-        -   查询投诉通知回调地址：`GetMerchantServiceComplaintNotification`
+        -   实时获取投诉信息
 
-        -   更新投诉通知回调地址：`UpdateMerchantServiceComplaintNotification`
+            -   创建投诉通知回调地址：`CreateMerchantServiceComplaintNotification`
 
-        -   删除投诉通知回调地址：`DeleteMerchantServiceComplaintNotification`
+            -   查询投诉通知回调地址：`GetMerchantServiceComplaintNotification`
 
-        -   提交回复：`CreateMerchantServiceComplaintResponse`
+            -   更新投诉通知回调地址：`UpdateMerchantServiceComplaintNotification`
 
-        -   反馈处理完成：`SetMerchantServiceComplaintComplete`
+            -   删除投诉通知回调地址：`DeleteMerchantServiceComplaintNotification`
 
-        -   商户上传反馈图片：`UploadMerchantServiceImage`
+        -   商户处理用户投诉
 
-        -   下载图片：`DownloadMerchantServiceImage`
+            -   回复用户：`CreateMerchantServiceComplaintResponse`
+
+            -   反馈处理完成：`SetMerchantServiceComplaintComplete`
+
+        -   商户反馈图片
+
+            -   图片上传接口：`UploadMerchantServiceImage`
+
+            -   图片请求接口：`DownloadMerchantServiceImage`
 
 -   安全工具
 
@@ -1307,6 +1327,12 @@
         -   查询风险信息：`GetMerchantRiskManageTradeRiskInformation`
 
         -   处置结果回传：`CreateMerchantRiskManageTradeRiskResult`
+
+    -   不活跃商户身份核实
+
+        -   发起不活跃商户身份核实：`CreateComplianceInactiveMerchantIdentityVerification`
+
+        -   查询不活跃商户身份核实结果：`GetComplianceInactiveMerchantIdentityVerificationByVerificationId`
 
 -   其他
 
