@@ -89,6 +89,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string? FileInfo { get; set; }
 
                 /// <summary>
+                /// 获取或设置文件大小（单位：字节）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("file_size")]
+                [System.Text.Json.Serialization.JsonPropertyName("file_size")]
+                public int? FileSize { get; set; }
+
+                /// <summary>
+                /// 获取或设置文文件的 MD5 值。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("file_md5")]
+                [System.Text.Json.Serialization.JsonPropertyName("file_md5")]
+                public string? FileMd5 { get; set; }
+
+                /// <summary>
                 /// 获取或设置申请人姓名。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("applicant_name")]

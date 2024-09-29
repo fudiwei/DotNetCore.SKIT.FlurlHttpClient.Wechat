@@ -11,7 +11,9 @@
                 "type": 101,
                 "source": 401
             },
-            "file_info": "1234567890.jpg"
+            "file_info": "1234567890.jpg",
+            "file_size": 405842,
+            "file_md5": "gmgi32jginniboamgoge"
         },
         {
             "time": 16666666666,
