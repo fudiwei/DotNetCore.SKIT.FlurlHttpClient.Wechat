@@ -572,6 +572,8 @@
 
         -   预扣费通知：`CreatePAPayContractNotification`
 
+        -   重试扣费通知：`CreatePAPayContractFailedNotification`
+
     -   代扣服务切卡组件
 
         -   出行券切卡组件预下单：`CreateIndustryCouponToken`
