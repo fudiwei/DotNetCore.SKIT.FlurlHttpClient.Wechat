@@ -1,17 +1,10 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /partner-papay/contracts/{contract_id}/notify 接口的请求。</para>
+    /// <para>表示 [POST] /partner-papay/contracts/{contract_id}/fail-notify 接口的请求。</para>
     /// </summary>
-    public class CreatePartnerPAPayContractNotificationRequest : WechatTenpayRequest
+    public class CreatePartnerPAPayContractFailedNotificationRequest : WechatTenpayRequest
     {
-        public static class Types
-        {
-            public class Amount : CreatePAPayContractNotificationRequest.Types.Amount
-            {
-            }
-        }
-
         /// <summary>
         /// 获取或设置委托代扣协议 ID。
         /// </summary>
@@ -46,12 +39,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("sub_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
         public string? SubAppId { get; set; }
-
-        /// <summary>
-        /// 获取或设置预计扣费金额信息。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("estimated_amount")]
-        [System.Text.Json.Serialization.JsonPropertyName("estimated_amount")]
-        public Types.Amount EstimatedAmount { get; set; } = new Types.Amount();
     }
 }

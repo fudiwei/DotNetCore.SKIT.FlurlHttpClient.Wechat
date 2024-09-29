@@ -1353,7 +1353,9 @@
 
     -   扣款服务
 
-        -   预扣费通知：`NotifyPartnerPAPayContract`
+        -   预扣费通知：`CreatePartnerPAPayContractNotification`
+
+        -   重试扣费通知：`CreatePartnerPAPayContractFailedNotification`
 
     -   代扣服务切卡组件
 
