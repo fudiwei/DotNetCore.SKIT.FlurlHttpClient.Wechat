@@ -10,6 +10,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
     public static class WechatWorkClientExecuteCgibinSecurityExtensions
     {
         /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/security/get_server_domain_ip 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/93221 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSecurityGetServerDomainIpResponse> ExecuteCgibinSecurityGetServerDomainIpAsync(this WechatWorkClient client, Models.CgibinSecurityGetServerDomainIpRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "security", "get_server_domain_ip")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinSecurityGetServerDomainIpResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/security/get_file_oper_record 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -33,26 +56,72 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /cgi-bin/security/get_server_domain_ip 接口。</para>
+        /// <para>异步调用 [POST] /cgi-bin/security/get_screen_oper_record 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/93221 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100128 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinSecurityGetServerDomainIpResponse> ExecuteCgibinSecurityGetServerDomainIpAsync(this WechatWorkClient client, Models.CgibinSecurityGetServerDomainIpRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CgibinSecurityGetScreenOperateRecordResponse> ExecuteCgibinSecurityGetScreenOperateRecordAsync(this WechatWorkClient client, Models.CgibinSecurityGetScreenOperateRecordRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "security", "get_server_domain_ip")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "security", "get_screen_oper_record")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinSecurityGetServerDomainIpResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinSecurityGetScreenOperateRecordResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/security/member_oper_log/list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100178 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSecurityMemberOperateLogListResponse> ExecuteCgibinSecurityMemberOperateLogListAsync(this WechatWorkClient client, Models.CgibinSecurityMemberOperateLogListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "security", "member_oper_log", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinSecurityMemberOperateLogListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/security/admin_oper_log/list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100179 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinSecurityAdministratorOperateLogListResponse> ExecuteCgibinSecurityAdministratorOperateLogListAsync(this WechatWorkClient client, Models.CgibinSecurityAdministratorOperateLogListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "security", "admin_oper_log", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinSecurityAdministratorOperateLogListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         #region TrustDevice

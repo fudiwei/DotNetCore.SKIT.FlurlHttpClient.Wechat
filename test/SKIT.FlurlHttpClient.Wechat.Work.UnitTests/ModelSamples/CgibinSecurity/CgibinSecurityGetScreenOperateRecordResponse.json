@@ -1,0 +1,24 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": true,
+    "next_cursor": "gejMjgLjgeigoejg",
+    "record_list": [
+        {
+            "time": 16666666666,
+            "userid": "zhangsan",
+            "department_id": 2,
+            "screen_shot_type": 1,
+            "screen_shot_content": "聊天",
+            "system": "iPad"
+        },
+        {
+            "time": 16666666666,
+            "userid": "lisi",
+            "department_id": 3,
+            "screen_shot_type": 4,
+            "screen_shot_content": "文件（防泄露文件：test.pdf）",
+            "system": "iOS"
+        }
+    ]
+}
