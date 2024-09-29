@@ -1,0 +1,11 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "userid": "zhangsan",
+    "external_userid": "woAJ2GCAAAXtWyujaWJHDDGi0mACAAA",
+    "chat_info": {
+        "recv_msg_cnt": 3,
+        "link_id": "caXXXXXXX",
+        "state": "STATE"
+    }
+}
