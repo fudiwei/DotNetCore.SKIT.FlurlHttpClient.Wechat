@@ -256,6 +256,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinServiceGetAppQrcodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// <para>异步调用 [GET] /cgi-bin/service/get_account_balance 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100137 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinServiceGetAccountBalanceResponse> ExecuteCgibinServiceGetAccountBalanceAsync(this WechatWorkClient client, Models.CgibinServiceGetAccountBalanceRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "cgi-bin", "service", "get_account_balance")
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinServiceGetAccountBalanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
         #region Register
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/service/get_register_code 接口。</para>
