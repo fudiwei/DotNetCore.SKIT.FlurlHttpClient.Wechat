@@ -2,10 +2,19 @@
     "complaint_id": "200201820200101080076610000",
     "complaint_time": "2015-05-20T13:29:35.120+08:00",
     "complaint_detail": "反馈一个重复扣费的问题",
-    "complainted_mchid": "1900012181",
     "complaint_state": "PENDING",
-    "payer_phone": "sGdNeTHMQGlxCWiUyHu6XNO9GCYln2Luv4HhwJzZBfcL12sB",
+    "payer_phone": "18500000000",
     "payer_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
+    "complaint_order_info": [
+        {
+            "transaction_id": "4200000404201909069117582536",
+            "out_trade_no": "20190906154617947762231",
+            "amount": 3
+        }
+    ],
+    "complaint_full_refunded": true,
+    "incoming_user_response": true,
+    "user_complaint_times": 1,
     "complaint_media_list": [
         {
             "media_type": "USER_COMPLAINT_IMAGE",
@@ -14,12 +23,11 @@
             ]
         }
     ],
-    "complaint_order_info": [
-        {
-            "transaction_id": "4200000404201909069117582536",
-            "out_trade_no": "20190906154617947762231",
-            "amount": 3
-        }
+    "problem_description": "不满意商家服务",
+    "problem_type": "REFUND",
+    "apply_refund_amount": 10,
+    "user_tag_list": [
+        "TRUSTED"
     ],
     "service_order_info": [
         {
@@ -28,14 +36,18 @@
             "state": "DOING"
         }
     ],
-    "complaint_full_refunded": true,
-    "incoming_user_response": true,
-    "problem_description": "不满意商家服务",
-    "user_complaint_times": 1,
     "additional_info": {
+        "type": "SHARE_POWER_TYPE",
         "share_power_info": {
-            "return_time": "2023-02-10T14:44:00+08:00"
-        },
-        "type": "SHARE_POWER_TYPE"
-    }
+            "return_time": "2015-05-20T13:29:35+08:00",
+            "return_address_info": {
+                "return_address": "广东省深圳市南山区海天二路南山区后海腾讯滨海大厦(海天二路西)",
+                "longitude": "113.93535488533665",
+                "latitude": "22.52305518747831"
+            },
+            "is_returned_to_same_machine": false
+        }
+    },
+    "in_platform_service": true,
+    "need_immediate_service": true
 }

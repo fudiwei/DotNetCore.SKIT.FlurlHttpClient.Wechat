@@ -32,7 +32,9 @@
             "operate_details": "已与用户电话沟通解决",
             "image_list": [
                 "https://qpic.cn/xxx"
-            ]
+            ],
+            "user_appy_platform_service_reason": "商家响应不及时",
+            "user_appy_platform_service_reason_description": "一周前就提交咨询了，到现在商家还没理我"
         }
     ],
     "limit": 50,

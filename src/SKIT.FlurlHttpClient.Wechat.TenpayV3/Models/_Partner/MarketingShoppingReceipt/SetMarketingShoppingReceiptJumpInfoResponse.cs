@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class JumpLink : SetMarketingShoppingReceiptJumpInfoRequest.Types.JumpLink
+                    public class JumpLink : SetMarketingShoppingReceiptJumpInfoRequest.Types.JumpInfo
                     {
                     }
                 }

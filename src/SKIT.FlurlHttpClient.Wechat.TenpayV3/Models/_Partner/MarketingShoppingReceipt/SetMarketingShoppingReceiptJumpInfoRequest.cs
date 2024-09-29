@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class JumpLink
+            public class JumpInfo
             {
                 /// <summary>
                 /// 获取或设置小程序 AppId。
@@ -69,6 +69,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("jump_info")]
         [System.Text.Json.Serialization.JsonPropertyName("jump_info")]
-        public Types.JumpLink JumpLink { get; set; } = new Types.JumpLink();
+        public Types.JumpInfo JumpInfo { get; set; } = new Types.JumpInfo();
     }
 }

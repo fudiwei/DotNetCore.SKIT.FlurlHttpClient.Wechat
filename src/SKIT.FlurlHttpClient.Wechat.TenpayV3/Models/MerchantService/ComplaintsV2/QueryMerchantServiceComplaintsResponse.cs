@@ -161,6 +161,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("additional_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("additional_info")]
                 public Types.AdditionalInfomation? AdditionalInfomation { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否在平台协助中。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("in_platform_service")]
+                [System.Text.Json.Serialization.JsonPropertyName("in_platform_service")]
+                public bool? IsInPlatformService { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否需即时服务用户。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("need_immediate_service")]
+                [System.Text.Json.Serialization.JsonPropertyName("need_immediate_service")]
+                public bool? IsImmediateServiceRequired { get; set; }
             }
         }
 

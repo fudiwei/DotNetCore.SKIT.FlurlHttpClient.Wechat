@@ -71,6 +71,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("complaint_media_list")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(Converters.ResponsePropertyNegotiationHistoryItemComplaintMediaListSystemTextJsonConverter))]
                 public Types.ComplaintMedia[]? ComplaintMediaList { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户申请平台协助原因。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("user_appy_platform_service_reason")]
+                [System.Text.Json.Serialization.JsonPropertyName("user_appy_platform_service_reason")]
+                public string? UserAppyPlatformServiceReason { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户申请平台协助原因描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("user_appy_platform_service_reason_description")]
+                [System.Text.Json.Serialization.JsonPropertyName("user_appy_platform_service_reason_description")]
+                public string? UserAppyPlatformServiceReasonDescription { get; set; }
             }
         }
 

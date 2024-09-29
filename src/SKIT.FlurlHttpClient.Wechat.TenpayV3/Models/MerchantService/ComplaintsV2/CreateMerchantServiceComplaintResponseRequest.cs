@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -7,6 +7,33 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// </summary>
     public class CreateMerchantServiceComplaintResponseRequest : WechatTenpayRequest
     {
+        public static class Types
+        {
+            public class MiniProgramJumpInfo
+            {
+                /// <summary>
+                /// 获取或设置小程序 AppId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                public string AppId { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置小程序页面路径。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("path")]
+                [System.Text.Json.Serialization.JsonPropertyName("path")]
+                public string PagePath { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置小程序页面名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("text")]
+                [System.Text.Json.Serialization.JsonPropertyName("text")]
+                public string Text { get; set; } = string.Empty;
+            }
+        }
+
         /// <summary>
         /// 获取或设置投诉单号。
         /// </summary>
@@ -48,5 +75,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("jump_url_text")]
         [System.Text.Json.Serialization.JsonPropertyName("jump_url_text")]
         public string? JumpUrlText { get; set; }
+
+        /// <summary>
+        /// 获取或设置小程序跳转信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mini_program_jump_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("mini_program_jump_info")]
+        public Types.MiniProgramJumpInfo? MiniProgramJumpInfo { get; set; }
     }
 }
