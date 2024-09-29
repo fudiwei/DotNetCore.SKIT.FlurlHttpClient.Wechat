@@ -7,42 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class TransferInAccount
+            public class TransferInAccount : ApplyBankTransferRechargeResponse.Types.TransferInAccount
             {
-                /// <summary>
-                /// 获取或设置开户银行名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("bank_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
-                public string? BankName { get; set; }
-
-                /// <summary>
-                /// 获取或设置开户银行省市编码。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("bank_address_code")]
-                [System.Text.Json.Serialization.JsonPropertyName("bank_address_code")]
-                public string? BankAddressCode { get; set; }
-
-                /// <summary>
-                /// 获取或设置开户银行行号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("bank_code")]
-                [System.Text.Json.Serialization.JsonPropertyName("bank_code")]
-                public string? BankCode { get; set; }
-
-                /// <summary>
-                /// 获取或设置银行账户名称。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("bank_account_name")]
-                [System.Text.Json.Serialization.JsonPropertyName("bank_account_name")]
-                public string? BankAccountName { get; set; }
-
-                /// <summary>
-                /// 获取或设置银行账号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("bank_account_no")]
-                [System.Text.Json.Serialization.JsonPropertyName("bank_account_no")]
-                public string? BankAccountNumber { get; set; }
             }
         }
 

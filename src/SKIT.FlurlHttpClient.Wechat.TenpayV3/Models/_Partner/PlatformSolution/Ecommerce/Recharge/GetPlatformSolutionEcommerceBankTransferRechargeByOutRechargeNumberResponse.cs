@@ -9,11 +9,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class RechargeAmount : GetPlatformSolutionEcommerceRechargeByOutRechargeNumberResponse.Types.RechargeAmount
+            public class RechargeAmount : GetBankTransferRechargeByOutRechargeNumberResponse.Types.RechargeAmount
             {
             }
 
-            public class BankTransferInfo : GetPlatformSolutionEcommerceRechargeByOutRechargeNumberResponse.Types.BankTransferInfo
+            public class BankTransferInfo : GetBankTransferRechargeByOutRechargeNumberResponse.Types.BankTransferInfo
             {
             }
         }

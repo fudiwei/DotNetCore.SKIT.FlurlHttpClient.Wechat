@@ -456,6 +456,13 @@
 
             -   将电子发票插入微信用户卡包：`CreateNewTaxControlFapiaoApplicationCard`
 
+
+    -   商家充值
+
+        -   申请银行转账充值：`ApplyBankTransferRecharge`
+
+        -   查询银行转账充值结果：`GetBankTransferRechargeByOutRechargeNumber`
+
 -   扩展工具
 
     -   分账

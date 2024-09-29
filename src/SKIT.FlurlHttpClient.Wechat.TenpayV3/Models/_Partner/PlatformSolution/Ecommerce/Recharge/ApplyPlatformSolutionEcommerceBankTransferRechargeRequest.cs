@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     {
         public static class Types
         {
-            public class RechargeAmount : ApplyPlatformSolutionEcommerceRechargeRequest.Types.RechargeAmount
+            public class RechargeAmount : ApplyBankTransferRechargeRequest.Types.RechargeAmount
             {
             }
         }

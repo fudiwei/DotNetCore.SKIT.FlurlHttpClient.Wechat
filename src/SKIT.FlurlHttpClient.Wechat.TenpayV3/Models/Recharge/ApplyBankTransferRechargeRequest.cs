@@ -1,23 +1,29 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /platsolution/ecommerce/recharges/apply 接口的请求。</para>
+    /// <para>表示 [POST] /recharge/bank-transfer-recharges/apply 接口的请求。</para>
     /// </summary>
-    public class ApplyPlatformSolutionEcommerceRechargeRequest : WechatTenpayRequest
+    public class ApplyBankTransferRechargeRequest : WechatTenpayRequest
     {
         public static class Types
         {
-            public class RechargeAmount : ApplyBankTransferRechargeRequest.Types.RechargeAmount
+            public class RechargeAmount
             {
+                /// <summary>
+                /// 获取或设置金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                public int? Amount { get; set; }
+
+                /// <summary>
+                /// 获取或设置币种。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("currency")]
+                [System.Text.Json.Serialization.JsonPropertyName("currency")]
+                public string? Currency { get; set; }
             }
         }
-
-        /// <summary>
-        /// 获取或设置二级商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sub_mchid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置商户充值单号。
@@ -46,12 +52,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("recharge_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("recharge_amount")]
         public Types.RechargeAmount RechargeAmount { get; set; } = new Types.RechargeAmount();
-
-        /// <summary>
-        /// 获取或设置回调通知地址。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("notify_url")]
-        [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
-        public string? NotifyUrl { get; set; }
     }
 }

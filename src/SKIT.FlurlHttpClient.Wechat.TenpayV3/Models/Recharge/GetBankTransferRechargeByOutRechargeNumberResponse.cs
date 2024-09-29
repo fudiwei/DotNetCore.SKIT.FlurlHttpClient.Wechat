@@ -3,44 +3,83 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /platsolution/ecommerce/recharges/out-recharge-no/{out_recharge_no} 接口的响应。</para>
+    /// <para>表示 [GET] /recharge/bank-transfer-recharges/out-recharge-no/{out_recharge_no} 接口的响应。</para>
     /// </summary>
-    public class GetPlatformSolutionEcommerceRechargeByOutRechargeNumberResponse : WechatTenpayResponse
+    public class GetBankTransferRechargeByOutRechargeNumberResponse : WechatTenpayResponse
     {
         public static class Types
         {
-            public class RechargeAmount : GetBankTransferRechargeByOutRechargeNumberResponse.Types.RechargeAmount
-            {
-            }
-
-            public class BankTransferInfo : GetBankTransferRechargeByOutRechargeNumberResponse.Types.BankTransferInfo
-            {
-            }
-
-            public class QrRechargeInfo
+            public class RechargeAmount
             {
                 /// <summary>
-                /// 获取或设置用户的 OpenId。
+                /// 获取或设置金额（单位：分）。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string? OpenId { get; set; }
+                [Newtonsoft.Json.JsonProperty("amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                public int? Amount { get; set; }
+
+                /// <summary>
+                /// 获取或设置币种。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("currency")]
+                [System.Text.Json.Serialization.JsonPropertyName("currency")]
+                public string? Currency { get; set; }
+            }
+
+            public class BankTransferInfo
+            {
+                /// <summary>
+                /// 获取或设置转入的银行流水单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("bill_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("bill_no")]
+                public string? BillNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置转账充值附言。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("memo")]
+                [System.Text.Json.Serialization.JsonPropertyName("memo")]
+                public string? Memo { get; set; }
+
+                /// <summary>
+                /// 获取或设置银行转账退回时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("return_time")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("return_time")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
+                public DateTimeOffset? ReturnTime { get; set; }
+
+                /// <summary>
+                /// 获取或设置银行转账退回原因。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("return_reason")]
+                [System.Text.Json.Serialization.JsonPropertyName("return_reason")]
+                public string? ReturnReason { get; set; }
+
+                /// <summary>
+                /// 获取或设置开户银行名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("bank_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("bank_name")]
+                public string? BankName { get; set; }
+
+                /// <summary>
+                /// 获取或设置银行卡号后四位。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("bank_card_tail")]
+                [System.Text.Json.Serialization.JsonPropertyName("bank_card_tail")]
+                public string? BankCardNumberTail { get; set; }
             }
         }
 
         /// <summary>
         /// 获取或设置微信商户号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("sp_mchid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sp_mchid")]
+        [Newtonsoft.Json.JsonProperty("mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("mchid")]
         public string MerchantId { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置二级商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sub_mchid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置商户充值单号。
@@ -55,13 +94,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("recharge_id")]
         [System.Text.Json.Serialization.JsonPropertyName("recharge_id")]
         public string RechargeId { get; set; } = default!;
-
-        /// <summary>
-        /// 获取或设置充值渠道。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("recharge_channel")]
-        [System.Text.Json.Serialization.JsonPropertyName("recharge_channel")]
-        public string? RechargeChannel { get; set; }
 
         /// <summary>
         /// 获取或设置充值场景。
@@ -104,13 +136,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("bank_transfer_info")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_transfer_info")]
         public Types.BankTransferInfo? BankTransferInfo { get; set; }
-
-        /// <summary>
-        /// 获取或设置扫码充值的付款信息。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("qr_recharge_info")]
-        [System.Text.Json.Serialization.JsonPropertyName("qr_recharge_info")]
-        public Types.QrRechargeInfo? QrRechargeInfo { get; set; }
 
         /// <summary>
         /// 获取或设置充值受理时间。
