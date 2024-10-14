@@ -804,6 +804,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceRefundReturnAdvanceResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/refunds/{refund_id}/apply-abnormal-refund 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-abnormal-refund.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateEcommerceAbnormalRefundApplyResponse> ExecuteCreateEcommerceAbnormalRefundApplyAsync(this WechatTenpayClient client, Models.CreateEcommerceAbnormalRefundApplyRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "refunds", request.RefundId, "apply-abnormal-refund");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceAbnormalRefundApplyResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
 
         #region Subsidies

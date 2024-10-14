@@ -927,6 +927,8 @@
 
             -   查询垫付回补结果：`GetEcommerceRefundReturnAdvance`
 
+            -   发起异常退款：`CreateEcommerceAbnormalRefundApply`
+
         -   平台收付通（余额查询）
 
             -   查询二级商户账户实时余额：`GetEcommerceFundBalance`
