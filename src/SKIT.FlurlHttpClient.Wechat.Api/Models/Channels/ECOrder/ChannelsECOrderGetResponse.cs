@@ -817,7 +817,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("agent_finder_nickname")]
                                 [System.Text.Json.Serialization.JsonPropertyName("agent_finder_nickname")]
-                                public bool AgentFinderNickname { get; set; }
+                                public string AgentFinderNickname { get; set; } = default!;
                             }
                         }
 
