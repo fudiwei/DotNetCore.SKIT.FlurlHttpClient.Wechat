@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/window/product/list/get 接口的请求。</para>
@@ -46,9 +46,14 @@
         /// 获取或设置是否需要返回总数量。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("need_total_num")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("need_total_num")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
         public bool? RequireTotalCount { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否仅查询橱窗中的带货商品。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("query_cps_product")]
+        [System.Text.Json.Serialization.JsonPropertyName("query_cps_product")]
+        public bool? IsOnlyCPSProduct { get; set; }
     }
 }
