@@ -9,12 +9,13 @@
             "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ"
         ]
     },
-    "cats": [
+    "cats": [],
+    "cats_v2": [
         {
-            "cat_id": "6033"
+            "cat_id": "10000111"
         },
         {
-            "cat_id": "6057"
+            "cat_id": "10000113"
         },
         {
             "cat_id": "6091"

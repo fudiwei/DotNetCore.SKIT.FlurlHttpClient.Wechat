@@ -3,7 +3,24 @@
         "level1": 7419,
         "level2": 7439,
         "level3": 7448,
-        "certificate": [ "THE_MEDIA_ID_1", "THE_MEDIA_ID_2" ],
+        "cats_v2": [
+            {
+                "cat_id": 6033
+            },
+            {
+                "cat_id": 6057
+            },
+            {
+                "cat_id": 6091
+            },
+            {
+                "cat_id": 6093
+            }
+        ],
+        "certificate": [
+            "THE_MEDIA_ID_1",
+            "THE_MEDIA_ID_2"
+        ],
         "brand_list": [
             { "brand_id": 1001 },
             { "brand_id": 1002 }

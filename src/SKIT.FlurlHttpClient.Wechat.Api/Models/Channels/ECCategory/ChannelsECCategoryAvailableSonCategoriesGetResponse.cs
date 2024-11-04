@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -31,14 +33,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("f_cat_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public long ParentCategoryId { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否是叶子节点。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("leaf")]
+                [System.Text.Json.Serialization.JsonPropertyName("leaf")]
+                public bool? IsLeaf { get; set; }
             }
         }
 
         /// <summary>
         /// 获取或设置类目列表。
         /// </summary>
+        [Obsolete("相关接口或字段于 2024-10-28 下线。")]
         [Newtonsoft.Json.JsonProperty("cat_list")]
         [System.Text.Json.Serialization.JsonPropertyName("cat_list")]
         public Types.Category[] CategoryList { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置新版类目列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("cat_list_v2")]
+        [System.Text.Json.Serialization.JsonPropertyName("cat_list_v2")]
+        public Types.Category[] CategoryV2List { get; set; } = default!;
     }
 }

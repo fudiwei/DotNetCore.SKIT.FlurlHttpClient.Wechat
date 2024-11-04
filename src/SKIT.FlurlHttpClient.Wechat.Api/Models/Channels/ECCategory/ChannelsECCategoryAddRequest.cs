@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -13,6 +14,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
+                    public class Category
+                    {
+                        /// <summary>
+                        /// 获取或设置分类 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("cat_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("cat_id")]
+                        public long CategoryId { get; set; }
+                    }
+
                     public class Brand
                     {
                         /// <summary>
@@ -27,23 +38,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置一级类目 ID。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2024-10-28 下线。")]
                 [Newtonsoft.Json.JsonProperty("level1")]
                 [System.Text.Json.Serialization.JsonPropertyName("level1")]
-                public long FirstCategoryId { get; set; }
+                public long? FirstCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置二级类目 ID。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2024-10-28 下线。")]
                 [Newtonsoft.Json.JsonProperty("level2")]
                 [System.Text.Json.Serialization.JsonPropertyName("level2")]
-                public long SecondCategoryId { get; set; }
+                public long? SecondCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置三级类目 ID。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2024-10-28 下线。")]
                 [Newtonsoft.Json.JsonProperty("level3")]
                 [System.Text.Json.Serialization.JsonPropertyName("level3")]
-                public long ThirdCategoryId { get; set; }
+                public long? ThirdCategoryId { get; set; }
+
+                /// <summary>
+                /// 获取或设置新版分类列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("cats_v2")]
+                [System.Text.Json.Serialization.JsonPropertyName("cats_v2")]
+                public IList<Types.Category>? CategoryV2List { get; set; }
 
                 /// <summary>
                 /// 获取或设置资质材料图片 MediaId 列表。

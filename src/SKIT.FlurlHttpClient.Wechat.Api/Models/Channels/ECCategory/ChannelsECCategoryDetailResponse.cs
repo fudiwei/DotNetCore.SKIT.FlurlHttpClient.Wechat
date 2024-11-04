@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string Type { get; set; } = default!;
 
                         /// <summary>
-                        /// 获取或设置新版属性类型（后续将替代 <see cref="Type"/> 字段）。
+                        /// 获取或设置新版属性类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type_v2")]
                         [System.Text.Json.Serialization.JsonPropertyName("type_v2")]

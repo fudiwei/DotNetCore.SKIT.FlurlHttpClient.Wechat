@@ -412,9 +412,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置商品类目列表。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2024-10-28 下线。")]
                 [Newtonsoft.Json.JsonProperty("cats")]
                 [System.Text.Json.Serialization.JsonPropertyName("cats")]
-                public Types.Category[] CategoryList { get; set; } = default!;
+                public Types.Category[]? CategoryList { get; set; }
+
+                /// <summary>
+                /// 获取或设置新版商品类目列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("cats_v2")]
+                [System.Text.Json.Serialization.JsonPropertyName("cats_v2")]
+                public Types.Category[]? CategoryV2List { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品属性列表。

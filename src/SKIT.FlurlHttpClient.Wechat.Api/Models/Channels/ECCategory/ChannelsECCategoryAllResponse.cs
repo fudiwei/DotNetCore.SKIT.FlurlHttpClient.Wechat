@@ -49,6 +49,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("level")]
                                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                                 public int Level { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置是否是叶子节点。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("leaf")]
+                                [System.Text.Json.Serialization.JsonPropertyName("leaf")]
+                                public bool? IsLeaf { get; set; }
                             }
 
                             public class Qualification
@@ -141,8 +148,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置类目列表。
         /// </summary>
+        [Obsolete("相关接口或字段于 2024-10-28 下线。")]
         [Newtonsoft.Json.JsonProperty("cats")]
         [System.Text.Json.Serialization.JsonPropertyName("cats")]
         public Types.Category[] CategoryList { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置新版类目列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("cats_v2")]
+        [System.Text.Json.Serialization.JsonPropertyName("cats_v2")]
+        public Types.Category[] CategoryV2List { get; set; } = default!;
     }
 }

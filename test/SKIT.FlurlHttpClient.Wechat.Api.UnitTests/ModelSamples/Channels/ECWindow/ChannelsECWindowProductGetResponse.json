@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "product": {
@@ -7,6 +7,7 @@
         "title": "任天堂 Nintendo Switch 国行续航增强版 NS家用体感游戏机掌机 便携掌上游戏机 红蓝主机",
         "img_url": "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
         "third_category_id": 6091,
+        "leaf_category_id": 6091,
         "status": 1,
         "market_price": 1500,
         "selling_price": 1300,

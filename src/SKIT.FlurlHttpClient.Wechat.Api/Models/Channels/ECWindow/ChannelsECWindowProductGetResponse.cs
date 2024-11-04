@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -157,10 +159,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置商品三级类目 ID。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2024-10-28 下线。")]
                 [Newtonsoft.Json.JsonProperty("third_category_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("third_category_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long ThirdCategoryId { get; set; }
+                public long? ThirdCategoryId { get; set; }
+
+                /// <summary>
+                /// 获取或设置新版商品三级类目 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("leaf_category_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("leaf_category_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public long? LeafCategoryId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品状态。
