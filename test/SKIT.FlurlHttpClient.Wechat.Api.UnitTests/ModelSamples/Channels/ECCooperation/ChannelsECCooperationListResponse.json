@@ -1,0 +1,26 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data_list": [
+        {
+            "sharer_id": "sphDFZbOEY46mMQ",
+            "status": 2,
+            "sharer_name": "视频号昵称1",
+            "sharer_type": 1,
+            "bind_time": 1728908643533,
+            "unbind_time": 1728909064625,
+            "reject_time": 0,
+            "cancel_time": 0
+        },
+        {
+            "sharer_id": "sphv31FDyX6sQOK",
+            "status": 1,
+            "sharer_name": "视频号昵称2",
+            "sharer_type": 1,
+            "bind_time": 1728903434994,
+            "unbind_time": 0,
+            "reject_time": 0,
+            "cancel_time": 0
+        }
+    ]
+}

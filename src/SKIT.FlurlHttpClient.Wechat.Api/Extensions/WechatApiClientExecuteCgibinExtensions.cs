@@ -18,6 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/access-token/auth.getAccessToken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/getaccesstoken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/windowproduct/getaccesstoken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/API/basics/getaccesstoken.html ]]>
         /// <![CDATA[ https://dev.weixin.qq.com/docs/framework/dev/openapi/getaccesstoken.html ]]>
         /// </para>
         /// </summary>
@@ -45,7 +46,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Basic_Information/getStableAccessToken.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/mp-access-token/getStableAccessToken.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/access-token/auth.getStableAccessToken.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/minigame/dev/api-backend/open-api/access-token/auth.getStableAccessToken.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/basics/getStableAccessToken.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/API/basics/getStableAccessToken.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
