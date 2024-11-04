@@ -68,11 +68,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? HouseNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置虚拟号码。
+                /// 获取或设置虚拟发货订单联系方式。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("virtual_order_tel_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("virtual_order_tel_number")]
-                public string? VirtualTeleNumber { get; set; }
+                public string? VirtualOrderTeleNumber { get; set; }
+            }
+
+            public class VirtualNumber
+            {
+                /// <summary>
+                /// 获取或设置虚拟号码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("virtual_number")]
+                [System.Text.Json.Serialization.JsonPropertyName("virtual_number")]
+                public string TeleNumber { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置分机号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("extension")]
+                [System.Text.Json.Serialization.JsonPropertyName("extension")]
+                public string? Extension { get; set; }
+
+                /// <summary>
+                /// 获取或设置过期时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("expiration")]
+                [System.Text.Json.Serialization.JsonPropertyName("expiration")]
+                public long ExpirationTimestamp { get; set; }
             }
         }
 
@@ -82,5 +106,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("address_info")]
         [System.Text.Json.Serialization.JsonPropertyName("address_info")]
         public Types.Address? Address { get; set; }
+
+        /// <summary>
+        /// 获取或设置虚拟号信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("virtual_number_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("virtual_number_info")]
+        public Types.VirtualNumber? VirtualNumber { get; set; }
     }
 }
