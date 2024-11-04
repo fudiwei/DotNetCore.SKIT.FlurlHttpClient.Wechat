@@ -291,6 +291,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("voucher_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("voucher_list")]
                                 public Types.Voucher[]? VoucherList { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置是否为赠品。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("is_free_gift")]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonPropertyName("is_free_gift")]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                public bool? IsFreeGift { get; set; }
                             }
 
                             public class Payment
