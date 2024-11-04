@@ -544,6 +544,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("size_chart")]
                 public Types.SizeChart? SizeChart { get; set; }
             }
+
+            public class SaleLimitInfo
+            {
+                /// <summary>
+                /// 获取或设置是否受到管控。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_limited")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_limited")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                public bool IsLimited { get; set; }
+
+                /// <summary>
+                /// 获取或设置售卖限制标题。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("title")]
+                [System.Text.Json.Serialization.JsonPropertyName("title")]
+                public string? Title { get; set; }
+
+                /// <summary>
+                /// 获取或设置售卖限制描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_title")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_title")]
+                public string? SubTitle { get; set; }
+            }
         }
 
         /// <summary>
@@ -559,5 +585,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("edit_product")]
         [System.Text.Json.Serialization.JsonPropertyName("edit_product")]
         public Types.Product? EditingProduct { get; set; }
+
+        /// <summary>
+        /// 获取或设置当日售卖上限提醒信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sale_limit_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("sale_limit_info")]
+        public Types.SaleLimitInfo? SaleLimitInfo { get; set; }
     }
 }
