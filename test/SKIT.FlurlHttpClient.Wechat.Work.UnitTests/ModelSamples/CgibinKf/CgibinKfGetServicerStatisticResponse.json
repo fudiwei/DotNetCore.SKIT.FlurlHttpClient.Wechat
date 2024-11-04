@@ -3,7 +3,7 @@
     "errmsg": "ok",
     "statistic_list": [
         {
-            "stat_date": 1645545600,
+            "stat_time": 1645545600,
             "statistic": {
                 "session_cnt": 1,
                 "customer_cnt": 1,

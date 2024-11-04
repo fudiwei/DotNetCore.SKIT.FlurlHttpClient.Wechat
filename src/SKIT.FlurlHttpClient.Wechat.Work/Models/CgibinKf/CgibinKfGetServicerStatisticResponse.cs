@@ -130,8 +130,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// <summary>
                 /// 获取或设置统计日期时间戳。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("stat_date")]
-                [System.Text.Json.Serialization.JsonPropertyName("stat_date")]
+                [Newtonsoft.Json.JsonProperty("stat_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("stat_time")]
                 public long StatisticsTimestamp { get; set; }
 
                 /// <summary>
