@@ -14,6 +14,7 @@
         "inspect_org_id": "001",
         "inspect_org_name": "中质",
         "warehouse_name": "xxx",
-        "warehouse_addr": "kklmp"
+        "warehouse_addr": "kklmp",
+        "remark": "xx"
     }
 }

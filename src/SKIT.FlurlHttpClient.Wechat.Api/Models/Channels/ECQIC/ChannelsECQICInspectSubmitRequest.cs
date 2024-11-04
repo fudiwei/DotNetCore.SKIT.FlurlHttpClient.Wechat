@@ -147,6 +147,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("inspect_org_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("inspect_org_name")]
                 public string InspectOrganizationName { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置备注。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("remark")]
+                [System.Text.Json.Serialization.JsonPropertyName("remark")]
+                public string Remark { get; set; } = string.Empty;
             }
         }
 
