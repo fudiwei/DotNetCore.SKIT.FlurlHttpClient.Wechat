@@ -33,6 +33,22 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.6.0 (2024-11-05)
+
+    -   **新增**：新增微信小店合作账号相关接口。
+
+    -   **新增**：新增微信小店主页管理相关接口。
+
+    -   **新增**：新增视频号小店上传生鲜质检信息、批量新增联盟团长推广等接口。
+
+    -   **新增**：随官方更新视频号小店商品分类、订单等相关接口模型。
+
+    -   **新增**：随官方更新短剧小程序剧目相关接口模型。（_via_ [GitHub #163](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/163)）
+
+    -   **变更**：随官方标记微信门店相关接口为已废弃。
+
+    -   **修复**：修复视频号小店获取订单详情接口模型定义错误。（_via_ [GitHub #160](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/160)）
+
 -   Release 3.5.0 (2024-08-15)
 
     -   **新增**：新增使用 AppSecret 重置 API 调用次数接口。

@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("cats_v2")]
                         [System.Text.Json.Serialization.JsonPropertyName("cats_v2")]
-                        public Types.Category[]? CategoryV2List { get; set; }
+                        public new Types.Category[]? CategoryV2List { get; set; }
                     }
                 }
 
