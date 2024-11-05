@@ -25,6 +25,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("openid")]
                 [System.Text.Json.Serialization.JsonPropertyName("openid")]
                 public string? OpenId { get; set; }
+
+                /// <summary>
+                /// 获取或设置员工类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("employee_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("employee_type")]
+                public string? EmployeeType { get; set; }
             }
         }
 
