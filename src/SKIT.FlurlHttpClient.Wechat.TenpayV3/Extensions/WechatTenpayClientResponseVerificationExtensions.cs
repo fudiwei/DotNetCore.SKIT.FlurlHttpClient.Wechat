@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 responseBody: Encoding.UTF8.GetString(response.GetRawBytes()),
                 responseSignature: response.WechatpaySignature,
                 responseSignatureType: response.WechatpaySignatureType,
-                responseSerialNumber: response.WechatpayCertificateSerialNumber
+                responseSerialNumber: response.WechatpaySerialNumber
             );
         }
 
@@ -124,7 +124,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 responseBody: Encoding.UTF8.GetString(response.GetRawBytes()),
                 responseSignature: response.WechatpaySignature,
                 responseSignatureType: response.WechatpaySignatureType,
-                responseSerialNumber: response.WechatpayCertificateSerialNumber,
+                responseSerialNumber: response.WechatpaySerialNumber,
                 cancellationToken: cancellationToken
             );
         }

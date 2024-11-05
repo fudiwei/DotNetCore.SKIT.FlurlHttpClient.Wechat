@@ -24,14 +24,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         public string AlgorithmType { get; }
 
         /// <summary>
-        /// 获取证书内容（CRT/CER PEM 格式，即 -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----）
-        /// </summary>
-        public string Certificate { get; }
-
-        /// <summary>
         /// 获取证书序列号。
         /// </summary>
         public string SerialNumber { get; }
+
+        /// <summary>
+        /// 获取证书内容（CRT/CER PEM 格式，即 -----BEGIN CERTIFICATE----- ... -----END CERTIFICATE-----）
+        /// </summary>
+        public string Certificate { get; }
 
         /// <summary>
         /// 获取生效时间。

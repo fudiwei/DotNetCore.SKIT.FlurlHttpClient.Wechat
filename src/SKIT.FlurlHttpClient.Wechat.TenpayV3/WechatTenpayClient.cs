@@ -12,15 +12,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     /// </summary>
     public class WechatTenpayClient : CommonClientBase, ICommonClient
     {
+        private static readonly string ASSEMBLY_VERSION = Assembly.GetAssembly(typeof(WechatTenpayClient))!.GetName()!.Version!.ToString();
+
         /// <summary>
         /// 获取当前客户端使用的微信支付商户凭证。
         /// </summary>
         public Settings.Credentials Credentials { get; }
 
         /// <summary>
+        /// 获取当前客户端使用的微信支付平台认证方案。
+        /// </summary>
+        public Settings.PlatformAuthScheme PlatformAuthScheme { get; }
+
+        /// <summary>
         /// 获取当前客户端使用的微信支付平台证书管理器。
         /// </summary>
         public Settings.ICertificateManager PlatformCertificateManager { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的微信支付平台公钥管理器。
+        /// </summary>
+        public Settings.IPublicKeyManager PlatformPublicKeyManager { get; }
 
         /// <summary>
         /// 获取是否自动加密请求中的敏感信息字段。
@@ -53,14 +65,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (options is null) throw new ArgumentNullException(nameof(options));
 
             Credentials = new Settings.Credentials(options);
+            PlatformAuthScheme = options.PlatformAuthScheme;
             PlatformCertificateManager = options.PlatformCertificateManager;
+            PlatformPublicKeyManager = options.PlatformPublicKeyManager;
             AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty;
             AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
             FlurlClient.BaseUrl = options.Endpoint ?? WechatTenpayEndpoints.DEFAULT;
             FlurlClient.WithHeader(HttpHeaders.Accept, "application/json");
             FlurlClient.WithHeader(HttpHeaders.AcceptLanguage, options.AcceptLanguage);
-            FlurlClient.WithHeader(HttpHeaders.UserAgent, $"OS/{Environment.OSVersion.Platform} SKIT.FlurlHttpClient.Wechat.Tenpay/{Assembly.GetAssembly(typeof(WechatTenpayClient))!.GetName().Version}");
+            FlurlClient.WithHeader(HttpHeaders.UserAgent, $"OS/{Environment.OSVersion.Platform} SKIT.FlurlHttpClient.Wechat.Tenpay/{ASSEMBLY_VERSION}");
             FlurlClient.WithTimeout(options.Timeout <= 0 ? Timeout.InfiniteTimeSpan : TimeSpan.FromMilliseconds(options.Timeout));
 
             Interceptors.Add(new Interceptors.WechatTenpayRequestSigningInterceptor(
@@ -87,9 +101,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 this.EncryptRequestSensitiveProperty(request);
             }
 
-            if (request.WechatpayCertificateSerialNumber is not null)
+            if (request.WechatpaySerialNumber is not null)
             {
-                flurlRequest.WithHeader("Wechatpay-Serial", request.WechatpayCertificateSerialNumber);
+                flurlRequest.WithHeader("Wechatpay-Serial", request.WechatpaySerialNumber);
             }
 
             return flurlRequest;

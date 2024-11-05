@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
@@ -66,9 +67,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// 获取微信应答签名使用的微信支付平台证书序列号。
         /// </summary>
+        [Obsolete("后续版本该属性将被移除，请使用 `WechatpaySerialNumber` 属性替代。", error: true)]
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string WechatpayCertificateSerialNumber { get { return GetRawHeaders().GetFirstValueOrEmpty("Wechatpay-Serial"); } }
+        public string WechatpayCertificateSerialNumber { get { return WechatpaySerialNumber; } }
+
+        /// <summary>
+        /// 获取微信应答签名使用的微信支付平台证书或公钥序列号。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string WechatpaySerialNumber { get { return GetRawHeaders().GetFirstValueOrEmpty("Wechatpay-Serial"); } }
 
         /// <summary>
         /// 获取一个值，该值指示调用微信 API 是否成功。

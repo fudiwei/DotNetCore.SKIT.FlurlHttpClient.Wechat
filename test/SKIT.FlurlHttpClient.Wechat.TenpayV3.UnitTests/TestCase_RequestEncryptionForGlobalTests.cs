@@ -38,7 +38,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.CertificateName!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CertificateId!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.CertificateName!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.ContactName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.MobileNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Contact!.Email!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))

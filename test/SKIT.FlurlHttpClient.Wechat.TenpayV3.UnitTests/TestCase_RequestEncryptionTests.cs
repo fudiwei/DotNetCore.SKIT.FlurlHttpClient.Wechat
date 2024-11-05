@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.AccountNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.AccountName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.AccountNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -130,7 +130,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdAddress!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -249,7 +249,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Subject!.UBOList![0].IdAddress!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccount!.AccountName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccount!.AccountNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -308,7 +308,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.ReceiverList![0].Name!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.ReceiverList![0].Name!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -361,7 +361,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.AccountNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.AccountNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -474,7 +474,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UBOList![0].IdAddress!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccount!.AccountName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccount!.AccountNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -527,7 +527,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -586,7 +586,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.ReceiverList![0].Name!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.ReceiverList![0].Name!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -639,7 +639,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -695,7 +695,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.RealName!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccountNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealName!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -763,7 +763,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Identity!.CredentialNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankCard!.BankCardNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankCard!.MobileNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -816,7 +816,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.MobileNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.MobileNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -872,7 +872,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.MerchantContactInformation!.ConsultationPhoneNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.MerchantContactInformation!.ConsultationPhoneNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -944,7 +944,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.BankAccount!.AccountNumber));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.Identity!.IdName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PayeeInfo!.Identity!.IdNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1000,7 +1000,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.PhoneNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCardNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1056,7 +1056,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCardNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1115,7 +1115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.Buyer!.UserEmail!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Buyer!.UserMobileNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Buyer!.UserEmail!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1174,7 +1174,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.Buyer!.UserEmail!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Buyer!.UserMobileNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Buyer!.UserEmail!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1233,7 +1233,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.RealIdentity!.IdCardNumber);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.RealName));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.IdCardNumber));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1292,7 +1292,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.RealIdentity!.IdCardNumber);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.RealName));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.IdCardNumber));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1351,7 +1351,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.RealIdentity!.IdCardNumber);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.RealName));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealIdentity!.IdCardNumber));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1407,7 +1407,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCardNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1463,7 +1463,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCardNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1519,7 +1519,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.IdCardNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.IdCardNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1571,7 +1571,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             static void AssertMockRequestModel(Models.ApplyPlatformSolutionMerchantTransferReservationRequest request, Func<string, string> decryptor)
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1630,7 +1630,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.ReceiverList![0].Name!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.ReceiverList![0].Name!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1683,7 +1683,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.Name!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Name!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1739,7 +1739,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.RealName!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankAccountNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.RealName!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1795,7 +1795,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobile!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobile!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1848,7 +1848,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobile!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobile!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1904,7 +1904,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserMobile!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserMobile!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -1960,7 +1960,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.DriverIdCardNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.DriverName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.DriverIdCardNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -2022,7 +2022,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.NotEqual(MOCK_PLAIN_STR, request.TransferDetailList![0].UserIdCardNumber!);
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.TransferDetailList![0].UserName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.TransferDetailList![0].UserIdCardNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
@@ -2084,7 +2084,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Identify!.RealName!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Identify!.CredentialNumber!));
                 Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.BankCardNumber!));
-                Assert.Equal(MOCK_CERT_SN, request.WechatpayCertificateSerialNumber!, ignoreCase: true);
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
             }
 
             if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))

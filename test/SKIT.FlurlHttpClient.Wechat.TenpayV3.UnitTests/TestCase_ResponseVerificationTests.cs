@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.WechatpayTimestamp);
             Assert.NotNull(response.WechatpaySignature);
             Assert.NotNull(response.WechatpaySignatureType);
-            Assert.NotNull(response.WechatpayCertificateSerialNumber);
+            Assert.NotNull(response.WechatpaySerialNumber);
         }
 
         [Fact(DisplayName = "测试用例：验证响应签名（基于 SM2）")]
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             Assert.NotNull(response.WechatpayTimestamp);
             Assert.NotNull(response.WechatpaySignature);
             Assert.NotNull(response.WechatpaySignatureType);
-            Assert.NotNull(response.WechatpayCertificateSerialNumber);
+            Assert.NotNull(response.WechatpaySerialNumber);
         }
     }
 }

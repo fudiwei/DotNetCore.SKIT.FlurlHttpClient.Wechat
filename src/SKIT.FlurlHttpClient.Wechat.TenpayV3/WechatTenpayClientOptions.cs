@@ -74,11 +74,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public bool AutoDecryptResponseSensitiveProperty { get; set; }
 
         /// <summary>
+        /// 获取或设置微信支付平台认证方案。
+        /// <para>默认值：<see cref="Settings.PlatformAuthScheme.Certificate"/></para>
+        /// </summary>
+        public Settings.PlatformAuthScheme PlatformAuthScheme { get; set; } = Settings.PlatformAuthScheme.Certificate;
+
+        /// <summary>
         /// 获取或设置微信支付平台证书管理器。
+        /// <para>
+        /// 仅当 <see cref="PlatformAuthScheme"/> 的值为 <see cref="Settings.PlatformAuthScheme.Certificate"/> 时有效。
+        /// </para>
         /// <para>
         /// 默认值：<see cref="Settings.InMemoryCertificateManager"/>
         /// </para>
         /// </summary>
         public Settings.ICertificateManager PlatformCertificateManager { get; set; } = new Settings.InMemoryCertificateManager();
+
+        /// <summary>
+        /// 获取或设置微信支付平台公钥管理器。
+        /// <para>
+        /// 仅当 <see cref="PlatformAuthScheme"/> 的值为 <see cref="Settings.PlatformAuthScheme.PublicKey"/> 时有效。
+        /// </para>
+        /// <para>
+        /// 默认值：<see cref="Settings.InMemoryPublicKeyManager"/>
+        /// </para>
+        /// </summary>
+        public Settings.IPublicKeyManager PlatformPublicKeyManager { get; set; } = new Settings.InMemoryPublicKeyManager();
     }
 }
