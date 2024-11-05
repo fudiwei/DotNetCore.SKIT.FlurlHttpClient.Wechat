@@ -3,29 +3,12 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /wxa/sec/vod/auditdrama 接口的请求。</para>
+    /// <para>表示 [POST] /wxa/sec/vod/modifydramabasicinfo 接口的请求。</para>
     /// </summary>
-    public class WxaSecVodAuditDramaRequest : WechatApiRequest, IInferable<WxaSecVodAuditDramaRequest, WxaSecVodAuditDramaResponse>
+    public class WxaSecVodModifyDramaBasicInfoRequest : WechatApiRequest, IInferable<WxaSecVodModifyDramaBasicInfoRequest, WxaSecVodModifyDramaBasicInfoResponse>
     {
         public static class Types
         {
-            public class ReplaceMedia
-            {
-                /// <summary>
-                /// 获取或设置旧媒资文件 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("old")]
-                [System.Text.Json.Serialization.JsonPropertyName("old")]
-                public long OldMediaId { get; set; }
-                
-                /// <summary>
-                /// 获取或设置新媒资文件 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("new")]
-                [System.Text.Json.Serialization.JsonPropertyName("new")]
-                public long NewMediaId { get; set; }
-            }
-
             public class ActorList
             {
                 /// <summary>
@@ -36,35 +19,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public IList<ActorItem> Items { get; set; } = new List<ActorItem>();
             }
 
-            public class ActorItem
+            public class ActorItem : WxaSecVodAuditDramaRequest.Types.ActorItem
             {
-                /// <summary>
-                /// 获取或设置演员姓名。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("name")]
-                [System.Text.Json.Serialization.JsonPropertyName("name")]
-                public string Name { get; set; } = string.Empty;
-
-                /// <summary>
-                /// 获取或设置演员照片 MediaId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("photo_material_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("photo_material_id")]
-                public string PhotoMediaId { get; set; } = string.Empty;
-
-                /// <summary>
-                /// 获取或设置饰演角色。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("role")]
-                [System.Text.Json.Serialization.JsonPropertyName("role")]
-                public string Role { get; set; } = string.Empty;
-
-                /// <summary>
-                /// 获取或设置演员简介。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("profile")]
-                [System.Text.Json.Serialization.JsonPropertyName("profile")]
-                public string Profile { get; set; } = string.Empty;
             }
         }
     
@@ -73,14 +29,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("drama_id")]
         [System.Text.Json.Serialization.JsonPropertyName("drama_id")]
-        public long? DramaId { get; set; }
+        public long DramaId { get; set; }
 
         /// <summary>
-        /// 获取或设置剧名。
+        /// 获取或设置备用剧名。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("name")]
-        [System.Text.Json.Serialization.JsonPropertyName("name")]
-        public string? Name { get; set; }
+        [Newtonsoft.Json.JsonProperty("alternate_name")]
+        [System.Text.Json.Serialization.JsonPropertyName("alternate_name")]
+        public string? AlternateName { get; set; }
 
         /// <summary>
         /// 获取或设置描述。
@@ -90,39 +46,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? Description { get; set; }
 
         /// <summary>
-        /// 获取或设置媒资文件数量。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("media_count")]
-        [System.Text.Json.Serialization.JsonPropertyName("media_count")]
-        public int? MediaCount { get; set; }
-
-        /// <summary>
-        /// 获取或设置媒资文件 ID 列表。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("media_id_list")]
-        [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
-        public IList<long>? MediaIdList { get; set; }
-
-        /// <summary>
         /// 获取或设置剧目推荐语。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("recommendations")]
         [System.Text.Json.Serialization.JsonPropertyName("recommendations")]
         public string? Recommendations { get; set; }
-
-        /// <summary>
-        /// 获取或设置制作方。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("producer")]
-        [System.Text.Json.Serialization.JsonPropertyName("producer")]
-        public string? Producer { get; set; }
-
-        /// <summary>
-        /// 获取或设置编剧。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("playwright")]
-        [System.Text.Json.Serialization.JsonPropertyName("playwright")]
-        public string? Playwright { get; set; }
 
         /// <summary>
         /// 获取或设置演员列表。
@@ -207,21 +135,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("other_material_material_id")]
         [System.Text.Json.Serialization.JsonPropertyName("other_material_material_id")]
         public string? OtherMaterialMediaId { get; set; }
-
-        /// <summary>
-        /// 获取或设置是否加急审核。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("expedited")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
-        [System.Text.Json.Serialization.JsonPropertyName("expedited")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
-        public bool? IsExpedited { get; set; }
-
-        /// <summary>
-        /// 获取或设置替换的剧集信息列表。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("replace_media_list")]
-        [System.Text.Json.Serialization.JsonPropertyName("replace_media_list")]
-        public IList<Types.ReplaceMedia>? ReplaceMediaList { get; set; }
     }
 }

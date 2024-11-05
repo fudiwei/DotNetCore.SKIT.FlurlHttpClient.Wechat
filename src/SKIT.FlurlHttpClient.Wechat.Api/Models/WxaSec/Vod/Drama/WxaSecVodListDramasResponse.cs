@@ -45,6 +45,47 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("audit_time")]
                         public long? AuditTimestamp { get; set; }
                     }
+
+                    public class ActorList
+                    {
+                        /// <summary>
+                        /// 获取或设置演员列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("actor")]
+                        [System.Text.Json.Serialization.JsonPropertyName("actor")]
+                        public ActorItem[] Items { get; set; } = default!;
+                    }
+
+                    public class ActorItem
+                    {
+                        /// <summary>
+                        /// 获取或设置演员姓名。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string Name { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置演员照片 MediaId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("photo_material_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("photo_material_id")]
+                        public string PhotoMediaId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置饰演角色。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("role")]
+                        [System.Text.Json.Serialization.JsonPropertyName("role")]
+                        public string Role { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置演员简介。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("profile")]
+                        [System.Text.Json.Serialization.JsonPropertyName("profile")]
+                        public string Profile { get; set; } = default!;
+                    }
                 }
 
                 /// <summary>
@@ -84,6 +125,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.Media[] MediaList { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置剧目状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("status")]
+                [System.Text.Json.Serialization.JsonPropertyName("status")]
+                public int Status { get; set; }
+
+                /// <summary>
                 /// 获取或设置创建时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
@@ -96,6 +144,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("cover_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("cover_url")]
                 public string? CoverUrl { get; set; }
+
+                /// <summary>
+                /// 获取或设置推广海报临时链接。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("promotion_poster")]
+                [System.Text.Json.Serialization.JsonPropertyName("promotion_poster")]
+                public string? PromotionPosterUrl { get; set; }
+
+                /// <summary>
+                /// 获取或设置剧目推荐语。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("recommendations")]
+                [System.Text.Json.Serialization.JsonPropertyName("recommendations")]
+                public string? Recommendations { get; set; }
 
                 /// <summary>
                 /// 获取或设置制作方。
@@ -112,11 +174,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? Playwright { get; set; }
 
                 /// <summary>
-                /// 获取或设置广播电视节目制作经营许可证 MediaId。
+                /// 获取或设置演员列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("actor_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("actor_list")]
+                public Types.ActorList? ActorList { get; set; }
+
+                /// <summary>
+                /// 获取或设置广播电视节目制作经营许可证编号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("production_license")]
                 [System.Text.Json.Serialization.JsonPropertyName("production_license")]
-                public string? ProductionLicenseMaterialMediaId { get; set; }
+                public string? ProductionLicenseNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核详细信息。

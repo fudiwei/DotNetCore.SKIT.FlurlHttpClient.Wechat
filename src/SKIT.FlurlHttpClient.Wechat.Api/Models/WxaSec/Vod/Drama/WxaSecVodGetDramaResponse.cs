@@ -18,6 +18,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     public class AuditDetail : WxaSecVodListDramasResponse.Types.DramaInfo.Types.AuditDetail
                     {
                     }
+
+                    public class ActorList : WxaSecVodListDramasResponse.Types.DramaInfo.Types.ActorList
+                    {
+                        /// <summary>
+                        /// 获取或设置演员列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("actor")]
+                        [System.Text.Json.Serialization.JsonPropertyName("actor")]
+                        public new ActorItem[] Items { get; set; } = default!;
+                    }
+
+                    public class ActorItem : WxaSecVodListDramasResponse.Types.DramaInfo.Types.ActorItem
+                    {
+                    }
                 }
 
                 /// <summary>
@@ -26,6 +40,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("media_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("media_list")]
                 public new Types.Media[] MediaList { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置演员列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("actor_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("actor_list")]
+                public new Types.ActorList? ActorList { get; set; }
 
                 /// <summary>
                 /// 获取或设置审核详细信息。
