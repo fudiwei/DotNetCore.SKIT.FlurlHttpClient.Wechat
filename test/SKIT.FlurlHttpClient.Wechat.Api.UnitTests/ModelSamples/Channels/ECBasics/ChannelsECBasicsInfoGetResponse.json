@@ -4,6 +4,8 @@
     "info": {
         "nickname": "NICKNAME",
         "headimg_url": "HEADIMG_URL",
-        "subject_type": "企业"
+        "subject_type": "企业",
+        "status": "opening",
+        "username": "USERNAME"
     }
 }

@@ -10,6 +10,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class BasicInfo
             {
                 /// <summary>
+                /// 获取或设置店铺原始 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("username")]
+                [System.Text.Json.Serialization.JsonPropertyName("username")]
+                public string? Username { get; set; }
+
+                /// <summary>
                 /// 获取或设置店铺名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
@@ -29,6 +36,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("subject_type")]
                 [System.Text.Json.Serialization.JsonPropertyName("subject_type")]
                 public string SubjectType { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置店铺状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("status")]
+                [System.Text.Json.Serialization.JsonPropertyName("status")]
+                public string Status { get; set; } = default!;
             }
         }
 
