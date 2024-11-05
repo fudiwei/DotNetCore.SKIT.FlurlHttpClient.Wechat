@@ -1,0 +1,41 @@
+{
+    "banner": {
+        "scale": 2,
+        "banner": [
+            {
+                "type": 1,
+                "product": {
+                    "product_id": 123
+                },
+                "banner": {
+                    "description": "测试商品精品展示位描述",
+                    "img_url": "https://store.mp.video.tencent-cloud.com/abc",
+                    "title": "测试商品精品展示位标题"
+                }
+            },
+            {
+                "type": 3,
+                "finder": {
+                    "feed_id": "export/abc",
+                    "finder_user_name": "sphabc"
+                },
+                "banner": {
+                    "description": "测试视频号视频精品展示位描述",
+                    "img_url": "https://store.mp.video.tencent-cloud.com/abc",
+                    "title": "测试视频号视频精品展示位标题"
+                }
+            },
+            {
+                "type": 4,
+                "official_account": {
+                    "url": "https://mp.weixin.qq.com/abc"
+                },
+                "banner": {
+                    "description": "测试公众号文章精品展示位描述",
+                    "img_url": "https://store.mp.video.tencent-cloud.com/abc",
+                    "title": "测试公众号文章精品展示位标题"
+                }
+            }
+        ]
+    }
+}

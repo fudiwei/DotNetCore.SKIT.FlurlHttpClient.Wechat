@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "products": [
+        {
+            "product_id": "1234567001",
+            "is_set_hide": 0,
+            "is_set_top": 0
+        },
+        {
+            "product_id": "1234567002",
+            "is_set_hide": 0,
+            "is_set_top": 0
+        }
+    ],
+    "next_key": "THE_NEXT_KEY_NEW",
+    "total_num": 100
+}
