@@ -231,18 +231,21 @@ public class RedisCertificateManager : ICertificateManager
 
 ---
 
-### 适配微信支付新商户的公钥加密方式
+### 适配微信支付新商户的平台公钥认证方式
 
 自 v3.9.0 版本起，本库支持接入微信支付平台基于微信支付公钥的验证身份方式。
 
 你只需要在原有的构造得到 `WechatTenpayClient` 对象的项目代码上做出调整，设置平台认证方案为“使用平台公钥认证”，并使用 `PlatformPublicKeyManager` 属性替代 `PlatformCertificateManager` 属性：
 
 ```csharp
+var manager = new Settings.InMemoryPublicKeyManager();
+manager.AddEntry(new PublicKeyEntry("公钥算法", "公钥序列号", "PKCS#8 公钥内容"));
+
 var options = new WechatTenpayClientOptions()
 {
     // 其他配置项略
     PlatformAuthScheme = Settings.PlatformAuthScheme.PublicKey,
-    PlatformPublicKeyManager = new Settings.InMemoryPublicKeyManager();
+    PlatformPublicKeyManager = manager
 };
 var client = WechatTenpayClientBuilder.Create(options).Build();
 ```

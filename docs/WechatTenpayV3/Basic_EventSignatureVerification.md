@@ -65,20 +65,6 @@ if (!res.Result)
 
 请参阅本文档[《基础用法 - 如何加密请求中的敏感数据？》](./Basic_RequestSensitiveDataEncryption.md)下的同名章节。
 
-### 适配微信支付新商户的公钥验签方式
+### 适配微信支付新商户的平台公钥认证方式
 
-自 v3.9.0 版本起，本库支持接入微信支付平台基于微信支付公钥的验证身份方式。
-
-你只需要在原有的构造得到 `WechatTenpayClient` 对象的项目代码上做出调整，设置平台认证方案为“使用平台公钥认证”，并使用 `PlatformPublicKeyManager` 属性替代 `PlatformCertificateManager` 属性：
-
-```csharp
-var options = new WechatTenpayClientOptions()
-{
-    // 其他配置项略
-    PlatformAuthScheme = Settings.PlatformAuthScheme.PublicKey,
-    PlatformPublicKeyManager = new Settings.InMemoryPublicKeyManager();
-};
-var client = WechatTenpayClientBuilder.Create(options).Build();
-```
-
-后续流程与原有方式完全一致。
+请参阅本文档[《基础用法 - 如何加密请求中的敏感数据？》](./Basic_RequestSensitiveDataEncryption.md)下的同名章节。

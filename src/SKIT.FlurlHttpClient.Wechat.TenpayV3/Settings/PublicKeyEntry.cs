@@ -29,7 +29,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         public string SerialNumber { get; }
 
         /// <summary>
-        /// 获取公钥内容（CRT/CER PEM 格式，即 -----BEGIN PUBLIC KEY----- ... -----END PUBLIC KEY-----）
+        /// 获取公钥内容（PKCS#8 PEM 格式，即 -----BEGIN PUBLIC KEY----- ... -----END PUBLIC KEY-----）
         /// </summary>
         public string PublicKey { get; }
 
