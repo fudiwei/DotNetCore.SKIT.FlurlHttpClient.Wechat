@@ -5,6 +5,8 @@
 > 请先自行阅读：
 >
 > [《微信支付开发者文档 - 开发指南：签名验证》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_1.shtml)
+>
+> [《微信支付官方公告 - 关于新商户调用接口验签方式变更通知》](https://developers.weixin.qq.com/community/pay/doc/0002c6a7cf438818df52145b863c01)
 
 ---
 
@@ -18,10 +20,6 @@
 如果你在开发过程出现验签不通过的情况，请先检查是否混淆了这两个证书。
 
 关于证书的更多注意事项，请参阅[《微信支付开发者文档 - 常见问题：证书相关》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay7_0.shtml)
-
----
-
-### 密钥文件格式说明：
 
 需要注意的是，平台为商户提供的是 PEM 格式的密钥文件，需注意文件格式之间的不同。
 
@@ -66,3 +64,21 @@ if (!res.Result)
 ### 通过 `CertificateManager` 管理平台证书信息：
 
 请参阅本文档[《基础用法 - 如何加密请求中的敏感数据？》](./Basic_RequestSensitiveDataEncryption.md)下的同名章节。
+
+### 适配微信支付新商户的公钥验签方式
+
+自 v3.9.0 版本起，本库支持接入微信支付平台基于微信支付公钥的验证身份方式。
+
+你只需要在原有的构造得到 `WechatTenpayClient` 对象的项目代码上做出调整，设置平台认证方案为“使用平台公钥认证”，并使用 `PlatformPublicKeyManager` 属性替代 `PlatformCertificateManager` 属性：
+
+```csharp
+var options = new WechatTenpayClientOptions()
+{
+    // 其他配置项略
+    PlatformAuthScheme = Settings.PlatformAuthScheme.PublicKey,
+    PlatformPublicKeyManager = new Settings.InMemoryPublicKeyManager();
+};
+var client = WechatTenpayClientBuilder.Create(options).Build();
+```
+
+后续流程与原有方式完全一致。
