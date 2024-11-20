@@ -647,6 +647,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.2.0 (2024-11-20)
+
+    -   **新增**：适配 .NET 9.0，修复因运行时的中断性变更导致商户证书加载失败的问题。（_via_ [GitHub #171](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/171)）
+
 -   Release 3.1.1 (2024-07-25)
 
     -   **修复**：修复 .NET 4.6.X 目标框架下运行错误的问题。
@@ -661,7 +665,7 @@
 
 -   Release 2.3.1 (2023-05-25)
 
-    -   **新增**：修复 Windows 环境下潜在的证书加载失败问题。（_via_ [GitHub #93](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/93)）
+    -   **修复**：修复 Windows 环境下潜在的证书加载失败问题。（_via_ [GitHub #93](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/93)）
 
 -   Release 2.3.0 (2023-04-04)
 
