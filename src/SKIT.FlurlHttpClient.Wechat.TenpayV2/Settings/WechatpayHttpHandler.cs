@@ -28,6 +28,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
             {
                 X509Certificate x509;
 
+#if NET9_0_OR_GREATER
+                x509 = X509CertificateLoader.LoadPkcs12(certificateBytes, certificatePassword, X509KeyStorageFlags.UserKeySet | X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.PersistKeySet);
+#else
 #if NET471_OR_GREATER || NETCOREAPP2_1_OR_GREATER || NET5_0_OR_GREATER
                 if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
 #else
@@ -44,6 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings
                         ? new X509Certificate2(certificateBytes)
                         : new X509Certificate2(certificateBytes, certificatePassword, X509KeyStorageFlags.UserKeySet | X509KeyStorageFlags.MachineKeySet | X509KeyStorageFlags.PersistKeySet);
                 }
+#endif
 
 #if NETCOREAPP2_1_OR_GREATER || NET5_0_OR_GREATER
                 handler.SslOptions.ClientCertificates = new X509CertificateCollection() { x509 };   
