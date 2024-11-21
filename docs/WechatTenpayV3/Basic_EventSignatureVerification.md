@@ -23,10 +23,6 @@
 
 关于证书的更多注意事项，请参阅[《微信支付开发者文档 - 常见问题：证书相关》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay7_0.shtml)
 
-需要注意的是，平台为商户提供的是 PEM 格式的密钥文件，需注意文件格式之间的不同。
-
-有关密钥文件格式的更多介绍，请参阅本文档[《基础用法 - 如何加密请求中的敏感数据？》](./Basic_RequestSensitiveDataEncryption.md)的有关章节。
-
 ---
 
 ### 验签流程

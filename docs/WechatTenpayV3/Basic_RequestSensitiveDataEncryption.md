@@ -21,19 +21,9 @@
 
 如果你在开发过程中出现请求加密失败、服务器响应私钥解密失败的情况，请先检查是否混淆了这两个证书。
 
-🔥 另，2024 年 10 月后新注册的微信商户已不再提供平台证书，取而代之的是平台公钥。但二者的加密流程基本相同。更多内容请见本章的《适配微信支付新商户的平台公钥认证方式》一节。
-
 关于证书的更多注意事项，请参阅[《微信支付开发者文档 - 常见问题：证书相关》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay7_0.shtml)
 
-需要注意的是，`QueryCertificatesAsync` 方法返回的是 CER 格式的证书文件（需先经 AES-GCM 解密一次），需区分文件格式之间的不同：
-
--   以 `-----BEGIN PRIVATE KEY-----` 开头、 `-----END PRIVATE KEY-----` 结尾的是 **PKCS#8 私钥**文件。
-
--   以 `-----BEGIN PUBLIC KEY-----` 开头、 `-----END PUBLIC KEY-----` 结尾的是 **PKCS#8 公钥**文件。
-
--   以 `-----BEGIN CERTIFICATE--- --` 开头、 `-----END CERTIFICATE-----` 结尾的是 **CRT/CER 证书**文件，可从中导出 PKCS#8 公钥和证书序列号。
-
-谨记，`QueryCertificatesAsync()` 方法返回的结果是 CRT/CER 证书，需要先通过 `RSAUtility` 工具类导出 PKCS#8 公钥，再进行数据加密；当然，`RSAUtility` 也封装了直接通过 CRT/CER 证书加密的方法。
+🔥 另，2024 年 10 月后新注册的微信商户已不再提供平台证书，取而代之的是平台公钥。但二者的加密流程基本相同。更多内容请见本章的《适配微信支付新商户的平台公钥认证方式》一节。
 
 ---
 
@@ -87,9 +77,13 @@ var client = WechatTenpayClientBuilder.Create(options).Build();
 
 这样，本库会在实际发出请求前自动为你调用 `EncryptRequestSensitiveProperty()` 方法。
 
-需要注意的是，使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请参阅下一小节。
+该扩展方法使用反射、并依赖 `WechatTenpaySensitiveAttribute`、`WechatTenpaySensitivePropertyAttribute` 特性，相比较手动加密，可能会存在一定的性能开销。
 
-此外，该扩展方法使用反射、并依赖 `WechatTenpaySensitiveAttribute`、`WechatTenpaySensitivePropertyAttribute` 特性，相比较手动加密，可能会存在一定的性能开销。
+> ⚠️ 【重要说明】
+>
+> 对于使用基于平台证书认证的旧商户，使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请阅读下方《通过 `CertificateManager` 管理平台证书信息》这一小节。
+>
+> 对于使用基于平台公钥认证的新商户，使用该扩展方法前需预先添加好平台公钥，并存入全局的 `PublicKeyManager`。有关 `PublicKeyManager` 的更多介绍，请阅读下方《适配微信支付新商户的平台公钥认证方式》这一小节。
 
 ---
 
