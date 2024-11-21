@@ -241,7 +241,7 @@ public class RedisCertificateManager : ICertificateManager
 
 ```csharp
 var manager = new Settings.InMemoryPublicKeyManager();
-manager.AddEntry(new PublicKeyEntry("公钥算法", "公钥序列号", "PKCS#8 公钥内容"));
+manager.AddEntry(new PublicKeyEntry("公钥算法，目前仅支持 RSA 这一种类型", "公钥序列号（PubKeyID）", "PKCS#8 公钥内容"));
 
 var options = new WechatTenpayClientOptions()
 {

@@ -45,7 +45,11 @@ bool ret = client.VerifyEventSignature(
 );
 ```
 
-> ⚠️ 【重要说明】使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请阅读下方《通过 `CertificateManager` 管理平台证书信息》这一小节。
+> ⚠️ 【重要说明】
+>
+> 对于使用基于平台证书认证的旧商户，使用该扩展方法前需先下载好平台证书，并存入全局的 `CertificateManager`。有关 `CertificateManager` 的更多介绍，请阅读下方《通过 `CertificateManager` 管理平台证书信息》这一小节。
+>
+> 对于使用基于平台公钥认证的新商户，使用该扩展方法前需预先添加好平台公钥，并存入全局的 `PublicKeyManager`。有关 `PublicKeyManager` 的更多介绍，请阅读下方《适配微信支付新商户的平台公钥认证方式》这一小节。
 
 ---
 
