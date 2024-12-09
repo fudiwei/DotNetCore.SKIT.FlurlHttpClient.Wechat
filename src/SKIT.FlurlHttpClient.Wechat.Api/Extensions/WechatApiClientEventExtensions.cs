@@ -13,6 +13,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     public static partial class WechatApiClientEventExtensions
     {
         /// <summary>
+        /// <para>从 JSON 解析并解密得到明文回调通知事件内容。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="webhookJson"></param>
+        /// <returns></returns>
+        public static string DecryptEventFromJson(this WechatApiClient client, string webhookJson)
+        {
+            return InnerDecryptEventFromJson(client, webhookJson);
+        }
+
+        /// <summary>
+        /// <para>从 XML 解析并解密明文回调通知事件内容。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="webhookXml"></param>
+        /// <returns></returns>
+        public static string DecryptEventFromXml(this WechatApiClient client, string webhookXml)
+        {
+            return InnerDecryptEventFromXml(client, webhookXml);
+        }
+
+        /// <summary>
         /// <para>从 JSON 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
         /// </summary>
         /// <typeparam name="TEvent"></typeparam>
@@ -331,16 +353,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             try
             {
-                if (webhookJson.Contains("\"Encrypt\""))
-                {
-                    if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
-                        throw new WechatApiException("Failed to decrypt event data, because the push no encoding AES key is not set.");
+                var webhookJsonString = InnerDecryptEventFromJson(client, webhookJson);
 
-                    InnerEncryptedEvent encryptedEvent = client.JsonSerializer.Deserialize<InnerEncryptedEvent>(webhookJson);
-                    webhookJson = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
-                }
-
-                return client.JsonSerializer.Deserialize<TEvent>(webhookJson);
+                return client.JsonSerializer.Deserialize<TEvent>(webhookJsonString);
             }
             catch (WechatApiException)
             {
@@ -355,6 +370,56 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         private static TEvent InnerDeserializeEventFromXml<TEvent>(WechatApiClient client, string webhookXml)
             where TEvent : WechatApiEvent
         {
+
+            try
+            {
+                var webhookXmlString = InnerDecryptEventFromXml(client, webhookXml);
+                return (TEvent)_XmlSimpleSerializer.Deserialize(webhookXmlString, typeof(TEvent));
+            }
+            catch (ArgumentNullException)
+            {
+                throw;
+            }
+            catch (WechatApiException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new WechatApiException("Failed to deserialize event data. Please see the inner exception for more details.", ex);
+            }
+        }
+
+        private static string InnerDecryptEventFromJson(WechatApiClient client, string webhookJson)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (webhookJson is null) throw new ArgumentNullException(webhookJson);
+
+            try
+            {
+                if (webhookJson.Contains("\"Encrypt\""))
+                {
+                    if (string.IsNullOrEmpty(client.Credentials.PushEncodingAESKey))
+                        throw new WechatApiException("Failed to decrypt event data, because the push no encoding AES key is not set.");
+
+                    InnerEncryptedEvent encryptedEvent = client.JsonSerializer.Deserialize<InnerEncryptedEvent>(webhookJson);
+                    webhookJson = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedEvent.EncryptedData, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
+                }
+
+                return webhookJson;
+            }
+            catch (WechatApiException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new WechatApiException("Failed to deserialize event data. Please see the inner exception for more details.", ex);
+            }
+        }
+
+        private static string InnerDecryptEventFromXml(WechatApiClient client, string webhookXml)
+        {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (webhookXml is null) throw new ArgumentNullException(webhookXml);
 
@@ -368,7 +433,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                     webhookXml = Utilities.WxMsgCryptor.AESDecrypt(cipherText: encryptedXml, encodingAESKey: client.Credentials.PushEncodingAESKey!, out _);
                 }
 
-                return (TEvent)_XmlSimpleSerializer.Deserialize(webhookXml, typeof(TEvent));
+                return webhookXml;
             }
             catch (WechatApiException)
             {
