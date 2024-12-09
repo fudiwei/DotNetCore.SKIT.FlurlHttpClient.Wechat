@@ -13,6 +13,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     public static partial class WechatApiClientEventExtensions
     {
         /// <summary>
+        /// <para>从 JSON 解析并解密得到明文回调通知事件内容。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="webhookJson"></param>
+        /// <returns></returns>
+        public static string DecryptEventFromJson(this WechatApiClient client, string webhookJson)
+        {
+            return InnerDecryptEventFromJson(client, webhookJson);
+        }
+
+        /// <summary>
+        /// <para>从 XML 解析并解密明文回调通知事件内容。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="webhookXml"></param>
+        /// <returns></returns>
+        public static string DecryptEventFromXml(this WechatApiClient client, string webhookXml)
+        {
+            return InnerDecryptEventFromXml(client, webhookXml);
+        }
+
+        /// <summary>
         /// <para>从 JSON 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
         /// </summary>
         /// <typeparam name="TEvent"></typeparam>
@@ -37,17 +59,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>从 JSON 反序列化得到 JSON String 对象。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="webhookJson"></param>
-        /// <returns></returns>
-        public static string DeserializeEventFromJsonToString(this WechatApiClient client, string webhookJson)
-        {
-            return InnerDeserializeEventFromJsonToString(client, webhookJson);
-        }
-
-        /// <summary>
         /// <para>从 XML 反序列化得到 <see cref="WechatApiEvent"/> 对象。</para>
         /// </summary>
         /// <typeparam name="TEvent"></typeparam>
@@ -69,17 +80,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public static WechatApiEvent DeserializeEventFromXml(this WechatApiClient client, string webhookXml)
         {
             return InnerDeserializeEventFromXml<WechatApiEvent>(client, webhookXml);
-        }
-
-        /// <summary>
-        /// <para>从 XML 反序列化得到 XML String 对象。</para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="webhookXml"></param>
-        /// <returns></returns>
-        public static string DeserializeEventFromXmlToString(this WechatApiClient client, string webhookXml)
-        {
-            return InnerDeserializeEventFromXmlToString(client, webhookXml);
         }
 
         /// <summary>
@@ -348,11 +348,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         private static TEvent InnerDeserializeEventFromJson<TEvent>(WechatApiClient client, string webhookJson)
             where TEvent : WechatApiEvent
         {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (webhookJson is null) throw new ArgumentNullException(webhookJson);
+
             try
             {
-                var webhookJsonString = InnerDeserializeEventFromJsonToString(client, webhookJson);
+                var webhookJsonString = InnerDecryptEventFromJson(client, webhookJson);
 
                 return client.JsonSerializer.Deserialize<TEvent>(webhookJsonString);
+            }
+            catch (WechatApiException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new WechatApiException("Failed to deserialize event data. Please see the inner exception for more details.", ex);
+            }
+        }
+
+        private static TEvent InnerDeserializeEventFromXml<TEvent>(WechatApiClient client, string webhookXml)
+            where TEvent : WechatApiEvent
+        {
+
+            try
+            {
+                var webhookXmlString = InnerDecryptEventFromXml(client, webhookXml);
+                return (TEvent)_XmlSimpleSerializer.Deserialize(webhookXmlString, typeof(TEvent));
             }
             catch (ArgumentNullException)
             {
@@ -368,7 +390,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
         }
 
-        private static string InnerDeserializeEventFromJsonToString(WechatApiClient client, string webhookJson)
+        private static string InnerDecryptEventFromJson(WechatApiClient client, string webhookJson)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (webhookJson is null) throw new ArgumentNullException(webhookJson);
@@ -396,30 +418,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             }
         }
 
-        private static TEvent InnerDeserializeEventFromXml<TEvent>(WechatApiClient client, string webhookXml)
-            where TEvent : WechatApiEvent
-        {
-
-            try
-            {
-                var webhookXmlString = InnerDeserializeEventFromXmlToString(client, webhookXml);
-                return (TEvent)_XmlSimpleSerializer.Deserialize(webhookXmlString, typeof(TEvent));
-            }
-            catch (ArgumentNullException)
-            {
-                throw;
-            }
-            catch (WechatApiException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new WechatApiException("Failed to deserialize event data. Please see the inner exception for more details.", ex);
-            }
-        }
-
-        private static string InnerDeserializeEventFromXmlToString(WechatApiClient client, string webhookXml)
+        private static string InnerDecryptEventFromXml(WechatApiClient client, string webhookXml)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (webhookXml is null) throw new ArgumentNullException(webhookXml);
