@@ -25,14 +25,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         void AddEntry(PublicKeyEntry entry);
 
         /// <summary>
-        /// 根据公钥序列号获取公钥实体。
+        /// 根据公钥 ID 获取公钥实体。
         /// </summary>
         /// <param name="serialNumber"></param>
         /// <returns></returns>
         PublicKeyEntry? GetEntry(string serialNumber);
 
         /// <summary>
-        /// 根据公钥序列号移除公钥实体。
+        /// 根据公钥 ID 移除公钥实体。
         /// </summary>
         /// <param name="serialNumber"></param>
         /// <returns></returns>
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         Task AddEntryAsync(PublicKeyEntry entry, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 异步根据公钥序列号获取公钥实体。
+        /// 异步根据公钥 ID 获取公钥实体。
         /// </summary>
         /// <param name="serialNumber"></param>
         /// <param name="cancellationToken"></param>
@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         Task<PublicKeyEntry?> GetEntryAsync(string serialNumber, CancellationToken cancellationToken = default);
 
         /// <summary>
-        /// 异步根据公钥序列号移除公钥实体。
+        /// 异步根据公钥 ID 移除公钥实体。
         /// </summary>
         /// <param name="serialNumber"></param>
         /// <param name="cancellationToken"></param>

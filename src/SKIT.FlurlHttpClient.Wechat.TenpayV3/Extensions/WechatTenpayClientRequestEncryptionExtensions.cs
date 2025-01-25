@@ -230,7 +230,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 string publicKey;
                 if (string.IsNullOrEmpty(request.WechatpaySerialNumber))
                 {
-                    // 如果未在请求中指定特定的平台公钥序列号，从管理器中取第一个
+                    // 如果未在请求中指定特定的平台公钥 ID，从管理器中取第一个
                     IEnumerable<PublicKeyEntry> entries = client.PlatformPublicKeyManager.AllEntries()
                         .Where(e => e.AlgorithmType == algorithmType);
                     if (!entries.Any())
@@ -244,7 +244,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 }
                 else
                 {
-                    // 如果已在请求中指定特定的平台公钥序列号，直接从管理器中取值
+                    // 如果已在请求中指定特定的平台公钥 ID，直接从管理器中取值
                     PublicKeyEntry? entry = client.PlatformPublicKeyManager.GetEntry(request.WechatpaySerialNumber!);
                     if (!entry.HasValue)
                     {
@@ -308,7 +308,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     if (client.PlatformPublicKeyManager is null)
                         throw new WechatTenpayException("Failed to encrypt request, because the platform public key manager is not initialized.");
 
-                    // 如果未在请求中指定特定的平台公钥序列号，从管理器中第一个
+                    // 如果未在请求中指定特定的平台公钥 ID，从管理器中第一个
                     IEnumerable<PublicKeyEntry> entries = await ((IPublicKeyManagerAsync)client.PlatformPublicKeyManager).AllEntriesAsync(cancellationToken).ConfigureAwait(false);
                     entries = entries.Where(e => e.AlgorithmType == algorithmType);
                     if (!entries.Any())
@@ -322,7 +322,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 }
                 else
                 {
-                    // 如果已在请求中指定特定的平台公钥序列号，直接从管理器中取值
+                    // 如果已在请求中指定特定的平台公钥 ID，直接从管理器中取值
                     PublicKeyEntry? entry = await ((IPublicKeyManagerAsync)client.PlatformPublicKeyManager).GetEntryAsync(request.WechatpaySerialNumber!, cancellationToken).ConfigureAwait(false);
                     if (!entry.HasValue)
                     {

@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings
         public string AlgorithmType { get; }
 
         /// <summary>
-        /// 获取公钥序列号。
+        /// 获取公钥 ID。
         /// </summary>
         public string SerialNumber { get; }
 
