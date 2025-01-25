@@ -186,6 +186,28 @@
 
 -   运营工具
 
+    -   商家转账
+
+        -   发起转账
+
+            -   发起转账：`CreatePayScoreServiceOrder`
+
+            -   撤销转账：`CancelFundAppMerchantTransferBill`
+
+            -   商户单号查询转账单：`GetFundAppMerchantTransferBillByOutBillNumber`
+
+            -   微信单号查询转账单：`GetFundAppMerchantTransferBillByTransferBillNumber`
+
+        -   获取电子回单
+
+            -   商户单号申请电子回单：`CreateFundAppMerchantTransferElecsignByOutBillNumber`
+
+            -   商户单号查询电子回单：`GetFundAppMerchantTransferElecsignByOutBillNumber`
+
+            -   微信单号申请电子回单：`CreateFundAppMerchantTransferElecsignByTransferBillNumber`
+
+            -   微信单号查询电子回单：`GetFundAppMerchantTransferElecsignByTransferBillNumber`
+
     -   转账到零钱
 
         -   发起批量转账：`CreateTransferBatch`
