@@ -647,6 +647,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.2.1 (2025-01-25)
+
+    -   **变更**：升级公共组件至 v3.1.1。
+
 -   Release 3.2.0 (2024-11-20)
 
     -   **新增**：适配 .NET 9.0，修复因运行时的中断性变更导致商户证书加载失败的问题。（_via_ [GitHub #171](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/171)）
