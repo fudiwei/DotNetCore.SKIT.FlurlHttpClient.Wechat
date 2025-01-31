@@ -33,6 +33,18 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.7.0 (2025-02-01)
+
+    -   **新增**：新增微信小店免审更新商品、小程序连接小店获取小程序的定制文件等接口。
+
+    -   **新增**：随官方更新微信小店分类、商品、订单、售后单等相关接口模型。
+
+    -   **新增**：暴露解析并解密回调通知事件的扩展方法。（_via_ [GitHub #173](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/173)）
+
+    -   **变更**：升级公共组件至 v3.1.1。
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.5.0。
+
 -   Release 3.6.0 (2024-11-05)
 
     -   **新增**：新增微信小店合作账号相关接口。
