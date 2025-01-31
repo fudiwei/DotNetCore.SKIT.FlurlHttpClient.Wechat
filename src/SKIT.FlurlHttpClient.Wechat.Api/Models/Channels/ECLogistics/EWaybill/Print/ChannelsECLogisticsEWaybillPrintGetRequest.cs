@@ -18,5 +18,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("template_id")]
         [System.Text.Json.Serialization.JsonPropertyName("template_id")]
         public string TemplateId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置子单的物流单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_waybill_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_waybill_id")]
+        public string? SubWaybillId { get; set; }
     }
 }

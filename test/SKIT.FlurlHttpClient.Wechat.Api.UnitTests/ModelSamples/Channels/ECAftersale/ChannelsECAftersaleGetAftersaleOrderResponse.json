@@ -16,6 +16,14 @@
                 {
                     "vourcher_code": "232324"
                 }
+            ],
+            "gift_product_list": [
+                {
+                    "product_id": "123",
+                    "sku_id": "456",
+                    "count": 1,
+                    "task_id": 234
+                }
             ]
         },
         "details": {

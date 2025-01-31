@@ -68,7 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stock_num")]
                 [System.Text.Json.Serialization.JsonPropertyName("stock_num")]
-                public int Stock { get; set; }
+                public int? Stock { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品编码。
@@ -222,6 +222,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("deliver_method")]
         [System.Text.Json.Serialization.JsonPropertyName("deliver_method")]
         public int? DeliverMethod { get; set; }
+
+        /// <summary>
+        /// 获取或设置发货账号类型列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("deliver_acct_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("deliver_acct_type")]
+        public IList<int>? DeliverAccountTypeList { get; set; }
 
         /// <summary>
         /// 获取或设置运费信息。

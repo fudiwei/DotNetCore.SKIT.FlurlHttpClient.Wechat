@@ -320,11 +320,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int? FloorPrice { get; set; }
 
                 /// <summary>
+                /// 获取或设置收货时间选项。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("confirm_receipt_days")]
+                [System.Text.Json.Serialization.JsonPropertyName("confirm_receipt_days")]
+                public string[]? ConfirmReceiptDays { get; set; }
+
+                /// <summary>
                 /// 获取或设置商品编辑要求信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_requirement")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_requirement")]
                 public Types.ProductRequirement? ProductRequirement { get; set; }
+
+                /// <summary>
+                /// 获取或设置尺码表列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("size_chart")]
+                [System.Text.Json.Serialization.JsonPropertyName("size_chart")]
+                public Types.SizeChart[]? SizeChartList { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否放心买必须打开坏损包赔。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_confidence_require_bad_must_pay")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_confidence_require_bad_must_pay")]
+                public bool? IsConfidenceRequireBadMustPay { get; set; }
             }
 
             public class Qualification : ChannelsECCategoryAllResponse.Types.Category.Types.CategoryAndQualification.Types.Qualification

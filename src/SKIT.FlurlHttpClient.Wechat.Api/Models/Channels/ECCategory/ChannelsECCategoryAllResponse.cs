@@ -133,6 +133,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("brand_qua")]
                         [System.Text.Json.Serialization.JsonPropertyName("brand_qua")]
                         public Types.Qualification? BrandQualification { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否放心买必须打开坏损包赔。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_confidence_require_bad_must_pay")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_confidence_require_bad_must_pay")]
+                        public bool? IsConfidenceRequireBadMustPay { get; set; }
                     }
                 }
 

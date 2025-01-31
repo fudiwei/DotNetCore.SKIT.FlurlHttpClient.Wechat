@@ -24,6 +24,40 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("vourcher_code")]
                                 public string VoucherCode { get; set; } = default!;
                             }
+
+                            public class GiftProduct
+                            {
+                                /// <summary>
+                                /// 获取或设置商品 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("product_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("product_id")]
+                                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                                public long ProductId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置 SKU ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sku_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
+                                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                                public long SKUId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置商品数量。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("count")]
+                                [System.Text.Json.Serialization.JsonPropertyName("count")]
+                                public int Count { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置活动 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("task_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("task_id")]
+                                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                                public long TaskId { get; set; }
+                            }
                         }
 
                         /// <summary>
@@ -55,6 +89,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("voucher_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("voucher_list")]
                         public Types.Voucher[]? VoucherList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置赠品列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("gift_product_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("gift_product_list")]
+                        public Types.GiftProduct[]? GiftProductList { get; set; }
                     }
 
                     public class AftersaleDetail
