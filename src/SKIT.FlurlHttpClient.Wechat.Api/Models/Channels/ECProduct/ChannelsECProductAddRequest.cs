@@ -147,14 +147,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int FullPaymentPresaleDeliveryType { get; set; }
 
                 /// <summary>
-                /// 获取或设置 SKU 预售周期开始时间。
+                /// 获取或设置 SKU 预售周期开始时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("presale_begin_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("presale_begin_time")]
                 public long PresaleBeginTimestamp { get; set; }
 
                 /// <summary>
-                /// 获取或设置 SKU 预售周期结束时间。
+                /// 获取或设置 SKU 预售周期结束时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("presale_end_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("presale_end_time")]
