@@ -3281,6 +3281,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
         #endregion
 
+        #region ECOpen
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/open/get_download_url 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/API/miniandstore/get_download_url.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOpenGetDownloadUrlResponse> ExecuteChannelsECOpenGetDownloadUrlAsync(this WechatApiClient client, Models.ChannelsECOpenGetDownloadUrlRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "open", "get_download_url")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOpenGetDownloadUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ECOrder
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/order/search 接口。</para>
