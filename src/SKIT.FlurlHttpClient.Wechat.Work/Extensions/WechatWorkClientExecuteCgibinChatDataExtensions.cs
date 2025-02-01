@@ -33,6 +33,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/chatdata/get_corp_auth_info 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100237 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinChatDataGetCorpAuthInfoResponse> ExecuteCgibinChatDataGetCorpAuthInfoAsync(this WechatWorkClient client, Models.CgibinChatDataGetCorpAuthInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "chatdata", "get_corp_auth_info")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinChatDataGetCorpAuthInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false); ;
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/chatdata/set_public_key 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -53,6 +76,83 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinChatDataSetPublicKeyResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false); ;
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/chatdata/set_receive_callback 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100018 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinChatDataSetReceiveCallbackResponse> ExecuteCgibinChatDataSetReceiveCallbackAsync(this WechatWorkClient client, Models.CgibinChatDataSetReceiveCallbackRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "chatdata", "set_receive_callback")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinChatDataSetReceiveCallbackResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false); ;
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/chatdata/set_log_level 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100109 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinChatDataSetLogLevelResponse> ExecuteCgibinChatDataSetLogLevelAsync(this WechatWorkClient client, Models.CgibinChatDataSetLogLevelRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "chatdata", "set_log_level")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinChatDataSetLogLevelResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false); ;
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/chatdata/upload_media 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100175 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinChatDataUploadMediaResponse> ExecuteCgibinChatDataUploadMediaAsync(this WechatWorkClient client, Models.CgibinChatDataUploadMediaRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.FileName is null)
+                request.FileName = Guid.NewGuid().ToString("N").ToLower();
+
+            if (request.FileContentType is null)
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "chatdata", "upload")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("type", request.Type);
+
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, formDataName: "media");
+            return await client.SendFlurlRequestAsync<Models.CgibinChatDataUploadMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

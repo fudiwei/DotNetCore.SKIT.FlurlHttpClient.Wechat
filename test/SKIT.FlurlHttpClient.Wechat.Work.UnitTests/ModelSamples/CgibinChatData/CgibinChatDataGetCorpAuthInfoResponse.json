@@ -1,0 +1,30 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "auth_edition_list": [
+        {
+            "edition": 1,
+            "auth_scope": {
+                "userid_list": [ "xxxx" ],
+                "department_id_list": [ 1, 2, 3 ],
+                "tag_id_list": [ 10, 11 ]
+            },
+            "status": 1,
+            "begin_time": 1726588800,
+            "end_time": 1729180799,
+            "msg_duration_days": 90
+        },
+        {
+            "edition": 2,
+            "auth_scope": {
+                "userid_list": [ "xxxx" ],
+                "department_id_list": [ 1, 2 ],
+                "tag_id_list": [ 10 ]
+            },
+            "status": 1,
+            "begin_time": 1726588800,
+            "end_time": 1729180799,
+            "msg_duration_days": 90
+        }
+    ]
+}
