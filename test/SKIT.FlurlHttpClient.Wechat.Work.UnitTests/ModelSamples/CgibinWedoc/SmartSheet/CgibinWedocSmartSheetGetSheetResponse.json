@@ -5,7 +5,8 @@
         {
             "sheet_id": "123Abc",
             "title": "XXXX",
-            "is_visible": true
+            "is_visible": true,
+            "type": "smartsheet"
         }
     ]
 }

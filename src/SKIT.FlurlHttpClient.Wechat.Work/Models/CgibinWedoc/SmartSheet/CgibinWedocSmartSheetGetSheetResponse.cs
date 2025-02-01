@@ -24,6 +24,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string Title { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置子表类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("type")]
+                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                public string Type { get; set; } = default!;
+
+                /// <summary>
                 /// 获取或设置是否可见。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_visible")]
