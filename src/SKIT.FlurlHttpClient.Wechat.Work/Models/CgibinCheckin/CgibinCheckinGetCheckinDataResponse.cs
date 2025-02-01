@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sch_checkin_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("sch_checkin_time")]
-                public long StandardCheckinTimestamp { get; set; }
+                public long ScheduledCheckinTimestamp { get; set; }
 
                 /// <summary>
                 /// 获取或设置打卡地点名称。

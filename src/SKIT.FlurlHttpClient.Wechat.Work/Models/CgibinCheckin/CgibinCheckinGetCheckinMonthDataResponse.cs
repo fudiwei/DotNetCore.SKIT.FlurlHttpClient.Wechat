@@ -97,7 +97,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("work_days")]
                         [System.Text.Json.Serialization.JsonPropertyName("work_days")]
-                        public int StandardDays { get; set; }
+                        public int WorkDays { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置休息天数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("rest_days")]
+                        [System.Text.Json.Serialization.JsonPropertyName("rest_days")]
+                        public int RestDays { get; set; }
 
                         /// <summary>
                         /// 获取或设置实际工作时长（单位：秒）。

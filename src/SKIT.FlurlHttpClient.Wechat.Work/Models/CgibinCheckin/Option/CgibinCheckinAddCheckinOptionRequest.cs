@@ -954,6 +954,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("open_sp_checkin")]
                 [System.Text.Json.Serialization.JsonPropertyName("open_sp_checkin")]
                 public bool? IsOpenApprovalCheckin { get; set; }
+
+                /// <summary>
+                /// 获取或设置打卡交替方式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("checkin_method_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("checkin_method_type")]
+                public int? CheckinMethodType { get; set; }
             }
         }
 
