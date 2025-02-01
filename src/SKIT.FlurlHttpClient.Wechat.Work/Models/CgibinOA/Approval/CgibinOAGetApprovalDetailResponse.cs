@@ -29,6 +29,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public long DepartmentId { get; set; }
                     }
 
+                    public class BatchApplicant
+                    {
+                        /// <summary>
+                        /// 获取或设置申请人成员账号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("userid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                        public string UserId { get; set; } = default!;
+                    }
+
                     public class Notifier
                     {
                         /// <summary>
@@ -889,7 +899,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("applyer")]
                 [System.Text.Json.Serialization.JsonPropertyName("applyer")]
-                public Types.Applicant Applicant { get; set; } = default!;
+                public Types.Applicant? Applicant { get; set; }
+
+                /// <summary>
+                /// 获取或设置批量申请人信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("batch_applyer")]
+                [System.Text.Json.Serialization.JsonPropertyName("batch_applyer")]
+                public Types.BatchApplicant? BatchApplicant { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请时间戳。
