@@ -1,4 +1,4 @@
-﻿## 如何接入会话内容存档 C SDK？
+﻿## 如何接入会话内容存档？
 
 ---
 
@@ -6,29 +6,29 @@
 >
 > [《企业微信开发者中心 - 服务端 API - 会话内容存档：使用前帮助》](https://developer.work.weixin.qq.com/document/path/91361)
 
-自 v2.16.0 版本起，本库支持接入会话内容存档 C SDK。
+自 v2.16.0 版本起，本库支持接入会话内容存档服务。
 
 如需使用本功能，请先在企业微信管理后台中开启会话内容存档并设置相关参数。
 
-注意，本章节中提到的会话内容存档，是指基于 C SDK 的企业内部会话内容存档。如果你需要接入服务商开放会话内容存档三方接口，请按照普通的 API 方式接入。
+注意，本章节中提到的会话内容存档，是指基于 C++ SDK 的企业内部会话内容存档。如果你需要接入服务商开放会话内容存档三方接口，请按照普通的 API 方式接入。
 
 ---
 
 ### 接入前必读
 
-企业微信官方仅提供了 C 语言实现的会话内容存档 SDK，且屏蔽了具体实现细节。
+企业微信官方仅提供了 C++ 实现的会话内容存档 SDK，且屏蔽了具体实现细节。
 
 本库在此基础之上，对相关功能做了二次封装。
 
 与简单的基于 P/Invoke 的调用方式相比，本库的封装更加符合 C# 项目的编程习惯，使得开发者无需关心非托管对象的内存空间开辟与释放问题，大大减轻了开发者的心智负担。
 
-为了减少本库的打包体积，本库并没有内嵌 C SDK 相关的动态链接库，需要开发者手动下载。
+为了减少本库的打包体积，本库并没有内嵌 C++ SDK 相关的动态链接库，需要开发者手动下载。
 
--   对于 Linux 环境，你需要[下载 v1.2 版本的 C SDK for Linux](https://developer.work.weixin.qq.com/document/path/91774)，解压缩并拷贝以下几个文件到你的项目根路径下，或添加至系统环境变量 _/$LD_LIBRARY_PATH/_（通常为 _/lib/_ 或 _/usr/lib/_）中：
+-   对于 Linux 环境，你需要[下载 v1.2~v3.0 版本的 Linux 环境 C SDK](https://developer.work.weixin.qq.com/document/path/91774)，解压缩并拷贝以下几个文件到你的项目根路径下，或添加至系统环境变量 _/$LD_LIBRARY_PATH/_（通常为 _/lib/_ 或 _/usr/lib/_）中：
 
     1. `libWeWorkFinanceSdk_C.so`
 
--   对于 Windows 环境，你需要[下载 v1.1 版本的 C SDK for Windows](https://developer.work.weixin.qq.com/document/path/91774)，解压缩并拷贝以下几个文件到你的项目根路径下，或添加至系统环境变量 _%SYSTEMROOT%\System32\\_（通常为 _C:\Windows\System32\\_）中：
+-   对于 Windows 环境，你需要[下载 v1.1~v3.0 版本的 Windows 环境 C SDK](https://developer.work.weixin.qq.com/document/path/91774)，解压缩并拷贝以下几个文件到你的项目根路径下，或添加至系统环境变量 _%SYSTEMROOT%\System32\\_（通常为 _C:\Windows\System32\\_）中：
 
     1. `libcrypto-1_1-x64.dll`
     2. `libcurl-x64.dll`
