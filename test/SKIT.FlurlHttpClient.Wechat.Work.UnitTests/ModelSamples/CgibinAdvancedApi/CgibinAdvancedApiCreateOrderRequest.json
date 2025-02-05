@@ -1,0 +1,20 @@
+{
+    "advanced_api_type": 1,
+    "custom_corpid": "wwxxx",
+    "buyer_userid": "xxxx",
+    "order_type": 1,
+    "chat_archive_api": {
+        "edition": 3,
+        "old_edition": 2,
+        "purchase_count": 100,
+        "take_effect_time": 1704038400,
+        "old_edition_info": {
+            "begin_time": 1704038000,
+            "end_time": 1704038000
+        },
+        "target_edition_info": {
+            "begin_time": 1704038000,
+            "end_time": 1704038000
+        }
+    }
+}
