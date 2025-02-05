@@ -19,6 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-06-06 下线。")]
         public static async Task<Models.SpecialGetTokenResponse> ExecuteSpecialGetTokenAsync(this WechatWorkSpecialApiClient client, Models.SpecialGetTokenRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -42,6 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-06-06 下线。")]
         public static async Task<Models.SpecialListJobResponse> ExecuteSpecialListJobAsync(this WechatWorkSpecialApiClient client, Models.SpecialListJobRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -66,6 +68,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-06-06 下线。")]
         public static async Task<Models.SpecialExecuteAndReportJobResponse> ExecuteSpecialExecuteAndReportJobAsync(this WechatWorkSpecialApiClient client, Models.SpecialExecuteAndReportJobRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -89,6 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-06-06 下线。")]
         public static async Task<Models.SpecialFetchMessageResponse> ExecuteSpecialFetchMessageAsync(this WechatWorkSpecialApiClient client, Models.SpecialFetchMessageRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -112,6 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2024-06-06 下线。")]
         public static async Task<Models.SpecialDownloadMediaResponse> ExecuteSpecialDownloadMediaAsync(this WechatWorkSpecialApiClient client, Models.SpecialDownloadMediaRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));

@@ -746,7 +746,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
         #endregion
 
-        #region SecurityApi
+        #region SpecialApi
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/chatdata/specapi/create_job 接口。</para>
         /// <para>
@@ -758,7 +758,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinChatDataSecurityApiCreateJobResponse> ExecuteCgibinChatDataSecurityApiCreateJobAsync(this WechatWorkClient client, Models.CgibinChatDataSecurityApiCreateJobRequest request, CancellationToken cancellationToken = default)
+        [Obsolete("相关接口或字段于 2024-06-06 下线。")]
+        public static async Task<Models.CgibinChatDataSpecialApiCreateJobResponse> ExecuteCgibinChatDataSpecialApiCreateJobAsync(this WechatWorkClient client, Models.CgibinChatDataSpecialApiCreateJobRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -767,7 +768,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "chatdata", "specapi", "create_job")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinChatDataSecurityApiCreateJobResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false); ;
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinChatDataSpecialApiCreateJobResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false); ;
         }
 
         /// <summary>
@@ -781,7 +782,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CgibinChatDataSecurityApiGetJobResultResponse> ExecuteCgibinChatDataSecurityApiGetJobResultAsync(this WechatWorkClient client, Models.CgibinChatDataSecurityApiGetJobResultRequest request, CancellationToken cancellationToken = default)
+        [Obsolete("相关接口或字段于 2024-06-06 下线。")]
+        public static async Task<Models.CgibinChatDataSpecialApiGetJobResultResponse> ExecuteCgibinChatDataSpecialApiGetJobResultAsync(this WechatWorkClient client, Models.CgibinChatDataSpecialApiGetJobResultRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -790,7 +792,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "chatdata", "specapi", "get_job_result")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinChatDataSecurityApiGetJobResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false); ;
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinChatDataSpecialApiGetJobResultResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false); ;
         }
         #endregion
     }

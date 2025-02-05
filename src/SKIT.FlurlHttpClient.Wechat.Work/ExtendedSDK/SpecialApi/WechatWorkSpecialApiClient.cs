@@ -9,6 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.SpecialApi
     /// <summary>
     /// 一个企业微信数据分析专区 API HTTP 客户端。
     /// </summary>
+    [Obsolete("相关接口或字段于 2024-06-06 下线。")]
     public sealed class WechatWorkSpecialApiClient : CommonClientBase, ICommonClient
     {
         /// <summary>

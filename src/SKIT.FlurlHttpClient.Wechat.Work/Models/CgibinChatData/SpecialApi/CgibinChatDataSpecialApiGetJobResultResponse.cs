@@ -1,9 +1,12 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/chatdata/specapi/get_job_result 接口的响应。</para>
     /// </summary>
-    public class CgibinChatDataSecurityApiGetJobResultResponse : WechatWorkResponse
+    [Obsolete("相关接口或字段于 2024-06-06 下线。")]
+    public class CgibinChatDataSpecialApiGetJobResultResponse : WechatWorkResponse
     {
         public static class Types
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
@@ -5,7 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/chatdata/specapi/create_job 接口的请求。</para>
     /// </summary>
-    public class CgibinChatDataSecurityApiCreateJobRequest : WechatWorkRequest
+    [Obsolete("相关接口或字段于 2024-06-06 下线。")]
+    public class CgibinChatDataSpecialApiCreateJobRequest : WechatWorkRequest
     {
         public static class Types
         {
