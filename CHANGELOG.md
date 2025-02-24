@@ -659,6 +659,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.2.2 (2025-02-24)
+
+    -   **修复**：修复清关申报相关接口模型定义错误。（_via_ [GitHub #179](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/179)）
+
 -   Release 3.2.1 (2025-01-25)
 
     -   **变更**：升级公共组件至 v3.1.1。
