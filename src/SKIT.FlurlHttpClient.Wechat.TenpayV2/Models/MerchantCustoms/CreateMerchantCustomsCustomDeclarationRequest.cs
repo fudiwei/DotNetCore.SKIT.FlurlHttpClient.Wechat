@@ -20,6 +20,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public override string? AppId { get; set; }
 
         /// <summary>
+        /// <inheritdoc/>
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public override string? NonceString { get; set; }
+
+        /// <summary>
         /// 获取或设置商户订单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_trade_no")]
