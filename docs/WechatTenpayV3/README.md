@@ -39,21 +39,25 @@
 using SKIT.FlurlHttpClient.Wechat.TenpayV3;
 using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
-var manager = new InMemoryCertificateManager();
 var options = new WechatTenpayClientOptions()
 {
     MerchantId = "微信商户号",
     MerchantV3Secret = "微信商户 v3 API 密钥",
     MerchantCertificateSerialNumber = "微信商户证书序列号",
     MerchantCertificatePrivateKey = System.IO.File.ReadAllText("/微信商户证书私钥文件路径/apiclient_key.pem"),
-    PlatformCertificateManager = manager
+
+    // 基于平台证书的认证方式还需设置以下参数：
+    PlatformAuthScheme = Settings.PlatformAuthScheme.Certificate,
+    PlatformCertificateManager = new InMemoryCertificateManager()
+
+    // 基于平台公钥的认证方式还需设置以下参数：
+    PlatformAuthScheme = Settings.PlatformAuthScheme.PublicKey,
+    PlatformPublicKeyManager = new InMemoryPublicKeyManager()
 };
 var client = WechatTenpayClientBuilder.Create(options).Build();
 ```
 
-🔥 平台证书管理器的具体用法请参阅下文的基础用法与加密、验签有关的章节。
-
-🔥 另，2024 年 10 月后新注册的微信商户已不再提供平台证书，取而代之的是平台公钥。与平台证书管理器类似，具体用法也请参阅下文的基础用法与加密、验签有关的章节。
+🔥 平台证书管理器、平台公钥管理器的具体用法请参阅下文的基础用法与加密、验签有关的章节。
 
 ### 请求 & 响应：
 
