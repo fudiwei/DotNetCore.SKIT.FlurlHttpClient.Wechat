@@ -10,6 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
     using SKIT.FlurlHttpClient.Primitives;
     using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices;
     using SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Settings;
+    using SKIT.FlurlHttpClient.Wechat.Work.Utilities;
 
     /// <summary>
     /// 一个企业微信会话内容存档 API HTTP 客户端。
@@ -159,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                             IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(dataPtr) :
                             IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(dataPtr) :
                             throw new PlatformNotSupportedException();
-                        string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr)!;
+                        string dataContent = MarshalHelper.PtrToStringUTF8(dataContentPtr)!;
 
                         response = JsonSerializer.Deserialize<Models.GetChatRecordsResponse>(dataContent);
                         response._InternalRawBytes = Encoding.UTF8.GetBytes(dataContent);
@@ -253,7 +254,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                             IsRunOnWindows() ? FinanceDllWindowsPInvoker.GetContentFromSlice(dataPtr) :
                             IsRunOnLinux() ? FinanceDllLinuxPInvoker.GetContentFromSlice(dataPtr) :
                             throw new PlatformNotSupportedException();
-                        string dataContent = MarshalerHelper.PtrToStringUTF8(dataContentPtr)!;
+                        string dataContent = MarshalHelper.PtrToStringUTF8(dataContentPtr)!;
 
                         try
                         {
@@ -357,7 +358,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance
                         Marshal.Copy(dataContentPtr, bytes, 0, bytes.Length);
 
                         response._InternalRawBytes = bytes;
-                        response.NextBufferIndex = MarshalerHelper.PtrToStringAnsi(dataNextBufferIndex);
+                        response.NextBufferIndex = MarshalHelper.PtrToStringAnsi(dataNextBufferIndex);
                         response.IsFinished = dataIsFinishFlag != 0;
                     }
 

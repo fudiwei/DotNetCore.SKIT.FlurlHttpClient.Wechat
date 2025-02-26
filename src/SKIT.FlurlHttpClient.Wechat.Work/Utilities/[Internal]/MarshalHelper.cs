@@ -1,11 +1,13 @@
 using System;
 using System.Runtime.InteropServices;
+using System.Security;
 using System.Text;
 
-namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices
+namespace SKIT.FlurlHttpClient.Wechat.Work.Utilities
 {
-    internal static class MarshalerHelper
+    internal static class MarshalHelper
     {
+        [SecurityCritical]
         public static string? PtrToStringAnsi(IntPtr ptr)
         {
             if (ptr == IntPtr.Zero)
@@ -14,6 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.InteropServices
             return Marshal.PtrToStringAnsi(ptr)!;
         }
 
+        [SecurityCritical]
         public static string? PtrToStringUTF8(IntPtr ptr)
         {
             if (ptr == IntPtr.Zero)
