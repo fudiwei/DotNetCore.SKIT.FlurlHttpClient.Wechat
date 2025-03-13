@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -14,6 +14,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             }
 
             public class Discount : CreatePayScoreServiceOrderRequest.Types.Discount
+            {
+            }
+
+            public class Device : CreatePayScoreServiceOrderRequest.Types.Device
             {
             }
         }
@@ -52,6 +56,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("post_discounts")]
         [System.Text.Json.Serialization.JsonPropertyName("post_discounts")]
         public IList<Types.Discount>? PostDiscountList { get; set; }
+
+        /// <summary>
+        /// 获取或设置设备信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("device")]
+        [System.Text.Json.Serialization.JsonPropertyName("device")]
+        public Types.Device? Device { get; set; }
 
         /// <summary>
         /// 获取或设置总金额（单位：分）。

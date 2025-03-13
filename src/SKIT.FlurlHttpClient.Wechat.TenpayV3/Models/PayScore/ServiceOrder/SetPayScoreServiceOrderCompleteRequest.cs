@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -22,6 +22,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             }
 
             public class Location : CreatePayScoreServiceOrderRequest.Types.Location
+            {
+            }
+
+            public class Device : CreatePayScoreServiceOrderRequest.Types.Device
             {
             }
         }
@@ -74,6 +78,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("location")]
         [System.Text.Json.Serialization.JsonPropertyName("location")]
         public Types.Location? Location { get; set; }
+
+        /// <summary>
+        /// 获取或设置设备信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("device")]
+        [System.Text.Json.Serialization.JsonPropertyName("device")]
+        public Types.Device? Device { get; set; }
 
         /// <summary>
         /// 获取或设置总金额（单位：分）。

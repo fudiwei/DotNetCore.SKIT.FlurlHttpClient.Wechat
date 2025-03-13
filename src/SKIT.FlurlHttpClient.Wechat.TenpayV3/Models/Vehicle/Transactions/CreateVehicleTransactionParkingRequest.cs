@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("currency")]
                 [System.Text.Json.Serialization.JsonPropertyName("currency")]
-                public string Currency { get; set; } = "CNY";
+                public string? Currency { get; set; } = "CNY";
             }
 
             public class Parking

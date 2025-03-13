@@ -142,6 +142,30 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("amount")]
                 public int Amount { get; set; }
             }
+
+            public class Device
+            {
+                /// <summary>
+                /// 获取或设置服务开始的设备 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("start_device_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("start_device_id")]
+                public string? StartDeviceId { get; set; }
+
+                /// <summary>
+                /// 获取或设置服务结束的设备 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("end_device_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("end_device_id")]
+                public string? EndDeviceId { get; set; }
+
+                /// <summary>
+                /// 获取或设置物料编码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("materiel_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("materiel_no")]
+                public string? MaterielNumber { get; set; }
+            }
         }
 
         /// <summary>
@@ -227,6 +251,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("location")]
         [System.Text.Json.Serialization.JsonPropertyName("location")]
         public Types.Location? Location { get; set; }
+
+        /// <summary>
+        /// 获取或设置设备信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("device")]
+        [System.Text.Json.Serialization.JsonPropertyName("device")]
+        public Types.Device? Device { get; set; }
 
         /// <summary>
         /// 获取或设置订单风险金信息。
