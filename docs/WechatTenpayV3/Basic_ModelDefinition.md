@@ -998,6 +998,10 @@
 
         -   获取购付汇账单文件下载链接：`GetFundsToOverseaBillDownloadUrl`
 
+        -   申请资金出境退回：`CreateFundsToOverseaReturnOrder`
+
+        -   查询出境退回结果：`GetFundsToOverseaReturnOrderByOutReturnNumber`
+
     -   平台收付通（下载账单）
 
         -   申请交易账单：`GetBillTradeBill`

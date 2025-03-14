@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/transaction-api/get-available-abroad-amount.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476109 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /funds-to-oversea/orders 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/funds-to-os-order-api/create-order.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476113 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /funds-to-oversea/orders/{out_order_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/funds-to-os-order-api/query-order.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476127 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /funds-to-oversea/bill-download-url 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-funds-to-oversea/purchase-payment-bill/query-download-info.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476132 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -101,5 +101,51 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundsToOverseaBillDownloadUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /funds-to-oversea/return/return-orders 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013735039 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateFundsToOverseaReturnOrderResponse> ExecuteCreateFundsToOverseaReturnOrderAsync(this WechatTenpayClient client, Models.CreateFundsToOverseaReturnOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "funds-to-oversea", "return", "return-orders");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateFundsToOverseaReturnOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /funds-to-oversea/return/return-orders/out-return-no/{out_return_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013735052 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetFundsToOverseaReturnOrderByOutReturnNumberResponse> ExecuteGetFundsToOverseaReturnOrderByOutReturnNumberAsync(this WechatTenpayClient client, Models.GetFundsToOverseaReturnOrderByOutReturnNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "funds-to-oversea", "return", "return-orders", "out-return-no", request.OutReturnNumber)
+                .SetQueryParam("sub_mchid", request.SubMerchantId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetFundsToOverseaReturnOrderByOutReturnNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
     }
 }

@@ -1,0 +1,13 @@
+{
+    "out_return_no": "R20250220103930",
+    "sub_mchid": "1900000109",
+    "return_id": "2375897293812",
+    "out_order_id": "merchant_1123123",
+    "transaction_id": "420000000000000010",
+    "refund_id": "5017752501201407033233368018",
+    "amount": 100,
+    "state": "PROCESSING",
+    "create_time": "2025-02-20T10:29:35+08:00",
+    "success_time": "2025-02-22T10:29:35+08:00",
+    "fail_reason": "RETURN_AMOUNT_NOT_ENOUGH"
+}
