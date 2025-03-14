@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/get_contact_way 接口的响应。</para>
@@ -225,6 +225,13 @@
                 [Newtonsoft.Json.JsonProperty("unionid")]
                 [System.Text.Json.Serialization.JsonPropertyName("unionid")]
                 public string? UnionId { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否同一外部企业客户只能添加同一个员工。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_exclusive")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_exclusive")]
+                public bool? IsExclusive { get; set; }
 
                 /// <summary>
                 /// 获取或设置结束语信息。

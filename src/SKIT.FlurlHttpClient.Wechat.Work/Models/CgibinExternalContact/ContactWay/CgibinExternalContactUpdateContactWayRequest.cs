@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -90,6 +90,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("unionid")]
         [System.Text.Json.Serialization.JsonPropertyName("unionid")]
         public string? UnionId { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否同一外部企业客户只能添加同一个员工。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("is_exclusive")]
+        [System.Text.Json.Serialization.JsonPropertyName("is_exclusive")]
+        public bool? IsExclusive { get; set; }
 
         /// <summary>
         /// 获取或设置结束语信息。
