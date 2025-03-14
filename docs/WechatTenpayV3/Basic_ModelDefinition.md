@@ -1370,6 +1370,20 @@
 
         -   查询不活跃商户身份核实结果：`GetComplianceInactiveMerchantIdentityVerificationByVerificationId`
 
+-   扩展工具
+
+    -   电商订单实名校验
+
+        -   实名信息校验：`GetRealNameVerification`
+
+    -   微信点餐订单
+
+        -   点餐订单信息同步：`SyncCateringOrderStatus`
+
+    -   微信寄快递
+
+        -   用户 OpenID 转换：`TransformExpressUserOpenId`
+
 -   其他
 
     -   来账识别
@@ -1575,14 +1589,6 @@
             -   特约商户银行来账查询：`QueryMerchantFundPartnerIncomeRecords`
 
             -   服务商银行来账查询：`QueryMerchantFundMerchantIncomeRecords`
-
-    -   微信点餐订单
-
-        -   点餐订单信息同步：`SyncCateringOrderStatus`
-
-    -   微信寄快递
-
-        -   用户 OpenID 转换：`TransformExpressUserOpenId`
 
 </details>
 
