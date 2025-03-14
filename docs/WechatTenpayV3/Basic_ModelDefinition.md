@@ -1062,6 +1062,16 @@
 
             -   查询保险理赔功能开通状态：`GetPlatformSolutionEcommerceInsuranceCompensationContractBySubMerchantId`
 
+    -   平台收付通（平台保险理赔）
+
+            -   请求保险理赔：`CreatePlatformSolutionEcommerceMerchantTransferInsuranceClaimBill`
+
+            -   请求保险理赔预下单：`CreatePlatformSolutionEcommerceMerchantTransferInsuranceClaimBillPreTransfer`
+
+            -   请求撤销保险理赔：`CancelPlatformSolutionEcommerceMerchantTransferInsuranceClaimBill`
+
+            -   查询保险理赔结果：`GetPlatformSolutionEcommerceMerchantTransferInsuranceClaimBillByOutBillNumber` / `GetPlatformSolutionEcommerceMerchantTransferInsuranceClaimBillByBillId`
+
     -   代金券
 
         -   创建代金券批次：`CreateMarketingFavorStock`

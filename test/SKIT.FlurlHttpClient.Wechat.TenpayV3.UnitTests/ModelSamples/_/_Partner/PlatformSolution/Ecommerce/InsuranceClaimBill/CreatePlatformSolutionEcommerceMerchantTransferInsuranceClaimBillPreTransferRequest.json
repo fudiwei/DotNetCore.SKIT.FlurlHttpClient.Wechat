@@ -1,0 +1,13 @@
+{
+	"sub_mchid": "1900001109",
+	"receiver": {
+		"type": "MERCHANT",
+		"transaction_info": {
+			"transaction_id": "1217752501201407033233368018"
+		}
+	},
+	"out_bill_no": "plfk2020042013",
+	"amount": 10000,
+	"transfer_remark": "直播违规扣罚",
+	"notify_url": "https://www.weixin.qq.com/wxpay/pay.php"
+}
