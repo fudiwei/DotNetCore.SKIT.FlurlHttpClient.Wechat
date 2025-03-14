@@ -14,7 +14,7 @@
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat</PackageProjectUrl>
         <PackageTags>Flurl.Http Wechat Weixin MicroMessage WechatWork WeixinWork WxWork WeWork WeCom 微信 企业微信 企业号 微信企业号</PackageTags>
-        <Version>3.7.0</Version>
+        <Version>3.8.0</Version>
         <Description>基于 Flurl.Http 的企业微信 API 客户端，支持企业内部开发、第三方应用开发、服务商代开发、智慧硬件开发模式，支持基础服务、通讯录管理、身份验证、企业互联、上下游、消息推送、应用管理、素材管理、电子发票、客户联系、微信客服、企业支付、会话内容存档、家校沟通、家校应用、政民沟通、邮件、文档、日程、会议、微盘、直播、公费电话、打卡、审批、汇报、人事助手、会议室、紧急通知应用、硬件云端接入等功能。</Description>
         <Authors>Fu Diwei</Authors>
         <RepositoryType>git</RepositoryType>

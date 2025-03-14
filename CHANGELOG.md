@@ -1237,6 +1237,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.8.0 (2025-03-14)
+
+    -   **新增**：新增数据与智能调用程序、调试模式、订单管理等相关接口。
+
+    -   **新增**：随官方更新客户联系联系我管理相关接口模型。（_via_ [GitHub #181](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/181)）
+
+    -   **变更**：移除旧版数据分析专区相关接口。
+
 -   Release 3.7.0 (2025-02-01)
 
     -   **新增**：新增数据与智能专区部分基础接口。
