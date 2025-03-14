@@ -7,8 +7,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 PAYSCORE.USER_PAID（针对直连商户）通知的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/success-notification.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/confirm-notification.html ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012587953 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012587960 ]]>
     /// </para>
     /// </summary>
     public class PayScoreServiceOrderResource : WechatTenpayEvent.Types.IDecryptedResource

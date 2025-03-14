@@ -7,7 +7,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 RECHARGE.CLOSED （仅限服务商）通知的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/notification/recharge-notice.html ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012763652 ]]>
     /// </para>
     /// </summary>
     public class PlatformSolutionRechargeResource : WechatTenpayEvent.Types.IDecryptedResource

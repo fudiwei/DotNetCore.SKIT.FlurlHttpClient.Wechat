@@ -6,14 +6,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 TRANSACTION.SUCCESS （仅限直连商户）通知的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/h5-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/native-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/profit-sharing/notice-division.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct-result-notify.html ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012286313 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012289459 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012289679 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012791836 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012791861 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012791882 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012791902 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013070368 ]]>
     /// </para>
     /// </summary>
     public class TransactionResource : WechatTenpayEvent.Types.IDecryptedResource

@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 VIOLATION.APPEAL 通知的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/disposal-record-notice.html ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012079216 ]]>
     /// </para>
     /// </summary>
     public class ViolationResource : WechatTenpayEvent.Types.IDecryptedResource

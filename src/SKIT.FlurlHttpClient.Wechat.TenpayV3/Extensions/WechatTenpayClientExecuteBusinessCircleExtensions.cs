@@ -13,8 +13,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /businesscircle/points/notify 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/smart-business-circle/points/notify-points.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/points/notify-points.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012534698 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012474133 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -36,8 +36,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /businesscircle/parkings 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/smart-business-circle/parkings/update-parkings.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/parkings/update-parkings.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012535502 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012474127 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -59,8 +59,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /businesscircle/user-authorizations/{openid} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/smart-business-circle/user-authorizations/query-user-authorization.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/user-authorizations/query-user-authorization.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012534848 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012474135 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -84,8 +84,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /businesscircle/users/{openid}/points/commit_status 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/smart-business-circle/points/get-points-commit-status.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/points/get-points-commit-status.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012534994 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012474129 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

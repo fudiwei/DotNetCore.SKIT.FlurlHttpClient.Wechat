@@ -12,8 +12,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /edu-papay/contracts/presign 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/contracts/pre-sign.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts/pre-sign.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012522560 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012465360 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -35,8 +35,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /edu-papay/contracts/id/{contract_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/contracts/query-contract.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts/query-contract.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012522951 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012465367 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -61,8 +61,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /edu-papay/user/{openid}/contracts 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/contracts/list-user-contracts.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts/list-user-contracts.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012523265 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012489548 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -92,8 +92,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [DELETE] /edu-papay/contracts/{contract_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/contracts/delete-contract.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts/list-user-contracts.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012466882 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012489548 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -115,8 +115,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /edu-papay/user-notifications/{contract_id}/send 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/user-notifications/send-user-notification.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/user-notifications/send-user-notification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012524814 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012855408 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -138,8 +138,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /edu-papay/transactions 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/transactions/create-transaction.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/transactions/create-transaction.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012524731 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012465548 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -161,8 +161,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /edu-papay/transactions/out-trade-no/{out_trade_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/transactions/query-transaction-by-out-trade-no.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/transactions/query-transaction-by-out-trade-no.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012523591 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012465574 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -184,8 +184,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /edu-papay/transactions/id/{transaction_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/education-fee-payment/transactions/query-transaction-by-id.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/transactions/query-transaction-by-id.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012523468 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012465567 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

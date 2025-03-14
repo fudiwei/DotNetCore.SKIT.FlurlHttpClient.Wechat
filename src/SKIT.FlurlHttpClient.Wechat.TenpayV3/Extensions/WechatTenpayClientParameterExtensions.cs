@@ -12,17 +12,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>生成客户端 JSAPI / 小程序调起支付所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/jsapi-payment/jsapi-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/mini-program-payment/mini-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/jsapi-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/mini-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/jsapi-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/mini-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/jsapi-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/mini-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/jsapi-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/jsapi-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/mini-transfer-payment.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012266069 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012266109 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012791857 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012791898 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012069855 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012085827 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090156 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090843 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012091236 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012166844 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012166847 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -58,8 +58,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>生成 APP 调起支付所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/in-app-payment/app-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/app-transfer-payment.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090168 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090181 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090949 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012166845 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080233 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -75,11 +78,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>生成 APP 调起支付所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/app-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/app-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/app-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/mini-transfer-payment.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/app-transfer-payment.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090168 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090181 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090949 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012166845 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080233 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

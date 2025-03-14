@@ -12,8 +12,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /certificates 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/platform-certificate/api-v3-get-certificates/get.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platform-certificate/api-v3-get-certificates/get.html ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012551764 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715700 ]]> <br/>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

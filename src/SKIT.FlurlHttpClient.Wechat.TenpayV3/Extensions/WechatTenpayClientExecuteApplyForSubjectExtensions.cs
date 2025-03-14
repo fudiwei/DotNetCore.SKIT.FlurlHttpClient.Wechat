@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /apply4subject/applyment 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/submit-applyment.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012722388 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /apply4subject/applyment 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/get-audit-result.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012697715 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /apply4subject/applyment 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/get-audit-result.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012697715 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -81,7 +81,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /apply4subject/applyment/{business_code}/cancel 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/cancel-applyment.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012697627 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -103,7 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /apply4subject/applyment/{applyment_id}/cancel 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/cancel-applyment.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012697627 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -125,7 +125,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /apply4subject/applyment/merchants/{sub_mchid}/state 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/applyment/get-authorize-state.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012467549 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

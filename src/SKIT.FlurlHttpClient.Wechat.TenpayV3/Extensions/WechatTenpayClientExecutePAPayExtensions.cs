@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/schedule/query-policy-period.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012471229 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -85,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}/schedule 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/schedule/schedule-policy-period.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012471270 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/insurance-sign/contracts/pre-entrust-sign/jsapi 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/jsapi-sign-and-create-transaction.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012528600 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/insurance-sign/contracts/pre-entrust-sign/mini-program 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/mimi-program-sign-and-create-transaction.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012528950 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -153,7 +153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/insurance-sign/contracts/pre-entrust-sign/h5 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/h5-sign-and-create-transaction.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012529050 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -177,7 +177,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /papay/insurance-sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/operate-contract/get-contract-by-code.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012472641 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -199,7 +199,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/insurance-sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/operate-contract/terminate-contract-by-code.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012472767 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -221,7 +221,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /papay/insurance-sign/policy_periods/plan-id/{plan_id}/out-contract-code/{out_contract_code} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/query-policy-periods-by-code.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012489530 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -245,7 +245,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/insurance-sign/contracts/plan-id/{plan_id}/contract-id/{contract_id}/renew 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/apply-renew-contract.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012489588 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -269,7 +269,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/insurance-pay/transactions/apply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct/create-transaction.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012471158 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -293,7 +293,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /papay/pay/schedules/contract-id/{contract_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-query-deduct-schedule.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012466997 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -315,7 +315,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/pay/schedules/contract-id/{contract_id}/schedule 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-schedule-deduction.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012467036 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -339,7 +339,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/pay/transactions/apply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-schedule-deduction.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012467036 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -363,7 +363,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/scheduled-deduct-sign/contracts/pre-entrust-sign/app 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-app-scheduled-deduct-pre-sign.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012524934 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -385,7 +385,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/scheduled-deduct-sign/contracts/pre-entrust-sign/h5 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-h5-scheduled-deduct-pre-sign.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012489208 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -407,7 +407,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/scheduled-deduct-sign/contracts/pre-entrust-sign/jsapi 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/jsapi-scheduled-deduct-pre-sign.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012525133 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -429,7 +429,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/scheduled-deduct-sign/contracts/pre-entrust-sign/mini-program 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/mini-program-scheduled-deduct-pre-sign.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012525209 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -453,7 +453,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /papay/sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-get-contract-by-code.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012489245 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -475,7 +475,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /papay/sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-terminate-contract-by-code.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012489295 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

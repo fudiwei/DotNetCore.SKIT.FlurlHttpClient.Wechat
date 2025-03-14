@@ -13,8 +13,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013053249 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013053420 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013059017 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013059030 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -41,8 +43,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013053249 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013053420 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013059017 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013059030 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -72,8 +76,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013053249 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013053420 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013059017 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013059030 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -102,8 +108,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步验证回调通知事件签名。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/development/interface-rules/signature-verification.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/development/interface-rules/signature-verification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013053249 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013053420 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013059017 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013059030 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

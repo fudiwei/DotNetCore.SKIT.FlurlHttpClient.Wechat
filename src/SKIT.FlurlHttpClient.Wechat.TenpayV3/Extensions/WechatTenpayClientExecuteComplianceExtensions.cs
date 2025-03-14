@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /compliance/inactive-merchant-identity-verification/merchants 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/inactive-merchant-identity-verification/inactive-mch-identity-verification/create-inactive-merchant-identity-verification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471357 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /compliance/inactive-merchant-identity-verification/merchants/{sub_mchid}/verifications/{verification_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/inactive-merchant-identity-verification/inactive-mch-identity-verification/query-inactive-merchant-identity-verification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471359 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

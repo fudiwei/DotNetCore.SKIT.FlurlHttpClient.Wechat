@@ -4,8 +4,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 TRANSACTION.SUCCESS 通知的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/combine-payment/orders/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/payment-notice.html ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012158598 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012231898 ]]>
     /// </para>
     /// </summary>
     public class CombineTransactionResource : WechatTenpayEvent.Types.IDecryptedResource

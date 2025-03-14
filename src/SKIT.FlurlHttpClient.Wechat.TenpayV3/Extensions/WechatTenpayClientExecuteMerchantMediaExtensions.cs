@@ -15,9 +15,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /merchant/media/upload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/upload.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/contracted-merchant-application/upload.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/confirmation-of-account-creation/upload.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012760432 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012760490 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012760509 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -49,7 +49,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /merchant/media/video_upload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/contracted-merchant-application/video-upload.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012761084 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

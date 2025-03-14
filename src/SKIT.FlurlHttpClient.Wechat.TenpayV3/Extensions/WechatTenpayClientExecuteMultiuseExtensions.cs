@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /multiuse/stocks/{stock_id}/refund-flow 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/multiuse-coupon/stock/refund-flow.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012539762 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /multiuse/stocks/{stock_id}/send-flow 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/multiuse-coupon/stock/send-flow.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012539756 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /multiuse/stocks/{stock_id}/use-flow 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/multiuse-coupon/stock/use-flow.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012539758 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /multiuse/users/{openid}/coupons 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/multiuse-coupon/multiuse-coupon/send-multiuse-coupon.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012539766 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 MCHTRANSFER.BATCH.CLOSED 通知的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/batch-transfer-to-balance/transfer-batch-callback-notice.html ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012269028 ]]> <br/>
     /// </para>
     /// </summary>
     public class MerchantTransferBatchClosedResource : WechatTenpayEvent.Types.IDecryptedResource

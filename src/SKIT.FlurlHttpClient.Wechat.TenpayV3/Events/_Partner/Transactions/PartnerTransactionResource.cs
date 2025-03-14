@@ -6,16 +6,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 TRANSACTION.SUCCESS （仅限服务商）通知的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-jsapi-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-in-app-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-h5-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-native-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-mini-program-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-combine-payment/payment-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/ecommerce-profit-sharing/notification.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/profit-sharing/notice-division.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/brand-profit-sharing/notification.html ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012085146 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080237 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012085680 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012085875 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012085801 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090195 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012237246 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012116672 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012075216 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012075400 ]]>
     /// </para>
     /// </summary>
     public class PartnerTransactionResource : WechatTenpayEvent.Types.IDecryptedResource

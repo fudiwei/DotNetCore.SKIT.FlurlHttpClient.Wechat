@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 COUPON.SEND 通知的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/coupon/busicoupon-send.html ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012285279 ]]>
     /// </para>
     /// </summary>
     public class MarketingBusifavorCouponResource : WechatTenpayEvent.Types.IDecryptedResource

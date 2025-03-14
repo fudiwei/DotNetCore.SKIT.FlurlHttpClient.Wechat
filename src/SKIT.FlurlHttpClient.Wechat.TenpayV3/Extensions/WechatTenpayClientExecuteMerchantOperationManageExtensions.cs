@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /mch-operation-manage/merchant-limitations/sub-mchid/{sub_mchid} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/limited-functions-and-reasons/mch-limitations/query-sub-mch-limitation.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012803072 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

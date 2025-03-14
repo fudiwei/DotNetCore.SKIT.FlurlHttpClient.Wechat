@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /mch_operate/risk/withdrawl-apply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/withdrawal-apply/withdrawal-apply/submit-apply.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012488950 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /mch_operate/risk/withdrawl-apply/out-request-no/{out_request_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/withdrawal-apply/withdrawal-apply/get-apply-by-out-request-no.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476164 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /mch_operate/risk/withdrawl-apply/applyment-id/{applyment_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/withdrawal-apply/withdrawal-apply/get-apply-by-applyment-id.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012778400 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

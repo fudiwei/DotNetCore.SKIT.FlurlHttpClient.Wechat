@@ -15,12 +15,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/favor/media/image-upload 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/cash-coupons/upload-image.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/merchant-exclusive-coupon/upload-image.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/gift-activity/upload-image.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/cash-coupons/upload-image.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/merchant-exclusive-coupon/upload-image.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gift-activity/upload-image.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012557233 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012557243 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012557248 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012759802 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012760240 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012760270 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

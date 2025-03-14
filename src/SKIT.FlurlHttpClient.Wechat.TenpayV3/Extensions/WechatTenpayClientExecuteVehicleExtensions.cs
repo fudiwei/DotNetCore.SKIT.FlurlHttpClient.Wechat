@@ -14,8 +14,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/parking/services/find 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/services/query-plate-service.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/services/query-plate-service.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012534043 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012534183 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -42,8 +42,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /vehicle/parking/parkings 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/parkings/create-parking.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/parkings/create-parking.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012533937 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012533994 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -67,8 +67,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /vehicle/transactions/parking 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/transactions/create-transaction.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/transactions/create-transaction.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012534352 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012534427 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -90,8 +90,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/transactions/out-trade-no/{out_trade_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/wexin-pay-score-parking/transactions/query-transaction.html ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/wexin-pay-score-parking/transactions/query-transaction.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012534308 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012534441 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -116,7 +116,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /vehicle/etc/preopen 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/contracts/pre-open-etc.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715215 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -138,7 +138,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /vehicle/etc/transactions/highway 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/transactions/pay-etc-on-highway.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715331 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -160,7 +160,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/etc/users/{openid}/contracts 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/contracts/get-no.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715623 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -185,7 +185,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/etc/contracts/{contract_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/contracts/get-by.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715667 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -208,7 +208,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/etc/transactions/out-trade-no/{out_trade_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/transactions/get-by-trade-no.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715845 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -231,7 +231,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /vehicle/etc/transactions/id/{transaction_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/etc-authorization/transactions/get-by-transacation-id.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715719 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

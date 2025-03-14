@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /password-exempt-contract/contracts/qs/pre-entrust-sign/mini-program 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-password-free-contract/sign/qs-mini-program-pre-entrust-sign.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471282 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /password-exempt-contract/contracts/qs/pre-entrust-sign/pay-redirect-sign 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-password-free-contract/sign/qs-pay-redirect-sign-pre-entrust-sign.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471286 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /password-exempt-contract/contracts/service-provider/pre-entrust-sign/mini-program 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-password-free-contract/sign/sp-mini-program-pre-entrust-sign.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471269 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /password-exempt-contract/contracts/service-provider/pre-entrust-sign/pay-redirect-sign 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-password-free-contract/sign/sp-pay-redirect-sign-pre-entrust-sign.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471272 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /password-exempt-contract/contracts/service-id/{service_id}/out-contract-code/{out_contract_code} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-password-free-contract/contract/partner-get-by-code.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715321 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -122,7 +122,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /password-exempt-contract/contracts/service-id/{service_id}/out-contract-code/{out_contract_code}/terminate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/partner-password-free-contract/contract/partner-terminate-by-code.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012715383 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

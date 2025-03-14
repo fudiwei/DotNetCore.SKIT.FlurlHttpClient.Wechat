@@ -6,8 +6,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 PAYSCORE.USER_SIGN_PLAN（针对直连商户）通知的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/cancel-sign-plan-notice.html ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/sign-plan-notice.html ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012286184 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012286193 ]]>
     /// </para>
     /// </summary>
     public class PayScoreUserSignPlanResource : WechatTenpayEvent.Types.IDecryptedResource

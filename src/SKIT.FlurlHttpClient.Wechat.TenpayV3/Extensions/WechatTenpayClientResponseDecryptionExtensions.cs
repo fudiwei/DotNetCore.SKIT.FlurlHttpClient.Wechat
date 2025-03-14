@@ -51,7 +51,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                             if (string.IsNullOrEmpty(client.Credentials.MerchantV3Secret))
                                 throw new WechatTenpayException("Failed to decrypt response, because the merchant APIv3 secret is not set.");
 
-                            // REF: https://pay.weixin.qq.com/docs/merchant/development/shangmi/guide.html
+                            // REF: https://pay.weixin.qq.com/doc/v3/merchant/4012076194
                             // 由于 SM4 密钥长度的限制，密钥由 APIv3 密钥通过国密 SM3 Hash 计算生成。SM4 密钥取其摘要（256bit）的前 128bit。
                             byte[] secretBytes = SM3Utility.Hash(EncodedString.FromLiteralString(client.Credentials.MerchantV3Secret));
                             byte[] keyBytes = new byte[16];

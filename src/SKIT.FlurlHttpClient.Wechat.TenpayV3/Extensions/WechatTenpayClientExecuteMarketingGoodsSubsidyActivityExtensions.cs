@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-stores/add-representative.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012384386 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -36,7 +36,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representatives 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-representative.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012384405 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [DELETE] /marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-representative.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012384399 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/materials 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012384395 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -108,7 +108,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012384414 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -132,7 +132,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores/{store_code} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012384414 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -154,7 +154,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/add-stores.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012384421 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -176,7 +176,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [DELETE] /marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-stores.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012384431 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

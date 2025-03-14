@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /merchant-risk-manage/report-trade-union-information 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk/report-trade-risk-information.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012692160 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /merchant-risk-manage/trade-risk-information 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk/query-trade-risk-information.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012467535 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /merchant-risk-manage/trade-risk-result 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk/report-trade-risk-information.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012692160 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /merchant-risk-manage/violation-notifications 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/create-violation-notification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471333 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -109,7 +109,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /merchant-risk-manage/violation-notifications 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/query-violation-notification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471327 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -131,7 +131,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [PUT] /merchant-risk-manage/violation-notifications 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/update-violation-notification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471330 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -153,7 +153,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [DELETE] /merchant-risk-manage/violation-notifications 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/violation-notice/violation-notifications/delete-violation-notification.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012471334 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /goldplan/merchants/changegoldplanstatus 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/status/change-gold-plan-status.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012473796 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /goldplan/merchants/changecustompagestatus 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/status/change-custom-page-status.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012473788 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /goldplan/merchants/set-advertising-industry-filter 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/merchants/set-advertising-industry-filter.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012473784 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /goldplan/merchants/open-advertising-show 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/merchants/open-advertising-show.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012473794 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /goldplan/merchants/close-advertising-show 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/gold-plan/merchants/close-advertising-show.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012473781 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
