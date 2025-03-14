@@ -1056,13 +1056,11 @@
 
             -   查询二级商户可扫码充值员工列表：`QueryPlatformSolutionEcommerceRechargeEmployees`
 
-    -   平台收付通（赔付）
+    -   平台收付通（平台保险理赔）
 
             -   开通保险理赔功能：`ApplyPlatformSolutionEcommerceInsuranceCompensationContract`
 
             -   查询保险理赔功能开通状态：`GetPlatformSolutionEcommerceInsuranceCompensationContractBySubMerchantId`
-
-    -   平台收付通（平台保险理赔）
 
             -   请求保险理赔：`CreatePlatformSolutionEcommerceMerchantTransferInsuranceClaimBill`
 
@@ -1071,6 +1069,16 @@
             -   请求撤销保险理赔：`CancelPlatformSolutionEcommerceMerchantTransferInsuranceClaimBill`
 
             -   查询保险理赔结果：`GetPlatformSolutionEcommerceMerchantTransferInsuranceClaimBillByOutBillNumber` / `GetPlatformSolutionEcommerceMerchantTransferInsuranceClaimBillByBillId`
+
+    -   平台收付通（平台售后赔付）
+
+            -   请求赔付：`CreatePlatformSolutionEcommerceMerchantTransferCompensateBill`
+
+            -   请求赔付预下单：`CreatePlatformSolutionEcommerceMerchantTransferCompensateBillPreTransfer`
+
+            -   请求撤销赔付：`CancelPlatformSolutionEcommerceMerchantTransferCompensateBill`
+
+            -   查询赔付结果：`GetPlatformSolutionEcommerceMerchantTransferCompensateBillByOutBillNumber` / `GetPlatformSolutionEcommerceMerchantTransferCompensateBillByBillId`
 
     -   代金券
 
