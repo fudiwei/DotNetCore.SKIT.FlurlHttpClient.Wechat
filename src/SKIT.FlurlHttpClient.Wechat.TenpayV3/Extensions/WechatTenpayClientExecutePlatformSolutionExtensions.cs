@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /platsolution/ecommerce/insurance-compensation-contracts 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/plat-compensation/plat-compensation/open-insurance-compensation.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012781476 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /platsolution/ecommerce/insurance-compensation-contracts/sub-mchid/{sub_mchid}/check-opened 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/plat-compensation/plat-compensation/check-insurance-compensation-opened.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012781480 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /platsolution/ecommerce/recharges/apply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/apply.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012762860 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /platsolution/ecommerce/recharges/out-recharge-no/{out_recharge_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/get-by-out-no.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012762874 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -105,7 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /platsolution/ecommerce/recharges/out-recharge-no/{out_recharge_no}/close 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/close.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012762895 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -128,7 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /platsolution/ecommerce/bank-transfer-recharges/apply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/bank-recharge/bank-transfer-recharge-apply.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012763053 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -150,7 +150,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /platsolution/ecommerce/bank-transfer-recharges/out-recharge-no/{out_recharge_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/bank-recharge/bank-transfer-recharge-get-by-out-no.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012763057 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -167,7 +167,74 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionEcommerceBankTransferRechargeByOutRechargeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+        #endregion
 
+        #region EcommerceRechargeEmployees
+        /// <summary>
+        /// <para>异步调用 [POST] /platsolution/ecommerce/recharge-employees 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013521743 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.AddPlatformSolutionEcommerceRechargeEmployeeResponse> ExecuteAddPlatformSolutionEcommerceRechargeEmployeeAsync(this WechatTenpayClient client, Models.AddPlatformSolutionEcommerceRechargeEmployeeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "ecommerce", "recharge-employees");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.AddPlatformSolutionEcommerceRechargeEmployeeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /platsolution/ecommerce/recharge-employees/sub-mchid/{sub_mchid}/sp-openid/{sp_openid}/delete 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013521753 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DeletePlatformSolutionEcommerceRechargeEmployeeResponse> ExecuteDeletePlatformSolutionEcommerceRechargeEmployeeAsync(this WechatTenpayClient client, Models.DeletePlatformSolutionEcommerceRechargeEmployeeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "ecommerce", "recharge-employees", "sub-mchid", request.SubMerchantId, "sp-openid", request.OpenId, "delete");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DeletePlatformSolutionEcommerceRechargeEmployeeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /platsolution/ecommerce/recharge-employees/sub-mchid/{sub_mchid} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013521757 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.QueryPlatformSolutionEcommerceRechargeEmployeesResponse> ExecuteQueryPlatformSolutionEcommerceRechargeEmployeesAsync(this WechatTenpayClient client, Models.QueryPlatformSolutionEcommerceRechargeEmployeesRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "ecommerce", "recharge-employees", "sub-mchid", request.SubMerchantId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.QueryPlatformSolutionEcommerceRechargeEmployeesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
 
         #region MerchantTransfer

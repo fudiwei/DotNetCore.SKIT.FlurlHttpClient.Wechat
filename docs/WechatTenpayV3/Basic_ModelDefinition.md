@@ -1050,6 +1050,12 @@
 
             -   查询银行转账充值结果：`GetPlatformSolutionEcommerceBankTransferRechargeByOutRechargeNumber`
 
+            -   添加二级商户可扫码充值员工：`AddPlatformSolutionEcommerceRechargeEmployee`
+
+            -   删除二级商户可扫码充值员工：`DeletePlatformSolutionEcommerceRechargeEmployee`
+
+            -   查询二级商户可扫码充值员工列表：`QueryPlatformSolutionEcommerceRechargeEmployees`
+
     -   平台收付通（赔付）
 
             -   开通保险理赔功能：`ApplyPlatformSolutionEcommerceInsuranceCompensationContract`
