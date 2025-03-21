@@ -190,7 +190,7 @@
 
         -   发起转账
 
-            -   发起转账：`CreatePayScoreServiceOrder`
+            -   发起转账：`CreateFundAppMerchantTransferBill`
 
             -   撤销转账：`CancelFundAppMerchantTransferBill`
 
