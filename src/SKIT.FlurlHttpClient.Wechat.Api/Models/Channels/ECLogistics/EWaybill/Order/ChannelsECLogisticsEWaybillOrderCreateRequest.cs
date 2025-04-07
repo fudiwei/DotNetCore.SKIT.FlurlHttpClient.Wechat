@@ -118,6 +118,92 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonExtensionData]
                 public IDictionary<string, object>? ExtensionData { get; set; }
             }
+
+            public class DeliveryInfo
+            {
+                public static class Types
+                {
+                    public class SubPackage
+                    {
+                        /// <summary>
+                        /// 获取或设置重量（单位：克）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("weight_g")]
+                        [System.Text.Json.Serialization.JsonPropertyName("weight_g")]
+                        public int? Weight { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置长度（单位：厘米）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("space_x")]
+                        [System.Text.Json.Serialization.JsonPropertyName("space_x")]
+                        public int? Length { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置宽度（单位：厘米）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("space_y")]
+                        [System.Text.Json.Serialization.JsonPropertyName("space_y")]
+                        public int? Width { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置高度（单位：厘米）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("space_z")]
+                        [System.Text.Json.Serialization.JsonPropertyName("space_z")]
+                        public int? Height { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置包裹编号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("package_no")]
+                        [System.Text.Json.Serialization.JsonPropertyName("package_no")]
+                        public string? PackageNumber { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置发货方式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("delivery_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("delivery_type")]
+                public int? DeliveryType { get; set; }
+
+                /// <summary>
+                /// 获取或设置预约上门开始时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("collected_time_begin")]
+                [System.Text.Json.Serialization.JsonPropertyName("collected_time_begin")]
+                public long? CollectedBeginTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置预约上门结束时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("collected_time_end")]
+                [System.Text.Json.Serialization.JsonPropertyName("collected_time_end")]
+                public long? CollectedEndTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置子母件包裹数量。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("package_quantity")]
+                [System.Text.Json.Serialization.JsonPropertyName("package_quantity")]
+                public int? PackageQuantity { get; set; }
+
+                /// <summary>
+                /// 获取或设置子件列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("subpackage_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("subpackage_list")]
+                public IList<Types.SubPackage>? SubPackageList { get; set; }
+
+                /// <summary>
+                /// 获取或设置商家额外信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("merchant_ext_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("merchant_ext_info")]
+                public string? MerchantExtraInfo { get; set; }
+            }
         }
 
         /// <summary>
@@ -217,5 +303,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("ext_info")]
         [System.Text.Json.Serialization.JsonPropertyName("ext_info")]
         public Types.EWaybillExtra? EWaybillExtra { get; set; }
+
+        /// <summary>
+        /// 获取或设置发货信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("delivery_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("delivery_info")]
+        public Types.DeliveryInfo? DeliveryInfo { get; set; }
     }
 }

@@ -3,5 +3,17 @@
     "errmsg": "ok",
     "ewaybill_order_id": "111",
     "waybill_id": "1212xzcxz",
-    "delivery_error_msg": "xxxx"
+    "delivery_error_msg": "xxxx",
+    "waybill_id_list": [
+        {
+            "waybill_id": "xxxxxx",
+            "waybill_type": 1,
+            "create_time": 1732515904
+        },
+        {
+            "waybill_id": "xxxxxx",
+            "waybill_type": 2,
+            "create_time": 1732515904
+        }
+    ]
 }
