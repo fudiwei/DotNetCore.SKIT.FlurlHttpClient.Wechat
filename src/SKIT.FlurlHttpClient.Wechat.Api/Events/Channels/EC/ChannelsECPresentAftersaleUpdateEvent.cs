@@ -1,14 +1,13 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.channels_ec_aftersale_update 事件的数据。</para>
+    /// <para>表示 EVENT.channels_ec_present_aftersale_update 事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/aftersale/ec_callback/channels_ec_aftersale_update.html ]]> <br>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/ec_callback/channels_ec_aftersale_update.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/ec_callback/channels_ec_present_aftersale_update.html ]]>
     /// </para>
     /// </summary>
-    public class ChannelsECAftersaleUpdateEvent : WechatApiEvent
+    public class ChannelsECPresentAftersaleUpdateEvent : WechatApiEvent
     {
         public static class Types
         {
@@ -45,9 +44,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// <summary>
         /// 获取或设置售后单信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("finder_shop_aftersale_status_update")]
-        [System.Text.Json.Serialization.JsonPropertyName("finder_shop_aftersale_status_update")]
-        [System.Xml.Serialization.XmlElement("finder_shop_aftersale_status_update")]
+        [Newtonsoft.Json.JsonProperty("finder_shop_present_aftersale_status_update")]
+        [System.Text.Json.Serialization.JsonPropertyName("finder_shop_present_aftersale_status_update")]
+        [System.Xml.Serialization.XmlElement("finder_shop_present_aftersale_status_update")]
         public Types.AftersaleOrder AftersaleOrder { get; set; } = default!;
     }
 }

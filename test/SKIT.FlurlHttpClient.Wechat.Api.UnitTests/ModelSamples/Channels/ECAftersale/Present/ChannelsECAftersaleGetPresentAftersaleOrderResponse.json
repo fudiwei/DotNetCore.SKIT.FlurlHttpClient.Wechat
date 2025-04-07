@@ -1,0 +1,49 @@
+{
+    "errcode": 0,
+    "after_sale_order": {
+        "after_sale_order_id": "6000000000000001",
+        "present_order_id": "4200000000000001",
+        "status": "MERCHANT_REFUND_SUCCESS",
+        "openid": "OPENID",
+        "unionid": "UNIONID",
+        "create_time": 1591319454,
+        "update_time": 1612754444,
+        "refund_info": {
+            "amount": 100
+        },
+        "order_info_list": [
+            {
+                "order_id": "3700000000000001",
+                "refund_info": {
+                    "amount": 51
+                },
+                "product_info_list": [
+                    {
+                        "product_id": "1111",
+                        "sku_id": "2222",
+                        "count": 1,
+                        "refund_info": {
+                            "amount": 51
+                        }
+                    }
+                ]
+            },
+            {
+                "order_id": "3700000000000002",
+                "refund_info": {
+                    "amount": 49
+                },
+                "product_info_list": [
+                    {
+                        "product_id": "3333",
+                        "sku_id": "4444",
+                        "count": 1,
+                        "refund_info": {
+                            "amount": 49
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
