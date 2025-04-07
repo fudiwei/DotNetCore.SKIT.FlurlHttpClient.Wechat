@@ -1,16 +1,16 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/product/h5url/get 接口的请求。</para>
+    /// <para>表示 [POST] /channels/ec/basics/shop/qrcode/get 接口的请求。</para>
     /// </summary>
-    public class ChannelsECProductH5UrlGetRequest : WechatApiRequest, IInferable<ChannelsECProductH5UrlGetRequest, ChannelsECProductH5UrlGetResponse>
+    public class ChannelsECBasicsShopQrcodeGetRequest : WechatApiRequest, IInferable<ChannelsECBasicsShopQrcodeGetRequest, ChannelsECBasicsShopQrcodeGetResponse>
     {
         /// <summary>
-        /// 获取或设置商品 ID。
+        /// 获取或设置二维码类型。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("product_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("product_id")]
-        public long ProductId { get; set; }
+        [Newtonsoft.Json.JsonProperty("qrcode_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("qrcode_type")]
+        public int QrcodeType { get; set; }
 
         /// <summary>
         /// 获取或设置企业微信 ID。
