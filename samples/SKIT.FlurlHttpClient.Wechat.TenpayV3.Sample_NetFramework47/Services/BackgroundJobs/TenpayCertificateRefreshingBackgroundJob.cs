@@ -12,6 +12,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
 
         public async Task ExecuteAsync()
         {
+            // NOTICE:
+            //   2024-10-01 后微信支付新增了基于微信支付公钥的验证身份方式，
+            //   如果你已切换至使用平台公钥，则不再需要下载平台证书，可忽略此定时任务。
             foreach (var tenpayMerchantOptions in Options.TenpayOptions.Instance.Value.Merchants)
             {
                 try
