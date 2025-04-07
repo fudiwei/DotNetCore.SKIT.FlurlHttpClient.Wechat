@@ -39,6 +39,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("out_goods_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("out_goods_info")]
                         public string? OutGoodsInfo { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品额外信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("goods_ext")]
+                        [System.Text.Json.Serialization.JsonPropertyName("goods_ext")]
+                        public string? GoodsExtraInfo { get; set; }
                     }
                 }
             }
