@@ -9,8 +9,8 @@
         "order_detail": {
             "product_infos": [
                 {
-                    "product_id": 234245,
-                    "sku_id": 23424,
+                    "product_id": "234245",
+                    "sku_id": "23424",
                     "sku_cnt": 10,
                     "on_aftersale_sku_cnt": 10,
                     "finish_aftersale_sku_cnt": 0,
@@ -18,29 +18,34 @@
                     "thumb_img": "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
                     "sale_price": 2000,
                     "market_price": 2000,
-                    "sku_code": "18236414",
                     "sku_attrs": [
                         {
-                            "attr_key": "个数",
-                            "attr_value": "一套"
-                        }
-                    ],
-                    "real_price": 1900,
-                    "out_product_id": "88",
-                    "out_sku_id": "248",
-                    "out_warehouse_id": "",
-                    "sku_deliver_info": {
-                        "stock_type": 0
-                    },
-                    "extra_service": {
-                        "seven_day_return": 1,
-                        "freight_insurance": 0
-                    },
-                    "voucher_list": [
+                            "attr_key": "产地",
+                            "attr_value": "四川成都"
+                        },
                         {
-                            "voucher_code": "12345",
-                            "voucher_type": 1,
-                            "voucher_buy_amount": 10000
+                            "attr_key": "材质",
+                            "attr_value": "玻璃"
+                        },
+                        {
+                            "attr_key": "适用人群",
+                            "attr_value": "青年;中年"
+                        },
+                        {
+                            "attr_key": "数量",
+                            "attr_value": "33"
+                        },
+                        {
+                            "attr_key": "精度",
+                            "attr_value": "3.001"
+                        },
+                        {
+                            "attr_key": "重量",
+                            "attr_value": "38 mg"
+                        },
+                        {
+                            "attr_key": "毛重",
+                            "attr_value": "380 kg"
                         }
                     ]
                 }
@@ -85,8 +90,7 @@
                     }
                 ],
                 "ship_done_time": 1620738080,
-                "deliver_method": 0,
-                "ewaybill_order_code": "ofskfRaaNSxitNLtwCqOfLMIO4r5ZEOXXVTGjf_g_4LuMzRPsZn2CnTn97xWg3AxHoZQXydN8iQA"
+                "deliver_method": 0
             },
             "coupon_info": {
                 "user_coupon_id": "301234567890"
@@ -97,6 +101,7 @@
                 "finder_id": "sph3FZbOEY46mAB",
                 "live_id": "export/UzFfAgtgekIEAQAAAAAAt40WWe5njQAAAAstQy6ubaLX4KHWvLEZgBPE5KNoYRJdUeaEzNPgMJq4tEJ8QSCaA2N_Iua2abcd",
                 "order_scene": 2
+
             },
             "sharer_info": {
                 "sharer_openid": "SHAREROPENID",
@@ -128,7 +133,6 @@
             ],
             "on_aftersale_order_cnt": 1
         },
-        "openid": "OPENID",
-        "unionid": "UNIONID"
+        "openid": "OPENID"
     }
 }

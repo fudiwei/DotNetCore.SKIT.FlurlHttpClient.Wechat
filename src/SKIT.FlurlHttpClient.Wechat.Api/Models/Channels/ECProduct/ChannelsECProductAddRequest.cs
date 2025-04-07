@@ -199,37 +199,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Obsolete("相关接口或字段于 2024-08-05 下线。")]
                 [Newtonsoft.Json.JsonProperty("pay_after_use")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("pay_after_use")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
-                public bool IsPayAfterUseSupported { get; set; }
+                public int PayAfterUse { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否支持运费险。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("freight_insurance")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("freight_insurance")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
-                public bool IsFreightInsuranceSupported { get; set; }
+                public int FreightInsurance { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否支持假一赔三。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("fake_one_pay_three")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("fake_one_pay_three")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
-                public bool? IsFakeOnePayThreeSupported { get; set; }
+                public int? FakeOnePayThree { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否支持坏损包退。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("damage_guarantee")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("damage_guarantee")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
-                public bool? IsDamageGuaranteeSupported { get; set; }
+                public int? DamageGuarantee { get; set; }
             }
 
             public class Aftersale
