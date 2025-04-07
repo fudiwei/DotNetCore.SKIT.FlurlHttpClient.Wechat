@@ -217,6 +217,95 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("message")]
                         public string? ErrorMessage { get; set; }
                     }
+
+                    public class ExchangeProductInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置商品 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_id")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public long ProductId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置旧 SKU ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("old_sku_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("old_sku_id")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public long OldSKUId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置新 SKU ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_sku_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_sku_id")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public long NewSKUId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品数量。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_count")]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_count")]
+                        public int Count { get; set; }
+                    }
+
+                    public class ExchangeDeliveryInfo
+                    {
+                        public static class Types
+                        {
+                            public class Address : ChannelsECOrderGetResponse.Types.Order.Types.OrderDetail.Types.Delivery.Types.Address
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置快递公司 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("delivery_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("delivery_id")]
+                        public string DeliveryId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置快递公司名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("delivery_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("delivery_name")]
+                        public string DeliveryName { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置快递单号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("waybill_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
+                        public string WaybillId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置地址信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("address_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("address_info")]
+                        public Types.Address? Address { get; set; }
+                    }
+
+                    public class VirualTeleNumberInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置虚拟号码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("virtual_tel_number")]
+                        [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_number")]
+                        public string? VirtualTeleNumber { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置主动兑换的虚拟号码过期时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("virtual_tel_expire_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_expire_time")]
+                        public long? VirtualTeleNumberExpireTimestamp { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -318,6 +407,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("deadline")]
                 [System.Text.Json.Serialization.JsonPropertyName("deadline")]
                 public int Deadline { get; set; }
+
+                /// <summary>
+                /// 获取或设置换货相关商品信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_product_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_product_info")]
+                public Types.ExchangeProductInfo? ExchangeProductInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置换货相关物流信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_delivery_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_delivery_info")]
+                public Types.ExchangeDeliveryInfo? ExchangeDeliveryInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置虚拟号码信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("virtual_tel_num_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_num_info")]
+                public Types.VirualTeleNumberInfo? VirualTeleNumberInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。
