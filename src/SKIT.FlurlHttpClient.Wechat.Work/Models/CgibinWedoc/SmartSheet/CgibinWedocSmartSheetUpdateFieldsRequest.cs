@@ -98,6 +98,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     public class GroupChatFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.GroupChatFieldProperty
                     {
                     }
+
+                    public class PercentageFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.PercentageFieldProperty
+                    {
+                    }
                 }
 
                 /// <summary>
@@ -239,6 +243,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("property_ww_group")]
                 [System.Text.Json.Serialization.JsonPropertyName("property_ww_group")]
                 public Types.GroupChatFieldProperty? PropertyAsGroupChat { get; set; }
+
+                /// <summary>
+                /// 获取或设置百分数的字段属性。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("property_percentage")]
+                [System.Text.Json.Serialization.JsonPropertyName("property_percentage")]
+                public Types.PercentageFieldProperty? PropertyAsPercentage { get; set; }
             }
         }
 

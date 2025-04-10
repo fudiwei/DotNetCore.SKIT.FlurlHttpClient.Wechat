@@ -314,6 +314,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [System.Text.Json.Serialization.JsonPropertyName("allow_multiple")]
                         public bool IsAllowMultiple { get; set; }
                     }
+
+                    public class PercentageFieldProperty
+                    {
+                        /// <summary>
+                        /// 获取或设置小数点的位数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("decimal_places")]
+                        [System.Text.Json.Serialization.JsonPropertyName("decimal_places")]
+                        public int DecimalPlaces { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否使用千位符。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("use_separate")]
+                        [System.Text.Json.Serialization.JsonPropertyName("use_separate")]
+                        public bool IsUseSeparate { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -448,6 +465,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("property_ww_group")]
                 [System.Text.Json.Serialization.JsonPropertyName("property_ww_group")]
                 public Types.GroupChatFieldProperty? PropertyAsGroupChat { get; set; }
+
+                /// <summary>
+                /// 获取或设置百分数的字段属性。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("property_percentage")]
+                [System.Text.Json.Serialization.JsonPropertyName("property_percentage")]
+                public Types.PercentageFieldProperty? PropertyAsPercentage { get; set; }
             }
         }
 
