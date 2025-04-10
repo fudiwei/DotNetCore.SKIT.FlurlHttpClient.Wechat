@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -9,6 +9,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
     {
         public static class Types
         {
+            public class BusinessEmailAliasList
+            {
+                /// <summary>
+                /// 获取或设置企业邮箱别名列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("item")]
+                [System.Text.Json.Serialization.JsonPropertyName("item")]
+                public IList<string> Items { get; set; } = new List<string>();
+            }
+
             public class ExtendedAttribute : CgibinUserCreateRequest.Types.ExtendedAttribute
             {
             }
@@ -24,6 +34,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("userid")]
         [System.Text.Json.Serialization.JsonPropertyName("userid")]
         public string UserId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置新的成员账号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("new_userid")]
+        [System.Text.Json.Serialization.JsonPropertyName("new_userid")]
+        public string? NewUserId { get; set; }
 
         /// <summary>
         /// 获取或设置成员名称。
@@ -52,6 +69,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("biz_mail")]
         [System.Text.Json.Serialization.JsonPropertyName("biz_mail")]
         public string? BusinessEmail { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业邮箱别名列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("biz_mail_alias")]
+        [System.Text.Json.Serialization.JsonPropertyName("biz_mail_alias")]
+        public Types.BusinessEmailAliasList? BusinessEmailAliasList { get; set; }
 
         /// <summary>
         /// 获取或设置手机号码。
