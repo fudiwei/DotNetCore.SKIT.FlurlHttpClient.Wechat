@@ -24,7 +24,8 @@
             "status": 1,
             "begin_time": 1726588800,
             "end_time": 1729180799,
-            "msg_duration_days": 90
+            "msg_duration_days": 90,
+            "auth_user_count": 23
         }
     ]
 }

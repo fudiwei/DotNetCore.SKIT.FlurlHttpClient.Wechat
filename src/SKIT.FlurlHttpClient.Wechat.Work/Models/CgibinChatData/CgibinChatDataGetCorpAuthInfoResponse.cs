@@ -77,6 +77,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("msg_duration_days")]
                 [System.Text.Json.Serialization.JsonPropertyName("msg_duration_days")]
                 public int MessageDurationDays { get; set; }
+
+                /// <summary>
+                /// 获取或设置去重的人数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("auth_user_count")]
+                [System.Text.Json.Serialization.JsonPropertyName("auth_user_count")]
+                public int AuthorizedUserCount { get; set; }
             }
         }
 
