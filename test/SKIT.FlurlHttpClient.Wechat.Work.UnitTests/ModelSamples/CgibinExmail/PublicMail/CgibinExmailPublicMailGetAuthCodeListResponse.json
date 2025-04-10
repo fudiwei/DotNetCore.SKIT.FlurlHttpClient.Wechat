@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "auth_code_list": [
+        {
+            "auth_code_id": 1,
+            "create_time": 1724743240,
+            "last_use_time": 1724743241,
+            "remark": "客户端专用密码备注"
+        },
+        {
+            "auth_code_id": 2,
+            "create_time": 1724743240,
+            "last_use_time": 1724743241,
+            "remark": "客户端专用密码备注"
+        }
+    ]
+}

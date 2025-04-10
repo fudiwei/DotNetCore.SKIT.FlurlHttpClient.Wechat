@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -25,6 +25,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
             public class DepartmentIdList : CgibinExmailGroupCreateRequest.Types.DepartmentIdList
             {
+            }
+
+            public class AuthCodeInfo
+            {
+                /// <summary>
+                /// 获取或设置备注。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("remark")]
+                [System.Text.Json.Serialization.JsonPropertyName("remark")]
+                public string? Remark { get; set; }
             }
         }
 
@@ -62,5 +72,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("department_list")]
         [System.Text.Json.Serialization.JsonPropertyName("department_list")]
         public Types.DepartmentIdList? AllowDepartmentIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否创建客户端专用密码。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("create_auth_code")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("create_auth_code")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+        public bool? IsCreateAuthCode { get; set; }
+
+        /// <summary>
+        /// 获取或设置客户端专用密码信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("auth_code_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("auth_code_info")]
+        public Types.AuthCodeInfo? AuthCodeInfo { get; set; }
     }
 }
