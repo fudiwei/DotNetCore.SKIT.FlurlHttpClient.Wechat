@@ -759,6 +759,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.12.0 (2025-04-21)
+
+    -   **新增**：新增商家转账到 QQ 钱包相关接口。
+
+    -   **新增**：新增特约商户修改主体信息相关接口。
+
+    -   **新增**：随官方更新连锁品牌门店相关接口模型。
+
+    -   **新增**：新增分账动账回调通知模型。（_via_ [GitHub #185](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/185)）
+
 -   Release 3.11.0 (2025-03-14)
 
     -   **新增**：新增平台收付通商家充值可扫码充值员工相关接口。
