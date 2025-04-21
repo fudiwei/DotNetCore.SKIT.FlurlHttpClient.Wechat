@@ -8,7 +8,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// REF: <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012286313 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012289459 ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012289679 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012791836 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012791861 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012791882 ]]> <br/>

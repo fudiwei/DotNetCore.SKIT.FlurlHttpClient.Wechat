@@ -12,10 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012085875 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012085801 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090195 ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012237246 ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012116672 ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012075216 ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012075400 ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012237246 ]]>
     /// </para>
     /// </summary>
     public class PartnerTransactionResource : WechatTenpayEvent.Types.IDecryptedResource
