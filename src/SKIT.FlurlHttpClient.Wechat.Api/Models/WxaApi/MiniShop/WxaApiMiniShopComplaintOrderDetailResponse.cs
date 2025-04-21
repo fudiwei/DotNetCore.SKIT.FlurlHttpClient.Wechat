@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxaapi/minishop/complaintOrderDetail 接口的响应。</para>
@@ -52,11 +52,25 @@
                 public int Type { get; set; }
 
                 /// <summary>
-                /// 获取或设置订单状态。
+                /// 获取或设置申诉状态。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("status")]
-                [System.Text.Json.Serialization.JsonPropertyName("status")]
-                public int Status { get; set; }
+                [Newtonsoft.Json.JsonProperty("appealState")]
+                [System.Text.Json.Serialization.JsonPropertyName("appealState")]
+                public int AppealState { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户昵称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("nickName")]
+                [System.Text.Json.Serialization.JsonPropertyName("nickName")]
+                public string Nickname { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置用户头像 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("headImgUrl")]
+                [System.Text.Json.Serialization.JsonPropertyName("headImgUrl")]
+                public string HeadImageUrl { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置用户手机号码。
@@ -74,6 +88,13 @@
                 public Types.CustomerMaterial? CustomerMaterial { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置商户订单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("outTradeNo")]
+                [System.Text.Json.Serialization.JsonPropertyName("outTradeNo")]
+                public string OutTradeNumber { get; set; } = default!;
+
+                /// <summary>
                 /// 获取或设置订单号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("orderId")]
@@ -81,11 +102,11 @@
                 public string OrderId { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置商户订单号。
+                /// 获取或设置订单状态。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("outTradeNo")]
-                [System.Text.Json.Serialization.JsonPropertyName("outTradeNo")]
-                public string OutTradeNumber { get; set; } = default!;
+                [Newtonsoft.Json.JsonProperty("status")]
+                [System.Text.Json.Serialization.JsonPropertyName("status")]
+                public int Status { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品名称。
@@ -102,11 +123,11 @@
                 public long PayTimestamp { get; set; }
 
                 /// <summary>
-                /// 获取或设置交易金额（单位：分）。
+                /// 获取或设置交易金额字符串。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("totalCost")]
-                [System.Text.Json.Serialization.JsonPropertyName("totalCost")]
-                public int TotalCost { get; set; }
+                [Newtonsoft.Json.JsonProperty("totalCostStr")]
+                [System.Text.Json.Serialization.JsonPropertyName("totalCostStr")]
+                public string TotalCostString { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置投诉发起时间戳。
@@ -133,11 +154,25 @@
                 public int ItemType { get; set; }
 
                 /// <summary>
+                /// 获取或设置投诉节点申诉状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("appealItemType")]
+                [System.Text.Json.Serialization.JsonPropertyName("appealItemType")]
+                public int? AppealItemType { get; set; }
+
+                /// <summary>
                 /// 获取或设置时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("time")]
                 [System.Text.Json.Serialization.JsonPropertyName("time")]
                 public long Timestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户昵称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("nickName")]
+                [System.Text.Json.Serialization.JsonPropertyName("nickName")]
+                public string Nickname { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置手机号码。
@@ -160,6 +195,13 @@
                 [Newtonsoft.Json.JsonProperty("mediaIdList")]
                 [System.Text.Json.Serialization.JsonPropertyName("mediaIdList")]
                 public string[]? MediaIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置判责结果。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("blameResult")]
+                [System.Text.Json.Serialization.JsonPropertyName("blameResult")]
+                public int BlameResult { get; set; }
             }
 
             public class ReturnBill
@@ -170,6 +212,13 @@
                 [Newtonsoft.Json.JsonProperty("returnId")]
                 [System.Text.Json.Serialization.JsonPropertyName("returnId")]
                 public string ReturnId { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置快递公司。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("deliveryName")]
+                [System.Text.Json.Serialization.JsonPropertyName("deliveryName")]
+                public string DeliveryName { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置运单号。

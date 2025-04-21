@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "complaintOrder": {
@@ -10,14 +10,17 @@
         "status": 1,
         "customerMaterial": {
             "content": "",
-            "mediaIdList": ["fsadfasdfsaf"]
+            "mediaIdList": [ "fsadfasdfsaf" ]
         },
         "orderId": "2342",
         "outTradeNo": "sdfsfd",
         "productName": "sdf",
         "payTime": 123123,
-        "totalCost": 1213,
-        "expireTime": 1231231
+        "totalCostStr": "￥0.01",
+        "expireTime": 1231231,
+        "headImgUrl": "http://xxx.xxx/xxx",
+        "nickName": "xxxxxx",
+        "appealState": 403
     },
     "item": [
         {
