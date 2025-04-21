@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /applyment4sub/applyment/business_code/{business_code} 接口的响应。</para>
@@ -79,6 +79,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("audit_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("audit_detail")]
-        public Types.AuditDetail[]? AuditList { get; set; }
+        public Types.AuditDetail[]? AuditDetailList { get; set; }
     }
 }
