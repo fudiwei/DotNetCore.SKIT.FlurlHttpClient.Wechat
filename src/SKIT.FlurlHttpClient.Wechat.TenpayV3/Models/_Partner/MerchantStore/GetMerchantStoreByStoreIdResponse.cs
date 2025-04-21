@@ -22,6 +22,30 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Recipient : CreateMerchantStoreRequest.Types.Recipient
             {
             }
+
+            public class State
+            {
+                /// <summary>
+                /// 获取或设置门店状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_state_value")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_state_value")]
+                public string StateValue { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置门店状态描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("store_state_message")]
+                [System.Text.Json.Serialization.JsonPropertyName("store_state_message")]
+                public string? StateMessage { get; set; }
+
+                /// <summary>
+                /// 获取或设置地址核实失败原因。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("address_failed_reason")]
+                [System.Text.Json.Serialization.JsonPropertyName("address_failed_reason")]
+                public string? AddressFailedReason { get; set; }
+            }
         }
 
         /// <summary>
@@ -51,5 +75,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("store_recipient")]
         [System.Text.Json.Serialization.JsonPropertyName("store_recipient")]
         public Types.Recipient[] RecipientList { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置门店状态信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("store_state")]
+        [System.Text.Json.Serialization.JsonPropertyName("store_state")]
+        public Types.State State { get; set; } = default!;
     }
 }
