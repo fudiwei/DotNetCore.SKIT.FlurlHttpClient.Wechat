@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /papay/partner/preentrustweb 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988366 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [GET] /papay/partner/h5entrustweb 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_4.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988368 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -83,7 +83,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /pay/partner/pappayapply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_8.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988372 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -102,10 +102,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /papay/deletecontract 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988374 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DeletePAPPayPartnerContractResponse> ExecuteDeletePAPPayPartnerContractAsync(this WechatTenpayClient client, Models.DeletePAPPayPartnerContractRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "papay", "deletecontract");
+
+            return await client.SendFlurlRequestAsXmlAsync<Models.DeletePAPPayPartnerContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /papay/partner/querycontract 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_7.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988379 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

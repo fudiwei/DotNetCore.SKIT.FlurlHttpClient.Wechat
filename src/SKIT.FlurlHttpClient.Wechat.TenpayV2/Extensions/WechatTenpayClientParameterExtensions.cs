@@ -183,7 +183,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>生成客户端公众号唤起微信委托代扣的 URL。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011986768 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -227,7 +227,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>生成客户端公众号唤起微信委托代扣的 URL。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988368 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -275,7 +275,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>生成客户端小程序唤起微信委托代扣页面所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011987274 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -313,7 +313,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>生成客户端小程序唤起微信委托代扣页面所需的参数字典。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988367 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

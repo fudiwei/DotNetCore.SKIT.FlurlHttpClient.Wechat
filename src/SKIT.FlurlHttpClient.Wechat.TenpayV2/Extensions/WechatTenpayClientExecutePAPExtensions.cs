@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /papay/preentrustweb 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011986804 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [GET] /papay/h5entrustweb 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_4.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011987295 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /pay/contractorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_5.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011987320 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /pay/pappayapply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_8.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011987377 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -106,9 +106,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /papay/deletecontract 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_9.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011987432 ]]>
         /// </para>
-        /// <para>REF" https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_9.shtml </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -129,7 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /papay/querycontract 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_7.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011987640 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
