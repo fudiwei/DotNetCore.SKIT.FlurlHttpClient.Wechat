@@ -189,6 +189,74 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppMerchantTransferBillByTransferBillNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
+
+        #region MerchantTransfer/TransferToQQWalletBills
+        /// <summary>
+        /// <para>异步调用 [POST] /fund-app/mch-transfer/transfer-to-qq-wallet-bills 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014297386 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateFundAppMerchantTransferToQQWalletBillResponse> ExecuteCreateFundAppMerchantTransferToQQWalletBillAsync(this WechatTenpayClient client, Models.CreateFundAppMerchantTransferToQQWalletBillRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "fund-app", "mch-transfer", "transfer-to-qq-wallet-bills");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateFundAppMerchantTransferToQQWalletBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}/cancel 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014297396 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CancelFundAppMerchantTransferToQQWalletBillResponse> ExecuteCancelFundAppMerchantTransferToQQWalletBillAsync(this WechatTenpayClient client, Models.CancelFundAppMerchantTransferToQQWalletBillRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "fund-app", "mch-transfer", "transfer-to-qq-wallet-bills", request.OutBillNumber, "cancel");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CancelFundAppMerchantTransferToQQWalletBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014297440 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberResponse> ExecuteGetFundAppMerchantTransferToQQWalletBillByOutBillNumberAsync(this WechatTenpayClient client, Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "transfer-to-qq-wallet-bills", request.OutBillNumber);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
         #endregion
     }
 }

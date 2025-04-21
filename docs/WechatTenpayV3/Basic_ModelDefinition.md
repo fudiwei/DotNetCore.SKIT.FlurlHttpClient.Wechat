@@ -208,7 +208,16 @@
 
             -   微信单号查询电子回单：`GetFundAppMerchantTransferElecsignByTransferBillNumber`
 
-    -   转账到零钱
+
+    -   商家转账到 QQ 钱包
+
+        -   发起转账到 QQ 钱包：`CreateFundAppMerchantTransferToQQWalletBill`
+
+        -   撤销转账到 QQ 钱包：`CancelFundAppMerchantTransferToQQWalletBill`
+
+        -   查询转账到 QQ 钱包的结果：`GetFundAppMerchantTransferToQQWalletBillByOutBillNumber`
+
+    -   商家转账到零钱
 
         -   发起批量转账：`CreateTransferBatch`
 

@@ -431,6 +431,128 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetFundAppMerchantTransferBillByOutBillNumberResponse()
+        {
+            static Models.GetFundAppMerchantTransferBillByOutBillNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return SetMockResponseRawStatusAsOk(new Models.GetFundAppMerchantTransferBillByOutBillNumberResponse()
+                {
+                    UserName = encryptor.Invoke(MOCK_PLAIN_STR)
+                });
+            }
+
+            static void AssertMockResponseModel(Models.GetFundAppMerchantTransferBillByOutBillNumberResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetFundAppMerchantTransferBillByOutBillNumberRequest();
+                    var response = await client.ExecuteGetFundAppMerchantTransferBillByOutBillNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetFundAppMerchantTransferBillByOutBillNumberRequest();
+                    var response = await client.ExecuteGetFundAppMerchantTransferBillByOutBillNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetFundAppMerchantTransferToQQWalletBillByOutBillNumberResponse()
+        {
+            static Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return SetMockResponseRawStatusAsOk(new Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberResponse()
+                {
+                    UserName = encryptor.Invoke(MOCK_PLAIN_STR)
+                });
+            }
+
+            static void AssertMockResponseModel(Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberRequest();
+                    var response = await client.ExecuteGetFundAppMerchantTransferToQQWalletBillByOutBillNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetFundAppMerchantTransferToQQWalletBillByOutBillNumberRequest();
+                    var response = await client.ExecuteGetFundAppMerchantTransferToQQWalletBillByOutBillNumberAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+        }
+
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /marketing/shopping-receipt/shoppingreceipts）")]
         public async Task TestDecryptResponseSensitiveProperty_UploadMarketingShoppingReceiptResponse()
         {
