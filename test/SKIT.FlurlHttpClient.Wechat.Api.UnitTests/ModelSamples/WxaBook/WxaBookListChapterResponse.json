@@ -1,0 +1,16 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "chapter_list": [
+        {
+            "chapter_id": "abc1234",
+            "chapter_title": "第一章 x",
+            "word_cnt": 1234,
+            "create_time": 1704793640,
+            "volume_index": -1,
+            "original_id": "1234",
+            "seq": 100
+        }
+    ],
+    "total_cnt": 1
+}

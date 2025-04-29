@@ -1,0 +1,14 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "setting": {
+        "book_id": "test",
+        "default_words": 240,
+        "chapter_setting": [
+            {
+                "chapter_index": 1,
+                "words": 123
+            }
+        ]
+    }
+}

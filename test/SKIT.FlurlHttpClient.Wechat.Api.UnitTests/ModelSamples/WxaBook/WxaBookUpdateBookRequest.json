@@ -1,0 +1,17 @@
+{
+    "book_id": "A1b2C3d4",
+    "complete_status": 2,
+    "need_volume": true,
+    "volume_list": [
+        {
+            "volume_title": "第一卷",
+            "start_index": 0,
+            "end_index": 2
+        },
+        {
+            "volume_title": "第二卷",
+            "start_index": 2,
+            "end_index": 5
+        }
+    ]
+}

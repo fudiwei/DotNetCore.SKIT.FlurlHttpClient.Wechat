@@ -840,6 +840,77 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region NovelReader
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/novelreader/setpreviewsetting 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E9%A2%84%E8%A7%88%E8%AE%BE%E7%BD%AE%E4%BF%AE%E6%94%B9 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessNovelReaderSetPreviewSettingsResponse> ExecuteWxaBusinessNovelReaderSetPreviewSettingsAsync(this WechatApiClient client, Models.WxaBusinessNovelReaderSetPreviewSettingsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "business", "novelreader", "setpreviewsetting")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaBusinessNovelReaderSetPreviewSettingsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/novelreader/getpreviewsetting 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E9%A2%84%E8%A7%88%E8%AE%BE%E7%BD%AE%E8%8E%B7%E5%8F%96 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessNovelReaderGetPreviewSettingsResponse> ExecuteWxaBusinessNovelReaderGetPreviewSettingsAsync(this WechatApiClient client, Models.WxaBusinessNovelReaderGetPreviewSettingsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "business", "novelreader", "getpreviewsetting")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaBusinessNovelReaderGetPreviewSettingsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/novelreader/setrecmdnovel 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E8%AF%BB%E5%90%8E%E6%8E%A8%E8%8D%90 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessNovelReaderSetRecommendNovelResponse> ExecuteWxaBusinessNovelReaderSetRecommendNovelAsync(this WechatApiClient client, Models.WxaBusinessNovelReaderSetRecommendNovelRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "business", "novelreader", "setrecmdnovel")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaBusinessNovelReaderSetRecommendNovelResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region Runtime
         /// <summary>
         /// <para>异步调用 [POST] /wxa/business/runtime/adddevice 接口。</para>

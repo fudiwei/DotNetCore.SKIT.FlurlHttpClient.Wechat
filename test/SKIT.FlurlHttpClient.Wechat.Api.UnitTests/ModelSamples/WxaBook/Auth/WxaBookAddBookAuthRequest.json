@@ -1,0 +1,14 @@
+{
+    "books": [
+        {
+            "book_id": "A1Hcfuuv",
+            "expire_time": 1704970161,
+            "grantee_appid": "wx002"
+        },
+        {
+            "book_id": "KqNdTu",
+            "expire_time": 1705460123,
+            "grantee_appid": "wx003"
+        }
+    ]
+}

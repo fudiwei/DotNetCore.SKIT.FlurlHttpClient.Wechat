@@ -7,10 +7,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         /// <summary>
         /// 获取或设置推荐位类型。
+        /// <para>默认值：2002</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("entry_type")]
         [System.Text.Json.Serialization.JsonPropertyName("entry_type")]
-        public int EntryType { get; set; }
+        public int EntryType { get; set; } = 2002;
 
         /// <summary>
         /// 获取或设置是否打开。
