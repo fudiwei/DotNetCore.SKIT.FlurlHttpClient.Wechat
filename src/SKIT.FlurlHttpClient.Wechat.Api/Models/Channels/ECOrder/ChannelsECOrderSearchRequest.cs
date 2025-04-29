@@ -38,14 +38,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Obsolete("相关接口或字段于 2023-06-03 下线。")]
                 [Newtonsoft.Json.JsonProperty("tel_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                public string? TeleNumber { get; set; }
+                public string? TelNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置收件人电话号码后 4 位。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tel_number_last4")]
                 [System.Text.Json.Serialization.JsonPropertyName("tel_number_last4")]
-                public string? TeleNumberLast4Digits { get; set; }
+                public string? TelNumberLast4Digits { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单 ID。

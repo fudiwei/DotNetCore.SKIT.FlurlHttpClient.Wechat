@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tel_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                        public string TeleNumber { get; set; } = default!;
+                        public string TelNumber { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置邮政编码。

@@ -589,35 +589,35 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                     {
                                         public static class Types
                                         {
-                                            public class TeleNumberExtendedInfo
+                                            public class TelNumberExtendedInfo
                                             {
                                                 /// <summary>
                                                 /// 获取或设置脱敏手机号。
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("real_tel_number")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("real_tel_number")]
-                                                public string? RealTeleNumber { get; set; }
+                                                public string? RealTelNumber { get; set; }
 
                                                 /// <summary>
                                                 /// 获取或设置虚拟号码。
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("virtual_tel_number")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_number")]
-                                                public string? VirtualTeleNumber { get; set; }
+                                                public string? VirtualTelNumber { get; set; }
 
                                                 /// <summary>
                                                 /// 获取或设置主动兑换的虚拟号码过期时间戳。
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("virtual_tel_expire_time")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_expire_time")]
-                                                public long? VirtualTeleNumberExpireTimestamp { get; set; }
+                                                public long? VirtualTelNumberExpireTimestamp { get; set; }
 
                                                 /// <summary>
                                                 /// 获取或设置主动兑换虚拟号码次数。
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("get_virtual_tel_cnt")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("get_virtual_tel_cnt")]
-                                                public int? GetVirtualTeleNumberCount { get; set; }
+                                                public int? GetVirtualTelNumberCount { get; set; }
                                             }
                                         }
 
@@ -633,7 +633,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("virtual_order_tel_number")]
                                         [System.Text.Json.Serialization.JsonPropertyName("virtual_order_tel_number")]
-                                        public string? VirtualTeleNumber { get; set; }
+                                        public string? VirtualTelNumber { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置是否使用虚拟号码。
@@ -642,14 +642,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("use_tel_number")]
                                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
-                                        public bool? IsVirtualTeleNumber { get; set; }
+                                        public bool? IsVirtualTelNumber { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置额外的联系方式信息。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("tel_number_ext_info")]
                                         [System.Text.Json.Serialization.JsonPropertyName("tel_number_ext_info")]
-                                        public Types.TeleNumberExtendedInfo? TeleNumberExtendedInfo { get; set; }
+                                        public Types.TelNumberExtendedInfo? TelNumberExtendedInfo { get; set; }
                                     }
 
                                     public class QualityInspection

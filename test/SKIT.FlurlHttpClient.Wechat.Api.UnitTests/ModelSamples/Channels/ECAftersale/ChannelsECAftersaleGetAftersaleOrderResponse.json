@@ -30,8 +30,9 @@
             "desc": "1234",
             "receive_product": true,
             "cancel_time": 0,
-            "prove_imgs": [],
-            "tel_number": ""
+            "media_id_list": [],
+            "tel_number": "",
+            "wxa_vip_discounted_price": 0
         },
         "refund_info": {
             "amount": 11,

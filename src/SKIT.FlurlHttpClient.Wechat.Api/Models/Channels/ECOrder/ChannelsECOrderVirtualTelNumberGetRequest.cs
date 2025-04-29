@@ -3,7 +3,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /channels/ec/order/virtualtelnumber/get 接口的请求。</para>
     /// </summary>
-    public class ChannelsECOrderVirtualTeleNumberGetRequest : WechatApiRequest, IInferable<ChannelsECOrderVirtualTeleNumberGetRequest, ChannelsECOrderVirtualTeleNumberGetResponse>
+    public class ChannelsECOrderVirtualTelNumberGetRequest : WechatApiRequest, IInferable<ChannelsECOrderVirtualTelNumberGetRequest, ChannelsECOrderVirtualTelNumberGetResponse>
     {
         /// <summary>
         /// 获取或设置订单 ID。

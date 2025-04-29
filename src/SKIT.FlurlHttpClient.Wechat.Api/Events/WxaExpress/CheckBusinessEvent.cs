@@ -47,7 +47,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("ShopTelphone")]
         [System.Text.Json.Serialization.JsonPropertyName("ShopTelphone")]
         [System.Xml.Serialization.XmlElement("ShopTelphone", IsNullable = true)]
-        public string? ShopTeleNumber { get; set; }
+        public string? ShopTelephoneNumber { get; set; }
 
         /// <summary>
         /// 获取或设置商户联系人姓名。

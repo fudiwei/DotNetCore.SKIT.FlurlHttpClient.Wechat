@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tel_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                        public string TeleNumber { get; set; } = string.Empty;
+                        public string TelNumber { get; set; } = string.Empty;
 
                     }
 

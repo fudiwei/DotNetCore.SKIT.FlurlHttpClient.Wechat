@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [Newtonsoft.Json.JsonProperty("Tel")]
                 [System.Text.Json.Serialization.JsonPropertyName("Tel")]
                 [System.Xml.Serialization.XmlElement("Tel", IsNullable = true)]
-                public string? TeleNumber { get; set; }
+                public string? TelephoneNumber { get; set; }
 
                 /// <summary>
                 /// 获取或设置手机号码。

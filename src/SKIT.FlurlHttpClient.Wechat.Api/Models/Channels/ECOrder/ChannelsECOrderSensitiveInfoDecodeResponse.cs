@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tel_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                public string TeleNumber { get; set; } = default!;
+                public string TelNumber { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置门牌号。
@@ -72,7 +72,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("virtual_order_tel_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("virtual_order_tel_number")]
-                public string? VirtualOrderTeleNumber { get; set; }
+                public string? VirtualOrderTelNumber { get; set; }
             }
 
             public class VirtualNumber
@@ -82,7 +82,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("virtual_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("virtual_number")]
-                public string TeleNumber { get; set; } = default!;
+                public string TelNumber { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置分机号。

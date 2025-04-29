@@ -185,7 +185,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("contract_phone")]
         [System.Text.Json.Serialization.JsonPropertyName("contract_phone")]
-        public string TeleNumber { get; set; } = string.Empty;
+        public string TelNumber { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置经营资质证件号。

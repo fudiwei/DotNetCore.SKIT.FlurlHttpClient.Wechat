@@ -23,10 +23,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("tel")]
                 [System.Text.Json.Serialization.JsonPropertyName("tel")]
-                public string? TeleNumber { get; set; }
+                public string? TelephoneNumber { get; set; }
 
                 /// <summary>
-                /// 获取或设置手机号码。与字段 <see cref="TeleNumber"/> 二选一。
+                /// 获取或设置手机号码。与字段 <see cref="TelephoneNumber"/> 二选一。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mobile")]
                 [System.Text.Json.Serialization.JsonPropertyName("mobile")]

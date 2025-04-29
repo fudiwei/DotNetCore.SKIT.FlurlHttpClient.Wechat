@@ -122,18 +122,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public long CancelTimestamp { get; set; }
 
                         /// <summary>
-                        /// 获取或设置举证图片 URL 列表。
+                        /// 获取或设置举证图片 MediaId 列表。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("prove_imgs")]
-                        [System.Text.Json.Serialization.JsonPropertyName("prove_imgs")]
-                        public string[]? ProveImageUrlList { get; set; }
+                        [Newtonsoft.Json.JsonProperty("media_id_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
+                        public string[]? MediaIdList { get; set; }
 
                         /// <summary>
                         /// 获取或设置联系电话。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tel_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                        public string? TeleNumber { get; set; }
+                        public string? TelNumber { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置小程序会员已经优惠金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("wxa_vip_discounted_price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("wxa_vip_discounted_price")]
+                        public int? WxaVipDiscountedPrice { get; set; }
                     }
 
                     public class Refund
@@ -290,21 +297,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public Types.Address? Address { get; set; }
                     }
 
-                    public class VirualTeleNumberInfo
+                    public class VirualTelNumberInfo
                     {
                         /// <summary>
                         /// 获取或设置虚拟号码。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("virtual_tel_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_number")]
-                        public string? VirtualTeleNumber { get; set; }
+                        public string? VirtualTelNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置主动兑换的虚拟号码过期时间戳。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("virtual_tel_expire_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_expire_time")]
-                        public long? VirtualTeleNumberExpireTimestamp { get; set; }
+                        public long? VirtualTelNumberExpireTimestamp { get; set; }
                     }
                 }
 
@@ -434,7 +441,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("virtual_tel_num_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_num_info")]
-                public Types.VirualTeleNumberInfo? VirualTeleNumberInfo { get; set; }
+                public Types.VirualTelNumberInfo? VirualTelNumberInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。

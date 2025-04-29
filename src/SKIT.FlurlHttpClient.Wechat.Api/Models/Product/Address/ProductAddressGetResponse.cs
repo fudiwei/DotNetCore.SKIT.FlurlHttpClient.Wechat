@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/address/get 接口的响应。</para>
@@ -60,7 +60,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("tel_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                        public string? TeleNumber { get; set; }
+                        public string? TelNumber { get; set; }
 
                         /// <summary>
                         /// 获取或设置邮政编码。
