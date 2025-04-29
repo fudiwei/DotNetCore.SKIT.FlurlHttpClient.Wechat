@@ -9,6 +9,152 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 {
     public static class WechatApiClientExecuteWxaApiExtensions
     {
+        #region Comment
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/comment/mpcommentlist/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_1-1%E6%9F%A5%E8%AF%A2%E8%AF%84%E4%BB%B7%E5%88%97%E8%A1%A8 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiCommentMpCommentListGetResponse> ExecuteWxaApiCommentMpCommentListGetAsync(this WechatApiClient client, Models.WxaApiCommentMpCommentListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "comment", "mpcommentlist", "get")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("startTime", request.StartTimestamp)
+                .SetQueryParam("endTime", request.EndTimestamp)
+                .SetQueryParam("filterType", request.FilterType)
+                .SetQueryParam("offset", request.Offset)
+                .SetQueryParam("limit", request.Limit);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiCommentMpCommentListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /wxaapi/comment/replyandcommentreplylist/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_1-2%E6%9F%A5%E8%AF%A2%E8%AF%84%E8%AE%BA%E5%88%97%E8%A1%A8 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiCommentReplyAndCommentReplyListGetResponse> ExecuteWxaApiCommentReplyAndCommentReplyListGetAsync(this WechatApiClient client, Models.WxaApiCommentReplyAndCommentReplyListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "wxaapi", "comment", "replyandcommentreplylist", "get")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("commentId", request.CommentId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiCommentReplyAndCommentReplyListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/comment/commentreply/add 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_2-1%E5%88%9B%E5%BB%BA%E8%AF%84%E8%AE%BA ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiCommentReplyAddResponse> ExecuteWxaApiCommentReplyAddAsync(this WechatApiClient client, Models.WxaApiCommentReplyAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "comment", "reply", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiCommentReplyAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/comment/commentreply/delete 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_3-2%E5%88%A0%E9%99%A4%E5%9B%9E%E5%A4%8D ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiCommentReplyDeleteResponse> ExecuteWxaApiCommentReplyDeleteAsync(this WechatApiClient client, Models.WxaApiCommentReplyDeleteRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "comment", "reply", "delete")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiCommentReplyDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/comment/apikfquota/reset 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_4-2%E9%87%8D%E7%BD%AEApi%E5%AE%A2%E6%9C%8Dquota ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiCommentApiKfQuotaResetResponse> ExecuteWxaApiCommentApiKfQuotaResetAsync(this WechatApiClient client, Models.WxaApiCommentApiKfQuotaResetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "comment", "apikfquota", "reset")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiCommentApiKfQuotaResetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxaapi/comment/confirmcompromise 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/guarantee/comment.html#_5%E3%80%81%E7%A1%AE%E8%AE%A4%E5%92%8C%E8%A7%A3 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaApiCommentConfirmCompromiseResponse> ExecuteWxaApiCommentConfirmCompromiseAsync(this WechatApiClient client, Models.WxaApiCommentConfirmCompromiseRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "comment", "confirmcompromise")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiCommentConfirmCompromiseResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region NewTemplate
         /// <summary>
         /// <para>异步调用 [POST] /wxaapi/newtmpl/addtemplate 接口。</para>

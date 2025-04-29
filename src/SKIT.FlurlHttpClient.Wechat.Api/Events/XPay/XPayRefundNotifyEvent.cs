@@ -44,7 +44,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [Newtonsoft.Json.JsonProperty("WxOrderId")]
         [System.Text.Json.Serialization.JsonPropertyName("WxOrderId")]
         [System.Xml.Serialization.XmlElement("WxOrderId")]
-        public string WechatpayOrderId { get; set; } = default!;
+        public string WechatpayTransactionId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置退款单的微信支付单号。

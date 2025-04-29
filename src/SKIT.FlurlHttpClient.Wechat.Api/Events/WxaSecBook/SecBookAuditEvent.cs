@@ -1,10 +1,10 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
-    /// <para>表示 EVENT.secvod_audit_event 事件的数据。</para>
-    /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_7-2-%E5%AE%A1%E6%A0%B8%E7%8A%B6%E6%80%81%E4%BA%8B%E4%BB%B6 </para>
+    /// <para>表示 EVENT.secbook_audit_event 事件的数据。</para>
+    /// <para>REF: https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/novel-api.html#%E5%AE%A1%E6%A0%B8%E7%8A%B6%E6%80%81%E4%BA%8B%E4%BB%B6 </para>
     /// </summary>
-    public class SecVodAuditEvent : WechatApiEvent
+    public class SecBookAuditEvent : WechatApiEvent
     {
         public static class Types
         {
@@ -14,14 +14,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 {
                     public class AuditDetail
                     {
-                        /// <summary>
-                        /// 获取或设置审核类型。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("audit_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("audit_type")]
-                        [System.Xml.Serialization.XmlElement("audit_type")]
-                        public int AuditType { get; set; }
-
                         /// <summary>
                         /// 获取或设置审核状态。
                         /// </summary>
@@ -49,12 +41,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 }
 
                 /// <summary>
-                /// 获取或设置剧目 ID。
+                /// 获取或设置作品 ID。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("drama_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("drama_id")]
-                [System.Xml.Serialization.XmlElement("drama_id")]
-                public string DramaId { get; set; } = default!;
+                [Newtonsoft.Json.JsonProperty("book_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("book_id")]
+                [System.Xml.Serialization.XmlElement("book_id")]
+                public string BookId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置审核信息。
