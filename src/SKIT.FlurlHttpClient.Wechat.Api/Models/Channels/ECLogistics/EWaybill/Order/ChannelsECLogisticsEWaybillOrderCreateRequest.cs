@@ -246,7 +246,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ewaybill_acct_id")]
         [System.Text.Json.Serialization.JsonPropertyName("ewaybill_acct_id")]
-        public string AccountId { get; set; } = string.Empty;
+        public string EWaybillAccountId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置面单模板 ID。
