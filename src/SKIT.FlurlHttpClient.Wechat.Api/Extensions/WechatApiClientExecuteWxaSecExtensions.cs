@@ -504,6 +504,98 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaSecVodGetAuthorizedAppsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/sec/vod/authorizecopyright 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_8-1-%E5%A2%9E%E5%8A%A0%E7%89%88%E6%9D%83%E6%8E%88%E6%9D%83 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodAuthorizeCopyrightResponse> ExecuteWxaSecVodAuthorizeCopyrightAsync(this WechatApiClient client, Models.WxaSecVodAuthorizeCopyrightRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "authorizecopyright")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSecVodAuthorizeCopyrightResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/sec/vod/deauthorizecopyright 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_8-2-%E8%A7%A3%E9%99%A4%E7%89%88%E6%9D%83%E6%8E%88%E6%9D%83 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodDeauthorizeCopyrightResponse> ExecuteWxaSecVodDeauthorizeCopyrightAsync(this WechatApiClient client, Models.WxaSecVodDeauthorizeCopyrightRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "deauthorizecopyright")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSecVodDeauthorizeCopyrightResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/sec/vod/getcopyrightauthorizationlist 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_8-3-%E6%9F%A5%E8%AF%A2%E7%89%88%E6%9D%83%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodGetCopyrightAuthorizationListResponse> ExecuteWxaSecVodGetCopyrightAuthorizationListAsync(this WechatApiClient client, Models.WxaSecVodGetCopyrightAuthorizationListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "getcopyrightauthorizationlist")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSecVodGetCopyrightAuthorizationListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/sec/vod/getcopyrightauthorizedlist 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/mini-drama/mini_drama.html#_8-4-%E6%9F%A5%E8%AF%A2%E8%A2%AB%E7%89%88%E6%9D%83%E6%8E%88%E6%9D%83%E4%BF%A1%E6%81%AF ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaSecVodGetCopyrightAuthorizedListResponse> ExecuteWxaSecVodGetCopyrightAuthorizedListAsync(this WechatApiClient client, Models.WxaSecVodGetCopyrightAuthorizedListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "sec", "vod", "getcopyrightauthorizedlist")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaSecVodGetCopyrightAuthorizedListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
 
         #region Vod/Upload
