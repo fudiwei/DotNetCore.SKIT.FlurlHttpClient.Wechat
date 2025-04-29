@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/business/register 接口的请求。</para>
@@ -25,5 +25,12 @@
         [Newtonsoft.Json.JsonProperty("icon_media_id")]
         [System.Text.Json.Serialization.JsonPropertyName("icon_media_id")]
         public string IconMediaId { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置是否将消息转发到通用客服。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("transfer_to_commkf")]
+        [System.Text.Json.Serialization.JsonPropertyName("transfer_to_commkf")]
+        public bool? IsTransferToCommonKf { get; set; }
     }
 }

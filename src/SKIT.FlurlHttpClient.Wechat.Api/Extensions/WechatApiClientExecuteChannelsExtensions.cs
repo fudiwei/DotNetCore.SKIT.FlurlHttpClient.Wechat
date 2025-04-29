@@ -1306,6 +1306,72 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region ECCommonKf
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/commkf/cosupload 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/kf/upload_cos/upload_cos_api.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECCommonKfCosUploadResponse> ExecuteChannelsECCommonKfCosUploadAsync(this WechatApiClient client, Models.ChannelsECCommonKfCosUploadRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.FileName is null)
+            {
+                if ("image".Equals(request.FileType))
+                    request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
+                else if ("video".Equals(request.FileType))
+                    request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".mp4";
+                else
+                    request.FileName = Guid.NewGuid().ToString("N").ToLower();
+            }
+
+            if (request.FileContentType is null)
+            {
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+            }
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "commkf", "cosupload")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes!, fileContentType: request.FileContentType, formDataName: "file");
+            httpContent.Add(new StringContent(request.FileType), "msg_type");
+            httpContent.Add(new StringContent(request.OpenId), "open_id");
+            return await client.SendFlurlRequestAsync<Models.ChannelsECCommonKfCosUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/commkf/sendmsg 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/kf/send_msg/send_msg_api.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECCommonKfSendMessageResponse> ExecuteChannelsECCommonKfSendMessageAsync(this WechatApiClient client, Models.ChannelsECCommonKfSendMessageRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "commkf", "sendmsg")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECCommonKfSendMessageResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ECCompass
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/compass/shop/overall/get 接口。</para>
