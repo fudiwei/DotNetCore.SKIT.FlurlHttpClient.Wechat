@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /union/promoter/promotion/list 接口的响应。</para>
@@ -38,7 +38,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total")]
         [System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int Total { get; set; }
+        public int TotalCount { get; set; }
 
         /// <summary>
         /// 获取或设置允许创建的推广位最大数量。

@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("totalNum")]
         [System.Text.Json.Serialization.JsonPropertyName("totalNum")]
-        public int Total { get; set; }
+        public int TotalCount { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

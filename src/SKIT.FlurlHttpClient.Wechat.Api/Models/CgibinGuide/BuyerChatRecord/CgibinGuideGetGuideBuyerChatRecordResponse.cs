@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getguidebuyerchatrecord 接口的响应。</para>
@@ -54,17 +54,17 @@
         }
 
         /// <summary>
-        /// 获取或设置消息记录总数。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("total_num")]
-        [System.Text.Json.Serialization.JsonPropertyName("total_num")]
-        public int Total { get; set; }
-
-        /// <summary>
         /// 获取或设置消息记录列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("msg_list")]
         [System.Text.Json.Serialization.JsonPropertyName("msg_list")]
         public Types.ChatRecord[] ChatRecordList { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置消息记录总数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("total_num")]
+        [System.Text.Json.Serialization.JsonPropertyName("total_num")]
+        public int TotalCount { get; set; }
     }
 }

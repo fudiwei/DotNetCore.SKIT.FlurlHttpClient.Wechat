@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxaapi/log/jserr_list 接口的响应。</para>
@@ -79,6 +79,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("totalCount")]
         [System.Text.Json.Serialization.JsonPropertyName("totalCount")]
-        public int Total { get; set; }
+        public int TotalCount { get; set; }
     }
 }

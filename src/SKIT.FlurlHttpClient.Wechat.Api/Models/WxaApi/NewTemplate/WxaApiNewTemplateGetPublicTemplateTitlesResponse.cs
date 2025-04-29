@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxaapi/newtmpl/getpubtemplatetitles 接口的响应。</para>
@@ -40,17 +40,17 @@
         }
 
         /// <summary>
-        /// 获取或设置模板标题数量。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("count")]
-        [System.Text.Json.Serialization.JsonPropertyName("count")]
-        public int Total { get; set; }
-
-        /// <summary>
         /// 获取或设置模板标题列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("data")]
         [System.Text.Json.Serialization.JsonPropertyName("data")]
         public Types.TemplateTitle[] TemplateTitleList { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置模板标题数量。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("count")]
+        [System.Text.Json.Serialization.JsonPropertyName("count")]
+        public int TotalCount { get; set; }
     }
 }

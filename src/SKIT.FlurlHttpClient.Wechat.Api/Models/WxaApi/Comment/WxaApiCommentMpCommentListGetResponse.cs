@@ -259,7 +259,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("extInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("extInfo")]
-                public Types.ExtraInfo ExtraInfo { get; set; } = default!;
+                public Types.ExtraInfo? ExtraInfo { get; set; }
             }
         }
 

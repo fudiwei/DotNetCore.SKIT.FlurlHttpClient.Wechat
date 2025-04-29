@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [GET] /wxaapi/broadcast/role/getrolelist 接口的响应。</para>
@@ -65,6 +65,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total")]
         [System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int Total { get; set; }
+        public int TotalCount { get; set; }
     }
 }

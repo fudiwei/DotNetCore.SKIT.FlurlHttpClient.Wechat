@@ -283,6 +283,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total")]
         [System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int Total { get; set; }
+        public int TotalCount { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/batchget 接口的响应。</para>
@@ -17,6 +17,6 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_num")]
         [System.Text.Json.Serialization.JsonPropertyName("total_num")]
-        public int Total { get; set; }
+        public int TotalCount { get; set; }
     }
 }

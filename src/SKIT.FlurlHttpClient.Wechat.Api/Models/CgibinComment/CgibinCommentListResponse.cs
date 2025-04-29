@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/comment/list 接口的响应。</para>
@@ -76,17 +76,17 @@
         }
 
         /// <summary>
-        /// 获取或设置评论总数。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("total")]
-        [System.Text.Json.Serialization.JsonPropertyName("total")]
-        public int Total { get; set; }
-
-        /// <summary>
         /// 获取或设置评论列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("comment")]
         [System.Text.Json.Serialization.JsonPropertyName("comment")]
         public Types.Comment[] CommentList { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置评论总数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("total")]
+        [System.Text.Json.Serialization.JsonPropertyName("total")]
+        public int TotalCount { get; set; }
     }
 }

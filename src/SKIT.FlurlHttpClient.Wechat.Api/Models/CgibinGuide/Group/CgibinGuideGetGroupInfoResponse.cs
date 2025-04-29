@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/guide/getgroupinfo 接口的响应。</para>
@@ -47,17 +47,17 @@
         }
 
         /// <summary>
-        /// 获取或设置组内顾问人员总数。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("total_num")]
-        [System.Text.Json.Serialization.JsonPropertyName("total_num")]
-        public int Total { get; set; }
-
-        /// <summary>
         /// 获取或设置顾问列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("guide_list")]
         [System.Text.Json.Serialization.JsonPropertyName("guide_list")]
         public Types.Guide[] GuideList { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置组内顾问人员总数。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("total_num")]
+        [System.Text.Json.Serialization.JsonPropertyName("total_num")]
+        public int TotalCount { get; set; }
     }
 }

@@ -1,0 +1,65 @@
+{
+    "info": {
+        "content": {
+            "commentId": "123",
+            "createTime": "1669031402",
+            "userInfo": {
+                "openid": "xxx",
+                "headImg": "",
+                "nickName": "啊哈"
+            },
+            "content": {
+                "txt": "突突突突突突有",
+                "media": [
+                    {
+                        "video": "https://xxx/xx",
+                        "videoCover": "http://xxx/xx",
+                        "videoDuration": 11
+                    }
+                ]
+            },
+            "bizInfo": {
+                "appid": "wx1234567890",
+                "headImg": "http://wx.qlogo.cn/mmhead/xxxxxx",
+                "nickName": "xxx的小商店"
+            },
+            "score": 200,
+            "orderId": "payorder@xxxx",
+            "wxPayId": "xxxx",
+            "orderInfo": {
+                "busiOrderId": "xxxxxx"
+            },
+            "productInfo": {
+                "productList": [
+                    {
+                        "name": "我是描述",
+                        "picUrl": "https://xxxxx/x"
+                    }
+                ]
+            },
+            "payTime": "1669030760",
+            "amount": 1
+        }
+    },
+    "processInfo": {
+        "commentId": "xxx",
+        "actionList": [
+            {
+                "type": 1,
+                "updateTime": 1669031402
+            },
+            {
+                "type": 2
+            },
+            {
+                "type": 3
+            }
+        ]
+    },
+    "oldComment": {
+        "commentId": "xxx",
+        "content": {},
+        "score": 100,
+        "createTime": 11111
+    }
+}

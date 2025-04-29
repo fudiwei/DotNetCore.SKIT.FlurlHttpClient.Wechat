@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -161,6 +161,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("totalCount")]
         [System.Text.Json.Serialization.JsonPropertyName("totalCount")]
-        public int Total { get; set; }
+        public int TotalCount { get; set; }
     }
 }
