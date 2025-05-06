@@ -808,11 +808,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public string? LiveId { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置单场景。
+                                /// 获取或设置订单场景。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("order_scene")]
                                 [System.Text.Json.Serialization.JsonPropertyName("order_scene")]
                                 public int? OrderScene { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置会员权益 SessionId。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("vip_order_session_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("vip_order_session_id")]
+                                public string? VipOrderSessionId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置分佣单生成进度。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("commission_handling_progress")]
+                                [System.Text.Json.Serialization.JsonPropertyName("commission_handling_progress")]
+                                public int? CommissionHandlingProgress { get; set; }
                             }
 
                             public class Commission
@@ -1280,9 +1294,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置礼物订单 ID。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("present_order_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("present_order_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                [Newtonsoft.Json.JsonProperty("present_order_id_str")]
+                [System.Text.Json.Serialization.JsonPropertyName("present_order_id_str")]
                 public string? PresentOrderId { get; set; }
 
                 /// <summary>
