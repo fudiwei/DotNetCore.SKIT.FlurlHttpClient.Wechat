@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -131,6 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置联系电话。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2025-04-14 下线。")]
                         [Newtonsoft.Json.JsonProperty("tel_number")]
                         [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
                         public string? TelNumber { get; set; }

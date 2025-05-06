@@ -131,11 +131,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                     public class ChangeSKUInfo
                                     {
                                         /// <summary>
-                                        /// 获取或设置发货前更换 SKU 是否成功。
+                                        /// 获取或设置发货前更换 SKU 状态。
                                         /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("preshipment_change_sku_success")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("preshipment_change_sku_success")]
-                                        public bool IsPreshipmentChangeSKUSuccessful { get; set; }
+                                        [Newtonsoft.Json.JsonProperty("preshipment_change_sku_state")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("preshipment_change_sku_state")]
+                                        public int IsPreshipmentChangeSKUSuccessful { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置原 SKU ID。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("old_sku_id")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("old_sku_id")]
+                                        public long OldSKUId { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置新 SKU ID。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("new_sku_id")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("new_sku_id")]
+                                        public long NewSKUId { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置商家处理请求的最后时间戳。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("ddl_time_stamp")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("ddl_time_stamp")]
+                                        public long? DeadlineTimestamp { get; set; }
                                     }
                                 }
 

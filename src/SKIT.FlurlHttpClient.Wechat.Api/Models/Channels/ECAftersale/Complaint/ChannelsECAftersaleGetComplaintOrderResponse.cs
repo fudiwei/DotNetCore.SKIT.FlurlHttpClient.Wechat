@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -40,6 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置手机号码。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2025-04-14 下线。")]
                 [Newtonsoft.Json.JsonProperty("phone_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
                 public string? PhoneNumber { get; set; }
@@ -64,6 +67,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("after_sale_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("after_sale_reason")]
                 public int? AftersaleReasonType { get; set; }
+            }
+
+            public class VirualTelNumberInfo : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.VirualTelNumberInfo
+            {
             }
         }
 
@@ -96,5 +103,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
         public int Status { get; set; }
+
+        /// <summary>
+        /// 获取或设置虚拟号码信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("virtual_tel_num_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_num_info")]
+        public Types.VirualTelNumberInfo? VirualTelNumberInfo { get; set; }
     }
 }
