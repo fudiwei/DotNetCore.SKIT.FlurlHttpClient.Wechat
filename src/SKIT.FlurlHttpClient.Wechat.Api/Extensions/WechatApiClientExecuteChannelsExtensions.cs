@@ -11,6 +11,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
     {
         #region ECAftersale
         /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/aftersale/genaftersaleorder 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/aftersale/genaftersaleorder.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECAftersaleGenerateAftersaleOrderResponse> ExecuteChannelsECAftersaleGenerateAftersaleOrderAsync(this WechatApiClient client, Models.ChannelsECAftersaleGenerateAftersaleOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "aftersale", "genaftersaleorder")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECAftersaleGenerateAftersaleOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /channels/ec/aftersale/getaftersalelist 接口。</para>
         /// <para>
         /// REF: <br/>

@@ -360,7 +360,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? UnionId { get; set; }
 
                 /// <summary>
-                /// 获取或设置退款原因。
+                /// 获取或设置售后原因。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
