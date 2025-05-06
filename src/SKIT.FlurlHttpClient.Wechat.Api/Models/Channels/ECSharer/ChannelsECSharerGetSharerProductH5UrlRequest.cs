@@ -1,8 +1,11 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/sharer/get_sharer_product_h5url 接口的请求。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2025-03-07 下线。")]
     public class ChannelsECSharerGetSharerProductH5UrlRequest : WechatApiRequest, IInferable<ChannelsECSharerGetSharerProductH5UrlRequest, ChannelsECSharerGetSharerProductH5UrlResponse>
     {
         /// <summary>
