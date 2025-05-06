@@ -13,6 +13,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long ProductId { get; set; }
 
         /// <summary>
+        /// 获取或设置商品在橱窗的 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("product_window_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("product_window_id")]
+        public long? ProductWindowId { get; set; }
+
+        /// <summary>
         /// 获取或设置小店 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
@@ -24,6 +31,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finder_id")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
-        public string FinderId { get; set; } = string.Empty;
+        public string? FinderId { get; set; }
+
+        /// <summary>
+        /// 获取或设置视频号 OpenFinderId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("openfinderid")]
+        [System.Text.Json.Serialization.JsonPropertyName("openfinderid")]
+        public string? OpenFinderId { get; set; }
+
+        /// <summary>
+        /// 获取或设置带货达人 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("opentalentid")]
+        [System.Text.Json.Serialization.JsonPropertyName("opentalentid")]
+        public string? OpenTalentId { get; set; }
     }
 }

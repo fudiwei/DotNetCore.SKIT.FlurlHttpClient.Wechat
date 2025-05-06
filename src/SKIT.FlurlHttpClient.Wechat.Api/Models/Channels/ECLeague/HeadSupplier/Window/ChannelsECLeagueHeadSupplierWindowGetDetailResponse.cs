@@ -68,6 +68,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("cats_v2")]
                         [System.Text.Json.Serialization.JsonPropertyName("cats_v2")]
                         public Types.Category[]? CategoryV2List { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品小程序跳转小店场景添加商品时传递的跟佣信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_promotion_link")]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_promotion_link")]
+                        public string? ProductPromotionLink { get; set; }
                     }
                 }
 

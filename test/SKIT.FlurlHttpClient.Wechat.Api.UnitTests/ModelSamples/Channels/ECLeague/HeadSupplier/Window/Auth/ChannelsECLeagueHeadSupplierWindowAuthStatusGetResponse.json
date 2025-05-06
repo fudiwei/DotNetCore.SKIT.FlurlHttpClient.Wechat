@@ -1,5 +1,7 @@
 {
     "errcode": 0,
     "errmsg": "ok",
-    "window_auth_status": 1
+    "window_auth_status": 1,
+    "openfinderid": "",
+    "opentalentid": ""
 }

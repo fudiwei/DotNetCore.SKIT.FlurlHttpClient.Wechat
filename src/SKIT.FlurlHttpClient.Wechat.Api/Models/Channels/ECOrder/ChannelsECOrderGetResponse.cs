@@ -868,7 +868,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public string? OpenFinderId { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置新带货平台 ID。
+                                /// 获取或设置带货达人 ID。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("talent_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("talent_id")]

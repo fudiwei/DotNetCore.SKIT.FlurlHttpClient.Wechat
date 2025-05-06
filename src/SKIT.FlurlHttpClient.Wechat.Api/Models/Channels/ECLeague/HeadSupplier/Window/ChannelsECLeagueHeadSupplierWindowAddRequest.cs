@@ -24,6 +24,41 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finder_id")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
-        public string FinderId { get; set; } = string.Empty;
+        public string? FinderId { get; set; }
+
+        /// <summary>
+        /// 获取或设置视频号 OpenFinderId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("openfinderid")]
+        [System.Text.Json.Serialization.JsonPropertyName("openfinderid")]
+        public string? OpenFinderId { get; set; }
+
+        /// <summary>
+        /// 获取或设置带货达人 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("opentalentid")]
+        [System.Text.Json.Serialization.JsonPropertyName("opentalentid")]
+        public string? OpenTalentId { get; set; }
+
+        /// <summary>
+        /// 获取或设置联盟商品链接。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("product_link")]
+        [System.Text.Json.Serialization.JsonPropertyName("product_link")]
+        public string? ProductLink { get; set; }
+
+        /// <summary>
+        /// 获取或设置计划类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("plan_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("plan_type")]
+        public int? PlanType { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否需要在个人橱窗页隐藏。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("is_hide_for_window")]
+        [System.Text.Json.Serialization.JsonPropertyName("is_hide_for_window")]
+        public bool? IsHideForWindow { get; set; }
     }
 }
