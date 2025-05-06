@@ -1,11 +1,9 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/league/headsupplier/item/get 接口的响应。</para>
+    /// <para>表示 [POST] /channels/ec/league/headsupplier/productdetail/get 接口的响应。</para>
     /// </summary>
-    public class ChannelsECLeagueHeadSupplierItemGetResponse : WechatApiResponse
+    public class ChannelsECLeagueHeadSupplierProductDetailGetResponse : WechatApiResponse
     {
         public static class Types
         {
@@ -17,11 +15,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     {
                         public static class Types
                         {
-                            public class Detail : ChannelsECLeagueHeadSupplierWindowGetDetailResponse.Types.Product.Types.ProductInfo.Types.Detail
+                            public class Detail : ChannelsECProductGetResponse.Types.Product.Types.Detail
                             {
                             }
 
-                            public class Category : ChannelsECLeagueHeadSupplierWindowGetDetailResponse.Types.Product.Types.ProductInfo.Types.Category
+                            public class Category : ChannelsECProductGetResponse.Types.Product.Types.Category
+                            {
+                            }
+
+                            public class SKU : ChannelsECProductGetResponse.Types.Product.Types.SKU
                             {
                             }
                         }
@@ -55,27 +57,64 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public Types.Detail Detail { get; set; } = default!;
 
                         /// <summary>
-                        /// 获取或设置商品类目列表。
-                        /// </summary>
-                        [Obsolete("相关接口或字段于 2024-10-28 下线。")]
-                        [Newtonsoft.Json.JsonProperty("cats")]
-                        [System.Text.Json.Serialization.JsonPropertyName("cats")]
-                        public Types.Category[]? CategoryList { get; set; }
-
-                        /// <summary>
                         /// 获取或设置新版商品类目列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("cats_v2")]
                         [System.Text.Json.Serialization.JsonPropertyName("cats_v2")]
                         public Types.Category[]? CategoryV2List { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 SKU 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("skus")]
+                        [System.Text.Json.Serialization.JsonPropertyName("skus")]
+                        public Types.SKU[] SKUList { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置商品状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("status")]
+                        public int Status { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置近 30 天销量范围。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("monthly_sales_range")]
+                        [System.Text.Json.Serialization.JsonPropertyName("monthly_sales_range")]
+                        public int MonthlySalesRange { get; set; }
+                    }
+
+                    public class ShopInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置店铺名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("name")]
+                        public string Name { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置店铺图标 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("icon")]
+                        [System.Text.Json.Serialization.JsonPropertyName("icon")]
+                        public string IconUrl { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置店铺评分。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("score")]
+                        [System.Text.Json.Serialization.JsonPropertyName("score")]
+                        public int Score { get; set; }
                     }
                 }
 
                 /// <summary>
                 /// 获取或设置小店 AppId。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("appid")]
-                [System.Text.Json.Serialization.JsonPropertyName("appid")]
+                [Newtonsoft.Json.JsonProperty("shop_appid")]
+                [System.Text.Json.Serialization.JsonPropertyName("shop_appid")]
                 public string AppId { get; set; } = default!;
 
                 /// <summary>
@@ -92,14 +131,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("product_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_info")]
                 public Types.ProductInfo ProductInfo { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置店铺信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("shop")]
+                [System.Text.Json.Serialization.JsonPropertyName("shop")]
+                public Types.ShopInfo ShopInfo { get; set; } = default!;
             }
         }
 
         /// <summary>
         /// 获取或设置商品信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("item")]
-        [System.Text.Json.Serialization.JsonPropertyName("item")]
+        [Newtonsoft.Json.JsonProperty("product")]
+        [System.Text.Json.Serialization.JsonPropertyName("product")]
         public Types.Product Product { get; set; } = default!;
     }
 }

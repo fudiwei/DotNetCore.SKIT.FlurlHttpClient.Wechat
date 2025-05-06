@@ -33,11 +33,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? AppId { get; set; }
 
         /// <summary>
+        /// 获取或设置推客 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sharer_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sharer_appid")]
+        public string? SharerAppId { get; set; }
+
+        /// <summary>
         /// 获取或设置视频号 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finder_id")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
         public string? FinderId { get; set; }
+
+        /// <summary>
+        /// 获取或设置视频号 OpenFinderId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("openfinderid")]
+        [System.Text.Json.Serialization.JsonPropertyName("openfinderid")]
+        public string? OpenFinderId { get; set; }
 
         /// <summary>
         /// 获取或设置创建时间范围。

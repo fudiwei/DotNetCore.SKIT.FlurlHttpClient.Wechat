@@ -2455,12 +2455,60 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
 
         #region ECLeague/HeadSupplier
+        #region ECLeague/HeadSupplier/CooperativeItem
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/cooperativeitem/add 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/addcooperativeitem.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueHeadSupplierCooperativeItemAddResponse> ExecuteChannelsECLeagueHeadSupplierCooperativeItemAddAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierCooperativeItemAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "cooperativeitem", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierCooperativeItemAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/cooperativeitem/list/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getcooperativeitemlist.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueHeadSupplierCooperativeItemListGetResponse> ExecuteChannelsECLeagueHeadSupplierCooperativeItemListGetAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierCooperativeItemListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "cooperativeitem", "list", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierCooperativeItemListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ECLeague/HeadSupplier/Funds
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/funds/balance/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getbalance.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getbalance.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2483,7 +2531,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/funds/flowdetail/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getfundsflowdeatail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getfundsflowdeatail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2506,7 +2554,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/funds/flowlist/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getfundsflowlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getfundsflowlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2531,7 +2579,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getitemlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getitemlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2554,7 +2602,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getitem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getitem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2577,7 +2625,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/upd 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/updateitem.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/updateitem.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2595,6 +2643,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierItemUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/item/promotiondetail/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getpromotiondetail.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueHeadSupplierItemPromotionDetailGetResponse> ExecuteChannelsECLeagueHeadSupplierItemPromotionDetailGetAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierItemPromotionDetailGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "item", "promotiondetail", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierItemPromotionDetailGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
 
         #region ECLeague/HeadSupplier/Order
@@ -2602,7 +2673,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/order/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getorderlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getorderlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2625,7 +2696,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/order/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getorder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2645,12 +2716,62 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region ECLeague/HeadSupplier/ProductDetail
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/productdetail/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getproductdetail.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueHeadSupplierProductDetailGetResponse> ExecuteChannelsECLeagueHeadSupplierProductDetailGetAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierProductDetailGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "productdetail", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierProductDetailGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region ECLeague/HeadSupplier/SelectionProduct
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/selectionproducts/list/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/listselectionproducts.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueHeadSupplierSelectionProductsListGetResponse> ExecuteChannelsECLeagueHeadSupplierSelectionProductsListGetAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierSelectionProductsListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "selectionproducts", "list", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierSelectionProductsListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ECLeague/HeadSupplier/Shop
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/shop/list/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getshoplist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getshoplist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2673,7 +2794,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/shop/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getshop.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getshop.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2690,6 +2811,54 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierShopGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region ECLeague/HeadSupplier/SubItem
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/subitem/add 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/addsubitem.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueHeadSupplierSubItemAddResponse> ExecuteChannelsECLeagueHeadSupplierSubItemAddAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierSubItemAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "subitem", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierSubItemAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/subitem/list/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getsubitemlist.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueHeadSupplierSubItemListGetResponse> ExecuteChannelsECLeagueHeadSupplierSubItemListGetAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierSubItemListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "shop", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierSubItemListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -2721,7 +2890,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/window/remove 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/removewindow.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/removewindow.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2744,7 +2913,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/window/getall 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getallwindow.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getallwindow.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2767,7 +2936,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/window/getdetail 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getwindowdetail.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getwindowdetail.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2790,7 +2959,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/windowauth/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getauth.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getauth.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -2813,7 +2982,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/windowauth/status/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/leagueheadsupplier/getauthstatus.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/API/getauthstatus.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

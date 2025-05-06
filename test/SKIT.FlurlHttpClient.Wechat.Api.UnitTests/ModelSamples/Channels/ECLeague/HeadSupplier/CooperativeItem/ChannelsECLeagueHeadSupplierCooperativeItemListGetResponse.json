@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "product_id": 1,
+            "id": 123,
+            "head_supplier_item_link": "weixinstore/10001"
+        }
+    ],
+    "next_key": "PAGECONTEXT"
+}
