@@ -46,11 +46,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? TransactionId { get; set; }
 
                         /// <summary>
-                        /// 获取或设置提现单号。
+                        /// 获取或设置保障单 ID。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("withdraw_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("withdraw_id")]
-                        public string? WithdrawId { get; set; }
+                        [Newtonsoft.Json.JsonProperty("guarantee_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("guarantee_id")]
+                        public string? GuaranteeId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置礼物订单 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("present_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("present_id")]
+                        public string? PresentId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置群送礼关联订单号 ID 列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("group_present_sub_order_id_list")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringArrayWithCommaSplitConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("group_present_sub_order_id_list")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringArrayWithCommaSplitConverter))]
+                        public string[]? GroupPresentSubOrderIdList { get; set; }
                     }
                 }
 
