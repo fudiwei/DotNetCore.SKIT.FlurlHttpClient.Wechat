@@ -191,7 +191,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("spu_code")]
         [System.Text.Json.Serialization.JsonPropertyName("spu_code")]
-        public string? SpuCode { get; set; }
+        public string? SPUCode { get; set; }
 
         /// <summary>
         /// 获取或设置品牌 ID。

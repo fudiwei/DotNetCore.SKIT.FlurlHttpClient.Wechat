@@ -1,0 +1,37 @@
+{
+    "title": "宠物玩具5",
+    "head_imgs": [
+        "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ"
+    ],
+    "desc_info": {
+        "imgs": [
+            "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ"
+        ],
+        "desc": "物美价廉"
+    },
+    "cats_v2": [
+        {
+            "cat_id": "10000026"
+        },
+        {
+            "cat_id": "10000032"
+        },
+        {
+            "cat_id": "1246"
+        }
+    ],
+    "attrs": [
+        {
+            "attr_key": "产品净重（kg）",
+            "attr_value": "1"
+        }
+    ],
+    "skus": [
+        {
+            "sale_price": 100,
+            "stock_num": 0
+        }
+    ],
+    "spu_code": "SPU_CODE_XXX",
+    "brand_id": "2100000000"
+}

@@ -17,7 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/openapi/clearQuota.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/openApi-mgnt/clearQuota.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/apimgnt/clearQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/API/apimgnt/clearQuota.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/clearQuota.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/openApi/clearQuotaByAppSecret.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/apimgnt/clearQuotaByAppSecret.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/API/apimgnt/clearQuotaByAppSecret.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/clearQuotaByAppSecret.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/openapi/getApiQuota.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/openApi-mgnt/getApiQuota.html ]]>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/apimgnt/getApiQuota.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/API/apimgnt/getApiQuota.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/getApiQuota.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -106,7 +106,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <![CDATA[ https://developers.weixin.qq.com/doc/oplatform/openApi/OpenApiDoc/openapi/getRidInfo.html ]]> <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/openApi-mgnt/getRidInfo.html ]]>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/apimgnt/getRidInfo.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/API/apimgnt/getRidInfo.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/getRidInfo.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
