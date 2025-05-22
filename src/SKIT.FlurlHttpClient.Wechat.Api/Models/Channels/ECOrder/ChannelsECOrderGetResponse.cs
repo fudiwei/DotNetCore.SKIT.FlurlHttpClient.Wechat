@@ -135,7 +135,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("preshipment_change_sku_state")]
                                         [System.Text.Json.Serialization.JsonPropertyName("preshipment_change_sku_state")]
-                                        public int IsPreshipmentChangeSKUSuccessful { get; set; }
+                                        public int PreshipmentChangeSKUState { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置原 SKU ID。
@@ -1072,6 +1072,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("content_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("content_id")]
                                 public string? ContentId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置自营推客推广的带货机构 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("promoter_head_supplier_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("promoter_head_supplier_id")]
+                                public string? PromoterHeadSupplierId { get; set; }
                             }
 
                             public class Refund
@@ -1106,6 +1113,37 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("greeting_message")]
                                 [System.Text.Json.Serialization.JsonPropertyName("greeting_message")]
                                 public string? GreetingMessage { get; set; }
+                            }
+
+                            public class CustomInfo
+                            {
+                                /// <summary>
+                                /// 获取或设置定制类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("custom_type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("custom_type")]
+                                public int CustomType { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置定制图片 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("custom_img_url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("custom_img_url")]
+                                public string? CustomImageUrl { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置定制预览图片 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("custom_preview_img_url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("custom_preview_img_url")]
+                                public string? CustomPreviewImageUrl { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置定制文字。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("custom_word")]
+                                [System.Text.Json.Serialization.JsonPropertyName("custom_word")]
+                                public string? CustomWord { get; set; }
                             }
                         }
 
@@ -1206,6 +1244,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("greeting_card_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("greeting_card_info")]
                         public Types.GreetingCard? GreetingCard { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置商品定制信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("custom_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("custom_info")]
+                        public Types.CustomInfo? CustomInfo { get; set; }
                     }
 
                     public class AftersaleDetail
