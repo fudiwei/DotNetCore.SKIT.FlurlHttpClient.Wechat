@@ -127,42 +127,42 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                     public class H5Info
                     {
                         /// <summary>
-                        /// 场景类型。
+                        /// 获取或设置场景类型。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("type")]
                         [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = string.Empty;
+                        public string? Type { get; set; }
 
                         /// <summary>
-                        /// 应用名。
+                        /// 获取或设置应用名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("app_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("app_name")]
                         public string? AppName { get; set; }
 
                         /// <summary>
-                        /// IOS移动应用bundle_id。
+                        /// 获取或设置 iOS 应用包名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("bundle_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("bundle_id")]
                         public string? BundleId { get; set; }
 
                         /// <summary>
-                        /// 安卓移动应用包名。
+                        /// 获取或设置 Android 应用包名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("package_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("package_name")]
                         public string? PackageName { get; set; }
 
                         /// <summary>
-                        /// WAP网站应用-WAP网站URL地址。
+                        /// 获取或设置网站 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("wap_url")]
                         [System.Text.Json.Serialization.JsonPropertyName("wap_url")]
                         public string? WapUrl { get; set; }
 
                         /// <summary>
-                        /// WAP网站应用-WAP 网站名。
+                        /// 获取或设置网站名。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("wap_name")]
                         [System.Text.Json.Serialization.JsonPropertyName("wap_name")]
@@ -178,7 +178,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
                 public Types.Store? Store { get; set; }
 
                 /// <summary>
-                /// 获取或设置IOS移动应用/安卓移动应用/WAP网站应用。
+                /// 获取或设置移动应用或网站应用信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("h5_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("h5_info")]
