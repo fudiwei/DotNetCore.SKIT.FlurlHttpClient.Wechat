@@ -697,6 +697,10 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.3.0 (2025-02-24)
+
+    -   **新增**：补充统一下单接口场景信息字段。（_via_ [GitHub #193](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/193)）
+
 -   Release 3.2.2 (2025-02-24)
 
     -   **修复**：修复清关申报相关接口模型定义错误。（_via_ [GitHub #179](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/179)）
