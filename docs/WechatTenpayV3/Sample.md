@@ -2,7 +2,7 @@
 
 ---
 
-示例项目基于 .NET Framework 4.7 和 .NET 6.0 实现，分别位于 _samples/SKIT.FlurlHttpClient.Wechat.Sample_NetFramework47_ 和 _samples/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net6_。
+示例项目基于 .NET Framework 4.8 和 .NET 6.0 实现，分别位于 _samples/SKIT.FlurlHttpClient.Wechat.Sample_NetFramework48_ 和 _samples/SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample_Net6_。
 
 示例项目依赖以下第三方库：
 
@@ -18,7 +18,7 @@
 
 -   验证并接收微信服务器推送数据；
 
--   一个 JSAPI 下单和退款的 API。
+-   一个 JSAPI 下单和退款的 WebAPI。
 
 ---
 

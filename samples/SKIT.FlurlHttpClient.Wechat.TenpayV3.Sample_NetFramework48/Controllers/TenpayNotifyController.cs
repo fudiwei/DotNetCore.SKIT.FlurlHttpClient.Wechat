@@ -1,5 +1,15 @@
+using System.Diagnostics;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Web.Http;
+
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3;
+
     [RoutePrefix("api/notify")]
     public class TenpayNotifyController : ApiController
     {
@@ -19,10 +29,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Controllers
             using (var stream = await Request.Content.ReadAsStreamAsync())
             using (var reader = new StreamReader(stream, Encoding.UTF8))
             {
-                string timestamp = Request.Headers.TryGetValues("Wechatpay-Timestamp", out _) ? Request.Headers.GetValues("Wechatpay-Timestamp").First() : null;
-                string nonce = Request.Headers.TryGetValues("Wechatpay-Nonce", out _) ? Request.Headers.GetValues("Wechatpay-Nonce").First() : null;
-                string signature = Request.Headers.TryGetValues("Wechatpay-Signature", out _) ? Request.Headers.GetValues("Wechatpay-Signature").First() : null;
-                string serialNumber = Request.Headers.TryGetValues("Wechatpay-Serial", out _) ? Request.Headers.GetValues("Wechatpay-Serial").First() : null;
+                string timestamp = Request.Headers.Contains("Wechatpay-Timestamp") ? Request.Headers.GetValues("Wechatpay-Timestamp").First() : null;
+                string nonce = Request.Headers.Contains("Wechatpay-Nonce") ? Request.Headers.GetValues("Wechatpay-Nonce").First() : null;
+                string signature = Request.Headers.Contains("Wechatpay-Signature") ? Request.Headers.GetValues("Wechatpay-Signature").First() : null;
+                string serialNumber = Request.Headers.Contains("Wechatpay-Serial") ? Request.Headers.GetValues("Wechatpay-Serial").First() : null;
                 string content = await reader.ReadToEndAsync();
                 Debug.WriteLine("接收到微信支付推送的数据：{0}", content);
 

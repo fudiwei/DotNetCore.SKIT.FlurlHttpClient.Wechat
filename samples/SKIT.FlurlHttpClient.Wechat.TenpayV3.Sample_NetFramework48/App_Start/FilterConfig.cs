@@ -1,6 +1,8 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
+using System.Web.Mvc;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 {
-    public class FilterRegistration
+    public class FilterConfig
     {
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {

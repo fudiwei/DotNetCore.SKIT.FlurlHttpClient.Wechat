@@ -1,47 +1,38 @@
 using System;
-using System.Threading;
+using System.Diagnostics;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 
-namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundServices
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundJobs
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Models;
     using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
 
-    internal class TenpayCertificateRefreshingBackgroundService : BackgroundService
+    internal class TenpayCertificateRefreshingBackgroundJob
     {
-        private readonly ILogger _logger;
-        private readonly Options.TenpayOptions _tenpayOptions;
         private readonly HttpClients.IWechatTenpayClientFactory _wechatTenpayClientFactory;
 
-        public TenpayCertificateRefreshingBackgroundService(
-            ILoggerFactory loggerFactory,
-            IOptions<Options.TenpayOptions> tenpayOptions,
+        public TenpayCertificateRefreshingBackgroundJob(
             HttpClients.IWechatTenpayClientFactory wechatTenpayClientFactory)
         {
-            _logger = loggerFactory.CreateLogger(GetType());
-            _tenpayOptions = tenpayOptions.Value;
             _wechatTenpayClientFactory = wechatTenpayClientFactory;
         }
 
-        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
+        public async Task ExecuteAsync()
         {
             // NOTICE:
             //   2024-10-01 后微信支付新增了基于微信支付公钥的验证身份方式，
             //   如果你已切换至使用平台公钥，则不再需要下载平台证书，可删除此定时任务。
 
-            while (!stoppingToken.IsCancellationRequested)
+            foreach (var tenpayMerchantOptions in Options.TenpayOptions.Instance.Value.Merchants)
             {
-                foreach (var tenpayMerchantOptions in _tenpayOptions.Merchants)
+                try
                 {
-                    try
+                    const string ALGORITHM_TYPE = "RSA";
+                    using (var client = _wechatTenpayClientFactory.Create(tenpayMerchantOptions.MerchantId))
                     {
-                        const string ALGORITHM_TYPE = "RSA";
-                        var client = _wechatTenpayClientFactory.Create(tenpayMerchantOptions.MerchantId);
                         var request = new QueryCertificatesRequest() { AlgorithmType = ALGORITHM_TYPE };
-                        var response = await client.ExecuteQueryCertificatesAsync(request, cancellationToken: stoppingToken);
+                        var response = await client.ExecuteQueryCertificatesAsync(request);
                         if (response.IsSuccessful())
                         {
                             // NOTICE:
@@ -53,23 +44,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.BackgroundService
                                 client.PlatformCertificateManager.AddEntry(CertificateEntry.Parse(ALGORITHM_TYPE, certificate));
                             }
 
-                            _logger.LogInformation("刷新微信商户平台证书成功。");
+                            Debug.WriteLine("刷新微信商户平台证书成功。");
                         }
                         else
                         {
-                            _logger.LogWarning(
+                            Debug.WriteLine(
                                 "刷新微信商户平台证书失败（状态码：{0}，错误代码：{1}，错误描述：{2}）。",
                                 response.GetRawStatus(), response.ErrorCode, response.ErrorMessage
                             );
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        _logger.LogError(ex, "刷新微信商户平台证书遇到异常。");
-                    }
                 }
-
-                await Task.Delay(TimeSpan.FromDays(1)); // 每隔 1 天轮询刷新
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("刷新微信商户平台证书遇到异常。\r\n{0}", ex);
+                }
             }
         }
     }

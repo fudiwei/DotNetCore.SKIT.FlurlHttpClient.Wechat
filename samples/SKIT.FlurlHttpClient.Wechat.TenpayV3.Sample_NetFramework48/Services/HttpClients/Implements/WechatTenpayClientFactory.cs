@@ -1,13 +1,21 @@
+using System;
+using System.Linq;
+
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Implements
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Settings;
+
     internal partial class WechatTenpayClientFactory : IWechatTenpayClientFactory
     {
         private readonly IWechatTenpayCertificateManagerFactory _tenpayCertificateManagerFactory;
+        private readonly IWechatTenpayPublicKeyManagerFactory _tenpayPublicKeyManagerFactory;
 
         public WechatTenpayClientFactory(
-            IWechatTenpayCertificateManagerFactory tenpayCertificateManagerFactory)
+            IWechatTenpayCertificateManagerFactory tenpayCertificateManagerFactory,
+            IWechatTenpayPublicKeyManagerFactory tenpayPublicKeyManagerFactory)
         {
             _tenpayCertificateManagerFactory = tenpayCertificateManagerFactory;
+            _tenpayPublicKeyManagerFactory = tenpayPublicKeyManagerFactory;
         }
 
         public WechatTenpayClient Create(string merchantId)
@@ -24,11 +32,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Services.HttpClients.Imple
             {
                 MerchantId = tenpayMerchantOptions.MerchantId,
                 MerchantV3Secret = tenpayMerchantOptions.SecretV3,
-                MerchantCertSerialNumber = tenpayMerchantOptions.CertSerialNumber,
-                MerchantCertPrivateKey = tenpayMerchantOptions.CertPrivateKey,
-                CertificateManager = _tenpayCertificateManagerFactory.Create(tenpayMerchantOptions.MerchantId),
+                MerchantCertificateSerialNumber = tenpayMerchantOptions.CertificateSerialNumber,
+                MerchantCertificatePrivateKey = tenpayMerchantOptions.CertificatePrivateKey,
                 AutoEncryptRequestSensitiveProperty = false,
-                AutoDecryptResponseSensitiveProperty = false
+                AutoDecryptResponseSensitiveProperty = false,
+
+                // 基于平台证书的认证方式还需设置以下参数：
+                PlatformAuthScheme = PlatformAuthScheme.Certificate,
+                PlatformCertificateManager = _tenpayCertificateManagerFactory.Create(tenpayMerchantOptions.MerchantId),
+
+                // 基于平台公钥的认证方式还需设置以下参数：
+                //PlatformAuthScheme = PlatformAuthScheme.PublicKey,
+                //PlatformPublicKeyManager = _tenpayPublicKeyManagerFactory.Create(tenpayMerchantOptions.MerchantId)
             });
         }
     }

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -25,6 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
             // 注入工厂 HTTP 客户端
             services.AddHttpClient();
             services.AddSingleton<Services.HttpClients.IWechatTenpayCertificateManagerFactory, Services.HttpClients.Implements.WechatTenpayCertificateManagerFactory>();
+            services.AddSingleton<Services.HttpClients.IWechatTenpayPublicKeyManagerFactory, Services.HttpClients.Implements.WechatTenpayPublicKeyManagerFactory>();
             services.AddSingleton<Services.HttpClients.IWechatTenpayClientFactory, Services.HttpClients.Implements.WechatTenpayClientFactory>();
 
             // 注入后台任务

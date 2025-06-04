@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
 using Hangfire;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 {
-    public class HangfireInitializer
+    public class HangfireConfig
     {
         public static BackgroundJobServer Init()
         {

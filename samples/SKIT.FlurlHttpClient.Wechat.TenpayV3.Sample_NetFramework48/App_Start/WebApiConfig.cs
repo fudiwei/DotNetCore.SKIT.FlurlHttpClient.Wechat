@@ -1,6 +1,8 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
+using System.Web.Http;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 {
-    public static class WebApiConfiguration
+    public static class WebApiConfig
     {
         public static void Register(HttpConfiguration config)
         {

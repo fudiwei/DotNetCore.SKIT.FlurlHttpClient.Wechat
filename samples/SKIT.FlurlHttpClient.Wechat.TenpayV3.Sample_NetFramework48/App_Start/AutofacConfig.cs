@@ -1,6 +1,13 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
+using System.Reflection;
+using System.Web.Mvc;
+using Autofac;
+using Autofac.Integration.Mvc;
+using Autofac.Integration.WebApi;
+using Hangfire;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample
 {
-    public class AutofacInitializer
+    public class AutofacConfig
     {
         public static void Init()
         {
@@ -12,6 +19,9 @@
 
             builder.RegisterType<Services.HttpClients.Implements.WechatTenpayCertificateManagerFactory>()
                    .As<Services.HttpClients.IWechatTenpayCertificateManagerFactory>()
+                   .SingleInstance();
+            builder.RegisterType<Services.HttpClients.Implements.WechatTenpayPublicKeyManagerFactory>()
+                   .As<Services.HttpClients.IWechatTenpayPublicKeyManagerFactory>()
                    .SingleInstance();
             builder.RegisterType<Services.HttpClients.Implements.WechatTenpayClientFactory>()
                    .As<Services.HttpClients.IWechatTenpayClientFactory>()

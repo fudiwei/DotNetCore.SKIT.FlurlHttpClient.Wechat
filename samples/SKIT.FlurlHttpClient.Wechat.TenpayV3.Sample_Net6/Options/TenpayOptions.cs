@@ -25,6 +25,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Sample.Options
                 public string CertificateSerialNumber { get; set; } = string.Empty;
 
                 public string CertificatePrivateKey { get; set; } = string.Empty;
+
+                public string? PlatformPublicKeyId { get; set; }
+
+                public string? PlatformPublicKey { get; set; }
             }
         }
     }
