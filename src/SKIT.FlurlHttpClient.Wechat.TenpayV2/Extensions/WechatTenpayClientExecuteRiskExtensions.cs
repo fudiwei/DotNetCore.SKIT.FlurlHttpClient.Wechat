@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /risk/getviolation 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_28 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/institution/4011985446 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

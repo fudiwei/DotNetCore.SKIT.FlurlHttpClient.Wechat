@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /cgi-bin/mch/customs/customdeclareorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_1 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011985151 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /cgi-bin/mch/customs/customdeclarequery 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_2 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011985273 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /cgi-bin/mch/newcustoms/customdeclareredeclare 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_4 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011985318 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

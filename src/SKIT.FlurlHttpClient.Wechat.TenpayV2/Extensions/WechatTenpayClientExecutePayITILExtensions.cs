@@ -12,24 +12,24 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /payitil/report 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_14 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_14 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=9_8 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/QuickPay/chapter8_8.shtml ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/NativePay/chapter8_8.shtml ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/MiniProgramPay/chapter8_8.shtml ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/OfficialPayMent/chapter8_8.shtml ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/In-AppPay/chapter8_8.shtml ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/pay/H5Payment/chapter8_8.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/401193996 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/401193522 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/401193718 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/401193993 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/401193942 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/401194165 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/401194168 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/401193665 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/401198926 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/401198411 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/401194135 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/401198440 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013634924 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013634972 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013635003 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013635266 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013636502 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013636622 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

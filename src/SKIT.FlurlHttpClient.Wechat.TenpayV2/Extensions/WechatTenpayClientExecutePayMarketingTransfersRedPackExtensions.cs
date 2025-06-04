@@ -4,7 +4,6 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using Flurl.Http;
-using SKIT.FlurlHttpClient.Wechat.TenpayV2.Settings;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 {
@@ -14,8 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /mmpaymkttransfers/sendredpack 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_4 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011983137 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,35 +32,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /mmpaymkttransfers/sendgroupredpack 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_5 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_5 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        [Obsolete("相关接口或字段于 2024-06-05 下线。")]
-        public static async Task<Models.SendPayMarketingTransfersGroupRedPackResponse> ExecuteSendPayMarketingTransfersGroupRedPackAsync(this WechatTenpayClient client, Models.SendPayMarketingTransfersGroupRedPackRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "sendgroupredpack");
-
-            return await client.SendFlurlRequestAsXmlAsync<Models.SendPayMarketingTransfersGroupRedPackResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
         /// <para>异步调用 [POST] /mmpaymkttransfers/sendminiprogramhb 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_2 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_2 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011974053 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011937425 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011941282 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -84,10 +59,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /mmpaymkttransfers/gethbinfo 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_6 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=13_6 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_sl.php?chapter=18_6 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011981612 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011937431 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011983160 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011941290 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -110,7 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /mmpaymkttransfers/sendworkwxredpack 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/96697 ]]>
+        /// <![CDATA[ https://open.work.weixin.qq.com/api/doc/90000/90135/90275 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

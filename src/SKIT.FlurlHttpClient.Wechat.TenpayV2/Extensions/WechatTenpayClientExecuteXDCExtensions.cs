@@ -12,18 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /xdc/apiv2getsignkey/sign/getsignkey 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/app/app_sl.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/H5_sl.php?chapter=23_1 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_sl_api.php?chapter=23_1 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011984810 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

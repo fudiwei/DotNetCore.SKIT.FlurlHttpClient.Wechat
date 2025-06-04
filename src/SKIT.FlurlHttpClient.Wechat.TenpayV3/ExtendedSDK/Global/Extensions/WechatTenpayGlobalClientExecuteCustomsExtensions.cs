@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [POST] /customs/orders 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013652510 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [GET] /customs/orders 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013652513 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [POST] /customs/redeclare 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_4.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013652521 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [PATCH] /customs/orders 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_5.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013652518 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <para>异步调用 [POST] /customs/verify-certificate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/declarecustom/chapter3_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013652524 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

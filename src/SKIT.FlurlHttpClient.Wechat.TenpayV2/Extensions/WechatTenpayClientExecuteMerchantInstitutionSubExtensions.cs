@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /secapi/mch/addInstitutionsub 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/sub_merchant_entry/chapter3_1.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013636642 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /secapi/mch/queryInstitutionsub 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/sub_merchant_entry/chapter3_2.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013636643 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /secapi/mch/modifyInstitutionsub 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxpay/en/sub_merchant_entry/chapter3_3.shtml ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013636644 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

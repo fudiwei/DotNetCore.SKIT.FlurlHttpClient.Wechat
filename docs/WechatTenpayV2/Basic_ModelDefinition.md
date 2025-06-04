@@ -61,7 +61,7 @@
 
 ### 【附】普通商户模式 API 模型命名速查表：
 
-注：树形结构与[微信支付开发文档](https://pay.weixin.qq.com/wiki/doc/api/index.html)目录结构保持一致。
+注：树形结构与[微信支付开发文档](https://pay.weixin.qq.com/doc/v2/merchant)目录结构保持一致。
 
 <details>
 
@@ -199,8 +199,6 @@
 
         -   发放红包：`SendPayMarketingTransfersRedPack`
 
-        -   发放裂变红包：`SendPayMarketingTransfersGroupRedPack`
-
         -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
 
     -   小程序红包：
@@ -209,12 +207,6 @@
 
         -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
 
-    -   付款到零钱：
-
-        -   付款：`CreatePayMarketingTransfersPromotionTransfer`
-
-        -   查询付款：`GetPayMarketingTransfersTransferInfo`
-
     -   付款到银行卡：
 
         -   付款到银行卡：`CreatePayServicePartnerTransfersPayToBank`
@@ -222,6 +214,12 @@
         -   查询付款银行卡：`GetPayServicePartnerTransfersPayToBankInfo`
 
         -   获取 RSA 加密公钥：`GetRiskPublicKey`
+
+    -   付款到零钱：
+
+        -   付款：`CreatePayMarketingTransfersPromotionTransfer`
+
+        -   查询付款：`GetPayMarketingTransfersTransferInfo`
 
     -   扣款服务：
 
@@ -269,7 +267,7 @@
 
 ### 【附】境内服务商模式 API 模型命名速查表：
 
-注：树形结构与[微信支付开发文档](https://pay.weixin.qq.com/wiki/doc/api/sl.html)目录结构保持一致。
+注：树形结构与[微信支付开发文档](https://pay.weixin.qq.com/doc/v2)目录结构保持一致。
 
 <details>
 
@@ -394,8 +392,6 @@
     -   现金红包：
 
         -   发放红包：`SendPayMarketingTransfersRedPack`
-
-        -   发放裂变红包：`SendPayMarketingTransfersGroupRedPack`
 
         -   查询红包记录：`GetPayMarketingTransfersRedPackInfo`
 
@@ -475,7 +471,7 @@
 
 ### 【附】银行服务商模式 API 模型命名速查表：
 
-注：树形结构与[微信支付开发文档](https://pay.weixin.qq.com/wiki/doc/api/bank.html)目录结构保持一致。
+注：树形结构与[微信支付开发文档](https://pay.weixin.qq.com/doc/v2)目录结构保持一致。
 
 <details>
 

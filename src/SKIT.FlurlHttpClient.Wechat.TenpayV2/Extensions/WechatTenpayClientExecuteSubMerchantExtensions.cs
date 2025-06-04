@@ -12,10 +12,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /secapi/mch/addsubdevconfig 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_2 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_3 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=20_2 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=20_3 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4014115404 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4014115410 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/institution/4011985201 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/institution/4011985217 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -37,8 +37,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /secapi/mch/querysubdevconfig 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_25 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=20_4 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4014115413 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/institution/4011985252 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /secapi/mkt/addrecommendconf 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=20_0 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4014115399 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

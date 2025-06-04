@@ -12,8 +12,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /deposit/unifiedorder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_7 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_8 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011986340 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011986476 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /deposit/micropay 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_1 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011986623 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /deposit/facepay 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_0 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011986577 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -79,7 +79,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /deposit/orderquery 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_2 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011986679 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -101,7 +101,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /deposit/reverse 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_3 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011986741 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -123,7 +123,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /deposit/consume 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_4 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011986801 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -145,7 +145,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /deposit/refund 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_5 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011987251 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -167,7 +167,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /deposit/refundquery 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_6 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011987300 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

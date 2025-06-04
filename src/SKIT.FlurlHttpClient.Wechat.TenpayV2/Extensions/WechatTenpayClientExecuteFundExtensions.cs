@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /fund/queryautowithdrawbydate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_1 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4014115346 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

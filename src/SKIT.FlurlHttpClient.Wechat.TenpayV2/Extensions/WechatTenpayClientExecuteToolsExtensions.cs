@@ -12,8 +12,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /tools/authcodetoopenid 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_13 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/micropay_sl.php?chapter=9_12 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011940944 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011941724 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -35,8 +35,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /tools/shorturl 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_9 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/native_sl.php?chapter=9_9 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011937195 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011989264 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/global/v2/zh/4013634974 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

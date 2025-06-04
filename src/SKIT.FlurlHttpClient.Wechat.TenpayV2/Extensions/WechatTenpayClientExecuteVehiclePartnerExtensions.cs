@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /vehicle/partnerpay/notification 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_992 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988204 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /vehicle/partnerpay/payapply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_982 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988205 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -56,7 +56,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /vehicle/partnerpay/querystate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_93 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/partner/4011988212 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -72,28 +72,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
                 .CreateFlurlRequest(request, HttpMethod.Post, "vehicle", "partnerpay", "querystate");
 
             return await client.SendFlurlRequestAsXmlAsync<Models.GetVehiclePartnerPayStateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
-        }
-
-        /// <summary>
-        /// <para>异步调用 [POST] /transit/partnerpay/queryorder 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_96 ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.GetTransitPartnerOrderResponse> ExecuteGetTransitPartnerOrderAsync(this WechatTenpayClient client, Models.GetTransitPartnerOrderRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "transit", "partnerpay", "queryorder");
-
-            return await client.SendFlurlRequestAsXmlAsync<Models.GetTransitPartnerOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }

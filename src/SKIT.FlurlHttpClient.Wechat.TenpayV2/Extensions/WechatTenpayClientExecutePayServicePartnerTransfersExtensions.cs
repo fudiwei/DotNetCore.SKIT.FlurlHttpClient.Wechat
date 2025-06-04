@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /mmpaysptrans/pay_bank 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=24_2 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011939840 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -34,7 +34,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /mmpaysptrans/query_bank 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=24_3 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4011941066 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

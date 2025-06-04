@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
         /// <para>异步调用 [POST] /billcommentsp/batchquerycomment 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_17 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v2/merchant/4014326528 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
