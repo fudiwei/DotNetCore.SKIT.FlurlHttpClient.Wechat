@@ -136,9 +136,9 @@ else
 
 ---
 
-## 常见问题
+## 故障排查
 
--   [本地开发时正常，发布到 IIS 后请求抛出异常？](./FAQ_IISProblem.md)
+-   [本地开发时正常，发布到 IIS 后请求抛出异常？](./Troubleshooting_IISProblem.md)
 
 ---
 
