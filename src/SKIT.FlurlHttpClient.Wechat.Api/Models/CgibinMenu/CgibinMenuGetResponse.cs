@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -58,7 +58,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? ArticleId { get; set; }
 
                         /// <summary>
-                        /// 获取或设置小程序的 AppId。
+                        /// 获取或设置小程序 AppId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("appid")]

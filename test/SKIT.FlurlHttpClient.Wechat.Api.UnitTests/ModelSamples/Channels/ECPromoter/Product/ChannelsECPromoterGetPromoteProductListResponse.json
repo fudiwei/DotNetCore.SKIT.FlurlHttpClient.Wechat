@@ -1,0 +1,11 @@
+{
+    "errcode": "0",
+    "errmsg": "ok",
+    "product_list": [
+        {
+            "product_id": 1,
+            "shop_appid": "SHOPAPPID"
+        }
+    ],
+    "next_key": "PAGECONTEXT"
+}

@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置团长开放唯一凭证。
+        /// 获取或设置供货机构 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("headsupplier_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("headsupplier_appid")]

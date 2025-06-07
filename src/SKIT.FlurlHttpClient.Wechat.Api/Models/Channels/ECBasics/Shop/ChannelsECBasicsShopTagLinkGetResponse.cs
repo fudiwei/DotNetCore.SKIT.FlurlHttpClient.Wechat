@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class ChannelsECBasicsShopTagLinkGetResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置店铺微信口令。
+        /// 获取或设置小店微信口令。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_taglink")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_taglink")]

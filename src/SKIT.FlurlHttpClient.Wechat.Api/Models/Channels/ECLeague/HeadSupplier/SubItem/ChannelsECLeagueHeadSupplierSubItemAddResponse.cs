@@ -5,5 +5,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class ChannelsECLeagueHeadSupplierSubItemAddResponse : WechatApiResponse
     {
+        /// <summary>
+        /// 获取或设置达人佣金计划 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_item_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_item_id")]
+        public long SubItemId { get; set; }
     }
 }

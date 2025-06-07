@@ -19,3 +19,21 @@ var client = WechatTenpayGlobalClientBuilder.Create(options).Build();
 ```
 
 该扩展客户端在用法上基础客户端完全相同，只需引入相应的命名空间即可。
+
+---
+
+### 切换接入点
+
+默认情况下，微信支付境外支付 API 客户端的接入点为 `https://apihk.mch.weixin.qq.com/v3/global`。
+
+如果你要切换为 `https://api.mch.weixin.qq.com/hk/v3` 或其他入口点，可以在构造客户端时指定：
+
+```csharp
+
+var options = new WechatTenpayGlobalClientOptions()
+{
+    // 其他配置项略
+    Endpoint = "https://api.mch.weixin.qq.com/hk/v3" // 注意结尾不要带 "/"
+};
+var client = WechatTenpayGlobalClientBuilder.Create(options).Build();
+```

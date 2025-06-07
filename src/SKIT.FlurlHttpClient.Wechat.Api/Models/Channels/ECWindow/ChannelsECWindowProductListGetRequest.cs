@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class ChannelsECWindowProductListGetRequest : WechatApiRequest, IInferable<ChannelsECWindowProductListGetRequest, ChannelsECWindowProductListGetResponse>
     {
         /// <summary>
-        /// 获取或设置商品来源店铺的 AppId。
+        /// 获取或设置商品来源小店 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]

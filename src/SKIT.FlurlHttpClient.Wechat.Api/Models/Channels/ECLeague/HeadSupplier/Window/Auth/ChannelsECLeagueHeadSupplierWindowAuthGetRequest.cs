@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置带货达人 AppId。与字段 <see cref="FinderId" />、<see cref="OpenId"/> 三选一。
+        /// 获取或设置达人平台 AppId。与字段 <see cref="FinderId" />、<see cref="OpenId"/> 三选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("talent_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("talent_appid")]

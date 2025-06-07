@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class CouponDetail
+                    public class CouponInfo
                     {
                         public static class Types
                         {
@@ -233,7 +233,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public Types.Validity Validity { get; set; } = default!;
                     }
 
-                    public class CouponStock
+                    public class StockInfo
                     {
                         /// <summary>
                         /// 获取或设置剩余量。
@@ -284,14 +284,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_info")]
-                public Types.CouponDetail CouponDetail { get; set; } = default!;
+                public Types.CouponInfo CouponInfo { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置优惠券库存信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("stock_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("stock_info")]
-                public Types.CouponStock CouponStock { get; set; } = default!;
+                public Types.StockInfo StockInfo { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置更新时间。

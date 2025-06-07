@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/getmpadminauth 接口的请求。</para>
@@ -6,14 +6,14 @@
     public class WxaGetMpAdminAuthRequest : WechatApiRequest, IInferable<WxaGetMpAdminAuthRequest, WxaGetMpAdminAuthResponse>
     {
         /// <summary>
-        /// 获取或设置公众号的 AppId。
+        /// 获取或设置公众号 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("mp_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("mp_appid")]
         public string MediaPlatformAppId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置公众号的 AppId。
+        /// 获取或设置公众号 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("same_admin")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]

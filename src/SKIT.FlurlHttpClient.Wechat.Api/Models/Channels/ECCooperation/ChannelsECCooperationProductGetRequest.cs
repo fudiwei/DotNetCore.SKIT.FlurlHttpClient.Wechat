@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class ChannelsECCooperationProductGetRequest : WechatApiRequest, IInferable<ChannelsECCooperationProductGetRequest, ChannelsECCooperationProductGetResponse>
     {
         /// <summary>
-        /// 获取或设置店铺 AppId。
+        /// 获取或设置小店 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_appid")]

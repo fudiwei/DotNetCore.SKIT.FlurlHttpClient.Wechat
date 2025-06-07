@@ -14,7 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
             public class EventData
             {
                 /// <summary>
-                /// 获取或设置小程序的 AppId。
+                /// 获取或设置小程序 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 public string MiniProgramAppId { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置公众号的 AppId。
+                /// 获取或设置公众号 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("mp_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("mp_appid")]

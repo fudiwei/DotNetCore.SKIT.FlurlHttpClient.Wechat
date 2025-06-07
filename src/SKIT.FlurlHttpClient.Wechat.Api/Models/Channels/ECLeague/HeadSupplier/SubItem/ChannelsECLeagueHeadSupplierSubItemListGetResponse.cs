@@ -10,11 +10,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class SubItem
             {
                 /// <summary>
-                /// 获取或设置计划 ID。
+                /// 获取或设置达人佣金计划 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_item_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_item_id")]
-                public long PlanId { get; set; }
+                public long SubItemId { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划链接。
@@ -29,6 +29,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
                 public int Status { get; set; }
+
+                /// <summary>
+                /// 获取或设置达人佣金率（范围：0～90）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ratio")]
+                [System.Text.Json.Serialization.JsonPropertyName("ratio")]
+                public int Ratio { get; set; }
 
                 /// <summary>
                 /// 获取或设置相对于服务费的达人佣金率（范围：0～90）。

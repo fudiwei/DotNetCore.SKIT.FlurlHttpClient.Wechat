@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/coupon/get 接口的响应。</para>
@@ -15,7 +15,7 @@
                     {
                         public static class Types
                         {
-                            public class CouponDetail
+                            public class CouponInfo
                             {
                                 public static class Types
                                 {
@@ -322,7 +322,7 @@
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("coupon_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("coupon_info")]
-                        public Types.CouponDetail CouponDetail { get; set; } = default!;
+                        public Types.CouponInfo CouponInfo { get; set; } = default!;
 
                         /// <summary>
                         /// 获取或设置优惠券状态。

@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class ChannelsECBasicsShopQrcodeGetResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置店铺二维码链接。
+        /// 获取或设置小店二维码链接。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_qrcode")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_qrcode")]

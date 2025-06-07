@@ -1,0 +1,5 @@
+{
+    "shop_appid": "需要过滤的店铺appid",
+    "next_key": "NEXT_KEY",
+    "page_size": 20
+}

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /tcb/shareenv 接口的请求。</para>
@@ -13,7 +13,7 @@
         public string EnvironmentId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置被授权的 AppId。
+        /// 获取或设置被授权 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]

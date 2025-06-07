@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? Query { get; set; }
 
                         /// <summary>
-                        /// 获取或设置第三方平台的 AppId。
+                        /// 获取或设置第三方平台 AppId。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("resource_appid")]
                         [System.Text.Json.Serialization.JsonPropertyName("resource_appid")]

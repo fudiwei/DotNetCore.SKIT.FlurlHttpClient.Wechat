@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -105,7 +105,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? OpenId { get; set; }
 
         /// <summary>
-        /// 获取或设置 App 的 AppId。
+        /// 获取或设置 App  AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("app_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("app_appid")]

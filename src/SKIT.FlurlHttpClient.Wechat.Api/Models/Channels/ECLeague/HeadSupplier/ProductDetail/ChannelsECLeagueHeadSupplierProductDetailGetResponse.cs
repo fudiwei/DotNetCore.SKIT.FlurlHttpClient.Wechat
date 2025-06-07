@@ -88,21 +88,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     public class ShopInfo
                     {
                         /// <summary>
-                        /// 获取或设置店铺名称。
+                        /// 获取或设置小店名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
                         public string Name { get; set; } = default!;
 
                         /// <summary>
-                        /// 获取或设置店铺图标 URL。
+                        /// 获取或设置小店图标 URL。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("icon")]
                         [System.Text.Json.Serialization.JsonPropertyName("icon")]
                         public string IconUrl { get; set; } = default!;
 
                         /// <summary>
-                        /// 获取或设置店铺评分。
+                        /// 获取或设置小店评分。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("score")]
                         [System.Text.Json.Serialization.JsonPropertyName("score")]

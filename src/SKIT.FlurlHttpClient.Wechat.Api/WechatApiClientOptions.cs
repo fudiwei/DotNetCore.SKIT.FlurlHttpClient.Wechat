@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         public bool SecureApiEnabled { get; set; }
 
         /// <summary>
-        /// 获取或设置 API 安全鉴权模式所使用的 AppId。如果不指定将使用 <see cref="AppId"/>。
+        /// 获取或设置 API 安全鉴权模式所使用 AppId。如果不指定将使用 <see cref="AppId"/>。
         /// </summary>
         public string? SecureApiAppId { get; set; }
 

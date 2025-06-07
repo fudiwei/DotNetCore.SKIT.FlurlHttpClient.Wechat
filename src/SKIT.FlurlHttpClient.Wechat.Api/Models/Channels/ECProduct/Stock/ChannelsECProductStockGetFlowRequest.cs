@@ -57,18 +57,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public IList<int>? OperateTypeList { get; set; }
 
         /// <summary>
+        /// 获取或设置分页游标。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("next_key")]
+        [System.Text.Json.Serialization.JsonPropertyName("next_key")]
+        public string? Cursor { get; set; }
+
+        /// <summary>
         /// 获取或设置分页每页数量。
         /// <para>默认值：10</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("page_size")]
         [System.Text.Json.Serialization.JsonPropertyName("page_size")]
         public int PageSize { get; set; } = 10;
-
-        /// <summary>
-        /// 获取或设置分页游标。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("next_key")]
-        [System.Text.Json.Serialization.JsonPropertyName("next_key")]
-        public string? PageCursor { get; set; }
     }
 }

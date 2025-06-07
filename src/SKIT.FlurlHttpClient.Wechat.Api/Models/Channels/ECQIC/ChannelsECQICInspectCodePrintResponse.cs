@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 }
 
                 /// <summary>
-                /// 获取或设置视频号店铺 AppId。
+                /// 获取或设置小店 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("channelAppId")]
                 [System.Text.Json.Serialization.JsonPropertyName("channelAppId")]

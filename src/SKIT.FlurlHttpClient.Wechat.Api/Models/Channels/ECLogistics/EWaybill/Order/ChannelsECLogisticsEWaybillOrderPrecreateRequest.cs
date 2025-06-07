@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? EWaybillOrderCode { get; set; }
 
                 /// <summary>
-                /// 获取或设置代发的订单所属店铺 AppId。
+                /// 获取或设置代发的订单所属小店 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ewaybill_order_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_appid")]

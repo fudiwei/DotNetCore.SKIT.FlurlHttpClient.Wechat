@@ -18,7 +18,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long ProductId { get; set; }
 
                 /// <summary>
-                /// 获取或设置店铺 AppId。
+                /// 获取或设置小店 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public bool IsHidden { get; set; }
 
                 /// <summary>
-                /// 获取或设置商品小程序跳转小店场景添加商品时传递的跟佣信息。
+                /// 获取或设置商品小程序跳转小店场景添加商品时传递的推广信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_promotion_link")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_promotion_link")]

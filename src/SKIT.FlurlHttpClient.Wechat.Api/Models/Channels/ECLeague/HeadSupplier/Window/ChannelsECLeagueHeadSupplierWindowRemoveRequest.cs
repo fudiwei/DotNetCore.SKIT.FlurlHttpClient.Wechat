@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? OpenFinderId { get; set; }
 
         /// <summary>
-        /// 获取或设置带货达人 ID。
+        /// 获取或设置带货达人 OpenTalentId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("opentalentid")]
         [System.Text.Json.Serialization.JsonPropertyName("opentalentid")]

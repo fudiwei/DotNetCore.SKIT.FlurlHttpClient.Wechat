@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/generate_urllink 接口的请求。</para>
@@ -38,7 +38,7 @@
                 public string? Query { get; set; }
 
                 /// <summary>
-                /// 获取或设置第三方平台的 AppId。
+                /// 获取或设置第三方平台 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("resource_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("resource_appid")]

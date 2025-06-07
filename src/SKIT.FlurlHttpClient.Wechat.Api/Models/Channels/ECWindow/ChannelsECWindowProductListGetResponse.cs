@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/window/product/list/get 接口的响应。</para>
@@ -18,7 +18,7 @@
                 public long ProductId { get; set; }
 
                 /// <summary>
-                /// 获取或设置商品来源店铺的 AppId。
+                /// 获取或设置商品来源小店 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]

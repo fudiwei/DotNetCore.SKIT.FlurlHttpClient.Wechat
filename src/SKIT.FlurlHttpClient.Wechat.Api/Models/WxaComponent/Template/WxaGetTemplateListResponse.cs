@@ -115,7 +115,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string UserDescription { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置开发小程序的 AppId。
+                /// 获取或设置开发小程序 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("source_miniprogram_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("source_miniprogram_appid")]

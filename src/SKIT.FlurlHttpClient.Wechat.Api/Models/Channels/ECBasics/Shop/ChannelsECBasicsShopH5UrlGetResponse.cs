@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class ChannelsECBasicsShopH5UrlGetResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置店铺 H5 短链。
+        /// 获取或设置小店 H5 短链。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_h5url")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_h5url")]

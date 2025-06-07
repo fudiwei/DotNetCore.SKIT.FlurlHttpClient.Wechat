@@ -47,11 +47,11 @@ var client = WechatApiClientBuilder.Create(options).Build();
 var options = new WechatApiClientOptions()
 {
     // 其他配置项略
-    SecureApiCustomRequestPathMatcher = (url) =>
+    SecureApiCustomRequestPathMatcher = (path) =>
     {
-        if (url == "/sns/auth")
+        if (path == "/sns/auth")
             return true;
-        else if (url == "/sns/userinfo")
+        else if (path == "/sns/userinfo")
             return true;
 
         return false;

@@ -10,14 +10,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             public class Shop
             {
                 /// <summary>
-                /// 获取或设置店铺 AppId。
+                /// 获取或设置小店 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
                 public string AppId { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置店铺名称。
+                /// 获取或设置小店名称。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("nickname")]
                 [System.Text.Json.Serialization.JsonPropertyName("nickname")]
@@ -54,7 +54,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置店铺列表。
+        /// 获取或设置小店列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("shop_list")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_list")]

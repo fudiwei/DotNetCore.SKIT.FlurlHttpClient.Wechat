@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -13,7 +13,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class CouponDetail
+                    public class CouponInfo
                     {
                         public static class Types
                         {
@@ -25,11 +25,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                     {
                                         public static class Types
                                         {
-                                            public class TradeIn : ShopCouponAddRequest.Types.Coupon.Types.CouponDetail.Types.Discount.Types.DiscountCondidtion.Types.TradeIn
+                                            public class TradeIn : ShopCouponAddRequest.Types.Coupon.Types.CouponInfo.Types.Discount.Types.DiscountCondidtion.Types.TradeIn
                                             {
                                             }
 
-                                            public class BuyGet : ShopCouponAddRequest.Types.Coupon.Types.CouponDetail.Types.Discount.Types.DiscountCondidtion.Types.BuyGet
+                                            public class BuyGet : ShopCouponAddRequest.Types.Coupon.Types.CouponInfo.Types.Discount.Types.DiscountCondidtion.Types.BuyGet
                                             {
                                             }
                                         }
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             {
                                 public static class Types
                                 {
-                                    public class Finder : ShopCouponAddRequest.Types.Coupon.Types.CouponDetail.Types.Promotion.Types.Finder
+                                    public class Finder : ShopCouponAddRequest.Types.Coupon.Types.CouponInfo.Types.Promotion.Types.Finder
                                     {
                                     }
                                 }
@@ -117,11 +117,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public Types.Finder? Finder { get; set; }
                             }
 
-                            public class Reception : ShopCouponAddRequest.Types.Coupon.Types.CouponDetail.Types.Reception
+                            public class Reception : ShopCouponAddRequest.Types.Coupon.Types.CouponInfo.Types.Reception
                             {
                             }
 
-                            public class Validity : ShopCouponAddRequest.Types.Coupon.Types.CouponDetail.Types.Validity
+                            public class Validity : ShopCouponAddRequest.Types.Coupon.Types.CouponInfo.Types.Validity
                             {
                             }
                         }
@@ -189,7 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("coupon_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("coupon_info")]
-                public Types.CouponDetail CouponDetail { get; set; } = new Types.CouponDetail();
+                public Types.CouponInfo CouponInfo { get; set; } = new Types.CouponInfo();
             }
         }
 

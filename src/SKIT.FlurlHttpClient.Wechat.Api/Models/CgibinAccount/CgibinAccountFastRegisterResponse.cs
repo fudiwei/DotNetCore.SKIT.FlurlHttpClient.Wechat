@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/account/fastregister 接口的响应。</para>
@@ -6,7 +6,7 @@
     public class CgibinAccountFastRegisterResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置新创建的 AppId。
+        /// 获取或设置新创建 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("appid")]
         [System.Text.Json.Serialization.JsonPropertyName("appid")]

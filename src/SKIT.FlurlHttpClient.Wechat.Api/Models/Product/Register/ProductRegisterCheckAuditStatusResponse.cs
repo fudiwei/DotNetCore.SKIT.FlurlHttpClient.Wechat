@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/register/check_audit_status 接口的响应。</para>
@@ -86,7 +86,7 @@
                 public string? LegalPersonValidationUrl { get; set; }
 
                 /// <summary>
-                /// 获取或设置注册的 AppId。
+                /// 获取或设置注册 AppId。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("registered_appid")]
                 [System.Text.Json.Serialization.JsonPropertyName("registered_appid")]

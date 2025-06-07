@@ -20,11 +20,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long? EndCreateTimestamp { get; set; }
 
         /// <summary>
+        /// 获取或设置佣金单更新时间范围的开始时间戳。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("update_time_gt")]
+        [System.Text.Json.Serialization.JsonPropertyName("update_time_gt")]
+        public long? StartUpdateTimestamp { get; set; }
+
+        /// <summary>
+        /// 获取或设置佣金单更新时间范围的结束时间戳。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("update_time_lt")]
+        [System.Text.Json.Serialization.JsonPropertyName("update_time_lt")]
+        public long? EndUpdateTimestamp { get; set; }
+
+        /// <summary>
         /// 获取或设置订单 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_id")]
         [System.Text.Json.Serialization.JsonPropertyName("order_id")]
         public string? OrderId { get; set; }
+
+        /// <summary>
+        /// 获取或设置 SPU ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("spu_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("spu_id")]
+        public string? SPUId { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。
