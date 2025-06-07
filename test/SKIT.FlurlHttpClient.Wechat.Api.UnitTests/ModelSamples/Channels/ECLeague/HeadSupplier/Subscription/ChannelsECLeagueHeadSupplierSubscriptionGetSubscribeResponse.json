@@ -1,0 +1,13 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "subscribe_info_list": [
+        {
+            "product_id": 10000207528058,
+            "shop_appid": "wx2b255582a7b4bfd0"
+        }
+    ],
+    "total_num": 0,
+    "next_key": "",
+    "has_more": false
+}
