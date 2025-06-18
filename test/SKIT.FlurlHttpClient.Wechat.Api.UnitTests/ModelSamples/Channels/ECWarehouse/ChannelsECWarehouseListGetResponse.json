@@ -1,8 +1,0 @@
-{
-    "errcode": 0,
-    "errmsg": "ok",
-    "data": {
-        "out_warehouse_ids": [ "test1" ],
-        "next_key": "CK+h/+vJMA=="
-    }
-}

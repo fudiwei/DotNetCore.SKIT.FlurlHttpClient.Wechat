@@ -1,8 +1,0 @@
-﻿{
-    "return_code": "SUCCESS",
-    "return_msg": "签名失败",
-    "result_code": "FAIL",
-    "sign": "C380BEC2BFD727A4B6845133519F3AD6",
-    "err_code": "INVALID_REQUEST",
-    "err_code_des": "子商户号信息有误，请检查修改后重试"
-}

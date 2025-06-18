@@ -1,7 +1,0 @@
-{
-    "notify_type": 1001,
-    "openid": "xxx",
-    "notify_code": "xxx",
-    "check_json": "{\"pay_amount\":1005,\"pay_time\": 1683525070}",
-    "content_json": "{\"cur_status\":2,\"license_plate\":\"粤A12345A\",\"arrival_time\":1679569348,\"wxa_path_query\":\"\"}"
-}

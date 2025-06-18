@@ -1,9 +1,0 @@
-﻿{
-    "handover_userid": "zhangsan",
-    "takeover_userid": "lisi",
-    "external_userid": [
-        "woAJ2GCAAAXtWyujaWJHDDGi0mACAAAA",
-        "woAJ2GCAAAXtWyujaWJHDDGi0mACBBBB"
-    ],
-    "transfer_success_msg": "您好，您的服务已升级，后续将由我的同事李四@腾讯接替我的工作，继续为您服务。"
-}

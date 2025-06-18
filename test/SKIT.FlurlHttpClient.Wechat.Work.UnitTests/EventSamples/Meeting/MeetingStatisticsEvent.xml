@@ -1,9 +1,0 @@
-<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[fromUser]]></FromUserName>
-    <CreateTime>1348831860</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[meeting_statistics]]></Event>
-    <ChangeType><![CDATA[start_meeting]]></ChangeType>
-    <Status>1</Status>
-</xml>

@@ -1,9 +1,0 @@
-{
-    "query": "我叫我妈妈的姐姐叫什么？",
-    "env": "online",
-    "first_priority_skills": [],
-    "second_priority_skills": [],
-    "user_name": "测试用户名",
-    "avatar": "https://example.com/img/avatar.png",
-    "userid": "123"
-}

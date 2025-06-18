@@ -1,9 +1,0 @@
-﻿{
-    "spaceid": "SPACEID",
-    "enable_watermark": true,
-    "share_url_no_approve": true,
-    "share_url_no_approve_default_auth": 1,
-    "enable_confidential_mode":true,
-    "default_file_scope":1,
-    "ban_share_external":false
-}

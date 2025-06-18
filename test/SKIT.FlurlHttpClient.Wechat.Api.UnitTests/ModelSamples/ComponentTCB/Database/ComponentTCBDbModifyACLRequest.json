@@ -1,6 +1,0 @@
-﻿{
-    "env": "myttest-8gu57so0bd9f9e8a",
-    "collection_name": "test",
-    "acl_tag": "CUSTOM",
-    "rule": "{\n  \"read\": true,\n  \"write\": \"doc._openid == auth.openid\"\n}"
-}

@@ -1,8 +1,0 @@
-﻿<xml>
-    <ServiceCorpId><![CDATA[xxxx]]></ServiceCorpId>
-    <InfoType><![CDATA[license_pay_success]]></InfoType>
-    <AuthCorpId><![CDATA[yyyy]]></AuthCorpId>
-    <OrderId><![CDATA[zzzz]]></OrderId>
-    <BuyerUserId><![CDATA[USERID]]></BuyerUserId>
-    <TimeStamp>1403610513</TimeStamp>
-</xml>

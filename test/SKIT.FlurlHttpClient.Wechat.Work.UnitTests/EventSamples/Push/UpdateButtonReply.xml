@@ -1,9 +1,0 @@
-﻿<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[fromUser]]></FromUserName>
-    <CreateTime>1357290913</CreateTime>
-    <MsgType><![CDATA[update_button]]></MsgType>
-    <Button>
-        <ReplaceName><![CDATA[ReplaceName]]></ReplaceName>
-    </Button>
-</xml>

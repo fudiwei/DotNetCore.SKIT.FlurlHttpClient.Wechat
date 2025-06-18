@@ -1,9 +1,0 @@
-﻿{
-    "ToUserName": "toUser",
-    "FromUserName": "fromUser",
-    "CreateTime": 1482048670,
-    "MsgType": "text",
-    "Content": "this is a test",
-    "MsgId": 1234567890123456,
-    "BusinessId": 1
-}

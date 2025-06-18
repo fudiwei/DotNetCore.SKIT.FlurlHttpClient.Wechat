@@ -1,9 +1,0 @@
-﻿<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[sys]]></FromUserName>
-    <CreateTime>1403610513</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[change_school_contact]]></Event>
-    <ChangeType><![CDATA[update_deparmtment]]></ChangeType>
-    <Id><![CDATA[1]]></Id>
-</xml>

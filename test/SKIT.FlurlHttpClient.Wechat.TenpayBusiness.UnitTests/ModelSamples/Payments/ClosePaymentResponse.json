@@ -1,6 +1,0 @@
-{
-    "payment_id": "string",
-    "out_payment_id": "string",
-    "status": "PROCESSING",
-    "close_time": "2022-11-15T13:25:18.000+00:00"
-}

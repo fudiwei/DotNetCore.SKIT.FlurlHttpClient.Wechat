@@ -1,7 +1,0 @@
-{
-    "name": "测试广告单元",
-    "type": "SLOT_ID_WEAPP_BANNER",
-    "video_duration_min": 6,
-    "video_duration_max": 30,
-    "tmpl_type": 6
-}

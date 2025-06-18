@@ -1,8 +1,0 @@
-{
-    "ToUserName": "toUser",
-    "FromUserName": "fromUser",
-    "CreateTime": 1482048670,
-    "MsgType": "event",
-    "Event": "user_enter_tempsession",
-    "SessionFrom": "sessionFrom"
-}

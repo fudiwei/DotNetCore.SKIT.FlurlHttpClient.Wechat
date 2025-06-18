@@ -1,4 +1,0 @@
-﻿{
-    "env": "test2-4a89da",
-    "query": "db.collection(\"geo\").where({done:true}).limit(10).skip(1).get()"
-}

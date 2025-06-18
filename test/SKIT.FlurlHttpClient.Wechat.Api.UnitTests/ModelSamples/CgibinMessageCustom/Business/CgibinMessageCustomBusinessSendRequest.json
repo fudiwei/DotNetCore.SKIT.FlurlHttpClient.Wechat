@@ -1,8 +1,0 @@
-﻿{
-    "touser": "OPENID",
-    "businessid": 1,
-    "msgtype": "text",
-    "text": {
-        "content": "Hello World"
-    }
-}

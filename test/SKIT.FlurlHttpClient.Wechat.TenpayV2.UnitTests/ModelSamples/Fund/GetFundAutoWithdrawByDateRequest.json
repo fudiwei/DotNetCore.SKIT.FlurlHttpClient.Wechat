@@ -1,8 +1,0 @@
-{
-    "nonce_str": "ibuaiVcKdpRxkhJA",
-    "date": "20180503",
-    "mch_id": "2480029942",
-    "sub_mch_id": "2480029752",
-    "sign_type": "HMAC-SHA256",
-    "sign": "1091442CB5E1D3B04DAC6CA9F42B50F74428727968FE2E570DE271030F16CCA8"
-}

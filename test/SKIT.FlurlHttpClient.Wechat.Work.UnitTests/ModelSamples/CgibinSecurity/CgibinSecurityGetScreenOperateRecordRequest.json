@@ -1,9 +1,0 @@
-{
-    "start_time": 166666666,
-    "end_time": 166666667,
-    "userid_list": [ "zhangsan", "lisi" ],
-    "department_id_list": [ 2, 3 ],
-    "screen_shot_type": 1,
-    "cursor": "ngLgjieajgieo",
-    "limit": 100
-}

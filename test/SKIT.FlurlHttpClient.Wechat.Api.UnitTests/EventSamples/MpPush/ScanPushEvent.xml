@@ -1,9 +1,0 @@
-﻿<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[FromUser]]></FromUserName>
-    <CreateTime>123456789</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[SCAN]]></Event>
-    <EventKey><![CDATA[SCENE_VALUE]]></EventKey>
-    <Ticket><![CDATA[TICKET]]></Ticket>
-</xml>

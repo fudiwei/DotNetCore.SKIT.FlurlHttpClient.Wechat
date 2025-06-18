@@ -1,9 +1,0 @@
-﻿{
-    "errcode": 0,
-    "errmsg": "ok",
-    "livingid": "livingid",
-    "viewer_userid": "viewer_userid",
-    "viewer_external_userid": "viewer_external_userid",
-    "invitor_userid": "invitor_userid",
-    "invitor_external_userid": "invitor_external_userid"
-}

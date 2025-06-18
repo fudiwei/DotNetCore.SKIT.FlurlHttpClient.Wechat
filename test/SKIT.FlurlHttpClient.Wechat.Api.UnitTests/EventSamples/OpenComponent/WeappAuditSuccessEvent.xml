@@ -1,8 +1,0 @@
-﻿<xml>
-    <ToUserName><![CDATA[gh_fb9688c2a4b2]]></ToUserName>
-    <FromUserName><![CDATA[od1P50M-fNQI5Gcq-trm4a7apsU8]]></FromUserName>
-    <CreateTime>1488856741</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[weapp_audit_success]]></Event>
-    <SuccTime>1488856741</SuccTime>
-</xml>

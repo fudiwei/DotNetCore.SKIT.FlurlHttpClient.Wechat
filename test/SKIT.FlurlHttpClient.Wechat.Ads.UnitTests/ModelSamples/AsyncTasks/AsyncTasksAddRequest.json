@@ -1,9 +1,0 @@
-﻿{
-    "task_name": "testtaskname",
-    "task_type": "TASK_TYPE_AGENCY_ADGROUP_HOURLY_REPORT",
-    "task_spec": {
-        "task_type_adgroup_hourly_report_spec": {
-            "date": "2019-03-24"
-        }
-    }
-}

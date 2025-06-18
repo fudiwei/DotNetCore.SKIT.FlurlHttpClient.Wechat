@@ -1,7 +1,0 @@
-﻿{
-    "action": "set",
-    "open": true,
-    "env": "myttest-8gu57so0bd9f9e8a",
-    "api_whitelist": ["/*"],
-    "version": 6
-}

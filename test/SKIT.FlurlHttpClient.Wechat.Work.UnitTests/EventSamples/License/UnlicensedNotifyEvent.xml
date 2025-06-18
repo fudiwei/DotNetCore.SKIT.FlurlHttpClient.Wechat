@@ -1,8 +1,0 @@
-﻿<xml>
-	<ToUserName><![CDATA[toUser]]></ToUserName>
-	<FromUserName><![CDATA[FromUser]]></FromUserName>
-	<CreateTime>1408091189</CreateTime>
-	<MsgType><![CDATA[event]]></MsgType>
-	<Event><![CDATA[unlicensed_notify]]></Event>
-	<AgentID>1</AgentID>
-</xml>

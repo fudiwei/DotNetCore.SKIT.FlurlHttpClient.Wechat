@@ -1,9 +1,0 @@
-﻿{
-    "ToUserName": "toUser",
-    "FromUserName": "fromUser",
-    "CreateTime": 1546924844,
-    "MsgType": "event",
-    "Event": "update_business_bind_result",
-    "delivery_id": "EMS",
-    "biz_id": "1234567"
-}

@@ -1,8 +1,0 @@
-{
-    "errcode": 0,
-    "errmsg": "ok",
-    "job_result": {
-        "succ_userid_list": [ "zhangsan", "lisi" ],
-        "fail_userid_list": [ "wangwu" ]
-    }
-}

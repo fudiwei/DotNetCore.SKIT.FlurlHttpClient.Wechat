@@ -1,9 +1,0 @@
-﻿{
-    "errcode": 0,
-    "errmsg": "",
-    "data": {
-        "left_apply_num": 9,
-        "max_apply_num": 10,
-        "data": "{\"poi_list\": [{\"poi_id\": \"123456\",\"qualification_address\": \"广东省广州市海珠区新港中路123号\",\"qualification_num\": \"123456789-1\",\"audit_status\": 3,\"display_status\": 0,\"refuse_reason\": \"\"}]}"
-    }
-}

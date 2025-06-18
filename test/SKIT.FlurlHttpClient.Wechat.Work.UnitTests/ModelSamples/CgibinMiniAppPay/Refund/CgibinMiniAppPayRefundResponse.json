@@ -1,9 +1,0 @@
-{
-    "out_refund_no": "1217752501201407033233368018",
-    "amount": {
-        "refund": 888,
-        "currency": "CNY"
-    },
-    "errcode": 0,
-    "errmsg": "ok"
-}

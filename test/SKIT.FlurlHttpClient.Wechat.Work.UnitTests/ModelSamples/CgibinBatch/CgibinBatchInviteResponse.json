@@ -1,7 +1,0 @@
-﻿{
-    "errcode": 0,
-    "errmsg": "ok",
-    "invaliduser": ["UserID1", "UserID2"],
-    "invalidparty": [1, 2],
-    "invalidtag": [1, 2]
-}

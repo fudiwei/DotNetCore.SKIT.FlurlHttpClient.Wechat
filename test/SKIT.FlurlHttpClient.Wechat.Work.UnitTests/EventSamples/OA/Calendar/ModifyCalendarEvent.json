@@ -1,8 +1,0 @@
-﻿{
-    "ToUserName": "toUser",
-    "FromUserName": "fromUser",
-    "CreateTime": 1348831860,
-    "MsgType": "event",
-    "Event": "modify_calendar",
-    "CalId": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA"
-}

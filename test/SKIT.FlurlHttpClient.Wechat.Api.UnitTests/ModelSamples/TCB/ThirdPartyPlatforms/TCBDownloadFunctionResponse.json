@@ -1,6 +1,0 @@
-﻿{
-    "errcode": 0,
-    "errmsg": "ok",
-    "url": "https://lambdash-1253665810.cos.ap-shanghai.myqcloud.com/1258717764/qbasetest-a5c40e/login/login_LATEST.zip?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDqbBtfGe4eSSK8CExGjmC0e8Qcnswv6yj%26q-sign-time%3D1562247164%3B1562257224%26q-key-time%3D1562247164%3B1562257224%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Dfd43be65f7381293315269dbf18cd99e143fab48&response-content-type=application/octet-stream",
-    "checksum": "bf657f327e477652d137b45b08b6400ab16947b4aaf92e2b04a5fbe5a4582b46"
-}

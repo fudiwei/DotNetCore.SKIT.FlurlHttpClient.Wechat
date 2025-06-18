@@ -1,6 +1,0 @@
-﻿{
-    "template_id": "0",
-    "ext_json": "{\"extAppid\":\"\",\"ext\":{\"attr1\":\"value1\",\"attr2\":\"value2\"},\"extPages\":{\"index\":{},\"search/index\":{}},\"pages\":[\"index\",\"search/index\"],\"window\":{},\"networkTimeout\":{},\"tabBar\":{},\"plugin\":{}}",
-    "user_version": "V1.0",
-    "user_desc": "test"
-}

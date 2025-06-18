@@ -1,9 +1,0 @@
-{
-    "state": "GENERATING",
-    "create_time": "2015-05-20T13:29:35.120+08:00",
-    "update_time": "2015-05-20T13:29:35.120+08:00",
-    "hash_type": "SHA256",
-    "hash_value": "DE731F35146A0BEFADE5DB9D1E468D96C01CA8898119C674FEE9F11F4DBE5529",
-    "download_url": "https://api.mch.weixin.qq.com/v3/transferbilldownload/file?token=xxx",
-    "fail_reason": "\"转账单据不存在\""
-}

@@ -1,7 +1,0 @@
-{
-    "type": 1,
-    "begin_time": 1700000000,
-    "end_time": 1700001000,
-    "limit": 1000,
-    "cursor": "CURSOR"
-}

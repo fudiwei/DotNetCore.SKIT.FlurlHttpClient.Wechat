@@ -1,8 +1,0 @@
-<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[sys]]></FromUserName>
-    <CreateTime>1403610513</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[security]]></Event>
-    <ChangeType><![CDATA[change_domain_ip]]></ChangeType>
-</xml>

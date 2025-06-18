@@ -1,9 +1,0 @@
-﻿<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[FromUser]]></FromUserName>
-    <CreateTime>123456789</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[view]]></Event>
-    <EventKey><![CDATA[www.qq.com]]></EventKey>
-    <AgentID>1</AgentID>
-</xml>

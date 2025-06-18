@@ -1,5 +1,0 @@
-﻿{
-    "download_url": "https://api.mch.weixin.qq.com/v3/bill/downloadurl?token=xxx",
-    "hash_type": "SHA1",
-    "hash_value": "79bb0f45fc4c42234a918000b2668d689e2bde04"
-}

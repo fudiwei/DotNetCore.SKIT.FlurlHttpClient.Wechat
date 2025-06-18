@@ -1,9 +1,0 @@
-﻿<xml>
-    <ToUserName>gh_abcdefg</ToUserName>
-    <FromUserName>1asdaf2141noejgeroig_0</FromUserName>
-    <CreateTime>12344555555</CreateTime>
-    <MsgType>event</MsgType>
-    <Event>miniprogram_sharer_bind_status_change</Event>
-    <openid>asfafoi3254o3214_12332</openid>
-    <bind_status>1</bind_status>
-</xml>

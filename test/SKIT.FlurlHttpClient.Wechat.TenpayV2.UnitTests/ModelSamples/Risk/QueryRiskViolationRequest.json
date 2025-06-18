@@ -1,8 +1,0 @@
-﻿{
-    "mch_id": "123456",
-    "nonce_str": "5087e0xessefellkg",
-    "sign": "xxxxxx",
-    "sign_type": "HMAC-SHA256",
-    "begin_time": "2017-07-02 0:0:0",
-    "end_time": "2017-07-29 23:59:59"
-}

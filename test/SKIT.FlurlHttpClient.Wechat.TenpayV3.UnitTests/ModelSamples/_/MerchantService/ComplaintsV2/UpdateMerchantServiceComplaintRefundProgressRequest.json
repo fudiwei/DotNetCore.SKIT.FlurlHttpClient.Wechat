@@ -1,7 +1,0 @@
-﻿{
-    "action": "REJECT",
-    "launch_refund_day": 3,
-    "reject_media_list": ["file23578_21798531.jpg"],
-    "reject_reason": "拒绝退款",
-    "remark": "不同意退款"
-}

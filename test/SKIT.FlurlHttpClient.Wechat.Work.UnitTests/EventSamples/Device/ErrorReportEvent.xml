@@ -1,8 +1,0 @@
-﻿<xml>
-    <DeviceSn><![CDATA[xxxx]]></DeviceSn>
-    <InfoType><![CDATA[error_report]]></InfoType>
-    <TimeStamp>1403610513</TimeStamp>
-    <ServiceCorpId><![CDATA[xxxx]]></ServiceCorpId>
-    <ErrCode>0</ErrCode>
-    <ErrMsg><![CDATA[ok]]></ErrMsg>
-</xml>

@@ -1,8 +1,0 @@
-{
-    "appid": "wxd678efh567hg6787",
-    "plan_id": 12535,
-    "out_contract_code": "wxwtdk20200910100000",
-    "contract_display_account": "微信代扣用户A",
-    "notify_url": "https://yourapp.com/notify",
-    "return_app": true
-}

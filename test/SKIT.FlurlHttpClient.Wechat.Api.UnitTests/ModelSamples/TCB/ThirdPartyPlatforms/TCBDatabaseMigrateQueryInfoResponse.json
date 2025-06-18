@@ -1,9 +1,0 @@
-﻿{
-    "errcode": 0,
-    "errmsg": "ok",
-    "status": "success",
-    "record_success": 3,
-    "record_fail": 0,
-    "error_msg": "导出完成.",
-    "file_url": "https://tcb-mongodb-data-1254135806.cos.ap-shanghai.myqcloud.com/..."
-}

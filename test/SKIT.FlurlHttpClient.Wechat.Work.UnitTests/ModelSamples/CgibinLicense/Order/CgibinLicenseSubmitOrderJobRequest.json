@@ -1,8 +1,0 @@
-{
-    "jobid": "wwxxx",
-    "buyer_userid": "xxxx",
-    "account_duration": {
-        "months": 2,
-        "new_expire_time":1700000000
-    }
-}

@@ -1,5 +1,0 @@
-﻿{
-    "openid": "$openid",
-    "json_string": "$resultJSON",
-    "json_signature": "$resultJSONSignature"
-}

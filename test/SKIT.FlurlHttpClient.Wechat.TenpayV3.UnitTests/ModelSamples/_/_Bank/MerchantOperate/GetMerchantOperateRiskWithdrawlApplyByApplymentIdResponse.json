@@ -1,9 +1,0 @@
-{
-    "withdrawl_apply": {
-        "applyment_id": "20220101332222",
-        "out_request_no": "1234567",
-        "state": "SUBMITTED",
-        "fail_reason": "银行卡信息有误",
-        "modify_time": "2015-05-20T13:29:35+08:00"
-    }
-}

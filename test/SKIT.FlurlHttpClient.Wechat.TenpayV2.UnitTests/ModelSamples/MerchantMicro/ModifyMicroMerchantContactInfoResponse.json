@@ -1,9 +1,0 @@
-{
-    "return_code": "SUCCESS",
-    "return_msg": "OK",
-    "nonce_str": "z5SLBxca4rw1Quiv",
-    "sign": "7C474FF5CD991BE660EF02C6404F5708C12E0580A4F1A46BC6FC99E563D46B09",
-    "result_code": "SUCCESS",
-    "mch_id": "1900006501",
-    "sub_mch_id": "1501859791"
-}

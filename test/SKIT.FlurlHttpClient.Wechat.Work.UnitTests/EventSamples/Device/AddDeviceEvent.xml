@@ -1,9 +1,0 @@
-﻿<xml>
-    <DeviceSn><![CDATA[xxxx]]></DeviceSn>
-    <AuthCorpId><![CDATA[xxxx]]></AuthCorpId>
-    <InfoType><![CDATA[add_device]]></InfoType>
-    <TimeStamp>1403610513</TimeStamp>
-    <ServiceCorpId><![CDATA[xxxx]]></ServiceCorpId>
-    <RemarkName><![CDATA[测试名称]]></RemarkName>
-    <ModelId><![CDATA[MODEL]]></ModelId>
-</xml>

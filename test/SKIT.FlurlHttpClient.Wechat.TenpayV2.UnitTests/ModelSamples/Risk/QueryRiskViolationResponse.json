@@ -1,5 +1,0 @@
-﻿{
-    "return_code": "FAIL",
-    "return_msg": "INVALID_REQUEST",
-    "violation_records": "{\"total_size\":1,\"violation_records\":[{\"company_name\":\"ABC公司\",\"handle_method\":\"刷单欺诈,整改 限期 2天\",\"handle_state\":\"超时未处理\",\"illegal_type\":\"其他\",\"punish_time\":\"2018-07-24 20:12:25\",\"sub_mch_id\":\"1900012891\"}]}"
-}

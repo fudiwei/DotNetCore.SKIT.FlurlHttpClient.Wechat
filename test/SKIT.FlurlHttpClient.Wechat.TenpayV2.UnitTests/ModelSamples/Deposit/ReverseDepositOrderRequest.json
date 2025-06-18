@@ -1,8 +1,0 @@
-﻿{
-    "appid": "wx2421b1c4370ec43b",
-    "mch_id": "10000100",
-    "nonce_str": "b7ffb16a7150cf08639db472c5f5bdae",
-    "out_trade_no": "1415717424",
-    "sign_type": " HMAC-SHA256",
-    "sign": "9B2EA16C05A5CEF8E53B14D53932D012"
-}

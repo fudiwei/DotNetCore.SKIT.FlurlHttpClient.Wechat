@@ -1,8 +1,0 @@
-﻿{
-    "meetingroom_id": 1,
-    "subject": "周会",
-    "start_time": 1593532800,
-    "end_time": 1593619200,
-    "booker": "zhangsan",
-    "attendees": ["lisi", "wangwu"]
-}

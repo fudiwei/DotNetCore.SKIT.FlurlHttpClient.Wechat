@@ -1,9 +1,0 @@
-{
-    "meetingid": "MEETINGID",
-    "invite_id": "INVITEID",
-    "meeting_room_id": "ROOMID",
-    "mra_address": {
-        "protocol": 2,
-        "dial_string": "xxx"
-    }
-}

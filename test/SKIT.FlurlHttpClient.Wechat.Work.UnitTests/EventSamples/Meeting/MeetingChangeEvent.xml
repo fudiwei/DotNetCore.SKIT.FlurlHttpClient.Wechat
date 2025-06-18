@@ -1,9 +1,0 @@
-<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[fromUser]]></FromUserName>
-    <CreateTime>1348831860</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[meeting_change]]></Event>
-    <ChangeType><![CDATA[modify_meeting]]></ChangeType>
-    <MeetingId><![CDATA[wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA]]></MeetingId>
-</xml>

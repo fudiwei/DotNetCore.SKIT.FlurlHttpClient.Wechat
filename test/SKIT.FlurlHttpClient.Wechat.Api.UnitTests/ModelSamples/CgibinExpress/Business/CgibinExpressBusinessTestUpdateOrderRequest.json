@@ -1,9 +1,0 @@
-﻿{
-    "biz_id": "test_biz_id",
-    "order_id": "xxxxxxxxxxxx",
-    "delivery_id": "TEST",
-    "waybill_id": "xxxxxxxxxx",
-    "action_time": 123456789,
-    "action_type": 100001,
-    "action_msg": "揽件阶段"
-}

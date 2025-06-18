@@ -1,6 +1,0 @@
-{
-    "notify_type": 1003,
-    "openid": "xxx",
-    "notify_code": "xxx",
-    "ext_json": "{\"pay_info\":\"{\\\"transaction_id\\\":\\\"4200001855202305090060871147\\\",\\\"pay_amount\\\":2001,\\\"pay_time\\\":1683546394}\",\"store_info\":\"{\\\"store_name\\\":\\\"westore\\\",\\\"store_address\\\":\\\"深圳市南山区南山大道18号\\\",\\\"latitude\\\":22,\\\"longitude\\\":114}\"}"
-}

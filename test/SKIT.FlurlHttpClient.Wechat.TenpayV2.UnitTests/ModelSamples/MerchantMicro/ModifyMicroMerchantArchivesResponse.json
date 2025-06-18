@@ -1,9 +1,0 @@
-{
-    "return_code": "SUCCESS",
-    "return_msg": "OK",
-    "nonce_str": "3Ilu41xvNWLNmgjw",
-    "sign": "5E024CB99587352F6141DDC0BE13FD1A3F349AD1E5874244EE9717C3B295557E",
-    "result_code": "FAIL",
-    "err_code": "INVALID_REQUEST",
-    "err_code_des": "银行卡存在，但与姓名证件号其中一项或全部不匹配"
-}

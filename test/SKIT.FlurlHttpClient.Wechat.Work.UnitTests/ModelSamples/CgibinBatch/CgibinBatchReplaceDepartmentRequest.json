@@ -1,8 +1,0 @@
-﻿{
-    "media_id": "xxxxxx",
-    "callback": {
-        "url": "xxx",
-        "token": "xxx",
-        "encodingaeskey": "xxx"
-    }
-}

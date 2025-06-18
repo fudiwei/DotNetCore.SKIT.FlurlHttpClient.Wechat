@@ -1,7 +1,0 @@
-{
-    "ent_id": "string",
-    "receiver_acct_id": "string",
-    "out_withdraw_id": "string",
-    "amount": 0,
-    "server_notify_url": "string"
-}

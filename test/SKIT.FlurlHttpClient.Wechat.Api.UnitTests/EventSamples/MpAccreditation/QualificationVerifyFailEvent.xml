@@ -1,9 +1,0 @@
-﻿<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[fromUser]]></FromUserName>
-    <CreateTime>1442401156</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[qualification_verify_fail]]></Event>
-    <FailTime>1442401122</FailTime>
-    <FailReason><![CDATA[by time]]></FailReason>
-</xml>

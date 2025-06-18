@@ -1,9 +1,0 @@
-﻿<xml>
-    <DeviceSn><![CDATA[testsn]]></DeviceSn>
-    <AuthCorpId><![CDATA[xxxx]]></AuthCorpId>
-    <InfoType><![CDATA[disconnect_info]]></InfoType>
-    <TimeStamp>1548074765</TimeStamp>
-    <ServiceCorpId><![CDATA[xxxx]]></ServiceCorpId>
-    <DisconnectTime>1452460633</DisconnectTime>
-    <Reason>1</Reason>
-</xml>

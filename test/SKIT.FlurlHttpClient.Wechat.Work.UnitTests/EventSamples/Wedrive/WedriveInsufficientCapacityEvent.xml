@@ -1,7 +1,0 @@
-<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[sys]]></FromUserName>
-    <CreateTime>1348831860</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[wedrive_insufficient_capacity]]></Event>
-</xml>

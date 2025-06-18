@@ -1,9 +1,0 @@
-﻿<xml>
-    <ToUserName><![CDATA[toUser]]></ToUserName>
-    <FromUserName><![CDATA[fromUser]]></FromUserName>
-    <CreateTime>1546924844</CreateTime>
-    <MsgType><![CDATA[event]]></MsgType>
-    <Event><![CDATA[update_business_bind_result]]></Event>
-    <delivery_id><![CDATA[EMS]]></delivery_id>
-    <biz_id><![CDATA[1234567]]></biz_id>
-</xml>

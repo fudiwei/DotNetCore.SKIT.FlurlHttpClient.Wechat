@@ -1,4 +1,0 @@
-﻿{
-    "env": "test2-4a89da",
-    "query": "db.collection(\"geo\").where({done:false}).remove()"
-}
