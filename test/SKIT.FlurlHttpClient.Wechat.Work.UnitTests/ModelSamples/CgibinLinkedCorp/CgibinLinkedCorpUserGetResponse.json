@@ -1,0 +1,33 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "user_info": {
+        "userid": "zhangsan",
+        "name": "张三",
+        "department": ["LINKEDID/1", "LINKEDID/2"],
+        "mobile": "+86 12345678901",
+        "telephone": "10086",
+        "email": "zhangsan@tencent.com",
+        "position": "后台开发",
+        "corpid": "xxxxxx",
+        "extattr": {
+            "attrs": [
+                {
+                    "name": "自定义属性(文本)",
+                    "type": 0,
+                    "text": {
+                        "value": "10086"
+                    }
+                },
+                {
+                    "name": "自定义属性(网页)",
+                    "type": 1,
+                    "web": {
+                        "url": "https://work.weixin.qq.com/",
+                        "title": "官网"
+                    }
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "fapiao_download_info_list": [
+        {
+            "download_url": "https://pay.wechatpay.cn/invoicing/fapiao/fapiao-file",
+            "fapiao_id": "20200701123456",
+            "status": "ISSUED"
+        }
+    ]
+}

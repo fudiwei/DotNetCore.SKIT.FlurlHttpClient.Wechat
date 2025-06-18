@@ -1,0 +1,19 @@
+{
+    "openid": "ovtZW4yB7DIj3CxOb6ii-nk4HhFo",
+    "waybill_id": "WXTESTEXPRESS0000014",
+    "sender_phone": "12345678901",
+    "receiver_phone": "123456566",
+    "delivery_id": "KYSY",
+    "goods_info": {
+        "detail_list": [
+            {
+                "goods_name": "测试名字",
+                "goods_img_url": "www.qq.com"
+            },
+            {
+                "goods_name": "测试名字2",
+                "goods_img_url": "www.qq.com"
+            }
+        ]
+    }
+}

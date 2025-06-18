@@ -1,0 +1,30 @@
+{
+    "sp_mchid": "1900001109",
+    "sub_mchid": "1900001121",
+    "recharge_id": "172234484162395401",
+    "out_recharge_no": "cz2020042013",
+    "recharge_channel": "BANK_TRANSFER",
+    "account_type": "DEPOSIT",
+    "recharge_state": "SUCCESS",
+    "recharge_scene": "ECOMMERCE_DEPOSIT",
+    "recharge_state_desc": "超过时间限制，系统自动关闭充值单",
+    "recharge_amount": {
+        "amount": 500000,
+        "currency": "CNY"
+    },
+    "bank_transfer_info": {
+        "bill_no": "110240620400046628001252733345",
+        "memo": "转账充值附言",
+        "return_time": "2015-05-20T13:29:35+08:00",
+        "return_reason": "银行转账充值金额与申请充值金额不一致",
+        "bank_name": "中国银行",
+        "bank_card_tail": "0722"
+    },
+    "qr_recharge_info": {
+        "openid": "owYiu0WOJdGCYxoHrPabGhI39uT4",
+        "employee_type": "ADMIN"
+    },
+    "accept_time": "2015-05-20T13:29:35+08:00",
+    "success_time": "2015-05-20T13:29:35+08:00",
+    "close_time": "2015-05-20T13:29:35+08:00"
+}

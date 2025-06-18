@@ -1,0 +1,23 @@
+{
+    "errcode": 0,
+    "errmsg": "成功",
+    "bill_list": [
+        {
+            "voucher_name": "90抵100代金券",
+            "product_id": "123456",
+            "code": "123456789",
+            "order_id": "027828012830384172",
+            "openid": "asdjeine835k9fjeld93mf",
+            "voucher_buy_time": 1702016538,
+            "voucher_buy_amount": 9000,
+            "voucher_pay_amount": 8500,
+            "mch_favor_amount": 500,
+            "platform_favor_amount": 0,
+            "consume_time": 1702189338,
+            "consume_store_name": "开心小店",
+            "mch_settle_amount": 8300,
+            "finder_settle_amount": 0
+        }
+    ],
+    "page_ctx": "dsfajasdlf3434"
+}

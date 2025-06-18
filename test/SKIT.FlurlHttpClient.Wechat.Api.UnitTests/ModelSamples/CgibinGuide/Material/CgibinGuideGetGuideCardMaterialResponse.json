@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "card_list": [
+        {
+            "title": "title",
+            "appid": "xxxxxx",
+            "path": "path111111",
+            "picurl": "xxxxxxx",
+            "master_id": 0,
+            "slave_id": 0
+        }
+    ]
+}

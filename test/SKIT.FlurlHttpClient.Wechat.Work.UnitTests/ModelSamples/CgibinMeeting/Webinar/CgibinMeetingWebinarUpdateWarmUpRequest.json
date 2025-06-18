@@ -1,0 +1,6 @@
+{
+    "meetingid": "MEETINGID1",
+    "warm_up_picture": "https://xxxxxx.cos.myqcloud.com/flower.png",
+    "warm_up_video": "https://xxxxxx.cos.myqcloud.com/cat.mp4",
+    "allow_attendees_invite_others": true
+}

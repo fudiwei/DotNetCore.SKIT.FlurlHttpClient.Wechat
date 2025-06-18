@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "poll_topic": "TITLE",
+    "poll_desc": "DESC",
+    "is_anony": 1,
+    "poll_question_data": [
+        {
+            "question_desc": "desc",
+            "question_type": 1,
+            "option_info": [
+                {
+                    "option_desc": "option"
+                }
+            ]
+        }
+    ]
+}

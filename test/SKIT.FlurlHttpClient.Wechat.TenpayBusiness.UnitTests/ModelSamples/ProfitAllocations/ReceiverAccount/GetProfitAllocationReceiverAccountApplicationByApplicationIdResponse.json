@@ -1,0 +1,18 @@
+{
+    "out_application_id": "string",
+    "application_id": "string",
+    "status": "PROCESSING",
+    "ent_id": "stringstri",
+    "receiver_info": {
+        "receiver_acct_id": "string",
+        "receiver_type": "ENTERPRISE",
+        "merchant_name": "string",
+        "out_receiver_name": "string",
+        "id_card_num_mask": "152***********123*",
+        "id_card_num_md5": "d41d8cd98f00b204e9800998ecf8427e"
+    },
+    "failed_reason": {
+        "failed_type": "BANK_REJECTED",
+        "failed_detail": "string"
+    }
+}

@@ -1,0 +1,6 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "succ_userid_list": [ "zhangsan", "lisi" ],
+    "fail_userid_list": [ "wangwu" ]
+}

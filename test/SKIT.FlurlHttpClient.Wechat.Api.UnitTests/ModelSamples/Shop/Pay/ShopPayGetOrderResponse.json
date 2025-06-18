@@ -1,0 +1,39 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "order": {
+        "trade_no": "522346",
+        "transaction_id": "4302900974202204024351451925",
+        "combine_trade_no": "512346",
+        "mchid": "1623426221",
+        "create_time": 1648880172,
+        "update_time": 1648880485,
+        "pay_time": 1648880315,
+        "expire_time": 1651161600,
+        "amount": 1,
+        "description": "测试商品",
+        "refund_list": [
+            {
+                "amount": 1,
+                "create_time": 1648880476,
+                "finish_time": 1648880483,
+                "result": "SUCCESS",
+                "refund_id": "50301901362022040218937476250",
+                "refund_no": "522347"
+            }
+        ],
+        "profit_sharing_list": [
+            {
+                "mchid": "1623426221",
+                "amount": 1,
+                "create_time": 1648880985,
+                "finish_time": 1648881016,
+                "result": "SUCCESS",
+                "profit_sharing_id": "30002107912022040228952584675",
+                "profit_sharing_no": "512341"
+            }
+        ],
+        "profit_sharing_delay": 30,
+        "profit_sharing_frozen": 0
+    }
+}

@@ -1,0 +1,69 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "targetPlanInfo": {
+        "planId": "1964112935262240768",
+        "planStatus": 1,
+        "planName": "TEST定向计划CR",
+        "planDesc": "TEST定向计划CR",
+        "planStartTime": 1629216000,
+        "planEndTime": 1630166399,
+        "extInfo": {
+            "bizBasicInfo": {
+                "headimgurl": "http://wx.qlogo.cn/mmhead/Q3auHgzwzM77ia7ibuPAQBJgME8gFF9APicaSpd7evrLCVb5hn2zsUBOw",
+                "nickname": "猪腩肉小商店",
+                "appid": "wxb825f130c284597f"
+            },
+            "data": {}
+        }
+    },
+    "productListInfo": [
+        {
+            "planId": "1964112935262240768",
+            "productId": "37610006",
+            "productStatus": 1,
+            "commissionRatio": 700,
+            "productDetailInfo": {
+                "headImg": [
+                    "https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SZ/reserved/60a77aac00065bee000000006a849d09000000a000004f50"
+                ],
+                "category": [
+                    {
+                        "catId": "1208",
+                        "name": "宠物生活"
+                    },
+                    {
+                        "catId": "1224",
+                        "name": "猫狗出行"
+                    },
+                    {
+                        "catId": "1227",
+                        "name": "宠物鞋服"
+                    }
+                ],
+                "param": [],
+                "title": "新商品哈哈中",
+                "subTitle": "",
+                "model": "",
+                "detail": {
+                    "detailImg": []
+                },
+                "brandId": "2100000000",
+                "totalStockNum": "128",
+                "totalSoldNum": "2"
+            },
+            "leagueExInfo": {
+                "hasCommission": 1,
+                "commissionRatio": 700,
+                "commissionValue": 7,
+                "banBizuin": 0,
+                "banCategory": 0,
+                "banProduct": 0
+            },
+            "couponInfo": {
+                "couponId": "0",
+                "discount": "0"
+            }
+        }
+    ]
+}

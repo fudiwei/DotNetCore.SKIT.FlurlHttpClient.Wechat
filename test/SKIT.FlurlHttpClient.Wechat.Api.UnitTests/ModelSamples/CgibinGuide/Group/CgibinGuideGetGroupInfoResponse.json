@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "guide_list": [
+        {
+            "guide_account": "xxxxx",
+            "guide_headimgurl": "xxxxxx",
+            "guide_nickname": "xxx",
+            "create_time": 1584090536,
+            "guide_openid": ""
+        }
+    ],
+    "total_num": 1
+}

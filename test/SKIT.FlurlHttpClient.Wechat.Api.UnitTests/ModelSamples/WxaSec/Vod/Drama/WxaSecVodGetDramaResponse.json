@@ -1,0 +1,43 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "drama_info": {
+        "drama_id": 28918028,
+        "create_time": 1682214878,
+        "name": "我的演艺",
+        "playwright": "编剧名",
+        "producer": "制作方名",
+        "production_license": "abd123",
+        "cover_url": "https://developers.weixin.qq.com/test.jpg",
+        "media_count": 2,
+        "recommendations": "这是这部剧的推荐语。",
+        "description": "剧目的简介。",
+        "promotion_poster": "xxxxxxxxx",
+        "status": 0,
+        "media_list": [
+            { "media_id": 10001 },
+            { "media_id": 10002 }
+        ],
+        "audit_detail": {
+            "status": 3,
+            "create_time": 1682215878,
+            "audit_time": 1682235878
+        },
+        "actor_list": {
+            "actor": [
+                {
+                    "name": "演员1",
+                    "photo_material_id": "xxxxxxxx",
+                    "role": "角色1",
+                    "profile": "简介"
+                },
+                {
+                    "name": "演员2",
+                    "photo_material_id": "xxxxxxxx",
+                    "role": "角色2",
+                    "profile": "简介"
+                }
+            ]
+        }
+    }
+}

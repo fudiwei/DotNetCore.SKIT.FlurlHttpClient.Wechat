@@ -1,0 +1,18 @@
+{
+    "query_word": "欢迎",
+    "chat_info": {
+        "chat_type": 1,
+        "id_list": [
+            {
+                "open_userid": "OPEN_USERID"
+            },
+            {
+                "external_userid": "EXTERNALID1"
+            }
+        ]
+    },
+    "start_time": 1668355200,
+    "end_time": 1668528000,
+    "limit": 50,
+    "cursor": "CURSOR"
+}

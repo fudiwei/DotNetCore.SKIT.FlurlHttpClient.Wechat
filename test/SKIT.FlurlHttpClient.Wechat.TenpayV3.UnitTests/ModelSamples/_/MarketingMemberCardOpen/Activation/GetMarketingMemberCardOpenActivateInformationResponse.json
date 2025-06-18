@@ -1,0 +1,19 @@
+﻿{
+    "nickname": "周星星",
+    "head_image_url": "https://xxx.jpg",
+    "user_information": {
+        "common_field_list": [
+            {
+                "name": "USER_FORM_FLAG_MOBILE",
+                "value": "深圳"
+            }
+        ],
+        "custom_field_list": [
+            {
+                "name": "喜欢的运动",
+                "value": "篮球",
+                "value_list": ["羽毛球,足球,乒乓球"]
+            }
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "supported_shipping_methods": {
+        "express": 0,
+        "same_city": 1,
+        "pickup": 0
+    }
+}

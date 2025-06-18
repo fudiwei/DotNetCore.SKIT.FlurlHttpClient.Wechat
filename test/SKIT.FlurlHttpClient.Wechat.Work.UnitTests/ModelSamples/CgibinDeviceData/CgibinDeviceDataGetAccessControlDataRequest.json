@@ -1,0 +1,11 @@
+﻿{
+    "user_type": 0,
+    "begin_time": 12345,
+    "end_time": 67890,
+    "data_filter_type": 1,
+    "device_sn_list": ["SN1", "SN2"],
+    "open_userid_list": [],
+    "cursor": "CURSOR",
+    "limit": 0,
+    "agentid": 10000
+}

@@ -1,0 +1,8 @@
+﻿<xml>
+    <ServiceCorpId><![CDATA[xxxx]]></ServiceCorpId>
+    <InfoType><![CDATA[license_refund]]></InfoType>
+    <AuthCorpId><![CDATA[yyyy]]></AuthCorpId>
+    <OrderId><![CDATA[zzzz]]></OrderId>
+    <OrderStatus>1</OrderStatus>
+    <TimeStamp>1403610513</TimeStamp>
+</xml>

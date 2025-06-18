@@ -1,0 +1,10 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "service_trans_id": "SFTC",
+    "wx_store_id": "1000000000000023002",
+    "store_order_id": "testorder123",
+    "distance": 2358,
+    "fee": 1300,
+    "trans_order_id": "JS123143DA"
+}

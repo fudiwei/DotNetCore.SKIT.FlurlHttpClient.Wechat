@@ -1,0 +1,31 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "selected_layout_id": "LAYOUTID1",
+    "layout_name": "testmictest",
+    "layout_type": 2,
+    "page_list": [
+        {
+            "layout_template_id": "3",
+            "enable_polling": true,
+            "polling_setting": {
+                "polling_interval_unit": 1,
+                "polling_interval": 10,
+                "ignore_user_absence": false,
+                "ignore_user_novideo": false
+            },
+            "user_seat_list": [
+                {
+                    "grid_id": "1",
+                    "grid_type": 1,
+                    "video_type": 3,
+                    "user_list": [
+                        {
+                            "tmp_openid": "TMPOPENID1"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,34 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "live_list": [
+        {
+            "live_id": "export/UzFfAgtgekIEAQAAAAAA7H0w5NglsgAAAAstQy6ubaLX4KHWvLEZgBPEkKEQAGAUFbyEzNPgMJr0ltCVZdoYnc3iKOwF3f-P",
+            "live_title": "",
+            "live_time": "1715411591",
+            "live_duration": "665",
+            "live_cover_img_url": "http://wxapp.tc.qq.com/251/20350/stodownload?m=34af50dc00cbf7b0f8f0cab3ba43ea54&filekey=30350201010421301f020200fb0402535a041034af50dc00cbf7b0f8f0cab3ba43ea5402030136f0040d00000004627466730000000132&hy=SZ&storeid=5657c127d000e07771a454a71000000fb00004f7e535a19f69bc1e6a3d6725&dotrans=0&bizid=1023"
+        },
+        {
+            "live_id": "export/UzFfAgtgekIEAQAAAAAAAkYHTK6vkAAAAAstQy6ubaLX4KHWvLEZgBPEsaEsWzNJC7yEzNPgMJqXNdVJbsXgEd2QUtC5OIeu",
+            "live_title": "",
+            "live_time": "1715412297",
+            "live_duration": "1625",
+            "live_cover_img_url": "http://wxapp.tc.qq.com/251/20350/stodownload?m=34af50dc00cbf7b0f8f0cab3ba43ea54&filekey=30350201010421301f020200fb0402535a041034af50dc00cbf7b0f8f0cab3ba43ea5402030136f0040d00000004627466730000000132&hy=SZ&storeid=5657c127d000e07771a454a71000000fb00004f7e535a19f69bc1e6a3d6725&dotrans=0&bizid=1023"
+        },
+        {
+            "live_id": "export/UzFfAgtgekIEAQAAAAAAk8Mwt7aD8AAAAAstQy6ubaLX4KHWvLEZgBPEu6F0VChZDryEzNPgMJqEDY5WqvniwQgbJOTVvWFg",
+            "live_title": "",
+            "live_time": "1715413937",
+            "live_duration": "434",
+            "live_cover_img_url": "http://wxapp.tc.qq.com/251/20350/stodownload?m=34af50dc00cbf7b0f8f0cab3ba43ea54&filekey=30350201010421301f020200fb0402535a041034af50dc00cbf7b0f8f0cab3ba43ea5402030136f0040d00000004627466730000000132&hy=SZ&storeid=5657c127d000e07771a454a71000000fb00004f7e535a19f69bc1e6a3d6725&dotrans=0&bizid=1023"
+        },
+        {
+            "live_id": "export/UzFfAgtgekIEAQAAAAAArlcp9BbHOAAAAAstQy6ubaLX4KHWvLEZgBPEiqEUeB1PD7yEzNPgMJqdjdg2bPmVps73BdBCsEqr",
+            "live_title": "",
+            "live_time": "1715414385",
+            "live_duration": "998",
+            "live_cover_img_url": "http://wxapp.tc.qq.com/251/20350/stodownload?m=34af50dc00cbf7b0f8f0cab3ba43ea54&filekey=30350201010421301f020200fb0402535a041034af50dc00cbf7b0f8f0cab3ba43ea5402030136f0040d00000004627466730000000132&hy=SZ&storeid=5657c127d000e07771a454a71000000fb00004f7e535a19f69bc1e6a3d6725&dotrans=0&bizid=1023"
+        }
+    ]
+}

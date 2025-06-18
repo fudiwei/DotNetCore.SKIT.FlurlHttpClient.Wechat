@@ -1,0 +1,45 @@
+{
+    "errcode": "0",
+    "errmsg": "ok",
+    "product": {
+        "shop_appid": "test",
+        "product_id": 12345,
+        "product_info": {
+            "title": "test_title",
+            "sub_title": "",
+            "head_imgs": [
+                "https://test.com/0"
+            ],
+            "desc_info": {
+                "imgs": [
+                    "https://test.com/0"
+                ],
+                "desc": ""
+            },
+            "cats_v2": [
+                {
+                    "cat_id": "1421"
+                }
+            ],
+            "skus": [
+                {
+                    "sku_id": "670813472",
+                    "thumb_img": "",
+                    "sale_price": 500,
+                    "stock_num": 998,
+                    "sku_attrs": [
+                        {
+                            "attr_key": "产地",
+                            "attr_value": "四川成都"
+                        }
+                    ]
+                }
+            ]
+        },
+        "shop": {
+            "name": "xx",
+            "score": 463,
+            "icon": "https://xx"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "service_order_list": [
+        {
+            "service_order_id": 12345,
+            "service_id": 12,
+            "service_name": "一键搬家",
+            "create_time": "2020-08-05 00:00:00",
+            "expire_time": "2020-08-05 12:00:00",
+            "service_type": 2,
+            "specification_id": "move_goods",
+            "total_price": 100,
+            "status": 1
+        }
+    ]
+}

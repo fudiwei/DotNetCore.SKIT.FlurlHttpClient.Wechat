@@ -1,0 +1,16 @@
+{
+    "type": 2,
+    "info_id": 123,
+    "operate_type": 1,
+    "ratio": 60,
+    "exclusive_info": {
+        "begin_time": 1100,
+        "end_time": 3000,
+        "add_finder_ids": [
+            "finder_id_01"
+        ],
+        "del_finder_ids": [
+            "finder_id_02"
+        ]
+    }
+}

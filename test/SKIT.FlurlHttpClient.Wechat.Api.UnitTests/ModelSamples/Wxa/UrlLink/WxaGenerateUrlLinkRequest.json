@@ -1,0 +1,13 @@
+﻿{
+    "path": "/pages/publishHomework/publishHomework",
+    "query": "",
+    "is_expire": true,
+    "expire_type": 1,
+    "expire_interval": 1,
+    "cloud_base": {
+        "env": "xxx",
+        "domain": "xxx.xx",
+        "path": "/jump-wxa.html",
+        "query": "a=1&b=2"
+    }
+}

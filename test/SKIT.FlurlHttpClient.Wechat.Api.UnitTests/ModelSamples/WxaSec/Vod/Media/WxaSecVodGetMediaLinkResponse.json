@@ -1,0 +1,13 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "media_info": {
+        "media_id": 28918028,
+        "duration": 120,
+        "name": "我的中国梦 - 第1集",
+        "description": "剧情非常精彩哦",
+        "cover_url": "https://developers.weixin.qq.com/test.jpg",
+        "mp4_url": "https://developers.weixin.qq.com/test-encode.mp4",
+        "hls_url": "https://developers.weixin.qq.com/test-encode.m3u8"
+    }
+}

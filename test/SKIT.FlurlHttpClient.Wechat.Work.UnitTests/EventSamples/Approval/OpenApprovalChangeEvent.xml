@@ -1,0 +1,46 @@
+﻿<xml>
+    <ToUserName>wwd08c8e7c775abaaa</ToUserName>
+    <FromUserName>sys</FromUserName>
+    <CreateTime>1527838022</CreateTime>
+    <MsgType>event</MsgType>
+    <Event>open_approval_change</Event>
+    <AgentID>1</AgentID>
+    <ApprovalInfo>
+        <ThirdNo>201806010001</ThirdNo>
+        <OpenSpName>付款</OpenSpName>
+        <OpenTemplateId>1234567111</OpenTemplateId>
+        <OpenSpStatus>1</OpenSpStatus>
+        <ApplyTime>1527837645</ApplyTime>
+        <ApplyUserName>jackiejjwu</ApplyUserName>
+        <ApplyUserId>WuJunJie</ApplyUserId>
+        <ApplyUserParty>产品部</ApplyUserParty>
+        <ApplyUserImage>http://www.qq.com/xxx.png</ApplyUserImage>
+        <ApprovalNodes>
+            <ApprovalNode>
+                <NodeStatus>1</NodeStatus>
+                <NodeAttr>1</NodeAttr>
+                <NodeType>1</NodeType>
+                <Items>
+                    <Item>
+                        <ItemName>chauvetxiao</ItemName>
+                        <ItemUserid>XiaoWen</ItemUserid>
+                        <ItemParty>产品部</ItemParty>
+                        <ItemImage>http://www.qq.com/xxx.png</ItemImage>
+                        <ItemStatus>1</ItemStatus>
+                        <ItemSpeech></ItemSpeech>
+                        <ItemOpTime>0</ItemOpTime>
+                    </Item>
+                </Items>
+            </ApprovalNode>
+        </ApprovalNodes>
+        <NotifyNodes>
+            <NotifyNode>
+                <ItemName>jinhuiguo</ItemName>
+                <ItemUserid>GuoJinHui</ItemUserid>
+                <ItemParty>行政部</ItemParty>
+                <ItemImage>http://www.qq.com/xxx.png</ItemImage>
+            </NotifyNode>
+        </NotifyNodes>
+        <ApproverStep >0</ApproverStep >
+    </ApprovalInfo>
+</xml>

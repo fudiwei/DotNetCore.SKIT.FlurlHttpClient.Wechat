@@ -1,0 +1,48 @@
+{
+    "refund_id": "50000000382019052709732678859",
+    "out_refund_no": "1217752501201407033233368018",
+    "transaction_id": "1217752501201407033233368018",
+    "out_trade_no": "1217752501201407033233368018",
+    "channel": "ORIGINAL",
+    "user_received_account": "招商银行信用卡0403",
+    "success_time": "2020-12-01T16:18:12+08:00",
+    "create_time": "2020-12-01T16:18:12+08:00",
+    "status": "SUCCESS",
+    "funds_account": "UNSETTLED",
+    "amount": {
+        "total": 100,
+        "refund": 100,
+        "from": [
+            {
+                "account": "AVAILABLE",
+                "amount": 444
+            }
+        ],
+        "payer_total": 90,
+        "payer_refund": 90,
+        "settlement_refund": 100,
+        "settlement_total": 100,
+        "discount_refund": 10,
+        "currency": "CNY",
+        "refund_fee": 100
+    },
+    "promotion_detail": [
+        {
+            "promotion_id": "109519",
+            "scope": "GLOBAL",
+            "type": "COUPON",
+            "amount": 5,
+            "refund_amount": 100,
+            "goods_detail": [
+                {
+                    "merchant_goods_id": "1217752501201407033233368018",
+                    "wechatpay_goods_id": "1001",
+                    "goods_name": "iPhone6s 16G",
+                    "unit_price": 528800,
+                    "refund_amount": 528800,
+                    "refund_quantity": 1
+                }
+            ]
+        }
+    ]
+}

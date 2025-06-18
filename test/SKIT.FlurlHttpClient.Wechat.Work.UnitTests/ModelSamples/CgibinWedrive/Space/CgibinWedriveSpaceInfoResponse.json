@@ -1,0 +1,29 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "space_info": {
+        "spaceid": "SPACEID",
+        "space_name": "SPACE_NAME",
+        "auth_list": {
+            "auth_info": [
+                {
+                    "type": 1,
+                    "userid": "USERID1",
+                    "auth": 3
+                },
+                {
+                    "type": 1,
+                    "userid": "USERID2",
+                    "auth": 2
+                },
+                {
+                    "type": 2,
+                    "departmentid": 1,
+                    "auth": 1
+                }
+            ],
+            "quit_userid": ["USERID3", "USERID4"]
+        },
+        "space_sub_type":0
+    }
+}

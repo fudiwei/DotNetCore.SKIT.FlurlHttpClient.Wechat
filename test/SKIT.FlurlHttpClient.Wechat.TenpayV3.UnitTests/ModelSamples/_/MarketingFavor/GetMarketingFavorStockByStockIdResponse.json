@@ -1,0 +1,52 @@
+{
+    "stock_id": "9836588",
+    "stock_creator_mchid": "123456",
+    "stock_name": "微信支付批次",
+    "status": "paused",
+    "create_time": "2015-05-20T13:29:35.120+08:00",
+    "description": "微信支付营销",
+    "stock_use_rule": {
+        "max_coupons": 100,
+        "max_amount": 5000,
+        "max_amount_by_day": 400,
+        "fixed_normal_coupon": {
+            "coupon_amount": 100,
+            "transaction_minimum": 100
+        },
+        "max_coupons_per_user": 3,
+        "coupon_type": "NORMAL",
+        "goods_tag": [
+            "123456"
+        ],
+        "trade_type": [
+            "MICROAPP"
+        ],
+        "combine_use": true
+    },
+    "available_begin_time": "2015-05-20T13:29:35.120+08:00",
+    "available_end_time": "2015-05-20T13:29:35.120+08:00",
+    "distributed_coupons": 100,
+    "no_cash": true,
+    "start_time": "2015-05-20T13:29:35.120+08:00",
+    "stop_time": "2015-05-20T13:29:35.120+08:00",
+    "cut_to_message": {
+        "single_price_max": 100,
+        "cut_to_price": 80
+    },
+    "singleitem": true,
+    "stock_type": "NORMAL",
+    "card_id": "pX2-vjoeC94Nn-r2g5GjDwkfFH7E",
+    "business_type": "MULTIUSE",
+    "available_region_list": [
+        {
+            "type": "PROVINCE",
+            "province": "广东省",
+            "city": "深圳市",
+            "district": "南山区",
+            "country": "中国大陆"
+        }
+    ],
+    "available_industry_list": [
+        "餐饮"
+    ]
+}

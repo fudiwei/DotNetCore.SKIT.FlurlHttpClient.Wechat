@@ -1,0 +1,33 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "responses": [
+            {
+                "add_sheet_response": {
+                    "properties": {
+                        "sheet_id": "ABCDE",
+                        "title": "XXXXXX",
+                        "row_count": 100,
+                        "column_count": 100
+                    }
+                }
+            },
+            {
+                "update_range_response": {
+                    "updated_cells": 10
+                }
+            },
+            {
+                "delete_dimension_response": {
+                    "deleted": 10
+                }
+            },
+            {
+                "delete_sheet_response": {
+                    "sheet_id": "AABBCC"
+                }
+            }
+        ]
+    }
+}

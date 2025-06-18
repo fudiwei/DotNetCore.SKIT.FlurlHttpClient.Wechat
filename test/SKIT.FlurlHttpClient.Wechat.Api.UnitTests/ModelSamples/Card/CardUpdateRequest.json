@@ -1,0 +1,29 @@
+﻿{
+    "card_id": "ph_gmt7cUVrlRk8swPwx7aDyF-pg",
+    "member_card": {
+        "base_info": {
+            "logo_url": "http://www.supadmin.cn/uploads/allimg/120216/1_120216214725_1.jpg",
+            "color": "Color010",
+            "notice": "使用时向服务员出示此券",
+            "service_phone": "020-88888888",
+            "description": "不可与其他优惠同享。如需团购券发票，请在消费时向商户提出店内均可使用，仅限堂食餐前不可打包，餐后未吃完，可打包本团购券不限人数，建议2人使用，超过建议人数须另收酱料费5元 / 位。本单谢绝自带酒水饮料",
+            "location_id_list": [123, 12321, 345345],
+            "pay_info": {
+                "swipe_card": {
+                    "is_swipe_card": true
+                }
+            }
+        },
+        "bonus_cleared": "aaaaaaaaaaaaaa",
+        "bonus_rules": "aaaaaaaaaaaaaa",
+        "prerogative": "",
+        "activate_msg_operation": {
+            "url_cell": {
+                "card_id_list": ["pbLatjhcI6XUxJWA0Au3Gaq5eFPs"],
+                "end_time": 1492724561,
+                "text": "恭喜你获得一张50元代金券",
+                "url": "www.qq.com"
+            }
+        }
+    }
+}

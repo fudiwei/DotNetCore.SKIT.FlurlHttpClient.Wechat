@@ -1,0 +1,12 @@
+﻿{
+    "bank_type": "ICBC_DEBIT",
+    "create_time": "2020-05-20T13:29:35+08:00",
+    "fail_count": 20,
+    "filename": "active_user.csv",
+    "package_id": "8473295",
+    "status": "PROCESSING",
+    "success_count": 1000,
+    "success_user_count": 1000,
+    "task_id": "101",
+    "update_time": "2020-05-20T13:29:35+08:00"
+}

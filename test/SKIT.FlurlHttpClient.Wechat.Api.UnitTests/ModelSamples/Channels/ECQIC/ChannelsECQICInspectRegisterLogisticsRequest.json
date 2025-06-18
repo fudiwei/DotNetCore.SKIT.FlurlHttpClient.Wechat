@@ -1,0 +1,12 @@
+{
+    "order_id_list": [
+        "37423523451235145",
+        "37423523451235146"
+    ],
+    "logistics_info": {
+        "waybill_id": "SF11111111",
+        "delivery_id": "SF",
+        "delivery_name": "顺丰快递",
+        "delivery_type": 1
+    }
+}

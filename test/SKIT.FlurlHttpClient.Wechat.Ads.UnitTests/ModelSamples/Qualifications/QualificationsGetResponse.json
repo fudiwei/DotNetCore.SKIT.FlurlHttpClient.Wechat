@@ -1,0 +1,23 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "data": {
+        "list": [
+            {
+                "qualification_id": 12345,
+                "qualification_name": "《增值电信业务经营许可证》",
+                "qualification_url": "https://www.example.com/image/01",
+                "qualification_type": "INDUSTRY_QUALIFICATION",
+                "qualification_status": "QUALIFICATION_STATUS_NORMAL",
+                "valid_date": "",
+                "reject_message": ""
+            }
+        ],
+        "page_info": {
+            "total_number": 1,
+            "total_page": 1,
+            "page_size": 10,
+            "page": 1
+        }
+    }
+}

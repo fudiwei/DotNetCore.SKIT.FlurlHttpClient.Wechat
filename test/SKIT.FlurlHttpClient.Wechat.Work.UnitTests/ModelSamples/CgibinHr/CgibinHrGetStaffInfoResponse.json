@@ -1,0 +1,32 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "fieldinfo": [
+        {
+            "fieldid": 11004,
+            "sub_idx": 0,
+            "result": 1,
+            "value_type": 3,
+            "value_uint32": 1
+        },
+        {
+            "fieldid": 11003,
+            "sub_idx": 0,
+            "result": 1,
+            "value_type": 5,
+            "value_mobile": {
+                "value_country_code": "xx",
+                "value_mobile": "xxxxxxxxxx"
+            }
+        },
+        {
+            "fieldid": 19001,
+            "sub_idx": 0,
+            "result": 1,
+            "value_type": 6,
+            "value_file": {
+                "media_id": [ "xxxxxx", "xxxxxx" ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+﻿{
+    "time": {
+        "end_timestamp": 1609689600,
+        "begin_timestamp": 1609603200
+    },
+    "module": "10022",
+    "params": [
+        {
+            "field": "networktype",
+            "value": "wifi"
+        },
+        {
+            "field": "device_level",
+            "value": "1"
+        },
+        {
+            "field": "device",
+            "value": "1"
+        }
+    ]
+}

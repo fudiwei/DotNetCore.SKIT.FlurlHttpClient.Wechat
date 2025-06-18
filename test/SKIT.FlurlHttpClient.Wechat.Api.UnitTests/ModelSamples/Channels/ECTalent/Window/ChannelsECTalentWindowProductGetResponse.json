@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "product": {
+        "product_id": "1000000000000",
+        "appid": "wxee9f94a33abcdefg",
+        "out_product_id": "",
+        "title": "api测试商品",
+        "img_url": "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+        "leaf_category_id": 6091,
+        "status": 1,
+        "selling_price": 999,
+        "stock": 1,
+        "sales": 123,
+        "is_hide": false,
+        "product_promotion_link": "v1=HAOHK025pGFF8tBx69zbwNpU473uiTNa5MOHrs_Hknqa_-Cjk9IbBHMHeKh5rSnIrQ"
+    }
+}

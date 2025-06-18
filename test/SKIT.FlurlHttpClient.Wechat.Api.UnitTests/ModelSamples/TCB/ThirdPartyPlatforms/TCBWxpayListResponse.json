@@ -1,0 +1,30 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "merchant_code": "1900006511",
+            "merchant_name": "MIOKKK市区政府-test_mdm",
+            "company_name": "weapp政府111",
+            "mch_relation_state": "RELATION_BINDED",
+            "jsapi_auth_state": "AUTH_AUTHORIZED",
+            "refund_auth_state": "AUTH_AUTHORIZED"
+        },
+        {
+            "merchant_code": "1800008315",
+            "merchant_name": "微信公众平台",
+            "company_name": "深圳市腾讯计算机系统有限公司",
+            "mch_relation_state": "RELATION_WAIT_CONFIRM_WXTPL",
+            "jsapi_auth_state": "AUTH_WAIT_CONFIRM_WXTPL",
+            "refund_auth_state": "AUTH_UNAUTHORIZED"
+        },
+        {
+            "merchant_code": "11485517",
+            "merchant_name": "商家简称",
+            "company_name": "广平大街2",
+            "mch_relation_state": "RELATION_WAIT_CONFIRM_WXTPL",
+            "jsapi_auth_state": "AUTH_WAIT_CONFIRM_WXTPL",
+            "refund_auth_state": "AUTH_UNAUTHORIZED"
+        }
+    ]
+}

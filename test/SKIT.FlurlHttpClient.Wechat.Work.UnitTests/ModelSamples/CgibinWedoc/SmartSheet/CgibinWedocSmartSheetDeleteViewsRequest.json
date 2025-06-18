@@ -1,0 +1,8 @@
+{
+    "docid": "DOCID",
+    "sheet_id": "123Abc",
+    "view_ids": [
+        "VIEWID1",
+        "VIEWID2"
+    ]
+}

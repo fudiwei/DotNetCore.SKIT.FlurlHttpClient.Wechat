@@ -1,0 +1,18 @@
+﻿{
+    "items": [
+        {
+            "env": "tiyan1-5gzlnxws501f4e68",
+            "service_name": "echo",
+            "items": [
+                {
+                    "version_name": "echo-004",
+                    "flow_ratio": 80
+                },
+                {
+                    "version_name": "echo-007",
+                    "flow_ratio": 20
+                }
+            ]
+        }
+    ]
+}

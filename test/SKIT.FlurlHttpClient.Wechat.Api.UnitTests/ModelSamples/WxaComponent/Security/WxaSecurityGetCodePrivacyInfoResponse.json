@@ -1,0 +1,11 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "without_auth_list": [
+        "wx.getLocation",
+        "wx.onLocationChange"
+    ],
+    "without_conf_list": [
+        "wx.onLocationChange"
+    ]
+}

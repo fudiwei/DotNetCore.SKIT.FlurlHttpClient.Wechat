@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total": 1,
+    "fields": [
+        {
+            "field_id": "ID1",
+            "field_title": "TITLE1",
+            "field_type": "FIELD_TYPE_TEXT"
+        }
+    ]
+}

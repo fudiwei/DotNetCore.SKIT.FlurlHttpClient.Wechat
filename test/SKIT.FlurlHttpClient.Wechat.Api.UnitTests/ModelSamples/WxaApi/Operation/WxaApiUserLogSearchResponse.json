@@ -1,0 +1,32 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "data": {
+        "list": [
+            {
+                "level": 6,
+                "platform": 1,
+                "libraryVersion": "2.8.3",
+                "clientVersion": "7.0.7",
+                "id": "oXu034-Kl5Et2U0vsexKDsFaon0Q",
+                "timestamp": 1570852796,
+                "msg": [
+                    {
+                        "time": 1570852795,
+                        "msg": ["hello world"],
+                        "level": 2
+                    },
+                    {
+                        "time": 1570852795,
+                        "msg": ["get msg list mig 10006"],
+                        "level": 4
+                    }
+                ],
+                "url": "pages/chat/chat",
+                "traceid": "oXu03410akoNqfsrMMswk6Zwwl1U_1570852656",
+                "filterMsg": "NetworkExceed08 ReportTimeTotal"
+            }
+        ],
+        "total": 1000
+    }
+}

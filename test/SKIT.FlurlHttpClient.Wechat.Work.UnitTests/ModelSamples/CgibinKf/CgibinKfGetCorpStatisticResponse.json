@@ -1,0 +1,32 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "statistic_list": [
+        {
+            "stat_time": 1645545600,
+            "statistic": {
+                "session_cnt": 2,
+                "customer_cnt": 1,
+                "customer_msg_cnt": 6,
+                "upgrade_service_customer_cnt": 0,
+                "ai_session_reply_cnt": 1,
+                "ai_transfer_rate": 1,
+                "ai_knowledge_hit_rate": 0,
+                "msg_rejected_customer_cnt": 1
+            }
+        },
+        {
+            "stat_time": 1645632000,
+            "statistic": {
+                "session_cnt": 2,
+                "customer_cnt": 1,
+                "customer_msg_cnt": 6,
+                "upgrade_service_customer_cnt": 0,
+                "ai_session_reply_cnt": 1,
+                "ai_transfer_rate": 1,
+                "ai_knowledge_hit_rate": 0,
+                "msg_rejected_customer_cnt": 1
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+﻿{
+    "product_id": 23423523452345235,
+    "out_product_id": "1234566",
+    "out_sku_id": "1024",
+    "thumb_img": "https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SZ/reserved/6059ade300096eb200000000f19f9d09000000a000004f50",
+    "sale_price": 1300,
+    "market_price": 1500,
+    "stock_num": 100,
+    "sku_code": "A24525252",
+    "barcode": "13251454",
+    "sku_attrs": [
+        {
+            "attr_key": "选择颜色",
+            "attr_value": "红蓝主机"
+        },
+        {
+            "attr_key": "选择套装",
+            "attr_value": "主机+保护套"
+        }
+    ]
+}

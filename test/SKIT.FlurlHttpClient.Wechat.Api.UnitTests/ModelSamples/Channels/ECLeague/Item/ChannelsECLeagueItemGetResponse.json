@@ -1,0 +1,41 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "item": {
+        "product_id": 1000001,
+        "type": 2,
+        "status": 1,
+        "ratio": 50,
+        "exclusive_info": {
+            "info_id": 123,
+            "begin_time": 1669867200,
+            "end_time": 1672459200,
+            "is_forerver": false,
+            "finder_ids": [
+                "finder_id_01"
+            ],
+            "finder_num": 1,
+            "finder_info_list": [
+                {
+                    "finder_id": "sphAAAA",
+                    "begin_time": 1669867200,
+                    "end_time": 1672459200
+                },
+                {
+                    "finder_id": "sphBBBB",
+                    "begin_time": 1669867200,
+                    "end_time": 1672459200
+                },
+                {
+                    "finder_id": "sphCCCC",
+                    "begin_time": 1669867200,
+                    "end_time": 1672459200
+                }
+            ]
+        },
+        "ext_info": {
+            "is_sale_forbidden": false,
+            "is_banned": false
+        }
+    }
+}

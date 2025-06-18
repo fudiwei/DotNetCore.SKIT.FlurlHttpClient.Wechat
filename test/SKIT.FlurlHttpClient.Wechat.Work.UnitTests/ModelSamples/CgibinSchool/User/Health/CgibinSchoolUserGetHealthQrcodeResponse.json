@@ -1,0 +1,17 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "result_list": [
+        {
+            "errcode": 0,
+            "errmsg": "ok",
+            "userid": "userid1",
+            "qrcode_data": "QRCODE_DATA"
+        },
+        {
+            "errcode": 1,
+            "errmsg": "record not found",
+            "userid": "userid1"
+        }
+    ]
+}

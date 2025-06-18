@@ -1,0 +1,15 @@
+{
+    "policy_period_id": 1,
+    "policy_period_state": "NO_SCHEDULED",
+    "deduct_start_date": "2019-11-22",
+    "deduct_end_date": "2019-11-22",
+    "scheduled_amount": {
+        "total": 1,
+        "currency": "CNY"
+    },
+    "deduct_amount": {
+        "total": 1,
+        "currency": "CNY"
+    },
+    "deduct_date": "2019-11-22"
+}

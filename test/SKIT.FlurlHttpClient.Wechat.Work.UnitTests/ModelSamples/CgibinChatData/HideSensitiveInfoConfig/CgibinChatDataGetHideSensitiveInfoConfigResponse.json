@@ -1,0 +1,9 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "config": {
+        "hide_mobile": false,
+        "hide_idcard": true,
+        "hide_bankno": true
+    }
+}

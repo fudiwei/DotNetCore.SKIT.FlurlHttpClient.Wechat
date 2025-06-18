@@ -1,0 +1,47 @@
+﻿{
+    "activity_base_info": {
+        "activity_name": "良品铺子回馈活动",
+        "activity_second_title": "海飞丝的券",
+        "merchant_logo_url": "https://tool.oschina.net/regex.jpg",
+        "background_color": "COLOR010",
+        "begin_time": "2015-05-20T13:29:35+08:00",
+        "end_time": "2015-05-20T13:29:35+08:00",
+        "available_periods": {
+            "available_time": [
+                {
+                    "begin_time": "2015-05-20T00:00:00+08:00",
+                    "end_time": "2015-05-20T23:59:59+08:00"
+                }
+            ],
+            "available_day_time": [
+                {
+                    "begin_day_time": "110000",
+                    "end_day_time": "135959"
+                }
+            ]
+        },
+        "out_request_no": "100002322019090134234sfdf",
+        "delivery_purpose": "OFF_LINE_PAY",
+        "mini_programs_appid": "wx23232232323",
+        "mini_programs_path": "/path/index/index"
+    },
+    "award_send_rule": {
+        "transaction_amount_minimum": 100,
+        "send_content": "SINGLE_COUPON",
+        "award_type": "BUSIFAVOR",
+        "award_list": [
+            {
+                "stock_id": "98065001",
+                "original_image_url": "https://tool.oschina.net/regex.jpg",
+                "thumbnail_url": "https://tool.oschina.net/regex.jpg"
+            }
+        ],
+        "merchant_option": "MANUAL_INPUT_MERCHANT",
+        "merchant_id_list": ["10000022", "10000023"]
+    },
+    "advanced_setting": {
+        "delivery_user_category": "DELIVERY_MEMBER_PERSON",
+        "merchant_member_appid": "34567890",
+        "goods_tags": ["xxx", "yyy"]
+    }
+}

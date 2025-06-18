@@ -1,0 +1,37 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "meetingroom_list": [
+        {
+            "meetingroom_id": 1,
+            "name": "18F-会议室",
+            "capacity": 10,
+            "city": "深圳",
+            "building": "腾讯大厦",
+            "floor": "18F",
+            "equipment": [ 1, 2, 3 ],
+            "coordinate": {
+                "latitude": "22.540503",
+                "longitude": "113.934528"
+            },
+            "range": {
+                "user_list": [ "zhangsan", "lisi" ],
+                "department_list": [ 1 ]
+            },
+            "need_approval": 1
+        },
+        {
+            "meetingroom_id": 2,
+            "name": "19F-会议室",
+            "capacity": 20,
+            "city": "深圳",
+            "building": "腾讯大厦",
+            "floor": "19F",
+            "equipment": [2, 3],
+            "coordinate": {
+                "latitude": "22.540503",
+                "longitude": "113.934528"
+            }
+        }
+    ]
+}

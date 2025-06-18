@@ -1,0 +1,20 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "approve_type": 1,
+    "is_collect_question": 1,
+    "no_registration_needed_for_staff": true,
+    "question_list": [
+        {
+            "is_required": 1,
+            "question_type": 1,
+            "question_title": "acd",
+            "special_type": 1,
+            "option_list": [
+                {
+                    "content": "asr"
+                }
+            ]
+        }
+    ]
+}

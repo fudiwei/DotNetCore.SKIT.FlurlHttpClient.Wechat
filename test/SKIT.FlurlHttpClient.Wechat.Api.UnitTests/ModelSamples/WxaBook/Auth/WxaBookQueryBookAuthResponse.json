@@ -1,0 +1,17 @@
+{
+    "errcode": 0,
+    "results": [
+        {
+            "book_id": "A1Hcfu",
+            "grantor_appid": "wx001",
+            "grantee_appid": "wx004",
+            "expire_time": 1801698644
+        },
+        {
+            "book_id": "uvKqNd",
+            "grantor_appid": "wx001",
+            "grantee_appid": "wx005",
+            "expire_time": 1704259146
+        }
+    ]
+}

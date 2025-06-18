@@ -1,0 +1,13 @@
+{
+    "out_batch_no": "bfatestnotify000033",
+    "batch_id": "131000007026709999520922023081519403795655",
+    "batch_status": "FINISHED",
+    "total_num": 2,
+    "total_amount": 200,
+    "success_amount": 100,
+    "success_num": 1,
+    "fail_amount": 100,
+    "fail_num": 1,
+    "mchid": "2483775951",
+    "update_time": "2023-08-15T20:33:22+08:00"
+}

@@ -1,0 +1,57 @@
+{
+    "admin_userid": "zhangsan",
+    "title": "新建会议",
+    "meeting_start": 1600000000,
+    "meeting_duration": 3600,
+    "description": "新建会议描述",
+    "location": "广州媒体港",
+    "agentid": 1000014,
+    "invitees": {
+        "userid": [ "lisi", "wangwu" ]
+    },
+    "guests": [
+        {
+            "area": "86",
+            "phone_number": "135012938457",
+            "guest_name": "fifa"
+        }
+    ],
+    "settings": {
+        "password": "1234",
+        "enable_waiting_room": false,
+        "allow_enter_before_host": true,
+        "enable_enter_mute": 1,
+        "allow_unmute_self": true,
+        "mute_all": false,
+        "allow_external_user": false,
+        "enable_screen_watermark": false,
+        "watermark_type": 1,
+        "auto_record_type": "none",
+        "attendee_join_auto_record": false,
+        "enable_host_pause_auto_record": false,
+        "enable_interpreter": true,
+        "enable_enroll": true,
+        "enable_host_key": true,
+        "host_key": "meetinghostkey",
+        "hosts": {
+            "userid": [ "lisi", "wangwu" ]
+        },
+        "remind_scope": 1,
+        "ring_users": {
+            "userid": [ "zhangsan", "lis" ]
+        }
+    },
+    "cal_id": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
+    "reminders": {
+        "is_repeat": 1,
+        "repeat_type": 0,
+        "is_custom_repeat": 1,
+        "repeat_until_type": 1,
+        "repeat_until_count": 10,
+        "repeat_until": 1606976813,
+        "repeat_interval": 1,
+        "repeat_day_of_week": [ 3, 7 ],
+        "repeat_day_of_month": [ 10, 21 ],
+        "remind_before": [ 0, 900 ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "errcode": "0",
+    "errmsg": "ok",
+    "bind_status": 0,
+    "register_status": 1,
+    "register_business_type": "",
+    "register_query_string": "",
+    "bind_business_type": "",
+    "bind_query_string": ""
+}

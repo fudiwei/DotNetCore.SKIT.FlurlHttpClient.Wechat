@@ -1,0 +1,13 @@
+{
+    "mchid": "1230000109",
+    "merchant_name": "腾讯广场",
+    "shop_name": "微信支付",
+    "shop_number": "123456",
+    "appid": "wxd678efh567hg6787",
+    "openid": "oUpF8uMuAJ2pxb1Q9zNjWUHsd",
+    "amount": 200,
+    "time_end": "2020-05-20T13:29:35+08:00",
+    "transaction_id": "1234567890",
+    "code": "478515832665",
+    "auth_type": "REGISTERED_MODE"
+}

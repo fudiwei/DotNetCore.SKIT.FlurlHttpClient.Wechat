@@ -1,0 +1,20 @@
+﻿{
+    "docid": "DOCID",
+    "update_file_member_list": [
+        {
+            "type": 1,
+            "auth": 7,
+            "userid": "USERID1"
+        }
+    ],
+    "del_file_member_list": [
+        {
+            "type": 1,
+            "userid": "USERID2"
+        },
+        {
+            "type": 1,
+            "tmp_external_userid": "TMP_EXTERNAL_USERID2"
+        }
+    ]
+}

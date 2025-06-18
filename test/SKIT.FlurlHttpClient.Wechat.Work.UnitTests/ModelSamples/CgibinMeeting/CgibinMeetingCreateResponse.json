@@ -1,0 +1,8 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "meetingid": "XXXXXXXXX",
+    "meeting_code": "meeting_code",
+    "meeting_link": "https://meeting.com/jige",
+    "excess_users": [ "zhangsan", "lisi" ]
+}

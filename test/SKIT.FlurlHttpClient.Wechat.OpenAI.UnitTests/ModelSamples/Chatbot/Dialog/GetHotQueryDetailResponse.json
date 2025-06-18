@@ -1,0 +1,17 @@
+{
+    "code": 0,
+    "msg": "",
+    "data": {
+        "count": 0,
+        "totalPages": 0,
+        "list": [
+            {
+                "ques": "",
+                "score": 0,
+                "hitIntent": "",
+                "askCount": 0,
+                "askUserCount": 0
+            }
+        ]
+    }
+}

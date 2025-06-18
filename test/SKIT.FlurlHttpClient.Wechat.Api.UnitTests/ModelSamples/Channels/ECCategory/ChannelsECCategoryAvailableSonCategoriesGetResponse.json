@@ -1,0 +1,36 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "cat_list": [
+        {
+            "cat_id": 1,
+            "f_cat_id": 0,
+            "name": "服饰"
+        },
+        {
+            "cat_id": 2,
+            "f_cat_id": 0,
+            "name": "鞋帽"
+        }
+    ],
+    "cat_list_v2": [
+        {
+            "cat_id": 1,
+            "f_cat_id": 0,
+            "name": "服饰",
+            "leaf": false
+        },
+        {
+            "cat_id": 2,
+            "f_cat_id": 0,
+            "name": "鞋帽",
+            "leaf": false
+        },
+        {
+            "cat_id": 3,
+            "f_cat_id": 0,
+            "name": "生鲜水产",
+            "leaf": false
+        }
+    ]
+}

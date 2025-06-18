@@ -1,0 +1,7 @@
+﻿{
+	"student_userid": "zhangsan",
+	"mobile": "18000000000",
+	"new_student_userid":"NEW_ID",
+	"name": "张三",
+	"department": [1, 2]
+}

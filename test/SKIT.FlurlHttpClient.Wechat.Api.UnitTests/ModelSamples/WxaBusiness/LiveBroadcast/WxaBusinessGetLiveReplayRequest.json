@@ -1,0 +1,6 @@
+﻿{
+    "action": "get_replay",
+    "room_id": 354,
+    "start": 0,
+    "limit": 10
+}

@@ -1,0 +1,36 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "item": [
+        {
+            "component_type": 0,
+            "traffic_type": 0,
+            "leads_count": 1000
+        },
+        {
+            "component_type": 0,
+            "traffic_type": 1,
+            "leads_count": 1000
+        },
+        {
+            "component_type": 1,
+            "traffic_type": 0,
+            "leads_count": 1000
+        },
+        {
+            "component_type": 1,
+            "traffic_type": 1,
+            "leads_count": 1000
+        },
+        {
+            "component_type": 2,
+            "traffic_type": 0,
+            "leads_count": 1000
+        },
+        {
+            "component_type": 2,
+            "traffic_type": 1,
+            "leads_count": 1000
+        }
+    ]
+}

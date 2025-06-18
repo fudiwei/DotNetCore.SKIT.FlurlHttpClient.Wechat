@@ -1,0 +1,24 @@
+{
+    "retail_info_list": [
+        {
+            "mobile_phone": "12345678910",
+            "retail_name": "张三烧烤店",
+            "retail_type": "餐饮店",
+            "address_province": "广东省",
+            "address_city": "广州市",
+            "address_region": "海珠区",
+            "address_street": "新港中路397号TIT创意园"
+        },
+        {
+            "mobile_phone": "a123456789",
+            "retail_type": "便利店",
+            "address_province": "广东省",
+            "address_city": "广州市",
+            "address_region": "海珠区",
+            "address_street": "新港中路397号TIT创意园",
+            "registration_number": "xxxxx",
+            "biz_name": "xxxxx",
+            "corporation_name": "xxxxx"
+        }
+    ]
+}

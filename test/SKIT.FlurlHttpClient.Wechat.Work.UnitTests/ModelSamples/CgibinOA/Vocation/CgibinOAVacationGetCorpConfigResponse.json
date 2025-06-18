@@ -1,0 +1,56 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "lists": [
+        {
+            "id": 1,
+            "name": "年假",
+            "time_attr": 0,
+            "duration_type": 0,
+            "quota_attr": {
+                "type": 1,
+                "autoreset_time": 1641010352,
+                "autoreset_duration": 432000,
+                "quota_rule_type": 1,
+                "quota_rules": {
+                    "list": [
+                        {
+                            "quota": 432000,
+                            "begin": 0,
+                            "end": 1
+                        },
+                        {
+                            "quota": 518400,
+                            "begin": 1,
+                            "end": 2
+                        },
+                        {
+                            "quota": 604800,
+                            "begin": 2,
+                            "end": 0
+                        }
+                    ],
+                    "based_on_actual_work_time": true
+                },
+                "at_entry_date": true,
+                "auto_reset_month_day": 0
+            },
+            "perday_duration": 86400,
+            "is_newovertime": 0,
+            "enter_comp_time_limit": 0,
+            "expire_rule": {
+                "type": 2,
+                "duration": 2,
+                "date": {
+                    "month": 0,
+                    "day": 0
+                },
+                "extern_duration_enable": false,
+                "extern_duration": {
+                    "month": 0,
+                    "day": 0
+                }
+            }
+        }
+    ]
+}

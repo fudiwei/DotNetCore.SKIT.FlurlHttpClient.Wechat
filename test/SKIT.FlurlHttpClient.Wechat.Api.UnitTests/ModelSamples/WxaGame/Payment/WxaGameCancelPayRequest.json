@@ -1,0 +1,10 @@
+{
+    "offer_id": "12345678",
+    "openid": "oUrsfxxxxxxxxxx",
+    "ts": 1668512806,
+    "zone_id": "1",
+    "env": 0,
+    "bill_no": "test_cancel_pay_1668512806",
+    "pay_bill_no": "test_pay_1668512428",
+    "amount": 1
+}

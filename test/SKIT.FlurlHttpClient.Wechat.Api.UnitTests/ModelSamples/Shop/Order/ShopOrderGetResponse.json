@@ -1,0 +1,63 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "order": {
+        "order_id": 3302968738502279424,
+        "out_order_id": "***************",
+        "status": 20,
+        "path": "/pages/order.html?out_order_id=xxxxx",
+        "default_receiving_address": {
+            "city": "广州市",
+            "country": "中国",
+            "detailed_address": "龙洞250号",
+            "province": "广东省",
+            "receiver_name": "我爱我家",
+            "tel_number": "18712345678",
+            "town": "温柔乡"
+        },
+        "order_detail": {
+            "promotion_info": {
+                "promoter_id": "PROMOTER_ID",
+                "finder_nickname": "FINDER_NICKNAME",
+                "sharer_openid": "SHARER_OPENID"
+            },
+            "product_infos": [
+                {
+                    "out_product_id": "12345",
+                    "out_sku_id": "23456",
+                    "product_cnt": 10,
+                    "sale_price": 200,
+                    "path": "pages/productDetail/productDetail?productId=2176180",
+                    "title": "标题",
+                    "head_img": "http://img10.360buyimg.com/n1/s450x450_jfs/t1/85865/39/13611/488083/5e590a40E4bdf69c0/55c9bf645ea2b727.jpg",
+                    "real_price": 200
+                }
+            ],
+            "pay_info": {
+                "pay_method": "微信支付",
+                "prepay_id": "42526234625",
+                "prepay_time": "2020-03-25 14:04:25",
+                "transaction_id": "131456479687",
+                "pay_time": "2020-03-25 14:05:25",
+                "pay_method_type": 0
+            },
+            "price_info": {
+                "order_price": 1600,
+                "freight": 500,
+                "discounted_price": 1000,
+                "additional_price": 100,
+                "additional_remarks": "税费"
+            },
+            "delivery_detail": {
+                "delivery_type": 1,
+                "finish_all_delivery": 1,
+                "delivery_list": [
+                    {
+                        "waybill_id": "SFXXXX",
+                        "delivery_id": "SF"
+                    }
+                ]
+            }
+        }
+    }
+}

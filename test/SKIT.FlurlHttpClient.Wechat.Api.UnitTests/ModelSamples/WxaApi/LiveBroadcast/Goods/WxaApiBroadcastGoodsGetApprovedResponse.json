@@ -1,0 +1,16 @@
+﻿{
+    "errcode": 0,
+    "total": 68,
+    "goods": [
+        {
+            "goodsId": 9,
+            "coverImgUrl": "xxxx",
+            "name": "xxxxx",
+            "price": 12300,
+            "url": "xxxxxxx",
+            "priceType": 1,
+            "price2": 0,
+            "thirdPartyTag": 0
+        }
+    ]
+}

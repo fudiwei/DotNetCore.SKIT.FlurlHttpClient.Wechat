@@ -1,0 +1,25 @@
+﻿{
+    "id": "2008450740201411110000174436",
+    "out_refund_no": "R20150806125346",
+    "create_time": "2018-06-08T10:34:56+08:00",
+    "amount": {
+        "refund": 50,
+        "currency": "CNY",
+        "payer_refund": 49,
+        "payer_currency": "HKD",
+        "exchange_rate": {
+            "type": "SETTLEMENT_RATE",
+            "rate": 8000000
+        }
+    },
+    "promotion_detail": [
+        {
+            "promotion_id": "109519",
+            "scope": "GLOBAL",
+            "type": "COUPON",
+            "amount": 1,
+            "refund_amount": 1,
+            "currency": "HKD"
+        }
+    ]
+}

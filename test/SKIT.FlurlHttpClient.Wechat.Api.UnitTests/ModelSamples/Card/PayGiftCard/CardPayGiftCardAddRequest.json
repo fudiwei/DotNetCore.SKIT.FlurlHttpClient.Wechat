@@ -1,0 +1,16 @@
+﻿{
+    "rule_info": {
+        "type": "RULE_TYPE_PAY_MEMBER_CARD",
+        "base_info": {
+            "mchid_list": ["123", "456"],
+            "begin_time": 1480317217,
+            "end_time": 1580317217
+        },
+        "member_rule": {
+            "card_id": "abcdefg",
+            "least_cost": 2,
+            "max_cost": 20000,
+            "jump_url": "www.qq.com"
+        }
+    }
+}

@@ -1,0 +1,67 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_num": 1,
+    "spus": [
+        {
+            "title": "任天堂 Nintendo Switch 国行续航增强版 NS家用体感游戏机掌机 便携掌上游戏机 红蓝主机",
+            "sub_title": "JD自营更放心】【国行Switch，更安心的保修服务，更快的国行服务器】一台主机三种模式，游戏掌机，随时随地，一起趣玩。",
+            "head_img": [
+                "http://img10.360buyimg.com/n1/s450x450_jfs/t1/85865/39/13611/488083/5e590a40E4bdf69c0/55c9bf645ea2b727.jpg"
+            ],
+            "desc_info": {
+                "imgs": [
+                    "http://img10.360buyimg.com/n1/s450x450_jfs/t1/85865/39/13611/488083/5e590a40E4bdf69c0/55c9bf645ea2b727.jpg"
+                ]
+            },
+            "out_product_id": "1234566",
+            "product_id": 12345,
+            "brand_id": 2352,
+            "status": 5,
+            "edit_status": 2,
+            "min_price": 100,
+            "path": "plugin-private://wx34345ae5855f892d/pages/productDetail/productDetail?productId=12345",
+            "cats": [
+                {
+                    "cat_id": 1,
+                    "level": 1
+                },
+                {
+                    "cat_id": 2,
+                    "level": 2
+                },
+                {
+                    "cat_id": 3,
+                    "level": 3
+                }
+            ],
+            "attrs": [
+                {
+                    "attr_key": "商品毛重",
+                    "attr_value": "380g"
+                },
+                {
+                    "attr_key": "商品产地",
+                    "attr_value": "中国大陆"
+                }
+            ],
+            "model": "国行续航增强版",
+            "shopcat": [
+                {
+                    "shopcat_id": 1
+                },
+                {
+                    "shopcat_id": 2
+                }
+            ],
+            "skus": [
+                {
+                    "sku_id": 1001
+                },
+                {
+                    "sku_id": 1002
+                }
+            ]
+        }
+    ]
+}

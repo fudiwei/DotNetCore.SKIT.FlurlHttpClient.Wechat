@@ -1,0 +1,83 @@
+﻿{
+    "sp_appid": "wx8888888888888888",
+    "sp_mchid": "1230000109",
+    "sub_appid": "wxd678efh567hg6999",
+    "sub_mchid": "1900000109",
+    "out_trade_no": "1217752501201407033233368018",
+    "trade_state_desc": "支付成功",
+    "trade_type": "MICROPAY",
+    "attach": "自定义数据",
+    "transaction_id": "1217752501201407033233368018",
+    "trade_state": "SUCCESS",
+    "bank_type": "CMC",
+    "success_time": "2018-06-08T10:34:56+08:00",
+    "amount": {
+        "payer_total": 100,
+        "total": 100,
+        "currency": "CNY",
+        "payer_currency": "CNY"
+    },
+    "promotion_detail": [
+        {
+            "amount": 100,
+            "wechatpay_contribute": 0,
+            "coupon_id": "109519",
+            "scope": "GLOBAL",
+            "merchant_contribute": 0,
+            "name": "单品惠-6",
+            "other_contribute": 0,
+            "currency": "CNY",
+            "stock_id": "931386",
+            "goods_detail": [
+                {
+                    "goods_remark": "商品备注信息",
+                    "quantity": 1,
+                    "discount_amount": 1,
+                    "goods_id": "M1006",
+                    "unit_price": 100
+                },
+                {
+                    "goods_remark": "商品备注信息",
+                    "quantity": 1,
+                    "discount_amount": 1,
+                    "goods_id": "M1006",
+                    "unit_price": 100
+                }
+            ]
+        },
+        {
+            "amount": 100,
+            "wechatpay_contribute": 0,
+            "coupon_id": "109519",
+            "scope": "GLOBAL",
+            "merchant_contribute": 0,
+            "name": "单品惠-6",
+            "other_contribute": 0,
+            "currency": "CNY",
+            "stock_id": "931386",
+            "goods_detail": [
+                {
+                    "goods_remark": "商品备注信息",
+                    "quantity": 1,
+                    "discount_amount": 1,
+                    "goods_id": "M1006",
+                    "unit_price": 100
+                },
+                {
+                    "goods_remark": "商品备注信息",
+                    "quantity": 1,
+                    "discount_amount": 1,
+                    "goods_id": "M1006",
+                    "unit_price": 100
+                }
+            ]
+        }
+    ],
+    "payer": {
+        "sp_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
+        "sub_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o"
+    },
+    "scene_info": {
+        "device_id": "013467007045764"
+    }
+}

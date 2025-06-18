@@ -1,0 +1,37 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "OK",
+    "job": {
+        "task_id": 1332519773019865088,
+        "create_time": 1589016638,
+        "update_time": 1589016638,
+        "push_time": 1589010582,
+        "finish_time": 0,
+        "task_name": "testtask_name111",
+        "task_remark": "testtask_remark111",
+        "material": [
+            {
+                "type": 1,
+                "word": "testword"
+            },
+            {
+                "type": 3,
+                "pic_url": "http://mmbiz.qpic.cn/mmbiz_png/pHhTMtqk90rHY17p2cOXN9uhxMLpugicrGmYpljlNuoMbEjDib1S1nAcib3CC4qHOBqHtlOPYGP6OCuQpL5NDyUUA/0"
+            },
+            {
+                "type": 49,
+                "title": "test_title",
+                "path": "",
+                "appid": "xxxxxxxx",
+                "pic_url": "http://mmbiz.qpic.cn/mmbiz_png/pHhTMtqk90rHY17p2cOXN9uhxMLpugicrGmYpljlNuoMbEjDib1S1nAcib3CC4qHOBqHtlOPYGP6OCuQpL5NDyUUA/0"
+            }
+        ],
+        "buyer_info": [
+            {
+                "openid": "xxxxxxxxxx",
+                "send_status": 1
+            }
+        ],
+        "task_status": 1
+    }
+}

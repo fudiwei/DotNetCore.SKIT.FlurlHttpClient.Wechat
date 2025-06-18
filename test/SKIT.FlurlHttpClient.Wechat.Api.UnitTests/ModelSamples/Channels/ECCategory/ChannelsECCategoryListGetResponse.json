@@ -1,0 +1,14 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "cat_id": "1003",
+            "qua_id": "0"
+        },
+        {
+            "cat_id": "1096",
+            "qua_id": "6"
+        }
+    ]
+}

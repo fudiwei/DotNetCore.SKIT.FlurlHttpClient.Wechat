@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "delivery_list": [
+        {
+            "delivery_id": "(AU)",
+            "delivery_name": "Interparcel"
+        },
+        {
+            "delivery_id": "BDT",
+            "delivery_name": "八达通"
+        },
+        {
+            "delivery_id": "YD",
+            "delivery_name": "韵达速递"
+        }
+    ],
+    "count": 1379
+}

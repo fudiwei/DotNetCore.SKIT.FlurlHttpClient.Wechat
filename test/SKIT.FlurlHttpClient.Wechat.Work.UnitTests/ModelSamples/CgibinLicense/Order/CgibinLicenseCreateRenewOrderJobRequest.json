@@ -1,0 +1,10 @@
+﻿{
+    "corpid": "wwxxx",
+    "account_list": [
+        {
+            "userid": "userid1",
+            "type": 1
+        }
+    ],
+    "jobid": "JOBID"
+}

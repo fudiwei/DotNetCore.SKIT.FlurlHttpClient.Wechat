@@ -1,0 +1,12 @@
+{
+    "ToUserName": "gh_*",
+    "FromUserName": "OpenID",
+    "CreateTime": 1662480000,
+    "MsgType": "event",
+    "Event": "channels_ec_present_aftersale_update",
+    "finder_shop_present_aftersale_status_update": {
+        "status": "PLATFORM_REFUNDING",
+        "after_sale_order_id": "1234567",
+        "order_id": "12345"
+    }
+}

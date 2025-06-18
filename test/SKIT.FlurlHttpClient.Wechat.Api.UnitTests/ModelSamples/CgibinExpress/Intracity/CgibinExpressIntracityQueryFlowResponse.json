@@ -1,0 +1,23 @@
+{
+    "total": 1,
+    "flow_list": [
+        {
+            "flow_type": 1,
+            "appid": "wx539e0b4872f196d1",
+            "wx_store_id": "4000000000000042002",
+            "pay_order_id": "2920020938702667776",
+            "service_trans_id": "SFTC",
+            "pay_amount": 1,
+            "refund_amount": 1,
+            "create_time": 1683639082,
+            "pay_time": 1683639151,
+            "refund_time": 1683653491,
+            "consume_deadline": 1686231082,
+            "pay_status": "SUCCESS"
+        }
+    ],
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_pay_amt": 1,
+    "total_refund_amt": 1
+}

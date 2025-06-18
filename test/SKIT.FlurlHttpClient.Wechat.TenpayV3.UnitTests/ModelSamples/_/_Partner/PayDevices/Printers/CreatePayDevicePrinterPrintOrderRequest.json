@@ -1,0 +1,21 @@
+{
+    "print_order_no": "wx8888888888888888",
+    "template_id": "pt_02583429616371386640209536",
+    "notify_url": "https:\/\/payapp.weixin.qq.com\/callback",
+    "variable_list": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ],
+    "table_list": [
+        {
+            "key": "",
+            "row_list": [
+                {
+                    "cell_list": [ "string" ]
+                }
+            ]
+        }
+    ]
+}

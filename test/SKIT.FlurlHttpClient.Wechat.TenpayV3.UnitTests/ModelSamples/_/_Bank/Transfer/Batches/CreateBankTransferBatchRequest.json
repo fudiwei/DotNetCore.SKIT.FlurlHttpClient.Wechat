@@ -1,0 +1,24 @@
+{
+    "attach_remark": "付款专用商户单号11111",
+    "batch_name": "2019年1月深圳分部报销单",
+    "batch_remark": "2019年1月深圳分部报销单",
+    "out_batch_no": "plfk2020042013",
+    "platform_mchid": "1900001109",
+    "specialized_payment_mchid": "1900001109",
+    "sponsor_mchid": "1900001109",
+    "total_amount": 4000000,
+    "total_count": 200,
+    "transfer_detail_list": [
+        {
+            "openid": "o-MYE42l80oelYMDE34nYD456Xoy",
+            "out_detail_no": "x23zy545Bd5436",
+            "transfer_amount": 200000,
+            "transfer_remark": "2020年4月报销"
+
+        }
+    ],
+    "transfer_purpose": "COMMISSION",
+    "transfer_scene": "ORDINARY_TRANSFER",
+    "user_authorized_appid": "wxaffdakkk11112e3",
+    "user_authorized_mchid": "1900001109"
+}

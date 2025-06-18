@@ -1,0 +1,14 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "exp_info": {
+        "exp_time": 1640762988,
+        "exp_version": "V1.0",
+        "exp_desc": "test"
+    },
+    "release_info": {
+        "release_time": 1640763902,
+        "release_version": "V1.5",
+        "release_desc": "test"
+    }
+}

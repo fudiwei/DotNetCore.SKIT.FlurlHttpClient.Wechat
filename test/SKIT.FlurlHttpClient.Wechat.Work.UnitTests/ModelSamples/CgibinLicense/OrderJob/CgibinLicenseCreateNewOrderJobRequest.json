@@ -1,0 +1,17 @@
+{
+    "buy_list": [
+        {
+            "corpid": "CORPID",
+            "account_count": {
+                "base_count": 100,
+                "external_contact_count": 100
+            },
+            "account_duration": {
+                "months": 2,
+                "days": 20
+            },
+            "auto_active_status": 1
+        }
+    ],
+    "jobid": "JOBID"
+}

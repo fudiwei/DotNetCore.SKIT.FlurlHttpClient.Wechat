@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "prefetch_dns_domain": [
+        {
+            "url": "d1.com",
+            "status": 0
+        },
+        {
+            "url": "d2.com",
+            "status": 0
+        }
+    ],
+    "size_limit": 5
+}

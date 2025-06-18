@@ -1,0 +1,60 @@
+﻿{
+    "card_id": "pbLatjvWOibDc5-TBnbUk1pD12o0",
+    "code": "478515832665",
+    "openid": "obLatjnx9gnqzS4myYGmLZ7LgLBA",
+    "membership_number": "316510891298",
+    "level": "钻石会员",
+    "nickname": "周星星",
+    "head_image_url": "http://wx.qlogo.cn/xxx",
+    "background_picture_url": "https://wxpaylogo.qpic.cn/wxpaylogo/PiajxSqBRaEIPAeia7Imvtsn7sYGNcEj33YzVvJF88ECQ19LXId8ZL2Q/0",
+    "balance": 888,
+    "user_card_status": "EFFECTIVE",
+    "user_information": {
+        "common_field_list": [
+            {
+                "name": "USER_FORM_FLAG_MOBILE",
+                "value": "深圳"
+            }
+        ],
+        "custom_field_list": [
+            {
+                "name": "喜欢的运动",
+                "value": "篮球",
+                "value_list": ["羽毛球,足球,乒乓球"]
+            }
+        ]
+    },
+    "bonus_value": 600,
+    "service_modules": [
+        {
+            "service_module_id": "666",
+            "state_setting": {
+                "state_id": "CHECKED_IN",
+                "content_template_data": {
+                    "field_list": [
+                        {
+                            "field_id": "hotel_name",
+                            "field_value": "深圳市南山区滨海路700号"
+                        }
+                    ],
+                    "action_setting": {
+                        "action_name": "一键开锁",
+                        "jump_miniprogram": {
+                            "appid": "wx37178d097a6851d8",
+                            "path": "pages/index/index"
+                        }
+                    }
+                },
+                "message_template_setting": {
+                    "message_template_id": "9bJgRNz9XG248XZ-a0nDKH3Vt_vaTp32fRP1LWvxjzI",
+                    "field_list": [
+                        {
+                            "field_id": "keyword1",
+                            "field_value": "深圳市南山区滨海路700号"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+﻿{
+    "data": [
+        {
+            "amount": {
+                "settled": 123,
+                "fee": 123,
+                "pay": 123,
+                "currency": "HKD",
+                "net": 123,
+                "unsettle": 123,
+                "refund": 123
+            },
+            "settlement_date": "20091225",
+            "batch_id": "20091225003",
+            "wallet_region": "CHINA_HONGKONG",
+            "trade_start_date": "20091225",
+            "trade_end_date": "20091225"
+        },
+        {
+            "amount": {
+                "settled": 123,
+                "fee": 123,
+                "pay": 123,
+                "currency": "HKD",
+                "net": 123,
+                "unsettle": 123,
+                "refund": 123
+            },
+            "settlement_date": "20091225",
+            "batch_id": "20091225003",
+            "wallet_region": "CHINA_HONGKONG",
+            "trade_start_date": "20091225",
+            "trade_end_date": "20091225"
+        }
+    ],
+    "offset": 1,
+    "total_count": 1234,
+    "limit": 20
+}

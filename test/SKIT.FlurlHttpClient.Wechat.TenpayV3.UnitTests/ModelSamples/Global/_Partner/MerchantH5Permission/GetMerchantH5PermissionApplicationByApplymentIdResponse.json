@@ -1,0 +1,16 @@
+{
+    "applyment_id": 100000,
+    "applyment_state": "PENDING",
+    "applyment_type": "APPLY_FOR_PAYMENT_AUTHORITY",
+    "audit_reject_detail": "The merchant's certificate does not meet requirements.",
+    "business_description": "Founded in November 1998, Tencent is an Internet-based platform company that uses technology to enrich the lives of Internet users and assist enterprises with digital upgrade.",
+    "company_register_cert": "6uqyGjvHzOhsLleGFQVRF",
+    "domains": [ "qq.com" ],
+    "notify_url": "https://pay.weixin.qq.com/wxpay/pay.action",
+    "sub_mchid": "2491935631",
+    "transaction_limit_type": "UN_LAUNCHED_WEBSITE_LIMIT",
+    "website_business_page_pics": [ "" ],
+    "website_homepage_pics": [ "" ],
+    "website_state": "HAS_LAUNCHED",
+    "website_url": "https://qq.com"
+}

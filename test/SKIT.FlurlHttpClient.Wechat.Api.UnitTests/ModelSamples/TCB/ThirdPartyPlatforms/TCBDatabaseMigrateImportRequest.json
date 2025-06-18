@@ -1,0 +1,8 @@
+﻿{
+    "env": "qbasetest-a5c40e",
+    "collection_name": "test1",
+    "file_path": "test_import",
+    "file_type": 1,
+    "stop_on_error": false,
+    "conflict_mode": 2
+}

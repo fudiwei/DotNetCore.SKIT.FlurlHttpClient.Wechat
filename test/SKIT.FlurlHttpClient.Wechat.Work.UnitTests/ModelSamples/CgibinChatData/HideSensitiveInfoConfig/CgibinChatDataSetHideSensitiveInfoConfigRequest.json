@@ -1,0 +1,8 @@
+{
+    "open_userid": "xxxxx",
+    "config": {
+        "hide_mobile": false,
+        "hide_idcard": true,
+        "hide_bankno": true
+    }
+}

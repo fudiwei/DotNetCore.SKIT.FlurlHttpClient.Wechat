@@ -1,0 +1,9 @@
+﻿{
+    "ToUserName": "toUser",
+    "FromUserName": "fromUser",
+    "CreateTime": 1348831860,
+    "MsgType": "event",
+    "Event": "add_schedule",
+    "CalId": "wcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA",
+    "ScheduleId": "17c7d2bd9f20d652840f72f59e796AAA"
+}

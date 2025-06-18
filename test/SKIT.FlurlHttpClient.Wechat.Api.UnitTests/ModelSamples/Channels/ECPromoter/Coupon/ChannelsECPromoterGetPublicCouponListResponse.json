@@ -1,0 +1,11 @@
+{
+    "errcode": "0",
+    "errmsg": "ok",
+    "next_key": "NEW_NEXT_KEY",
+    "coupons": [
+        {
+            "coupon_id": "1111111"
+        }
+    ],
+    "has_more": true
+}

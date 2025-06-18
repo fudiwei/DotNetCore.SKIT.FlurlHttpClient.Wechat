@@ -1,0 +1,13 @@
+{
+    "service_id": "500001",
+    "appid": "wxd678efh567hg6787",
+    "sub_appid": "wxd678efh567hg6787",
+    "sub_mchid": "1230000109",
+    "authorization_code": "实例1234323JKHDFE1243252",
+    "notify_url": "http://www.qq.com",
+    "scene": "TRANSACTION",
+    "transaction_scene_info": {
+        "mchid": "1230000109",
+        "sub_mchid": "1230000109"
+    }
+}

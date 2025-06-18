@@ -1,0 +1,18 @@
+{
+    "receipt": {
+        "create_time": "2015-05-20T13:29:35+08:00",
+        "image_type": "PNG",
+        "merchant_contact_information": {
+            "consultation_phone_number": "pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg=="
+        },
+        "modify_time": "2015-05-20T13:29:35+08:00",
+        "openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
+        "receipt_id": "121630001",
+        "sha256": "2969f98ef4763da62670d3aee5d456b56a8f3447c0178da21445206aa400a464",
+        "state": "WAIT_REVIEW",
+        "transaction_id": "1217752501201407033233368018",
+        "transaction_mchid": "1230000109",
+        "transaction_sub_mchid": "1230000109",
+        "upload_time": "2021-05-20T13:29:35.120+08:00"
+    }
+}

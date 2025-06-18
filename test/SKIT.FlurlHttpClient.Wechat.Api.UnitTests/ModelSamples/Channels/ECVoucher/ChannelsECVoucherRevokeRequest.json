@@ -1,0 +1,12 @@
+{
+    "revoke_request_no": "233244dfgfdfgsdfgsdf",
+    "reovke_vouchers": [
+        {
+            "encrypted_code": "223dfsdf"
+        },
+        {
+            "code": "123412",
+            "sku_id": "12345"
+        }
+    ]
+}

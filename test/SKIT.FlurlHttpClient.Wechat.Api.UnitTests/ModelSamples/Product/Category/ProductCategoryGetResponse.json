@@ -1,0 +1,16 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "cat_list": [
+        {
+            "cat_id": 1,
+            "f_cat_id": 0,
+            "name": "服饰"
+        },
+        {
+            "cat_id": 2,
+            "f_cat_id": 0,
+            "name": "鞋帽"
+        }
+    ]
+}

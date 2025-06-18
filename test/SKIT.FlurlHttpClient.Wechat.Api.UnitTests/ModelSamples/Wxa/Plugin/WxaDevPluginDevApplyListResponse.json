@@ -1,0 +1,21 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "apply_list": [
+        {
+            "appid": "xxxxxxxxxxxxx",
+            "status": 1,
+            "nickname": "名称",
+            "headimgurl": "**********",
+            "reason": "polo has gone",
+            "apply_url": "*******",
+            "create_time": "1536305096",
+            "categories": [
+                {
+                    "first": "IT科技",
+                    "second": "硬件与设备"
+                }
+            ]
+        }
+    ]
+}

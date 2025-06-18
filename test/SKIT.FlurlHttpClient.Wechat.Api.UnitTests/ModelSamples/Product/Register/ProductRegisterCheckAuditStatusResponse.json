@@ -1,0 +1,18 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "merchant_info_status": 0,
+        "acct_verify_status": 0,
+        "basic_info_status": 0,
+        "pay_sign_status": 0,
+        "audit_reject_reasons": "基础信息驳回原因",
+        "legal_validation_url": "法人验证链接",
+        "pay_audit_detail": {
+            "param_name": "参数名",
+            "reject_reason": "支付资质驳回原因"
+        },
+        "register_status": 0,
+        "registered_appid": "wxe11234123123"
+    }
+}

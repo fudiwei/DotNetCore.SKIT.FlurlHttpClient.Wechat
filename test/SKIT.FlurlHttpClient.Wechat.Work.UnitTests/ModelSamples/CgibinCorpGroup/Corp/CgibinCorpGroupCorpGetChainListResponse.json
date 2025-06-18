@@ -1,0 +1,14 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "chains": [
+        {
+            "chain_id": "chainid1",
+            "chain_name": "能源供应链"
+        },
+        {
+            "chain_id": "chainid2",
+            "chain_name": "原材料供应链"
+        }
+    ]
+}

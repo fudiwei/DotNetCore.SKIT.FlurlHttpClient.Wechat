@@ -1,0 +1,10 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "auth_info": {
+        "auth_url": "https://channels.weixin.qq.com/miniprogram/live-commerce/auth?authkey=0_1234",
+        "auth_wxa_username": "gh_bebad552f050",
+        "auth_wxa_appid": "wx2cea70df4257bba8",
+        "auth_wxa_path": "/pages/partner/auth?scene=thirdapp&authkey=0_1234"
+    }
+}

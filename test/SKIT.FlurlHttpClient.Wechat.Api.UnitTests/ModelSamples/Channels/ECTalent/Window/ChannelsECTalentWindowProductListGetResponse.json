@@ -1,0 +1,17 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "products": [
+        { 
+            "product_id": "1000000000000",
+            "appid": "wxee9f94a33abcdefg",
+            "product_source": 1
+        },
+        {
+            "product_id": "14000000000000",
+            "out_product_id": "100000012356",
+            "product_source": 2
+        }
+    ],
+    "last_buffer": "EB4YAg="
+}

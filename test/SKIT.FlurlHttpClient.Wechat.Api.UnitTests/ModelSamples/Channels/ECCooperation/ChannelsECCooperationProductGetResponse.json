@@ -1,0 +1,13 @@
+{
+    "product": {
+        "product_id": 10000157022254,
+        "title": "测试商品",
+        "img_urls": [
+            "IMG_URL0",
+            "IMG_URL1"
+        ],
+        "min_price": 2800
+    },
+    "errcode": 0,
+    "errmsg": "ok"
+}

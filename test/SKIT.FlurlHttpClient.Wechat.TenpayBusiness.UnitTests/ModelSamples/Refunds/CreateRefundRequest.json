@@ -1,0 +1,10 @@
+{
+    "ent_id": "string",
+    "out_refund_id": "string",
+    "payment_id": "string",
+    "out_payment_id": "string",
+    "total_amount": 0,
+    "refund_amount": 0,
+    "refund_reason": "string",
+    "server_notify_url": "string"
+}

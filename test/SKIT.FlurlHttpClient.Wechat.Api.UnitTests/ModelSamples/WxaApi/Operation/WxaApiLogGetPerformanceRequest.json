@@ -1,0 +1,9 @@
+﻿{
+    "cost_time_type": 2,
+    "default_start_time": 1572339403,
+    "default_end_time": 1574931403,
+    "device": "@_all",
+    "networktype": "@_all",
+    "scene": "@_all",
+    "is_download_code": "@_all"
+}

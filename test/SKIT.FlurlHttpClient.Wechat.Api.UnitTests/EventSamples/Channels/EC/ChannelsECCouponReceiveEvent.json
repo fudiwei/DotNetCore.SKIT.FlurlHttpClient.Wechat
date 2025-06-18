@@ -1,0 +1,12 @@
+{
+    "ToUserName": "gh_*",
+    "FromUserName": "OpenID",
+    "CreateTime": 1662480000,
+    "MsgType": "event",
+    "Event": "channels_ec_coupon_receive",
+    "receive_info": {
+        "coupon_id": "19126",
+        "user_coupon_id": "29730",
+        "receive_time": "1662480000"
+    }
+}

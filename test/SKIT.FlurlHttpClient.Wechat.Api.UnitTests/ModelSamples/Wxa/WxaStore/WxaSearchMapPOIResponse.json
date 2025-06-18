@@ -1,0 +1,18 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "item": [
+            {
+                "branch_name": "X-MAX工厂",
+                "address": "广东省广州市海珠区怡安路172-174号怡安花园二、三层(中海名都)",
+                "longitude": 113.274810791,
+                "latitude": 23.1088695526,
+                "telephone": " 020-89190388",
+                "category": "运动健身:健身中心",
+                "sosomap_poi_uid": "2708071440732747189",
+                "pic_urls": []
+            }
+        ]
+    }
+}

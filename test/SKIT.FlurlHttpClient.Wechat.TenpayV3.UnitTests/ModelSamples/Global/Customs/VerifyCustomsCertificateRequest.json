@@ -1,0 +1,12 @@
+﻿{
+    "appid": "wxd678efh567hg6787",
+    "mchid": "1230000109",
+    "out_trade_no": "20150806125346",
+    "transaction_id": "1000320306201511078440737890",
+    "sub_order_no": "20150806125346",
+    "customs": "SHANGHAI_ZS",
+    "merchant_customs_no": "123456",
+    "certificate_type": "IDCARD",
+    "certificate_id": "330821198809085211",
+    "certificate_name": "张三"
+}

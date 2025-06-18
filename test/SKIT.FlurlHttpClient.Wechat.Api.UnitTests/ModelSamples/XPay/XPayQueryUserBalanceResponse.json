@@ -1,0 +1,11 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "balance": 0,
+    "present_balance": 0,
+    "sum_save": 0,
+    "sum_present": 0,
+    "sum_balance": 0,
+    "sum_cost": 0,
+    "first_save_flag": 1
+}

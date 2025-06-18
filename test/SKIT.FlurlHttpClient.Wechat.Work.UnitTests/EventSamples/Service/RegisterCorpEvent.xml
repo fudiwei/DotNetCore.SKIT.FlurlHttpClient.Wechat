@@ -1,0 +1,16 @@
+﻿<xml>
+    <ServiceCorpId><![CDATA[wwddddccc7775555aab]]></ServiceCorpId>
+    <InfoType><![CDATA[register_corp]]></InfoType>
+    <TimeStamp>1502682173</TimeStamp>
+    <RegisterCode><![CDATA[pIKi3wRPNWCGF-pyP-YU5KWjDDD]]></RegisterCode>
+    <AuthCorpId><![CDATA[wwddddccc7775555aaa]]></AuthCorpId>
+    <ContactSync>
+        <AccessToken><![CDATA[accesstoken000001]]></AccessToken>
+        <ExpiresIn>1800</ExpiresIn>
+    </ContactSync>
+    <AuthUserInfo>
+        <UserId><![CDATA[zhangshan]]></UserId>
+    </AuthUserInfo>
+    <State><![CDATA[state1]]></State>
+    <TemplateId><![CDATA[tpl1test]]></TemplateId>
+</xml>

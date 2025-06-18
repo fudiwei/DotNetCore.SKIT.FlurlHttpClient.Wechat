@@ -1,0 +1,12 @@
+﻿{
+    "pages": [
+        {
+            "path": "pages/index/index",
+            "query": "userName=wechat_user"
+        },
+        {
+            "path": "pages/video/index",
+            "query": "vid=123"
+        }
+    ]
+}

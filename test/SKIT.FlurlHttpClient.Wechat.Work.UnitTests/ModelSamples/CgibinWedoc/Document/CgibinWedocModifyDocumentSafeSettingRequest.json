@@ -1,0 +1,10 @@
+﻿{
+    "docid": "DOCID",
+    "enable_readonly_copy": false,
+    "watermark": {
+        "margin_type": 1,
+        "show_visitor_name": true,
+        "show_text": true,
+        "text": "test mark"
+    }
+}

@@ -1,0 +1,12 @@
+﻿{
+    "kv_list": [
+        {
+            "key": "score",
+            "value": "100"
+        },
+        {
+            "key": "gold",
+            "value": "3000"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "status": 1,
+    "type": "replace_user",
+    "total": 3,
+    "percentage": 33,
+    "result": [
+        {
+            "userid": "lisi",
+            "errcode": 0,
+            "errmsg": "ok"
+        },
+        {
+            "userid": "zhangsan",
+            "errcode": 0,
+            "errmsg": "ok"
+        },
+        {
+            "action": 1,
+            "partyid": 1,
+            "errcode": 0,
+            "errmsg": "ok"
+        },
+        {
+            "action": 4,
+            "partyid": 2,
+            "errcode": 0,
+            "errmsg": "ok"
+        }
+    ]
+}

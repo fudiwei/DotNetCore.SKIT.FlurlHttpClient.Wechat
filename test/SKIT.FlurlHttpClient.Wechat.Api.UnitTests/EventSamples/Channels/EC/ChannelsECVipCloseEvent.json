@@ -1,0 +1,10 @@
+{
+    "ToUserName": "gh_*",
+    "FromUserName": "OPENID",
+    "CreateTime": 1662480000,
+    "MsgType": "event",
+    "Event": "channels_ec_vip_close",
+    "user_info": {
+        "close_time": 1662480000
+    }
+}

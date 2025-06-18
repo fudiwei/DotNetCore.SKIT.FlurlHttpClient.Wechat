@@ -1,0 +1,11 @@
+{
+    "mchid": "1900001109",
+    "out_bill_no": "plfk2020042013",
+    "transfer_bill_no": "1330000071100999991182020050700019480001",
+    "state": "ACCEPTED",
+    "transfer_amount": 400000,
+    "fail_reason": "PAYEE_ACCOUNT_ABNORMAL",
+    "openid": "o-MYE42l80oelYMDE34nYD456Xoy",
+    "create_time": "2015-05-20T13:29:35.120+08:00",
+    "update_time": "2015-05-20T13:29:35.120+08:00"
+}

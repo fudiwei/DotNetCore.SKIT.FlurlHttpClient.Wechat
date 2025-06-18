@@ -1,0 +1,17 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_page": 0,
+    "bill_list": [
+        {
+            "bill_id": "",
+            "recover_time": 0,
+            "settle_begin": 0,
+            "settle_end": 0,
+            "fund_id": "",
+            "recover_account_name": "",
+            "recover_amount": 0,
+            "refund_order_list": [""]
+        }
+    ]
+}

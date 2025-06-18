@@ -1,0 +1,13 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "num_success": 1,
+    "num_failure": 1,
+    "failure_record_list": [
+        {
+            "mobile_phone": "a123456789",
+            "registration_number": "",
+            "failure_code": 6
+        }
+    ]
+}

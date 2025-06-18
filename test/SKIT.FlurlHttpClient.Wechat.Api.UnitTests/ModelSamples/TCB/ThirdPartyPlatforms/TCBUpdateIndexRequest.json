@@ -1,0 +1,21 @@
+﻿{
+    "env": "test2-4a89da",
+    "collection_name": "counters",
+    "create_indexes": [
+        {
+            "name": "add_index",
+            "unique": true,
+            "keys": [
+                {
+                    "name": "test",
+                    "direction": "2dsphere"
+                }
+            ]
+        }
+    ],
+    "drop_indexes": [
+        {
+            "name": "del_index"
+        }
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "approval_id": "APPROVALID",
+    "approval_status": 1,
+    "apply_id": "ApplyId",
+    "approval_url": "www.qq.com",
+    "process_list": {
+        "node_list": [
+            {
+                "current_approvers": [ "LEADER1", "LEADER2" ],
+                "completed_approvers": [ "LEADER0" ],
+                "node_apv_status": 1,
+                "node_apv_rel": 1,
+                "apv_update_time": 1715741759
+            },
+            {
+                "current_approvers": [ "LEADER3", "LEADER4" ],
+                "completed_approvers": [ "LEADER5" ],
+                "node_apv_status": 1,
+                "node_apv_rel": 1,
+                "apv_update_time": 1715741759
+            }
+        ]
+    }
+}

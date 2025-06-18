@@ -1,0 +1,6 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "deleted",
+    "invalidlist": "usr1|usr2|usr",
+    "invalidparty": [2, 4]
+}

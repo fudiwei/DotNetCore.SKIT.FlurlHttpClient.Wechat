@@ -1,0 +1,42 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "all_category_info": {
+            "categories": [
+                {
+                    "id": 0,
+                    "name": "root",
+                    "level": 0,
+                    "children": [269, 278]
+                },
+                {
+                    "id": 278,
+                    "name": "购物",
+                    "level": 1,
+                    "father": 0,
+                    "children": [279, 280]
+                },
+                {
+                    "id": 280,
+                    "name": "便利店",
+                    "level": 2,
+                    "father": 278,
+                    "children": [],
+                    "qualify": {
+                        "exter_list": [
+                            {
+                                "inner_list": [
+                                    {
+                                        "name": "若涉及食品，请提供《食品经营许可证》或《卫生许可证》"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    "sensitive_type": 1
+                }
+            ]
+        }
+    }
+}

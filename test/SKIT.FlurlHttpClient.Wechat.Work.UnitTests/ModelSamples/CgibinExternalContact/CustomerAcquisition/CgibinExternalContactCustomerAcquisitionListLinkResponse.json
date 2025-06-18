@@ -1,0 +1,10 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "link_id_list": [
+        "LINK_ID_AAA",
+        "LINK_ID_BBB",
+        "LINK_ID_CCC"
+    ],
+    "next_cursor": "CURSOR"
+}

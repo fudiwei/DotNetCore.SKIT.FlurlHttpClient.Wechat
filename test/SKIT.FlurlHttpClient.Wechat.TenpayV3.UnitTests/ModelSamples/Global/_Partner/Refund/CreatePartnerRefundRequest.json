@@ -1,0 +1,15 @@
+﻿{
+    "sp_appid": "wx2421b1c4370ec43b",
+    "sub_appid": "1900000109",
+    "sp_mchid": "10000100",
+    "sub_mchid": "20000100",
+    "transaction_id": "1008450740201411110005820873",
+    "out_refund_no": "R20150806125346",
+    "amount": {
+        "refund": 50,
+        "total": 100,
+        "currency": "HKD"
+    },
+    "reason": "商品已售完",
+    "source": "REFUND_SOURCE_UNSETTLED_FUNDS"
+}

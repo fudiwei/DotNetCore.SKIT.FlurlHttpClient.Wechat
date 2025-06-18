@@ -1,0 +1,12 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "auth_corp_info": {
+        "corpid": "wxf8b4f85f3a794e77",
+        "corp_name": "腾讯科技有限公司"
+    },
+    "device_info": {
+        "remark_name": "TIT-B4 401投影",
+        "model_id": "xxxxx"
+    }
+}

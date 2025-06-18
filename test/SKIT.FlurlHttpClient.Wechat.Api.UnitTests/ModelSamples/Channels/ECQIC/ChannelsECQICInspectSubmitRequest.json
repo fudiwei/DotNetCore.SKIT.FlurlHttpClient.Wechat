@@ -1,0 +1,20 @@
+{
+    "order_id": "37423523451235145",
+    "inspect_info": {
+        "delivery_id": "SF",
+        "backup_delivery_id": "STO",
+        "delivery_product_id": 2,
+        "backup_delivery_product_id": 1,
+        "express_insure": true,
+        "express_insure_amount": 999,
+        "delivery_insure_id": "INSURE",
+        "backup_express_insure": false,
+        "express_merge": true,
+        "refund_intercept": 0,
+        "inspect_org_id": "001",
+        "inspect_org_name": "中质",
+        "warehouse_name": "xxx",
+        "warehouse_addr": "kklmp",
+        "remark": "xx"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "title": "TITLE",
+    "meetingid": "MEETINGID",
+    "meeting_code": "CODE",
+    "start_time": "166666666",
+    "end_time": "177777777",
+    "admission_type": 0,
+    "password": "PASSWORD",
+    "audience_join_link": "LINK",
+    "guest_join_link": "LINK",
+    "manual_check_link": "LINK",
+    "manual_check_password": "PASSWORD"
+}

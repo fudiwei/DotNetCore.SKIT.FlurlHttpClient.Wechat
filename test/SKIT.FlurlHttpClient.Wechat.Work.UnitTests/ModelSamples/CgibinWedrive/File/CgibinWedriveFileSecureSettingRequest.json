@@ -1,0 +1,9 @@
+﻿{
+    "fileid": "FILEID",
+    "watermark": {
+        "text": "WATERMARK_TEXT",
+        "margin_type": 0,
+        "show_visitor_name": false,
+        "show_text": false
+    }
+}

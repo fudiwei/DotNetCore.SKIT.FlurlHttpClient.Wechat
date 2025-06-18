@@ -1,0 +1,22 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "result": {
+        "succ_cnt": 2,
+        "fail_cnt": 0,
+        "total_cnt": 2,
+        "progress": "100.00%",
+        "statuses": [
+            {
+                "pid": "pid001",
+                "ret": 0,
+                "err_msg": "success"
+            },
+            {
+                "pid": "pid002",
+                "ret": 0,
+                "err_msg": "success"
+            }
+        ]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "meeting_settings": {
+        "water_mark": 2,
+        "auto_response": 1,
+        "caption": true,
+        "room_pmi": true,
+        "room_notification": true
+    },
+    "record_settings": {
+        "share_record": 0,
+        "download_record": true
+    }
+}

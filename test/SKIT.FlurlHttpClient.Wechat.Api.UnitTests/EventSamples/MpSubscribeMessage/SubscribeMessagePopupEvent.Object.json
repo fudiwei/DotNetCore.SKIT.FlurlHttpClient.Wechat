@@ -1,0 +1,12 @@
+{
+    "ToUserName": "gh_123456789abc",
+    "FromUserName": "o7esq5OI1Uej6Xixw1lA2H7XDVbc",
+    "CreateTime": "1620973045",
+    "MsgType": "event",
+    "Event": "subscribe_msg_popup_event",
+    "List": {
+        "TemplateId": "hD-ixGOhYmUfjOnI8MCzQMPshzGVeux_2vzyvQu7O68",
+        "SubscribeStatusString": "accept",
+        "PopupScene": "0"
+    }
+}

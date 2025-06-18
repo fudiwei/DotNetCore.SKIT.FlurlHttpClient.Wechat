@@ -1,0 +1,51 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "basic_info": {
+        "rooms_id_list": [
+            "200115200039985708"
+        ],
+        "meeting_room_name": "会议室测试1",
+        "city": "广州",
+        "building": "大厦",
+        "floor": "10",
+        "participant_number": 3,
+        "device": "ROOMS",
+        "desc": "aGVsbG8=",
+        "password": "MzMz"
+    },
+    "account_info": {
+        "account_type": 0,
+        "valid_period": "-"
+    },
+    "hardware_info": {
+        "factory": "",
+        "device_model": "",
+        "sn": "",
+        "ip": "10.10.10.69",
+        "mac": "a1:ee:27:c1:8a:1a",
+        "rooms_version": "2.7.2.420",
+        "firmware_version": "",
+        "health_status": "ERROR",
+        "system_type": "10.13.6",
+        "meeting_room_status": 1,
+        "active_time": "2021-03-23 15:37:34",
+        "cpu_info": "Intel(R) Core(TM) i7-7700K",
+        "cpu_usage": "",
+        "gpu_info": "",
+        "net_type": "ethernet",
+        "memory_info": "",
+        "monitor_frequency": 0,
+        "camera_model": "FaceTime 高清摄像头（内建）",
+        "enable_video_mirror": true,
+        "microphone_info": "内建麦克风 ",
+        "speaker_info": "内建输出"
+    },
+    "pmi_info": {
+        "pmi_code": "12345678",
+        "pmi_pwd": "XXXXXXX"
+    },
+    "monitor_status": 0,
+    "is_allow_call": true,
+    "scheduled_status": 1
+}

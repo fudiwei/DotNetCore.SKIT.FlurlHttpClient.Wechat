@@ -1,0 +1,62 @@
+{
+    "touser": "OPENID",
+    "msgtype": "type",
+    "text": {
+        "content": "Hello World"
+    },
+    "image": {
+        "media_id": "MEDIA_ID"
+    },
+    "voice": {
+        "media_id": "MEDIA_ID"
+    },
+    "video": {
+        "media_id": "MEDIA_ID",
+        "thumb_media_id": "MEDIA_ID",
+        "title": "TITLE",
+        "description": "DESCRIPTION"
+    },
+    "music": {
+        "title": "MUSIC_TITLE",
+        "description": "MUSIC_DESCRIPTION",
+        "musicurl": "MUSIC_URL",
+        "hqmusicurl": "HQ_MUSIC_URL",
+        "thumb_media_id": "THUMB_MEDIA_ID"
+    },
+    "news": {
+        "articles": [
+            {
+                "title": "Happy Day",
+                "description": "Is Really A Happy Day",
+                "url": "URL",
+                "picurl": "PIC_URL"
+            }
+        ]
+    },
+    "msgmenu": {
+        "head_content": "您对本次服务是否满意呢? ",
+        "list": [
+            {
+                "id": "101",
+                "content": "满意"
+            },
+            {
+                "id": "102",
+                "content": "不满意"
+            }
+        ],
+        "tail_content": "欢迎再次光临"
+    },
+    "wxcard": {
+        "card_id": "123dsdajkasd231jhksad"
+    },
+    "miniprogrampage": {
+        "title": "title",
+        "appid": "appid",
+        "pagepath": "pagepath",
+        "thumb_media_id": "thumb_media_id"
+    },
+    "customservice": {
+        "kf_account": "test1@kftest"
+    }
+}

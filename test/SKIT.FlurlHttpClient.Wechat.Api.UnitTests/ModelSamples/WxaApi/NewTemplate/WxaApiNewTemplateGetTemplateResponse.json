@@ -1,0 +1,30 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": [
+        {
+            "priTmplId": "9Aw5ZV1j9xdWTFEkqCpZ7mIBbSC34khK55OtzUPl0rU",
+            "title": "报名结果通知",
+            "content": "会议时间:{{date2.DATA}}\n会议地点:{{thing1.DATA}}\n",
+            "example": "会议时间:2016年8月8日\n会议地点:TIT会议室\n",
+            "type": 2
+        },
+        {
+            "priTmplId": "cy_DfOZL7lypxHh3ja3DyAUbn1GYQRGwezuy5LBTFME",
+            "title": "洗衣机故障提醒",
+            "content": "完成时间:{{time1.DATA}}\n所在位置:{{enum_string2.DATA}}\n提示说明:{{enum_string3.DATA}}\n",
+            "example": "完成时间:2021年10月21日 12:00:00\n所在位置:客厅\n提示说明:设备发生故障，导致工作异常，请及时查看\n",
+            "keywordEnumValueList": [
+                {
+                    "enumValueList": [ "客厅", "餐厅", "厨房", "卧室", "主卧", "次卧", "客卧", "父母房", "儿童房", "男孩房", "女孩房", "卫生间", "主卧卫生间", "公共卫生间", "衣帽间", "书房", "游戏室", "阳台", "地下室", "储物间", "车库", "保姆房", "其他房间" ],
+                    "keywordCode": "enum_string2.DATA"
+                },
+                {
+                    "enumValueList": [ "设备发生故障，导致工作异常，请及时查看" ],
+                    "keywordCode": "enum_string3.DATA"
+                }
+            ],
+            "type": 3
+        }
+    ]
+} 

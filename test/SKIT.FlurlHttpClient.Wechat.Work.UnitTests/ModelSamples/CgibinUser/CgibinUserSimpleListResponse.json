@@ -1,0 +1,12 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "userlist": [
+        {
+            "userid": "zhangsan",
+            "name": "张三",
+            "department": [1, 2],
+            "open_userid": "xxxxxx"
+        }
+    ]
+}

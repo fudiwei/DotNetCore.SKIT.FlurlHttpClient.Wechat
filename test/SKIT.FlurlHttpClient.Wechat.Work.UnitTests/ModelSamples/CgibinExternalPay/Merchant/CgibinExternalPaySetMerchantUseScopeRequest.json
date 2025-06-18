@@ -1,0 +1,8 @@
+﻿{
+    "mch_id": "12334",
+    "allow_use_scope": {
+        "user": ["zhangsan", "lisi"],
+        "partyid": [1],
+        "tagid": [1, 2, 3]
+    }
+}

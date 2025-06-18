@@ -1,0 +1,29 @@
+﻿{
+    "template_id": "msgXXXXXXX",
+    "text": {
+        "content": "文本消息内容"
+    },
+    "image": {
+        "media_id": "MEDIA_ID",
+        "pic_url": "http://p.qpic.cn/pic_wework/3474110808/7a6344sdadfwehe42060/0"
+    },
+    "link": {
+        "title": "消息标题",
+        "picurl": "https://example.pic.com/path",
+        "desc": "消息描述",
+        "url": "https://example.link.com/path"
+    },
+    "miniprogram": {
+        "title": "消息标题",
+        "pic_media_id": "MEDIA_ID",
+        "appid": "wx8bd80126147df384",
+        "page": "/path/index"
+    },
+    "file": {
+        "media_id": "1Yv-zXfHjSjU-7LH-GwtYqDGS-zz6w22KmWAT5COgP7o"
+    },
+    "video": {
+        "media_id": "MEDIA_ID"
+    },
+    "agentid": 1000014
+}

@@ -1,0 +1,9 @@
+﻿<xml>
+    <ToUserName><![CDATA[gh_fb9688c2a4b2]]></ToUserName>
+    <FromUserName><![CDATA[od1P50M-fNQI5Gcq-trm4a7apsU8]]></FromUserName>
+    <CreateTime>1488856591</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[weapp_audit_delay]]></Event>
+    <Reason><![CDATA[为了更好的服务小程序，您的服务商正在进行提审系统的优化，可能会导致审核时效的增长，请耐心等待]]></Reason>
+    <DelayTime>1488856591</DelayTime>
+</xml>

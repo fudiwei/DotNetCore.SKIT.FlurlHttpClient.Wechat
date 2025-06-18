@@ -1,0 +1,24 @@
+{
+    "err_msg": "ok",
+    "ret": 0,
+    "list": [
+        {
+            "ad_unit_id": "adunit-9cedd8514XXXX",
+            "ad_unit_name": "激励视频长广告",
+            "stat_item": [
+                {
+                    "ad_slot": "SLOT_ID_WEAPP_REWARD_VIDEO",
+                    "date": "2020-04-10",
+                    "req_succ_count": 138250,
+                    "exposure_count": 74771,
+                    "exposure_rate": 0.54083906,
+                    "click_count": 2242,
+                    "click_rate": 0.029984887,
+                    "income": 93883,
+                    "ecpm": 6.790813743
+                }
+            ]
+        }
+    ],
+    "total_num": 1
+}

@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "payfororder": {
+        "out_trade_no": "",
+        "order_no": "",
+        "openid": "",
+        "create_time": 123456,
+        "amount": 0,
+        "status": 0,
+        "zone_id": "",
+        "env": 0,
+        "pay_time": null
+    }
+}

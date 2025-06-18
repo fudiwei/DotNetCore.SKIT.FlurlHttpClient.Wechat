@@ -1,0 +1,10 @@
+﻿<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[FromUser]]></FromUserName>
+    <CreateTime>123456789</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[card_merchant_check_result]]></Event>
+    <MerchantId>0</MerchantId>
+    <IsPass>1</IsPass>
+    <Reason><![CDATA[reason]]></Reason>
+</xml>

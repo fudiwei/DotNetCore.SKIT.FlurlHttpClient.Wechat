@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "items": [
+        {
+            "type": 1,
+            "name": "国防机构"
+        },
+        {
+            "type": 2,
+            "name": "政府机关"
+        },
+        {
+            "type": 3,
+            "name": "事业单位"
+        }
+    ]
+} 

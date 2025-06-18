@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "pay_gmv": "42292",
+        "pay_uv": "8",
+        "pay_order_cnt": "10",
+        "pay_refund_gmv": "81",
+        "live_pay_gmv": "0",
+        "feed_pay_gmv": "0"
+    }
+}

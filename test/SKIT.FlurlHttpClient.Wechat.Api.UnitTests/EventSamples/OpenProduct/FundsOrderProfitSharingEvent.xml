@@ -1,0 +1,13 @@
+<xml>
+    <ToUserName>gh_abcdefg</ToUserName>
+    <FromUserName>oABCD</FromUserName>
+    <CreateTime>12344555555</CreateTime>
+    <MsgType>event</MsgType>
+    <Event>funds_order_profitsharing</Event>
+    <order_info>
+        <profit_sharing_no>P2015080612534</profit_sharing_no>
+        <amount>100</amount>
+        <result>SUCCESS</result>
+        <finish_time>2021-12-30 22:31:00</finish_time>
+    </order_info>
+</xml>

@@ -1,0 +1,26 @@
+﻿{
+    "applyment_state": "FINISH",
+    "applyment_state_desc": "审核中",
+    "sign_url": "https://pay.weixin.qq.com/public/apply4ec_sign/s?applymentId=2000002126198476&sign=b207b673049a32c858f3aabd7d27c7ec",
+    "sub_mchid": "1542488631",
+    "account_validation": {
+        "account_name": "aOf7Gk2qT26kakkuTZpbFAn7Mb7xcar0LlQaYoi3+LnnWwgAsfaUUTg9+GmYJq6YCz+RiluWHeHFq1lt8n3eIkF0laVvqmAU80xIWGZgWJnRmnRuZxsg0HJZfnUac2JfqyuL8OoyM2YSuYDqdsyvcOlgUQgq8MPCR6pmvhBCmIeJvnVSm8J+L+yx912itUmTDxhdBlu1CFBIUefME9nYB70vCVTNAVXgURkf65mjHMBiE9Y+wrPZVmTIIz3C3PtPVMZYDEvBT4rDdICA3ZYXshYqeOSslSjSMf+MhhC4oaujiISFzq3AE+as7mAEDJly+DgRuVs74msmKUH8pl+3oA==",
+        "account_no": "aOf7Gk2qT26kakkuTZpbFAn7Mb7xcar0LlQaYoi3+LnnWwgAsfaUUTg9+GmYJq6YCz+RiluWHeHFq1lt8n3eIkF0laVvqmAU80xIWGZgWJnRmnRuZxsg0HJZfnUac2JfqyuL8OoyM2YSuYDqdsyvcOlgUQgq8MPCR6pmvhBCmIeJvnVSm8J+L+yx912itUmTDxhdBlu1CFBIUefME9nYB70vCVTNAVXgURkf65mjHMBiE9Y+wrPZVmTIIz3C3PtPVMZYDEvBT4 rDdICA3ZYXshYqeOSslSjSMf+MhhC4oaujiISFzq3AE+as7mAEDJly+DgRuVs74msmKUH8pl+3oA==",
+        "pay_amount": 124,
+        "destination_account_number": "7222223333322332",
+        "destination_account_name": "财付通支付科技有限公司",
+        "destination_account_bank": "招商银行威盛大厦支行",
+        "city": "深圳",
+        "remark": "入驻账户验证",
+        "deadline": "2018-12-10 17:09:01"
+    },
+    "audit_detail": [
+        {
+            "param_name": "id_card_copy",
+            "reject_reason": "身份证背面识别失败，请上传更清晰的身份证图片。"
+        }
+    ],
+    "legal_validation_url": "https://pay.weixin.qq.com/public/apply4ec_sign/s?applymentId=2000002126198476&sign=b207b673049a32c858f3aabd7d27c7ec",
+    "out_request_no": "APPLYMENT_00000000001",
+    "applyment_id": 2000002124775691
+}

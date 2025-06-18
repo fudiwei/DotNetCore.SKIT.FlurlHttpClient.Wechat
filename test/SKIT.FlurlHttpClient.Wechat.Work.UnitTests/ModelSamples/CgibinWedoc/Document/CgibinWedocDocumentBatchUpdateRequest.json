@@ -1,0 +1,73 @@
+{
+    "docid": "DOCID",
+    "version": 10,
+    "requests": [
+        {
+            "replace_text": {
+                "text": "hello world",
+                "ranges": [
+                    {
+                        "start_index": 10,
+                        "length": 5
+                    }
+                ]
+            }
+        },
+        {
+            "insert_text": {
+                "text": "text content",
+                "location": {
+                    "index": 10
+                }
+            }
+        },
+        {
+            "delete_content": {
+                "range": {
+                    "start_index": 10,
+                    "length": 5
+                }
+            }
+        },
+        {
+            "insert_image": {
+                "image_id": "https://https://wework.qpic.cn/wwpic/xxxxxx",
+                "width": 10,
+                "height": 10,
+                "location": {
+                    "index": 10
+                }
+            }
+        },
+        {
+            "insert_page_break": {
+                "location": {
+                    "index": 10
+                }
+            }
+        },
+        {
+            "insert_table": {
+                "rows": 2,
+                "cols": 2,
+                "location": {
+                    "index": 10
+                }
+            }
+        },
+        {
+            "insert_paragraph": {
+                "location": {
+                    "index": 10
+                }
+            }
+        },
+        {
+            "update_text_property": {
+                "bold": true,
+                "color": "000000",
+                "background_color": "0000FF"
+            }
+        }
+    ]
+}

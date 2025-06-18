@@ -1,0 +1,9 @@
+﻿<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[FromUser]]></FromUserName>
+    <CreateTime>123456789</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[switch_workbench_mode]]></Event>
+    <Mode>1</Mode >
+    <AgentID>1</AgentID>
+</xml>

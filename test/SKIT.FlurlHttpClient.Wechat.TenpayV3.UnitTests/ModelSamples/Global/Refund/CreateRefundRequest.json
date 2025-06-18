@@ -1,0 +1,12 @@
+﻿{
+    "appid": "wx2421b1c4370ec43b",
+    "mchid": "10000100",
+    "transaction_id": "1008450740201411110005820873",
+    "out_refund_no": "R20150806125346",
+    "amount": {
+        "refund": 50,
+        "total": 100,
+        "currency": "HKD"
+    },
+    "reason": "商品已售完"
+}

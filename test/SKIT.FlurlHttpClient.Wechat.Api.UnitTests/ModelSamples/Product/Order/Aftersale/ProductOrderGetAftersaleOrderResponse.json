@@ -1,0 +1,42 @@
+﻿{
+    "errcode": 0,
+    "after_sale_order": {
+        "order_id": 7011,
+        "status": "MERCHANT_REFUND_SUCCESS",
+        "openid": "oTVP50Ks6gr9NU2hvc1YF22naK0Y",
+        "original_order_id": 1768683047558651,
+        "product_info": {
+            "product_id": 3286,
+            "sku_id": 4740,
+            "count": 1
+        },
+        "details": {
+            "num": 1,
+            "desc": "1234",
+            "cancel_time": 0,
+            "prove_imgs": [],
+            "tel_number": ""
+        },
+        "refund_info": {
+            "amount": 11
+        },
+        "return_info": {
+            "waybill_id": "",
+            "delivery_id": "",
+            "delivery_name": ""
+        },
+        "merchant_upload_info": {
+            "reject_reason": "",
+            "refund_certificates": []
+        },
+        "create_time": 1591319454,
+        "update_time": 1612754444,
+        "reason": "NO_LONGER_WANT",
+        "refund_resp": {
+            "code": "",
+            "ret": 0,
+            "message": ""
+        },
+        "type": "REFUND"
+    }
+}

@@ -1,0 +1,16 @@
+﻿{
+    "anchor_userid": "zhangsan",
+    "theme": "theme",
+    "living_start": 1600000000,
+    "living_duration": 3600,
+    "description": "test description",
+    "type": 4,
+    "agentid": 1000014,
+    "remind_time": 60,
+    "activity_cover_mediaid": "MEDIA_ID",
+    "activity_share_mediaid": "MEDIA_ID",
+    "activity_detail": {
+        "description": "活动描述，非活动类型的直播不用传",
+        "image_list": ["MEDIA_ID_1", "MEDIA_ID_2"]
+    }
+}

@@ -1,0 +1,20 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "category_list": [
+        {
+            "first_class": "工具",
+            "second_class": "备忘录",
+            "first_id": 1,
+            "second_id": 2
+        },
+        {
+            "first_class": "教育",
+            "second_class": "学历教育",
+            "third_class": "高等",
+            "first_id": 3,
+            "second_id": 4,
+            "third_id": 5
+        }
+    ]
+}

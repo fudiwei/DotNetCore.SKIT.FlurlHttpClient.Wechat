@@ -1,0 +1,7 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "priority_sort": [ "test3", "test2" ]
+    }
+}

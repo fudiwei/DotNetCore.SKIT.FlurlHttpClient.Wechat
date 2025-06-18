@@ -1,0 +1,20 @@
+﻿{
+    "touser": "OPENID",
+    "template_id": "TEMPLATEID",
+    "page": "mp.weixin.qq.com",
+    "miniprogram": {
+        "appid": "APPID",
+        "pagepath": "index?foo=bar"
+    },
+    "data": {
+        "name1": {
+            "value": "广州腾讯科技有限公司"
+        },
+        "thing8": {
+            "value": "广州腾讯科技有限公司"
+        },
+        "time7": {
+            "value": "2019年8月8日"
+        }
+    }
+}

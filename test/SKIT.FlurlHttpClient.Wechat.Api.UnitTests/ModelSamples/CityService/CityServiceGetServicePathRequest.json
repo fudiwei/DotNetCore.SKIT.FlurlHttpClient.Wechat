@@ -1,0 +1,14 @@
+﻿{
+    "page_type": 1,
+    "src_channel": 0,
+    "city_name": "广州",
+    "card_type": 10001,
+    "ext_params": [
+        {
+            "key": "keyword",
+            "value": "挂号就诊"
+        }
+    ],
+    "content_name": "购房落户",
+    "params": "[{\"key\":\"type\",\"value\":\"11\"},{\"key\":\"dd\",\"value\":\"23\"}]"
+}

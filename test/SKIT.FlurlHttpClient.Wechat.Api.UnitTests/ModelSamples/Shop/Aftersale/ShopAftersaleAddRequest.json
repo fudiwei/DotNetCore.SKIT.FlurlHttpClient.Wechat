@@ -1,0 +1,18 @@
+﻿{
+    "out_order_id": "xxxxx",
+    "out_aftersale_id": "xxxxxx",
+    "openid": "oTVP50O53a7jgmawAmxKukNlq3XI",
+    "type": 1,
+    "create_time": "2020-12-01 00:00:00",
+    "status": 1,
+    "finish_all_aftersale": 0,
+    "path": "/pages/aftersale.html?out_aftersale_id=xxxxx",
+    "refund": 100,
+    "product_infos": [
+        {
+            "out_product_id": "234245",
+            "out_sku_id": "23424",
+            "product_cnt": 5
+        }
+    ]
+}

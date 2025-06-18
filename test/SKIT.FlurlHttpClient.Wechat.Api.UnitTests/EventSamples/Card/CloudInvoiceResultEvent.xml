@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[FromUser]]></FromUserName>
+    <CreateTime>123456789</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[cloud_invoice_invoiceresult_event]]></Event>
+    <fpqqlsh><![CDATA[14574d75004451097886]]></fpqqlsh>
+    <status>100</status>
+    <nsrsbh><![CDATA[150001197205134629]]></nsrsbh>
+</xml>

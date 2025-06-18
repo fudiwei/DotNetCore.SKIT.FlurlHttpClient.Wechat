@@ -1,0 +1,17 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "status": 2,
+    "data_list": [
+        {
+            "url": "https://xxxxx",
+            "size": 12345,
+            "md5": "xxxxxxxxx"
+        },
+        {
+            "url": "https://xxxxx",
+            "size": 12345,
+            "md5": "xxxxxxxx"
+        }
+    ]
+}

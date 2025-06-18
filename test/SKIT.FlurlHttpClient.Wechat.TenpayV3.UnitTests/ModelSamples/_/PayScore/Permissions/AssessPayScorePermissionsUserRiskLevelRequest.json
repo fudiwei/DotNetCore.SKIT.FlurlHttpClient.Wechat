@@ -1,0 +1,19 @@
+{
+    "service_id": "500001",
+    "appid": "wxd678efh567hg6787",
+    "authorization_code": "1234323JKHDFE1243252",
+    "openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o",
+    "shopping_info": {
+        "goods": [
+            {
+                "name": "森海塞尔 MOMENTUM 4 无线耳机大馒头4 头戴式蓝牙音乐耳机自适应降噪",
+                "picture": "http://mmbiz.qpic.cn/mmbiz_png/ldTw9dg46zkjOrzyTkbQAvQkysliaiblZhdthZWewgQMyqLZwStaNEsJrYmjwh2MlK7G4wibAFOEuISQKplSnxMWA/640?wx_fmt=png&wxfrom=200",
+                "amount": 550,
+                "count": 1,
+                "category_id": [
+                    "6032"
+                ]
+            }
+        ]
+    }
+}

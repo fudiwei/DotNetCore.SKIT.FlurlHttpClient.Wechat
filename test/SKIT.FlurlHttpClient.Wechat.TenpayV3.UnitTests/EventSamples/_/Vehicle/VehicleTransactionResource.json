@@ -1,0 +1,48 @@
+﻿{
+    "appid": "wx2421b1c4370ec43b",
+    "sp_mchid": "10000100",
+    "sub_appid": "wxd678efh567hg6797",
+    "sub_mchid": "10000109",
+    "out_trade_no": "20150806125346",
+    "trade_state": "SUCCESS",
+    "trade_state_description": "扣款成功",
+    "bank_type": "BPA",
+    "attach": "支付测试",
+    "success_time": "2017-08-26T10:43:39+08:00",
+    "create_time": "2017-08-26T10:43:39+08:00",
+    "user_repaid": "Y",
+    "description": "停车场扣费",
+    "trade_scene": "PARKING",
+    "payer": {
+        "openid": "oUpF8uN95-Ptaags6E_roPHg7AG0"
+    },
+    "amount": {
+        "total": 528800,
+        "discount_total": 1,
+        "payer_total": 518799,
+        "currency": "CNY"
+    },
+    "parking_info": {
+        "parking_id": "5K8264ILTKCH16CQ250",
+        "plate_number": "粤B88888",
+        "plate_color": "BLUE",
+        "start_time": "2017-08-26T10:43:39+08:00",
+        "end_time": "2017-08-26T10:43:39+08:00",
+        "parking_name": "欢乐海岸停车场",
+        "charging_duration": 3600,
+        "device_id": "12321"
+    },
+    "promotion_detail": [
+        {
+            "coupon_id": "109519",
+            "name": "单品惠-6",
+            "scope": "SINGLE",
+            "type": "DISCOUNT",
+            "amount": 1,
+            "stock_id": "931386",
+            "wechatpay_contribute": 1,
+            "merchant_contribute": 0,
+            "other_contribute": 0
+        }
+    ]
+}

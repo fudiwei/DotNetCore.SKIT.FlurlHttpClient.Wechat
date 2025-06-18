@@ -1,0 +1,25 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": true,
+    "next_cursor": "CURSOR",
+    "controller_info_list": [
+        {
+            "rooms_id": "12356",
+            "meeting_room_name": "会议室测试1",
+            "meeting_room_location": "广州-大厦-10",
+            "controller_name": "nxxxxxxeng-test123",
+            "manufacture_name": "Apple",
+            "controller_model": "Apple",
+            "app_version": "x.x.x.x",
+            "status": "0",
+            "framework_version": "iOS 15.2.1",
+            "ip_address": "x.x.x.x",
+            "mac_address": "x:x:x:x:x:x",
+            "cpu_type": "ARM64",
+            "cpu_usage": "1.7",
+            "network_type": "wifi",
+            "mem_usage": "3.6GB"
+        }
+    ]
+}

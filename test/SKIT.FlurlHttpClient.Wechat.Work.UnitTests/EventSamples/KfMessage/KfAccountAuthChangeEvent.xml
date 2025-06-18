@@ -1,0 +1,9 @@
+<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[sys]]></FromUserName>
+    <CreateTime>1348831860</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[kf_account_auth_change]]></Event>
+    <AuthAddOpenKfId><![CDATA[wkxxxx1]]></AuthAddOpenKfId>
+    <AuthDelOpenKfId><![CDATA[wkxxxx2]]></AuthDelOpenKfId>
+</xml>

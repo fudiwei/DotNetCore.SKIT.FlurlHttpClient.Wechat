@@ -1,0 +1,16 @@
+﻿{
+    "return_code": "SUCCESS",
+    "return_msg": "ok",
+    "result_code": "SUCCESS",
+    "err_code": "SUCCESS",
+    "err_code_des": "ok",
+    "mch_id": "2302758702",
+    "partner_trade_no": "1212121221278",
+    "payment_no": "10000600500852017030900000020006012",
+    "bank_no_md5": "2260AB5EF3D290E28EFD3F74FF7A29A0",
+    "true_name_md5": "7F25B325D37790764ABA55DAD8D09B76",
+    "amount": "500",
+    "status": "处理中",
+    "cmms_amt": "0",
+    "create_time": "2017-03-09 15:04:04"
+}

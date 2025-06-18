@@ -1,0 +1,25 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "site_code_infos": [
+        {
+            "id": "siteid",
+            "type": "商场超市",
+            "area": "广东省/广州市/荔湾区",
+            "address": "广州市广州大饭店",
+            "name": "广州市广州大饭店",
+            "admin": ["zhangsan", "lisi"],
+            "qr_code_url": "https://www.abc"
+        },
+        {
+            "id": "siteid",
+            "type": "商场超市",
+            "area": "广东省/广州市/荔湾区",
+            "address": "广州市广州大饭店",
+            "name": "广州市广州大饭店",
+            "admin": ["zhangsan", "lisi"],
+            "qr_code_url": "https://www.abc"
+        }
+    ],
+    "next_cursor": "NEXT_CURSOR"
+}

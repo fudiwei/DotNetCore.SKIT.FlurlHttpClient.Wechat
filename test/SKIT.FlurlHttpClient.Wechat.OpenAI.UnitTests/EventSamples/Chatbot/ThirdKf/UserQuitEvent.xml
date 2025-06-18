@@ -1,0 +1,10 @@
+<xml>
+    <userid>用户的唯一ID，（通常为用户在微信的openid）</userid>
+    <appid>应用的appid</appid>
+    <event>userQuit</event>
+    <from>0</from>
+    <kfstate>0</kfstate>
+    <channel>0</channel>
+    <assessment>0</assessment>
+    <createtime>1234567890</createtime>
+</xml>

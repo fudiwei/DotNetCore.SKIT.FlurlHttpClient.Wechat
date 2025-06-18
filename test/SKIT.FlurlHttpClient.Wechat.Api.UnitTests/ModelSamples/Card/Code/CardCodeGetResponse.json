@@ -1,0 +1,28 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "card": {
+        "card_id": "pbLatjk4T4Hx-QFQGL4zGQy27_Qg",
+        "begin_time": 1457452800,
+        "end_time": 1463155199
+    },
+    "openid": "obLatjm43RA5C6QfMO5szKYnT3dM",
+    "can_consume": true,
+    "nickname": "Fourier",
+    "membership_number": "316510891298",
+    "bonus": 460,
+    "user_info": {
+        "common_field_list": [
+            {
+                "name": "USER_FORM_INFO_FLAG_MOBILE",
+                "value": "1552xxxx8888"
+            },
+            {
+                "name": "USER_FORM_INFO_FLAG_NAME",
+                "value": "微信"
+            }
+        ],
+        "custom_field_list": []
+    },
+    "user_card_status": "NORMAL"
+}

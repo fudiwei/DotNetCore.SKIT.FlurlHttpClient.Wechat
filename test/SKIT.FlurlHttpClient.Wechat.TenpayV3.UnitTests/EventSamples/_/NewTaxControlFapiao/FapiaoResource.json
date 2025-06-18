@@ -1,0 +1,12 @@
+{
+    "mchid": "1900000109",
+    "fapiao_apply_id": "4200000444201910177461284488",
+    "apply_time": "2020-07-01T12:00:00+08:00",
+    "fapiao_information": [
+        {
+            "fapiao_id": "20200701123456",
+            "fapiao_status": "ISSUED",
+            "card_status": "INSERTED"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+﻿{
+    "business_code": "1900013511_10000",
+    "applyment_id": 2000002124775691,
+    "sub_mchid": "1234567890",
+    "sign_url": "https://pay.weixin.qq.com/public/apply4ec_sign/s?applymentId=2000002126198476&sign=b207b673049a32c858f3aabd7d27c7ec",
+    "applyment_state": "APPLYMENT_STATE_FINISHED",
+    "applyment_state_msg": "审核中",
+    "audit_detail": [
+        {
+            "field": "id_card_copy",
+            "field_name": "身份证复印件",
+            "reject_reason": "身份证背面识别失败，请上传更清晰的身份证图片。"
+        }
+    ]
+}

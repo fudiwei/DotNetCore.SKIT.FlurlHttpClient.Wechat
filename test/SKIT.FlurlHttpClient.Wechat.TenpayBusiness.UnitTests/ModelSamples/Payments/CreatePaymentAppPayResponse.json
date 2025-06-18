@@ -1,0 +1,18 @@
+{
+    "payment_id": "string",
+    "out_payment_id": "string",
+    "amount": 0,
+    "currency": "CNY",
+    "payer": {
+        "payer_name": "string",
+        "out_payer_id": "string",
+        "payer_acct_last4": "1010"
+    },
+    "payee": {
+        "ent_id": "string",
+        "ent_name": "string"
+    },
+    "pay_status": "PROCESSING",
+    "memo": "string",
+    "attachment": "string"
+}

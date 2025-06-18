@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "tmp_openid": "TMP_OPENID",
+    "instance_id": 9,
+    "user_role": 0,
+    "webinar_member_role": 0,
+    "ip": "192.168.2.2",
+    "name": "user2",
+    "audio_state": true,
+    "video_state": false,
+    "screen_shared_state": false,
+    "default_layout": 1,
+    "raise_hands_state": false
+}

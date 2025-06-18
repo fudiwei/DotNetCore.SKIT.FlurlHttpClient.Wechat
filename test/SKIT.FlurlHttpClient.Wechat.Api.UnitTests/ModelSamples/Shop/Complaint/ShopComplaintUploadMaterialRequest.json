@@ -1,0 +1,7 @@
+﻿{
+    "complaint_order_id": 123,
+    "material_info": {
+        "content": "说明一下",
+        "media_url_list": ["xx", "xx"]
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "chapter": {
+        "book_id": "A1b2C3d4",
+        "chapter_id": "abc1234",
+        "chapter_title": "第一章 香蕉的诞生",
+        "content": "从前，有一座山……",
+        "word_cnt": 1234,
+        "create_time": 1704793640,
+        "audit_info": {
+            "audit_status": 3,
+            "create_time": 1705062255,
+            "audit_time": 1705063255
+        },
+        "volume_index": -1,
+        "original_id": "1234"
+    }
+}

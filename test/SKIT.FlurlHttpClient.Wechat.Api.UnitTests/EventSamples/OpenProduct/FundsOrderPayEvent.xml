@@ -1,0 +1,12 @@
+<xml>
+    <ToUserName>gh_abcdefg</ToUserName>
+    <FromUserName>oABCD</FromUserName>
+    <CreateTime>12344555555</CreateTime>
+    <MsgType>event</MsgType>
+    <Event>funds_order_pay</Event>
+    <order_info>
+        <trade_no>1217752501201407033233368018</trade_no>
+        <transaction_id>42000000123123</transaction_id>
+        <pay_time>2021-12-30 22:31:00</pay_time>
+    </order_info>
+</xml>

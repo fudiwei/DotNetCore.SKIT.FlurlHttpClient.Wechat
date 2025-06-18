@@ -1,0 +1,12 @@
+﻿{
+    "funds_flow": {
+        "bookkeeping_time": "2020-08-20 00:08:13",
+        "funds_flow_id": "4200000586202008206907203418",
+        "type": "交易",
+        "flow_type": "收入",
+        "amount": "0.10",
+        "balance": "115.12",
+        "busi_type": "订单",
+        "request_no": "1768262391135651"
+    }
+}

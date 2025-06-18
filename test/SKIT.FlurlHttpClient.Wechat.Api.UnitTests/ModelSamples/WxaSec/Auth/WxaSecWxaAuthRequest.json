@@ -1,0 +1,41 @@
+{
+    "auth_data": {
+        "account_name": "",
+        "account_name_type": 0,
+        "account_supplemental": [ "", "" ],
+        "auth_ident_material": [ "", "" ],
+        "auth_identification": "",
+        "customer_type": 15,
+        "contact_info": {
+            "email": "认证联系人电子信箱",
+            "name": "认证联系人姓名"
+        },
+        "invoice_info": {
+            "electronic": {
+                "desc": "电子发票信息-发票备注（选填）",
+                "id": "电子发票信息-纳税识别号（15位、17、18或20位）"
+            },
+            "invoice_type": 0,
+            "vat": {
+                "address": "增值税专票-街道地址（xx省xx市xx区xxxx）",
+                "bank_account": "增值税专票-企业银行账号",
+                "bank_name": "增值税专票-企业开户银行",
+                "enterprise_address": "增值税专票-企业注册地址",
+                "enterprise_phone": "增值税专票-企业电话",
+                "id": "增值税专票-纳税识别号（15位、17、18或20位）",
+                "mailing_address": "增值税专票-发票邮寄地址邮编",
+                "name": "增值税专票-联系人",
+                "phone": "增值税专票-联系电话",
+                "province": "广东省",
+                "city": "广州市",
+                "district": "海珠区",
+                "desc": "发票备注，选填"
+            }
+        },
+        "pay_type": 0,
+        "qualification": "",
+        "qualification_other": [ "", "" ],
+        "service_appid": "",
+        "third_party_phone": ""
+    }
+}

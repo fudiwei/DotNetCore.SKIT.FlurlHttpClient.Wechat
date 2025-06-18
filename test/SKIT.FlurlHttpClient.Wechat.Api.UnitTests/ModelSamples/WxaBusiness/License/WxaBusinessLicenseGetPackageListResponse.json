@@ -1,0 +1,25 @@
+{
+    "errcode": 0,
+    "errmsg": "success",
+    "pkg_list": [
+        {
+            "pkg_id": "ZY100000000",
+            "pkg_type": 1,
+            "start_time": 1629907200,
+            "end_time": 1630425600,
+            "pkg_status": 1,
+            "used": 10,
+            "all": 100
+        },
+        {
+            "pkg_id": "ZY100000001",
+            "pkg_type": 2,
+            "start_time": 1629907200,
+            "end_time": 1630425600,
+            "pkg_status": 1,
+            "used": 20,
+            "all": 200
+        }
+    ],
+    "max_active_number": 300
+}

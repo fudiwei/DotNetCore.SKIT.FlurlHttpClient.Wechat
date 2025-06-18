@@ -1,0 +1,12 @@
+{
+    "out_apply_no": "No123456",
+    "sub_mchid": "1900000109",
+    "agreement_list": [
+        {
+            "agreement_code": "微信支付运营功能服务协议（平台二级商户）",
+            "agreement_version": "20240815",
+            "sign_organization": "温州名优贸易",
+            "sign_time": "2024-08-08T10:34:56+08:00"
+        }
+    ]
+}

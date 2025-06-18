@@ -1,0 +1,10 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "notify_info": {
+        "notify_type": 1001,
+        "content_json": "{\"cur_status\":2,\"license_plate\":\"粤A·12345A\",\"arrival_time\":1679569348,\"wxa_path_query\":\"\"}",
+        "code_state": 1,
+        "code_expire_time": 1681906267
+    }
+}

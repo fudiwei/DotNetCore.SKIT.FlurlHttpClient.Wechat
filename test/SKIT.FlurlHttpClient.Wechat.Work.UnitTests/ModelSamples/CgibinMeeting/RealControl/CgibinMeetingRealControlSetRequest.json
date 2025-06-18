@@ -1,0 +1,13 @@
+{
+    "meetingid": "MEETINGID",
+    "mute_all": true,
+    "allow_unmute_self": true,
+    "enable_enter_mute": 1,
+    "meeting_locked": true,
+    "hide_meeting_code_password": true,
+    "allow_chat": 1,
+    "allow_share_screen": true,
+    "allow_external_user": true,
+    "play_ivr_on_join": true,
+    "enable_waiting_room": true
+}

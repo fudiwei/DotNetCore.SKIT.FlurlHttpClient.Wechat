@@ -1,0 +1,18 @@
+{
+    "ent_id": "stringstri",
+    "payment_id": "string",
+    "out_allocation_id": "string",
+    "server_notify_url": "string",
+    "finish": true,
+    "allocations": [
+        {
+            "out_allocation_detail_id": "string",
+            "receiver_acct_id": "string",
+            "merchant_name": "string",
+            "amount": 0,
+            "scenario": "PLATFORM_ALLOCATION",
+            "detail": "string",
+            "desc": "string"
+        }
+    ]
+}

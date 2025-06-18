@@ -1,0 +1,9 @@
+{
+    "errcode": 0,
+    "errmsg": "OK",
+    "status": "2",
+    "waybill_id": "JDxxxxxx",
+    "order_status": 0,
+    "delivery_name": "申通快递",
+    "delivery_id": "SF"
+}

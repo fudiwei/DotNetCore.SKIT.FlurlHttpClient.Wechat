@@ -1,0 +1,27 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "next_key": "",
+    "has_more": false,
+    "article_list": [
+        {
+            "product_info_list": [
+                {
+                    "product_id": 123,
+                    "product_name": "name",
+                    "product_img_url": "imag_url",
+                    "predict_commission_amount": 123,
+                    "product_mini_price": 590
+                }
+            ],
+            "article_info": {
+                "article_title": "title",
+                "cover_image": "image",
+                "article_url": "url",
+                "promoter_share_link": "promoter_share_link"
+            },
+            "create_time": 1736864136,
+            "update_time": 1736864136
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+﻿{
+    "appid": "wx2421b1c4370ec43b",
+    "customs": "ZHENGZHOU_BS",
+    "mch_customs_no": "D00411",
+    "mch_id": "1262544101",
+    "order_fee": "13110",
+    "out_trade_no": "15112496832609",
+    "product_fee": "13110",
+    "sign": "8FF6CEF879FB9555CD580222E671E9D4",
+    "transaction_id": "1006930610201511241751403478",
+    "transport_fee": "0",
+    "fee_type": "CNY",
+    "sub_order_no": "15112496832609001"
+}

@@ -1,0 +1,36 @@
+﻿{
+    "device_sn_list": ["SN"],
+    "rule_name": "access_rule_name_xxx",
+    "pass_rule": {
+        "rule_list": [
+            "9:00-10:00 * * 1-5 *",
+            "9:00-10:00,15:30-17:45 * * 0,6 *"
+        ],
+        "effect_open_userid_list": [
+            {
+                "open_userid": "user1",
+                "user_type": 0
+            },
+            {
+                "open_userid": "user2",
+                "user_type": 2
+            }
+        ]
+    },
+    "remote_pass_rule": {
+        "rule_list": [
+            "9:00-10:00 * * 1-5 *",
+            "9:00-10:00,15:30-17:45 * * 0,6 *"
+        ],
+        "effect_open_userid_list": [
+            {
+                "open_userid": "user1",
+                "user_type": 0
+            },
+            {
+                "open_userid": "user2",
+                "user_type": 2
+            }
+        ]
+    }
+}

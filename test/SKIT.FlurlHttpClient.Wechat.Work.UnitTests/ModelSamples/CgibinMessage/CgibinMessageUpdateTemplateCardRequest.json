@@ -1,0 +1,145 @@
+{
+    "userids": ["userid1", "userid2"],
+    "partyids": [2, 3],
+    "tagids": [44, 55],
+    "atall": 0,
+    "agentid": 1,
+    "response_code": "response_code",
+    "original_task_id": "original_task_id",
+    "button": {
+        "task_id": "taskid",
+        "replace_name": "replace_name"
+    },
+    "template_card": {
+        "card_type": "text_notice",
+        "source": {
+            "icon_url": "图片的url",
+            "desc": "企业微信"
+        },
+        "card_image": {
+            "url": "图片的url",
+            "aspect_ratio": 1.3
+        },
+        "main_title": {
+            "title": "欢迎使用企业微信",
+            "desc": "您的好友正在邀请您加入企业微信"
+        },
+        "vertical_content_list": [
+            {
+                "title": "惊喜红包等你来拿",
+                "desc": "下载企业微信还能抢红包！"
+            }
+        ],
+        "emphasis_content": {
+            "title": "100",
+            "desc": "核心数据"
+        },
+        "sub_title_text": "下载企业微信还能抢红包！",
+        "horizontal_content_list": [
+            {
+                "keyname": "邀请人",
+                "value": "张三"
+            },
+            {
+                "type": 1,
+                "keyname": "企业微信官网",
+                "value": "点击访问",
+                "url": "https://work.weixin.qq.com"
+            },
+            {
+                "type": 2,
+                "keyname": "企业微信下载",
+                "value": "企业微信.apk",
+                "media_id": "文件的media_id"
+            }
+        ],
+        "jump_list": [
+            {
+                "type": 1,
+                "title": "企业微信官网",
+                "url": "https://work.weixin.qq.com"
+            },
+            {
+                "type": 2,
+                "title": "跳转小程序",
+                "appid": "小程序的appid",
+                "pagepath": "/index.html"
+            }
+        ],
+        "card_action": {
+            "type": 2,
+            "url": "https://work.weixin.qq.com",
+            "appid": "小程序的appid",
+            "pagepath": "/index.html"
+        },
+        "button_list": [
+            {
+                "text": "按钮1",
+                "style": 1,
+                "key": "button_key_1"
+            },
+            {
+                "text": "按钮2",
+                "style": 2,
+                "key": "button_key_2"
+            }
+        ],
+        "checkbox": {
+            "question_key": "question_key1",
+            "option_list": [
+                {
+                    "id": "option_id1",
+                    "disable": false,
+                    "text": "选择题选项1",
+                    "is_checked": true
+                },
+                {
+                    "id": "option_id2",
+                    "text": "选择题选项2",
+                    "is_checked": false
+                }
+            ],
+            "disable": false,
+            "mode": 1
+        },
+        "select_list": [
+            {
+                "question_key": "question_key1",
+                "title": "选择器标签1",
+                "selected_id": "selection_id1",
+                "disable": false,
+                "option_list": [
+                    {
+                        "id": "selection_id1",
+                        "text": "选择器选项1"
+                    },
+                    {
+                        "id": "selection_id2",
+                        "text": "选择器选项2"
+                    }
+                ]
+            },
+            {
+                "question_key": "question_key2",
+                "title": "选择器标签2",
+                "selected_id": "selection_id3",
+                "disable": false,
+                "option_list": [
+                    {
+                        "id": "selection_id3",
+                        "text": "选择器选项3"
+                    },
+                    {
+                        "id": "selection_id4",
+                        "text": "选择器选项4"
+                    }
+                ]
+            }
+        ],
+        "submit_button": {
+            "text": "提交",
+            "key": "key"
+        },
+        "replace_text": "已提交"
+    }
+}

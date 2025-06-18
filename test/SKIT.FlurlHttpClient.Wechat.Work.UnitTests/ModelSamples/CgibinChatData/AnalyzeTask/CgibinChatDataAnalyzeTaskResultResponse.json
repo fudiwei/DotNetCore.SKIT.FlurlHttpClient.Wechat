@@ -1,0 +1,26 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "status": 1,
+    "analyze_result": {
+        "result_id": "RESULTID1",
+        "service_encrypt_info": {
+            "encrypted_secret_key": "KEYAAAAAAABBBBBB",
+            "public_key_ver": 1
+        }
+    },
+    "analyze_result_list": [
+        {
+            "errcode": 0,
+            "errmsg": "ok",
+            "msgid": "MSGID1",
+            "sentiment_result": 2,
+            "spam_result": 1
+        },
+        {
+            "errcode": 710601,
+            "errmsg": "xxx",
+            "msgid": "MSGID4"
+        }
+    ]
+}

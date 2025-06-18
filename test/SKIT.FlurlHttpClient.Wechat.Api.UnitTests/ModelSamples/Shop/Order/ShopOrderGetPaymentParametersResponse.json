@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "payment_params": {
+        "timeStamp": 1639124652,
+        "nonceStr": "123",
+        "package": "prepay_id=123",
+        "paySign": "12904324823458940394",
+        "signType": "MD5"
+    }
+}

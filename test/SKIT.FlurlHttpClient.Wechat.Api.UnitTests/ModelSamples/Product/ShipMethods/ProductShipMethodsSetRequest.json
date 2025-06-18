@@ -1,0 +1,7 @@
+﻿{
+    "supported_shipping_methods": {
+        "express": 0,
+        "same_city": 0,
+        "pickup": 0
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "drama_id": 10001,
+    "description": "新剧目简介",
+    "cover_material_id": "新剧目海报临时material_id",
+    "recommendations": "新剧目推荐语",
+    "promotion_poster_material_id": "新推广海报临时material_id",
+    "alternate_name": "备用剧名",
+    "actor_list": {
+        "actor": [
+            {
+                "name": "演员1",
+                "photo_material_id": "xxxxxxxx",
+                "role": "角色1",
+                "profile": "简介"
+            },
+            {
+                "name": "演员2",
+                "photo_material_id": "xxxxxxxx",
+                "role": "角色2",
+                "profile": "简介"
+            }
+        ]
+    },
+    "qualification_type": 1,
+    "qualification_certificate_material_id": "xxxxxxxx",
+    "registration_number": "V123456788888888",
+    "other_material_material_id": "新其他材料临时material_id"
+}

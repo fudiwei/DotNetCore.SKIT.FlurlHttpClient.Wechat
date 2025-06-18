@@ -1,0 +1,37 @@
+{
+    "out_product_id": "test_120719261",
+    "product_type": 1,
+    "product_name": "测试商品",
+    "category_id": "545201",
+    "brand_id": "10010719",
+    "head_imgs": [
+        "https://mmecimage.cn/p/wx2b255582a7b4bfd0/HPfcDsYrzbTlVSFQI9Qar0uzDhKI-EB7Efryf-dxlUE",
+        "https://mmecimage.cn/p/wx2b255582a7b4bfd0/HAOY-e61JPVNI5fsTlOcy-1r_rSxqnAsIUWqXXWNJSE",
+        "https://mmecimage.cn/p/wx2b255582a7b4bfd0/HLD6dz9RbUkPzBQGHnpb9Z7BcK9kF1HYeLkwxiK9RtI"
+    ],
+    "verify_page": {
+        "appid": "wxca8d4b8e8feedc2a",
+        "path": "main/channels/buy/buy.html?productId=123"
+    },
+    "code_source_type": 1,
+    "attr_kv_map": {
+        "use_date_rule": "{\\\"validate_type\\\":1,\\\"use_date\\\":{\\\"use_start_date\\\":\\\"2023-11-29\\\",\\\"use_end_date\\\":\\\"2023-12-31\\\"}\\}",
+        "use_time": "{\"use_time_type\":2,\"time_periods\":[{\"use_start_time\":\"10:00:00\",\"use_end_time\":\"20:00:00\"}]}",
+        "detail_imgs": "[\"https://mmecimage.cn/xxxxxxxxxx\",\"https://mmecimage.cn/yyyyyyyyyy\",\"https://mmecimage.cn/zzzzzzzzzz\"]",
+        "set_meals": "[{\"group_name\": \"套餐名称\", \"items\": [{\"item_count\": 1, \"item_name\": \"项目名称\",\"item_price\": 28800}],\"option_count\": 1}]",
+        "exclusive_date": "{\"enable\": 0}",
+        "voucher_amount": "100",
+        "bring_out_type": "1",
+        "appointment": "{\"need_appointment\":0}",
+        "need_phone_num": "0",
+        "additional_rule": "\"附加规则\"",
+        "available_store_desc": "\"可用门店描述\"",
+        "settle_type": "1",
+        "refund_policy": "1"
+    },
+    "skus": [
+        {
+            "sale_price": 100
+        }
+    ]
+}

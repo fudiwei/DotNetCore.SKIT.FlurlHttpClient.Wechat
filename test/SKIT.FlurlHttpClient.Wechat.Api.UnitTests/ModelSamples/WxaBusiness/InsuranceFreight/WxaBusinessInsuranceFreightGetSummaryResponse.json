@@ -1,0 +1,10 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total": 1,
+    "claim_num": 1,
+    "claim_succ_num": 1,
+    "premium": 1,
+    "funds": 1,
+    "need_close": false
+}

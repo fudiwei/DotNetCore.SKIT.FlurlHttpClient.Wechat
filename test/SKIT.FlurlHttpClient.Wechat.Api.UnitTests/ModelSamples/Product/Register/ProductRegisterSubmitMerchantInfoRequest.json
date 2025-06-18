@@ -1,0 +1,89 @@
+{
+    "appid": "xxx",
+    "subject_type": 4,
+    "busi_license": {
+        "license_type": 1,
+        "pic_file": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        },
+        "registration_num": "证件注册号",
+        "merchant_name": "商户名称",
+        "legal_representative": "法定代表人",
+        "registered_addrs": "注册地址",
+        "start_date": "注册日期",
+        "end_date": "有效期至"
+    },
+    "organization_code_info": {
+        "pic_file": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        },
+        "organization_code": "组织机构代码",
+        "start_date": "注册日期",
+        "end_date": "有效期至"
+    },
+    "id_card_info": {
+        "portrait_pic_file": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        },
+        "nation_pic_file": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        },
+        "id_card_name": "张三",
+        "id_card_number": "121321412",
+        "start_date": "注册日期",
+        "end_date": "有效期至"
+    },
+    "super_administrator_info": {
+        "type": 65,
+        "name": "姓名",
+        "id_card_number": "身份证件号码",
+        "phone": "手机号",
+        "mail": "邮箱",
+        "contact_id_doc_type": "IDENTIFICATION_TYPE_MAINLAND_IDCARD",
+        "contact_id_doc_copy": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        },
+        "contact_id_doc_copy_back": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        },
+        "contact_id_doc_period_begin": "证件开始时间",
+        "contact_id_doc_period_end": "证件结束时间",
+        "business_authorization_letter": {
+            "media_id": "xlvjalsdhgas",
+            "pay_media_id": "asdgasvdadfa"
+        }
+    },
+    "merchant_shortname": "商户简称",
+    "special_qualification": {
+        "pic_file_list": [
+            {
+                "media_id": "xlvjalsdhgas",
+                "pay_media_id": "asdgasvdadfa"
+            }
+        ]
+    },
+    "supplementary_material": {
+        "pic_file_list": [
+            {
+                "media_id": "xlvjalsdhgas",
+                "pay_media_id": "asdgasvdadfa"
+            }
+        ]
+    },
+    "supplementary_desc": "补充描述",
+    "settle_acct_info": {
+        "acct_type": 74,
+        "bank": "",
+        "name": "",
+        "province_city_code": "",
+        "full_name": "",
+        "bank_account_no": ""
+    },
+    "applyment_version": 1
+}

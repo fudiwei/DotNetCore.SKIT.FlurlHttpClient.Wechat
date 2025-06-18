@@ -1,0 +1,21 @@
+﻿{
+    "department_code": "143605002004",
+    "department_name": "韶关市公安局交警支队市区一大队",
+    "errcode": 0,
+    "errmsg": "通知书未缴款",
+    "fee": 20000,
+    "items": [
+        {
+            "fee": 20000,
+            "item_id": "103050101200",
+            "item_name": "交通违法罚款",
+            "no": 1,
+            "overdue": 0
+        }
+    ],
+    "payment_notice_create_time": 1508806661,
+    "payment_notice_no": "440204190185356",
+    "payment_notice_type": 1,
+    "region_code": "440000",
+    "user_name": "叶*梅"
+}

@@ -1,0 +1,5 @@
+{
+    "meetingid": "MEETINGID",
+    "meeting_room_id_list": [ "RoomId001", "RoomId002" ],
+    "subject_visible": true
+}

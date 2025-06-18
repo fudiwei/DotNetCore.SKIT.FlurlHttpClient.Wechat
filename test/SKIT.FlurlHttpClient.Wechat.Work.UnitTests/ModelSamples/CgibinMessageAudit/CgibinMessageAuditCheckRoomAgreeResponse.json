@@ -1,0 +1,21 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "agreeinfo": [
+        {
+            "status_change_time": 1562766651,
+            "exteranalopenid": "wmeDKaCQAAGdtHdiQWxVadfwV2HxNAAA",
+            "agree_status": "Agree"
+        },
+        {
+            "status_change_time": 1562766651,
+            "exteranalopenid": "wmeDKaCQAAIQ_p9ACyiopLBBJSGocAAA",
+            "agree_status": "Disagree"
+        },
+        {
+            "status_change_time": 1562766651,
+            "exteranalopenid": "wmeDKaCQAAIQ_p9ACnxacyBBJSGocAAA",
+            "agree_status": "Agree"
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "orderList": [
+        {
+            "orderId": "1952315038682581",
+            "payTime": 1612355317,
+            "shopName": "xxx小商店",
+            "productList": [
+                {
+                    "productId": "4085505",
+                    "title": "身体护理",
+                    "thumbImg": "https://snsdy.tc.qq.com/161/20304/snscosdownload/SZ/reserved/xxx",
+                    "price": "¥0.20",
+                    "ratio": 9000,
+                    "commissionStatus": "SETTLEMENT_CANCELED",
+                    "commission": "¥0",
+                    "categoryStr": "11",
+                    "promotionInfo": {
+                        "promotionSourcePid": "oqt8u5E4_3XcsaMicK_E2gNyvBfM_1290469201",
+                        "promotionSourceName": "xxx"
+                    },
+                    "customizeInfo": "customizeInfo"
+                }
+            ]
+        }
+    ]
+}

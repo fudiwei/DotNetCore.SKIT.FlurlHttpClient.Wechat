@@ -1,0 +1,38 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "domain_list": [
+        {
+            "domain": "i.work.weixin.qq.com",
+            "universal_domian": "work.weixin.qq.com",
+            "protocol": "TCP",
+            "port": [ 443, 80 ],
+            "is_necessary": 1,
+            "description": "企业微信客户端长连接，消息收发等功能;企业微信客户端短连接，登录、拉组织架构等功能"
+        },
+        {
+            "domain": "live.work.weixin.qq.com",
+            "universal_domian": "work.weixin.qq.com",
+            "protocol": "TCP",
+            "port": [ 443, 80 ],
+            "is_necessary": 0,
+            "description": "企业微信客户端长连接，消息收发等功能;企业微信客户端短连接，登录、拉组织架构等功能"
+        }
+    ],
+    "ip_list": [
+        {
+            "ip": "115.238.203.109",
+            "protocol": "TCP",
+            "port": [ 443, 80 ],
+            "is_necessary": 0,
+            "description": "企业微信客户端HTTPDNS解析"
+        },
+        {
+            "ip": "115.238.203.110",
+            "protocol": "TCP",
+            "port": [ 443, 80 ],
+            "is_necessary": 1,
+            "description": "企业微信客户端HTTPDNS解析"
+        }
+    ]
+}

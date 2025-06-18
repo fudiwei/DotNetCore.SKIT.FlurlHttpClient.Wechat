@@ -1,0 +1,29 @@
+﻿{
+    "info_list": [
+        {
+            "merchant_id": 12,
+            "create_time": 1438790559,
+            "update_time": 1438790559,
+            "brand_name": "aaaaaa",
+            "logo_url": "http://mmbiz.xxxx",
+            "status": "CHECKING",
+            "begin_time": 1438790559,
+            "end_time": 1438990559,
+            "primary_category_id": 1,
+            "secondary_category_id": 101
+        },
+        {
+            "merchant_id": 13,
+            "create_time": 1438790559,
+            "update_time": 1438790559,
+            "brand_name": "bbbbbb",
+            "logo_url": "http://mmbiz.xxxx",
+            "status": "APPROVED",
+            "begin_time": 1438790559,
+            "end_time": 1438990559,
+            "primary_category_id": 1,
+            "secondary_category_id": 101
+        }
+    ],
+    "next_begin_id": 13
+}

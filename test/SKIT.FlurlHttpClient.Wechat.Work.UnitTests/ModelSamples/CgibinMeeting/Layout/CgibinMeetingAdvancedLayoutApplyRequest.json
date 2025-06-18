@@ -1,0 +1,9 @@
+{
+    "meetingid": "MEETINGID",
+    "layout_id": "LAYOUTID1",
+    "user_list": [
+        {
+            "tmp_openid": "TMPOPENID1"
+        }
+    ]
+}

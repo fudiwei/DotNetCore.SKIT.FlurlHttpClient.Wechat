@@ -1,0 +1,29 @@
+{
+    "gift_activity": {
+        "activity_id": 123456789147,
+        "detail": {
+            "gift_set": {
+                "gift_items": [
+                    {
+                        "gift_id": 121212,
+                        "give_num": 1
+                    }
+                ],
+                "gift_set_num": 1
+            },
+            "main_products": [
+                {
+                    "product_id": 121212
+                }
+            ],
+            "receive_limit": {
+                "is_limited": true,
+                "limit_num": 111
+            },
+            "show_scene": 1
+        },
+        "end_time": "11111",
+        "start_time": "222222",
+        "title": "测试创建赠品活动"
+    }
+}

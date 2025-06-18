@@ -1,0 +1,13 @@
+﻿{
+    "team_count": 2,
+    "team_member_count": 1,
+    "need_room_service_info": 1,
+    "game_room_info": {
+        "game_tick": 30,
+        "udp_reliability_strategy": 3,
+        "start_percent": 100,
+        "need_user_info": true,
+        "game_last_time": 1800,
+        "need_game_seed": true
+    }
+}

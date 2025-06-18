@@ -1,0 +1,15 @@
+<xml>
+    <ToUserName><![CDATA[gh_fb9688c2a4b2]]></ToUserName>
+    <FromUserName><![CDATA[od1P50M-fNQI5Gcq-trm4a7apsU8]]></FromUserName>
+    <CreateTime>1488856741</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[wxa_privacy_apply]]></Event>
+    <result_info>
+        <api_name>wx.choosePoi</api_name>
+        <apply_time>1644805538</apply_time>
+        <audit_id>421609337</audit_id>
+        <audit_time>1644828435</audit_time>
+        <reason>小程序内未含有相应使用场景</reason>
+        <status>2</status>
+    </result_info>
+</xml>

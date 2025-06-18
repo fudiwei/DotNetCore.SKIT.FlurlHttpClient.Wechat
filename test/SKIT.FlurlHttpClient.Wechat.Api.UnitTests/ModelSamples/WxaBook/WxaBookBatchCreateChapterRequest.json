@@ -1,0 +1,13 @@
+{
+    "book_id": "A1b2C3d4",
+    "chapter_list": [
+        {
+            "chapter_title": "第一章 香蕉的诞生",
+            "content": "从前，有一座山……"
+        },
+        {
+            "chapter_title": "第二章 牛奶的诞生",
+            "content": "一望无际的草原，有一群快乐的奶牛……"
+        }
+    ]
+}

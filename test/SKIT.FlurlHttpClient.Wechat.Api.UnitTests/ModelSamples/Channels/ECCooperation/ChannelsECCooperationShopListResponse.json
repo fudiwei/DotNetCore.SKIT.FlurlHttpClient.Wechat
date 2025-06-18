@@ -1,0 +1,14 @@
+{
+    "shop_list": [
+        {
+            "appid": "wx***************0",
+            "nickname": "测试店",
+            "status": 1,
+            "bind_time": 1728979333943,
+            "unbind_time": 0,
+            "cancel_time": 0
+        }
+    ],
+    "errcode": 0,
+    "errmsg": "ok"
+}

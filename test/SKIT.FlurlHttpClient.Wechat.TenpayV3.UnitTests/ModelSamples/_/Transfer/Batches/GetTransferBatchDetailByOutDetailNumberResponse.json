@@ -1,0 +1,15 @@
+﻿{
+    "out_batch_no": "plfk2020042013",
+    "batch_id": "1030000071100999991182020050700019480001",
+    "appid": "wxf636efh567hg4356",
+    "out_detail_no": "x23zy545Bd5436",
+    "detail_id": "1040000071100999991182020050700019500100",
+    "detail_status": "SUCCESS",
+    "transfer_amount": 200000,
+    "transfer_remark": "2020年4月报销",
+    "fail_reason": "ACCOUNT_FROZEN",
+    "openid": "o-MYE42l80oelYMDE34nYD456Xoy",
+    "user_name": "757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45",
+    "initiate_time": "2015-05-20T13:29:35.120+08:00",
+    "update_time": "2015-05-20T13:29:35.120+08:00"
+}

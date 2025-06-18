@@ -1,0 +1,9 @@
+﻿<xml>
+    <ToUserName>gh_abcdefg</ToUserName>
+    <FromUserName>oABCD</FromUserName>
+    <CreateTime>12344555555</CreateTime>
+    <MsgType>event</MsgType>
+    <Event>open_product_receive_coupon</Event>
+    <out_coupon_id>real_out_coupon_id</out_coupon_id>
+    <request_id>real_request_id</request_id>
+</xml>

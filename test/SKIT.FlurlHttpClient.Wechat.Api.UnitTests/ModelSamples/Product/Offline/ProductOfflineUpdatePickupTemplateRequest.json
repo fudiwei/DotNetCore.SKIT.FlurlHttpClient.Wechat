@@ -1,0 +1,13 @@
+﻿{
+    "pickup_template": {
+        "template_id": 59529,
+        "pickup_time": {
+            "start_business_hour": 9,
+            "start_business_minute": 30,
+            "end_business_hour": 22,
+            "end_business_minute": 0,
+            "promise_delivery_minutes": 60,
+            "book_time": 1440
+        }
+    }
+}

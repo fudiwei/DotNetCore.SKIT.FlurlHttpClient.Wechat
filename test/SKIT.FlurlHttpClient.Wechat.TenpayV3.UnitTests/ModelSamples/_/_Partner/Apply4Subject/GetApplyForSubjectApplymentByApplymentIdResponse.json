@@ -1,0 +1,6 @@
+﻿{
+    "applyment_state": "APPLYMENT_STATE_PASSED",
+    "qrcode_data": "cGFnZXMvYXBwbHkvYXBpdzQvd2VsY29tZS93ZWxjb21lP2FwcGx5bWVudF9pZD14eHg=",
+    "reject_param": "merchant_name",
+    "reject_reason": "公司名称与工商局登记不一致"
+}

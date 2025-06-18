@@ -1,0 +1,18 @@
+{
+    "return_code": "SUCCESS",
+    "result_code": "SUCCESS",
+    "appid": "wx1a************",
+    "mch_id": "1515********",
+    "sub_mch_id": "152********",
+    "nonce_str": "0t1K************",
+    "sign": "51D8C0093****************************************",
+    "transaction_id": "4200************************",
+    "out_trade_no": "DEMO****************",
+    "total_fee": "10",
+    "settlement_total_fee": "2",
+    "fee_type": "CNY",
+    "out_refund_no": "DEMO****************",
+    "refund_id": "503****************************",
+    "refund_fee": "2",
+    "refund_status": "SUCCESS"
+}

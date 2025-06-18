@@ -1,0 +1,11 @@
+{
+    "meetingid": "meetingid",
+    "invitees": [
+        {
+            "userid": "zhangsan"
+        },
+        {
+            "userid": "lisi"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+﻿{
+    "is_delete": false,
+    "black_keyword": {
+        "values": ["敏感词1", "敏感词2"]
+    },
+    "guide_auto_reply": {
+        "content": "自动回复"
+    }
+}

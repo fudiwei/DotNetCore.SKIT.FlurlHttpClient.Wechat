@@ -1,0 +1,56 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "icp_subject": {
+        "base_info": {
+            "type": 5, 
+            "name": "*三",
+            "province": "110000", 
+            "city": "110100",
+            "district": "110105", 
+            "address": "高碑************5室",
+            "comment": "主体备注"
+        },
+        "organize_info": {
+            "certificate_type": 2,
+            "certificate_number": "11**************34",
+            "certificate_address": "北京******************5室"
+        },
+        "principal_info": {
+            "name": "*三",
+            "mobile": "13*******21",
+            "email": "zh*********************om",
+            "emergency_contact": "17*******34",
+            "certificate_type": 2, 
+            "certificate_number": "11**************34",
+            "certificate_validity_date_start": "20230815",
+            "certificate_validity_date_end": "20330815"
+        }
+    },
+    "icp_applets": {
+        "base_info": {
+            "appid": "wx1111111122222222",
+            "name": "张三测试号",
+            "service_content_types": [
+                3,
+                4
+            ],
+            "nrlx_details": [
+                {
+                    "type": 24
+                }
+            ],
+            "comment": "小程序备注"
+        },
+        "principal_info": {
+            "name": "张三",
+            "mobile": "13012344321",
+            "email": "zhangsan@zhangsancorp.com",
+            "emergency_contact": "17743211234",
+            "certificate_type": 2,
+            "certificate_number": "110105199001011234",
+            "certificate_validity_date_start": "20230815",
+            "certificate_validity_date_end": "20330815"
+        }
+    }
+}

@@ -1,0 +1,14 @@
+﻿{
+    "openid": "{openid}",
+    "reimburse_status": "{reimburse_status}",
+    "invoice_list": [
+        {
+            "card_id": "cardid_1",
+            "encrypt_code": "encrypt_code_1"
+        },
+        {
+            "card_id": "cardid_2",
+            "encrypt_code": "encrypt_code_2"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+﻿{
+    "access_data": [
+        {
+            "open_userid": "x1",
+            "user_type": 0,
+            "timestamp": 12345,
+            "pass_type": 1,
+            "pass_method": 1
+        },
+        {
+            "open_userid": "x2",
+            "user_type": 0,
+            "timestamp": 12345,
+            "pass_type": 1,
+            "pass_method": 1
+        }
+    ]
+}

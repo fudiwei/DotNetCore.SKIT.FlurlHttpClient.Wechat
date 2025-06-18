@@ -1,0 +1,48 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "shop_id": "50xxxxxxxx18",
+    "list": [
+        {
+            "delivery_id": "JTSD",
+            "delivery_name": "极兔速递"
+        },
+        {
+            "delivery_id": "STO",
+            "delivery_name": "申通快递"
+        },
+        {
+            "delivery_id": "YTO",
+            "delivery_name": "圆通速递"
+        },
+        {
+            "delivery_id": "YUNDA",
+            "delivery_name": "韵达速递"
+        },
+        {
+            "delivery_id": "ZTO",
+            "delivery_name": "中通快递"
+        },
+        {
+            "delivery_id": "SF",
+            "delivery_name": "顺丰速运"
+        },
+        {
+            "delivery_id": "JD",
+            "delivery_name": "京东"
+        },
+        {
+            "delivery_id": "EMS",
+            "delivery_name": "中国邮政"
+        },
+        {
+            "delivery_id": "CNSD",
+            "delivery_name": "菜鸟速递(丹鸟)"
+        },
+        {
+            "delivery_id": "DBKD",
+            "delivery_name": "德邦快递"
+        }
+
+    ]
+}

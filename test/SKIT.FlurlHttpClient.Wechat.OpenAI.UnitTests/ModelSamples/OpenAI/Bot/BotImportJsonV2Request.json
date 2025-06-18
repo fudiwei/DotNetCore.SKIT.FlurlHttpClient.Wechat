@@ -1,0 +1,18 @@
+{
+    "mode": 0,
+    "data": [
+        {
+            "skill": "AAA",
+            "intent": "BBC",
+            "threshold": "0.9",
+            "disable": true,
+            "questions": [
+                "q",
+                "q2"
+            ],
+            "answers": [
+                "a"
+            ]
+        }
+    ]
+}

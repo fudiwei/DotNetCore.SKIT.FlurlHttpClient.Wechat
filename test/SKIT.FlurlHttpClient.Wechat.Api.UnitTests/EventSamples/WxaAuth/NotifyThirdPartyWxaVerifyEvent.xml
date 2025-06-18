@@ -1,0 +1,12 @@
+<xml>
+    <AppId><![CDATA[wx31f828cesdfa4eabc]]></AppId>
+    <CreateTime>1700634212</CreateTime>
+    <InfoType><![CDATA[notify_3rd_wxa_wxverify]]></InfoType>
+    <appid><![CDATA[wxaf614423g25ffd9b]]></appid>
+    <expired>1704162245</expired>
+    <message>
+        <![CDATA[账号名称: 我的小程序名
+到期时间: 2024年1月2日
+详情: 账号已进入年审期，为确保运营主体经营状态存续、命名合规、行业资质真实有效且线上服务可用，请尽快完成认证年审。 到期未完成年审将影响新版本发布和“被搜索”能力。逾期 30 天将影响“被分享”能力，逾期 60 天将影响新用户访问及支付功能。]]>
+    </message>
+</xml>

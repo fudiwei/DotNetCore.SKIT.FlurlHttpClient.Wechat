@@ -1,0 +1,25 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total": 1,
+    "appid": "wx539e0b4872f196d1",
+    "store_list": [
+        {
+            "wx_store_id": "4000000000000042001",
+            "out_store_id": "123",
+            "city_id": 440300,
+            "address_info": {
+                "province": "广东省",
+                "city": "深圳市",
+                "area": "南山区",
+                "street": "南头街道",
+                "house": "深南大道10000号",
+                "lat": 22.540366,
+                "lng": 113.934559,
+                "phone": "1380000138"
+            },
+            "order_pattern": 0,
+            "service_trans_prefer": ""
+        }
+    ]
+}

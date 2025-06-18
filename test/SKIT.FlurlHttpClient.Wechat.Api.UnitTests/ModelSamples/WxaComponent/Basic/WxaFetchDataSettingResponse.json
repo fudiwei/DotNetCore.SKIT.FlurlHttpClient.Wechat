@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "is_pre_fetch_open": true,
+    "pre_fetch_type": 1,
+    "pre_env": "test-pfyol",
+    "pre_function_name": "test_func",
+    "is_period_fetch_open": true,
+    "period_fetch_type": 0,
+    "period_fetch_url": "https://111.qq.com"
+}

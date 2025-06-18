@@ -1,0 +1,15 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "code": "8",
+    "code_start": 0,
+    "code_end": 200,
+    "activity_name": "test_name",
+    "product_brand": "test_brand",
+    "product_title": "test_title",
+    "product_code": "test_code",
+    "wxa_appid": "wx3sxjifjwojfsffef",
+    "wxa_path": "pages/index/index",
+    "application_id": 581865877,
+    "isv_application_id": "test_id"
+}

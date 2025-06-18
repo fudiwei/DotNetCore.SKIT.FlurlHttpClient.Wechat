@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "company_list": [
+        {
+            "delivery_id": "SF",
+            "delivery_name": "顺丰速运"
+        },
+        {
+            "delivery_id": "YTO",
+            "delivery_name": "圆通快速"
+        },
+        {
+            "delivery_id": "ZTO",
+            "delivery_name": "中通快速"
+        }
+    ]
+}

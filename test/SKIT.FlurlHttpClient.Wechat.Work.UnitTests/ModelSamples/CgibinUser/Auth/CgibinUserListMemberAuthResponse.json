@@ -1,0 +1,10 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "next_cursor": "next_cursor",
+    "member_auth_list": [
+        {
+            "open_userid": "xxx"
+        }
+    ]
+}

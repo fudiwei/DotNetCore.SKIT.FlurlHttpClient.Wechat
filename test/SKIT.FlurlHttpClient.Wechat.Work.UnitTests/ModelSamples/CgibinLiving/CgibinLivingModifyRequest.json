@@ -1,0 +1,9 @@
+﻿{
+    "livingid": "XXXXXXXXX",
+    "theme": "theme",
+    "living_start": 1600100000,
+    "living_duration": 3600,
+    "description": "test description",
+    "type": 1,
+    "remind_time": 60
+}

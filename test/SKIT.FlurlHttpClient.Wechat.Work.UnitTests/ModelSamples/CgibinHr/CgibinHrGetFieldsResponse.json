@@ -1,0 +1,36 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "group_list": [
+        {
+            "group_id": 1001,
+            "group_name": "个人信息",
+            "field_list": [
+                {
+                    "fieldid": 11001,
+                    "field_name": "姓名",
+                    "field_type": 1,
+                    "is_must": true
+                },
+                {
+                    "fieldid": 11002,
+                    "field_name": "别名",
+                    "field_type": 1,
+                    "is_must": false
+                }
+            ]
+        },
+        {
+            "group_id": 1002,
+            "group_name": "在职信息",
+            "field_list": [
+                {
+                    "fieldid": 12024,
+                    "field_name": "工号",
+                    "field_type": 1,
+                    "is_must": true
+                }
+            ]
+        }
+    ]
+}

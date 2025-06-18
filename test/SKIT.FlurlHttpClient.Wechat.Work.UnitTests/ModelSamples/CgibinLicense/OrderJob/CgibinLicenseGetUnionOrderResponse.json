@@ -1,0 +1,28 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "order": {
+        "order_id": "ORDERID",
+        "order_type": 1,
+        "order_status": 1,
+        "price": 10000,
+        "create_time": 150000000,
+        "pay_time": 1550000000
+    },
+    "has_more": 1,
+    "next_cursor": "CURSOR",
+    "buy_list": [
+        {
+            "sub_order_id": "SUBORDERID",
+            "corpid": "CORPID",
+            "account_count": {
+                "base_count": 100,
+                "external_contact_count": 100
+            },
+            "account_duration": {
+                "months": 2,
+                "days": 20
+            }
+        }
+    ]
+}

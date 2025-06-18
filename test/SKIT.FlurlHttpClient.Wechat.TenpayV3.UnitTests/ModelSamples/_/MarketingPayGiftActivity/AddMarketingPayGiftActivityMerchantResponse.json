@@ -1,0 +1,14 @@
+﻿{
+    "activity_id": "1001234567",
+    "invalid_merchant_id_list": [
+        {
+            "mchid": "1001234567",
+            "invalid_reason": "商户与活动创建方不具备父子关系"
+        },
+        {
+            "mchid": "1001234567",
+            "invalid_reason": "商户与活动创建方不具备父子关系"
+        }
+    ],
+    "add_time": "2015-05-20T13:29:35+08:00"
+}

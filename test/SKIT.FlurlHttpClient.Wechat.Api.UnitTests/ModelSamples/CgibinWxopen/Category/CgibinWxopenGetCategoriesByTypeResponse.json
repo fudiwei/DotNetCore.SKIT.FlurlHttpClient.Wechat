@@ -1,0 +1,48 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "categories_list": {
+        "categories": [
+            {
+                "id": 0,
+                "children": [1, 402],
+                "qualify": {
+                    "exter_list": [],
+                    "remark": ""
+                }
+            },
+            {
+                "id": 1,
+                "name": "快递业与邮政",
+                "level": 1,
+                "father": 0,
+                "children": [2, 5, 556, 558, 1033],
+                "sensitive_type": 0,
+                "qualify": {
+                    "exter_list": [],
+                    "remark": ""
+                }
+            },
+            {
+                "id": 920,
+                "name": "律师",
+                "level": 2,
+                "father": 402,
+                "children": [],
+                "sensitive_type": 1,
+                "qualify": {
+                    "exter_list": [
+                        {
+                            "inner_list": [
+                                {
+                                    "name": "《律师执业资格证》",
+                                    "url": ""
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

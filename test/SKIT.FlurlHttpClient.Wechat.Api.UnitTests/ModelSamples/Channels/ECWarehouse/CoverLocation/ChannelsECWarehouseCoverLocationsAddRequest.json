@@ -1,0 +1,17 @@
+{
+    "out_warehouse_id": "test3",
+    "cover_locations": [
+        {
+            "address_id1": 440000000,
+            "address_id2": 440300000,
+            "address_id3": 0,
+            "address_id4": 0
+        },
+        {
+            "address_id1": 440000000,
+            "address_id2": 440600000,
+            "address_id3": 0,
+            "address_id4": 0
+        }
+    ]
+}

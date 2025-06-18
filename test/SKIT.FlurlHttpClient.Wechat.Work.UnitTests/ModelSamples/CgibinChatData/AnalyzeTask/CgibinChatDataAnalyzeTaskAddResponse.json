@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "jobid": "JOBID",
+    "fail_list": [
+        {
+            "errcode": 710601,
+            "errmsg": "xxx",
+            "msgid": "MSGID2"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+﻿{
+    "report_action": "sendSmsTask",
+    "env_id": "xxx",
+    "activity_id": "xxx",
+    "task_id": "xxx",
+    "phone_count": "12345",
+    "channel_id": "xxx",
+    "session_id": "xxx"
+}

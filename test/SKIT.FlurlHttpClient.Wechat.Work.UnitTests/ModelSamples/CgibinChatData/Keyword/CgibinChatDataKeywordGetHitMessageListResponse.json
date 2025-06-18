@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": 1,
+    "next_cursor": "JGNLGEHJGIE",
+    "msg_list": [
+        {
+            "msgid": "xxxmsgid",
+            "hit_rule_list": [
+                {
+                    "rule_id": "vvvvvvvvvvvvvvvvvxxxx",
+                    "has_hit_keyword": false,
+                    "semantics_list": [ 1, 2 ]
+                }
+            ]
+        }
+    ]
+}

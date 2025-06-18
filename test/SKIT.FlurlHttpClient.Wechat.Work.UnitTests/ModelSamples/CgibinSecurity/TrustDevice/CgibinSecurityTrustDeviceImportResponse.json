@@ -1,0 +1,20 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "result": [
+        {
+            "device_index": 1,
+            "device_code": "49nNtYq",
+            "status": 1
+        },
+        {
+            "device_index": 2,
+            "duplicated_device_code": "49nNtYq",
+            "status": 2
+        },
+        {
+            "device_index": 3,
+            "status": 3
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+﻿{
+    "appid": "wx5f6e43071809a9dd",
+    "bank_account": "",
+    "bank_id": "test_bank_id",
+    "department_code": "1",
+    "department_name": "test",
+    "desc": "测试缴费",
+    "fee": 2,
+    "ip": "113.68.115.241",
+    "items": [
+        {
+            "fee": 2,
+            "item_id": "103050101200",
+            "item_name": "测试缴费2",
+            "no": 1,
+            "overdue": 0
+        }
+    ],
+    "openid": "ont-9vjAcIdSU-LgB7ubALAVJO9U",
+    "payment_expire_date": "",
+    "payment_notice_no": "08111639088",
+    "payment_notice_type": 1,
+    "region_code": "440000",
+    "return_url": "http://cockpouncher.55555.io/nontax-wxpay/pay_demand_result.html?type=showPayResult&region_code=44000&unitNo=1&payNoticeNo=1",
+    "service_id": 0,
+    "user_name": "张*丰"
+}

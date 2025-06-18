@@ -1,0 +1,317 @@
+﻿{
+    "card": {
+        "card_type": "GROUPON",
+        "groupon": {
+            "base_info": {
+                "sub_merchant_info": {
+                    "merchant_id": "123456"
+                },
+                "logo_url": "http://mmbiz.qpic.cn/mmbiz/iaL1LJM1mF9aRKPZJkmG8xXhiaHqkKSVMMWeN3hLut7X7hicFNjakmxibMLGWpXrEXB33367o7zHN0CwngnQY7zb7g/0",
+                "brand_name": "微信餐厅",
+                "code_type": "CODE_TYPE_TEXT",
+                "title": "132元双人火锅套餐",
+                "color": "Color010",
+                "notice": "使用时向服务员出示此券",
+                "service_phone": "020-88888888",
+                "description": "不可与其他优惠同享\n如需团购券发票，请在消费时向商户提出\n店内均可使用，仅限堂食",
+                "date_info": {
+                    "type": "DATE_TYPE_FIX_TIME_RANGE",
+                    "begin_timestamp": 1397577600,
+                    "end_timestamp": 1472724261
+                },
+                "sku": {
+                    "quantity": 500000
+                },
+                "use_limit": 100,
+                "get_limit": 3,
+                "use_custom_code": false,
+                "bind_openid": false,
+                "can_share": true,
+                "can_give_friend": true,
+                "location_id_list": [123, 12321, 345345],
+                "center_title": "顶部居中按钮",
+                "center_sub_title": "按钮下方的wording",
+                "center_url": "www.qq.com",
+                "custom_url_name": "立即使用",
+                "custom_url": "http://www.qq.com",
+                "custom_url_sub_title": "6个汉字tips",
+                "promotion_url_name": "更多优惠",
+                "promotion_url": "http://www.qq.com"
+            },
+            "advanced_info": {
+                "use_condition": {
+                    "accept_category": "鞋类",
+                    "reject_category": "阿迪达斯",
+                    "can_use_with_other_discount": true
+                },
+                "abstract": {
+                    "abstract": "微信餐厅推出多种新季菜品，期待您的光临",
+                    "icon_url_list": [
+                        "http://mmbiz.qpic.cn/mmbiz/p98FjXy8LacgHxp3sJ3vn97bGLz0ib0Sfz1bjiaoOYA027iasqSG0sjpiby4vce3AtaPu6cIhBHkt6IjlkY9YnDsfw / 0 "
+                    ]
+                },
+                "text_image_list": [
+                    {
+                        "image_url": "http://mmbiz.qpic.cn/mmbiz/p98FjXy8LacgHxp3sJ3vn97bGLz0ib0Sfz1bjiaoOYA027iasqSG0sjpiby4vce3AtaPu6cIhBHkt6IjlkY9YnDsfw/0",
+                        "text": "此菜品精选食材，以独特的烹饪方法，最大程度地刺激食 客的味蕾"
+                    },
+                    {
+                        "image_url": "http://mmbiz.qpic.cn/mmbiz/p98FjXy8LacgHxp3sJ3vn97bGLz0ib0Sfz1bjiaoOYA027iasqSG0sj piby4vce3AtaPu6cIhBHkt6IjlkY9YnDsfw/0",
+                        "text": "此菜品迎合大众口味，老少皆宜，营养均衡"
+                    }
+                ],
+                "time_limit": [
+                    {
+                        "type": "MONDAY",
+                        "begin_hour": 0,
+                        "end_hour": 10,
+                        "begin_minute": 10,
+                        "end_minute": 59
+                    },
+                    {
+                        "type": "HOLIDAY"
+                    }
+                ],
+                "business_service": [
+                    "BIZ_SERVICE_FREE_WIFI",
+                    "BIZ_SERVICE_WITH_PET",
+                    "BIZ_SERVICE_FREE_PARK",
+                    "BIZ_SERVICE_DELIVER"
+                ]
+            },
+            "deal_detail": "以下锅底2选1（有菌王锅、麻辣锅、大骨锅、番茄锅、清补 凉锅、酸菜鱼锅可选）：\n大锅1份 12元\n小锅2份 16元 "
+        },
+        "cash": {
+            "base_info": {},
+            "advanced_info": {},
+            "least_cost": 1000,
+            "reduce_cost": 100
+        },
+        "discount": {
+            "base_info": {},
+            "advanced_info": {},
+            "discount": 30
+        },
+        "gift": {
+            "base_info": {},
+            "advanced_info": {},
+            "gift": "可兑换音乐木盒一个"
+        },
+        "general_coupon": {
+            "base_info": {},
+            "advanced_info": {},
+            "default_detail": "优惠券专用，填写优惠详情"
+        },
+        "general_card": {
+            "sub_card_type": "GIFT_CARD",
+            "background_pic_url": "https://mmbiz.qlogo.cn/mmbiz/",
+            "base_info": {
+                "max_give_friend_times": 1,
+                "giftcard_info": {
+                    "price": 1
+                },
+                "logo_url": "https://mmbiz.qlogo.cn/mmbiz/p98FjXy8LaeMq67mEpDmkj05EtiaVcGOibVaVux3Agib1ibcHFkCoic7HuQWFawx9XGCNWIO085drjdxTib2nBHlYGAA/0?wx_fmt=gif",
+                "brand_name": "微信咖啡厅",
+                "code_type": "CODE_TYPE_QRCODE",
+                "title": "心意卡",
+                "color": "Color020",
+                "notice": "使用时向服务员出示",
+                "service_phone": "020-88888888",
+                "description": "不可与其他优惠同享",
+                "date_info": {
+                    "type": "DATE_TYPE_FIX_TIME_RANGE",
+                    "begin_timestamp": 1397577600,
+                    "end_timestamp": 1472724261
+                },
+                "sku": {
+                    "quantity": 50000000
+                },
+                "get_limit": 0,
+                "use_custom_code": false,
+                "can_give_friend": true,
+                "location_id_list": [213059884],
+                "center_title": "顶部居中按钮",
+                "center_sub_title": "按钮下方的wording",
+                "center_url": "www.qq.com",
+                "center_app_brand_user_name": "gh_86a091e50ad4@app",
+                "center_app_brand_pass": "pages/index/index",
+                "custom_url_name": "新品推荐",
+                "custom_url": "https://www.starbucks.com.cn/",
+                "custom_app_brand_user_name": "gh_86a091e50ad4@app",
+                "custom_app_brand_pass": "pages/index/index",
+                "need_push_on_view": true
+            },
+            "advanced_info": {
+                "text_image_list": [
+                    {
+                        "image_url": "http://mmbiz.qpic.cn/mmbiz/p98FjXy8LacgHxp3sJ3vn97bGLz0ib0Sfz1bjiaoOYA027iasqSG0sjpiby4vce3AtaPu6cIhBHkt6IjlkY9YnDsfw/0",
+                        "text": "此菜品精选食材，以独特的烹饪方法，最大程度地刺激食 客的味"
+                    },
+                    {
+                        "image_url": "http://mmbiz.qpic.cn/mmbiz/p98FjXy8LacgHxp3sJ3vn97bGLz0ib0Sfz1bjiaoOYA027iasqSG0sj piby4vce3AtaPu6cIhBHkt6IjlkY9YnDsfw/0",
+                        "text": "此菜品迎合大众口味，老少皆宜，营养均衡"
+                    }
+                ]
+            },
+            "supply_balance": true,
+            "prerogative": "礼品卡享受更多优惠",
+            "auto_activate": true,
+            "init_balance": 10000,
+            "custom_field1": {
+                "name": "优惠券",
+                "url": ""
+            },
+            "custom_field2": {
+                "name": "兑换券",
+                "url": ""
+            }
+        },
+        "member_card": {
+            "background_pic_url": "https://mmbiz.qlogo.cn/mmbiz/",
+            "base_info": {
+                "logo_url": "http://mmbiz.qpic.cn/mmbiz/iaL1LJM1mF9aRKPZ/0",
+                "brand_name": "海底捞",
+                "code_type": "CODE_TYPE_TEXT",
+                "title": "海底捞会员卡",
+                "color": "Color010",
+                "notice": "使用时向服务员出示此券",
+                "service_phone": "020-88888888",
+                "description": "不可与其他优惠同享",
+                "date_info": {
+                    "type": "DATE_TYPE_PERMANENT"
+                },
+                "sku": {
+                    "quantity": 50000000
+                },
+                "get_limit": 3,
+                "use_custom_code": false,
+                "can_give_friend": true,
+                "location_id_list": [123, 12321],
+                "custom_url_name": "立即使用",
+                "custom_url": "http://weixin.qq.com",
+                "custom_url_sub_title": "6个汉字tips",
+                "promotion_url_name": "营销入口1",
+                "promotion_url": "http://www.qq.com",
+                "need_push_on_view": true,
+                "pay_info": {
+                    "swipe_card": {
+                        "is_swipe_card": true
+                    }
+                }
+            },
+            "advanced_info": {
+                "use_condition": {
+                    "accept_category": "鞋类",
+                    "reject_category": "阿迪达斯",
+                    "can_use_with_other_discount": true
+                },
+                "abstract": {
+                    "abstract": "微信餐厅推出多种新季菜品，期待您的光临",
+                    "icon_url_list": [
+                        "http://mmbiz.qpic.cn/mmbiz/p98FjXy8LacgHxp3sJ3vn97bGLz0ib0Sfz1bjiaoOYA027iasqSG0sjpiby4vce3AtaPu6cIhBHkt6IjlkY9YnDsfw/0"
+                    ]
+                },
+                "text_image_list": [
+                    {
+                        "image_url": "http://mmbiz.qpic.cn/mmbiz/p98FjXy8LacgHxp3sJ3vn97bGLz0ib0Sfz1bjiaoOYA027iasqSG0sjpiby4vce3AtaPu6cIhBHkt6IjlkY9YnDsfw/0",
+                        "text": "此菜品精选食材，以独特的烹饪方法，最大程度地刺激食 客的味蕾"
+                    },
+                    {
+                        "image_url": "http://mmbiz.qpic.cn/mmbiz/p98FjXy8LacgHxp3sJ3vn97bGLz0ib0Sfz1bjiaoOYA027iasqSG0sj piby4vce3AtaPu6cIhBHkt6IjlkY9YnDsfw/0",
+                        "text": "此菜品迎合大众口味，老少皆宜，营养均衡"
+                    }
+                ],
+                "time_limit": [
+                    {
+                        "type": "MONDAY",
+                        "begin_hour": 0,
+                        "end_hour": 10,
+                        "begin_minute": 10,
+                        "end_minute": 59
+                    },
+                    {
+                        "type": "HOLIDAY"
+                    }
+                ],
+                "business_service": [
+                    "BIZ_SERVICE_FREE_WIFI",
+                    "BIZ_SERVICE_WITH_PET",
+                    "BIZ_SERVICE_FREE_PARK",
+                    "BIZ_SERVICE_DELIVER"
+                ]
+            },
+            "supply_bonus": true,
+            "supply_balance": false,
+            "prerogative": "test_prerogative",
+            "auto_activate": true,
+            "custom_field1": {
+                "name_type": "FIELD_NAME_TYPE_LEVEL",
+                "url": "http://www.qq.com"
+            },
+            "activate_url": "http://www.qq.com",
+            "custom_cell1": {
+                "name": "使用入口2",
+                "tips": "激活后显示",
+                "url": "http://www.qq.com"
+            },
+            "bonus_rule": {
+                "cost_money_unit": 100,
+                "increase_bonus": 1,
+                "max_increase_bonus": 200,
+                "init_increase_bonus": 10,
+                "cost_bonus_unit": 5,
+                "reduce_money": 100,
+                "least_money_to_use_bonus": 1000,
+                "max_reduce_bonus": 50
+            },
+            "discount": 10
+        },
+        "meeting_ticket": {
+            "base_info": {
+                "logo_url": "http://mmbiz.qpic.cn/mmbiz/iaL1LJM1mF9aRKPZJkmG8xXhiaHqkKSVMMWeN3hLut7X7hicFNjakmxibMLGWpXrEXB33367o7zHN0CwngnQY7zb7g/0",
+                "brand_name": "票务公司",
+                "code_type": "CODE_TYPE_TEXT",
+                "title": "XX会议",
+                "color": "Color010",
+                "notice": "使用时向检票员出示此券",
+                "service_phone": "020-88888888",
+                "description": "请务必准时入场",
+                "date_info": {
+                    "type": "1",
+                    "begin_timestamp": 1397577600,
+                    "end_timestamp": 1422724261
+                },
+                "sku": {
+                    "quantity": 50000000
+                },
+                "get_limit": 3,
+                "use_custom_code": false,
+                "bind_openid": false,
+                "can_share": true,
+                "can_give_friend": true,
+                "location_id_list": [123, 12321, 345345],
+                "custom_url_name": "查看更多",
+                "custom_url": "http://www.qq.com",
+                "custom_url_sub_title": "6个汉字tips"
+            },
+            "meeting_detail": "会议时间：xxx;地点：xxx "
+        },
+        "scenic_ticket": {
+            "base_info": {},
+            "ticket_class": "全日票"
+        },
+        "movie_ticket": {
+            "base_info": {},
+            "detail": "电影名：xxx，电影简介：xxx"
+        },
+        "boarding_pass": {
+            "base_info": {},
+            "from": "成都",
+            "to": "广州",
+            "flight": "CE123",
+            "departure_time": "1434507901",
+            "landing_time": "1434909901",
+            "air_model": "空客A320"
+        }
+    }
+}

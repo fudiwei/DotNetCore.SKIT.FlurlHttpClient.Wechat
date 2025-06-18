@@ -1,0 +1,11 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": true,
+    "next_cursor": "GENIG",
+    "invitees": [
+        {
+            "userid": "USERID"
+        }
+    ]
+}

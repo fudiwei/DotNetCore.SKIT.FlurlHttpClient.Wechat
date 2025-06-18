@@ -1,0 +1,12 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "department": {
+        "id": 2,
+        "name": "广州研发中心",
+        "name_en": "RDGZ",
+        "department_leader": ["zhangsan", "lisi"],
+        "parentid": 1,
+        "order": 10
+    }
+}

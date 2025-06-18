@@ -1,0 +1,15 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "control_info": {
+        "biz_control_type": "E_PAGE_CONTROL_BIZ",
+        "system_biz_control_type": "E_PAGE_CONTROL_NORMAL",
+        "list": [
+            {
+                "page_id": "abcedfghifk=+Uasdaseq14fadkf8123h4jk",
+                "page_control_type": "E_PAGE_CONTROL_BIZ",
+                "system_page_control_type": "E_PAGE_CONTROL_SYSTEM"
+            }
+        ]
+    }
+}

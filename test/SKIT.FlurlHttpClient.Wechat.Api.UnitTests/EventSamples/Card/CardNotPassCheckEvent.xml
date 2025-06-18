@@ -1,0 +1,9 @@
+﻿<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[FromUser]]></FromUserName>
+    <CreateTime>123456789</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[card_not_pass_check]]></Event>
+    <CardId><![CDATA[cardid]]></CardId>
+    <RefuseReason><![CDATA[非法代制]]></RefuseReason>
+</xml>

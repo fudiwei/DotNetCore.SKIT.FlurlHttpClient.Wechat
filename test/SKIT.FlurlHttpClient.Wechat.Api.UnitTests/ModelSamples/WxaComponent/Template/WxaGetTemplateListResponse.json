@@ -1,0 +1,20 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "template_list": [
+        {
+            "create_time": 1488965944,
+            "user_version": "VVV",
+            "user_desc": "AAS",
+            "template_id": 0,
+            "template_type": 1
+        },
+        {
+            "create_time": 1504790906,
+            "user_version": "11",
+            "user_desc": "111111",
+            "template_id": 4,
+            "template_type": 0
+        }
+    ]
+}

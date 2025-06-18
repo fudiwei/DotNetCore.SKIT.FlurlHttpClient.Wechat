@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "jobid": "BUYJOBID",
+    "invalid_list": [
+        {
+            "corpid": "CORPID",
+            "errcode": 1,
+            "errmsg": "xxx"
+        }
+    ]
+}

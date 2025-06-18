@@ -1,0 +1,25 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "data": {
+        "list": [
+            {
+                "campaign_id": 23456,
+                "campaign_name": "朋友圈推广计划测试1",
+                "configured_status": "AD_STATUS_NORMAL",
+                "campaign_type": "CAMPAIGN_TYPE_WECHAT_MOMENTS",
+                "product_type": "PRODUCT_TYPE_LINK_WECHAT",
+                "daily_budget": 0,
+                "budget_reach_date": 0,
+                "created_time": 1459924690,
+                "last_modified_time": 1459924690
+            }
+        ],
+        "page_info": {
+            "total_number": 1,
+            "total_page": 1,
+            "page_size": 10,
+            "page": 1
+        }
+    }
+}

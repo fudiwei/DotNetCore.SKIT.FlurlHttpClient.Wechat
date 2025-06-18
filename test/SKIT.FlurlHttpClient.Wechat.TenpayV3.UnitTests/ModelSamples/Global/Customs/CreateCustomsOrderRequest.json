@@ -1,0 +1,14 @@
+﻿{
+    "appid": "wxd678efh567hg6787",
+    "mchid": "1230000109",
+    "out_trade_no": "20150806125346",
+    "transaction_id": "1000320306201511078440737890",
+    "customs": "SHANGHAI_ZS",
+    "merchant_customs_no": "123456",
+    "duty": 888,
+    "sub_order_no": "20150806125346",
+    "fee_type": "CNY",
+    "order_fee": 888,
+    "transport_fee": 888,
+    "product_fee": 888
+}

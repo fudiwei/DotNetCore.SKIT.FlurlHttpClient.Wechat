@@ -1,0 +1,20 @@
+﻿{
+    "recordlist": [
+        {
+            "openid": "oDF3iY9WMaswOPWjCIp_f3Bnpljk",
+            "opercode": 2002,
+            "text": " 您好，客服test1为您服务。",
+            "time": 1400563710,
+            "worker": "test1@test"
+        },
+        {
+            "openid": "oDF3iY9WMaswOPWjCIp_f3Bnpljk",
+            "opercode": 2003,
+            "text": "你好，有什么事情？",
+            "time": 1400563731,
+            "worker": "test1@test"
+        }
+    ],
+    "number": 2,
+    "msgid": 20165267
+}

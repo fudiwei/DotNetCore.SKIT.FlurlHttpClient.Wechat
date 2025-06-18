@@ -1,0 +1,14 @@
+{
+    "sp_mchid": "1900000100",
+    "sub_mchid": "1900000100",
+    "transaction_id": "4200000000000000000000000000",
+    "order_id": "1217752501201407033233368018",
+    "out_order_no": "P20150806125346",
+    "receiver": {
+        "type": "MERCHANT_ID",
+        "account": "1900000100",
+        "amount": 888,
+        "description": "运费/交易分账/及时奖励"
+    },
+    "success_time": "2018-06-08T10:34:56+08:00"
+}

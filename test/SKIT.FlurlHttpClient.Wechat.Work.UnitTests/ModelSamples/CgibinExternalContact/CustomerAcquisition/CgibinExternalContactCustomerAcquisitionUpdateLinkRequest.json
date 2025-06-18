@@ -1,0 +1,9 @@
+{
+    "link_id": "LINK_ID",
+    "link_name": "获客链接1号",
+    "range": {
+        "user_list": [ "zhangsan", "lisi" ],
+        "department_list": [ 2, 3 ]
+    },
+    "skip_verify": true
+}

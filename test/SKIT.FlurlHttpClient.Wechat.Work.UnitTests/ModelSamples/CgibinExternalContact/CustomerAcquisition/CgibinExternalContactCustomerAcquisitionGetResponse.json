@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "link": {
+        "link_id": "LINK_ID_AAA",
+        "link_name": "LINK_NAME",
+        "url": "work.weixin.qq.com/ca/xxxxxx",
+        "create_time": 1672502400
+    },
+    "range": {
+        "user_list": [ "rocky", "sam" ],
+        "department_list": [ 1 ]
+    },
+    "skip_verify": true
+}

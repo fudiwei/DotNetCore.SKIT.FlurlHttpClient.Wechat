@@ -1,0 +1,22 @@
+﻿<xml>
+   <ToUserName><![CDATA[gh_885ece6ed5eb]]></ToUserName>
+   <FromUserName><![CDATA[oMKbH5MtRalx0-1bIdmAuduh]]></FromUserName>
+   <CreateTime>1623856215</CreateTime>
+   <MsgType><![CDATA[event]]></MsgType>
+   <Event><![CDATA[open_product_scene_group_audit]]></Event>
+   <SceneGroupAudit>
+      <group_id>1</group_id>
+      <reason><![CDATA[审核通过，可以在视频号场景使用。]]></reason>
+      <name><![CDATA[视频号、公众号场景]]></name>
+      <scene_group_ext_list>
+         <ext_id>1</ext_id>
+         <status>1</status>
+         <name><![CDATA[绑定视频号]]></name>
+      </scene_group_ext_list>
+      <scene_group_ext_list>
+         <ext_id>2</ext_id>
+         <status>1</status>
+         <name><![CDATA[添加推广员]]></name>
+      </scene_group_ext_list>
+   </SceneGroupAudit>
+</xml>

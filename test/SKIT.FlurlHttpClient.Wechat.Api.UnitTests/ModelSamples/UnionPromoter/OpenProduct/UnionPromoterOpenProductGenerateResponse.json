@@ -1,0 +1,22 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "pid": "oJtf15NzExNvQ8UnT9SNOWQpyOpw_466373468",
+            "productInfo": {
+                "productId": "413063159",
+                "shopName": "测试商品精品商城",
+                "totalStockNum": 100
+            },
+            "shareInfo": {
+                "appId": "wxd5246f9e9041f745",
+                "username": "gh_760d082de91f",
+                "path": "pages/detail/detail?productId=3354&open_league_ticket=bGVhZ3VldGlja2V0OjE1NjAzOTc5NzU1MDA2MjU1Mjg0NDM5OTg2",
+                "promotionWording": "😨大家都在等这款，每次都巨抢手👑把它带回家！❗️售完即止💰\n————\n测试礼盒\n\n优惠价：62元\n\n下单：https://mmbizurl.cn/u/Kr1xRsVy",
+                "promotionUrl": "https://mmbizurl.cn/u/Kr1xRsV",
+                "promotionTag": "#小程序://测试商品精品商城/【佳琦会员专享测试商品/gRDKwkGQYkTc"
+            }
+        }
+    ]
+}

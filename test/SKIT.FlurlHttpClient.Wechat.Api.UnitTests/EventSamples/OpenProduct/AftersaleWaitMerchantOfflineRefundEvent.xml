@@ -1,0 +1,11 @@
+﻿<xml>
+    <ToUserName>gh_abcdefg</ToUserName>
+    <FromUserName>oABCD</FromUserName>
+    <CreateTime>12344555555</CreateTime>
+    <MsgType>event</MsgType>
+    <Event>aftersale_wait_merchant_offline_refund</Event>
+    <aftersale_info>
+        <aftersale_id>123456</aftersale_id>
+        <out_aftersale_id>1234567</out_aftersale_id>
+    </aftersale_info>
+</xml>

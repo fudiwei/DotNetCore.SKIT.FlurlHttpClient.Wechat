@@ -1,0 +1,12 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": [
+        {
+            "kid": 1,
+            "name": "物品名称",
+            "example": "名称",
+            "rule": "thing"
+        }
+    ]
+}

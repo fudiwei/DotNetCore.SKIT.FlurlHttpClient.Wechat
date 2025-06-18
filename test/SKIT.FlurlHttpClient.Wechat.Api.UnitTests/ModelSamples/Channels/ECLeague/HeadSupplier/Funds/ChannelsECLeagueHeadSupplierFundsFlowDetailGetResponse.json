@@ -1,0 +1,13 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "funds_flow": {
+        "flow_id": "123455",
+        "funds_type": 2,
+        "amount": 4,
+        "balance": 139,
+        "bookkeeping_time": "2023-02-11 15:45:39",
+        "remark": "分账",
+        "order_id": "123455678"
+    }
+}

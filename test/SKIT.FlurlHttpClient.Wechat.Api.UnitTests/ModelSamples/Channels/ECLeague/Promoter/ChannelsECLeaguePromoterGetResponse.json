@@ -1,0 +1,11 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "promoter": {
+        "finder_id": "sph1234",
+        "status": 1,
+        "invite_time": 0,
+        "sale_product_number": 0,
+        "sale_gmv": 0
+    }
+}

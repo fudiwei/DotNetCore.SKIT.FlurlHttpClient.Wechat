@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "customer": [
+        {
+            "external_userid": "woAJ2GCAAAXtWyujaWJHDDGi0mACBBBB",
+            "errcode": 0
+        },
+        {
+            "external_userid": "woAJ2GCAAAXtWyujaWJHDDGi0mACAAAA",
+            "errcode": 40096
+        }
+    ]
+}

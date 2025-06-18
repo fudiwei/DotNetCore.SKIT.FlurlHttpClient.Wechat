@@ -1,0 +1,32 @@
+﻿{
+    "config_id": "42b34949e138eb6e027c123cba77fAAA",
+    "remark": "渠道客户",
+    "skip_verify": true,
+    "style": 1,
+    "state": "teststate",
+    "user": ["zhangsan", "lisi", "wangwu"],
+    "party": [2, 3],
+    "expires_in": 86400,
+    "chat_expires_in": 86400,
+    "unionid": "oxTWIuGaIt6gTKsQRLau2M0AAAA",
+    "conclusions": {
+        "text": {
+            "content": "文本消息内容"
+        },
+        "image": {
+            "media_id": "MEDIA_ID"
+        },
+        "link": {
+            "title": "消息标题",
+            "picurl": "https://example.pic.com/path",
+            "desc": "消息描述",
+            "url": "https://example.link.com/path"
+        },
+        "miniprogram": {
+            "title": "消息标题",
+            "pic_media_id": "MEDIA_ID",
+            "appid": "wx8bd80126147dfAAA",
+            "page": "/path/index"
+        }
+    }
+}

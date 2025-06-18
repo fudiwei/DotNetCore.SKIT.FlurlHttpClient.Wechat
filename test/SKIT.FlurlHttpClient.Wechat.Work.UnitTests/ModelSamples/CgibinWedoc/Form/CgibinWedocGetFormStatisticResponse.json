@@ -1,0 +1,29 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "fill_cnt": 1,
+    "fill_user_cnt": 1,
+    "unfill_user_cnt": 90,
+    "submit_users": [
+        {
+            "userid": "USERID1",
+            "submit_time": 1668418200,
+            "answer_id": 1,
+            "user_name": "USER_NAME1"
+        },
+        {
+            "tmp_external_userid": "TMP_EXTERNAL_USERID1",
+            "submit_time": 1668418200,
+            "answer_id": 2,
+            "user_name": "USER_NAME2"
+        }
+    ],
+    "unfill_users": [
+        {
+            "userid": "USERID1",
+            "user_name": "USER_NAME1"
+        }
+    ],
+    "has_more": false,
+    "cursor": 1
+}

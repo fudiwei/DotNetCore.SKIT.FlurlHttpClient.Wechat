@@ -1,0 +1,31 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "planList": [
+        {
+            "planId": "d3g1MzllMGI0ODcyZjE5NmQxLDIwMjU0MTQzOTUwMTg3NTYwOTYsMQ==",
+            "planName": "参数加了plantype",
+            "planStatus": "VALID",
+            "planType": "PROMOTION_TARGETED_PLAN_TYPE_OPEN",
+            "planDesc": "最后一个",
+            "planStartTime": 1630339200,
+            "planEndTime": 1631203200,
+            "acceptPromoterCnt": 0,
+            "auditingPromoterCnt": 0,
+            "inviteUrl": "https://union.weixin.qq.com/mp/promoter/target/addPlan?planId=d3g1MzllMGI0ODcyZjE5NmQxLDIwMjU0MTQzOTUwMTg3NTYwOTYsMQ=="
+        }
+    ],
+    "total": 17,
+    "plan": {
+        "planId": "d3g1MzllMGI0ODcyZjE5NmQxLDIwMjU0MTQzOTUwMTg3NTYwOTYsMQ==",
+        "planName": "参数加了plantype",
+        "planStatus": "VALID",
+        "planType": "PROMOTION_TARGETED_PLAN_TYPE_OPEN",
+        "planDesc": "最后一个",
+        "planStartTime": 1630339200,
+        "planEndTime": 1631203200,
+        "acceptPromoterCnt": 0,
+        "auditingPromoterCnt": 0,
+        "inviteUrl": "https://union.weixin.qq.com/mp/promoter/target/addPlan?planId=d3g1MzllMGI0ODcyZjE5NmQxLDIwMjU0MTQzOTUwMTg3NTYwOTYsMQ=="
+    }
+}

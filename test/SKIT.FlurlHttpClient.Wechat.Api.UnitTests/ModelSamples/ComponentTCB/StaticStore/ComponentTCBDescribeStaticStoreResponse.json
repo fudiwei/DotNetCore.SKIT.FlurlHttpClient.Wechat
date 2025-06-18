@@ -1,0 +1,13 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": [
+        {
+            "env": "myttest-8gu57so0bd9f9e8a",
+            "domain": "myttest-8gu57so0bd9f9e8a-1304480914.tcloudbaseapp.com",
+            "bucket": "b8b3-static-myttest-8gu57so0bd9f9e8a-1304480914",
+            "regoin": "ap-shanghai",
+            "status": "online"
+        }
+    ]
+}

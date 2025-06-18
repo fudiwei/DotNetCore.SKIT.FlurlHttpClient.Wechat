@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "triggers": [
+        {
+            "trigger_name": "myTrigger",
+            "config": "0 0 2 1 * * *",
+            "type": "timer"
+        }
+    ]
+}

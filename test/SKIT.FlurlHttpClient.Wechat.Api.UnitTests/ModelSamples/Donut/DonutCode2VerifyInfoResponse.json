@@ -1,0 +1,30 @@
+{
+    "errcode": 0,
+    "login_info": {
+        "type": "weixinApp",
+        "login_time": 12345678,
+        "appid": "aaa"
+    },
+    "user_info": {
+        "user_id": "xxx",
+        "openapp_info": {
+            "appid": "bbb",
+            "openid": "ccc",
+            "unionid": "ddd",
+            "headimgurl": "HEADIMGURL",
+            "nickname": "NICKNAME"
+        },
+        "phone_info": {
+            "phone": "137xxxxxxx"
+        },
+        "apple_info": {
+            "bundleid": "eee",
+            "apple_user_id": "fff"
+        },
+        "miniprogram_info": {
+            "appid": "bbb",
+            "openid": "ccc",
+            "unionid": "ddd"
+        }
+    }
+}

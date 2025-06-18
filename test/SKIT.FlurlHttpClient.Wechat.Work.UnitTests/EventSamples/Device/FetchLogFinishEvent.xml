@@ -1,0 +1,7 @@
+﻿<xml>
+    <DeviceSn><![CDATA[testsn]]></DeviceSn>
+    <InfoType><![CDATA[fetch_log_finish]]></InfoType>
+    <TimeStamp>1548074765</TimeStamp>
+    <ServiceCorpId><![CDATA[xxxx]]></ServiceCorpId>
+    <MediaId><![CDATA[testmediaid]]></MediaId>
+</xml>

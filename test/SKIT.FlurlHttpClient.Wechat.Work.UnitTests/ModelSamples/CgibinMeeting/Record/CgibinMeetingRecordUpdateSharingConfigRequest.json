@@ -1,0 +1,13 @@
+{
+    "meeting_record_id": "record",
+    "meetingid": "MEETINGID",
+    "sharing_config": {
+        "enable_sharing": true,
+        "sharing_auth_type": 0,
+        "enable_password": true,
+        "password": "123352",
+        "enable_sharing_expire": true,
+        "sharing_expire": 1999999999,
+        "allow_download": true
+    }
+}

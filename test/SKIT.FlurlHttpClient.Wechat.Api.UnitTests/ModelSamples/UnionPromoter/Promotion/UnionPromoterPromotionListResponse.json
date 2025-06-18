@@ -1,0 +1,16 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "promotionSourceList": [
+        {
+            "promotionSourceName": "23444444444",
+            "promotionSourcePid": "oqt8u5MV-nX9iyrzARrq-QFsxI28_648499549"
+        },
+        {
+            "promotionSourceName": "123",
+            "promotionSourcePid": "oqt8u5MV-nX9iyrzARrq-QFsxI28_1515204302"
+        }
+    ],
+    "total": 91,
+    "promotionMaxCnt": 100
+}

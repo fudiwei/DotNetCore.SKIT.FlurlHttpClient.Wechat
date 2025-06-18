@@ -1,0 +1,17 @@
+﻿{
+    "order_id": "1511169724",
+    "card_ext": {
+        "user_card": {
+            "invoice_user_data": {
+                "billing_time": "1511169724",
+                "billing_code": "aabbccdd",
+                "billing_no": "1511169724",
+                "s_pdf_media_id": "s_pdf_media_id",
+                "fee": 123,
+                "title": "灌哥发票"
+            }
+        }
+    },
+    "card_id": "pjZ8Yt7xiy3b9UfffRIA4Tm2xTnw",
+    "appid": "wxc0b84a53ed8e8d29"
+}

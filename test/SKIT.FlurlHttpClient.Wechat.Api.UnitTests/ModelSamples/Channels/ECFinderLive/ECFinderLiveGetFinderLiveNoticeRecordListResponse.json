@@ -1,0 +1,15 @@
+{
+    "errcode": "0",
+    "errmsg": "ok",
+    "live_notice_list": [
+        {
+            "notice_id": "直播预约id",
+            "status": 0,
+            "status_wording": "状态描述",
+            "start_time": "1234567890",
+            "description": "描述",
+            "nickname": "开播视频号昵称",
+            "head_url": "开播视频号头像"
+        }
+    ]
+}

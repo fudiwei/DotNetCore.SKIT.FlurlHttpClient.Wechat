@@ -1,0 +1,24 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "business": {
+        "base_info": {
+            "business_name": "龙涤小区熟食店",
+            "address": "舍利街道中都大道龙涤小区阿升电脑旁",
+            "telephone": "12345678",
+            "city": "哈尔滨市",
+            "province": "黑龙江省",
+            "longitude": 126.94355011,
+            "latitude": 45.556098938,
+            "photo_list": [
+                {
+                    "photo_url": "http://mmbiz.qpic.cn/mmbiz_png/tW66AWvE2K6icjle1q6nbfKr0HMibzxKqOUfG1hARktHV84ZZojt9cXZ0UicDevZQUicckPw68lfo2Le3RjpEo6oLg/0?wx_fmt=png"
+                }
+            ],
+            "open_time": "11:00-12:00",
+            "poi_id": "472671857",
+            "status": 2,
+            "district": "value"
+        }
+    }
+}

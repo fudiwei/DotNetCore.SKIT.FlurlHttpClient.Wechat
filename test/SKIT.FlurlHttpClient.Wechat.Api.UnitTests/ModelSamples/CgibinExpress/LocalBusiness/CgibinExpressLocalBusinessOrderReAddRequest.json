@@ -1,0 +1,74 @@
+﻿{
+    "cargo": {
+        "cargo_first_class": "美食夜宵",
+        "cargo_second_class": "零食小吃",
+        "goods_detail": {
+            "goods": [
+                {
+                    "good_count": 1,
+                    "good_name": "水果",
+                    "good_price": 10,
+                    "good_unit": "元"
+                },
+                {
+                    "good_count": 2,
+                    "good_name": "蔬菜",
+                    "good_price": 20,
+                    "good_unit": "元"
+                }
+            ]
+        },
+        "goods_height": 1,
+        "goods_length": 3,
+        "goods_value": 5,
+        "goods_weight": 1,
+        "goods_width": 2
+    },
+    "delivery_id": "SFTC",
+    "delivery_sign": "01234567890123456789",
+    "openid": "oABC123456",
+    "order_info": {
+        "delivery_service_code": "",
+        "expected_delivery_time": 0,
+        "is_direct_delivery": 0,
+        "is_finish_code_needed": 1,
+        "is_insured": 0,
+        "is_pickup_code_needed": 1,
+        "note": "test_note",
+        "order_time": 1555220757,
+        "order_type": 0,
+        "poi_seq": "1111",
+        "tips": 0
+    },
+    "receiver": {
+        "address": "xxx地铁站",
+        "address_detail": "2号楼202",
+        "city": "北京市",
+        "coordinate_type": 0,
+        "lat": 40.15296,
+        "lng": 116.50603,
+        "name": "老王",
+        "phone": "18512345678"
+    },
+    "sender": {
+        "address": "xx大厦",
+        "address_detail": "1号楼101",
+        "city": "北京市",
+        "coordinate_type": 0,
+        "lat": 40.448612,
+        "lng": 116.383075,
+        "name": "刘一",
+        "phone": "13712345678"
+    },
+    "shop": {
+        "goods_count": 2,
+        "goods_name": "宝贝",
+        "img_url": "https://mmbiz.qpic.cn/mmbiz_png/xxxxxxxxx/0?wx_fmt=png",
+        "wxa_path": "/page/index/index"
+    },
+    "shop_no": "12345678",
+    "sub_biz_id": "sub_biz_id_1",
+    "shop_order_id": "SFTC_001",
+    "shopid": "122222222",
+    "delivery_token": "xxxxxxxx"
+}

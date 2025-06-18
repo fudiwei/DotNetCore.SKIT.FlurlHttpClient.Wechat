@@ -1,0 +1,50 @@
+{
+    "code": "CODE",
+    "msgid": "MSG_ID",
+    "msgtype": "MSG_TYPE",
+    "text": {
+        "content": "欢迎咨询"
+    },
+    "msgmenu": {
+        "head_content": "欢迎咨询",
+        "list": [
+            {
+                "type": "click",
+                "click": {
+                    "id": "101",
+                    "content": "接入人工"
+                }
+            },
+            {
+                "type": "click",
+                "click": {
+                    "id": "102",
+                    "content": "继续跟机器人聊天"
+                }
+            },
+            {
+                "type": "view",
+                "view": {
+                    "url": "https://work.weixin.qq.com",
+                    "content": "点击跳转到自助查询页面"
+                }
+            },
+            {
+                "type": "miniprogram",
+                "miniprogram": {
+                    "appid": "wx123123123123123",
+                    "pagepath": "pages/index?userid=zhangsan&orderid=123123123",
+                    "content": "点击打开小程序查询更多"
+                }
+            },
+            {
+                "type": "text",
+                "text": {
+                    "content": "纯文本，支持\n换行",
+                    "no_newline": 0
+                }
+            }
+        ],
+        "tail_content": "如有问题，随时转人工服务"
+    }
+}

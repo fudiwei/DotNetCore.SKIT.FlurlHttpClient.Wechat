@@ -1,0 +1,13 @@
+﻿{
+    "mchid": "1234567890",
+    "merchant_name": "万象天地",
+    "shop_name": "重庆烤鱼（万象天地店）",
+    "shop_number": "50001",
+    "openid": "swe23be954ffots3jrvjweslfmde",
+    "appid": "wx2c23be954ff1624f",
+    "refund_time": "2018-05-23T12:13:50+08:00",
+    "pay_amount": 100,
+    "refund_amount": 100,
+    "transaction_id": "42000001217201407033233368018",
+    "refund_id": "1217752501201407033233368999"
+}

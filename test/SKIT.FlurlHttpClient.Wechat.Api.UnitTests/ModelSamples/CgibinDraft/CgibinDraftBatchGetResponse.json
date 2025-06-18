@@ -1,0 +1,26 @@
+﻿{
+    "total_count": 0,
+    "item_count": 0,
+    "item": [
+        {
+            "media_id": "MEDIA_ID",
+            "content": {
+                "news_item": [
+                    {
+                        "title": "TITLE",
+                        "author": "AUTHOR",
+                        "digest": "DIGEST",
+                        "content": "CONTENT",
+                        "content_source_url": "CONTENT_SOURCE_URL",
+                        "thumb_media_id": "THUMB_MEDIA_ID",
+                        "show_cover_pic": 1,
+                        "need_open_comment": 0,
+                        "only_fans_can_comment": 0,
+                        "url": "URL"
+                    }
+                ]
+            },
+            "update_time": 0
+        }
+    ]
+}

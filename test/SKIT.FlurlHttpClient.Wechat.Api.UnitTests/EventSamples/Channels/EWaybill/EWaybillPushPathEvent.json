@@ -1,0 +1,14 @@
+{
+    "ToUserName": "gh_*",
+    "FromUserName": "OpenID",
+    "CreateTime": 1662480000,
+    "MsgType": "event",
+    "Event": "ewaybill_push_path",
+    "waybill_info": {
+        "ewaybill_order_id": 123123123123123,
+        "waybill_id": "xxxx",
+        "update_time": 1231231,
+        "status": 1,
+        "desc": "您的快件已签收"
+    }
+}

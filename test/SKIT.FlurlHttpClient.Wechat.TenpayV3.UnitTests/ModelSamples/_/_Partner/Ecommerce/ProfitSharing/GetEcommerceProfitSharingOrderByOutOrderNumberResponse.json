@@ -1,0 +1,19 @@
+﻿{
+    "sub_mchid": "1900000109",
+    "transaction_id": "4208450740201411110007820472",
+    "out_order_no": "P20150806125346",
+    "order_id": "3008450740201411110007820472",
+    "status": "FINISHED",
+    "receivers": [
+        {
+            "receiver_mchid": "1900000110",
+            "amount": 100,
+            "description": "分给商户1900000110",
+            "result": "SUCCESS",
+            "finish_time": "2015-05-20T13:29:35.120+08:00",
+            "fail_reason": "ACCOUNT_ABNORMAL"
+        }
+    ],
+    "finish_amount": 100,
+    "finish_description": "分账完结"
+}

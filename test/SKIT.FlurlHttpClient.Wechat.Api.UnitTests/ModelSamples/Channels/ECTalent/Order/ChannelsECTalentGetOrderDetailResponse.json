@@ -1,0 +1,30 @@
+{
+    "errcode": "0",
+    "errmsg": "ok",
+    "base_info": {
+        "order_id": "202402260001",
+        "spu_id": "123456",
+        "sku_id": "987654",
+        "order_status": 2,
+        "actual_payment": "99.99",
+        "order_create_time": 1700000000,
+        "order_update_time": 1700003600,
+        "buyer_info": {
+            "open_id": "o1234567890abcdef",
+            "union_id": "u1234567890abcdef"
+        }
+    },
+    "commission_info": {
+        "state": 1,
+        "ratio": "0",
+        "expect_settle_time": 1701000000,
+        "expect_settlement": "9.99",
+        "actual_settle_time": 1702000000,
+        "actual_settlement": "9.99"
+    },
+    "channel_info": {
+        "channel_type": 2,
+        "channel_id": "channel_12345",
+        "channel_name": "某视频号"
+    }
+}

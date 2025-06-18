@@ -1,0 +1,12 @@
+{
+    "after_sale_order_id": "1768034782998651",
+    "type": 1,
+    "amount": 100,
+    "merchant_update_desc": "xxx",
+    "update_reason_type": "123",
+    "merchant_update_type": 6,
+    "media_ids": [
+        "id1",
+        "id2"
+    ]
+}

@@ -1,0 +1,182 @@
+{
+    "product_id": "10000000089215",
+    "title": "任天堂 Nintendo Switch 国行续航增强版 NS家用体感游戏机掌机 便携掌上游戏机 红蓝主机",
+    "sub_title": "随时随地，一起趣玩。【更新】",
+    "head_imgs": [
+        "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ"
+    ],
+    "desc_info": {
+        "imgs": [
+            "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ"
+        ],
+        "desc": "物美价廉"
+    },
+    "cats": [],
+    "cats_v2": [
+        {
+            "cat_id": "10000111"
+        },
+        {
+            "cat_id": "10000113"
+        },
+        {
+            "cat_id": "6091"
+        }
+    ],
+    "attrs": [
+        {
+            "attr_key": "产地",
+            "attr_value": "四川成都"
+        },
+        {
+            "attr_key": "材质",
+            "attr_value": "玻璃"
+        },
+        {
+            "attr_key": "适用人群",
+            "attr_value": "青年;中年"
+        },
+        {
+            "attr_key": "数量",
+            "attr_value": "33"
+        },
+        {
+            "attr_key": "精度",
+            "attr_value": "3.001"
+        },
+        {
+            "attr_key": "重量",
+            "attr_value": "38 mg"
+        },
+        {
+            "attr_key": "毛重",
+            "attr_value": "380 kg"
+        }
+    ],
+    "express_info": {
+        "template_id": "47428464001"
+    },
+    "skus": [
+        {
+            "sku_id": "462966903",
+            "thumb_img": "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+            "sale_price": 1300,
+            "stock_num": 100,
+            "sku_code": "A24525252",
+            "sku_attrs": [
+                {
+                    "attr_key": "产地",
+                    "attr_value": "四川成都"
+                },
+                {
+                    "attr_key": "材质",
+                    "attr_value": "玻璃"
+                },
+                {
+                    "attr_key": "适用人群",
+                    "attr_value": "青年;中年"
+                },
+                {
+                    "attr_key": "数量",
+                    "attr_value": "33"
+                },
+                {
+                    "attr_key": "精度",
+                    "attr_value": "3.001"
+                },
+                {
+                    "attr_key": "重量",
+                    "attr_value": "38 mg"
+                },
+                {
+                    "attr_key": "毛重",
+                    "attr_value": "380 kg"
+                }
+            ],
+            "sku_deliver_info": {
+                "stock_type": 0
+            }
+        },
+        {
+            "thumb_img": "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+            "sale_price": 1000,
+            "stock_num": 100,
+            "sku_code": "A24525252",
+            "sku_attrs": [
+                {
+                    "attr_key": "产地",
+                    "attr_value": "四川成都"
+                },
+                {
+                    "attr_key": "材质",
+                    "attr_value": "玻璃"
+                },
+                {
+                    "attr_key": "适用人群",
+                    "attr_value": "青年;中年"
+                },
+                {
+                    "attr_key": "数量",
+                    "attr_value": "33"
+                },
+                {
+                    "attr_key": "精度",
+                    "attr_value": "3.001"
+                },
+                {
+                    "attr_key": "重量",
+                    "attr_value": "38 mg"
+                },
+                {
+                    "attr_key": "毛重",
+                    "attr_value": "380 kg"
+                }
+            ],
+            "sku_deliver_info": {
+                "stock_type": 0
+            }
+        }
+    ],
+    "product_qua_infos": [
+        {
+            "qua_id": "1111488",
+            "qua_url": [
+                "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+                "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn71nCC"
+            ]
+        },
+        {
+            "qua_id": "1111489",
+            "qua_url": [
+                "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn51nMQ",
+                "https://mmecimage.cn/p/wx37f38d59298839c3/HJE9eJaEc5bJk-eaArVdILSB7MMaHgdK2-JIn71nCC"
+            ]
+        }
+    ],
+    "size_chart": {
+        "enable": true,
+        "specification_list": [
+            {
+                "name": "",
+                "unit": "",
+                "is_range": false,
+                "value_list": [
+                    {
+                        "key": "1",
+                        "value": "S",
+                        "left": "",
+                        "right": ""
+                    },
+                    {
+                        "key": "2",
+                        "value": "M"
+                    },
+                    {
+                        "key": "3",
+                        "value": "L"
+                    }
+                ]
+            }
+        ]
+    }
+}

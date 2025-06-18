@@ -1,0 +1,16 @@
+﻿{
+    "invoice_info": {
+        "base_info": {
+            "logo_url": "http://mmbiz.qpic.cn/mmbiz/iaL1LJM1mF9aRKPZJkmG8xXhiaHqkKSVMMWeN3hLut7X7hicFNjakmxibMLGWpXrEXB33367o7zHN0CwngnQY7zb7g/0",
+            "title": "xx公司",
+            "custom_url_name": "xyz",
+            "custom_url": "xyz",
+            "custom_url_sub_title": "xyz",
+            "promotion_url_name": "puname",
+            "promotion_url": "purl",
+            "promotion_url_sub_title": "ptitle"
+        },
+        "type": " 广东省增值税普通发票 ",
+        "payee": " 测试 - 收款方 "
+    }
+}

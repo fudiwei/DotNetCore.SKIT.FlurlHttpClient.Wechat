@@ -1,0 +1,13 @@
+﻿{
+    "corpid": "CORPID",
+    "transfer_list": [
+        {
+            "handover_userid": "USERID",
+            "takeover_userid": "USERID"
+        },
+        {
+            "handover_userid": "USERID",
+            "takeover_userid": "USERID"
+        }
+    ]
+}

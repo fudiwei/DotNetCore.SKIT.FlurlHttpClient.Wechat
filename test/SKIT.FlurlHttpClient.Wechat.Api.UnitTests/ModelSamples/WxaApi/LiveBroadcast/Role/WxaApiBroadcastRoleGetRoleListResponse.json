@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "total": 1,
+    "list": [
+        {
+            "headingimg": "http://wx.qlogo.cn/mmhead/Q3auHgzwzM5jBhFwrHoeoaxTlhP9YzlVica7wu6lZLnGreKAj7CVicA/0",
+            "nickname": "test1",
+            "openid": "o7esq5MvImF2SEm7OHYohausj2o",
+            "roleList": [2, 3],
+            "updateTimestamp": "1600340080",
+            "username": "o0****0o"
+        }
+    ]
+}

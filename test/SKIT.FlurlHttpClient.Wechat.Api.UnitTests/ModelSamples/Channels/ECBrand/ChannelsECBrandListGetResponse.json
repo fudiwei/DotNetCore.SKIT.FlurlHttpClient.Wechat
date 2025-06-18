@@ -1,0 +1,108 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "brands": [
+        {
+            "brand_id": "10000083",
+            "ch_name": "",
+            "en_name": "vivo",
+            "classification_no": "5",
+            "trade_mark_symbol": 1,
+            "register_details": {
+                "registrant": "111",
+                "register_no": "1111",
+                "start_time": 1667318400,
+                "end_time": 1669219200,
+                "is_permanent": false,
+                "register_certifications": [
+                    "file_id_XXXX"
+                ],
+                "renew_certifications": [
+                    "file_id_XXXX"
+                ]
+            },
+            "application_details": {
+                "acceptance_certification": []
+            },
+            "grant_type": 1,
+            "grant_details": {
+                "grant_certifications": [],
+                "brand_owner_id_photos": []
+            },
+            "application_details": {
+                "acceptance_certification": [
+                    "file_id_XXXX"
+                ]
+            },
+            "grant_type": 1,
+            "status": 2,
+            "create_time": 1668686275,
+            "update_time": 1668735765
+        },
+        {
+            "brand_id": "10003374",
+            "ch_name": "",
+            "en_name": "byj",
+            "classification_no": "2",
+            "trade_mark_symbol": 1,
+            "register_details": {
+                "registrant": "111",
+                "register_no": "111",
+                "start_time": 1667750400,
+                "end_time": 1669737600,
+                "is_permanent": false,
+                "register_certifications": [
+                    "file_id_XXXX"
+                ],
+                "renew_certifications": [
+                    "file_id_XXXX"
+                ]
+            },
+            "application_details": {
+                "acceptance_certification": []
+            },
+            "grant_type": 1,
+            "grant_details": {
+                "grant_certifications": [],
+                "brand_owner_id_photos": []
+            },
+            "grant_type": 1,
+            "status": 2,
+            "create_time": 1667623597,
+            "update_time": 1668152185
+        },
+        {
+            "brand_id": "10002934",
+            "ch_name": "周大生",
+            "en_name": "",
+            "classification_no": "5",
+            "trade_mark_symbol": 1,
+            "register_details": {
+                "registrant": "222",
+                "register_no": "111",
+                "start_time": 1665417600,
+                "end_time": 1666713600,
+                "is_permanent": false,
+                "register_certifications": [
+                    "file_id_XXXX"
+                ],
+                "renew_certifications": [
+                    "file_id_XXXX"
+                ]
+            },
+            "application_details": {
+                "acceptance_certification": []
+            },
+            "grant_type": 1,
+            "grant_details": {
+                "grant_certifications": [],
+                "brand_owner_id_photos": []
+            },
+            "status": 2,
+            "create_time": 1666349246,
+            "update_time": 1666352609
+        }
+    ],
+    "total_num": 3,
+    "next_key": "next_key_xxxx"
+}

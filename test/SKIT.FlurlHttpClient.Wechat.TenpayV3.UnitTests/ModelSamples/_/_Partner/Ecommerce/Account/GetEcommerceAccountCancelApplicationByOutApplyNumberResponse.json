@@ -1,0 +1,7 @@
+{
+    "out_apply_no": "abcd12345FEGH",
+    "sub_mchid": "123456789",
+    "reject_reason": "非电商服务商，无权调用此接口",
+    "cancel_state": "REVIEWING",
+    "update_time": "2023-01-20T13:29:35+08:00"
+}

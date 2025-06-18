@@ -1,0 +1,18 @@
+﻿{
+    "sub_mchid": "1900008XXX",
+    "notify_url": "https://weixin.qq.com/",
+    "amount": {
+        "total": 1,
+        "currency": "CNY",
+        "refund": 1,
+        "from": [
+            {
+                "account": "AVAILABLE",
+                "amount": 444
+            }
+        ]
+    },
+    "transaction_id": "4200000991202103266853086457",
+    "out_refund_no": "sdk12345678920210326145039",
+    "reason": "商品已售完"
+}

@@ -1,0 +1,14 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "project_name": "学费",
+    "amount": 998,
+    "payment_result": [
+        {
+            "student_userid": "xxxx",
+            "trade_state": 1,
+            "trade_no": "xxxxx",
+            "payer_parent_userid": "zhangshan"
+        }
+    ]
+}

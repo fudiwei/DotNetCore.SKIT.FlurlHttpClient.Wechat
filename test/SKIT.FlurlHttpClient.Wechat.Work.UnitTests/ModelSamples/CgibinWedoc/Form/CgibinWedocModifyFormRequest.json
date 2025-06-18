@@ -1,0 +1,45 @@
+{
+	"oper": 1,
+	"formid": "FORMID",
+    "form_info": {
+        "form_title": "FORM_TITLE",
+        "form_desc": "FORM_DESC",
+        "form_header": "FORM_HEADER",
+        "form_question": {
+            "items": [
+                {
+                    "question_id": 1,
+                    "title": "TITLE",
+                    "pos": 0,
+                    "status": 1,
+                    "reply_type": 1,
+                    "must_reply": true,
+                    "note": "NOTE",
+                    "option_item": [
+                        {
+                            "key": 1,
+                            "value": "VALUE",
+                            "status": 1
+                        }
+                    ],
+                    "placeholder": "PLACEHOLDER",
+                    "question_extend_setting": {}
+                }
+            ]
+        },
+        "form_setting": {
+            "fill_out_auth": 0,
+            "fill_in_range": {
+                "userids": ["USER_1", "USER_2", "USER_3"],
+                "departmentids": [10001, 10002, 10003]
+            },
+            "setting_manager_range": {
+                "userids": ["USER_4", "USER_5", "USER_6"]
+            },
+            "max_fill_cnt": 0,
+            "timed_finish": 0,
+            "can_anonymous": false,
+            "can_notify_submit": false
+        }
+    }
+}

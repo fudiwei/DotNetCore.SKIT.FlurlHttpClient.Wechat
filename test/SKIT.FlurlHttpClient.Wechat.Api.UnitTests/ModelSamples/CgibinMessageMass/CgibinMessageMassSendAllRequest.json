@@ -1,0 +1,31 @@
+﻿{
+    "filter": {
+        "is_to_all": false,
+        "tag_id": 2
+    },
+    "msgtype": "mpnews",
+    "text": {
+        "content": "CONTENT"
+    },
+    "images": {
+        "media_ids": ["aaa", "bbb", "ccc"],
+        "recommend": "xxx",
+        "need_open_comment": 1,
+        "only_fans_can_comment": 0
+    },
+    "mpnews": {
+        "media_id": "123dsdajkasd231jhksad"
+    },
+    "voice": {
+        "media_id": "123dsdajkasd231jhksad"
+    },
+    "mpvideo": {
+        "media_id": "IhdaAQXuvJtGzwwc0abfXnzeezfO0NgPK6AQYShD8RQYMTtfzbLdBIQkQziv2XJc",
+        "title": "TITLE",
+        "description": "DESCRIPTION"
+    },
+    "wxcard": {
+        "card_id": "123dsdajkasd231jhksad",
+        "card_ext": "{\"code\":\"\",\"openid\":\"\",\"timestamp\":\"1402057159\",\"signature\":\"017bb17407c8e0058a66d72dcc61632b70f511ad\"}"
+    }
+}

@@ -1,0 +1,13 @@
+﻿{
+    "touser": "OPENID",
+    "template_id": "TEMPLATE_ID",
+    "url": "URL",
+    "scene": "SCENE",
+    "title": "TITLE",
+    "data": {
+        "content": {
+            "value": "VALUE",
+            "color": "COLOR"
+        }
+    }
+}

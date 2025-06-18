@@ -1,0 +1,25 @@
+{
+    "data": [
+        {
+            "policy_period_id": 1,
+            "estimated_deduct_date": "2019-11-22",
+            "estimated_deduct_amount": {
+                "total": 1,
+                "currency": "CNY"
+            },
+            "policy_period_state": "NO_SCHEDULED",
+            "scheduled_amount": {
+                "total": 1,
+                "currency": "CNY"
+            },
+            "deduct_amount": {
+                "total": 1,
+                "currency": "CNY"
+            },
+            "deduct_date": "2019-11-22"
+        }
+    ],
+    "limit": 20,
+    "offset": 50,
+    "total_count": 360
+}

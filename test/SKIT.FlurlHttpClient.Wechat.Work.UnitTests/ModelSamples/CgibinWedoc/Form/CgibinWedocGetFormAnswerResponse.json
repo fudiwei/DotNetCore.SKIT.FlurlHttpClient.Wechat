@@ -1,0 +1,114 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "answer": {
+        "answer_list": [
+            {
+                "answer_id": 15,
+                "user_name": "USER_NAME1",
+                "ctime": 1668430580,
+                "mtime": 1668430580,
+                "reply": {
+                    "items": [
+                        {
+                            "question_id": 1,
+                            "text_reply": "Ndjnd"
+                        },
+                        {
+                            "question_id": 2,
+                            "option_reply": [
+                                2
+                            ]
+                        },
+                        {
+                            "question_id": 3,
+                            "text_reply": "20:53"
+                        },
+                        {
+                            "question_id": 4,
+                            "text_reply": "73℃"
+                        },
+                        {
+                            "question_id": 5,
+                            "file_extend_reply": [
+                                {
+                                    "name": "FILE_NAME1",
+                                    "fileid": "FILEID1"
+                                }
+                            ]
+                        },
+                        {
+                            "question_id": 6,
+                            "text_reply": "四川省/成都市/武侯区/天府三街(峰汇中心)"
+                        },
+                        {
+                            "question_id": 7,
+                            "text_reply": "test"
+                        },
+                        {
+                            "question_id": 8,
+                            "option_reply": [
+                                1
+                            ]
+                        },
+                        {
+                            "question_id": 9,
+                            "text_reply": "2022年11月"
+                        },
+                        {
+                            "question_id": 10,
+                            "option_reply": [
+                                5
+                            ]
+                        },
+                        {
+                            "question_id": 11,
+                            "option_reply": [
+                                3
+                            ],
+                            "option_extend_reply": [
+                                {
+                                    "option_reply": 3,
+                                    "extend_text": "test"
+                                }
+                            ]
+                        },
+                        {
+                            "question_id": 12,
+                            "department_reply": {
+                                "list": [
+                                    {
+                                        "department_id": 3
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "question_id": 13,
+                            "member_reply": {
+                                "list": [
+                                    {
+                                        "userid": "zhangsan"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "question_id": 14,
+                            "duration_reply": {
+                                "begin_time": 1586136317,
+                                "end_time": 1586236317,
+                                "time_scale": 0,
+                                "day_range": 0,
+                                "days": 1.0,
+                                "hours": 2.5
+                            }
+                        }
+                    ]
+                },
+                "answer_status": 1,
+                "tmp_external_userid": "TMP_EXTERNAL_USERID1"
+            }
+        ]
+    }
+}

@@ -1,0 +1,19 @@
+﻿{
+    "parent_id": 0,
+    "strategy_name": "NAME",
+    "admin_list": ["zhangsan", "lisi"],
+    "privilege": {
+        "send_moment": true,
+        "view_moment_list": true
+    },
+    "range": [
+        {
+            "type": 1,
+            "userid": "zhangsan"
+        },
+        {
+            "type": 2,
+            "partyid": 1
+        }
+    ]
+}

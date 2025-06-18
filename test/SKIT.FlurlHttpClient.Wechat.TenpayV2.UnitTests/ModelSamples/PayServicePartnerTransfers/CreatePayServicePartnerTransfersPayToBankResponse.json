@@ -1,0 +1,13 @@
+﻿{
+    "return_code": "SUCCESS",
+    "return_msg": "支付成功",
+    "result_code": "SUCCESS",
+    "err_code": "SUCCESS",
+    "err_code_des": "微信侧受理成功",
+    "nonce_str": "50780e0cca98c8c8e814883e5caa672e",
+    "mch_id": "2302758702",
+    "partner_trade_no": "1212121221278",
+    "amount": "500",
+    "payment_no": "10000600500852017030900000020006012",
+    "cmms_amt": "0"
+}

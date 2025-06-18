@@ -1,0 +1,17 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "categories": [
+        {
+            "first": 8,
+            "first_name": "教育",
+            "second": 39,
+            "second_name": "出国移民",
+            "audit_status": 1,
+            "audit_reason": ""
+        }
+    ],
+    "limit": 5,
+    "quota": 4,
+    "category_limit": 20
+}

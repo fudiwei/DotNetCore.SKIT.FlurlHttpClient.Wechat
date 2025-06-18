@@ -1,0 +1,19 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "appid": "test1",
+            "product_id": 12345,
+            "head_supplier_id": 23456
+        },
+        {
+            "appid": "test2",
+            "product_id": 12346,
+            "head_supplier_id": 23457
+        }
+    ],
+    "next_offset": 100,
+    "have_more": true,
+    "total_num": 369
+}

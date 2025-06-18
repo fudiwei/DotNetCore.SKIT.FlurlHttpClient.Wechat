@@ -1,0 +1,18 @@
+﻿{
+    "ToUserName": "gh_abcdefg",
+    "FromUserName": "oABCD",
+    "CreateTime": 1533042556,
+    "MsgType": "event",
+    "Event": "check_biz",
+    "BizID": "xyz",
+    "BizPwd": "xyz123",
+    "ShopAppID": "wxABCD",
+    "ShopName": "商户名称",
+    "ShopTelphone": "18677778888",
+    "ShopContact": "村正",
+    "ServiceName": "标准快递",
+    "SenderProvince": "广东省",
+    "SenderCity": "广州市",
+    "SenderArea": "海珠区",
+    "SenderAddress": "新港中路397号"
+}

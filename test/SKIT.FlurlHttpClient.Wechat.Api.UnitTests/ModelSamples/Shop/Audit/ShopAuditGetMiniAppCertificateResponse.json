@@ -1,0 +1,23 @@
+﻿{
+    "errcode": 0,
+    "brand_info": {
+        "brand_wording": "商标名",
+        "sale_authorization": [
+            "https://store.mp.video.tencent-cloud.com/xxxxxxxxxxxxxxxxxxxxxxxxxx"
+        ],
+        "trademark_registration_certificate": [
+            "https://store.mp.video.tencent-cloud.com/xxxxxxxxxxxxxxxxxxxxxxxxxx"
+        ]
+    },
+    "category_info_list": [
+        {
+            "first_category_id": 304,
+            "first_category_name": "商家自营",
+            "second_category_id": 321,
+            "second_category_name": "食品",
+            "certificate_url": [
+                "https://store.mp.video.tencent-cloud.com/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+            ]
+        }
+    ]
+}

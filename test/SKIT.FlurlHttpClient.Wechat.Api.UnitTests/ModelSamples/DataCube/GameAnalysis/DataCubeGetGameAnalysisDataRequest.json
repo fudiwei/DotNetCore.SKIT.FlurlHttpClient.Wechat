@@ -1,0 +1,13 @@
+﻿{
+    "metric": "1000006:4",
+    "granularity": 24,
+    "start_time": 1601568000,
+    "end_time": 1601654400,
+    "filter_list": [
+        {
+            "dimension": "5",
+            "value": "1"
+        }
+    ],
+    "group_list": ["3"]
+}

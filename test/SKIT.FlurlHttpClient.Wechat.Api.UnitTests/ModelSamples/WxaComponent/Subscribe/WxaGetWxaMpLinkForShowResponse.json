@@ -1,0 +1,12 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_num": 10,
+    "biz_info_list": [
+        {
+            "nickname": "公众号昵称",
+            "appid": "公众号appid",
+            "headimg": "公众号头像"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "",
+    "data": {
+        "wechat_account_name": "微信广告",
+        "system_status": "MP_STATUS_NORMAL",
+        "industry_id": 2113,
+        "contact_person": "test",
+        "contact_person_telephone": "13500000000",
+        "business_type": "OFFLINE",
+        "business_content": ""
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+    "students": [
+        {
+            "student_userid": "zhangsan",
+            "mobile": "18000000000",
+            "to_invite": false,
+            "name": "张三",
+            "department": [1, 2]
+        },
+        {
+            "student_userid": "lisi",
+            "mobile": "18000000000",
+            "name": "李四",
+            "department": [3, 4]
+        }
+    ]
+}

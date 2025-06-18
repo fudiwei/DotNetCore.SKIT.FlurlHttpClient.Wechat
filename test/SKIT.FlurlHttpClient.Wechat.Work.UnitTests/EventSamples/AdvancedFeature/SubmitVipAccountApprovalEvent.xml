@@ -1,0 +1,11 @@
+<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[fromUser]]></FromUserName>
+    <CreateTime>1715681559</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[submit_vip_account_approval]]></Event>
+    <ApplyReason><![CDATA[我有很多客户资料,微盘空间不足]]></ApplyReason>
+    <BusinessType>1</BusinessType>
+    <ApplyId><![CDATA[ApplyId]]></ApplyId>
+    <AgentID>1</AgentID>
+</xml>

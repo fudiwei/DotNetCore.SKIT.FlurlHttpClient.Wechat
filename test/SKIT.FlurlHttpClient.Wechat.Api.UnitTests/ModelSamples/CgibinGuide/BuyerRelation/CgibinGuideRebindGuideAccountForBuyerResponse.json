@@ -1,0 +1,16 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "buyer_resp": [
+        {
+            "errcode": 0,
+            "errmsg": "ok",
+            "openid": "xxxxxxx"
+        },
+        {
+            "errcode": 0,
+            "errmsg": "ok",
+            "openid": "yyyyyyyy"
+        }
+    ]
+}

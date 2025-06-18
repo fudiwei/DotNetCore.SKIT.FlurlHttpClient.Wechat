@@ -1,0 +1,11 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "data": {
+        "order_id": 32434234,
+        "out_order_id": "xxxxx",
+        "ticket": "xxxxxxx",
+        "ticket_expire_time": "2020-12-01 00:00:00",
+        "final_price": 10500
+    }
+}

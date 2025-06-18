@@ -1,0 +1,29 @@
+﻿{
+    "errcode": 0,
+    "errmsg": "ok",
+    "query_result_list": [
+        {
+            "query_request": {
+                "query_word": "zhangsan",
+                "query_type": 1,
+                "limit": 50,
+                "cursor": "CURSOR"
+            },
+            "query_result": {
+                "user": {
+                    "userid": ["zhangshan", "lisi"],
+                    "open_userid": ["wwxxxx", "wwxxxa"]
+                },
+                "party": {
+                    "department_id": [1, 2, 3]
+                },
+                "dismiss_user": {
+                    "userid": ["zhangshan", "lisi"],
+                    "open_userid": ["wwxxxx", "wwxxxa"]
+                }
+            },
+            "is_last": false,
+            "next_cursor": "NEXT_CURSOR"
+        }
+    ]
+}

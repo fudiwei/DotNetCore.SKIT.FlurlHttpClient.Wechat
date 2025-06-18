@@ -1,0 +1,9 @@
+{
+    "account_type": "BASIC",
+    "out_recharge_no": "cz202407181234",
+    "recharge_amount": {
+        "amount": 500000,
+        "currency": "CNY"
+    },
+    "recharge_scene": "NORMAL_BANK_TRANSFER"
+}
