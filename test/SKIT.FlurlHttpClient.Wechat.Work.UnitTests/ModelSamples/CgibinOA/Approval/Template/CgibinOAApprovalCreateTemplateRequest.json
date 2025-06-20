@@ -1,4 +1,4 @@
-﻿{
+{
     "template_name": [
         {
             "text": "我的api测试模版",
@@ -13,13 +13,13 @@
                     "id": "Text-01",
                     "title": [
                         {
-                            "text": "控件名称",
+                            "text": "文本控件名称",
                             "lang": "zh_CN"
                         }
                     ],
                     "placeholder": [
                         {
-                            "text": "控件说明",
+                            "text": "文本控件说明",
                             "lang": "zh_CN"
                         }
                     ],
@@ -27,6 +27,452 @@
                     "un_print": 1
                 },
                 "config": {}
+            },
+            {
+                "property": {
+                    "control": "Number",
+                    "id": "Number-01",
+                    "title": [
+                        {
+                            "text": "数字控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "数字控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {}
+            },
+            {
+                "property": {
+                    "control": "Money",
+                    "id": "Money-01",
+                    "title": [
+                        {
+                            "text": "金额控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "金额控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {}
+            },
+            {
+                "property": {
+                    "control": "Date",
+                    "id": "Date-01",
+                    "title": [
+                        {
+                            "text": "日期控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "日期控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "date": {
+                        "type": "day"
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "Selector",
+                    "id": "Selector-01",
+                    "title": [
+                        {
+                            "text": "多选控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "多选控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "selector": {
+                        "type": "multi",
+                        "options": [
+                            {
+                                "key": "option-1",
+                                "value": [
+                                    {
+                                        "text": "选项1",
+                                        "lang": "zh_CN"
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "option-2",
+                                "value": [
+                                    {
+                                        "text": "选项2",
+                                        "lang": "zh_CN"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "Contact",
+                    "id": "Contact-01",
+                    "title": [
+                        {
+                            "text": "成员控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "成员控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "contact": {
+                        "type": "single",
+                        "mode": "user"
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "Tips",
+                    "id": "Tips-01",
+                    "title": [
+                        {
+                            "text": "说明文字控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "说明文字控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "tips": {
+                        "tips_content": [
+                            {
+                                "text": {
+                                    "sub_text": [
+                                        {
+                                            "type": 1,
+                                            "content": {
+                                                "plain_text": {
+                                                    "content": "说明文字"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": 2,
+                                            "content": {
+                                                "link": {
+                                                    "title": "这是一个链接",
+                                                    "url": "https://work.weixin.qq.com"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "lang": "zh_CN"
+                            },
+                            {
+                                "text": {
+                                    "sub_text": [
+                                        {
+                                            "type": 1,
+                                            "content": {
+                                                "plain_text": {
+                                                    "content": "tips"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": 2,
+                                            "content": {
+                                                "link": {
+                                                    "title": "this is a link",
+                                                    "url": "https://work.weixin.qq.com"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "lang": "en"
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "File",
+                    "id": "File-01",
+                    "title": [
+                        {
+                            "text": "附件控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "附件控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "file": {
+                        "is_only_photo": 1
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "File",
+                    "id": "File-01",
+                    "title": [
+                        {
+                            "text": "附件控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "附件控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "file": {
+                        "is_only_photo": 1
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "Table",
+                    "id": "Table-01",
+                    "title": [
+                        {
+                            "text": "明细控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "明细控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "table": {
+                        "print_format": 0,
+                        "children": [
+                            {
+                                "property": {
+                                    "control": "File",
+                                    "id": "File-01",
+                                    "title": [
+                                        {
+                                            "text": "File控件名称",
+                                            "lang": "zh_CN"
+                                        }
+                                    ],
+                                    "placeholder": [
+                                        {
+                                            "text": "控件说明",
+                                            "lang": "zh_CN"
+                                        }
+                                    ],
+                                    "require": 0,
+                                    "un_print": 1
+                                },
+                                "config": {
+                                    "file": {
+                                        "is_only_photo": 1
+                                    }
+                                }
+                            },
+                            {
+                                "property": {
+                                    "control": "Date",
+                                    "id": "Date-01",
+                                    "title": [
+                                        {
+                                            "text": "Date控件名称",
+                                            "lang": "zh_CN"
+                                        }
+                                    ],
+                                    "placeholder": [
+                                        {
+                                            "text": "控件说明",
+                                            "lang": "zh_CN"
+                                        }
+                                    ],
+                                    "require": 0,
+                                    "un_print": 1
+                                },
+                                "config": {
+                                    "date": {
+                                        "type": "day"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "Attendance",
+                    "id": "Attendance-01",
+                    "title": [
+                        {
+                            "text": "假勤控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "假勤控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "attendance": {
+                        "type": 3,
+                        "date_range": {
+                            "type": "halfday",
+                            "official_holiday": 0,
+                            "perday_duration": 86400
+                        }
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "DateRange",
+                    "id": "DateRange-01",
+                    "title": [
+                        {
+                            "text": "时长控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "时长控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "date_range": {
+                        "type": "halfday",
+                        "official_holiday": 0,
+                        "perday_duration": 86400
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "Location",
+                    "id": "Location-01",
+                    "title": [
+                        {
+                            "text": "位置控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "位置控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "location": {
+                        "distance": 100
+                    }
+                }
+            },
+            {
+                "property": {
+                    "control": "RelatedApproval",
+                    "id": "RelatedApproval-01",
+                    "title": [
+                        {
+                            "text": "关联审批单控件名称",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "placeholder": [
+                        {
+                            "text": "关联审批单控件说明",
+                            "lang": "zh_CN"
+                        }
+                    ],
+                    "require": 0,
+                    "un_print": 1
+                },
+                "config": {
+                    "related_approval": {
+                        "template_id": [ "C4RbNKm731MCFVgk6XLq1Rs9W4aNXPJV2mmXT4qGy" ]
+                    }
+                }
             }
         ]
     }

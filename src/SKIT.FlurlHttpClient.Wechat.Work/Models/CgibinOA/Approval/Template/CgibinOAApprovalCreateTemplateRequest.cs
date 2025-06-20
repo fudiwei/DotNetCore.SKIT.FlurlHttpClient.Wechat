@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -94,6 +94,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public ContactControlConfig? Contact { get; set; }
 
                                 /// <summary>
+                                /// 获取或设置 Tips 控件配置信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("tips")]
+                                [System.Text.Json.Serialization.JsonPropertyName("tips")]
+                                public TipsControlConfig? Tips { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置 File 控件配置信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("file")]
+                                [System.Text.Json.Serialization.JsonPropertyName("file")]
+                                public FileControlConfig? File { get; set; }
+
+                                /// <summary>
                                 /// 获取或设置 Table 控件配置信息。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("table")]
@@ -113,6 +127,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [Newtonsoft.Json.JsonProperty("vacation_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("vacation_list")]
                                 public VacationControlConfig? Vacation { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置 DateRange 控件配置信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("date_range")]
+                                [System.Text.Json.Serialization.JsonPropertyName("date_range")]
+                                public DateRangeControlConfig? DateRange { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置 Location 控件配置信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("location")]
+                                [System.Text.Json.Serialization.JsonPropertyName("location")]
+                                public LocationControlConfig? Location { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置 RelatedApproval 控件配置信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("related_approval")]
+                                [System.Text.Json.Serialization.JsonPropertyName("related_approval")]
+                                public RelatedApprovalControlConfig? RelatedApproval { get; set; }
                             }
 
                             public class DateControlConfig
@@ -179,8 +214,140 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 public string Mode { get; set; } = string.Empty;
                             }
 
+                            public class TipsControlConfig
+                            {
+                                public static class Types
+                                {
+                                    public class TipsContent
+                                    {
+                                        public static class Types
+                                        {
+                                            public class Text
+                                            {
+                                                public static class Types
+                                                {
+                                                    public class SubText
+                                                    {
+                                                        public static class Types
+                                                        {
+                                                            public class Content
+                                                            {
+                                                                public static class Types
+                                                                {
+                                                                    public class PlainText
+                                                                    {
+                                                                        /// <summary>
+                                                                        /// 获取或设置纯文本文字。
+                                                                        /// </summary>
+                                                                        [Newtonsoft.Json.JsonProperty("content")]
+                                                                        [System.Text.Json.Serialization.JsonPropertyName("content")]
+                                                                        public string Content { get; set; } = string.Empty;
+                                                                    }
+
+                                                                    public class Link
+                                                                    {
+                                                                        /// <summary>
+                                                                        /// 获取或设置链接标题。
+                                                                        /// </summary>
+                                                                        [Newtonsoft.Json.JsonProperty("title")]
+                                                                        [System.Text.Json.Serialization.JsonPropertyName("title")]
+                                                                        public string Title { get; set; } = string.Empty;
+
+                                                                        /// <summary>
+                                                                        /// 获取或设置链接 URL。
+                                                                        /// </summary>
+                                                                        [Newtonsoft.Json.JsonProperty("url")]
+                                                                        [System.Text.Json.Serialization.JsonPropertyName("url")]
+                                                                        public string URL { get; set; } = string.Empty;
+                                                                    }
+                                                                }
+
+                                                                /// <summary>
+                                                                /// 获取或设置纯文本类型的内容信息。
+                                                                /// </summary>
+                                                                [Newtonsoft.Json.JsonProperty("plain_text")]
+                                                                [System.Text.Json.Serialization.JsonPropertyName("plain_text")]
+                                                                public Types.PlainText? PlainText { get; set; }
+
+                                                                /// <summary>
+                                                                /// 获取或设置链接类型的内容信息。
+                                                                /// </summary>
+                                                                [Newtonsoft.Json.JsonProperty("link")]
+                                                                [System.Text.Json.Serialization.JsonPropertyName("link")]
+                                                                public Types.Link? Link { get; set; }
+                                                            }
+                                                        }
+
+                                                        /// <summary>
+                                                        /// 获取或设置文本类型。
+                                                        /// </summary>
+                                                        [Newtonsoft.Json.JsonProperty("type")]
+                                                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                                                        public int Type { get; set; }
+
+                                                        /// <summary>
+                                                        /// 获取或设置文本内容。
+                                                        /// </summary>
+                                                        [Newtonsoft.Json.JsonProperty("content")]
+                                                        [System.Text.Json.Serialization.JsonPropertyName("content")]
+                                                        public Types.Content Content { get; set; } = new Types.Content();
+                                                    }
+                                                }
+
+                                                /// <summary>
+                                                /// 获取或设置说明文字分段列表。
+                                                /// </summary>
+                                                [Newtonsoft.Json.JsonProperty("sub_text")]
+                                                [System.Text.Json.Serialization.JsonPropertyName("sub_text")]
+                                                public IList<Types.SubText> SubTextList { get; set; } = new List<Types.SubText>();
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置语言类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("lang")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("lang")]
+                                        public string Language { get; set; } = string.Empty;
+
+                                        /// <summary>
+                                        /// 获取或设置说明文字信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("text")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("text")]
+                                        public Types.Text Text { get; set; } = new Types.Text();
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置说明文字列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("tips_content")]
+                                [System.Text.Json.Serialization.JsonPropertyName("tips_content")]
+                                public IList<Types.TipsContent> TipsList { get; set; } = new List<Types.TipsContent>();
+                            }
+
+                            public class FileControlConfig
+                            {
+                                /// <summary>
+                                /// 获取或设置是否只允许拍照。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("is_only_photo")]
+                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonPropertyName("is_only_photo")]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                public bool IsOnlyPhoto { get; set; }
+                            }
+
                             public class TableControlConfig
                             {
+                                /// <summary>
+                                /// 获取或设置打印格式。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("print_format")]
+                                [System.Text.Json.Serialization.JsonPropertyName("print_format")]
+                                public int PrintFormat { get; set; }
+
                                 /// <summary>
                                 /// 获取或设置子控件。
                                 /// </summary>
@@ -193,14 +360,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                             {
                                 public static class Types
                                 {
-                                    public class DateRange
+                                    public class DateRange : DateRangeControlConfig
                                     {
-                                        /// <summary>
-                                        /// 获取或设置时间刻度。
-                                        /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("type")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                        public string Type { get; set; } = string.Empty;
                                     }
                                 }
 
@@ -247,6 +408,50 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [Newtonsoft.Json.JsonProperty("item")]
                                 [System.Text.Json.Serialization.JsonPropertyName("item")]
                                 public IList<Types.Vacation> VacationList { get; set; } = new List<Types.Vacation>();
+                            }
+
+                            public class DateRangeControlConfig
+                            {
+                                /// <summary>
+                                /// 获取或设置时间刻度。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                                public string Type { get; set; } = string.Empty;
+
+                                /// <summary>
+                                /// 获取或设置自然日或工作日。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("official_holiday")]
+                                [System.Text.Json.Serialization.JsonPropertyName("official_holiday")]
+                                public int? OfficialHoliday { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置一天的时长（单位：秒）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("perday_duration")]
+                                [System.Text.Json.Serialization.JsonPropertyName("perday_duration")]
+                                public int? PerdayDuration { get; set; }
+                            }
+
+                            public class LocationControlConfig
+                            {
+                                /// <summary>
+                                /// 获取或设置距离（单位：米）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("distance")]
+                                [System.Text.Json.Serialization.JsonPropertyName("distance")]
+                                public int Distance { get; set; }
+                            }
+
+                            public class RelatedApprovalControlConfig
+                            {
+                                /// <summary>
+                                /// 获取或设置审批单模板 ID 列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("template_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("template_id")]
+                                public IList<string> TemplateIdList { get; set; } = new List<string>();
                             }
                         }
 

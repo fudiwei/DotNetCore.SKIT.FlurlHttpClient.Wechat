@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "template_names": [
@@ -58,6 +58,58 @@
                     "contact": {
                         "type": "multi",
                         "mode": "department"
+                    },
+                    "tips": {
+                        "tips_content": [
+                            {
+                                "text": {
+                                    "sub_text": [
+                                        {
+                                            "type": 1,
+                                            "content": {
+                                                "plain_text": {
+                                                    "content": "说明文字"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": 2,
+                                            "content": {
+                                                "link": {
+                                                    "title": "这是一个链接",
+                                                    "url": "https://work.weixin.qq.com"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "lang": "zh_CN"
+                            },
+                            {
+                                "text": {
+                                    "sub_text": [
+                                        {
+                                            "type": 1,
+                                            "content": {
+                                                "plain_text": {
+                                                    "content": "tips"
+                                                }
+                                            }
+                                        },
+                                        {
+                                            "type": 2,
+                                            "content": {
+                                                "link": {
+                                                    "title": "this is a link",
+                                                    "url": "https://work.weixin.qq.com"
+                                                }
+                                            }
+                                        }
+                                    ]
+                                },
+                                "lang": "en"
+                            }
+                        ]
                     },
                     "table": {
                         "children": [
