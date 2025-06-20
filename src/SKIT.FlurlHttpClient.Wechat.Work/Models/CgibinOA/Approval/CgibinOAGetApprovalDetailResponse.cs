@@ -864,6 +864,88 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [System.Text.Json.Serialization.JsonPropertyName("commenttime")]
                         public long CreateTimestamp { get; set; }
                     }
+
+                    public class Process
+                    {
+                        public static class Types
+                        {
+                            public class Node
+                            {
+                                /// <summary>
+                                /// 获取或设置节点类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("node_type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("node_type")]
+                                public int NodeType { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置节点状态。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sp_status")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sp_status")]
+                                public int? Status { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置多人办理方式。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("apv_rel")]
+                                [System.Text.Json.Serialization.JsonPropertyName("apv_rel")]
+                                public int? ApproversRelation { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置子节点列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sub_node_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sub_node_list")]
+                                public Types.SubNode[] SubNodeList { get; set; } = default!;
+                            }
+
+                            public class SubNode
+                            {
+                                /// <summary>
+                                /// 获取或设置处理人成员账号。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("userid")]
+                                [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                                public string UserId { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置审批状态。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("sp_yj")]
+                                [System.Text.Json.Serialization.JsonPropertyName("sp_yj")]
+                                public int? ApproveStatus { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置操作时间。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("Sptime")]
+                                [System.Text.Json.Serialization.JsonPropertyName("Sptime")]
+                                public long? ApproveTimestamp { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置审批意见。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("Speech")]
+                                [System.Text.Json.Serialization.JsonPropertyName("Speech")]
+                                public string? Speech { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置审批意见附件 MediaId 列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("media_ids")]
+                                [System.Text.Json.Serialization.JsonPropertyName("media_ids")]
+                                public string[]? AttachmentMediaIdList { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置节点列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("node_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("node_list")]
+                        public Types.Node[] NodeList { get; set; } = default!;
+                    }
                 }
 
                 /// <summary>
@@ -902,11 +984,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public Types.Applicant? Applicant { get; set; }
 
                 /// <summary>
-                /// 获取或设置批量申请人信息。
+                /// 获取或设置批量申请人列表。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("batch_applyer")]
                 [System.Text.Json.Serialization.JsonPropertyName("batch_applyer")]
-                public Types.BatchApplicant? BatchApplicant { get; set; }
+                public Types.BatchApplicant[]? BatchApplicantList { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请时间戳。
@@ -942,6 +1024,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("comments")]
                 [System.Text.Json.Serialization.JsonPropertyName("comments")]
                 public Types.Comment[] CommentList { get; set; } = default!;
+                
+                /// <summary>
+                /// 获取或设置审批流程信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("process_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("process_list")]
+                public Types.Process? Process { get; set; }
             }
         }
 
