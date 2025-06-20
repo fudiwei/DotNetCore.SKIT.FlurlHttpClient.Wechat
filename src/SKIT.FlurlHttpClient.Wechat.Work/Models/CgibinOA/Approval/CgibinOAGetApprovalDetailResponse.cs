@@ -876,7 +876,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("node_type")]
                                 [System.Text.Json.Serialization.JsonPropertyName("node_type")]
-                                [System.Xml.Serialization.XmlElement("node_type")]
                                 public int NodeType { get; set; }
 
                                 /// <summary>
@@ -884,7 +883,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("sp_status")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sp_status")]
-                                [System.Xml.Serialization.XmlElement("sp_status", IsNullable = true)]
                                 public int? Status { get; set; }
 
                                 /// <summary>
@@ -892,7 +890,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("apv_rel")]
                                 [System.Text.Json.Serialization.JsonPropertyName("apv_rel")]
-                                [System.Xml.Serialization.XmlElement("apv_rel", IsNullable = true)]
                                 public int? ApproversRelation { get; set; }
 
                                 /// <summary>
@@ -900,7 +897,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("sub_node_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sub_node_list")]
-                                [System.Xml.Serialization.XmlElement("sub_node_list", Type = typeof(Types.SubNode))]
                                 public Types.SubNode[] SubNodeList { get; set; } = default!;
                             }
 
@@ -911,14 +907,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("userid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("userid")]
-                                [System.Xml.Serialization.XmlElement("userid")]
                                 public string UserId { get; set; } = default!;
+
                                 /// <summary>
                                 /// 获取或设置审批状态。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("sp_yj")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sp_yj")]
-                                [System.Xml.Serialization.XmlElement("sp_yj", IsNullable = true)]
                                 public int? ApproveStatus { get; set; }
 
                                 /// <summary>
@@ -926,7 +921,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("Sptime")]
                                 [System.Text.Json.Serialization.JsonPropertyName("Sptime")]
-                                [System.Xml.Serialization.XmlElement("Sptime", IsNullable = true)]
                                 public long? ApproveTimestamp { get; set; }
 
                                 /// <summary>
@@ -934,7 +928,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("Speech")]
                                 [System.Text.Json.Serialization.JsonPropertyName("Speech")]
-                                [System.Xml.Serialization.XmlElement("Speech", IsNullable = true)]
                                 public string? Speech { get; set; }
 
                                 /// <summary>
@@ -942,7 +935,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("media_ids")]
                                 [System.Text.Json.Serialization.JsonPropertyName("media_ids")]
-                                [System.Xml.Serialization.XmlElement("media_ids", Type = typeof(string), IsNullable = true)]
                                 public string[]? AttachmentMediaIdList { get; set; }
                             }
                         }
@@ -952,7 +944,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("node_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("node_list")]
-                        [System.Xml.Serialization.XmlElement("node_list", Type = typeof(Types.Node))]
                         public Types.Node[] NodeList { get; set; } = default!;
                     }
                 }
@@ -992,12 +983,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("applyer")]
                 public Types.Applicant? Applicant { get; set; }
 
-                ///// <summary>
-                ///// 获取或设置批量申请人信息。
-                ///// </summary>
-                //[Newtonsoft.Json.JsonProperty("batch_applyer")]
-                //[System.Text.Json.Serialization.JsonPropertyName("batch_applyer")]
-                //public Types.BatchApplicant? BatchApplicant { get; set; }
+                /// <summary>
+                /// 获取或设置批量申请人列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("batch_applyer")]
+                [System.Text.Json.Serialization.JsonPropertyName("batch_applyer")]
+                public Types.BatchApplicant[]? BatchApplicantList { get; set; }
 
                 /// <summary>
                 /// 获取或设置申请时间戳。
@@ -1033,12 +1024,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("comments")]
                 [System.Text.Json.Serialization.JsonPropertyName("comments")]
                 public Types.Comment[] CommentList { get; set; } = default!;
+                
                 /// <summary>
                 /// 获取或设置审批流程信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("process_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("process_list")]
-                [System.Xml.Serialization.XmlElement("process_list", IsNullable = true)]
                 public Types.Process? Process { get; set; }
             }
         }
