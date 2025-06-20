@@ -1303,6 +1303,18 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.10.0 (2025-06-20)
+
+    -   **新增**：随官方更新打卡相关接口模型。
+
+    -   **新增**：随官方更新审批模板相关接口模型。
+
+    -   **新增**：随官方更新智能表格字段相关接口模型。
+
+    -   **修复**：修复获取审批详情接口模型定义错误。（_via_ [GitHub #196](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/196)）
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.6.1。
+
 -   Release 3.9.0 (2025-04-10)
 
     -   **新增**：随官方更新企业公共邮箱相关接口模型。
