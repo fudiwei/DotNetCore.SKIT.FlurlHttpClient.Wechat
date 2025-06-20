@@ -25,6 +25,158 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("desc")]
                 public bool IsDescend { get; set; }
             }
+
+            public class FilterSpec
+            {
+                public static class Types
+                {
+                    public class Condition
+                    {
+                        public static class Types
+                        {
+                            public class StringValue
+                            {
+                                /// <summary>
+                                /// 获取或设置值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                public IList<string> Value { get; set; } = new List<string>();
+                            }
+
+                            public class NumberValue
+                            {
+                                /// <summary>
+                                /// 获取或设置值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                public decimal Value { get; set; }
+                            }
+
+                            public class BoolValue
+                            {
+                                /// <summary>
+                                /// 获取或设置值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                public bool Value { get; set; }
+                            }
+
+                            public class UserValue
+                            {
+                                /// <summary>
+                                /// 获取或设置值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                public IList<string> Value { get; set; } = new List<string>();
+                            }
+
+                            public class DateTimeValue
+                            {
+                                public static class Types
+                                {
+                                    public class Value
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置日期类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                                        public string Type { get; set; } = string.Empty;
+
+                                        /// <summary>
+                                        /// 获取或设置日期时间值。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("value")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                        public IList<string>? DateTimes { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                public Types.Value Value { get; set; } = new Types.Value();
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置字段 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("field_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("field_id")]
+                        public string FieldId { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置字段类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("field_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("field_type")]
+                        public string? FieldType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置判断类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("operator")]
+                        [System.Text.Json.Serialization.JsonPropertyName("operator")]
+                        public string Operator { get; set; } = string.Empty;
+
+                        /// <summary>
+                        /// 获取或设置文本值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("string_value")]
+                        [System.Text.Json.Serialization.JsonPropertyName("string_value")]
+                        public Types.StringValue? StringValue { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置数字值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("number_value")]
+                        [System.Text.Json.Serialization.JsonPropertyName("number_value")]
+                        public Types.NumberValue? NumberValue { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置布尔值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("bool_value")]
+                        [System.Text.Json.Serialization.JsonPropertyName("bool_value")]
+                        public Types.BoolValue? BoolValue { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置人员值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user_value")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_value")]
+                        public Types.UserValue? UserValue { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置日期时间值。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("date_time_value")]
+                        [System.Text.Json.Serialization.JsonPropertyName("date_time_value")]
+                        public Types.DateTimeValue? DateTimeValue { get; set; }
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置条件连词。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("conjunction")]
+                [System.Text.Json.Serialization.JsonPropertyName("conjunction")]
+                public string Conjunction { get; set; } = string.Empty;
+
+                /// <summary>
+                /// 获取或设置条件列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("conditions")]
+                [System.Text.Json.Serialization.JsonPropertyName("conditions")]
+                public IList<Types.Condition> ConditionList { get; set; } = new List<Types.Condition>();
+            }
         }
 
         /// <summary>
@@ -82,6 +234,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("sort")]
         [System.Text.Json.Serialization.JsonPropertyName("sort")]
         public IList<Types.SortField>? SortFieldList { get; set; }
+
+        /// <summary>
+        /// 获取或设置过滤设置。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("filter_spec")]
+        [System.Text.Json.Serialization.JsonPropertyName("filter_spec")]
+        public Types.FilterSpec? FilterSpec { get; set; }
 
         /// <summary>
         /// 获取或设置分页起始位置。

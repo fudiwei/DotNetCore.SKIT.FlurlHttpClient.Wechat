@@ -102,6 +102,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     public class PercentageFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.PercentageFieldProperty
                     {
                     }
+
+                    public class BarcodeFieldProperty : CgibinWedocSmartSheetAddFieldsRequest.Types.Field.Types.BarcodeFieldProperty
+                    {
+                    }
                 }
 
                 /// <summary>
@@ -250,6 +254,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("property_percentage")]
                 [System.Text.Json.Serialization.JsonPropertyName("property_percentage")]
                 public Types.PercentageFieldProperty? PropertyAsPercentage { get; set; }
+
+                /// <summary>
+                /// 获取或设置条码的字段属性。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("property_barcode")]
+                [System.Text.Json.Serialization.JsonPropertyName("property_barcode")]
+                public Types.BarcodeFieldProperty? PropertyAsBarcode { get; set; }
             }
         }
 

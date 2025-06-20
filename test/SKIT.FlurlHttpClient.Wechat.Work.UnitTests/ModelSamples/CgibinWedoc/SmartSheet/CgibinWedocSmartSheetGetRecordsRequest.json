@@ -16,6 +16,8 @@
             "desc": false
         }
     ],
+    "filter_spec": {
+    },
     "offset": 0,
     "limit": 100
 }

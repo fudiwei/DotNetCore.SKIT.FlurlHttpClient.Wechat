@@ -329,6 +329,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [System.Text.Json.Serialization.JsonPropertyName("use_separate")]
                         public bool IsUseSeparate { get; set; }
                     }
+
+                    public class BarcodeFieldProperty
+                    {
+                        /// <summary>
+                        /// 获取或设置是否仅限手机扫描录入。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("mobile_scan_only")]
+                        [System.Text.Json.Serialization.JsonPropertyName("mobile_scan_only")]
+                        public bool IsMobileScanOnly { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -477,6 +487,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("property_percentage")]
                 [System.Text.Json.Serialization.JsonPropertyName("property_percentage")]
                 public Types.PercentageFieldProperty? PropertyAsPercentage { get; set; }
+
+                /// <summary>
+                /// 获取或设置条码的字段属性。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("property_barcode")]
+                [System.Text.Json.Serialization.JsonPropertyName("property_barcode")]
+                public Types.BarcodeFieldProperty? PropertyAsBarcode { get; set; }
             }
         }
 

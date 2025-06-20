@@ -1,0 +1,14 @@
+<xml>
+    <ToUserName><![CDATA[toUser]]></ToUserName>
+    <FromUserName><![CDATA[fromUser]]></FromUserName>
+    <CreateTime>1348831860</CreateTime>
+    <MsgType><![CDATA[event]]></MsgType>
+    <Event><![CDATA[smart_sheet_change]]></Event>
+    <ChangeType><![CDATA[update_field_or_record]]></ChangeType>
+    <DocId><![CDATA[dcjgewCwAAqeJcPI1d8Pwbjt7nttzAAA]]></DocId>
+    <SheetId><![CDATA[SheetId]]></SheetId>
+    <FieldId><![CDATA[FieldId1]]></FieldId>
+    <FieldId><![CDATA[FieldId2]]></FieldId>
+    <RecordId><![CDATA[RecordId1]]></RecordId>
+    <RecordId><![CDATA[RecordId2]]></RecordId>
+</xml>
