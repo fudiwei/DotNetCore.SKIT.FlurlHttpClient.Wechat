@@ -165,6 +165,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
                     public class CheckinTime
                     {
+                        public static class Types
+                        {
+                            public class RestTime
+                            {
+                                /// <summary>
+                                /// 获取或设置休息开始时间距当天零点的秒数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("rest_begin_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("rest_begin_time")]
+                                public int BeginTime { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置休息结束时间距当天零点的秒数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("rest_end_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("rest_end_time")]
+                                public int EndTime { get; set; }
+                            }
+                        }
+
                         /// <summary>
                         /// 获取或设置时段 ID。
                         /// </summary>
@@ -248,6 +268,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("rest_end_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("rest_end_time")]
                         public int? RestEndTime { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置多组休息时间列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("rest_times")]
+                        [System.Text.Json.Serialization.JsonPropertyName("rest_times")]
+                        public IList<Types.RestTime>? RestTimeList { get; set; }
 
                         /// <summary>
                         /// 获取或设置是否不需要上班打卡。

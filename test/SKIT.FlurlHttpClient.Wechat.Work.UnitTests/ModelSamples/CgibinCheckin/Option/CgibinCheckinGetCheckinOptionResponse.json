@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "info": [
@@ -97,7 +97,13 @@
                                 "remind_off_work_sec": 61200,
                                 "rest_begin_time": 43200,
                                 "rest_end_time": 46800,
-                                "allow_rest": false
+                                "allow_rest": false,
+                                "rest_times": [
+                                    {
+                                        "rest_begin_time": 47400,
+                                        "rest_end_time": 48000
+                                    }
+                                ]
                             }
                         ],
                         "limit_aheadtime": 14400000,
