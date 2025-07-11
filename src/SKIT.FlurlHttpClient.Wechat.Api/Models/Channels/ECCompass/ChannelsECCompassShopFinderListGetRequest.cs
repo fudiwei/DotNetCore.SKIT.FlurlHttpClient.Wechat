@@ -11,5 +11,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("ds")]
         [System.Text.Json.Serialization.JsonPropertyName("ds")]
         public string DateString { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置接口版本。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("version")]
+        [System.Text.Json.Serialization.JsonPropertyName("version")]
+        public string? Version { get; set; }
     }
 }

@@ -70,6 +70,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string FinderNickname { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置达人号 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("talent_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("talent_id")]
+                public string? TalentId { get; set; }
+
+                /// <summary>
+                /// 获取或设置达人号昵称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("talent_nickname")]
+                [System.Text.Json.Serialization.JsonPropertyName("talent_nickname")]
+                public string? TalentNickname { get; set; }
+
+                /// <summary>
+                /// 获取或设置公众号 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mp_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("mp_id")]
+                public string? MpId { get; set; }
+
+                /// <summary>
+                /// 获取或设置公众号昵称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mp_nickname")]
+                [System.Text.Json.Serialization.JsonPropertyName("mp_nickname")]
+                public string? MpNickname { get; set; }
+
+                /// <summary>
                 /// 获取或设置统计数据。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("data")]

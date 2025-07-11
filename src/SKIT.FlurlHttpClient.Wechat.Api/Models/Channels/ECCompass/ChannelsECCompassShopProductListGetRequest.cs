@@ -11,5 +11,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("ds")]
         [System.Text.Json.Serialization.JsonPropertyName("ds")]
         public string DateString { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置分页起始位置。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("offset")]
+        [System.Text.Json.Serialization.JsonPropertyName("offset")]
+        public int? Offset { get; set; }
+
+        /// <summary>
+        /// 获取或设置分页每页数量。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("limit")]
+        [System.Text.Json.Serialization.JsonPropertyName("limit")]
+        public int? Limit { get; set; }
     }
 }

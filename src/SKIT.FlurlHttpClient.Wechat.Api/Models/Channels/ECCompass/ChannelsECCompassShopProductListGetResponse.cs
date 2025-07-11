@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -120,6 +122,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置发货后成交退款率（单位：百分数）。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2025-06-16 下线。")]
                         [Newtonsoft.Json.JsonProperty("pay_refund_after_send_ratio")]
                         [System.Text.Json.Serialization.JsonPropertyName("pay_refund_after_send_ratio")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
@@ -136,6 +139,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置成交退款件数。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2025-06-16 下线。")]
                         [Newtonsoft.Json.JsonProperty("pay_refund_product_cnt")]
                         [System.Text.Json.Serialization.JsonPropertyName("pay_refund_product_cnt")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
@@ -144,6 +148,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置发货前成交退款率（单位：百分数）。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2025-06-16 下线。")]
                         [Newtonsoft.Json.JsonProperty("pay_refund_before_send_ratio")]
                         [System.Text.Json.Serialization.JsonPropertyName("pay_refund_before_send_ratio")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
@@ -182,6 +187,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int RefundProductCount { get; set; }
 
                         /// <summary>
+                        /// 获取或设置加购支付转化率（单位：百分数）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("cart_pay_ratio")]
+                        [System.Text.Json.Serialization.JsonPropertyName("cart_pay_ratio")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public decimal CartPayRatio { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置加购人数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("cart_pay_uv")]
+                        [System.Text.Json.Serialization.JsonPropertyName("cart_pay_uv")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public int CartPayUV { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置加购成交金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("cart_pay_gmv")]
+                        [System.Text.Json.Serialization.JsonPropertyName("cart_pay_gmv")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public long CartPayAmount { get; set; }
+
+                        /// <summary>
                         /// 获取或设置商品点击人数。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("product_click_uv")]
@@ -198,8 +227,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int ProductClickCount { get; set; }
 
                         /// <summary>
+                        /// 获取或设置动销达人数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("pay_finder_cnt")]
+                        [System.Text.Json.Serialization.JsonPropertyName("pay_finder_cnt")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public int PayFinderCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置点击成交率（单位：百分数）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("click_to_pay_cnt_ratio")]
+                        [System.Text.Json.Serialization.JsonPropertyName("click_to_pay_cnt_ratio")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public decimal ClickToPayCountRatio { get; set; }
+
+                        /// <summary>
                         /// 获取或设置实际结算金额（单位：分）。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2025-06-16 下线。")]
                         [Newtonsoft.Json.JsonProperty("seller_actual_settle_amount")]
                         [System.Text.Json.Serialization.JsonPropertyName("seller_actual_settle_amount")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
