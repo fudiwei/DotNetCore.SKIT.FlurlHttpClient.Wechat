@@ -354,9 +354,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置商品副标题。
         /// </summary>
+        [Obsolete("相关接口或字段于 2025-06-16 下线。")]
         [Newtonsoft.Json.JsonProperty("sub_title")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_title")]
         public string? SubTitle { get; set; }
+
+        /// <summary>
+        /// 获取或设置商品短标题。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("short_title")]
+        [System.Text.Json.Serialization.JsonPropertyName("short_title")]
+        public string? ShortTitle { get; set; }
 
         /// <summary>
         /// 获取或设置主图 URL 列表。

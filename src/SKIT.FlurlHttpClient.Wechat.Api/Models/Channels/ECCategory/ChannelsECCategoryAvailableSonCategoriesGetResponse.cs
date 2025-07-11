@@ -5,6 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// <summary>
     /// <para>表示 [POST] /channels/ec/category/availablesoncategories/get 接口的响应。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2025-07-01 下线。")]
     public class ChannelsECCategoryAvailableSonCategoriesGetResponse : WechatApiResponse
     {
         public static class Types
