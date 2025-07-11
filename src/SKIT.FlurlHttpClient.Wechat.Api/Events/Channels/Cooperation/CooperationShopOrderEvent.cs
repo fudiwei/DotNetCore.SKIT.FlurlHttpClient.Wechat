@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
@@ -7,6 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/cooperation_shop/order_callback.html ]]>
     /// </para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2025-06-16 下线。")]
     public class CooperationShopOrderEvent : WechatApiEvent
     {
         public static class Types
