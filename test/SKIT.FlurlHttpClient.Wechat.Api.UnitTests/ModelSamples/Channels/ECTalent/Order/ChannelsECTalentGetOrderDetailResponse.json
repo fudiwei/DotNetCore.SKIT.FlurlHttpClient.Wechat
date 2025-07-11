@@ -9,6 +9,7 @@
         "actual_payment": "99.99",
         "order_create_time": 1700000000,
         "order_update_time": 1700003600,
+        "special_id": "SP12345",
         "buyer_info": {
             "open_id": "o1234567890abcdef",
             "union_id": "u1234567890abcdef"

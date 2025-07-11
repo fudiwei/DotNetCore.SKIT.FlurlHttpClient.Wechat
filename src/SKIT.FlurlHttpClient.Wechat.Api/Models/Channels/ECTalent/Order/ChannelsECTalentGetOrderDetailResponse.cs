@@ -37,6 +37,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string OrderId { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置佣金单特殊标识。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("special_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("special_id")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                public string? SpecialId { get; set; }
+
+                /// <summary>
                 /// 获取或设置 SPU ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("spu_id")]
