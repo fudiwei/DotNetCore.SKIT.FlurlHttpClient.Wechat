@@ -13,10 +13,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long PlanId { get; set; }
 
         /// <summary>
-        /// 获取或设置相对于服务费的达人佣金率（范围：0～90）。
+        /// 获取或设置达人佣金率（范围：0～90）。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("ratio_to_service_rate")]
-        [System.Text.Json.Serialization.JsonPropertyName("ratio_to_service_rate")]
-        public int RatioToServiceRate { get; set; }
+        [Newtonsoft.Json.JsonProperty("ratio")]
+        [System.Text.Json.Serialization.JsonPropertyName("ratio")]
+        public int Ratio { get; set; }
     }
 }

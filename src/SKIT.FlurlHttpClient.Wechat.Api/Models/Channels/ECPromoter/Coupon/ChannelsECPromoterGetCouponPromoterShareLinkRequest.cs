@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/promoter/get_coupon_short_link 接口的请求。</para>
+    /// <para>表示 [POST] /channels/ec/promoter/get_coupon_promoter_share_link 接口的请求。</para>
     /// </summary>
-    public class ChannelsECPromoterGetCouponShortLinkRequest : WechatApiRequest, IInferable<ChannelsECPromoterGetCouponShortLinkRequest, ChannelsECPromoterGetCouponShortLinkResponse>
+    public class ChannelsECPromoterGetCouponPromoterShareLinkRequest : WechatApiRequest, IInferable<ChannelsECPromoterGetCouponPromoterShareLinkRequest, ChannelsECPromoterGetCouponPromoterShareLinkResponse>
     {
         /// <summary>
         /// 获取或设置推客的微信电商平台注册的身份标识。
