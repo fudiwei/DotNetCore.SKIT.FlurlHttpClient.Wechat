@@ -373,6 +373,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("change_sku_info")]
                                 [System.Text.Json.Serialization.JsonPropertyName("change_sku_info")]
                                 public Types.ChangeSKUInfo? ChangeSKUInfo { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置订单内商品维度会员权益优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("vip_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("vip_discounted_price")]
+                                [System.Xml.Serialization.XmlElement("vip_discounted_price")]
+                                public int? VipDiscountedPrice { get; set; }
                             }
 
                             public class Payment

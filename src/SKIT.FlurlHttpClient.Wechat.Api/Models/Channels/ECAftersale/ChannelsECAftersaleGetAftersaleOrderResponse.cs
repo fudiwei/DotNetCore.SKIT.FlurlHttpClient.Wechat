@@ -255,6 +255,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public long NewSKUId { get; set; }
 
                         /// <summary>
+                        /// 获取或设置旧 SKU 价格（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("old_sku_price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("old_sku_price")]
+                        public int OldSKUPrice { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置新 SKU 价格（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_sku_price")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_sku_price")]
+                        public int NewSKUPrice { get; set; }
+
+                        /// <summary>
                         /// 获取或设置商品数量。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("product_cnt")]
@@ -361,6 +375,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("unionid")]
                 [System.Text.Json.Serialization.JsonPropertyName("unionid")]
                 public string? UnionId { get; set; }
+
+                /// <summary>
+                /// 获取或设置礼物订单赠送者 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("present_giver_openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("present_giver_openid")]
+                public string? PresentGiverOpenId { get; set; }
+
+                /// <summary>
+                /// 获取或设置礼物订单赠送者 UnionId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("present_giver_unionid")]
+                [System.Text.Json.Serialization.JsonPropertyName("present_giver_unionid")]
+                public string? PresentGiverUnionId { get; set; }
 
                 /// <summary>
                 /// 获取或设置售后原因。

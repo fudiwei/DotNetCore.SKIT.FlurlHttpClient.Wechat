@@ -39,6 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
                 [System.Xml.Serialization.XmlElement("status")]
                 public string Status { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置小程序会员已经优惠金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("wxa_vip_discounted_price")]
+                [System.Text.Json.Serialization.JsonPropertyName("wxa_vip_discounted_price")]
+                [System.Xml.Serialization.XmlElement("wxa_vip_discounted_price")]
+                public int? WxaVipDiscountedPrice { get; set; }
             }
         }
 

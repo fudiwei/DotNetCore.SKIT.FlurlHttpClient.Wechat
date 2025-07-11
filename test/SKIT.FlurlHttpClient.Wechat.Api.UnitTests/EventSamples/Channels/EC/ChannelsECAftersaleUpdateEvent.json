@@ -6,6 +6,8 @@
     "Event": "channels_ec_aftersale_update",
     "finder_shop_aftersale_status_update": {
         "status": "USER_WAIT_RETURN",
-        "after_sale_order_id": "1234567"
+        "after_sale_order_id": "1234567",
+        "order_id": "12345",
+        "wxa_vip_discounted_price": 100
     }
 }
