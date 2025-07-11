@@ -1,0 +1,10 @@
+{
+    "shop_appid": "wxxxxxxxxxxxxxxxxx",
+    "open_id": "OPENID",
+    "create_time_range": {
+        "start_time": "1749007175",
+        "end_time": "1749008175"
+    },
+    "page_size": 10,
+    "next_key": "THE_NEXT_KEY"
+}

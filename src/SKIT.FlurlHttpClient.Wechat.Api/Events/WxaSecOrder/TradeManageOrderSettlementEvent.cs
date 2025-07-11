@@ -45,13 +45,5 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Text.Json.Serialization.JsonPropertyName("settlement_time")]
         [System.Xml.Serialization.XmlElement("settlement_time", IsNullable = true)]
         public long? SettlementTimestamp { get; set; }
-
-        /// <summary>
-        /// 获取或设置消息文本内容。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("msg")]
-        [System.Text.Json.Serialization.JsonPropertyName("msg")]
-        [System.Xml.Serialization.XmlElement("msg", IsNullable = true)]
-        public string? Message { get; set; }
     }
 }

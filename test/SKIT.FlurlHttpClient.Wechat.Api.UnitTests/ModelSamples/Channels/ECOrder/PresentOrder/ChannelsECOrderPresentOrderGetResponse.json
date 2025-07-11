@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "present_order_info": {
+        "ecsgift": {
+            "gifts": {
+                "gift": [
+                    {
+                        "order_id": 4226341196275658752,
+                        "wishmessage": "祝福你",
+                        "giftstatus": 0
+                    }
+                ]
+            },
+            "user_type": 1
+        }
+    }
+}

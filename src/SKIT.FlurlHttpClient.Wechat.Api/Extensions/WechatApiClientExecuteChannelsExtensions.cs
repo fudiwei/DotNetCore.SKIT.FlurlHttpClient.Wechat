@@ -4153,6 +4153,43 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOpenGetDownloadUrlResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/open/upload 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/cooperation_shop/upload.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOpenUploadResponse> ExecuteChannelsECOpenUploadAsync(this WechatApiClient client, Models.ChannelsECOpenUploadRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.FileName is null)
+                request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
+
+            if (request.FileContentType is null)
+                request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "open", "upload")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            if (request.UploadType == 0)
+            {
+                using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes!, fileContentType: request.FileContentType, formDataName: "file");
+                return await client.SendFlurlRequestAsync<Models.ChannelsECOpenUploadResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+            else
+            {
+                return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOpenUploadResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            }
+        }
         #endregion
 
         #region ECOrder
@@ -4564,6 +4601,77 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDeliverySendResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region ECOrder/PresentOrder
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/presentorder/create 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/cooperation_shop/create_present_order.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderPresentOrderCreateResponse> ExecuteChannelsECOrderPresentOrderCreateAsync(this WechatApiClient client, Models.ChannelsECOrderPresentOrderCreateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentorder", "create")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentOrderCreateResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/presentorderlist/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/cooperation_shop/list_present_order.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderPresentOrderListGetResponse> ExecuteChannelsECOrderPresentOrderListGetAsync(this WechatApiClient client, Models.ChannelsECOrderPresentOrderListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentorderlist", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentOrderListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/presentorder/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/cooperation_shop/get_present_order.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderPresentOrderGetResponse> ExecuteChannelsECOrderPresentOrderGetAsync(this WechatApiClient client, Models.ChannelsECOrderPresentOrderGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentorder", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentOrderGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
