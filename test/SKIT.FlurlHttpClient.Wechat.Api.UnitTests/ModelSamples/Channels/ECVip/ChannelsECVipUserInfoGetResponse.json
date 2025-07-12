@@ -1,0 +1,9 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "info": {
+        "identity": "Lv.1",
+        "outer_userid": "outer_userid",
+        "related_shop_appid": [ "appid1", "appid2" ]
+    }
+}

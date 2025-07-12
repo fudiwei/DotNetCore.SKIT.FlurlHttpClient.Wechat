@@ -1,0 +1,19 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "wxa_appid": "wxxxxxxxxxxxxxxxxx",
+    "info": {
+        "paths": {
+            "register_path": "main/register/path",
+            "rights_path": "main/rights/path"
+        },
+        "whitelist_openids": [
+            "openid_1",
+            "openid_2"
+        ],
+        "display_info": {
+            "order_page_display": 0
+        }
+    },
+    "state": 0
+}

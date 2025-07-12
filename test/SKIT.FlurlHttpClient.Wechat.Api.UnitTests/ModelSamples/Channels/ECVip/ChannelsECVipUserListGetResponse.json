@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "wxa_openid": "wxa_openid",
+            "identity": "Lv.1",
+            "outer_userid": "outer_userid",
+            "related_shop_appid": [ "shop_appid1", "shop_appid2" ]
+        }
+    ]
+}
