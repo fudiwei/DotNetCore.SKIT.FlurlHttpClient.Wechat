@@ -3,9 +3,9 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /platsolution/ecommerce/mch-transfer/insurance-claim-bills/out-bill-no/{out_bill_no} 接口的响应。</para>
+    /// <para>表示 [GET] /platsolution/ecommerce/mch-transfer/transfer-bills/out-bill-no/{out_bill_no} 接口的响应。</para>
     /// </summary>
-    public class GetPlatformSolutionEcommerceMerchantTransferInsuranceClaimBillByOutBillNumberResponse : WechatTenpayResponse
+    public class GetPlatformSolutionEcommerceMerchantTransferBillByOutBillNumberResponse : WechatTenpayResponse
     {
         public static class Types
         {
@@ -17,21 +17,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                     {
                         public static class Types
                         {
-                            public class TransactionInfo
+                            public class MerchantInfo
                             {
                                 /// <summary>
-                                /// 获取或设置转账接收方订单类型。
+                                /// 获取或设置转账接收方商户号。
                                 /// </summary>
-                                [Newtonsoft.Json.JsonProperty("type")]
-                                [System.Text.Json.Serialization.JsonPropertyName("type")]
-                                public string? Type { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置微信交易订单号。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("transaction_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
-                                public string TransactionId { get; set; } = default!;
+                                [Newtonsoft.Json.JsonProperty("mchid")]
+                                [System.Text.Json.Serialization.JsonPropertyName("mchid")]
+                                public string? MerchantId { get; set; }
                             }
                         }
 
@@ -43,11 +36,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? Type { get; set; }
 
                         /// <summary>
-                        /// 获取或设置转账接收方订单信息。
+                        /// 获取或设置转账接收方商户信息。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("transaction_info")]
-                        [System.Text.Json.Serialization.JsonPropertyName("transaction_info")]
-                        public Types.TransactionInfo? TransactionInfo { get; set; }
+                        [Newtonsoft.Json.JsonProperty("mch_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("mch_info")]
+                        public Types.MerchantInfo? MerchantInfo { get; set; }
                     }
                 }
 
@@ -87,11 +80,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string MerchantId { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sp_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
         /// 获取或设置二级商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
         public string? SubMerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置业务类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("business_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("business_type")]
+        public string BusinessType { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置商户单号。
@@ -134,6 +141,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("transfer_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_remark")]
         public string TransferRemark { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置收款方备注。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("receiver_remark")]
+        [System.Text.Json.Serialization.JsonPropertyName("receiver_remark")]
+        public string? ReceiverRemark { get; set; }
 
         /// <summary>
         /// 获取或设置出资商户号。

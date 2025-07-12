@@ -1,0 +1,15 @@
+{
+    "sub_mchid": "1900001109",
+    "sp_appid": "wx8888888888888888",
+    "business_type": "DEPOSIT_COMPENSATION",
+    "receiver": {
+        "type": "MERCHANT",
+        "mch_info": {
+            "mchid": "1900001108"
+        }
+    },
+    "out_bill_no": "plfk2020042013",
+    "amount": 10000,
+    "transfer_remark": "直播违规扣罚",
+    "receiver_remark": "小店XXXX直播违规扣罚"
+}

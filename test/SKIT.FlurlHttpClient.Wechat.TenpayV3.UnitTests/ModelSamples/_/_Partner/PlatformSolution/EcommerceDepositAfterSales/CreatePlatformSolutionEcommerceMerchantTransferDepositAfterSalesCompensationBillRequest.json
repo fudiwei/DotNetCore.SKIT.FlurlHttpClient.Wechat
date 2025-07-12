@@ -1,0 +1,19 @@
+{
+	"sub_mchid": "1900001109",
+	"sp_appid": "wx8888888888888888",
+	"receiver": {
+		"type": "TRANSACTION_USER",
+		"transaction_info": {
+			"transaction_id": "1217752501201407033233368018",
+			"type": "WXPAY"
+		},
+		"user_info": {
+			"sp_openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o"
+		}
+	},
+	"out_bill_no": "plfk2020042013",
+	"amount": 10000,
+	"transfer_remark": "直播违规扣罚",
+	"transfer_scene_id": "1001",
+	"user_recv_perception": "退货运费补偿"
+}

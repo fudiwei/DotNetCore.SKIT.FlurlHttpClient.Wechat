@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /platsolution/ecommerce/mch-transfer/compensate-bills 接口的请求。</para>
+    /// <para>表示 [POST] /platsolution/ecommerce/mch-transfer/deposit-shipping-cost-compensation-bills 接口的请求。</para>
     /// </summary>
-    public class CreatePlatformSolutionEcommerceMerchantTransferCompensationBillRequest : WechatTenpayRequest
+    public class CreatePlatformSolutionEcommerceMerchantTransferDepositShippingCostCompensationBillRequest : WechatTenpayRequest
     {
         public static class Types
         {
@@ -27,6 +27,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
                         public string TransactionId { get; set; } = string.Empty;
                     }
+
+                    public class MerchantInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置转账接收方商户号。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("mchid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("mchid")]
+                        public string? MerchantId { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -42,8 +52,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("transaction_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("transaction_info")]
                 public Types.TransactionInfo? TransactionInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置转账接收方商户信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mch_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("mch_info")]
+                public Types.MerchantInfo? MerchantInfo { get; set; }
             }
         }
+
+        /// <summary>
+        /// 获取或设置二级商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
+        public string? SubMerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sp_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
+        public string? AppId { get; set; }
 
         /// <summary>
         /// 获取或设置商户单号。
@@ -72,26 +103,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("transfer_remark")]
         [System.Text.Json.Serialization.JsonPropertyName("transfer_remark")]
         public string TransferRemark { get; set; } = string.Empty;
-
-        /// <summary>
-        /// 获取或设置出资商户号。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("sponsor_mchid")]
-        [System.Text.Json.Serialization.JsonPropertyName("sponsor_mchid")]
-        public string? SponsorMerchantId { get; set; }
-
-        /// <summary>
-        /// 获取或设置转账场景 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("transfer_scene_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("transfer_scene_id")]
-        public string? TransferSceneId { get; set; }
-
-        /// <summary>
-        /// 获取或设置用户收款感知。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("user_recv_perception")]
-        [System.Text.Json.Serialization.JsonPropertyName("user_recv_perception")]
-        public string? UserReceivePerception { get; set; }
     }
 }

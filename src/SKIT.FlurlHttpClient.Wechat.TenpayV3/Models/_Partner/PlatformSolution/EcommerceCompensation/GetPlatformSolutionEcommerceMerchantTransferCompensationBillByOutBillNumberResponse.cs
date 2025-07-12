@@ -20,6 +20,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                             public class TransactionInfo
                             {
                                 /// <summary>
+                                /// 获取或设置转账接收方订单类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("type")]
+                                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                                public string? Type { get; set; }
+
+                                /// <summary>
                                 /// 获取或设置微信交易订单号。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("transaction_id")]
