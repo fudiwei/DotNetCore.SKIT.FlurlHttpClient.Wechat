@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
                 return (DecryptResponseSensitiveProperty(client, queryCertificatesResponse) as TResponse)!;
             }
 
-            return WechatTenpayClientResponseDecryptionExtensions.DecryptResponseSensitiveProperty(client, response);
+            return WechatTenpayClientResponseDecryptionExtensions.DecryptResponseSensitiveProperty(client.ProxyClient, response);
         }
     }
 }

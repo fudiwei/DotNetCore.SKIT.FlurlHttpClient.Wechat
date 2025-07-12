@@ -7,13 +7,13 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
+
     /// <summary>
     /// 一个微信支付 API HTTP 客户端。
     /// </summary>
     public class WechatTenpayClient : CommonClientBase, ICommonClient
     {
-        private static readonly string ASSEMBLY_VERSION = Assembly.GetAssembly(typeof(WechatTenpayClient))!.GetName()!.Version!.ToString();
-
         /// <summary>
         /// 获取当前客户端使用的微信支付商户凭证。
         /// </summary>
@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             FlurlClient.BaseUrl = options.Endpoint ?? WechatTenpayEndpoints.DEFAULT;
             FlurlClient.WithHeader(HttpHeaders.Accept, "application/json");
             FlurlClient.WithHeader(HttpHeaders.AcceptLanguage, options.AcceptLanguage);
-            FlurlClient.WithHeader(HttpHeaders.UserAgent, $"OS/{Environment.OSVersion.Platform} SKIT.FlurlHttpClient.Wechat.Tenpay/{ASSEMBLY_VERSION}");
+            FlurlClient.WithHeader(HttpHeaders.UserAgent, $"OS/{Environment.OSVersion.Platform} SKIT.FlurlHttpClient.Wechat.Tenpay/{AssemblyProps.VERSION}");
             FlurlClient.WithTimeout(options.Timeout <= 0 ? Timeout.InfiniteTimeSpan : TimeSpan.FromMilliseconds(options.Timeout));
 
             Interceptors.Add(new Interceptors.WechatTenpayRequestSigningInterceptor(
@@ -121,7 +121,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             where T : WechatTenpayResponse, new()
         {
             if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
-            if (this is ExtendedSDK.Global.WechatTenpayGlobalClient) throw new InvalidOperationException("This client only supports WeChatPay Global business. Maybe you have misused the client builder or imported a wrong namespaces.");
 
             using IFlurlResponse flurlResponse = await base.SendFlurlRequestAsync(flurlRequest, httpContent, cancellationToken).ConfigureAwait(false);
             return await WrapFlurlResponseAsJsonAsync<T>(flurlResponse, cancellationToken).ConfigureAwait(false);
@@ -139,7 +138,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             where T : WechatTenpayResponse, new()
         {
             if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
-            if (this is ExtendedSDK.Global.WechatTenpayGlobalClient) throw new InvalidOperationException("This client only supports WeChatPay Global business. Maybe you have misused the client builder or imported a wrong namespaces.");
 
             bool isSimpleRequest = data is null ||
                 flurlRequest.Verb == HttpMethod.Get ||

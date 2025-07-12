@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         public static ErroredResult VerifyResponseSignature<TResponse>(this WechatTenpayGlobalClient client, TResponse response)
             where TResponse : WechatTenpayGlobalResponse
         {
-            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignature(client, response);
+            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignature(client.ProxyClient, response);
         }
 
         /// <summary>
@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static ErroredResult VerifyResponseSignature(this WechatTenpayGlobalClient client, string responseTimestamp, string responseNonce, string responseBody, string responseSignature, string responseSerialNumber)
         {
-            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignature(client, responseTimestamp, responseNonce, responseBody, responseSignature, responseSerialNumber);
+            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignature(client.ProxyClient, responseTimestamp, responseNonce, responseBody, responseSignature, responseSerialNumber);
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static ErroredResult VerifyResponseSignature(this WechatTenpayGlobalClient client, string responseTimestamp, string responseNonce, string responseBody, string responseSignature, string responseSignatureType, string responseSerialNumber)
         {
-            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignature(client, responseTimestamp, responseNonce, responseBody, responseSignature, responseSignatureType, responseSerialNumber);
+            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignature(client.ProxyClient, responseTimestamp, responseNonce, responseBody, responseSignature, responseSignatureType, responseSerialNumber);
         }
 
         /// <summary>
@@ -78,7 +78,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         public static Task<ErroredResult> VerifyResponseSignatureAsync<TResponse>(this WechatTenpayGlobalClient client, TResponse response, CancellationToken cancellationToken = default)
             where TResponse : WechatTenpayGlobalResponse
         {
-            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignatureAsync(client, response, cancellationToken);
+            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignatureAsync(client.ProxyClient, response, cancellationToken);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static Task<ErroredResult> VerifyResponseSignatureAsync(this WechatTenpayGlobalClient client, string responseTimestamp, string responseNonce, string responseBody, string responseSignature, string responseSerialNumber, CancellationToken cancellationToken = default)
         {
-            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignatureAsync(client, responseTimestamp, responseNonce, responseBody, responseSignature, responseSerialNumber, cancellationToken);
+            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignatureAsync(client.ProxyClient, responseTimestamp, responseNonce, responseBody, responseSignature, responseSerialNumber, cancellationToken);
         }
 
         /// <summary>
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static Task<ErroredResult> VerifyResponseSignatureAsync(this WechatTenpayGlobalClient client, string responseTimestamp, string responseNonce, string responseBody, string responseSignature, string responseSignatureType, string responseSerialNumber, CancellationToken cancellationToken = default)
         {
-            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignatureAsync(client, responseTimestamp, responseNonce, responseBody, responseSignature, responseSignatureType, responseSerialNumber, cancellationToken);
+            return WechatTenpayClientResponseVerificationExtensions.VerifyResponseSignatureAsync(client.ProxyClient, responseTimestamp, responseNonce, responseBody, responseSignature, responseSignatureType, responseSerialNumber, cancellationToken);
         }
     }
 }

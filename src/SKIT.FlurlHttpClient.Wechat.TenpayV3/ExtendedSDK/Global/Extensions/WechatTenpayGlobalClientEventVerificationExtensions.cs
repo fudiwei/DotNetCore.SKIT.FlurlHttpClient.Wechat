@@ -23,7 +23,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static ErroredResult VerifyEventSignature(this WechatTenpayGlobalClient client, string webhookTimestamp, string webhookNonce, string webhookBody, string webhookSignature, string webhookSerialNumber)
         {
-            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignature(client, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSerialNumber);
+            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignature(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSerialNumber);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static ErroredResult VerifyEventSignature(this WechatTenpayGlobalClient client, string webhookTimestamp, string webhookNonce, string webhookBody, string webhookSignature, string webhookSignatureType, string webhookSerialNumber)
         {
-            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignature(client, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSignatureType, webhookSerialNumber);
+            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignature(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSignatureType, webhookSerialNumber);
         }
 
         /// <summary>
@@ -63,7 +63,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static Task<ErroredResult> VerifyEventSignatureAsync(this WechatTenpayGlobalClient client, string webhookTimestamp, string webhookNonce, string webhookBody, string webhookSignature, string webhookSerialNumber, CancellationToken cancellationToken = default)
         {
-            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignatureAsync(client, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSerialNumber, cancellationToken);
+            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignatureAsync(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSerialNumber, cancellationToken);
         }
 
         /// <summary>
@@ -84,7 +84,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public static Task<ErroredResult> VerifyEventSignatureAsync(this WechatTenpayGlobalClient client, string webhookTimestamp, string webhookNonce, string webhookBody, string webhookSignature, string webhookSignatureType, string webhookSerialNumber, CancellationToken cancellationToken = default)
         {
-            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignatureAsync(client, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSignatureType, webhookSerialNumber, cancellationToken);
+            return WechatTenpayClientEventVerificationExtensions.VerifyEventSignatureAsync(client.ProxyClient, webhookTimestamp, webhookNonce, webhookBody, webhookSignature, webhookSignatureType, webhookSerialNumber, cancellationToken);
         }
     }
 }

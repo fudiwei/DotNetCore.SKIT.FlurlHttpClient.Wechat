@@ -6,15 +6,35 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 {
+    using _ROOT_ = SKIT.FlurlHttpClient.Wechat.TenpayV3;
+    using SKIT.FlurlHttpClient.Wechat.TenpayV3.Constants;
+
     /// <summary>
     /// 一个微信支付 Global API HTTP 客户端。
     /// </summary>
-    public class WechatTenpayGlobalClient : WechatTenpayClient
+    public class WechatTenpayGlobalClient : CommonClientBase, ICommonClient
     {
+        internal WechatTenpayClient ProxyClient { get; }
+
         /// <summary>
         /// 获取当前客户端使用的微信支付商户凭证。
         /// </summary>
-        public new Settings.Credentials Credentials { get; }
+        public Settings.Credentials Credentials { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的微信支付平台证书管理器。
+        /// </summary>
+        public _ROOT_.Settings.ICertificateManager PlatformCertificateManager { get; }
+
+        /// <summary>
+        /// 获取是否自动加密请求中的敏感信息字段。
+        /// </summary>
+        protected internal bool AutoEncryptRequestSensitiveProperty { get; }
+
+        /// <summary>
+        /// 获取是否自动解密请求中的敏感信息字段。
+        /// </summary>
+        protected internal bool AutoDecryptResponseSensitiveProperty { get; }
 
         /// <summary>
         /// 用指定的配置项初始化 <see cref="WechatTenpayGlobalClient"/> 类的新实例。
@@ -32,30 +52,43 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="httpClient"></param>
         /// <param name="disposeClient"></param>
         internal protected WechatTenpayGlobalClient(WechatTenpayGlobalClientOptions options, HttpClient? httpClient, bool disposeClient = true)
-            : base(
-                new WechatTenpayClientOptions()
-                {
-                    Timeout = options.Timeout,
-                    Endpoint = options.Endpoint,
-                    AcceptLanguage = options.AcceptLanguage,
-                    SignScheme = options.SignScheme,
-                    MerchantId = options.MerchantId,
-                    MerchantV3Secret = options.MerchantV3Secret,
-                    MerchantCertificateSerialNumber = options.MerchantCertificateSerialNumber,
-                    MerchantCertificatePrivateKey = options.MerchantCertificatePrivateKey,
-                    AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty,
-                    AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty,
-                    PlatformCertificateManager = options.PlatformCertificateManager
-                },
-                httpClient,
-                disposeClient
-            )
+            : base(httpClient, disposeClient)
         {
             if (options is null) throw new ArgumentNullException(nameof(options));
 
+            ProxyClient = new WechatTenpayClient(new WechatTenpayClientOptions()
+            {
+                Timeout = options.Timeout,
+                Endpoint = options.Endpoint,
+                AcceptLanguage = options.AcceptLanguage,
+                SignScheme = options.SignScheme,
+                MerchantId = options.MerchantId,
+                MerchantV3Secret = options.MerchantV3Secret,
+                MerchantCertificateSerialNumber = options.MerchantCertificateSerialNumber,
+                MerchantCertificatePrivateKey = options.MerchantCertificatePrivateKey,
+                PlatformAuthScheme = _ROOT_.Settings.PlatformAuthScheme.Certificate,
+                PlatformCertificateManager = options.PlatformCertificateManager,
+                AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty,
+                AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty
+            }, httpClient, disposeClient);
+
             Credentials = new Settings.Credentials(options);
+            PlatformCertificateManager = options.PlatformCertificateManager;
+            AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty;
+            AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty;
 
             FlurlClient.BaseUrl = options.Endpoint ?? WechatTenpayGlobalEndpoints.DEFAULT;
+            FlurlClient.WithHeader(HttpHeaders.Accept, "application/json");
+            FlurlClient.WithHeader(HttpHeaders.AcceptLanguage, options.AcceptLanguage);
+            FlurlClient.WithHeader(HttpHeaders.UserAgent, $"OS/{Environment.OSVersion.Platform} SKIT.FlurlHttpClient.Wechat.Tenpay/{AssemblyProps.VERSION}");
+            FlurlClient.WithTimeout(options.Timeout <= 0 ? Timeout.InfiniteTimeSpan : TimeSpan.FromMilliseconds(options.Timeout));
+
+            Interceptors.Add(new Interceptors.WechatTenpayRequestSigningInterceptor(
+                scheme: options.SignScheme,
+                mchId: options.MerchantId,
+                mchCertSn: options.MerchantCertificateSerialNumber,
+                mchCertPk: options.MerchantCertificatePrivateKey
+            ));
         }
 
         /// <summary>
@@ -78,7 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="httpContent"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public new async Task<T> SendFlurlRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
+        public async Task<T> SendFlurlRequestAsync<T>(IFlurlRequest flurlRequest, HttpContent? httpContent = null, CancellationToken cancellationToken = default)
             where T : WechatTenpayGlobalResponse, new()
         {
             if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));
@@ -95,7 +128,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <param name="data"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public new async Task<T> SendFlurlRequestAsJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
+        public async Task<T> SendFlurlRequestAsJsonAsync<T>(IFlurlRequest flurlRequest, object? data = null, CancellationToken cancellationToken = default)
             where T : WechatTenpayGlobalResponse, new()
         {
             if (flurlRequest is null) throw new ArgumentNullException(nameof(flurlRequest));

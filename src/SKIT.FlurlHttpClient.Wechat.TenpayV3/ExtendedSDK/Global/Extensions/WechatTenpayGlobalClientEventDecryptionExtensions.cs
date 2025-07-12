@@ -28,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         public static T DecryptEventResource<T>(this WechatTenpayGlobalClient client, WechatTenpayGlobalEvent webhookEvent)
             where T : WechatTenpayGlobalEvent.Types.IDecryptedResource, new()
         {
-            return WechatTenpayClientEventDecryptionExtensions.DecryptEventResource<T>(client, webhookEvent.Resource);
+            return WechatTenpayClientEventDecryptionExtensions.DecryptEventResource<T>(client.ProxyClient, webhookEvent.Resource);
         }
 
         /// <summary>
@@ -41,7 +41,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         public static T DecryptEventResource<T>(this WechatTenpayGlobalClient client, WechatTenpayGlobalEvent.Types.Resource webhookEventResource)
             where T : WechatTenpayGlobalEvent.Types.IDecryptedResource, new()
         {
-            return WechatTenpayClientEventDecryptionExtensions.DecryptEventResource<T>(client, webhookEventResource);
+            return WechatTenpayClientEventDecryptionExtensions.DecryptEventResource<T>(client.ProxyClient, webhookEventResource);
         }
     }
 }
