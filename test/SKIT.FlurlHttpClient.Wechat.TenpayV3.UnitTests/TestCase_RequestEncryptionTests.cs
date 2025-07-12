@@ -1740,18 +1740,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
-        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /platsolution/mch-transfer/reservation/apply）")]
-        public async Task TestEncryptRequestSensitiveProperty_ApplyPlatformSolutionMerchantTransferReservationRequest()
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /platsolution/insurance/mch-transfer/reservation/apply）")]
+        public async Task TestEncryptRequestSensitiveProperty_ApplyPlatformSolutionInsuranceMerchantTransferReservationRequest()
         {
-            static Models.ApplyPlatformSolutionMerchantTransferReservationRequest GenerateMockRequestModel()
+            static Models.ApplyPlatformSolutionInsuranceMerchantTransferReservationRequest GenerateMockRequestModel()
             {
-                return new Models.ApplyPlatformSolutionMerchantTransferReservationRequest()
+                return new Models.ApplyPlatformSolutionInsuranceMerchantTransferReservationRequest()
                 {
                     UserName = MOCK_PLAIN_STR
                 };
             }
 
-            static void AssertMockRequestModel(Models.ApplyPlatformSolutionMerchantTransferReservationRequest request, Func<string, string> decryptor)
+            static void AssertMockRequestModel(Models.ApplyPlatformSolutionInsuranceMerchantTransferReservationRequest request, Func<string, string> decryptor)
             {
                 Assert.NotEqual(MOCK_PLAIN_STR, request.UserName!);
                 Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
@@ -1769,7 +1769,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseRSA(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
-                    await client.ExecuteApplyPlatformSolutionMerchantTransferReservationAsync(request);
+                    await client.ExecuteApplyPlatformSolutionInsuranceMerchantTransferReservationAsync(request);
                     AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }
@@ -1786,7 +1786,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                 using (var client = CreateMockClientUseSM2(autoEncrypt: true))
                 {
                     var request = GenerateMockRequestModel();
-                    await client.ExecuteApplyPlatformSolutionMerchantTransferReservationAsync(request);
+                    await client.ExecuteApplyPlatformSolutionInsuranceMerchantTransferReservationAsync(request);
                     AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
                 }
             }

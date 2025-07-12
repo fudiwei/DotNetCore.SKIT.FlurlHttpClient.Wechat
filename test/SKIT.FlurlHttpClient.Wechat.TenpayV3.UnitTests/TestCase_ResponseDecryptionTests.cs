@@ -1072,18 +1072,18 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
-        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /platsolution/mch-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}）")]
-        public async Task TestDecryptResponseSensitiveProperty_GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse()
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /platsolution/insurance/mch-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdResponse()
         {
-            static Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            static Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return SetMockResponseRawStatusAsOk(new Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdResponse()
                 {
                     UserName = encryptor.Invoke(MOCK_PLAIN_STR)
                 });
             }
 
-            static void AssertMockResponseModel(Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse response)
+            static void AssertMockResponseModel(Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdResponse response)
             {
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
@@ -1104,8 +1104,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     )
                 ))
                 {
-                    var request = new Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdRequest();
-                    var response = await client.ExecuteGetPlatformSolutionMerchantTransferBatchDetailByDetailIdAsync(request);
+                    var request = new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdRequest();
+                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdAsync(request);
                     AssertMockResponseModel(response);
                 }
             }
@@ -1126,25 +1126,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     )
                 ))
                 {
-                    var request = new Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdRequest();
-                    var response = await client.ExecuteGetPlatformSolutionMerchantTransferBatchDetailByDetailIdAsync(request);
+                    var request = new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdRequest();
+                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdAsync(request);
                     AssertMockResponseModel(response);
                 }
             }
         }
 
-        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /platsolution/mch-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}）")]
-        public async Task TestDecryptResponseSensitiveProperty_GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse()
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /platsolution/insurance/mch-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberResponse()
         {
-            static Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            static Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)
             {
-                return SetMockResponseRawStatusAsOk(new Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse()
+                return SetMockResponseRawStatusAsOk(new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberResponse()
                 {
                     UserName = encryptor.Invoke(MOCK_PLAIN_STR)
                 });
             }
 
-            static void AssertMockResponseModel(Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse response)
+            static void AssertMockResponseModel(Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberResponse response)
             {
                 Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
             }
@@ -1165,8 +1165,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     )
                 ))
                 {
-                    var request = new Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberRequest();
-                    var response = await client.ExecuteGetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberAsync(request);
+                    var request = new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberRequest();
+                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberAsync(request);
                     AssertMockResponseModel(response);
                 }
             }
@@ -1187,8 +1187,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
                     )
                 ))
                 {
-                    var request = new Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberRequest();
-                    var response = await client.ExecuteGetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberAsync(request);
+                    var request = new Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberRequest();
+                    var response = await client.ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberAsync(request);
                     AssertMockResponseModel(response);
                 }
             }

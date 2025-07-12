@@ -47,6 +47,7 @@
 |  √  |     经营能力：微信支付分停车      | 直连商户 & 合作伙伴 |                   |
 |  √  |   经营能力：微信支付分签约计划    | 直连商户 & 合作伙伴 |                   |
 |  √  |       经营能力：平台收付通        |      合作伙伴       |                   |
+|  √  |       经营能力：平台保证金        |      合作伙伴       |                   |
 |  √  |         运营工具：代金券          | 直连商户 & 合作伙伴 |                   |
 |  √  |         运营工具：商家券          | 直连商户 & 合作伙伴 |                   |
 |  √  |         运营工具：消费金          |      直连商户       |                   |
@@ -1027,25 +1028,25 @@
 
         -   批量商家转账
 
-            -   受理商家转账：`ApplyPlatformSolutionMerchantTransferBatch`
+            -   受理商家转账：`ApplyPlatformSolutionInsuranceMerchantTransferBatch`
 
-            -   微信支付转账批次单号查询批次单：`GetPlatformSolutionMerchantTransferBatchByBatchId`
+            -   微信支付转账批次单号查询批次单：`GetPlatformSolutionInsuranceMerchantTransferBatchByBatchId`
 
-            -   微信支付转账明细单号查询明细单：`GetPlatformSolutionMerchantTransferBatchDetailByDetailId`
+            -   微信支付转账明细单号查询明细单：`GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailId`
 
-            -   商户转账批次单号查询批次单：`GetPlatformSolutionMerchantTransferBatchByOutBatchNumber`
+            -   商户转账批次单号查询批次单：`GetPlatformSolutionInsuranceMerchantTransferBatchByOutBatchNumber`
 
-            -   商户明细单号查询明细单：`GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumber`
+            -   商户明细单号查询明细单：`GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumber`
 
         -   预约商家转账
 
-            -   受理单次预约商家转账：`ApplyPlatformSolutionMerchantTransferReservation`
+            -   受理单次预约商家转账：`ApplyPlatformSolutionInsuranceMerchantTransferReservation`
 
-            -   商户预约单号查询预约商家转账记录：`GetPlatformSolutionMerchantTransferReservationByOutReservationNumber`
+            -   商户预约单号查询预约商家转账记录：`GetPlatformSolutionInsuranceMerchantTransferReservationByOutReservationNumber`
 
-            -   关闭预约商家转账记录：`ClosePlatformSolutionMerchantTransferReservation`
+            -   关闭预约商家转账记录：`ClosePlatformSolutionInsuranceMerchantTransferReservation`
 
-            -   微信支付预约单号查询预约商家转账记录：`GetPlatformSolutionMerchantTransferReservationByReservationId`
+            -   微信支付预约单号查询预约商家转账记录：`GetPlatformSolutionInsuranceMerchantTransferReservationByReservationId`
 
     -   平台收付通（商家充值）
 
@@ -1081,13 +1082,13 @@
 
     -   平台收付通（平台售后赔付）
 
-            -   请求赔付：`CreatePlatformSolutionEcommerceMerchantTransferCompensateBill`
+            -   请求赔付：`CreatePlatformSolutionEcommerceMerchantTransferCompensationBill`
 
-            -   请求赔付预下单：`CreatePlatformSolutionEcommerceMerchantTransferCompensateBillPreTransfer`
+            -   请求赔付预下单：`CreatePlatformSolutionEcommerceMerchantTransferCompensationBillPreTransfer`
 
-            -   请求撤销赔付：`CancelPlatformSolutionEcommerceMerchantTransferCompensateBill`
+            -   请求撤销赔付：`CancelPlatformSolutionEcommerceMerchantTransferCompensationBill`
 
-            -   查询赔付结果：`GetPlatformSolutionEcommerceMerchantTransferCompensateBillByOutBillNumber` / `GetPlatformSolutionEcommerceMerchantTransferCompensateBillByBillId`
+            -   查询赔付结果：`GetPlatformSolutionEcommerceMerchantTransferCompensationBillByOutBillNumber` / `GetPlatformSolutionEcommerceMerchantTransferCompensationBillByBillId`
 
     -   代金券
 

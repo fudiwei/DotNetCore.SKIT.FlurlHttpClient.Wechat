@@ -8,7 +8,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
     public static class WechatTenpayClientExecutePlatformSolutionExtensions
     {
-        #region EcommerceInsuranceCompensationContracts
+        #region EcommerceInsuranceCompensation
         /// <summary>
         /// <para>异步调用 [POST] /platsolution/ecommerce/insurance-compensation-contracts 接口。</para>
         /// <para>
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
         #endregion
 
-        #region EcommerceMerchantTransferCompensateBill
+        #region EcommerceMerchantTransferCompensation
         /// <summary>
         /// <para>异步调用 [POST] /platsolution/ecommerce/mch-transfer/compensate-bills 接口。</para>
         /// <para>
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CreatePlatformSolutionEcommerceMerchantTransferCompensateBillResponse> ExecuteCreatePlatformSolutionEcommerceMerchantTransferCompensateBillAsync(this WechatTenpayClient client, Models.CreatePlatformSolutionEcommerceMerchantTransferCompensateBillRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CreatePlatformSolutionEcommerceMerchantTransferCompensationBillResponse> ExecuteCreatePlatformSolutionEcommerceMerchantTransferCompensationBillAsync(this WechatTenpayClient client, Models.CreatePlatformSolutionEcommerceMerchantTransferCompensationBillRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "ecommerce", "mch-transfer", "compensate-bills");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePlatformSolutionEcommerceMerchantTransferCompensateBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePlatformSolutionEcommerceMerchantTransferCompensationBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CreatePlatformSolutionEcommerceMerchantTransferCompensateBillPreTransferResponse> ExecuteCreatePlatformSolutionEcommerceMerchantTransferCompensateBillPreTransferAsync(this WechatTenpayClient client, Models.CreatePlatformSolutionEcommerceMerchantTransferCompensateBillPreTransferRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CreatePlatformSolutionEcommerceMerchantTransferCompensationBillPreTransferResponse> ExecuteCreatePlatformSolutionEcommerceMerchantTransferCompensationBillPreTransferAsync(this WechatTenpayClient client, Models.CreatePlatformSolutionEcommerceMerchantTransferCompensationBillPreTransferRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -97,7 +97,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "ecommerce", "mch-transfer", "compensate-bills", "pre-transfer");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePlatformSolutionEcommerceMerchantTransferCompensateBillPreTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePlatformSolutionEcommerceMerchantTransferCompensationBillPreTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.CancelPlatformSolutionEcommerceMerchantTransferCompensateBillResponse> ExecuteCancelPlatformSolutionEcommerceMerchantTransferCompensateBillAsync(this WechatTenpayClient client, Models.CancelPlatformSolutionEcommerceMerchantTransferCompensateBillRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.CancelPlatformSolutionEcommerceMerchantTransferCompensationBillResponse> ExecuteCancelPlatformSolutionEcommerceMerchantTransferCompensationBillAsync(this WechatTenpayClient client, Models.CancelPlatformSolutionEcommerceMerchantTransferCompensationBillRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -119,7 +119,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "ecommerce", "mch-transfer", "compensate-bills", "out-bill-no", request.OutBillNumber, "cancel");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.CancelPlatformSolutionEcommerceMerchantTransferCompensateBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.CancelPlatformSolutionEcommerceMerchantTransferCompensationBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetPlatformSolutionEcommerceMerchantTransferCompensateBillByOutBillNumberResponse> ExecuteGetPlatformSolutionEcommerceMerchantTransferCompensateBillByOutBillNumberAsync(this WechatTenpayClient client, Models.GetPlatformSolutionEcommerceMerchantTransferCompensateBillByOutBillNumberRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetPlatformSolutionEcommerceMerchantTransferCompensationBillByOutBillNumberResponse> ExecuteGetPlatformSolutionEcommerceMerchantTransferCompensationBillByOutBillNumberAsync(this WechatTenpayClient client, Models.GetPlatformSolutionEcommerceMerchantTransferCompensationBillByOutBillNumberRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -141,7 +141,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "ecommerce", "mch-transfer", "compensate-bills", "out-bill-no", request.OutBillNumber);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionEcommerceMerchantTransferCompensateBillByOutBillNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionEcommerceMerchantTransferCompensationBillByOutBillNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -155,7 +155,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetPlatformSolutionEcommerceMerchantTransferCompensateBillByBillIdResponse> ExecuteGetPlatformSolutionEcommerceMerchantTransferCompensateBillByBillIdAsync(this WechatTenpayClient client, Models.GetPlatformSolutionEcommerceMerchantTransferCompensateBillByBillIdRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetPlatformSolutionEcommerceMerchantTransferCompensationBillByBillIdResponse> ExecuteGetPlatformSolutionEcommerceMerchantTransferCompensationBillByBillIdAsync(this WechatTenpayClient client, Models.GetPlatformSolutionEcommerceMerchantTransferCompensationBillByBillIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
@@ -163,11 +163,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "ecommerce", "mch-transfer", "compensate-bills", "bill-id", request.BillId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionEcommerceMerchantTransferCompensateBillByBillIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionEcommerceMerchantTransferCompensationBillByBillIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
-        #region EcommerceMerchantTransferInsuranceClaimBill
+        #region EcommerceMerchantTransferInsuranceClaim
         /// <summary>
         /// <para>异步调用 [POST] /platsolution/ecommerce/mch-transfer/insurance-claim-bills 接口。</para>
         /// <para>
@@ -281,7 +281,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
         #endregion
 
-        #region EcommerceRecharges
+        #region EcommerceRecharge
         /// <summary>
         /// <para>异步调用 [POST] /platsolution/ecommerce/recharges/apply 接口。</para>
         /// <para>
@@ -393,9 +393,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionEcommerceBankTransferRechargeByOutRechargeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
-        #endregion
-
-        #region EcommerceRechargeEmployees
+        
+        #region EcommerceRecharge/Employee
         /// <summary>
         /// <para>异步调用 [POST] /platsolution/ecommerce/recharge-employees 接口。</para>
         /// <para>
@@ -462,218 +461,219 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryPlatformSolutionEcommerceRechargeEmployeesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
+        #endregion
 
         #region MerchantTransfer
         /// <summary>
-        /// <para>异步调用 [POST] /platsolution/mch-transfer/batches/apply 接口。</para>
+        /// <para>异步调用 [POST] /platsolution/insurance/mch-transfer/batches/apply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-batch/transfer-batch-apply.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013504220 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ApplyPlatformSolutionMerchantTransferBatchResponse> ExecuteApplyPlatformSolutionMerchantTransferBatchAsync(this WechatTenpayClient client, Models.ApplyPlatformSolutionMerchantTransferBatchRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ApplyPlatformSolutionInsuranceMerchantTransferBatchResponse> ExecuteApplyPlatformSolutionInsuranceMerchantTransferBatchAsync(this WechatTenpayClient client, Models.ApplyPlatformSolutionInsuranceMerchantTransferBatchRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "mch-transfer", "batches", "apply");
+                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "insurance", "mch-transfer", "batches", "apply");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ApplyPlatformSolutionMerchantTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ApplyPlatformSolutionInsuranceMerchantTransferBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /platsolution/mch-transfer/batches/out-batch-no/{out_batch_no} 接口。</para>
+        /// <para>异步调用 [GET] /platsolution/insurance/mch-transfer/batches/out-batch-no/{out_batch_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-batch/transfer-batch-get-by-out-code.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013504221 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetPlatformSolutionMerchantTransferBatchByOutBatchNumberResponse> ExecuteGetPlatformSolutionMerchantTransferBatchByOutBatchNumberAsync(this WechatTenpayClient client, Models.GetPlatformSolutionMerchantTransferBatchByOutBatchNumberRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetPlatformSolutionInsuranceMerchantTransferBatchByOutBatchNumberResponse> ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchByOutBatchNumberAsync(this WechatTenpayClient client, Models.GetPlatformSolutionInsuranceMerchantTransferBatchByOutBatchNumberRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "mch-transfer", "batches", "out-batch-no", request.OutBatchNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "insurance", "mch-transfer", "batches", "out-batch-no", request.OutBatchNumber)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail ? "true" : "false")
                 .SetQueryParam("detail_state", request.DetailState)
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionMerchantTransferBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionInsuranceMerchantTransferBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /platsolution/mch-transfer/batches/batch-id/{batch_id} 接口。</para>
+        /// <para>异步调用 [GET] /platsolution/insurance/mch-transfer/batches/batch-id/{batch_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-batch/transfer-batch-get-by-id.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013504223 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetPlatformSolutionMerchantTransferBatchByBatchIdResponse> ExecuteGetPlatformSolutionMerchantTransferBatchByBatchIdAsync(this WechatTenpayClient client, Models.GetPlatformSolutionMerchantTransferBatchByBatchIdRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetPlatformSolutionInsuranceMerchantTransferBatchByBatchIdResponse> ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchByBatchIdAsync(this WechatTenpayClient client, Models.GetPlatformSolutionInsuranceMerchantTransferBatchByBatchIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "mch-transfer", "batches", "batch-id", request.BatchId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "insurance", "mch-transfer", "batches", "batch-id", request.BatchId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId)
                 .SetQueryParam("need_query_detail", request.RequireQueryDetail ? "true" : "false")
                 .SetQueryParam("detail_state", request.DetailState)
                 .SetQueryParam("offset", request.Offset)
                 .SetQueryParam("limit", request.Limit);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionMerchantTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionInsuranceMerchantTransferBatchByBatchIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /platsolution/mch-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no} 接口。</para>
+        /// <para>异步调用 [GET] /platsolution/insurance/mch-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-batch/transfer-batch-get-detail-by-out-no.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013504222 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse> ExecuteGetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberAsync(this WechatTenpayClient client, Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberResponse> ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberAsync(this WechatTenpayClient client, Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "mch-transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "insurance", "mch-transfer", "batches", "out-batch-no", request.OutBatchNumber, "details", "out-detail-no", request.OutDetailNumber)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionMerchantTransferBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /platsolution/mch-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id} 接口。</para>
+        /// <para>异步调用 [GET] /platsolution/insurance/mch-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-batch/get-transfer-detail-by-no.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013504224 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse> ExecuteGetPlatformSolutionMerchantTransferBatchDetailByDetailIdAsync(this WechatTenpayClient client, Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdResponse> ExecuteGetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdAsync(this WechatTenpayClient client, Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "mch-transfer", "batches", "out-batch-no", request.BatchId, "details", "detail-id", request.DetailId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "insurance", "mch-transfer", "batches", "out-batch-no", request.BatchId, "details", "detail-id", request.DetailId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionMerchantTransferBatchDetailByDetailIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionInsuranceMerchantTransferBatchDetailByDetailIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /platsolution/mch-transfer/reservation/apply 接口。</para>
+        /// <para>异步调用 [POST] /platsolution/insurance/mch-transfer/reservation/apply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-apply.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013504216 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ApplyPlatformSolutionMerchantTransferReservationResponse> ExecuteApplyPlatformSolutionMerchantTransferReservationAsync(this WechatTenpayClient client, Models.ApplyPlatformSolutionMerchantTransferReservationRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ApplyPlatformSolutionInsuranceMerchantTransferReservationResponse> ExecuteApplyPlatformSolutionInsuranceMerchantTransferReservationAsync(this WechatTenpayClient client, Models.ApplyPlatformSolutionInsuranceMerchantTransferReservationRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "mch-transfer", "reservation", "apply");
+                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "insurance", "mch-transfer", "reservation", "apply");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ApplyPlatformSolutionMerchantTransferReservationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ApplyPlatformSolutionInsuranceMerchantTransferReservationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /platsolution/mch-transfer/reservation/out-reservation-no/{out_reservation_no} 接口。</para>
+        /// <para>异步调用 [GET] /platsolution/insurance/mch-transfer/reservation/out-reservation-no/{out_reservation_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-get-by-out-no.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013504218 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetPlatformSolutionMerchantTransferReservationByOutReservationNumberResponse> ExecuteGetPlatformSolutionMerchantTransferReservationByOutReservationNumberAsync(this WechatTenpayClient client, Models.GetPlatformSolutionMerchantTransferReservationByOutReservationNumberRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetPlatformSolutionInsuranceMerchantTransferReservationByOutReservationNumberResponse> ExecuteGetPlatformSolutionInsuranceMerchantTransferReservationByOutReservationNumberAsync(this WechatTenpayClient client, Models.GetPlatformSolutionInsuranceMerchantTransferReservationByOutReservationNumberRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "mch-transfer", "reservation", "out-reservation-no", request.OutReservationNumber)
+                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "insurance", "mch-transfer", "reservation", "out-reservation-no", request.OutReservationNumber)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionMerchantTransferReservationByOutReservationNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionInsuranceMerchantTransferReservationByOutReservationNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [GET] /platsolution/mch-transfer/reservation/reservation-id/{reservation_id} 接口。</para>
+        /// <para>异步调用 [GET] /platsolution/insurance/mch-transfer/reservation/reservation-id/{reservation_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-get-by-id.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013504217 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.GetPlatformSolutionMerchantTransferReservationByReservationIdResponse> ExecuteGetPlatformSolutionMerchantTransferReservationByReservationIdAsync(this WechatTenpayClient client, Models.GetPlatformSolutionMerchantTransferReservationByReservationIdRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.GetPlatformSolutionInsuranceMerchantTransferReservationByReservationIdResponse> ExecuteGetPlatformSolutionInsuranceMerchantTransferReservationByReservationIdAsync(this WechatTenpayClient client, Models.GetPlatformSolutionInsuranceMerchantTransferReservationByReservationIdRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "mch-transfer", "reservation", "reservation-id", request.ReservationId)
+                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "insurance", "mch-transfer", "reservation", "reservation-id", request.ReservationId)
                 .SetQueryParam("sub_mchid", request.SubMerchantId);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionMerchantTransferReservationByReservationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionInsuranceMerchantTransferReservationByReservationIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /platsolution/mch-transfer/reservation/out-reservation-no/{out_reservation_no}/close 接口。</para>
+        /// <para>异步调用 [POST] /platsolution/insurance/mch-transfer/reservation/out-reservation-no/{out_reservation_no}/close 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-close.html ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013504219 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ClosePlatformSolutionMerchantTransferReservationResponse> ExecuteClosePlatformSolutionMerchantTransferReservationAsync(this WechatTenpayClient client, Models.ClosePlatformSolutionMerchantTransferReservationRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ClosePlatformSolutionInsuranceMerchantTransferReservationResponse> ExecuteClosePlatformSolutionInsuranceMerchantTransferReservationAsync(this WechatTenpayClient client, Models.ClosePlatformSolutionInsuranceMerchantTransferReservationRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "mch-transfer", "reservation", "out-reservation-no", request.OutReservationNumber, "close");
+                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "insurance", "mch-transfer", "reservation", "out-reservation-no", request.OutReservationNumber, "close");
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ClosePlatformSolutionMerchantTransferReservationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ClosePlatformSolutionInsuranceMerchantTransferReservationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }
