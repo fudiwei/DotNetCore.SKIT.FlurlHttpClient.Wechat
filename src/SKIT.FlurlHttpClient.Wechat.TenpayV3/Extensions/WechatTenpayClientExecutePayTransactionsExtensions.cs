@@ -248,5 +248,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ReversePayTransactionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        #region Exposure
+        /// <summary>
+        /// <para>异步调用 [POST] /pay/transactions/exposure 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014326314 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePayTransactionExposureResponse> ExecuteCreatePayTransactionExposureAsync(this WechatTenpayClient client, Models.CreatePayTransactionExposureRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.MerchantId is null)
+                request.MerchantId = client.Credentials.MerchantId;
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "pay", "transactions", "exposure");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePayTransactionExposureResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
     }
 }

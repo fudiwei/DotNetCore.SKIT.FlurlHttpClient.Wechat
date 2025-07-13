@@ -1,0 +1,9 @@
+{
+    "mchid": "example_mchid",
+    "appid": "wxd678efh567hg6787",
+    "payer": {
+        "openid": "oLTPCuEfSOSZA6X5uR_JxNKjrGLg",
+        "phone_number_hash": "ABDEF3445546456B"
+    },
+    "out_trade_no": "example_out_trade_no"
+}

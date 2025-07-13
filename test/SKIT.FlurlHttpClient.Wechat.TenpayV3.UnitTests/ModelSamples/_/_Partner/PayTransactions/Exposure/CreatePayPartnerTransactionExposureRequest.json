@@ -1,0 +1,12 @@
+{
+    "sp_mchid": "example_sp_mchid",
+    "sp_appid": "wxd678efh567hg6787",
+    "sub_mchid": "example_sub_mchid",
+    "sub_appid": "wxd678efh567hg6787",
+    "payer": {
+        "sp_openid": "oLTPCuEfSOSZA6X5uR_JxNKjrGLg",
+        "phone_number_hash": "ABDEF3445546456B",
+        "sub_openid": "oLTPCuEfSOSZA6X5uR_JxNKjrGLg"
+    },
+    "out_trade_no": "example_out_trade_no"
+}
