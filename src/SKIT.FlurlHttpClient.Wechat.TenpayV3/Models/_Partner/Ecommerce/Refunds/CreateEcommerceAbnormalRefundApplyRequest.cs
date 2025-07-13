@@ -35,11 +35,39 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         }
 
         /// <summary>
-        /// 获取或设置微信二级商户号。
+        /// 获取或设置微信 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sp_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sp_appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string? SubMerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置子商户 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_appid")]
+        public string? SubAppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置还款服务商商户号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("combine_mchid")]
+        [System.Text.Json.Serialization.JsonPropertyName("combine_mchid")]
+        public string? CombineMerchantId { get; set; }
+
+        /// <summary>
+        /// 获取或设置还款商户订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("combine_out_trade_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("combine_out_trade_no")]
+        public string? CombineOutTradeNumber { get; set; }
 
         /// <summary>
         /// 获取或设置微信退款单号。
