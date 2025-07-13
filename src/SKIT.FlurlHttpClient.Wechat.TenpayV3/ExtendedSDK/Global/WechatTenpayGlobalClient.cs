@@ -155,5 +155,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
 
             return result;
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            base.Dispose(disposing);
+
+            if (disposing)
+            {
+                ProxyClient.Dispose();
+            }
+        }
     }
 }
