@@ -1,0 +1,13 @@
+{
+    "out_authorization_no": "plfk2020042013",
+    "appid": "102022609",
+    "openid": "216BE837A39456BD6729F6F47D7C0EEE",
+    "user_display_name": "wx_123456",
+    "authorization_id": "201202504101000123456789012",
+    "state": "TAKING_EFFECT",
+    "authorize_time": "2015-05-20T13:29:35.120+08:00",
+    "close_info": {
+        "close_time": "2015-05-20T13:29:35.120+08:00",
+        "close_reason": "USER_CLOSE"
+    }
+}

@@ -370,6 +370,67 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[POST] /ecommerce/mch-transfer/transfer-bills/transfer）")]
+        public async Task TestDecryptResponseSensitiveProperty_CreateFundAppMerchantTransferBillTransferResponse()
+        {
+            static Models.CreateFundAppMerchantTransferBillTransferResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return SetMockResponseRawStatusAsOk(new Models.CreateFundAppMerchantTransferBillTransferResponse()
+                {
+                    UserName = encryptor.Invoke(MOCK_PLAIN_STR)
+                });
+            }
+
+            static void AssertMockResponseModel(Models.CreateFundAppMerchantTransferBillTransferResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.UserName!);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.CreateFundAppMerchantTransferBillTransferRequest();
+                    var response = await client.ExecuteCreateFundAppMerchantTransferBillTransferAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.CreateFundAppMerchantTransferBillTransferRequest();
+                    var response = await client.ExecuteCreateFundAppMerchantTransferBillTransferAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+        }
+
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /ecommerce/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}）")]
         public async Task TestDecryptResponseSensitiveProperty_GetEcommerceMerchantTransferBillByTransferBillNumberResponse()
         {
@@ -553,7 +614,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
-        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}）")]
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /fund-app/brand-redpacket/brand-merchant-out-batches/{out_batch_no}/out-details/{out_detail_no}）")]
         public async Task TestDecryptResponseSensitiveProperty_GetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberResponse()
         {
             static Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberResponse GenerateMockResponseModel(Func<string, string> encryptor)

@@ -200,6 +200,12 @@
 
             -   微信单号查询转账单：`GetFundAppMerchantTransferBillByTransferBillNumber`
 
+            -   发起转账并完成免确认收款授权：`CreateFundAppMerchantTransferBillPreTransferWithAuthorization`
+
+            -   转账（用户免确认收款）：`CreateFundAppMerchantTransferBillTransfer`
+
+            -   商户单号查询免确认收款授权：`GetFundAppMerchantTransferUserConfirmAuthorizationByOutAuthorizationNumber`
+
         -   获取电子回单
 
             -   商户单号申请电子回单：`CreateFundAppMerchantTransferElecsignByOutBillNumber`
