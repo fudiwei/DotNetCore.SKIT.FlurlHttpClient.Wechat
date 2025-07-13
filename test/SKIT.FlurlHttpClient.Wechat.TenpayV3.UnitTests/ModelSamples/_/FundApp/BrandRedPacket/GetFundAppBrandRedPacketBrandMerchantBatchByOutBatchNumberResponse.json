@@ -1,0 +1,27 @@
+{
+    "brand_mchid": "1900001109",
+    "batch_no": "1030000071100999991182020050700019480001",
+    "out_batch_no": "plfk2020042013",
+    "brand_id": 1234,
+    "template_id": "12340000000001",
+    "brand_appid": "wxf636efh567hg4356",
+    "batch_state": "ACCEPTED",
+    "batch_name": "双十一营销发放品牌红包",
+    "batch_remark": "双十一营销发放品牌红包",
+    "close_reason": "SYSTEM_OVERDUE_CLOSE",
+    "total_amount": 10000,
+    "total_num": 10,
+    "create_time": "2015-05-20T13:29:35+08:00",
+    "update_time": "2015-05-20T13:29:35+08:00",
+    "success_amount": 5000,
+    "success_num": 10,
+    "fail_amount": 5000,
+    "fail_num": 10,
+    "detail_list": [
+        {
+            "transfer_detail_no": "1220000071100999991182020050700019500100",
+            "out_detail_no": "x23zy545Bd5436",
+            "detail_state": "DETAIL_SUCCESS"
+        }
+    ]
+}

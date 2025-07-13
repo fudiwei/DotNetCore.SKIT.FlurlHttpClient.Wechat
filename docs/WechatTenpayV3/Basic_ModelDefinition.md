@@ -58,6 +58,7 @@
 |  √  |        运营工具：电子发票         | 直连商户 & 合作伙伴 |                   |
 |  √  |        运营工具：点金计划         |      合作伙伴       |                   |
 |  ×  |   <del>运营工具：现金红包</del>   | 直连商户 & 合作伙伴 | 官方未提供 v3 API |
+|  √  |        运营工具：品牌红包         |      直连商户       |                   |
 |  √  |          扩展工具：分账           | 直连商户 & 合作伙伴 |                   |
 |  √  |      扩展工具：连锁品牌分账       |      合作伙伴       |                   |
 |  √  |     扩展工具：消费者投诉 2.0      | 直连商户 & 合作伙伴 |                   |
@@ -208,7 +209,6 @@
             -   微信单号申请电子回单：`CreateFundAppMerchantTransferElecsignByTransferBillNumber`
 
             -   微信单号查询电子回单：`GetFundAppMerchantTransferElecsignByTransferBillNumber`
-
 
     -   商家转账到 QQ 钱包
 
@@ -487,6 +487,18 @@
             -   上传电子发票文件：`UploadNewTaxControlFapiaoApplicationFapiaoFile`
 
             -   将电子发票插入微信用户卡包：`CreateNewTaxControlFapiaoApplicationCard`
+
+    -   品牌红包
+
+        -   品牌商户发放红包：`CreateFundAppBrandRedPacketBrandMerchantBatch`
+
+        -   商家批次单号查询批次单：`GetFundAppBrandRedPacketBrandMerchantBatchByOutBatchNumber`
+
+        -   商家明细单号查询明细单：`GetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumber`
+
+        -   微信支付批次单号查询批次单：`GetFundAppBrandRedPacketBrandMerchantBatchByBatchNumber`
+
+        -   微信支付明细单号查询明细单：`GetFundAppBrandRedPacketBrandMerchantBatchDetailByDetailNumber`
 
     -   商家充值
 

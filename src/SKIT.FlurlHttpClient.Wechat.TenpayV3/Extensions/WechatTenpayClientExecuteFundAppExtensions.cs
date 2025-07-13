@@ -258,5 +258,121 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
         #endregion
         #endregion
+
+        #region BrandRedPacket
+        /// <summary>
+        /// <para>异步调用 [POST] /fund-app/brand-redpacket/brand-merchant-batches 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014310358 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateFundAppBrandRedPacketBrandMerchantBatchResponse> ExecuteCreateFundAppBrandRedPacketBrandMerchantBatchAsync(this WechatTenpayClient client, Models.CreateFundAppBrandRedPacketBrandMerchantBatchRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "fund-app", "brand-redpacket", "brand-merchant-batches");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateFundAppBrandRedPacketBrandMerchantBatchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /fund-app/brand-redpacket/brand-merchant-out-batches/{out_batch_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014310378 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetFundAppBrandRedPacketBrandMerchantBatchByOutBatchNumberResponse> ExecuteGetFundAppBrandRedPacketBrandMerchantBatchByOutBatchNumberAsync(this WechatTenpayClient client, Models.GetFundAppBrandRedPacketBrandMerchantBatchByOutBatchNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-out-batches", request.OutBatchNumber)
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail)
+                .SetQueryParam("detail_state", request.DetailState);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppBrandRedPacketBrandMerchantBatchByOutBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /fund-app/brand-redpacket/brand-merchant-batches/{batch_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014310369 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetFundAppBrandRedPacketBrandMerchantBatchByBatchNumberResponse> ExecuteGetFundAppBrandRedPacketBrandMerchantBatchByBatchNumberAsync(this WechatTenpayClient client, Models.GetFundAppBrandRedPacketBrandMerchantBatchByBatchNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-batches", request.BatchNumber)
+                .SetQueryParam("need_query_detail", request.RequireQueryDetail)
+                .SetQueryParam("detail_state", request.DetailState);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppBrandRedPacketBrandMerchantBatchByBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /fund-app/brand-redpacket/brand-merchant-out-batches/{out_batch_no}/out-details/{out_detail_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014310391 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberResponse> ExecuteGetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberAsync(this WechatTenpayClient client, Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-out-batches", request.OutBatchNumber, "out-details", request.OutDetailNumber);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByOutDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /fund-app/brand-redpacket/brand-merchant-batches/{batch_no}/details/{detail_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014310384 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByDetailNumberResponse> ExecuteGetFundAppBrandRedPacketBrandMerchantBatchDetailByDetailNumberAsync(this WechatTenpayClient client, Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByDetailNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-batches", request.BatchNumber, "out-details", request.DetailNumber);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
     }
 }

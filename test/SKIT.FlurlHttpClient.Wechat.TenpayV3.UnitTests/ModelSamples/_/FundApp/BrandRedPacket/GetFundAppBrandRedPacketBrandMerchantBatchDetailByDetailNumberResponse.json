@@ -1,0 +1,18 @@
+{
+    "brand_mchid": "1900001109",
+    "out_batch_no": "plfk2020042013",
+    "batch_no": "1030000071100999991182020050700019480001",
+    "out_detail_no": "x23zy545Bd5436",
+    "detail_no": "1040000071100999991182020050700019500100",
+    "detail_state": "DETAIL_SUCCESS",
+    "amount": 100,
+    "remark": "来自XX品牌红包",
+    "fail_reason": "ACCOUNT_FROZEN",
+    "openid": "o-MYE42l80oelYMDE34nYD456Xoy",
+    "user_name": "757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45",
+    "initiate_time": "2015-05-20T13:29:35+08:00",
+    "update_time": "2015-05-20T13:29:35+08:00",
+    "brand_id": 1234,
+    "template_id": "12340000000001",
+    "brand_appid": "wxf636efh567hg4356"
+}
