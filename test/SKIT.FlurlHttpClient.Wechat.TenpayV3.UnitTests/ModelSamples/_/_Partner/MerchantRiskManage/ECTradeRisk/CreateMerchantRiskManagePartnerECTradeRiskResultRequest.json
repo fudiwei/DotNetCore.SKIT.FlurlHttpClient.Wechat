@@ -1,0 +1,13 @@
+{
+    "sp_mchid": "1900000109",
+    "sub_mchid": "1900009231",
+    "out_trade_no": "20150806125346",
+    "final_risk_result": 1,
+    "final_risk_type": 1,
+    "disp_conclusion": [
+        1
+    ],
+    "disp_addition": "example_disp_addition",
+    "exist_complaint": false,
+    "refund_amount": 100
+}

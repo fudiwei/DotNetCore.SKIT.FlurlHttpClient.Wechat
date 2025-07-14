@@ -1431,6 +1431,12 @@
 
         -   处置结果回传：`CreateMerchantRiskManageTradeRiskResult`
 
+    -   风险订单同步及处理
+
+        -   查询风险订单：`QueryMerchantRiskManagePartnerECTradeRiskTrades`
+
+        -   处置结果回传：`CreateMerchantRiskManagePartnerECTradeRiskResult`
+
     -   不活跃商户身份核实
 
         -   发起不活跃商户身份核实：`CreateComplianceInactiveMerchantIdentityVerification`
