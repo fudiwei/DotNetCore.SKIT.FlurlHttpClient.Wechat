@@ -1,0 +1,10 @@
+{
+    "out_settle_batch_no": "123699878455555",
+    "settle_batch_no": "123688554855555666",
+    "individual_auth_id": "1900000109",
+    "description": "共计2笔订单，订单金额xxx元，平台服务费xxx元，合计收款xxx元",
+    "state": "SUCCESS",
+    "trade_scenario": "RECOMMERCE",
+    "create_time": "2024-06-08T10:34:56+08:00",
+    "finish_time": "2024-06-08T10:34:56+08:00"
+}

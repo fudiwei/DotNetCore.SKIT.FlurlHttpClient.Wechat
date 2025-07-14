@@ -1,0 +1,6 @@
+{
+    "individual_auth_id": "256322110225",
+    "out_abnormal_settle_batch_no": "1236698745558870",
+    "abnormal_settle_type": "TRANSFER_TO_ORIGINAL_RECEIVE_USER",
+    "description": "xx结算失败，转付至原用户"
+}

@@ -1,0 +1,17 @@
+{
+    "out_settle_batch_no": "123699878455555",
+    "settle_batch_no": "123688554855555666",
+    "individual_auth_id": "1900000109",
+    "description": "共计2笔订单，订单金额xxx元，平台服务费xxx元，合计收款xxx元",
+    "state": "SUCCESS",
+    "trade_scenario": "RECOMMERCE",
+    "create_time": "2024-06-08T10:34:56+08:00",
+    "finish_time": "2024-06-08T10:34:56+08:00",
+    "abnormal_type": "AUTH_RELATIONSHIP_INVALID",
+    "abnormal_settle_result": {
+        "abnormal_settle_type": "TRANSFER_TO_ORIGINAL_RECEIVE_USER",
+        "apply_success_time": "2025-04-22T10:34:56+08:00",
+        "abnormal_fund_receipt_id": "2123685544886666",
+        "out_abnormal_settle_batch_no": "1236698745558870"
+    }
+}

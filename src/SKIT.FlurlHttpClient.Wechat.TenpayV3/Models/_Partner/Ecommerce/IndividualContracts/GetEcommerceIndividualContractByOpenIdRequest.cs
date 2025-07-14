@@ -1,29 +1,29 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /ecommerce/refunds/id/{refund_id} 接口的请求。</para>
+    /// <para>表示 [GET] /ecommerce/individual-contracts/{openid} 接口的请求。</para>
     /// </summary>
-    public class GetEcommerceRefundByRefundIdRequest : WechatTenpayRequest
+    public class GetEcommerceIndividualContractByOpenIdRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置微信二级商户号。
+        /// 获取或设置微信 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string SubMerchantId { get; set; } = string.Empty;
+        public string AppId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置微信退款单号。
+        /// 获取或设置用户 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string RefundId { get; set; } = string.Empty;
+        public string OpenId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置个人收款方受理授权 ID。
+        /// 获取或设置权限类型。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
-        public string? IndividualAuthId { get; set; }
+        public string? PermissionType { get; set; }
     }
 }

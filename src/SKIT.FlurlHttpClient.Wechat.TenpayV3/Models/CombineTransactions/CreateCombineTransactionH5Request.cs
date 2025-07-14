@@ -126,5 +126,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("scene_info")]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
         public Types.Scene? Scene { get; set; }
+
+        /// <summary>
+        /// 获取或设置交易场景。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("trade_scenario")]
+        [System.Text.Json.Serialization.JsonPropertyName("trade_scenario")]
+        public string? TradeScenario { get; set; }
     }
 }

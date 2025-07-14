@@ -16,7 +16,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012124635 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012231901 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080628 ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080241 ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080241 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012650317 ]]>
     /// </para>
     /// </summary>
     public class PartnerRefundResource : WechatTenpayEvent.Types.IDecryptedResource
@@ -55,6 +56,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         [Newtonsoft.Json.JsonProperty("transaction_id")]
         [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
         public string TransactionId { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置个人收款方受理授权 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("individual_auth_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("individual_auth_id")]
+        public string? IndividualAuthId { get; set; }
 
         /// <summary>
         /// 获取或设置商户退款单号。

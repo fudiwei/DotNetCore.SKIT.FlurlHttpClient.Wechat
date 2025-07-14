@@ -14,7 +14,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// REF: <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012556944 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012758021 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012760622 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012760622 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015001933 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -156,12 +157,47 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /combine-transactions/miniprogram 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012602225 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateCombineTransactionMiniProgramResponse> ExecuteCreateCombineTransactionMiniProgramAsync(this WechatTenpayClient client, Models.CreateCombineTransactionMiniProgramRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.CombineMerchantId is null)
+                request.CombineMerchantId = client.Credentials.MerchantId;
+
+            if (request.SubOrderList is not null)
+            {
+                foreach (var subOrder in request.SubOrderList)
+                {
+                    if (subOrder.MerchantId is null)
+                        subOrder.MerchantId = request.CombineMerchantId;
+                }
+            }
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "combine-transactions", "miniprogram");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateCombineTransactionMiniProgramResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [GET] /combine-transactions/out-trade-no/{combine_out_trade_no} 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012557006 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012761049 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012761057 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012761057 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012602253 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -177,6 +213,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "combine-transactions", "out-trade-no", request.CombineOutTradeNumber);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetCombineTransactionByCombineOutTradeNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /combine-transactions/id/{combine_transaction_id} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012602242 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetCombineTransactionByCombineTransactionIdResponse> ExecuteGetCombineTransactionByCombineTransactionIdAsync(this WechatTenpayClient client, Models.GetCombineTransactionByCombineTransactionIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "combine-transactions", "id", request.CombineTransactionId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetCombineTransactionByCombineTransactionIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

@@ -69,6 +69,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? TransactionId { get; set; }
 
         /// <summary>
+        /// 获取或设置合单微信支付订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("combine_transaction_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("combine_transaction_id")]
+        public string? CombineTransactionId { get; set; }
+
+        /// <summary>
+        /// 获取或设置个人收款方受理授权 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("individual_auth_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("individual_auth_id")]
+        public string? IndividualAuthId { get; set; }
+
+        /// <summary>
         /// 获取或设置商户退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("out_refund_no")]

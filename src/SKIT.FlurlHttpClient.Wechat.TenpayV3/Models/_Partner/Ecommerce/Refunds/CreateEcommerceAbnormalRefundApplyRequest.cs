@@ -70,6 +70,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? CombineOutTradeNumber { get; set; }
 
         /// <summary>
+        /// 获取或设置个人收款方受理授权 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("individual_auth_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("individual_auth_id")]
+        public string? IndividualAuthId { get; set; }
+
+        /// <summary>
         /// 获取或设置微信退款单号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
@@ -82,13 +89,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("out_refund_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_refund_no")]
         public string OutRefundNumber { get; set; } = string.Empty;
-
-        /// <summary>
-        /// 获取或设置个人收款方受理授权 ID。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("individual_auth_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("individual_auth_id")]
-        public string? IndividualAuthId { get; set; }
 
         /// <summary>
         /// 获取或设置异常退款处理方式。

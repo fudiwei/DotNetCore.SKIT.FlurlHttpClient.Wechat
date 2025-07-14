@@ -5,7 +5,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>
     /// REF: <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012158598 ]]> <br/>
-    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012231898 ]]>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012231898 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015124358 ]]>
     /// </para>
     /// </summary>
     public class CombineTransactionResource : WechatTenpayEvent.Types.IDecryptedResource
@@ -45,6 +46,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         [Newtonsoft.Json.JsonProperty("combine_out_trade_no")]
         [System.Text.Json.Serialization.JsonPropertyName("combine_out_trade_no")]
         public string CombineOutTradeNumber { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置合单微信支付订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("combine_transaction_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("combine_transaction_id")]
+        public string CombineTransactionId { get; set; } = default!;
 
         /// <summary>
         /// 获取或设置子单列表。

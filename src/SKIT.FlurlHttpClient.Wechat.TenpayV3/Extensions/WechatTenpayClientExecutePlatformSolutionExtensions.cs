@@ -695,6 +695,74 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         #endregion
         #endregion
 
+        #region EcommerceSettle
+        /// <summary>
+        /// <para>异步调用 [POST] /platsolution/ecommerce/settle/prepay-settle-orders 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012649847 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreatePlatformSolutionEcommerceSettlePrepaySettleOrderResponse> ExecuteCreatePlatformSolutionEcommerceSettlePrepaySettleOrderAsync(this WechatTenpayClient client, Models.CreatePlatformSolutionEcommerceSettlePrepaySettleOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "ecommerce", "settle", "prepay-settle-orders");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreatePlatformSolutionEcommerceSettlePrepaySettleOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012650326 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPlatformSolutionEcommerceSettlePrepaySettleOrderBySettleBatchNumberResponse> ExecuteGetPlatformSolutionEcommerceSettlePrepaySettleOrderBySettleBatchNumberAsync(this WechatTenpayClient client, Models.GetPlatformSolutionEcommerceSettlePrepaySettleOrderBySettleBatchNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "platsolution", "ecommerce", "settle", "prepay-settle-orders", request.SettleBatchNumber);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetPlatformSolutionEcommerceSettlePrepaySettleOrderBySettleBatchNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no}/apply-abnormal-settle 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015198012 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ApplyPlatformSolutionEcommerceSettlePrepaySettleOrderAbnormalSettleResponse> ExecuteApplyPlatformSolutionEcommerceSettlePrepaySettleOrderAbnormalSettleAsync(this WechatTenpayClient client, Models.ApplyPlatformSolutionEcommerceSettlePrepaySettleOrderAbnormalSettleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "platsolution", "ecommerce", "settle", "prepay-settle-orders", request.SettleBatchNumber, "apply-abnormal-settle");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ApplyPlatformSolutionEcommerceSettlePrepaySettleOrderAbnormalSettleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region InsuranceMerchantTransfer
         /// <summary>
         /// <para>异步调用 [POST] /platsolution/insurance/mch-transfer/batches/apply 接口。</para>

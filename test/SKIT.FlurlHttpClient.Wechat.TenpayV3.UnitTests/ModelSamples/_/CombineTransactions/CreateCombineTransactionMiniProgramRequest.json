@@ -1,0 +1,29 @@
+{
+    "combine_appid": "wxd678efh567hg6787",
+    "combine_mchid": "1230000109",
+    "combine_out_trade_no": "P20150806125346",
+    "combine_payer_info": {
+        "openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o"
+    },
+    "scene_info": {
+        "device_id": "POS1:1",
+        "payer_client_ip": "127.0.0.1"
+    },
+    "sub_orders": [
+        {
+            "mchid": "1230000109",
+            "individual_auth_id": "1900000109",
+            "individual_name": "哈哈哈小店",
+            "out_trade_no": "20150806125346",
+            "amount": {
+                "total_amount": 10,
+                "currency": "CNY"
+            },
+            "attach": "深圳分店",
+            "description": "Image形象店-深圳腾大-QQ公仔"
+        }
+    ],
+    "time_expire": "2018-06-08T10:34:56+08:00",
+    "notify_url": "https://yourapp.com/notify",
+    "trade_scenario": "RECOMMERCE"
+}

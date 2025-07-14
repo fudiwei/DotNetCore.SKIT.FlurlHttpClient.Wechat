@@ -1,0 +1,25 @@
+{
+    "product_name": "C2C",
+    "receipt_id": "0100011742874700562078230000",
+    "transfer_amount": {
+        "total": 100,
+        "currency": "CNY"
+    },
+    "receipt_state": "RECEIPT_STATE_PENDING",
+    "create_time": "2023-10-01T12:34:56+08:00",
+    "last_update_time": "2023-10-01T12:34:56+08:00",
+    "instruction": {
+        "out_instruction_no": "1200002",
+        "commander": {
+            "operator": "MERCHANT",
+            "mchid": "990055040"
+        },
+        "transfer_mode": "TRANSFER_TO_ORIGINAL_RECEIVE_USER",
+        "receiver": {
+            "account_type": "OTHERS",
+            "openid": "eoCuiA7RW33Tc3jtz_5CNLegC9kN0",
+            "appid": "wxf636efh567hg4356"
+        },
+        "success_time": "2023-10-01T12:34:56+08:00"
+    }
+}

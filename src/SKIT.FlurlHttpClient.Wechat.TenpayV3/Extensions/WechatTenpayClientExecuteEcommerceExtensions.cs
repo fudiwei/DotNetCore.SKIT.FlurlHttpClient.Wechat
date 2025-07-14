@@ -303,6 +303,30 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
         #endregion
 
+        #region IndividualContracts
+        /// <summary>
+        /// <para>异步调用 [GET] /ecommerce/individual-contracts/{openid} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012739528 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetEcommerceIndividualContractByOpenIdResponse> ExecuteGetEcommerceIndividualContractByOpenIdAsync(this WechatTenpayClient client, Models.GetEcommerceIndividualContractByOpenIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "individual-contracts", request.OpenId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceIndividualContractByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region MerchantTransfer
         /// <summary>
         /// <para>异步调用 [POST] /ecommerce/mch-transfer/authorizations 接口。</para>
@@ -691,7 +715,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /ecommerce/refunds/apply 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476892 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476892 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012649457 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -713,7 +738,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /ecommerce/refunds/out-refund-no/{out_refund_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476911 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476911 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012650314 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -727,7 +753,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "refunds", "out-refund-no", request.OutRefundNumber)
-                .SetQueryParam("sub_mchid", request.SubMerchantId);
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("individual_auth_id", request.IndividualAuthId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceRefundByOutRefundNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -736,7 +763,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /ecommerce/refunds/id/{refund_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476908 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012476908 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012650253 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -750,7 +778,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "refunds", "id", request.RefundId)
-                .SetQueryParam("sub_mchid", request.SubMerchantId);
+                .SetQueryParam("sub_mchid", request.SubMerchantId)
+                .SetQueryParam("individual_auth_id", request.IndividualAuthId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceRefundByRefundIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
@@ -804,7 +833,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /ecommerce/refunds/{refund_id}/apply-abnormal-refund 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080627 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080627 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012649274 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
