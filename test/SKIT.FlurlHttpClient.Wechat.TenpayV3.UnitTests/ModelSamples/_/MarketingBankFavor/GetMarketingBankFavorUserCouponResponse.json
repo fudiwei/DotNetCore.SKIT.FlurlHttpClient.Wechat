@@ -1,0 +1,20 @@
+{
+    "stock_creator_mchid": "9800064",
+    "stock_id": "9865888",
+    "coupon_id": "98674556",
+    "coupon_name": "微信支付代金券",
+    "coupon_state": "COUPON_STATE_UNKNOW",
+    "receive_time": "2015-05-20T13:29:35.120+08:00",
+    "available_begin_time": "2015-05-20T13:29:35.120+08:00",
+    "available_end_time": "2015-05-20T13:29:35.120+08:00",
+    "activity_id": "186745560",
+    "max_use_number": 5,
+    "available_number": 3,
+    "used_number": 2,
+    "use_amount_list": {
+        "used_amounts": [
+            "200"
+        ]
+    },
+    "openid": "oUpF8uMuAJO_M2pxb1Q9zNjWeS6o"
+}

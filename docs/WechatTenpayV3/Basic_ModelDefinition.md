@@ -82,6 +82,7 @@
 |  √  |        其他：微信点餐订单         |      合作伙伴       |                   |
 |  √  |         其他：微信寄快递          |      合作伙伴       |                   |
 |  √  |        其他：品牌小店营销         |      合作伙伴       |                   |
+|  √  |         其他：银行多笔立减          |      直连商户       |                   |
 |  √  |        其他：银行定向促活         | 直连商户 & 合作伙伴 |                   |
 |  √  |       其他：银行提现免费券        |      合作伙伴       |                   |
 |  √  |         其他：银行周周惠          |      合作伙伴       |                   |
@@ -579,6 +580,12 @@
     -   消费卡
 
         -   发放消费卡：`SendMarketingBusifavorCoupon`
+
+    -   银行多笔立减
+
+        -   查询绑定多笔立减活动的代金券详情：`GetMarketingBankFavorUserCoupon`
+
+        -   给指定用户报名多笔立减活动：`SendMarketingBankFavorUserBankMultipleActivityCoupon`
 
     -   银行定向促活
 
