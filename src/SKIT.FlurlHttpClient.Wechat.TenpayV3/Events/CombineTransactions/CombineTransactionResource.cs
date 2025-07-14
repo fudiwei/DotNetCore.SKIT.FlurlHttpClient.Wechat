@@ -59,7 +59,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_orders")]
-        public Types.SubOrder[]? SubOrderList { get; set; } = default!;
+        public Types.SubOrder[]? SubOrderList { get; set; }
 
         /// <summary>
         /// 获取或设置支付者信息。

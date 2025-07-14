@@ -45,7 +45,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("subsidy_amount")]
                         [System.Text.Json.Serialization.JsonPropertyName("subsidy_amount")]
-                        public long? SubsidyAmount { get; set; }
+                        public int? SubsidyAmount { get; set; }
                     }
                 }
 

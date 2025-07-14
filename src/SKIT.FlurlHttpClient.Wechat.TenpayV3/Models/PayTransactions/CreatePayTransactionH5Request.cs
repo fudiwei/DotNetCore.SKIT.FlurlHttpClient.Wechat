@@ -21,7 +21,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static new class Types
                 {
-                    public class H5
+                    public class H5Info
                     {
                         /// <summary>
                         /// 获取或设置场景类型。
@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("h5_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("h5_info")]
-                public Types.H5 H5 { get; set; } = new Types.H5();
+                public Types.H5Info H5Info { get; set; } = new Types.H5Info();
             }
 
             public class Settlement : CreatePayTransactionAppRequest.Types.Settlement

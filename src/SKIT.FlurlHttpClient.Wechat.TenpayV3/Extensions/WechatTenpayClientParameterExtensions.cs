@@ -23,7 +23,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012091236 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012166844 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012166847 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012602233 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012602233 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015124455 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -64,7 +65,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090949 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012166845 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080233 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015001851 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015001851 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015124372 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -85,7 +87,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012090949 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012166845 ]]> <br/>
         /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013080233 ]]> <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015001851 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015001851 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015124372 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

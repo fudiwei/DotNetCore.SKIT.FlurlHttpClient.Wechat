@@ -18,43 +18,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
                 public static class Types
                 {
-                    public class H5
+                    public class H5Info : CreatePayTransactionH5Request.Types.Scene.Types.H5Info
                     {
-                        /// <summary>
-                        /// 获取或设置场景类型。
-                        /// <para>默认值："Wap"</para>
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("type")]
-                        public string Type { get; set; } = "Wap";
-
-                        /// <summary>
-                        /// 获取或设置应用名称。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("app_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("app_name")]
-                        public string? AppName { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置网站 URL。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("app_url")]
-                        [System.Text.Json.Serialization.JsonPropertyName("app_url")]
-                        public string? AppUrl { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置 iOS 平台 BundleID。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("bundle_id")]
-                        [System.Text.Json.Serialization.JsonPropertyName("bundle_id")]
-                        public string? BundleId { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置 Android 平台 PackageName。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("package_name")]
-                        [System.Text.Json.Serialization.JsonPropertyName("package_name")]
-                        public string? PackageName { get; set; }
                     }
                 }
 
@@ -63,7 +28,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("h5_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("h5_info")]
-                public Types.H5 H5 { get; set; } = new Types.H5();
+                public Types.H5Info H5Info { get; set; } = new Types.H5Info();
             }
         }
 
