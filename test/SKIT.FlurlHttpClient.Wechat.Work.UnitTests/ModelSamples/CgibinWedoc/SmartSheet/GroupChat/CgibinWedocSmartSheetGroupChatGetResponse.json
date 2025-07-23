@@ -1,0 +1,7 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "name": "NAME",
+    "owner": "userid2",
+    "user_list": [ "userid1", "userid2", "userid3" ]
+}

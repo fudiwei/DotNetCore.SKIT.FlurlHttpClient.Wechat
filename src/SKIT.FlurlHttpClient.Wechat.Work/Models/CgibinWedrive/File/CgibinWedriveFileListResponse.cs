@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wedrive/file_list 接口的响应。</para>
@@ -120,10 +120,10 @@
         public bool HasMore { get; set; }
 
         /// <summary>
-        /// 获取或设置翻页标记。
+        /// 获取或设置分页游标。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_start")]
         [System.Text.Json.Serialization.JsonPropertyName("next_start")]
-        public int? NextStart { get; set; }
+        public int? NextCursor { get; set; }
     }
 }

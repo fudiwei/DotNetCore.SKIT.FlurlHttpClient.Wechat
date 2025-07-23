@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/wedrive/file_list 接口的请求。</para>
@@ -27,11 +27,11 @@
         public int SortType { get; set; }
 
         /// <summary>
-        /// 获取或设置分页起始位置。
+        /// 获取或设置分页游标。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("start")]
         [System.Text.Json.Serialization.JsonPropertyName("start")]
-        public int Offset { get; set; }
+        public int Cursor { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

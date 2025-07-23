@@ -726,6 +726,77 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWedocSmartSheetDeleteRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        #region SmartSheet/GroupChat
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/smartsheet/groupchat/list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/100989 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSmartSheetGroupChatListResponse> ExecuteCgibinWedocSmartSheetGroupChatListAsync(this WechatWorkClient client, Models.CgibinWedocSmartSheetGroupChatListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "smartsheet", "groupchat", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWedocSmartSheetGroupChatListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/smartsheet/groupchat/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101028 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSmartSheetGroupChatGetResponse> ExecuteCgibinWedocSmartSheetGroupChatGetAsync(this WechatWorkClient client, Models.CgibinWedocSmartSheetGroupChatGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "smartsheet", "groupchat", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWedocSmartSheetGroupChatGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/smartsheet/groupchat/update 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101029 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSmartSheetGroupChatUpdateResponse> ExecuteCgibinWedocSmartSheetGroupChatUpdateAsync(this WechatWorkClient client, Models.CgibinWedocSmartSheetGroupChatUpdateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "smartsheet", "groupchat", "update")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWedocSmartSheetGroupChatUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
         #endregion
 
         #region SpreadSheet

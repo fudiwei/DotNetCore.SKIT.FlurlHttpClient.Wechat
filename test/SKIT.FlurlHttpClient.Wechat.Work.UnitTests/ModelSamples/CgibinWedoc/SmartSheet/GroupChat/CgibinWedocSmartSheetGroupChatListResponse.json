@@ -1,0 +1,7 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": true,
+    "next_cursor": "GNIJIGEO",
+    "chat_id_list": [ "chatid1", "chatid2" ]
+}
