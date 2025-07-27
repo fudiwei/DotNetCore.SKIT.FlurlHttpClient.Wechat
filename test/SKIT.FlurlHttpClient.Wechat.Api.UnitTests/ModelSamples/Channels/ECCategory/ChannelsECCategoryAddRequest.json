@@ -1,8 +1,5 @@
 {
     "category_info": {
-        "level1": 7419,
-        "level2": 7439,
-        "level3": 7448,
         "cats_v2": [
             {
                 "cat_id": 6033
@@ -17,9 +14,25 @@
                 "cat_id": 6093
             }
         ],
+        "is_new_apply_cat": true,
         "certificate": [
             "THE_MEDIA_ID_1",
             "THE_MEDIA_ID_2"
+        ],
+        "license_group_list": [
+            { 
+                "license_group_id": 123, 
+                "license": {
+                    "license_id": 123, 
+                    "file_id_list": [ "THE_FILE_ID_1" ],
+                    "license_field_list": [
+                        {
+                            "key": "",
+                            "value": ""
+                        }
+                    ]
+                }
+            }
         ],
         "brand_list": [
             { "brand_id": 1001 },
