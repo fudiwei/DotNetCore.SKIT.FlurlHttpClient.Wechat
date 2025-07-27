@@ -81,6 +81,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public string Nickname { get; set; } = default!;
 
                                         /// <summary>
+                                        /// 获取或设置达人头像 URL。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("head_img_url")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("head_img_url")]
+                                        public string HeadImageUrl { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置视频号 OpenFinderId。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("openfinderid")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("openfinderid")]
+                                        public string? OpenFinderId { get; set; }
+
+                                        /// <summary>
                                         /// 获取或设置佣金费率（单位：万分数）。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("ratio")]
@@ -112,11 +126,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public string Nickname { get; set; } = default!;
 
                                         /// <summary>
+                                        /// 获取或设置推客头像 URL。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("head_img_url")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("head_img_url")]
+                                        public string HeadImageUrl { get; set; } = default!;
+
+                                        /// <summary>
                                         /// 获取或设置推客 OpenSharerId。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("opensharerid")]
                                         [System.Text.Json.Serialization.JsonPropertyName("opensharerid")]
-                                        public string OpenSharerId { get; set; } = default!;
+                                        public string? OpenSharerId { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置佣金（单位：分）。
@@ -150,11 +171,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public string Nickname { get; set; } = default!;
 
                                         /// <summary>
+                                        /// 获取或设置达人平台头像 URL。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("head_img_url")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("head_img_url")]
+                                        public string HeadImageUrl { get; set; } = default!;
+
+                                        /// <summary>
                                         /// 获取或设置带货达人 OpenTalentId。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("opentalentid")]
                                         [System.Text.Json.Serialization.JsonPropertyName("opentalentid")]
-                                        public string OpenTalentId { get; set; } = default!;
+                                        public string? OpenTalentId { get; set; }
 
                                         /// <summary>
                                         /// 获取或设置佣金（单位：分）。
@@ -176,8 +204,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// <summary>
                                         /// 获取或设置机构 AppId。
                                         /// </summary>
-                                        [Newtonsoft.Json.JsonProperty("sharer_appid")]
-                                        [System.Text.Json.Serialization.JsonPropertyName("sharer_appid")]
+                                        [Newtonsoft.Json.JsonProperty("appid")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("appid")]
                                         public string AgencyAppId { get; set; } = default!;
 
                                         /// <summary>
@@ -186,6 +214,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         [Newtonsoft.Json.JsonProperty("nickname")]
                                         [System.Text.Json.Serialization.JsonPropertyName("nickname")]
                                         public string Nickname { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置帮卖机构头像 URL。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("head_img_url")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("head_img_url")]
+                                        public string HeadImageUrl { get; set; } = default!;
 
                                         /// <summary>
                                         /// 获取或设置结算时间戳。
@@ -234,7 +269,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("openfinderid")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("openfinderid")]
-                                                public string OpenFinderId { get; set; } = default!;
+                                                public string? OpenFinderId { get; set; }
                                             }
 
                                             public class TalentInfo
@@ -258,7 +293,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                                 /// </summary>
                                                 [Newtonsoft.Json.JsonProperty("opentalentid")]
                                                 [System.Text.Json.Serialization.JsonPropertyName("opentalentid")]
-                                                public string OpenTalentId { get; set; } = default!;
+                                                public string? OpenTalentId { get; set; }
                                             }
 
                                             public class MpInfo

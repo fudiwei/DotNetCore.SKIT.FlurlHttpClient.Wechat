@@ -43,6 +43,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("ratio_to_service_rate")]
                 [System.Text.Json.Serialization.JsonPropertyName("ratio_to_service_rate")]
                 public int RatioToServiceRate { get; set; }
+
+                /// <summary>
+                /// 获取或设置达人精确佣金率（单位：万分数）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("ratio_ext")]
+                [System.Text.Json.Serialization.JsonPropertyName("ratio_ext")]
+                public int RatioExt { get; set; }
             }
         }
 
