@@ -251,6 +251,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("after_sale_address_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("after_sale_address_id")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public long? AftersaleAddressId { get; set; }
                     }
 

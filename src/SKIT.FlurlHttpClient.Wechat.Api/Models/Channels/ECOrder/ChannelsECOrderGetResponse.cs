@@ -1366,6 +1366,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public bool IsPresent { get; set; }
 
                 /// <summary>
+                /// 获取或设置礼物订单类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("present_send_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("present_send_type")]
+                public int? PresentSendType { get; set; }
+
+                /// <summary>
                 /// 获取或设置礼物订单 ID。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("present_order_id_str")]

@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -15,6 +17,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置是否对订单进行脱敏。
         /// </summary>
+        [Obsolete("相关接口或字段于 2025-07-15 下线。")]
         [Newtonsoft.Json.JsonProperty("encode_sensitive_info")]
         [System.Text.Json.Serialization.JsonPropertyName("encode_sensitive_info")]
         public bool? RequireEncodeSensitiveInfo { get; set; }
