@@ -54,6 +54,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Settings
         /// </summary>
         public string? PushToken { get; }
 
+        /// <summary>
+        /// 初始化客户端时 <see cref="WechatWorkClientOptions.PayToolApiSecret"/> 的副本。
+        /// </summary>
+        public string? PayToolApiSecret { get; }
+
         internal Credentials(WechatWorkClientOptions options)
         {
             if (options is null) throw new ArgumentNullException(nameof(options));
@@ -68,6 +73,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Settings
             ModelSecret = options.ModelSecret;
             PushEncodingAESKey = options.PushEncodingAESKey;
             PushToken = options.PushToken;
+            PayToolApiSecret = options.PayToolApiSecret;
         }
     }
 }

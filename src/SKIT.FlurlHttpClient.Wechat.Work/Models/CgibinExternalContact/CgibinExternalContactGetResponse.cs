@@ -259,11 +259,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string? State { get; set; }
 
                 /// <summary>
-                /// 获取或设置发起添加的成员账号。
+                /// 获取或设置操作人的成员账号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("oper_userid")]
                 [System.Text.Json.Serialization.JsonPropertyName("oper_userid")]
-                public string? OperateUserId { get; set; }
+                public string? OperatorUserId { get; set; }
 
                 /// <summary>
                 /// 获取或设置视频号信息。

@@ -66,5 +66,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// 获取或设置企业微信服务器推送的 Token。
         /// </summary>
         public string? PushToken { get; set; }
+
+        /// <summary>
+        /// 获取或设置企业微信收银台 API 调用密钥。
+        /// </summary>
+        public string? PayToolApiSecret { get; set; }
     }
 }

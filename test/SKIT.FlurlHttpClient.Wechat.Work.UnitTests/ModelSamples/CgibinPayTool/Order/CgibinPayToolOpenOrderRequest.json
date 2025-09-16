@@ -1,0 +1,78 @@
+{
+    "business_type": 1,
+    "custom_corpid": "wx979abee1572365f9",
+    "pay_type": 1,
+    "bank_receipt_media_id": "MEDIA_ID_XXX",
+    "creator": "CREATOR",
+    "product_list": {
+        "third_app": {
+            "order_type": 0,
+            "buy_info_list": [
+                {
+                    "suiteid": "wx63bea8582b858ee7",
+                    "appid": 1,
+                    "edition_id": "sp7fd5170a8e807a44",
+                    "duration_days": 1,
+                    "take_effect_date": "20221220",
+                    "user_count": 10,
+                    "discount_info": {
+                        "discount_type": 2,
+                        "discount_amount": 0,
+                        "discount_ratio": 75,
+                        "discount_remarks": "老客户优惠"
+                    }
+                },
+                {
+                    "suiteid": "wx46b0217691d307f7",
+                    "appid": 1,
+                    "edition_id": "spb5625fc505870d09",
+                    "duration_days": 1,
+                    "user_count": 10
+                }
+            ],
+            "notify_custom_corp": 1
+        },
+        "customized_app": {
+            "order_type": 0,
+            "buy_info_list": [
+                {
+                    "suiteid": "dk6e2ed1be411f395a",
+                    "duration_days": 30,
+                    "take_effect_date": "20221220",
+                    "user_count": 10,
+                    "total_price": 250000
+                },
+                {
+                    "suiteid": "dk9b5e63db2d5d98a0",
+                    "duration_days": 10,
+                    "take_effect_date": "20221220",
+                    "user_count": 20,
+                    "total_price": 2500
+                }
+            ],
+            "notify_custom_corp": 1
+        },
+        "promotion_case": {
+            "order_type": 0,
+            "case_id": "slne7508097f40c4f8e",
+            "promotion_edition_name": "固定单价",
+            "duration_days": 30,
+            "take_effect_date": "20221230",
+            "buy_info_list": [
+                {
+                    "suiteid": "wx8838a73b0f57a7b5",
+                    "appid": 2,
+                    "user_count": 10
+                },
+                {
+                    "suiteid": "wx15ab15f7b1ced876",
+                    "user_count": 20
+                }
+            ],
+            "notify_custom_corp": 1
+        }
+    },
+    "nonce_str": "129031823",
+    "ts": 1548302135,
+    "sig": "mPOwVW/vQ74xN+b+Yu1KMa9RrmhKJaJjAtXHTof+EpU="
+}

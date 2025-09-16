@@ -1,0 +1,67 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "pay_order": {
+        "order_id": "ORDERID",
+        "create_time": 1671161338,
+        "custom_corpid": "ww0***********7e21",
+        "buy_content": "BUYCONTENT",
+        "origin_price": 10000,
+        "paid_price": 9000,
+        "order_status": 2,
+        "order_from": 1,
+        "creator": "CREATOR",
+        "pay_type": 1,
+        "custom_corp_name": "测试企业",
+        "pay_channel": 1,
+        "channel_order_id": "4200001711202212169932901772",
+        "paid_time": 1671161378,
+        "business_type": 2,
+        "income_type": 1,
+        "income_time": 1672111778,
+        "income_amount": 2,
+        "product_list": {
+            "third_app": {
+                "order_type": 0,
+                "buy_info_list": [
+                    {
+                        "suiteid": "SUITEID",
+                        "appid": 1,
+                        "edition_id": "版本名字",
+                        "user_count": 10,
+                        "duration_days": 365,
+                        "origin_price": 10000,
+                        "paid_price": 9000,
+                        "take_effect_date": "20221220"
+                    }
+                ]
+            },
+            "customized_app": {
+                "order_type": 2,
+                "buy_info_list": [
+                    {
+                        "suiteid": "SUITEID",
+                        "user_count": 10,
+                        "duration_days": 365,
+                        "origin_price": 10000,
+                        "paid_price": 9000,
+                        "take_effect_date": "20221220"
+                    }
+                ]
+            },
+            "promotion_case": {
+                "order_type": 0,
+                "case_id": "CASEID",
+                "promotion_edition_name": "版本名字",
+                "buy_info_list": [
+                    {
+                        "suiteid": "SUITEID",
+                        "appid": 1,
+                        "user_count": 10,
+                        "take_effect_date": "20221220"
+                    }
+                ]
+            }
+        }
+    }
+}

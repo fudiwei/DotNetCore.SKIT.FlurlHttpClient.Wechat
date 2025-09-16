@@ -1,0 +1,29 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "has_more": 1,
+    "next_cursor": "CURSOR",
+    "invoice_list": [
+        {
+            "order_id": "ORDERID",
+            "custom_corpid": "wwxx",
+            "apply_time": 1680000000,
+            "invoice_type": 0,
+            "paid_price": 9000,
+            "invoice_status": 1,
+            "invoice_title": "发票抬头",
+            "tax_number": "TAXPAYERID",
+            "send_way": 1,
+            "contact_name": "张三",
+            "contact_tel": "12345678901",
+            "contact_addr": "广东省|广州市|海珠区",
+            "contact_postcode": "200240",
+            "receive_email": "jack@qq.com",
+            "company_addr": "广东省广州市海珠区媒体港",
+            "company_tel": "187XXXXXXXX",
+            "bank_name": "中国邮政储蓄银行股份有限公司广州市天河支行",
+            "bank_account_number": "17631364174811341",
+            "invoice_note": "开票备注"
+        }
+    ]
+}
