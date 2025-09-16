@@ -33,11 +33,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                     public class CorpExtraName
                     {
                         /// <summary>
-                        /// 获取或设置企业简称。
+                        /// 获取或设置企业简称列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("name_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("name_list")]
-                        public string[]? Names { get; set; } = default!;
+                        public string[]? NameList { get; set; } = default!;
                     }
                 }
 
