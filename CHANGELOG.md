@@ -1337,6 +1337,16 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.11.0 (2025-09-16)
+
+    -   **新增**：新增收银台收款工具相关接口。（_via_ [Gitee #ICWM8Q](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/ICWM8Q)）
+
+    -   **新增**：新增智能表格自动化创建的群聊相关接口。
+
+    -   **修复**：修复获取企业授权信息接口模型定义错误。（_via_ [Gitee #ICXIEX](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/ICXIEX)）
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.6.2。
+
 -   Release 3.10.0 (2025-06-20)
 
     -   **新增**：随官方更新打卡相关接口模型。
