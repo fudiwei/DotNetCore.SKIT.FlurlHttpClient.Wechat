@@ -20,7 +20,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public Settings.Credentials Credentials { get; }
 
         /// <summary>
-        /// 获取当前客户端使用的微信支付平台认证方案。
+        /// 获取当前客户端是否开启微信支付平台 API 认证方案回退开关。
+        /// </summary>
+        public bool PlatformAuthFallbackSwitch { get; }
+
+        /// <summary>
+        /// 获取当前客户端使用的微信支付平台 API 认证方案。
         /// </summary>
         public Settings.PlatformAuthScheme PlatformAuthScheme { get; }
 
@@ -65,6 +70,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (options is null) throw new ArgumentNullException(nameof(options));
 
             Credentials = new Settings.Credentials(options);
+            PlatformAuthFallbackSwitch = options.PlatformAuthFallbackSwitch;
             PlatformAuthScheme = options.PlatformAuthScheme;
             PlatformCertificateManager = options.PlatformCertificateManager;
             PlatformPublicKeyManager = options.PlatformPublicKeyManager;
@@ -95,6 +101,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public IFlurlRequest CreateFlurlRequest(WechatTenpayRequest request, HttpMethod httpMethod, params object[] urlSegments)
         {
             IFlurlRequest flurlRequest = base.CreateFlurlRequest(request, httpMethod, urlSegments);
+
+            if (PlatformAuthFallbackSwitch)
+            {
+                this._EnsureRequestWechatpaySerialNumberIsSet(request);
+            }
 
             if (AutoEncryptRequestSensitiveProperty)
             {

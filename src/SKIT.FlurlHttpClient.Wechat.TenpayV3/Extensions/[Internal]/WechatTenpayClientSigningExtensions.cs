@@ -1,4 +1,5 @@
 using System;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -10,75 +11,54 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
     internal static class WechatTenpayClientSigningExtensions
     {
-        public static ErroredResult VerifySignature(this WechatTenpayClient client, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignScheme, string strSerialNumber)
+        public static ErroredResult _VerifySignature(this WechatTenpayClient client, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignScheme, string strSerialNumber)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
-            switch (client.PlatformAuthScheme)
+            PlatformAuthScheme authSchema;
+            if (!TryGetAuthScheme(client, strSerialNumber, out authSchema))
+            {
+                return ErroredResult.Fail(new Exception("Could not detect the platform auth schema because the serial number is missing or invalid."));
+            }
+
+            switch (authSchema)
             {
                 case PlatformAuthScheme.Certificate:
                     {
-                        CertificateEntry? entry = client.PlatformCertificateManager.GetEntry(strSerialNumber);
-                        if (!entry.HasValue)
-                        {
-                            return ErroredResult.Fail(new Exception($"The platform certificate manager does not contain a certificate matched the serial number \"{strSerialNumber}\"."));
-                        }
-
-                        return GenerateSignatureResultByCertificate(
-                            scheme: strSignScheme,
-                            certificate: entry.Value.Certificate,
-                            message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
-                            signature: strSignature
-                        );
+                        return VerifySignatureUseCertificateManager(client.PlatformCertificateManager, strTimestamp: strTimestamp, strNonce: strNonce, strContent: strContent, strSignature: strSignature, strSignScheme: strSignScheme, strSerialNumber: strSerialNumber);
                     }
 
                 case PlatformAuthScheme.PublicKey:
                     {
-                        PublicKeyEntry? entry = client.PlatformPublicKeyManager.GetEntry(strSerialNumber);
-                        if (!entry.HasValue)
-                        {
-                            return ErroredResult.Fail(new Exception($"The platform public key manager does not contain a key matched the serial number \"{strSerialNumber}\"."));
-                        }
-
-                        return GenerateSignatureResultByPublicKey(
-                            scheme: strSignScheme,
-                            publicKey: entry.Value.PublicKey,
-                            message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
-                            signature: strSignature
-                        );
+                        return VerifySignatureUsePublicKeyManager(client.PlatformPublicKeyManager, strTimestamp: strTimestamp, strNonce: strNonce, strContent: strContent, strSignature: strSignature, strSignScheme: strSignScheme, strSerialNumber: strSerialNumber);
                     }
 
                 default:
-                    return ErroredResult.Fail(new Exception($"Unsupported platform auth scheme: \"{client.PlatformAuthScheme}\"."));
+                    return ErroredResult.Fail(new NotSupportedException($"Unsupported platform auth scheme: \"{client.PlatformAuthScheme}\"."));
             }
         }
 
-        public static async Task<ErroredResult> VerifySignatureAsync(this WechatTenpayClient client, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignScheme, string strSerialNumber, CancellationToken cancellationToken = default)
+        public static async Task<ErroredResult> _VerifySignatureAsync(this WechatTenpayClient client, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignScheme, string strSerialNumber, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
-            switch (client.PlatformAuthScheme)
+            PlatformAuthScheme authSchema;
+            if (!TryGetAuthScheme(client, strSerialNumber, out authSchema))
+            {
+                return ErroredResult.Fail(new Exception("Could not detect the platform auth schema because the serial number is missing or invalid."));
+            }
+
+            switch (authSchema)
             {
                 case PlatformAuthScheme.Certificate:
                     {
                         if (client.PlatformCertificateManager is not ICertificateManagerAsync)
                         {
                             // 降级为同步调用
-                            return VerifySignature(client, strTimestamp, strNonce, strContent, strSignature, strSignScheme, strSerialNumber);
+                            return _VerifySignature(client, strTimestamp, strNonce, strContent, strSignature, strSignScheme, strSerialNumber);
                         }
 
-                        CertificateEntry? entry = await ((ICertificateManagerAsync)client.PlatformCertificateManager).GetEntryAsync(strSerialNumber, cancellationToken).ConfigureAwait(false);
-                        if (!entry.HasValue)
-                        {
-                            return ErroredResult.Fail(new Exception($"The platform certificate manager does not contain a certificate matched the serial number \"{strSerialNumber}\"."));
-                        }
-
-                        return GenerateSignatureResultByCertificate(
-                            scheme: strSignScheme,
-                            certificate: entry.Value.Certificate,
-                            message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
-                            signature: strSignature
-                        );
+                        return await VerifySignatureUseCertificateManagerAsync((ICertificateManagerAsync)client.PlatformCertificateManager, strTimestamp: strTimestamp, strNonce: strNonce, strContent: strContent, strSignature: strSignature, strSignScheme: strSignScheme, strSerialNumber: strSerialNumber, cancellationToken).ConfigureAwait(false);
                     }
 
                 case PlatformAuthScheme.PublicKey:
@@ -86,26 +66,122 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                         if (client.PlatformCertificateManager is not IPublicKeyManagerAsync)
                         {
                             // 降级为同步调用
-                            return VerifySignature(client, strTimestamp, strNonce, strContent, strSignature, strSignScheme, strSerialNumber);
+                            return _VerifySignature(client, strTimestamp, strNonce, strContent, strSignature, strSignScheme, strSerialNumber);
                         }
 
-                        PublicKeyEntry? entry = await ((IPublicKeyManagerAsync)client.PlatformPublicKeyManager).GetEntryAsync(strSerialNumber, cancellationToken).ConfigureAwait(false);
-                        if (!entry.HasValue)
-                        {
-                            return ErroredResult.Fail(new Exception($"The platform public key manager does not contain a key matched the serial number \"{strSerialNumber}\"."));
-                        }
-
-                        return GenerateSignatureResultByPublicKey(
-                            scheme: strSignScheme,
-                            publicKey: entry.Value.PublicKey,
-                            message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
-                            signature: strSignature
-                        );
+                        return await VerifySignatureUseCertificateManagerAsync((IPublicKeyManagerAsync)client.PlatformPublicKeyManager, strTimestamp: strTimestamp, strNonce: strNonce, strContent: strContent, strSignature: strSignature, strSignScheme: strSignScheme, strSerialNumber: strSerialNumber, cancellationToken).ConfigureAwait(false);
                     }
 
                 default:
-                    return ErroredResult.Fail(new Exception($"Unsupported platform auth scheme: \"{client.PlatformAuthScheme}\"."));
+                    return ErroredResult.Fail(new NotSupportedException($"Unsupported platform auth scheme: \"{client.PlatformAuthScheme}\"."));
             }
+        }
+
+        private static ErroredResult VerifySignatureUseCertificateManager(ICertificateManager manager, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignScheme, string strSerialNumber)
+        {
+            if (manager is null)
+            {
+                return ErroredResult.Fail(new NullReferenceException("The platform certificate manager is not configured."));
+            }
+
+            CertificateEntry? entry = manager.GetEntry(strSerialNumber);
+            if (!entry.HasValue)
+            {
+                return ErroredResult.Fail(new Exception($"The platform certificate manager does not contain a certificate matched the serial number \"{strSerialNumber}\"."));
+            }
+
+            return GenerateVerifyResultByCertificate(
+                scheme: strSignScheme,
+                certificate: entry.Value.Certificate,
+                message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
+                signature: strSignature
+            );
+        }
+
+        private static async Task<ErroredResult> VerifySignatureUseCertificateManagerAsync(ICertificateManagerAsync manager, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignScheme, string strSerialNumber, CancellationToken cancellationToken = default)
+        {
+            if (manager is null)
+            {
+                return ErroredResult.Fail(new NullReferenceException("The platform certificate manager is not configured."));
+            }
+
+            CertificateEntry? entry = await manager.GetEntryAsync(strSerialNumber, cancellationToken).ConfigureAwait(false);
+            if (!entry.HasValue)
+            {
+                return ErroredResult.Fail(new Exception($"The platform certificate manager does not contain a certificate matched the serial number \"{strSerialNumber}\"."));
+            }
+
+            return GenerateVerifyResultByCertificate(
+                scheme: strSignScheme,
+                certificate: entry.Value.Certificate,
+                message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
+                signature: strSignature
+            );
+        }
+
+        private static ErroredResult VerifySignatureUsePublicKeyManager(IPublicKeyManager manager, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignScheme, string strSerialNumber)
+        {
+            if (manager is null)
+            {
+                return ErroredResult.Fail(new NullReferenceException("The platform public key manager is not configured."));
+            }
+
+            PublicKeyEntry? entry = manager.GetEntry(strSerialNumber);
+            if (!entry.HasValue)
+            {
+                return ErroredResult.Fail(new Exception($"The platform public key manager does not contain a key matched the serial number \"{strSerialNumber}\"."));
+            }
+
+            return GenerateVerifyResultByPublicKey(
+                scheme: strSignScheme,
+                publicKey: entry.Value.PublicKey,
+                message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
+                signature: strSignature
+            );
+        }
+
+        private static async Task<ErroredResult> VerifySignatureUseCertificateManagerAsync(IPublicKeyManagerAsync manager, string strTimestamp, string strNonce, string strContent, string strSignature, string strSignScheme, string strSerialNumber, CancellationToken cancellationToken = default)
+        {
+            if (manager is null)
+            {
+                return ErroredResult.Fail(new NullReferenceException("The platform public key manager is not configured."));
+            }
+
+            PublicKeyEntry? entry = await manager.GetEntryAsync(strSerialNumber, cancellationToken).ConfigureAwait(false);
+            if (!entry.HasValue)
+            {
+                return ErroredResult.Fail(new Exception($"The platform public key manager does not contain a key matched the serial number \"{strSerialNumber}\"."));
+            }
+
+            return GenerateVerifyResultByPublicKey(
+                scheme: strSignScheme,
+                publicKey: entry.Value.PublicKey,
+                message: GenerateMessageForSignature(timestamp: strTimestamp, nonce: strNonce, body: strContent),
+                signature: strSignature
+            );
+        }
+
+        private static bool TryGetAuthScheme(WechatTenpayClient client, string strSerialNumber, out PlatformAuthScheme authScheme)
+        {
+            authScheme = client.PlatformAuthScheme;
+            if (client.PlatformAuthFallbackSwitch)
+            {
+                if (string.IsNullOrEmpty(strSerialNumber))
+                {
+                    return false;
+                }
+
+                if (Regex.IsMatch(strSerialNumber, "^PUB_KEY_ID_", RegexOptions.IgnoreCase))
+                {
+                    authScheme = PlatformAuthScheme.PublicKey;
+                }
+                else if (Regex.IsMatch(strSerialNumber, "^[A-Za-z0-9]+$", RegexOptions.IgnoreCase))
+                {
+                    authScheme = PlatformAuthScheme.Certificate;
+                }
+            }
+
+            return true;
         }
 
         private static string GenerateMessageForSignature(string timestamp, string nonce, string body)
@@ -113,7 +189,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return $"{timestamp}\n{nonce}\n{body}\n";
         }
 
-        private static ErroredResult GenerateSignatureResultByCertificate(string scheme, string certificate, string message, string signature)
+        private static ErroredResult GenerateVerifyResultByCertificate(string scheme, string certificate, string message, string signature)
         {
             string publicKey = string.Empty;
 
@@ -146,10 +222,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                     break;
             }
 
-            return GenerateSignatureResultByPublicKey(scheme, publicKey, message, signature);
+            return GenerateVerifyResultByPublicKey(scheme, publicKey, message, signature);
         }
 
-        private static ErroredResult GenerateSignatureResultByPublicKey(string scheme, string publicKey, string message, string signature)
+        private static ErroredResult GenerateVerifyResultByPublicKey(string scheme, string publicKey, string message, string signature)
         {
             ErroredResult result;
 
@@ -199,7 +275,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                 default:
                     {
-                        result = ErroredResult.Fail(new Exception($"Unsupported signing scheme: \"{scheme}\"."));
+                        result = ErroredResult.Fail(new NotSupportedException($"Unsupported signing scheme: \"{scheme}\"."));
                     }
                     break;
             }

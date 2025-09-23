@@ -74,7 +74,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         public bool AutoDecryptResponseSensitiveProperty { get; set; }
 
         /// <summary>
-        /// 获取或设置微信支付平台认证方案。
+        /// 获取或设置微信支付平台 API 认证方案回退开关。<br/>
+        /// 开启后会在验证签名时根据响应或回调中接收到的序列号自动推测使用哪种认证方案。<br/>
+        /// 开启后会有一定的性能损耗，建议仅在灰度切换期间时开启，待切换进度为百分之百后请关闭。
+        /// <para>
+        /// 默认值：false
+        /// </para>
+        /// </summary>
+        public bool PlatformAuthFallbackSwitch { get; set; }
+
+        /// <summary>
+        /// 获取或设置微信支付平台 API 认证方案。
         /// <para>默认值：<see cref="Settings.PlatformAuthScheme.Certificate"/></para>
         /// </summary>
         public Settings.PlatformAuthScheme PlatformAuthScheme { get; set; } = Settings.PlatformAuthScheme.Certificate;
@@ -82,7 +92,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// 获取或设置微信支付平台证书管理器。
         /// <para>
-        /// 仅当 <see cref="PlatformAuthScheme"/> 的值为 <see cref="Settings.PlatformAuthScheme.Certificate"/> 时有效。
+        /// 仅当 <see cref="PlatformAuthScheme"/> 的值为 <see cref="Settings.PlatformAuthScheme.Certificate"/>，或开启 <see cref="PlatformAuthSchemaFallback"/> 开关时有效。
         /// </para>
         /// <para>
         /// 默认值：<see cref="Settings.InMemoryCertificateManager"/>
@@ -93,7 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <summary>
         /// 获取或设置微信支付平台公钥管理器。
         /// <para>
-        /// 仅当 <see cref="PlatformAuthScheme"/> 的值为 <see cref="Settings.PlatformAuthScheme.PublicKey"/> 时有效。
+        /// 仅当 <see cref="PlatformAuthScheme"/> 的值为 <see cref="Settings.PlatformAuthScheme.PublicKey"/>，或开启 <see cref="PlatformAuthSchemaFallback"/> 开关时有效。
         /// </para>
         /// <para>
         /// 默认值：<see cref="Settings.InMemoryPublicKeyManager"/>

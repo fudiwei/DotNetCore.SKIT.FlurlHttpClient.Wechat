@@ -107,7 +107,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
                 string signScheme = client.Credentials.SignScheme;
 
-                ReflectionHelper.ReplaceObjectStringProperties(response, (_, currentProp, oldValue) =>
+                ReflectionHelper.ReplaceObjectStringProperties(ref response, (_, currentProp, oldValue) =>
                 {
                     if (currentProp is null || !currentProp.IsDefined(typeof(WechatTenpaySensitivePropertyAttribute)))
                         return (false, oldValue);

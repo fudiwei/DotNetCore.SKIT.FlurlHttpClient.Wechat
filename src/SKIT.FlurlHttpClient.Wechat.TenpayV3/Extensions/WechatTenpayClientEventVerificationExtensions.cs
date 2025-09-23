@@ -61,7 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
-            return WechatTenpayClientSigningExtensions.VerifySignature(
+            return WechatTenpayClientSigningExtensions._VerifySignature(
                 client,
                 strTimestamp: webhookTimestamp,
                 strNonce: webhookNonce,
@@ -127,7 +127,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
 
-            return WechatTenpayClientSigningExtensions.VerifySignatureAsync(
+            return WechatTenpayClientSigningExtensions._VerifySignatureAsync(
                 client,
                 strTimestamp: webhookTimestamp,
                 strNonce: webhookNonce,

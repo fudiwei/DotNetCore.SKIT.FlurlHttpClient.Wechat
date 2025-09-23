@@ -69,7 +69,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
                 PlatformAuthScheme = _ROOT_.Settings.PlatformAuthScheme.Certificate,
                 PlatformCertificateManager = options.PlatformCertificateManager,
                 AutoEncryptRequestSensitiveProperty = options.AutoEncryptRequestSensitiveProperty,
-                AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty
+                AutoDecryptResponseSensitiveProperty = options.AutoDecryptResponseSensitiveProperty,
             }, httpClient, disposeClient);
 
             Credentials = new Settings.Credentials(options);
@@ -100,7 +100,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.ExtendedSDK.Global
         /// <returns></returns>
         public IFlurlRequest CreateFlurlRequest(WechatTenpayGlobalRequest request, HttpMethod httpMethod, params object[] urlSegments)
         {
-            return base.CreateFlurlRequest(request, httpMethod, urlSegments);
+            return ProxyClient.CreateFlurlRequest(request, httpMethod, urlSegments);
         }
 
         /// <summary>

@@ -2561,7 +2561,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             var manager = new Settings.InMemoryCertificateManager();
             manager.AddEntry(new Settings.CertificateEntry(
                 algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_RSA,
-                serialNumber: "OBSOLETED1",
+                serialNumber: "MOCK1",
                 certificate: "-----BEGIN CERTIFICATE----------END CERTIFICATE-----",
                 effectiveTime: DateTimeOffset.Now.AddSeconds(-1),
                 expireTime: DateTimeOffset.Now.AddSeconds(-1)
@@ -2575,7 +2575,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             ));
             manager.AddEntry(new Settings.CertificateEntry(
                 algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_RSA,
-                serialNumber: "OBSOLETED2",
+                serialNumber: "MOCK2",
                 certificate: "-----BEGIN CERTIFICATE----------END CERTIFICATE-----",
                 effectiveTime: DateTimeOffset.Now.AddSeconds(-1),
                 expireTime: DateTimeOffset.Now.AddSeconds(-1)
@@ -2598,7 +2598,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             var manager = new Settings.InMemoryCertificateManager();
             manager.AddEntry(new Settings.CertificateEntry(
                 algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_SM2,
-                serialNumber: "OBSOLETED1",
+                serialNumber: "MOCK1",
                 certificate: "-----BEGIN CERTIFICATE----------END CERTIFICATE-----",
                 effectiveTime: DateTimeOffset.Now.AddSeconds(-1),
                 expireTime: DateTimeOffset.Now.AddSeconds(-1)
@@ -2612,7 +2612,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             ));
             manager.AddEntry(new Settings.CertificateEntry(
                 algorithmType: Settings.CertificateEntry.ALGORITHM_TYPE_SM2,
-                serialNumber: "OBSOLETED2",
+                serialNumber: "MOCK2",
                 certificate: "-----BEGIN CERTIFICATE----------END CERTIFICATE-----",
                 effectiveTime: DateTimeOffset.Now.AddSeconds(-1),
                 expireTime: DateTimeOffset.Now.AddSeconds(-1)

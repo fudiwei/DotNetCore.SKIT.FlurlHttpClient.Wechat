@@ -25,16 +25,37 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            switch (client.PlatformAuthScheme)
+            bool required = request.GetType().IsDefined(typeof(WechatTenpaySensitiveAttribute));
+            if (!required)
+                return request;
+
+            try
             {
-                case PlatformAuthScheme.Certificate:
-                    return EncryptRequestSensitivePropertyByCertificate<TRequest>(client, request);
+                switch (client.PlatformAuthScheme)
+                {
+                    case PlatformAuthScheme.Certificate:
+                        {
+                            WechatTenpayClientRequestSerialNumberExtensions._EnsureRequestWechatpaySerialNumberIsSet(client, request);
+                            return EncryptRequestSensitivePropertyUseCertificateManager<TRequest>(client.PlatformCertificateManager, client.Credentials.SignScheme, request);
+                        }
 
-                case PlatformAuthScheme.PublicKey:
-                    return EncryptRequestSensitivePropertyByPublicKey<TRequest>(client, request);
+                    case PlatformAuthScheme.PublicKey:
+                        {
+                            WechatTenpayClientRequestSerialNumberExtensions._EnsureRequestWechatpaySerialNumberIsSet(client, request);
+                            return EncryptRequestSensitivePropertyUsePublicKeyManager<TRequest>(client.PlatformPublicKeyManager, client.Credentials.SignScheme, request);
+                        }
 
-                default:
-                    throw new WechatTenpayException($"Unsupported platform auth scheme: \"{client.PlatformAuthScheme}\".");
+                    default:
+                        throw new NotSupportedException($"Unsupported platform auth scheme: \"{client.PlatformAuthScheme}\".");
+                }
+            }
+            catch (WechatTenpayException)
+            {
+                throw;
+            }
+            catch (Exception ex)
+            {
+                throw new WechatTenpayException("Failed to encrypt request. Please see the inner exception for more details.", ex);
             }
         }
 
@@ -45,84 +66,47 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static Task<TRequest> EncryptRequestSensitivePropertyAsync<TRequest>(this WechatTenpayClient client, TRequest request, CancellationToken cancellationToken = default)
+        public static async Task<TRequest> EncryptRequestSensitivePropertyAsync<TRequest>(this WechatTenpayClient client, TRequest request, CancellationToken cancellationToken = default)
             where TRequest : WechatTenpayRequest
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
-            switch (client.PlatformAuthScheme)
-            {
-                case PlatformAuthScheme.Certificate:
-                    return EncryptRequestSensitivePropertyByCertificateAsync<TRequest>(client, request);
+            bool required = request.GetType().IsDefined(typeof(WechatTenpaySensitiveAttribute));
+            if (!required)
+                return request;
 
-                case PlatformAuthScheme.PublicKey:
-                    return EncryptRequestSensitivePropertyByPublicKeyAsync<TRequest>(client, request);
-
-                default:
-                    throw new WechatTenpayException($"Unsupported platform auth scheme: \"{client.PlatformAuthScheme}\".");
-            }
-        }
-
-        private static TRequest EncryptRequestSensitivePropertyByCertificate<TRequest>(this WechatTenpayClient client, TRequest request)
-            where TRequest : WechatTenpayRequest
-        {
             try
             {
-                bool requireEncrypt = request.GetType().IsDefined(typeof(WechatTenpaySensitiveAttribute));
-                if (!requireEncrypt)
-                    return request;
-
-                string signScheme = client.Credentials.SignScheme;
-                string algorithmType = // 签名方式与加密算法保持一致：RSA_SHA256 签名需 RSA 加密，SM3 签名需 SM2 加密
-                    SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256.Equals(signScheme) ? CertificateEntry.ALGORITHM_TYPE_RSA :
-                    SignSchemes.WECHATPAY2_SM2_WITH_SM3.Equals(signScheme) ? CertificateEntry.ALGORITHM_TYPE_SM2 :
-                    throw new WechatTenpayException($"Failed to encrypt request. Unsupported signing scheme: \"{signScheme}\".");
-
-                string certificate;
-                if (string.IsNullOrEmpty(request.WechatpaySerialNumber))
+                switch (client.PlatformAuthScheme)
                 {
-                    // 如果未在请求中指定特定的平台证书序列号，从管理器中取过期时间最远的
-                    IEnumerable<CertificateEntry> entries = client.PlatformCertificateManager.AllEntries()
-                        .Where(e => e.AlgorithmType == algorithmType)
-                        .OrderByDescending(e => e.ExpireTime);
-                    if (!entries.Any())
-                    {
-                        throw new WechatTenpayException("Failed to encrypt request, because the platform certificate manager is empty. Please make sure you have downloaded platform (NOT merchant) certificates first.");
-                    }
+                    case PlatformAuthScheme.Certificate:
+                        {
+                            if (client.PlatformCertificateManager is not ICertificateManagerAsync)
+                            {
+                                // 降级为同步调用
+                                return EncryptRequestSensitivePropertyUseCertificateManager(client.PlatformCertificateManager, client.Credentials.SignScheme, request);
+                            }
 
-                    CertificateEntry entry = entries.First();
-                    certificate = entry.Certificate;
-                    request.WechatpaySerialNumber = entry.SerialNumber;
+                            await WechatTenpayClientRequestSerialNumberExtensions._EnsureRequestWechatpaySerialNumberIsSetAsync(client, request, cancellationToken).ConfigureAwait(false);
+                            return await EncryptRequestSensitivePropertyUseCertificateManagerAsync<TRequest>((ICertificateManagerAsync)client.PlatformCertificateManager, client.Credentials.SignScheme, request, cancellationToken).ConfigureAwait(false);
+                        }
+
+                    case PlatformAuthScheme.PublicKey:
+                        {
+                            if (client.PlatformPublicKeyManager is not IPublicKeyManagerAsync)
+                            {
+                                // 降级为同步调用
+                                return EncryptRequestSensitivePropertyUsePublicKeyManager(client.PlatformPublicKeyManager, client.Credentials.SignScheme, request);
+                            }
+
+                            await WechatTenpayClientRequestSerialNumberExtensions._EnsureRequestWechatpaySerialNumberIsSetAsync(client, request, cancellationToken).ConfigureAwait(false);
+                            return await EncryptRequestSensitivePropertyUsePublicKeyManagerAsync<TRequest>((IPublicKeyManagerAsync)client.PlatformPublicKeyManager, client.Credentials.SignScheme, request, cancellationToken).ConfigureAwait(false);
+                        }
+
+                    default:
+                        throw new NotSupportedException($"Unsupported platform auth scheme: \"{client.PlatformAuthScheme}\".");
                 }
-                else
-                {
-                    // 如果已在请求中指定特定的平台证书序列号，直接从管理器中取值
-                    CertificateEntry? entry = client.PlatformCertificateManager.GetEntry(request.WechatpaySerialNumber!);
-                    if (!entry.HasValue)
-                    {
-                        throw new WechatTenpayException($"Failed to encrypt request, because the platform certificate manager does not contain a certificate matched the serial number \"{request.WechatpaySerialNumber}\". Please make sure you have downloaded platform (NOT merchant) certificates first.");
-                    }
-
-                    certificate = entry.Value.Certificate;
-                }
-
-                ReflectionHelper.ReplaceObjectStringProperties(request, (_, currentProp, oldValue) =>
-                {
-                    if (currentProp is null || !currentProp.IsDefined(typeof(WechatTenpaySensitivePropertyAttribute)))
-                        return (false, oldValue);
-
-                    WechatTenpaySensitivePropertyAttribute? attribute = currentProp
-                        .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
-                        .FirstOrDefault(attr => attr.Scheme == signScheme);
-                    if (attribute is null)
-                        return (false, oldValue);
-
-                    string newValue = GenerateEncryptedValueByCertificate(attribute.Algorithm, certificate, oldValue);
-                    return (true, newValue);
-                });
-
-                return request;
             }
             catch (WechatTenpayException)
             {
@@ -134,281 +118,128 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             }
         }
 
-        private static async Task<TRequest> EncryptRequestSensitivePropertyByCertificateAsync<TRequest>(this WechatTenpayClient client, TRequest request, CancellationToken cancellationToken = default)
+        private static TRequest EncryptRequestSensitivePropertyUseCertificateManager<TRequest>(ICertificateManager manager, string signScheme, TRequest request)
             where TRequest : WechatTenpayRequest
         {
-            if (client.PlatformCertificateManager is not ICertificateManagerAsync)
-            {
-                // 降级为同步调用
-                return EncryptRequestSensitivePropertyByCertificate(client, request);
-            }
+            if (manager is null)
+                throw new NullReferenceException("The platform certificate manager is not configured.");
 
-            try
-            {
-                bool requireEncrypt = request.GetType().IsDefined(typeof(WechatTenpaySensitiveAttribute));
-                if (!requireEncrypt)
-                    return request;
+            CertificateEntry? entry = manager.GetEntry(request.WechatpaySerialNumber!);
+            if (!entry.HasValue)
+                throw new WechatTenpayException($"Failed to encrypt request, because the platform certificate manager does not contain a certificate matched the serial number \"{request.WechatpaySerialNumber}\". Please make sure you have downloaded platform (NOT merchant) certificates first.");
 
-                string signScheme = client.Credentials.SignScheme;
-                string algorithmType = // 签名方式与加密算法保持一致：RSA_SHA256 签名需 RSA 加密，SM3 签名需 SM2 加密
-                    SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256.Equals(signScheme) ? CertificateEntry.ALGORITHM_TYPE_RSA :
-                    SignSchemes.WECHATPAY2_SM2_WITH_SM3.Equals(signScheme) ? CertificateEntry.ALGORITHM_TYPE_SM2 :
-                    throw new WechatTenpayException($"Failed to encrypt request. Unsupported signing scheme: \"{signScheme}\".");
-
-                string certificate;
-                if (string.IsNullOrEmpty(request.WechatpaySerialNumber))
-                {
-                    if (client.PlatformCertificateManager is null)
-                        throw new WechatTenpayException("Failed to encrypt request, because the platform certificate manager is not initialized.");
-
-                    // 如果未在请求中指定特定的平台证书序列号，从管理器中取过期时间最远的
-                    IEnumerable<CertificateEntry> entries = await ((ICertificateManagerAsync)client.PlatformCertificateManager).AllEntriesAsync(cancellationToken).ConfigureAwait(false);
-                    entries = entries.Where(e => e.AlgorithmType == algorithmType).OrderByDescending(e => e.ExpireTime);
-                    if (!entries.Any())
-                    {
-                        throw new WechatTenpayException("Failed to encrypt request, because the platform certificate manager is empty. Please make sure you have downloaded platform (NOT merchant) certificates first.");
-                    }
-
-                    CertificateEntry entry = entries.First();
-                    certificate = entry.Certificate;
-                    request.WechatpaySerialNumber = entry.SerialNumber;
-                }
-                else
-                {
-                    // 如果已在请求中指定特定的平台证书序列号，直接从管理器中取值
-                    CertificateEntry? entry = await ((ICertificateManagerAsync)client.PlatformCertificateManager).GetEntryAsync(request.WechatpaySerialNumber!, cancellationToken).ConfigureAwait(false);
-                    if (!entry.HasValue)
-                    {
-                        throw new WechatTenpayException($"Failed to encrypt request, because the platform certificate manager does not contain a certificate matched the serial number \"{request.WechatpaySerialNumber}\". Please make sure you have downloaded platform (NOT merchant) certificates first.");
-                    }
-
-                    certificate = entry.Value.Certificate;
-                }
-
-                ReflectionHelper.ReplaceObjectStringProperties(request, (_, currentProp, oldValue) =>
-                {
-                    if (currentProp is null || !currentProp.IsDefined(typeof(WechatTenpaySensitivePropertyAttribute)))
-                        return (false, oldValue);
-
-                    WechatTenpaySensitivePropertyAttribute? attribute = currentProp
-                        .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
-                        .FirstOrDefault(attr => attr.Scheme == signScheme);
-                    if (attribute is null)
-                        return (false, oldValue);
-
-                    string newValue = GenerateEncryptedValueByCertificate(attribute.Algorithm, certificate, oldValue);
-                    return (true, newValue);
-                });
-
-                return request;
-            }
-            catch (WechatTenpayException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new WechatTenpayException("Failed to encrypt request. Please see the inner exception for more details.", ex);
-            }
+            return PopulateRequestEncryptedFieldsByCertificate(signScheme, entry.Value.Certificate, ref request);
         }
 
-        private static TRequest EncryptRequestSensitivePropertyByPublicKey<TRequest>(this WechatTenpayClient client, TRequest request)
+        private static async Task<TRequest> EncryptRequestSensitivePropertyUseCertificateManagerAsync<TRequest>(ICertificateManagerAsync manager, string signScheme, TRequest request, CancellationToken cancellationToken = default)
             where TRequest : WechatTenpayRequest
         {
-            try
-            {
-                bool requireEncrypt = request.GetType().IsDefined(typeof(WechatTenpaySensitiveAttribute));
-                if (!requireEncrypt)
-                    return request;
+            if (manager is null)
+                throw new NullReferenceException("The platform certificate manager is not configured.");
 
-                string signScheme = client.Credentials.SignScheme;
-                string algorithmType = // 签名方式与加密算法保持一致：RSA_SHA256 签名需 RSA 加密，SM3 签名需 SM2 加密
-                    SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256.Equals(signScheme) ? PublicKeyEntry.ALGORITHM_TYPE_RSA :
-                    SignSchemes.WECHATPAY2_SM2_WITH_SM3.Equals(signScheme) ? PublicKeyEntry.ALGORITHM_TYPE_SM2 :
-                    throw new WechatTenpayException($"Failed to encrypt request. Unsupported signing scheme: \"{signScheme}\".");
+            CertificateEntry? entry = await manager.GetEntryAsync(request.WechatpaySerialNumber!, cancellationToken).ConfigureAwait(false);
+            if (!entry.HasValue)
+                throw new WechatTenpayException($"Failed to encrypt request, because the platform certificate manager does not contain a certificate matched the serial number \"{request.WechatpaySerialNumber}\". Please make sure you have downloaded platform (NOT merchant) certificates first.");
 
-                string publicKey;
-                if (string.IsNullOrEmpty(request.WechatpaySerialNumber))
-                {
-                    // 如果未在请求中指定特定的平台公钥 ID，从管理器中取第一个
-                    IEnumerable<PublicKeyEntry> entries = client.PlatformPublicKeyManager.AllEntries()
-                        .Where(e => e.AlgorithmType == algorithmType);
-                    if (!entries.Any())
-                    {
-                        throw new WechatTenpayException("Failed to encrypt request, because the platform public key manager is empty.");
-                    }
-
-                    PublicKeyEntry entry = entries.First();
-                    publicKey = entry.PublicKey;
-                    request.WechatpaySerialNumber = entry.SerialNumber;
-                }
-                else
-                {
-                    // 如果已在请求中指定特定的平台公钥 ID，直接从管理器中取值
-                    PublicKeyEntry? entry = client.PlatformPublicKeyManager.GetEntry(request.WechatpaySerialNumber!);
-                    if (!entry.HasValue)
-                    {
-                        throw new WechatTenpayException($"Failed to encrypt request, because the platform public key manager does not contain a key matched the serial number \"{request.WechatpaySerialNumber}\".");
-                    }
-
-                    publicKey = entry.Value.PublicKey;
-                }
-
-                ReflectionHelper.ReplaceObjectStringProperties(request, (_, currentProp, oldValue) =>
-                {
-                    if (currentProp is null || !currentProp.IsDefined(typeof(WechatTenpaySensitivePropertyAttribute)))
-                        return (false, oldValue);
-
-                    WechatTenpaySensitivePropertyAttribute? attribute = currentProp
-                        .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
-                        .FirstOrDefault(attr => attr.Scheme == signScheme);
-                    if (attribute is null)
-                        return (false, oldValue);
-
-                    string newValue = GenerateEncryptedValueByPublicKey(attribute.Algorithm, publicKey, oldValue);
-                    return (true, newValue);
-                });
-
-                return request;
-            }
-            catch (WechatTenpayException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new WechatTenpayException("Failed to encrypt request. Please see the inner exception for more details.", ex);
-            }
+            return PopulateRequestEncryptedFieldsByCertificate(signScheme, entry.Value.Certificate, ref request);
         }
 
-        private static async Task<TRequest> EncryptRequestSensitivePropertyByPublicKeyAsync<TRequest>(this WechatTenpayClient client, TRequest request, CancellationToken cancellationToken = default)
+        private static TRequest EncryptRequestSensitivePropertyUsePublicKeyManager<TRequest>(IPublicKeyManager manager, string signScheme, TRequest request)
             where TRequest : WechatTenpayRequest
         {
-            if (client.PlatformPublicKeyManager is not IPublicKeyManagerAsync)
-            {
-                // 降级为同步调用
-                return EncryptRequestSensitivePropertyByPublicKey(client, request);
-            }
+            if (manager is null)
+                throw new NullReferenceException("The platform public key manager is not configured.");
 
-            try
-            {
-                bool requireEncrypt = request.GetType().IsDefined(typeof(WechatTenpaySensitiveAttribute));
-                if (!requireEncrypt)
-                    return request;
+            PublicKeyEntry? entry = manager.GetEntry(request.WechatpaySerialNumber!);
+            if (!entry.HasValue)
+                throw new WechatTenpayException($"Failed to encrypt request, because the platform public key manager does not contain a key matched the serial number \"{request.WechatpaySerialNumber}\".");
 
-                string signScheme = client.Credentials.SignScheme;
-                string algorithmType = // 签名方式与加密算法保持一致：RSA_SHA256 签名需 RSA 加密，SM3 签名需 SM2 加密
-                    SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256.Equals(signScheme) ? PublicKeyEntry.ALGORITHM_TYPE_RSA :
-                    SignSchemes.WECHATPAY2_SM2_WITH_SM3.Equals(signScheme) ? PublicKeyEntry.ALGORITHM_TYPE_SM2 :
-                    throw new WechatTenpayException($"Failed to encrypt request. Unsupported signing scheme: \"{signScheme}\".");
-
-                string publicKey;
-                if (string.IsNullOrEmpty(request.WechatpaySerialNumber))
-                {
-                    if (client.PlatformPublicKeyManager is null)
-                        throw new WechatTenpayException("Failed to encrypt request, because the platform public key manager is not initialized.");
-
-                    // 如果未在请求中指定特定的平台公钥 ID，从管理器中第一个
-                    IEnumerable<PublicKeyEntry> entries = await ((IPublicKeyManagerAsync)client.PlatformPublicKeyManager).AllEntriesAsync(cancellationToken).ConfigureAwait(false);
-                    entries = entries.Where(e => e.AlgorithmType == algorithmType);
-                    if (!entries.Any())
-                    {
-                        throw new WechatTenpayException("Failed to encrypt request, because the platform public key manager is empty.");
-                    }
-
-                    PublicKeyEntry entry = entries.First();
-                    publicKey = entry.PublicKey;
-                    request.WechatpaySerialNumber = entry.SerialNumber;
-                }
-                else
-                {
-                    // 如果已在请求中指定特定的平台公钥 ID，直接从管理器中取值
-                    PublicKeyEntry? entry = await ((IPublicKeyManagerAsync)client.PlatformPublicKeyManager).GetEntryAsync(request.WechatpaySerialNumber!, cancellationToken).ConfigureAwait(false);
-                    if (!entry.HasValue)
-                    {
-                        throw new WechatTenpayException($"Failed to encrypt request, because the platform public key manager does not contain a key matched the serial number \"{request.WechatpaySerialNumber}\".");
-                    }
-
-                    publicKey = entry.Value.PublicKey;
-                }
-
-                ReflectionHelper.ReplaceObjectStringProperties(request, (_, currentProp, oldValue) =>
-                {
-                    if (currentProp is null || !currentProp.IsDefined(typeof(WechatTenpaySensitivePropertyAttribute)))
-                        return (false, oldValue);
-
-                    WechatTenpaySensitivePropertyAttribute? attribute = currentProp
-                        .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
-                        .FirstOrDefault(attr => attr.Scheme == signScheme);
-                    if (attribute is null)
-                        return (false, oldValue);
-
-                    string newValue = GenerateEncryptedValueByPublicKey(attribute.Algorithm, publicKey, oldValue);
-                    return (true, newValue);
-                });
-
-                return request;
-            }
-            catch (WechatTenpayException)
-            {
-                throw;
-            }
-            catch (Exception ex)
-            {
-                throw new WechatTenpayException("Failed to encrypt request. Please see the inner exception for more details.", ex);
-            }
+            return PopulateRequestEncryptedFieldsByPublicKey(signScheme, entry.Value.PublicKey, ref request);
         }
 
-        private static string GenerateEncryptedValueByCertificate(string algorithm, string certificate, string value)
+        private static async Task<TRequest> EncryptRequestSensitivePropertyUsePublicKeyManagerAsync<TRequest>(IPublicKeyManagerAsync manager, string signScheme, TRequest request, CancellationToken cancellationToken = default)
+            where TRequest : WechatTenpayRequest
         {
-            switch (algorithm)
+            if (manager is null)
+                throw new NullReferenceException("The platform public key manager is not configured.");
+
+            PublicKeyEntry? entry = await manager.GetEntryAsync(request.WechatpaySerialNumber!, cancellationToken).ConfigureAwait(false);
+            if (!entry.HasValue)
+                throw new WechatTenpayException($"Failed to encrypt request, because the platform public key manager does not contain a key matched the serial number \"{request.WechatpaySerialNumber}\".");
+
+            return PopulateRequestEncryptedFieldsByPublicKey(signScheme, entry.Value.PublicKey, ref request);
+        }
+
+        private static TRequest PopulateRequestEncryptedFieldsByCertificate<TRequest>(string scheme, string certificate, ref TRequest request)
+            where TRequest : WechatTenpayRequest
+        {
+            switch (scheme)
             {
-                case EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1:
-                case EncryptionAlgorithms.RSA_2048_ECB_PKCS1:
+                case SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256:
                     {
                         string publicKey = RSAUtility.ExportPublicKeyFromCertificate(certificate);
-                        return GenerateEncryptedValueByPublicKey(algorithm, publicKey, value);
+                        return PopulateRequestEncryptedFieldsByPublicKey(scheme, publicKey, ref request);
                     }
 
-                case EncryptionAlgorithms.SM2_C1C3C2_ASN1:
+                case SignSchemes.WECHATPAY2_SM2_WITH_SM3:
                     {
                         string publicKey = SM2Utility.ExportPublicKeyFromCertificate(certificate);
-                        return GenerateEncryptedValueByPublicKey(algorithm, publicKey, value);
+                        return PopulateRequestEncryptedFieldsByPublicKey(scheme, publicKey, ref request);
                     }
 
                 default:
-                    throw new WechatTenpayException($"Failed to encrypt request. Unsupported encryption algorithm: \"{algorithm}\".");
+                    throw new NotSupportedException($"Unsupported signing scheme: \"{scheme}\".");
             }
         }
 
-        private static string GenerateEncryptedValueByPublicKey(string algorithm, string publicKey, string value)
+        private static TRequest PopulateRequestEncryptedFieldsByPublicKey<TRequest>(string scheme, string publicKey, ref TRequest request)
+            where TRequest : WechatTenpayRequest
         {
-            switch (algorithm)
+            ReflectionHelper.ReplaceObjectStringProperties(ref request, (_, currentProp, oldValue) =>
             {
-                case EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1:
-                    return RSAUtility.EncryptWithECB(
-                        publicKeyPem: publicKey,
-                        plainData: value,
-                        paddingMode: RSAUtility.PADDING_MODE_OAEPWITHSHA1ANDMGF1
-                    )!;
+                if (currentProp is null || !currentProp.IsDefined(typeof(WechatTenpaySensitivePropertyAttribute)))
+                    return (false, oldValue);
 
-                case EncryptionAlgorithms.RSA_2048_ECB_PKCS1:
-                    return RSAUtility.EncryptWithECB(
-                        publicKeyPem: publicKey,
-                        plainData: value,
-                        paddingMode: RSAUtility.PADDING_MODE_PKCS1
-                    )!;
+                WechatTenpaySensitivePropertyAttribute? attribute = currentProp
+                    .GetCustomAttributes<WechatTenpaySensitivePropertyAttribute>()
+                    .FirstOrDefault(attr => attr.Scheme == scheme);
+                if (attribute is null)
+                    return (false, oldValue);
 
-                case EncryptionAlgorithms.SM2_C1C3C2_ASN1:
-                    return SM2Utility.Encrypt(
-                        publicKeyPem: publicKey,
-                        plainData: value,
-                        asn1Encoding: true
-                    )!;
+                string newValue;
+                switch (attribute.Algorithm)
+                {
+                    case EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1:
+                        newValue = RSAUtility.EncryptWithECB(
+                            publicKeyPem: publicKey,
+                            plainData: oldValue,
+                            paddingMode: RSAUtility.PADDING_MODE_OAEPWITHSHA1ANDMGF1
+                        )!;
+                        break;
 
-                default:
-                    throw new WechatTenpayException($"Failed to encrypt request. Unsupported encryption algorithm: \"{algorithm}\".");
-            }
+                    case EncryptionAlgorithms.RSA_2048_ECB_PKCS1:
+                        newValue = RSAUtility.EncryptWithECB(
+                            publicKeyPem: publicKey,
+                            plainData: oldValue,
+                            paddingMode: RSAUtility.PADDING_MODE_PKCS1
+                        )!;
+                        break;
+
+                    case EncryptionAlgorithms.SM2_C1C3C2_ASN1:
+                        newValue = SM2Utility.Encrypt(
+                            publicKeyPem: publicKey,
+                            plainData: oldValue,
+                            asn1Encoding: true
+                        )!;
+                        break;
+
+                    default:
+                        throw new NotSupportedException($"Unsupported encryption algorithm: \"{attribute.Algorithm}\".");
+                }
+
+                return (true, newValue);
+            });
+            return request;
         }
     }
 }

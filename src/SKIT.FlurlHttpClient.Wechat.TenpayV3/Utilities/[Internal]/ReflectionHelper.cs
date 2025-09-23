@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
 {
     internal static partial class ReflectionHelper
     {
-        public static void ReplaceObjectStringProperties(object targetObj, ReplaceObjectStringPropertiesReplacementDelegate replacement)
+        public static void ReplaceObjectStringProperties<T>(ref T targetObj, ReplaceObjectStringPropertiesReplacementDelegate replacement)
         {
             if (targetObj is null) throw new ArgumentNullException(nameof(targetObj));
             if (replacement is null) throw new ArgumentNullException(nameof(replacement));
@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
     {
         public delegate (bool IsModified, string NewValue) ReplaceObjectStringPropertiesReplacementDelegate(object currentObj, PropertyInfo? currentProp, string oldValue);
 
-        private static void InnerReplaceObjectStringProperties(ref object currentObj, PropertyInfo? currentProp, ReplaceObjectStringPropertiesReplacementDelegate replacement, ISet<object> visited)
+        private static void InnerReplaceObjectStringProperties<T>(ref T currentObj, PropertyInfo? currentProp, ReplaceObjectStringPropertiesReplacementDelegate replacement, ISet<object> visited)
         {
             if (currentObj is null) throw new ArgumentNullException(nameof(currentObj));
             if (replacement is null) throw new ArgumentNullException(nameof(replacement));
@@ -53,7 +53,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Utilities
             // 处理数组类型
             if (type.IsArray)
             {
-                Array currentObjAsArray = (Array)currentObj;
+                Array currentObjAsArray = (currentObj as Array)!;
                 for (int i = 0; i < currentObjAsArray.Length; i++)
                 {
                     object? element = currentObjAsArray.GetValue(i);
