@@ -23,7 +23,7 @@
 
 关于证书的更多注意事项，请参阅[《微信支付开发者文档 - 常见问题：证书相关》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay7_0.shtml)
 
-🔥 另，2024 年 10 月后新注册的微信商户已不再提供平台证书，取而代之的是平台公钥。但二者的加密流程基本相同。更多内容请见本章的《适配微信支付新商户的平台公钥认证方式》一节。
+🔥 另，2024 年 10 月后新注册的微信商户已默认不再提供平台证书，取而代之的是平台公钥。但二者的加密流程基本相同。更多内容请见本章下文的《适配微信支付新商户的平台公钥认证方式》一节。
 
 ---
 
@@ -229,21 +229,4 @@ public class RedisCertificateManager : ICertificateManager
 
 ### 适配微信支付新商户的平台公钥认证方式
 
-自 v3.9.0 版本起，本库支持接入微信支付平台基于微信支付公钥的验证身份方式。
-
-你只需要在原有的构造得到 `WechatTenpayClient` 对象的项目代码上做出调整，设置平台认证方案为“使用平台公钥认证”，并使用 `PlatformPublicKeyManager` 属性替代 `PlatformCertificateManager` 属性：
-
-```csharp
-var manager = new Settings.InMemoryPublicKeyManager();
-manager.AddEntry(new PublicKeyEntry("公钥算法，目前仅支持 RSA 这一种类型", "公钥序列号（PubKeyID）", "PKCS#8 公钥内容"));
-
-var options = new WechatTenpayClientOptions()
-{
-    // 其他配置项略
-    PlatformAuthScheme = Settings.PlatformAuthScheme.PublicKey,
-    PlatformPublicKeyManager = manager
-};
-var client = WechatTenpayClientBuilder.Create(options).Build();
-```
-
-后续流程与原有方式完全一致。
+请参阅本文档[《基础用法 - 如何从平台证书切换成公钥？》](./Basic_Certificate2PublicKey.md)。
