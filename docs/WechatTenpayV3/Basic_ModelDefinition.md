@@ -203,11 +203,15 @@
 
             -   微信单号查询转账单：`GetFundAppMerchantTransferBillByTransferBillNumber`
 
+        -   用户授权免确认模式
+
             -   发起转账并完成免确认收款授权：`CreateFundAppMerchantTransferBillPreTransferWithAuthorization`
 
-            -   转账（用户免确认收款）：`CreateFundAppMerchantTransferBillTransfer`
+            -   商户单号查询授权结果：`GetFundAppMerchantTransferUserConfirmAuthorizationByOutAuthorizationNumber`
 
-            -   商户单号查询免确认收款授权：`GetFundAppMerchantTransferUserConfirmAuthorizationByOutAuthorizationNumber`
+            -   用户授权后转账：`CreateFundAppMerchantTransferBillTransfer`
+
+            -   解除免确认收款授权：`CloseFundAppMerchantTransferUserConfirmAuthorization`
 
         -   获取电子回单
 

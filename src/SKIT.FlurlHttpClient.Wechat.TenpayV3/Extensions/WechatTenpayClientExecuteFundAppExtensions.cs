@@ -254,6 +254,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppMerchantTransferUserConfirmAuthorizationByOutAuthorizationNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}/close 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4015653811 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CloseFundAppMerchantTransferUserConfirmAuthorizationResponse> ExecuteCloseFundAppMerchantTransferUserConfirmAuthorizationAsync(this WechatTenpayClient client, Models.CloseFundAppMerchantTransferUserConfirmAuthorizationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "fund-app", "mch-transfer", "user-confirm-authorization", "out-authorization-no", request.OutAuthorizationNumber, "close");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CloseFundAppMerchantTransferUserConfirmAuthorizationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
 
         #region MerchantTransfer/TransferToQQWalletBills
