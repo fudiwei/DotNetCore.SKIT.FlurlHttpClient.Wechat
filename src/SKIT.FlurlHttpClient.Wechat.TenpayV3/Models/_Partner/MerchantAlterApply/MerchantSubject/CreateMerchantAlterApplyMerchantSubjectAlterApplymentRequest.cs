@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? CompanyAddress { get; set; }
             }
 
-            public class FinanceInstitutionLicense : CreateApplyForSubjectApplymentRequest.Types.Subject.Types.FinanceInstitutionLicense
+            public class FinanceInstitutionLicense : CreateApplyForSubMerchantApplymentRequest.Types.Subject.Types.FinanceInstitutionLicense
             {
             }
 

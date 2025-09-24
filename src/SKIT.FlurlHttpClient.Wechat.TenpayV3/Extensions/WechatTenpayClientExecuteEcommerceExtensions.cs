@@ -205,7 +205,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /ecommerce/applyments/{applyment_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012691469 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012691469 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015616714 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -227,7 +228,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /ecommerce/applyments/out-request-no/{out_request_no} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012691376 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012691376 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015616708 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -243,6 +245,94 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "applyments", "out-request-no", request.OutRequestNumber);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceApplymentByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/applyments/{applyment_id}/revoke 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015616720 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.RevokeEcommerceApplymentByApplymentIdResponse> ExecuteRevokeEcommerceApplymentByApplymentIdAsync(this WechatTenpayClient client, Models.RevokeEcommerceApplymentByApplymentIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "applyments", request.ApplymentId.ToString(), "revoke");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.RevokeEcommerceApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/applyments/out-request-no/{out_request_no}/revoke 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015616721 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.RevokeEcommerceApplymentByOutRequestNumberResponse> ExecuteRevokeEcommerceApplymentByOutRequestNumberAsync(this WechatTenpayClient client, Models.RevokeEcommerceApplymentByOutRequestNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "applyments", "out-request-no", request.OutRequestNumber, "revoke");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.RevokeEcommerceApplymentByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/applyments/submit-account-hosting-applyment 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015616688 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateEcommerceApplymentForSubmitAccountHostingResponse> ExecuteCreateEcommerceApplymentForSubmitAccountHostingAsync(this WechatTenpayClient client, Models.CreateEcommerceApplymentForSubmitAccountHostingRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "applyments", "submit-account-hosting-applyment");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceApplymentForSubmitAccountHostingResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/applyments/submit-sign-verify-info 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015616722 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateEcommerceApplymentForSubmitSignVerifyInfoResponse> ExecuteCreateEcommerceApplymentForSubmitSignVerifyInfoAsync(this WechatTenpayClient client, Models.CreateEcommerceApplymentForSubmitSignVerifyInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "applyments", "submit-sign-verify-info");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceApplymentForSubmitSignVerifyInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 

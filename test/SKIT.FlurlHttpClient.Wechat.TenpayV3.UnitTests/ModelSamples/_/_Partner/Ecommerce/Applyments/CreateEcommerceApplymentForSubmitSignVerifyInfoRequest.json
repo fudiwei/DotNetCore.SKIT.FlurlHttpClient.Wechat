@@ -1,0 +1,9 @@
+{
+    "out_request_no": "1900013511_10000",
+    "applyment_id": 2000002124775691,
+    "pre_sign_time": "2018-06-08T10:34:56+08:00",
+    "proxy_verify_identity_info": {
+        "verify_identity_type": "VERIFY_IDENTITY_TYPE_FACE_TO_FACE",
+        "verify_identity_result": true
+    }
+}

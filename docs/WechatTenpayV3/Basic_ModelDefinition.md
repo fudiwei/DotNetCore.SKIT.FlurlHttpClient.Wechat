@@ -1115,6 +1115,24 @@
 
             -   查询赔付结果：`GetPlatformSolutionEcommerceMerchantTransferCompensationBillByOutBillNumber` / `GetPlatformSolutionEcommerceMerchantTransferCompensationBillByBillId`
 
+    -   账号托管模式（进件）
+
+        -   提交申请单：`CreateEcommerceApplymentForSubmitAccountHosting`
+
+        -   查询申请单状态：`GetEcommerceApplymentByOutRequestNumber` / `GetEcommerceApplymentByApplymentId`
+
+        -   撤销申请单：`RevokeEcommerceApplymentByOutRequestNumber` / `RevokeEcommerceApplymentByApplymentId`
+
+        -   平台代理签约核身：`CreateEcommerceApplymentForSubmitSignVerifyInfo`
+
+    -   账号托管模式（修改超级管理员）
+
+        -   提交申请单：`CreateMerchantAlterApplyMerchantContactAlterApplyment`
+
+        -   查询申请单状态：`GetMerchantAlterApplyMerchantContactAlterApplymentByOutRequestNumber` / `GetMerchantAlterApplyMerchantContactAlterApplymentByApplymentId`
+
+        -   撤销申请单：`RevokeMerchantAlterApplyMerchantContactAlterApplyment`
+
     -   代金券
 
         -   创建代金券批次：`CreateMarketingFavorStock`
