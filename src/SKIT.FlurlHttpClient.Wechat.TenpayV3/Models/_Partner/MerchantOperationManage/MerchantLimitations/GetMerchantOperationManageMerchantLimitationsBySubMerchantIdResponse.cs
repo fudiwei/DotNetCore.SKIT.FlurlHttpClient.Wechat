@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
@@ -17,11 +19,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? LimitationReasonType { get; set; }
 
                 /// <summary>
-                /// 获取或设置商户被管控原因描述。
+                /// 获取或设置商户被管控原因。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("limitation_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("limitation_reason")]
                 public string? LimitationReason { get; set; }
+
+                /// <summary>
+                /// 获取或设置商户被管控原因描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("limitation_reason_describe")]
+                [System.Text.Json.Serialization.JsonPropertyName("limitation_reason_describe")]
+                public string? LimitationReasonDescription { get; set; }
+
+                /// <summary>
+                /// 获取或设置商户被该原因管控的单据号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("limitation_case_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("limitation_case_id")]
+                public string? LimitationCaseId { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户被该原因管控的解脱路径。
@@ -29,6 +45,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("recover_way")]
                 [System.Text.Json.Serialization.JsonPropertyName("recover_way")]
                 public string? RecoverWay { get; set; }
+
+                /// <summary>
+                /// 获取或设置商户被该原因管控的解脱路径参数字符串。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("recover_way_param")]
+                [System.Text.Json.Serialization.JsonPropertyName("recover_way_param")]
+                public string? RecoverWayParametersString { get; set; }
 
                 /// <summary>
                 /// 获取或设置商户被该原因管控的解脱帮助链接。
@@ -50,6 +73,31 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("other_relate_limitations")]
                 [System.Text.Json.Serialization.JsonPropertyName("other_relate_limitations")]
                 public string? OtherRelateLimitation { get; set; }
+
+                /// <summary>
+                /// 获取或设置处置方式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("limitation_action_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("limitation_action_type")]
+                public string? LimitationActionType { get; set; }
+
+                /// <summary>
+                /// 获取或设置预计管控开始时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("limitation_start_date")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("limitation_start_date")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
+                public DateTimeOffset? LimitationStartDate { get; set; }
+
+                /// <summary>
+                /// 获取或设置商户被该原因管控的时间。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("limitation_date")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("limitation_date")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
+                public DateTimeOffset? LimitationDate { get; set; }
             }
         }
 

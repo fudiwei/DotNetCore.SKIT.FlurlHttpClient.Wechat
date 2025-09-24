@@ -1,0 +1,25 @@
+{
+    "mchid": "123000110",
+    "limited_functions": [
+        "NO_TRANSACTION_AND_RECHARGEN"
+    ],
+    "other_limited_functions": "关闭相册扫码支付,关闭长按识别支付",
+    "recovery_specifications": [
+        {
+            "limitation_case_id": "A20250819155047774441874",
+            "limitation_reason_type": "LICENSE_ABNORMAL",
+            "limitation_reason": "入驻后180天无账户动账",
+            "limitation_reason_describe": "当前商户号入驻后长时间无账户动账，请重新确认开户意愿并核实身份",
+            "relate_limitations": [
+                "NO_TRANSACTION_AND_RECHARGE"
+            ],
+            "other_relate_limitations": "关闭相册扫码支付,关闭长按识别支付",
+            "recover_way": "MODIFY_SUBJECT_INFORMATION",
+            "recover_way_param": "100200300112233",
+            "recover_help_url": "https://kf.qq.com",
+            "limitation_action_type": "LIMIT_ACTION_TYPE_IMMEDIATE_CONTROL",
+            "limitation_start_date": "2025-06-08T10:34:56+08:00",
+            "limitation_date": "2025-06-08T10:34:56+08:00"
+        }
+    ]
+}
