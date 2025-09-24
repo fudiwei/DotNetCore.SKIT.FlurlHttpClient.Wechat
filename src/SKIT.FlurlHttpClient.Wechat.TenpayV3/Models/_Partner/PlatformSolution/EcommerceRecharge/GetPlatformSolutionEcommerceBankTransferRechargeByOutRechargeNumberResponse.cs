@@ -107,5 +107,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [System.Text.Json.Serialization.JsonPropertyName("close_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
         public DateTimeOffset? CloseTime { get; set; }
+
+        /// <summary>
+        /// 获取或设置可用充值渠道列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("available_recharge_channels")]
+        [System.Text.Json.Serialization.JsonPropertyName("available_recharge_channels")]
+        public string[]? AvailableRechargeChannelList { get; set; }
     }
 }

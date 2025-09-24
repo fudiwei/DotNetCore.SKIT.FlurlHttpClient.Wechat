@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
@@ -53,5 +55,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
         public string? NotifyUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置可用充值渠道列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("available_recharge_channels")]
+        [System.Text.Json.Serialization.JsonPropertyName("available_recharge_channels")]
+        public IList<string>? AvailableRechargeChannelList { get; set; }
+
+        /// <summary>
+        /// 获取或设置充值备注。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("remark")]
+        [System.Text.Json.Serialization.JsonPropertyName("remark")]
+        public string? Remark { get; set; }
     }
 }

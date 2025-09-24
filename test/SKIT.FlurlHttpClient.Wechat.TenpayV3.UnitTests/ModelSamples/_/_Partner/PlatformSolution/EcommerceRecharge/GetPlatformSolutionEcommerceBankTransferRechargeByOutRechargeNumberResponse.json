@@ -19,5 +19,6 @@
     "recharge_scene": "ECOMMERCE_BANK_TRANSFER",
     "recharge_state": "SUCCESS",
     "recharge_state_desc": "超过时间限制，系统自动关闭充值单",
-    "success_time": "2015-05-20T13:29:35+08:00"
+    "success_time": "2015-05-20T13:29:35+08:00",
+    "available_recharge_channels": [ "BANK_TRANSFER" ]
 }

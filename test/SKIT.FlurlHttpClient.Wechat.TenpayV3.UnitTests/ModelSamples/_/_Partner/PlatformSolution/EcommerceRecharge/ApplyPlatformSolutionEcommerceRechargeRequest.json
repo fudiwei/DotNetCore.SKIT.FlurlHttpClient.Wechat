@@ -7,5 +7,7 @@
         "amount": 500000,
         "currency": "CNY"
     },
-    "notify_url": "https://www.weixin.qq.com/wxpay/pay.php"
+    "notify_url": "https://www.weixin.qq.com/wxpay/pay.php",
+    "available_recharge_channels": [ "BANK_TRANSFER" ],
+    "remark": "充值备注"
 }
