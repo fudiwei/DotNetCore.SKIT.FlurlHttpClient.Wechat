@@ -403,6 +403,8 @@
 
         -   图片上传：`UploadMerchantMediaImage`
 
+        -   向用户发放商品券：`SendMarketingBusifavorProductCoupon`
+
     -   消费金
 
         -   下载批次退款明细：`GetMultiuseStockRefundFlow`
@@ -1188,6 +1190,8 @@
         -   查询营销补差付款单详情：`GetMarketingBusifavorSubsidyPayReceiptBySubsidyReceiptId`
 
         -   图片上传：`UploadMarketingMediaImage`
+
+        -   向用户发放商品券：`SendMarketingBusifavorProductCoupon`
 
     -   委托营销
 
