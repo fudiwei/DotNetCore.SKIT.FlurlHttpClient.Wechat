@@ -31,16 +31,17 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 
         /// <summary>
         /// 获取或设置文件内容哈希算法。
+        /// <para>默认值："SM3"</para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("digest_alogrithm")]
         [System.Text.Json.Serialization.JsonPropertyName("digest_alogrithm")]
-        public string FileHashAlgorithm { get; set; } = string.Empty;
+        public string FileHashAlgorithm { get; set; } = "SM3";
 
         /// <summary>
-        /// 获取或设置文件内容哈希值。
+        /// 获取或设置文件内容哈希值。如果不指定将由系统自动生成。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("digest")]
         [System.Text.Json.Serialization.JsonPropertyName("digest")]
-        public string FileHashValue { get; set; } = string.Empty;
+        public string? FileHash { get; set; }
     }
 }

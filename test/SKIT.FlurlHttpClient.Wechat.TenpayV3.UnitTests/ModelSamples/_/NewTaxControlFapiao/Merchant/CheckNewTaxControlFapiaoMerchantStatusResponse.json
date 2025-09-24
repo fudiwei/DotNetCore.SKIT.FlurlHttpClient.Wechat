@@ -1,0 +1,25 @@
+{
+    "sub_mchid": "1900000109",
+    "third_mode": {
+        "status": "ENABLED"
+    },
+    "digital_tax_mode": {
+        "status": "ENABLED",
+        "billing_person_info": [
+            {
+                "id": "187776276864872",
+                "name": "张伟"
+            }
+        ],
+        "access_time": "2020-07-01T12:00:00+08:00",
+        "expired_time": "2020-07-02T12:00:00+08:00",
+        "access_fail_reason": "失败原因",
+        "ability_info": [
+            {
+                "type": "BASE_ABILITY",
+                "status": "AUTHORIZED",
+                "authorize_fail_reason": "失败原因"
+            }
+        ]
+    }
+}

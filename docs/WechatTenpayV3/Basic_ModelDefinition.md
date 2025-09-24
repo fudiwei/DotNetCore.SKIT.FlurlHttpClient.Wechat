@@ -485,7 +485,7 @@
 
             -   获取用户填写的抬头：`GetNewTaxControlFapiaoUserTitle`
 
-        -   区块链电子发票 API
+        -   区块链电子发票
 
             -   获取商户开票基础信息：`GetNewTaxControlFapiaoMerchantBaseInformation`
 
@@ -1271,6 +1271,10 @@
 
             -   开具电子发票：`CreateNewTaxControlFapiaoApplication`
 
+            -   开具通用行业电子发票：`CreateNewTaxControlFapiaoApplicationIssueGeneral`
+
+            -   开具不动产租赁行业电子发票：`CreateNewTaxControlFapiaoApplicationRealEstateLeasing`
+
             -   上传电子发票文件：`UploadNewTaxControlFapiaoApplicationFapiaoFile`
 
             -   查询电子发票：`GetNewTaxControlFapiaoApplicationByFapiaoApplyId`
@@ -1283,6 +1287,12 @@
 
             -   下载发票文件：`DownloadNewTaxControlFapiaoApplicationFile`
 
+        -   电子发票服务商邀请
+
+            -   获取邀请商户开通服务商电子发票能力：`GetNewTaxControlFapiaoMerchantServicePartnerInviteUrl`
+
+            -   获取邀请开通的商户信息：`QueryNewTaxControlFapiaoMerchantServicePartnerInvitedMerchants`
+
         -   电子发票商户信息
 
             -   获取商户开票基础信息：`GetNewTaxControlFapiaoMerchantBaseInformation`
@@ -1293,7 +1303,7 @@
 
             -   获取商品和服务税收分类对照表：`QueryNewTaxControlFapiaoMerchantTaxCodes`
 
-            -   检查子商户开票功能状态：`CheckNewTaxControlFapiaoMerchant`
+            -   检查子商户开票功能状态：`CheckNewTaxControlFapiaoMerchant` / `CheckNewTaxControlFapiaoMerchantStatus`
 
         -   用户抬头
 

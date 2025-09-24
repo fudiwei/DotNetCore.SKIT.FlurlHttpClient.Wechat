@@ -72,5 +72,33 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_RSA_2048_WITH_SHA256, algorithm: Constants.EncryptionAlgorithms.RSA_2048_ECB_PKCS8_OAEP_WITH_SHA1_AND_MGF1)]
         [WechatTenpaySensitiveProperty(scheme: Constants.SignSchemes.WECHATPAY2_SM2_WITH_SM3, algorithm: Constants.EncryptionAlgorithms.SM2_C1C3C2_ASN1)]
         public string? UserEmail { get; set; }
+
+        /// <summary>
+        /// 获取或设置订单金额（单位：分）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("amount")]
+        [System.Text.Json.Serialization.JsonPropertyName("amount")]
+        public int? Amount { get; set; }
+
+        /// <summary>
+        /// 获取或设置商户订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("out_trade_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_trade_no")]
+        public string? OutTradeNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置开具发票类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("fapiao_bill_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("fapiao_bill_type")]
+        public string? FapiaoBillType { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户留言信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("user_apply_message")]
+        [System.Text.Json.Serialization.JsonPropertyName("user_apply_message")]
+        public string? UserApplyMessage { get; set; }
     }
 }

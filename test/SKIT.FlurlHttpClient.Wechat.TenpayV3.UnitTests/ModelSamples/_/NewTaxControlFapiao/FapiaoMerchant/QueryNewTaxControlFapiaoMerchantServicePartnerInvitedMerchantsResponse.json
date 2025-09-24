@@ -1,0 +1,17 @@
+{
+    "total_count": 50,
+    "offset": 10,
+    "limit": 1,
+    "mch_invite_result_list": [
+        {
+            "sub_mchid": "1999192837",
+            "mch_invite_status": "MCH_INVITE_SUCC",
+            "ep_name": "示例（深圳）有限公司",
+            "tax_id": "9144050071126766XG",
+            "invite_code": "code_20200101_123",
+            "operate_time": "2020-07-01T00:00:00",
+            "invite_failed_code": "UNKNOWN_TAX_INFO",
+            "invite_failed_reason": "示例失败原因"
+        }
+    ]
+}

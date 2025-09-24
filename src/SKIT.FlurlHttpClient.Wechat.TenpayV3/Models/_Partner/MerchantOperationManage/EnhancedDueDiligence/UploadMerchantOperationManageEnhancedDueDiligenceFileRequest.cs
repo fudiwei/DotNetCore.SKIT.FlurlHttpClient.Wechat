@@ -33,7 +33,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("file_digest")]
         [System.Text.Json.Serialization.JsonPropertyName("file_digest")]
-        public string? FileDigest { get; set; }
+        public string? FileHash { get; set; }
 
         /// <summary>
         /// 获取或设置文件 Conent-Type。如果不指定将由系统自动生成。

@@ -1,3 +1,5 @@
 {
-    "callback_url": "https://pay.weixin.qq.com/callback"
+    "callback_url": "https://pay.weixin.qq.com/callback",
+    "show_fapiao_cell": false,
+    "support_vat_fapiao": false
 }

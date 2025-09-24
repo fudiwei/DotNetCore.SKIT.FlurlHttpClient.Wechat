@@ -10,6 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("callback_url")]
         [System.Text.Json.Serialization.JsonPropertyName("callback_url")]
-        public string CallbackUrl { get; set; } = default!;
+        public string? CallbackUrl { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否展示开发票入口开关。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("show_fapiao_cell")]
+        [System.Text.Json.Serialization.JsonPropertyName("show_fapiao_cell")]
+        public bool? RequireShowFapiaoCell { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否支持开电子专票。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("support_vat_fapiao")]
+        [System.Text.Json.Serialization.JsonPropertyName("support_vat_fapiao")]
+        public bool? IsSupportVATFapiao { get; set; }
     }
 }

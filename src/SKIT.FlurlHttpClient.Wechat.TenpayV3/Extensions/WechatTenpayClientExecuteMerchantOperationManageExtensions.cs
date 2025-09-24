@@ -75,8 +75,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request.FileName is null)
                 request.FileName = Guid.NewGuid().ToString("N").ToLower() + ".png";
 
-            if (request.FileDigest is null)
-                request.FileDigest = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToUpper();
+            if (request.FileHash is null)
+                request.FileHash = EncodedString.ToHexString(Utilities.SHA256Utility.Hash(request.FileBytes)).Value!.ToUpper();
 
             if (request.FileContentType is null)
                 request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);

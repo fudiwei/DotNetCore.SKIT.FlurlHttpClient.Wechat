@@ -6,6 +6,8 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 {
+    using SKIT.FlurlHttpClient.Primitives;
+
     public static class WechatTenpayClientExecuteTaxiInvoiceExtensions
     {
         #region TaxiCompany
@@ -218,6 +220,21 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.FileHashAlgorithm is null)
+            {
+                request.FileHashAlgorithm = "SM3";
+            }
+
+            if (request.FileHash is null)
+            {
+                switch (request.FileHashAlgorithm)
+                {
+                    case "SM3":
+                        request.FileHash = EncodedString.ToHexString(Utilities.SM3Utility.Hash(request.FileBytes)).Value!.ToLower();
+                        break;
+                }
+            }
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "taxi-invoice", "cards", "upload-file");

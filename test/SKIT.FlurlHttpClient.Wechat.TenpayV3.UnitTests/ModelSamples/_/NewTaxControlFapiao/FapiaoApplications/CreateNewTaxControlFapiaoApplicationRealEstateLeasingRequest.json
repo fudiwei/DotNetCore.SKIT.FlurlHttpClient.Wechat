@@ -1,0 +1,62 @@
+{
+    "sub_mchid": "1900000109",
+    "fapiao_apply_id": "4200000444201910177461284488",
+    "buyer_information": {
+        "type": "INDIVIDUAL",
+        "name": "深圳市南山区测试企业",
+        "taxpayer_id": "202003261233701778",
+        "address": "深圳市南山区深南大道10000号",
+        "telephone": "075512345678",
+        "bank_name": "测试银行",
+        "bank_account": "62001234567890",
+        "phone": "mI7HGEJ4Q2B91IGjHrl7FNN9QuFPDfzeXoaJM4B8ZghZPzXK+vNotEZu/Gthm87Szv0MK2AoC0/3ZMDgltMtdoY6O0qZ4F1iXiwCuqkkBe+9M4ggvdzpPGM+fyed2QU1seUGbii5RVVVB9s+zLEQ8nv74vsgl77MZx14nd5obtCcfAvPfDJob3oG7FqlThmYKJqjiOwBvvQse7p9R8onj/POzSrbM8re8ZYGp4LcehXopTLdk2ZVWRv8bnJgKZWArAcqMdahq4jY2UVYeY4vpMmq4xuRTYk6xNXvowBBKK2SX8SqM+jm1USyoBIazLu4oaNFNdBO3fip1a1rFW0vRw==",
+        "email": "NzJy3r0Z2u2Vs5l+WSH0A3CZ1oGlCZ66aa2wUlMXNmACbd4wU8LqqYCuTG4cYWxrVUSmviV59/Uy9vLdIwuHZVrMalYAZGtb8inWGhDj3wUqQnPkmBKBVGIWG5Y6XJmMvpXW6rIKsdzxs8NwWj30cRNfjanLxiWc0aIgl8Knwo0JcxlcYLo38T9ntsrRkQZMQEWHaMYnzjp7ysLbp6yW83OZb/NwEufERBdPnIbDbVE7DUd5MGhvO+tlr2YC1b4VCsrDmjryuTD5nvYYCGHyfXW2CM23hZdBm9tPc+mU18Z9d4XkasnfsecGWd2ISkpPmnk3DtapnD64Nw8JyLtkgw==",
+        "amount": 1000,
+        "out_trade_no": "order_20200701_123456",
+        "fapiao_bill_type": "COMM_FAPIAO",
+        "user_apply_message": "用户留言"
+    },
+    "fapiao_information": {
+        "fapiao_id": "20200701123456",
+        "total_amount": 382895,
+        "items": [
+            {
+                "tax_code": "3010101020203000000",
+                "goods_name": "*经营租赁*车辆停放服务",
+                "specification": "米",
+                "unit": "METER",
+                "quantity": 100000000,
+                "total_amount": 429900,
+                "tax_rate": 1300,
+                "discount": false,
+                "preferential_policy_code": 1,
+                "real_estate_leasing_information": {
+                    "province": "重庆市",
+                    "city": "涪陵区",
+                    "address": "xx街道xx小区",
+                    "lease_period_start": "2025-01-01T10:00:00+08:00",
+                    "lease_period_end": "2025-07-01T12:00:00+08:00",
+                    "cross_city_flag": true,
+                    "certificate_no": "OVgc/slzCvzSebaz46sUA4tJmm5GbNC0Tkp0oKmuHev9aTDzzcNIy5fKuywKWa0aYIWPyitr3wCYVPUw5Bnw1VUr6jn9eCeQPQye2t+zNuuCM0vmr1NNhdI3a2FNIx5HxkBrdM0XuiLt2/46UaWuzcUbZ52CCtZGgRzxeuj6oF/RKVG+dzT2HOm3kbYi1cUM10hARPKN+kV84I5WnFglX1cPM7s+OHkWvj38xEAfJBJfj3lf0UTRo",
+                    "plate_no": [
+                        "渝A12345"
+                    ]
+                }
+            }
+        ],
+        "export_business_policy_code": 1,
+        "vat_refund_levy_code": 1,
+        "billing_person_id": "187776276864872",
+        "billing_person": "张伟",
+        "fapiao_bill_type": "COMM_FAPIAO",
+        "transaction_information": [
+            {
+                "pay_channel": "WECHAT_PAY",
+                "transaction_id": "4200000008202508080512076713",
+                "out_trade_no": "order_20200701_123456",
+                "amount": 382895
+            }
+        ],
+        "remark": "备注"
+    }
+}

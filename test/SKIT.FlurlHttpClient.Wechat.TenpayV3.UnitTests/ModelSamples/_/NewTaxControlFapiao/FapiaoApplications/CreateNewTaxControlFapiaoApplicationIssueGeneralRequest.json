@@ -1,0 +1,50 @@
+{
+    "sub_mchid": "example_sub_mchid",
+    "fapiao_apply_id": "example_fapiao_apply_id",
+    "buyer_information": {
+        "type": "INDIVIDUAL",
+        "name": "深圳市南山区测试企业",
+        "taxpayer_id": "202003261233701778",
+        "address": "深圳市南山区深南大道10000号",
+        "telephone": "075512345678",
+        "bank_name": "测试银行",
+        "bank_account": "62001234567890",
+        "phone": "mI7HGEJ4Q2B91IGjHrl7FNN9QuFPDfzeXoaJM4B8ZghZPzXK+vNotEZu/Gthm87Szv0MK2AoC0/3ZMDgltMtdoY6O0qZ4F1iXiwCuqkkBe+9M4ggvdzpPGM+fyed2QU1seUGbii5RVVVB9s+zLEQ8nv74vsgl77MZx14nd5obtCcfAvPfDJob3oG7FqlThmYKJqjiOwBvvQse7p9R8onj/POzSrbM8re8ZYGp4LcehXopTLdk2ZVWRv8bnJgKZWArAcqMdahq4jY2UVYeY4vpMmq4xuRTYk6xNXvowBBKK2SX8SqM+jm1USyoBIazLu4oaNFNdBO3fip1a1rFW0vRw==",
+        "email": "NzJy3r0Z2u2Vs5l+WSH0A3CZ1oGlCZ66aa2wUlMXNmACbd4wU8LqqYCuTG4cYWxrVUSmviV59/Uy9vLdIwuHZVrMalYAZGtb8inWGhDj3wUqQnPkmBKBVGIWG5Y6XJmMvpXW6rIKsdzxs8NwWj30cRNfjanLxiWc0aIgl8Knwo0JcxlcYLo38T9ntsrRkQZMQEWHaMYnzjp7ysLbp6yW83OZb/NwEufERBdPnIbDbVE7DUd5MGhvO+tlr2YC1b4VCsrDmjryuTD5nvYYCGHyfXW2CM23hZdBm9tPc+mU18Z9d4XkasnfsecGWd2ISkpPmnk3DtapnD64Nw8JyLtkgw==",
+        "amount": 1000,
+        "out_trade_no": "order_20200701_123456",
+        "fapiao_bill_type": "COMM_FAPIAO",
+        "user_apply_message": "用户留言"
+    },
+    "fapiao_information": {
+        "fapiao_id": "20200701123456",
+        "total_amount": 382895,
+        "items": [
+            {
+                "tax_code": "3010101020203000000",
+                "goods_name": "*xxx*服务",
+                "specification": "米",
+                "unit": "米",
+                "quantity": 100000000,
+                "total_amount": 429900,
+                "tax_rate": 1300,
+                "discount": false,
+                "preferential_policy_code": 1
+            }
+        ],
+        "export_business_policy_code": 1,
+        "vat_refund_levy_code": 1,
+        "billing_person_id": "128279891283",
+        "billing_person": "example_billing_person",
+        "fapiao_bill_type": "COMM_FAPIAO",
+        "transaction_information": [
+            {
+                "pay_channel": "WECHAT_PAY",
+                "transaction_id": "4200000008202508080512076713",
+                "out_trade_no": "order_20200701_123456",
+                "amount": 382895
+            }
+        ],
+        "remark": "备注"
+    }
+}
