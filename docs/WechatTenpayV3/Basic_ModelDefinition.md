@@ -207,6 +207,8 @@
 
             -   发起转账并完成免确认收款授权：`CreateFundAppMerchantTransferBillPreTransferWithAuthorization`
 
+            -   发起免确认收款授权：`CreateFundAppMerchantTransferUserConfirmAuthorization`
+
             -   商户单号查询授权结果：`GetFundAppMerchantTransferUserConfirmAuthorizationByOutAuthorizationNumber`
 
             -   用户授权后转账：`CreateFundAppMerchantTransferBillTransfer`

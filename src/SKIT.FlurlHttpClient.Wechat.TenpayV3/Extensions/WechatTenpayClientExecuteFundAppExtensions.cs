@@ -234,6 +234,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /fund-app/mch-transfer/user-confirm-authorization 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4015901167 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateFundAppMerchantTransferUserConfirmAuthorizationResponse> ExecuteCreateFundAppMerchantTransferUserConfirmAuthorizationAsync(this WechatTenpayClient client, Models.CreateFundAppMerchantTransferUserConfirmAuthorizationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "fund-app", "mch-transfer", "user-confirm-authorization");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateFundAppMerchantTransferUserConfirmAuthorizationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [GET] /fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no} 接口。</para>
         /// <para>
         /// REF: <br/>
