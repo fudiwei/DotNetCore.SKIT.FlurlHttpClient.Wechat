@@ -51,8 +51,8 @@ var options = new WechatTenpayClientOptions()
     // 其他配置项略
     PlatformAuthFallbackSwitch = true,
     PlatformAuthScheme = Settings.PlatformAuthScheme.PublicKey,
-    PlatformCertificateManager = <your-manager>, // 需要同时设置 CertificateManager 与 PublicKeyManager
-    PlatformPublicKeyManager = <your-manager>,   // 需要同时设置 CertificateManager 与 PublicKeyManager
+    PlatformCertificateManager = <your-manager>, // 需要同时设置 `CertificateManager` 并存入至少一个平台证书
+    PlatformPublicKeyManager = <your-manager>,   // 需要同时设置 `PublicKeyManager` 并存入至少一个平台公钥
 };
 var client = WechatTenpayClientBuilder.Create(options).Build();
 ```
