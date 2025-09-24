@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public string? IdentityType { get; set; }
 
                 /// <summary>
-                /// 获取或设置超级管理员证件号码（需使用平台公钥/证书加密）。与字段 <see cref="OpenId"/> 二选一。
+                /// 获取或设置超级管理员证件号码（需使用平台公钥/证书加密）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("contact_id_card_number")]
                 [System.Text.Json.Serialization.JsonPropertyName("contact_id_card_number")]
