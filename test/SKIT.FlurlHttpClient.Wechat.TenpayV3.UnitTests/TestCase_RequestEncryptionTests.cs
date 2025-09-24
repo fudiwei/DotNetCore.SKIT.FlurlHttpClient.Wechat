@@ -399,6 +399,77 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /ecommerce/account/apply-cancel-withdraw）")]
+        public async Task TestEncryptRequestSensitiveProperty_CreateEcommerceAccountCancelWithdrawApplicationRequest()
+        {
+            static Models.CreateEcommerceAccountCancelWithdrawApplicationRequest GenerateMockRequestModel()
+            {
+                return new Models.CreateEcommerceAccountCancelWithdrawApplicationRequest()
+                {
+                    Payee = new Models.CreateEcommerceAccountCancelWithdrawApplicationRequest.Types.Payee()
+                    {
+                        BankAccount = new Models.CreateEcommerceAccountCancelWithdrawApplicationRequest.Types.Payee.Types.BankAccount()
+                        {
+                            AccountName = MOCK_PLAIN_STR,
+                            AccountNumber = MOCK_PLAIN_STR
+                        },
+                        Identify = new Models.CreateEcommerceAccountCancelWithdrawApplicationRequest.Types.Payee.Types.Identify()
+                        {
+                            IdName = MOCK_PLAIN_STR,
+                            IdNumber = MOCK_PLAIN_STR
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.CreateEcommerceAccountCancelWithdrawApplicationRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payee!.BankAccount!.AccountName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payee!.BankAccount!.AccountNumber!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payee!.Identify!.IdName!);
+                Assert.NotEqual(MOCK_PLAIN_STR, request.Payee!.Identify!.IdNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payee!.BankAccount!.AccountName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payee!.BankAccount!.AccountNumber!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payee!.Identify!.IdName!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.Payee!.Identify!.IdNumber!));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateEcommerceAccountCancelWithdrawApplicationAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteCreateEcommerceAccountCancelWithdrawApplicationAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /ecommerce/applyments）")]
         public async Task TestEncryptRequestSensitiveProperty_CreateEcommerceApplymentRequest()
         {

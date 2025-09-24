@@ -87,6 +87,94 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: request.FileName, fileBytes: request.FileBytes, fileContentType: request.FileContentType, fileMetaJson: client.JsonSerializer.Serialize(request));
             return await client.SendFlurlRequestAsync<Models.UploadEcommerceAccountCancelApplicationMediaResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/account/apply-cancel-withdraw 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013892756 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateEcommerceAccountCancelWithdrawApplicationResponse> ExecuteCreateEcommerceAccountCancelWithdrawApplicationAsync(this WechatTenpayClient client, Models.CreateEcommerceAccountCancelWithdrawApplicationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "account", "apply-cancel-withdraw");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateEcommerceAccountCancelWithdrawApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /ecommerce/account/apply-cancel-withdraw/out-request-no/{out_request_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013892759 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetEcommerceAccountCancelWithdrawApplicationByOutRequestNumberResponse> ExecuteGetEcommerceAccountCancelWithdrawApplicationByOutRequestNumberAsync(this WechatTenpayClient client, Models.GetEcommerceAccountCancelWithdrawApplicationByOutRequestNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "account", "apply-cancel-withdraw", "out-request-no", request.OutRequestNumber);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceAccountCancelWithdrawApplicationByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /ecommerce/account/apply-cancel-withdraw/applyment-id/{applyment_id} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013892765 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetEcommerceAccountCancelWithdrawApplicationByApplymentIdResponse> ExecuteGetEcommerceAccountCancelWithdrawApplicationByApplymentIdAsync(this WechatTenpayClient client, Models.GetEcommerceAccountCancelWithdrawApplicationByApplymentIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "account", "apply-cancel-withdraw", "applyment-id", request.ApplymentId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceAccountCancelWithdrawApplicationByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/account/apply-cancel-withdraw/confirm 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4013892772 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ConfirmEcommerceAccountCancelWithdrawApplicationResponse> ExecuteConfirmEcommerceAccountCancelWithdrawApplicationAsync(this WechatTenpayClient client, Models.ConfirmEcommerceAccountCancelWithdrawApplicationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "account", "apply-cancel-withdraw", "confirm");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ConfirmEcommerceAccountCancelWithdrawApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
 
         #region Applyments

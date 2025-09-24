@@ -1011,6 +1011,18 @@
 
         -   按日下载提现异常文件：`GetMerchantFundWithdrawBill`
 
+    -   平台收付通（下载账单）
+
+        -   申请交易账单：`GetBillTradeBill`
+
+        -   申请资金账单：`GetBillFundflowBill`
+
+        -   获取分账账单文件下载地址：`GetProfitSharingBill`
+
+        -   申请二级商户资金账单：`GetEcommerceBillFundflowBill`
+
+        -   下载账单：`DownloadBillFile`
+
     -   平台收付通（注销申请）
 
         -   提交注销申请单：`CreateEcommerceAccountCancelApplication`
@@ -1027,31 +1039,15 @@
 
         -   提交已注销商户号可用余额提现申请单：`CreateMerchantOperateRiskWithdrawlApply`
 
-    -   平台收付通（跨境付款）
+    -   平台收付通（注销提现）
 
-        -   查询订单剩余可出境余额：`GetFundsToOverseaTransactionAvailableAbroadAmountByTransactionId`
+        -   提交注销提现申请：`CreateEcommerceAccountCancelWithdrawApplication`
 
-        -   申请资金出境：`CreateFundsToOverseaOrder`
+        -   商户申请单号查询申请单状态：`GetEcommerceAccountCancelWithdrawApplicationByOutRequestNumber`
 
-        -   查询出境结果：`GetFundsToOverseaOrderByOutOrderId`
+        -   微信支付申请单号查询申请单状态：`GetEcommerceAccountCancelWithdrawApplicationByApplymentId`
 
-        -   获取购付汇账单文件下载链接：`GetFundsToOverseaBillDownloadUrl`
-
-        -   申请资金出境退回：`CreateFundsToOverseaReturnOrder`
-
-        -   查询出境退回结果：`GetFundsToOverseaReturnOrderByOutReturnNumber`
-
-    -   平台收付通（下载账单）
-
-        -   申请交易账单：`GetBillTradeBill`
-
-        -   申请资金账单：`GetBillFundflowBill`
-
-        -   获取分账账单文件下载地址：`GetProfitSharingBill`
-
-        -   申请二级商户资金账单：`GetEcommerceBillFundflowBill`
-
-        -   下载账单：`DownloadBillFile`
+        -   平台代商户确认注销：`ConfirmEcommerceAccountCancelWithdrawApplication`
 
     -   平台收付通（商家转账）
 
