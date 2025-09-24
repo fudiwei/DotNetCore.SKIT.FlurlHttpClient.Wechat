@@ -499,9 +499,34 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "individual-contracts", request.OpenId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "individual-contracts", request.OpenId)
+                .SetQueryParam("appid", request.AppId)
+                .SetQueryParam("permission_type", request.PermissionType);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceIndividualContractByOpenIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /ecommerce/individual-contracts/out-contract-code/{out_contract_code} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015851492 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetEcommerceIndividualContractByOutContractCodeResponse> ExecuteGetEcommerceIndividualContractByOutContractCodeAsync(this WechatTenpayClient client, Models.GetEcommerceIndividualContractByOutContractCodeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "individual-contracts", "out-contract-code", request.OutContractCode)
+                .SetQueryParam("appid", request.AppId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetEcommerceIndividualContractByOutContractCodeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 

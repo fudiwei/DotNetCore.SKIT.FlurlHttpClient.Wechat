@@ -105,7 +105,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId);
+                .CreateFlurlRequest(request, HttpMethod.Get, "mch-operation-manage", "enhanced-due-diligence", request.DueDiligenceId)
+                .SetQueryParam("sub_mchid", request.SubMerchantId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantOperationManageEnhancedDueDiligenceByDueDiligenceIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
