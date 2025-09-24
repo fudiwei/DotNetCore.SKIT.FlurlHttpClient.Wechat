@@ -29,5 +29,27 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryIoTManageDevicesResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /iotmanage/device-inspections/{device_sn} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/wiki/doc/wxfacepay/tool/factory-check-data-api.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetIoTManageDeviceInspectionByDeviceSerialNumberResponse> ExecuteGetIoTManageDeviceInspectionByDeviceSerialNumberAsync(this WechatTenpayClient client, Models.GetIoTManageDeviceInspectionByDeviceSerialNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "iotmanage", "device-inspections", request.DeviceSerialNumber);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetIoTManageDeviceInspectionByDeviceSerialNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
     }
 }
