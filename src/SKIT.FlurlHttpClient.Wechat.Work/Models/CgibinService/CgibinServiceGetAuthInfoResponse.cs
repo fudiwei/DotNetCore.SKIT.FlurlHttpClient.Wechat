@@ -270,6 +270,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("agent")]
                 public Types.Agent[] AgentList { get; set; } = default!;
             }
+
+            public class Edition : CgibinServiceGetPermanentCodeResponse.Types.Edition
+            {
+
+            }
         }
 
         /// <summary>
@@ -292,5 +297,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("auth_info")]
         [System.Text.Json.Serialization.JsonPropertyName("auth_info")]
         public Types.Authorization? Authorization { get; set; }
+
+        /// <summary>
+        /// 获取或设置当前版本信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("edition_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("edition_info")]
+        public Types.Edition? Edition { get;set; }
     }
 }
