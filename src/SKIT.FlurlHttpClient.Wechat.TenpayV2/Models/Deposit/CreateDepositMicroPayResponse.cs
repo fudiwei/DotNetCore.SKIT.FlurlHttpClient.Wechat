@@ -172,14 +172,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.DigitalDateTimeOffsetConverter))]
         public DateTimeOffset? EndTime { get; set; }
 
-        /// <summary>
-        /// 获取一个值，该值指示调用微信 API 是否成功。
-        /// <para>
+        /// <inheritdoc/>
+        /// <remarks>
         /// 针对押金支付接口，当押金支付不需要等待用户输入密码时，微信会直接冻结资金并返回表示交易成功的响应体，
         /// 此时错误代码 err_code 节点的值为 "SUCCESS"，应当被视为成功。
-        /// </para>
-        /// </summary>
-        /// <returns></returns>
+        /// </remarks>
         public override bool IsSuccessful()
         {
             bool ret1 = GetRawStatus() == 200 && "SUCCESS".Equals(ReturnCode);
