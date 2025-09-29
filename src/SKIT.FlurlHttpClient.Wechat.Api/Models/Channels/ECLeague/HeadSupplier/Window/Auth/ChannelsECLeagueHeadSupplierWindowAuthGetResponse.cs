@@ -36,6 +36,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("auth_url")]
                 [System.Text.Json.Serialization.JsonPropertyName("auth_url")]
                 public string AuthUrl { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置达人昵称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("nickname")]
+                [System.Text.Json.Serialization.JsonPropertyName("nickname")]
+                public string? TalentNickname { get; set; }
+
+                /// <summary>
+                /// 获取或设置达人头像 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("head_img_url")]
+                [System.Text.Json.Serialization.JsonPropertyName("head_img_url")]
+                public string? TalentHeadImageUrl { get; set; }
             }
         }
 
