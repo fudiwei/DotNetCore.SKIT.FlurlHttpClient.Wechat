@@ -129,6 +129,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? SKUCode { get; set; }
 
                         /// <summary>
+                        /// 获取或设置商品条形码。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("bar_code")]
+                        [System.Text.Json.Serialization.JsonPropertyName("bar_code")]
+                        public string? BarCode { get; set; }
+
+                        /// <summary>
                         /// 获取或设置商品属性列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("sku_attrs")]
