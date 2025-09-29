@@ -23,6 +23,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("appid")]
                                 [System.Text.Json.Serialization.JsonPropertyName("appid")]
                                 public string ShopAppId { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置小店名称。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("shop_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("shop_name")]
+                                public string ShopName { get; set; } = default!;
                             }
 
                             public class ProductInfo
@@ -65,6 +72,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("order_status")]
                                 [System.Text.Json.Serialization.JsonPropertyName("order_status")]
                                 public int Status { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置订单支付时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("pay_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("pay_time")]
+                                public long? PayTimestamp { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置订单创建时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("create_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+                                public long CreateTimestamp { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置订单更新时间戳。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("update_time")]
+                                [System.Text.Json.Serialization.JsonPropertyName("update_time")]
+                                public long UpdateTimestamp { get; set; }
                             }
 
                             public class CommissionInfo
