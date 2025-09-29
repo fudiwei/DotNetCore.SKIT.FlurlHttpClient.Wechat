@@ -3,19 +3,22 @@
     "errmsg": "ok",
     "reason_list": [
         {
-            "reject_reason_type": 21,
-            "reject_reason_type_text": "买家寄回包裹非本订单商品",
-            "reject_reason": "您的退货商品非本订单的商品，若有疑问请点击【联系商家】按钮与客服沟通"
+            "reject_reason_type": 6,
+            "reject_reason_type_text": "买家误操作/已协商取消申请",
+            "reject_reason": "亲，真是抱歉给您带来麻烦了，刚刚我们已经跟您沟通过了，这次售后我先帮您取消，要是您还有疑问，可以点击【联系商家】与我们进一步沟通",
+            "reject_scene": 1
         },
         {
-            "reject_reason_type": 20,
-            "reject_reason_type_text": "商品影响二次销售",
-            "reject_reason": "您的退货商品已影响二次销售，若有疑问请点击【联系商家】按钮与客服沟通"
+            "reject_reason_type": 4,
+            "reject_reason_type_text": "包裹在买家发起售后时已完成发货/揽收",
+            "reject_reason": "亲，您购买的商品已经在运输途中了，要是您不需要了，麻烦您收到货时重新发起售后，这次我先帮您取消了，要是您还有疑问，可以点击【联系商家】与我们进一步沟通",
+            "reject_scene": 1
         },
         {
-            "reject_reason_type": 19,
-            "reject_reason_type_text": "买家上传的单号有误，商家未收到货",
-            "reject_reason": "您填写的退货物流单号有误，目前无法查询到您退货物流的信息/未收到您的包裹，可点击【修改】按钮重新上传退货物流单号，若有疑问请点击【联系商家】按钮与客服沟通"
+            "reject_reason_type": 1,
+            "reject_reason_type_text": "已在约定时间发货且物流运输正常",
+            "reject_reason": "亲，您购买的商品本店已在约定时间内完成发货了，目前物流也在正常转运中，辛苦您核实一下，我这边也帮您再催一下快递，尽快给您派送，这次售后我先帮您取消了，要是您还有疑问，可以点击【联系商家】与我们进一步沟通",
+            "reject_scene": 1
         }
     ]
 }
