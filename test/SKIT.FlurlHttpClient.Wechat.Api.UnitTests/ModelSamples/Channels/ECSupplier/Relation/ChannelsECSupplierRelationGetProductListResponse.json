@@ -1,0 +1,14 @@
+{
+    "errcode": 0,
+    "errmsg": "",
+    "page_context": "",
+    "total_count": 0,
+    "list": [
+        {
+            "product_id": 0,
+            "distribute_status": 0,
+            "supplier_appid": "",
+            "supplier_name": ""
+        }
+    ]
+}

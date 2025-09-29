@@ -4,7 +4,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
     /// <para>表示 EVENT.ewaybill_push_path 事件的数据。</para>
     /// <para>
     /// REF: <br/>
-    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/push_path.html ]]>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/push_path.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/notify/merchant_callback/ewaybill_push_path.html ]]> <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/notify/merchant_callback/ewaybill_push_path.html ]]>
     /// </para>
     /// </summary>
     public class EWaybillPushPathEvent : WechatApiEvent

@@ -1,0 +1,13 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "dropship_order": {
+        "ds_order_id": 0,
+        "create_time": 0,
+        "update_time": 0,
+        "status": 0,
+        "supplier_appid": "",
+        "supplier_name": "",
+        "order_id": 0
+    }
+}

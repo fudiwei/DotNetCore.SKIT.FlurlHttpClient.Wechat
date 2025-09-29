@@ -1,0 +1,14 @@
+{
+    "list": [
+        {
+            "name": "",
+            "appid": "",
+            "status": 0,
+            "bind_audit_status": 0,
+            "update_time": 0
+        }
+    ],
+    "total_count": 0,
+    "errcode": 0,
+    "errmsg": ""
+}

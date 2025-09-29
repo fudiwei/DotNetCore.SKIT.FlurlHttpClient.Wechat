@@ -1,0 +1,15 @@
+{
+    "list": [
+        {
+            "appid": "wx8888888",
+            "name": "供货商test",
+            "status": 1,
+            "bind_audit_status": 1,
+            "update_time": 1754386966,
+            "head_img": "https://www.qq.com/1.png"
+        }
+    ],
+    "total_count": 10,
+    "errcode": 0,
+    "errmsg": ""
+}

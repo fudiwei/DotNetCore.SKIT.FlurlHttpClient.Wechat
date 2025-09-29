@@ -1,0 +1,29 @@
+{
+    "ds_order_id": "123456",
+    "change_infos": [
+        {
+            "old": {
+                "delivery_id": "YD",
+                "waybill_id": "23424324253",
+                "product_infos": [
+                    {
+                        "product_cnt": 1,
+                        "product_id": "12345",
+                        "sku_id": "678910"
+                    }
+                ]
+            },
+            "new": {
+                "delivery_id": "SF",
+                "waybill_id": "SF120930535",
+                "product_infos": [
+                    {
+                        "product_cnt": 1,
+                        "product_id": "12345",
+                        "sku_id": "678910"
+                    }
+                ]
+            }
+        }
+    ]
+}

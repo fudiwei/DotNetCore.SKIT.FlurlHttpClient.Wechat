@@ -1,0 +1,16 @@
+{
+    "ds_order_id": "123456",
+    "delivery_list": [
+        {
+            "delivery_id": "YD",
+            "waybill_id": "23424324253",
+            "product_infos": [
+                {
+                    "product_cnt": 1,
+                    "product_id": "12345",
+                    "sku_id": "678910"
+                }
+            ]
+        }
+    ]
+}

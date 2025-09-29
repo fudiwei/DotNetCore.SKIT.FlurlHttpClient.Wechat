@@ -1,0 +1,8 @@
+{
+    "ToUserName": "gh_*",
+    "FromUserName": "OpenID",
+    "CreateTime": 1662480000,
+    "MsgType": "event",
+    "Event": "dropship_order_new",
+    "ds_order_id": "4400123343235833535"
+}

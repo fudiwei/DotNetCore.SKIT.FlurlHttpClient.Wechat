@@ -3,9 +3,9 @@ using System.Collections.Generic;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/order/deliveryinfo/update 接口的请求。</para>
+    /// <para>表示 [POST] /channels/ec/order/dropship/supplier/delivery/send 接口的请求。</para>
     /// </summary>
-    public class ChannelsECOrderDeliveryInfoUpdateRequest : WechatApiRequest, IInferable<ChannelsECOrderDeliveryInfoUpdateRequest, ChannelsECOrderDeliveryInfoUpdateResponse>
+    public class ChannelsECOrderDropshipSupplierDeliverySendRequest : WechatApiRequest, IInferable<ChannelsECOrderDropshipSupplierDeliverySendRequest, ChannelsECOrderDropshipSupplierDeliverySendResponse>
     {
         public static class Types
         {
@@ -30,14 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("waybill_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
-                public string? WaybillId { get; set; }
-
-                /// <summary>
-                /// 获取或设置发货方式。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("deliver_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("deliver_type")]
-                public int DeliverType { get; set; }
+                public string WaybillId { get; set; } = string.Empty;
 
                 /// <summary>
                 /// 获取或设置商品列表。
@@ -49,11 +42,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置订单 ID。
+        /// 获取或设置代发单 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("order_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-        public string OrderId { get; set; } = string.Empty;
+        [Newtonsoft.Json.JsonProperty("ds_order_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("ds_order_id")]
+        public string DropshipOrderId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置快递列表。

@@ -1,0 +1,11 @@
+{
+    "order_id": "37012940902395351",
+    "supplier_appid": "wxabc",
+    "dropship_product_list": [
+        {
+            "spu_id": "1253129080",
+            "sku_id": "2983950535",
+            "product_cnt": 3
+        }
+    ]
+}

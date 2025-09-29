@@ -3531,7 +3531,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_account.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_account.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_account.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_getacct.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3557,7 +3558,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_acctdeliverylist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_acctdeliverylist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_acctdeliverylist.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_getdeliverylist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3583,7 +3585,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/precreate_order.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/precreate_order.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/precreate_order.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_precreateorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3607,7 +3610,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/create_order.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/create_order.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/create_order.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_createorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3630,7 +3634,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/addsuborder 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/add_suborder.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/add_suborder.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_addsuborder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3654,7 +3659,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/cancel_order.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/cancel_order.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/cancel_order.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_cancelorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3678,7 +3684,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_order.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_order.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_order.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_getorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3702,7 +3709,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/notify_print.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/notify_print.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/notify_print.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_printorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3726,7 +3734,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/batchnotify_print.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/batchnotify_print.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/batchnotify_print.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_batchprintorder.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3743,6 +3752,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLogisticsEWaybillOrderBatchPrintResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/logistics/ewaybill/biz/order/getprintinfo 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_get_print_content.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLogisticsEWaybillOrderGetPrintInfoResponse> ExecuteChannelsECLogisticsEWaybillOrderGetPrintInfoAsync(this WechatApiClient client, Models.ChannelsECLogisticsEWaybillOrderGetPrintInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "logistics", "ewaybill", "biz", "order", "getprintinfo")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLogisticsEWaybillOrderGetPrintInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
 
@@ -3778,7 +3810,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_template_config.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_template_config.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_template_config.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_get_template_config.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3802,7 +3835,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/add_template.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/add_template.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/add_template.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_createtemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3826,7 +3860,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/update_template.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/update_template.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/update_template.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_updatetemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3850,7 +3885,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/delete_template.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/delete_template.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/delete_template.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_deltemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3874,7 +3910,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_template.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_template.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_template.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_gettemplate.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3898,7 +3935,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/ewaybill/get_templatebyid.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_templatebyid.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/get_templatebyid.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_ewaybill_gettemplatebyid.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4025,7 +4063,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/list.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/list.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/list.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_getaddresslist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4049,7 +4088,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/get.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/get.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/get.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_getaddress.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4073,7 +4113,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/add.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/add.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/add.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_addaddress.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4097,7 +4138,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/update.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/update.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/update.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_updateaddress.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4121,7 +4163,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/merchant/address/delete.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/delete.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/merchant/address/delete.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/address/api_deleteaddress.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4548,7 +4591,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/order/deliverycompanylist/new/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/deliverycompanylist_get_new.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/ewaybill/deliverycompanylist_get_new.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/electronic/api_getdeliverycompanylistnew.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -4614,6 +4658,240 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDeliverySendResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+        #endregion
+
+        #region ECOrder/Dropship
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/assign 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/order/api_dropship_assign.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipAssignResponse> ExecuteChannelsECOrderDropshipAssignAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipAssignRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "assign")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipAssignResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/cancel 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/order/api_dropship_cancel.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipCancelResponse> ExecuteChannelsECOrderDropshipCancelAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipCancelRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "cancel")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipCancelResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/order/api_dropship_list.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipListResponse> ExecuteChannelsECOrderDropshipListAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/search 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/order/api_dropship_search.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipSearchResponse> ExecuteChannelsECOrderDropshipSearchAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipSearchRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "search")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/order/api_dropship_get.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipGetResponse> ExecuteChannelsECOrderDropshipGetAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        #region ECOrder/Dropship/Supplier
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/supplier/delivery/send 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/shipping/api_delivery_send.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipSupplierDeliverySendResponse> ExecuteChannelsECOrderDropshipSupplierDeliverySendAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipSupplierDeliverySendRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "supplier", "delivery", "send")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipSupplierDeliverySendResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/supplier/delivery/update 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/delivery/shipping/api_delivery_update.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipSupplierDeliveryUpdateResponse> ExecuteChannelsECOrderDropshipSupplierDeliveryUpdateAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipSupplierDeliveryUpdateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "supplier", "delivery", "update")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipSupplierDeliveryUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/supplier/list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/order/api_dropship_list.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipSupplierListResponse> ExecuteChannelsECOrderDropshipSupplierListAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipSupplierListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "supplier", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipSupplierListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/supplier/search 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/order/api_dropship_search.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipSupplierSearchResponse> ExecuteChannelsECOrderDropshipSupplierSearchAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipSupplierSearchRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "supplier", "search")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipSupplierSearchResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/dropship/supplier/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/order/api_dropship_get.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderDropshipSupplierGetResponse> ExecuteChannelsECOrderDropshipSupplierGetAsync(this WechatApiClient client, Models.ChannelsECOrderDropshipSupplierGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "dropship", "supplier", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderDropshipSupplierGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
         #endregion
 
         #region ECOrder/PresentOrder
@@ -7053,6 +7331,217 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECStoreWindowProductSetTopResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+        #endregion
+
+        #region ECSupplier
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/supplier/base/get_supplier_base_info 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/account/api_get_supplier_base_info.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECSupplierBaseGetSupplierBaseInfoResponse> ExecuteChannelsECSupplierBaseGetSupplierBaseInfoAsync(this WechatApiClient client, Models.ChannelsECSupplierBaseGetSupplierBaseInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "supplier", "base", "get_supplier_base_info")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECSupplierBaseGetSupplierBaseInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        #region ECSupplier/Relation
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/supplier/relation/get_distribute 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/auto/api_get_distribution.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECSupplierRelationGetDistributeResponse> ExecuteChannelsECSupplierRelationGetDistributeAsync(this WechatApiClient client, Models.ChannelsECSupplierRelationGetDistributeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "supplier", "relation", "get_distribute")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECSupplierRelationGetDistributeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/supplier/relation/set_manually_distribute 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/auto/api_set_manually_distribution.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECSupplierRelationSetManuallyDistributeResponse> ExecuteChannelsECSupplierRelationSetManuallyDistributeAsync(this WechatApiClient client, Models.ChannelsECSupplierRelationSetManuallyDistributeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "supplier", "relation", "set_manually_distribute")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECSupplierRelationSetManuallyDistributeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/supplier/relation/set_all_distribution 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/auto/api_set_all_distribution.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECSupplierRelationSetAllDistributeResponse> ExecuteChannelsECSupplierRelationSetAllDistributeAsync(this WechatApiClient client, Models.ChannelsECSupplierRelationSetAllDistributeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "supplier", "relation", "set_all_distribution")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECSupplierRelationSetAllDistributeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/supplier/relation/set_product_distribute 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/auto/api_set_product_distribution.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECSupplierRelationSetProductDistributeResponse> ExecuteChannelsECSupplierRelationSetProductDistributeAsync(this WechatApiClient client, Models.ChannelsECSupplierRelationSetProductDistributeRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "supplier", "relation", "set_product_distribute")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECSupplierRelationSetProductDistributeResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/supplier/relation/get_product_default_distribute 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/auto/api_get_product_default_distribution.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECSupplierRelationGetProductDefaultDistributionResponse> ExecuteChannelsECSupplierRelationGetProductDefaultDistributionAsync(this WechatApiClient client, Models.ChannelsECSupplierRelationGetProductDefaultDistributionRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "supplier", "relation", "get_product_default_distribute")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECSupplierRelationGetProductDefaultDistributionResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/supplier/relation/get_product_list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/auto/api_get_product_list.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECSupplierRelationGetProductListResponse> ExecuteChannelsECSupplierRelationGetProductListAsync(this WechatApiClient client, Models.ChannelsECSupplierRelationGetProductListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "supplier", "relation", "get_product_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECSupplierRelationGetProductListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/supplier/relation/get_supplier_list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/supplier/relation/api_get_supplier_list.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECSupplierRelationGetSupplierListResponse> ExecuteChannelsECSupplierRelationGetSupplierListAsync(this WechatApiClient client, Models.ChannelsECSupplierRelationGetSupplierListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "supplier", "relation", "get_supplier_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECSupplierRelationGetSupplierListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/supplier/relation/get_ec_list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/supplier/api/related/api_get_ec_list.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECSupplierRelationGetECListResponse> ExecuteChannelsECSupplierRelationGetECListAsync(this WechatApiClient client, Models.ChannelsECSupplierRelationGetECListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "supplier", "relation", "get_ec_list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECSupplierRelationGetECListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
         #endregion

@@ -1,0 +1,13 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "dropship_order": {
+        "ds_order_id": "4429352113418018304",
+        "create_time": 1751959503,
+        "update_time": 1751959503,
+        "status": 300,
+        "shop_appid": "wx2b255582a7b4bfd0",
+        "shop_name": "开平电商小店",
+        "order_id": "3729352105237033728"
+    }
+}

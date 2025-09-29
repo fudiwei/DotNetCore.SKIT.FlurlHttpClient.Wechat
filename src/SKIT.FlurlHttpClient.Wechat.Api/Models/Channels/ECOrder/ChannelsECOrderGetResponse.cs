@@ -209,12 +209,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                     public class Dropship
                                     {
                                         /// <summary>
-                                        /// 获取或设置代发单号。
+                                        /// 获取或设置代发单 ID。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("ds_order_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("ds_order_id")]
-                                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                                        public long DropshipOrderId { get; set; }
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                                        public string DropshipOrderId { get; set; } = default!;
                                     }
                                 }
 

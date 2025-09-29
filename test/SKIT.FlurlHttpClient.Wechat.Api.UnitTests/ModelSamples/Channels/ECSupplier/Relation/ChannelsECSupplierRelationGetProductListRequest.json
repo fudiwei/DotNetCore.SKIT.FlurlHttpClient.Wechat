@@ -1,0 +1,10 @@
+{
+    "is_filter_distribute_status": false,
+    "distribute_status": 0,
+    "is_filter_product_status": false,
+    "product_status": 0,
+    "is_filter_supplier_appid": false,
+    "supplier_appid": "",
+    "limit": 0,
+    "page_context": ""
+}
