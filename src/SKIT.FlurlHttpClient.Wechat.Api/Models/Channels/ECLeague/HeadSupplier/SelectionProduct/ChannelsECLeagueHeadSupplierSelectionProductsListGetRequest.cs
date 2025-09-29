@@ -67,6 +67,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.Range? PromoteTimestampRange { get; set; }
 
                 /// <summary>
+                /// 获取或设置创建时间戳范围信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("create_time_range")]
+                [System.Text.Json.Serialization.JsonPropertyName("create_time_range")]
+                public Types.Range? CreateTimestampRange { get; set; }
+
+                /// <summary>
                 /// 获取或设置保障标识信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("flags")]

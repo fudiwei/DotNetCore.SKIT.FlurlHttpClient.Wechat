@@ -6,17 +6,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class ChannelsECLeagueHeadSupplierSubItemAddRequest : WechatApiRequest, IInferable<ChannelsECLeagueHeadSupplierSubItemAddRequest, ChannelsECLeagueHeadSupplierSubItemAddResponse>
     {
         /// <summary>
-        /// 获取或设置计划 ID。
+        /// 获取或设置机构合作计划 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("id")]
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public long PlanId { get; set; }
+        [Newtonsoft.Json.JsonProperty("cooperative_item_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("cooperative_item_id")]
+        public long CooperativeItemId { get; set; }
 
         /// <summary>
-        /// 获取或设置达人佣金率（范围：0～90）。
+        /// 获取或设置达人佣金率（范围：0～90）。与字段 <see cref="RatioExt"/> 二选一。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ratio")]
         [System.Text.Json.Serialization.JsonPropertyName("ratio")]
-        public int Ratio { get; set; }
+        public int? Ratio { get; set; }
+
+        /// <summary>
+        /// 获取或设置达人精确佣金率（单位：万分数）。与字段 <see cref="Ratio"/> 二选一。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("ratio_ext")]
+        [System.Text.Json.Serialization.JsonPropertyName("ratio_ext")]
+        public int? RatioExt { get; set; }
     }
 }

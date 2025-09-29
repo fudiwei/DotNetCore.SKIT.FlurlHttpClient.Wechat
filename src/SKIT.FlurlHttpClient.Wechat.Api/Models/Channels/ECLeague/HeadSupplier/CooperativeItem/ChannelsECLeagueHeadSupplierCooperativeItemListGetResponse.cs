@@ -15,14 +15,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("product_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long CooperativeItemId { get; set; }
+                public long ProjectId { get; set; }
 
                 /// <summary>
-                /// 获取或设置合作计划 ID。
+                /// 获取或设置机构合作计划 ID。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("id")]
-                [System.Text.Json.Serialization.JsonPropertyName("id")]
-                public long PlanId { get; set; }
+                [Newtonsoft.Json.JsonProperty("cooperative_item_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("cooperative_item_id")]
+                public long CooperativeItemId { get; set; }
 
                 /// <summary>
                 /// 获取或设置计划链接。

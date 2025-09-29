@@ -6,11 +6,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class ChannelsECLeagueHeadSupplierSubItemListGetRequest : WechatApiRequest, IInferable<ChannelsECLeagueHeadSupplierSubItemListGetRequest, ChannelsECLeagueHeadSupplierSubItemListGetResponse>
     {
         /// <summary>
-        /// 获取或设置计划 ID。
+        /// 获取或设置机构合作计划 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("id")]
-        [System.Text.Json.Serialization.JsonPropertyName("id")]
-        public long SubItemId { get; set; }
+        [Newtonsoft.Json.JsonProperty("cooperative_item_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("cooperative_item_id")]
+        public long CooperativeItemId { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

@@ -4,7 +4,7 @@
     "list": [
         {
             "product_id": 1,
-            "id": 123,
+            "cooperative_item_id": 123,
             "head_supplier_item_link": "weixinstore/10001"
         }
     ],
