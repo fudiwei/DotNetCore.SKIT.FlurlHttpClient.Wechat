@@ -6006,6 +6006,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/promoter/get_live_notice_promoter_share_link 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getlivenoticepromotersharelink.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECPromoterGetLiveNoticePromoterShareLinkResponse> ExecuteChannelsECPromoterGetLiveNoticePromoterShareLinkAsync(this WechatApiClient client, Models.ChannelsECPromoterGetLiveNoticePromoterShareLinkRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "promoter", "get_live_notice_promoter_share_link")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECPromoterGetLiveNoticePromoterShareLinkResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_live_record_list 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -6124,7 +6147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /channels/ec/promoter/get_shop_live_notice_promoter_share_link 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_GetShopLiveNoticePromoterShareLink.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/sharer/live/api_getshoplivenoticepromotersharelink.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

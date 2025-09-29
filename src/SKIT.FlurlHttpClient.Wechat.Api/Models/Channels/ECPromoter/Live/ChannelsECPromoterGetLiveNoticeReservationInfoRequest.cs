@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sharer_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("sharer_appid")]
-        public string SharerAppId { get; set; } = string.Empty;
+        public string? SharerAppId { get; set; }
 
         /// <summary>
         /// 获取或设置预约 ID。
