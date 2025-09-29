@@ -1,0 +1,62 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "categories": [
+        {
+            "cats": [
+                {
+                    "cat_info": {
+                        "cat_id": "10000155"
+                    },
+                    "has_permission": false
+                },
+                {
+                    "cat_info": {
+                        "cat_id": "10000161"
+                    },
+                    "has_permission": false
+                },
+                {
+                    "cat_info": {
+                        "cat_id": "10000556"
+                    },
+                    "has_permission": false
+                },
+                {
+                    "cat_info": {
+                        "cat_id": "546334"
+                    },
+                    "has_permission": false
+                }
+            ]
+        },
+        {
+            "cats": [
+                {
+                    "cat_info": {
+                        "cat_id": "10000155"
+                    },
+                    "has_permission": false
+                },
+                {
+                    "cat_info": {
+                        "cat_id": "10000161"
+                    },
+                    "has_permission": false
+                },
+                {
+                    "cat_info": {
+                        "cat_id": "10000558"
+                    },
+                    "has_permission": false
+                },
+                {
+                    "cat_info": {
+                        "cat_id": "546346"
+                    },
+                    "has_permission": true
+                }
+            ]
+        }
+    ]
+}
