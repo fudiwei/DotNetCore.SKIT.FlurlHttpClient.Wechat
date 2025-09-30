@@ -735,6 +735,14 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.4.0 (2025-09-30)
+
+    -   **新增**：新增企业微信查询红包发放记录、查询向员工付款接口等接口。
+
+    -   **变更**：升级依赖 `BouncyCastle.Cryptography` 至 v2.6.2。
+
+    -   **修复**：修复酒店押金支付接口响应模型 `IsSuccessful()` 判断错误的问题。（_via_ [GitHub #203](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/203)）
+
 -   Release 3.3.0 (2025-06-04)
 
     -   **新增**：补充统一下单接口场景信息字段。（_via_ [GitHub #193](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pull/193)）
