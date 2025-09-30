@@ -656,3 +656,5 @@
 -   向员工付款：
 
     -   向员工付款：`CreatePayMarketingTransfersPromotionWeWorkTransfer`
+
+    -   查询付款记录：`GetPayMarketingTransfersPromotionWeWorkTransfers`

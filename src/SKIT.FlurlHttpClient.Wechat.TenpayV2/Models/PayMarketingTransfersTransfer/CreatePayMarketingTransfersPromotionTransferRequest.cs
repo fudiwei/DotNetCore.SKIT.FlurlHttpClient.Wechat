@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public string PartnerTradeNumber { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置用户的 OpenId。
+        /// 获取或设置收款用户的 OpenId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("openid")]
         [System.Text.Json.Serialization.JsonPropertyName("openid")]

@@ -1,0 +1,15 @@
+{
+    "return_code": "SUCCESS",
+    "return_msg": "获取成功",
+    "result_code": "SUCCESS",
+    "mch_id": "10000098",
+    "appid": "wxe062425f740c30d8",
+    "detail_id": "1000000000201503283103439304",
+    "partner_trade_no": "0010010404201411170000046545",
+    "status": "SUCCESS",
+    "payment_amount": "100",
+    "openid": "oxTWIuGaIt6gTKsQRLau2M0yL16E",
+    "transfer_time": "2017-07-22 20:10:15",
+    "transfer_name": "测试",
+    "desc": "付款测试"
+}

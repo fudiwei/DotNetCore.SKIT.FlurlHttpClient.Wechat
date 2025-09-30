@@ -110,6 +110,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2
 
             return await client.SendFlurlRequestAsXmlAsync<Models.CreatePayMarketingTransfersPromotionWeWorkTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /mmpaymkttransfers/promotion/querywwsptrans2pocket 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/90279 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetPayMarketingTransfersPromotionWeWorkTransferResponse> ExecuteGetPayMarketingTransfersPromotionWeWorkTransferAsync(this WechatTenpayClient client, Models.GetPayMarketingTransfersPromotionWeWorkTransferRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "mmpaymkttransfers", "promotion", "querywwsptrans2pocket");
+
+            return await client.SendFlurlRequestAsXmlAsync<Models.GetPayMarketingTransfersPromotionWeWorkTransferResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
     }
 }

@@ -3,9 +3,9 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /mmpaymkttransfers/gettransferinfo 接口的响应。</para>
+    /// <para>表示 [POST] /mmpaymkttransfers/promotion/querywwsptrans2pocket 接口的响应。</para>
     /// </summary>
-    public class GetPayMarketingTransfersTransferInfoResponse : WechatTenpaySignableResponse
+    public class GetPayMarketingTransfersPromotionWeWorkTransferResponse : WechatTenpaySignableResponse
     {
         /// <summary>
         /// <inheritdoc/>
@@ -87,15 +87,6 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [System.Text.Json.Serialization.JsonPropertyName("transfer_time")]
         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
         public DateTimeOffset TransferTime { get; set; }
-
-        /// <summary>
-        /// 获取或设置付款成功时间。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("payment_time")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
-        [System.Text.Json.Serialization.JsonPropertyName("payment_time")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
-        public DateTimeOffset? SuccessTime { get; set; }
 
         /// <summary>
         /// 获取或设置失败原因。
