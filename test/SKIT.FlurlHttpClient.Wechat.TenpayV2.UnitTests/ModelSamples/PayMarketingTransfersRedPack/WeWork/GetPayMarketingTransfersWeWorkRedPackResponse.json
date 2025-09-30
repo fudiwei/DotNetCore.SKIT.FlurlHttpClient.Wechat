@@ -1,0 +1,22 @@
+{
+    "return_code": "SUCCESS",
+    "return_msg": "ok",
+    "sign": "C380BEC2BFD727A4B6845133519F3AD6",
+    "result_code": "SUCCESS",
+    "mch_billno": "123456",
+    "mch_id": "10000098",
+    "detail_id": "43235678654322356",
+    "status": "RECEIVED",
+    "send_type": "API",
+    "total_amount": "5000",
+    "reason": "余额不足",
+    "send_time": "2017-07-20 22:45:12",
+    "wishing": "新年快乐",
+    "remark": "新年红包",
+    "act_name": "新年红包",
+    "openid": "ohO4GtzOAAYMp2yapORH3dQB3W18",
+    "amount": "100",
+    "rcv_time": "2017-07-20 22:46:59",
+    "sender_name": "XX活动",
+    "sender_header_media_id": "1G6nrLmr5EC3MMb_-zK1dDdzmd0p7cNliYu9V5w7o8K0"
+}

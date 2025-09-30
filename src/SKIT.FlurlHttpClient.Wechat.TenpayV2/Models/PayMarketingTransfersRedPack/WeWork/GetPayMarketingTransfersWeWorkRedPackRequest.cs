@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /mmpaymkttransfers/gethbinfo 接口的请求。</para>
+    /// <para>表示 [POST] /mmpaymkttransfers/queryworkwxredpack 接口的请求。</para>
     /// </summary>
-    public class GetPayMarketingTransfersRedPackInfoRequest : WechatTenpaySignableRequest
+    public class GetPayMarketingTransfersWeWorkRedPackRequest : WechatTenpaySignableRequest
     {
         /// <summary>
         /// <inheritdoc/>
@@ -25,13 +25,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         [Newtonsoft.Json.JsonProperty("mch_billno")]
         [System.Text.Json.Serialization.JsonPropertyName("mch_billno")]
         public string MerchantBillNumber { get; set; } = string.Empty;
-
-        /// <summary>
-        /// 获取或设置订单类型。
-        /// <para>默认值：MCHT</para>
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("bill_type")]
-        [System.Text.Json.Serialization.JsonPropertyName("bill_type")]
-        public string BillType { get; set; } = "MCHT";
     }
 }

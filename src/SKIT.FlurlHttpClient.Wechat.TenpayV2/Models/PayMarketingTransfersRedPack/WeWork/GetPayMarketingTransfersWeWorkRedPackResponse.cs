@@ -3,50 +3,10 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /mmpaymkttransfers/gethbinfo 接口的响应。</para>
+    /// <para>表示 [POST] /mmpaymkttransfers/queryworkwxredpack 接口的响应。</para>
     /// </summary>
-    public class GetPayMarketingTransfersRedPackInfoResponse : WechatTenpaySignableResponse
+    public class GetPayMarketingTransfersWeWorkRedPackResponse : WechatTenpaySignableResponse
     {
-        public static class Types
-        {
-            public class ReceiverList
-            {
-                /// <summary>
-                /// 获取或设置红包领取列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("hbinfo")]
-                [System.Text.Json.Serialization.JsonPropertyName("hbinfo")]
-                public ReceiverItem[] Items { get; set; } = default!;
-            }
-
-            public class ReceiverItem
-            {
-                /// <summary>
-                /// 获取或设置领取用户的 OpenId。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("openid")]
-                [System.Text.Json.Serialization.JsonPropertyName("openid")]
-                public string OpenId { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置领取金额（单位：分）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("amount")]
-                [System.Text.Json.Serialization.JsonPropertyName("amount")]
-                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int Amount { get; set; }
-
-                /// <summary>
-                /// 获取或设置领取时间。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("rcv_time")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
-                [System.Text.Json.Serialization.JsonPropertyName("rcv_time")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
-                public DateTimeOffset ReceiveTime { get; set; }
-            }
-        }
-
         /// <summary>
         /// <inheritdoc/>
         /// </summary>
@@ -77,14 +37,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public string MerchantBillNumber { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置微信红包订单号。
+        /// 获取或设置红包单号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("detail_id")]
         [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
-        public string PaymentNumber { get; set; } = default!;
+        public string DetailId { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置转账状态。
+        /// 获取或设置红包状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status")]
         [System.Text.Json.Serialization.JsonPropertyName("status")]
@@ -98,28 +58,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public string SendType { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置红包类型。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("hb_type")]
-        [System.Text.Json.Serialization.JsonPropertyName("hb_type")]
-        public string RedPackType { get; set; } = default!;
-
-        /// <summary>
         /// 获取或设置红包金额（单位：分）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("total_amount")]
         [System.Text.Json.Serialization.JsonPropertyName("total_amount")]
         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
         public int TotalAmount { get; set; }
-
-        /// <summary>
-        /// 获取或设置红包数量。
-        /// <para>默认值：1</para>
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("total_num")]
-        [System.Text.Json.Serialization.JsonPropertyName("total_num")]
-        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-        public int TotalCount { get; set; }
 
         /// <summary>
         /// 获取或设置红包祝福语。
@@ -176,10 +120,40 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV2.Models
         public string? FailReason { get; set; }
 
         /// <summary>
-        /// 获取或设置红包领取列表。
+        /// 获取或设置红包发送者名称。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("hblist")]
-        [System.Text.Json.Serialization.JsonPropertyName("hblist")]
-        public Types.ReceiverList ReceiverList { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("sender_name")]
+        [System.Text.Json.Serialization.JsonPropertyName("sender_name")]
+        public string? SenderName { get; set; }
+
+        /// <summary>
+        /// 获取或设置红包发送者头像 MediaId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sender_header_media_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("sender_header_media_id")]
+        public string? SenderHeadImageMediaId { get; set; }
+
+        /// <summary>
+        /// 获取或设置领取红包的用户 OpenId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("openid")]
+        [System.Text.Json.Serialization.JsonPropertyName("openid")]
+        public string OpenId { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置领取金额（单位：分）。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("amount")]
+        [System.Text.Json.Serialization.JsonPropertyName("amount")]
+        public int Amount { get; set; }
+
+        /// <summary>
+        /// 获取或设置领取时间。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("rcv_time")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.BasicDateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("rcv_time")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.BasicDateTimeOffsetConverter))]
+        public DateTimeOffset ReceiveTime { get; set; }
     }
 }

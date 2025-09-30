@@ -651,6 +651,8 @@
 
     -   发放企业红包：`SendPayMarketingTransfersWeWorkRedPack`
 
+    -   查询红包记录：`GetPayMarketingTransfersWeWorkRedPack`
+
 -   向员工付款：
 
     -   向员工付款：`CreatePayMarketingTransfersPromotionWeWorkTransfer`

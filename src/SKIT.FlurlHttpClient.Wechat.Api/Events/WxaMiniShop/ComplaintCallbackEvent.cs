@@ -562,7 +562,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 
         /// <summary>
         /// 获取或设置投诉进度列表。
-        /// <para>等效于 <see cref="Types.EventData.ComplaintHistory"/> </para>
         /// </summary>
         [Newtonsoft.Json.JsonProperty("history")]
         [Newtonsoft.Json.JsonConverter(typeof(Converters.EventPropertyComplaintHistoryListNewtonsoftJsonConverter))]
