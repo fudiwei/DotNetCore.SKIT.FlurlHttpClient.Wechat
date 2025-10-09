@@ -1,0 +1,70 @@
+{
+    "data": [
+        {
+            "out_request_no": "100002322019090134234sfdf",
+            "card_id": "pbLatjvWOibDc5-TBnbUk1pD12o0",
+            "brand_id": "1004",
+            "appid": "wxea9c30890f48d5ae",
+            "card_type": "NORMAL",
+            "card_title": "测试卡",
+            "card_color": "#FFFF00",
+            "card_picture_url": "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0",
+            "code_mode": "SYSTEM_ALLOCATE",
+            "code_type": "BAR_CODE",
+            "code_jump_information": {
+                "jump_appid": "wxea9c30a90fs8d3fe",
+                "jump_path": "/pages/code/code"
+            },
+            "benefits": "会员折扣、专属价",
+            "notify_url": "https://www.weixin.qq.com/wxpay/notify.php",
+            "need_pinned": true,
+            "need_display_level": true,
+            "init_level": "白银会员",
+            "service_phone": "010-8877xxxx",
+            "legal_agreement": "商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。",
+            "valid_date_information": {
+                "type": "PERMANENT",
+                "available_begin_time": "2020-05-20T13:29:35.120+08:00",
+                "available_end_time": "2020-05-20T13:29:35.120+08:00",
+                "available_day_after_receive": 30
+            },
+            "member_information": {
+                "jump_appid": "wxea9c30a90fs8d3fe",
+                "jump_path": "/pages/points/points"
+            },
+            "points_information": {
+                "jump_appid": "wxea9c30a90fs8d3fe",
+                "jump_path": "/pages/points/points"
+            },
+            "balance_information": {
+                "jump_appid": "wxea9c30a90fs8d3fe",
+                "jump_path": "/pages/balance/balance"
+            },
+            "purchase_information": {
+                "price": 100,
+                "jump_appid": "wxea9c30a90fs8d3fe",
+                "jump_path": "/pages/purchase/purchase"
+            },
+            "user_information": {
+                "common_field_list": [
+                    "USER_FORM_FLAG_SEX"
+                ],
+                "custom_field_list": [
+                    {
+                        "type": "CHECK_BOX",
+                        "name": "喜欢的运动",
+                        "values": [
+                            "篮球"
+                        ]
+                    }
+                ]
+            },
+            "state": "CARD_EFFECTIVE",
+            "create_time": "2020-05-20T13:29:35.120+08:00",
+            "modify_time": "2020-05-20T13:29:35.120+08:00"
+        }
+    ],
+    "total_count": 20,
+    "offset": 0,
+    "limit": 20
+}

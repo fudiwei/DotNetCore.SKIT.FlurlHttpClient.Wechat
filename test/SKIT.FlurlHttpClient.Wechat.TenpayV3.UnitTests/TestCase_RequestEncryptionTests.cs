@@ -287,6 +287,219 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[PATCH] /brand/partner/card-member/user-cards/{user_card_code}）")]
+        public async Task TestEncryptRequestSensitiveProperty_UpdateBrandPartnerCardMemberUserCardRequest()
+        {
+            static Models.UpdateBrandPartnerCardMemberUserCardRequest GenerateMockRequestModel()
+            {
+                return new Models.UpdateBrandPartnerCardMemberUserCardRequest()
+                {
+                    MobileNumber = MOCK_PLAIN_STR,
+                    UserInfo = new Models.UpdateBrandPartnerCardMemberUserCardRequest.Types.UserInfo()
+                    {
+                        CommonFieldList = new List<Models.UpdateBrandPartnerCardMemberUserCardRequest.Types.UserInfo.Types.CommonField>()
+                        {
+                            new Models.UpdateBrandPartnerCardMemberUserCardRequest.Types.UserInfo.Types.CommonField()
+                            {
+                                Value = MOCK_PLAIN_STR
+                            }
+                        },
+                        CustomFieldList = new List<Models.UpdateBrandPartnerCardMemberUserCardRequest.Types.UserInfo.Types.CustomField>()
+                        {
+                            new Models.UpdateBrandPartnerCardMemberUserCardRequest.Types.UserInfo.Types.CustomField()
+                            {
+                                Values = new List<string>() { MOCK_PLAIN_STR }
+                            }
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.UpdateBrandPartnerCardMemberUserCardRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.MobileNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserInfo!.CommonFieldList![0].Value!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserInfo!.CustomFieldList![0].Values![0]));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteUpdateBrandPartnerCardMemberUserCardAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteUpdateBrandPartnerCardMemberUserCardAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /brand/partner/card-member/user-cards/{user_card_code}/confirm）")]
+        public async Task TestEncryptRequestSensitiveProperty_ConfirmBrandPartnerCardMemberUserCardRequest()
+        {
+            static Models.ConfirmBrandPartnerCardMemberUserCardRequest GenerateMockRequestModel()
+            {
+                return new Models.ConfirmBrandPartnerCardMemberUserCardRequest()
+                {
+                    MobileNumber = MOCK_PLAIN_STR,
+                    UserInfo = new Models.ConfirmBrandPartnerCardMemberUserCardRequest.Types.UserInfo()
+                    {
+                        CommonFieldList = new List<Models.ConfirmBrandPartnerCardMemberUserCardRequest.Types.UserInfo.Types.CommonField>()
+                        {
+                            new Models.ConfirmBrandPartnerCardMemberUserCardRequest.Types.UserInfo.Types.CommonField()
+                            {
+                                Value = MOCK_PLAIN_STR
+                            }
+                        },
+                        CustomFieldList = new List<Models.ConfirmBrandPartnerCardMemberUserCardRequest.Types.UserInfo.Types.CustomField>()
+                        {
+                            new Models.ConfirmBrandPartnerCardMemberUserCardRequest.Types.UserInfo.Types.CustomField()
+                            {
+                                Values = new List<string>() { MOCK_PLAIN_STR }
+                            }
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.ConfirmBrandPartnerCardMemberUserCardRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.MobileNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserInfo!.CommonFieldList![0].Value!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserInfo!.CustomFieldList![0].Values![0]));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteConfirmBrandPartnerCardMemberUserCardAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteConfirmBrandPartnerCardMemberUserCardAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /brand/partner/card-member/user-cards/import-by-openid）")]
+        public async Task TestEncryptRequestSensitiveProperty_ImportBrandPartnerCardMemberUserCardByOpenIdRequest()
+        {
+            static Models.ImportBrandPartnerCardMemberUserCardByOpenIdRequest GenerateMockRequestModel()
+            {
+                return new Models.ImportBrandPartnerCardMemberUserCardByOpenIdRequest()
+                {
+                    MobileNumber = MOCK_PLAIN_STR,
+                    UserInfo = new Models.ImportBrandPartnerCardMemberUserCardByOpenIdRequest.Types.UserInfo()
+                    {
+                        CommonFieldList = new List<Models.ImportBrandPartnerCardMemberUserCardByOpenIdRequest.Types.UserInfo.Types.CommonField>()
+                        {
+                            new Models.ImportBrandPartnerCardMemberUserCardByOpenIdRequest.Types.UserInfo.Types.CommonField()
+                            {
+                                Value = MOCK_PLAIN_STR
+                            }
+                        },
+                        CustomFieldList = new List<Models.ImportBrandPartnerCardMemberUserCardByOpenIdRequest.Types.UserInfo.Types.CustomField>()
+                        {
+                            new Models.ImportBrandPartnerCardMemberUserCardByOpenIdRequest.Types.UserInfo.Types.CustomField()
+                            {
+                                Values = new List<string>() { MOCK_PLAIN_STR }
+                            }
+                        }
+                    }
+                };
+            }
+
+            static void AssertMockRequestModel(Models.ImportBrandPartnerCardMemberUserCardByOpenIdRequest request, Func<string, string> decryptor)
+            {
+                Assert.NotEqual(MOCK_PLAIN_STR, request.MobileNumber!);
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserInfo!.CommonFieldList![0].Value!));
+                Assert.Equal(MOCK_PLAIN_STR, decryptor.Invoke(request.UserInfo!.CustomFieldList![0].Values![0]));
+                Assert.Equal(MOCK_CERT_SN, request.WechatpaySerialNumber!, ignoreCase: true);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseRSA(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteImportBrandPartnerCardMemberUserCardByOpenIdAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.RSAUtility.DecryptWithECB(RSA_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoEncrypt: false))
+                {
+                    var request = GenerateMockRequestModel();
+                    client.EncryptRequestSensitiveProperty(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+
+                using (var client = CreateMockClientUseSM2(autoEncrypt: true))
+                {
+                    var request = GenerateMockRequestModel();
+                    await client.ExecuteImportBrandPartnerCardMemberUserCardByOpenIdAsync(request);
+                    AssertMockRequestModel(request, (cipher) => Utilities.SM2Utility.Decrypt(SM2_PEM_PRIVATE_KEY, (EncodedString)cipher)!);
+                }
+            }
+        }
+
         [Fact(DisplayName = "测试用例：加密请求中的敏感数据（[POST] /brand/profitsharing/orders）")]
         public async Task TestEncryptRequestSensitiveProperty_CreateBrandProfitSharingOrderRequest()
         {

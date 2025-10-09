@@ -1,0 +1,31 @@
+{
+    "brand_id": "1004",
+    "openid": "obLatjnx9gnqzS4myYGmLZ7LgLBA",
+    "card_color": "#FFFF00",
+    "card_picture_url": "https://wxpaylogo.qpic.cn/wxpaylogo/PiajxSqBRaEIPAeia7Imvtsn7sYGNcEj33YzVvJF88ECQ19LXId8ZL2Q/0",
+    "phone_number": "vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzLhShNHgujZzseiL6sYmT7E65mv/eFeTa7yslYfrX0hrhHazSM/+tfvN/C3OZwiBbcrF9LTIIdBVhGOqhCx0gK5YAVZc8dbW/yJqC5i79PDfVYJtpQe3A4v/GiDa2Q+Mv03taxgnEkzqlSPjkXiCYBj9UaFJ4bqCTXiO2Kt6TpczvAaZW+9/blxiJwqEFXe78LbrIQvkDUmVdZbqBdPQ+QGQgc/2Ea4IbP/EEt1qSyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==",
+    "level": "钻石会员",
+    "valid_date_information": {
+        "type": "PERMANENT",
+        "available_begin_time": "2020-05-20T13:29:35.120+08:00",
+        "available_end_time": "2020-05-20T13:29:35.120+08:00",
+        "available_day_after_receive": 30
+    },
+    "user_information": {
+        "common_field_list": [
+            {
+                "name": "USER_FORM_FLAG_BIRTHDAY",
+                "value": "vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzLhShNHgujZzseiL6sYmT7E65mv/eFeTa7yslYfrX0hrhHazSM/+tfvN/C3OZwiBbcrF9LTIIdBVhGOqhCx0gK5YAVZc8dbW/yJqC5i79PDfVYJtpQe3A4v/GiDa2Q+Mv03taxgnEkzqlSPjkXiCYBj9UaFJ4bqCTXiO2Kt6TpczvAaZW+9/blxiJwqEFXe78LbrIQvkDUmVdZbqBdPQ+QGQgc/2Ea4IbP/EEt1qSyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A=="
+            }
+        ],
+        "custom_field_list": [
+            {
+                "name": "喜欢的运动",
+                "user_chosen_values": [
+                    "vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzLhShNHgujZzseiL6sYmT7E65mv/eFeTa7yslYfrX0hrhHazSM/+tfvN/C3OZwiBbcrF9LTIIdBVhGOqhCx0gK5YAVZc8dbW/yJqC5i79PDfVYJtpQe3A4v/GiDa2Q+Mv03taxgnEkzqlSPjkXiCYBj9UaFJ4bqCTXiO2Kt6TpczvAaZW+9/blxiJwqEFXe78LbrIQvkDUmVdZbqBdPQ+QGQgc/2Ea4IbP/EEt1qSyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A=="
+                ]
+            }
+        ]
+    },
+    "attach": "自定义数据说明"
+}

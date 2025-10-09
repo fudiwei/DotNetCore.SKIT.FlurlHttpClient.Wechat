@@ -61,6 +61,7 @@
 |  √  |        运营工具：点金计划         |      合作伙伴       |                   |
 |  ×  |   <del>运营工具：现金红包</del>   | 直连商户 & 合作伙伴 | 官方未提供 v3 API |
 |  √  |        运营工具：品牌红包         |      直连商户       |                   |
+|  √  |      运营工具：商家名片会员       |      合作伙伴       |                   |
 |  √  |          扩展工具：分账           | 直连商户 & 合作伙伴 |                   |
 |  √  |      扩展工具：连锁品牌分账       |      合作伙伴       |                   |
 |  √  |     扩展工具：消费者投诉 2.0      | 直连商户 & 合作伙伴 |                   |
@@ -522,6 +523,50 @@
         -   申请银行转账充值：`ApplyBankTransferRecharge`
 
         -   查询银行转账充值结果：`GetBankTransferRechargeByOutRechargeNumber`
+
+    -   商家名片会员
+
+        -   会员卡模板管理：
+
+            -   创建会员卡模板：`CreateBrandPartnerCardMemberCard`
+
+            -   查询会员卡模板列表：`QueryBrandPartnerCardMemberCards`
+
+            -   查询会员卡模板信息：`GetBrandPartnerCardMemberCardByCardId`
+
+            -   修改会员卡模板信息：`UpdateBrandPartnerCardMemberCard`
+
+            -   作废会员卡模板：`InvalidateBrandPartnerCardMemberCard`
+
+        -   用户会员卡管理：
+
+            -   查询用户会员卡信息：`GetBrandPartnerCardMemberUserCardByUserCardCode`
+
+            -   查询用户在品牌下所有会员卡：`QueryBrandPartnerCardMemberUserCards`
+
+            -   修改用户会员卡信息：`UpdateBrandPartnerCardMemberUserCard`
+
+            -   作废用户会员卡：`InvalidateBrandPartnerCardMemberUserCard`
+
+        -   用户开通会员卡：
+
+            -   入会组件预授权：`CreateBrandPartnerCardMemberPreauthToken`
+
+        -   商家同步会员身份：
+
+            -   根据 OpenId 导入用户会员卡：`ImportBrandPartnerCardMemberUserCardByOpenId`
+
+            -   同步会员开通结果：`ConfirmBrandPartnerCardMemberUserCard`
+
+        -   用户动态：
+
+            -   创建用户动态信息：`CreateBrandPartnerCardMemberUserFeed`
+
+        -   会员卡积分兑券：
+
+            -   同步积分余额：`SyncBrandPartnerCardMemberUserPoint`
+
+            -   同步积分兑券结果：`ConfirmBrandPartnerCardMemberUserPointExchangeCoupon`
 
 -   扩展工具
 

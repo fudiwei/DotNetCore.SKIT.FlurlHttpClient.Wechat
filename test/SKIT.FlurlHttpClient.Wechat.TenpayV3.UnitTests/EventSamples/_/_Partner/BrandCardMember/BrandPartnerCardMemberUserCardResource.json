@@ -1,0 +1,38 @@
+{
+    "brand_id": "1077",
+    "card_color": "#FFFF00",
+    "card_id": "pbLatjvWOibDc5",
+    "card_picture_url": "https://wxpaylogo.qpic.cn/wxpaylogo/PiajxSqBRaEIPAeia7Imvtsn7sYGNcEj33YzVvJF88ECQ19LXId8ZL2Q/0",
+    "card_type": "NORMAL",
+    "valid_date_information": {
+        "available_begin_time": "2020-05-20T13:29:35.120+08:00",
+        "available_day_after_receive": 30,
+        "available_end_time": "2020-05-20T13:29:35.120+08:00",
+        "type": "PERMANENT"
+    },
+    "invalid_reason": "传入的自定义作废原因",
+    "invalid_time": "2015-05-20T13:29:35+08:00",
+    "level": "钻石会员",
+    "openid": "obLatjnxgnqzS4myYGmLZ7LgLBA",
+    "phone_number": "12345678999",
+    "pickup_time": "2020-05-20T13:29:35.120+08:00",
+    "user_card_code": "478515832665",
+    "user_card_state": "EFFECTIVE",
+    "create_time": "2020-05-20T13:29:35.120+08:00",
+    "modify_time": "2020-05-20T13:29:35.120+08:00",
+    "user_information": {
+        "common_field_list": [
+            {
+                "name": "USER_FORM_FLAG_SEX",
+                "value": "男"
+            }
+        ],
+        "custom_field_list": [
+            {
+                "name": "喜欢的运动",
+                "user_chosen_values": [ "足球", "篮球" ]
+            }
+        ]
+    },
+    "attach": "brand_data"
+}

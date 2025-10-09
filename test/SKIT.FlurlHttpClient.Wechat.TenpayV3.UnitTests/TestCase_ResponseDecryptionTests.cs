@@ -87,6 +87,172 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.UnitTests
             }
         }
 
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /brand/partner/card-member/user-cards）")]
+        public async Task TestDecryptResponseSensitiveProperty_QueryBrandPartnerCardMemberUserCardsResponse()
+        {
+            static Models.QueryBrandPartnerCardMemberUserCardsResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return SetMockResponseRawStatusAsOk(new Models.QueryBrandPartnerCardMemberUserCardsResponse()
+                {
+                    UserCardList = new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard[]
+                    {
+                        new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard()
+                        {
+                            MobileNumber = encryptor.Invoke(MOCK_PLAIN_STR),
+                            UserInfo = new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo()
+                            {
+                                CommonFieldList = new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CommonField[]
+                                {
+                                    new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CommonField()
+                                    {
+                                        Value = encryptor.Invoke(MOCK_PLAIN_STR)
+                                    }
+                                },
+                                CustomFieldList = new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CustomField[]
+                                {
+                                    new Models.QueryBrandPartnerCardMemberUserCardsResponse.Types.UserCard.Types.UserInfo.Types.CustomField()
+                                    {
+                                        Values = new string[] { encryptor.Invoke(MOCK_PLAIN_STR) }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+            }
+
+            static void AssertMockResponseModel(Models.QueryBrandPartnerCardMemberUserCardsResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.UserCardList[0].MobileNumber);
+                Assert.Equal(MOCK_PLAIN_STR, response.UserCardList[0].UserInfo!.CommonFieldList![0].Value);
+                Assert.Equal(MOCK_PLAIN_STR, response.UserCardList[0].UserInfo!.CustomFieldList![0].Values![0]);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.QueryBrandPartnerCardMemberUserCardsRequest();
+                    var response = await client.ExecuteQueryBrandPartnerCardMemberUserCardsAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.QueryBrandPartnerCardMemberUserCardsRequest();
+                    var response = await client.ExecuteQueryBrandPartnerCardMemberUserCardsAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+        }
+
+        [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /brand/partner/card-member/user-cards/{user_card_code}）")]
+        public async Task TestDecryptResponseSensitiveProperty_GetBrandPartnerCardMemberUserCardByUserCardCodeResponse()
+        {
+            static Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse GenerateMockResponseModel(Func<string, string> encryptor)
+            {
+                return SetMockResponseRawStatusAsOk(new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse()
+                {
+                    MobileNumber = encryptor.Invoke(MOCK_PLAIN_STR),
+                    UserInfo = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo()
+                    {
+                        CommonFieldList = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CommonField[]
+                        {
+                            new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CommonField()
+                            {
+                                Value = encryptor.Invoke(MOCK_PLAIN_STR)
+                            }
+                        },
+                        CustomFieldList = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CustomField[]
+                        {
+                            new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse.Types.UserInfo.Types.CustomField()
+                            {
+                                Values = new string[] { encryptor.Invoke(MOCK_PLAIN_STR) }
+                            }
+                        }
+                    }
+                });
+            }
+
+            static void AssertMockResponseModel(Models.GetBrandPartnerCardMemberUserCardByUserCardCodeResponse response)
+            {
+                Assert.Equal(MOCK_PLAIN_STR, response.MobileNumber);
+                Assert.Equal(MOCK_PLAIN_STR, response.UserInfo!.CommonFieldList![0].Value);
+                Assert.Equal(MOCK_PLAIN_STR, response.UserInfo!.CustomFieldList![0].Values![0]);
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantRSACertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseRSA(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseRSA(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.RSAUtility.EncryptWithECBByCertificate(RSA_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeRequest();
+                    var response = await client.ExecuteGetBrandPartnerCardMemberUserCardByUserCardCodeAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+
+            if (!string.IsNullOrEmpty(TestConfigs.WechatMerchantSM2CertificatePrivateKey))
+            {
+                using (var client = CreateMockClientUseSM2(autoDecrypt: false))
+                {
+                    var response = GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!);
+                    client.DecryptResponseSensitiveProperty(response);
+                    AssertMockResponseModel(response);
+                }
+
+                using (var client = CreateMockClientUseSM2(
+                    autoDecrypt: true,
+                    mockResponseContent: new SystemTextJsonSerializer().Serialize(
+                        GenerateMockResponseModel((plain) => Utilities.SM2Utility.EncryptByCertificate(SM2_PEM_CERTIFICATE, plain)!)
+                    )
+                ))
+                {
+                    var request = new Models.GetBrandPartnerCardMemberUserCardByUserCardCodeRequest();
+                    var response = await client.ExecuteGetBrandPartnerCardMemberUserCardByUserCardCodeAsync(request);
+                    AssertMockResponseModel(response);
+                }
+            }
+        }
+
         [Fact(DisplayName = "测试用例：解密响应中的敏感数据（[GET] /certificates）")]
         public async Task TestDecryptResponseSensitiveProperty_QueryCertificatesResponse()
         {
