@@ -1,0 +1,15 @@
+{
+    "data": [
+        {
+            "block_record_id": "23400",
+            "block_time": "2018-06-08T10:34:56+08:00",
+            "block_reason": "涉嫌信用卡套现",
+            "number_of_block": "LESS_THAN_TWENTY",
+            "recover_way": "SUBMIT_INFORMATION",
+            "requested_item_info": "{ \t\"record_fields\": [{ \t\t\t\"item_id\": \"100004\", \t\t\t\"field_name\": \"legal_person_card_id\", \t\t\t\"name\": \"企业法人身份证号\", \t\t\t\"type\": 1, \t\t\t\"tips\": \"\", \t\t\t\"placeholder\": \"请输入企业法人身份证号\", \t\t\t\"tooltip\": \"需要填写完整身份证号\", \t\t\t\"required\": 1, \t\t\t\"string_check_rule\": { \t\t\t\t\"min_string_length\": 1, \t\t\t\t\"max_string_length\": 50, \t\t\t\t\"validator\": \"idcard\" \t\t\t}, \t\t\t\"need_encrypt\": true \t\t}, \t\t{ \t\t\t\"item_id\": \"100005\", \t\t\t\"field_name\": \"legal_person_cert_type\", \t\t\t\"name\": \"企业法人证件类型\", \t\t\t\"type\": 4, \t\t\t\"tips\": \"\", \t\t\t\"placeholder\": \"请选择证件类型\", \t\t\t\"tooltip\": \"\", \t\t\t\"required\": 0, \t\t\t\"enum_check_rule\": { \t\t\t\t\"min_list_length\": 1, \t\t\t\t\"max_list_length\": 1, \t\t\t\t\"enum_values\": [\"大陆居民身份证\", \"港澳台通行证\"] \t\t\t}, \t\t\t\"need_encrypt\": false \t\t}, \t\t{ \t\t\t\"item_id\": \"100006\", \t\t\t\"field_name\": \"inland_cert_card_image\", \t\t\t\"name\": \"大陆居民身份证照片\", \t\t\t\"type\": 2, \t\t\t\"tips\": \"请上传图片\", \t\t\t\"placeholder\": \"\", \t\t\t\"tooltip\": \"需要正面和反面两张照片\", \t\t\t\"required\": 1, \t\t\t\"need_encrypt\": false, \t\t\t\"file_check_rule\": { \t\t\t\t\"min_list_length\": 2, \t\t\t\t\"max_list_length\": 2, \t\t\t\t\"enum_file_exts\": [\"png\", \"jpg\", \"jpeg\"], \t\t\t\t\"max_file_size\": 5 \t\t\t}, \t\t\t\"relations\": [{ \t\t\t\t\"source_key\": 100005, \t\t\t\t\"source_value\": \"大陆居民身份证\" \t\t\t}] \t\t} \t] }"
+        }
+    ],
+    "offset": 10,
+    "limit": 5,
+    "total_count": 1234
+}

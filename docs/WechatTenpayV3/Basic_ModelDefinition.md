@@ -70,6 +70,7 @@
 |  √  |    商户管理：商户开户意愿确认     |      合作伙伴       |                   |
 |  √  |    商户管理：商户平台处置通知     |      合作伙伴       |                   |
 |  √  |   商户管理：不活跃商户身份核实    |      合作伙伴       |                   |
+|  √  |      商户管理：商户管理记录       |      合作伙伴       |                   |
 |  √  |           其他：消费卡            | 直连商户 & 合作伙伴 |                   |
 |  √  |      其他：代扣服务切卡组件       | 直连商户 & 合作伙伴 |                   |
 |  √  |    其他：图片上传（营销专用）     | 直连商户 & 合作伙伴 |                   |
@@ -1523,6 +1524,24 @@
         -   发起不活跃商户身份核实：`CreateComplianceInactiveMerchantIdentityVerification`
 
         -   查询不活跃商户身份核实结果：`GetComplianceInactiveMerchantIdentityVerificationByVerificationId`
+
+    -   商户管理记录
+
+        -   分页查询子商户名下的商户管理记录：`QueryMerchantManageRecords`
+
+        -   查询子商户下指定商户管理记录：`GetMerchantManageRecord`
+
+        -   对指定商户管理记录提交资料：`CreateMerchantManageRecordSubmission`
+
+        -   上传商户提交资料文件：`UploadMerchantManageSubmissionFile`
+
+        -   分页查询子商户名下的交易拦截记录：`QueryTransactionBlockRecords`
+
+        -   查询子商户交易拦截记录详情：`GetTransactionBlockRecord`
+
+        -   发起交易拦截申诉：`CreateTransactionBlockSubmission`
+
+        -   查询交易拦截申诉详情：`GetTransactionBlockSubmission`
 
 -   扩展工具
 
