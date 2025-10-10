@@ -139,6 +139,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         public string[]? ToUserIdList { get; set; }
 
         /// <summary>
+        /// 获取或设置企业成员账号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("user")]
+        [System.Text.Json.Serialization.JsonPropertyName("user")]
+        public string? UserId { get; set; }
+
+        /// <summary>
         /// 获取或设置群聊房间 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("roomid")]
@@ -326,6 +333,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
         [Newtonsoft.Json.JsonProperty("voip_doc_share")]
         [System.Text.Json.Serialization.JsonPropertyName("voip_doc_share")]
         public Types.VoIPDocumentShareMessage? MessageContentAsVoIPDocumentShare { get; set; }
+
+        /// <summary>
+        /// 获取或设置互通红包消息信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("external_redpacket")]
+        [System.Text.Json.Serialization.JsonPropertyName("external_redpacket")]
+        public Types.ExternalRedPacketMessage? MessageContentAsExternalRedPacket { get; set; }
 
         /// <summary>
         /// 获取或设置视频号消息信息。

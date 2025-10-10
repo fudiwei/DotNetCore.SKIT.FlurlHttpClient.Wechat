@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractions
@@ -619,6 +620,40 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
 
     public class InfoMessage : ChatMessageBase
     {
+        public static class Types
+        {
+            public class NewsItem
+            {
+                /// <summary>
+                /// 获取或设置图文消息链接。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("url")]
+                [System.Text.Json.Serialization.JsonPropertyName("url")]
+                public string Url { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置图文消息标题。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("title")]
+                [System.Text.Json.Serialization.JsonPropertyName("title")]
+                public string Title { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置图文消息描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("description")]
+                [System.Text.Json.Serialization.JsonPropertyName("description")]
+                public string Description { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置图文消息配图 URL。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("picurl")]
+                [System.Text.Json.Serialization.JsonPropertyName("picurl")]
+                public string? PictureUrl { get; set; }
+            }
+        }
+
         /// <summary>
         /// 获取或设置内容。
         /// </summary>
@@ -629,6 +664,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// <summary>
         /// 获取或设置图文消息链接。
         /// </summary>
+        [Obsolete("相关接口或字段于 2025-05-08 下线。")]
         [Newtonsoft.Json.JsonProperty("url")]
         [System.Text.Json.Serialization.JsonPropertyName("url")]
         public string? NewsUrl { get; set; }
@@ -636,6 +672,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// <summary>
         /// 获取或设置图文消息标题。
         /// </summary>
+        [Obsolete("相关接口或字段于 2025-05-08 下线。")]
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
         public string? NewsTitle { get; set; }
@@ -643,9 +680,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// <summary>
         /// 获取或设置图文消息描述。
         /// </summary>
+        [Obsolete("相关接口或字段于 2025-05-08 下线。")]
         [Newtonsoft.Json.JsonProperty("description")]
         [System.Text.Json.Serialization.JsonPropertyName("description")]
         public string? NewsDescription { get; set; }
+
+        /// <summary>
+        /// 获取或设置图文消息列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("item")]
+        [System.Text.Json.Serialization.JsonPropertyName("item")]
+        public Types.NewsItem[]? NewsList { get; set; }
 
         /// <summary>
         /// 获取或设置 VoIP 通话时长（单位：秒）。
