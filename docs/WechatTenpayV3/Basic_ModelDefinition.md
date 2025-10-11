@@ -61,6 +61,8 @@
 |  √  |        运营工具：点金计划         |      合作伙伴       |                   |
 |  ×  |   <del>运营工具：现金红包</del>   | 直连商户 & 合作伙伴 | 官方未提供 v3 API |
 |  √  |        运营工具：品牌红包         |      直连商户       |                   |
+|  √  |   运营工具：品牌门店（商家券）    | 直连商户 & 合作伙伴 |                   |
+|  √  |   运营工具：品牌门店（商品券）    |      合作伙伴       |                   |
 |  √  |      运营工具：商家名片会员       |      合作伙伴       |                   |
 |  √  |          扩展工具：分账           | 直连商户 & 合作伙伴 |                   |
 |  √  |      扩展工具：连锁品牌分账       |      合作伙伴       |                   |
@@ -75,7 +77,6 @@
 |  √  |      其他：代扣服务切卡组件       | 直连商户 & 合作伙伴 |                   |
 |  √  |    其他：图片上传（营销专用）     | 直连商户 & 合作伙伴 |                   |
 |  √  |         其他：微信先享卡          |      直连商户       |                   |
-|  √  |        其他：连锁品牌门店         |      合作伙伴       |                   |
 |  √  |        其他：品牌小店营销         |      合作伙伴       |                   |
 |  √  |     其他：租用充电宝隔夜归还      |      直连商户       |                   |
 |  √  |          其他：ETC 扣费           |      合作伙伴       |                   |
@@ -519,6 +520,18 @@
         -   微信支付批次单号查询批次单：`GetFundAppBrandRedPacketBrandMerchantBatchByBatchNumber`
 
         -   微信支付明细单号查询明细单：`GetFundAppBrandRedPacketBrandMerchantBatchDetailByDetailNumber`
+
+    -   品牌门店（商家券）
+
+        -   创建门店：`CreateMerchantStore`
+
+        -   查询门店：`GetMerchantStoreByStoreId`
+
+        -   修改门店：`ModifyMerchantStore`
+
+        -   绑定门店收款信息：`BindMerchantStoreRecipient`
+
+        -   解除门店收款信息绑定：`UnbindMerchantStoreRecipient`
 
     -   商家充值
 
@@ -1326,6 +1339,32 @@
 
         -   关闭广告展示：`CloseGoldPlanAdvertisingShow`
 
+    -   品牌门店（商家券）
+
+        -   创建品牌门店：`CreateMerchantStore`
+
+        -   查询品牌门店：`GetMerchantStoreByStoreId`
+
+        -   修改品牌门店：`ModifyMerchantStore`
+
+        -   绑定品牌门店收款商户号：`BindMerchantStoreRecipient`
+
+        -   解绑品牌门店收款商户号：`UnbindMerchantStoreRecipient`
+
+    -   品牌门店（商品券）
+
+        -   创建品牌门店：`CreateBrandPartnerStore`
+
+        -   删除品牌门店：`DeleteBrandPartnerStore`
+
+        -   更新品牌门店：`ModifyBrandPartnerStore`
+
+        -   查询品牌门店：`GetBrandPartnerStoreByStoreId`
+
+        -   绑定收款商户号：`BindBrandPartnerStoreRecipient`
+
+        -   解绑收款商户号：`UnbindBrandPartnerStoreRecipient`
+
     -   商家名片会员
 
         -   会员卡模板管理：
@@ -1575,18 +1614,6 @@
     -   代扣服务切卡组件
 
         -   出行券切卡组件预下单：`CreateIndustryCouponToken`
-
-    -   连锁品牌门店
-
-        -   创建门店：`CreateMerchantStore`
-
-        -   查询门店：`GetMerchantStoreByStoreId`
-
-        -   修改门店：`ModifyMerchantStore`
-
-        -   绑定门店收款信息：`BindMerchantStoreRecipient`
-
-        -   解除门店收款信息绑定：`UnbindMerchantStoreRecipient`
 
     -   品牌小店营销
 

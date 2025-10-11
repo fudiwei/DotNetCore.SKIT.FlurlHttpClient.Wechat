@@ -1,0 +1,29 @@
+{
+    "brand_id": "123456789",
+    "store_id": "1234567890123456",
+    "store_state": "OPEN",
+    "audit_state": "SUCCESS",
+    "review_reject_reason": "通过核实，您提交的电话错误，请核实手机号码或座机号码是否正确",
+    "store_basics": {
+        "store_reference_id": "MDL001",
+        "branch_name": "海岸城店"
+    },
+    "store_address": {
+        "address_code": "440305",
+        "address_detail": "深南大道10000号腾讯大厦1楼",
+        "address_complements": "地铁A口右侧100米",
+        "longitude": "112.63484",
+        "latitude": "37.75464"
+    },
+    "store_business": {
+        "service_phone": "0755-86013388",
+        "business_hours": "周一至周五 09:00-20:00"
+    },
+    "store_recipient": [
+        {
+            "mchid": "1230000109",
+            "company_name": "腾讯科技（深圳）有限公司",
+            "recipient_state": "CONFIRMED"
+        }
+    ]
+}

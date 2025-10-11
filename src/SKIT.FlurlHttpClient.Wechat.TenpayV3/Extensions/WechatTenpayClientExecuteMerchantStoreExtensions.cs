@@ -11,6 +11,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         /// <summary>
         /// <para>异步调用 [POST] /merchant-store/stores 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014085766 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013948546 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -29,6 +34,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [GET] /merchant-store/stores/{store_id} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014085768 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013948551 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -48,6 +58,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [PATCH] /merchant-store/stores/{store_id} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014085769 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013948577 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -64,9 +79,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendFlurlRequestAsJsonAsync<Models.ModifyMerchantStoreResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
-        #region
         /// <summary>
         /// <para>异步调用 [POST] /merchant-store/stores/{store_id}/recipients/bind 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014085771 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013948577 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -85,6 +104,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
         /// <summary>
         /// <para>异步调用 [POST] /merchant-store/stores/{store_id}/recipients/unbind 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4014085773 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4013948580 ]]>
+        /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
@@ -100,6 +124,5 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
 
             return await client.SendFlurlRequestAsJsonAsync<Models.UnbindMerchantStoreRecipientResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
-        #endregion
     }
 }
