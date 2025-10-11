@@ -1,0 +1,8 @@
+{
+    "sp_mchid": "12341234",
+    "sub_mchid": "43214321",
+    "user_id": "employee123",
+    "authorization_state": "REVOKED",
+    "authorization_revoked_time": "2023-12-31T23:59:59+08:00",
+    "reason": "用户主动撤销"
+}

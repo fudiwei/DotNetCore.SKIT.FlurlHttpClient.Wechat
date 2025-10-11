@@ -1,0 +1,9 @@
+{
+    "sp_mchid": "12341234",
+    "sub_mchid": "43214321",
+    "out_card_no": "mch_card_123456",
+    "employee_id": "WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c",
+    "card_no": "1068019671702503425",
+    "effective_begin_time": "2023-01-01T00:00+08:00",
+    "effective_end_time": "2023-12-31T23:59:59+08:00"
+}

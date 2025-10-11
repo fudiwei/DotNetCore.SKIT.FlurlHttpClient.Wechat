@@ -1,0 +1,13 @@
+{
+    "sp_mchid": "12341234",
+    "out_batch_id": "batch12345678",
+    "batch_id": "1030000071201xxxxx",
+    "state": "ACCEPTED",
+    "match_results": [
+        {
+            "organization_code": "911100007109260000",
+            "store_name": "微信小店",
+            "has_valid_mchid": true
+        }
+    ]
+}

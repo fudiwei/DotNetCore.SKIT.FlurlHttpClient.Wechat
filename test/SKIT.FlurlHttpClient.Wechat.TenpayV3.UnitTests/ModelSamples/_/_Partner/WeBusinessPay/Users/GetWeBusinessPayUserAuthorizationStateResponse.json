@@ -1,0 +1,13 @@
+{
+    "sp_mchid": "12341234",
+    "sub_mchid": "43214321",
+    "user_id": "employee123",
+    "employee_list": [
+        {
+            "employee_id": "WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c",
+            "authorization_state": "AUTHORIZED",
+            "authorization_time": "2018-06-08T10:34:56+08:00",
+            "authorization_revoked_time": "2018-06-08T10:34:56+08:00"
+        }
+    ]
+}

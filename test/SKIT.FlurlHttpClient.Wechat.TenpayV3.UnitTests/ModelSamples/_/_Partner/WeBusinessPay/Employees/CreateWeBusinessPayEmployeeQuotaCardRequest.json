@@ -1,0 +1,10 @@
+{
+    "sp_mchid": "12341234",
+    "sub_mchid": "43214321",
+    "card_template_id": "template_123",
+    "amount": 10000,
+    "card_name": "报销额度卡",
+    "out_card_no": "out_card_123456",
+    "effective_end_time": "2023-12-31T23:59:59+08:00",
+    "card_remark": "2023年1月差旅报销"
+}

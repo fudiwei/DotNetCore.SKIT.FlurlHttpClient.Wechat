@@ -91,6 +91,7 @@
 |  √  |       其他：银行提现免费券        |      合作伙伴       |                   |
 |  √  |         其他：银行周周惠          |      合作伙伴       |                   |
 |  √  |           其他：微工卡            |      合作伙伴       |                   |
+|  √  |          其他：企业支付           |      合作伙伴       |                   |
 |  √  |        其他：优惠费率活动         |      合作伙伴       |                   |
 |  √  |           其他：爱心餐            |      直连商户       |                   |
 |  ×  |     <del>其他：清关报关</del>     |      直连商户       | 官方未提供 v3 API |
@@ -524,50 +525,6 @@
         -   申请银行转账充值：`ApplyBankTransferRecharge`
 
         -   查询银行转账充值结果：`GetBankTransferRechargeByOutRechargeNumber`
-
-    -   商家名片会员
-
-        -   会员卡模板管理：
-
-            -   创建会员卡模板：`CreateBrandPartnerCardMemberCard`
-
-            -   查询会员卡模板列表：`QueryBrandPartnerCardMemberCards`
-
-            -   查询会员卡模板信息：`GetBrandPartnerCardMemberCardByCardId`
-
-            -   修改会员卡模板信息：`UpdateBrandPartnerCardMemberCard`
-
-            -   作废会员卡模板：`InvalidateBrandPartnerCardMemberCard`
-
-        -   用户会员卡管理：
-
-            -   查询用户会员卡信息：`GetBrandPartnerCardMemberUserCardByUserCardCode`
-
-            -   查询用户在品牌下所有会员卡：`QueryBrandPartnerCardMemberUserCards`
-
-            -   修改用户会员卡信息：`UpdateBrandPartnerCardMemberUserCard`
-
-            -   作废用户会员卡：`InvalidateBrandPartnerCardMemberUserCard`
-
-        -   用户开通会员卡：
-
-            -   入会组件预授权：`CreateBrandPartnerCardMemberPreauthToken`
-
-        -   商家同步会员身份：
-
-            -   根据 OpenId 导入用户会员卡：`ImportBrandPartnerCardMemberUserCardByOpenId`
-
-            -   同步会员开通结果：`ConfirmBrandPartnerCardMemberUserCard`
-
-        -   用户动态：
-
-            -   创建用户动态信息：`CreateBrandPartnerCardMemberUserFeed`
-
-        -   会员卡积分兑券：
-
-            -   同步积分余额：`SyncBrandPartnerCardMemberUserPoint`
-
-            -   同步积分兑券结果：`ConfirmBrandPartnerCardMemberUserPointExchangeCoupon`
 
 -   扩展工具
 
@@ -1369,6 +1326,50 @@
 
         -   关闭广告展示：`CloseGoldPlanAdvertisingShow`
 
+    -   商家名片会员
+
+        -   会员卡模板管理：
+
+            -   创建会员卡模板：`CreateBrandPartnerCardMemberCard`
+
+            -   查询会员卡模板列表：`QueryBrandPartnerCardMemberCards`
+
+            -   查询会员卡模板信息：`GetBrandPartnerCardMemberCardByCardId`
+
+            -   修改会员卡模板信息：`UpdateBrandPartnerCardMemberCard`
+
+            -   作废会员卡模板：`InvalidateBrandPartnerCardMemberCard`
+
+        -   用户会员卡管理：
+
+            -   查询用户会员卡信息：`GetBrandPartnerCardMemberUserCardByUserCardCode`
+
+            -   查询用户在品牌下所有会员卡：`QueryBrandPartnerCardMemberUserCards`
+
+            -   修改用户会员卡信息：`UpdateBrandPartnerCardMemberUserCard`
+
+            -   作废用户会员卡：`InvalidateBrandPartnerCardMemberUserCard`
+
+        -   用户开通会员卡：
+
+            -   入会组件预授权：`CreateBrandPartnerCardMemberPreauthToken`
+
+        -   商家同步会员身份：
+
+            -   根据 OpenId 导入用户会员卡：`ImportBrandPartnerCardMemberUserCardByOpenId`
+
+            -   同步会员开通结果：`ConfirmBrandPartnerCardMemberUserCard`
+
+        -   用户动态：
+
+            -   创建用户动态信息：`CreateBrandPartnerCardMemberUserFeed`
+
+        -   会员卡积分兑券：
+
+            -   同步积分余额：`SyncBrandPartnerCardMemberUserPoint`
+
+            -   同步积分兑券结果：`ConfirmBrandPartnerCardMemberUserPointExchangeCoupon`
+
 -   扩展工具
 
     -   分账
@@ -1762,6 +1763,32 @@
             -   特约商户银行来账查询：`QueryMerchantFundPartnerIncomeRecords`
 
             -   服务商银行来账查询：`QueryMerchantFundMerchantIncomeRecords`
+
+    -   企业支付
+
+        -   企业商户为员工下发企业支付额度卡：`CreateWeBusinessPayEmployeeQuotaCard`
+
+        -   企业商户作废员工企业支付额度卡：`CancelWeBusinessPayEmployeeQuotaCard`
+
+        -   企业商户使用商户卡号查询企业支付额度卡：`GetWeBusinessPayEmployeeQuotaCardByOutCardNumber`
+
+        -   企业商户发起员工开通企业支付授权：`GetWeBusinessPayUserAuthorizationUrl`
+
+        -   企业商户发起解除员工企业支付授权：`RevokeGetWeBusinessPayEmployee`
+
+        -   企业商户查询企业员工开通授权状态：`GetWeBusinessPayUserAuthorizationState`
+
+        -   企业商户查询企业支付额度卡：`GetWeBusinessPayEmployeeQuotaCardByCardNumber`
+
+        -   企业商户获取指定额度卡支付链接：`GetWeBusinessPayEmployeeQuotaCardPaymentUrl`
+
+        -   发起门店主体匹配：`CreateWeBusinessPayStoreEntityMatch`
+
+        -   查询门店主体匹配结果：`GetWeBusinessPayStoreEntityMatchByBatchId`
+
+        -   申请企业商户企业支付业务账单：`GetWeBusinessPayBillTradeBill`
+
+        -   申请企业商户企业支付出资凭证：`GetWeBusinessPayBillProof`
 
 </details>
 

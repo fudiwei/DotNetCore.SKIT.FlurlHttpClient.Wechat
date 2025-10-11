@@ -1,0 +1,11 @@
+{
+    "sp_mchid": "12341234",
+    "out_batch_id": "batch12345678",
+    "match_details": [
+        {
+            "organization_code": "91110000710926094P",
+            "store_name": "微信小店",
+            "product_type": "CODE_PAY"
+        }
+    ]
+}

@@ -1,0 +1,13 @@
+{
+    "sp_mchid": "12341234",
+    "out_operation_id": "operation12345678",
+    "operation_id": "1030000071201xxxxx",
+    "sub_mchid": "43214321",
+    "start_date": "2025-04-23",
+    "end_date": "2025-04-23",
+    "entity_name": "某某科技有限公司",
+    "proof_id": "proof12345678",
+    "download_url": "https://api.mch.weixin.qq.com/v3/billdownload/file?token=xxx",
+    "created_time": "2023-06-08T10:34:56+08:00",
+    "updated_time": "2023-06-08T10:34:56+08:00"
+}

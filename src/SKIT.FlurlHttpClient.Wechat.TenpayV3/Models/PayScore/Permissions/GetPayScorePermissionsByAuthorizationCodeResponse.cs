@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public DateTimeOffset? AuthorizationCancelTime { get; set; }
 
         /// <summary>
-        /// 获取或设置最近一次解除授权时间。
+        /// 获取或设置最近一次授权时间。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorization_success_time")]
         [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
