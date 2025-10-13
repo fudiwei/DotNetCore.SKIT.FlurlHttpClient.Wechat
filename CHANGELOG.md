@@ -835,6 +835,18 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.15.0 (2025-10-13)
+
+    -   **新增**：新增企业支付额度卡相关接口。
+
+    -   **新增**：新增商家名片会员相关接口。
+
+    -   **新增**：新增摇一摇有优惠商品券相关接口。
+
+    -   **新增**：新增申请修改商家简称相关接口。
+
+    -   **新增**：新增商户管理与交易拦截记录相关接口。
+
 -   Release 3.14.0 (2025-09-24)
 
     -   **新增**：兼容平台证书与公钥灰度切换。（_via_ [Gitee #ICVPX7](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/ICVPX7)）
