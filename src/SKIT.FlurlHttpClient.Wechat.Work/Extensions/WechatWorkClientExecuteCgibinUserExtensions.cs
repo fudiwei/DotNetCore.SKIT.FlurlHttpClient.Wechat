@@ -291,6 +291,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/user/get_userid_by_email 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95895 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinUserGetUserIdByEmailResponse> ExecuteCgibinUserGetUserIdByEmailAsync(this WechatWorkClient client, Models.CgibinUserGetUserIdByEmailRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "user", "get_userid_by_email")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinUserGetUserIdByEmailResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/user/get_active_stat 接口。</para>
         /// <para>
         /// REF: <br/>
