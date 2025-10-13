@@ -690,7 +690,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// </summary>
         [Newtonsoft.Json.JsonProperty("item")]
         [System.Text.Json.Serialization.JsonPropertyName("item")]
-        public Types.NewsItem[]? NewsList { get; set; }
+        public Types.NewsItem[]? NewsItemList { get; set; }
 
         /// <summary>
         /// 获取或设置 VoIP 通话时长（单位：秒）。

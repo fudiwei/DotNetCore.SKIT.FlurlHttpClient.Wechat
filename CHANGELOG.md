@@ -1383,6 +1383,18 @@
 
 <summary>[展开查看]</summary>
 
+-   Release 3.12.0 (2025-10-13)
+
+    -   **新增**：新增通过邮箱获取 UserId 接口。
+
+    -   **新增**：随官方更新企业会话内容存档相关接口模型。（_via_ [Gitee #ID1C9X](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/ID1C9X)）
+
+    -   **新增**：随官方更新更新模版卡片消息接口模型。
+
+    -   **新增**：随官方更新企业互联获取下级或下游企业 AccessToken 接口模型。
+
+    -   **修复**：修复获取企业授权信息接口模型定义错误。（_via_ [Gitee #16](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/16)）
+
 -   Release 3.11.0 (2025-09-16)
 
     -   **新增**：新增收银台收款工具相关接口。（_via_ [Gitee #ICWM8Q](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/ICWM8Q)）
