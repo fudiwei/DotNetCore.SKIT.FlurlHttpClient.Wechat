@@ -1,0 +1,9 @@
+{
+    "out_request_no": "BUDGET1212512514",
+    "update_mode": "MAX_COUNT",
+    "current_max_count": 1,
+    "target_max_count": 1,
+    "current_max_count_per_day": 1,
+    "target_max_count_per_day": 1,
+    "brand_id": "120344"
+}

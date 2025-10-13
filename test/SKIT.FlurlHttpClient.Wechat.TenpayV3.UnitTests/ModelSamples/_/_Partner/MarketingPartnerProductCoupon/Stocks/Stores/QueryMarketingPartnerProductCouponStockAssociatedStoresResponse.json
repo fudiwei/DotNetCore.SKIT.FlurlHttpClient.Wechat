@@ -1,0 +1,9 @@
+{
+    "total_count": 500,
+    "store_list": [
+        {
+            "store_id": "100000001"
+        }
+    ],
+    "next_page_token": "MTIzNDUK"
+}

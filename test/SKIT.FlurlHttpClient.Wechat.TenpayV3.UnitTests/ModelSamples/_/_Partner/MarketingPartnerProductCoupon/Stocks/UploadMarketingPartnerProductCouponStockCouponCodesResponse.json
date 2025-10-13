@@ -1,0 +1,19 @@
+{
+    "total_count": 1,
+    "success_code_list": [
+        "vCode_8888888888"
+    ],
+    "failed_code_list": [
+        {
+            "coupon_code": "vCode_1234567890",
+            "code": "SYSTEM_ERROR",
+            "message": "系统失败"
+        }
+    ],
+    "already_exist_code_list": [
+        "vCode_1111111111"
+    ],
+    "duplicate_code_list": [
+        "vCode_8888888888"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "product_coupon_id": "1002323",
+    "stock_id": "100232301",
+    "appid": "wx233544546545989",
+    "use_time": "2025-07-24T00:00+08:00",
+    "associated_order_info": {
+        "transaction_id": "4200000000123456789123456789",
+        "out_trade_no": "trade_no_20250724123456",
+        "mchid": "1234567890",
+        "sub_mchid": "1234567890"
+    },
+    "out_request_no": "MCHUSE202003101234",
+    "sequential_coupon_index": 0,
+    "brand_id": "120344"
+}

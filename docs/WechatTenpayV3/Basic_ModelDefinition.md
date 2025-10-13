@@ -52,6 +52,7 @@
 |  √  |        经营能力：还款支付         |      合作伙伴       |                   |
 |  √  |         运营工具：代金券          | 直连商户 & 合作伙伴 |                   |
 |  √  |         运营工具：商家券          | 直连商户 & 合作伙伴 |                   |
+|  √  |         运营工具：商品券          |      合作伙伴       |                   |
 |  √  |         运营工具：消费金          |      直连商户       |                   |
 |  √  |        运营工具：委托营销         | 直连商户 & 合作伙伴 |                   |
 |  √  |        运营工具：支付有礼         | 直连商户 & 合作伙伴 |                   |
@@ -1228,6 +1229,64 @@
         -   图片上传：`UploadMarketingMediaImage`
 
         -   向用户发放商品券：`SendMarketingBusifavorProductCoupon`
+
+    -   商品券（摇一摇有优惠）
+
+        -   商品券管理
+
+            -   创建商品券：`CreateMarketingPartnerProductCoupon`
+
+            -   修改商品券：`UpdateMarketingPartnerProductCoupon`
+
+            -   查询商品券：`GetMarketingPartnerProductCouponByProductCouponId`
+
+            -   失效商品券：`DeactivateMarketingPartnerProductCoupon`
+
+        -   商户券回调通知配置
+
+            -   获取商品券事件通知地址：`GetMarketingPartnerProductCouponNotifyConfig`
+
+            -   设置商品券事件通知地址：`UpdateMarketingPartnerProductCouponNotifyConfig`
+
+        -   商品券批次管理
+
+            -   添加商品券批次：`CreateMarketingPartnerProductCouponStock`
+
+            -   查询商品券批次列表：`QueryMarketingPartnerProductCouponStocks`
+
+            -   查询商品券指定批次：`GetMarketingPartnerProductCouponStockByStockId`
+
+            -   修改商品券批次：`UpdateMarketingPartnerProductCouponStock`
+
+            -   修改商品券批次发放预算：`UpdateMarketingPartnerProductCouponStockBudget`
+
+            -   失效商品券批次：`DeactivateMarketingPartnerProductCouponStock`
+
+            -   批次关联门店：`AssociateMarketingPartnerProductCouponStockToStores`
+
+            -   查询批次关联门店列表：`QueryMarketingPartnerProductCouponStockAssociatedStores`
+
+            -   批次取消关联门店：`DisassociateMarketingPartnerProductCouponStockFromStores`
+
+            -   预上传券 Code：`UploadMarketingPartnerProductCouponStockCouponCodes`
+
+        -   用户商品券管理
+
+            -   向用户发放商品券：`SendMarketingPartnerProductCouponUserCoupon`
+
+            -   确认发放用户商品券：`ConfirmMarketingPartnerProductCouponUserCoupon`
+
+            -   查询用户商品券详情：`GetMarketingPartnerProductCouponUserCouponByCouponCode`
+
+            -   指定券状态查询用户商品券列表：`QueryMarketingPartnerProductCouponUserCoupons`
+
+            -   核销用户商品券：`UseMarketingPartnerProductCouponUserCoupon`
+
+            -   失效用户商品券：`DeactivateMarketingPartnerProductCouponUserCoupon`
+
+            -   退券：`ReturnMarketingPartnerProductCouponUserCoupon`
+
+        -   图片上传：`UploadMarketingPartnerProductCouponMediaImage`
 
     -   委托营销
 

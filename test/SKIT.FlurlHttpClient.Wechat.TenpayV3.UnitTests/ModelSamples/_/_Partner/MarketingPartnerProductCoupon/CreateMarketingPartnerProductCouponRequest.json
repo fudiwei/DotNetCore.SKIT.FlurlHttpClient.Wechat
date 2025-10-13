@@ -1,0 +1,83 @@
+{
+    "out_product_no": "Product_1234567890",
+    "scope": "ALL",
+    "usage_mode": "SINGLE",
+    "display_info": {
+        "name": "全场满100立打8折",
+        "image_url": "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx",
+        "background_url": "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx",
+        "detail_image_url_list": [
+            "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx"
+        ]
+    },
+    "single_usage_info": {
+        "discount_coupon": {
+            "threshold": 10000,
+            "percent_off": 20
+        }
+    },
+    "type": "DISCOUNT",
+    "stock": {
+        "remark": "8月工作日有效批次",
+        "coupon_code_mode": "UPLOAD",
+        "stock_send_rule": {
+            "max_count": 10000000,
+            "max_count_per_user": 1
+        },
+        "single_usage_rule": {
+            "coupon_available_period": {
+                "available_begin_time": "2025-08-01T00:00:00+08:00",
+                "available_end_time": "2025-08-31T23:59:59+08:00",
+                "available_days": 30,
+                "weekly_available_period": {
+                    "day_list": [
+                        "MONDAY",
+                        "TUESDAY",
+                        "WEDNESDAY",
+                        "THURSDAY",
+                        "FRIDAY"
+                    ]
+                }
+            }
+        },
+        "usage_rule_display_info": {
+            "coupon_usage_method_list": [
+                "OFFLINE",
+                "MINI_PROGRAM",
+                "PAYMENT_CODE"
+            ],
+            "mini_program_appid": "wx1234567890",
+            "mini_program_path": "/pages/index/product",
+            "usage_description": "工作日可用",
+            "coupon_available_store_info": {
+                "description": "所有门店可用，可使用小程序查看门店列表",
+                "mini_program_appid": "wx1234567890",
+                "mini_program_path": "/pages/index/store-list"
+            }
+        },
+        "coupon_display_info": {
+            "code_display_mode": "QRCODE",
+            "background_color": "Color010",
+            "entrance_mini_program": {
+                "appid": "wx1234567890",
+                "path": "/pages/index/product",
+                "entrance_wording": "欢迎选购",
+                "guidance_wording": "获取更多优惠"
+            },
+            "entrance_official_account": {
+                "appid": "wx1234567890"
+            },
+            "entrance_finder": {
+                "finder_id": "gh_12345678",
+                "finder_video_id": "UDFsdf24df34dD456Hdf34",
+                "finder_video_cover_image_url": "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx"
+            }
+        },
+        "store_scope": "NONE",
+        "notify_config": {
+            "notify_appid": "wx4fd12345678"
+        }
+    },
+    "out_request_no": "12345_20250101_A3489",
+    "brand_id": "120344"
+}

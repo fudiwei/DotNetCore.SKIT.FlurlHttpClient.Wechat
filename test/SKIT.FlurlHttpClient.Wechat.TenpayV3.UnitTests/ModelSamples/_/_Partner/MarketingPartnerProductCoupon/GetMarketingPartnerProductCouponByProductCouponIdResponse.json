@@ -1,0 +1,53 @@
+{
+    "product_coupon_id": "1002323",
+    "scope": "ALL",
+    "type": "NORMAL",
+    "usage_mode": "SEQUENTIAL",
+    "single_usage_info": {
+        "normal_coupon": {
+            "threshold": 10000,
+            "discount_amount": 100
+        },
+        "discount_coupon": {
+            "threshold": 10000,
+            "percent_off": 30
+        }
+    },
+    "sequential_usage_info": {
+        "type": "EQUAL",
+        "count": 10,
+        "available_days": 10,
+        "interval_days": 1
+    },
+    "display_info": {
+        "name": "全场满100可减10元",
+        "image_url": "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx",
+        "background_url": "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx",
+        "detail_image_url_list": [
+            "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx"
+        ],
+        "original_price": 10000,
+        "combo_package_list": [
+            {
+                "name": "咖啡2选1",
+                "pick_count": 3,
+                "choice_list": [
+                    {
+                        "name": "美式",
+                        "price": 10000,
+                        "count": 2,
+                        "image_url": "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx",
+                        "mini_program_appid": "wx4fd12345678",
+                        "mini_program_path": "/pages/index/index"
+                    }
+                ]
+            }
+        ]
+    },
+    "out_product_no": "Product_1234567890",
+    "state": "AUDITING",
+    "deactivate_request_no": "1002600620019090123143254436",
+    "deactivate_time": "2025-06-20T13:29:35+08:00",
+    "deactivate_reason": "商品已下架",
+    "brand_id": "120344"
+}

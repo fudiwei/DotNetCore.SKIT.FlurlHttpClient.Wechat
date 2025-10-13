@@ -1,0 +1,140 @@
+{
+    "product_coupon_id": "200000001",
+    "stock_id": "123456789",
+    "remark": "满减券",
+    "coupon_code_mode": "UPLOAD",
+    "coupon_code_count_info": {
+        "total_count": 10000,
+        "available_count": 999
+    },
+    "stock_send_rule": {
+        "max_count": 10000000,
+        "max_count_per_day": 10000,
+        "max_count_per_user": 1
+    },
+    "single_usage_rule": {
+        "coupon_available_period": {
+            "available_begin_time": "2025-01-01T00:00:00+08:00",
+            "available_end_time": "2025-10-01T00:00:00+08:00",
+            "available_days": 10,
+            "wait_days_after_receive": 1,
+            "weekly_available_period": {
+                "day_list": [
+                    "MONDAY"
+                ],
+                "day_period_list": [
+                    {
+                        "begin_time": 60,
+                        "end_time": 86399
+                    }
+                ]
+            },
+            "irregular_available_period_list": [
+                {
+                    "begin_time": "2025-01-01T00:00:00+08:00",
+                    "end_time": "2025-10-01T00:00:00+08:00"
+                }
+            ]
+        },
+        "normal_coupon": {
+            "threshold": 10000,
+            "discount_amount": 100
+        },
+        "discount_coupon": {
+            "threshold": 10000,
+            "percent_off": 30
+        },
+        "exchange_coupon": {
+            "threshold": 10000,
+            "exchange_price": 100
+        }
+    },
+    "sequential_usage_rule": {
+        "coupon_available_period": {
+            "available_begin_time": "2025-01-01T00:00:00+08:00",
+            "available_end_time": "2025-10-01T00:00:00+08:00",
+            "wait_days_after_receive": 1,
+            "weekly_available_period": {
+                "day_list": [
+                    "MONDAY"
+                ],
+                "day_period_list": [
+                    {
+                        "begin_time": 60,
+                        "end_time": 86399
+                    }
+                ]
+            },
+            "irregular_available_period_list": [
+                {
+                    "begin_time": "2025-01-01T00:00:00+08:00",
+                    "end_time": "2025-10-01T00:00:00+08:00"
+                }
+            ]
+        },
+        "normal_coupon_list": [
+            {
+                "threshold": 10000,
+                "discount_amount": 100
+            }
+        ],
+        "discount_coupon_list": [
+            {
+                "threshold": 10000,
+                "percent_off": 30
+            }
+        ],
+        "exchange_coupon_list": [
+            {
+                "threshold": 10000,
+                "exchange_price": 100
+            }
+        ],
+        "special_first": false
+    },
+    "usage_rule_display_info": {
+        "coupon_usage_method_list": [
+            "MINI_PROGRAM"
+        ],
+        "mini_program_appid": "wx1234567890",
+        "mini_program_path": "/pages/index/product",
+        "app_path": "https://www.example.com/jump-to-app",
+        "usage_description": "全场可用",
+        "coupon_available_store_info": {
+            "description": "可在上海市区的所有门店使用，详细列表参考小程序内信息为准",
+            "mini_program_appid": "wx1234567890",
+            "mini_program_path": "/pages/index/store-list"
+        }
+    },
+    "coupon_display_info": {
+        "code_display_mode": "QRCODE",
+        "background_color": "Color010",
+        "entrance_mini_program": {
+            "appid": "wx1234567890",
+            "path": "/pages/index/product",
+            "entrance_wording": "欢迎选购",
+            "guidance_wording": "获取更多优惠"
+        },
+        "entrance_official_account": {
+            "appid": "wx1234567890"
+        },
+        "entrance_finder": {
+            "finder_id": "gh_12345678",
+            "finder_video_id": "UDFsdf24df34dD456Hdf34",
+            "finder_video_cover_image_url": "https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx"
+        }
+    },
+    "notify_config": {
+        "notify_appid": "wx4fd12345678"
+    },
+    "store_scope": "SPECIFIC",
+    "sent_count_info": {
+        "total_count": 100,
+        "today_count": 10
+    },
+    "state": "SENDING",
+    "deactivate_request_no": "1002600620019090123143254436",
+    "deactivate_time": "2025-01-01T00:00+08:00",
+    "deactivate_reason": "批次信息有误，重新创建",
+    "brand_id": "120344"
+}

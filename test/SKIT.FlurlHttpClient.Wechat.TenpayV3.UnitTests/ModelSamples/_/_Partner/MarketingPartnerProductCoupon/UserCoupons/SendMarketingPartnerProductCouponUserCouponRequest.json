@@ -1,0 +1,17 @@
+{
+    "product_coupon_id": "200000001",
+    "stock_id": "100232301",
+    "coupon_code": "123446565767",
+    "appid": "wx233544546545989",
+    "send_request_no": "34657_20250101_123456",
+    "attach": "example_attach",
+    "brand_id": "120344",
+    "coupon_tag_info": {
+        "coupon_tag_list": [
+            "MEMBER"
+        ],
+        "member_tag_info": {
+            "member_card_id": "MemberCardId_1234567890"
+        }
+    }
+}
