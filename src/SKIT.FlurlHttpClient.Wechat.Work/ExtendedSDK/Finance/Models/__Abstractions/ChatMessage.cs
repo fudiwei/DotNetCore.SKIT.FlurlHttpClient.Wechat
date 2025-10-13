@@ -932,6 +932,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         public int FileSize { get; set; }
     }
 
+    public class ExternalRedPacketMessage : RedPacketMessage
+    {
+    }
+
     public class ChannelsFeedMessage : ChatMessageBase
     {
         /// <summary>

@@ -11,6 +11,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
         [Fact(DisplayName = "代码质量分析")]
         public void CodeAnalyze()
         {
+            Assert.Multiple(
+                CodeAnalyze_BaseSDK
+            );
+        }
+
+        private void CodeAnalyze_BaseSDK()
+        {
             // NOTICE:
             //   如果 Visual Studio 遇到 “缺少 SKIT.FlurlHttpClient.Tools.CodeAnalyzer 包” 的错误，
             //   请参考此 Issue：https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient/issues/8
@@ -46,6 +53,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     SdkWebhookEventDeclarationNamespace = "SKIT.FlurlHttpClient.Wechat.Work.Events",
                     ProjectSourceRootDirectory = Path.Combine(projdir, "./src/SKIT.FlurlHttpClient.Wechat.Work/"),
                     ProjectTestRootDirectory = Path.Combine(projdir, "./test/SKIT.FlurlHttpClient.Wechat.Work.UnitTests/"),
+                    ProjectTestRequestModelSerializationSampleSubDirectory = "ModelSamples/_/",
+                    ProjectTestResponseModelSerializationSampleSubDirectory = "ModelSamples/_/",
+                    ProjectTestWebhookEventSerializationSampleSubDirectory = "EventSamples/_/",
                     ThrowOnNotFoundRequestModelClassCodeFiles = true,
                     ThrowOnNotFoundResponseModelClassCodeFiles = true,
                     ThrowOnNotFoundExecutingExtensionClassCodeFiles = true,

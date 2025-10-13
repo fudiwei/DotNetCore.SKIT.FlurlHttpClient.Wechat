@@ -105,6 +105,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models
             {
             }
 
+            public class ExternalRedPacketMessage : Abstractions.ExternalRedPacketMessage
+            {
+            }
+
             public class ChannelsFeedMessage : Abstractions.ChannelsFeedMessage
             {
             }
