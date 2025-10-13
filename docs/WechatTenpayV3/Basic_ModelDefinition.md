@@ -1574,13 +1574,21 @@
 
         -   视频上传：`UploadMerchantMediaVideo`
 
-    -   修改主体信息
+    -   修改商户主体信息
 
         -   提交申请单：`CreateMerchantAlterApplyMerchantSubjectAlterApplyment`
 
         -   撤销申请单：`RevokeMerchantAlterApplyMerchantSubjectAlterApplyment`
 
         -   查询申请单状态：`GetMerchantAlterApplyMerchantSubjectAlterApplymentByApplymentId` / `GetMerchantAlterApplyMerchantSubjectAlterApplymentByOutRequestNumber`
+
+    -   修改商户简称
+
+        -   提交申请单：`CreateMerchantAlterApplyMerchantNameAlterApplyment`
+
+        -   撤销申请单：`RevokeMerchantAlterApplyMerchantNameAlterApplyment`
+
+        -   查询申请单：`GetMerchantAlterApplyMerchantNameAlterApplymentByApplymentId` / `GetMerchantAlterApplyMerchantNameAlterApplymentByOutRequestNumber`
 
     -   商户开户意愿确认
 

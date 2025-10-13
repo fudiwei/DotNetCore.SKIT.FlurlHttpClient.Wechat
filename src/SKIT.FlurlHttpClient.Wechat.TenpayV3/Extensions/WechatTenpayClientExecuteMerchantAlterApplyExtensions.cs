@@ -98,6 +98,96 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
         #endregion
 
+        #region MerchantName
+        /// <summary>
+        /// <para>异步调用 [POST] /mchalterapply/merchantnamealterapplyment 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016166071 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateMerchantAlterApplyMerchantNameAlterApplymentResponse> ExecuteCreateMerchantAlterApplyMerchantNameAlterApplymentAsync(this WechatTenpayClient client, Models.CreateMerchantAlterApplyMerchantNameAlterApplymentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "mchalterapply", "merchantnamealterapplyment");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMerchantAlterApplyMerchantNameAlterApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /mchalterapply/merchantnamealterapplyment/{apply_id}/revoke 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016166090 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.RevokeMerchantAlterApplyMerchantNameAlterApplymentResponse> ExecuteRevokeMerchantAlterApplyMerchantNameAlterApplymentAsync(this WechatTenpayClient client, Models.RevokeMerchantAlterApplyMerchantNameAlterApplymentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "mchalterapply", "merchantnamealterapplyment", request.ApplymentId, "revoke");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.RevokeMerchantAlterApplyMerchantNameAlterApplymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /mchalterapply/merchantnamealterapplyment/merchant/{sub_mchid}/out-request-no/{out_request_no} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016166085 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetMerchantAlterApplyMerchantNameAlterApplymentByOutRequestNumberResponse> ExecuteGetMerchantAlterApplyMerchantNameAlterApplymentByOutRequestNumberAsync(this WechatTenpayClient client, Models.GetMerchantAlterApplyMerchantNameAlterApplymentByOutRequestNumberRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "merchantnamealterapplyment", "merchant", request.SubMerchantId, "out-request-no", request.OutRequestNumber);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantAlterApplyMerchantNameAlterApplymentByOutRequestNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /mchalterapply/merchantnamealterapplyment/{apply_id} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016166074 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetMerchantAlterApplyMerchantNameAlterApplymentByApplymentIdResponse> ExecuteGetMerchantAlterApplyMerchantNameAlterApplymentByApplymentIdAsync(this WechatTenpayClient client, Models.GetMerchantAlterApplyMerchantNameAlterApplymentByApplymentIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "mchalterapply", "merchantnamealterapplyment", request.ApplymentId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMerchantAlterApplyMerchantNameAlterApplymentByApplymentIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region MerchantSubject
         /// <summary>
         /// <para>异步调用 [POST] /mchalterapply/mchsubjectalterapplyment 接口。</para>
