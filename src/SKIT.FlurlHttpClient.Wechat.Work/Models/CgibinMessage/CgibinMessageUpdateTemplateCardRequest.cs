@@ -82,11 +82,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public string ResponseCode { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置原始卡片的任务 ID。
+        /// 获取或设置是否开启 ID 转译。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("original_task_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("original_task_id")]
-        public string? OriginalTaskId { get; set; }
+        [Newtonsoft.Json.JsonProperty("enable_id_trans")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("enable_id_trans")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+        public bool? IsEnableIdTranslation { get; set; }
 
         /// <summary>
         /// 获取或设置按钮信息。

@@ -1,15 +1,15 @@
 {
-    "userids": ["userid1", "userid2"],
-    "partyids": [2, 3],
-    "tagids": [44, 55],
+    "userids": [ "userid1", "userid2" ],
+    "partyids": [ 2, 3 ],
+    "tagids": [ 44, 55 ],
     "atall": 0,
     "agentid": 1,
     "response_code": "response_code",
-    "original_task_id": "original_task_id",
     "button": {
         "task_id": "taskid",
         "replace_name": "replace_name"
     },
+    "enable_id_trans": 1,
     "template_card": {
         "card_type": "text_notice",
         "source": {

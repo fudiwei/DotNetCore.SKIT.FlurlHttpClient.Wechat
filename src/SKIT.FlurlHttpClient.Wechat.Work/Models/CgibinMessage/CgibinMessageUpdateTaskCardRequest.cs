@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -27,6 +27,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("agentid")]
         [System.Text.Json.Serialization.JsonPropertyName("agentid")]
         public int? AgentId { get; set; }
+
+        /// <summary>
+        /// 获取或设置原始卡片的任务 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("original_task_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("original_task_id")]
+        public string? OriginalTaskId { get; set; }
 
         /// <summary>
         /// 获取或设置替换文案。
