@@ -254,6 +254,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         }
 
         /// <summary>
+        /// <para>异步调用 [GET] /marketing/favor/stocks/{stock_id}/use-flow-by-day 接口。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetMarketingFavorStockUseFlowByDayResponse> ExecuteGetMarketingFavorStockUseFlowByDayAsync(this WechatTenpayClient client, Models.GetMarketingFavorStockUseFlowByDayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "use-flow-by-day")
+                .SetQueryParam("bill_date", request.BillDateString);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingFavorStockUseFlowByDayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [GET] /marketing/favor/stocks/{stock_id}/refund-flow 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -274,6 +293,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "refund-flow");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingFavorStockRefundFlowResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /marketing/favor/stocks/{stock_id}/refund-flow-by-day 接口。</para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetMarketingFavorStockRefundFlowByDayResponse> ExecuteGetMarketingFavorStockRefundFlowByDayAsync(this WechatTenpayClient client, Models.GetMarketingFavorStockRefundFlowByDayRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "favor", "stocks", request.StockId, "refund-flow-by-day")
+                .SetQueryParam("bill_date", request.BillDateString);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingFavorStockRefundFlowByDayResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
