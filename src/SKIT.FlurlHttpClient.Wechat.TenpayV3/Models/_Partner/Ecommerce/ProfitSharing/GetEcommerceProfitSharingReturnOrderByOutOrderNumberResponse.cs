@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -41,6 +41,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("return_no")]
         [System.Text.Json.Serialization.JsonPropertyName("return_no")]
         public string ReturnId { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置微信支付订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("transaction_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置回退商户号。

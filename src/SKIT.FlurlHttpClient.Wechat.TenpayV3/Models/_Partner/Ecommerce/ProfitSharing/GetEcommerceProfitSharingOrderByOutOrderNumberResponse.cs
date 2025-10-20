@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -12,18 +12,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Receiver
             {
                 /// <summary>
-                /// 获取或设置分账接收商户号。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("receiver_mchid")]
-                [System.Text.Json.Serialization.JsonPropertyName("receiver_mchid")]
-                public string MerchantId { get; set; } = default!;
-
-                /// <summary>
                 /// 获取或设置分账接收方类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("type")]
                 [System.Text.Json.Serialization.JsonPropertyName("type")]
                 public string Type { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置分账接收商户号。
+                /// </summary>
+                [Obsolete("相关接口或字段于 2025-09-29 下线。")]
+                [Newtonsoft.Json.JsonProperty("receiver_mchid")]
+                [System.Text.Json.Serialization.JsonPropertyName("receiver_mchid")]
+                public string? MerchantId { get; set; }
 
                 /// <summary>
                 /// 获取或设置分账接收方账户。
@@ -45,6 +46,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("description")]
                 [System.Text.Json.Serialization.JsonPropertyName("description")]
                 public string Description { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置分账明细单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("detail_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("detail_id")]
+                public string DetailId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置分账结果。

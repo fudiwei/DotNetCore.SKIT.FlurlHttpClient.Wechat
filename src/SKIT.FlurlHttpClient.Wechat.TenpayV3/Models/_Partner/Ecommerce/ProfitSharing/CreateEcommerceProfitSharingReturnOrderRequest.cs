@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /ecommerce/profitsharing/returnorders 接口的请求。</para>
@@ -32,6 +32,13 @@
         [Newtonsoft.Json.JsonProperty("out_return_no")]
         [System.Text.Json.Serialization.JsonPropertyName("out_return_no")]
         public string OutReturnNumber { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置微信支付订单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("transaction_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
+        public string? TransactionId { get; set; }
 
         /// <summary>
         /// 获取或设置回退商户号。
