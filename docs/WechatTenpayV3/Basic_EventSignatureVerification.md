@@ -4,7 +4,9 @@
 
 > 请先自行阅读：
 >
-> [《微信支付开发者文档 - 开发指南：签名验证》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay4_1.shtml)
+> [《微信支付文档中心 - 开发须知 / 如何验签 / 如何使用平台证书验签》](https://pay.weixin.qq.com/doc/v3/merchant/4013053420)
+>
+> [《微信支付文档中心 - 开发须知 / 如何验签 / 如何使用微信支付公钥验签》](https://pay.weixin.qq.com/doc/v3/merchant/4013053249)
 >
 > [《微信支付官方公告 - 关于新商户调用接口验签方式变更通知》](https://developers.weixin.qq.com/community/pay/doc/0002c6a7cf438818df52145b863c01)
 
@@ -20,8 +22,6 @@
 如果你在开发过程出现验签不通过的情况，请先检查是否混淆了这两个证书。
 
 🔥 另，2024 年 10 月后新注册的微信商户已默认不再提供平台证书，取而代之的是平台公钥。但二者的验签流程基本相同。更多内容请见本章下文的《适配微信支付新商户的平台公钥认证方式》一节。
-
-关于证书的更多注意事项，请参阅[《微信支付开发者文档 - 常见问题：证书相关》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay7_0.shtml)
 
 ---
 

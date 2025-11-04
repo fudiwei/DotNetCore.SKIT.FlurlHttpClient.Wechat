@@ -4,11 +4,11 @@
 
 > 请先自行阅读：
 >
-> [《微信支付开发者文档 - 平台证书：获取平台证书列表》](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay5_1.shtml)
->
-> [《微信支付开发者文档 - 开发指南：敏感信息加解密》](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
->
 > [《微信支付官方公告 - 关于新商户调用接口验签方式变更通知》](https://developers.weixin.qq.com/community/pay/doc/0002c6a7cf438818df52145b863c01)
+>
+> [《微信支付文档中心 - 开发须知 / 如何加解密敏感字段 / 如何使用微信支付公钥加密敏感字段》](https://pay.weixin.qq.com/doc/v3/merchant/4013053257)
+>
+> [《微信支付文档中心 - 开发须知 / 如何加解密敏感字段 / 如何使用平台证书加密敏感字段》](https://pay.weixin.qq.com/doc/v3/merchant/4013053264)
 
 ---
 
@@ -20,8 +20,6 @@
 -   **平台证书**用于加密请求中的敏感信息字段，需要在程序运行时实时通过接口动态获取（即 `QueryCertificatesAsync` 方法，注意证书内容需先经 AES-GCM 解密一次）。
 
 如果你在开发过程中出现请求加密失败、服务器响应私钥解密失败的情况，请先检查是否混淆了这两个证书。
-
-关于证书的更多注意事项，请参阅[《微信支付开发者文档 - 常见问题：证书相关》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay7_0.shtml)
 
 🔥 另，2024 年 10 月后新注册的微信商户已默认不再提供平台证书，取而代之的是平台公钥。但二者的加密流程基本相同。更多内容请见本章下文的《适配微信支付新商户的平台公钥认证方式》一节。
 

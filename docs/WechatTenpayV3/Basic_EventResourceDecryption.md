@@ -4,7 +4,7 @@
 
 > 请先自行阅读：
 >
-> [《微信支付开发者文档 - 开发指南：证书和回调报文解密》](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_2.shtml)
+> [《微信支付文档中心 - 开发须知 / 如何解密微信支付回调报文》](https://pay.weixin.qq.com/doc/v3/merchant/4012071382)
 
 ---
 

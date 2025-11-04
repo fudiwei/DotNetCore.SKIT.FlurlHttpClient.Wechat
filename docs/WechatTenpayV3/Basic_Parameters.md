@@ -4,11 +4,11 @@
 
 > 请先自行阅读：
 >
-> [《微信支付开发者文档 - 基础支付：JSAPI 调起支付 API》](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_1_4.shtml)
+> [《微信支付文档中心 - 开发须知 / 如何签名 / APP 调起支付签名》](https://pay.weixin.qq.com/doc/v3/merchant/4012365340)
 >
-> [《微信支付开发者文档 - 基础支付：APP 调起支付 API》](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_2_4.shtml)
+> [《微信支付文档中心 - 开发须知 / 如何签名 / JSAPI 调起支付签名》](https://pay.weixin.qq.com/doc/v3/merchant/4012365339)
 >
-> [《微信支付开发者文档 - 基础支付：小程序调起支付 API》](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_4.shtml)
+> [《微信支付文档中心 - 开发须知 / 如何签名 / 小程序调起支付签名》](https://pay.weixin.qq.com/doc/v3/merchant/4012365341)
 
 你可根据官方文档的规则利用本库提供的 `RSAUtility` 工具类自行进行签名生成。
 

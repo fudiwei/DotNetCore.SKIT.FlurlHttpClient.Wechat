@@ -4,9 +4,7 @@
 
 > 请先自行阅读：
 >
-> [《微信支付开发者文档 - 证书/密钥/签名介绍：私钥和证书 - 声明所使用的证书》](https://pay.weixin.qq.com/wiki/doc/apiv3/wechatpay/wechatpay3_1.shtml#part-3)
->
-> [《微信支付开发者文档 - 常见问题：证书相关 - 如何查看证书序列号？》](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay7_0.shtml#part-5)
+> [《微信支付文档中心 - 开发须知 / 开发参数申请和配置 / 申请商户 API 证书》](https://pay.weixin.qq.com/doc/v3/merchant/4012072428)
 
 请开发者按上面参考阅读给出的方法自行查看证书序列号。
 

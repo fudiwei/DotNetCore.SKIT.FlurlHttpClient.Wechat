@@ -4,9 +4,9 @@
 
 > 请先自行阅读：
 >
-> [《微信支付开发者文档 - 证书/密钥/签名介绍：API v3 密钥》](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay3_2.shtml)
+> [《微信支付文档中心 - 开发须知 / 开发参数申请和配置 / 配置 APIv3 密钥》](https://pay.weixin.qq.com/doc/v3/merchant/4012072195)
 >
-> [《微信支付开发者文档 - 开发指南：敏感信息加解密》](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/wechatpay/wechatpay4_3.shtml)
+> [《微信支付文档中心 - 开发须知 / 如何加解密敏感字段 / 如何使用 API 证书解密敏感字段》](https://pay.weixin.qq.com/doc/v3/merchant/4013053265)
 
 ---
 
