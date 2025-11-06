@@ -6,6 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /combine-transactions/jsapi 接口的请求。</para>
     /// </summary>
+    [WechatTenpaySensitive]
     public class CreateCombineTransactionJsapiRequest : WechatTenpayRequest
     {
         public static class Types
@@ -19,6 +20,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             }
 
             public class Scene : CreateCombineTransactionAppRequest.Types.Scene
+            {
+            }
+
+            public class Subsidy : CreateCombineTransactionAppRequest.Types.Subsidy
             {
             }
         }
@@ -96,5 +101,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("trade_scenario")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scenario")]
         public string? TradeScenario { get; set; }
+
+        /// <summary>
+        /// 获取或设置贴息信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("subsidy_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("subsidy_info")]
+        public Types.Subsidy? Subsidy { get; set; }
     }
 }

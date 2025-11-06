@@ -14,6 +14,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
             }
 
+            public class Payer : CreateCombineTransactionAppRequest.Types.Payer
+            {
+            }
+
             public class Scene : CreateCombineTransactionAppRequest.Types.Scene
             {
             }
@@ -71,6 +75,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("sub_orders")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_orders")]
         public IList<Types.SubOrder> SubOrderList { get; set; } = new List<Types.SubOrder>();
+
+        /// <summary>
+        /// 获取或设置支付者信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("combine_payer_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("combine_payer_info")]
+        public Types.Payer? CombinePayer { get; set; }
 
         /// <summary>
         /// 获取或设置场景信息。

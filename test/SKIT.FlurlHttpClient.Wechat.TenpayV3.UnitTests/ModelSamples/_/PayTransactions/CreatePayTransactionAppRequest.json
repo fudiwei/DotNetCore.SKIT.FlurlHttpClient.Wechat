@@ -1,4 +1,4 @@
-﻿{
+{
     "mchid": "1900006XXX",
     "out_trade_no": "APP1217752501201407033233368018",
     "appid": "wxb4ba3c02aa476XXX",
@@ -7,5 +7,22 @@
     "amount": {
         "total": 1,
         "currency": "CNY"
+    },
+    "subsidy_info": {
+        "subsidy_detail": [
+            {
+                "subsidy_period_type": "PERIOD",
+                "subsidy_plan": [
+                    {
+                        "subsidy_installment_num": 3,
+                        "subsidy_percent": 100
+                    },
+                    {
+                        "subsidy_installment_num": 6,
+                        "subsidy_percent": 100
+                    }
+                ]
+            }
+        ]
     }
 }

@@ -180,6 +180,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("goods_detail")]
                 public Types.GoodsDetail[]? GoodsList { get; set; }
             }
+
+            public class Installment
+            {
+                /// <summary>
+                /// 获取或设置是否使用了商户贴息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("use_subsidy")]
+                [System.Text.Json.Serialization.JsonPropertyName("use_subsidy")]
+                public bool IsUseSubsidy { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户实际选择的分期期数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("selected_installment_number")]
+                [System.Text.Json.Serialization.JsonPropertyName("selected_installment_number")]
+                public int SelectedInstallmentNumber { get; set; }
+            }
         }
 
         /// <summary>
@@ -281,5 +298,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("promotion_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
         public Types.Promotion[]? PromotionList { get; set; }
+
+        /// <summary>
+        /// 获取或设置分期信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("installment_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("installment_info")]
+        public Types.Installment? Installment { get; set; }
     }
 }

@@ -41,6 +41,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Settlement : CreatePayTransactionJsapiRequest.Types.Settlement
             {
             }
+
+            public class Subsidy : CreatePayTransactionJsapiRequest.Types.Subsidy
+            {
+            }
         }
 
         /// <summary>
@@ -156,5 +160,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("settle_info")]
         [System.Text.Json.Serialization.JsonPropertyName("settle_info")]
         public Types.Settlement? Settlement { get; set; }
+
+        /// <summary>
+        /// 获取或设置贴息信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("subsidy_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("subsidy_info")]
+        public Types.Subsidy? Subsidy { get; set; }
     }
 }

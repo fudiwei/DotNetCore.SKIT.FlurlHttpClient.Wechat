@@ -172,6 +172,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("device_id")]
                 public string? DeviceId { get; set; }
             }
+
+            public class Installment : GetPayTransactionByOutTradeNumberResponse.Types.Installment
+            {
+            }
         }
 
         /// <summary>
@@ -229,5 +233,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("trade_scenario")]
         [System.Text.Json.Serialization.JsonPropertyName("trade_scenario")]
         public string? TradeScenario { get; set; }
+
+        /// <summary>
+        /// 获取或设置分期信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("installment_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("installment_info")]
+        public Types.Installment? Installment { get; set; }
     }
 }

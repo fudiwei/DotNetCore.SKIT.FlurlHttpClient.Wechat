@@ -4,7 +4,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
     /// <para>表示 TRANSACTION.SUCCESS 通知的数据。</para>
     /// <para>
     /// REF: <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012166360 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012158598 ]]> <br/>
+    /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012167493 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012231898 ]]> <br/>
     /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015124358 ]]>
     /// </para>
@@ -22,6 +24,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
             }
 
             public class Payer : Models.GetCombineTransactionByCombineOutTradeNumberResponse.Types.Payer
+            {
+            }
+
+            public class Installment : Models.GetCombineTransactionByCombineOutTradeNumberResponse.Types.Installment
             {
             }
         }
@@ -74,5 +80,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         [Newtonsoft.Json.JsonProperty("scene_info")]
         [System.Text.Json.Serialization.JsonPropertyName("scene_info")]
         public Types.Scene? Scene { get; set; }
+
+        /// <summary>
+        /// 获取或设置分期信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("installment_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("installment_info")]
+        public Types.Installment? Installment { get; set; }
     }
 }

@@ -1,0 +1,12 @@
+{
+    "sp_mchid": "12345",
+    "sp_appid": "123abc",
+    "sub_mchid": "12345",
+    "sub_appid": "123abc",
+    "user_id": {
+        "user_id_type": "SP_OPENID",
+        "sp_openid": "123456789",
+        "sub_openid": "123456789",
+        "phone_number_hash": "EF879546FFFF"
+    }
+}

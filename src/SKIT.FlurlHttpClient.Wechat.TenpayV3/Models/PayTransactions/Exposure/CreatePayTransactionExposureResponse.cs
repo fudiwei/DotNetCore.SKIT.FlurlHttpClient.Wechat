@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("fqf_exposure")]
         [System.Text.Json.Serialization.JsonPropertyName("fqf_exposure")]
-        public bool IsExposed { get; set; }
+        public bool IsRecommendExposed { get; set; }
 
         /// <summary>
         /// 获取或设置曝光凭证。

@@ -34,6 +34,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
             public class Promotion : Models.GetPayPartnerTransactionByOutTradeNumberResponse.Types.Promotion
             {
             }
+
+            public class Installment : Models.GetPayPartnerTransactionByOutTradeNumberResponse.Types.Installment
+            {
+            }
         }
 
         /// <summary>
@@ -149,5 +153,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         [Newtonsoft.Json.JsonProperty("promotion_detail")]
         [System.Text.Json.Serialization.JsonPropertyName("promotion_detail")]
         public Types.Promotion[]? PromotionList { get; set; }
+
+        /// <summary>
+        /// 获取或设置分期信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("installment_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("installment_info")]
+        public Types.Installment? Installment { get; set; }
     }
 }
