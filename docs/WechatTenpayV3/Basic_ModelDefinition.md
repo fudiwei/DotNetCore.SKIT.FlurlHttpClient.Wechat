@@ -1288,6 +1288,18 @@
 
         -   图片上传：`UploadMarketingPartnerProductCouponMediaImage`
 
+        -   投放计划
+
+            -   创建投放计划：`CreateMarketingPartnerDeliveryPlan`
+
+            -   分页查询投放计划列表：`QueryMarketingPartnerDeliveryPlans`
+
+            -   更新投放计划：`UpdateMarketingPartnerDeliveryPlan`
+
+            -   终止投放计划：`TerminateMarketingPartnerDeliveryPlan`
+
+            -   设置投放计划回调地址：`UpdateMarketingPartnerDeliveryPlanNotifyUrl`
+
     -   委托营销
 
         -   建立合作关系：`BuildMarketingPartnership`

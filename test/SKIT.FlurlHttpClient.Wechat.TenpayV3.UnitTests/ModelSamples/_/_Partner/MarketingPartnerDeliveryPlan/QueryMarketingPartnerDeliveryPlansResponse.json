@@ -1,0 +1,20 @@
+{
+    "total_count": 1234,
+    "plan_list": [
+        {
+            "plan_id": "12000",
+            "plan_name": "冬季优惠投放",
+            "plan_state": "PLAN_CREATED",
+            "delivery_start_time": "2025-01-01T00:00:00+08:00",
+            "delivery_end_time": "2025-01-01T00:00:00+08:00",
+            "stock_id": "123456789",
+            "product_coupon_id": "1000000013",
+            "recommend_word": "天天有惊喜",
+            "brand_id": "40016",
+            "total_count": 11000,
+            "user_limit": 5,
+            "daily_limit": 100,
+            "reuse_coupon_config": false
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "out_request_no": "asdf-1234-40016",
+    "brand_id": "40016",
+    "product_coupon_id": "701146876221757924829193824428",
+    "stock_id": "701246876221757924829194755312",
+    "reuse_coupon_config": false,
+    "plan_name": "冬季饮料投放",
+    "total_count": 1,
+    "user_limit": 1,
+    "daily_limit": 1,
+    "delivery_start_time": "2025-01-01T00:00:00+08:00",
+    "delivery_end_time": "2025-01-01T00:00:00+08:00",
+    "recommend_word": "天天有惊喜"
+}

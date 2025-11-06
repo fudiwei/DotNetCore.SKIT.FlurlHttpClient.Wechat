@@ -1,0 +1,11 @@
+{
+    "modify_content": {
+        "plan_name": "冬季促销",
+        "delivery_end_time": "2025-01-01T00:00:00+08:00",
+        "total_count": 1,
+        "user_limit": 1,
+        "daily_limit": 1,
+        "recommend_word": "冬季优惠"
+    },
+    "out_request_no": "abcd-1234-1000"
+}
