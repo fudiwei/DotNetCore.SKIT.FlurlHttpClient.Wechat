@@ -232,6 +232,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("user_name")]
                 [System.Text.Json.Serialization.JsonPropertyName("user_name")]
                 public string UserName { get; set; } = default!;
+				
+                /// <summary>
+                /// 用户id，匿名填写不返回。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("userid")]
+                [System.Text.Json.Serialization.JsonPropertyName("userid")]
+                public string UserId { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置外部联系人临时 ID。
