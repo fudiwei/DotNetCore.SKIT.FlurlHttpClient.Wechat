@@ -53,6 +53,25 @@
             "f1gHSR": false,
             "fabcde": false
         },
-        "frozen_field_count": 0
+        "frozen_field_count": 0,
+        "color_config": {
+            "conditions": [
+                {
+                    "id": "4840474257",
+                    "type": "VIEW_COLOR_CONDITION_TYPE_CELL",
+                    "color": "chromeAmberLighten_5",
+                    "condition": {
+                        "field_id": "fRCjJz",
+                        "field_type": "FIELD_TYPE_TEXT",
+                        "operator": "OPERATOR_CONTAINS",
+                        "string_value": {
+                            "value": [
+                                "5555"
+                            ]
+                        }
+                    }
+                }
+            ]
+        }
     }
 }

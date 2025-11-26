@@ -228,6 +228,57 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("conditions")]
                                 public Types.Condition[] ConditionList { get; set; } = default!;
                             }
+
+                            public class ColorConfig
+                            {
+                                public static class Types
+                                {
+                                    public class ColorCondition
+                                    {
+                                        public static class Types
+                                        {
+                                            public class Condition : FilterSpec.Types.Condition
+                                            {
+                                            }
+                                        }
+
+                                        /// <summary>
+                                        /// 获取或设置填色 ID。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("id")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("id")]
+                                        public string Id { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置填色类型。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("type")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                                        public string Type { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置颜色。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("color")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("color")]
+                                        public string Color { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置条件信息。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("condition")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("condition")]
+                                        public Types.Condition Condition { get; set; } = default!;
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置填色条件列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("conditions")]
+                                [System.Text.Json.Serialization.JsonPropertyName("conditions")]
+                                public Types.ColorCondition[] ColorConditionList { get; set; } = default!;
+                            }
                         }
 
                         /// <summary>
@@ -278,6 +329,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("frozen_field_count")]
                         [System.Text.Json.Serialization.JsonPropertyName("frozen_field_count")]
                         public int FrozenFieldCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置填色设置。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("color_config")]
+                        [System.Text.Json.Serialization.JsonPropertyName("color_config")]
+                        public Types.ColorConfig? ColorConfig { get; set; }
                     }
                 }
 
