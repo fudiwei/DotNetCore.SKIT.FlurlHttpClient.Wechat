@@ -60,7 +60,7 @@
         "enable_screen_watermark": false,
         "watermark_type": 1,
         "auto_record_type": "none",
-        "participant_join_auto_record": false,
+        "attendee_join_auto_record": false,
         "enable_host_pause_auto_record": false,
         "enable_doc_upload_permission": true,
         "enable_enroll": true,
@@ -103,7 +103,9 @@
             "sub_meetingid": "sub_meetingid",
             "status": 0,
             "start_time": 16888888888,
-            "end_time": 179888888888
+            "end_time": 179888888888,
+            "title": "子会议标题",
+            "repeat_id": "123-cjig-gmeihue"
         }
     ],
     "guests": [
@@ -111,6 +113,19 @@
             "area": "86",
             "phone_number": "135123454321",
             "guest_name": "lisi"
+        }
+    ],
+    "sub_repeat_list": [
+        {
+            "repeat_id": "jmbioe-1249021-bmjg",
+            "repeat_type": 0,
+            "repeat_until_type": 1,
+            "repeat_until_count": 10,
+            "repeat_until": 1606976813,
+            "repeat_interval": 1,
+            "is_custom_repeat": 1,
+            "repeat_day_of_week": [ 3, 7 ],
+            "repeat_day_of_month": [ 10, 21 ]
         }
     ]
 }

@@ -18,5 +18,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("meeting_code")]
         [System.Text.Json.Serialization.JsonPropertyName("meeting_code")]
         public string? MeetingCode { get; set; }
+
+        /// <summary>
+        /// 获取或设置子会议 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_meetingid")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_meetingid")]
+        public string? SubMeetingId { get; set; }
     }
 }

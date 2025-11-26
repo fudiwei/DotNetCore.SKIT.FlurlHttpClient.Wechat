@@ -270,8 +270,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// <summary>
                 /// 获取或设置是否当有参会成员入会时立即开启云录制。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("participant_join_auto_record")]
-                [System.Text.Json.Serialization.JsonPropertyName("participant_join_auto_record")]
+                [Newtonsoft.Json.JsonProperty("attendee_join_auto_record")]
+                [System.Text.Json.Serialization.JsonPropertyName("attendee_join_auto_record")]
                 public bool IsAttendeeJoinAutoRecord { get; set; }
 
                 /// <summary>
@@ -439,6 +439,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public string SubMeetingId { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置标题。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("title")]
+                [System.Text.Json.Serialization.JsonPropertyName("title")]
+                public string Title { get; set; } = default!;
+
+                /// <summary>
                 /// 获取或设置状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
@@ -458,6 +465,81 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [Newtonsoft.Json.JsonProperty("end_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("end_time")]
                 public long EndTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置周期性会议分段 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_id")]
+                public string? RepeatId { get; set; }
+            }
+
+            public class SubRepeat
+            {
+                /// <summary>
+                /// 获取或设置周期性会议分段 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_id")]
+                public string RepeatId { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置重复类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_type")]
+                public int RepeatType { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否自定义重复设置。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_custom_repeat")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("is_custom_repeat")]
+                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                public bool IsCustomRepeat { get; set; }
+
+                /// <summary>
+                /// 获取或设置周期间隔。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_interval")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_interval")]
+                public int RepeatInterval { get; set; }
+
+                /// <summary>
+                /// 获取或设置每周重复日序号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_day_of_week")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_week")]
+                public int[]? RepeatDayOfWeekList { get; set; }
+
+                /// <summary>
+                /// 获取或设置每周重复日序号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_day_of_month")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_day_of_month")]
+                public int[]? RepeatDayOfMonthList { get; set; }
+
+                /// <summary>
+                /// 获取或设置周期性会议结束类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_until_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_until_type")]
+                public int RepeatUntilType { get; set; }
+
+                /// <summary>
+                /// 获取或设置分段的重复截止次数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_until_count")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_until_count")]
+                public int? RepeatUntilCount { get; set; }
+
+                /// <summary>
+                /// 获取或设置分段的重复截止时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("repeat_until")]
+                [System.Text.Json.Serialization.JsonPropertyName("repeat_until")]
+                public long? RepeatUntilTimestamp { get; set; }
             }
         }
 
@@ -616,5 +698,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         [Newtonsoft.Json.JsonProperty("current_sub_meetingid")]
         [System.Text.Json.Serialization.JsonPropertyName("current_sub_meetingid")]
         public string? CurrentSubMeetingId { get; set; }
+
+        /// <summary>
+        /// 获取或设置周期性会议分段信息列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("sub_repeat_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("sub_repeat_list")]
+        public Types.SubRepeat[]? SubRepeatList { get; set; }
     }
 }
