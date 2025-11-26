@@ -317,6 +317,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         [System.Text.Json.Serialization.JsonPropertyName("onwork_flex_time")]
                                         public int OnWorkFlexTime { get; set; }
                                     }
+
+                                    public class BiWeekly
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置是否开启大小周。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("enable_weekday_recurrence")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("enable_weekday_recurrence")]
+                                        public bool? EnableWeekdayRecurrence { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置奇数周次序号列表。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("odd_workdays")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("odd_workdays")]
+                                        public int[]? OddWorkdayList { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置偶数周次序号列表。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("even_workdays")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("even_workdays")]
+                                        public int[]? EvenWorkdayList { get; set; }
+                                    }
                                 }
 
                                 /// <summary>
@@ -402,6 +426,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [Newtonsoft.Json.JsonProperty("late_rule")]
                                 [System.Text.Json.Serialization.JsonPropertyName("late_rule")]
                                 public Types.LateRule? LateRule { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置大小周信息。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("biweekly")]
+                                [System.Text.Json.Serialization.JsonPropertyName("biweekly")]
+                                public Types.BiWeekly? BiWeekly { get; set; }
                             }
                         }
 

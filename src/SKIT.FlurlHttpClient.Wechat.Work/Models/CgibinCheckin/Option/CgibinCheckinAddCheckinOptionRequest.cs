@@ -104,6 +104,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("onwork_flex_time")]
                                 public int? OnWorkFlexTime { get; set; }
                             }
+
+                            public class BiWeekly
+                            {
+                                /// <summary>
+                                /// 获取或设置是否开启大小周。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("enable_weekday_recurrence")]
+                                [System.Text.Json.Serialization.JsonPropertyName("enable_weekday_recurrence")]
+                                public bool? EnableWeekdayRecurrence { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置奇数周次序号列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("odd_workdays")]
+                                [System.Text.Json.Serialization.JsonPropertyName("odd_workdays")]
+                                public IList<int>? OddWorkdayList { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置偶数周次序号列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("even_workdays")]
+                                [System.Text.Json.Serialization.JsonPropertyName("even_workdays")]
+                                public IList<int>? EvenWorkdayList { get; set; }
+                            }
                         }
 
                         /// <summary>
@@ -161,6 +185,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("late_rule")]
                         [System.Text.Json.Serialization.JsonPropertyName("late_rule")]
                         public Types.LateRule? LateRule { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置大小周信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("biweekly")]
+                        [System.Text.Json.Serialization.JsonPropertyName("biweekly")]
+                        public Types.BiWeekly? BiWeekly { get; set; }
                     }
 
                     public class CheckinTime
@@ -716,6 +747,44 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("vacation")]
                                 public Types.Vacation? Vacation { get; set; }
                             }
+
+                            public class TimeUnitConfig
+                            {
+                                /// <summary>
+                                /// 获取或设置加班单位类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("ot_time_unit")]
+                                [System.Text.Json.Serialization.JsonPropertyName("ot_time_unit")]
+                                public int? OvertimeTimeUnit { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置每天时长（单位：秒）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("perday_duration_secs")]
+                                [System.Text.Json.Serialization.JsonPropertyName("perday_duration_secs")]
+                                public int? DurationSecondsPerDay { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置舍入方式。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("rounding_method")]
+                                [System.Text.Json.Serialization.JsonPropertyName("rounding_method")]
+                                public int? RoundingMethod { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置舍入保留小数位数。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("rounding_precision")]
+                                [System.Text.Json.Serialization.JsonPropertyName("rounding_precision")]
+                                public int? RoundingPrecision { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置舍入时取整步长。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("step_size")]
+                                [System.Text.Json.Serialization.JsonPropertyName("step_size")]
+                                public int? StepSize { get; set; }
+                            }
                         }
 
                         /// <summary>
@@ -738,6 +807,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         [Newtonsoft.Json.JsonProperty("holidayconf")]
                         [System.Text.Json.Serialization.JsonPropertyName("holidayconf")]
                         public Types.Configuration? HolidayConfiguration { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置加班单位配置信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("time_unit_config")]
+                        [System.Text.Json.Serialization.JsonPropertyName("time_unit_config")]
+                        public Types.TimeUnitConfig? TimeUnitConfig { get; set; }
                     }
 
                     public class RecheckinReminder
