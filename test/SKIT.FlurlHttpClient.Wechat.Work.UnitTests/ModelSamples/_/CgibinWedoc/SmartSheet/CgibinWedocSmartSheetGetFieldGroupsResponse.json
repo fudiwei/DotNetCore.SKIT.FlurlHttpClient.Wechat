@@ -1,0 +1,18 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total": 1,
+    "has_more": false,
+    "next": 0,
+    "field_groups": [
+        {
+            "field_group_id": "FIELD_GROUP_ID",
+            "name": "编组名称",
+            "children": [
+                {
+                    "field_id": "FIELD_ID"
+                }
+            ]
+        }
+    ]
+}

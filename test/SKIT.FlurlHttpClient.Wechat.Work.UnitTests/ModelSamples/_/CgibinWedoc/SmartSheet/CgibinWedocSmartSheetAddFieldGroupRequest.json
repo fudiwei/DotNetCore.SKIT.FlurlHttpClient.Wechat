@@ -1,0 +1,13 @@
+{
+    "docid": "DOCID",
+    "sheet_id": "SHEETID",
+    "name": "编组名称",
+    "children": [
+        {
+            "field_id": "field_id"
+        },
+        {
+            "field_id": "field_id"
+        }
+    ]
+}

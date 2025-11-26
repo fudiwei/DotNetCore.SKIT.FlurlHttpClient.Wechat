@@ -727,6 +727,98 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWedocSmartSheetDeleteRecordsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/smartsheet/get_field_groups 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101103 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSmartSheetGetFieldGroupsResponse> ExecuteCgibinWedocSmartSheetGetFieldGroupsAsync(this WechatWorkClient client, Models.CgibinWedocSmartSheetGetFieldGroupsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "smartsheet", "get_field_groups")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWedocSmartSheetGetFieldGroupsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/smartsheet/add_field_group 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101100 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSmartSheetAddFieldGroupResponse> ExecuteCgibinWedocSmartSheetAddFieldGroupAsync(this WechatWorkClient client, Models.CgibinWedocSmartSheetAddFieldGroupRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "smartsheet", "add_field_group")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWedocSmartSheetAddFieldGroupResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/smartsheet/update_field_group 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101101 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSmartSheetUpdateFieldGroupResponse> ExecuteCgibinWedocSmartSheetUpdateFieldGroupAsync(this WechatWorkClient client, Models.CgibinWedocSmartSheetUpdateFieldGroupRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "smartsheet", "update_field_group")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWedocSmartSheetUpdateFieldGroupResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /cgi-bin/wedoc/smartsheet/delete_field_groups 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101102 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CgibinWedocSmartSheetDeleteFieldGroupsResponse> ExecuteCgibinWedocSmartSheetDeleteFieldGroupsAsync(this WechatWorkClient client, Models.CgibinWedocSmartSheetDeleteFieldGroupsRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "wedoc", "smartsheet", "delete_field_groups")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CgibinWedocSmartSheetDeleteFieldGroupsResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
         #region SmartSheet/GroupChat
         /// <summary>
         /// <para>异步调用 [POST] /cgi-bin/wedoc/smartsheet/groupchat/list 接口。</para>
