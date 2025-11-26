@@ -10,13 +10,32 @@
                     "fieldid": 11001,
                     "field_name": "姓名",
                     "field_type": 1,
+                    "value_type": 1,
                     "is_must": true
                 },
                 {
                     "fieldid": 11002,
                     "field_name": "别名",
                     "field_type": 1,
+                    "value_type": 1,
                     "is_must": false
+                },
+                {
+                    "fieldid": 12010,
+                    "field_name": "职位",
+                    "field_type": 2,
+                    "value_type": 3,
+                    "is_must": false,
+                    "option_list": [
+                        {
+                            "id": 1,
+                            "value": "总经理"
+                        },
+                        {
+                            "id": 2,
+                            "value": "秘书"
+                        }
+                    ]
                 }
             ]
         },
@@ -28,6 +47,7 @@
                     "fieldid": 12024,
                     "field_name": "工号",
                     "field_type": 1,
+                    "value_type": 1,
                     "is_must": true
                 }
             ]

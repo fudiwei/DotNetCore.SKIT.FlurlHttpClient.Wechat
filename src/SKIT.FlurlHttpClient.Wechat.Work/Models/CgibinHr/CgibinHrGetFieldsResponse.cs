@@ -13,6 +13,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 {
                     public class Field
                     {
+                        public static class Types
+                        {
+                            public class Option
+                            {
+                                /// <summary>
+                                /// 获取或设置选项的枚举值。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("id")]
+                                public int OptionId { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置选项的文本内容。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("value")]
+                                [System.Text.Json.Serialization.JsonPropertyName("value")]
+                                public string Value { get; set; } = default!;
+                            }
+                        }
+
                         /// <summary>
                         /// 获取或设置字段 ID。
                         /// </summary>
@@ -35,11 +55,25 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         public int FieldType { get; set; }
 
                         /// <summary>
+                        /// 获取或设置字段值类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("value_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("value_type")]
+                        public int ValueType { get; set; }
+
+                        /// <summary>
                         /// 获取或设置是否必须。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_must")]
                         [System.Text.Json.Serialization.JsonPropertyName("is_must")]
                         public bool IsMust { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置选项列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("option_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("option_list")]
+                        public Types.Option[]? OptionList { get; set; }
                     }
                 }
 
