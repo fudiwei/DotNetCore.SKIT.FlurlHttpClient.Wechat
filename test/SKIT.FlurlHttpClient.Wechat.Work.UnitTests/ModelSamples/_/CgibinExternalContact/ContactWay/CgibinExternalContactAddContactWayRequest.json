@@ -12,6 +12,7 @@
     "chat_expires_in": 86400,
     "unionid": "oxTWIuGaIt6gTKsQRLau2M0AAAA",
     "is_exclusive": true,
+    "mark_source": true,
     "conclusions": {
         "text": {
             "content": "文本消息内容"

@@ -2,14 +2,18 @@
     "errcode": 0,
     "errmsg": "ok",
     "link": {
-        "link_id": "LINK_ID_AAA",
         "link_name": "LINK_NAME",
-        "url": "work.weixin.qq.com/ca/xxxxxx",
-        "create_time": 1672502400
+        "url": "https://work.weixin.qq.com/ca/xxxxxx",
+        "create_time": 1672502400,
+        "skip_verify": true,
+        "mark_source": true
     },
     "range": {
         "user_list": [ "rocky", "sam" ],
         "department_list": [ 1 ]
     },
-    "skip_verify": true
+    "priority_option": {
+        "priority_type": 2,
+        "priority_userid_list": [ "tom", "lisi" ]
+    }
 }

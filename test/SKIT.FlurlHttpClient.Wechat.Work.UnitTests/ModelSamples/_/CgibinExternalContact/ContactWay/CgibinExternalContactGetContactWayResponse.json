@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "contact_way": {
@@ -9,19 +9,20 @@
         "remark": "test remark",
         "skip_verify": true,
         "state": "teststate",
-        "qr_code": "http://p.qpic.cn/wwhead/duc2TvpEgSdicZ9RrdUtBkv2UiaA/0",
-        "user": ["zhangsan", "lisi", "wangwu"],
-        "party": [2, 3],
+        "qr_code": "https://p.qpic.cn/wwhead/duc2TvpEgSdicZ9RrdUtBkv2UiaA/0",
+        "user": [ "zhangsan", "lisi", "wangwu" ],
+        "party": [ 2, 3 ],
         "is_temp": true,
         "expires_in": 86400,
         "chat_expires_in": 86400,
         "unionid": "oxTWIuGaIt6gTKsQRLau2M0AAAA",
+        "mark_source": true,
         "conclusions": {
             "text": {
                 "content": "文本消息内容"
             },
             "image": {
-                "pic_url": "http://p.qpic.cn/pic_wework/XXXXX"
+                "pic_url": "https://p.qpic.cn/pic_wework/XXXXX"
             },
             "link": {
                 "title": "消息标题",

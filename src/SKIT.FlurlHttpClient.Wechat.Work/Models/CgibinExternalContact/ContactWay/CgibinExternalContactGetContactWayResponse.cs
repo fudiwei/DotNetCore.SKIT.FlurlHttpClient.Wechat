@@ -234,6 +234,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public bool? IsExclusive { get; set; }
 
                 /// <summary>
+                /// 获取或设置是否标记客户添加来源为该应用创建的。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mark_source")]
+                [System.Text.Json.Serialization.JsonPropertyName("mark_source")]
+                public bool? IsMarkSource { get; set; }
+
+                /// <summary>
                 /// 获取或设置结束语信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("conclusions")]

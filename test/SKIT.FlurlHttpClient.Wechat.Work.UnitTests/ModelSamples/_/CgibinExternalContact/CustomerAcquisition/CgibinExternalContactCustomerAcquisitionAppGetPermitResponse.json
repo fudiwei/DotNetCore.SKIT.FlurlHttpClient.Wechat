@@ -1,0 +1,16 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "user_list": [
+        "jack",
+        "rose"
+    ],
+    "department_list": [
+        0,
+        1
+    ],
+    "tag_list": [
+        0,
+        1
+    ]
+}

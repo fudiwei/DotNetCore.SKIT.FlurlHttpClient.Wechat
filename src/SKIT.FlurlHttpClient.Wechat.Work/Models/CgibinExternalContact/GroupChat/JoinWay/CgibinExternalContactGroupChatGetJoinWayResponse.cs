@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/externalcontact/groupchat/get_join_way 接口的响应。</para>
@@ -71,6 +71,13 @@
                 [Newtonsoft.Json.JsonProperty("state")]
                 [System.Text.Json.Serialization.JsonPropertyName("state")]
                 public string? State { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否标记客户添加来源为该应用创建的。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mark_source")]
+                [System.Text.Json.Serialization.JsonPropertyName("mark_source")]
+                public bool? IsMarkSource { get; set; }
             }
         }
 

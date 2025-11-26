@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "join_way": {
@@ -13,6 +13,7 @@
             "wrOgQhDgAALPUthpRAKvl7mgiQRw_aaa"
         ],
         "qr_code": "http://p.qpic.cn/wwhead/nMl9ssowtibVGyrmvBiaibzDtp703nXuzpibnKtbSDBRJTLwS3ic4ECrf3ibLVtIFb0N6wWwy5LVuyvMQ22/0",
-        "state": "klsdup3kj3s1"
+        "state": "klsdup3kj3s1",
+        "mark_source": true
     }
 }

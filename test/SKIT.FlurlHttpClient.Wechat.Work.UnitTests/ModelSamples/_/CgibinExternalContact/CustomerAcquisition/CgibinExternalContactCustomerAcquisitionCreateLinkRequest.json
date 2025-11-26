@@ -4,5 +4,10 @@
         "user_list": [ "zhangsan", "lisi" ],
         "department_list": [ 2, 3 ]
     },
-    "skip_verify": true
+    "skip_verify": true,
+    "priority_option": {
+        "priority_type": 2,
+        "priority_userid_list": [ "tom", "lisi" ]
+    },
+    "mark_source": true
 }

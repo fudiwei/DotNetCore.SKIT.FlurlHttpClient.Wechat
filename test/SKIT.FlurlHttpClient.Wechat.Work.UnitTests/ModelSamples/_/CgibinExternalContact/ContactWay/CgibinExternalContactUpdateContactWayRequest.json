@@ -1,14 +1,15 @@
-﻿{
+{
     "config_id": "42b34949e138eb6e027c123cba77fAAA",
     "remark": "渠道客户",
     "skip_verify": true,
     "style": 1,
     "state": "teststate",
-    "user": ["zhangsan", "lisi", "wangwu"],
-    "party": [2, 3],
+    "user": [ "zhangsan", "lisi", "wangwu" ],
+    "party": [ 2, 3 ],
     "expires_in": 86400,
     "chat_expires_in": 86400,
     "unionid": "oxTWIuGaIt6gTKsQRLau2M0AAAA",
+    "mark_source": true,
     "conclusions": {
         "text": {
             "content": "文本消息内容"

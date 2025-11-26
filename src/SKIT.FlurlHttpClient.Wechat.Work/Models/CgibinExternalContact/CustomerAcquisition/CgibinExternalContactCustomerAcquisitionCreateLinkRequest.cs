@@ -25,6 +25,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 [System.Text.Json.Serialization.JsonPropertyName("department_list")]
                 public IList<long>? DepartmentId { get; set; }
             }
+
+            public class PriorityOption
+            {
+                /// <summary>
+                /// 获取或设置优先分配类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("priority_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("priority_type")]
+                public int PriorityType { get; set; }
+
+                /// <summary>
+                /// 获取或设置成员账号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("priority_userid_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("priority_userid_list")]
+                public IList<string>? PriorityUserIdList { get; set; }
+            }
         }
 
         /// <summary>
@@ -42,10 +59,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         public Types.Range? Range { get; set; }
 
         /// <summary>
+        /// 获取或设置优先分配配置信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("priority_option")]
+        [System.Text.Json.Serialization.JsonPropertyName("priority_option")]
+        public Types.PriorityOption? PriorityOption { get; set; }
+
+        /// <summary>
         /// 获取或设置是否无需验证。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("skip_verify")]
         [System.Text.Json.Serialization.JsonPropertyName("skip_verify")]
         public bool? IsSkipVerify { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否标记客户添加来源为该应用创建的。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("mark_source")]
+        [System.Text.Json.Serialization.JsonPropertyName("mark_source")]
+        public bool? IsMarkSource { get; set; }
     }
 }

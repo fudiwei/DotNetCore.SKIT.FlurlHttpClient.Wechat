@@ -1,4 +1,4 @@
-﻿{
+{
     "config_id": "9ad7fa5cdaa6511298498f979c4722de",
     "scene": 2,
     "remark": "bb_remark",
@@ -9,5 +9,6 @@
         "wrOgQhDgAAH2Yy-CTZ6POca8mlBEdaaa",
         "wrOgQhDgAALPUthpRAKvl7mgiQRw_aaa"
     ],
-    "state": "klsdup3kj3s1"
+    "state": "klsdup3kj3s1",
+    "mark_source": true
 }
