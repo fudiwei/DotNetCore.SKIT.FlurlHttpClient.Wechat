@@ -128,6 +128,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region B2CAuth
+        /// <summary>
+        /// <para>异步调用 [POST] /wxa/business/unbinduserb2cauthinfo 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/laboruse/api_unbinduserb2cauthinfo.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.WxaBusinessUnbindUserB2CAuthInfoResponse> ExecuteWxaBusinessUnbindUserB2CAuthInfoAsync(this WechatApiClient client, Models.WxaBusinessUnbindUserB2CAuthInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxa", "business", "unbinduserb2cauthinfo")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.WxaBusinessUnbindUserB2CAuthInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region GameMatch
         /// <summary>
         /// <para>异步调用 [POST] /wxa/business/gamematch/creatematchrule 接口。</para>

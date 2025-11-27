@@ -1,0 +1,9 @@
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+{
+    /// <summary>
+    /// <para>表示 [POST] /wxa/business/unbinduserb2cauthinfo 接口的响应。</para>
+    /// </summary>
+    public class WxaBusinessUnbindUserB2CAuthInfoResponse : WechatApiResponse
+    {
+    }
+}
