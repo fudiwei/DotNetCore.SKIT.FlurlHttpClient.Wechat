@@ -8,8 +8,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置文件下载链接。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("download_url")]
-        [System.Text.Json.Serialization.JsonPropertyName("download_url")]
+        [Newtonsoft.Json.JsonProperty("url")]
+        [System.Text.Json.Serialization.JsonPropertyName("url")]
         public string DownloadUrl { get; set; } = default!;
 
         /// <summary>

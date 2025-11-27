@@ -8,8 +8,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置待认证的手机号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("house_number")]
-        [System.Text.Json.Serialization.JsonPropertyName("house_number")]
+        [Newtonsoft.Json.JsonProperty("mobile")]
+        [System.Text.Json.Serialization.JsonPropertyName("mobile")]
         public string MobileNumber { get; set; } = string.Empty;
 
         /// <summary>

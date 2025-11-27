@@ -326,6 +326,41 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public int? FinderDiscountedPrice { get; set; }
 
                                 /// <summary>
+                                /// 获取或设置一起买优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("bulkbuy_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("bulkbuy_discounted_price")]
+                                public int? BulkBuyDiscountedPrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置平台券优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("cash_coupon_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("cash_coupon_discounted_price")]
+                                public int? CashCouponDiscountedPrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置活动商家补贴金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("platform_activity_merchant_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("platform_activity_merchant_discounted_price")]
+                                public int? PlatformActivityMerchantDiscountedPrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置国补优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("national_subsidy_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("national_subsidy_discounted_price")]
+                                public int? NationalSubsidyDiscountedPrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置国补优惠商家出资金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("national_subsidy_merchant_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("national_subsidy_merchant_discounted_price")]
+                                public int? NationalSubsidyMerchantDiscountedPrice { get; set; }
+
+                                /// <summary>
                                 /// 获取或设置是否修改过价格。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("is_change_price")]
@@ -452,6 +487,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [Newtonsoft.Json.JsonProperty("dropship_info")]
                                 [System.Text.Json.Serialization.JsonPropertyName("dropship_info")]
                                 public Types.Dropship? Dropship { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置是否为闪购商品。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("is_flash_sale")]
+                                [System.Text.Json.Serialization.JsonPropertyName("is_flash_sale")]
+                                public bool? IsFlashSale { get; set; }
                             }
 
                             public class Payment
@@ -607,6 +649,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public int? VipDiscountedPrice { get; set; }
 
                                 /// <summary>
+                                /// 获取或设置订单内平台券优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("cash_coupon_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("cash_coupon_discounted_price")]
+                                public int? CashCouponDiscountedPrice { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置活动商家补贴金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("platform_activity_merchant_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("platform_activity_merchant_discounted_price")]
+                                public int? PlatformActivityMerchantDiscountedPrice { get; set; }
+
+                                /// <summary>
                                 /// 获取或设置订单内一起买优惠金额（单位：分）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("bulkbuy_discounted_price")]
@@ -621,11 +677,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public int? NationalSubsidyDiscountedPrice { get; set; }
 
                                 /// <summary>
-                                /// 获取或设置订单内平台券优惠金额（单位：分）。
+                                /// 获取或设置订单内国补优惠商家出资金额（单位：分）。
                                 /// </summary>
-                                [Newtonsoft.Json.JsonProperty("cash_coupon_discounted_price")]
-                                [System.Text.Json.Serialization.JsonPropertyName("cash_coupon_discounted_price")]
-                                public int? CashCouponDiscountedPrice { get; set; }
+                                [Newtonsoft.Json.JsonProperty("national_subsidy_merchant_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("national_subsidy_merchant_discounted_price")]
+                                public int? NationalSubsidyMerchantDiscountedPrice { get; set; }
                             }
 
                             public class Delivery
