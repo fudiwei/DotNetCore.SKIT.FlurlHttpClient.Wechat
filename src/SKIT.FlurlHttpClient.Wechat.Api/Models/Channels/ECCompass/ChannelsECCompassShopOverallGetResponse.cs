@@ -56,6 +56,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("feed_pay_gmv")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public long FeedPayGMV { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品点击人数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("product_click_uv")]
+                [System.Text.Json.Serialization.JsonPropertyName("product_click_uv")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                public int ProductClickUV { get; set; }
             }
         }
 
