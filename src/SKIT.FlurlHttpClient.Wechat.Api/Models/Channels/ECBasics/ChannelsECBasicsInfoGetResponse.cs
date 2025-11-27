@@ -43,6 +43,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("status")]
                 [System.Text.Json.Serialization.JsonPropertyName("status")]
                 public string Status { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置是否本地生活小店。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_local_life")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_local_life")]
+                public bool IsLocalLife { get; set; }
+
+                /// <summary>
+                /// 获取或设置开店时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("open_timestamp")]
+                [System.Text.Json.Serialization.JsonPropertyName("open_timestamp")]
+                public long? OpenTimestamp { get; set; }
             }
         }
 
