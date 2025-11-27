@@ -67,6 +67,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("group_present_sub_order_id_list")]
                         [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringArrayWithCommaSplitConverter))]
                         public string[]? GroupPresentSubOrderIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置同城配送门店 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("intra_city_shop_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("intra_city_shop_id")]
+                        public string? IntraCityShopId { get; set; }
                     }
                 }
 
