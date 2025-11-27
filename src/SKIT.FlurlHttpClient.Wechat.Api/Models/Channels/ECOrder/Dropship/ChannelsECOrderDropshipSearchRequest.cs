@@ -31,6 +31,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string? SupplierAppId { get; set; }
 
                 /// <summary>
+                /// 获取或设置供货商名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("supplier_appname")]
+                [System.Text.Json.Serialization.JsonPropertyName("supplier_appname")]
+                public string? SupplierName { get; set; }
+
+                /// <summary>
                 /// 获取或设置代发单状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
@@ -50,6 +57,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("waybill_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
                 public string? WaybillId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品编码。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("product_code")]
+                [System.Text.Json.Serialization.JsonPropertyName("product_code")]
+                public string? ProductCode { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品名称。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("spu_name")]
+                [System.Text.Json.Serialization.JsonPropertyName("spu_name")]
+                public string? ProductName { get; set; }
+
+                /// <summary>
+                /// 获取或设置商家备注。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("merchant_notes")]
+                [System.Text.Json.Serialization.JsonPropertyName("merchant_notes")]
+                public string? MerchantNotes { get; set; }
             }
 
             public class Pagination : ChannelsECOrderDropshipSupplierListRequest.Types.Pagination

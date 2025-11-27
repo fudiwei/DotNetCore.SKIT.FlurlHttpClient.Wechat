@@ -1419,6 +1419,82 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("on_aftersale_order_cnt")]
                         public int OnAftersaleOrderCount { get; set; }
                     }
+
+                    public class PresentOrderInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置礼物订单类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("present_send_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("present_send_type")]
+                        public int PresentSendType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置礼物订单 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("present_order_id_str")]
+                        [System.Text.Json.Serialization.JsonPropertyName("present_order_id_str")]
+                        public string PresentOrderId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置礼物订单留言。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("present_note")]
+                        [System.Text.Json.Serialization.JsonPropertyName("present_note")]
+                        public string PresentNote { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置礼物订单赠送者 OpenId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("present_giver_openid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("present_giver_openid")]
+                        public string PresentGiverOpenId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置礼物订单赠送者 UnionId。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("present_giver_unionid")]
+                        [System.Text.Json.Serialization.JsonPropertyName("present_giver_unionid")]
+                        public string? PresentGiverUnionId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否付款。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_b2c_free_present")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_b2c_free_present")]
+                        public bool IsB2CFreePresent { get; set; }
+                    }
+
+                    public class IntraCityOrderInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置门店 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("shop_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("shop_id")]
+                        public string ShopId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置配送类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("predict_arrive_time_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("predict_arrive_time_type")]
+                        public int PredictArriveTimeType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置预计送达开始时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("predict_arrive_start_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("predict_arrive_start_time")]
+                        public long PredictArriveStartTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置预计送达结束时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("predict_arrive_end_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("predict_arrive_end_time")]
+                        public long PredictArriveEndTimestamp { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -1519,6 +1595,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("present_giver_unionid")]
                 [System.Text.Json.Serialization.JsonPropertyName("present_giver_unionid")]
                 public string? PresentGiverUnionId { get; set; }
+
+                /// <summary>
+                /// 获取或设置礼物订单信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_present_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_present_info")]
+                public Types.PresentOrderInfo? PresentOrderInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否为闪购订单。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_flash_sale_order")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_flash_sale_order")]
+                public bool IsFlashSaleOrder { get; set; }
+
+                /// <summary>
+                /// 获取或设置同城订单信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("intra_city_order_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("intra_city_order_info")]
+                public Types.IntraCityOrderInfo? IntraCityOrderInfo { get; set; }
             }
         }
 
