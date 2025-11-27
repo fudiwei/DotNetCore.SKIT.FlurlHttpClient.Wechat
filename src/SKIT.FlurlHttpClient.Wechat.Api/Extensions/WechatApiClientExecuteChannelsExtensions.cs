@@ -2195,6 +2195,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region ECFavorites
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/favorites/count/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/favorite/shopfavorite/api_getfavoritescount.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ECFavoritesCountGetResponse> ExecuteECFavoritesCountGetAsync(this WechatApiClient client, Models.ECFavoritesCountGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "favorites", "count", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ECFavoritesCountGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ECFinderLive
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/finderlive/getfinderliverecordlist 接口。</para>
