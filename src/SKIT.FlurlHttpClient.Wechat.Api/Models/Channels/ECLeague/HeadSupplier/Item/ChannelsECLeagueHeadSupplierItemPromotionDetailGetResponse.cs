@@ -91,6 +91,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
                         public string Name { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置团长头像 URL。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("head_img")]
+                        [System.Text.Json.Serialization.JsonPropertyName("head_img")]
+                        public string HeadImageUrl { get; set; } = default!;
                     }
 
                     public class CooperativeInfo
