@@ -5408,6 +5408,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region ECProduct/ExternalProduct
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/product/externalproductmapping 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_externalproductmapping.html ]]>
+        /// </para> 
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECProductCategoryExternalProductMappingResponse> ExecuteChannelsECProductCategoryExternalProductMappingAsync(this WechatApiClient client, Models.ChannelsECProductCategoryExternalProductMappingRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "product", "externalproductmapping")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECProductCategoryExternalProductMappingResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ECProduct/Gift
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/product/gift/add 接口。</para>

@@ -1,0 +1,8 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "external_attribute_name": "帮面材质",
+    "external_attribute_value": "塑胶",
+    "internal_attribute_name": "鞋面材质",
+    "internal_attribute_value": [ "塑胶" ]
+}
