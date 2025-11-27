@@ -25,7 +25,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long CooperativeItemId { get; set; }
 
                 /// <summary>
-                /// 获取或设置计划链接。
+                /// 获取或设置机构推广商品链接。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("head_supplier_item_link")]
                 [System.Text.Json.Serialization.JsonPropertyName("head_supplier_item_link")]

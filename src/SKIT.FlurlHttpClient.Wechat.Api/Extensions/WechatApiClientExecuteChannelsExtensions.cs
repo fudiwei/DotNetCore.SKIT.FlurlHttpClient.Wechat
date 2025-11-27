@@ -2899,6 +2899,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region ECLeague/HeadSupplier/SecondHeadSupplierItem
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/headsupplier/secondheadsupplieritem/add 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/leagueheadsupplier/api/opentalent/getshop/api_add_secondheadsupplier_item.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueHeadSupplierSecondHeadSupplierItemAddResponse> ExecuteChannelsECLeagueHeadSupplierSecondHeadSupplierItemAddAsync(this WechatApiClient client, Models.ChannelsECLeagueHeadSupplierSecondHeadSupplierItemAddRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "secondheadsupplieritem", "add")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierSecondHeadSupplierItemAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ECLeague/HeadSupplier/SelectionProduct
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/league/headsupplier/selectionproducts/list/get 接口。</para>
