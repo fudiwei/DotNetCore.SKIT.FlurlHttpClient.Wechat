@@ -134,6 +134,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     }
                 }
             }
+
+            public class TimingOnSale : ChannelsECProductAddRequest.Types.TimingOnSale
+            {
+            }
         }
 
         /// <summary>
@@ -149,14 +153,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("title")]
         [System.Text.Json.Serialization.JsonPropertyName("title")]
         public string Title { get; set; } = string.Empty;
-
-        /// <summary>
-        /// 获取或设置商品副标题。
-        /// </summary>
-        [Obsolete("相关接口或字段于 2025-06-16 下线。")]
-        [Newtonsoft.Json.JsonProperty("sub_title")]
-        [System.Text.Json.Serialization.JsonPropertyName("sub_title")]
-        public string? SubTitle { get; set; }
 
         /// <summary>
         /// 获取或设置商品短标题。
@@ -302,5 +298,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("size_chart")]
         [System.Text.Json.Serialization.JsonPropertyName("size_chart")]
         public Types.SizeChart? SizeChart { get; set; }
+
+        /// <summary>
+        /// 获取或设置待开售信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("timing_onsale_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("timing_onsale_info")]
+        public Types.TimingOnSale? TimingOnSale { get; set; }
+
+        /// <summary>
+        /// 获取或设置发布模式。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("release_mode")]
+        [System.Text.Json.Serialization.JsonPropertyName("release_mode")]
+        public int? ReleaseMode { get; set; }
     }
 }

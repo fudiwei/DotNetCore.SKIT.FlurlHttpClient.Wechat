@@ -39,6 +39,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 [System.Text.Json.Serialization.JsonPropertyName("reason")]
                 [System.Xml.Serialization.XmlElement("reason", IsNullable = true)]
                 public string? Reason { get; set; }
+
+                /// <summary>
+                /// 获取或设置审核信息 JSON 字符串。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("audit_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("audit_info")]
+                [System.Xml.Serialization.XmlElement("audit_info", IsNullable = true)]
+                public string? AuditInfoJson { get; set; }
             }
         }
 

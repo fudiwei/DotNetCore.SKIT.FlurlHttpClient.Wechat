@@ -7,6 +7,7 @@
     "ProductSpuAudit": {
         "product_id": "12345678",
         "status": 3,
-        "reason": "abc"
+        "reason": "abc",
+        "audit_info": "{\"busi_audit_info\":{\"item_list\":[{\"multi_failed_reasons\":[{\"audit_reason\":\"您好，该商品疑似与实际类目不符，需要修改类目为【xx>xxx>xxx】，请修改后再提交\"}],\"busi_show_field_api\":\"product.cat_v2\"}]}}"
     }
 }

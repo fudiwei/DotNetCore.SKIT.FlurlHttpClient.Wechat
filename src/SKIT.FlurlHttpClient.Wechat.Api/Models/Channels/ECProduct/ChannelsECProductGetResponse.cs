@@ -364,6 +364,39 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [System.Text.Json.Serialization.JsonPropertyName("specification_list")]
                         public Types.Specification[]? SpecificationList { get; set; }
                     }
+
+                    public class TimingOnSale
+                    {
+                        /// <summary>
+                        /// 获取或设置状态。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("status")]
+                        [System.Text.Json.Serialization.JsonPropertyName("status")]
+                        public int Status { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置开售时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("onsale_time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("onsale_time")]
+                        public long OnSaleTimestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否隐藏价格。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_hide_price")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_hide_price")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                        public bool IsHidePrice { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置待开售任务 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("task_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("task_id")]
+                        public long? TaskId { get; set; }
+                    }
                 }
 
                 /// <summary>
@@ -387,14 +420,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("title")]
                 [System.Text.Json.Serialization.JsonPropertyName("title")]
                 public string Title { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置商品副标题。
-                /// </summary>
-                [Obsolete("相关接口或字段于 2025-06-16 下线。")]
-                [Newtonsoft.Json.JsonProperty("sub_title")]
-                [System.Text.Json.Serialization.JsonPropertyName("sub_title")]
-                public string? SubTitle { get; set; }
 
                 /// <summary>
                 /// 获取或设置商品短标题。
@@ -540,6 +565,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long? SourceProductId { get; set; }
 
                 /// <summary>
+                /// 获取或设置总销量。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("total_sold_num")]
+                [System.Text.Json.Serialization.JsonPropertyName("total_sold_num")]
+                public int? TotalSoldCount { get; set; }
+
+                /// <summary>
                 /// 获取或设置售后地址。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("after_sale_info")]
@@ -559,6 +591,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("size_chart")]
                 [System.Text.Json.Serialization.JsonPropertyName("size_chart")]
                 public Types.SizeChart? SizeChart { get; set; }
+
+                /// <summary>
+                /// 获取或设置待开售信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("timing_onsale_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("timing_onsale_info")]
+                public Types.TimingOnSale? TimingOnSale { get; set; }
+
+                /// <summary>
+                /// 获取或设置发布模式。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("release_mode")]
+                [System.Text.Json.Serialization.JsonPropertyName("release_mode")]
+                public int? ReleaseMode { get; set; }
             }
 
             public class SaleLimitInfo
