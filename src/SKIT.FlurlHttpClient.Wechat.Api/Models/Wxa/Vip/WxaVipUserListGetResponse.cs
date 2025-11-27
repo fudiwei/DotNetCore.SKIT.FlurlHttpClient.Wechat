@@ -1,14 +1,21 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/vip/user/info/get 接口的响应。</para>
+    /// <para>表示 [POST] /wxa/vip/user/list/get 接口的响应。</para>
     /// </summary>
-    public class ChannelsECVipUserInfoGetResponse : WechatApiResponse
+    public class WxaVipUserListGetResponse : WechatApiResponse
     {
         public static class Types
         {
             public class UserInfo
             {
+                /// <summary>
+                /// 获取或设置小程序用户的 OpenId。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("wxa_openid")]
+                [System.Text.Json.Serialization.JsonPropertyName("wxa_openid")]
+                public string OpenId { get; set; } = default!;
+
                 /// <summary>
                 /// 获取或设置用户会员身份。
                 /// </summary>
@@ -33,10 +40,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
-        /// 获取或设置小程序用户信息。
+        /// 获取或设置小程序用户列表。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("info")]
-        [System.Text.Json.Serialization.JsonPropertyName("info")]
-        public Types.UserInfo UserInfo { get; set; } = default!;
+        [Newtonsoft.Json.JsonProperty("list")]
+        [System.Text.Json.Serialization.JsonPropertyName("list")]
+        public Types.UserInfo[] UserList { get; set; } = default!;
     }
 }

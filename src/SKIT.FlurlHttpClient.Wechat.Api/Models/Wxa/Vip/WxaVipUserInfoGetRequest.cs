@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/vip/user/info/delete 接口的请求。</para>
+    /// <para>表示 [POST] /wxa/vip/user/info/get 接口的请求。</para>
     /// </summary>
-    public class ChannelsECVipUserInfoDeleteRequest : WechatApiRequest, IInferable<ChannelsECVipUserInfoDeleteRequest, ChannelsECVipUserInfoDeleteResponse>
+    public class WxaVipUserInfoGetRequest : WechatApiRequest, IInferable<WxaVipUserInfoGetRequest, WxaVipUserInfoGetResponse>
     {
         /// <summary>
         /// 获取或设置小程序用户的 OpenId。

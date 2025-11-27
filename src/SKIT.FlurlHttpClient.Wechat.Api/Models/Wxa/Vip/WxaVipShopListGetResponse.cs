@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/vip/shop/list/get 接口的响应。</para>
+    /// <para>表示 [POST] /wxa/vip/shop/list/get 接口的响应。</para>
     /// </summary>
-    public class ChannelsECVipShopListGetResponse : WechatApiResponse
+    public class WxaVipShopListGetResponse : WechatApiResponse
     {
         public static class Types
         {
