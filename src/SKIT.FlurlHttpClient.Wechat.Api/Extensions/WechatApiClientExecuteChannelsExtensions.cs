@@ -497,6 +497,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2025-10-09 下线。")]
         public static async Task<Models.ChannelsECAftersaleGetPresentAftersaleListResponse> ExecuteChannelsECAftersaleGetPresentAftersaleListAsync(this WechatApiClient client, Models.ChannelsECAftersaleGetPresentAftersaleListRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -520,6 +521,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2025-10-09 下线。")]
         public static async Task<Models.ChannelsECAftersaleGetPresentAftersaleOrderResponse> ExecuteChannelsECAftersaleGetPresentAftersaleOrderAsync(this WechatApiClient client, Models.ChannelsECAftersaleGetPresentAftersaleOrderRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -6793,7 +6795,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "channels", "ec", "qic", "inspect", "submitconfig", "get")
-                .SetQueryParam("access_token", request.AccessToken);
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("order_id", request.OrderId);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECQICInspectSubmitConfigGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }

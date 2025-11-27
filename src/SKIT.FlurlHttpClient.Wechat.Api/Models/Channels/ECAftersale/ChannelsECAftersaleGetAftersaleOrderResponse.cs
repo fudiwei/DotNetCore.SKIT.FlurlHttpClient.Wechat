@@ -161,6 +161,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("refund_reason")]
                         [System.Text.Json.Serialization.JsonPropertyName("refund_reason")]
                         public int? RefundReasonType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置平台优惠退款金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("platform_discount_return_amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("platform_discount_return_amount")]
+                        public int? PlatformDiscountReturnAmount { get; set; }
                     }
 
                     public class Return
@@ -356,6 +363,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string Type { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置售后单子类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_type")]
+                public string? SubType { get; set; }
+
+                /// <summary>
                 /// 获取或设置售后单状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
@@ -473,6 +487,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("virtual_tel_num_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_num_info")]
                 public Types.VirualTelNumberInfo? VirualTelNumberInfo { get; set; }
+
+                /// <summary>
+                /// 获取或设置商责额外赔付金额（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("compensation_liability_amount")]
+                [System.Text.Json.Serialization.JsonPropertyName("compensation_liability_amount")]
+                public int? CompensationLiabilityAmount { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。
