@@ -74,6 +74,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string ActualPayment { get; set; } = default!;
 
                 /// <summary>
+                /// 获取或设置订单支付时间戳。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_pay_time")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_pay_time")]
+                public long OrderPayTimestamp { get; set; }
+
+                /// <summary>
                 /// 获取或设置订单创建时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_create_time")]
