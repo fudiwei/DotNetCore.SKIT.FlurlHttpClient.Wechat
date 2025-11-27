@@ -1,0 +1,17 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "score": 10,
+            "source": 2,
+            "remark": "下单-增加积分"
+        },
+        {
+            "score": -6,
+            "source": 5,
+            "remark": "下单-抵扣积分"
+        }
+    ],
+    "total_num": 1000
+}

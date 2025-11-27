@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "info": {
+        "openid": "OPENID",
+        "user_grade_info": {
+            "grade": 3,
+            "experience_value": 10000
+        },
+        "unionid": "UNIONID"
+    }
+}

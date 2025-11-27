@@ -1,0 +1,15 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "openid": "OPENID",
+            "user_grade_info": {
+                "grade": 3,
+                "experience_value": 1000
+            },
+            "unionid": "UNIONID"
+        }
+    ],
+    "total_num": 1230
+}
