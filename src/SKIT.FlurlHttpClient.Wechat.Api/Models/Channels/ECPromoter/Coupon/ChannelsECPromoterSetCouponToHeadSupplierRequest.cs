@@ -1,16 +1,16 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/promoter/get_coupon_detail 接口的请求。</para>
+    /// <para>表示 [POST] /channels/ec/promoter/set_coupon_to_headsupplier 接口的请求。</para>
     /// </summary>
-    public class ChannelsECPromoterGetCouponDetailRequest : WechatApiRequest, IInferable<ChannelsECPromoterGetCouponDetailRequest, ChannelsECPromoterGetCouponDetailResponse>
+    public class ChannelsECPromoterSetCouponToHeadSupplierRequest : WechatApiRequest, IInferable<ChannelsECPromoterSetCouponToHeadSupplierRequest, ChannelsECPromoterSetCouponToHeadSupplierResponse>
     {
         /// <summary>
-        /// 获取或设置来源的机构 AppId。
+        /// 获取或设置接收的机构 AppId。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("from_head_supplier_appid")]
-        [System.Text.Json.Serialization.JsonPropertyName("from_head_supplier_appid")]
-        public string? FromHeadSupplierAppId { get; set; }
+        [Newtonsoft.Json.JsonProperty("to_head_supplier_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("to_head_supplier_appid")]
+        public string ToHeadSupplierAppId { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置券 ID。

@@ -1,0 +1,13 @@
+{
+    "errcode": 0,
+    "errmsg": "success",
+    "list": [
+        {
+            "coupon_id": "23234",
+            "to_head_supplier_appid": "wxsdsdfsds",
+            "give_time": 1761767465
+        }
+    ],
+    "page_context": "CAEQARgfKj0AACcYl2AAABQBAgQAXFE1wJCeiAAA",
+    "total_count": 100
+}
