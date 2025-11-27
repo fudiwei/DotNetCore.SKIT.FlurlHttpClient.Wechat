@@ -118,6 +118,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("name")]
                         [System.Text.Json.Serialization.JsonPropertyName("name")]
                         public string Name { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置质检机构类别。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("org_category")]
+                        [System.Text.Json.Serialization.JsonPropertyName("org_category")]
+                        public int OrganizationCategory { get; set; }
                     }
                 }
 
