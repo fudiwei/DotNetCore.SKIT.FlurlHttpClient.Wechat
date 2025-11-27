@@ -229,6 +229,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("damage_guarantee")]
                 [System.Text.Json.Serialization.JsonPropertyName("damage_guarantee")]
                 public int? DamageGuarantee { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否支持换货。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_support")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_support")]
+                public int? ExchangeSupport { get; set; }
             }
 
             public class Aftersale
