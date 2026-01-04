@@ -1,0 +1,14 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "progress": {
+        "status": 0
+    },
+    "application": {
+        "apply_for": 1,
+        "audit_info": {
+            "audit_reason": ""
+        },
+        "status": 0
+    }
+}

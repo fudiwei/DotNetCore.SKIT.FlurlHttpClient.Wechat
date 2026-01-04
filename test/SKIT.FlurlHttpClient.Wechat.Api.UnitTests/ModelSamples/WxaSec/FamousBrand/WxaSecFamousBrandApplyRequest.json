@@ -1,0 +1,19 @@
+{
+    "Application": {
+        "apply_for": 2,
+        "audit_info": {
+            "brand_name": "我的小店",
+            "brand_type": 4,
+            "flagship_in_which_ec_platform": "淘宝",
+            "ec_platform_proof_list": [
+                "R7oH3VuVWboktgKh3QABx2UqbeNoUDJzLdDjLVvi4kLEOtkCTAGmX9g8-xxxxxx"
+            ],
+            "other_material_list": [
+                "R7oH3VuVWboktgKh3QABx2UqbeNoUDJzLdDjLVvi4kLEOtkCTAGmX9g8-xxxxxx"
+            ],
+            "authority_certified_proof_list": [
+                "R7oH3VuVWboktgKh3QABx2UqbeNoUDJzLdDjLVvi4kLEOtkCTAGmX9g8-xxxxxx"
+            ]
+        }
+    }
+}
