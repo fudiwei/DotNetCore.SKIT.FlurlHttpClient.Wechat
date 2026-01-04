@@ -351,6 +351,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ShopCategoryGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /shop/ec/category/getcategoryrule 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/category-rule/api_get_category_rule.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/category-rule/api_get_delivery_method_category_rule.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ShopECCategoryGetCategoryRuleResponse> ExecuteShopECCategoryGetCategoryRuleAsync<TResponse>(this WechatApiClient client, Models.ShopECCategoryGetCategoryRuleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "shop", "ec", "category", "getcategoryrule")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("rule_id", request.RuleId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ShopECCategoryGetCategoryRuleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
         #endregion
 
         #region Complaint

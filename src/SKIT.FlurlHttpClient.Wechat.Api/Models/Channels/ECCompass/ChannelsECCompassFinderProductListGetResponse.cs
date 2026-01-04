@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -144,6 +146,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置发货前成交退款率（单位：百分数）。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2025-11-28 下线。")]
                         [Newtonsoft.Json.JsonProperty("pay_refund_before_send_ratio")]
                         [System.Text.Json.Serialization.JsonPropertyName("pay_refund_before_send_ratio")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
