@@ -827,7 +827,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
 
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "service", "corpid_to_opencorpid")
-                .SetQueryParam("access_token", request.ProviderAccessToken);
+                .SetQueryParam("provider_access_token", request.ProviderAccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.CgibinServiceCorpIdToOpenCorpIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
