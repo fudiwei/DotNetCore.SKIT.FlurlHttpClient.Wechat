@@ -4566,6 +4566,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/freshinspect/submit 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/fresh_inspect_submit.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/fresh_inspect_submit.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderFreshInspectSubmitResponse> ExecuteChannelsECOrderFreshInspectSubmitAsync(this WechatApiClient client, Models.ChannelsECOrderFreshInspectSubmitRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "freshinspect", "submit")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderFreshInspectSubmitResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /channels/ec/order/presentnote/add 接口。</para>
         /// <para>
         /// REF: <br/>
@@ -4730,27 +4754,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/order/freshinspect/submit 接口。</para>
+        /// <para>异步调用 [POST] /channels/ec/order/realnumberviewaudit/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/order/fresh_inspect_submit.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/order/fresh_inspect_submit.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-order/api_getrealnumberviewaudit.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
-        public static async Task<Models.ChannelsECOrderFreshInspectSubmitResponse> ExecuteChannelsECOrderFreshInspectSubmitAsync(this WechatApiClient client, Models.ChannelsECOrderFreshInspectSubmitRequest request, CancellationToken cancellationToken = default)
+        public static async Task<Models.ChannelsECOrderRealNumberViewAuditGetResponse> ExecuteChannelsECOrderRealNumberViewAuditGetAsync(this WechatApiClient client, Models.ChannelsECOrderRealNumberViewAuditGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "freshinspect", "submit")
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "realnumberviewaudit", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderFreshInspectSubmitResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderRealNumberViewAuditGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
 
         #region ECOrder/Address

@@ -10,6 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("task_id")]
         [System.Text.Json.Serialization.JsonPropertyName("task_id")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
         public string TaskId { get; set; } = default!;
     }
 }
