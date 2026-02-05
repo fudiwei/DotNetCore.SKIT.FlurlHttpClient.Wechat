@@ -96,10 +96,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
-                public SKUDeliver? SKUDeliver { get; set; }
+                public SKUDeliverInfo? SKUDeliverInfo { get; set; }
             }
 
-            public class SKUDeliver : ChannelsECProductAddRequest.Types.SKUDeliver
+            public class SKUDeliverInfo : ChannelsECProductAddRequest.Types.SKUDeliverInfo
             {
             }
 
@@ -136,6 +136,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             }
 
             public class TimingOnSale : ChannelsECProductAddRequest.Types.TimingOnSale
+            {
+            }
+
+            public class SPUDeliverInfo : ChannelsECProductAddRequest.Types.SPUDeliverInfo
             {
             }
         }
@@ -305,6 +309,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("timing_onsale_info")]
         [System.Text.Json.Serialization.JsonPropertyName("timing_onsale_info")]
         public Types.TimingOnSale? TimingOnSale { get; set; }
+
+        /// <summary>
+        /// 获取或设置商品预售信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("spu_deliver_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("spu_deliver_info")]
+        public Types.SPUDeliverInfo? SPUDeliverInfo { get; set; }
 
         /// <summary>
         /// 获取或设置发布模式。

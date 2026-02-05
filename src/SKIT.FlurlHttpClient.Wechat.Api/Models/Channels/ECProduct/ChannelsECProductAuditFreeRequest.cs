@@ -30,42 +30,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int DiffCount { get; set; }
                     }
 
-                    public class SKUDeliverInfo
+                    public class SKUDeliverInfo : ChannelsECProductAddRequest.Types.SKUDeliverInfo
                     {
-                        /// <summary>
-                        /// 获取或设置 SKU 库存情况。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("stock_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("stock_type")]
-                        public int StockType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置 SKU 发货节点。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("full_payment_presale_delivery_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("full_payment_presale_delivery_type")]
-                        public int? FullPaymentPresaleDeliveryType { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置 SKU 预售周期开始时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("presale_begin_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("presale_begin_time")]
-                        public long? PresaleBeginTimestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置 SKU 预售周期结束时间戳。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("presale_end_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("presale_end_time")]
-                        public long? PresaleEndTimestamp { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置 SKU 发货时效。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("full_payment_presale_delivery_time")]
-                        [System.Text.Json.Serialization.JsonPropertyName("full_payment_presale_delivery_time")]
-                        public int FullPaymentPresaleDeliveryTime { get; set; }
                     }
                 }
 
@@ -185,6 +151,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("exchange_support")]
                 public int? ExchangeSupport { get; set; }
             }
+
+            public class TimingOnSale : ChannelsECProductUpdateRequest.Types.TimingOnSale
+            {
+            }
+
+            public class SPUDeliverInfo
+            {
+                public static class Types
+                {
+                    public class SKUDeliverInfo : ChannelsECProductUpdateRequest.Types.SKUDeliverInfo
+                    {
+                    }
+                }
+
+                /// <summary>
+                /// 获取或设置是否生效。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("is_spu_range")]
+                [System.Text.Json.Serialization.JsonPropertyName("is_spu_range")]
+                public bool? IsSPURange { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品预售信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
+                public Types.SKUDeliverInfo? SKUDeliverInfo { get; set; }
+            }
         }
 
         /// <summary>
@@ -235,5 +229,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("extra_service")]
         [System.Text.Json.Serialization.JsonPropertyName("extra_service")]
         public Types.ExtraService? ExtraService { get; set; }
+
+        /// <summary>
+        /// 获取或设置待开售信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("timing_onsale_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("timing_onsale_info")]
+        public Types.TimingOnSale? TimingOnSale { get; set; }
+
+        /// <summary>
+        /// 获取或设置商品预售信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("spu_deliver_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("spu_deliver_info")]
+        public Types.SPUDeliverInfo? SPUDeliverInfo { get; set; }
     }
 }
