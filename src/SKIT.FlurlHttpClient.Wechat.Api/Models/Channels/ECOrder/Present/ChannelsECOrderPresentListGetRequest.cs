@@ -1,12 +1,9 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/order/presentorderlist/get 接口的请求。</para>
+    /// <para>表示 [POST] /channels/ec/order/presentlist/get 接口的请求。</para>
     /// </summary>
-    [Obsolete("相关接口或字段于 2025-12-08 下线。")]
-    public class ChannelsECOrderPresentOrderListGetRequest : WechatApiRequest, IInferable<ChannelsECOrderPresentOrderListGetRequest, ChannelsECOrderPresentOrderListGetResponse>
+    public class ChannelsECOrderPresentListGetRequest : WechatApiRequest, IInferable<ChannelsECOrderPresentListGetRequest, ChannelsECOrderPresentListGetResponse>
     {
         public static class Types
         {
@@ -21,13 +18,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("shop_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("shop_appid")]
         public string ShopAppId { get; set; } = string.Empty;
-
-        /// <summary>
-        /// 获取或设置用户的 OpenId。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("open_id")]
-        [System.Text.Json.Serialization.JsonPropertyName("open_id")]
-        public string? OpenId { get; set; }
 
         /// <summary>
         /// 获取或设置创建订单时间范围。

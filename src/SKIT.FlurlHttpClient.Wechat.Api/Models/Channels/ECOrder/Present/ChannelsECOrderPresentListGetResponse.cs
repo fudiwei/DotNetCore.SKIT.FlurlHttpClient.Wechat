@@ -1,12 +1,9 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/order/presentorderlist/get 接口的响应。</para>
+    /// <para>表示 [POST] /channels/ec/order/presentlist/get 接口的响应。</para>
     /// </summary>
-    [Obsolete("相关接口或字段于 2025-12-08 下线。")]
-    public class ChannelsECOrderPresentOrderListGetResponse : WechatApiResponse
+    public class ChannelsECOrderPresentListGetResponse : WechatApiResponse
     {
         public static class Types
         {
@@ -19,13 +16,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("present_order_id")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
                 public string PresentOrderId { get; set; } = default!;
-
-                /// <summary>
-                /// 获取或设置子单订单 ID 列表。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("order_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                public string[] OrderIdList { get; set; } = default!;
             }
         }
 

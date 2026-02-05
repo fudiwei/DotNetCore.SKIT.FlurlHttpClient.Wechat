@@ -634,6 +634,56 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
         #endregion
 
+        #region ECB2C
+        #region ECB2C/Activity
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/b2c/activity/list/promoter/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_list_present_activity.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECB2CActivityListPromoterGetResponse> ExecuteChannelsECB2CActivityListPromoterGetAsync(this WechatApiClient client, Models.ChannelsECB2CActivityListPromoterGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "b2c", "activity", "list", "promoter", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECB2CActivityListPromoterGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/b2c/activity/info/promoter/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_get_activity.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECB2CActivityInfoPromoterGetResponse> ExecuteChannelsECB2CActivityInfoPromoterGetAsync(this WechatApiClient client, Models.ChannelsECB2CActivityInfoPromoterGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "b2c", "activity", "info", "promoter", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECB2CActivityInfoPromoterGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+        #endregion
+
         #region ECBasics
         /// <summary>
         /// <para>异步调用 [GET] /channels/ec/basics/info/get 接口。</para>
@@ -5132,6 +5182,54 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         #endregion
         #endregion
 
+        #region ECOrder/Present
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/presentlist/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_get_present_list.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderPresentListGetResponse> ExecuteChannelsECOrderPresentListGetAsync(this WechatApiClient client, Models.ChannelsECOrderPresentListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentlist", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/present/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_get_present.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderPresentGetResponse> ExecuteChannelsECOrderPresentGetAsync(this WechatApiClient client, Models.ChannelsECOrderPresentGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "present", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
         #region ECOrder/PresentOrder
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/order/presentorder/create 接口。</para>
@@ -5167,6 +5265,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2025-12-08 下线。")]
         public static async Task<Models.ChannelsECOrderPresentOrderListGetResponse> ExecuteChannelsECOrderPresentOrderListGetAsync(this WechatApiClient client, Models.ChannelsECOrderPresentOrderListGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -5190,6 +5289,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2025-12-08 下线。")]
         public static async Task<Models.ChannelsECOrderPresentOrderGetResponse> ExecuteChannelsECOrderPresentOrderGetAsync(this WechatApiClient client, Models.ChannelsECOrderPresentOrderGetRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -5200,6 +5300,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentOrderGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/presentorder/receiver/set 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_set_present_receiver.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderPresentOrderReceiverSetResponse> ExecuteChannelsECOrderPresentOrderReceiverSetAsync(this WechatApiClient client, Models.ChannelsECOrderPresentOrderReceiverSetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentorder", "receiver", "set")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentOrderReceiverSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
 
@@ -5271,6 +5394,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPreshipmentChangeSKUGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+        #endregion
+
+        #region ECOrder/ReceiverOrder
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/receiverorderlist/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_get_receiver_order_list.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderReceiverOrderListGetResponse> ExecuteChannelsECOrderReceiverOrderListGetAsync(this WechatApiClient client, Models.ChannelsECOrderReceiverOrderListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentlist", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderReceiverOrderListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
         #endregion
@@ -8604,7 +8752,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECWecomGetWecomIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
-
+         
         #region ECWindow
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/window/product/add 接口。</para>

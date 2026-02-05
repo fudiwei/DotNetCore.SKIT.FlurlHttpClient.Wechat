@@ -26,6 +26,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         }
 
         /// <summary>
+        /// 获取或设置请求幂等 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("idempotent_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("idempotent_id")]
+        public string? IdempotentId { get; set; }
+
+        /// <summary>
         /// 获取或设置活动 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("activity_id")]

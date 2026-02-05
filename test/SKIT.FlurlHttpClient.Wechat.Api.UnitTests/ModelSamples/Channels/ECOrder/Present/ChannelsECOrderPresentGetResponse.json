@@ -1,0 +1,30 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "present": {
+        "present_order_id": "4232433395290081234",
+        "create_time": 1763713709,
+        "present_detail": {
+            "price_info": {
+                "order_price": 100
+            },
+            "pay_info": {
+                "pay_time": 1763715605
+            },
+            "wishmessage": "大家一起来抽奖"
+        },
+        "sub_order_list": [
+            {
+                "order_id": "3732433407897635321",
+                "openid": "oDiTs6_jRMfM4lualWTODbwt42kB",
+                "status": 30
+            },
+            {
+                "order_id": "3732433407896586753",
+                "status": 12
+            }
+        ],
+        "is_b2c_free_present": false,
+        "activity_id": "3002981"
+    }
+}

@@ -1,8 +1,11 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/order/presentorder/get 接口的响应。</para>
     /// </summary>
+    [Obsolete("相关接口或字段于 2025-12-08 下线。")]
     public class ChannelsECOrderPresentOrderGetResponse : WechatApiResponse
     {
         public static class Types

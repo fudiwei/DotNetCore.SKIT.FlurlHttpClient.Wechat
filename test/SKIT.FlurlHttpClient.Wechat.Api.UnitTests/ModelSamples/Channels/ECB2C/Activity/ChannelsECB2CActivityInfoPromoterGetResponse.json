@@ -1,0 +1,32 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "activity": {
+        "activity_id": "111",
+        "info": {
+            "basic_info": {
+                "activity_start_time": "1745856000",
+                "activity_end_time": "1746028800",
+                "shop_info": {
+                    "nickname": "小店昵称",
+                    "appid": "wxxxxxxxxxxxxxxxxx"
+                }
+            },
+            "prize_info": {
+                "product_info_list": [
+                    {
+                        "product_id": "111111111111111",
+                        "sku_id": "2222222222",
+                        "product_img_url": "https://res.wx.qq.com/op_res/1UTAKQSOJopJ5uMwT8EKEWPgJ1RjiMm8XC93FVwJ6GZlPmfXBjqkwVz8QvO985FR-IWAdYj1sMsaVYdl4jEwUA",
+                        "product_name": "商品名称",
+                        "sku_name": "商品sku名称",
+                        "price": "10",
+                        "stock_num": "10",
+                        "can_use_stock_num": "10"
+                    }
+                ]
+            }
+        },
+        "status": 1
+    }
+}

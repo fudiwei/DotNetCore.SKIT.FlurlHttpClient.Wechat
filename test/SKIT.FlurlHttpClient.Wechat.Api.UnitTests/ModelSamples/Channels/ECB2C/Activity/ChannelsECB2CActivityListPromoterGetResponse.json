@@ -1,0 +1,17 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "list": [
+        {
+            "shop_appid": "wxxxxxxxxxxxxxxxxx",
+            "shop_nickname": "小店昵称",
+            "activity_id": "111"
+        },
+        {
+            "shop_appid": "wxxxxxxxxxxxxxxxxx",
+            "shop_nickname": "小店昵称",
+            "activity_id": "222"
+        }
+    ],
+    "total_num": 2
+}

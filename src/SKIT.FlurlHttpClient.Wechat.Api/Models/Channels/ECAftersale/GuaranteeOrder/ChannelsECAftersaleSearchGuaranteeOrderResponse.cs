@@ -14,6 +14,24 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     public class ProductInfo
                     {
                         /// <summary>
+                        /// 获取或设置商品 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("product_id")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberReadOnlyConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("product_id")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberReadOnlyConverter))]
+                        public long? ProductId { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置 SKU ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("sku_id")]
+                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberReadOnlyConverter))]
+                        [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberReadOnlyConverter))]
+                        public long? SKUId { get; set; }
+
+                        /// <summary>
                         /// 获取或设置商品名称。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title")]
