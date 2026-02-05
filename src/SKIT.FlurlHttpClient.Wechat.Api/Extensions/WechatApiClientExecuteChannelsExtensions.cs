@@ -368,7 +368,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
-        #region ECAftersale/GuaranteeOrder
+        #region ECAftersale/Guarantee
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/aftersale/searchguaranteeorder 接口。</para>
         /// <para>
@@ -5228,9 +5228,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
-        #endregion
 
-        #region ECOrder/PresentOrder
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/order/presentorder/create 接口。</para>
         /// <para>
@@ -5324,6 +5322,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentOrderReceiverSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/receiverorderlist/get 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_get_receiver_order_list.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderReceiverOrderListGetResponse> ExecuteChannelsECOrderReceiverOrderListGetAsync(this WechatApiClient client, Models.ChannelsECOrderReceiverOrderListGetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentlist", "get")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderReceiverOrderListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
         #endregion
 
         #region ECOrder/PreshipmentChangeSKU
@@ -5394,31 +5415,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPreshipmentChangeSKUGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
-        }
-        #endregion
-
-        #region ECOrder/ReceiverOrder
-        /// <summary>
-        /// <para>异步调用 [POST] /channels/ec/order/receiverorderlist/get 接口。</para>
-        /// <para>
-        /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_get_receiver_order_list.html ]]>
-        /// </para>
-        /// </summary>
-        /// <param name="client"></param>
-        /// <param name="request"></param>
-        /// <param name="cancellationToken"></param>
-        /// <returns></returns>
-        public static async Task<Models.ChannelsECOrderReceiverOrderListGetResponse> ExecuteChannelsECOrderReceiverOrderListGetAsync(this WechatApiClient client, Models.ChannelsECOrderReceiverOrderListGetRequest request, CancellationToken cancellationToken = default)
-        {
-            if (client is null) throw new ArgumentNullException(nameof(client));
-            if (request is null) throw new ArgumentNullException(nameof(request));
-
-            IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentlist", "get")
-                .SetQueryParam("access_token", request.AccessToken);
-
-            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderReceiverOrderListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
         }
         #endregion
         #endregion

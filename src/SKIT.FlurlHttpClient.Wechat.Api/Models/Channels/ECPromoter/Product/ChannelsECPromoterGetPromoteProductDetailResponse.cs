@@ -27,7 +27,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             {
                             }
 
-                            public class SKUDeliver : ChannelsECProductGetResponse.Types.Product.Types.SKUDeliver
+                            public class SKUDeliver : ChannelsECProductGetResponse.Types.Product.Types.SKUDeliverInfo
                             {
                             }
 

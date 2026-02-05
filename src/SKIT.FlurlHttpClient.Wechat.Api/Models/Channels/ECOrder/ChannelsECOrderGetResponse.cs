@@ -42,7 +42,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public int FreightInsurance { get; set; }
                                     }
 
-                                    public class SKUDeliver
+                                    public class SKUDeliverInfo
                                     {
                                         /// <summary>
                                         /// 获取或设置商品发货类型。
@@ -340,6 +340,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public int? CashCouponDiscountedPrice { get; set; }
 
                                 /// <summary>
+                                /// 获取或设置限时抢购优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("limited_discount_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("limited_discount_discounted_price")]
+                                public int? LimitedDiscountDiscountedPrice { get; set; }
+
+                                /// <summary>
                                 /// 获取或设置活动商家补贴金额（单位：分）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("platform_activity_merchant_discounted_price")]
@@ -428,7 +435,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
-                                public Types.SKUDeliver? SKUDeliver { get; set; }
+                                public Types.SKUDeliverInfo? SKUDeliverInfo { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置额外的服务信息。
@@ -670,6 +677,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public int? BulkBuyDiscountedPrice { get; set; }
 
                                 /// <summary>
+                                /// 获取或设置订单内限时抢购优惠金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("limited_discount_discounted_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("limited_discount_discounted_price")]
+                                public int? LimitedDiscountDiscountedPrice { get; set; }
+
+                                /// <summary>
                                 /// 获取或设置订单内国补优惠金额（单位：分）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("national_subsidy_discounted_price")]
@@ -836,7 +850,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public Types.TelNumberExtendedInfo? TelNumberExtendedInfo { get; set; }
                                     }
 
-                                    public class QualityInspection
+                                    public class QualityInspectInfo
                                     {
                                         /// <summary>
                                         /// 获取或设置质检状态。
@@ -934,7 +948,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("quality_inspect_info")]
                                 [System.Text.Json.Serialization.JsonPropertyName("quality_inspect_info")]
-                                public Types.QualityInspection? QualityInspection { get; set; }
+                                public Types.QualityInspectInfo? QualityInspectInfo { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置虚拟商品充值账户信息。

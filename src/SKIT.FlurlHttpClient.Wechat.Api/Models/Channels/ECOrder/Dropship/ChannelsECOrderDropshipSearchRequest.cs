@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class TimeRange : ChannelsECOrderDropshipListRequest.Types.TimeRange
+                    public class TimeRange : ChannelsECOrderListGetRequest.Types.TimeRange
                     {
                     }
                 }
@@ -22,6 +22,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("create_time_range")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time_range")]
                 public Types.TimeRange? CreateTimeRange { get; set; }
+
+                /// <summary>
+                /// 获取或设置更新时间范围信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("update_time_range")]
+                [System.Text.Json.Serialization.JsonPropertyName("update_time_range")]
+                public Types.TimeRange? UpdateTimeRange { get; set; }
 
                 /// <summary>
                 /// 获取或设置供货商 AppId。
