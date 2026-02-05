@@ -1,0 +1,7 @@
+{
+    "audit_strategy": {
+        "hide_err_field_flag": 1,
+        "hit_duplicated_flag": 2,
+        "hit_low_risk_rule_flag": 0
+    }
+}
