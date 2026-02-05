@@ -67,11 +67,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int OrderStatus { get; set; }
 
                 /// <summary>
-                /// 获取或设置实际支付金额（单位：分）。
+                /// 获取或设置实际支付金额字符串（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("actual_payment")]
                 [System.Text.Json.Serialization.JsonPropertyName("actual_payment")]
-                public string ActualPayment { get; set; } = default!;
+                public string ActualPaymentString { get; set; } = default!;
+
+                /// <summary>
+                /// 获取或设置订单分佣基数金额字符串（单位：分）。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("settle_payment")]
+                [System.Text.Json.Serialization.JsonPropertyName("settle_payment")]
+                public string SettlePaymentString { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置订单支付时间戳。
