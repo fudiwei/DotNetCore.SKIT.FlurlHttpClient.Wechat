@@ -5767,6 +5767,31 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region ECProduct/AuditQuota
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/product/getauditquota 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-product/shop/api_getproductauditquota.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECProductGetAuditQuotaResponse> ExecuteChannelsECProductGetAuditQuotaAsync(this WechatApiClient client, Models.ChannelsECProductGetAuditQuotaRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "product", "getauditquota")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECProductGetAuditQuotaResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ECProduct/AuditStrategy
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/product/auditstrategy/get 接口。</para>
