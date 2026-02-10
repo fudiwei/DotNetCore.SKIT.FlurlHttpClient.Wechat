@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
@@ -9,6 +11,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         {
             public class TextMessage : CgibinMessageSendRequest.Types.TextMessage
             {
+                /// <summary>
+                /// 获取或设置提及成员账号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mentioned_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("mentioned_list")]
+                public IList<string>? MentionedUserIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置提及手机号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mentioned_mobile_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("mentioned_mobile_list")]
+                public IList<string>? MentionedMobileNumberList { get; set; }
             }
 
             public class ImageMessage : CgibinMessageSendRequest.Types.ImageMessage
@@ -41,6 +56,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 
             public class MarkdownMessage : CgibinMessageSendRequest.Types.MarkdownMessage
             {
+                /// <summary>
+                /// 获取或设置提及成员账号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mentioned_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("mentioned_list")]
+                public IList<string>? MentionedUserIdList { get; set; }
+
+                /// <summary>
+                /// 获取或设置提及手机号列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mentioned_mobile_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("mentioned_mobile_list")]
+                public IList<string>? MentionedMobileNumberList { get; set; }
             }
         }
 
