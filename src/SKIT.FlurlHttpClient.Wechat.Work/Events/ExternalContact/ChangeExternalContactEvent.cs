@@ -36,6 +36,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
         public string ChangeType { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置获客链接 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("LinkId")]
+        [System.Text.Json.Serialization.JsonPropertyName("LinkId")]
+        [System.Xml.Serialization.XmlElement("LinkId", IsNullable = true)]
+        public string? LinkId { get; set; }
+
+        /// <summary>
         /// 获取或设置用户成员账号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("UserID")]

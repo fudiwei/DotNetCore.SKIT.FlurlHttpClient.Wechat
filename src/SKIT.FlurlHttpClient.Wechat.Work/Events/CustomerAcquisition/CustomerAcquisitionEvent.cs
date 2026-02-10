@@ -10,6 +10,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Events
     public class CustomerAcquisitionEvent : WechatWorkEvent
     {
         /// <summary>
+        /// 获取或设置第三方应用的 SuiteId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("SuiteId")]
+        [System.Text.Json.Serialization.JsonPropertyName("SuiteId")]
+        [System.Xml.Serialization.XmlElement("SuiteId", IsNullable = true)]
+        public string? SuiteId { get; set; }
+
+        /// <summary>
+        /// 获取或设置授权方的 CorpId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("AuthCorpId")]
+        [System.Text.Json.Serialization.JsonPropertyName("AuthCorpId")]
+        [System.Xml.Serialization.XmlElement("AuthCorpId", IsNullable = true)]
+        public string? AuthorizerCorpId { get; set; }
+
+        /// <summary>
         /// 获取或设置变更类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ChangeType")]
