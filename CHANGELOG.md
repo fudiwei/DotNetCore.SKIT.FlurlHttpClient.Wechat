@@ -935,6 +935,11 @@
 
 <summary>[展开查看]</summary>
 
+- Release 3.14.0 (2026-02-10)
+    - **新增**：随官方更新发送应用消息接口模型。
+    - **新增**：随官方更新获客助手相关回调通知事件模型。（_via_ [GitHub #208](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/208)、[GitHub #209](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/209)）
+    - **修复**：修复 CorpId 转换接口参数错误。（_via_ [GitHub #211](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/211)）
+
 - Release 3.13.0 (2025-11-26)
     - **新增**：新增营销获客相关接口。
     - **新增**：新增智能表格内容编组相关接口。
