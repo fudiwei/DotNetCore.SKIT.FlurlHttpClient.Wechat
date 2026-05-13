@@ -23,8 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// <summary>
                         /// 获取或设置部门 ID 列表。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("partyid")]
-                        [System.Text.Json.Serialization.JsonPropertyName("partyid")]
+                        [Newtonsoft.Json.JsonProperty("party_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("party_id")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public long[]? DepartmentIdList { get; set; }
 
                         /// <summary>

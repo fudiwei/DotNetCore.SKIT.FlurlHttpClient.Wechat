@@ -1,4 +1,4 @@
-﻿{
+{
     "errcode": 0,
     "errmsg": "ok",
     "group": [
@@ -82,7 +82,7 @@
                 }
             ],
             "range": {
-                "partyid": [],
+                "party_id": [],
                 "userid": ["icef", "LiJingZhong"],
                 "tagid": [2]
             },

@@ -51,7 +51,7 @@
             }
         ],
         "range": {
-            "partyid": [],
+            "party_id": [],
             "userid": [
                 "gongjuren",
                 "tester"
