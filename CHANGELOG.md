@@ -935,6 +935,10 @@
 
 <summary>[展开查看]</summary>
 
+- Release 3.15.1 (2026-05-13)
+    - **修复**：修复企业会话存档小程序消息模型字段缺失问题。（_via_ [GitHub #218](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/218)）
+    - **修复**：修复打卡规则相关接口模型定义错误。（_via_ [GitHub #219](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/219)）
+
 - Release 3.15.0 (2026-03-12)
     - **新增**：实现智能机器人扩展客户端。（_via_ [GitHub #213](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/213)）
     - **修复**：修复获取员工花名册信息接口模型定义错误。（_via_ [GitHub #215](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/215)）
