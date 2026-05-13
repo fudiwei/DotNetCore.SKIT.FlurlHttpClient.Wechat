@@ -334,6 +334,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         [Newtonsoft.Json.JsonProperty("username")]
         [System.Text.Json.Serialization.JsonPropertyName("username")]
         public string UserName { get; set; } = default!;
+
+        /// <summary>
+        /// 获取或设置小程序 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("appid")]
+        public string? AppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置小程序页面路径。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("pagepath")]
+        [System.Text.Json.Serialization.JsonPropertyName("pagepath")]
+        public string? PagePath { get; set; }
     }
 
     public class ChatRecordMessage : ChatMessageBase
