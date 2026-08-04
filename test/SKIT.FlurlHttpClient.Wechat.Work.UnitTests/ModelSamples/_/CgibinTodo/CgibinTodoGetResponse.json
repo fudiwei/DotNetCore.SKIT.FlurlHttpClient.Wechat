@@ -1,0 +1,24 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "content": "完成述职PPT",
+    "creator": "zhangsan",
+    "status": 1,
+    "create_time": 177777777,
+    "attendees": [
+        {
+            "userid": "lisi",
+            "status": 0
+        },
+        {
+            "userid": "zhangsan",
+            "status": 1
+        }
+    ],
+    "end_time": 17777777,
+    "reminders": [
+        {
+            "remind_time": 17777777
+        }
+    ]
+}
