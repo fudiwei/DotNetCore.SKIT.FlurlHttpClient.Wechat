@@ -1,0 +1,17 @@
+{
+    "rules": [
+        {
+            "rule_id": 10001,
+            "range": {
+                "userid": [ "zhangsan", "lisi" ],
+                "partyid": [ 1, 2 ],
+                "tagid": [ 3 ]
+            },
+            "whitelist": {
+                "userid": [ "wangwu" ],
+                "partyid": [ 4 ],
+                "tagid": []
+            }
+        }
+    ]
+}

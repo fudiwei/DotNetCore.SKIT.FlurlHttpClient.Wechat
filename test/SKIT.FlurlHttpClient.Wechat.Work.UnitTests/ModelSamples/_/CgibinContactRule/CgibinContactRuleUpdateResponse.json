@@ -1,0 +1,20 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "rules": [
+        {
+            "rule_id": 10001,
+            "rule_type": 1,
+            "range": {
+                "userid": [ "zhangsan", "lisi" ],
+                "partyid": [ 1, 2 ],
+                "tagid": [ 3 ]
+            },
+            "whitelist": {
+                "userid": [ "wangwu" ],
+                "partyid": [ 4 ],
+                "tagid": []
+            }
+        }
+    ]
+}

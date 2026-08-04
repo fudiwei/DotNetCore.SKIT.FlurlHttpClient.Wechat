@@ -139,7 +139,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
         /// <para>异步调用 [POST] /cgi-bin/batch/userid_to_openuserid 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95435 ]]>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/95435 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/97062 ]]> <br/>
+        /// <![CDATA[ https://developer.work.weixin.qq.com/document/path/101521 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
