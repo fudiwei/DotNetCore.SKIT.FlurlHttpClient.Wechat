@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
@@ -6,8 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /payscore/serviceorder/{out_order_no}/complete 接口的请求。</para>
     /// </summary>
-    [Obsolete("请使用 CompletePayScoreServiceOrderRequest 类型代替。")]
-    public class SetPayScoreServiceOrderCompleteRequest : WechatTenpayRequest
+    public class CompletePayScoreServiceOrderRequest : WechatTenpayRequest
     {
         public static class Types
         {

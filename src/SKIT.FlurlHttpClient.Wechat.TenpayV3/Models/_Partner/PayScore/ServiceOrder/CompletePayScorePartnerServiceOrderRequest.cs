@@ -5,8 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /payscore/partner/serviceorder/{out_order_no}/complete 接口的请求。</para>
     /// </summary>
-    [Obsolete("请使用 CompletePayScorePartnerServiceOrderRequest 方法代替。")]
-    public class SetPayScorePartnerServiceOrderCompleteRequest : SetPayScoreServiceOrderCompleteRequest
+    public class CompletePayScorePartnerServiceOrderRequest : CompletePayScoreServiceOrderRequest
     {
         /// <summary>
         /// 获取或设置子商户号。

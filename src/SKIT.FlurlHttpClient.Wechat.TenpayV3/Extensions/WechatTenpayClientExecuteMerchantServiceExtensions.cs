@@ -126,6 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("请使用 ExecuteCompleteMerchantServiceComplaintAsync 方法代替。")]
         public static async Task<Models.SetMerchantServiceComplaintCompleteResponse> ExecuteSetMerchantServiceComplaintCompleteAsync(this WechatTenpayClient client, Models.SetMerchantServiceComplaintCompleteRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -138,6 +139,32 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId, "complete");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SetMerchantServiceComplaintCompleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /merchant-service/complaints-v2/{complaint_id}/complete 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012467255 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012467217 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CompleteMerchantServiceComplaintResponse> ExecuteCompleteMerchantServiceComplaintAsync(this WechatTenpayClient client, Models.CompleteMerchantServiceComplaintRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            if (request.ComplaintedMerchantId is null)
+                request.ComplaintedMerchantId = client.Credentials.MerchantId;
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "merchant-service", "complaints-v2", request.ComplaintId, "complete");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CompleteMerchantServiceComplaintResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

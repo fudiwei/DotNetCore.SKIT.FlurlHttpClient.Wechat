@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /brand/profitsharing/finish-order 接口的请求。</para>
     /// </summary>
+    [Obsolete("请使用 FinishBrandProfitSharingOrderRequest 方法代替。")]
     public class SetBrandProfitSharingOrderFinishRequest : WechatTenpayRequest
     {
         /// <summary>

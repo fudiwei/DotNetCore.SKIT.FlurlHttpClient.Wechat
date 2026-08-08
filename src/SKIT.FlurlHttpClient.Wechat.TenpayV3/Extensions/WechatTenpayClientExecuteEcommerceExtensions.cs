@@ -835,6 +835,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("请使用 ExecuteFinishEcommerceProfitSharingOrderAsync 方法代替。")]
         public static async Task<Models.SetEcommerceProfitSharingOrderFinishResponse> ExecuteSetEcommerceProfitSharingOrderFinishAsync(this WechatTenpayClient client, Models.SetEcommerceProfitSharingOrderFinishRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -844,6 +845,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "finish-order");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SetEcommerceProfitSharingOrderFinishResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /ecommerce/profitsharing/finish-order 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012477745 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.FinishEcommerceProfitSharingOrderResponse> ExecuteFinishEcommerceProfitSharingOrderAsync(this WechatTenpayClient client, Models.FinishEcommerceProfitSharingOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "ecommerce", "profitsharing", "finish-order");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.FinishEcommerceProfitSharingOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

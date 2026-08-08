@@ -5,8 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /marketing/busifavor/coupons/use 接口的响应。</para>
     /// </summary>
-    [Obsolete("请使用 UseMarketingBusifavorCouponResponse 类型代替。")]
-    public class SetMarketingBusifavorCouponUsedResponse : WechatTenpayResponse
+    public class UseMarketingBusifavorCouponResponse : WechatTenpayResponse
     {
         /// <summary>
         /// 获取或设置批次号。

@@ -1,12 +1,9 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /merchant-service/complaints-v2/{complaint_id}/complete 接口的请求。</para>
     /// </summary>
-    [Obsolete("请使用 CompleteMerchantServiceComplaintRequest 类型代替。")]
-    public class SetMerchantServiceComplaintCompleteRequest : WechatTenpayRequest
+    public class CompleteMerchantServiceComplaintRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置投诉单号。

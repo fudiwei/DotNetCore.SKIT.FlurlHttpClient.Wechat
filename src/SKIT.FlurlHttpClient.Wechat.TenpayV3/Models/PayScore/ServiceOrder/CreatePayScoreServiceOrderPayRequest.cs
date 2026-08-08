@@ -1,12 +1,9 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /payscore/serviceorder/{out_order_no}/pay 接口的请求。</para>
     /// </summary>
-    [Obsolete("请使用 CreatePayScoreServiceOrderPayRequest 类型代替。")]
-    public class SetPayScoreServiceOrderPayRequest : WechatTenpayRequest
+    public class CreatePayScoreServiceOrderPayRequest : WechatTenpayRequest
     {
         public static class Types
         {

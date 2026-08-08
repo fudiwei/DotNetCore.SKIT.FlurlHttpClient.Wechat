@@ -1,15 +1,12 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /brand/profitsharing/finish-order 接口的响应。</para>
+    /// <para>表示 [POST] /ecommerce/profitsharing/finish-order 接口的响应。</para>
     /// </summary>
-    [Obsolete("请使用 FinishBrandProfitSharingOrderResponse 方法代替。")]
-    public class SetBrandProfitSharingOrderFinishResponse : WechatTenpayResponse
+    public class FinishEcommerceProfitSharingOrderResponse : WechatTenpayResponse
     {
         /// <summary>
-        /// 获取或设置微信子商户号。
+        /// 获取或设置微信二级商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]

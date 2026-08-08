@@ -117,6 +117,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("请使用 ExecuteUnfreezeProfitSharingOrderAsync 方法代替。")]
         public static async Task<Models.SetProfitSharingOrderUnfrozenResponse> ExecuteSetProfitSharingOrderUnfrozenAsync(this WechatTenpayClient client, Models.SetProfitSharingOrderUnfrozenRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -126,6 +127,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "profitsharing", "orders", "unfreeze");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SetProfitSharingOrderUnfrozenResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /profitsharing/orders/unfreeze 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012526374 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012466860 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UnfreezeProfitSharingOrderResponse> ExecuteUnfreezeProfitSharingOrderAsync(this WechatTenpayClient client, Models.UnfreezeProfitSharingOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "profitsharing", "orders", "unfreeze");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.UnfreezeProfitSharingOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

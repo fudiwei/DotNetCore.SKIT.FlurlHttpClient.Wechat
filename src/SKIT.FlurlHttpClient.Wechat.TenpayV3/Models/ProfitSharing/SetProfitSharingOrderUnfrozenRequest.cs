@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /profitsharing/orders/unfreeze 接口的请求。</para>
     /// </summary>
+    [Obsolete("请使用 UnfreezeProfitSharingOrderRequest 类型代替。")]
     public class SetProfitSharingOrderUnfrozenRequest : WechatTenpayRequest
     {
         /// <summary>

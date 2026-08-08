@@ -209,6 +209,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("请使用 ExecuteCompletePayScoreAcquiringBankServiceOrderAsync 方法代替。")]
         public static async Task<Models.SetPayScoreAcquiringBankServiceOrderCompleteResponse> ExecuteSetPayScoreAcquiringBankServiceOrderCompleteAsync(this WechatTenpayClient client, Models.SetPayScoreAcquiringBankServiceOrderCompleteRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -218,6 +219,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber, "complete");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SetPayScoreAcquiringBankServiceOrderCompleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /payscore/acquiringbank/serviceorder/{out_order_no}/complete 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012460791 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CompletePayScoreAcquiringBankServiceOrderResponse> ExecuteCompletePayScoreAcquiringBankServiceOrderAsync(this WechatTenpayClient client, Models.CompletePayScoreAcquiringBankServiceOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber, "complete");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CompletePayScoreAcquiringBankServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
@@ -231,6 +254,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("请使用 ExecuteSyncPayScoreAcquiringBankServiceOrderAsync 方法代替。")]
         public static async Task<Models.SetPayScoreAcquiringBankServiceOrderSyncResponse> ExecuteSetPayScoreAcquiringBankServiceOrderSyncAsync(this WechatTenpayClient client, Models.SetPayScoreAcquiringBankServiceOrderSyncRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -240,6 +264,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber, "sync");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SetPayScoreAcquiringBankServiceOrderSyncResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /payscore/acquiringbank/serviceorder/{out_order_no}/sync 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012691378 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.SyncPayScoreAcquiringBankServiceOrderResponse> ExecuteSyncPayScoreAcquiringBankServiceOrderAsync(this WechatTenpayClient client, Models.SyncPayScoreAcquiringBankServiceOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "payscore", "acquiringbank", "serviceorder", request.OutOrderNumber, "sync");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.SyncPayScoreAcquiringBankServiceOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>

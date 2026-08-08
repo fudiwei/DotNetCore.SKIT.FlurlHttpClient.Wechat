@@ -3,10 +3,9 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /payscore/acquiringbank/serviceorder/{out_order_no}/sync 接口的请求。</para>
+    /// <para>表示 [POST] /payscore/acquiringbank/serviceorder/{out_order_no}/complete 接口的请求。</para>
     /// </summary>
-    [Obsolete("请使用 SyncPayScoreAcquiringBankServiceOrderRequest 类型代替。")]
-    public class SetPayScoreAcquiringBankServiceOrderSyncRequest : SetPayScorePartnerServiceOrderSyncRequest
+    public class CompletePayScoreAcquiringBankServiceOrderRequest : CompletePayScorePartnerServiceOrderRequest
     {
         /// <summary>
         /// 获取或设置渠道商商户号。

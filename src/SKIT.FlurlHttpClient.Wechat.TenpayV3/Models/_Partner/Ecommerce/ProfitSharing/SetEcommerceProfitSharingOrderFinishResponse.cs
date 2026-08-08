@@ -1,8 +1,11 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /ecommerce/profitsharing/finish-order 接口的响应。</para>
     /// </summary>
+    [Obsolete("请使用 FinishEcommerceProfitSharingOrderResponse 类型代替。")]
     public class SetEcommerceProfitSharingOrderFinishResponse : WechatTenpayResponse
     {
         /// <summary>

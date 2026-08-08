@@ -193,6 +193,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("请使用 ExecuteUseMarketingBusifavorCouponAsync 方法代替。")]
         public static async Task<Models.SetMarketingBusifavorCouponUsedResponse> ExecuteSetMarketingBusifavorCouponUsedAsync(this WechatTenpayClient client, Models.SetMarketingBusifavorCouponUsedRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -202,6 +203,29 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "busifavor", "coupons", "use");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.SetMarketingBusifavorCouponUsedResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/busifavor/coupons/use 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/merchant/4012465292 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4012465359 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UseMarketingBusifavorCouponResponse> ExecuteUseMarketingBusifavorCouponAsync(this WechatTenpayClient client, Models.UseMarketingBusifavorCouponRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "busifavor", "coupons", "use");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.UseMarketingBusifavorCouponResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
