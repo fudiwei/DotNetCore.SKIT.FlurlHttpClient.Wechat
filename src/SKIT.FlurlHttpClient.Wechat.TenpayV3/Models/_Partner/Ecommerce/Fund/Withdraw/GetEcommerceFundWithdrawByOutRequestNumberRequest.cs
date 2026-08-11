@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /ecommerce/fund/withdraw/out-request-no/{out_request_no} 接口的请求。</para>
@@ -6,7 +6,7 @@
     public class GetEcommerceFundWithdrawByOutRequestNumberRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置微信二级商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

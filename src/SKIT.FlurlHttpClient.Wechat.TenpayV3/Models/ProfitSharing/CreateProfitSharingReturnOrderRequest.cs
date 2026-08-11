@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /profitsharing/return-orders 接口的请求。</para>
@@ -6,7 +6,7 @@
     public class CreateProfitSharingReturnOrderRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置微信二级商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]

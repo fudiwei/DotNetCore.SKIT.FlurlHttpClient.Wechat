@@ -6,7 +6,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     public class GetMerchantAlterApplyMerchantContactAlterApplymentByOutRequestNumberRequest : WechatTenpayRequest
     {
         /// <summary>
-        /// 获取或设置特约商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]

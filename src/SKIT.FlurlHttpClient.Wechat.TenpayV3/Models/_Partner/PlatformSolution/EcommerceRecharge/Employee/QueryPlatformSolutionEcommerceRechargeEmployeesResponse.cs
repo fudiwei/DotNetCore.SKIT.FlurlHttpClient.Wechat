@@ -12,7 +12,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class Employee
             {
                 /// <summary>
-                /// 获取或设置二级商户号。
+                /// 获取或设置子商户号。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("sub_mchid")]
                 [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]

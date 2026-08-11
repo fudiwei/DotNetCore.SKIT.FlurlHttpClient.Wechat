@@ -47,14 +47,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? AquiringBankAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置特约商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_id")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_id")]
         public string SubMerchantId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置特约商户 AppId。
+        /// 获取或设置子商户 AppId。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("merchant_appid")]
         [System.Text.Json.Serialization.JsonPropertyName("merchant_appid")]

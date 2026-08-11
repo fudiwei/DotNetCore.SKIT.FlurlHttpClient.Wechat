@@ -40,12 +40,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("sign_time")]
                 [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
-                public DateTimeOffset SignTime { get; set; } 
+                public DateTimeOffset SignTime { get; set; }
             }
         }
 
         /// <summary>
-        /// 获取或设置二级商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mchid")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]

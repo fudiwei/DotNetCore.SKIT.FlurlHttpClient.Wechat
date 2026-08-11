@@ -37,7 +37,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? SubAppId { get; set; }
 
         /// <summary>
-        /// 获取或设置特约商户授权类型。
+        /// 获取或设置子商户授权类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("authorization_type")]
         [System.Text.Json.Serialization.JsonPropertyName("authorization_type")]

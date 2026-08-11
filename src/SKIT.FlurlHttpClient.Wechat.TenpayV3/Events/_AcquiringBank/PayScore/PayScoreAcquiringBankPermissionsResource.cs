@@ -16,7 +16,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Events
         public string MerchantId { get; set; } = default!;
 
         /// <summary>
-        /// 获取或设置子商户号。
+        /// 获取或设置微信子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sub_mch_id")]
         [System.Text.Json.Serialization.JsonPropertyName("sub_mch_id")]

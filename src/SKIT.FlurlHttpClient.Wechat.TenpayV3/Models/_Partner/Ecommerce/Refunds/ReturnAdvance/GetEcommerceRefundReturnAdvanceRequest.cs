@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
+namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [GET] /ecommerce/refunds/{refund_id}/return-advance 接口的请求。</para>
@@ -13,7 +13,7 @@
         public string RefundId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置微信二级商户号。
+        /// 获取或设置子商户号。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
