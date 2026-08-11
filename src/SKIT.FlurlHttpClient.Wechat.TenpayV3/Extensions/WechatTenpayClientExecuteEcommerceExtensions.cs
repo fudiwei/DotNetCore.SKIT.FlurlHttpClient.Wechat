@@ -13,6 +13,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
     {
         #region Account
         /// <summary>
+        /// <para>异步调用 [GET] /ecommerce/account/apply-cancel-withdraw/validate-cancel/{sub_mchid} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016420099 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ValidateEcommerceAccountCancelWithdrawApplicationResponse> ExecuteValidateEcommerceAccountCancelWithdrawApplicationAsync(this WechatTenpayClient client, Models.ValidateEcommerceAccountCancelWithdrawApplicationRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "ecommerce", "account", "apply-cancel-withdraw", "validate-cancel", request.SubMerchantId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ValidateEcommerceAccountCancelWithdrawApplicationResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /ecommerce/account/cancel-applications 接口。</para>
         /// <para>
         /// REF: <br/>

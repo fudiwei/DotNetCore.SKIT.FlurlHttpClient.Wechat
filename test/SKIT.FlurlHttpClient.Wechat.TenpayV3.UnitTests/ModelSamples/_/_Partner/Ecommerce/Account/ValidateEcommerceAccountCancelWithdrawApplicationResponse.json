@@ -1,0 +1,17 @@
+{
+    "sub_mchid": "1900000109",
+    "merchant_state": "NORMAL",
+    "validate_result": "ALLOW_CANCEL_WITHDRAW",
+    "account_info": [
+        {
+            "out_account_type": "BASIC_ACCOUNT",
+            "amount": 101
+        }
+    ],
+    "block_reasons": [
+        {
+            "type": "CONSUMER_COMPLAINT_UNPROCESSED",
+            "description": "该商户存在冻结资金或在途资金，请先处理资金再申请注销"
+        }
+    ]
+}

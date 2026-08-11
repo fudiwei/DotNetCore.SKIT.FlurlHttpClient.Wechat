@@ -860,7 +860,9 @@
             - 修改结算帐号：`ModifyApplyForSubMerchantSettlement`
             - 查询结算账户：`GetApplyForSubMerchantSettlement`
             - 查询结算账户修改申请状态：`GetApplyForSubMerchantSettlementByApplicationNumber`
-        - 注销申请
+        - 注销预校验
+            - 商户注销资格校验：`ValidateEcommerceAccountCancelWithdrawApplication`
+        - 注销申请（新流程）
             - 提交注销提现申请：`CreateEcommerceAccountCancelWithdrawApplication`
             - 商户申请单号查询申请单状态：`GetEcommerceAccountCancelWithdrawApplicationByOutRequestNumber`
             - 微信支付申请单号查询申请单状态：`GetEcommerceAccountCancelWithdrawApplicationByApplymentId`
