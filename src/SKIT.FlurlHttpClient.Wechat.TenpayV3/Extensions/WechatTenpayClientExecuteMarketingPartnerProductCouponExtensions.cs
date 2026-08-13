@@ -15,7 +15,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/partner/product-coupon/product-coupons 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781289 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781289 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016434630 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -37,7 +38,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/partner/product-coupon/product-coupons/{product_coupon_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781284 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781284 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016434632 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -60,7 +62,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [PATCH] /marketing/partner/product-coupon/product-coupons/{product_coupon_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781296 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781296 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016434633 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -82,7 +85,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/deactivate 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781290 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781290 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016434631 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -104,7 +108,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/partner/product-coupon/media/upload-image 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781275 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781275 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016435731 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -137,7 +142,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/partner/product-coupon/notify-configs 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781284 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781284 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016435718 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -159,7 +165,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/partner/product-coupon/notify-configs 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781286 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781286 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016435719 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -437,7 +444,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/partner/product-coupon/users/{openid}/coupons 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781590 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781590 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016435703 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -466,7 +474,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781582 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781582 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016435702 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -492,7 +501,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/confirm 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781575 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781575 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016435562 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -514,7 +524,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/use 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781608 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781608 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016435636 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -558,7 +569,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/return 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781599 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781599 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016435674 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>

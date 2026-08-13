@@ -147,6 +147,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                                 [Newtonsoft.Json.JsonProperty("irregular_available_period_list")]
                                 [System.Text.Json.Serialization.JsonPropertyName("irregular_available_period_list")]
                                 public IList<Types.IrregularPeriod>? IrregularPeriodList { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置领取后 N 秒内有效。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("available_seconds")]
+                                [System.Text.Json.Serialization.JsonPropertyName("available_seconds")]
+                                public int? AvailableSeconds { get; set; }
                             }
 
                             public class NormalCoupon
