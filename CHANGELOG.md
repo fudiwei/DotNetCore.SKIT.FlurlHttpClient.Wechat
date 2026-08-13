@@ -177,7 +177,8 @@
     - **新增**：随官方更新第三方平台授权账号管理、代商家注册小程序等相关接口模型。
 
 - Release 2.35.0 (2023-12-02)
-    - **新增**：新增视频号小店获取生效中的品牌资质列表接口。（_via_ [Gitee #12](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/12)） - **修复**：修复视频号小店运费模板更新接口模型定义错误。（_via_ [Gitee #10](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/10)）
+    - **新增**：新增视频号小店获取生效中的品牌资质列表接口。（_via_ [Gitee #12](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/12)）
+    - **修复**：修复视频号小店运费模板更新接口模型定义错误。（_via_ [Gitee #10](https://gitee.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/pulls/10)）
 
 - Release 2.34.0 (2023-10-14)
     - **新增**：新增小程序微信物流服务退货组件、查询组件等相关接口。
@@ -569,6 +570,14 @@
 <details>
 
 <summary>[展开查看]</summary>
+
+- Release 3.17.0 (2026-08-13)
+    - **新增**：新增品牌经营相关接口。
+    - **新增**：新增商家名片相关接口。
+    - **新增**：新增平台收付通商户注销资格校验接口。（_via_ [GitHub #220](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/220)）
+    - **新增**：随官方更新商家转账相关接口模型。（_via_ [GitHub #226](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/226)）
+    - **新增**：随官方更新商品券相关接口模型。
+    - **变更**：规范化部分接口命名，并标记原接口方法为已废弃。
 
 - Release 3.16.0 (2025-11-06)
     - **新增**：新增代金券获取批次核销和退款明细下载链接相关接口。
@@ -1336,7 +1345,8 @@
     - **变更**：升级公共组件至 v3.1.0。
 
 - Release 3.1.0 (2024-06-05)
-    - **新增**：适配新的 OpenAI v2 版接口。（_via_ [GitHub #143](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/143)） - **变更**：随官方标记部分接口为废弃。（_via_ [GitHub #143](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/143)）
+    - **新增**：适配新的 OpenAI v2 版接口。（_via_ [GitHub #143](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/143)）
+    - **变更**：随官方标记部分接口为废弃。（_via_ [GitHub #143](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/143)）
     - **变更**：重命名原客户端相关类型 "WechatOpenAI" → "WechatChatbot"，并调整默认入口点。（_via_ [GitHub #143](https://github.com/fudiwei/DotNetCore.SKIT.FlurlHttpClient.Wechat/issues/143)）
 
 - Release 3.0.0 (2024-02-07)
