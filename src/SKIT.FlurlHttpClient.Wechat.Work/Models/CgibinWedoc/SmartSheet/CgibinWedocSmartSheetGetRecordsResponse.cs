@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
@@ -40,20 +41,36 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 public IDictionary<string, object> Values { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置创建时间毫秒级戳。
+                /// 获取或设置创建时间毫秒级时间戳。
+                /// </summary>
+                [Obsolete("请使用 CreateTimestampMilli 属性代替。")]
+                [Newtonsoft.Json.JsonIgnore]
+                [System.Text.Json.Serialization.JsonIgnore]
+                public long CreateTimeMilliseconds { get { return CreateTimestampMilli; } set { CreateTimestampMilli = value; } }
+
+                /// <summary>
+                /// 获取或设置创建时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("create_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long CreateTimeMilliseconds { get; set; }
+                public long CreateTimestampMilli { get; set; }
 
                 /// <summary>
-                /// 获取或设置更新时间毫秒级戳。
+                /// 获取或设置更新时间毫秒级时间戳。
+                /// </summary>
+                [Obsolete("请使用 UpdateTimestampMilli 属性代替。")]
+                [Newtonsoft.Json.JsonIgnore]
+                [System.Text.Json.Serialization.JsonIgnore]
+                public long UpdateTimeMilliseconds { get { return UpdateTimestampMilli; } set { UpdateTimestampMilli = value; } }
+
+                /// <summary>
+                /// 获取或设置更新时间戳。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("update_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("update_time")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long UpdateTimeMilliseconds { get; set; }
+                public long UpdateTimestampMilli { get; set; }
             }
         }
 

@@ -147,7 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     Assert.Equal("FROM", model.FromUserId);
                     Assert.Equal("TO", model.ToUserIdList![0]);
                     Assert.Equal("ROOMID", model.RoomId);
-                    Assert.Equal(1234567890, model.MessageTimeMilliseconds);
+                    Assert.Equal(1234567890, model.MessageTimestampMilli);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);
@@ -261,7 +261,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.UnitTests
                     var model = serializer.Deserialize<DecryptChatRecordResponse>(json);
                     Assert.Equal("agree", model.MessageType);
                     Assert.Equal("wmGAgeDQAAvQeaTqWwkMTxGMkvI7OOuQ", model.MessageContentAsAgree!.UserId);
-                    Assert.Equal(1603875826656, model.MessageContentAsAgree!.AgreeTimeMilliseconds);
+                    Assert.Equal(1603875826656, model.MessageContentAsAgree!.AgreeTimestampMilli);
                 }
 
                 AssertModelWithJsonSerializer(newtonsoftJsonSerializer);

@@ -69,9 +69,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.Finance.Models.Abstractio
         /// <summary>
         /// 获取或设置毫秒级时间戳。
         /// </summary>
+        [Obsolete("请使用 AgreeTimestampMilli 属性代替。")]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public long AgreeTimeMilliseconds { get { return AgreeTimestampMilli; } set { AgreeTimestampMilli = value; } }
+
+        /// <summary>
+        /// 获取或设置时间戳。
+        /// </summary>
         [Newtonsoft.Json.JsonProperty("agree_time")]
         [System.Text.Json.Serialization.JsonPropertyName("agree_time")]
-        public long AgreeTimeMilliseconds { get; set; }
+        public long AgreeTimestampMilli { get; set; }
     }
 
     public class VoiceMessage : ChatMessageBase
