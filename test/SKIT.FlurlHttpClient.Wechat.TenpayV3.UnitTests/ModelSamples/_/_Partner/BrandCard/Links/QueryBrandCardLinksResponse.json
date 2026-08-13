@@ -1,0 +1,16 @@
+{
+    "brand_id": "123456",
+    "total_num": 1,
+    "active_link_list": [
+        {
+            "payment_scene": "MINI_PROGRAM",
+            "appid_list": [
+                "abcd111111"
+            ],
+            "card_link_mchid": "111222333",
+            "service_id": "00005000000000548218251086296300"
+        }
+    ],
+    "page_index": 1,
+    "page_size": 10
+}

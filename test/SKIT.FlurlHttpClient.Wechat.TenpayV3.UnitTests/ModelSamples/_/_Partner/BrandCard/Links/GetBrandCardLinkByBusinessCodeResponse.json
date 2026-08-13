@@ -1,0 +1,10 @@
+{
+    "business_code": "1900013511_10000",
+    "brand_id": "123456",
+    "payment_scene": "MINI_PROGRAM",
+    "appid": "abcd111111",
+    "card_link_mchid": "111222333",
+    "service_id": "00005000000000548218251086296300",
+    "configuration_state": "AUDIT_REJECT",
+    "reject_reason": "具体驳回原因xxx"
+}

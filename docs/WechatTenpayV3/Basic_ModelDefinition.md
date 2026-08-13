@@ -60,6 +60,7 @@
 |  √  |        品牌经营：品牌入驻         |      合作伙伴       |                   |
 |  √  |        品牌经营：品牌门店         | 直连商户 & 合作伙伴 |                   |
 |  √  |        品牌经营：品牌红包         |      直连商户       |                   |
+|  √  |        品牌经营：商家名片         |      合作伙伴       |                   |
 |  √  |      品牌经营：商家名片会员       |      合作伙伴       |                   |
 |  √  |      品牌经营：摇一摇有优惠       |      合作伙伴       |                   |
 |  √  |         品牌经营：商品券          |      合作伙伴       |                   |
@@ -662,6 +663,19 @@
         - 删除品牌门店：`DeleteBrandPartnerStore`
         - 绑定收款商户号：`BindBrandPartnerStoreRecipient`
         - 解绑收款商户号：`UnbindBrandPartnerStoreRecipient`
+    - 商家名片
+        - 商家名片配置
+            - 提交商家名片配置申请：`CreateBrandCardConfig`
+            - 发布商家名片配置：`PublishBrandCardConfig`
+            - 撤销商家名片配置申请：`CancelBrandCardConfig`
+            - 查询商家名片配置申请状态：`GetBrandCardConfigByBusinessCode` / `GetBrandCardConfigByApplymentId`
+            - 获取商家名片预览二维码：`GetBrandCardConfigPreviewUrl`
+        - 交易连接名片
+            - 添加交易连接名片规则申请：`CreateBrandCardLink`
+            - 解除已生效交易连接名片场景：`UnbindBrandCardLink`
+            - 撤销交易连接名片配置申请：`CancelBrandCardLinkApplyment`
+            - 查询已生效交易连接名片规则：`QueryBrandCardLinks`
+            - 根据业务申请编号查询添加申请状态：`GetBrandCardLinkByBusinessCode`
     - 商家名片会员
         - 会员卡模板管理：
             - 创建会员卡模板：`CreateBrandPartnerCardMemberCard`

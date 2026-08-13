@@ -1,0 +1,24 @@
+{
+    "business_code": "1900013511_10000",
+    "brand_id": "1234567",
+    "brand_mini_program_info": {
+        "appid": "wx1234567890abcdef",
+        "default_jump_path": "pages/shop/index",
+        "button_text": "前往小程序"
+    },
+    "brand_customer_service": {
+        "customer_service_type": "MINI_PROGRAM",
+        "customer_service_phone": "12345678900",
+        "customer_service_path": "pages/service/index",
+        "appid": "wx1234567890abcdef"
+    },
+    "service_list": [
+        {
+            "service_classify_name": "会员服务",
+            "service_name": "会员中心",
+            "service_jump_type": "JUMP_MINI_PROGRAM",
+            "service_jump_path": "pages/shop/index",
+            "appid": "wx1234567890abcdef"
+        }
+    ]
+}
