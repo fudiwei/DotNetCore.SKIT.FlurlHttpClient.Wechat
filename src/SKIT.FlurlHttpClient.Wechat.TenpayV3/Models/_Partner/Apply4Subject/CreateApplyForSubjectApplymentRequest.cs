@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
@@ -520,6 +521,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// <summary>
         /// 获取或设置最终受益人列表。
         /// </summary>
+        [Obsolete("相关接口或字段于 2026-03-31 下线。")]
         [Newtonsoft.Json.JsonProperty("ubo_info_list")]
         [System.Text.Json.Serialization.JsonPropertyName("ubo_info_list")]
         public IList<Types.UBO>? UBOList { get; set; }

@@ -5,8 +5,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
     /// <summary>
     /// <para>表示 [POST] /merchant/media/upload 接口的请求。</para>
     /// </summary>
-    [Obsolete("请使用 UploadMerchantMediaRequest 类型代替。")]
-    public class UploadMerchantMediaImageRequest : WechatTenpayRequest
+    public class UploadMerchantMediaRequest : WechatTenpayRequest
     {
         /// <summary>
         /// 获取或设置图片文件字节数组。
@@ -16,7 +15,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public byte[] FileBytes { get; set; } = Array.Empty<byte>();
 
         /// <summary>
-        /// 获取或设置图片文件名（必须以 jpg、bmp、png 为后缀）。如果不指定将由系统自动生成。
+        /// 获取或设置图片文件名（必须以 jpg、bmp、png、pdf 为后缀）。如果不指定将由系统自动生成。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("filename")]
         [System.Text.Json.Serialization.JsonPropertyName("filename")]

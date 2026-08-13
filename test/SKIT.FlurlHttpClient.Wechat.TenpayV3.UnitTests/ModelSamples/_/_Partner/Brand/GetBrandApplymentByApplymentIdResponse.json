@@ -1,0 +1,9 @@
+{
+    "applyment_id": "11111111111",
+    "business_code": "1900013511_10000",
+    "applyment_state": "APPLYMENT_STATE_FINISH",
+    "applyment_state_desc": "资料审核通过|主体意愿确认完成|待管理员授权确认",
+    "authorization_confirmation_qr_code": "https://pay.weixin.qq.com/xdc/partnerapply4brandweb/get-auth-code?applyId=200000212476&sign=b207b673049a32c858f3aabd7d27c7ec",
+    "reject_reason": "具体驳回原因xxx",
+    "brand_id": "12345678"
+}

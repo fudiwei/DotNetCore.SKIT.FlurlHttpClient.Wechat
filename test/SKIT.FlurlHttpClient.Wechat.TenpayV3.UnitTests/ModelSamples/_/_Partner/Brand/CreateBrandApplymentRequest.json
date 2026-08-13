@@ -1,0 +1,60 @@
+{
+    "business_code": "1900013511_10000",
+    "admin_info": {
+        "admin_name": "U2FsdGVkX1+3vZQv5+9JhTq3Xy6LdKjP0o9iYx5W7vRtNqY3sDfGhJkLmNbVcXz4Qw1UbP6oE8iC=",
+        "id_doc_type": "IDENTIFICATION_TYPE_MAINLAND_ID_CARD",
+        "id_card_number": "AOZdYGISxo4y44/UgZ69bdu9X+tfMUJ9dl+LetjM45/zMbrYu+wWZ8gn4CTdo+D/m9MrPg+V4sm73oxqdQu/hj7aWyDl4GQtPXVdaztB9jVbVZh3QFzV+BEmytMNQp9dt1uWJktlfdDdLR3AMWyMB377xd+m9bSr/ioDTzagEcGe+vLYiKrzcroQv3OR0p3ppFYoQ3IfYeU/04S4t9rNFL+kyblK2FCCqQ11NdbbHoCrJc7NV4oASq6ZFonjTtgjjgKsadIKHXtb3JZKGZjduGdtkRJJp0/0eow96uY1Pk7Rq79Jtt7+I8juwEc4P4TG5xzchG/5IL9DBd+Z0zZXkw=="
+    },
+    "subject_info": {
+        "subject_type": "SUBJECT_TYPE_ENTERPRISE",
+        "subject_name": "xx有限公司",
+        "unified_social_credit_code": "91310101MA1FPX1234"
+    },
+    "brand_basic_info": {
+        "brand_name": "爱马哥",
+        "brand_logo": "U2FsdGVkX1+8n2qLk9jP4vRtY6Wx1Zc3DqF7sH0mNpBvY2Tq5X9gLkE4wRz1oU6IcJ8mVfA0sBd="
+    },
+    "trademark": {
+        "trademark_exists": "TRADEMARK_EXISTS",
+        "trademark_registration_certificate": {
+            "certificate": "jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ",
+            "name": "爱马哥",
+            "number": "12345678",
+            "valid_begin_time": "2025-09-08",
+            "valid_end_time": "2035-09-08",
+            "international_class": "25",
+            "holder": "腾讯科技有限公司",
+            "license": "jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ",
+            "authorization_begin_time": "2025-09-08",
+            "authorization_end_time": "2035-09-08",
+            "certificate_list": [
+                "example_certificate_list"
+            ],
+            "license_list": [
+                "example_license_list"
+            ]
+        },
+        "logo_trademark_registration_certificate": {
+            "certificate": "jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ",
+            "name": "爱马哥",
+            "number": "21312344",
+            "valid_begin_time": "2025-09-08",
+            "valid_end_time": "2035-09-08",
+            "international_class": "25",
+            "holder": "腾讯科技有限公司",
+            "license": "jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ",
+            "authorization_begin_time": "2025-09-08",
+            "authorization_end_time": "2035-09-08",
+            "certificate_list": [
+                "example_certificate_list"
+            ],
+            "license_list": [
+                "example_license_list"
+            ]
+        },
+        "no_trademark_addition_prove": "jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ",
+        "no_trademark_addition_prove_list": [
+            "example_no_trademark_addition_prove_list"
+        ]
+    }
+}

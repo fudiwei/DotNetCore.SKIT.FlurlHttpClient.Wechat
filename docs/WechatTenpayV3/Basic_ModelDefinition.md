@@ -57,14 +57,14 @@
 |  √  |       营销产品：支付即服务        | 直连商户 & 合作伙伴 |                   |
 |  √  |        营销产品：点金计划         |      合作伙伴       |                   |
 |  ×  |   <del>营销产品：现金红包</del>   | 直连商户 & 合作伙伴 | 官方未提供 v3 API |
-|  √  |        营销产品：品牌红包         |      直连商户       |                   |
+|  √  |        品牌经营：品牌入驻         |      合作伙伴       |                   |
+|  √  |        品牌经营：品牌门店         | 直连商户 & 合作伙伴 |                   |
+|  √  |        品牌经营：品牌红包         |      直连商户       |                   |
 |  √  |      品牌经营：商家名片会员       |      合作伙伴       |                   |
 |  √  |      品牌经营：摇一摇有优惠       |      合作伙伴       |                   |
 |  √  |         品牌经营：商品券          |      合作伙伴       |                   |
-|  √  |        品牌经营：品牌门店         | 直连商户 & 合作伙伴 |                   |
-|  √  |        品牌经营：品牌门店         |      合作伙伴       |                   |
+|  √  |      品牌经营：零售小店活动       |      合作伙伴       |                   |
 |  √  |      品牌经营：连锁品牌分账       |      合作伙伴       |                   |
-|  √  |      品牌经营：品牌小店营销       |      合作伙伴       |                   |
 |  √  |   交易支持产品：消费者投诉 2.0    | 直连商户 & 合作伙伴 |                   |
 |  √  |    交易支持产品：微信电子发票     | 直连商户 & 合作伙伴 |                   |
 |  √  |   交易支持产品：出租车电子发票    |      合作伙伴       |                   |
@@ -80,13 +80,14 @@
 |  √  |     交易解决方案：平台保证金      |      合作伙伴       |                   |
 |  √  |      交易解决方案：个人收款       |      合作伙伴       |                   |
 |  √  |      交易解决方案：还款支付       |      合作伙伴       |                   |
-|  √  |      交易解决方案：ETC 扣费       |      合作伙伴       |                   |
 |  √  |     交易解决方案：教育续费通      | 直连商户 & 合作伙伴 |                   |
 |  √  |     交易解决方案：校园轻松付      |      合作伙伴       |                   |
 |  √  |       交易解决方案：微工卡        |      合作伙伴       |                   |
 |  √  |      交易解决方案：企业支付       |      合作伙伴       |                   |
 |  √  |           其他：消费卡            | 直连商户 & 合作伙伴 |                   |
+|  √  |          其他：扣费服务           | 直连商户 & 合作伙伴 |                   |
 |  √  |      其他：代扣服务切卡组件       | 直连商户 & 合作伙伴 |                   |
+|  √  |          其他：ETC 扣费           |      合作伙伴       |                   |
 |  √  |         其他：微信先享卡          |      直连商户       |                   |
 |  √  |        其他：微信点餐订单         |      合作伙伴       |                   |
 |  √  |         其他：微信寄快递          |      合作伙伴       |                   |
@@ -275,7 +276,7 @@
         - 下载批次核销明细：`GetMarketingFavorStockUseFlow`
         - 下载批次退款明细：`GetMarketingFavorStockRefundFlow`
         - 设置消息通知地址：`UpdateMarketingFavorCallback`
-        - 图片上传：`UploadMerchantMediaImage`
+        - 图片上传：`UploadMarketingMediaImage`
     - 商家券
         - 创建商家券：`CreateMarketingBusifavorStock`
         - 查询商家券详情：`GetMarketingBusifavorStockByStockId`
@@ -295,7 +296,7 @@
         - 营销补差回退：`CreateMarketingBusifavorSubsidyReturnReceipt`
         - 查询营销补差付款单列表：`QueryMarketingBusifavorSubsidyPayReceipts`
         - 查询营销补差付款单详情：`GetMarketingBusifavorSubsidyPayReceiptBySubsidyReceiptId`
-        - 图片上传：`UploadMerchantMediaImage`
+        - 图片上传：`UploadMarketingMediaImage`
     - 消费金
         - 下载批次退款明细：`GetMultiuseStockRefundFlow`
         - 下载批次发放明细：`GetMultiuseStockSendFlow`
@@ -314,7 +315,7 @@
         - 新增活动发券商户号：`AddMarketingPayGiftActivityMerchant`
         - 获取支付有礼活动列表：`QueryMarketingPayGiftActivities`
         - 删除活动发券商户号：`DeleteMarketingPayGiftActivityMerchant`
-        - 图片上传：`UploadMerchantMediaImage`
+        - 图片上传：`UploadMarketingMediaImage`
     - 智慧商圈
         - 商圈积分同步：`NotifyBusinessCirclePoints`
         - 商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
@@ -648,6 +649,19 @@
         - 开通广告展示：`OpenGoldPlanAdvertisingShow`
         - 关闭广告展示：`CloseGoldPlanAdvertisingShow`
 - 品牌经营
+    - 品牌入驻
+        - 提交入驻申请：`CreateBrandApplyment`
+        - 根据业务申请编号查询申请状态：`GetBrandApplymentByBusinessCode`
+        - 根据申请单 ID 查询申请状态：`GetBrandApplymentByApplymentId`
+        - 撤销申请：`CancelBrandApplyment`
+        - 图片上传：`UploadMerchantMedia`
+    - 品牌门店
+        - 创建品牌门店：`CreateBrandPartnerStore`
+        - 查询品牌门店：`GetBrandPartnerStoreByStoreId`
+        - 更新品牌门店：`ModifyBrandPartnerStore`
+        - 删除品牌门店：`DeleteBrandPartnerStore`
+        - 绑定收款商户号：`BindBrandPartnerStoreRecipient`
+        - 解绑收款商户号：`UnbindBrandPartnerStoreRecipient`
     - 商家名片会员
         - 会员卡模板管理：
             - 创建会员卡模板：`CreateBrandPartnerCardMemberCard`
@@ -670,6 +684,7 @@
         - 会员卡积分兑券：
             - 同步积分余额：`SyncBrandPartnerCardMemberUserPoint`
             - 同步积分兑券结果：`ConfirmBrandPartnerCardMemberUserPointExchangeCoupon`
+        - 图片上传：`UploadMarketingMediaImage`
     - 摇一摇有优惠
         - 投放计划
             - 创建投放计划：`CreateMarketingPartnerDeliveryPlan`
@@ -706,13 +721,15 @@
             - 失效用户商品券：`DeactivateMarketingPartnerProductCouponUserCoupon`
             - 退券：`ReturnMarketingPartnerProductCouponUserCoupon`
         - 图片上传：`UploadMarketingPartnerProductCouponMediaImage`
-    - 品牌门店
-        - 创建品牌门店：`CreateBrandPartnerStore`
-        - 查询品牌门店：`GetBrandPartnerStoreByStoreId`
-        - 更新品牌门店：`ModifyBrandPartnerStore`
-        - 删除品牌门店：`DeleteBrandPartnerStore`
-        - 绑定收款商户号：`BindBrandPartnerStoreRecipient`
-        - 解绑收款商户号：`UnbindBrandPartnerStoreRecipient`
+    - 零售小店活动
+        - 查询零售小店活动业务代理：`QueryMarketingGoodsSubsidyActivityRetailStoreRepresentatives`
+        - 添加零售小店活动业务代理：`AddMarketingGoodsSubsidyActivityRetailStoreRepresentative`
+        - 删除零售小店活动业务代理：`DeleteMarketingGoodsSubsidyActivityRetailStoreRepresentative`
+        - 生成小店活动物料码：`CreateMarketingGoodsSubsidyActivityRetailStoreMaterial`
+        - 查询小店活动门店列表：`QueryMarketingGoodsSubsidyActivityRetailStores`
+        - 查询小店活动门店详情：`GetMarketingGoodsSubsidyActivityRetailStoreByStoreCode`
+        - 添加小店活动门店：`AddMarketingGoodsSubsidyActivityRetailStore`
+        - 删除小店活动门店：`DeleteMarketingGoodsSubsidyActivityRetailStore`
     - 连锁品牌分账
         - 请求分账：`CreateBrandProfitSharingOrder`
         - 查询分账结果：`GetBrandProfitSharingOrderByOutOrderNumber`
@@ -725,15 +742,6 @@
         - 删除分账接收方：`DeleteBrandProfitSharingReceiver`
         - 申请分账账单：`GetProfitSharingBill`
         - 下载账单：`DownloadBillFile`
-    - 品牌小店营销
-        - 查询零售小店活动业务代理：`QueryMarketingGoodsSubsidyActivityRetailStoreRepresentatives`
-        - 添加零售小店活动业务代理：`AddMarketingGoodsSubsidyActivityRetailStoreRepresentative`
-        - 删除零售小店活动业务代理：`DeleteMarketingGoodsSubsidyActivityRetailStoreRepresentative`
-        - 生成小店活动物料码：`CreateMarketingGoodsSubsidyActivityRetailStoreMaterial`
-        - 查询小店活动门店列表：`QueryMarketingGoodsSubsidyActivityRetailStores`
-        - 查询小店活动门店详情：`GetMarketingGoodsSubsidyActivityRetailStoreByStoreCode`
-        - 添加小店活动门店：`AddMarketingGoodsSubsidyActivityRetailStore`
-        - 删除小店活动门店：`DeleteMarketingGoodsSubsidyActivityRetailStore`
 - 交易支持产品
     - 消费者投诉 2.0
         - 主动查询投诉信息
@@ -809,7 +817,7 @@
         - 修改结算帐号：`ModifyApplyForSubMerchantSettlement`
         - 查询结算账户：`GetApplyForSubMerchantSettlement`
         - 查询结算账户修改申请状态：`GetApplyForSubMerchantSettlementByApplicationNumber`
-        - 图片上传：`UploadMerchantMediaImage`
+        - 图片上传：`UploadMerchantMedia`
         - 视频上传：`UploadMerchantMediaVideo`
     - 修改商户主体信息
         - 提交申请单：`CreateMerchantAlterApplyMerchantSubjectAlterApplyment`
@@ -824,7 +832,7 @@
         - 撤销申请单：`CancelApplyForSubjectApplymentByApplymentId` / `CancelApplyForSubjectApplymentByBusinessCode`
         - 查询申请单审核结果：`GetApplyForSubjectApplymentByApplymentId` / `GetApplyForSubjectApplymentByBusinessCode`
         - 获取商户开户意愿确认状态：`GetApplyForSubjectApplymentMerchantState`
-        - 图片上传：`UploadMerchantMediaImage`
+        - 图片上传：`UploadMerchantMedia`
     - 商户平台处置通知
         - 创建商户违规通知回调地址：`CreateMerchantRiskManageViolationNotification`
         - 查询商户违规通知回调地址：`GetMerchantRiskManageViolationNotification`
@@ -986,11 +994,6 @@
                 - 提交申请单：`CreateMerchantAlterApplyMerchantContactAlterApplyment`
                 - 查询申请单状态：`GetMerchantAlterApplyMerchantContactAlterApplymentByOutRequestNumber` / `GetMerchantAlterApplyMerchantContactAlterApplymentByApplymentId`
                 - 撤销申请单：`RevokeMerchantAlterApplyMerchantContactAlterApplyment`
-    - ETC 扣费
-        - 预开通用户 ETC 指定卡扣费：`PreopenVehicleETC`
-        - 高速场景商户扣款：`CreateVehicleETCTransactionHighway`
-        - 查询 ETC 签约状态：`GetVehicleETCContractByOpenId` / `GetVehicleETCContractByContractId`
-        - 查询订单：`GetVehicleETCTransactionByOutTradeNumber` / `GetVehicleETCTransactionByTransactionId`
     - 教育续费通：
         - 预签约：`PresignEducationPAPayContract`
         - 通过协议号查询签约：`GetEducationPAPayContractByContractId`
@@ -1067,6 +1070,11 @@
         - 重试扣费通知：`CreatePartnerPAPayContractFailedNotification`
     - 代扣服务切卡组件
         - 出行券切卡组件预下单：`CreateIndustryCouponToken`
+    - ETC 扣费
+        - 预开通用户 ETC 指定卡扣费：`PreopenVehicleETC`
+        - 高速场景商户扣款：`CreateVehicleETCTransactionHighway`
+        - 查询 ETC 签约状态：`GetVehicleETCContractByOpenId` / `GetVehicleETCContractByContractId`
+        - 查询订单：`GetVehicleETCTransactionByOutTradeNumber` / `GetVehicleETCTransactionByTransactionId`
 
 </details>
 

@@ -1,12 +1,9 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
     /// <summary>
     /// <para>表示 [POST] /merchant/media/upload 接口的响应。</para>
     /// </summary>
-    [Obsolete("请使用 UploadMerchantMediaResponse 类型代替。")]
-    public class UploadMerchantMediaImageResponse : WechatTenpayResponse
+    public class UploadMerchantMediaResponse : WechatTenpayResponse
     {
         /// <summary>
         /// 获取或设置媒体文件标识 ID。
