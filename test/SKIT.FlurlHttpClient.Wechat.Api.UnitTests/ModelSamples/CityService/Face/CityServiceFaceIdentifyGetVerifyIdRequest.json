@@ -1,0 +1,9 @@
+{
+    "out_seq_no": "xxx",
+    "cert_info": {
+        "cert_type": "xxx",
+        "cert_name": "xxx",
+        "cert_no": "xxx"
+    },
+    "openid": "xxx"
+}
