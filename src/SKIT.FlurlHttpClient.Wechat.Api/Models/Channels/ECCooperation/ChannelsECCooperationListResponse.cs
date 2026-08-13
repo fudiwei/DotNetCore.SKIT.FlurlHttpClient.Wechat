@@ -43,30 +43,62 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置绑定时间毫秒级时间戳。
                 /// </summary>
+                [Obsolete("请使用 BindTimestampMilli 属性代替。")]
+                [Newtonsoft.Json.JsonIgnore]
+                [System.Text.Json.Serialization.JsonIgnore]
+                public long? BindTimeMilliseconds { get { return BindTimestampMilli; } set { BindTimestampMilli = value; } }
+
+                /// <summary>
+                /// 获取或设置绑定时间戳。
+                /// </summary>
                 [Newtonsoft.Json.JsonProperty("bind_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("bind_time")]
-                public long? BindTimeMilliseconds { get; set; }
+                public long? BindTimestampMilli { get; set; }
 
                 /// <summary>
                 /// 获取或设置解绑时间毫秒级时间戳。
                 /// </summary>
+                [Obsolete("请使用 UnbindTimestampMilli 属性代替。")]
+                [Newtonsoft.Json.JsonIgnore]
+                [System.Text.Json.Serialization.JsonIgnore]
+                public long? UnbindTimeMilliseconds { get { return UnbindTimestampMilli; } set { UnbindTimestampMilli = value; } }
+
+                /// <summary>
+                /// 获取或设置解绑时间戳。
+                /// </summary>
                 [Newtonsoft.Json.JsonProperty("unbind_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("unbind_time")]
-                public long? UnbindTimeMilliseconds { get; set; }
+                public long? UnbindTimestampMilli { get; set; }
 
                 /// <summary>
                 /// 获取或设置用户拒绝时间毫秒级时间戳。
                 /// </summary>
+                [Obsolete("请使用 RejectTimestampMilli 属性代替。")]
+                [Newtonsoft.Json.JsonIgnore]
+                [System.Text.Json.Serialization.JsonIgnore]
+                public long? RejectTimeMilliseconds { get { return RejectTimestampMilli; } set { RejectTimestampMilli = value; } }
+
+                /// <summary>
+                /// 获取或设置用户拒绝时间戳。
+                /// </summary>
                 [Newtonsoft.Json.JsonProperty("reject_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("reject_time")]
-                public long? RejectTimeMilliseconds { get; set; }
+                public long? RejectTimestampMilli { get; set; }
 
                 /// <summary>
                 /// 获取或设置商家取消时间毫秒级时间戳。
                 /// </summary>
+                [Obsolete("请使用 CancelTimestampMilli 属性代替。")]
+                [Newtonsoft.Json.JsonIgnore]
+                [System.Text.Json.Serialization.JsonIgnore]
+                public long? CancelTimeMilliseconds { get { return CancelTimestampMilli; } set { CancelTimestampMilli = value; } }
+
+                /// <summary>
+                /// 获取或设置商家取消时间戳。
+                /// </summary>
                 [Newtonsoft.Json.JsonProperty("cancel_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("cancel_time")]
-                public long? CancelTimeMilliseconds { get; set; }
+                public long? CancelTimestampMilli { get; set; }
             }
         }
 

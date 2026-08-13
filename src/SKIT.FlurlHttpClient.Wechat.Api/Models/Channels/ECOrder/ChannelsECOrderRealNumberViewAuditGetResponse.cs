@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -30,8 +32,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置申请时间毫秒级时间戳。
         /// </summary>
+        [Obsolete("请使用 ApplyTimestampMilli 属性代替。")]
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public long ApplyTimeMilliseconds { get { return ApplyTimestampMilli; } set { ApplyTimestampMilli = value; } }
+
+        /// <summary>
+        /// 获取或设置申请时间戳。
+        /// </summary>
         [Newtonsoft.Json.JsonProperty("apply_time")]
         [System.Text.Json.Serialization.JsonPropertyName("apply_time")]
-        public long ApplyTimeMilliseconds { get; set; }
+        public long ApplyTimestampMilli { get; set; }
     }
 }

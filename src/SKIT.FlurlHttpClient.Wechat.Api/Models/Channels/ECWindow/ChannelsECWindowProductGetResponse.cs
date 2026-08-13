@@ -114,9 +114,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置活动结束时间毫秒级时间戳。
                         /// </summary>
+                        [Obsolete("请使用 EndTimestampMilli 属性代替。")]
+                        [Newtonsoft.Json.JsonIgnore]
+                        [System.Text.Json.Serialization.JsonIgnore]
+                        public long EndTimeMilliseconds { get { return EndTimestampMilli; } set { EndTimestampMilli = value; } }
+
+                        /// <summary>
+                        /// 获取或设置活动结束时间戳。
+                        /// </summary>
                         [Newtonsoft.Json.JsonProperty("end_time_ms")]
                         [System.Text.Json.Serialization.JsonPropertyName("end_time_ms")]
-                        public long EndTimeMilliseconds { get; set; }
+                        public long EndTimestampMilli { get; set; }
                     }
                 }
 
