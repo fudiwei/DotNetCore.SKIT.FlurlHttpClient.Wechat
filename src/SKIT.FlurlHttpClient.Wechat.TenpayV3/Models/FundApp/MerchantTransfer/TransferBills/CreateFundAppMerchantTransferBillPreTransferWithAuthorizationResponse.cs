@@ -38,11 +38,11 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public DateTimeOffset CreateTime { get; set; }
 
         /// <summary>
-        /// 获取或设置跳转领取页面的携带信息。
+        /// 获取或设置商户侧授权单号。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("package_info")]
-        [System.Text.Json.Serialization.JsonPropertyName("package_info")]
-        public string? PackageInfo { get; set; }
+        [Newtonsoft.Json.JsonProperty("out_authorization_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_authorization_no")]
+        public string? OutAuthorizationNumber { get; set; }
 
         /// <summary>
         /// 获取或设置用户展示昵称。
@@ -52,10 +52,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? UserDisplayName { get; set; }
 
         /// <summary>
-        /// 获取或设置商户侧授权单号。
+        /// 获取或设置跳转领取页面的携带信息。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("out_authorization_no")]
-        [System.Text.Json.Serialization.JsonPropertyName("out_authorization_no")]
-        public string? OutAuthorizationNumber { get; set; }
+        [Newtonsoft.Json.JsonProperty("package_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("package_info")]
+        public string? PackageInfo { get; set; }
     }
 }

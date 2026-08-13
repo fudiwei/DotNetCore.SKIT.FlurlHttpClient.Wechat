@@ -274,6 +274,9 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             IFlurlRequest flurlReq = client
                 .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "mch-transfer", "user-confirm-authorization", "out-authorization-no", request.OutAuthorizationNumber);
 
+            if (request.IsDisplayAuthorization is not null)
+                flurlReq.SetQueryParam("is_display_authorization", request.IsDisplayAuthorization.Value ? "true" : "false");
+
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppMerchantTransferUserConfirmAuthorizationByOutAuthorizationNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 

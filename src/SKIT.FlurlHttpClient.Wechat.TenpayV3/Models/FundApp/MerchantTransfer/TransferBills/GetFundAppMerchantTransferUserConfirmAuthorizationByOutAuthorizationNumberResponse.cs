@@ -51,6 +51,15 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string AuthorizationId { get; set; } = default!;
 
         /// <summary>
+        /// 获取或设置单据创建时间。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("create_time")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.Rfc3339DateTimeOffsetConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("create_time")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.Rfc3339DateTimeOffsetConverter))]
+        public DateTimeOffset CreateTime { get; set; }
+
+        /// <summary>
         /// 获取或设置授权状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]
@@ -86,5 +95,26 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("close_info")]
         [System.Text.Json.Serialization.JsonPropertyName("close_info")]
         public Types.CloseInfo? CloseInfo { get; set; }
+
+        /// <summary>
+        /// 获取或设置转账场景 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("transfer_scene_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("transfer_scene_id")]
+        public string? TransferSceneId { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户收款感知。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("user_recv_perception")]
+        [System.Text.Json.Serialization.JsonPropertyName("user_recv_perception")]
+        public string? UserReceivePerception { get; set; }
+
+        /// <summary>
+        /// 获取或设置跳转领取页面的携带信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("package_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("package_info")]
+        public string? PackageInfo { get; set; }
     }
 }

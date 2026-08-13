@@ -9,5 +9,9 @@
     "close_info": {
         "close_time": "2015-05-20T13:29:35.120+08:00",
         "close_reason": "USER_CLOSE"
-    }
+    },
+    "transfer_scene_id": "1000",
+    "user_recv_perception": "现金奖励",
+    "create_time": "2015-05-20T13:29:35.120+08:00",
+    "package_info": "0004-affffddafdfafddffda=="
 }

@@ -11,5 +11,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonIgnore]
         [System.Text.Json.Serialization.JsonIgnore]
         public string OutAuthorizationNumber { get; set; } = string.Empty;
+
+        /// <summary>
+        /// 获取或设置是否展示用户授权信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public bool? IsDisplayAuthorization { get; set; }
     }
 }

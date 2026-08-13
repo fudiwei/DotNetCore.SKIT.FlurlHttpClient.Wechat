@@ -45,6 +45,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? FailReason { get; set; }
 
         /// <summary>
+        /// 获取或设置商户侧授权单号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("out_authorization_no")]
+        [System.Text.Json.Serialization.JsonPropertyName("out_authorization_no")]
+        public string? OutAuthorizationNumber { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户展示昵称。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("user_display_name")]
+        [System.Text.Json.Serialization.JsonPropertyName("user_display_name")]
+        public string? UserDisplayName { get; set; }
+
+        /// <summary>
         /// 获取或设置跳转领取页面的携带信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("package_info")]

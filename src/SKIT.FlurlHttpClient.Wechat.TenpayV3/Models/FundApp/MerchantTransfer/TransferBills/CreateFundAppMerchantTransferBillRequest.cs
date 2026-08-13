@@ -26,6 +26,16 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("info_content")]
                 public string InfoContent { get; set; } = string.Empty;
             }
+
+            public class UserReceiveStyle
+            {
+                /// <summary>
+                /// 获取或设置用户收款样式类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("type")]
+                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                public string? Type { get; set; }
+            }
         }
 
         /// <summary>
@@ -92,6 +102,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("user_recv_perception")]
         [System.Text.Json.Serialization.JsonPropertyName("user_recv_perception")]
         public string? UserReceivePerception { get; set; }
+
+        /// <summary>
+        /// 获取或设置用户收款样式信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("user_recv_style")]
+        [System.Text.Json.Serialization.JsonPropertyName("user_recv_style")]
+        public Types.UserReceiveStyle? UserReceiveStyle { get; set; }
 
         /// <summary>
         /// 获取或设置转账场景报备信息列表。
