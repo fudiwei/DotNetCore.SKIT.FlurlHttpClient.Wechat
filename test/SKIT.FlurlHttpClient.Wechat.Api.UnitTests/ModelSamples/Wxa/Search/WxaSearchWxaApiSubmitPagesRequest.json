@@ -1,12 +1,39 @@
-﻿{
+{
     "pages": [
         {
-            "path": "pages/index/index",
-            "query": "userName=wechat_user"
-        },
-        {
-            "path": "pages/video/index",
-            "query": "vid=123"
+            "path": "",
+            "query": "",
+            "data_list": [
+                {
+                    "@type": "",
+                    "update": 0,
+                    "content_id": "",
+                    "page_type": 0,
+                    "h5_url": "",
+                    "title": "",
+                    "abstract": [
+                        ""
+                    ],
+                    "referer": "",
+                    "cover_img_url": "",
+                    "mainbody": "",
+                    "author": {
+                        "author_name": "",
+                        "author_title": "",
+                        "author_portrait": ""
+                    },
+                    "video": [
+                        {
+                            "video_title": "",
+                            "video_length": 0,
+                            "video_img": ""
+                        }
+                    ],
+                    "time_publish": 0,
+                    "time_modify": 0,
+                    "extra_info": {}
+                }
+            ]
         }
     ]
 }
