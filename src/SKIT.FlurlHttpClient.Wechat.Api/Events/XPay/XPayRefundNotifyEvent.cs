@@ -2,10 +2,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.xpay_refund_notify 事件的数据。</para>
-    /// <para>https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/virtual-payment.html ]]>
+    /// </para>
     /// </summary>
     public class XPayRefundNotifyEvent : WechatApiEvent
     {
+        public static class Types
+        {
+            public class TeamInfo : XPayGoodsDeliverNotifyEvent.Types.TeamInfo
+            {
+            }
+        }
+
         /// <summary>
         /// 获取或设置用户 OpenId。
         /// </summary>
@@ -101,5 +111,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         [System.Text.Json.Serialization.JsonPropertyName("RetryTimes")]
         [System.Xml.Serialization.XmlElement("RetryTimes")]
         public int RetryTimes { get; set; }
+
+        /// <summary>
+        /// 获取或设置拼团信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("TeamInfo")]
+        [System.Text.Json.Serialization.JsonPropertyName("TeamInfo")]
+        [System.Xml.Serialization.XmlElement("TeamInfo", IsNullable = true)]
+        public Types.TeamInfo? TeamInfo { get; set; }
     }
 }

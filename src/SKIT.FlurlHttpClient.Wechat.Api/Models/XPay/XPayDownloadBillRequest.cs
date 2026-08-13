@@ -9,14 +9,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置起始日期字符串（格式：yyyyMMdd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("begin_ds")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalStringConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("begin_ds")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
         public string BeginDateString { get; set; } = string.Empty;
 
         /// <summary>
         /// 获取或设置截止日期字符串（格式：yyyyMMdd）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("end_ds")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalStringConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("end_ds")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
         public string EndDateString { get; set; } = string.Empty;
 
         protected internal override string GetRequestPath()

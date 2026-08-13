@@ -2,7 +2,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
 {
     /// <summary>
     /// <para>表示 EVENT.xpay_coin_pay_notify 事件的数据。</para>
-    /// <para>https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html </para>
+    /// <para>
+    /// REF: <br/>
+    /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/business-capabilities/virtual-payment.html ]]>
+    /// </para>
     /// </summary>
     public class XPayCoinPayNotifyEvent : WechatApiEvent
     {

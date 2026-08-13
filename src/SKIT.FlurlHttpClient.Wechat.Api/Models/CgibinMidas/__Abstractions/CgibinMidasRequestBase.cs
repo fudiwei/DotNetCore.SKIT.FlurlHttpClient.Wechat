@@ -10,7 +10,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string? AppId { get; set; }
 
         /// <summary>
-        /// 获取或设置米大师分配的 OfferId。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.MidasOfferId"/> 参数。
+        /// 获取或设置米大师应用 ID。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.MidasOfferId"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offer_id")]
         [System.Text.Json.Serialization.JsonPropertyName("offer_id")]

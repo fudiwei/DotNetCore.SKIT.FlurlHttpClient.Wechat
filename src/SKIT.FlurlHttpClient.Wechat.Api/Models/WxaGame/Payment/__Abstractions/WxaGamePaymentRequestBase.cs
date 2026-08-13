@@ -3,14 +3,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public abstract class WxaGamePaymentRequestBase : WechatApiRequest
     {
         /// <summary>
-        /// 获取或设置虚拟支付应用 ID。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.MidasOfferIdV2"/> 参数。
+        /// 获取或设置米大师应用 ID。如果不指定将使用构造 <see cref="WechatApiClient"/> 时的 <see cref="WechatApiClientOptions.MidasOfferIdV2"/> 参数。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("offer_id")]
         [System.Text.Json.Serialization.JsonPropertyName("offer_id")]
         public string? OfferId { get; set; }
 
         /// <summary>
-        /// 获取或设置虚拟支付分区 ID。
+        /// 获取或设置米大师分区 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("zone_id")]
         [System.Text.Json.Serialization.JsonPropertyName("zone_id")]

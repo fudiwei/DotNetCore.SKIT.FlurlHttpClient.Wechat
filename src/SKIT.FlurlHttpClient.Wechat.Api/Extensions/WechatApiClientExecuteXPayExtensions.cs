@@ -40,7 +40,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_user_balance 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_user_balance.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -67,7 +67,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/currency_pay 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_currency_pay.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -94,7 +94,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/cancel_currency_pay 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_cancel_currency_pay.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -121,7 +121,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/notify_provide_goods 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_notify_provide_goods.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -147,7 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/present_currency 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_present_currency.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -173,7 +173,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/download_bill 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_download_bill.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -199,7 +199,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_order 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -225,7 +225,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/refund_order 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_refund_order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -251,7 +251,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/create_withdraw_order 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_create_withdraw_order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -277,7 +277,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_withdraw_order 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_withdraw_order.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -303,7 +303,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/start_upload_goods 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_start_upload_goods.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -329,7 +329,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_upload_goods 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_upload_goods.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -355,7 +355,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/start_publish_goods 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_start_publish_goods.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -381,7 +381,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_publish_goods 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_publish_goods.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -407,7 +407,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_biz_balance 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_biz_balance.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -433,7 +433,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_transfer_account 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_transfer_account.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -459,7 +459,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_adver_funds 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_adver_funds.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -485,7 +485,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/create_funds_bill 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_create_funds_bill.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -511,7 +511,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/bind_transfer_accout 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_bind_transfer_accout.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -537,7 +537,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_funds_bill 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_funds_bill.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -563,7 +563,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /xpay/query_recover_bill 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/platform-capabilities/industry/virtual-payment.html#_2-3-%E6%9C%8D%E5%8A%A1%E5%99%A8API ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_recover_bill.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -583,6 +583,243 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("pay_sig", request.PaySign);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.XPayQueryRecoverListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/download_adverfunds_order 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_download_adverfunds_order.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayDownloadAdverFundsOrderResponse> ExecuteXPayDownloadAdverFundsOrderAsync(this WechatApiClient client, Models.XPayDownloadAdverFundsOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "download_adverfunds_order")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPayDownloadAdverFundsOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/upload_vp_file 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_upload_vp_file.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayUploadVirtualPaymentFileResponse> ExecuteXPayUploadVirtualPaymentFileAsync(this WechatApiClient client, Models.XPayUploadVirtualPaymentFileRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "upload_vp_file")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPayUploadVirtualPaymentFileResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/query_subscribe_contract 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_subscribe_contract.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayQuerySubscribeContractResponse> ExecuteXPayQuerySubscribeContractAsync(this WechatApiClient client, Models.XPayQuerySubscribeContractRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "query_subscribe_contract")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPayQuerySubscribeContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/send_subscribe_pre_payment 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_send_subscribe_pre_payment.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPaySendSubscribePrepaymentResponse> ExecuteXPaySendSubscribePrepaymentAsync(this WechatApiClient client, Models.XPaySendSubscribePrepaymentRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "send_subscribe_pre_payment")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPaySendSubscribePrepaymentResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/submit_subscribe_pay_order 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_submit_subscribe_pay_order.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPaySubmitSubscribePayOrderResponse> ExecuteXPaySubmitSubscribePayOrderAsync(this WechatApiClient client, Models.XPaySubmitSubscribePayOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            if (request.OfferId is null)
+                request.OfferId = client.Credentials.MidasOfferIdV2!;
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "submit_subscribe_pay_order")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPaySubmitSubscribePayOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/cancel_subscribe_contract 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_cancel_subscribe_contract.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayCancelSubscribeContractResponse> ExecuteXPayCancelSubscribeContractAsync(this WechatApiClient client, Models.XPayCancelSubscribeContractRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "cancel_subscribe_contract")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPayCancelSubscribeContractResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/start_download_order 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_start_download_order.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayStartDownloadOrderResponse> ExecuteXPayStartDownloadOrderAsync(this WechatApiClient client, Models.XPayStartDownloadOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "start_download_order")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPayStartDownloadOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/query_download_order 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_query_download_order.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayQueryDownloadOrderResponse> ExecuteXPayQueryDownloadOrderAsync(this WechatApiClient client, Models.XPayQueryDownloadOrderRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "query_download_order")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPayQueryDownloadOrderResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /xpay/download_ios_settlement_bill 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/miniprogram/dev/server/API/VirtualPayment/api_download_ios_settlement_bill.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.XPayDownloadIOSSettlementBillResponse> ExecuteXPayDownloadIOSSettlementBillAsync(this WechatApiClient client, Models.XPayDownloadIOSSettlementBillRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            PreprocessRequest(client, ref request);
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "xpay", "download_ios_settlement_bill")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("pay_sig", request.PaySign);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.XPayDownloadIOSSettlementBillResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
     }
 }
