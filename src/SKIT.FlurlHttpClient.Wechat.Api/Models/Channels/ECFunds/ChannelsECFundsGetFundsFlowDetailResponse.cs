@@ -92,6 +92,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public int FundsType { get; set; }
 
                 /// <summary>
+                /// 获取或设置资金类型描述。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("funds_type_desc")]
+                [System.Text.Json.Serialization.JsonPropertyName("funds_type_desc")]
+                public string FundsTypeDescription { get; set; } = default!;
+
+                /// <summary>
                 /// 获取或设置流水类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("flow_type")]
