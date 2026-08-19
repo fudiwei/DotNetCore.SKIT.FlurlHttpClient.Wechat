@@ -1,0 +1,118 @@
+{
+    "scene_value": 1,
+    "publish_method": 1,
+    "supplier": {
+        "supplier_name": "广州某某贸易有限公司",
+        "source_platform_type": 1,
+        "source_platform_name": "1688"
+    },
+    "supplier_shop_performance": {
+        "accept_rate_24h": 95,
+        "accept_rate_48h": 98,
+        "ship_count_30d": 500,
+        "ship_count_7d": 120,
+        "distribute_product_count": 50,
+        "on_time_ship_rate": 97,
+        "merchant_identity": "源头工厂"
+    },
+    "product_source_info": {
+        "visit_url": "https://detail.1688.com/offer/123456789.html",
+        "product_id": "123456789",
+        "title": "2026新款纯棉短袖T恤男女同款宽松圆领半袖",
+        "head_img_urls": [
+            "xxx",
+            "xxx",
+            "xxx"
+        ],
+        "detail_img_urls": [
+            "xxx",
+            "xxx"
+        ],
+        "qualification_list": [
+            "xxx",
+            "xxx"
+        ],
+        "brand": "xxx",
+        "attr_list": [
+            {
+                "attr_type": 1,
+                "attr_name": "面料材质",
+                "attr_value": "纯棉"
+            },
+            {
+                "attr_type": 2,
+                "attr_name": "适用季节",
+                "attr_value": "夏季"
+            },
+            {
+                "attr_type": 2,
+                "attr_name": "领型",
+                "attr_value": "圆领"
+            },
+            {
+                "attr_type": 6,
+                "attr_name": "克重",
+                "attr_value": "230g"
+            },
+            {
+                "attr_type": 1,
+                "attr_name": "袖型",
+                "attr_value": "常规袖"
+            }
+        ],
+        "sku_list": [
+            {
+                "sku_id": "sku_white_s",
+                "spec_name": "颜色",
+                "spec_value": "白色-S",
+                "sku_img": "https://mmecimage.cn/p/wxc16458b33be42c61/sku_white.jpg",
+                "price": 5900,
+                "stock": 200,
+                "stock_type": 1
+            },
+            {
+                "sku_id": "sku_white_m",
+                "spec_name": "颜色",
+                "spec_value": "白色-M",
+                "sku_img": "https://mmecimage.cn/p/wxc16458b33be42c61/sku_white.jpg",
+                "price": 5900,
+                "stock": 350,
+                "stock_type": 1
+            },
+            {
+                "sku_id": "sku_black_s",
+                "spec_name": "颜色",
+                "spec_value": "黑色-S",
+                "sku_img": "https://mmecimage.cn/p/xxx/sku_black.jpg",
+                "price": 5900,
+                "stock": 180,
+                "stock_type": 1
+            },
+            {
+                "sku_id": "sku_black_m",
+                "spec_name": "颜色",
+                "spec_value": "黑色-M",
+                "sku_img": "https://mmecimage.cn/p/xxx/sku_black.jpg",
+                "price": 5900,
+                "stock": 420,
+                "stock_type": 1
+            },
+            {
+                "sku_id": "sku_grey_l",
+                "spec_name": "颜色",
+                "spec_value": "灰色-L",
+                "sku_img": "https://mmecimage.cn/p/xxx/sku_grey.jpg",
+                "price": 6900,
+                "stock": 100,
+                "stock_type": 1
+            }
+        ],
+        "detail_description": "面料采用新疆长绒棉，克重230g，亲肤透气不易变形。宽松版型，男女同款，适合日常通勤休闲穿搭。",
+        "logistics_info": {
+            "freight_info": "满99包邮",
+            "logistics_template": "全国包邮（偏远地区除外）"
+        },
+        "service_guarantee": "7天无理由退换,正品保障,极速退款",
+        "delivery_time": "24小时内发货"
+    }
+}
