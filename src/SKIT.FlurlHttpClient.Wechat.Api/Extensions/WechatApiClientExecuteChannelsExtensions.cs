@@ -4999,6 +4999,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
 
         /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/order/presentorder/wishmessage/set 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/miniandstore/cooperation_gift/api_set_present_wishmessage.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECOrderPresentOrderWishMessageSetResponse> ExecuteChannelsECOrderPresentOrderWishMessageSetAsync(this WechatApiClient client, Models.ChannelsECOrderPresentOrderWishMessageSetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentorder", "wishmessage", "set")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderPresentOrderWishMessageSetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
+        }
+
+        /// <summary>
         /// <para>异步调用 [POST] /channels/ec/order/receiverorderlist/get 接口。</para>
         /// <para>
         /// REF: <br/>
