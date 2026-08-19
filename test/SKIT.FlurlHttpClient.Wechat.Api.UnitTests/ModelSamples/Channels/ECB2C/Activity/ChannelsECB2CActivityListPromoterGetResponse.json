@@ -5,12 +5,16 @@
         {
             "shop_appid": "wxxxxxxxxxxxxxxxxx",
             "shop_nickname": "小店昵称",
-            "activity_id": "111"
+            "activity_id": "111",
+            "status": 1,
+            "type": 0
         },
         {
             "shop_appid": "wxxxxxxxxxxxxxxxxx",
             "shop_nickname": "小店昵称",
-            "activity_id": "222"
+            "activity_id": "222",
+            "status": 2,
+            "type": 0
         }
     ],
     "total_num": 2

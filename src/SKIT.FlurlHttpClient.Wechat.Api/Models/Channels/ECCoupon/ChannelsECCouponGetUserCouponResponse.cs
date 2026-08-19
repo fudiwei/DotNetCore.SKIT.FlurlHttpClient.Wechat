@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /channels/ec/coupon/get_user_coupon 接口的响应。</para>
@@ -90,6 +92,7 @@
                 /// <summary>
                 /// 获取或设置优惠金额（单位：分）。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2026-06-03 下线。")]
                 [Newtonsoft.Json.JsonProperty("discount_fee")]
                 [System.Text.Json.Serialization.JsonPropertyName("discount_fee")]
                 public int? DiscountFee { get; set; }
