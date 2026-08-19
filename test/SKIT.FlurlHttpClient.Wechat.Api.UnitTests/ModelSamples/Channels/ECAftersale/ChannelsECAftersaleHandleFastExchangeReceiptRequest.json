@@ -1,0 +1,11 @@
+{
+    "after_sale_order_id": "1768715750567651",
+    "act": 2,
+    "reject_reason": "买家寄回商品影响二次销售",
+    "reject_reason_type": 46,
+    "merchant_text": "补充说明",
+    "reject_confirm_exchange": [
+        "media_id_1",
+        "media_id_2"
+    ]
+}
