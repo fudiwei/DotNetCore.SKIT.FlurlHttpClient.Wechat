@@ -90,11 +90,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int ShowScene { get; set; }
 
                         /// <summary>
-                        /// 获取或设置场景值。
+                        /// 获取或设置活动类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("activity_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("activity_type")]
+                        public int ActivityType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置限领规则信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("receive_limit")]
                         [System.Text.Json.Serialization.JsonPropertyName("receive_limit")]
-                        public Types.ReceiveLimit ReceiveLimit { get; set; } = new Types.ReceiveLimit();
+                        public Types.ReceiveLimit? ReceiveLimit { get; set; }
 
                         /// <summary>
                         /// 获取或设置主商品列表。
@@ -109,6 +116,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("gift_set")]
                         [System.Text.Json.Serialization.JsonPropertyName("gift_set")]
                         public Types.GiftSet GiftSet { get; set; } = new Types.GiftSet();
+
+                        /// <summary>
+                        /// 获取或设置满赠门槛类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("threshold_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("threshold_type")]
+                        public int? ThresholdType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置满赠门槛金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("threshold_money")]
+                        [System.Text.Json.Serialization.JsonPropertyName("threshold_money")]
+                        public int? ThresholdAmount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置满赠门槛件数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("threshold_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("threshold_type")]
+                        public int? ThresholdProductCount { get; set; }
                     }
                 }
 

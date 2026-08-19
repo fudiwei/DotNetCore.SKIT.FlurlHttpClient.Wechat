@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/activity/stop 接口的请求。</para>
+    /// <para>表示 [POST] /channels/ec/product/activity/del 接口的请求。</para>
     /// </summary>
-    public class ChannelsECActivityStopRequest : WechatApiRequest, IInferable<ChannelsECActivityStopRequest, ChannelsECActivityStopResponse>
+    public class ChannelsECProductActivityDeleteRequest : WechatApiRequest, IInferable<ChannelsECProductActivityDeleteRequest, ChannelsECProductActivityDeleteResponse>
     {
         /// <summary>
         /// 获取或设置买赠活动 ID。

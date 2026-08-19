@@ -32,6 +32,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long ActivityId { get; set; }
 
                 /// <summary>
+                /// 获取或设置活动类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("type")]
+                [System.Text.Json.Serialization.JsonPropertyName("type")]
+                public int Type { get; set; }
+
+                /// <summary>
                 /// 获取或设置活动状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]
