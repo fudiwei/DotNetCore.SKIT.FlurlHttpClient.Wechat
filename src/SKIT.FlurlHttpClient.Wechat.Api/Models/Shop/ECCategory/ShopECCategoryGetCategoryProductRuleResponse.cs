@@ -88,7 +88,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string EnglishName { get; set; } = default!;
             }
 
-            public class ProductAttribute : ChannelsECCategoryDetailResponse.Types.CategoryAttribute.Types.ProductAttribute
+            public class ProductAttribute : ShopECCategoryDetailResponse.Types.CategoryAttribute.Types.ProductAttribute
             {
                 public static class Types
                 {
@@ -220,11 +220,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.RequiredRule? RequiredRule { get; set; }
             }
 
-            public class ProductRequirement : ChannelsECCategoryDetailResponse.Types.CategoryAttribute.Types.ProductRequirement
+            public class ProductRequirement : ShopECCategoryDetailResponse.Types.CategoryAttribute.Types.ProductRequirement
             {
             }
 
-            public class SizeChart : ChannelsECCategoryDetailResponse.Types.CategoryAttribute.Types.SizeChart
+            public class SizeChart : ShopECCategoryDetailResponse.Types.CategoryAttribute.Types.SizeChart
             {
             }
 

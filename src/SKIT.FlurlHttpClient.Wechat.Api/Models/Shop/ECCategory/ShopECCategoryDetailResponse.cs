@@ -3,9 +3,9 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/category/detail 接口的响应。</para>
+    /// <para>表示 [POST] /shop/ec/category/detail 接口的响应。</para>
     /// </summary>
-    public class ChannelsECCategoryDetailResponse : WechatApiResponse
+    public class ShopECCategoryDetailResponse : WechatApiResponse
     {
         public static class Types
         {
@@ -348,7 +348,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public bool? IsConfidenceRequireBadMustPay { get; set; }
             }
 
-            public class Qualification : ChannelsECCategoryAllResponse.Types.Category.Types.CategoryAndQualification.Types.Qualification
+            public class Qualification : ShopECCategoryAllResponse.Types.Category.Types.CategoryAndQualification.Types.Qualification
             {
             }
         }

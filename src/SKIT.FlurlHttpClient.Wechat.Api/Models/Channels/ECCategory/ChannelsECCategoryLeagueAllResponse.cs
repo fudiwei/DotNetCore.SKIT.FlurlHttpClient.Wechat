@@ -9,7 +9,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Category : ChannelsECCategoryAllResponse.Types.Category
+            public class Category : ShopECCategoryAllResponse.Types.Category
             {
             }
         }

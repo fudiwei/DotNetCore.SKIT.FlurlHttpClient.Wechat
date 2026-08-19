@@ -3,9 +3,9 @@ using System;
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [GET] /channels/ec/category/all 接口的响应。</para>
+    /// <para>表示 [GET] /shop/ec/category/all 接口的响应。</para>
     /// </summary>
-    public class ChannelsECCategoryAllResponse : WechatApiResponse
+    public class ShopECCategoryAllResponse : WechatApiResponse
     {
         public static class Types
         {

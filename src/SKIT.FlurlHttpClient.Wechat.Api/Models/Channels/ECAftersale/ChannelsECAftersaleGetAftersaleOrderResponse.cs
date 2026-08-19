@@ -186,14 +186,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string[]? MediaIdList { get; set; }
 
                         /// <summary>
-                        /// 获取或设置联系电话。
-                        /// </summary>
-                        [Obsolete("相关接口或字段于 2025-04-14 下线。")]
-                        [Newtonsoft.Json.JsonProperty("tel_number")]
-                        [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
-                        public string? TelNumber { get; set; }
-
-                        /// <summary>
                         /// 获取或设置小程序会员已经优惠金额（单位：分）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("wxa_vip_discounted_price")]

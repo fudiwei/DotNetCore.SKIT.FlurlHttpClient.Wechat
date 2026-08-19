@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/category/detail 接口的请求。</para>
+    /// <para>表示 [POST] /shop/ec/category/detail 接口的请求。</para>
     /// </summary>
-    public class ChannelsECCategoryDetailRequest : WechatApiRequest, IInferable<ChannelsECCategoryDetailRequest, ChannelsECCategoryDetailResponse>
+    public class ShopECCategoryDetailRequest : WechatApiRequest, IInferable<ShopECCategoryDetailRequest, ShopECCategoryDetailResponse>
     {
         /// <summary>
         /// 获取或设置类目 ID。

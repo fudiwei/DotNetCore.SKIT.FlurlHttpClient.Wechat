@@ -104,14 +104,6 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string[]? MediaIdList { get; set; }
 
                 /// <summary>
-                /// 获取或设置手机号码。
-                /// </summary>
-                [Obsolete("相关接口或字段于 2025-04-14 下线。")]
-                [Newtonsoft.Json.JsonProperty("phone_number")]
-                [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-                public string? PhoneNumber { get; set; }
-
-                /// <summary>
                 /// 获取或设置纠纷类型。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("complaint_type")]

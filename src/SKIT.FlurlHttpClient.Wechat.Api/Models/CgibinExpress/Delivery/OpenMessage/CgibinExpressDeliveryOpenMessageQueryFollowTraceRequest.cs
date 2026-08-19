@@ -1,11 +1,8 @@
-using System;
-
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/express/delivery/open_msg/query_follow_trace 接口的请求。</para>
     /// </summary>
-    [Obsolete("相关接口或字段于 2023-05-31 下线。")]
     public class CgibinExpressDeliveryOpenMessageQueryFollowTraceRequest : WechatApiRequest, IInferable<CgibinExpressDeliveryOpenMessageQueryFollowTraceRequest, CgibinExpressDeliveryOpenMessageQueryFollowTraceResponse>
     {
         /// <summary>

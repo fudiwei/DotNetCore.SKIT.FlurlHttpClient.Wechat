@@ -1,9 +1,9 @@
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
-    /// <para>表示 [POST] /channels/ec/category/audit/cancel 接口的请求。</para>
+    /// <para>表示 [POST] /shop/ec/category/audit/cancel 接口的请求。</para>
     /// </summary>
-    public class ChannelsECCategoryAuditCancelRequest : WechatApiRequest, IInferable<ChannelsECCategoryAuditCancelRequest, ChannelsECCategoryAuditCancelResponse>
+    public class ShopECCategoryAuditCancelRequest : WechatApiRequest, IInferable<ShopECCategoryAuditCancelRequest, ShopECCategoryAuditCancelResponse>
     {
         /// <summary>
         /// 获取或设置审核单 ID。
