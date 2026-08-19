@@ -1,11 +1,23 @@
 {
     "errcode": 0,
     "errmsg": "ok",
-    "promoter": {
-        "finder_id": "sph1234",
-        "status": 1,
-        "invite_time": 0,
-        "sale_product_number": 0,
-        "sale_gmv": 0
+    "talent": {
+        "base_talent_info": {
+            "nickname": "",
+            "head_img": "",
+            "talent_appid": ""
+        },
+        "data": {
+            "total_sale_gmv": 0,
+            "sale_gmv_30d": 0,
+            "total_order_num": 0,
+            "order_num_30d": 0,
+            "sale_product_num_30d": 0,
+            "window_product_num": 0
+        },
+        "feature_info": {
+            "level": 0,
+            "is_blacklisted": false
+        }
     }
 }

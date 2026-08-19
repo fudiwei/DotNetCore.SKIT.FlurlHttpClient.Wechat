@@ -3575,7 +3575,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_getpromoter.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_getpromoter.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/promoter/api_getpromoter.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3599,7 +3599,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/channels/API/league/ecleague_getpromoterlist.html ]]> <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/ecleague_getpromoterlist.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/promoter/api_getpromoterlist.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -3616,6 +3616,55 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeaguePromoterListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region ECLeague/Talent
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/talent/getproductdatalist 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/promoter/api_gettalentproductdata.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueTalentGetProductDataListResponse> ExecuteChannelsECLeagueTalentGetProductDataListAsync(this WechatApiClient client, Models.ChannelsECLeagueTalentGetProductDataListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "talent", "getproductdatalist")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueTalentGetProductDataListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/talent/update 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/promoter/api_updatetalent.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeagueTalentUpdateResponse> ExecuteChannelsECLeagueTalentUpdateAsync(this WechatApiClient client, Models.ChannelsECLeagueTalentUpdateRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "talent", "update")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueTalentUpdateResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
         #endregion

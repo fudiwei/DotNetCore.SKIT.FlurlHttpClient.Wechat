@@ -1,0 +1,21 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_num": 0,
+    "continue_flag": false,
+    "list": [
+        {
+            "spu_id": 0,
+            "product_data": {
+                "total_sale_gmv": 0,
+                "sale_gmv_30d": 0,
+                "total_order_num": 0,
+                "order_num_30d": 0
+            },
+            "talent_commission_info": {
+                "commission_type": 0,
+                "ratio": 0
+            }
+        }
+    ]
+}

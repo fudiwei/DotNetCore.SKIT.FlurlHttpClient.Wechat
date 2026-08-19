@@ -10,6 +10,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("finder_id")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
-        public string FinderId { get; set; } = string.Empty;
+        public string? FinderId { get; set; }
+
+        /// <summary>
+        /// 获取或设置带货达人 AppId。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("talent_appid")]
+        [System.Text.Json.Serialization.JsonPropertyName("talent_appid")]
+        public string? TalentAppId { get; set; }
+
+        /// <summary>
+        /// 获取或设置带货达人搜索关键词。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("talent_search_key")]
+        [System.Text.Json.Serialization.JsonPropertyName("talent_search_key")]
+        public string? TalentKeyword { get; set; }
     }
 }
