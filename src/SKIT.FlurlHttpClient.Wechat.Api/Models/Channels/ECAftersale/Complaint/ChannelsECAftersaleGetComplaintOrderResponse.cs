@@ -11,6 +11,70 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         {
             public class ComplaintHistory
             {
+                public static class Types
+                {
+                    public class MediaInfo
+                    {
+                        public static class Types
+                        {
+                            public class Picture
+                            {
+                                /// <summary>
+                                /// 获取或设置媒体文件 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("media_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("media_id")]
+                                public string MediaId { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置临时访问 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("ticket_url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
+                                public string? TicketUrl { get; set; }
+                            }
+
+                            public class Video
+                            {
+                                /// <summary>
+                                /// 获取或设置媒体文件 ID。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("media_id")]
+                                [System.Text.Json.Serialization.JsonPropertyName("media_id")]
+                                public string MediaId { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置临时访问 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("ticket_url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
+                                public string? TicketUrl { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置媒体文件类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public int MediaType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置图片信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("picture")]
+                        [System.Text.Json.Serialization.JsonPropertyName("picture")]
+                        public Types.Picture? Picture { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("video")]
+                        [System.Text.Json.Serialization.JsonPropertyName("video")]
+                        public Types.Video? Video { get; set; }
+                    }
+                }
+
                 /// <summary>
                 /// 获取或设置历史操作类型。
                 /// </summary>
@@ -67,6 +131,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("after_sale_reason")]
                 [System.Text.Json.Serialization.JsonPropertyName("after_sale_reason")]
                 public int? AftersaleReasonType { get; set; }
+
+                /// <summary>
+                /// 获取或设置媒体文件列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("media_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("media_list")]
+                public Types.MediaInfo[]? MediaList { get; set; }
             }
 
             public class VirualTelNumberInfo : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.VirualTelNumberInfo

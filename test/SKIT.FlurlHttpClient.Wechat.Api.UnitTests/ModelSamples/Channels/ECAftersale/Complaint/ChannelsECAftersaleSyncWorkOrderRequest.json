@@ -1,0 +1,24 @@
+{
+    "complaint_id": "",
+    "work_order_info": {
+        "version": 0,
+        "items": [
+            {
+                "status": 0,
+                "desc": "",
+                "update_time": 0,
+                "result_type": 0,
+                "refund_amount": 0,
+                "media_list": [
+                    {
+                        "type": 1,
+                        "picture": {
+                            "tmp_media_id": ""
+                        }
+                    }
+                ]
+            }
+        ],
+        "work_order_id": ""
+    }
+}
