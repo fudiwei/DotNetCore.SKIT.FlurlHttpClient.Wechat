@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -43,7 +43,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class AddressInformation
+                    public class AddressInfo
                     {
                         /// <summary>
                         /// 获取或设置省份名称。
@@ -77,7 +77,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("addressInfo")]
                 [System.Text.Json.Serialization.JsonPropertyName("addressInfo")]
-                public Types.AddressInformation AddressInformation { get; set; } = new Types.AddressInformation();
+                public Types.AddressInfo AddressInfo { get; set; } = new Types.AddressInfo();
 
                 /// <summary>
                 /// 获取或设置地址类型信息。

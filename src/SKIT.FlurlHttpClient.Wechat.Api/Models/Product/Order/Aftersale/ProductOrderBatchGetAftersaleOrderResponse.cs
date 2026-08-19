@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /product/order/batchgetaftersaleorder 接口的响应。</para>
@@ -131,7 +131,7 @@
                         public string[]? ProofImageUrlList { get; set; }
                     }
 
-                    public class MerchantUploadInformation
+                    public class MerchantUploadInfo
                     {
                         /// <summary>
                         /// 获取或设置退款凭证图片 URL 列表。
@@ -231,7 +231,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("merchant_upload_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("merchant_upload_info")]
-                public Types.MerchantUploadInformation? MerchantUploadInformation { get; set; }
+                public Types.MerchantUploadInfo? MerchantUploadInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。

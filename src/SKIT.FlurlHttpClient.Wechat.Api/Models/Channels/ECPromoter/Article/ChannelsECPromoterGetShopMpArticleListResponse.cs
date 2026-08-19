@@ -60,7 +60,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_list")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_list")]
-                public Types.ProductInfo[] ProductInfoList { get; set; } = default!;
+                public Types.ProductInfo[] ProductList { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置文章信息。

@@ -35,7 +35,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("order_info")]
-        public string? OrderInfo { get; set; }
+        public string? OrderKeyword { get; set; }
 
         /// <summary>
         /// 获取或设置是否已发货。

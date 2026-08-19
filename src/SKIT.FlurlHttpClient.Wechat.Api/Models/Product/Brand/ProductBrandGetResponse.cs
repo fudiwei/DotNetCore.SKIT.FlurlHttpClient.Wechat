@@ -11,7 +11,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
             {
                 public static class Types
                 {
-                    public class BrandInformation
+                    public class BrandInfo
                     {
                         /// <summary>
                         /// 获取或设置品牌 ID。
@@ -55,7 +55,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("brand_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("brand_info")]
-                public Types.BrandInformation BrandInformation { get; set; } = default!;
+                public Types.BrandInfo BrandInfo { get; set; } = default!;
             }
         }
 

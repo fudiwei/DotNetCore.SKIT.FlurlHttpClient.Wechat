@@ -19,12 +19,46 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         {
                             public class Voucher
                             {
+                                public static class Types
+                                {
+                                    public class Time
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置次卡 ID。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("serial_id")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("serial_id")]
+                                        public string SerialId { get; set; } = default!;
+
+                                        /// <summary>
+                                        /// 获取或设置退卡金额（单位：分）。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("amount")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                                        public int Amount { get; set; }
+                                    }
+                                }
+
                                 /// <summary>
                                 /// 获取或设置团购优惠券码。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("vourcher_code")]
                                 [System.Text.Json.Serialization.JsonPropertyName("vourcher_code")]
                                 public string VoucherCode { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置券退款金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("amount")]
+                                [System.Text.Json.Serialization.JsonPropertyName("amount")]
+                                public int Amount { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置券退款金额（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("times_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("times_list")]
+                                public Types.Time[]? TimeList { get; set; }
                             }
 
                             public class GiftProduct
@@ -207,6 +241,82 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                     public class Return
                     {
+                        public static class Types
+                        {
+                            public class AddressInfo
+                            {
+                                /// <summary>
+                                /// 获取或设置收件人姓名。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("user_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("user_name")]
+                                public string UserName { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置国家码。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("national_code")]
+                                [System.Text.Json.Serialization.JsonPropertyName("national_code")]
+                                public string? NationalCode { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置邮政编码。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("postal_code")]
+                                [System.Text.Json.Serialization.JsonPropertyName("postal_code")]
+                                public string? PostalCode { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置省份。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("province_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("province_name")]
+                                public string? ProvinceName { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置城市。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("city_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("city_name")]
+                                public string? CityName { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置区县。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("county_name")]
+                                [System.Text.Json.Serialization.JsonPropertyName("county_name")]
+                                public string? DistrictName { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置详细地址。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("detail_info")]
+                                [System.Text.Json.Serialization.JsonPropertyName("detail_info")]
+                                public string? Detail { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置电话号码。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("tel_number")]
+                                [System.Text.Json.Serialization.JsonPropertyName("tel_number")]
+                                public string TelNumber { get; set; } = default!;
+
+                                /// <summary>
+                                /// 获取或设置门牌号。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("house_number")]
+                                [System.Text.Json.Serialization.JsonPropertyName("house_number")]
+                                public string? HouseNumber { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置退回方式。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("return_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("return_type")]
+                        public int ReturnType { get; set; } = default!;
+
                         /// <summary>
                         /// 获取或设置快递公司 ID。
                         /// </summary>
@@ -227,6 +337,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("waybill_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("waybill_id")]
                         public string WaybillId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置退货地址信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("address_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("address_info")]
+                        public Types.AddressInfo? AddressInfo { get; set; }
                     }
 
                     public class MerchantUploadInfo
@@ -429,6 +546,70 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public Types.Address? Address { get; set; }
                     }
 
+                    public class ExchangeInfo
+                    {
+                        public static class Types
+                        {
+                            public class FastExchagneInfo
+                            {
+                                public static class Types
+                                {
+                                    public class FastExchangeAction
+                                    {
+                                        /// <summary>
+                                        /// 获取或设置商家确认状态。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("merchant_confirm")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("merchant_confirm")]
+                                        public int? MerchantConfirmStatus { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置商家确认时间戳。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("merchant_confirm_time")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("merchant_confirm_time")]
+                                        public long? MerchantConfirmTimestamp { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置商家拒绝状态。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("merchant_reject")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("merchant_reject")]
+                                        public int? MerchantRejectStatus { get; set; }
+
+                                        /// <summary>
+                                        /// 获取或设置商家拒绝时间戳。
+                                        /// </summary>
+                                        [Newtonsoft.Json.JsonProperty("merchant_reject_time")]
+                                        [System.Text.Json.Serialization.JsonPropertyName("merchant_reject_time")]
+                                        public long? MerchantRejectTimestamp { get; set; }
+                                    }
+                                }
+
+                                /// <summary>
+                                /// 获取或设置是否极速换货。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("fast_exchange")]
+                                [System.Text.Json.Serialization.JsonPropertyName("fast_exchange")]
+                                public bool IsFastExchange { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置极速换货商家操作动作。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("fast_exchange_act")]
+                                [System.Text.Json.Serialization.JsonPropertyName("fast_exchange_act")]
+                                public Types.FastExchangeAction? FastExchangeAction { get; set; }
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置急速换货信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("fast_exchange_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("fast_exchange_info")]
+                        public Types.FastExchagneInfo? FastExchagneInfo { get; set; }
+                    }
+
                     public class VirualTelNumberInfo
                     {
                         /// <summary>
@@ -597,6 +778,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.ExchangeDeliveryInfo? ExchangeDeliveryInfo { get; set; }
 
                 /// <summary>
+                /// 获取或设置换货信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("exchange_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("exchange_info")]
+                public Types.ExchangeInfo? ExchangeInfo { get; set; }
+
+                /// <summary>
                 /// 获取或设置虚拟号码信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("virtual_tel_num_info")]
@@ -609,6 +797,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("compensation_liability_amount")]
                 [System.Text.Json.Serialization.JsonPropertyName("compensation_liability_amount")]
                 public int? CompensationLiabilityAmount { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否需要线下退款。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("need_offline_refund")]
+                [System.Text.Json.Serialization.JsonPropertyName("need_offline_refund")]
+                public bool? RequireOfflineRefund { get; set; }
+
+                /// <summary>
+                /// 获取或设置售后单本地生活类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("aftersale_voucher_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("aftersale_voucher_type")]
+                public int? AftersaleVoucherType { get; set; }
 
                 /// <summary>
                 /// 获取或设置更新时间戳。

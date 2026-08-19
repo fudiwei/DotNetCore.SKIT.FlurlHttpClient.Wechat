@@ -5,6 +5,21 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     /// </summary>
     public class ChannelsECAftersaleGenerateAftersaleOrderRequest : WechatApiRequest, IInferable<ChannelsECAftersaleGenerateAftersaleOrderRequest, ChannelsECAftersaleGenerateAftersaleOrderResponse>
     {
+        public static class Types
+        {
+            public class ExchangeSKUInfo
+            {
+                /// <summary>
+                /// 获取或设置新 SKU ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("new_sku_id")]
+                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
+                [System.Text.Json.Serialization.JsonPropertyName("new_sku_id")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString | System.Text.Json.Serialization.JsonNumberHandling.WriteAsString)]
+                public long NewSKUId { get; set; }
+            }
+        }
+
         /// <summary>
         /// 获取或设置请求唯一 ID。
         /// </summary>
@@ -78,5 +93,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("desc")]
         [System.Text.Json.Serialization.JsonPropertyName("desc")]
         public string? Description { get; set; }
+
+        /// <summary>
+        /// 获取或设置换货信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("exchange_sku_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("exchange_sku_info")]
+        public Types.ExchangeSKUInfo? ExchangeSKUInfo { get; set; }
     }
 }
