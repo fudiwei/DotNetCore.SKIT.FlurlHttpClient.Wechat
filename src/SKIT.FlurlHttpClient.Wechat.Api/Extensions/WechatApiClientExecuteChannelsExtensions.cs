@@ -799,6 +799,102 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBasicsMediaGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/basics/video/initupload 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_video_initupload.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECBasicsVideoInitUploadResponse> ExecuteChannelsECBasicsVideoInitUploadAsync(this WechatApiClient client, Models.ChannelsECBasicsVideoInitUploadRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "basics", "video", "initupload")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBasicsVideoInitUploadResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/basics/video/uploadpart 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_video_uploadpart.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECBasicsVideoUploadPartResponse> ExecuteChannelsECBasicsVideoUploadPartAsync(this WechatApiClient client, Models.ChannelsECBasicsVideoUploadPartRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "basics", "video", "uploadpart")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("video_upload_key", request.VideoUploadKey)
+                .SetQueryParam("partnum", request.PartNumber);
+
+            using var httpContent = Utilities.HttpContentBuilder.BuildWithFile(fileName: null, fileBytes: request.FileBytes!, fileContentType: null, formDataName: "media");
+            return await client.SendFlurlRequestAsync<Models.ChannelsECBasicsVideoUploadPartResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/basics/video/finishupload 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_video_finishupload.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECBasicsVideoFinishUploadResponse> ExecuteChannelsECBasicsVideoFinishUploadAsync(this WechatApiClient client, Models.ChannelsECBasicsVideoFinishUploadRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "basics", "video", "finishupload")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBasicsVideoFinishUploadResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /channels/ec/basics/video/getplayinfo 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/apimgnt/resource/api_video_getplayinfo.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECBasicsVideoGetPlayInfoResponse> ExecuteChannelsECBasicsVideoGetPlayInfoAsync(this WechatApiClient client, Models.ChannelsECBasicsVideoGetPlayInfoRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "channels", "ec", "basics", "video", "getplayinfo")
+                .SetQueryParam("access_token", request.AccessToken)
+                .SetQueryParam("video_upload_key", request.VideoUploadKey);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECBasicsVideoGetPlayInfoResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
         #region ECBasics/HomepageBackground
         /// <summary>
         /// <para>异步调用 [POST] /channels/ec/basics/homepage/background/apply/submit 接口。</para>
