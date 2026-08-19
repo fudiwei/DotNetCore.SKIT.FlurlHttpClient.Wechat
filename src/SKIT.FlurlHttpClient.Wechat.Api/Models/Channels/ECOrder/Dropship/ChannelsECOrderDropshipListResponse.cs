@@ -7,8 +7,28 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     {
         public static class Types
         {
-            public class Pagination : ChannelsECOrderDropshipListRequest.Types.Pagination
+            public class Pagination
             {
+                /// <summary>
+                /// 获取或设置分页起始位置。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("offset")]
+                [System.Text.Json.Serialization.JsonPropertyName("offset")]
+                public int? Offset { get; set; }
+
+                /// <summary>
+                /// 获取或设置分页每页数量。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("limit")]
+                [System.Text.Json.Serialization.JsonPropertyName("limit")]
+                public int Limit { get; set; }
+
+                /// <summary>
+                /// 获取或设置下一页分页游标。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("next_key")]
+                [System.Text.Json.Serialization.JsonPropertyName("next_key")]
+                public string? NextCursor { get; set; }
             }
         }
 

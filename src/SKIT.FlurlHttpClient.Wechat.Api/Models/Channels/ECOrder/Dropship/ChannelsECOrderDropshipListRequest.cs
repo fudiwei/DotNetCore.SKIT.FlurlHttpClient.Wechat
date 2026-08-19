@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -18,14 +20,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("offset")]
                 [System.Text.Json.Serialization.JsonPropertyName("offset")]
-                public int Offset { get; set; }
+                public int? Offset { get; set; }
 
                 /// <summary>
                 /// 获取或设置分页每页数量。
+                /// <para>默认值：100</para>
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("limit")]
                 [System.Text.Json.Serialization.JsonPropertyName("limit")]
-                public int Limit { get; set; }
+                public int Limit { get; set; } = 100;
+
+                /// <summary>
+                /// 获取或设置分页游标。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("next_key")]
+                [System.Text.Json.Serialization.JsonPropertyName("next_key")]
+                public string? Cursor { get; set; }
             }
         }
 

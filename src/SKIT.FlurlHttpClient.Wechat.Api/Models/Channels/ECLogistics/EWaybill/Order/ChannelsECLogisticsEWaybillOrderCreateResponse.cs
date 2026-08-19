@@ -31,7 +31,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long CreateTimestamp { get; set; }
             }
 
-            public class RiskInfo
+            public class Risk
             {
                 public static class Types
                 {
@@ -76,6 +76,30 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [System.Text.Json.Serialization.JsonPropertyName("risk_ec_order_info")]
                 public Types.Order[]? OrderList { get; set; }
             }
+
+            public class ConsolidationWaybill
+            {
+                /// <summary>
+                /// 获取或设置 B 段运单的快递公司 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("b_segment_delivery_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("b_segment_delivery_id")]
+                public string? BSegmentDeliveryId { get; set; }
+
+                /// <summary>
+                /// 获取或设置 B 段运单的电子面单 ID。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("b_segment_ewaybill_order_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("b_segment_ewaybill_order_id")]
+                public string? BSegmentEWaybillOrderId { get; set; }
+
+                /// <summary>
+                /// 获取或设置 B 段运单的快递单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("b_segment_waybill_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("b_segment_waybill_id")]
+                public string? BSegmentWaybillId { get; set; }
+            }
         }
 
         /// <summary>
@@ -114,10 +138,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public Types.SubWaybill[]? SubWaybillList { get; set; }
 
         /// <summary>
-        /// 获取或设置疑似风险信息。
+        /// 获取或设置疑似风险列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("order_risk_info")]
         [System.Text.Json.Serialization.JsonPropertyName("order_risk_info")]
-        public Types.RiskInfo? RiskInfo { get; set; }
+        public Types.Risk[]? RiskList { get; set; }
+
+        /// <summary>
+        /// 获取或设置补充物流列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("consolidation_waybill_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("consolidation_waybill_info")]
+        public Types.ConsolidationWaybill[]? ConsolidationWaybillList { get; set; }
     }
 }

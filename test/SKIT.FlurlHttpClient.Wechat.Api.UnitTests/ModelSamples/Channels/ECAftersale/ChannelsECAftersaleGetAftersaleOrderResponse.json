@@ -31,7 +31,6 @@
             "receive_product": true,
             "cancel_time": 0,
             "media_id_list": [],
-            "tel_number": "",
             "wxa_vip_discounted_price": 0
         },
         "refund_info": {
