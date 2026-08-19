@@ -26,7 +26,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("qua_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("qua_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public int? QualificationId { get; set; }
+                public long? QualificationId { get; set; }
             }
         }
 

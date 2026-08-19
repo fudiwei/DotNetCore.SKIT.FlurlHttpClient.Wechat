@@ -85,6 +85,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// <summary>
                                 /// 获取或设置是否需要申请才能用。
                                 /// </summary>
+                                [Obsolete("相关接口或字段于 2026-04-24 下线。")]
                                 [Newtonsoft.Json.JsonProperty("need_to_apply")]
                                 [System.Text.Json.Serialization.JsonPropertyName("need_to_apply")]
                                 public bool IsApplyRequired { get; set; }

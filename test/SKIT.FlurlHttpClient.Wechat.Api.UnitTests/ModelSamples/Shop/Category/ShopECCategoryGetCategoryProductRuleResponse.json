@@ -1,0 +1,112 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "info": {
+        "cat_id": "546776",
+        "name": "鹅蛋"
+    },
+    "product_attr_list": [
+        {
+            "name": "国产/进口",
+            "type": "select_one",
+            "value": "国产;进口",
+            "hint": "",
+            "append_allowed": false,
+            "type_v2": "select_one",
+            "required_rule": {
+                "rule_type": 1,
+                "or_combinators": []
+            }
+        },
+        {
+            "name": "产地",
+            "type": "select_one",
+            "value": "美国;韩国;日本",
+            "hint": "",
+            "append_allowed": false,
+            "type_v2": "select_one",
+            "required_rule": {
+                "rule_type": 1,
+                "or_combinators": []
+            }
+        }
+    ],
+    "sale_attr_list": [],
+    "product_qua_list": [
+        {
+            "id": 1111518,
+            "tips": "生鲜肉类产品需提供",
+            "name": "动物防疫条件合格证",
+            "required_rule": {
+                "rule_type": 3,
+                "or_combinators": [
+                    {
+                        "and_combinators": [
+                            {
+                                "combine_type": 1,
+                                "text_conditions": [
+                                    {
+                                        "check_field": 1,
+                                        "oper_type": 1,
+                                        "keywords": [
+                                            "国产/进口"
+                                        ]
+                                    },
+                                    {
+                                        "check_field": 2,
+                                        "oper_type": 1,
+                                        "keywords": [
+                                            "国产"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "id": 1111491,
+            "tips": "若为进口商品，需提供近一年内的中华人民共和国海关进口货物报关单，展现对应品牌名称及商品名称",
+            "name": "报关单",
+            "required_rule": {
+                "rule_type": 3,
+                "or_combinators": [
+                    {
+                        "and_combinators": [
+                            {
+                                "combine_type": 1,
+                                "text_conditions": [
+                                    {
+                                        "check_field": 1,
+                                        "oper_type": 1,
+                                        "keywords": [
+                                            "国产/进口"
+                                        ]
+                                    },
+                                    {
+                                        "check_field": 2,
+                                        "oper_type": 1,
+                                        "keywords": [
+                                            "进口"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    ],
+    "size_chart": {
+        "is_support": false,
+        "item_list": []
+    },
+    "product_requirement": {
+        "product_title_requirement": "",
+        "product_img_requirement": "",
+        "product_desc_requirement": ""
+    }
+}
