@@ -3619,6 +3619,54 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         }
         #endregion
 
+        #region ECLeague/Promotion
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/promotion/plan/list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/item/api_listspupromotionplans.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeaguePromotionPlanListResponse> ExecuteChannelsECLeaguePromotionPlanListAsync(this WechatApiClient client, Models.ChannelsECLeaguePromotionPlanListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "promotion", "plan", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeaguePromotionPlanListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /channels/ec/league/promotion/talent/list 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/league/item/api_listspupromotiontalents.html ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.ChannelsECLeaguePromotionTalentListResponse> ExecuteChannelsECLeaguePromotionTalentListAsync(this WechatApiClient client, Models.ChannelsECLeaguePromotionTalentListRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "promotion", "talent", "list")
+                .SetQueryParam("access_token", request.AccessToken);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeaguePromotionTalentListResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region ECLeague/Talent
 
         /// <summary>

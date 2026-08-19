@@ -1,0 +1,12 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_num": 0,
+    "continue_flag": false,
+    "list": [
+        {
+            "promotion_plan_id": 0,
+            "promotion_plan_type": 0
+        }
+    ]
+}

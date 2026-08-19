@@ -1,0 +1,21 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "total_num": 0,
+    "continue_flag": false,
+    "list": [
+        {
+            "base_talent_info": {
+                "nickname": "",
+                "head_img": "",
+                "talent_appid": ""
+            },
+            "commission_info": {
+                "promotion_plan_id": 0,
+                "promotion_plan_type": 0,
+                "ratio": 0
+            },
+            "talent_relation_status": 0
+        }
+    ]
+}
