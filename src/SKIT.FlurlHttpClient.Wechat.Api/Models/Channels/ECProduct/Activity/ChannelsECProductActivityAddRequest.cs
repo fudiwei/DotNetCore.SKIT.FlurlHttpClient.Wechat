@@ -134,8 +134,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置满赠门槛件数。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("threshold_type")]
-                        [System.Text.Json.Serialization.JsonPropertyName("threshold_type")]
+                        [Newtonsoft.Json.JsonProperty("threshold_product_num")]
+                        [System.Text.Json.Serialization.JsonPropertyName("threshold_product_num")]
                         public int? ThresholdProductCount { get; set; }
                     }
                 }

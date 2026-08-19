@@ -2,7 +2,7 @@
     "errcode": 0,
     "errmsg": "ok",
     "audit_quota": {
-        "block_status": false,
+        "block_status": 1,
         "avail_quota": 1000,
         "total_quota": 4000
     }

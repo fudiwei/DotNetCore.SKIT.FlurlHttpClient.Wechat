@@ -24,13 +24,20 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
                                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                                 public long SKUId { get; set; }
-                                
+
                                 /// <summary>
                                 /// 获取或设置达人专属计划营销库存。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("finder_total_num")]
                                 [System.Text.Json.Serialization.JsonPropertyName("finder_total_num")]
                                 public int? FinderTotalStock { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置直播预热专属库存。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("exclusive_num")]
+                                [System.Text.Json.Serialization.JsonPropertyName("exclusive_num")]
+                                public int? ExclusiveStock { get; set; }
                             }
                         }
 

@@ -24,6 +24,15 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 public long ProductId { get; set; }
 
                 /// <summary>
+                /// 获取或设置商品类型。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("product_type")]
+                [System.Text.Json.Serialization.JsonPropertyName("product_type")]
+                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                [System.Xml.Serialization.XmlElement("product_type")]
+                public int ProductType { get; set; }
+
+                /// <summary>
                 /// 获取或设置上下架状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("status")]

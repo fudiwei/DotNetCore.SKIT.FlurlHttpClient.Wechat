@@ -80,76 +80,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public bool? IsDeleted { get; set; }
             }
 
-            public class Limitation
+            public class Limitation : ChannelsECProductAddRequest.Types.Limitation
             {
-                /// <summary>
-                /// 获取或设置限购周期类型。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("period_type")]
-                [System.Text.Json.Serialization.JsonPropertyName("period_type")]
-                public int? PeriodType { get; set; }
-
-                /// <summary>
-                /// 获取或设置限购数量。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("limited_buy_num")]
-                [System.Text.Json.Serialization.JsonPropertyName("limited_buy_num")]
-                public int? LimitedBuyCount { get; set; }
             }
 
-            public class Express
+            public class Express : ChannelsECProductAddRequest.Types.Express
             {
-                /// <summary>
-                /// 获取或设置运费模板 ID。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("template_id")]
-                [System.Text.Json.Serialization.JsonPropertyName("template_id")]
-                public long? TemplateId { get; set; }
-
-                /// <summary>
-                /// 获取或设置商品重量（单位：克）。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("weight")]
-                [System.Text.Json.Serialization.JsonPropertyName("weight")]
-                public int? Weight { get; set; }
             }
 
-            public class ExtraService
+            public class ExtraService : ChannelsECProductAddRequest.Types.ExtraService
             {
-                /// <summary>
-                /// 获取或设置是否支持七天无理由退货。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("seven_day_return")]
-                [System.Text.Json.Serialization.JsonPropertyName("seven_day_return")]
-                public int? SevenDayReturn { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否支持运费险。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("freight_insurance")]
-                [System.Text.Json.Serialization.JsonPropertyName("freight_insurance")]
-                public int? FreightInsurance { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否支持假一赔三。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("fake_one_pay_three")]
-                [System.Text.Json.Serialization.JsonPropertyName("fake_one_pay_three")]
-                public int? FakeOnePayThree { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否支持坏损包退。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("damage_guarantee")]
-                [System.Text.Json.Serialization.JsonPropertyName("damage_guarantee")]
-                public int? DamageGuarantee { get; set; }
-
-                /// <summary>
-                /// 获取或设置是否支持换货。
-                /// </summary>
-                [Newtonsoft.Json.JsonProperty("exchange_support")]
-                [System.Text.Json.Serialization.JsonPropertyName("exchange_support")]
-                public int? ExchangeSupport { get; set; }
             }
 
             public class TimingOnSale : ChannelsECProductUpdateRequest.Types.TimingOnSale
@@ -178,6 +118,10 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
                 public Types.SKUDeliverInfo? SKUDeliverInfo { get; set; }
+            }
+
+            public class Aftersale : ChannelsECProductUpdateRequest.Types.Aftersale
+            {
             }
         }
 
@@ -229,6 +173,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("extra_service")]
         [System.Text.Json.Serialization.JsonPropertyName("extra_service")]
         public Types.ExtraService? ExtraService { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否在店铺首页隐藏。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("hide_in_window")]
+        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonPropertyName("hide_in_window")]
+        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+        public bool? IsHideInWindow { get; set; }
+
+        /// <summary>
+        /// 获取或设置售后信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("after_sale_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("after_sale_info")]
+        public Types.Aftersale? Aftersale { get; set; }
 
         /// <summary>
         /// 获取或设置待开售信息。

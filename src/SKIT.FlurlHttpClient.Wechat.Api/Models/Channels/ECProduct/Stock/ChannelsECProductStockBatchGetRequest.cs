@@ -13,5 +13,26 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("product_id")]
         [System.Text.Json.Serialization.JsonPropertyName("product_id")]
         public IList<long> ProductIdList { get; set; } = new List<long>();
+
+        /// <summary>
+        /// 获取或设置达人的视频号。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("finder_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
+        public string? FinderId { get; set; }
+
+        /// <summary>
+        /// 获取或设置库存类型 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("stock_type_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("stock_type_id")]
+        public int? StockTypeId { get; set; }
+
+        /// <summary>
+        /// 获取或设置库存类型。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("stock_type")]
+        [System.Text.Json.Serialization.JsonPropertyName("stock_type")]
+        public int? StockType { get; set; }
     }
 }

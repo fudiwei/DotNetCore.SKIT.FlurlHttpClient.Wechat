@@ -22,6 +22,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long SKUId { get; set; }
 
         /// <summary>
+        /// 获取或设置库存类型 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("stock_type_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("stock_type_id")]
+        public int? StockTypeId { get; set; }
+
+        /// <summary>
         /// 获取或设置库存类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("stock_type")]

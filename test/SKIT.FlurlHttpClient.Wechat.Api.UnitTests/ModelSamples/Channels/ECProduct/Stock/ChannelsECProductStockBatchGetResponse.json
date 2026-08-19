@@ -4,10 +4,10 @@
     "data": {
         "spu_stock_list": [
             {
-                "product_id": "10000017524246",
+                "product_id": "10000000000001",
                 "sku_stock": [
                     {
-                        "sku_id": "764787449",
+                        "sku_id": "1000000001",
                         "normal_stock_num": 990,
                         "limited_discount_stock_num": 0,
                         "warehouse_stocks": [

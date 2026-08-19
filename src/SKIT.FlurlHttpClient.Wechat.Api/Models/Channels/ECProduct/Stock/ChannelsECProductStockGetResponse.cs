@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -46,6 +48,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置限时抢购库存数量。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2026-04-08 下线。")]
                 [Newtonsoft.Json.JsonProperty("limited_discount_stock_num")]
                 [System.Text.Json.Serialization.JsonPropertyName("limited_discount_stock_num")]
                 public int LimitedDiscountStock { get; set; }
