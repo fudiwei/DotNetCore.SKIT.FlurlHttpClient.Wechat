@@ -334,11 +334,11 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.ProductRequirement? ProductRequirement { get; set; }
 
                 /// <summary>
-                /// 获取或设置尺码表列表。
+                /// 获取或设置尺码表信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("size_chart")]
                 [System.Text.Json.Serialization.JsonPropertyName("size_chart")]
-                public Types.SizeChart[]? SizeChartList { get; set; }
+                public Types.SizeChart? SizeChart { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否放心买必须打开坏损包赔。
