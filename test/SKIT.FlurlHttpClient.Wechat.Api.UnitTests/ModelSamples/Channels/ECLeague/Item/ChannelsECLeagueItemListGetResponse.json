@@ -3,8 +3,9 @@
     "errmsg": "ok",
     "items": [
         {
-            "product_id": 123456
+            "product_id": 0
         }
     ],
-    "total_num": 10
+    "has_more": false,
+    "total_num": 0
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
@@ -19,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long ProductId { get; set; }
 
                 /// <summary>
-                /// 获取或设置分佣率（范围：0～100）。
+                /// 获取或设置佣金率（范围：0～100）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ratio")]
                 [System.Text.Json.Serialization.JsonPropertyName("ratio")]
@@ -39,14 +40,22 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public IList<Types.Item> List { get; set; } = new List<Types.Item>();
+        public IList<Types.Item> ItemList { get; set; } = new List<Types.Item>();
 
         /// <summary>
-        /// 获取或设置视频号 ID列表。
+        /// 获取或设置视频号 ID 列表。
         /// </summary>
+        [Obsolete("相关接口或字段于 2026-06-18 下线。")]
         [Newtonsoft.Json.JsonProperty("finder_ids")]
         [System.Text.Json.Serialization.JsonPropertyName("finder_ids")]
         public IList<string>? FinderIdList { get; set; }
+
+        /// <summary>
+        /// 获取或设置带货达人 AppId 列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("talent_appids")]
+        [System.Text.Json.Serialization.JsonPropertyName("talent_appids")]
+        public IList<string>? TalentAppIdList { get; set; }
 
         /// <summary>
         /// 获取或设置推广开始时间戳。

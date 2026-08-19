@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -15,61 +15,29 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 {
                     public class ExclusiveInfo
                     {
-                        public static class Types
-                        {
-                            public class FinderInfo
-                            {
-                                /// <summary>
-                                /// 获取或设置达人视频号。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("finder_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("finder_id")]
-                                public string FinderId { get; set; } = default!;
-
-                                /// <summary>
-                                /// 获取或设置开始时间戳。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("begin_time")]
-                                [System.Text.Json.Serialization.JsonPropertyName("begin_time")]
-                                public long BeginTimestamp { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置结束时间戳。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("end_time")]
-                                [System.Text.Json.Serialization.JsonPropertyName("end_time")]
-                                public long EndTimestamp { get; set; }
-                            }
-                        }
-
                         /// <summary>
                         /// 获取或设置特殊推广商品计划 ID。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2026-06-18 下线。")]
                         [Newtonsoft.Json.JsonProperty("info_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("info_id")]
                         [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                         public long? InfoId { get; set; }
 
                         /// <summary>
-                        /// 获取或设置推广达人视频号 ID列表。
+                        /// 获取或设置推广计划 ID。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("finder_ids")]
-                        [System.Text.Json.Serialization.JsonPropertyName("finder_ids")]
-                        public string[]? FinderIdList { get; set; }
+                        [Newtonsoft.Json.JsonProperty("promotion_plan_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("promotion_plan_id")]
+                        [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
+                        public long? PromotionPlanId { get; set; }
 
                         /// <summary>
-                        /// 获取或设置推广达人总数量。
+                        /// 获取或设置推广达人数量。
                         /// </summary>
-                        [Newtonsoft.Json.JsonProperty("finder_num")]
-                        [System.Text.Json.Serialization.JsonPropertyName("finder_num")]
-                        public int? FinderTotalCount { get; set; }
-
-                        /// <summary>
-                        /// 获取或设置推广达人视频号列表。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("finder_info_list")]
-                        [System.Text.Json.Serialization.JsonPropertyName("finder_info_list")]
-                        public Types.FinderInfo[]? FinderInfoList { get; set; }
+                        [Newtonsoft.Json.JsonProperty("talent_num")]
+                        [System.Text.Json.Serialization.JsonPropertyName("talent_num")]
+                        public int? TalentCount { get; set; }
 
                         /// <summary>
                         /// 获取或设置推广开始时间戳。
@@ -96,18 +64,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                     public class ExtendedInfo
                     {
                         /// <summary>
-                        /// 获取或设置是否类目禁售。
-                        /// </summary>
-                        [Newtonsoft.Json.JsonProperty("is_sale_forbidden")]
-                        [System.Text.Json.Serialization.JsonPropertyName("is_sale_forbidden")]
-                        public bool IsSaleForbidden { get; set; }
-
-                        /// <summary>
                         /// 获取或设置是否被官方封禁。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("is_banned")]
                         [System.Text.Json.Serialization.JsonPropertyName("is_banned")]
                         public bool IsBanned { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置是否类目禁售。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("is_sale_forbidden")]
+                        [System.Text.Json.Serialization.JsonPropertyName("is_sale_forbidden")]
+                        public bool? IsSaleForbidden { get; set; }
                     }
                 }
 
@@ -127,7 +95,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long? ProductId { get; set; }
 
                 /// <summary>
-                /// 获取或设置分佣率（范围：0～100）。
+                /// 获取或设置佣金率（范围：0～100）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ratio")]
                 [System.Text.Json.Serialization.JsonPropertyName("ratio")]

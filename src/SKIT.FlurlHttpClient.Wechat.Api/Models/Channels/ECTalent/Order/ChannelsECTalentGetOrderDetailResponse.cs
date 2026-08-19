@@ -74,7 +74,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public string ActualPaymentString { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置订单分佣基数金额字符串（单位：分）。
+                /// 获取或设置订单佣金基数金额字符串（单位：分）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("settle_payment")]
                 [System.Text.Json.Serialization.JsonPropertyName("settle_payment")]

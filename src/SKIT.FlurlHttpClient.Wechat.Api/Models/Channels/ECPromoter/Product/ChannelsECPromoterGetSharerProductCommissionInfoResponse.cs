@@ -6,14 +6,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
     public class ChannelsECPromoterGetSharerProductCommissionInfoResponse : WechatApiResponse
     {
         /// <summary>
-        /// 获取或设置是否设置过分佣比例。
+        /// 获取或设置是否设置过佣金比例。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_set")]
         [System.Text.Json.Serialization.JsonPropertyName("is_set")]
         public bool IsSet { get; set; }
 
         /// <summary>
-        /// 获取或设置分佣比例（单位：万分数）。
+        /// 获取或设置佣金比例（单位：万分数）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("commission_ratio")]
         [System.Text.Json.Serialization.JsonPropertyName("commission_ratio")]

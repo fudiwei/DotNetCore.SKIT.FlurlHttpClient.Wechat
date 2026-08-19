@@ -1,16 +1,18 @@
 {
-    "type": 2,
-    "info_id": 123,
-    "operate_type": 1,
-    "ratio": 60,
+    "type": 0,
+    "product_id": 0,
+    "promotion_plan_id": 80000001,
+    "operate_type": 0,
+    "ratio": 0,
     "exclusive_info": {
-        "begin_time": 1100,
-        "end_time": 3000,
-        "add_finder_ids": [
-            "finder_id_01"
+        "begin_time": 0,
+        "end_time": 0,
+        "is_forerver": false,
+        "add_talent_appids": [
+            ""
         ],
-        "del_finder_ids": [
-            "finder_id_02"
+        "del_talent_appids": [
+            ""
         ]
     }
 }

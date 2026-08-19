@@ -52,7 +52,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public int PromotionPlanType { get; set; }
 
                         /// <summary>
-                        /// 获取或设置推广佣金率（单位：万分数）。
+                        /// 获取或设置佣金率（单位：万分数）。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("ratio")]
                         [System.Text.Json.Serialization.JsonPropertyName("ratio")]

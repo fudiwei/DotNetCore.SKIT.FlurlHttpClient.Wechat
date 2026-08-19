@@ -1,5 +1,7 @@
 {
-    "type": 1,
-    "page_size": 1,
-    "page_index": 1
+    "type": 0,
+    "page_size": 0,
+    "page_index": 0,
+    "product_id": 0,
+    "need_total_num": false
 }

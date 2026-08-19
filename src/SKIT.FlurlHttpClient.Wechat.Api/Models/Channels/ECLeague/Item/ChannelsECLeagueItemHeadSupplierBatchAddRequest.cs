@@ -19,7 +19,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public long ProductId { get; set; }
 
                 /// <summary>
-                /// 获取或设置分佣率（范围：0～100）。
+                /// 获取或设置佣金率（范围：0～100）。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ratio")]
                 [System.Text.Json.Serialization.JsonPropertyName("ratio")]
@@ -46,7 +46,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        public IList<Types.Item> List { get; set; } = new List<Types.Item>();
+        public IList<Types.Item> ItemList { get; set; } = new List<Types.Item>();
 
         /// <summary>
         /// 获取或设置推广开始时间戳。

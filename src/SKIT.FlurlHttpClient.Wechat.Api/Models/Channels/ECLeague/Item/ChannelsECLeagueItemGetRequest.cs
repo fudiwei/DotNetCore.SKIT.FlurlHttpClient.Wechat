@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -22,36 +24,16 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置特殊推广商品计划 ID。
         /// </summary>
+        [Obsolete("相关接口或字段于 2026-06-18 下线。")]
         [Newtonsoft.Json.JsonProperty("info_id")]
         [System.Text.Json.Serialization.JsonPropertyName("info_id")]
         public long? InfoId { get; set; }
 
         /// <summary>
-        /// 获取或设置是否获取特殊推广商品绑定的达人列表。
+        /// 获取或设置推广计划 ID。
         /// </summary>
-        [Newtonsoft.Json.JsonProperty("need_relation")]
-        [System.Text.Json.Serialization.JsonPropertyName("need_relation")]
-        public bool? RequireRelation { get; set; }
-
-        /// <summary>
-        /// 获取或设置是否需要返回该计划绑定达人总数。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("need_total_num")]
-        [System.Text.Json.Serialization.JsonPropertyName("need_total_num")]
-        public bool? RequireRelationTotalCount { get; set; }
-
-        /// <summary>
-        /// 获取或设置达人分页页数（从 1 开始）。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("page_index")]
-        [System.Text.Json.Serialization.JsonPropertyName("page_index")]
-        public int? RelationPage { get; set; }
-
-        /// <summary>
-        /// 获取或设置达人分页每页数量。
-        /// </summary>
-        [Newtonsoft.Json.JsonProperty("page_size")]
-        [System.Text.Json.Serialization.JsonPropertyName("page_size")]
-        public int? RelationLimit { get; set; }
+        [Newtonsoft.Json.JsonProperty("promotion_plan_id")]
+        [System.Text.Json.Serialization.JsonPropertyName("promotion_plan_id")]
+        public long? PromotionPlanId { get; set; }
     }
 }

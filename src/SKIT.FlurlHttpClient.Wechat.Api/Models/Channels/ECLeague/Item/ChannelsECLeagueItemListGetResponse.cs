@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -15,15 +17,23 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("product_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long? ProductId { get; set; }
+                public long ProductId { get; set; }
 
                 /// <summary>
                 /// 获取或设置特殊推广商品计划 ID。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2026-06-18 下线。")]
                 [Newtonsoft.Json.JsonProperty("info_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("info_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
                 public long? InfoId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商品状态。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("status")]
+                [System.Text.Json.Serialization.JsonPropertyName("status")]
+                public int Status { get; set; }
             }
         }
 
@@ -51,6 +61,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// <summary>
         /// 获取或设置翻页标记。
         /// </summary>
+        [Obsolete("相关接口或字段于 2026-06-18 下线。")]
         [Newtonsoft.Json.JsonProperty("last_buffer")]
         [System.Text.Json.Serialization.JsonPropertyName("last_buffer")]
         public string? NextCursor { get; set; }

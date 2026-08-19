@@ -75,7 +75,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 public Types.ProductData ProductData { get; set; } = default!;
 
                 /// <summary>
-                /// 获取或设置分佣信息。
+                /// 获取或设置佣金信息。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("talent_commission_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("talent_commission_info")]

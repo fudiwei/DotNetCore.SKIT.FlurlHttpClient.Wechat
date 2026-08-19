@@ -4,15 +4,12 @@
     "result_info_list": [
         {
             "errcode": 0,
-            "errmsg": "ok",
-            "product_id": 123,
-            "info_id": 100
-        },
-        {
-            "errcode": 0,
-            "errmsg": "ok",
-            "product_id": 124,
-            "info_id": 101
+            "errmsg": "",
+            "promotion_plan_id": 0,
+            "product_id": 0,
+            "fail_talent_appids": [
+                ""
+            ]
         }
     ]
 }

@@ -13,14 +13,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public string SharerAppId { get; set; } = string.Empty;
 
         /// <summary>
-        /// 获取或设置分佣类型。
+        /// 获取或设置佣金类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("commission_type")]
         [System.Text.Json.Serialization.JsonPropertyName("commission_type")]
         public int CommissionType { get; set; }
 
         /// <summary>
-        /// 获取或设置分佣比例（单位：万分数）。
+        /// 获取或设置佣金比例（单位：万分数）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("commission_ratio")]
         [System.Text.Json.Serialization.JsonPropertyName("commission_ratio")]

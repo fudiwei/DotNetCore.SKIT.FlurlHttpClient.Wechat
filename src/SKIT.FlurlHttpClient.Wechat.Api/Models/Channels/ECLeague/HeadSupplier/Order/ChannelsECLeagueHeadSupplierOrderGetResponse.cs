@@ -57,7 +57,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 public string Title { get; set; } = default!;
 
                                 /// <summary>
-                                /// 获取或设置可分佣金额（单位：分）。
+                                /// 获取或设置可佣金金额（单位：分）。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("actual_payment")]
                                 [System.Text.Json.Serialization.JsonPropertyName("actual_payment")]
@@ -175,7 +175,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public int Amount { get; set; }
 
                                         /// <summary>
-                                        /// 获取或设置推佣金率（单位：万分数）。
+                                        /// 获取或设置佣金率（单位：万分数）。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("ratio")]
                                         [System.Text.Json.Serialization.JsonPropertyName("ratio")]
@@ -220,7 +220,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public int Amount { get; set; }
 
                                         /// <summary>
-                                        /// 获取或设置推佣金率（单位：万分数）。
+                                        /// 获取或设置佣金率（单位：万分数）。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("ratio")]
                                         [System.Text.Json.Serialization.JsonPropertyName("ratio")]
@@ -265,7 +265,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         public int Amount { get; set; }
 
                                         /// <summary>
-                                        /// 获取或设置推佣金率（单位：万分数）。
+                                        /// 获取或设置佣金率（单位：万分数）。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("ratio")]
                                         [System.Text.Json.Serialization.JsonPropertyName("ratio")]
@@ -483,7 +483,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public Types.OrderInfo OrderInfo { get; set; } = default!;
 
                         /// <summary>
-                        /// 获取或设置分佣信息。
+                        /// 获取或设置佣金信息。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("commission_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("commission_info")]

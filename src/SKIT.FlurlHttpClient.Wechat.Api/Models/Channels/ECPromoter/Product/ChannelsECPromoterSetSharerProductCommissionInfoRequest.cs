@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long ProductId { get; set; }
 
         /// <summary>
-        /// 获取或设置分佣比例（单位：万分数）。
+        /// 获取或设置佣金比例（单位：万分数）。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("commission_ratio")]
         [System.Text.Json.Serialization.JsonPropertyName("commission_ratio")]
