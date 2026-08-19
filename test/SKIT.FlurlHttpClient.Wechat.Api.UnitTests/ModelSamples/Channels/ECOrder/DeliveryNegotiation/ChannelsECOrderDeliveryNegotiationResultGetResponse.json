@@ -1,0 +1,17 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "negotiation_list": [
+        {
+            "order_id": "123",
+            "original_delivery_time": 1777016294,
+            "predict_delivery_time": 1777046400,
+            "state": 1,
+            "reason": 2,
+            "remark": "test",
+            "deadline": 1776940902,
+            "create_time": 1776940602,
+            "update_time": 1776940602
+        }
+    ]
+}
