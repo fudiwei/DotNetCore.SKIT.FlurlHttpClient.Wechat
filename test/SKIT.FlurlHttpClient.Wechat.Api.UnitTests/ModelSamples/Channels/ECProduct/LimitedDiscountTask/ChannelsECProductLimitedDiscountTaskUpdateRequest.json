@@ -1,0 +1,20 @@
+{
+    "task_id": "12345678",
+    "status": 0,
+    "title": "新活动名称",
+    "end_time": 1614873822,
+    "limited_discount_skus": [
+        {
+            "product_id": "1234567001",
+            "sku_id": "12345678901",
+            "sale_price": 2888,
+            "sale_stock": 5
+        },
+        {
+            "product_id": "1234567001",
+            "sku_id": "12345678902",
+            "sale_price": 2600,
+            "sale_stock": 50
+        }
+    ]
+}

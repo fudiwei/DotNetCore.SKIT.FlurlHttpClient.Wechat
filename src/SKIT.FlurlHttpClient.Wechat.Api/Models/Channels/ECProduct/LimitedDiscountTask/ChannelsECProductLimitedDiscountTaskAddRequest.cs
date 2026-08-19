@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -42,6 +42,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         public long ProductId { get; set; }
 
         /// <summary>
+        /// 获取或设置活动名称。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("title")]
+        [System.Text.Json.Serialization.JsonPropertyName("title")]
+        public string? Title { get; set; }
+
+        /// <summary>
         /// 获取或设置抢购任务开始时间戳。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("start_time")]
@@ -61,5 +68,19 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         [Newtonsoft.Json.JsonProperty("limited_discount_skus")]
         [System.Text.Json.Serialization.JsonPropertyName("limited_discount_skus")]
         public IList<Types.SKU> SKUList { get; set; } = new List<Types.SKU>();
+
+        /// <summary>
+        /// 获取或设置是否开启限购。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("is_limit_purchase")]
+        [System.Text.Json.Serialization.JsonPropertyName("is_limit_purchase")]
+        public bool? IsLimitedPurchase { get; set; }
+
+        /// <summary>
+        /// 获取或设置限购数量。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("limit_purchase_num")]
+        [System.Text.Json.Serialization.JsonPropertyName("limit_purchase_num")]
+        public int? LimitedPurchaseCount { get; set; }
     }
 }
