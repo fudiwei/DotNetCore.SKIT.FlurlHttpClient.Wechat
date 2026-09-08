@@ -898,6 +898,8 @@
                 - 商户提现申请单号查询提现申请单状态：`GetMerchantOperateRiskWithdrawlApplyByOutRequestNumber`
                 - 微信支付提现申请单号查询提现申请单状态：`GetMerchantOperateRiskWithdrawlApplyByApplymentId`
                 - 提交已注销商户号可用余额提现申请单：`CreateMerchantOperateRiskWithdrawlApply`
+        - 商户查询
+            - 查询指定主体子商户列表：`QueryEcommerceSubjectSubMerchants`
         - 支付下单
             - 普通支付
                 - APP 下单：`CreatePayPartnerTransactionApp`
