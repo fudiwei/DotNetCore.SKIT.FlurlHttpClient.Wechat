@@ -137,6 +137,54 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             return await client.SendFlurlRequestAsync<Models.UploadMarketingPartnerProductCouponMediaImageResponse>(flurlReq, httpContent: httpContent, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
 
+        #region ImageGenerationTasks
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/partner/product-coupon/image-generation-tasks 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4017327735 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4017327752 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateMarketingPartnerProductCouponImageGenerationTaskResponse> ExecuteCreateMarketingPartnerProductCouponImageGenerationTaskAsync(this WechatTenpayClient client, Models.CreateMarketingPartnerProductCouponImageGenerationTaskRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "product-coupon", "image-generation-tasks");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMarketingPartnerProductCouponImageGenerationTaskResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [GET] /marketing/partner/product-coupon/image-generation-tasks/{task_id} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4017327739 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4017327753 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.GetMarketingPartnerProductCouponImageGenerationTaskByTaskIdResponse> ExecuteGetMarketingPartnerProductCouponImageGenerationTaskByTaskIdAsync(this WechatTenpayClient client, Models.GetMarketingPartnerProductCouponImageGenerationTaskByTaskIdRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "partner", "product-coupon", "image-generation-tasks", request.TaskId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.GetMarketingPartnerProductCouponImageGenerationTaskByTaskIdResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
         #region NotifyConfigs
         /// <summary>
         /// <para>异步调用 [GET] /marketing/partner/product-coupon/notify-configs 接口。</para>
@@ -212,7 +260,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781553 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781553 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016434641 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -228,6 +277,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Get, "marketing", "partner", "product-coupon", "product-coupons", request.ProductCouponId, "stocks")
                 .SetQueryParam("brand_id", request.BrandId)
                 .SetQueryParam("state", request.StockState)
+                .SetQueryParam("stock_bundle_id", request.StockBundleId)
                 .SetQueryParam("page_size", request.PageSize)
                 .SetQueryParam("page_token", request.PageToken);
 
@@ -238,7 +288,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id} 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781542 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781542 ]]> </br>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016434649 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -327,7 +378,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [POST] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/upload-coupon-codes 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781572 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781572 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016434668 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -394,7 +446,8 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
         /// <para>异步调用 [GET] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/associated-stores 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781546 ]]>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4015781546 ]]> <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016434665 ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -413,6 +466,120 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("page_size", request.PageSize);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.QueryMarketingPartnerProductCouponStockAssociatedStoresResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+        #endregion
+
+        #region StockBundles
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stock-bundles 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016280622 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.CreateMarketingPartnerProductCouponStockBundleResponse> ExecuteCreateMarketingPartnerProductCouponStockBundleAsync(this WechatTenpayClient client, Models.CreateMarketingPartnerProductCouponStockBundleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "product-coupon", "product-coupons", request.ProductCouponId, "stock-bundles");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.CreateMarketingPartnerProductCouponStockBundleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [PATCH] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stock-bundles/{stock_bundle_id} 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016280633 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UpdateMarketingPartnerProductCouponStockBundleResponse> ExecuteUpdateMarketingPartnerProductCouponStockBundleAsync(this WechatTenpayClient client, Models.UpdateMarketingPartnerProductCouponStockBundleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, new HttpMethod("PATCH"), "marketing", "partner", "product-coupon", "product-coupons", request.ProductCouponId, "stock-bundles", request.StockBundleId);
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMarketingPartnerProductCouponStockBundleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stock-bundles/{stock_bundle_id}/update-budget 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016280642 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.UpdateMarketingPartnerProductCouponStockBundleBudgetResponse> ExecuteUpdateMarketingPartnerProductCouponStockBundleBudgetAsync(this WechatTenpayClient client, Models.UpdateMarketingPartnerProductCouponStockBundleBudgetRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "product-coupon", "product-coupons", request.ProductCouponId, "stock-bundles", request.StockBundleId, "update-budget");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.UpdateMarketingPartnerProductCouponStockBundleBudgetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        #region /Stocks/Stores
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stock-bundles/{stock_bundle_id}/associate-stores 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016280620 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.AssociateMarketingPartnerProductCouponStockBundleToStoresResponse> ExecuteAssociateMarketingPartnerProductCouponStockBundleToStoresAsync(this WechatTenpayClient client, Models.AssociateMarketingPartnerProductCouponStockBundleToStoresRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "product-coupon", "product-coupons", request.ProductCouponId, "stock-bundles", request.StockBundleId, "associate-stores");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.AssociateMarketingPartnerProductCouponStockBundleToStoresResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stock-bundles/{stock_bundle_id}/disassociate-stores 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016280629 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DisassociateMarketingPartnerProductCouponStockBundleFromStoresResponse> ExecuteDisassociateMarketingPartnerProductCouponStockBundleFromStoresAsync(this WechatTenpayClient client, Models.DisassociateMarketingPartnerProductCouponStockBundleFromStoresRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "product-coupon", "product-coupons", request.ProductCouponId, "stock-bundles", request.StockBundleId, "disassociate-stores");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DisassociateMarketingPartnerProductCouponStockBundleFromStoresResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
         #endregion
@@ -464,6 +631,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .SetQueryParam("stock_id", request.StockId)
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("coupon_state", request.CouponState)
+                .SetQueryParam("user_coupon_bundle_id", request.UserCouponBundleId)
                 .SetQueryParam("page_size", request.PageSize)
                 .SetQueryParam("page_token", request.PageToken);
 
@@ -586,6 +754,52 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
                 .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "product-coupon", "users", request.OpenId, "coupons", request.CouponCode, "return");
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ReturnMarketingPartnerProductCouponUserCouponResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+        #endregion
+
+        #region UserCouponBundles
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/partner/product-coupon/users/{openid}/coupon-bundles 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016280664 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.SendMarketingPartnerProductCouponUserCouponBundleResponse> ExecuteSendMarketingPartnerProductCouponUserCouponBundleAsync(this WechatTenpayClient client, Models.SendMarketingPartnerProductCouponUserCouponBundleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "product-coupon", "users", request.OpenId, "coupon-bundles");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.SendMarketingPartnerProductCouponUserCouponBundleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
+        }
+
+        /// <summary>
+        /// <para>异步调用 [POST] /marketing/partner/product-coupon/users/{openid}/coupon-bundles/{user_coupon_bundle_id}/deactivate 接口。</para>
+        /// <para>
+        /// REF: <br/>
+        /// <![CDATA[ https://pay.weixin.qq.com/doc/v3/partner/4016280658 ]]>
+        /// </para>
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="request"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
+        public static async Task<Models.DeactivateMarketingPartnerProductCouponUserCouponBundleResponse> ExecuteDeactivateMarketingPartnerProductCouponUserCouponBundleAsync(this WechatTenpayClient client, Models.DeactivateMarketingPartnerProductCouponUserCouponBundleRequest request, CancellationToken cancellationToken = default)
+        {
+            if (client is null) throw new ArgumentNullException(nameof(client));
+            if (request is null) throw new ArgumentNullException(nameof(request));
+
+            IFlurlRequest flurlReq = client
+                .CreateFlurlRequest(request, HttpMethod.Post, "marketing", "partner", "product-coupon", "users", request.OpenId, "coupon-bundles", request.UserCouponBundleId, "deactivate");
+
+            return await client.SendFlurlRequestAsJsonAsync<Models.DeactivateMarketingPartnerProductCouponUserCouponBundleResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
         #endregion
     }

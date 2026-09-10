@@ -706,15 +706,12 @@
             - 更新投放计划：`UpdateMarketingPartnerDeliveryPlan`
             - 终止投放计划：`TerminateMarketingPartnerDeliveryPlan`
             - 设置投放计划回调地址：`UpdateMarketingPartnerDeliveryPlanNotifyUrl`
-    - 商品券
+    - 商品券（单券）
         - 商品券管理
             - 创建商品券：`CreateMarketingPartnerProductCoupon`
             - 修改商品券：`UpdateMarketingPartnerProductCoupon`
             - 查询商品券：`GetMarketingPartnerProductCouponByProductCouponId`
             - 失效商品券：`DeactivateMarketingPartnerProductCoupon`
-        - 商户券回调通知配置
-            - 获取商品券事件通知地址：`GetMarketingPartnerProductCouponNotifyConfig`
-            - 设置商品券事件通知地址：`UpdateMarketingPartnerProductCouponNotifyConfig`
         - 商品券批次管理
             - 添加商品券批次：`CreateMarketingPartnerProductCouponStock`
             - 查询商品券批次列表：`QueryMarketingPartnerProductCouponStocks`
@@ -723,8 +720,8 @@
             - 修改商品券批次发放预算：`UpdateMarketingPartnerProductCouponStockBudget`
             - 失效商品券批次：`DeactivateMarketingPartnerProductCouponStock`
             - 批次关联门店：`AssociateMarketingPartnerProductCouponStockToStores`
-            - 查询批次关联门店列表：`QueryMarketingPartnerProductCouponStockAssociatedStores`
             - 批次取消关联门店：`DisassociateMarketingPartnerProductCouponStockFromStores`
+            - 查询批次关联门店列表：`QueryMarketingPartnerProductCouponStockAssociatedStores`
             - 预上传券 Code：`UploadMarketingPartnerProductCouponStockCouponCodes`
         - 用户商品券管理
             - 向用户发放商品券：`SendMarketingPartnerProductCouponUserCoupon`
@@ -734,6 +731,43 @@
             - 核销用户商品券：`UseMarketingPartnerProductCouponUserCoupon`
             - 失效用户商品券：`DeactivateMarketingPartnerProductCouponUserCoupon`
             - 退券：`ReturnMarketingPartnerProductCouponUserCoupon`
+        - 商户券回调通知
+            - 获取商品券事件通知地址：`GetMarketingPartnerProductCouponNotifyConfig`
+            - 设置商品券事件通知地址：`UpdateMarketingPartnerProductCouponNotifyConfig`
+        - 生成商品券头图
+            - 提交图片生成任务：`CreateMarketingPartnerProductCouponImageGenerationTask`
+            - 查询图片生成任务执行结果：`GetMarketingPartnerProductCouponImageGenerationTaskByTaskId`
+        - 图片上传：`UploadMarketingPartnerProductCouponMediaImage`
+    - 商品券（多次优惠）
+        - 商品券管理
+            - 创建商品券：`CreateMarketingPartnerProductCoupon`
+            - 修改商品券：`UpdateMarketingPartnerProductCoupon`
+            - 查询商品券：`GetMarketingPartnerProductCouponByProductCouponId`
+            - 失效商品券：`DeactivateMarketingPartnerProductCoupon`
+        - 商品券批次管理
+            - 添加商品券批次组：`CreateMarketingPartnerProductCouponStockBundle`
+            - 查询商品券批次列表：`QueryMarketingPartnerProductCouponStocks`
+            - 查询商品券指定批次：`GetMarketingPartnerProductCouponStockByStockId`
+            - 修改商品券批次组：`UpdateMarketingPartnerProductCouponStockBundle`
+            - 修改商品券批次组发放预算：`UpdateMarketingPartnerProductCouponStockBundleBudget`
+            - 批次组关联门店：`AssociateMarketingPartnerProductCouponStockBundleToStores`
+            - 批次组取消关联门店：`DisassociateMarketingPartnerProductCouponStockBundleFromStores`
+            - 查询批次关联门店列表：`QueryMarketingPartnerProductCouponStockAssociatedStores`
+            - 预上传券 Code：`UploadMarketingPartnerProductCouponStockCouponCodes`
+        - 用户商品券管理
+            - 向用户发放商品券批次组：`SendMarketingPartnerProductCouponUserCouponBundle`
+            - 确认发放用户商品券：`ConfirmMarketingPartnerProductCouponUserCoupon`
+            - 查询用户商品券详情：`GetMarketingPartnerProductCouponUserCouponByCouponCode`
+            - 指定券状态查询用户商品券列表：`QueryMarketingPartnerProductCouponUserCoupons`
+            - 核销用户商品券：`UseMarketingPartnerProductCouponUserCoupon`
+            - 失效用户商品券组：`DeactivateMarketingPartnerProductCouponUserCouponBundle`
+            - 退券：`ReturnMarketingPartnerProductCouponUserCoupon`
+        - 商户券回调通知
+            - 获取商品券事件通知地址：`GetMarketingPartnerProductCouponNotifyConfig`
+            - 设置商品券事件通知地址：`UpdateMarketingPartnerProductCouponNotifyConfig`
+        - 生成商品券头图
+            - 提交图片生成任务：`CreateMarketingPartnerProductCouponImageGenerationTask`
+            - 查询图片生成任务执行结果：`GetMarketingPartnerProductCouponImageGenerationTaskByTaskId`
         - 图片上传：`UploadMarketingPartnerProductCouponMediaImage`
     - 零售小店活动
         - 查询零售小店活动业务代理：`QueryMarketingGoodsSubsidyActivityRetailStoreRepresentatives`

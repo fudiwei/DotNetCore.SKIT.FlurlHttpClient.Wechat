@@ -17,6 +17,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
             }
 
+            public class ProgressiveBundleUsageDetail : QueryMarketingPartnerProductCouponUserCouponsResponse.Types.UserCoupon.Types.ProgressiveBundleUsageDetail
+            {
+            }
+
             public class ProductCouponInfo : QueryMarketingPartnerProductCouponUserCouponsResponse.Types.UserCoupon.Types.ProductCouponInfo
             {
             }

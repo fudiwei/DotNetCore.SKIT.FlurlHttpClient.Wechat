@@ -39,6 +39,37 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [System.Text.Json.Serialization.JsonPropertyName("transaction_id")]
                 public string? TransactionId { get; set; }
             }
+
+            public class AssociatedPayScoreOrder
+            {
+                /// <summary>
+                /// 获取或设置微信商户号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("mchid")]
+                [System.Text.Json.Serialization.JsonPropertyName("mchid")]
+                public string? MerchantId { get; set; }
+
+                /// <summary>
+                /// 获取或设置子商户号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("sub_mchid")]
+                [System.Text.Json.Serialization.JsonPropertyName("sub_mchid")]
+                public string? SubMerchantId { get; set; }
+
+                /// <summary>
+                /// 获取或设置商户服务订单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("out_order_no")]
+                [System.Text.Json.Serialization.JsonPropertyName("out_order_no")]
+                public string? OutOrderNumber { get; set; }
+
+                /// <summary>
+                /// 获取或设置微信支付服务订单号。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("order_id")]
+                [System.Text.Json.Serialization.JsonPropertyName("order_id")]
+                public string? OrderId { get; set; }
+            }
         }
 
         /// <summary>
@@ -104,7 +135,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("associated_order_info")]
         [System.Text.Json.Serialization.JsonPropertyName("associated_order_info")]
-        public Types.AssociatedOrder AssociatedOrder { get; set; } = new Types.AssociatedOrder();
+        public Types.AssociatedOrder? AssociatedOrder { get; set; }
+
+        /// <summary>
+        /// 获取或设置关联微信支付分订单信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("associated_pay_score_order_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("associated_pay_score_order_info")]
+        public Types.AssociatedPayScoreOrder? AssociatedPayScoreOrder { get; set; }
 
         /// <summary>
         /// 获取或设置多次优惠索引。

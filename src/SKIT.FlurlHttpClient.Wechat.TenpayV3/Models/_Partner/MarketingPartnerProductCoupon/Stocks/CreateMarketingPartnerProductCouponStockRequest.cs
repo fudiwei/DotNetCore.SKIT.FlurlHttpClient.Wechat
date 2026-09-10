@@ -336,11 +336,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? MiniProgramPagePath { get; set; }
 
                         /// <summary>
+                        /// 获取或设置品牌方 App 跳转类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("app_jump_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("app_jump_type")]
+                        public string? AppJumpType { get; set; }
+
+                        /// <summary>
                         /// 获取或设置品牌方 App 跳转路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("app_path")]
                         [System.Text.Json.Serialization.JsonPropertyName("app_path")]
                         public string? AppPath { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置口令链接。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("passcode_link")]
+                        [System.Text.Json.Serialization.JsonPropertyName("passcode_link")]
+                        public string? PasscodeLink { get; set; }
 
                         /// <summary>
                         /// 获取或设置可用门店信息。

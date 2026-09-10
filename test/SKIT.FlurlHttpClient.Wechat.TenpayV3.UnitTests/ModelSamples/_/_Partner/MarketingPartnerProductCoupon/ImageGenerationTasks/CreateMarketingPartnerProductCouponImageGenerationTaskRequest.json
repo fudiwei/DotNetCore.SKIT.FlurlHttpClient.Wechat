@@ -1,0 +1,26 @@
+{
+    "brand_id": "120344",
+    "task_id": "image_generation_task_1",
+    "image_generation_type": "COMBINE_IMAGE",
+    "combine_image": {
+        "scope": "ALL",
+        "type": "NORMAL",
+        "usage_mode": "SINGLE",
+        "normal_coupon": {
+            "threshold": 10000,
+            "discount_amount": 100
+        },
+        "discount_coupon": {
+            "threshold": 10000,
+            "percent_off": 30
+        },
+        "exchange_coupon": {
+            "threshold": 10000,
+            "exchange_price": 100
+        },
+        "background_color": "#ff5733"
+    },
+    "cut_out": {
+        "image_url": "https://wxpaylogo.qpic.cn/wxpaylogo/example.jpg"
+    }
+}

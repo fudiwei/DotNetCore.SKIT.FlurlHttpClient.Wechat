@@ -20,6 +20,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                             public class AssociatedOrder : UseMarketingPartnerProductCouponUserCouponRequest.Types.AssociatedOrder
                             {
                             }
+
+                            public class AssociatedPayScoreOrder : UseMarketingPartnerProductCouponUserCouponRequest.Types.AssociatedPayScoreOrder
+                            {
+                            }
                         }
 
                         /// <summary>
@@ -60,6 +64,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("associated_order_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("associated_order_info")]
                         public Types.AssociatedOrder? AssociatedOrder { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置关联微信支付分订单信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("associated_pay_score_order_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("associated_pay_score_order_info")]
+                        public Types.AssociatedPayScoreOrder? AssociatedPayScoreOrder { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置实际优惠金额（单位：分）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("saved_amount")]
+                        [System.Text.Json.Serialization.JsonPropertyName("saved_amount")]
+                        public int? SavedAmount { get; set; }
                     }
 
                     public class SingleUsageDetail : UsageDetail
@@ -130,6 +148,41 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public Types.DetailItem[]? DetailItemList { get; set; }
                     }
 
+                    public class ProgressiveBundleUsageDetail : UsageDetail
+                    {
+                    }
+
+                    public class UserProductCouponBundleInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置用户券组 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user_coupon_bundle_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_coupon_bundle_id")]
+                        public string UserCouponBundleId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置用户券组内索引。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("user_coupon_bundle_index")]
+                        [System.Text.Json.Serialization.JsonPropertyName("user_coupon_bundle_index")]
+                        public int UserCouponBundleIndex { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置总可使用次数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("total_count")]
+                        [System.Text.Json.Serialization.JsonPropertyName("total_count")]
+                        public int TotalCount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置已使用次数。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("used_count")]
+                        [System.Text.Json.Serialization.JsonPropertyName("used_count")]
+                        public int UsedCount { get; set; }
+                    }
+
                     public class ProductCouponInfo
                     {
                         public static class Types
@@ -139,6 +192,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                             }
 
                             public class SequentialUsageInfo : GetMarketingPartnerProductCouponByProductCouponIdResponse.Types.SequentialUsageInfo
+                            {
+                            }
+
+                            public class ProgressiveBundleUsageInfo : GetMarketingPartnerProductCouponByProductCouponIdResponse.Types.ProgressiveBundleUsageInfo
                             {
                             }
 
@@ -195,6 +252,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("sequential_usage_info")]
                         [System.Text.Json.Serialization.JsonPropertyName("sequential_usage_info")]
                         public Types.SequentialUsageInfo? SequentialUsageInfo { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置多次优惠模式信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("progressive_bundle_usage_info")]
+                        [System.Text.Json.Serialization.JsonPropertyName("progressive_bundle_usage_info")]
+                        public Types.ProgressiveBundleUsageInfo? ProgressiveBundleUsageInfo { get; set; }
 
                         /// <summary>
                         /// 获取或设置展示信息。
@@ -390,6 +454,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("sequential_usage_detail")]
                 [System.Text.Json.Serialization.JsonPropertyName("sequential_usage_detail")]
                 public Types.SequentialUsageDetail? SequentialUsageDetail { get; set; }
+
+                /// <summary>
+                /// 获取或设置多次优惠使用详情。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("progressive_bundle_usage_detail")]
+                [System.Text.Json.Serialization.JsonPropertyName("progressive_bundle_usage_detail")]
+                public Types.ProgressiveBundleUsageDetail? ProgressiveBundleUsageDetail { get; set; }
+
+                /// <summary>
+                /// 获取或设置用户券组信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("user_product_coupon_bundle_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("user_product_coupon_bundle_info")]
+                public Types.UserProductCouponBundleInfo UserProductCouponBundleInfo { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置商品券信息。

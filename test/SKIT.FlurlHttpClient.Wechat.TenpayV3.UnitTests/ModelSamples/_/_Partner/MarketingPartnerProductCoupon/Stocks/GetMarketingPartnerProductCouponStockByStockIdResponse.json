@@ -92,6 +92,30 @@
         ],
         "special_first": false
     },
+    "progressive_bundle_usage_rule": {
+        "coupon_available_period": {
+            "available_begin_time": "2025-08-01T00:00:00+08:00",
+            "available_end_time": "2025-08-31T23:59:59+08:00",
+            "available_days": 30,
+            "weekly_available_period": {
+                "day_list": [
+                    "MONDAY",
+                    "TUESDAY",
+                    "WEDNESDAY",
+                    "THURSDAY",
+                    "FRIDAY"
+                ]
+            }
+        },
+        "discount_coupon": {
+            "threshold": 10000,
+            "percent_off": 20
+        }
+    },
+    "stock_bundle_info": {
+        "stock_bundle_id": "712315129419284901",
+        "stock_bundle_index": 1
+    },
     "usage_rule_display_info": {
         "coupon_usage_method_list": [
             "MINI_PROGRAM"

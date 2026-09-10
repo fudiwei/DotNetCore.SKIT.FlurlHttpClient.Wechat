@@ -218,6 +218,75 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public bool? IsSpecialFirst { get; set; }
                     }
 
+                    public class ProgressiveBundleUsageRule : UsageRule
+                    {
+                        /// <summary>
+                        /// 获取或设置券可核销时间信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("coupon_available_period")]
+                        [System.Text.Json.Serialization.JsonPropertyName("coupon_available_period")]
+                        public Types.AvailablePeriod AvailablePeriod { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置满减券使用规则列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("normal_coupon_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("normal_coupon_list")]
+                        public Types.NormalCoupon[]? NormalCouponList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置满减券使用规则信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("normal_coupon")]
+                        [System.Text.Json.Serialization.JsonPropertyName("normal_coupon")]
+                        public Types.NormalCoupon? NormalCoupon { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置折扣券使用规则信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("discount_coupon")]
+                        [System.Text.Json.Serialization.JsonPropertyName("discount_coupon")]
+                        public Types.DiscountCoupon? DiscountCoupon { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置折扣券使用规则列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("discount_coupon_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("discount_coupon_list")]
+                        public Types.DiscountCoupon[]? DiscountCouponList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置兑换券使用规则信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("exchange_coupon")]
+                        [System.Text.Json.Serialization.JsonPropertyName("exchange_coupon")]
+                        public Types.ExchangeCoupon? ExchangeCoupon { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置兑换券使用规则列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("exchange_coupon_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("exchange_coupon_list")]
+                        public Types.ExchangeCoupon[]? ExchangeCouponList { get; set; }
+                    }
+
+                    public class StockBundleInfo
+                    {
+                        /// <summary>
+                        /// 获取或设置批次所属批次组 ID。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("stock_bundle_id")]
+                        [System.Text.Json.Serialization.JsonPropertyName("stock_bundle_id")]
+                        public string StockBundleId { get; set; } = default!;
+
+                        /// <summary>
+                        /// 获取或设置批次在批次组内的次序。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("stock_bundle_index")]
+                        [System.Text.Json.Serialization.JsonPropertyName("stock_bundle_index")]
+                        public int StockBundleIndex { get; set; }
+                    }
+
                     public class UsageRuleDisplayInfo
                     {
                         public static class Types
@@ -276,11 +345,25 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         public string? MiniProgramPagePath { get; set; }
 
                         /// <summary>
+                        /// 获取或设置品牌方 App 跳转类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("app_jump_type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("app_jump_type")]
+                        public string? AppJumpType { get; set; }
+
+                        /// <summary>
                         /// 获取或设置品牌方 App 跳转路径。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("app_path")]
                         [System.Text.Json.Serialization.JsonPropertyName("app_path")]
                         public string? AppPath { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置口令链接。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("passcode_link")]
+                        [System.Text.Json.Serialization.JsonPropertyName("passcode_link")]
+                        public string? PasscodeLink { get; set; }
 
                         /// <summary>
                         /// 获取或设置可用门店信息。
@@ -430,6 +513,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 [Newtonsoft.Json.JsonProperty("sequential_usage_rule")]
                 [System.Text.Json.Serialization.JsonPropertyName("sequential_usage_rule")]
                 public Types.SequentialUsageRule? SequentialUsageRule { get; set; }
+
+                /// <summary>
+                /// 获取或设置多次优惠使用规则信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("progressive_bundle_usage_rule")]
+                [System.Text.Json.Serialization.JsonPropertyName("progressive_bundle_usage_rule")]
+                public Types.ProgressiveBundleUsageRule? ProgressiveBundleUsageRule { get; set; }
+
+                /// <summary>
+                /// 获取或设置批次组信息。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("stock_bundle_info")]
+                [System.Text.Json.Serialization.JsonPropertyName("stock_bundle_info")]
+                public Types.StockBundleInfo? StockBundleInfo { get; set; }
 
                 /// <summary>
                 /// 获取或设置使用规则展示信息。

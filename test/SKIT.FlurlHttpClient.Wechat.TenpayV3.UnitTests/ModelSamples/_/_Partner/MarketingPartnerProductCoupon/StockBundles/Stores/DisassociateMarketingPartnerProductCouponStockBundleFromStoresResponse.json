@@ -1,0 +1,15 @@
+{
+    "total_count": 10,
+    "success_store_list": [
+        {
+            "store_id": "100000001"
+        }
+    ],
+    "failed_store_list": [
+        {
+            "store_id": "100000001",
+            "code": "INVALID_REQUEST",
+            "message": "门店ID非法或不属于当前品牌"
+        }
+    ]
+}

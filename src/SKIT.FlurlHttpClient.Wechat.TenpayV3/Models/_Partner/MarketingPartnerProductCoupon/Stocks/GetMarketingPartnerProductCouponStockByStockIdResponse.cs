@@ -21,6 +21,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             {
             }
 
+            public class ProgressiveBundleUsageRule : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.ProgressiveBundleUsageRule
+            {
+            }
+
+            public class StockBundleInfo : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.StockBundleInfo
+            {
+            }
+
             public class UsageRuleDisplayInfo : QueryMarketingPartnerProductCouponStocksResponse.Types.Stock.Types.UsageRuleDisplayInfo
             {
             }
@@ -90,6 +98,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("sequential_usage_rule")]
         [System.Text.Json.Serialization.JsonPropertyName("sequential_usage_rule")]
         public Types.SequentialUsageRule? SequentialUsageRule { get; set; }
+
+        /// <summary>
+        /// 获取或设置多次优惠使用规则信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("progressive_bundle_usage_rule")]
+        [System.Text.Json.Serialization.JsonPropertyName("progressive_bundle_usage_rule")]
+        public Types.ProgressiveBundleUsageRule? ProgressiveBundleUsageRule { get; set; }
+
+        /// <summary>
+        /// 获取或设置批次组信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("stock_bundle_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("stock_bundle_info")]
+        public Types.StockBundleInfo? StockBundleInfo { get; set; }
 
         /// <summary>
         /// 获取或设置使用规则展示信息。

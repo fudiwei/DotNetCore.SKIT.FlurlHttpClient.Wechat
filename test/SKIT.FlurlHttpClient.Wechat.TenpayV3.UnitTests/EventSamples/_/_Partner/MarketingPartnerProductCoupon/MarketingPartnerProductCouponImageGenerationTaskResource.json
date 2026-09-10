@@ -1,0 +1,12 @@
+{
+    "task_id": "image_generation_task_1",
+    "brand_id": "12345",
+    "image_generation_type": "COMBINE_IMAGE",
+    "task_state": "PROCESSING",
+    "combine_image_result": {
+        "image_url": "https://wxpaylogo.qpic.cn/wxpaylogo/example.jpg"
+    },
+    "cut_out_result": {
+        "image_url": "https://wxpaylogo.qpic.cn/wxpaylogo/example.jpg"
+    }
+}

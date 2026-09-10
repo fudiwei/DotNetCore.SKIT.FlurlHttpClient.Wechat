@@ -27,6 +27,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? StockState { get; set; }
 
         /// <summary>
+        /// 获取或设置批次组 ID。
+        /// </summary>
+        [Newtonsoft.Json.JsonIgnore]
+        [System.Text.Json.Serialization.JsonIgnore]
+        public string? StockBundleId { get; set; }
+
+        /// <summary>
         /// 获取或设置分页游标。
         /// </summary>
         [Newtonsoft.Json.JsonIgnore]

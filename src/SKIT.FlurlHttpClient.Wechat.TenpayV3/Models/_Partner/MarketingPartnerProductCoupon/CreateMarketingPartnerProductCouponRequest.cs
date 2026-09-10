@@ -95,6 +95,23 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public int? IntervalDays { get; set; }
             }
 
+            public class ProgressiveBundleUsageInfo
+            {
+                /// <summary>
+                /// 获取或设置可使用次数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("count")]
+                [System.Text.Json.Serialization.JsonPropertyName("count")]
+                public int Count { get; set; }
+
+                /// <summary>
+                /// 获取或设置使用间隔天数。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("interval_days")]
+                [System.Text.Json.Serialization.JsonPropertyName("interval_days")]
+                public int? IntervalDays { get; set; }
+            }
+
             public class DisplayInfo
             {
                 public static class Types
@@ -218,6 +235,10 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
             public class StockInfo : CreateMarketingPartnerProductCouponStockRequest.Types.StockInfo
             {
             }
+
+            public class StockBundle : CreateMarketingPartnerProductCouponStockBundleRequest.Types.StockBundle
+            {
+            }
         }
 
         /// <summary>
@@ -270,6 +291,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public Types.SequentialUsageInfo? SequentialUsageInfo { get; set; }
 
         /// <summary>
+        /// 获取或设置多次优惠模式信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("progressive_bundle_usage_info")]
+        [System.Text.Json.Serialization.JsonPropertyName("progressive_bundle_usage_info")]
+        public Types.ProgressiveBundleUsageInfo? ProgressiveBundleUsageInfo { get; set; }
+
+        /// <summary>
         /// 获取或设置展示信息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("display_info")]
@@ -289,5 +317,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("stock")]
         [System.Text.Json.Serialization.JsonPropertyName("stock")]
         public Types.StockInfo? StockInfo { get; set; }
+
+        /// <summary>
+        /// 获取或设置批次组信息。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("stock_bundle")]
+        [System.Text.Json.Serialization.JsonPropertyName("stock_bundle")]
+        public Types.StockBundle? StockBundle { get; set; }
     }
 }

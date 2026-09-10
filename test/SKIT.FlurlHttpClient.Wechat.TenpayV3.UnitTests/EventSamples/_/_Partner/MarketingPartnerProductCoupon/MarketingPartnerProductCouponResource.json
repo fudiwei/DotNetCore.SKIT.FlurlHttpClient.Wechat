@@ -1,0 +1,19 @@
+{
+    "brand_id": "12345",
+    "coupon_code": "1227944959000000911017",
+    "product_coupon_id": "1000932014",
+    "stock_id": "1000932014001",
+    "stock_bundle_id": "100093201412323",
+    "user_coupon_bundle_id": "123446565767",
+    "appid": "wx233544546545989",
+    "openid": "oh-394z-6CGkNoJrsDLTTUKiAnp4",
+    "unionid": "oOuyajgxj0oVwjocSoQm6mp7PGKw",
+    "receive_time": "2025-05-20T13:29:35.120+08:00",
+    "send_request_no": "SEND120395730984",
+    "send_channel": "API",
+    "valid_begin_time": "2025-05-20T13:29:35.120+08:00",
+    "valid_end_time": "2025-05-25T23:59:59.000+08:00",
+    "phone_number": "13212345678",
+    "country_code": "86",
+    "attach": "brand_custom_attach"
+}
