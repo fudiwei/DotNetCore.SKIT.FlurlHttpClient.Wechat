@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
@@ -44,9 +45,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// <summary>
         /// 获取或设置翻页标记。
         /// </summary>
+        [Obsolete("相关接口或字段于 2024-07-05 下线。")]
         [Newtonsoft.Json.JsonProperty("cursor")]
         [System.Text.Json.Serialization.JsonPropertyName("cursor")]
-        public int Cursor { get; set; }
+        public int? Cursor { get; set; }
+
+        /// <summary>
+        /// 获取或设置翻页标记。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("new_cursor")]
+        [System.Text.Json.Serialization.JsonPropertyName("new_cursor")]
+        public string? NewCursor { get; set; }
 
         /// <summary>
         /// 获取或设置分页每页数量。

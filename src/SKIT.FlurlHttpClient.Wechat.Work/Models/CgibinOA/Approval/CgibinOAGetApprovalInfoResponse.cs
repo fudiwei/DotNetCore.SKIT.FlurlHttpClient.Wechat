@@ -1,4 +1,6 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+using System;
+
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/oa/getapprovalinfo 接口的响应。</para>
@@ -15,8 +17,16 @@
         /// <summary>
         /// 获取或设置翻页标记。
         /// </summary>
+        [Obsolete("相关接口或字段于 2024-07-05 下线。")]
         [Newtonsoft.Json.JsonProperty("next_cursor")]
         [System.Text.Json.Serialization.JsonPropertyName("next_cursor")]
         public int? NextCursor { get; set; }
+
+        /// <summary>
+        /// 获取或设置翻页标记。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("new_next_cursor")]
+        [System.Text.Json.Serialization.JsonPropertyName("new_next_cursor")]
+        public string? NewNextCursor { get; set; }
     }
 }
