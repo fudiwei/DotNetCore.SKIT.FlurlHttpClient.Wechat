@@ -19,6 +19,25 @@
             "screen_shot_type": 4,
             "screen_shot_content": "文件（防泄露文件：test.pdf）",
             "system": "iOS"
+        },
+        {
+            "time": 1788164413,
+            "userid": "12345678i90-",
+            "department_id": 1,
+            "screen_shot_type": 6,
+            "screen_shot_content": "其他",
+            "system": "other",
+            "operation_type": 2,
+            "device_info": {
+                "platform": "Mac",
+                "device_code": "FR2LXK6W7J417b370e3e2642849748a181459b1e76",
+                "device_model": "Mac16,7",
+                "mac": {
+                    "mac_addr": [ "36:99:71:2a:29:40", "36:99:71:2a:29:44", "36:99:71:2a:29:48", "4a:e8:d7:80:a3:ca", "4a:e8:d7:80:a3:cb", "4a:e8:d7:80:a3:cc", "4a:e8:d7:80:a3:ea", "4a:e8:d7:80:a3:eb", "4a:e8:d7:80:a3:ec", "84:2f:57:a1:10:48" ],
+                    "seq_no": "FR2LXK6W7J"
+                }
+            },
+            "ip": "14.22.11.188(广州市)"
         }
     ]
 }
