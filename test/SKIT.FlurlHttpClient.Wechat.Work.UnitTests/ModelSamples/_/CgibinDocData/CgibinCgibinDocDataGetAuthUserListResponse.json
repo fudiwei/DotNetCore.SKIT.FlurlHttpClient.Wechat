@@ -1,0 +1,14 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "auth_user_list": [
+        {
+            "userid": "woxxxjigegen"
+        },
+        {
+            "userid": "woaaaaaaaaaa"
+        }
+    ],
+    "next_cursor": "xjigeojgeigwj",
+    "has_more": true
+}
