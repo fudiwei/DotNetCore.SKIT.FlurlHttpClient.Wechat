@@ -1,0 +1,9 @@
+{
+    "docid": "DOC_ID",
+    "file_name": "FILE_NAME",
+    "size": 123,
+    "block_sha": [
+        "STATE1",
+        "STATE2"
+    ]
+}
