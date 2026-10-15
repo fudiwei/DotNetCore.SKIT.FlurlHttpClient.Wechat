@@ -31,6 +31,12 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                             public class SKU : ChannelsECProductGetResponse.Types.Product.Types.SKU
                             {
+                                /// <summary>
+                                /// 获取或设置用户视角普惠价（单位：分）。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("user_inclusive_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("user_inclusive_price")]
+                                public int? UserInclusivePrice { get; set; }
                             }
 
                             public class ExtraService : ChannelsECProductGetResponse.Types.Product.Types.ExtraService

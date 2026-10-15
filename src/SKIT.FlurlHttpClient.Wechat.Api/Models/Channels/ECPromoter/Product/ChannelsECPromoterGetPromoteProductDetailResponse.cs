@@ -31,50 +31,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                             {
                             }
 
-                            public class SKU
+                            public class SKU : ChannelsECProductGetResponse.Types.Product.Types.SKU
                             {
                                 /// <summary>
-                                /// 获取或设置 SKU ID。
+                                /// 获取或设置用户视角普惠价（单位：分）。
                                 /// </summary>
-                                [Newtonsoft.Json.JsonProperty("sku_id")]
-                                [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
-                                [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                                public long SKUId { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置缩略图 URL。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("thumb_img")]
-                                [System.Text.Json.Serialization.JsonPropertyName("thumb_img")]
-                                public string ThumbnailUrl { get; set; } = default!;
-
-                                /// <summary>
-                                /// 获取或设置售价（单位：分）。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("sale_price")]
-                                [System.Text.Json.Serialization.JsonPropertyName("sale_price")]
-                                public int SalePrice { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置库存。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("stock_num")]
-                                [System.Text.Json.Serialization.JsonPropertyName("stock_num")]
-                                public int Stock { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置商品属性列表。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("sku_attrs")]
-                                [System.Text.Json.Serialization.JsonPropertyName("sku_attrs")]
-                                public Attribute[]? AttributeList { get; set; }
-
-                                /// <summary>
-                                /// 获取或设置商品配送信息。
-                                /// </summary>
-                                [Newtonsoft.Json.JsonProperty("sku_deliver_info")]
-                                [System.Text.Json.Serialization.JsonPropertyName("sku_deliver_info")]
-                                public SKUDeliver? SKUDeliver { get; set; }
+                                [Newtonsoft.Json.JsonProperty("user_inclusive_price")]
+                                [System.Text.Json.Serialization.JsonPropertyName("user_inclusive_price")]
+                                public int? UserInclusivePrice { get; set; }
                             }
                         }
 
