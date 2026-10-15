@@ -7,7 +7,7 @@ using Flurl.Http;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api
 {
-    public static class WechatApiClientExecuteScanProductV2Extensions
+    public static class WechatApiClientExecuteScanProductExtensions
     {
         /// <summary>
         /// <para>异步调用 [POST] /scan/product/v2/add 接口。</para>

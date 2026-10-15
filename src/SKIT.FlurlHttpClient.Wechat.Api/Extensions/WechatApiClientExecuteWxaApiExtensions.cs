@@ -103,7 +103,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "comment", "reply", "add")
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "comment", "commentreply", "add")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiCommentReplyAddResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -126,7 +126,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "comment", "reply", "delete")
+                .CreateFlurlRequest(request, HttpMethod.Post, "wxaapi", "comment", "commentreply", "delete")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.WxaApiCommentReplyDeleteResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);

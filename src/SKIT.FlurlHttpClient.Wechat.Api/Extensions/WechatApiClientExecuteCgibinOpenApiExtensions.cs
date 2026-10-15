@@ -66,7 +66,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
                 request.AppSecret = client.Credentials.AppSecret;
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "clear_quota")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "clear_quota", "v2")
                 .SetQueryParam("appid", request.AppId)
                 .SetQueryParam("appsecret", request.AppSecret);
 

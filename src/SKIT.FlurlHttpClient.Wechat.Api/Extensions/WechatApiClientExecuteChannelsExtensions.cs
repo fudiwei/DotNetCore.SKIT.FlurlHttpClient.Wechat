@@ -2905,7 +2905,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "shop", "get")
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "league", "headsupplier", "subitem", "list", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECLeagueHeadSupplierSubItemListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
@@ -4591,7 +4591,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "virtualtelnumber", "get")
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "virtualnumber", "applyagain")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderVirtualNumberApplyAgainResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -4614,7 +4614,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "virtualtelnumber", "delay")
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "virtualnumber", "delay")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderVirtualNumberDelayResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
@@ -5276,7 +5276,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "presentlist", "get")
+                .CreateFlurlRequest(request, HttpMethod.Post, "channels", "ec", "order", "receiverorderlist", "get")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ChannelsECOrderReceiverOrderListGetResponse>(flurlReq, data: request, cancellationToken: cancellationToken);
