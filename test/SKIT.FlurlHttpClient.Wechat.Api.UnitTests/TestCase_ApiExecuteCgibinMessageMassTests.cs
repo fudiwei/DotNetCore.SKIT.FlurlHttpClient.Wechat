@@ -1,28 +1,10 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using Xunit;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.UnitTests
 {
     public class TestCase_ApiExecuteCgibinMessageMassTests
     {
-        [Fact(DisplayName = "测试用例：调用 API [POST] /cgi-bin/message/mass/send")]
-        public async Task TestExecuteCgibinMessageMassSend()
-        {
-            var request = new Models.CgibinMessageMassSendRequest()
-            {
-                ToUserOpenIdList = new string[] { TestConfigs.WechatOpenId, TestConfigs.WechatOpenId },
-                MessageType = "text",
-                MessageContentForText = new Models.CgibinMessageMassSendRequest.Types.TextMessage()
-                {
-                    Content = "FAKE_CONTENT"
-                },
-                AccessToken = TestConfigs.WechatAccessToken
-            };
-            var response = await TestClients.Instance.ExecuteCgibinMessageMassSendAsync(request);
-
-            Assert.True(response.MessageId > 0);
-        }
-
         [Fact(DisplayName = "测试用例：调用 API [POST] /cgi-bin/message/mass/preview")]
         public async Task TestExecuteCgibinMessageMassPreview()
         {

@@ -14,6 +14,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置是否向全部用户发送。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2027-01-18 下线。")]
                 [Newtonsoft.Json.JsonProperty("is_to_all")]
                 [System.Text.Json.Serialization.JsonPropertyName("is_to_all")]
                 public bool? IsToAll { get; set; }
@@ -21,32 +22,33 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// <summary>
                 /// 获取或设置群发到的标签 ID。
                 /// </summary>
+                [Obsolete("相关接口或字段于 2027-01-18 下线。")]
                 [Newtonsoft.Json.JsonProperty("tag_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("tag_id")]
                 public int? TagId { get; set; }
             }
 
-            public class TextMessage : CgibinMessageMassSendRequest.Types.TextMessage
+            public class TextMessage : CgibinMessageMassPreviewRequest.Types.TextMessage
             {
             }
 
-            public class ImagesMessage : CgibinMessageMassSendRequest.Types.ImagesMessage
+            public class ImagesMessage : CgibinMessageMassPreviewRequest.Types.ImagesMessage
             {
             }
 
-            public class MpNewsMessage : CgibinMessageMassSendRequest.Types.MpNewsMessage
+            public class MpNewsMessage : CgibinMessageMassPreviewRequest.Types.MpNewsMessage
             {
             }
 
-            public class VoiceMessage : CgibinMessageMassSendRequest.Types.VoiceMessage
+            public class VoiceMessage : CgibinMessageMassPreviewRequest.Types.VoiceMessage
             {
             }
 
-            public class VideoMessage : CgibinMessageMassSendRequest.Types.VideoMessage
+            public class VideoMessage : CgibinMessageMassPreviewRequest.Types.VideoMessage
             {
             }
 
-            public class CardMessage : CgibinMessageMassSendRequest.Types.CardMessage
+            public class CardMessage : CgibinMessageMassPreviewRequest.Types.CardMessage
             {
             }
         }

@@ -13,7 +13,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/message/mass/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Batch_Sends_and_Originality_Checks.html#6 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/notify/message/api_massmsgget.html ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/message/api_massmsgget.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -36,7 +37,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/message/mass/sendall 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Batch_Sends_and_Originality_Checks.html#2 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/notify/message/api_sendall.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/message/api_sendall.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -59,13 +61,14 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/message/mass/send 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Batch_Sends_and_Originality_Checks.html#3 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/message/api_masssend.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
         /// <param name="request"></param>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
+        [Obsolete("相关接口或字段于 2027-01-18 下线。")]
         public static async Task<Models.CgibinMessageMassSendResponse> ExecuteCgibinMessageMassSendAsync(this WechatApiClient client, Models.CgibinMessageMassSendRequest request, CancellationToken cancellationToken = default)
         {
             if (client is null) throw new ArgumentNullException(nameof(client));
@@ -82,7 +85,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/message/mass/preview 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Batch_Sends_and_Originality_Checks.html#5 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/notify/message/api_preview.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/message/api_preview.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -105,7 +109,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/message/mass/delete 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Batch_Sends_and_Originality_Checks.html#4 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/notify/message/api_deletemassmsg.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/message/api_deletemassmsg.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -129,7 +134,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [GET] /cgi-bin/message/mass/speed/get 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Batch_Sends_and_Originality_Checks.html#9 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/notify/message/api_getspeed.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/message/api_getspeed.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
@@ -152,7 +158,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
         /// <para>异步调用 [POST] /cgi-bin/message/mass/speed/set 接口。</para>
         /// <para>
         /// REF: <br/>
-        /// <![CDATA[ https://developers.weixin.qq.com/doc/offiaccount/Message_Management/Batch_Sends_and_Originality_Checks.html#9 ]]>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/subscription/api/notify/message/api_setspeed.html ]]> <br/>
+        /// <![CDATA[ https://developers.weixin.qq.com/doc/service/api/notify/message/api_setspeed.html ]]>
         /// </para>
         /// </summary>
         /// <param name="client"></param>
