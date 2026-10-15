@@ -1,3 +1,5 @@
+using System;
+
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
@@ -84,6 +86,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("present_order_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("present_order_id")]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
                         public string PresentOrderId { get; set; } = default!;
 
                         /// <summary>
@@ -134,16 +137,32 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置鉴定凭证 MediaId 列表。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
                         [Newtonsoft.Json.JsonProperty("identify_proof_pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("identify_proof_pic_list")]
                         public string[]? IdentifyProofPictureMediaIdList { get; set; }
 
                         /// <summary>
+                        /// 获取或设置鉴定凭证列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_identify_proof_pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_identify_proof_pic_list")]
+                        public MediaFile[]? NewIdentifyProofPictureMediaList { get; set; }
+
+                        /// <summary>
                         /// 获取或设置费用凭证 MediaId 列表。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
                         [Newtonsoft.Json.JsonProperty("fee_proof_pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("fee_proof_pic_list")]
                         public string[]? FeeProofPictureMediaIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置费用凭证列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_fee_proof_pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_fee_proof_pic_list")]
+                        public MediaFile[]? NewFeeProofPictureMediaList { get; set; }
 
                         /// <summary>
                         /// 获取或设置申请原因类型。
@@ -155,6 +174,34 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 
                     public class BadPayInfo
                     {
+                        public static class Types
+                        {
+                            public class TitlePicture
+                            {
+                                /// <summary>
+                                /// 获取或设置凭证类型。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("title")]
+                                [System.Text.Json.Serialization.JsonPropertyName("title")]
+                                public int Type { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置凭证图片 MediaId 列表。
+                                /// </summary>
+                                [Obsolete("相关接口或字段于 2026-10-12 下线。")]
+                                [Newtonsoft.Json.JsonProperty("pic_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
+                                public string[]? PictureMediaIdList { get; set; }
+
+                                /// <summary>
+                                /// 获取或设置凭证图片列表。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("new_media_list")]
+                                [System.Text.Json.Serialization.JsonPropertyName("new_media_list")]
+                                public MediaFile[]? NewMediaList { get; set; }
+                            }
+                        }
+
                         /// <summary>
                         /// 获取或设置损坏程度。
                         /// </summary>
@@ -172,9 +219,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置损坏凭证图片 MediaId 列表。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
                         [Newtonsoft.Json.JsonProperty("pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
-                        public string[]? PictureMediaList { get; set; }
+                        public string[]? PictureMediaIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置损坏凭证图片列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_pic_list")]
+                        public MediaFile[]? NewPictureMediaList { get; set; }
 
                         /// <summary>
                         /// 获取或设置赔付金额（单位：分）。
@@ -233,11 +288,61 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         public string? RefundReason { get; set; }
 
                         /// <summary>
-                        /// 获取或设置凭证图片 MediaId 列表。
+                        /// 获取或设置凭证图片列表。
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("title_pic_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("title_pic_list")]
-                        public string[]? TitleMediaIdList { get; set; }
+                        public Types.TitlePicture[]? TitlePictureList { get; set; }
+                    }
+
+                    public class History
+                    {
+                        /// <summary>
+                        /// 获取或设置事件类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("event")]
+                        [System.Text.Json.Serialization.JsonPropertyName("event")]
+                        public int EventType { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置事件时间戳。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("time")]
+                        [System.Text.Json.Serialization.JsonPropertyName("time")]
+                        public int Timestamp { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置客服名称。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("kf_name")]
+                        [System.Text.Json.Serialization.JsonPropertyName("kf_name")]
+                        public string? KfName { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置文字内容。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("content")]
+                        [System.Text.Json.Serialization.JsonPropertyName("content")]
+                        public string? Content { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置凭证图片 MediaId 列表。
+                        /// </summary>
+                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
+                        [Newtonsoft.Json.JsonProperty("pic_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("pic_list")]
+                        public string[]? PictureMediaIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置凭证图片列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("new_media_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("new_media_list")]
+                        public MediaFile[]? NewPictureMediaList { get; set; }
+                    }
+
+                    public class MediaFile : ChannelsECAftersaleGetAftersaleOrderResponse.Types.AftersaleOrder.Types.MediaFile
+                    {
                     }
                 }
 
@@ -247,7 +352,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("guarantee_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("guarantee_order_id")]
                 [System.Text.Json.Serialization.JsonNumberHandling(System.Text.Json.Serialization.JsonNumberHandling.AllowReadingFromString)]
-                public long c { get; set; }
+                public long GuaranteeOrderId { get; set; }
 
                 /// <summary>
                 /// 获取或设置订单 ID。
@@ -326,7 +431,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("product_info")]
                 [System.Text.Json.Serialization.JsonPropertyName("product_info")]
-                public Types.ProductInfo ProductInfo { get; set; } = default!;
+                public Types.ProductInfo[] ProductList { get; set; } = default!;
 
                 /// <summary>
                 /// 获取或设置退款金额（单位：分）。
@@ -390,6 +495,13 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 [Newtonsoft.Json.JsonProperty("create_time")]
                 [System.Text.Json.Serialization.JsonPropertyName("create_time")]
                 public long CreateTimestamp { get; set; }
+
+                /// <summary>
+                /// 获取或设置协商历史列表。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("history_list")]
+                [System.Text.Json.Serialization.JsonPropertyName("history_list")]
+                public Types.History[]? HistoryList { get; set; }
             }
         }
 

@@ -181,9 +181,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置举证图片 MediaId 列表。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
                         [Newtonsoft.Json.JsonProperty("media_id_list")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_id_list")]
                         public string[]? MediaIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置举证图片列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("media_files")]
+                        [System.Text.Json.Serialization.JsonPropertyName("media_files")]
+                        public MediaFile[]? MediaFileList { get; set; }
 
                         /// <summary>
                         /// 获取或设置小程序会员已经优惠金额（单位：分）。
@@ -409,9 +417,17 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         /// <summary>
                         /// 获取或设置协商图片 MediaId 列表。
                         /// </summary>
+                        [Obsolete("相关接口或字段于 2026-10-12 下线。")]
                         [Newtonsoft.Json.JsonProperty("media_ids")]
                         [System.Text.Json.Serialization.JsonPropertyName("media_ids")]
                         public string[]? MediaIdList { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置协商图片列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("media_files")]
+                        [System.Text.Json.Serialization.JsonPropertyName("media_files")]
+                        public MediaFile[]? MediaFileList { get; set; }
                     }
 
                     public class RefundResultInfo
@@ -617,6 +633,54 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                         [Newtonsoft.Json.JsonProperty("virtual_tel_expire_time")]
                         [System.Text.Json.Serialization.JsonPropertyName("virtual_tel_expire_time")]
                         public long? VirtualTelNumberExpireTimestamp { get; set; }
+                    }
+
+                    public class MediaFile
+                    {
+                        public static class Types
+                        {
+                            public class Picture
+                            {
+                                /// <summary>
+                                /// 获取或设置临时访问 URL。
+                                /// </summary>
+                                [Newtonsoft.Json.JsonProperty("ticket_url")]
+                                [System.Text.Json.Serialization.JsonPropertyName("ticket_url")]
+                                public string TicketUrl { get; set; } = default!;
+                            }
+
+                            public class Video : Picture
+                            {
+                            }
+                        }
+
+                        /// <summary>
+                        /// 获取或设置多媒体文件类型。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("type")]
+                        [System.Text.Json.Serialization.JsonPropertyName("type")]
+                        public int Type { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置图片信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("picture")]
+                        [System.Text.Json.Serialization.JsonPropertyName("picture")]
+                        public Types.Picture? Picture { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频信息。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("video")]
+                        [System.Text.Json.Serialization.JsonPropertyName("video")]
+                        public Types.Video? Video { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置视频时长（单位：秒秒）。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("video_play_length")]
+                        [System.Text.Json.Serialization.JsonPropertyName("video_play_length")]
+                        public int? VideoPlayLength { get; set; }
                     }
                 }
 

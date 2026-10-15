@@ -1,0 +1,117 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "guarantee_order": {
+        "guarantee_order_id": 2000001077270153,
+        "type": 2,
+        "order_id": 3726524657461498624,
+        "status": "STATUS_WAIT_MERCHANT_HANDLE",
+        "create_time": 1750000000,
+        "update_time": 1750000000,
+        "apply_reason": "",
+        "product_info": [
+            {
+                "thumb_img": "",
+                "title": "",
+                "real_price": 0,
+                "product_cnt": 0,
+                "detail": ""
+            }
+        ],
+        "expire_time": 0,
+        "openid": "",
+        "unionid": "",
+        "pay_amount": 0,
+        "merchant_refuse_reason": "",
+        "order_pay_info": {
+            "transaction_id": ""
+        },
+        "complete_time": 0,
+        "apply_reason_type": 0,
+        "order_present_info": {
+            "present_order_id": 0,
+            "accept_present_time": 0,
+            "giver_nickname": ""
+        },
+        "order_type": 0,
+        "fake_one_pay_four_info": {
+            "identify_fee": 0,
+            "product_fee": 0,
+            "total_pay_fee": 0,
+            "apply_reason": 0,
+            "acctual_pay": 0,
+            "new_identify_proof_pic_list": [
+                {
+                    "type": 1,
+                    "picture": {
+                        "ticket_url": "TICKET_URL"
+                    }
+                }
+            ],
+            "new_fee_proof_pic_list": [
+                {
+                    "type": 1,
+                    "picture": {
+                        "ticket_url": "TICKET_URL"
+                    }
+                }
+            ]
+        },
+        "bad_pay_info": {
+            "bad_level": 0,
+            "content": "",
+            "pay_fee": 0,
+            "merchant_modify_level": 0,
+            "merchant_remark": "",
+            "platform_modify_level": 0,
+            "refund_type": 0,
+            "receive_product": 0,
+            "refund_reason": 0,
+            "refund_reason_text": "",
+            "new_pic_list": [
+                {
+                    "type": 1,
+                    "picture": {
+                        "ticket_url": "TICKET_URL"
+                    }
+                }
+            ],
+            "title_pic_list": [
+                {
+                    "title": 1,
+                    "new_media_list": [
+                        {
+                            "type": 1,
+                            "picture": {
+                                "ticket_url": "TICKET_URL"
+                            }
+                        },
+                        {
+                            "type": 2,
+                            "video": {
+                                "ticket_url": "TICKET_URL"
+                            },
+                            "video_play_length": 15
+                        }
+                    ]
+                }
+            ]
+        },
+        "wxa_vip_discounted_price": 0,
+        "history_list": [
+            {
+                "event": 1,
+                "time": 1750000000,
+                "content": "",
+                "new_media_list": [
+                    {
+                        "type": 1,
+                        "picture": {
+                            "ticket_url": "TICKET_URL"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}

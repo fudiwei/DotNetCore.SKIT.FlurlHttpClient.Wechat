@@ -1,0 +1,65 @@
+{
+    "errcode": 0,
+    "errmsg": "ok",
+    "guarantee_order_list": [
+        {
+            "guarantee_order_id": 2000001077270153,
+            "type": 2,
+            "order_id": 3726524657461498624,
+            "status": "STATUS_WAIT_MERCHANT_HANDLE",
+            "create_time": 1750000000,
+            "update_time": 1750000000,
+            "apply_reason": "",
+            "expire_time": 0,
+            "pay_amount": 0,
+            "bad_pay_info": {
+                "bad_level": 0,
+                "content": "",
+                "new_pic_list": [
+                    {
+                        "type": 1,
+                        "picture": {
+                            "ticket_url": "TICKET_URL"
+                        }
+                    }
+                ],
+                "title_pic_list": [
+                    {
+                        "title": 1,
+                        "new_media_list": [
+                            {
+                                "type": 1,
+                                "picture": {
+                                    "ticket_url": "TICKET_URL"
+                                }
+                            },
+                            {
+                                "type": 2,
+                                "video": {
+                                    "ticket_url": "TICKET_URL"
+                                },
+                                "video_play_length": 15
+                            }
+                        ]
+                    }
+                ]
+            },
+            "history_list": [
+                {
+                    "event": 1,
+                    "time": 1750000000,
+                    "content": "",
+                    "new_media_list": [
+                        {
+                            "type": 1,
+                            "picture": {
+                                "ticket_url": "TICKET_URL"
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "total_num": 1
+}

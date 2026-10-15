@@ -30,8 +30,22 @@
             "desc": "1234",
             "receive_product": true,
             "cancel_time": 0,
-            "media_id_list": [],
-            "wxa_vip_discounted_price": 0
+            "wxa_vip_discounted_price": 0,
+            "media_files": [
+                {
+                    "type": 1,
+                    "picture": {
+                        "ticket_url": "TICKET_URL"
+                    }
+                },
+                {
+                    "type": 2,
+                    "video": {
+                        "ticket_url": "TICKET_URL"
+                    },
+                    "video_play_length": 15
+                }
+            ]
         },
         "refund_info": {
             "amount": 11,
