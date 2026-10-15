@@ -984,7 +984,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
 
         #region ECCategory
         /// <summary>
-        /// <para>异步调用 [GET] /shop/ec/category/all 接口。</para>
+        /// <para>异步调用 [POST] /shop/ec/category/all 接口。</para>
         /// <para>
         /// REF: <br/>
         /// <![CDATA[ https://developers.weixin.qq.com/doc/store/shop/API/channels-shop-category/api_getallcategory.html ]]>
@@ -1000,7 +1000,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "shop", "ec", "category", "all")
+                .CreateFlurlRequest(request, HttpMethod.Post, "shop", "ec", "category", "all")
                 .SetQueryParam("access_token", request.AccessToken);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.ShopECCategoryAllResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
