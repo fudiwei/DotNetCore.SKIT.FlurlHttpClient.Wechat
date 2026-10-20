@@ -289,6 +289,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                 public Types.UserInfo? UserInfo { get; set; }
 
                 /// <summary>
+                /// 获取或设置是否支持用户主动入会。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("support_user_active_join")]
+                [System.Text.Json.Serialization.JsonPropertyName("support_user_active_join")]
+                public bool? IsSupportUserActiveJoin { get; set; }
+
+                /// <summary>
+                /// 获取或设置是否为付费会员。
+                /// </summary>
+                [Newtonsoft.Json.JsonProperty("purchase_membership")]
+                [System.Text.Json.Serialization.JsonPropertyName("purchase_membership")]
+                public bool? IsPurchaseMembership { get; set; }
+
+                /// <summary>
                 /// 获取或设置会员卡状态。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("state")]

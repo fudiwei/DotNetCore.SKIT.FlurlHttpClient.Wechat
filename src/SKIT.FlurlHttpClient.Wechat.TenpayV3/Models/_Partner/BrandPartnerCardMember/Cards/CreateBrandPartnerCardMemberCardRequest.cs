@@ -157,28 +157,28 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_color")]
         [System.Text.Json.Serialization.JsonPropertyName("card_color")]
-        public string CardColor { get; set; } = string.Empty;
+        public string? CardColor { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡图片 URL。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("card_picture_url")]
         [System.Text.Json.Serialization.JsonPropertyName("card_picture_url")]
-        public string CardPictureUrl { get; set; } = string.Empty;
+        public string? CardPictureUrl { get; set; }
 
         /// <summary>
         /// 获取或设置会员卡 Code 分配类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code_mode")]
         [System.Text.Json.Serialization.JsonPropertyName("code_mode")]
-        public string CodeMode { get; set; } = string.Empty;
+        public string? CodeMode { get; set; }
 
         /// <summary>
         /// 获取或设置会员码展示类型。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("code_type")]
         [System.Text.Json.Serialization.JsonPropertyName("code_type")]
-        public string CodeType { get; set; } = string.Empty;
+        public string? CodeType { get; set; }
 
         /// <summary>
         /// 获取或设置会员码跳转信息。
@@ -220,14 +220,14 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("benefits")]
         [System.Text.Json.Serialization.JsonPropertyName("benefits")]
-        public string Benefits { get; set; } = string.Empty;
+        public string? Benefits { get; set; }
 
         /// <summary>
         /// 获取或设置回调地址。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("notify_url")]
         [System.Text.Json.Serialization.JsonPropertyName("notify_url")]
-        public string NotifyUrl { get; set; } = string.Empty;
+        public string? NotifyUrl { get; set; }
 
         /// <summary>
         /// 获取或设置是否置顶。
@@ -277,5 +277,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("user_information")]
         [System.Text.Json.Serialization.JsonPropertyName("user_information")]
         public Types.UserInfo? UserInfo { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否支持用户主动入会。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("support_user_active_join")]
+        [System.Text.Json.Serialization.JsonPropertyName("support_user_active_join")]
+        public bool? IsSupportUserActiveJoin { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否为付费会员。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("purchase_membership")]
+        [System.Text.Json.Serialization.JsonPropertyName("purchase_membership")]
+        public bool? IsPurchaseMembership { get; set; }
     }
 }
