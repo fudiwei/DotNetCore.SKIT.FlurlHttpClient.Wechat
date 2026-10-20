@@ -26,9 +26,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// 获取或设置是否发货完成。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("finish_delivery")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("finish_delivery")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                 public bool IsFinishDelivery { get; set; }
             }
         }

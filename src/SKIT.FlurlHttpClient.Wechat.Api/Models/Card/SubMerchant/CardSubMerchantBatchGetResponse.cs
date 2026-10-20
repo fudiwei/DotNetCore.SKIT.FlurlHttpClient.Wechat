@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /card/submerchant/batchget 接口的响应。</para>
@@ -24,7 +24,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("next_begin_id")]
         [System.Text.Json.Serialization.JsonPropertyName("next_begin_id")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
         public string? NextMerchantId { get; set; }
     }
 }

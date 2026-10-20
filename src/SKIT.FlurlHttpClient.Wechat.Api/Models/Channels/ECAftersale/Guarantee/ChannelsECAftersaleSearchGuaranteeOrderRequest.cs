@@ -46,9 +46,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置保障单状态列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("status_list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedNumberListWithCommaSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberListWithCommaSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("status_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedNumberListWithCommaSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberListWithCommaSplitConverter))]
         public IList<int>? StatusList { get; set; }
 
         /// <summary>

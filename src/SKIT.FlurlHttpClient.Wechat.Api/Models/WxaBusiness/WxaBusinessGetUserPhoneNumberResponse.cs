@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/business/getuserphonenumber 接口的响应。</para>
@@ -48,7 +48,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("countryCode")]
                 [System.Text.Json.Serialization.JsonPropertyName("countryCode")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
                 public string CountryCode { get; set; } = default!;
 
                 /// <summary>

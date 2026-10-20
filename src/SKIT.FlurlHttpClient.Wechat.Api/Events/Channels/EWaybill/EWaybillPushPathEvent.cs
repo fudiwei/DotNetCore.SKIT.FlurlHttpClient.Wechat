@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ewaybill_order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("ewaybill_order_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
                 [System.Xml.Serialization.XmlElement("ewaybill_order_id")]
                 public string EWaybillOrderId { get; set; } = default!;
 

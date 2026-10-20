@@ -30,7 +30,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("RevokeInfo")]
         [System.Text.Json.Serialization.JsonPropertyName("RevokeInfo")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
         [System.Xml.Serialization.XmlElement("RevokeInfo", IsNullable = true)]
         public string? RevokeInfo { get; set; }
     }

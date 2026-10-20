@@ -24,7 +24,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_wx_verify_succ")]
         [System.Text.Json.Serialization.JsonPropertyName("is_wx_verify_succ")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedBooleanConverter))]
         public bool IsVerifySuccessful { get; set; }
 
         /// <summary>
@@ -32,7 +32,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_link_succ")]
         [System.Text.Json.Serialization.JsonPropertyName("is_link_succ")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedBooleanConverter))]
         public bool IsLinkSuccessful { get; set; }
     }
 }

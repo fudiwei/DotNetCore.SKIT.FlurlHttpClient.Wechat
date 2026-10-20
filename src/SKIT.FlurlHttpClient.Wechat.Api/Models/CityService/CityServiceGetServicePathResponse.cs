@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cityservice/getservicepath 接口的响应。</para>
@@ -31,7 +31,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("business_type")]
         [System.Text.Json.Serialization.JsonPropertyName("business_type")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
         public string? BusinessType { get; set; }
 
         /// <summary>

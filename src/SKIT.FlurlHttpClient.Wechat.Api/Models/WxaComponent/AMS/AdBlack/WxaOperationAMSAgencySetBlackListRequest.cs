@@ -38,9 +38,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置屏蔽的广告主列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
         public IList<Types.Advertiser> BlackList { get; set; } = new List<Types.Advertiser>();
     }
 }

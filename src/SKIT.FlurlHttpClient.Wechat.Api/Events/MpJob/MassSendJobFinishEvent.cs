@@ -62,7 +62,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("CanReprint")]
                         [System.Text.Json.Serialization.JsonPropertyName("CanReprint")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                         [System.Xml.Serialization.XmlElement("CanReprint")]
                         public bool CanReprint { get; set; }
 
@@ -71,7 +71,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("NeedReplaceContent")]
                         [System.Text.Json.Serialization.JsonPropertyName("NeedReplaceContent")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                         [System.Xml.Serialization.XmlElement("NeedReplaceContent")]
                         public bool RequireReplaceContent { get; set; }
 
@@ -80,7 +80,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("NeedShowReprintSource")]
                         [System.Text.Json.Serialization.JsonPropertyName("NeedShowReprintSource")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                         [System.Xml.Serialization.XmlElement("NeedShowReprintSource")]
                         public bool RequireShowReprintSource { get; set; }
                     }

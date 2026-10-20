@@ -391,7 +391,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("phone_number")]
         [System.Text.Json.Serialization.JsonPropertyName("phone_number")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
         [System.Xml.Serialization.XmlIgnore]
         public string PhoneNumber
         {

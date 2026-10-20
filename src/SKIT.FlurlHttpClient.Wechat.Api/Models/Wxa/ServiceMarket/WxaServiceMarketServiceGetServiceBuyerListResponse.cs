@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /wxa/servicemarket/service/get_service_buyer_list 接口的响应。</para>
@@ -41,7 +41,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("service_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("service_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
                 public string ServiceId { get; set; } = default!;
 
                 /// <summary>

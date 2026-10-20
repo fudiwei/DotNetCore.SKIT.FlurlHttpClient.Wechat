@@ -23,9 +23,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置封面场景值列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("cover_scene_list")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedNumberArrayWithCommaSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberArrayWithCommaSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("cover_scene_list")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedNumberArrayWithCommaSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberArrayWithCommaSplitConverter))]
         public int[] CoverSceneList { get; set; } = default!;
 
         public override bool IsSuccessful()

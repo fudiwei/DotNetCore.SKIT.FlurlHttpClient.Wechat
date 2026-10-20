@@ -199,9 +199,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// 获取或设置是否需要预约。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("need_appointment")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("need_appointment")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                                         public bool? RequireAppointment { get; set; }
                                     }
 
@@ -242,9 +242,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// 获取或设置是否更换 SKU。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("change_sku")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("change_sku")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                                         public bool ChangeSKU { get; set; }
 
                                         /// <summary>
@@ -258,9 +258,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// 获取或设置是否收礼者拉起过“选一款”半屏。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("receiver_choose_sku")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("receiver_choose_sku")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                                         public bool? IsReceiverChooseSKU { get; set; }
                                     }
 
@@ -318,7 +318,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("ds_order_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("ds_order_id")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
                                         public string DropshipOrderId { get; set; } = default!;
                                     }
 
@@ -329,7 +329,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("supply_order_id")]
                                         [System.Text.Json.Serialization.JsonPropertyName("supply_order_id")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
                                         public string SupplyOrderId { get; set; } = default!;
                                     }
 
@@ -617,9 +617,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// 获取或设置是否为赠品。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("is_free_gift")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("is_free_gift")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                                 public bool? IsFreeGift { get; set; }
 
                                 /// <summary>
@@ -1030,9 +1030,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                         /// 获取或设置是否使用虚拟号码。
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("use_tel_number")]
-                                        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                                         [System.Text.Json.Serialization.JsonPropertyName("use_tel_number")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                                         public bool? IsVirtualTelNumber { get; set; }
 
                                         /// <summary>
@@ -1756,7 +1756,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("aftersale_order_id")]
                                 [System.Text.Json.Serialization.JsonPropertyName("aftersale_order_id")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
                                 public string AftersaleOrderId { get; set; } = default!;
 
                                 /// <summary>
@@ -1920,7 +1920,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("order_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("order_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
                 public string OrderId { get; set; } = default!;
 
                 /// <summary>

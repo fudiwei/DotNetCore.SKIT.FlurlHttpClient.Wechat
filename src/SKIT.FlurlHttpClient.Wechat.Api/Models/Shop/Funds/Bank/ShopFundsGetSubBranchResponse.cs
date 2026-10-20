@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Api.Models
+namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
     /// <summary>
     /// <para>表示 [POST] /shop/funds/getsubbranch 接口的响应。</para>
@@ -14,7 +14,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("branch_id")]
                 [System.Text.Json.Serialization.JsonPropertyName("branch_id")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
                 public string BranchId { get; set; } = default!;
 
                 /// <summary>
@@ -38,7 +38,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("account_bank_code")]
         [System.Text.Json.Serialization.JsonPropertyName("account_bank_code")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
         public string AccountBankCode { get; set; } = default!;
 
         /// <summary>
@@ -53,7 +53,7 @@
         /// </summary>
         [Newtonsoft.Json.JsonProperty("bank_alias_code")]
         [System.Text.Json.Serialization.JsonPropertyName("bank_alias_code")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
         public string BankAliasCode { get; set; } = default!;
 
         /// <summary>

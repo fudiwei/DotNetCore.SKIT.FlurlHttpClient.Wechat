@@ -23,18 +23,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置商品 ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("product_id")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("product_id")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberConverter))]
         public long ProductId { get; set; }
 
         /// <summary>
         /// 获取或设置 SKU ID。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("sku_id")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.TextualNumberConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("sku_id")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberConverter))]
         public long SKUId { get; set; }
 
         /// <summary>

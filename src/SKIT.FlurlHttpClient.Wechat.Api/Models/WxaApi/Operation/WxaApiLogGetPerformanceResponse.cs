@@ -49,9 +49,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置查询数据。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("default_time_data")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedObjectInJsonFormatConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedObjectInJsonFormatConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("default_time_data")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedObjectInJsonFormatConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedObjectInJsonFormatConverter))]
         public Types.DefaultTimeData? DefaultTimeData { get; set; }
 
         /// <summary>

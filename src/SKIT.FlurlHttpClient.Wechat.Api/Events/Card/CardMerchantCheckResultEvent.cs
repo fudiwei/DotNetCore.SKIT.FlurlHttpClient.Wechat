@@ -22,7 +22,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Events
         /// </summary>
         [Newtonsoft.Json.JsonProperty("IsPass")]
         [System.Text.Json.Serialization.JsonPropertyName("IsPass")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
         [System.Xml.Serialization.XmlElement("IsPass")]
         public bool IsPassed { get; set; }
 

@@ -9,9 +9,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置是否已订阅。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("is_subscribed")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanReadOnlyConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanReadOnlyConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("is_subscribed")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanReadOnlyConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanReadOnlyConverter))]
         public bool IsSubscribed { get; set; }
     }
 }

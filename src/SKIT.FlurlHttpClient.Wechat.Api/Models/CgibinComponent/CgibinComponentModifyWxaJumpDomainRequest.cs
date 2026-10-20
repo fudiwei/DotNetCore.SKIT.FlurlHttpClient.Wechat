@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.Api.Models
 {
@@ -32,9 +32,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Api.Models
         /// 获取或设置业务域名列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("wxa_jump_h5_domain")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringListWithSemicolonSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("wxa_jump_h5_domain")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringListWithSemicolonSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithSemicolonSplitConverter))]
         public IList<string>? WxaJumpH5DomainList { get; set; }
     }
 }
