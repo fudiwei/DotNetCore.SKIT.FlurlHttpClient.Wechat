@@ -20,7 +20,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("member_card_id")]
                         [System.Text.Json.Serialization.JsonPropertyName("member_card_id")]
-                        public string MemberCardId { get; set; } = string.Empty;
+                        public string? MemberCardId { get; set; }
                     }
                 }
 

@@ -303,6 +303,20 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         public string? OutProductNumber { get; set; }
 
         /// <summary>
+        /// 获取或设置是否展示兑换价。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("show_as_exchange")]
+        [System.Text.Json.Serialization.JsonPropertyName("show_as_exchange")]
+        public bool? IsShowAsExchange { get; set; }
+
+        /// <summary>
+        /// 获取或设置可用商品编码列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("available_product_no_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("available_product_no_list")]
+        public string[]? AvailableProductNumberList { get; set; }
+
+        /// <summary>
         /// 获取或设置商品券状态。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("state")]

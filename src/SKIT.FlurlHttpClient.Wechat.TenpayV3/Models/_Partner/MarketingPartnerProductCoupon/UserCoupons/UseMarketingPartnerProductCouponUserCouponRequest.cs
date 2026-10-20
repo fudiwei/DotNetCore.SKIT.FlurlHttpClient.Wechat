@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
 {
@@ -150,5 +151,12 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("sequential_coupon_index")]
         [System.Text.Json.Serialization.JsonPropertyName("sequential_coupon_index")]
         public int? SequentialCouponIndex { get; set; }
+
+        /// <summary>
+        /// 获取或设置核销商品编码列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("use_product_no_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("use_product_no_list")]
+        public IList<string>? UseProductNumberList { get; set; }
     }
 }

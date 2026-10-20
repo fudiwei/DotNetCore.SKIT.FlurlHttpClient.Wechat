@@ -78,6 +78,13 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
                         [Newtonsoft.Json.JsonProperty("saved_amount")]
                         [System.Text.Json.Serialization.JsonPropertyName("saved_amount")]
                         public int? SavedAmount { get; set; }
+
+                        /// <summary>
+                        /// 获取或设置核销商品编码列表。
+                        /// </summary>
+                        [Newtonsoft.Json.JsonProperty("use_product_no_list")]
+                        [System.Text.Json.Serialization.JsonPropertyName("use_product_no_list")]
+                        public string[]? UseProductNumberList { get; set; }
                     }
 
                     public class SingleUsageDetail : UsageDetail

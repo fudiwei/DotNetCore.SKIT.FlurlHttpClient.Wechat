@@ -302,7 +302,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         /// </summary>
         [Newtonsoft.Json.JsonProperty("display_info")]
         [System.Text.Json.Serialization.JsonPropertyName("display_info")]
-        public Types.DisplayInfo DisplayInfo { get; set; } = new Types.DisplayInfo();
+        public Types.DisplayInfo? DisplayInfo { get; set; }
 
         /// <summary>
         /// 获取或设置外部商品 ID。
@@ -324,5 +324,19 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3.Models
         [Newtonsoft.Json.JsonProperty("stock_bundle")]
         [System.Text.Json.Serialization.JsonPropertyName("stock_bundle")]
         public Types.StockBundle? StockBundle { get; set; }
+
+        /// <summary>
+        /// 获取或设置是否展示兑换价。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("show_as_exchange")]
+        [System.Text.Json.Serialization.JsonPropertyName("show_as_exchange")]
+        public bool? IsShowAsExchange { get; set; }
+
+        /// <summary>
+        /// 获取或设置可用商品编码列表。
+        /// </summary>
+        [Newtonsoft.Json.JsonProperty("available_product_no_list")]
+        [System.Text.Json.Serialization.JsonPropertyName("available_product_no_list")]
+        public IList<string>? AvailableProductNumberList { get; set; }
     }
 }
