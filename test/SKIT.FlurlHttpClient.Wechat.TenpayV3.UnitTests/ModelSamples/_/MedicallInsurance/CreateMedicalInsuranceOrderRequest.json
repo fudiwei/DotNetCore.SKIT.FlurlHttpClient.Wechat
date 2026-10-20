@@ -1,0 +1,54 @@
+{
+    "mix_pay_type": "CASH_AND_INSURANCE",
+    "order_type": "REG_PAY",
+    "appid": "wxdace645e0bc2cXXX",
+    "sub_appid": "wxdace645e0bc2cXXX",
+    "sub_mchid": "1900008XXX",
+    "openid": "o4GgauInH_RCEdvrrNGrntXDuXXX",
+    "sub_openid": "o4GgauInH_RCEdvrrNGrntXDuXXX",
+    "payer": {
+        "name": "Z04855dpsqvI10Fn0KNZQxtA/iWhNfPYlXiSUo14bcuRKpq3w909wqjs0iHP4pXERgSRLmCjR0KCIZVz1AvV4mrwg9R4DRVTaEwK5ZZ9/iChlj3Oc9ICs+5b6tJbAm9S8dqiP1u0s7ef2BNamv9Rdvog3TdZQOpTJH/MCWWO629S6RFfmlr2y3Yk8vwEPOHaeILsMoMBZl5HgTZBP5I78oGQ9CQUPR+69Vb7xgg4fwQe7Z8m1nXKP+xyCFI2PtZe6UvLyrCL9duT5oq1p/8UOZex+G25/qc2cuYekkj7hn4d+0m9fPZOycOuZigJ0xWAvsb069RhlmHoCVWsiDpGOQ==",
+        "id_digest": "Y/UXZ//uUPz23LpL2pRFhhiBngwoMeY9IU1j3RIf0XP9Ye4okTHVrrdQ7FnjQe3/ZExZnp4S6MkkAF8cPkFatnig/vLDtuFptqhiXgfTGHOjlVwogjCbE0UcB4qktcyDeo5V1BbKkj5bBWKhxrqCnGlu169MhtdO/U1QhgMwAAf4ZNKEn8Y5QjhnxU0uiAs9v4WUAlfKvJ0wkWkDi/3Dy0VEFV36c2alu7nhsLEZmVWYQxWvhQ9nnl8fnvEugqxzdH6AT9sAB1Doi0WY6aw2xPGf7qca2+sfhM4H9kjTDkfpcHez9z9/mfcBvriW7/CUAr27oboXIozNeKgxwwFKoA==",
+        "card_type": "ID_CARD"
+    },
+    "pay_for_relatives": false,
+    "relative": {
+        "name": "Z04855dpsqvI10Fn0KNZQxtA/iWhNfPYlXiSUo14bcuRKpq3w909wqjs0iHP4pXERgSRLmCjR0KCIZVz1AvV4mrwg9R4DRVTaEwK5ZZ9/iChlj3Oc9ICs+5b6tJbAm9S8dqiP1u0s7ef2BNamv9Rdvog3TdZQOpTJH/MCWWO629S6RFfmlr2y3Yk8vwEPOHaeILsMoMBZl5HgTZBP5I78oGQ9CQUPR+69Vb7xgg4fwQe7Z8m1nXKP+xyCFI2PtZe6UvLyrCL9duT5oq1p/8UOZex+G25/qc2cuYekkj7hn4d+0m9fPZOycOuZigJ0xWAvsb069RhlmHoCVWsiDpGOQ==",
+        "id_digest": "Y/UXZ//uUPz23LpL2pRFhhiBngwoMeY9IU1j3RIf0XP9Ye4okTHVrrdQ7FnjQe3/ZExZnp4S6MkkAF8cPkFatnig/vLDtuFptqhiXgfTGHOjlVwogjCbE0UcB4qktcyDeo5V1BbKkj5bBWKhxrqCnGlu169MhtdO/U1QhgMwAAf4ZNKEn8Y5QjhnxU0uiAs9v4WUAlfKvJ0wkWkDi/3Dy0VEFV36c2alu7nhsLEZmVWYQxWvhQ9nnl8fnvEugqxzdH6AT9sAB1Doi0WY6aw2xPGf7qca2+sfhM4H9kjTDkfpcHez9z9/mfcBvriW7/CUAr27oboXIozNeKgxwwFKoA==",
+        "card_type": "ID_CARD"
+    },
+    "out_trade_no": "202204022005169952975171534816",
+    "serial_no": "1217752501201",
+    "pay_order_id": "ORD530100202204022006350000021",
+    "pay_auth_no": "AUTH530100202204022006310000034",
+    "geo_location": "102.682296,25.054260",
+    "city_id": "530100",
+    "med_inst_name": "北大医院",
+    "med_inst_no": "1217752501201407033233368318",
+    "med_ins_order_create_time": "2015-05-20T13:29:35+08:00",
+    "total_fee": 202000,
+    "med_ins_gov_fee": 100000,
+    "med_ins_self_fee": 45000,
+    "med_ins_other_fee": 5000,
+    "med_ins_cash_fee": 50000,
+    "wechat_pay_cash_fee": 42000,
+    "cash_add_detail": [
+        {
+            "cash_add_fee": 2000,
+            "cash_add_type": "FREIGHT"
+        }
+    ],
+    "cash_reduce_detail": [
+        {
+            "cash_reduce_fee": 10000,
+            "cash_reduce_type": "DEFAULT_REDUCE_TYPE"
+        }
+    ],
+    "callback_url": "https://www.weixin.qq.com/wxpay/pay.php",
+    "prepay_id": "wx201410272009395522657a690389285100",
+    "passthrough_request_content": "{\"payAuthNo\":\"AUTH****\",\"payOrdId\":\"ORD****\",\"setlLatlnt\":\"118.096435,24.485407\"}",
+    "extends": "{}",
+    "attach": "{}",
+    "channel_no": "AAGN9uhZc5EGyRdairKW7Qnu",
+    "med_ins_test_env": false
+}

@@ -39,8 +39,9 @@
 |  √  |       支付产品：小程序支付        | 直连商户 & 合作伙伴 |                   |
 |  √  |       支付产品：付款码支付        | 直连商户 & 合作伙伴 |                   |
 |  √  |        支付产品：合单支付         | 直连商户 & 合作伙伴 |                   |
-|  √  |        支付产品：下载账单         | 直连商户 & 合作伙伴 |                   |
+|  √  |        支付产品：医保支付         | 直连商户 & 合作伙伴 |                   |
 |  √  |        支付产品：订单退款         | 直连商户 & 合作伙伴 |                   |
+|  √  |        支付产品：下载账单         | 直连商户 & 合作伙伴 |                   |
 |  √  |          支付产品：分账           | 直连商户 & 合作伙伴 |                   |
 |  √  |       转账产品：转账到零钱        | 直连商户 & 合作伙伴 |                   |
 |  ×  | <del>转账产品：转账到银行卡</del> | 直连商户 & 合作伙伴 | 官方未提供 v3 API |
@@ -151,6 +152,10 @@
         - 合单小程序下单：`CreateCombineTransactionJsapi`
         - 合单查询订单：`GetCombineTransactionByCombineOutTradeNumber`
         - 合单关闭订单：`CloseCombineTransaction`
+    - 医保支付
+        - 医保自费混合收款下单：`CreateMedicalIndustryOrder`
+        - 使用医保自费混合订单号查看下单结果：`GetMedicalIndustryOrderByMixTradeNumber`
+        - 使用服务商订单号查看下单结果：`GetMedicalIndustryOrderByOutTradeNumber`
     - 订单退款
         - 申请退款：`CreateRefundDomesticRefund`
         - 查询单笔退款：`GetRefundDomesticRefundByOutRefundNumber`
@@ -472,6 +477,13 @@
         - 合单小程序下单：`CreateCombineTransactionJsapi`
         - 合单查询订单：`GetCombineTransactionByCombineOutTradeNumber`
         - 合单关闭订单：`CloseCombineTransaction`
+    - 医保支付
+        - 医保自费混合订单
+            - 医保自费混合收款下单：`CreateMedicalInsuranceOrder`
+            - 使用医保自费混合订单号查看下单结果：`GetMedicalInsuranceOrderByMixTradeNumber`
+            - 使用服务商订单号查看下单结果：`GetMedicalInsuranceOrderByOutTradeNumber`
+        - 医保退款
+            - 医保退款通知：`CreateMedicalInsuranceRefundNotification`
     - 订单退款
         - 申请退款：`CreateRefundDomesticRefund`
         - 查询单笔退款：`GetRefundDomesticRefundByOutRefundNumber`
@@ -634,10 +646,10 @@
         - 删除活动发券商户号：`DeleteMarketingPayGiftActivityMerchant`
         - 图片上传：`UploadMarketingMediaImage`
     - 智慧商圈
-        - 商圈积分同步：`NotifyBusinessCirclePoints`
+        - 商圈积分同步：`CreateBusinessCirclePointNotification`
         - 商圈积分授权查询：`GetBusinessCircleUserAuthorizationByOpenId`
         - 商圈会员待积分状态查询：`GetBusinessCircleUserPointsCommitStatusByOpenId`
-        - 商圈会员停车状态同步：`NotifyBusinessCircleParkings`
+        - 商圈会员停车状态同步：`CreateBusinessCircleParking`
     - 支付即服务
         - 服务人员注册：`CreateSmartGuide`
         - 服务人员分配：`AssignSmartGuide`

@@ -1,0 +1,9 @@
+{
+    "sub_mchid": "1900008XXX",
+    "med_refund_total_fee": 45000,
+    "med_refund_gov_fee": 45000,
+    "med_refund_self_fee": 45000,
+    "med_refund_other_fee": 45000,
+    "refund_time": "2015-05-20T13:29:35+08:00",
+    "out_refund_no": "R202204022005169952975171534816"
+}
