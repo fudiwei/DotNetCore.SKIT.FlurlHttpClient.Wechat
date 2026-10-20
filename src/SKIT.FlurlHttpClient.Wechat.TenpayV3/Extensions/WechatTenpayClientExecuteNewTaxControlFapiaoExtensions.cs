@@ -327,7 +327,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "fapiaomerchant", "getspinviteurl")
+                .CreateFlurlRequest(request, HttpMethod.Get, "new-tax-control-fapiao", "fapiaomerchant", "listspinvitemchinfo")
                 .SetQueryParam("query_time_start", request.QueryStartTime.HasValue ? request.QueryStartTime.Value.ToString("yyyy-MM-dd'T'HH:mm:sszzz") : null)
                 .SetQueryParam("query_time_end", request.QueryEndTime.HasValue ? request.QueryEndTime.Value.ToString("yyyy-MM-dd'T'HH:mm:sszzz") : null)
                 .SetQueryParam("invite_code", request.InviteCode)

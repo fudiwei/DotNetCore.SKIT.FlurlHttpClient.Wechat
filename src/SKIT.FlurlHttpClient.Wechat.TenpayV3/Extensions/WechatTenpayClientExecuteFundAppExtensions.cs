@@ -482,7 +482,7 @@ namespace SKIT.FlurlHttpClient.Wechat.TenpayV3
             if (request is null) throw new ArgumentNullException(nameof(request));
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-batches", request.BatchNumber, "out-details", request.DetailNumber);
+                .CreateFlurlRequest(request, HttpMethod.Get, "fund-app", "brand-redpacket", "brand-merchant-batches", request.BatchNumber, "details", request.DetailNumber);
 
             return await client.SendFlurlRequestAsJsonAsync<Models.GetFundAppBrandRedPacketBrandMerchantBatchDetailByDetailNumberResponse>(flurlReq, data: request, cancellationToken: cancellationToken).ConfigureAwait(false);
         }
