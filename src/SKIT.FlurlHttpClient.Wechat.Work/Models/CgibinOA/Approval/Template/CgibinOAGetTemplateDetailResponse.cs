@@ -66,18 +66,18 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// 获取或设置是否为必填项。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("require")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("require")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                                 public bool IsRequired { get; set; }
 
                                 /// <summary>
                                 /// 获取或设置是否不可打印。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("un_print")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("un_print")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                                 public bool IsUnprintable { get; set; }
                             }
 
@@ -344,9 +344,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// 获取或设置是否只允许拍照。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("is_only_photo")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("is_only_photo")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                                 public bool IsOnlyPhoto { get; set; }
                             }
 

@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [GET] /cgi-bin/oa/vacation/getcorpconf 接口的响应。</para>
@@ -229,9 +229,9 @@
                 /// 获取或设置是否关联加班调休。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_newovertime")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_newovertime")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                 public bool IsNewOvertime { get; set; }
 
                 /// <summary>

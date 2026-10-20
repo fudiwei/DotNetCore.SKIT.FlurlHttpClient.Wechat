@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/corp/getopenapprovaldata 接口的响应。</para>
@@ -170,7 +170,7 @@
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("ThirdNo")]
                 [System.Text.Json.Serialization.JsonPropertyName("ThirdNo")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
                 public string ThirdPartyApprovalNumber { get; set; } = default!;
 
                 /// <summary>

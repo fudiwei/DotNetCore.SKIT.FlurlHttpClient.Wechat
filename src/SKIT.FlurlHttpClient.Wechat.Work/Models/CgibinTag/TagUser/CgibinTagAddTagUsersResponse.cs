@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/tag/addtagusers 接口的响应。</para>
@@ -9,9 +9,9 @@
         /// 获取或设置无效的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("invalidlist")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringArrayWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringArrayWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("invalidlist")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringArrayWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringArrayWithPipeSplitConverter))]
         public string[]? InvalidUserIdList { get; set; }
 
         /// <summary>

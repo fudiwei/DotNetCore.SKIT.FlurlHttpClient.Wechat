@@ -27,8 +27,8 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.ExtendedSDK.AIBot.Events
                 /// <summary>
                 /// 获取或设置图片数据的 MD5 值。
                 /// </summary>
-                [Newtonsoft.Json.JsonProperty("msgtype")]
-                [System.Text.Json.Serialization.JsonPropertyName("msgtype")]
+                [Newtonsoft.Json.JsonProperty("md5")]
+                [System.Text.Json.Serialization.JsonPropertyName("md5")]
                 public string ImageDataMd5 { get; set; } = default!;
             }
 

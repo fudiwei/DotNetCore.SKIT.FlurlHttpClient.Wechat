@@ -87,7 +87,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("sptime")]
                                 [System.Text.Json.Serialization.JsonPropertyName("sptime")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberConverter))]
                                 public long? ApproveTimestamp { get; set; }
 
                                 /// <summary>
@@ -304,7 +304,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("s_timestamp")]
                                         [System.Text.Json.Serialization.JsonPropertyName("s_timestamp")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberConverter))]
                                         public long? Timestamp { get; set; }
 
                                         /// <summary>
@@ -650,7 +650,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("time")]
                                         [System.Text.Json.Serialization.JsonPropertyName("time")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberConverter))]
                                         public long? Timestamp { get; set; }
 
                                         /// <summary>
@@ -658,7 +658,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("daymonthyear")]
                                         [System.Text.Json.Serialization.JsonPropertyName("daymonthyear")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberConverter))]
                                         public long? DateTimestamp { get; set; }
                                     }
 
@@ -742,7 +742,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                         /// </summary>
                                         [Newtonsoft.Json.JsonProperty("time")]
                                         [System.Text.Json.Serialization.JsonPropertyName("time")]
-                                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.TextualNumberConverter))]
+                                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberConverter))]
                                         public long? Timestamp { get; set; }
                                     }
 
@@ -927,9 +927,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                                 /// 获取或设置是否为必填项。
                                 /// </summary>
                                 [Newtonsoft.Json.JsonProperty("require")]
-                                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                                 [System.Text.Json.Serialization.JsonPropertyName("require")]
-                                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                                 public bool? IsRequired { get; set; }
                             }
                         }
@@ -962,7 +962,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                         /// </summary>
                         [Newtonsoft.Json.JsonProperty("commentid")]
                         [System.Text.Json.Serialization.JsonPropertyName("commentid")]
-                        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
+                        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
                         public string CommentId { get; set; } = default!;
 
                         /// <summary>

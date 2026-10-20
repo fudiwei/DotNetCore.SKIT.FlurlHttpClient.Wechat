@@ -1,4 +1,4 @@
-﻿namespace SKIT.FlurlHttpClient.Wechat.Work.Models
+namespace SKIT.FlurlHttpClient.Wechat.Work.Models
 {
     /// <summary>
     /// <para>表示 [POST] /cgi-bin/school/user/get_teacher_customize_health_info 接口的响应。</para>
@@ -54,9 +54,9 @@
                 /// 获取或设置健康状态是否为本人填写。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("self_submit")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("self_submit")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                 public bool IsSelfSubmit { get; set; }
 
                 /// <summary>
@@ -114,18 +114,18 @@
                 /// 获取或设置是否必填。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_must_fill")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_must_fill")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                 public bool IsRequired { get; set; }
 
                 /// <summary>
                 /// 获取或设置是否隐藏。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("is_not_display")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("is_not_display")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
                 public bool IsHidden { get; set; }
 
                 /// <summary>
@@ -162,9 +162,9 @@
         /// 获取或设置翻页是否结束。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("ending")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("ending")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
         public bool IsEnding { get; set; }
 
         /// <summary>

@@ -147,7 +147,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work
                 request.FileContentType = MimeTypes.GetMimeMapping(request.FileName!);
 
             IFlurlRequest flurlReq = client
-                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "chatdata", "upload")
+                .CreateFlurlRequest(request, HttpMethod.Post, "cgi-bin", "chatdata", "upload_media")
                 .SetQueryParam("access_token", request.AccessToken)
                 .SetQueryParam("type", request.Type);
 

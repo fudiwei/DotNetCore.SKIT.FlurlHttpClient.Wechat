@@ -978,27 +978,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置接收消息的成员账号列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("touser")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedStringListWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedStringListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("touser")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedStringListWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedStringListWithPipeSplitConverter))]
         public IList<string>? ToUserIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的部门 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("toparty")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedNumberListWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("toparty")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedNumberListWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberListWithPipeSplitConverter))]
         public IList<long>? ToDepartmentIdList { get; set; }
 
         /// <summary>
         /// 获取或设置接收消息的标签 ID 列表。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("totag")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.StringifiedNumberListWithPipeSplitConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.StringifiedNumberListWithPipeSplitConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("totag")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.StringifiedNumberListWithPipeSplitConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.StringifiedNumberListWithPipeSplitConverter))]
         public IList<int>? ToTagIdList { get; set; }
 
         /// <summary>
@@ -1117,27 +1117,27 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
         /// 获取或设置是否是保密消息。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("safe")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("safe")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
         public bool? IsSafe { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启 ID 转译。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enable_id_trans")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("enable_id_trans")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
         public bool? EnableIdTransform { get; set; }
 
         /// <summary>
         /// 获取或设置是否开启重复消息检查。
         /// </summary>
         [Newtonsoft.Json.JsonProperty("enable_duplicate_check")]
-        [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalBooleanConverter))]
+        [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericBooleanConverter))]
         [System.Text.Json.Serialization.JsonPropertyName("enable_duplicate_check")]
-        [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalBooleanConverter))]
+        [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericBooleanConverter))]
         public bool? EnableDuplicateCheck { get; set; }
 
         /// <summary>

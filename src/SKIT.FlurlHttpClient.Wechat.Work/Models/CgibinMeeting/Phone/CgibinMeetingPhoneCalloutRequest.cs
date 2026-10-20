@@ -15,9 +15,9 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// 获取或设置国家地区代码。
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("area")]
-                [Newtonsoft.Json.JsonConverter(typeof(Newtonsoft.Json.Converters.Common.NumericalStringConverter))]
+                [Newtonsoft.Json.JsonConverter(typeof(SKIT.JsonConv.NewtonsoftJson.Converters.NumericStringConverter))]
                 [System.Text.Json.Serialization.JsonPropertyName("area")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringConverter))]
                 public string AreaCode { get; set; } = string.Empty;
 
                 /// <summary>

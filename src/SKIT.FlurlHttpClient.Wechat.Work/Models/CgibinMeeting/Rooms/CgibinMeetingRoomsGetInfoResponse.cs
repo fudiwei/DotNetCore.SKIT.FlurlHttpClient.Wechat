@@ -209,7 +209,7 @@ namespace SKIT.FlurlHttpClient.Wechat.Work.Models
                 /// </summary>
                 [Newtonsoft.Json.JsonProperty("monitor_frequency")]
                 [System.Text.Json.Serialization.JsonPropertyName("monitor_frequency")]
-                [System.Text.Json.Serialization.JsonConverter(typeof(System.Text.Json.Serialization.Common.NumericalStringReadOnlyConverter))]
+                [System.Text.Json.Serialization.JsonConverter(typeof(SKIT.JsonConv.SystemTextJson.Converters.NumericStringReadOnlyConverter))]
                 public string MonitorFrequency { get; set; } = default!;
 
                 /// <summary>
